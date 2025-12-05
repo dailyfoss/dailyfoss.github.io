@@ -1,0 +1,81 @@
+{
+  "name": "channels-dvr",
+  "slug": "channels-dvr",
+  "categories": [
+    107
+  ],
+  "date_created": "2025-11-23",
+  "interface_port": null,
+  "documentation": "getchannels.com/dvr-server/",
+  "website": "getchannels.com/dvr-server/",
+  "source_code": "getchannels.com/dvr-server/",
+  "github_stars": null,
+  "logo": "/icons/channels-dvr.webp",
+  "description": "Channels DVR Server allows users to record live TV streams and watch them on any device. It integrates with HDHomeRun tuners and offers mobile apps, web playback, and automatic commercial skipping for home DVR setups.",
+  "install_methods": [
+    {
+      "platform": {
+        "desktop": {
+          "linux": false,
+          "windows": false,
+          "macos": false
+        },
+        "mobile": {
+          "android": false,
+          "ios": false
+        },
+        "web_app": false,
+        "browser_extension": false,
+        "cli_only": false
+      },
+      "hosting": {
+        "self_hosted": false,
+        "saas": false,
+        "managed_cloud": false
+      },
+      "ui": {
+        "cli": false,
+        "gui": false,
+        "web_ui": false,
+        "api": false,
+        "tui": false
+      },
+      "deployment": {
+        "script": true,
+        "docker": true,
+        "docker_compose": true,
+        "helm": true,
+        "kubernetes": true,
+        "terraform": true
+      }
+    }
+  ],
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "platform": {
+    "desktop": false,
+    "mobile": false,
+    "web_extensions": false,
+    "hosting": false,
+    "ui_interface": false
+  },
+  "deployment": {
+    "script": true,
+    "docker": true,
+    "docker_compose": true,
+    "helm": true,
+    "kubernetes": true,
+    "terraform": true,
+    "paths": {
+      "script": "/public/manifest/dummy/script.sh",
+      "docker": "/public/manifest/dummy/Dockerfile",
+      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
+      "helm": "/public/manifest/dummy/helm.yaml",
+      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
+      "terraform": "/public/manifest/dummy/main.tf"
+    }
+  }
+}

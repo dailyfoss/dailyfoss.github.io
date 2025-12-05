@@ -1,0 +1,81 @@
+{
+  "name": "opnform",
+  "slug": "opnform",
+  "categories": [
+    157
+  ],
+  "date_created": "2025-11-23",
+  "interface_port": null,
+  "documentation": "github.com/OpnForm/OpnForm",
+  "website": "opnform.com",
+  "source_code": "github.com/OpnForm/OpnForm",
+  "github_stars": "3024",
+  "logo": "/icons/opnform.webp",
+  "description": "OpnForm is an open-source, Airtable-like form builder that allows users to create, share, and collect responses with an integrated UI. It supports REST APIs and can be self-hosted for full data control.",
+  "install_methods": [
+    {
+      "platform": {
+        "desktop": {
+          "linux": false,
+          "windows": false,
+          "macos": false
+        },
+        "mobile": {
+          "android": false,
+          "ios": false
+        },
+        "web_app": false,
+        "browser_extension": false,
+        "cli_only": false
+      },
+      "hosting": {
+        "self_hosted": false,
+        "saas": false,
+        "managed_cloud": false
+      },
+      "ui": {
+        "cli": false,
+        "gui": false,
+        "web_ui": false,
+        "api": false,
+        "tui": false
+      },
+      "deployment": {
+        "script": true,
+        "docker": true,
+        "docker_compose": true,
+        "helm": true,
+        "kubernetes": true,
+        "terraform": true
+      }
+    }
+  ],
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "platform": {
+    "desktop": false,
+    "mobile": false,
+    "web_extensions": false,
+    "hosting": false,
+    "ui_interface": false
+  },
+  "deployment": {
+    "script": true,
+    "docker": true,
+    "docker_compose": true,
+    "helm": true,
+    "kubernetes": true,
+    "terraform": true,
+    "paths": {
+      "script": "/public/manifest/dummy/script.sh",
+      "docker": "/public/manifest/dummy/Dockerfile",
+      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
+      "helm": "/public/manifest/dummy/helm.yaml",
+      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
+      "terraform": "/public/manifest/dummy/main.tf"
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "name": "managarr",
+  "slug": "managarr",
+  "categories": [
+    166
+  ],
+  "date_created": "2025-11-23",
+  "interface_port": null,
+  "documentation": "github.com/Dark-Alex-17/managarr",
+  "website": "github.com/Dark-Alex-17/managarr",
+  "source_code": "github.com/Dark-Alex-17/managarr",
+  "github_stars": "606",
+  "logo": "/icons/managarr.webp",
+  "description": "Managarr automates user requests for video and media in self-hosted media servers. It organizes requests, handles approvals, and integrates with popular downloaders like Radarr or Sonarr.",
+  "install_methods": [
+    {
+      "platform": {
+        "desktop": {
+          "linux": true,
+          "windows": true,
+          "macos": true
+        },
+        "mobile": {
+          "android": false,
+          "ios": false
+        },
+        "web_app": false,
+        "browser_extension": false,
+        "cli_only": false
+      },
+      "hosting": {
+        "self_hosted": false,
+        "saas": false,
+        "managed_cloud": false
+      },
+      "ui": {
+        "cli": false,
+        "gui": false,
+        "web_ui": false,
+        "api": false,
+        "tui": false
+      },
+      "deployment": {
+        "script": true,
+        "docker": true,
+        "docker_compose": true,
+        "helm": true,
+        "kubernetes": true,
+        "terraform": true
+      }
+    }
+  ],
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "platform": {
+    "desktop": false,
+    "mobile": false,
+    "web_extensions": false,
+    "hosting": false,
+    "ui_interface": true
+  },
+  "deployment": {
+    "script": true,
+    "docker": true,
+    "docker_compose": true,
+    "helm": true,
+    "kubernetes": true,
+    "terraform": true,
+    "paths": {
+      "script": "/public/manifest/dummy/script.sh",
+      "docker": "/public/manifest/dummy/Dockerfile",
+      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
+      "helm": "/public/manifest/dummy/helm.yaml",
+      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
+      "terraform": "/public/manifest/dummy/main.tf"
+    }
+  }
+}

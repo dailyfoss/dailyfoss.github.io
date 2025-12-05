@@ -1,0 +1,81 @@
+{
+  "name": "retrom",
+  "slug": "retrom",
+  "categories": [
+    69
+  ],
+  "date_created": "2025-11-23",
+  "interface_port": null,
+  "documentation": "github.com/JMBeresford/retrom",
+  "website": "github.com/JMBeresford/retrom",
+  "source_code": "github.com/JMBeresford/retrom",
+  "github_stars": "1594",
+  "logo": "/icons/retrom.webp",
+  "description": "Retrom is a self-hosted retro gaming management system with collections, metadata, and a web dashboard to organize and track ROMs across platforms.",
+  "install_methods": [
+    {
+      "platform": {
+        "desktop": {
+          "linux": true,
+          "windows": true,
+          "macos": true
+        },
+        "mobile": {
+          "android": false,
+          "ios": false
+        },
+        "web_app": false,
+        "browser_extension": false,
+        "cli_only": false
+      },
+      "hosting": {
+        "self_hosted": false,
+        "saas": false,
+        "managed_cloud": false
+      },
+      "ui": {
+        "cli": false,
+        "gui": false,
+        "web_ui": false,
+        "api": false,
+        "tui": false
+      },
+      "deployment": {
+        "script": true,
+        "docker": true,
+        "docker_compose": true,
+        "helm": true,
+        "kubernetes": true,
+        "terraform": true
+      }
+    }
+  ],
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "platform": {
+    "desktop": false,
+    "mobile": false,
+    "web_extensions": false,
+    "hosting": false,
+    "ui_interface": false
+  },
+  "deployment": {
+    "script": true,
+    "docker": true,
+    "docker_compose": true,
+    "helm": true,
+    "kubernetes": true,
+    "terraform": true,
+    "paths": {
+      "script": "/public/manifest/dummy/script.sh",
+      "docker": "/public/manifest/dummy/Dockerfile",
+      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
+      "helm": "/public/manifest/dummy/helm.yaml",
+      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
+      "terraform": "/public/manifest/dummy/main.tf"
+    }
+  }
+}

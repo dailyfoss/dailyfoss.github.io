@@ -1,0 +1,81 @@
+{
+  "name": "chiyogami",
+  "slug": "chiyogami",
+  "categories": [
+    21
+  ],
+  "date_created": "2025-11-23",
+  "interface_port": null,
+  "documentation": "github.com/rhee876527/chiyogami",
+  "website": "chiyogami.myaddr.dev",
+  "source_code": "github.com/rhee876527/chiyogami",
+  "github_stars": "67",
+  "logo": "/icons/chiyogami.webp",
+  "description": "Chiyogami is a minimal, aesthetic note-taking and journaling web app with markdown support and keyboard shortcuts. It lets users manage plain text notes with elegant design and simple folder-based organization.",
+  "install_methods": [
+    {
+      "platform": {
+        "desktop": {
+          "linux": false,
+          "windows": false,
+          "macos": false
+        },
+        "mobile": {
+          "android": false,
+          "ios": false
+        },
+        "web_app": false,
+        "browser_extension": false,
+        "cli_only": false
+      },
+      "hosting": {
+        "self_hosted": false,
+        "saas": false,
+        "managed_cloud": false
+      },
+      "ui": {
+        "cli": false,
+        "gui": false,
+        "web_ui": false,
+        "api": false,
+        "tui": false
+      },
+      "deployment": {
+        "script": true,
+        "docker": true,
+        "docker_compose": true,
+        "helm": true,
+        "kubernetes": true,
+        "terraform": true
+      }
+    }
+  ],
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "platform": {
+    "desktop": false,
+    "mobile": false,
+    "web_extensions": false,
+    "hosting": false,
+    "ui_interface": false
+  },
+  "deployment": {
+    "script": true,
+    "docker": true,
+    "docker_compose": true,
+    "helm": true,
+    "kubernetes": true,
+    "terraform": true,
+    "paths": {
+      "script": "/public/manifest/dummy/script.sh",
+      "docker": "/public/manifest/dummy/Dockerfile",
+      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
+      "helm": "/public/manifest/dummy/helm.yaml",
+      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
+      "terraform": "/public/manifest/dummy/main.tf"
+    }
+  }
+}

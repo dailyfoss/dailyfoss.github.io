@@ -1,0 +1,81 @@
+{
+  "name": "mafl",
+  "slug": "mafl",
+  "categories": [
+    165
+  ],
+  "date_created": "2025-11-23",
+  "interface_port": null,
+  "documentation": "github.com/hywax/mafl",
+  "website": "mafl.hywax.space",
+  "source_code": "github.com/hywax/mafl",
+  "github_stars": "618",
+  "logo": "/icons/mafl.webp",
+  "description": "Mafl is a self-hosted feed and blog aggregator similar to Feedly. It allows subscribing to RSS/Atom feeds, filtering stories, and reading articles via a simple responsive web interface.",
+  "install_methods": [
+    {
+      "platform": {
+        "desktop": {
+          "linux": false,
+          "windows": false,
+          "macos": false
+        },
+        "mobile": {
+          "android": false,
+          "ios": false
+        },
+        "web_app": false,
+        "browser_extension": false,
+        "cli_only": false
+      },
+      "hosting": {
+        "self_hosted": false,
+        "saas": false,
+        "managed_cloud": false
+      },
+      "ui": {
+        "cli": false,
+        "gui": false,
+        "web_ui": false,
+        "api": false,
+        "tui": false
+      },
+      "deployment": {
+        "script": true,
+        "docker": true,
+        "docker_compose": true,
+        "helm": true,
+        "kubernetes": true,
+        "terraform": true
+      }
+    }
+  ],
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "platform": {
+    "desktop": false,
+    "mobile": false,
+    "web_extensions": false,
+    "hosting": false,
+    "ui_interface": true
+  },
+  "deployment": {
+    "script": true,
+    "docker": true,
+    "docker_compose": true,
+    "helm": true,
+    "kubernetes": true,
+    "terraform": true,
+    "paths": {
+      "script": "/public/manifest/dummy/script.sh",
+      "docker": "/public/manifest/dummy/Dockerfile",
+      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
+      "helm": "/public/manifest/dummy/helm.yaml",
+      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
+      "terraform": "/public/manifest/dummy/main.tf"
+    }
+  }
+}

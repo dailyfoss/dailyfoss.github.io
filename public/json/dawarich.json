@@ -1,0 +1,81 @@
+{
+  "name": "dawarich",
+  "slug": "dawarich",
+  "categories": [
+    3
+  ],
+  "date_created": "2025-11-23",
+  "interface_port": null,
+  "documentation": "github.com/Freika/dawarich",
+  "website": "dawarich.app",
+  "source_code": "github.com/Freika/dawarich",
+  "github_stars": "7402",
+  "logo": "/icons/dawarich.webp",
+  "description": "Dawarich is a self-hosted travel tracker that visualizes trips and visited places on an interactive world map. It supports multiple trips, photos, tags, and timeframes, making it ideal for travelers to document their adventures privately.",
+  "install_methods": [
+    {
+      "platform": {
+        "desktop": {
+          "linux": false,
+          "windows": false,
+          "macos": false
+        },
+        "mobile": {
+          "android": false,
+          "ios": false
+        },
+        "web_app": false,
+        "browser_extension": false,
+        "cli_only": false
+      },
+      "hosting": {
+        "self_hosted": false,
+        "saas": false,
+        "managed_cloud": false
+      },
+      "ui": {
+        "cli": false,
+        "gui": false,
+        "web_ui": false,
+        "api": false,
+        "tui": false
+      },
+      "deployment": {
+        "script": true,
+        "docker": true,
+        "docker_compose": true,
+        "helm": true,
+        "kubernetes": true,
+        "terraform": true
+      }
+    }
+  ],
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "platform": {
+    "desktop": false,
+    "mobile": false,
+    "web_extensions": false,
+    "hosting": true,
+    "ui_interface": true
+  },
+  "deployment": {
+    "script": true,
+    "docker": true,
+    "docker_compose": true,
+    "helm": true,
+    "kubernetes": true,
+    "terraform": true,
+    "paths": {
+      "script": "/public/manifest/dummy/script.sh",
+      "docker": "/public/manifest/dummy/Dockerfile",
+      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
+      "helm": "/public/manifest/dummy/helm.yaml",
+      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
+      "terraform": "/public/manifest/dummy/main.tf"
+    }
+  }
+}

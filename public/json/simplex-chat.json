@@ -1,0 +1,81 @@
+{
+  "name": "simplex-chat",
+  "slug": "simplex-chat",
+  "categories": [
+    102
+  ],
+  "date_created": "2025-11-23",
+  "interface_port": null,
+  "documentation": "github.com/simplex-chat/simplex-chat",
+  "website": "simplex.chat",
+  "source_code": "github.com/simplex-chat/simplex-chat",
+  "github_stars": "9979",
+  "logo": "/icons/simplex-chat.webp",
+  "description": "SimpleX Chat is a privacy-focused messaging platform with E2E encryption and no identifiers. It provides mobile and desktop clients, and can use self-hosted servers as transport nodes.",
+  "install_methods": [
+    {
+      "platform": {
+        "desktop": {
+          "linux": true,
+          "windows": true,
+          "macos": true
+        },
+        "mobile": {
+          "android": true,
+          "ios": false
+        },
+        "web_app": false,
+        "browser_extension": false,
+        "cli_only": false
+      },
+      "hosting": {
+        "self_hosted": false,
+        "saas": false,
+        "managed_cloud": false
+      },
+      "ui": {
+        "cli": false,
+        "gui": false,
+        "web_ui": false,
+        "api": false,
+        "tui": false
+      },
+      "deployment": {
+        "script": true,
+        "docker": true,
+        "docker_compose": true,
+        "helm": true,
+        "kubernetes": true,
+        "terraform": true
+      }
+    }
+  ],
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "platform": {
+    "desktop": false,
+    "mobile": false,
+    "web_extensions": false,
+    "hosting": false,
+    "ui_interface": false
+  },
+  "deployment": {
+    "script": true,
+    "docker": true,
+    "docker_compose": true,
+    "helm": true,
+    "kubernetes": true,
+    "terraform": true,
+    "paths": {
+      "script": "/public/manifest/dummy/script.sh",
+      "docker": "/public/manifest/dummy/Dockerfile",
+      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
+      "helm": "/public/manifest/dummy/helm.yaml",
+      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
+      "terraform": "/public/manifest/dummy/main.tf"
+    }
+  }
+}

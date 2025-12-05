@@ -1,0 +1,81 @@
+{
+  "name": "13ft-ladder",
+  "slug": "13ft-ladder",
+  "categories": [
+    9
+  ],
+  "date_created": "2025-11-23",
+  "interface_port": null,
+  "documentation": "github.com/wasi-master/13ft",
+  "website": "github.com/wasi-master/13ft",
+  "source_code": "github.com/wasi-master/13ft",
+  "github_stars": "3948",
+  "logo": "/icons/13ft-ladder.webp",
+  "description": "13ft is an open-source, self-hosted web service designed as a replacement for 12ft.io. It allows you to input a URL and retrieve the article’s full content—bypassing ads and paywalls, by emulating a GoogleBot crawl to fetch what search engines see. Built in Python (Flask) and easily deployable via Docker, it’s geared toward users who want more control over accessing web content and hosting their own instance. The project is MIT-licensed, with support for custom host/port setups, and has a community of users and contributors.",
+  "install_methods": [
+    {
+      "platform": {
+        "desktop": {
+          "linux": false,
+          "windows": false,
+          "macos": false
+        },
+        "mobile": {
+          "android": false,
+          "ios": false
+        },
+        "web_app": false,
+        "browser_extension": false,
+        "cli_only": false
+      },
+      "hosting": {
+        "self_hosted": false,
+        "saas": false,
+        "managed_cloud": false
+      },
+      "ui": {
+        "cli": false,
+        "gui": false,
+        "web_ui": false,
+        "api": false,
+        "tui": false
+      },
+      "deployment": {
+        "script": true,
+        "docker": true,
+        "docker_compose": true,
+        "helm": true,
+        "kubernetes": true,
+        "terraform": true
+      }
+    }
+  ],
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "platform": {
+    "desktop": false,
+    "mobile": false,
+    "web_extensions": false,
+    "hosting": false,
+    "ui_interface": false
+  },
+  "deployment": {
+    "script": true,
+    "docker": true,
+    "docker_compose": true,
+    "helm": true,
+    "kubernetes": true,
+    "terraform": true,
+    "paths": {
+      "script": "/public/manifest/dummy/script.sh",
+      "docker": "/public/manifest/dummy/Dockerfile",
+      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
+      "helm": "/public/manifest/dummy/helm.yaml",
+      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
+      "terraform": "/public/manifest/dummy/main.tf"
+    }
+  }
+}

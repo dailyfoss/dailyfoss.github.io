@@ -1,0 +1,81 @@
+{
+  "name": "flint",
+  "slug": "flint",
+  "categories": [
+    69
+  ],
+  "date_created": "2025-11-23",
+  "interface_port": null,
+  "documentation": "github.com/volantvm/flint",
+  "website": "github.com/volantvm/flint",
+  "source_code": "github.com/volantvm/flint",
+  "github_stars": "1437",
+  "logo": "/icons/flint.webp",
+  "description": "Flint is a lightweight self-hosted leveled log viewer designed for distributed systems. It helps developers visualize and search logs across environments with a web UI for filtering and navigation.",
+  "install_methods": [
+    {
+      "platform": {
+        "desktop": {
+          "linux": true,
+          "windows": false,
+          "macos": true
+        },
+        "mobile": {
+          "android": false,
+          "ios": false
+        },
+        "web_app": false,
+        "browser_extension": false,
+        "cli_only": false
+      },
+      "hosting": {
+        "self_hosted": false,
+        "saas": false,
+        "managed_cloud": false
+      },
+      "ui": {
+        "cli": false,
+        "gui": false,
+        "web_ui": false,
+        "api": false,
+        "tui": false
+      },
+      "deployment": {
+        "script": true,
+        "docker": true,
+        "docker_compose": true,
+        "helm": true,
+        "kubernetes": true,
+        "terraform": true
+      }
+    }
+  ],
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "platform": {
+    "desktop": true,
+    "mobile": false,
+    "web_extensions": false,
+    "hosting": false,
+    "ui_interface": true
+  },
+  "deployment": {
+    "script": true,
+    "docker": true,
+    "docker_compose": true,
+    "helm": true,
+    "kubernetes": true,
+    "terraform": true,
+    "paths": {
+      "script": "/public/manifest/dummy/script.sh",
+      "docker": "/public/manifest/dummy/Dockerfile",
+      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
+      "helm": "/public/manifest/dummy/helm.yaml",
+      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
+      "terraform": "/public/manifest/dummy/main.tf"
+    }
+  }
+}

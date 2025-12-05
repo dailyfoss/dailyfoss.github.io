@@ -1,0 +1,43 @@
+{
+  "name": "Reactive Resume",
+  "slug": "reactive-resume",
+  "categories": [
+    12
+  ],
+  "date_created": "2025-04-22",
+  "type": "ct",
+  "updateable": true,
+  "privileged": false,
+  "interface_port": 3000,
+  "documentation": "https://docs.rxresume.org/",
+  "website": "https://rxresume.org",
+  "github_stars": null,
+  "logo": "/icons/reactive-resume.webp",
+  "config_path": "/opt/reactive-resume/.env",
+  "description": "A one-of-a-kind resume builder that keeps your privacy in mind.",
+  "tagline": "A clean, privacy-focused alternative to online resume builders with full data ownership.",
+  "features": [
+    "Completely secure and privacy-focused",
+    "Fully customizable resume templates",
+    "Portable - export and take your data anywhere",
+    "100% open-source and free forever"
+  ],
+  "install_methods": [
+    {
+      "type": "default",
+      "script": "ct/reactive-resume.sh",
+      "resources": {
+        "cpu": 2,
+        "ram": 4096,
+        "hdd": 8,
+        "os": "debian",
+        "version": "13"
+      }
+    }
+  ],
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": []
+}

@@ -1,0 +1,81 @@
+{
+  "name": "4ga-boards",
+  "slug": "4ga-boards",
+  "categories": [
+    69
+  ],
+  "date_created": "2025-11-23",
+  "interface_port": null,
+  "documentation": "github.com/RARgames/4gaBoards",
+  "website": "4gaboards.com",
+  "source_code": "github.com/RARgames/4gaBoards",
+  "github_stars": "411",
+  "logo": "/icons/4ga-boards.webp",
+  "description": "4gaBoards is an open-source, self-hostable Kanban-style task-management web app designed for real-time collaboration. It features dark mode, intuitive drag-&-drop boards with multi-level hierarchy (projects → boards → lists → cards → tasks), advanced Markdown editing, import/export support (including from Trello), and simplified wide-screen UI with minimal clutter. Built with React/Redux on the front end and Sails.js/Knex/PostgreSQL on the back end, 4gaBoards is published under the MIT License and supports Docker / Kubernetes deployment.",
+  "install_methods": [
+    {
+      "platform": {
+        "desktop": {
+          "linux": false,
+          "windows": false,
+          "macos": false
+        },
+        "mobile": {
+          "android": false,
+          "ios": false
+        },
+        "web_app": false,
+        "browser_extension": false,
+        "cli_only": false
+      },
+      "hosting": {
+        "self_hosted": false,
+        "saas": false,
+        "managed_cloud": false
+      },
+      "ui": {
+        "cli": false,
+        "gui": false,
+        "web_ui": false,
+        "api": false,
+        "tui": false
+      },
+      "deployment": {
+        "script": true,
+        "docker": true,
+        "docker_compose": true,
+        "helm": true,
+        "kubernetes": true,
+        "terraform": true
+      }
+    }
+  ],
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "platform": {
+    "desktop": false,
+    "mobile": false,
+    "web_extensions": false,
+    "hosting": false,
+    "ui_interface": false
+  },
+  "deployment": {
+    "script": true,
+    "docker": true,
+    "docker_compose": true,
+    "helm": true,
+    "kubernetes": true,
+    "terraform": true,
+    "paths": {
+      "script": "/public/manifest/dummy/script.sh",
+      "docker": "/public/manifest/dummy/Dockerfile",
+      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
+      "helm": "/public/manifest/dummy/helm.yaml",
+      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
+      "terraform": "/public/manifest/dummy/main.tf"
+    }
+  }
+}
