@@ -11,6 +11,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { fetchCategories } from "@/lib/data";
+import { usePlausiblePageview } from "@/hooks/use-plausible-pageview";
 
 import type { FilterState } from "./_components/script-filters";
 
@@ -64,6 +65,9 @@ function ScriptContent() {
     hosting: new Set(),
     ui: new Set(),
   });
+
+  // Track pageviews with custom URL for Plausible
+  usePlausiblePageview();
 
   // Read URL parameters and set selected script
   useEffect(() => {

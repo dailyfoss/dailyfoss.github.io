@@ -90,8 +90,16 @@ export default function RootLayout({
           domain="dailyfoss.github.io" 
           customDomain="https://plausible.mvl.biz.id"
           selfHosted
+          trackOutboundLinks
         />
         <script defer src={`https://${analytics.url}/script.js`} data-website-id={analytics.token}></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) };
+            `,
+          }}
+        />
         <link rel="canonical" href={metadata.metadataBase?.href} />
         <link rel="manifest" href="manifest.webmanifest" />
         <link rel="preconnect" href="https://api.github.com" />

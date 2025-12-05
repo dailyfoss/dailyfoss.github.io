@@ -6,7 +6,10 @@ declare global {
     };
     plausible?: (
       eventName: string,
-      options?: { props?: Record<string, string | number | boolean> }
+      options?: { 
+        u?: string;
+        props?: Record<string, string | number | boolean>;
+      }
     ) => void;
   }
 }
