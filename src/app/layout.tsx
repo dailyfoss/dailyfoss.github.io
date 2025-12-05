@@ -3,9 +3,10 @@ import type { Metadata } from "next";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Inter } from "next/font/google";
 import React from "react";
+import PlausibleProvider from "next-plausible";
 
 import { ThemeProvider } from "@/components/theme-provider";
-import { analytics, basePath } from "@/config/site-config";
+import { analytics } from "@/config/site-config";
 import QueryProvider from "@/components/query-provider";
 import { Toaster } from "@/components/ui/sonner";
 import Footer from "@/components/footer";
@@ -85,6 +86,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <PlausibleProvider domain="dailyfoss.github.io" />
         <script defer src={`https://${analytics.url}/script.js`} data-website-id={analytics.token}></script>
         <link rel="canonical" href={metadata.metadataBase?.href} />
         <link rel="manifest" href="manifest.webmanifest" />
