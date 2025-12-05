@@ -110,8 +110,14 @@ function ScriptContent() {
 
           // Track in Plausible with custom page URL
           if ((window as any).plausible) {
+            const customUrl = `${window.location.origin}/scripts/${selectedScript}`;
+            console.log("[Plausible] Manual tracking for script:", {
+              scriptName: script.name,
+              customUrl,
+            });
+            
             (window as any).plausible("pageview", {
-              u: `${window.location.origin}/scripts/${selectedScript}`,
+              u: customUrl,
               props: {
                 script_name: script.name,
                 script_slug: selectedScript,

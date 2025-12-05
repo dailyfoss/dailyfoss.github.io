@@ -25,25 +25,15 @@ export function usePlausiblePageview() {
       return;
     }
 
-    // Get the script ID from query params
-    const scriptId = searchParams.get("id");
-    
-    // If we're on /scripts with an ID, create a custom URL
-    if (pathname === "/scripts" && scriptId) {
-      const customUrl = `${window.location.origin}/scripts/${scriptId}`;
-      
-      // Track custom pageview with custom URL
-      window.plausible("pageview", { 
-        u: customUrl,
-        props: {
-          script_id: scriptId,
-        },
-      });
-    } else {
-      console.log("[Plausible] Tracking normal pageview:", pathname);
-      
-      // Track normal pageview
-      window.plausible("pageview");
+    // Skip tracking on /scripts page - it's handled manually in the page component
+    if (pathname === "/scripts") {
+      console.log("[Plausible] Skipping auto-tracking on /scripts (handled manually)");
+      return;
     }
+    
+    console.log("[Plausible] Tracking normal pageview:", pathname);
+    
+    // Track normal pageview
+    window.plausible("pageview");
   }, [pathname, searchParams]);
 }
