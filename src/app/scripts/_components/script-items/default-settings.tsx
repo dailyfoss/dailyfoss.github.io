@@ -77,13 +77,7 @@ export default function DefaultSettings({ item }: { item: Script }) {
     ui?.api && "API",
   ].filter(Boolean) as string[];
 
-  const interfaceIcon = platform?.cli_only
-    ? (
-      <Terminal className="h-3 w-3 shrink-0" />
-    )
-    : (
-      <MousePointerClick className="h-3 w-3 shrink-0" />
-    );
+  const interfaceIcon = <MousePointerClick className="h-3 w-3 shrink-0" />;
 
   return (
     <div className="flex flex-col space-y-2">

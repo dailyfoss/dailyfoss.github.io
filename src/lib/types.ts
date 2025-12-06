@@ -33,7 +33,6 @@ export type Script = {
       };
       web_app?: boolean;
       browser_extension?: boolean;
-      cli_only?: boolean;
     };
     hosting?: {
       self_hosted?: boolean;

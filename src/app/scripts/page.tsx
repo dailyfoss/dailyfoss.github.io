@@ -170,8 +170,6 @@ function ScriptContent() {
           return platform?.web_app;
         if (filter === "browser_extension")
           return platform?.browser_extension;
-        if (filter === "cli_only")
-          return platform?.cli_only;
         return false;
       });
       if (!platformMatches)
@@ -223,26 +221,19 @@ function ScriptContent() {
       let matchesQuickFilter = true;
       if (quickFilter) {
         const method = script.install_methods?.[0];
-        const hosting = method?.hosting;
-        const deployment = method?.deployment;
+        const platform = method?.platform;
         switch (quickFilter) {
-          case "popular":
-            // This is a visual filter, we'll handle it differently
-            matchesQuickFilter = true;
+          case "desktop":
+            matchesQuickFilter = !!(platform?.desktop?.linux || platform?.desktop?.windows || platform?.desktop?.macos);
             break;
-          case "recent":
-            const thirtyDaysAgo = new Date();
-            thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
-            matchesQuickFilter = new Date(script.date_created) >= thirtyDaysAgo;
+          case "mobile":
+            matchesQuickFilter = !!(platform?.mobile?.android || platform?.mobile?.ios);
             break;
-          case "self-hosted":
-            matchesQuickFilter = hosting?.self_hosted || false;
+          case "web_app":
+            matchesQuickFilter = platform?.web_app || false;
             break;
-          case "docker":
-            matchesQuickFilter = deployment?.docker || deployment?.docker_compose || false;
-            break;
-          case "kubernetes":
-            matchesQuickFilter = deployment?.kubernetes || deployment?.helm || false;
+          case "browser_extension":
+            matchesQuickFilter = platform?.browser_extension || false;
             break;
         }
       }
@@ -296,44 +287,52 @@ function ScriptContent() {
                 <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-hide sm:flex-wrap sm:justify-center sm:overflow-visible">
                   <span className="text-xs text-muted-foreground font-medium whitespace-nowrap">Quick filters:</span>
                   <Badge
-                    variant={quickFilter === "popular" ? "default" : "outline"}
-                    className="cursor-pointer hover:bg-primary/90 hover:text-primary-foreground transition-colors whitespace-nowrap"
-                    onClick={() => setQuickFilter(quickFilter === "popular" ? null : "popular")}
-                  >
-                    <TrendingUp className="h-3 w-3 mr-1" />
-                    Most Popular
-                  </Badge>
-                  <Badge
-                    variant={quickFilter === "recent" ? "default" : "outline"}
-                    className="cursor-pointer hover:bg-primary/90 hover:text-primary-foreground transition-colors whitespace-nowrap"
-                    onClick={() => setQuickFilter(quickFilter === "recent" ? null : "recent")}
-                  >
-                    <Clock className="h-3 w-3 mr-1" />
-                    Recently Updated
-                  </Badge>
-                  <Badge
-                    variant={quickFilter === "self-hosted" ? "default" : "outline"}
-                    className="cursor-pointer hover:bg-primary/90 hover:text-primary-foreground transition-colors whitespace-nowrap"
-                    onClick={() => setQuickFilter(quickFilter === "self-hosted" ? null : "self-hosted")}
-                  >
-                    <Home className="h-3 w-3 mr-1" />
-                    Self-Hosted
-                  </Badge>
-                  <Badge
-                    variant={quickFilter === "docker" ? "default" : "outline"}
-                    className="cursor-pointer hover:bg-primary/90 hover:text-primary-foreground transition-colors whitespace-nowrap"
-                    onClick={() => setQuickFilter(quickFilter === "docker" ? null : "docker")}
+                    variant={quickFilter === "desktop" ? "default" : "outline"}
+                    className={`cursor-pointer transition-colors whitespace-nowrap ${
+                      quickFilter === "desktop" 
+                        ? "bg-primary text-primary-foreground hover:bg-primary/90" 
+                        : "hover:bg-accent"
+                    }`}
+                    onClick={() => setQuickFilter(quickFilter === "desktop" ? null : "desktop")}
                   >
                     <Container className="h-3 w-3 mr-1" />
-                    Docker
+                    Desktop
                   </Badge>
                   <Badge
-                    variant={quickFilter === "kubernetes" ? "default" : "outline"}
-                    className="cursor-pointer hover:bg-primary/90 hover:text-primary-foreground transition-colors whitespace-nowrap"
-                    onClick={() => setQuickFilter(quickFilter === "kubernetes" ? null : "kubernetes")}
+                    variant={quickFilter === "mobile" ? "default" : "outline"}
+                    className={`cursor-pointer transition-colors whitespace-nowrap ${
+                      quickFilter === "mobile" 
+                        ? "bg-primary text-primary-foreground hover:bg-primary/90" 
+                        : "hover:bg-accent"
+                    }`}
+                    onClick={() => setQuickFilter(quickFilter === "mobile" ? null : "mobile")}
+                  >
+                    <TrendingUp className="h-3 w-3 mr-1" />
+                    Mobile
+                  </Badge>
+                  <Badge
+                    variant={quickFilter === "web_app" ? "default" : "outline"}
+                    className={`cursor-pointer transition-colors whitespace-nowrap ${
+                      quickFilter === "web_app" 
+                        ? "bg-primary text-primary-foreground hover:bg-primary/90" 
+                        : "hover:bg-accent"
+                    }`}
+                    onClick={() => setQuickFilter(quickFilter === "web_app" ? null : "web_app")}
+                  >
+                    <Home className="h-3 w-3 mr-1" />
+                    Web App
+                  </Badge>
+                  <Badge
+                    variant={quickFilter === "browser_extension" ? "default" : "outline"}
+                    className={`cursor-pointer transition-colors whitespace-nowrap ${
+                      quickFilter === "browser_extension" 
+                        ? "bg-primary text-primary-foreground hover:bg-primary/90" 
+                        : "hover:bg-accent"
+                    }`}
+                    onClick={() => setQuickFilter(quickFilter === "browser_extension" ? null : "browser_extension")}
                   >
                     <Hexagon className="h-3 w-3 mr-1" />
-                    Kubernetes
+                    Browser Extension
                   </Badge>
                 </div>
               </div>

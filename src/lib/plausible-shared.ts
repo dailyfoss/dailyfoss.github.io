@@ -24,23 +24,32 @@ export interface PlausibleSharedPageStats {
 export async function getTopPagesShared(
   sharedLinkAuth: string,
   period: string = "month",
-  limit: number = 100,
+  limit: number = 30,
 ): Promise<PlausibleSharedPageStats[]> {
   try {
     // Use Cloudflare Worker proxy if configured (most secure)
     if (PROXY_URL) {
-      const url = new URL(PROXY_URL, window.location.origin);
+      const url = new URL(PROXY_URL);
       url.searchParams.append("period", period);
       url.searchParams.append("limit", limit.toString());
 
-      const response = await fetch(url.toString());
+      console.log("Fetching from proxy:", url.toString());
+
+      const response = await fetch(url.toString(), {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
 
       if (!response.ok) {
-        console.error("Failed to fetch from proxy:", response.statusText);
+        const errorText = await response.text();
+        console.error("Failed to fetch from proxy:", response.status, errorText);
         return [];
       }
 
       const data = await response.json();
+      console.log("Proxy response:", data);
       return data.results || [];
     }
 
@@ -87,7 +96,7 @@ export async function getTrendingScriptsShared(
   period: string = "month",
 ): Promise<Record<string, number>> {
   try {
-    const topPages = await getTopPagesShared(sharedLinkAuth, period, 100);
+    const topPages = await getTopPagesShared(sharedLinkAuth, period, 60);
 
     // Extract view counts for script pages
     const counts: Record<string, number> = {};

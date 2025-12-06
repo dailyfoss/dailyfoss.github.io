@@ -50,7 +50,6 @@ export const PlatformSchema = z
     }).optional(),
     web_app: z.boolean().optional(),
     browser_extension: z.boolean().optional(),
-    cli_only: z.boolean().optional(),
   })
   .partial();
 
