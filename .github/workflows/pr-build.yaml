@@ -1,0 +1,30 @@
+name: PR – Build Check
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Build with Next.js
+        run: bun run build
+        env:
+          NODE_ENV: production
+          NEXT_PUBLIC_PLAUSIBLE_PROXY_URL: ${{ secrets.NEXT_PUBLIC_PLAUSIBLE_PROXY_URL }}
