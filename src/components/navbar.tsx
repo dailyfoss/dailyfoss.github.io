@@ -16,14 +16,31 @@ import CommandMenu from "./command-menu";
 
 export const dynamic = "force-dynamic";
 
+function NavbarLogo({ logoSrc }: { logoSrc: string }) {
+  const searchParams = useSearchParams();
+  const isScriptDetailPage = searchParams.get("id") !== null;
+  
+  return (
+    <Link
+      href={isScriptDetailPage ? "/scripts" : "/"}
+      className="cursor-pointer w-full justify-center sm:justify-start flex-row-reverse hidden sm:flex items-center gap-2 font-semibold sm:flex-row"
+    >
+      <Image
+        height={40}
+        width={40}
+        unoptimized
+        alt="DailyFOSS logo"
+        src={logoSrc}
+      />
+      <span className="">Daily FOSS</span>
+    </Link>
+  );
+}
+
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
-  const searchParams = useSearchParams();
-  
-  // Check if we're on a script detail page
-  const isScriptDetailPage = searchParams.get("id") !== null;
 
   useEffect(() => {
     setMounted(true);
@@ -39,7 +56,7 @@ function Navbar() {
     };
   }, []);
 
-  // Hindari hydration mismatch: sebelum mounted pakai default light
+  // Avoid hydration mismatch
   const logoSrc = !mounted
     ? "/logo_white.png"
     : resolvedTheme === "dark"
@@ -53,19 +70,23 @@ function Navbar() {
           }`}
       >
         <div className="flex h-20 w-full max-w-[1440px] items-center justify-between sm:flex-row">
-          <Link
-            href={isScriptDetailPage ? "/scripts" : "/"}
-            className="cursor-pointer w-full justify-center sm:justify-start flex-row-reverse hidden sm:flex items-center gap-2 font-semibold sm:flex-row"
-          >
-            <Image
-              height={40}
-              width={40}
-              unoptimized
-              alt="DailyFOSS logo"
-              src={logoSrc}
-            />
-            <span className="">Daily FOSS</span>
-          </Link>
+          <Suspense fallback={
+            <Link
+              href="/"
+              className="cursor-pointer w-full justify-center sm:justify-start flex-row-reverse hidden sm:flex items-center gap-2 font-semibold sm:flex-row"
+            >
+              <Image
+                height={40}
+                width={40}
+                unoptimized
+                alt="DailyFOSS logo"
+                src={logoSrc}
+              />
+              <span className="">Daily FOSS</span>
+            </Link>
+          }>
+            <NavbarLogo logoSrc={logoSrc} />
+          </Suspense>
           <div className="flex items-center justify-between sm:justify-end gap-2 w-full">
             <div className="flex sm:hidden">
               <Suspense>
