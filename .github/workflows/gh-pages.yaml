@@ -43,6 +43,7 @@ jobs:
         run: bun run build
         env:
           NODE_ENV: production
+          NEXT_PUBLIC_PLAUSIBLE_PROXY_URL: ${{ secrets.NEXT_PUBLIC_PLAUSIBLE_PROXY_URL }}
 
       - name: Add .nojekyll file
         run: touch out/.nojekyll

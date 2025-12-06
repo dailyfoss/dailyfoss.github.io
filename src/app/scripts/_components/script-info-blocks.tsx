@@ -362,44 +362,41 @@ export function MostViewedScripts({ items }: { items: Category[] }) {
 export function TrendingScripts({ items }: { items: Category[] }) {
   const [viewCounts, setViewCounts] = useState<Record<string, number>>({});
   const [isLoadingAnalytics, setIsLoadingAnalytics] = useState(true);
+  const [lastUpdated, setLastUpdated] = useState<string | null>(null);
 
-  // Load view counts from Umami using share token
+  // Load view counts from Plausible Analytics
   useEffect(() => {
     async function fetchTrendingData() {
       try {
-        // Fetch share token from Umami
-        const shareResponse = await fetch("https://umami.mvl.biz.id/api/share/Zr8HcUGi7hsRQqqU");
-        if (!shareResponse.ok) {
-          throw new Error("Failed to fetch share token");
-        }
+        // Check if shared link is configured (real-time, client-side)
+        const sharedLinkAuth = process.env.NEXT_PUBLIC_PLAUSIBLE_SHARED_LINK_AUTH;
+        
+        if (sharedLinkAuth) {
+          // Use shared link for real-time data (client-side)
+          const { getTrendingScriptsShared } = await import("@/lib/plausible-shared");
+          const counts = await getTrendingScriptsShared(sharedLinkAuth, "month");
+          setViewCounts(counts);
+          setLastUpdated(new Date().toISOString());
+        } else {
+          // Fallback to API route (build-time data, more secure)
+          const response = await fetch("/api/trending");
 
-        const shareData = await shareResponse.json();
-        const token = shareData.token;
-
-        // Fetch metrics using the share token
-        const endAt = Date.now();
-        const startAt = endAt - (30 * 24 * 60 * 60 * 1000); // 30 days ago
-
-        const metricsResponse = await fetch(
-          `https://umami.mvl.biz.id/api/websites/8d221a30-297c-432b-9e4e-2df217132fd6/stats?startAt=${startAt}&endAt=${endAt}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          },
-        );
-
-        if (metricsResponse.ok) {
-          const data = await metricsResponse.json();
-          console.log("Umami stats data:", data);
-
-          // For now, we'll use GitHub stars as primary sorting
-          // since we need to explore the Umami API structure more
-          setViewCounts({});
+          if (response.ok) {
+            const data = await response.json();
+            
+            // Extract view counts from trending scripts
+            const counts: Record<string, number> = {};
+            data.scripts.forEach((script: any) => {
+              counts[script.slug] = script.visitors || 0;
+            });
+            
+            setViewCounts(counts);
+            setLastUpdated(data.lastUpdated);
+          }
         }
       }
       catch (error) {
-        console.error("Failed to load Umami data:", error);
+        console.error("Failed to load trending data:", error);
       }
       finally {
         setIsLoadingAnalytics(false);
@@ -442,18 +439,13 @@ export function TrendingScripts({ items }: { items: Category[] }) {
     return Array.from(uniqueScriptsMap.values())
       .filter(script => new Date(script.date_created) >= thirtyDaysAgo)
       .sort((a, b) => {
-        // Calculate trending score: 70% clicks + 30% GitHub stars
-        const clicksA = viewCounts[a.slug] || 0;
-        const clicksB = viewCounts[b.slug] || 0;
-        const starsA = parseStars((a as any).github_stars);
-        const starsB = parseStars((b as any).github_stars);
+        // Sort 100% by Plausible visitor count
+        const visitorsA = viewCounts[a.slug] || 0;
+        const visitorsB = viewCounts[b.slug] || 0;
 
-        const scoreA = (clicksA * 0.7) + (starsA * 0.0003); // 0.0003 to normalize stars
-        const scoreB = (clicksB * 0.7) + (starsB * 0.0003);
-
-        // Sort by trending score first, then by date
-        if (scoreB !== scoreA)
-          return scoreB - scoreA;
+        // Sort by visitors first, then by date for ties
+        if (visitorsB !== visitorsA)
+          return visitorsB - visitorsA;
         return new Date(b.date_created).getTime() - new Date(a.date_created).getTime();
       })
       .slice(0, 6);

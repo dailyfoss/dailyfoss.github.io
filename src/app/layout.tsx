@@ -6,7 +6,6 @@ import React from "react";
 import PlausibleProvider from "next-plausible";
 
 import { ThemeProvider } from "@/components/theme-provider";
-import { analytics } from "@/config/site-config";
 import QueryProvider from "@/components/query-provider";
 import { Toaster } from "@/components/ui/sonner";
 import Footer from "@/components/footer";
@@ -93,14 +92,6 @@ export default function RootLayout({
           selfHosted
           trackOutboundLinks
           manualPageviews
-        />
-        <script defer src={`https://${analytics.url}/script.js`} data-website-id={analytics.token}></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) };
-            `,
-          }}
         />
         <link rel="canonical" href={metadata.metadataBase?.href} />
         <link rel="manifest" href="manifest.webmanifest" />

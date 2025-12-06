@@ -97,24 +97,12 @@ function ScriptContent() {
         .find(script => script.slug === selectedScript);
       setItem(script);
 
-      // Track script view in both Umami and Plausible
+      // Track script view in Plausible
       if (script && typeof window !== "undefined") {
         try {
-          // Track in Umami
-          if ((window as any).umami) {
-            (window as any).umami.track("script-view", {
-              slug: selectedScript,
-              name: script.name,
-            });
-          }
-
           // Track in Plausible with custom page URL
           if ((window as any).plausible) {
             const customUrl = `${window.location.origin}/scripts/${selectedScript}`;
-            console.log("[Plausible] Manual tracking for script:", {
-              scriptName: script.name,
-              customUrl,
-            });
             
             (window as any).plausible("pageview", {
               u: customUrl,

@@ -45,9 +45,13 @@ export const navbarLinks = [
 export const mostPopularScripts = ["post-pve-install", "docker", "homeassistant"];
 
 export const analytics = {
-  url: "umami.mvl.biz.id",
-  token: "8d221a30-297c-432b-9e4e-2df217132fd6",
-  shareId: "Zr8HcUGi7hsRQqqU", // Public share URL ID
+  plausible: {
+    domain: "dailyfoss.github.io",
+    apiUrl: "https://plausible.mvl.biz.id",
+    // Optional: Use shared link for real-time trending (no API key needed)
+    // Get this from Plausible: Settings → Visibility → Share Stats
+    sharedLinkAuth: process.env.NEXT_PUBLIC_PLAUSIBLE_SHARED_LINK_AUTH || "",
+  },
 };
 
 export const AlertColors = {
