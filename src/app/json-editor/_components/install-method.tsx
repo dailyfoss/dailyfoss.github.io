@@ -60,7 +60,6 @@ export const defaultInstallMethod = {
     mobile: { android: false, ios: false },
     web_app: false,
     browser_extension: false,
-    cli_only: false,
   },
   hosting: { self_hosted: false, saas: false, managed_cloud: false },
   ui: { cli: false, gui: false, web_ui: false, api: false, tui: false },
@@ -280,12 +279,12 @@ function InstallMethod({ script, setScript, setIsValid, setZodErrors }: InstallM
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="font-medium">Web & Extensions</div>
-                    <div className="text-xs text-gray-500">Web app, browser extension, CLI-only</div>
+                    <div className="text-xs text-gray-500">Web app, browser extension</div>
                   </div>
                   <div>
                     <button
                       type="button"
-                      onClick={() => togglePlatformKeys(["web_app", "browser_extension", "cli_only"])}
+                      onClick={() => togglePlatformKeys(["web_app", "browser_extension"])}
                       className="text-xs text-blue-600 hover:underline"
                     >
                       Select all / Clear
@@ -306,13 +305,6 @@ function InstallMethod({ script, setScript, setIsValid, setZodErrors }: InstallM
                     onChange={(v: boolean) => updatePlatform(["browser_extension"], v)}
                   >
                     Browser Extension
-                  </ToggleCheckbox>
-
-                  <ToggleCheckbox
-                    checked={!!method.platform?.cli_only}
-                    onChange={(v: boolean) => updatePlatform(["cli_only"], v)}
-                  >
-                    CLI Only
                   </ToggleCheckbox>
                 </div>
               </div>

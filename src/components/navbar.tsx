@@ -1,6 +1,7 @@
 "use client";
 import { Suspense, useEffect, useState } from "react";
 import { useTheme } from "next-themes";
+import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -19,6 +20,10 @@ function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
+  const searchParams = useSearchParams();
+  
+  // Check if we're on a script detail page
+  const isScriptDetailPage = searchParams.get("id") !== null;
 
   useEffect(() => {
     setMounted(true);
@@ -49,7 +54,7 @@ function Navbar() {
       >
         <div className="flex h-20 w-full max-w-[1440px] items-center justify-between sm:flex-row">
           <Link
-            href="/"
+            href={isScriptDetailPage ? "/scripts" : "/"}
             className="cursor-pointer w-full justify-center sm:justify-start flex-row-reverse hidden sm:flex items-center gap-2 font-semibold sm:flex-row"
           >
             <Image

@@ -1,6 +1,6 @@
 "use client";
 
-import { CalendarPlus, Crown, LayoutGrid, Star, TrendingUp } from "lucide-react";
+import { CalendarPlus, Crown, Eye, LayoutGrid, Star, TrendingUp } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 
@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { extractDate } from "@/lib/time";
 
-const ITEMS_PER_PAGE = 3;
+const ITEMS_PER_PAGE = 6;
 const ITEMS_PER_PAGE_LARGE = 6;
 
 // ⬇️ Helper to format star count (e.g., 3663 -> "3.7k")
@@ -61,29 +61,50 @@ function AppIcon({ src, name, size = 64 }: { src?: string | null; name: string; 
   );
 }
 
-// ⬇️ Get deployment methods from script
-function getDeploymentMethods(script: Script): string[] {
-  const methods: string[] = [];
+// ⬇️ Get combined info: hosting, categories, and platform (max 3 badges)
+function getScriptBadges(script: Script, allCategories: Category[]): string[] {
+  const badges: string[] = [];
 
+  // Add hosting info
   if (script.install_methods && script.install_methods.length > 0) {
-    const deployment = script.install_methods[0]?.deployment;
-    if (deployment) {
-      if (deployment.docker)
-        methods.push("Docker");
-      if (deployment.docker_compose)
-        methods.push("Compose");
-      if (deployment.kubernetes)
-        methods.push("K8s");
-      if (deployment.helm)
-        methods.push("Helm");
-      if (deployment.terraform)
-        methods.push("Terraform");
-      if (deployment.script)
-        methods.push("Script");
+    const hosting = script.install_methods[0]?.hosting;
+    if (hosting) {
+      if (hosting.self_hosted)
+        badges.push("Self-hosted");
+      if (hosting.managed_cloud)
+        badges.push("Managed-cloud");
+      if (hosting.saas)
+        badges.push("SaaS");
     }
   }
 
-  return methods.slice(0, 3); // Limit to 3 badges
+  // Add categories
+  if (script.categories && script.categories.length > 0) {
+    const categoryNames = script.categories
+      .map(categoryId => {
+        const category = allCategories.find(cat => cat.id === categoryId);
+        return category?.name;
+      })
+      .filter((name): name is string => name !== undefined);
+    badges.push(...categoryNames);
+  }
+
+  // Add platform info
+  if (script.install_methods && script.install_methods.length > 0) {
+    const platform = script.install_methods[0]?.platform;
+    if (platform) {
+      if (platform.desktop?.linux || platform.desktop?.windows || platform.desktop?.macos)
+        badges.push("Desktop");
+      if (platform.mobile?.android || platform.mobile?.ios)
+        badges.push("Mobile");
+      if (platform.web_app)
+        badges.push("Web");
+      if (platform.browser_extension)
+        badges.push("Browser Extension");
+    }
+  }
+
+  return badges.slice(0, 3); // Limit to 3 badges
 }
 
 export function FeaturedScripts({ items }: { items: Category[] }) {
@@ -147,13 +168,13 @@ export function FeaturedScripts({ items }: { items: Category[] }) {
                 </div>
               </CardTitle>
             </CardHeader>
-            <CardContent className="flex-grow space-y-3">
-              <CardDescription className="line-clamp-3 text-sm leading-relaxed">{script.description}</CardDescription>
-              {getDeploymentMethods(script).length > 0 && (
-                <div className="flex flex-wrap gap-1.5">
-                  {getDeploymentMethods(script).map(method => (
-                    <Badge key={method} variant="secondary" className="text-xs">
-                      {method}
+            <CardContent className="flex-grow space-y-3 pb-6">
+              <CardDescription className="line-clamp-3 text-sm leading-[1.6rem] mb-3">{script.description}</CardDescription>
+              {getScriptBadges(script, items).length > 0 && (
+                <div className="flex flex-wrap gap-1.5 pt-2">
+                  {getScriptBadges(script, items).map(badge => (
+                    <Badge key={badge} variant="secondary" className="text-xs">
+                      {badge}
                     </Badge>
                   ))}
                 </div>
@@ -243,47 +264,44 @@ export function LatestScripts({ items }: { items: Category[] }) {
             }}
             className="block group"
           >
-            <Card className="bg-accent/30 border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col h-full cursor-pointer relative overflow-hidden">
-              {/* New Badge */}
-              <div className="absolute top-2 left-2 z-65">
-                <Badge className="bg-emerald-500 text-white border-0 text-[10px] px-2 py-0.5">
-                  🆕 Recent
-                </Badge>
-              </div>
-              <CardHeader className="pt-8">
+            <Card className="bg-accent/30 border-2 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-[3px] flex flex-col h-full cursor-pointer overflow-hidden">
+              <CardHeader className="pb-2">
                 <CardTitle className="flex items-start gap-3">
-                  <div className="flex h-20 w-20 min-w-20 items-center justify-center rounded-xl bg-gradient-to-br from-accent/40 to-accent/60 p-1 shadow-md">
-                    <AppIcon src={script.logo} name={script.name || script.slug} size={80} />
+                  <div className="flex h-16 w-16 min-w-16 items-center justify-center rounded-xl bg-gradient-to-br from-accent/40 to-accent/60 p-1 shadow-md">
+                    <AppIcon src={script.logo} name={script.name || script.slug} size={64} />
                   </div>
-                  <div className="flex flex-col flex-1 min-w-0">
-                    <h3 className="font-semibold text-base line-clamp-1 mb-1">{script.name}</h3>
-                    <p className="text-xs text-muted-foreground flex items-center gap-1" title={script.date_created}>
-                      <CalendarPlus className="h-3 w-3" />
-                      {extractDate(script.date_created)}
-                    </p>
-                    {formatStarCount((script as any).github_stars) && (
-                      <p className="text-xs text-muted-foreground flex items-center gap-1">
-                        <Star className="h-3 w-3 fill-current" />
-                        {formatStarCount((script as any).github_stars)}
-                      </p>
-                    )}
+                  <div className="flex flex-col flex-1 min-w-0 gap-1">
+                    <h3 className="font-semibold text-base line-clamp-1">{script.name}</h3>
+                    {/* Metadata row (compact) */}
+                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                      <span className="flex items-center gap-1" title={script.date_created}>
+                        <CalendarPlus className="h-3 w-3" />
+                        {extractDate(script.date_created)}
+                      </span>
+                      {formatStarCount((script as any).github_stars) && (
+                        <span className="flex items-center gap-1">
+                          <Star className="h-3 w-3 fill-current" />
+                          {formatStarCount((script as any).github_stars)}
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </CardTitle>
               </CardHeader>
-              <CardContent className="flex-grow space-y-3">
+              <CardContent className="flex-grow space-y-3 pb-6">
                 <CardDescription className="line-clamp-3 text-sm leading-relaxed">{script.description}</CardDescription>
-                {getDeploymentMethods(script).length > 0 && (
-                  <div className="flex flex-wrap gap-1.5">
-                    {getDeploymentMethods(script).map(method => (
-                      <Badge key={method} variant="secondary" className="text-xs">
-                        {method}
+                {getScriptBadges(script, items).length > 0 && (
+                  <div className="flex flex-wrap gap-1.5 mt-1">
+                    {getScriptBadges(script, items).map(badge => (
+                      <Badge key={badge} variant="secondary" className="text-xs">
+                        {badge}
                       </Badge>
                     ))}
                   </div>
                 )}
               </CardContent>
-              <CardFooter className="pt-2">
-                <div className="w-full text-center text-sm font-medium text-primary group-hover:underline">
+              <CardFooter className="pt-1">
+                <div className="w-full text-center text-sm font-medium text-primary hover:underline">
                   View Details →
                 </div>
               </CardFooter>
@@ -310,49 +328,58 @@ export function MostViewedScripts({ items }: { items: Category[] }) {
       )}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {mostViewedScripts.map(script => (
-          <Card key={script.slug} className="bg-accent/30 border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-lg flex flex-col">
-            <CardHeader>
-              <CardTitle className="flex items-start gap-3">
-                <div className="flex h-16 w-16 min-w-16 items-center justify-center rounded-xl bg-gradient-to-br from-accent/40 to-accent/60 p-1 shadow-md">
-                  <AppIcon src={script.logo} name={script.name || script.slug} />
+          <Link
+            key={script.slug}
+            href={{
+              pathname: "/scripts",
+              query: { id: script.slug },
+            }}
+            className="block group"
+            prefetch={false}
+          >
+            <Card className="bg-accent/30 border-2 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-[3px] flex flex-col h-full cursor-pointer overflow-hidden">
+              <CardHeader className="pb-2">
+                <CardTitle className="flex items-start gap-3">
+                  <div className="flex h-16 w-16 min-w-16 items-center justify-center rounded-xl bg-gradient-to-br from-accent/40 to-accent/60 p-1 shadow-md">
+                    <AppIcon src={script.logo} name={script.name || script.slug} size={64} />
+                  </div>
+                  <div className="flex flex-col flex-1 min-w-0 gap-1">
+                    <h3 className="font-semibold text-base line-clamp-1">{script.name}</h3>
+                    {/* Metadata row (compact) */}
+                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                      <span className="flex items-center gap-1" title={script.date_created}>
+                        <CalendarPlus className="h-3 w-3" />
+                        {extractDate(script.date_created)}
+                      </span>
+                      {formatStarCount((script as any).github_stars) && (
+                        <span className="flex items-center gap-1">
+                          <Star className="h-3 w-3 fill-current" />
+                          {formatStarCount((script as any).github_stars)}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="flex-grow space-y-3 pb-6">
+                <CardDescription className="line-clamp-3 text-sm leading-relaxed">{script.description}</CardDescription>
+                {getScriptBadges(script, items).length > 0 && (
+                  <div className="flex flex-wrap gap-1.5 mt-1">
+                    {getScriptBadges(script, items).map(badge => (
+                      <Badge key={badge} variant="secondary" className="text-xs">
+                        {badge}
+                      </Badge>
+                    ))}
+                  </div>
+                )}
+              </CardContent>
+              <CardFooter className="pt-1">
+                <div className="w-full text-center text-sm font-medium text-primary hover:underline">
+                  View Details →
                 </div>
-                <div className="flex flex-col flex-1 min-w-0">
-                  <h3 className="font-semibold text-base line-clamp-1 mb-1">{script.name}</h3>
-                  <p className="text-xs text-muted-foreground flex items-center gap-1">
-                    <CalendarPlus className="h-3 w-3" />
-                    {extractDate(script.date_created)}
-                  </p>
-                </div>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="flex-grow space-y-3">
-              <CardDescription className="line-clamp-3 text-sm leading-relaxed break-words">
-                {script.description}
-              </CardDescription>
-              {getDeploymentMethods(script).length > 0 && (
-                <div className="flex flex-wrap gap-1.5">
-                  {getDeploymentMethods(script).map(method => (
-                    <Badge key={method} variant="secondary" className="text-xs">
-                      {method}
-                    </Badge>
-                  ))}
-                </div>
-              )}
-            </CardContent>
-            <CardFooter className="pt-2">
-              <Button asChild variant="outline" className="w-full">
-                <Link
-                  href={{
-                    pathname: "/scripts",
-                    query: { id: script.slug },
-                  }}
-                  prefetch={false}
-                >
-                  View Details
-                </Link>
-              </Button>
-            </CardFooter>
-          </Card>
+              </CardFooter>
+            </Card>
+          </Link>
         ))}
       </div>
     </div>
@@ -361,45 +388,28 @@ export function MostViewedScripts({ items }: { items: Category[] }) {
 
 export function TrendingScripts({ items }: { items: Category[] }) {
   const [viewCounts, setViewCounts] = useState<Record<string, number>>({});
-  const [isLoadingAnalytics, setIsLoadingAnalytics] = useState(true);
-  const [lastUpdated, setLastUpdated] = useState<string | null>(null);
+  const [page, setPage] = useState(1);
 
-  // Load view counts from Plausible Analytics
+  // Load view counts from Plausible Analytics via Cloudflare Worker
   useEffect(() => {
     async function fetchTrendingData() {
       try {
-        // Check if shared link is configured (real-time, client-side)
-        const sharedLinkAuth = process.env.NEXT_PUBLIC_PLAUSIBLE_SHARED_LINK_AUTH;
+        const proxyUrl = process.env.NEXT_PUBLIC_PLAUSIBLE_PROXY_URL;
         
-        if (sharedLinkAuth) {
-          // Use shared link for real-time data (client-side)
-          const { getTrendingScriptsShared } = await import("@/lib/plausible-shared");
-          const counts = await getTrendingScriptsShared(sharedLinkAuth, "month");
-          setViewCounts(counts);
-          setLastUpdated(new Date().toISOString());
-        } else {
-          // Fallback to API route (build-time data, more secure)
-          const response = await fetch("/api/trending");
-
-          if (response.ok) {
-            const data = await response.json();
-            
-            // Extract view counts from trending scripts
-            const counts: Record<string, number> = {};
-            data.scripts.forEach((script: any) => {
-              counts[script.slug] = script.visitors || 0;
-            });
-            
-            setViewCounts(counts);
-            setLastUpdated(data.lastUpdated);
-          }
+        if (!proxyUrl) {
+          console.warn("Plausible proxy URL not configured");
+          return;
         }
+
+        // Fetch from Cloudflare Worker proxy
+        const { getTrendingScriptsShared } = await import("@/lib/plausible-shared");
+        const counts = await getTrendingScriptsShared("", "day"); // Use "day" since "month" returns empty
+        
+        console.log("Trending data loaded:", counts);
+        setViewCounts(counts);
       }
       catch (error) {
         console.error("Failed to load trending data:", error);
-      }
-      finally {
-        setIsLoadingAnalytics(false);
       }
     }
 
@@ -420,18 +430,6 @@ export function TrendingScripts({ items }: { items: Category[] }) {
       }
     });
 
-    // Helper to parse GitHub stars (e.g., "3.5k" -> 3500)
-    const parseStars = (stars?: string): number => {
-      if (!stars)
-        return 0;
-      const num = Number.parseFloat(stars.replace(/[^0-9.]/g, ""));
-      if (stars.toLowerCase().includes("k"))
-        return num * 1000;
-      if (stars.toLowerCase().includes("m"))
-        return num * 1000000;
-      return num;
-    };
-
     // Get scripts from last 30 days
     const thirtyDaysAgo = new Date();
     thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
@@ -447,24 +445,43 @@ export function TrendingScripts({ items }: { items: Category[] }) {
         if (visitorsB !== visitorsA)
           return visitorsB - visitorsA;
         return new Date(b.date_created).getTime() - new Date(a.date_created).getTime();
-      })
-      .slice(0, 6);
+      });
   }, [items, viewCounts]);
+
+  const goToNextPage = () => setPage(prev => prev + 1);
+  const goToPreviousPage = () => setPage(prev => prev - 1);
+
+  const startIndex = (page - 1) * ITEMS_PER_PAGE_LARGE;
+  const endIndex = page * ITEMS_PER_PAGE_LARGE;
 
   if (!items || trendingScripts.length === 0)
     return null;
 
   return (
     <div className="">
-      <div className="flex w-full items-center gap-2 mb-6 pb-3 border-b-2 border-primary/20">
-        <TrendingUp className="h-6 w-6 text-primary" />
-        <h2 className="text-2xl font-bold tracking-tight">Trending This Month</h2>
-        <Badge variant="outline" className="ml-auto text-xs">
-          Last 30 Days
-        </Badge>
+      <div className="flex w-full items-center justify-between mb-6 pb-3 border-b-2 border-primary/20">
+        <div className="flex items-center gap-2">
+          <TrendingUp className="h-6 w-6 text-primary" />
+          <h2 className="text-2xl font-bold tracking-tight">Trending This Month</h2>
+          <Badge variant="outline" className="text-xs">
+            Last 30 Days
+          </Badge>
+        </div>
+        <div className="flex items-center justify-end gap-2">
+          {page > 1 && (
+            <div className="cursor-pointer select-none px-4 py-2 text-sm font-semibold rounded-lg hover:bg-accent transition-colors" onClick={goToPreviousPage}>
+              Previous
+            </div>
+          )}
+          {endIndex < trendingScripts.length && (
+            <div onClick={goToNextPage} className="cursor-pointer select-none px-4 py-2 text-sm font-semibold rounded-lg hover:bg-accent transition-colors">
+              {page === 1 ? "More.." : "Next"}
+            </div>
+          )}
+        </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {trendingScripts.map(script => (
+        {trendingScripts.slice(startIndex, endIndex).map(script => (
           <Link
             key={script.slug}
             href={{
@@ -473,55 +490,50 @@ export function TrendingScripts({ items }: { items: Category[] }) {
             }}
             className="block group"
           >
-            <Card className="bg-accent/30 border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col h-full cursor-pointer relative overflow-hidden">
-              <div className="absolute top-2 left-2 z-65">
-                <Badge className="bg-gradient-to-r from-amber-500 to-orange-500 text-white border-0 text-[10px] px-2 py-0.5">
-                  ⭐ Trending
-                </Badge>
-              </div>
-              <CardHeader className="pt-8">
+            <Card className="bg-accent/30 border-2 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-[3px] flex flex-col h-full cursor-pointer overflow-hidden">
+              <CardHeader className="pb-2">
                 <CardTitle className="flex items-start gap-3">
-                  <div className="flex h-20 w-20 min-w-20 items-center justify-center rounded-xl bg-gradient-to-br from-accent/40 to-accent/60 p-1 shadow-md">
-                    <AppIcon src={script.logo} name={script.name || script.slug} size={80} />
+                  <div className="flex h-16 w-16 min-w-16 items-center justify-center rounded-xl bg-gradient-to-br from-accent/40 to-accent/60 p-1 shadow-md">
+                    <AppIcon src={script.logo} name={script.name || script.slug} size={64} />
                   </div>
                   <div className="flex flex-col flex-1 min-w-0 gap-1">
                     <h3 className="font-semibold text-base line-clamp-1">{script.name}</h3>
-                    <div className="flex items-center gap-3">
-                      <p className="text-xs text-muted-foreground flex items-center gap-1" title={script.date_created}>
+                    {/* Metadata row (compact) */}
+                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                      <span className="flex items-center gap-1" title={script.date_created}>
                         <CalendarPlus className="h-3 w-3" />
                         {extractDate(script.date_created)}
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-2">
+                      </span>
                       {formatStarCount((script as any).github_stars) && (
-                        <p className="text-xs text-muted-foreground flex items-center gap-1">
+                        <span className="flex items-center gap-1">
                           <Star className="h-3 w-3 fill-current" />
                           {formatStarCount((script as any).github_stars)}
-                        </p>
+                        </span>
                       )}
-                      {viewCounts[script.slug] > 0 && (
-                        <p className="text-xs text-amber-600 dark:text-amber-500 flex items-center gap-1 font-medium">
-                          👁️ {viewCounts[script.slug]}
-                        </p>
+                      {viewCounts[script.slug] && (
+                        <span className="flex items-center gap-1">
+                          <Eye className="h-3 w-3" />
+                          {viewCounts[script.slug]}
+                        </span>
                       )}
                     </div>
                   </div>
                 </CardTitle>
               </CardHeader>
-              <CardContent className="flex-grow space-y-3">
-                <CardDescription className="line-clamp-2 text-sm leading-relaxed">{script.description}</CardDescription>
-                {getDeploymentMethods(script).length > 0 && (
-                  <div className="flex flex-wrap gap-1.5">
-                    {getDeploymentMethods(script).map(method => (
-                      <Badge key={method} variant="secondary" className="text-xs">
-                        {method}
+              <CardContent className="flex-grow space-y-3 pb-6">
+                <CardDescription className="line-clamp-3 text-sm leading-relaxed">{script.description}</CardDescription>
+                {getScriptBadges(script, items).length > 0 && (
+                  <div className="flex flex-wrap gap-1.5 mt-1">
+                    {getScriptBadges(script, items).map(badge => (
+                      <Badge key={badge} variant="secondary" className="text-xs">
+                        {badge}
                       </Badge>
                     ))}
                   </div>
                 )}
               </CardContent>
-              <CardFooter className="pt-2">
-                <div className="w-full text-center text-sm font-medium text-primary group-hover:underline">
+              <CardFooter className="pt-1">
+                <div className="w-full text-center text-sm font-medium text-primary hover:underline">
                   View Details →
                 </div>
               </CardFooter>
@@ -633,52 +645,44 @@ export function PopularScripts({ items }: { items: Category[] }) {
             className="block group"
             prefetch={false}
           >
-            <Card className="bg-accent/30 border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col h-full cursor-pointer relative overflow-hidden">
-              <div className="absolute top-2 left-2 z-65">
-                <Badge className="bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0 text-[10px] px-2 py-0.5">
-                  ⭐ Popular
-                </Badge>
-              </div>
-              <CardHeader className="pt-8">
+            <Card className="bg-accent/30 border-2 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-[3px] flex flex-col h-full cursor-pointer overflow-hidden">
+              <CardHeader className="pb-2">
                 <CardTitle className="flex items-start gap-3">
-                  <div className="flex h-20 w-20 min-w-20 items-center justify-center rounded-xl bg-gradient-to-br from-accent/40 to-accent/60 p-1 shadow-md">
-                    <AppIcon src={script.logo} name={script.name || script.slug} size={80} />
+                  <div className="flex h-16 w-16 min-w-16 items-center justify-center rounded-xl bg-gradient-to-br from-accent/40 to-accent/60 p-1 shadow-md">
+                    <AppIcon src={script.logo} name={script.name || script.slug} size={64} />
                   </div>
                   <div className="flex flex-col flex-1 min-w-0 gap-1">
                     <h3 className="font-semibold text-base line-clamp-1">{script.name}</h3>
-                    <div className="flex items-center gap-3">
-                      <p className="text-xs text-muted-foreground flex items-center gap-1" title={script.date_created}>
+                    {/* Metadata row (compact) */}
+                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                      <span className="flex items-center gap-1" title={script.date_created}>
                         <CalendarPlus className="h-3 w-3" />
                         {extractDate(script.date_created)}
-                      </p>
-                    </div>
-                    <div>
+                      </span>
                       {formatStarCount((script as any).github_stars) && (
-                        <p className="text-xs text-muted-foreground flex items-center gap-1">
+                        <span className="flex items-center gap-1">
                           <Star className="h-3 w-3 fill-current" />
                           {formatStarCount((script as any).github_stars)}
-                        </p>
+                        </span>
                       )}
                     </div>
                   </div>
                 </CardTitle>
               </CardHeader>
-              <CardContent className="flex-grow space-y-3">
-                <CardDescription className="line-clamp-2 text-sm leading-relaxed break-words">
-                  {script.description}
-                </CardDescription>
-                {getDeploymentMethods(script).length > 0 && (
-                  <div className="flex flex-wrap gap-1.5">
-                    {getDeploymentMethods(script).map(method => (
-                      <Badge key={method} variant="secondary" className="text-xs">
-                        {method}
+              <CardContent className="flex-grow space-y-3 pb-6">
+                <CardDescription className="line-clamp-3 text-sm leading-relaxed">{script.description}</CardDescription>
+                {getScriptBadges(script, items).length > 0 && (
+                  <div className="flex flex-wrap gap-1.5 mt-1">
+                    {getScriptBadges(script, items).map(badge => (
+                      <Badge key={badge} variant="secondary" className="text-xs">
+                        {badge}
                       </Badge>
                     ))}
                   </div>
                 )}
               </CardContent>
-              <CardFooter className="pt-2">
-                <div className="w-full text-center text-sm font-medium text-primary group-hover:underline">
+              <CardFooter className="pt-1">
+                <div className="w-full text-center text-sm font-medium text-primary hover:underline">
                   View Details →
                 </div>
               </CardFooter>

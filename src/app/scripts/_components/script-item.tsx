@@ -199,7 +199,6 @@ function PlatformSummary({ method }: { method?: InstallMethodWithPlatform }) {
     platform?.mobile?.ios && "iOS",
     platform?.web_app && "Web App",
     platform?.browser_extension && "Browser Extension",
-    platform?.cli_only && "CLI Only",
   ].filter(Boolean) as string[];
 
   // Combine Hosting + Deploy into "Deployment"

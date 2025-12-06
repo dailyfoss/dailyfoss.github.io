@@ -34,7 +34,6 @@ const platformOptions = [
   { id: "mobile-ios", label: "iOS", category: "platforms" },
   { id: "web_app", label: "Web App", category: "platforms" },
   { id: "browser_extension", label: "Browser Extension", category: "platforms" },
-  { id: "cli_only", label: "CLI Only", category: "platforms" },
 ];
 
 const deploymentOptions = [

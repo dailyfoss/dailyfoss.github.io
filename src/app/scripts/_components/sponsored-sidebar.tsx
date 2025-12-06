@@ -199,7 +199,7 @@ export function SponsoredSidebar({ items, onScriptSelect }: SponsoredSidebarProp
               </li>
             </ul>
             <Button asChild variant="default" className="w-full h-9 bg-primary hover:bg-primary/90 shadow-sm" size="sm">
-              <a href="mailto:support@example.com" className="flex items-center gap-1.5 text-xs font-semibold">
+              <a href="mailto:dailyfoss@gmail.com" className="flex items-center gap-1.5 text-xs font-semibold">
                 <Mail className="h-3.5 w-3.5" />
                 Get Started
               </a>
