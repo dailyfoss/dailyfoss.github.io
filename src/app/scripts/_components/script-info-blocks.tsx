@@ -403,7 +403,7 @@ export function TrendingScripts({ items }: { items: Category[] }) {
 
         // Fetch from Cloudflare Worker proxy
         const { getTrendingScriptsShared } = await import("@/lib/plausible-shared");
-        const counts = await getTrendingScriptsShared("", "day"); // Use "day" since "month" returns empty
+        const counts = await getTrendingScriptsShared("", "month");
         
         console.log("Trending data loaded:", counts);
         setViewCounts(counts);
