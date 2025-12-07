@@ -7,19 +7,15 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const JSON_DIR = path.join(__dirname, '../frontend/public/json');
-const CONCURRENT_REQUESTS = process.env.GITHUB_TOKEN ? 50 : 10; // Parallel requests (50 with token, 10 without)
-
-
+const JSON_DIR = path.join(__dirname, '../public/json');
+const CONCURRENT_REQUESTS = process.env.GITHUB_TOKEN ? 50 : 10;
 
 // Extract owner and repo from various URL formats
 function parseRepoUrl(url) {
     if (!url) return null;
 
-    // Remove protocol and www
     let cleanUrl = url.replace(/^(https?:\/\/)?(www\.)?/, '');
 
-    // GitHub patterns
     const githubMatch = cleanUrl.match(/github\.com\/([^\/]+)\/([^\/\s]+)/i);
     if (githubMatch) {
         return {
@@ -29,7 +25,6 @@ function parseRepoUrl(url) {
         };
     }
 
-    // GitLab patterns
     const gitlabMatch = cleanUrl.match(/gitlab\.com\/([^\/]+)\/([^\/\s]+)/i);
     if (gitlabMatch) {
         return {
@@ -47,11 +42,10 @@ async function fetchGitHubStars(owner, repo) {
     try {
         const url = `https://api.github.com/repos/${owner}/${repo}`;
         const headers = {
-            'Accept': 'application/vnd.github.v3+json',
-            'User-Agent': 'ProxmoxVE-Scripts-Stargazer-Updater'
+            Accept: 'application/vnd.github.v3+json',
+            'User-Agent': 'DailyFOSS-Stargazer-Updater'
         };
 
-        // Add GitHub token if available (increases rate limit from 60 to 5000/hour)
         if (process.env.GITHUB_TOKEN) {
             headers['Authorization'] = `token ${process.env.GITHUB_TOKEN}`;
         }
@@ -60,21 +54,21 @@ async function fetchGitHubStars(owner, repo) {
 
         if (!response.ok) {
             if (response.status === 404) {
-                console.log(`  ⚠️  Repository not found: ${owner}/${repo}`);
+                console.log(`Repository not found: ${owner}/${repo}`);
                 return null;
             }
             if (response.status === 403) {
-                console.log(`  ⚠️  Rate limit hit. Please wait or use GitHub token.`);
+                console.log(`Rate limit reached. Use a GitHub token for increased limits.`);
                 return null;
             }
-            console.log(`  ⚠️  Error ${response.status} for ${owner}/${repo}`);
+            console.log(`Error ${response.status} for ${owner}/${repo}`);
             return null;
         }
 
         const data = await response.json();
         return data.stargazers_count;
     } catch (error) {
-        console.log(`  ❌ Error fetching ${owner}/${repo}:`, error.message);
+        console.log(`Error fetching ${owner}/${repo}: ${error.message}`);
         return null;
     }
 }
@@ -84,25 +78,21 @@ async function fetchGitLabStars(owner, repo) {
     try {
         const projectPath = encodeURIComponent(`${owner}/${repo}`);
         const url = `https://gitlab.com/api/v4/projects/${projectPath}`;
-        const response = await fetch(url, {
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
+        const response = await fetch(url, { headers: { Accept: 'application/json' } });
 
         if (!response.ok) {
             if (response.status === 404) {
-                console.log(`  ⚠️  Repository not found: ${owner}/${repo}`);
+                console.log(`Repository not found: ${owner}/${repo}`);
                 return null;
             }
-            console.log(`  ⚠️  Error ${response.status} for ${owner}/${repo}`);
+            console.log(`Error ${response.status} for ${owner}/${repo}`);
             return null;
         }
 
         const data = await response.json();
         return data.star_count;
     } catch (error) {
-        console.log(`  ❌ Error fetching ${owner}/${repo}:`, error.message);
+        console.log(`Error fetching ${owner}/${repo}: ${error.message}`);
         return null;
     }
 }
@@ -113,7 +103,6 @@ async function updateJsonFile(filePath) {
         const content = fs.readFileSync(filePath, 'utf8');
         const data = JSON.parse(content);
 
-        // Skip if no source_code
         if (!data.source_code) {
             return { updated: false, reason: 'no_source' };
         }
@@ -134,7 +123,6 @@ async function updateJsonFile(filePath) {
             return { updated: false, reason: 'fetch_failed' };
         }
 
-        // Update the file
         const oldStars = data.github_stars;
         data.github_stars = stars.toString();
 
@@ -147,7 +135,7 @@ async function updateJsonFile(filePath) {
             changed: oldStars !== stars.toString()
         };
     } catch (error) {
-        console.log(`  ❌ Error processing file:`, error.message);
+        console.log(`Error processing file: ${error.message}`);
         return { updated: false, reason: 'error' };
     }
 }
@@ -158,13 +146,11 @@ async function processInParallel(files, concurrency, stats) {
     let completed = 0;
     let lastProgressUpdate = Date.now();
 
-    // Create a queue of promises
     const queue = [...files];
     const inProgress = new Set();
 
     return new Promise((resolve) => {
         const processNext = () => {
-            // Start new tasks up to concurrency limit
             while (inProgress.size < concurrency && queue.length > 0) {
                 const file = queue.shift();
                 const fileName = path.basename(file);
@@ -173,25 +159,21 @@ async function processInParallel(files, concurrency, stats) {
                     .then(result => {
                         completed++;
 
-                        // Update stats
                         if (result.updated) {
                             stats.updated++;
-                            if (result.changed) {
-                                stats.changed++;
-                            }
+                            if (result.changed) stats.changed++;
                         } else {
-                            switch (result.reason) {
-                                case 'no_source': stats.noSource++; break;
-                                case 'invalid_url': stats.invalidUrl++; break;
-                                case 'fetch_failed': stats.fetchFailed++; break;
-                                default: stats.errors++;
-                            }
+                            if (result.reason === 'no_source') stats.noSource++;
+                            else if (result.reason === 'invalid_url') stats.invalidUrl++;
+                            else if (result.reason === 'fetch_failed') stats.fetchFailed++;
+                            else stats.errors++;
                         }
 
-                        // Show progress every second
                         const now = Date.now();
                         if (now - lastProgressUpdate > 1000) {
-                            process.stdout.write(`\r📊 Progress: ${completed}/${files.length} files processed (${Math.round(completed / files.length * 100)}%)`);
+                            process.stdout.write(
+                                `\rProgress: ${completed}/${files.length} files processed (${Math.round(completed / files.length * 100)}%)`
+                            );
                             lastProgressUpdate = now;
                         }
 
@@ -200,7 +182,7 @@ async function processInParallel(files, concurrency, stats) {
                     .finally(() => {
                         inProgress.delete(promise);
                         if (inProgress.size === 0 && queue.length === 0) {
-                            process.stdout.write(`\r📊 Progress: ${completed}/${files.length} files processed (100%)\n`);
+                            process.stdout.write(`\rProgress: ${completed}/${files.length} files processed (100%)\n`);
                             resolve(results);
                         } else {
                             processNext();
@@ -218,23 +200,21 @@ async function processInParallel(files, concurrency, stats) {
 
 // Main function
 async function main() {
-    console.log('🌟 Starting stargazers update (parallel mode)...\n');
+    console.log('Starting stargazers update (parallel mode)...\n');
 
-    // Check for GitHub token
     if (process.env.GITHUB_TOKEN) {
-        console.log('✅ GitHub token detected - using authenticated requests (5000/hour)\n');
+        console.log('GitHub token detected - using authenticated requests (5000/hour)\n');
     } else {
-        console.log('⚠️  No GitHub token - using unauthenticated requests (60/hour)');
-        console.log('   Set GITHUB_TOKEN env variable for higher rate limits\n');
+        console.log('No GitHub token - using unauthenticated requests (60/hour)');
+        console.log('Set GITHUB_TOKEN environment variable for higher rate limits\n');
     }
 
-    // Get all JSON files
     const files = fs.readdirSync(JSON_DIR)
         .filter(file => file.endsWith('.json'))
         .map(file => path.join(JSON_DIR, file));
 
-    console.log(`� Fiound ${files.length} JSON files`);
-    console.log(`🚀 Processing with ${CONCURRENT_REQUESTS} parallel requests\n`);
+    console.log(`Found ${files.length} JSON files`);
+    console.log(`Processing with ${CONCURRENT_REQUESTS} parallel requests\n`);
 
     const stats = {
         total: files.length,
@@ -248,25 +228,89 @@ async function main() {
 
     const startTime = Date.now();
 
-    // Process files in parallel
     await processInParallel(files, CONCURRENT_REQUESTS, stats);
 
     const duration = ((Date.now() - startTime) / 1000).toFixed(1);
 
-    // Final summary
-    console.log('\n' + '='.repeat(60));
-    console.log('📊 Final Summary:');
-    console.log('='.repeat(60));
+    console.log('\n------------------------------------------------------------');
+    console.log('Final Summary:');
+    console.log('------------------------------------------------------------');
     console.log(`Total files:           ${stats.total}`);
-    console.log(`✅ Updated:            ${stats.updated}`);
-    console.log(`🔄 Changed:            ${stats.changed}`);
-    console.log(`⊘  No source code:     ${stats.noSource}`);
-    console.log(`⊘  Invalid URL:        ${stats.invalidUrl}`);
-    console.log(`⚠️  Fetch failed:       ${stats.fetchFailed}`);
-    console.log(`❌ Errors:             ${stats.errors}`);
-    console.log(`⏱️  Duration:           ${duration}s`);
-    console.log('='.repeat(60));
-    console.log('\n✨ Done!\n');
+    console.log(`Updated:               ${stats.updated}`);
+    console.log(`Changed:               ${stats.changed}`);
+    console.log(`No source code:        ${stats.noSource}`);
+    console.log(`Invalid URL:           ${stats.invalidUrl}`);
+    console.log(`Fetch failed:          ${stats.fetchFailed}`);
+    console.log(`Errors:                ${stats.errors}`);
+    console.log(`Duration:              ${duration}s`);
+    console.log('------------------------------------------------------------\n');
+
+    // Write summary for GitHub Actions
+    const summaryPath = process.env.GITHUB_STEP_SUMMARY || '.update-stargazers-summary.md';
+
+    const total = stats.total || 0;
+    const updated = stats.updated || 0;
+    const changed = stats.changed || 0;
+    const noSource = stats.noSource || 0;
+    const invalidUrl = stats.invalidUrl || 0;
+    const fetchFailed = stats.fetchFailed || 0;
+    const errors = stats.errors || 0;
+    const skippedTotal = noSource + invalidUrl;
+
+    const successRate = total ? ((updated / total) * 100).toFixed(1) : '0.0';
+    const changeRate = updated ? ((changed / updated) * 100).toFixed(1) : '0.0';
+    const skippedRate = total ? ((skippedTotal / total) * 100).toFixed(1) : '0.0';
+    const fetchFailedRate = total ? ((fetchFailed / total) * 100).toFixed(1) : '0.0';
+
+    let summary = `# Stargazers Update Report\n\n`;
+
+    if (changed > 0) {
+        summary += `Updated ${updated} repositories. ${changed} had star count changes.\n\n`;
+    } else if (updated > 0) {
+        summary += `All ${updated} repositories checked. No star count changes detected.\n\n`;
+    } else {
+        summary += `No star counts were updated.\n\n`;
+    }
+
+    summary += `## Key Metrics\n\n`;
+    summary += `| Metric | Count | Percent |\n`;
+    summary += `|--------|------:|--------:|\n`;
+    summary += `| Total files | ${total} | 100% |\n`;
+    summary += `| Updated | ${updated} | ${successRate}% |\n`;
+    summary += `| Star count changed | ${changed} | ${changeRate}% of updated |\n`;
+    summary += `| Skipped (no source / invalid URL) | ${skippedTotal} | ${skippedRate}% |\n`;
+    summary += `| Fetch failed | ${fetchFailed} | ${fetchFailedRate}% |\n`;
+    summary += `| Errors | ${errors} | ${errors ? ((errors/total)*100).toFixed(1)+'%' : '0.0%'} |\n\n`;
+
+    summary += `## Summary\n\n`;
+    summary += `Processed ${total} files in ${duration}s.\n`;
+    summary += `${updated} were updated, ${changed} had star changes.\n`;
+    if (skippedTotal > 0) {
+        summary += `${skippedTotal} skipped (${noSource} missing source URL, ${invalidUrl} invalid URLs).\n`;
+    }
+    if (fetchFailed > 0) {
+        summary += `${fetchFailed} repositories could not be fetched.\n`;
+    }
+    if (errors > 0) {
+        summary += `${errors} files had processing errors.\n`;
+    }
+    summary += `\n`;
+
+    summary += `## Detailed Breakdown\n\n`;
+    summary += '```\n';
+    summary += `Total:        ${String(total).padStart(6)}\n`;
+    summary += `Updated:      ${String(updated).padStart(6)}\n`;
+    summary += `Changed:      ${String(changed).padStart(6)}\n`;
+    summary += `No source:    ${String(noSource).padStart(6)}\n`;
+    summary += `Invalid URL:  ${String(invalidUrl).padStart(6)}\n`;
+    summary += `Fetch failed: ${String(fetchFailed).padStart(6)}\n`;
+    summary += `Errors:       ${String(errors).padStart(6)}\n`;
+    summary += `Duration:     ${String(duration + 's').padStart(6)}\n`;
+    summary += '```\n\n';
+
+    summary += `Report generated: ${new Date().toUTCString()}\n`;
+
+    fs.writeFileSync(summaryPath, summary, 'utf8');
 }
 
 main().catch(console.error);

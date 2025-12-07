@@ -1,0 +1,88 @@
+name: update versions
+
+on:
+  schedule:
+    # Run every day at 1 pm UTC
+    - cron: '0 13 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  update-versions:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Update versions
+        run: bun run update-versions
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Read summary
+        id: summary
+        run: |
+          if [ -f .update-versions-summary.md ]; then
+            echo "summary<<EOF" >> $GITHUB_OUTPUT
+            cat .update-versions-summary.md >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          else
+            echo "summary=No summary available" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore(data): update application versions'
+          branch: automated/update-versions
+          delete-branch: true
+          title: 'chore(data): update application versions'
+          body: |
+            ## Automated Version Updates
+            
+            This PR updates the `versions.json` file with the latest release versions from GitHub and GitLab repositories.
+            
+            ### What's Updated
+            
+            - Scanned all application JSON files for source code repositories
+            - Fetched latest releases/tags from GitHub and GitLab APIs
+            - Updated version information in `public/json/versions.json`
+            
+            ### Update Summary
+            
+            ${{ steps.summary.outputs.summary }}
+            
+            ---
+            
+            ### Review Checklist
+            
+            - [ ] Check that version changes look reasonable
+            - [ ] Verify no unexpected version downgrades
+            - [ ] Confirm new repositories are legitimate
+            
+            ### Automation Details
+            
+            - **Workflow**: `.github/workflows/update-versions.yaml`
+            - **Schedule**: Daily at 1 PM UTC
+            - **Script**: `tools/update-versions.js`
+            - **Triggered**: ${{ github.event_name == 'schedule' && 'Scheduled run' || 'Manual trigger' }}
+            
+            ---
+            
+            *This PR was automatically created. Merge when ready or close to skip this update.*
+          labels: |
+            automated
+            dependencies
+            version-update

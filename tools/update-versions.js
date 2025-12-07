@@ -7,7 +7,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const JSON_DIR = path.join(__dirname, '../frontend/public/json');
+const JSON_DIR = path.join(__dirname, '../public/json');
 const VERSIONS_FILE = path.join(JSON_DIR, 'versions.json');
 const CONCURRENT_REQUESTS = process.env.GITHUB_TOKEN ? 50 : 10;
 
@@ -45,7 +45,7 @@ async function fetchGitHubLatestRelease(owner, repo) {
         const url = `https://api.github.com/repos/${owner}/${repo}/releases/latest`;
         const headers = {
             'Accept': 'application/vnd.github.v3+json',
-            'User-Agent': 'ProxmoxVE-Scripts-Version-Updater'
+            'User-Agent': 'DailyFOSS-Version-Updater'
         };
 
         if (process.env.GITHUB_TOKEN) {
@@ -77,7 +77,7 @@ async function fetchGitHubLatestTag(owner, repo) {
         const url = `https://api.github.com/repos/${owner}/${repo}/tags`;
         const headers = {
             'Accept': 'application/vnd.github.v3+json',
-            'User-Agent': 'ProxmoxVE-Scripts-Version-Updater'
+            'User-Agent': 'DailyFOSS-Version-Updater'
         };
 
         if (process.env.GITHUB_TOKEN) {
@@ -224,7 +224,7 @@ async function processInParallel(repoList, existingVersions, concurrency, stats)
 
                         const now = Date.now();
                         if (now - lastProgressUpdate > 1000) {
-                            process.stdout.write(`\r📊 Progress: ${completed}/${repoList.length} repos processed (${Math.round(completed / repoList.length * 100)}%)`);
+                            process.stdout.write(`\rProgress: ${completed}/${repoList.length} repos processed (${Math.round(completed / repoList.length * 100)}%)`);
                             lastProgressUpdate = now;
                         }
 
@@ -233,7 +233,7 @@ async function processInParallel(repoList, existingVersions, concurrency, stats)
                     .finally(() => {
                         inProgress.delete(promise);
                         if (inProgress.size === 0 && queue.length === 0) {
-                            process.stdout.write(`\r📊 Progress: ${completed}/${repoList.length} repos processed (100%)\n`);
+                            process.stdout.write(`\rProgress: ${completed}/${repoList.length} repos processed (100%)\n`);
                             resolve(results);
                         } else {
                             processNext();
@@ -251,13 +251,13 @@ async function processInParallel(repoList, existingVersions, concurrency, stats)
 
 // Main function
 async function main() {
-    console.log('🔄 Starting versions update (parallel mode)...\n');
+    console.log('Starting versions update (parallel mode)...\n');
 
     if (process.env.GITHUB_TOKEN) {
-        console.log('✅ GitHub token detected - using authenticated requests (5000/hour)\n');
+        console.log('GitHub token detected - using authenticated requests (5000/hour)\n');
     } else {
-        console.log('⚠️  No GitHub token - using unauthenticated requests (60/hour)');
-        console.log('   Set GITHUB_TOKEN env variable for higher rate limits\n');
+        console.log('No GitHub token - using unauthenticated requests (60/hour)');
+        console.log('Set GITHUB_TOKEN env variable for higher rate limits\n');
     }
 
     // Read all JSON files from the json directory
@@ -265,7 +265,7 @@ async function main() {
         .filter(file => file.endsWith('.json') && file !== 'versions.json')
         .map(file => path.join(JSON_DIR, file));
 
-    console.log(`📦 Found ${files.length} JSON files to scan\n`);
+    console.log(`Found ${files.length} JSON files to scan\n`);
 
     // Extract unique repos from all JSON files
     const repoMap = new Map();
@@ -289,8 +289,8 @@ async function main() {
     }
 
     const uniqueRepos = Array.from(repoMap.values());
-    console.log(`🔍 Found ${uniqueRepos.length} unique repositories from ${filesWithRepos} apps`);
-    console.log(`🚀 Processing with ${CONCURRENT_REQUESTS} parallel requests\n`);
+    console.log(`Found ${uniqueRepos.length} unique repositories from ${filesWithRepos} apps`);
+    console.log(`Processing with ${CONCURRENT_REQUESTS} parallel requests\n`);
 
     // Read existing versions file if it exists
     let existingVersions = [];
@@ -298,7 +298,7 @@ async function main() {
         try {
             existingVersions = JSON.parse(fs.readFileSync(VERSIONS_FILE, 'utf8'));
         } catch (error) {
-            console.log('⚠️  Could not read existing versions.json, starting fresh\n');
+            console.log('Could not read existing versions.json, starting fresh\n');
         }
     }
 
@@ -335,13 +335,13 @@ async function main() {
 
     // Show changed versions
     if (stats.changed > 0) {
-        console.log('\n📝 Changed versions:');
+        console.log('\nChanged versions:');
         console.log('='.repeat(60));
         updatedRepos
             .filter(r => r.changed)
             .slice(0, 20)
             .forEach(r => {
-                console.log(`  ${r.name}: ${r.oldVersion} → ${r.version}`);
+                console.log(`  ${r.name}: ${r.oldVersion} -> ${r.version}`);
             });
         if (stats.changed > 20) {
             console.log(`  ... and ${stats.changed - 20} more`);
@@ -350,7 +350,7 @@ async function main() {
 
     // Show new repos
     if (stats.added > 0) {
-        console.log('\n✨ New repositories added:');
+        console.log('\nNew repositories added:');
         console.log('='.repeat(60));
         updatedRepos
             .filter(r => !existingVersions.find(v => v.name === r.name))
@@ -365,17 +365,97 @@ async function main() {
 
     // Final summary
     console.log('\n' + '='.repeat(60));
-    console.log('📊 Final Summary:');
+    console.log('Final Summary:');
     console.log('='.repeat(60));
     console.log(`Total repos:           ${stats.total}`);
-    console.log(`✅ Updated:            ${stats.updated}`);
-    console.log(`🔄 Changed:            ${stats.changed}`);
-    console.log(`✨ Added:              ${stats.added}`);
-    console.log(`⚠️  Fetch failed:       ${stats.fetchFailed}`);
-    console.log(`❌ Errors:             ${stats.errors}`);
-    console.log(`⏱️  Duration:           ${duration}s`);
+    console.log(`Updated:               ${stats.updated}`);
+    console.log(`Changed:               ${stats.changed}`);
+    console.log(`Added:                 ${stats.added}`);
+    console.log(`Fetch failed:          ${stats.fetchFailed}`);
+    console.log(`Errors:                ${stats.errors}`);
+    console.log(`Duration:              ${duration}s`);
     console.log('='.repeat(60));
-    console.log('\n✨ Done!\n');
+    console.log('\nDone!\n');
+
+    // Write summary for GitHub Actions
+    const summaryPath = process.env.GITHUB_STEP_SUMMARY || '.update-versions-summary.md';
+    const changedVersions = updatedRepos.filter(r => r.changed);
+    const newRepos = updatedRepos.filter(r => !existingVersions.find(v => v.name === r.name));
+    
+    const successRate = stats.total ? ((stats.updated / stats.total) * 100).toFixed(1) : '0.0';
+    const changeRate = stats.updated > 0 ? ((stats.changed / stats.updated) * 100).toFixed(1) : '0.0';
+    
+    let summary = `## Version Update Report\n\n`;
+    
+    // Status
+    if (stats.changed > 0) {
+        summary += `> ${stats.changed} version${stats.changed > 1 ? 's' : ''} updated successfully\n\n`;
+    } else if (stats.updated > 0) {
+        summary += `> All versions are up to date\n\n`;
+    } else {
+        summary += `> No versions could be updated\n\n`;
+    }
+
+    // Key metrics
+    summary += `### Statistics\n\n`;
+    summary += `| Metric | Count | Percentage |\n`;
+    summary += `|--------|------:|----------:|\n`;
+    summary += `| Total Repositories | ${stats.total} | 100% |\n`;
+    summary += `| Successfully Updated | ${stats.updated} | ${successRate}% |\n`;
+    summary += `| Version Changed | ${stats.changed} | ${changeRate}% |\n`;
+    summary += `| New Repositories | ${stats.added} | - |\n`;
+    summary += `| Failed to Fetch | ${stats.fetchFailed} | ${stats.total ? ((stats.fetchFailed / stats.total) * 100).toFixed(1) : '0.0'}% |\n`;
+    summary += `\n`;
+    summary += `Processing Time: ${duration}s\n\n`;
+
+    if (stats.changed > 0) {
+        summary += `---\n\n`;
+        summary += `### Version Changes (${stats.changed} total)\n\n`;
+        summary += `<details>\n`;
+        summary += `<summary>Click to expand version changes</summary>\n\n`;
+        summary += `| Repository | Old Version | New Version | Link |\n`;
+        summary += `|------------|-------------|-------------|------|\n`;
+        changedVersions.slice(0, 100).forEach(r => {
+            const repoUrl = `https://github.com/${r.name}`;
+            summary += `| \`${r.name}\` | \`${r.oldVersion}\` | \`${r.version}\` | [View](${repoUrl}/releases) |\n`;
+        });
+        if (stats.changed > 100) {
+            summary += `\n*... and ${stats.changed - 100} more changes*\n`;
+        }
+        summary += `\n</details>\n\n`;
+    }
+
+    if (stats.added > 0) {
+        summary += `---\n\n`;
+        summary += `### New Repositories Added (${stats.added} total)\n\n`;
+        summary += `<details>\n`;
+        summary += `<summary>Click to expand new repositories</summary>\n\n`;
+        summary += `| Repository | Initial Version | Link |\n`;
+        summary += `|------------|----------------|------|\n`;
+        newRepos.slice(0, 50).forEach(r => {
+            const repoUrl = `https://github.com/${r.name}`;
+            summary += `| \`${r.name}\` | \`${r.version}\` | [View](${repoUrl}) |\n`;
+        });
+        if (stats.added > 50) {
+            summary += `\n*... and ${stats.added - 50} more*\n`;
+        }
+        summary += `\n</details>\n\n`;
+    }
+
+    if (stats.fetchFailed > 0) {
+        summary += `---\n\n`;
+        summary += `### Failed Fetches\n\n`;
+        summary += `${stats.fetchFailed} repositories could not be fetched. Common reasons:\n`;
+        summary += `- Repository moved, renamed, or deleted\n`;
+        summary += `- No releases or tags available\n`;
+        summary += `- API rate limits exceeded\n`;
+        summary += `- Network connectivity issues\n\n`;
+    }
+
+    summary += `---\n\n`;
+    summary += `Report generated: ${new Date().toUTCString()}\n`;
+
+    fs.writeFileSync(summaryPath, summary, 'utf8');
 }
 
 main().catch(console.error);

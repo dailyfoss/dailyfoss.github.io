@@ -1,0 +1,95 @@
+name: Update Stargazers
+
+on:
+  schedule:
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  update-stargazers:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Update stargazers
+        run: bun run update-stargazers
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Read summary
+        id: summary
+        run: |
+          if [ -f .update-stargazers-summary.md ]; then
+            echo "summary<<EOF" >> $GITHUB_OUTPUT
+            cat .update-stargazers-summary.md >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          else
+            echo "summary=No summary available" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
+          commit-message: 'chore(data): update star counts'
+          branch: automated/update-stargazers
+          delete-branch: true
+          title: 'chore(data): update star counts'
+          body: |
+            ## Automated Stargazer Updates
+            
+            This PR updates GitHub and GitLab star counts for all applications in the database.
+            
+            ### What's Updated
+            
+            - Fetched current star counts from GitHub and GitLab APIs
+            - Updated `github_stars` field in application JSON files
+            - Processed all applications with valid source code URLs
+            
+            ### Update Summary
+            
+            ${{ steps.summary.outputs.summary }}
+            
+            ---
+            
+            ### Review Checklist
+            
+            - [ ] Star count changes look reasonable (no suspicious spikes/drops)
+            - [ ] No unexpected errors in the summary
+            - [ ] Failed fetches are acceptable (deleted/moved repos)
+            
+            ### Automation Details
+            
+            - **Workflow**: `.github/workflows/update-stargazers.yaml`
+            - **Schedule**: Every 6 hours
+            - **Script**: `tools/update-stargazers.js`
+            - **Triggered**: ${{ github.event_name == 'schedule' && 'Scheduled run' || 'Manual trigger' }}
+            
+            ### Why This Matters
+            
+            Keeping star counts up-to-date ensures:
+            - Accurate trending/popularity rankings
+            - Fresh data for users browsing applications
+            - Reliable metrics for filtering and sorting
+            
+            ---
+            
+            *This PR was automatically created. Merge when ready or close to skip this update.*
+          labels: |
+            automated
+            data-update
+            stargazers
