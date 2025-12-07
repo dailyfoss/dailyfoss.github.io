@@ -1,4 +1,4 @@
-name: update versions
+name: Update Versions
 
 on:
   schedule:
@@ -41,7 +41,37 @@ jobs:
             echo "summary=No summary available" >> $GITHUB_OUTPUT
           fi
 
+      - name: Validate changed files
+        id: validate
+        run: |
+          # Get list of changed files
+          git diff --name-only HEAD > changed_files.txt
+          
+          # Check if any files changed
+          if [ ! -s changed_files.txt ]; then
+            echo "valid=false" >> $GITHUB_OUTPUT
+            echo "reason=no_changes" >> $GITHUB_OUTPUT
+            echo "No changes detected"
+            exit 0
+          fi
+          
+          # Validate that only versions.json changed
+          invalid_files=$(grep -v "^public/json/versions.json$" changed_files.txt || true)
+          
+          if [ -n "$invalid_files" ]; then
+            echo "valid=false" >> $GITHUB_OUTPUT
+            echo "reason=invalid_files" >> $GITHUB_OUTPUT
+            echo "Invalid files changed:"
+            echo "$invalid_files"
+            exit 0
+          fi
+          
+          echo "valid=true" >> $GITHUB_OUTPUT
+          echo "All validations passed"
+
       - name: Create Pull Request
+        id: create-pr
+        if: steps.validate.outputs.valid == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -66,11 +96,10 @@ jobs:
             
             ---
             
-            ### Review Checklist
+            ### Validation
             
-            - [ ] Check that version changes look reasonable
-            - [ ] Verify no unexpected version downgrades
-            - [ ] Confirm new repositories are legitimate
+            ✅ Only `public/json/versions.json` was modified
+            ✅ Auto-merge enabled - will merge automatically
             
             ### Automation Details
             
@@ -81,8 +110,15 @@ jobs:
             
             ---
             
-            *This PR was automatically created. Merge when ready or close to skip this update.*
+            *This PR was automatically created and will auto-merge after validation.*
           labels: |
             automated
             dependencies
             version-update
+
+      - name: Enable auto-merge
+        if: steps.create-pr.outputs.pull-request-number
+        run: |
+          gh pr merge ${{ steps.create-pr.outputs.pull-request-number }} --auto --squash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
