@@ -2,8 +2,8 @@ name: Update Stargazers
 
 on:
   schedule:
-    # Run every 6 hours
-    - cron: '0 */6 * * *'
+    # Run every day at 2 pm UTC
+    - cron: '0 14 * * *'
   workflow_dispatch: # Allow manual trigger
 
 jobs:
@@ -45,10 +45,10 @@ jobs:
         id: validate
         run: |
           # Get list of changed files
-          git diff --name-only HEAD > changed_files.txt
+          changed_files=$(git diff --name-only HEAD)
           
           # Check if any files changed
-          if [ ! -s changed_files.txt ]; then
+          if [ -z "$changed_files" ]; then
             echo "valid=false" >> $GITHUB_OUTPUT
             echo "reason=no_changes" >> $GITHUB_OUTPUT
             echo "No changes detected"
@@ -56,7 +56,7 @@ jobs:
           fi
           
           # Validate that only JSON files in public/json/ changed
-          invalid_files=$(grep -v "^public/json/.*\.json$" changed_files.txt || true)
+          invalid_files=$(echo "$changed_files" | grep -v "^public/json/.*\.json$" || true)
           
           if [ -n "$invalid_files" ]; then
             echo "valid=false" >> $GITHUB_OUTPUT
@@ -78,7 +78,7 @@ jobs:
           commit-message: 'chore(data): update star counts'
           branch: automated/update-stargazers
           delete-branch: true
-          title: 'chore(data): update star counts'
+          title: 'chore(data): update stargazers counts'
           body: |
             ## Automated Stargazer Updates
             
