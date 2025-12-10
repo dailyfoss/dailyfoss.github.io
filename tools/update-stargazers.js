@@ -132,7 +132,10 @@ async function updateJsonFile(filePath) {
             updated: true,
             stars,
             oldStars,
-            changed: oldStars !== stars.toString()
+            changed: oldStars !== stars.toString(),
+            name: data.name || path.basename(filePath, '.json'),
+            sourceUrl: data.source_code,
+            repoInfo
         };
     } catch (error) {
         console.log(`Error processing file: ${error.message}`);
@@ -141,7 +144,7 @@ async function updateJsonFile(filePath) {
 }
 
 // Process files in parallel with concurrency limit
-async function processInParallel(files, concurrency, stats) {
+async function processInParallel(files, concurrency, stats, changes) {
     const results = [];
     let completed = 0;
     let lastProgressUpdate = Date.now();
@@ -161,7 +164,16 @@ async function processInParallel(files, concurrency, stats) {
 
                         if (result.updated) {
                             stats.updated++;
-                            if (result.changed) stats.changed++;
+                            if (result.changed) {
+                                stats.changed++;
+                                changes.push({
+                                    name: result.name,
+                                    oldStars: result.oldStars,
+                                    newStars: result.stars.toString(),
+                                    sourceUrl: result.sourceUrl,
+                                    repoInfo: result.repoInfo
+                                });
+                            }
                         } else {
                             if (result.reason === 'no_source') stats.noSource++;
                             else if (result.reason === 'invalid_url') stats.invalidUrl++;
@@ -226,9 +238,11 @@ async function main() {
         errors: 0
     };
 
+    const changes = [];
+
     const startTime = Date.now();
 
-    await processInParallel(files, CONCURRENT_REQUESTS, stats);
+    await processInParallel(files, CONCURRENT_REQUESTS, stats, changes);
 
     const duration = ((Date.now() - startTime) / 1000).toFixed(1);
 
@@ -295,6 +309,34 @@ async function main() {
         summary += `${errors} files had processing errors.\n`;
     }
     summary += `\n`;
+
+    // Add detailed changes table if there are any changes
+    if (changes.length > 0) {
+        // Sort by star count difference (descending)
+        changes.sort((a, b) => {
+            const diffA = parseInt(a.newStars) - parseInt(a.oldStars || '0');
+            const diffB = parseInt(b.newStars) - parseInt(b.oldStars || '0');
+            return diffB - diffA;
+        });
+
+        summary += `## Stargazer Changes (${changes.length} total)\n\n`;
+        summary += `<details>\n`;
+        summary += `<summary>Click to expand stargazers table</summary>\n\n`;
+        summary += `| Repository | Old Stars | New Stars | Difference | Link |\n`;
+        summary += `|------------|----------:|----------:|-----------:|------|\n`;
+
+        for (const change of changes) {
+            const oldStars = parseInt(change.oldStars || '0');
+            const newStars = parseInt(change.newStars);
+            const diff = newStars - oldStars;
+            const diffStr = diff > 0 ? `+${diff}` : diff.toString();
+            const repoPath = `${change.repoInfo.owner}/${change.repoInfo.repo}`;
+            
+            summary += `| ${change.name} | ${oldStars.toLocaleString()} | ${newStars.toLocaleString()} | ${diffStr} | [View](${change.sourceUrl}) |\n`;
+        }
+
+        summary += `\n</details>\n\n`;
+    }
 
     summary += `## Detailed Breakdown\n\n`;
     summary += '```\n';

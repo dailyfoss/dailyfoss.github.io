@@ -45,10 +45,10 @@ jobs:
         id: validate
         run: |
           # Get list of changed files
-          git diff --name-only HEAD > changed_files.txt
+          changed_files=$(git diff --name-only HEAD)
           
           # Check if any files changed
-          if [ ! -s changed_files.txt ]; then
+          if [ -z "$changed_files" ]; then
             echo "valid=false" >> $GITHUB_OUTPUT
             echo "reason=no_changes" >> $GITHUB_OUTPUT
             echo "No changes detected"
@@ -56,7 +56,7 @@ jobs:
           fi
           
           # Validate that only versions.json changed
-          invalid_files=$(grep -v "^public/json/versions.json$" changed_files.txt || true)
+          invalid_files=$(echo "$changed_files" | grep -v "^public/json/versions.json$" || true)
           
           if [ -n "$invalid_files" ]; then
             echo "valid=false" >> $GITHUB_OUTPUT
