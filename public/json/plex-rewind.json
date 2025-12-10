@@ -4,6 +4,8 @@
   "categories": [
     100
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/RaunoT/plex-rewind",
@@ -12,6 +14,21 @@
   "github_stars": "264",
   "logo": "/icons/plex-rewind.webp",
   "description": "Plex-Rewind is a self-hosted tool that generates recap clips from shows in Plex. It extracts key scenes to create summaries, helping viewers refresh before watching the next episode.",
+  "tagline": null,
+  "features": [
+    "Recap generation: Automatically create recap videos from previous episodes of TV shows.",
+    "Scene extraction: Identify and extract key scenes from episodes for summary content.",
+    "Plex integration: Connect to Plex Media Server to access and process library content.",
+    "Custom duration: Configure recap length to match your preferred summary duration.",
+    "Automated processing: Generate recaps automatically when new episodes are added to library.",
+    "Quality settings: Adjust video quality and compression for recap file size optimization.",
+    "Episode detection: Intelligently detect episode boundaries and important plot points.",
+    "Storage management: Configure where recap videos are stored and manage disk space usage.",
+    "Preview before saving: Review generated recaps to ensure quality before finalizing.",
+    "Batch processing: Create recaps for multiple episodes or entire seasons simultaneously.",
+    "Metadata integration: Add recap videos to Plex with proper metadata and thumbnails.",
+    "Scheduling: Set up automated recap generation on a schedule for new content."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

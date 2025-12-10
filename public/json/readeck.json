@@ -4,6 +4,8 @@
   "categories": [
     129
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "codeberg.org/readeck/readeck",
@@ -12,6 +14,21 @@
   "github_stars": null,
   "logo": "/icons/readeck.webp",
   "description": "Readeck is a self-hosted bookmarking and read-it-later tool. It supports importing, tagging, and organizing articles with a distraction-free reading mode.",
+  "tagline": null,
+  "features": [
+    "Article saving: Bookmark web pages and articles for reading later without distractions.",
+    "Reader mode: View saved content in a clean, distraction-free format without ads or sidebars.",
+    "Tag organization: Categorize bookmarks with tags for easy filtering and discovery.",
+    "Full-text search: Find saved articles by searching through titles, content, and tags.",
+    "Import bookmarks: Migrate existing bookmarks from Pocket, Instapaper, or browser exports.",
+    "Browser extension: Save articles with one click from Chrome, Firefox, or other browsers.",
+    "Offline reading: Access saved articles without an internet connection after initial download.",
+    "Archive management: Mark articles as read or archive them to keep your reading list organized.",
+    "RSS integration: Subscribe to feeds and save interesting articles automatically.",
+    "Mobile responsive: Read and manage bookmarks comfortably on smartphones and tablets.",
+    "Privacy focused: Store all reading data on your own server without tracking or analytics.",
+    "Export functionality: Download your bookmarks in standard formats for backup or migration."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

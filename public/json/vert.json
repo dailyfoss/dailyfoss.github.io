@@ -4,6 +4,8 @@
   "categories": [
     165
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/VERT-sh/VERT",
@@ -12,6 +14,21 @@
   "github_stars": "11641",
   "logo": "/icons/vert.webp",
   "description": "VERT is a self-hosted dashboard and toolkit for managing and visualizing services and metrics in homelab or small server environments, focused on UX and simplicity.",
+  "tagline": null,
+  "features": [
+    "Service dashboard: Visualize and manage homelab services from a centralized dashboard.",
+    "Metrics visualization: Display system metrics and service health with charts and graphs.",
+    "Simple interface: Navigate an intuitive, user-friendly interface designed for homelabs.",
+    "Service management: Start, stop, and monitor services from the web interface.",
+    "Status monitoring: Check service status and availability at a glance with visual indicators.",
+    "Resource tracking: Monitor CPU, memory, and disk usage across your infrastructure.",
+    "Quick access: Access service web interfaces directly from the dashboard with quick links.",
+    "Customizable views: Organize services and metrics to match your homelab setup.",
+    "Lightweight: Run with minimal resources suitable for small server environments.",
+    "Mobile-friendly: Manage your homelab from mobile devices with responsive design.",
+    "Easy setup: Get started quickly with minimal configuration and automatic service discovery.",
+    "Homelab focus: Designed specifically for homelab and small server use cases."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

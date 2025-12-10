@@ -4,6 +4,8 @@
   "categories": [
     148
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/nextcloud/social",
@@ -12,6 +14,21 @@
   "github_stars": "499",
   "logo": "/icons/nextcloud-social.webp",
   "description": "Nextcloud Social is a federated social media app using ActivityPub. It enables posts, follows, and interaction with other platforms like Mastodon—all within the Nextcloud infrastructure.",
+  "tagline": null,
+  "features": [
+    "ActivityPub federation: Connect with Mastodon, Pleroma, and other federated social networks.",
+    "Post creation: Share text, images, and links with followers on your timeline.",
+    "Follow system: Follow users on your instance or across the fediverse for content discovery.",
+    "Timeline feeds: View posts from followed users in chronological or filtered timelines.",
+    "Interactions: Like, boost, and reply to posts from your instance or federated networks.",
+    "Privacy controls: Set post visibility as public, followers-only, or direct messages.",
+    "Hashtag support: Tag posts with hashtags for discoverability and topic organization.",
+    "Notifications: Receive alerts for mentions, follows, and interactions with your posts.",
+    "Profile customization: Set avatar, bio, and header image for your social profile.",
+    "Media attachments: Share photos and videos with posts up to configured size limits.",
+    "Nextcloud integration: Unified authentication and interface within Nextcloud ecosystem.",
+    "Self-hosted control: Own your social media presence and data on your own infrastructure."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

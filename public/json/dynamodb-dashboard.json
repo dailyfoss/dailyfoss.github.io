@@ -4,6 +4,8 @@
   "categories": [
     39
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/kritish-dhaubanjar/dynamodb-dashboard",
@@ -12,6 +14,17 @@
   "github_stars": "47",
   "logo": "/icons/dynamodb-dashboard.webp",
   "description": "DynamoDB Dashboard is a web UI for visualizing and inspecting AWS DynamoDB tables. It helps developers browse items, run queries, and understand data structures without relying solely on the AWS console.",
+  "tagline": null,
+  "features": [
+    "Table browsing: View all DynamoDB tables in your AWS account with item counts and key schema information.",
+    "Item inspection: Browse table contents with pagination and view individual items with all attributes displayed.",
+    "Query builder: Construct queries using partition and sort keys with filter expressions for targeted data retrieval.",
+    "Scan operations: Perform full table scans with optional filters to explore data without predefined access patterns.",
+    "JSON formatting: Display item data in readable JSON format for easier analysis of complex nested structures.",
+    "AWS credential support: Connect using IAM roles, access keys, or environment variables for flexible authentication.",
+    "Local development: Test against DynamoDB Local or production tables from a unified interface during development.",
+    "Lightweight deployment: Run as a simple web application without heavy dependencies or complex setup requirements."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

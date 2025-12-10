@@ -4,6 +4,8 @@
   "categories": [
     133
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/mysql/mysql-server",
@@ -12,6 +14,17 @@
   "github_stars": "11895",
   "logo": "/icons/mysql.webp",
   "description": "MySQL Server is a widely used open-source relational database management system. It's the backbone for many applications, offering full data control for self-hosted and enterprise database workloads.",
+  "tagline": null,
+  "features": [
+    "ACID compliance: Ensure data integrity with atomic transactions, consistency, isolation, and durability guarantees.",
+    "Replication: Set up master-slave or master-master replication for high availability and read scaling.",
+    "Stored procedures: Create reusable database logic with procedures, functions, and triggers for complex operations.",
+    "Full-text search: Index and search text content efficiently using built-in full-text indexing capabilities.",
+    "Partitioning: Divide large tables into smaller pieces for improved query performance and maintenance.",
+    "JSON support: Store and query JSON documents natively with specialized functions and indexing options.",
+    "Performance tuning: Optimize queries with explain plans, indexes, and query cache for faster data access.",
+    "Backup tools: Use mysqldump, binary logs, and point-in-time recovery for comprehensive data protection."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

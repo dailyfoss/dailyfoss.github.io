@@ -4,6 +4,8 @@
   "categories": [
     106
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/swingmx/swingmusic",
@@ -12,6 +14,21 @@
   "github_stars": "1515",
   "logo": "/icons/swing-music.webp",
   "description": "SwingMusic is a self-hosted music streaming server and player with playlists, search, and a modern responsive UI for listening to your own collection.",
+  "tagline": null,
+  "features": [
+    "Music streaming: Streams personal music collection through web interface.",
+    "Library scanning: Automatically scans and indexes music files with metadata.",
+    "Playlist management: Creates and manages playlists with drag-and-drop organization.",
+    "Search functionality: Finds songs, albums, and artists quickly with instant search.",
+    "Album artwork: Displays cover art from embedded tags or online sources.",
+    "Audio formats: Supports MP3, FLAC, AAC, OGG, and other common formats.",
+    "Transcoding: Converts audio on-the-fly for bandwidth-limited connections.",
+    "Queue management: Builds and reorders playback queue dynamically.",
+    "Favorites: Marks favorite songs, albums, and artists for quick access.",
+    "Recently played: Tracks listening history and recently played tracks.",
+    "Mobile responsive: Streams music from smartphones and tablets.",
+    "Keyboard shortcuts: Controls playback with keyboard for efficient navigation."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

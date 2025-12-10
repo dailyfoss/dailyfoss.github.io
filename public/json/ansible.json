@@ -4,14 +4,26 @@
   "categories": [
     146
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/ansible/ansible",
   "website": "www.ansible.com/",
   "source_code": "github.com/ansible/ansible",
-  "github_stars": "67240",
+  "github_stars": "67258",
   "logo": "/icons/ansible.webp",
   "description": "Ansible is a widely-used IT automation and configuration management tool that coordinates server provisioning, application deployment, and orchestration using YAML-based playbooks. It is agentless and works over SSH.",
+  "tagline": null,
+  "features": [
+    "IT Automation: Automate server provisioning, configuration, and application deployment. Reduce manual work dramatically.",
+    "YAML Playbooks: Define infrastructure as code using simple, readable YAML syntax. Easy to learn and maintain.",
+    "Agentless: Works over SSH without requiring agents on target systems. Minimal setup required.",
+    "Orchestration: Coordinate complex multi-tier deployments across hundreds of servers. Scale effortlessly.",
+    "Extensive Modules: Thousands of built-in modules for common tasks and integrations. Ready to use.",
+    "Idempotent: Run playbooks repeatedly with consistent, predictable results. Safe automation.",
+    "Community Support: Massive ecosystem with shared roles and playbooks. Never start from scratch."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +37,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

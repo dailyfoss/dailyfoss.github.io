@@ -4,6 +4,8 @@
   "categories": [
     111
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/BaldissaraMatheus/Tasks.md",
@@ -12,6 +14,21 @@
   "github_stars": "1929",
   "logo": "/icons/tasks-md.webp",
   "description": "Tasks.md is a self-hosted Markdown-based task manager using plain text files. It offers a web UI to view, filter, and update tasks while keeping storage in Git-friendly format.",
+  "tagline": null,
+  "features": [
+    "Markdown storage: Store tasks in plain text Markdown files that remain readable and editable outside the application.",
+    "Git-friendly format: Track task changes with version control systems using human-readable diff-friendly file formats.",
+    "Web interface: View and manage tasks through a modern web UI with filtering, sorting, and search capabilities.",
+    "Task filtering: Filter tasks by status, tags, priority, or custom criteria to focus on what matters most.",
+    "File-based organization: Organize tasks across multiple files and folders to match your project structure.",
+    "Syntax highlighting: Edit tasks with Markdown syntax highlighting and preview for rich formatting support.",
+    "Tag system: Categorize and group tasks using hashtags for flexible organization and quick filtering.",
+    "Status tracking: Mark tasks as todo, in progress, done, or custom statuses with visual indicators.",
+    "Due dates: Set and track due dates with calendar views and overdue highlighting for time-sensitive tasks.",
+    "Portable data: Keep all task data in standard Markdown files that can be backed up, synced, or migrated easily.",
+    "Search functionality: Find tasks quickly using full-text search across all files and metadata.",
+    "Bulk operations: Update multiple tasks at once with batch editing for efficient task management."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

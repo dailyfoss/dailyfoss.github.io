@@ -4,6 +4,8 @@
   "categories": [
     103
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/traggo/server",
@@ -12,6 +14,21 @@
   "github_stars": "1487",
   "logo": "/icons/traggo.webp",
   "description": "Traggo is a self-hosted time tracking system that lets users track work using tags and flexible time ranges. It emphasizes quick logging and visualizations in a lightweight web interface.",
+  "tagline": null,
+  "features": [
+    "Tag-based tracking: Track time using flexible tags instead of rigid project hierarchies for natural organization.",
+    "Time ranges: Log time with start and end times or use a running timer for active work.",
+    "Quick logging: Start tracking with minimal clicks using a streamlined interface focused on speed.",
+    "Visualizations: View time spent across tags with charts and graphs showing distribution and trends.",
+    "Flexible tagging: Use multiple tags per time entry for multi-dimensional analysis and reporting.",
+    "Calendar view: See tracked time on a calendar to understand daily and weekly patterns.",
+    "Statistics: Generate statistics showing time spent by tag, day, week, or custom periods.",
+    "Lightweight: Run efficiently with minimal resource requirements for always-on time tracking.",
+    "Web interface: Access time tracking from any device through a responsive web interface.",
+    "Export data: Export time tracking data for invoicing, reporting, or analysis in other tools.",
+    "Privacy-focused: Keep all time tracking data on your own server with complete control.",
+    "Multi-user: Support multiple users with individual time tracking and separate data."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

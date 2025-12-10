@@ -4,6 +4,8 @@
   "categories": [
     186
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/PostHog/posthog",
@@ -12,6 +14,19 @@
   "github_stars": "30323",
   "logo": "/icons/posthog.webp",
   "description": "PostHog is an open-source product analytics suite with heatmaps, session recording, event tracking, and feature flags. It's self-hostable or cloud-based, offering privacy-friendly data ownership for growth teams.",
+  "tagline": null,
+  "features": [
+    "Event Tracking: Capture user interactions with flexible event instrumentation supporting both autocapture and manual tracking to analyze behavior patterns across your application.",
+    "Session Replay: Record and replay user sessions to understand navigation flows, identify friction points, and debug issues with full context of user interactions.",
+    "A/B Testing: Run controlled experiments with multivariate testing capabilities to validate hypotheses and optimize features based on statistical significance.",
+    "Feature Flags: Deploy features progressively with dynamic flag management, enabling gradual rollouts, targeted releases, and instant rollbacks without code changes.",
+    "Funnel Analysis: Visualize conversion paths and identify drop-off points across multi-step user journeys to optimize critical flows and improve completion rates.",
+    "Cohort Analysis: Segment users into behavioral cohorts and track retention, engagement, and conversion metrics over time to understand long-term product impact.",
+    "Custom Dashboards: Build tailored visualizations with drag-and-drop widgets, SQL queries, and real-time data updates to monitor KPIs relevant to your team.",
+    "API Integrations: Connect with third-party tools via REST APIs, webhooks, and native integrations to centralize data and automate workflows across your stack.",
+    "User Profiles: Build unified customer profiles by aggregating events, properties, and behavioral data to enable personalized experiences and targeted campaigns.",
+    "Privacy Controls: Ensure GDPR and CCPA compliance with built-in consent management, data anonymization, and configurable retention policies for user data."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +40,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

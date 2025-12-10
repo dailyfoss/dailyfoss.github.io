@@ -4,6 +4,8 @@
   "categories": [
     102
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/stoatchat/stoatchat",
@@ -12,6 +14,21 @@
   "github_stars": "1784",
   "logo": "/icons/stoat.webp",
   "description": "StoatChat is a self-hosted chat platform with channels, direct messages, and file sharing. It aims to be lightweight and easy to deploy for small communities.",
+  "tagline": null,
+  "features": [
+    "Text channels: Creates channels for organized topic-based discussions.",
+    "Direct messaging: Sends private messages to individuals or groups.",
+    "File sharing: Uploads and shares files within channels.",
+    "User roles: Assigns permissions with customizable role system.",
+    "Message history: Stores and searches through message history.",
+    "Emoji reactions: Reacts to messages with emoji.",
+    "Markdown formatting: Formats messages with markdown syntax.",
+    "Notification settings: Customizes alerts per channel or conversation.",
+    "Lightweight design: Runs efficiently with minimal resource usage.",
+    "Self-contained: Easy deployment for small communities.",
+    "Mobile responsive: Chats from smartphones and tablets.",
+    "Open source: Auditable code for security and customization."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

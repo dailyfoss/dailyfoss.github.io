@@ -4,6 +4,8 @@
   "categories": [
     20
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/sissbruecker/linkding",
@@ -12,6 +14,13 @@
   "github_stars": "9642",
   "logo": "/icons/linkding.webp",
   "description": "Linkding is a bookmark manager with a minimalist design and fast search. It enables tagging, archiving, full-text search, and API access for self-hosted users who want control over their bookmarks.",
+  "tagline": null,
+  "features": [
+    "Minimalist Bookmarking: Fast interface, Quick add, Keyboard shortcuts. Bookmark without friction.",
+    "Full-Text Search: Search content, Tag filtering, Instant results. Find bookmarks quickly.",
+    "Archiving: Snapshot pages, Offline access, Permanent storage. Never lose content.",
+    "API & Extensions: Browser extensions, REST API, Import/export. Flexible bookmark management."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +34,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

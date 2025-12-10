@@ -4,6 +4,8 @@
   "categories": [
     137
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/jittering/traefik-kop",
@@ -12,6 +14,21 @@
   "github_stars": "411",
   "logo": "/icons/traefik-kop.webp",
   "description": "traefik-kop is a self-hosted dashboard and helper for Traefik setups, providing quick overviews of routers, middlewares, and services, making complex reverse proxy configurations easier to manage.",
+  "tagline": null,
+  "features": [
+    "Configuration overview: View all Traefik routers, services, and middleware in an organized dashboard.",
+    "Visual representation: Understand complex routing configurations through visual diagrams and layouts.",
+    "Quick navigation: Jump between related routers, services, and middleware for efficient troubleshooting.",
+    "Status monitoring: See which routes are active, healthy, or experiencing issues at a glance.",
+    "Search functionality: Find specific routers or services quickly using search and filtering.",
+    "Configuration details: View detailed configuration for each component including rules and settings.",
+    "Middleware chains: Visualize middleware chains and their order of execution for debugging.",
+    "Service health: Monitor backend service health and availability from the dashboard.",
+    "Real-time updates: See configuration changes reflected immediately as Traefik discovers new services.",
+    "Simplified management: Manage complex Traefik setups more easily with an intuitive interface.",
+    "Documentation links: Access relevant Traefik documentation directly from configuration views.",
+    "Export capabilities: Export configuration information for documentation or backup purposes."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     104
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Sonarr/Sonarr",
@@ -12,6 +14,21 @@
   "github_stars": "12784",
   "logo": "/icons/sonarr.webp",
   "description": "Sonarr is a self-hosted TV series manager that automatically downloads, renames, and organizes episodes for Usenet and torrent users, integrating with indexers and media servers.",
+  "tagline": null,
+  "features": [
+    "Automated downloads: Monitors RSS feeds and automatically downloads new episodes.",
+    "Quality profiles: Defines preferred quality settings and upgrade rules for episodes.",
+    "Series tracking: Tracks TV shows with automatic season and episode detection.",
+    "Calendar view: Displays upcoming and recently aired episodes in calendar format.",
+    "Usenet and torrent: Integrates with download clients like SABnzbd, NZBGet, and qBittorrent.",
+    "Indexer support: Connects to Usenet indexers and torrent trackers for content discovery.",
+    "File renaming: Automatically renames downloaded files with customizable naming schemes.",
+    "Missing episodes: Identifies and searches for missing episodes in your collection.",
+    "Media server integration: Updates Plex, Kodi, Emby, and Jellyfin libraries automatically.",
+    "Custom scripts: Triggers custom scripts on download completion or import.",
+    "Multi-language: Searches for episodes in multiple languages with subtitle support.",
+    "API access: Provides REST API for automation and third-party app integration."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

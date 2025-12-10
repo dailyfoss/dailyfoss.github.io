@@ -4,6 +4,8 @@
   "categories": [
     128
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/owncast/owncast",
@@ -12,6 +14,14 @@
   "github_stars": "10700",
   "logo": "/icons/owncast.webp",
   "description": "Owncast is a self-hosted live streaming service for content creators. It supports chat, overlays, stream transcoding, and customizable pages—all running from a personal server.",
+  "tagline": null,
+  "features": [
+    "Analytics Dashboard: Visual metrics and usage statistics with customizable charts to track performance and user engagement.",
+    "Mobile Optimization: Responsive design with touch-friendly interfaces and offline sync capabilities for seamless mobile access.",
+    "Notification System: Configurable alerts via email, push, or in-app notifications to keep users informed of important updates.",
+    "Theme Customization: Multiple UI themes and layout options with custom branding support to match organizational identity.",
+    "Backup Automation: Scheduled backups with encryption and cloud storage integration to ensure data protection and disaster recovery."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +35,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

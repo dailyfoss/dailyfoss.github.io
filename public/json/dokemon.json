@@ -4,6 +4,8 @@
   "categories": [
     47
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/productiveops/dokemon",
@@ -12,6 +14,17 @@
   "github_stars": "752",
   "logo": "/icons/dokemon.webp",
   "description": "Dokemon is a Kubernetes cluster monitoring and management dashboard. It visualizes workloads, namespaces, resources, and events in an accessible web interface, making cluster status and troubleshooting more approachable for platform teams.",
+  "tagline": null,
+  "features": [
+    "Cluster visualization: View all Kubernetes resources including pods, services, and deployments in a unified dashboard.",
+    "Namespace management: Switch between namespaces and filter resources by scope for organized multi-tenant environments.",
+    "Resource monitoring: Track CPU, memory, and storage usage across nodes and workloads with real-time metrics.",
+    "Event tracking: Monitor cluster events and state changes to identify issues and understand system behavior.",
+    "Log aggregation: Access container logs directly from the interface without kubectl commands for faster troubleshooting.",
+    "Workload control: Start, stop, and scale deployments through the web UI with immediate feedback on status changes.",
+    "RBAC integration: Respect Kubernetes permissions to show only resources accessible to the authenticated user.",
+    "Multi-cluster support: Connect to multiple Kubernetes environments and switch between them from a single interface."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

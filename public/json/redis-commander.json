@@ -4,6 +4,8 @@
   "categories": [
     39
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/joeferner/redis-commander",
@@ -12,6 +14,21 @@
   "github_stars": "3929",
   "logo": "/icons/redis-commander.webp",
   "description": "Redis Commander is a self-hosted web UI for browsing and managing Redis databases. It displays keys, values, TTLs, and supports CRUD operations for easier debugging.",
+  "tagline": null,
+  "features": [
+    "Key browsing: Navigate Redis databases with a tree view showing all keys organized by pattern.",
+    "Value editing: View and modify string, list, set, hash, and sorted set values through the web interface.",
+    "TTL management: Check and update time-to-live values for keys to control expiration.",
+    "Multi-database support: Switch between Redis databases and manage multiple instances from one interface.",
+    "Search functionality: Find keys quickly using pattern matching or full-text search.",
+    "CRUD operations: Create, read, update, and delete keys and values without using the command line.",
+    "Command console: Execute raw Redis commands directly from the browser for advanced operations.",
+    "Data export: Download database contents in JSON or Redis protocol format for backup or migration.",
+    "Import functionality: Load data from files to populate or restore Redis databases.",
+    "Connection management: Save and switch between multiple Redis server configurations.",
+    "Read-only mode: Prevent accidental modifications by enabling view-only access to production databases.",
+    "Authentication support: Connect to password-protected Redis instances with credential management."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     135
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/glenndehaan/unifi-voucher-site",
@@ -12,6 +14,21 @@
   "github_stars": "216",
   "logo": "/icons/unifi-voucher-site.webp",
   "description": "unifi-voucher-site is a simple self-hosted website for generating UniFi hotspot vouchers. It connects to the UniFi controller and exposes a user-friendly form for voucher creation.",
+  "tagline": null,
+  "features": [
+    "Voucher generation: Create UniFi hotspot vouchers with custom duration and bandwidth limits.",
+    "UniFi integration: Connect directly to UniFi controller to generate vouchers programmatically.",
+    "User-friendly form: Provide a simple web form for non-technical users to create vouchers.",
+    "Custom durations: Set voucher validity periods from minutes to days based on your needs.",
+    "Bandwidth control: Define upload and download speed limits for voucher users.",
+    "Batch creation: Generate multiple vouchers at once for events or bulk distribution.",
+    "Voucher display: Show generated voucher codes clearly for easy distribution to guests.",
+    "Access control: Restrict who can generate vouchers with authentication and permissions.",
+    "Simple deployment: Deploy quickly with minimal configuration to start generating vouchers.",
+    "Guest WiFi management: Simplify guest WiFi access management for businesses and venues.",
+    "Print-friendly: Display vouchers in a format suitable for printing and distribution.",
+    "Lightweight: Run with minimal resources suitable for small deployments."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

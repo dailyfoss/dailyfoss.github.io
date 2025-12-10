@@ -4,6 +4,8 @@
   "categories": [
     146
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/kimdre/doco-cd",
@@ -12,6 +14,17 @@
   "github_stars": "968",
   "logo": "/icons/doco-cd.webp",
   "description": "Doco-CD is a lightweight continuous deployment helper for containerized apps. It focuses on simple configuration and automating rollouts with minimal infrastructure, ideal for small projects wanting Git-ops style deployments without heavy tooling.",
+  "tagline": null,
+  "features": [
+    "Git-based deployments: Trigger container updates automatically when pushing to configured repository branches.",
+    "Docker Compose support: Deploy multi-container applications using familiar compose file syntax and orchestration.",
+    "Webhook integration: Receive notifications from GitHub, GitLab, or Bitbucket to initiate deployment workflows.",
+    "Rollback capability: Revert to previous container versions quickly when issues are detected after deployment.",
+    "Environment management: Configure separate deployment pipelines for staging, production, and development environments.",
+    "Minimal dependencies: Run with just Docker installed, avoiding complex CI/CD platforms for straightforward projects.",
+    "Deployment logs: Track build output and container startup messages to diagnose issues during rollout.",
+    "Secret handling: Inject environment variables and credentials securely without storing them in repository files."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

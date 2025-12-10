@@ -4,6 +4,8 @@
   "categories": [
     196
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/rishikanthc/markopolis",
@@ -12,6 +14,21 @@
   "github_stars": "179",
   "logo": "/icons/markopolis.webp",
   "description": "Markopolis is a self-hosted platform for highlighting and annotating text on any web page. It stores highlights, tags quotes, and allows access later through a searchable UI ideal for research or note-taking.",
+  "tagline": null,
+  "features": [
+    "Web highlighting: Select and highlight text on any webpage for later reference and review.",
+    "Annotation system: Add notes and comments to highlighted passages for context and analysis.",
+    "Tag organization: Categorize highlights with custom tags for research topics or projects.",
+    "Search interface: Find specific highlights across all saved pages using full-text search.",
+    "Browser extension: Capture highlights directly from your browser without switching apps.",
+    "Quote extraction: Automatically extract and format highlighted text as quotations.",
+    "Source tracking: Maintain links to original pages and capture metadata like author and date.",
+    "Collection management: Group related highlights into collections for different research projects.",
+    "Export functionality: Download highlights in Markdown, CSV, or JSON formats for external use.",
+    "Privacy focused: All highlights stored on your server with no third-party tracking.",
+    "Bulk operations: Tag, delete, or move multiple highlights simultaneously for efficient management.",
+    "Reading list: Save pages for later reading and highlighting without immediate processing."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     145
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Lissy93/web-check",
@@ -12,6 +14,21 @@
   "github_stars": "26998",
   "logo": "/icons/web-check.webp",
   "description": "web-check is a self-hosted tool that inspects and reports on website health, security, performance, and DNS configuration via a detailed, interactive web dashboard.",
+  "tagline": null,
+  "features": [
+    "Security analysis: Scan websites for security headers, SSL/TLS configuration, and common vulnerabilities.",
+    "Performance metrics: Measure page load times, resource sizes, and identify performance bottlenecks.",
+    "DNS inspection: View complete DNS records including A, AAAA, MX, TXT, and CNAME entries for domains.",
+    "SSL certificate details: Examine certificate validity, issuer information, and expiration dates.",
+    "Server information: Identify web server software, hosting provider, and technology stack used.",
+    "Redirect chains: Trace HTTP redirects to understand URL routing and identify redirect loops.",
+    "Port scanning: Check which ports are open on the target server for security assessment.",
+    "WHOIS lookup: Retrieve domain registration information including registrar and expiration dates.",
+    "Lighthouse integration: Run Google Lighthouse audits for accessibility, SEO, and best practices scoring.",
+    "Social media tags: Verify Open Graph and Twitter Card metadata for proper social sharing.",
+    "Mobile compatibility: Test responsive design and mobile-friendliness of websites.",
+    "Export reports: Generate comprehensive PDF or JSON reports for documentation or client presentations."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

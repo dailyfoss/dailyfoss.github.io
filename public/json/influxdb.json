@@ -4,6 +4,8 @@
   "categories": [
     133
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/influxdata/influxdb",
@@ -12,6 +14,17 @@
   "github_stars": "30940",
   "logo": "/icons/influxdb.webp",
   "description": "InfluxDB is a high performance time series database optimized for metrics and events. It supports SQL like queries, retention policies and integrations with dashboards and agents, and can be run self hosted or in managed cloud offerings.",
+  "tagline": null,
+  "features": [
+    "Time Series Storage: Optimized database for storing timestamped metrics and events.",
+    "High Performance: Handle millions of writes per second with efficient compression.",
+    "Flux Query Language: Powerful SQL-like language for querying and analyzing time series data.",
+    "Retention Policies: Automatically downsample or delete old data to manage storage.",
+    "Continuous Queries: Pre-aggregate data for faster query performance.",
+    "Dashboard Integration: Works seamlessly with Grafana, Chronograf, and other visualization tools.",
+    "Data Collection: Integrate with Telegraf and other agents for metric collection.",
+    "Clustering Support: Scale horizontally for high-availability deployments."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

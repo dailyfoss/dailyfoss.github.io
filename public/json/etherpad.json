@@ -4,6 +4,8 @@
   "categories": [
     196
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/ether/etherpad-lite",
@@ -12,6 +14,15 @@
   "github_stars": "17965",
   "logo": "/icons/etherpad.webp",
   "description": "Etherpad Lite is a real-time collaborative text editor that runs on your own server. Multiple users can edit pads simultaneously, see each other’s cursors, and review revisions, making it ideal for workshops, notes, or coding interviews.",
+  "tagline": null,
+  "features": [
+    "Real-Time Collaboration: Multiple users edit simultaneously. See changes instantly.",
+    "Live Cursors: Watch collaborators' cursors in real-time. Enhanced awareness.",
+    "Revision History: Review and restore previous versions. Never lose work.",
+    "No Registration: Start collaborating immediately. Frictionless experience.",
+    "Plugin System: Extend functionality with community plugins. Customizable platform.",
+    "Self-Hosted: Run your own collaborative editor. Complete control over documents."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

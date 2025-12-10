@@ -4,6 +4,8 @@
   "categories": [
     18
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/borgbackup/borg",
@@ -12,6 +14,17 @@
   "github_stars": "12680",
   "logo": "/icons/borg.webp",
   "description": "BorgBackup is a deduplicating backup program that supports compression and authentication, making backups fast and efficient. It's designed for individuals and sysadmins needing encrypted and space-efficient backups.",
+  "tagline": null,
+  "features": [
+    "Deduplication: Save space with intelligent block-level deduplication. Efficient storage.",
+    "Compression: Reduce backup size with built-in compression. Faster transfers.",
+    "Encryption: Secure backups with strong authentication and encryption. Complete security.",
+    "Fast Backups: Incremental backups are quick and efficient. Minimal downtime.",
+    "Space Efficient: Only store changed data blocks. Maximize storage.",
+    "Cross-Platform: Works on Linux and macOS systems. Universal compatibility.",
+    "Remote Backups: Backup to remote servers over SSH. Offsite protection.",
+    "Reliable: Battle-tested backup solution trusted by sysadmins. Production-ready."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

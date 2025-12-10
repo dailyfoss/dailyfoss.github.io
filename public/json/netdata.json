@@ -4,6 +4,8 @@
   "categories": [
     103
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/netdata/netdata",
@@ -12,6 +14,21 @@
   "github_stars": "76928",
   "logo": "/icons/netdata.webp",
   "description": "Netdata is a real-time performance monitoring platform for servers, containers, and applications. It provides actionable dashboards with alerts and metrics, supporting both self-hosted and SaaS deployments.",
+  "tagline": null,
+  "features": [
+    "Real-time monitoring: Per-second metric collection and visualization for immediate system insights.",
+    "Comprehensive metrics: Track CPU, memory, disk, network, applications, and custom metrics automatically.",
+    "Interactive dashboards: Drill down into metrics with zoom, pan, and correlation features for analysis.",
+    "Anomaly detection: Machine learning algorithms identify unusual patterns and potential issues.",
+    "Alert notifications: Configure alerts with multiple channels including email, Slack, PagerDuty, and webhooks.",
+    "Zero configuration: Auto-detects services and starts monitoring immediately after installation.",
+    "Low overhead: Efficient C implementation uses minimal CPU and memory while collecting thousands of metrics.",
+    "Distributed monitoring: Aggregate metrics from multiple nodes into centralized dashboards.",
+    "Health monitoring: Built-in checks for common issues with actionable recommendations.",
+    "Container support: Monitor Docker, Kubernetes, and other containerized environments natively.",
+    "Plugin ecosystem: Extend monitoring with custom collectors for applications and services.",
+    "Historical data: Store and query metrics over time for trend analysis and capacity planning."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

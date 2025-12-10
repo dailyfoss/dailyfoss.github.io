@@ -4,6 +4,8 @@
   "categories": [
     34
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/yusing/godoxy",
@@ -12,6 +14,17 @@
   "github_stars": "2591",
   "logo": "/icons/godoxy.webp",
   "description": "Godoxy is a self-hosted proxy server designed for inspecting HTTP traffic and debugging. It provides a web interface and API for logging requests, useful for development and debugging processes.",
+  "tagline": null,
+  "features": [
+    "Traffic Inspection: Intercept and examine HTTP requests and responses in real-time.",
+    "Request Logging: Capture detailed logs of all HTTP traffic passing through the proxy.",
+    "Web Interface: View and analyze traffic through a browser-based dashboard.",
+    "Debugging Proxy: Identify issues in API calls, webhooks, and HTTP integrations.",
+    "Header Analysis: Inspect request and response headers for troubleshooting.",
+    "Body Viewing: Examine request and response bodies including JSON, XML, and form data.",
+    "API Testing: Test API endpoints by modifying requests before forwarding to backends.",
+    "Development Workflow: Essential tool for debugging web applications and services."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     125
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/opf/openproject",
@@ -12,6 +14,17 @@
   "github_stars": "13304",
   "logo": "/icons/openproject.webp",
   "description": "OpenProject is an open-source project management platform supporting agile boards, Gantt charts, time tracking, and team collaboration. It can be self-hosted or run as SaaS, serving as an enterprise-grade alternative to Jira.",
+  "tagline": null,
+  "features": [
+    "Agile boards: Manage sprints and backlogs with Scrum and Kanban views for iterative development workflows.",
+    "Gantt charts: Visualize project timelines with dependencies, milestones, and critical path analysis for planning.",
+    "Time tracking: Log hours spent on tasks and generate reports for billing, capacity planning, and productivity analysis.",
+    "Team collaboration: Share documents, comment on work packages, and mention team members for coordinated project execution.",
+    "Custom workflows: Define status transitions and approval processes tailored to your organization's project methodology.",
+    "Resource management: Assign team members to tasks and track workload distribution across projects and departments.",
+    "Budget tracking: Monitor project costs against estimates with expense logging and financial reporting capabilities.",
+    "API integration: Connect with external tools and automate workflows using REST API for custom business processes."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

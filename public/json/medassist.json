@@ -4,6 +4,8 @@
   "categories": [
     101
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/njic/medassist",
@@ -12,6 +14,21 @@
   "github_stars": "145",
   "logo": "/icons/medassist.webp",
   "description": "MedAssist is a personal medication tracker that helps individuals log doses, reminders, and prescriptions. It includes notifications, reports, and a clean web UI for health tracking and management at home.",
+  "tagline": null,
+  "features": [
+    "Medication logging: Record when medications are taken with timestamps and dosage information.",
+    "Reminder notifications: Set up alerts for medication times to ensure doses aren't missed.",
+    "Prescription tracking: Store prescription details including refill dates and pharmacy information.",
+    "Dosage history: View complete medication history with dates, times, and adherence statistics.",
+    "Multi-user support: Track medications for multiple family members from a single account.",
+    "Medication database: Search and add medications from a comprehensive drug database.",
+    "Side effect tracking: Log and monitor side effects or reactions to medications.",
+    "Report generation: Create medication reports for doctor visits or insurance purposes.",
+    "Refill reminders: Receive alerts when prescriptions are due for refill.",
+    "Export functionality: Download medication history in PDF or CSV format for records.",
+    "Privacy focused: All health data stored securely on your own server.",
+    "Mobile responsive: Access and log medications from any device with responsive interface."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

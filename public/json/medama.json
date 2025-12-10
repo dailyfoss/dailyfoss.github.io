@@ -4,6 +4,8 @@
   "categories": [
     21
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/medama-io/medama",
@@ -12,6 +14,21 @@
   "github_stars": "569",
   "logo": "/icons/medama.webp",
   "description": "Medama is a UI-first, self-hosted error tracking and monitoring tool for developers. It offers stack traces, session replay, and alerts to help diagnose issues in applications without relying on external services.",
+  "tagline": null,
+  "features": [
+    "Error tracking: Capture and log application errors with detailed stack traces and context.",
+    "Session replay: Record and replay user sessions to understand how errors occurred.",
+    "Alert system: Configure notifications for critical errors via email, Slack, or webhooks.",
+    "Source map support: Automatically map minified code to original source for easier debugging.",
+    "User context: Track which users experienced errors with custom user identification.",
+    "Environment filtering: Separate errors by environment like production, staging, or development.",
+    "Issue grouping: Automatically group similar errors to reduce noise and identify patterns.",
+    "Performance monitoring: Track application performance metrics alongside error data.",
+    "Search and filtering: Find specific errors using filters for time, severity, or affected users.",
+    "Privacy focused: Self-hosted solution keeps sensitive error data under your control.",
+    "SDK support: Integrate with JavaScript, Python, Ruby, and other language SDKs.",
+    "Dashboard analytics: View error trends, affected users, and resolution status at a glance."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

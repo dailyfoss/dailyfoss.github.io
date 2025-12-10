@@ -4,6 +4,8 @@
   "categories": [
     7
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/pi-hole/pi-hole",
@@ -12,6 +14,21 @@
   "github_stars": "54644",
   "logo": "/icons/pi-hole.webp",
   "description": "Pi-hole is a self-hosted network-wide ad blocker and DNS sinkhole. It blocks ads and trackers across devices with a lightweight DNS solution and a web-based dashboard for configuration.",
+  "tagline": null,
+  "features": [
+    "Network-wide blocking: Block ads and trackers for all devices on your network without individual configuration.",
+    "DNS sinkhole: Intercept DNS requests to known ad and tracking domains before they reach devices.",
+    "Web dashboard: Monitor blocking statistics, query logs, and network activity through an intuitive interface.",
+    "Blocklist management: Subscribe to curated blocklists or create custom lists for granular control.",
+    "Query logging: View detailed logs of all DNS queries with timestamps, clients, and block status.",
+    "Whitelist and blacklist: Override blocklists with custom allow and deny rules for specific domains.",
+    "DHCP server: Optionally serve DHCP to automatically configure network devices to use Pi-hole.",
+    "API access: Integrate with other tools and scripts using the built-in REST API.",
+    "Group management: Apply different blocking policies to device groups for customized filtering.",
+    "Conditional forwarding: Route specific DNS queries to designated servers for local network resolution.",
+    "Privacy protection: Block tracking domains to enhance privacy across all network devices.",
+    "Performance metrics: Track DNS query response times and blocking effectiveness with statistics."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

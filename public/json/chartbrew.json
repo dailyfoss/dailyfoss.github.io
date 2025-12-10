@@ -4,6 +4,8 @@
   "categories": [
     9
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/chartbrew/chartbrew",
@@ -12,6 +14,16 @@
   "github_stars": "3496",
   "logo": "/icons/chartbrew.webp",
   "description": "Chartbrew is a self-hosted platform for creating live dashboards and charts from databases and APIs. It allows scheduling syncs, building templates, team collaboration, and embedding visualizations anywhere via web UI.",
+  "tagline": null,
+  "features": [
+    "Live Dashboards: Create real-time dashboards from databases and APIs. Dynamic visualization.",
+    "Data Connections: Connect to PostgreSQL, MySQL, MongoDB, and APIs. Universal integration.",
+    "Scheduled Syncs: Automatic data updates at custom intervals. Always current.",
+    "Chart Templates: Pre-built templates for common visualizations. Quick setup.",
+    "Team Collaboration: Share dashboards with team members. Collaborative analytics.",
+    "Embeddable: Embed charts anywhere with iframe support. Flexible sharing.",
+    "Self-Hosted: Keep your analytics data private. Complete control."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +37,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

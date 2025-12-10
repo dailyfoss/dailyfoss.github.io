@@ -4,6 +4,8 @@
   "categories": [
     137
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/ZoeyVid/NPMplus",
@@ -12,6 +14,21 @@
   "github_stars": "1612",
   "logo": "/icons/npmplus.webp",
   "description": "NPMplus is an enhanced fork of Nginx Proxy Manager offering additional plugins, UI improvements, and community integrations for easier reverse proxy and SSL management in self-hosted setups.",
+  "tagline": null,
+  "features": [
+    "Enhanced proxy manager: Fork of Nginx Proxy Manager with additional features and improvements.",
+    "SSL management: Automatic certificate generation and renewal with Let's Encrypt and custom CAs.",
+    "Advanced routing: Configure complex proxy rules with custom headers and rewrites.",
+    "Plugin support: Extend functionality with community plugins and integrations.",
+    "Improved UI: Enhanced interface with better usability and additional configuration options.",
+    "Access control: Protect services with IP whitelisting, basic auth, or custom authentication.",
+    "WebSocket proxying: Full support for WebSocket connections and real-time applications.",
+    "Custom Nginx configs: Add advanced directives and configurations for specialized needs.",
+    "Monitoring dashboard: View proxy statistics, traffic, and health status.",
+    "Backup and restore: Export and import configurations for disaster recovery.",
+    "Docker optimized: Designed for containerized deployments with minimal resource usage.",
+    "Community-driven: Active development with features requested by the self-hosting community."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

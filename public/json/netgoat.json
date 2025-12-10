@@ -4,6 +4,8 @@
   "categories": [
     165
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/netgoat-xyz/netgoat",
@@ -12,6 +14,21 @@
   "github_stars": "645",
   "logo": "/icons/netgoat.webp",
   "description": "NetGoat is an intentionally vulnerable application designed for learning and testing web app security issues. It runs with a simple web UI and offers challenges and exercises for security training.",
+  "tagline": null,
+  "features": [
+    "Vulnerability challenges: Practice exploiting common web security flaws in a safe environment.",
+    "OWASP coverage: Learn about vulnerabilities from the OWASP Top 10 including injection and XSS.",
+    "Guided exercises: Step-by-step lessons explain vulnerabilities and how to identify them.",
+    "Hands-on practice: Test security tools and techniques against realistic vulnerable applications.",
+    "Safe testing environment: Isolated sandbox prevents accidental damage to production systems.",
+    "Multiple difficulty levels: Progress from beginner to advanced security concepts at your own pace.",
+    "Detailed explanations: Understand why vulnerabilities exist and how to prevent them in real applications.",
+    "Security tool integration: Practice using scanners, proxies, and other security testing tools.",
+    "Code examples: View vulnerable code to understand root causes and learn secure coding practices.",
+    "Reset functionality: Restore application state to retry challenges and experiments.",
+    "Educational focus: Designed for security training, certification prep, and skill development.",
+    "Docker deployment: Quick setup with containerized environment for consistent testing experience."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

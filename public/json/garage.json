@@ -4,6 +4,8 @@
   "categories": [
     113
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/deuxfleurs-org/garage",
@@ -12,6 +14,17 @@
   "github_stars": "1970",
   "logo": "/icons/garage.webp",
   "description": "Garage is a distributed storage backend designed for self-hosted deployments. It replicates data across nodes, supports S3-compatible APIs, and is built for durability and low-overhead cloud-style storage.",
+  "tagline": null,
+  "features": [
+    "Distributed Storage: Replicate data across multiple nodes for high availability and fault tolerance.",
+    "S3 Compatibility: Use standard S3 APIs for seamless integration with existing tools and applications.",
+    "Low Overhead: Lightweight design optimized for self-hosted deployments with minimal resource requirements.",
+    "Data Replication: Automatically replicate objects across nodes to ensure durability and redundancy.",
+    "Geo-Distribution: Deploy storage nodes across multiple locations for geographic redundancy.",
+    "Self-Hosted Cloud: Build your own S3-compatible object storage without relying on commercial cloud providers.",
+    "Resilient Architecture: Handle node failures gracefully with automatic failover and data recovery.",
+    "Simple Deployment: Easy setup and configuration for small to medium-scale distributed storage clusters."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

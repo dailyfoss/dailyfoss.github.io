@@ -4,6 +4,8 @@
   "categories": [
     146
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/webmin/webmin",
@@ -12,6 +14,21 @@
   "github_stars": "5417",
   "logo": "/icons/webmin.webp",
   "description": "Webmin is a self-hosted web-based interface for administering Unix-like systems. It provides modules for managing services, users, DNS, and more through a browser instead of command line alone.",
+  "tagline": null,
+  "features": [
+    "System administration: Manage Unix/Linux servers through a web interface without command-line access.",
+    "User management: Create, modify, and delete system users and groups with password and permission controls.",
+    "Service control: Start, stop, restart, and configure system services like Apache, MySQL, or SSH.",
+    "File management: Browse, edit, upload, and download files with a built-in file manager and text editor.",
+    "Package management: Install, update, and remove software packages using your distribution's package manager.",
+    "Network configuration: Configure network interfaces, routing, firewall rules, and DNS settings.",
+    "Disk management: Partition disks, create filesystems, manage RAID arrays, and monitor disk usage.",
+    "Backup scheduling: Set up automated backups of files, databases, and system configurations.",
+    "Log viewer: Browse and search system logs for troubleshooting and monitoring purposes.",
+    "Module system: Extend functionality with hundreds of available modules for specific services and applications.",
+    "Multi-server management: Manage multiple servers from a single Webmin instance with cluster features.",
+    "SSL/TLS support: Secure the web interface with HTTPS and certificate management."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     186
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Swetrix/swetrix",
@@ -12,6 +14,21 @@
   "github_stars": "772",
   "logo": "/icons/swetrix.webp",
   "description": "Swetrix is a privacy-focused web analytics platform that can be self-hosted or used as SaaS. It tracks visits without cookies and displays insights in a clean dashboard.",
+  "tagline": null,
+  "features": [
+    "Privacy-focused analytics: Tracks website visitors without cookies or personal data.",
+    "Real-time dashboard: Displays live visitor data and page views as they happen.",
+    "Event tracking: Monitors custom events like button clicks and form submissions.",
+    "Performance monitoring: Measures page load times and Core Web Vitals.",
+    "Traffic sources: Identifies referrers, UTM campaigns, and traffic channels.",
+    "Geographic data: Shows visitor locations by country and region.",
+    "Device analytics: Breaks down traffic by device type, browser, and OS.",
+    "Custom properties: Tracks custom dimensions for advanced segmentation.",
+    "API access: Queries analytics data programmatically via REST API.",
+    "Email reports: Sends periodic analytics summaries via email.",
+    "Multiple websites: Manages analytics for unlimited websites from one account.",
+    "GDPR compliant: Respects privacy regulations without requiring cookie consent."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

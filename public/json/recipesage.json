@@ -4,6 +4,8 @@
   "categories": [
     131
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/julianpoy/RecipeSage",
@@ -12,6 +14,21 @@
   "github_stars": "806",
   "logo": "/icons/recipesage.webp",
   "description": "RecipeSage is a self-hosted recipe manager with tagging, meal planning, ingredient scaling, and import features. It includes a mobile-friendly UI for organizing and cooking at home.",
+  "tagline": null,
+  "features": [
+    "Recipe import: Extract recipes from websites automatically by pasting URLs into the app.",
+    "Ingredient scaling: Adjust serving sizes and automatically recalculate ingredient quantities.",
+    "Meal planning: Schedule recipes on a calendar to plan weekly or monthly menus.",
+    "Shopping lists: Generate grocery lists from planned meals with automatic ingredient aggregation.",
+    "Tag organization: Categorize recipes with custom tags like cuisine type, dietary restrictions, or meal type.",
+    "Recipe sharing: Share favorite recipes with family and friends through shareable links.",
+    "Image upload: Add photos of your finished dishes to personalize recipe cards.",
+    "Cooking mode: Display recipes in a large, easy-to-read format while cooking in the kitchen.",
+    "Search and filter: Find recipes quickly by ingredient, tag, or full-text search.",
+    "Nutrition tracking: View nutritional information for recipes when available from source websites.",
+    "Recipe collections: Organize recipes into collections like \"Quick Dinners\" or \"Holiday Baking\".",
+    "Mobile apps: Access your recipe library from iOS and Android devices with native applications."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     34
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/stefanpejcic/OpenPanel",
@@ -12,6 +14,17 @@
   "github_stars": "573",
   "logo": "/icons/openpanel.webp",
   "description": "OpenPanel is a self-hosted control panel for managing web hosting environments. It supports domain management, email, databases, and integrates with web servers, ideal for self-hosted VPS setups.",
+  "tagline": null,
+  "features": [
+    "Domain management: Add, configure, and manage multiple domains with DNS settings and SSL certificate automation.",
+    "Email hosting: Create email accounts, forwarders, and manage mailboxes with webmail access for hosted domains.",
+    "Database administration: Create and manage MySQL and PostgreSQL databases with phpMyAdmin and Adminer integration.",
+    "File manager: Upload, edit, and organize website files through a web-based file browser with permissions control.",
+    "Web server control: Configure Nginx or Apache settings, manage virtual hosts, and control server processes.",
+    "User accounts: Create isolated hosting accounts with resource limits and separate file system access for multi-tenant hosting.",
+    "Backup management: Schedule automatic backups of websites, databases, and email with one-click restoration.",
+    "Resource monitoring: Track disk usage, bandwidth consumption, and server performance metrics per account and globally."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

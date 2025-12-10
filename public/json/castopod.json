@@ -4,6 +4,8 @@
   "categories": [
     123
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/ad-aures/castopod",
@@ -12,6 +14,16 @@
   "github_stars": "792",
   "logo": "/icons/castopod.webp",
   "description": "Castopod is a self-hosted podcast hosting platform built to support social interaction and sharing. It supports multiple users, analytics, episode scheduling, and federated distribution with ActivityPub.",
+  "tagline": null,
+  "features": [
+    "Podcast Hosting: Complete platform for hosting and distributing podcasts. Professional solution.",
+    "ActivityPub Federation: Connect with the fediverse for social distribution. Decentralized reach.",
+    "Episode Scheduling: Plan and automate episode releases. Consistent publishing.",
+    "Analytics Dashboard: Track listener statistics and engagement. Understand your audience.",
+    "Multi-User: Team collaboration with role-based permissions. Shared management.",
+    "RSS Feeds: Standard podcast RSS for all directories. Universal compatibility.",
+    "Self-Hosted: Own your podcast platform and data. Complete independence."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +37,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

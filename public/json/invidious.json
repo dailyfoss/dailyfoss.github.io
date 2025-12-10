@@ -4,6 +4,8 @@
   "categories": [
     100
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/iv-org/invidious",
@@ -12,6 +14,17 @@
   "github_stars": "18221",
   "logo": "/icons/invidious.webp",
   "description": "Invidious is a privacy focused alternative front end for YouTube. It proxies video, search and subscriptions without ads or tracking, supports RSS feeds and multiple clients, and can be self hosted as a lightweight video portal.",
+  "tagline": null,
+  "features": [
+    "Privacy Protection: Watch YouTube without Google tracking your viewing habits.",
+    "Ad-Free Experience: No advertisements or sponsored content interrupting videos.",
+    "Subscription Management: Subscribe to channels without a Google account.",
+    "RSS Feeds: Generate RSS feeds for channels to follow in your feed reader.",
+    "Proxy Streaming: Stream videos through your server to hide your IP from YouTube.",
+    "Lightweight Interface: Fast, minimal UI focused on content over distractions.",
+    "Audio-Only Mode: Listen to videos without loading video streams to save bandwidth.",
+    "Multiple Instances: Connect to public instances or self-host your own."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

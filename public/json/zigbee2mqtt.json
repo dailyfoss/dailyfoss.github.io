@@ -4,6 +4,8 @@
   "categories": [
     76
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Koenkk/zigbee2mqtt",
@@ -12,6 +14,21 @@
   "github_stars": "14303",
   "logo": "/icons/zigbee2mqtt.webp",
   "description": "Zigbee2MQTT is a self-hosted bridge that connects Zigbee devices to MQTT, enabling integration with many home automation platforms. It runs as a service with a web dashboard for managing devices and networks.",
+  "tagline": null,
+  "features": [
+    "Device pairing: Add Zigbee devices to your network through a simple web interface without proprietary hubs.",
+    "MQTT bridge: Expose Zigbee devices to MQTT topics for integration with Home Assistant, Node-RED, and other platforms.",
+    "Device management: Configure, rename, and remove devices with detailed information about capabilities and status.",
+    "Network visualization: View your Zigbee network topology with signal strength and routing information.",
+    "OTA updates: Update device firmware over-the-air directly through the interface when manufacturers release updates.",
+    "Group control: Create device groups to control multiple lights or switches simultaneously with one command.",
+    "Binding support: Set up direct device-to-device communication for faster response times and offline operation.",
+    "Extensive compatibility: Support thousands of Zigbee devices from hundreds of manufacturers with regular updates.",
+    "Custom converters: Add support for new or unsupported devices by writing JavaScript converter definitions.",
+    "Logging and debugging: Access detailed logs for troubleshooting device issues and network problems.",
+    "Backup and restore: Export network configuration and device settings for easy migration or disaster recovery.",
+    "Touchlink support: Reset and pair devices using Touchlink commissioning for devices without reset buttons."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

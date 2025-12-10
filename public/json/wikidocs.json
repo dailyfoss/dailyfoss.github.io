@@ -4,6 +4,8 @@
   "categories": [
     193
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Zavy86/WikiDocs",
@@ -12,6 +14,21 @@
   "github_stars": "453",
   "logo": "/icons/wikidocs.webp",
   "description": "WikiDocs is a self-hosted documentation and knowledge base system built around markdown files. It provides navigation, search, and clean page rendering, making it easy to publish internal or project documentation as a web site.",
+  "tagline": null,
+  "features": [
+    "Markdown-based: Write documentation using markdown files stored in a simple folder structure.",
+    "Automatic navigation: Generate navigation menus automatically from folder and file organization.",
+    "Search capability: Find documentation quickly with built-in full-text search across all pages.",
+    "Syntax highlighting: Display code examples with proper syntax highlighting for multiple programming languages.",
+    "Responsive layout: Access documentation on any device with a mobile-friendly responsive design.",
+    "No database required: Run without external dependencies using file-based storage for simplicity.",
+    "Custom branding: Personalize the appearance with logos, colors, and custom CSS.",
+    "Table of contents: Automatically generate page-level table of contents from markdown headings.",
+    "Image support: Embed images and diagrams directly in documentation pages.",
+    "Version control friendly: Store documentation in Git for collaborative editing and version tracking.",
+    "Quick deployment: Set up documentation sites in minutes with minimal configuration.",
+    "Lightweight footprint: Run on minimal server resources suitable for small VPS or shared hosting."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

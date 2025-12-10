@@ -4,6 +4,8 @@
   "categories": [
     166
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/nzbdav-dev/nzbdav",
@@ -12,6 +14,21 @@
   "github_stars": "651",
   "logo": "/icons/nzb-dav.webp",
   "description": "NZBDav adds WebDAV access to your NZB download folder. It acts as a bridge making downloads accessible via WebDAV clients or cloud sync services like Nextcloud or rClone, ideal in self-hosted media stacks.",
+  "tagline": null,
+  "features": [
+    "WebDAV bridge: Expose NZB download folders via WebDAV protocol for universal access.",
+    "Cloud sync integration: Connect with Nextcloud, ownCloud, or rClone for automatic syncing.",
+    "File access: Browse and download completed NZB files from any WebDAV-compatible client.",
+    "Cross-platform support: Access downloads from Windows, macOS, Linux, iOS, and Android.",
+    "Media stack integration: Seamlessly integrate with Sonarr, Radarr, and other automation tools.",
+    "Read-only mode: Prevent accidental deletion or modification of download files.",
+    "Authentication: Secure access with username and password protection.",
+    "Path mapping: Configure custom paths and folder structures for organized access.",
+    "Lightweight proxy: Minimal overhead for bridging local storage to WebDAV protocol.",
+    "Docker deployment: Easy containerized setup for integration with existing media stacks.",
+    "No file duplication: Direct access to download folder without copying or moving files.",
+    "Real-time updates: See new downloads immediately as they complete without manual refresh."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

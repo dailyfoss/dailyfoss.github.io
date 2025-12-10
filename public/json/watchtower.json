@@ -4,6 +4,8 @@
   "categories": [
     172
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/containrrr/watchtower",
@@ -12,6 +14,21 @@
   "github_stars": "24303",
   "logo": "/icons/watchtower.webp",
   "description": "Watchtower is a self-hosted automation tool that monitors running Docker containers and automatically updates them when new images are available. It operates as a background container with configuration via environment variables and CLI.",
+  "tagline": null,
+  "features": [
+    "Automatic updates: Monitor Docker containers and automatically pull and deploy new image versions when available.",
+    "Scheduled scans: Configure update check intervals from minutes to days based on your update preferences.",
+    "Notification system: Receive alerts via email, Slack, Discord, or webhooks when containers are updated.",
+    "Rolling updates: Update containers one at a time to minimize downtime and maintain service availability.",
+    "Label-based control: Use Docker labels to include or exclude specific containers from automatic updates.",
+    "Pre/post-update hooks: Execute custom scripts before or after updates for backup or validation tasks.",
+    "Registry authentication: Support private Docker registries with credential management for enterprise deployments.",
+    "Update monitoring: Track update history and view logs of all container updates performed.",
+    "Cleanup automation: Automatically remove old Docker images after successful updates to save disk space.",
+    "Test mode: Run in monitor-only mode to see what would be updated without making actual changes.",
+    "Resource efficient: Minimal CPU and memory footprint suitable for running on resource-constrained hosts.",
+    "Multi-host support: Manage updates across multiple Docker hosts using Docker Swarm or remote API connections."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

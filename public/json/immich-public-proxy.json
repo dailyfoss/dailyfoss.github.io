@@ -4,6 +4,8 @@
   "categories": [
     120
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/alangrainger/immich-public-proxy",
@@ -12,6 +14,17 @@
   "github_stars": "1285",
   "logo": "/icons/immich-public-proxy.webp",
   "description": "Immich Public Proxy exposes public sharing features of Immich through a small proxy service. It helps safely publish shared albums or links while keeping the main Immich instance protected behind authentication.",
+  "tagline": null,
+  "features": [
+    "Public Sharing: Safely expose shared Immich albums to the internet.",
+    "Proxy Layer: Add security layer between public access and your Immich server.",
+    "Protected Instance: Keep main Immich installation behind authentication.",
+    "Selective Exposure: Choose which albums or links to make publicly accessible.",
+    "Security Enhancement: Prevent direct access to your private Immich instance.",
+    "Share Links: Enable public sharing links without compromising server security.",
+    "Access Control: Manage what content is publicly visible versus private.",
+    "Immich Integration: Seamlessly works with Immich's sharing features."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

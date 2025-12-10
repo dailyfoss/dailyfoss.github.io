@@ -4,6 +4,8 @@
   "categories": [
     117
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/passbolt/passbolt_api",
@@ -12,6 +14,19 @@
   "github_stars": "5505",
   "logo": "/icons/passbolt.webp",
   "description": "Passbolt is a self-hosted, API-first password manager designed for team collaboration. It features encrypted password sharing, user controls, browser extensions, and auditing tools.",
+  "tagline": null,
+  "features": [
+    "Encrypted password storage: End-to-end encryption ensures passwords are encrypted on client side before storage, protecting against server breaches",
+    "Team sharing: Share passwords securely with team members or groups while maintaining encryption and access controls",
+    "Browser extensions: Native extensions for Chrome, Firefox, and Edge enable auto-fill and password management directly in browser",
+    "User management: Invite users, assign roles, and manage permissions to control who can access and share passwords",
+    "Audit logs: Track all password access, modifications, and sharing activities for security compliance and accountability",
+    "Groups and folders: Organize passwords into folders and share with groups for streamlined team-based access management",
+    "Password generator: Built-in generator creates strong, random passwords with customizable length and character requirements",
+    "API integration: RESTful API enables automation, integration with CI/CD pipelines, and custom workflow development",
+    "Mobile apps: iOS and Android apps provide secure password access on mobile devices with biometric authentication",
+    "Two-factor authentication: Add extra security layer with TOTP, YubiKey, or Duo support for account protection"
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +40,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

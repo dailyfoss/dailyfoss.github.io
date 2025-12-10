@@ -4,6 +4,8 @@
   "categories": [
     145
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/7ritn/VaulTLS",
@@ -12,6 +14,21 @@
   "github_stars": "288",
   "logo": "/icons/vaultls.webp",
   "description": "VaulTLS is a self-hosted tool for managing TLS certificates via HashiCorp Vault, automating issuance and renewal for services through CLI commands and scripts.",
+  "tagline": null,
+  "features": [
+    "Vault integration: Manage TLS certificates using HashiCorp Vault as the backend.",
+    "Automated issuance: Request and issue certificates automatically through Vault PKI.",
+    "Renewal automation: Automatically renew certificates before expiration to prevent outages.",
+    "CLI interface: Manage certificates through command-line tools for scripting and automation.",
+    "Certificate deployment: Deploy certificates to services automatically after issuance.",
+    "Multiple CAs: Support multiple certificate authorities and PKI backends.",
+    "Private PKI: Run your own private PKI infrastructure for internal services.",
+    "Certificate monitoring: Track certificate expiration dates and renewal status.",
+    "Scripting support: Integrate certificate management into deployment scripts and CI/CD.",
+    "Secure storage: Store private keys securely in Vault with access controls.",
+    "Audit logging: Track all certificate operations for compliance and security auditing.",
+    "Service integration: Integrate with common services and load balancers for automatic certificate updates."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

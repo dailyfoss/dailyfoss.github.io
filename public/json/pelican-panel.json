@@ -4,6 +4,8 @@
   "categories": [
     34
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/pelican-dev/panel",
@@ -12,6 +14,18 @@
   "github_stars": "1749",
   "logo": "/icons/pelican-panel.webp",
   "description": "Panel is a lightweight self-hosted dashboard designed to group links, services, and widgets into a single portal. It’s ideal for server admins and homelab setups.",
+  "tagline": null,
+  "features": [
+    "Link aggregation: Centralize access to all your services and applications through single, organized dashboard interface",
+    "Service widgets: Display real-time information from integrated services with customizable widgets showing status and metrics",
+    "Custom categories: Organize links and services into logical groups or categories for easier navigation and management",
+    "Lightweight design: Minimal resource usage makes it ideal for running on low-power devices or alongside other services",
+    "Responsive layout: Mobile-optimized interface adapts to any screen size for access from desktops, tablets, or smartphones",
+    "Icon support: Add custom icons or use built-in icon libraries to visually identify services at a glance",
+    "Search functionality: Quickly find services or links using integrated search without scrolling through categories",
+    "Theme customization: Personalize appearance with custom themes, colors, and layouts to match your preferences",
+    "Quick access: Bookmark-style interface provides instant access to frequently used services and tools"
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +39,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

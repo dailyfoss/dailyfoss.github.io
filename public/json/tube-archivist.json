@@ -4,6 +4,8 @@
   "categories": [
     100
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/tubearchivist/tubearchivist",
@@ -12,6 +14,21 @@
   "github_stars": "7267",
   "logo": "/icons/tube-archivist.webp",
   "description": "TubeArchivist is a self-hosted YouTube archiving and management solution. It downloads videos, indexes metadata, and offers search, playlists, and a web player to build a personal YouTube library.",
+  "tagline": null,
+  "features": [
+    "YouTube downloading: Download videos from YouTube channels and playlists automatically.",
+    "Metadata indexing: Index video metadata including titles, descriptions, tags, and thumbnails for searchability.",
+    "Channel subscriptions: Subscribe to channels and automatically download new videos as they're published.",
+    "Playlist management: Organize videos into playlists for categorization and easy browsing.",
+    "Web player: Watch archived videos through a built-in web player without leaving the interface.",
+    "Search functionality: Search across all archived videos by title, description, channel, or tags.",
+    "Thumbnail generation: Generate and store video thumbnails for visual browsing of your library.",
+    "Comment archiving: Optionally archive video comments for complete preservation of content.",
+    "Subtitle download: Download and store subtitles in multiple languages for accessibility.",
+    "Quality selection: Choose video quality and format preferences for downloads to balance quality and storage.",
+    "Scheduled downloads: Set up automatic download schedules to keep your archive up to date.",
+    "Statistics: View statistics on your archive including total videos, storage used, and channel breakdowns."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

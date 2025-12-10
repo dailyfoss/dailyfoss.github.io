@@ -4,6 +4,8 @@
   "categories": [
     62
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/rclone/rclone",
@@ -12,6 +14,21 @@
   "github_stars": "53936",
   "logo": "/icons/rclone.webp",
   "description": "Rclone is a command-line program for syncing files and directories to cloud storage providers. It supports encryption, mounting, and advanced operations with a powerful CLI.",
+  "tagline": null,
+  "features": [
+    "Multi-cloud support: Sync files across 40+ cloud storage providers including S3, Google Drive, and Dropbox.",
+    "Encryption: Protect data with client-side encryption before uploading to cloud storage.",
+    "Mount functionality: Access cloud storage as a local filesystem using FUSE on Linux and macOS.",
+    "Bandwidth control: Limit upload and download speeds to avoid saturating your network connection.",
+    "Sync operations: Keep local and remote directories synchronized with bidirectional or one-way sync.",
+    "Deduplication: Identify and skip duplicate files to save bandwidth and storage space.",
+    "Checksum verification: Ensure file integrity by comparing checksums after transfers.",
+    "Filtering rules: Include or exclude files based on patterns, size, or modification time.",
+    "Progress tracking: Monitor transfer speed, remaining time, and file counts during operations.",
+    "Retry logic: Automatically resume failed transfers and handle temporary network issues.",
+    "Crypt backend: Create encrypted remotes that work with any supported cloud provider.",
+    "Web GUI: Manage transfers and browse remote storage through an optional browser interface."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

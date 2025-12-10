@@ -4,6 +4,8 @@
   "categories": [
     112
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/wow-signal-dev/metadata-remote",
@@ -12,6 +14,21 @@
   "github_stars": "565",
   "logo": "/icons/metadata-remote.webp",
   "description": "Metadata Remote is a self-hosted backend for fetching and serving TV and movie metadata for media servers. It supports integrations with Plex, Emby, or Jellyfin and allows local caching of metadata.",
+  "tagline": null,
+  "features": [
+    "Metadata fetching: Retrieve TV show and movie information from online databases automatically.",
+    "Local caching: Store metadata locally to reduce external API calls and improve performance.",
+    "Media server integration: Connect with Plex, Emby, or Jellyfin to provide metadata services.",
+    "Poster and artwork: Download and serve cover art, posters, and background images for media.",
+    "Episode information: Fetch detailed episode data including titles, descriptions, and air dates.",
+    "Cast and crew data: Provide actor, director, and production information for media items.",
+    "Multiple sources: Aggregate metadata from various online databases for comprehensive coverage.",
+    "API compatibility: Implement standard metadata API protocols for seamless media server integration.",
+    "Update scheduling: Automatically refresh metadata on a schedule to keep information current.",
+    "Custom mappings: Override or supplement automatic metadata with manual corrections.",
+    "Bandwidth optimization: Reduce external API usage by serving cached metadata locally.",
+    "Privacy focused: Keep metadata requests within your network without exposing viewing habits."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

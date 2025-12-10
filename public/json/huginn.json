@@ -4,6 +4,8 @@
   "categories": [
     16
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/huginn/huginn",
@@ -12,6 +14,17 @@
   "github_stars": "48265",
   "logo": "/icons/huginn.webp",
   "description": "Huginn is a system for building agents that monitor the web and act on your behalf. You can create workflows that fetch, filter, react to and combine data from many sources, enabling powerful self hosted automation scenarios.",
+  "tagline": null,
+  "features": [
+    "Agent System: Create agents that monitor websites, APIs, and data sources for changes.",
+    "Web Scraping: Extract data from websites and RSS feeds with customizable selectors.",
+    "Workflow Automation: Chain agents together to create complex automation scenarios.",
+    "Event Processing: Filter, transform, and route data between different services.",
+    "Scheduled Tasks: Run agents on schedules or trigger them based on events.",
+    "Notifications: Send alerts via email, SMS, Slack, or webhooks when conditions are met.",
+    "Data Storage: Store extracted data for later processing or analysis.",
+    "Extensible: Create custom agents using Ruby for specialized automation needs."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

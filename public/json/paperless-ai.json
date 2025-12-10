@@ -4,6 +4,8 @@
   "categories": [
     48
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/clusterzx/paperless-ai",
@@ -12,6 +14,19 @@
   "github_stars": "4684",
   "logo": "/icons/paperless-ai.webp",
   "description": "Paperless AI is an enhanced fork of Paperless designed for intelligent document scanning, OCR, and metadata tagging, enabling smarter search over digitized documents in a self-hosted setup.",
+  "tagline": null,
+  "features": [
+    "AI-powered OCR: Advanced optical character recognition with machine learning extracts text from scanned documents with high accuracy",
+    "Intelligent tagging: Automatic metadata extraction and tag suggestions based on document content to improve organization",
+    "Smart classification: AI algorithms automatically categorize documents by type, sender, or content for streamlined filing",
+    "Full-text search: Search across all document content including OCR-extracted text to quickly find specific information",
+    "Document scanning: Import documents from scanners, email, or file uploads with automatic processing and indexing",
+    "Version control: Track document changes over time with version history and ability to restore previous versions",
+    "Custom workflows: Configure automated processing rules for document routing, tagging, and organization based on content",
+    "Multi-format support: Handle various document formats including PDF, images, Office files with unified processing",
+    "Secure storage: Encrypted document storage with access controls ensures sensitive information remains protected",
+    "API integration: RESTful API enables integration with other systems for automated document submission and retrieval"
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +40,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     39
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/RostislavDugin/postgresus",
@@ -12,6 +14,21 @@
   "github_stars": "2711",
   "logo": "/icons/postgresus.webp",
   "description": "Postgresus is a lightweight multi-tenant PostgreSQL management platform with a web UI for creating and managing databases, users, and access. It streamlines multi-db setups for developers and hosting providers.",
+  "tagline": null,
+  "features": [
+    "Multi-tenant management: Create and manage multiple PostgreSQL databases from a single interface.",
+    "User provisioning: Quickly create database users with customizable permissions and access controls.",
+    "Database creation: Spin up new databases with predefined templates and configurations.",
+    "Access control: Manage user permissions and roles across multiple databases and tenants.",
+    "Web interface: Administer databases through a lightweight, responsive web UI without command-line access.",
+    "Connection strings: Generate and display connection strings for easy application integration.",
+    "Resource monitoring: Track database sizes, connection counts, and resource usage per tenant.",
+    "Backup management: Schedule and manage database backups with retention policies.",
+    "Template databases: Create database templates for consistent provisioning across tenants.",
+    "API access: Automate database provisioning and management through a RESTful API.",
+    "Hosting provider ready: Designed for hosting providers managing databases for multiple clients.",
+    "Lightweight design: Minimal resource footprint suitable for shared hosting environments."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

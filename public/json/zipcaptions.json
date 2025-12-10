@@ -4,6 +4,8 @@
   "categories": [
     59
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/jptrsn/zip-captions",
@@ -12,6 +14,21 @@
   "github_stars": "56",
   "logo": "/icons/zipcaptions.webp",
   "description": "zip-captions is a self-hosted utility that collects and packages subtitle or caption files into zip archives for distribution or backup, often used alongside media automation workflows.",
+  "tagline": null,
+  "features": [
+    "Subtitle collection: Gather subtitle and caption files from multiple sources into organized collections.",
+    "Archive creation: Package collected subtitles into zip files for easy distribution and backup.",
+    "Format support: Handle SRT, VTT, ASS, and other common subtitle formats with automatic detection.",
+    "Batch processing: Process multiple subtitle files simultaneously to create archives efficiently.",
+    "Metadata preservation: Maintain language codes, encoding information, and file structure in archives.",
+    "Web interface: Upload and manage subtitle files through a browser-based interface without command-line tools.",
+    "Automation integration: Connect with media automation workflows to archive subtitles alongside video downloads.",
+    "Language filtering: Select specific subtitle languages to include or exclude from archive creation.",
+    "Duplicate detection: Identify and skip duplicate subtitle files to keep archives clean and minimal.",
+    "Custom naming: Configure archive naming patterns based on media titles, dates, or custom templates.",
+    "Download management: Generate download links for created archives with optional expiration times.",
+    "Storage organization: Automatically organize subtitle archives by media type, date, or custom categories."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

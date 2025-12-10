@@ -4,6 +4,8 @@
   "categories": [
     120
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/damongolding/immich-kiosk",
@@ -12,6 +14,17 @@
   "github_stars": "1188",
   "logo": "/icons/immich-kiosk.webp",
   "description": "Immich Kiosk is a simplified read only front end for Immich designed for kiosks and shared displays. It focuses on browsing and viewing photos with minimal controls, using Immich as the backend media source.",
+  "tagline": null,
+  "features": [
+    "Kiosk Mode: Simplified, read-only interface designed for public or shared displays.",
+    "Minimal Controls: Streamlined UI with only essential navigation for easy viewing.",
+    "Immich Backend: Uses your existing Immich server as the photo source.",
+    "Shared Display: Perfect for waiting rooms, offices, or family common areas.",
+    "Touch-Friendly: Optimized for touchscreen interaction on tablets and kiosks.",
+    "Auto-Refresh: Automatically updates to show new photos from Immich.",
+    "No Editing: Read-only access prevents accidental modifications to your library.",
+    "Customizable Views: Configure which albums or photos to display in kiosk mode."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": true
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

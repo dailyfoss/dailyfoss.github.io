@@ -4,6 +4,8 @@
   "categories": [
     186
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/umami-software/umami",
@@ -12,6 +14,17 @@
   "github_stars": "33977",
   "logo": "/icons/umami.webp",
   "description": "Umami is a self-hosted, privacy-friendly web analytics platform. It uses a small tracking script and offers clean dashboards, goal tracking, and multi-site support, with an optional hosted cloud service.",
+  "tagline": null,
+  "features": [
+    "Web Analytics: Monitor web traffic and user sessions with a GA-like dashboard to easily track conversion, web vitals, and revenue metrics.",
+    "Privacy Controls: Ensure GDPR and CCPA compliance with built-in consent management, data anonymization, and configurable retention policies for user data.",
+    "Multi-Site Support: Manage analytics for multiple websites from a single dashboard with unified reporting and cross-site comparison capabilities.",
+    "Goal Tracking: Define and monitor custom conversion goals with event-based tracking to measure success of key user actions and campaigns.",
+    "User Attribution: Track user journeys across devices and sessions with cross-domain tracking, UTM parameters, and referral source attribution for accurate marketing ROI.",
+    "Lightweight Tracking: Minimal script size ensures fast page loads without impacting site performance or user experience.",
+    "Team Collaboration: Share insights with role-based access controls, collaborative annotations on charts, and scheduled report delivery to keep stakeholders aligned.",
+    "API Integrations: Connect with third-party tools via REST APIs, webhooks, and native integrations to centralize data and automate workflows across your stack."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

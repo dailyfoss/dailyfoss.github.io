@@ -4,6 +4,8 @@
   "categories": [
     57
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/miniflux/v2",
@@ -12,6 +14,17 @@
   "github_stars": "8446",
   "logo": "/icons/miniflux.webp",
   "description": "Miniflux is a minimalist self-hosted RSS feed reader focused on performance and simplicity. It features a clean UI, keyboard shortcuts, API access, and supports external integrations like Fever and APIs.",
+  "tagline": null,
+  "features": [
+    "Feed management: Subscribe to RSS and Atom feeds with automatic updates and error handling for broken sources.",
+    "Keyboard shortcuts: Navigate and manage articles using vim-style keyboard commands for efficient reading workflow.",
+    "Read later: Save articles for offline reading or integration with Pocket, Instapaper, and Wallabag services.",
+    "Full-text scraping: Extract complete article content from feeds that only provide summaries or excerpts.",
+    "Fever API: Connect mobile RSS readers and third-party clients using the Fever-compatible API protocol.",
+    "Article filtering: Create rules to automatically mark, star, or hide articles based on keywords and patterns.",
+    "OPML import: Migrate feed subscriptions from other readers using standard OPML export files.",
+    "Minimal interface: Read articles in a distraction-free layout optimized for speed and content focus."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

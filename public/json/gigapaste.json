@@ -4,6 +4,8 @@
   "categories": [
     118
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/NRicode/GigaPaste",
@@ -12,6 +14,17 @@
   "github_stars": "2",
   "logo": "/icons/gigapaste.webp",
   "description": "GigaPaste is a self-hosted pastebin application that supports syntax highlighting, expiration controls, and public or private snippets. Ideal for sharing logs, code, or notes within development or teaching environments.",
+  "tagline": null,
+  "features": [
+    "Syntax Highlighting: Display code snippets with language-specific syntax highlighting for improved readability.",
+    "Expiration Controls: Set automatic expiration times for pastes to ensure temporary sharing and cleanup.",
+    "Privacy Options: Create public or private snippets with optional password protection for sensitive content.",
+    "Code Sharing: Share logs, code, and text snippets quickly within development or teaching environments.",
+    "Multiple Languages: Support for numerous programming languages and markup formats.",
+    "Simple Interface: Minimal, distraction-free UI focused on quick paste creation and viewing.",
+    "Self-Hosted Security: Keep shared content on your own infrastructure without third-party dependencies.",
+    "Team Collaboration: Facilitate code review and debugging by sharing snippets internally."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

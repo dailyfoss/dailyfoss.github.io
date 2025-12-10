@@ -4,6 +4,8 @@
   "categories": [
     102
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/murtaza-nasir/speakr",
@@ -12,6 +14,21 @@
   "github_stars": "2404",
   "logo": "/icons/speakr.webp",
   "description": "Speakr is a self-hosted text-to-speech service with a web UI for entering text and generating audio files. It can integrate into other apps via a simple HTTP API.",
+  "tagline": null,
+  "features": [
+    "Text-to-speech: Converts text into natural-sounding speech audio.",
+    "Multiple voices: Offers various voice options with different accents and styles.",
+    "Language support: Generates speech in multiple languages.",
+    "Audio export: Downloads generated speech as MP3 or WAV files.",
+    "SSML support: Uses Speech Synthesis Markup Language for advanced control.",
+    "Pronunciation control: Adjusts pronunciation of specific words or phrases.",
+    "Speed adjustment: Controls speech rate from slow to fast.",
+    "Pitch control: Modifies voice pitch for different effects.",
+    "Web interface: Generates speech through simple browser interface.",
+    "API access: Integrates TTS into applications via HTTP API.",
+    "Batch processing: Converts multiple text inputs to audio files.",
+    "Preview playback: Listens to generated speech before downloading."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

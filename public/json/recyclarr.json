@@ -4,6 +4,8 @@
   "categories": [
     166
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/recyclarr/recyclarr",
@@ -12,6 +14,21 @@
   "github_stars": "1727",
   "logo": "/icons/recyclarr.webp",
   "description": "Recyclarr is a CLI tool for syncing custom formats and quality profiles between Radarr/Sonarr and community templates using YAML configuration.",
+  "tagline": null,
+  "features": [
+    "Custom format sync: Apply community-maintained quality profiles to Radarr and Sonarr automatically.",
+    "YAML configuration: Define all settings in version-controlled YAML files for reproducible setups.",
+    "TRaSH Guides integration: Use curated quality profiles from the TRaSH Guides community.",
+    "Quality profile management: Synchronize preferred words, release profiles, and scoring across instances.",
+    "Dry-run mode: Preview changes before applying them to avoid unintended modifications.",
+    "Multi-instance support: Manage multiple Radarr and Sonarr installations from a single configuration.",
+    "Automated updates: Run on a schedule to keep quality profiles in sync with community recommendations.",
+    "Custom scoring: Override default scores for specific release groups or quality attributes.",
+    "Template system: Create reusable configuration templates for consistent setups across environments.",
+    "CLI interface: Execute sync operations from the command line for scripting and automation.",
+    "Validation checks: Verify configuration syntax and API connectivity before applying changes.",
+    "Rollback support: Revert to previous configurations if new profiles cause issues."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

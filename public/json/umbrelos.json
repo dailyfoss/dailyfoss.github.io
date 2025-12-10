@@ -4,6 +4,8 @@
   "categories": [
     121
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/getumbrel/umbrel",
@@ -12,6 +14,21 @@
   "github_stars": "9830",
   "logo": "/icons/umbrelos.webp",
   "description": "Umbrel is a self-hosted OS and app platform for running personal servers. It provides a one-click app store for Bitcoin, Lightning, Nextcloud, and more, managed via an easy-to-use web dashboard.",
+  "tagline": null,
+  "features": [
+    "App store: Install apps with one click from a curated store including Bitcoin, Nextcloud, and media servers.",
+    "Web dashboard: Manage your server and apps through an intuitive web interface accessible from any browser.",
+    "Bitcoin node: Run a full Bitcoin and Lightning node for sovereign financial operations.",
+    "Automatic updates: Keep apps and the OS updated automatically with minimal manual intervention.",
+    "App management: Start, stop, and configure apps easily without command-line knowledge.",
+    "User-friendly: Designed for non-technical users to run their own server without complexity.",
+    "Privacy-focused: Host your own services and data without relying on third-party cloud providers.",
+    "Raspberry Pi support: Run on affordable hardware like Raspberry Pi for low-cost self-hosting.",
+    "Backup and restore: Protect your data with built-in backup and restore functionality.",
+    "Community apps: Access community-contributed apps beyond the official store.",
+    "Remote access: Access your server securely from anywhere with built-in remote access features.",
+    "Resource monitoring: Monitor system resources and app performance from the dashboard."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

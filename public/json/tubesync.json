@@ -4,6 +4,8 @@
   "categories": [
     120
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/meeb/tubesync",
@@ -12,6 +14,21 @@
   "github_stars": "2530",
   "logo": "/icons/tubesync.webp",
   "description": "Tubesync is a self-hosted tool that syncs YouTube channels and playlists to media servers like Jellyfin, downloading and organizing videos automatically with minimal configuration.",
+  "tagline": null,
+  "features": [
+    "Channel synchronization: Automatically sync YouTube channels to your media server library.",
+    "Playlist support: Download entire playlists and keep them updated as new videos are added.",
+    "Media server integration: Organize downloads for seamless integration with Jellyfin, Plex, or Emby.",
+    "Automatic downloads: Download new videos automatically as channels publish them.",
+    "Quality selection: Choose preferred video quality and format for downloads.",
+    "Metadata management: Fetch and organize video metadata for proper media server cataloging.",
+    "Scheduling: Configure download schedules to run during off-peak hours or specific times.",
+    "Filtering rules: Set rules to download only specific videos based on title, duration, or upload date.",
+    "Storage management: Monitor storage usage and set limits to prevent disk space issues.",
+    "Web interface: Configure and monitor synchronization through a straightforward web interface.",
+    "Minimal configuration: Get started quickly with sensible defaults and simple setup process.",
+    "Background operation: Run continuously in the background with minimal resource usage."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

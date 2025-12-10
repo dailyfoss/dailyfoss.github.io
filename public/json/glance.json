@@ -4,6 +4,8 @@
   "categories": [
     37
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/glanceapp/glance",
@@ -12,6 +14,17 @@
   "github_stars": "30154",
   "logo": "/icons/glance.webp",
   "description": "Glance is a dynamic homepage and dashboard builder for self-hosted setups. It allows users to display widgets for services, schedules, weather, or links, all configured via simple YAML files.",
+  "tagline": null,
+  "features": [
+    "Dynamic Homepage: Build customizable homepages with real-time data from various services.",
+    "Widget System: Display weather, calendars, RSS feeds, bookmarks, and service status in modular widgets.",
+    "YAML Configuration: Define your entire dashboard layout through simple, readable YAML files.",
+    "Service Integration: Connect to self-hosted services and external APIs for live data display.",
+    "Responsive Design: Automatically adapts to different screen sizes for desktop and mobile viewing.",
+    "Minimal Setup: Quick deployment with sensible defaults and easy customization.",
+    "Theme Support: Customize colors and appearance to match your preferences.",
+    "Lightweight Performance: Fast loading and minimal resource usage for always-on dashboard displays."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

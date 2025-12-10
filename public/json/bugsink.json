@@ -4,6 +4,8 @@
   "categories": [
     93
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/bugsink/bugsink",
@@ -12,6 +14,16 @@
   "github_stars": "1271",
   "logo": "/icons/bugsink.webp",
   "description": "Bugsink is a self-hosted error monitoring and reporting tool for receiving error logs from applications and visualizing them in a clean UI. Ideal for dev teams who want to keep everything in-house.",
+  "tagline": null,
+  "features": [
+    "Error Monitoring: Receive and track application errors in real-time. Catch bugs fast.",
+    "Clean Visualization: View error logs through intuitive web interface. Easy debugging.",
+    "Error Grouping: Automatically group similar errors together. Reduce noise.",
+    "Stack Traces: Detailed stack traces for quick debugging. Find root causes.",
+    "Team Collaboration: Share error reports with development team. Work together.",
+    "Self-Hosted: Keep error data on your own infrastructure. Complete privacy.",
+    "In-House Solution: Perfect for teams wanting data control. No third-party access."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +37,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

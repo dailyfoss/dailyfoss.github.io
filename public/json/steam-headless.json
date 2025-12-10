@@ -4,6 +4,8 @@
   "categories": [
     69
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Steam-Headless/docker-steam-headless",
@@ -12,6 +14,21 @@
   "github_stars": "2458",
   "logo": "/icons/steam-headless.webp",
   "description": "docker-steam-headless provides a self-hosted, headless Steam client in Docker for remote game downloads or streaming setups. It exposes web-based management for sessions.",
+  "tagline": null,
+  "features": [
+    "Headless Steam: Runs Steam client in Docker without physical display.",
+    "Remote access: Connects to Steam via web browser or VNC.",
+    "Game downloads: Downloads and manages Steam games on server.",
+    "Streaming support: Streams games to other devices via Steam Link or Moonlight.",
+    "Proton compatibility: Runs Windows games on Linux with Proton integration.",
+    "Save management: Backs up and syncs game saves across devices.",
+    "Workshop support: Downloads and manages Steam Workshop content.",
+    "Controller support: Passes through USB controllers for game input.",
+    "Audio streaming: Routes game audio to remote clients.",
+    "GPU passthrough: Leverages GPU acceleration for better performance.",
+    "Automated updates: Keeps games updated automatically in background.",
+    "Web interface: Manages Steam library through browser-based UI."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

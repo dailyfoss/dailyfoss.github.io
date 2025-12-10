@@ -4,6 +4,8 @@
   "categories": [
     156
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/zammad/zammad",
@@ -12,6 +14,21 @@
   "github_stars": "5252",
   "logo": "/icons/zammad.webp",
   "description": "Zammad is a self-hosted helpdesk and ticketing system. It integrates with email, chat, and telephony, supports multi-channel tickets, and exposes a modern web UI and APIs, alongside commercial cloud hosting.",
+  "tagline": null,
+  "features": [
+    "Multi-channel ticketing: Manage support requests from email, chat, phone, and social media in one unified interface.",
+    "Email integration: Convert incoming emails to tickets automatically with threading and attachment handling.",
+    "Knowledge base: Build a searchable help center with articles that can be linked to tickets or accessed by customers.",
+    "Ticket workflows: Automate ticket routing, assignment, and status changes based on customizable rules and triggers.",
+    "Agent collaboration: Add internal notes, mention colleagues, and collaborate on tickets without exposing details to customers.",
+    "SLA management: Define and track service level agreements with automatic escalations for overdue tickets.",
+    "Customer portal: Provide a self-service interface where customers can submit tickets and track their status.",
+    "Reporting dashboard: Analyze ticket volume, response times, and agent performance with built-in analytics.",
+    "Text modules: Create reusable response templates for common questions to improve agent efficiency.",
+    "Time tracking: Log time spent on tickets for billing, reporting, and workload analysis.",
+    "Mobile apps: Access tickets and respond to customers from iOS and Android devices with native applications.",
+    "API access: Integrate with external systems and automate ticket creation using comprehensive REST APIs."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

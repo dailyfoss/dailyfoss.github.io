@@ -4,6 +4,8 @@
   "categories": [
     39
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/dbgate/dbgate",
@@ -12,6 +14,15 @@
   "github_stars": "6577",
   "logo": "/icons/dbgate.webp",
   "description": "DbGate is a modern database management tool with a web-based IDE for SQL, JSON, and CSV. It supports many database types like PostgreSQL, MySQL, MongoDB, and SQLite. Easy to deploy in Docker for self-hosting.",
+  "tagline": null,
+  "features": [
+    "Multi-Database Support: Connect to PostgreSQL, MySQL, MongoDB, SQLite, and more. Universal compatibility.",
+    "Web-Based IDE: Full-featured SQL editor in your browser. Code anywhere, anytime.",
+    "Data Export: Export to JSON, CSV, and other formats easily. Flexible data handling.",
+    "Query Builder: Visual tools for building complex queries. No SQL expertise required.",
+    "Schema Management: View and modify database structures visually. Intuitive database design.",
+    "Self-Hosted: Run your database management tool privately. Complete control and security."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

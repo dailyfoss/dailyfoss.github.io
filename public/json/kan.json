@@ -4,6 +4,8 @@
   "categories": [
     85
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/kanbn/kan",
@@ -12,6 +14,19 @@
   "github_stars": "3862",
   "logo": "/icons/kan.webp",
   "description": "kan is a minimalist self hosted kanban board for personal or team task management. It provides columns, cards, drag and drop reordering and simple metadata, focusing on speed and a distraction free workflow.",
+  "tagline": null,
+  "features": [
+    "Minimalist Design: Clean, distraction-free interface focused on task management. Get things done without complexity.",
+    "Kanban Workflow: Columns and cards with drag-and-drop reordering. Visualize work progress intuitively.",
+    "Fast Performance: Lightweight codebase with instant load times and responsive interactions. Work without delays.",
+    "Markdown Support: Write task descriptions and notes in markdown format. Rich text without heavy editors.",
+    "Keyboard Shortcuts: Navigate and manage tasks efficiently with keyboard commands. Speed up your workflow.",
+    "Local Storage: Tasks stored locally with optional sync capabilities. Own your data completely.",
+    "Quick Setup: No complex configuration required, start using immediately. Perfect for personal projects.",
+    "Task Metadata: Add due dates, priorities, and tags to organize tasks. Track important details simply.",
+    "Archive Completed: Move finished tasks to archive while keeping history. Maintain clean active boards.",
+    "Export & Import: Backup tasks or migrate between instances with JSON export. Portable task data."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +40,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

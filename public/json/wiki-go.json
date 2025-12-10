@@ -4,6 +4,8 @@
   "categories": [
     193
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/leomoon-studios/wiki-go",
@@ -12,6 +14,21 @@
   "github_stars": "454",
   "logo": "/icons/wiki-go.webp",
   "description": "wiki-go is a lightweight self-hosted wiki engine written in Go. It focuses on simplicity, markdown-based pages, fast performance, and easy deployment, making it suitable for small documentation sites and personal knowledge bases.",
+  "tagline": null,
+  "features": [
+    "Markdown editing: Write and edit wiki pages using markdown syntax for simple formatting.",
+    "Fast performance: Benefit from Go's efficiency with quick page loads and minimal resource usage.",
+    "File-based storage: Store wiki content as plain text files for easy backup and version control.",
+    "Search functionality: Find content quickly with full-text search across all wiki pages.",
+    "Page linking: Create internal links between pages to build an interconnected knowledge base.",
+    "Version history: Track page changes over time with built-in revision history and diff viewing.",
+    "Syntax highlighting: Display code blocks with proper syntax highlighting for technical documentation.",
+    "Attachment support: Upload and embed images or files within wiki pages.",
+    "User authentication: Protect your wiki with password authentication and user management.",
+    "Responsive design: Access and edit wiki pages from any device with a mobile-friendly interface.",
+    "Export options: Export pages or entire wikis to HTML or PDF for offline distribution.",
+    "Minimal dependencies: Deploy easily with a single binary and no external database requirements."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

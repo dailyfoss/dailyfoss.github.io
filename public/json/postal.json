@@ -4,6 +4,8 @@
   "categories": [
     53
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/postalserver/postal",
@@ -12,6 +14,21 @@
   "github_stars": "16095",
   "logo": "/icons/postal.webp",
   "description": "Postal is a self-hosted mail delivery platform designed for sending and managing large volumes of email. It supports SMTP, webhooks, message logging, and domain management with full control over infrastructure.",
+  "tagline": null,
+  "features": [
+    "SMTP delivery: Send transactional and marketing emails through a reliable SMTP server infrastructure.",
+    "Webhook integration: Receive real-time notifications for delivery events, bounces, and opens via webhooks.",
+    "Message logging: Track all sent emails with detailed logs including delivery status and recipient activity.",
+    "Domain management: Configure and manage multiple sending domains with DKIM and SPF authentication.",
+    "Queue management: Monitor and control email queues with retry logic and delivery scheduling.",
+    "Bounce handling: Automatically process bounces and suppress invalid email addresses to maintain sender reputation.",
+    "API access: Send emails programmatically using a RESTful API with comprehensive documentation.",
+    "IP pool management: Distribute sending across multiple IP addresses to optimize deliverability and reputation.",
+    "Suppression lists: Maintain lists of unsubscribed or bounced addresses to ensure compliance and reduce spam.",
+    "Statistics dashboard: View sending metrics, delivery rates, and engagement statistics in real-time.",
+    "Multi-organization: Support multiple organizations or clients with isolated email infrastructure and credentials.",
+    "Rate limiting: Control sending rates per domain or organization to prevent abuse and maintain deliverability."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

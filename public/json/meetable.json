@@ -4,6 +4,8 @@
   "categories": [
     55
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/aaronpk/Meetable",
@@ -12,6 +14,21 @@
   "github_stars": "156",
   "logo": "/icons/meetable.webp",
   "description": "Meetable is a self-hosted event listing platform that supports IndieWeb standards. It allows managing upcoming and past events, RSVP tracking, and embeds with a responsive interface.",
+  "tagline": null,
+  "features": [
+    "Event management: Create and publish upcoming events with dates, locations, and descriptions.",
+    "RSVP tracking: Allow attendees to RSVP and track who's coming to each event.",
+    "IndieWeb support: Implement Microformats and Webmention standards for decentralized event sharing.",
+    "Calendar integration: Export events in iCal format for import into calendar applications.",
+    "Past event archive: Maintain a searchable archive of previous events with attendance records.",
+    "Embed widgets: Generate embeddable event listings for display on external websites.",
+    "Responsive design: Display events beautifully on desktop, tablet, and mobile devices.",
+    "Event categories: Organize events by type, topic, or series for easier discovery.",
+    "Location mapping: Display event locations on maps with directions and venue information.",
+    "Notification system: Send reminders to attendees before events via email or RSS.",
+    "Multi-organizer support: Allow multiple users to create and manage events.",
+    "Search functionality: Find events by date, location, category, or keyword."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

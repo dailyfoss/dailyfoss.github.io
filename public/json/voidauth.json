@@ -4,6 +4,8 @@
   "categories": [
     15
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/voidauth/voidauth",
@@ -12,6 +14,21 @@
   "github_stars": "685",
   "logo": "/icons/voidauth.webp",
   "description": "Voidauth is a self-hosted authentication and authorization service that handles user registration, login, and token-based access for multiple applications through a web UI and REST API.",
+  "tagline": null,
+  "features": [
+    "User authentication: Handle user registration, login, and password management for applications.",
+    "Token-based auth: Issue JWT tokens for stateless authentication across services.",
+    "Multi-application: Manage authentication for multiple applications from one service.",
+    "User management: Create and manage user accounts through web UI and API.",
+    "Role-based access: Define roles and permissions to control access to resources.",
+    "OAuth2 support: Provide OAuth2 authentication for third-party application integration.",
+    "Session management: Track active sessions and provide logout functionality.",
+    "Password policies: Enforce password complexity and expiration requirements.",
+    "Two-factor authentication: Add extra security with optional 2FA support.",
+    "API integration: Integrate authentication into applications using REST API.",
+    "Admin dashboard: Manage users, roles, and settings through web administration panel.",
+    "Audit logging: Track authentication events and user actions for security monitoring."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

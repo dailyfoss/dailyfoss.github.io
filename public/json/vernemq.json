@@ -4,6 +4,8 @@
   "categories": [
     108
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/vernemq/vernemq",
@@ -12,6 +14,21 @@
   "github_stars": "3491",
   "logo": "/icons/vernemq.webp",
   "description": "VerneMQ is a scalable, high-availability MQTT broker designed for IoT and messaging workloads. It supports clustering, plugins, and standard MQTT clients, operated through configuration and CLI tools.",
+  "tagline": null,
+  "features": [
+    "MQTT broker: Provide MQTT messaging for IoT devices and applications with full protocol support.",
+    "High availability: Run in clustered mode for fault tolerance and automatic failover.",
+    "Scalability: Scale horizontally by adding nodes to handle millions of concurrent connections.",
+    "Plugin system: Extend functionality with plugins for authentication, authorization, and custom logic.",
+    "WebSocket support: Allow web browsers to connect via MQTT over WebSockets.",
+    "Bridge mode: Bridge to other MQTT brokers for hybrid cloud or multi-site deployments.",
+    "QoS levels: Support all MQTT quality of service levels for reliable message delivery.",
+    "Retained messages: Store and deliver retained messages to new subscribers automatically.",
+    "Session persistence: Maintain client sessions across disconnections for reliable messaging.",
+    "Access control: Define fine-grained access controls for topics and client permissions.",
+    "Monitoring: Monitor broker performance and client connections through built-in metrics.",
+    "CLI management: Manage broker configuration and operations through command-line tools."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     166
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/stabldev/torrra",
@@ -12,6 +14,21 @@
   "github_stars": "953",
   "logo": "/icons/torrra.webp",
   "description": "Torrra is a self-hosted torrent management application that centralizes torrent searching, adding, and monitoring across multiple clients using a unified web interface.",
+  "tagline": null,
+  "features": [
+    "Multi-client support: Manage torrents across multiple torrent clients from a single interface.",
+    "Torrent search: Search for torrents across multiple indexers and trackers without visiting each site.",
+    "Unified dashboard: View all active torrents from different clients in one consolidated view.",
+    "Remote management: Control torrent clients running on different machines from a central web interface.",
+    "Download monitoring: Track download progress, speeds, and completion status across all clients.",
+    "Torrent adding: Add torrents to any connected client by URL, magnet link, or file upload.",
+    "Client switching: Move torrents between different clients for load balancing or client-specific features.",
+    "Statistics: View aggregate statistics on downloads, upload ratios, and bandwidth usage.",
+    "Notifications: Receive alerts when torrents complete or encounter errors.",
+    "Search filters: Filter search results by size, seeders, quality, or other criteria to find the best torrents.",
+    "Category management: Organize torrents with categories and labels for better organization.",
+    "Mobile access: Manage torrents from mobile devices with a responsive web interface."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

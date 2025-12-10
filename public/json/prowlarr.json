@@ -4,6 +4,8 @@
   "categories": [
     166
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Prowlarr/Prowlarr",
@@ -12,6 +14,21 @@
   "github_stars": "5595",
   "logo": "/icons/prowlarr.webp",
   "description": "Prowlarr is a self-hosted indexer manager for Usenet and torrent indexers. It integrates with Radarr, Sonarr, and Lidarr for managing indexer sources and fetching metadata via a unified UI.",
+  "tagline": null,
+  "features": [
+    "Indexer management: Centrally manage Usenet and torrent indexers for all your *arr applications.",
+    "Automatic sync: Synchronize indexer configurations across Radarr, Sonarr, Lidarr, and Readarr automatically.",
+    "Search aggregation: Search across all configured indexers simultaneously from a unified interface.",
+    "Indexer testing: Test indexer connectivity and search capabilities to ensure proper configuration.",
+    "Category mapping: Map indexer categories to application-specific categories for accurate results.",
+    "Statistics tracking: Monitor indexer performance, success rates, and response times.",
+    "Custom filters: Create filters to exclude unwanted results based on size, quality, or other criteria.",
+    "Proxy support: Route indexer traffic through proxies or VPNs for privacy and access.",
+    "API integration: Connect with download clients and applications using standardized APIs.",
+    "Notification system: Receive alerts for indexer failures, configuration issues, or health problems.",
+    "History tracking: View search history and indexer usage across all connected applications.",
+    "Flaresolverr support: Bypass Cloudflare protection on indexers using Flaresolverr integration."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

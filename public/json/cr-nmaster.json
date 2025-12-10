@@ -4,6 +4,8 @@
   "categories": [
     158
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/fccview/cronmaster",
@@ -12,6 +14,15 @@
   "github_stars": "861",
   "logo": "/icons/cr-nmaster.webp",
   "description": "CronMaster is a self-hosted task scheduler for running cron jobs with a visual dashboard. It includes logs, scheduling UI, alerting features, and collaborative management for automated workflows.",
+  "tagline": null,
+  "features": [
+    "Visual Scheduling: Create cron jobs with intuitive dashboard. No cron syntax needed.",
+    "Job Monitoring: Track execution history and status. Full visibility into tasks.",
+    "Alert System: Get notified when jobs fail or succeed. Stay informed automatically.",
+    "Collaborative Management: Team access for shared workflow control. Work together efficiently.",
+    "Execution Logs: Detailed output from every job run. Debug issues quickly.",
+    "Self-Hosted: Run your task scheduler on your infrastructure. Complete control and privacy."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

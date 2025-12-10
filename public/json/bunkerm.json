@@ -4,6 +4,8 @@
   "categories": [
     36
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/bunkeriot/BunkerM",
@@ -12,6 +14,15 @@
   "github_stars": "325",
   "logo": "/icons/bunkerm.webp",
   "description": "BunkerM is a self-hosted dashboard for managing and monitoring Docker containers or apps. It features resource stats, controls for containers, and a clean web UI designed for local servers or NAS setups.",
+  "tagline": null,
+  "features": [
+    "Docker Management: Monitor and control Docker containers easily. Visual container control.",
+    "Resource Stats: Track CPU, memory, and network usage. Performance insights.",
+    "Container Controls: Start, stop, and restart containers from web UI. Simple management.",
+    "Clean Interface: User-friendly dashboard for server management. Intuitive design.",
+    "NAS Optimized: Perfect for home servers and NAS setups. Home lab ready.",
+    "Self-Hosted: Run your own container management dashboard. Complete control."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

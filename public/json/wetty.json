@@ -4,6 +4,8 @@
   "categories": [
     135
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/butlerx/wetty",
@@ -12,6 +14,21 @@
   "github_stars": "5036",
   "logo": "/icons/wetty.webp",
   "description": "Wetty is a self-hosted web-based terminal that exposes SSH access through the browser. It replaces traditional terminal apps with a responsive web UI, letting users reach shell sessions securely from anywhere without extra client software.",
+  "tagline": null,
+  "features": [
+    "Browser-based terminal: Access SSH sessions directly from any web browser without installing terminal software.",
+    "SSH connectivity: Connect to remote servers using standard SSH protocol with key or password authentication.",
+    "Responsive interface: Use the terminal on desktop, tablet, or mobile devices with touch-friendly controls.",
+    "Copy-paste support: Transfer commands and output between your local system and the terminal easily.",
+    "Session persistence: Maintain terminal sessions even when closing the browser tab with reconnection support.",
+    "Multiple sessions: Open multiple terminal tabs or windows to work on different servers simultaneously.",
+    "Customizable appearance: Adjust font size, color schemes, and terminal themes for comfortable viewing.",
+    "Keyboard shortcuts: Use familiar terminal keyboard shortcuts for efficient command-line navigation.",
+    "SSL/TLS encryption: Secure all terminal traffic with HTTPS to protect credentials and sensitive data.",
+    "Authentication options: Integrate with existing authentication systems or use built-in user management.",
+    "Lightweight deployment: Run on minimal resources making it suitable for jump boxes or bastion hosts.",
+    "Audit logging: Record terminal sessions for compliance and security review purposes."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

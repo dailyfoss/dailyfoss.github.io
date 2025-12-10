@@ -4,6 +4,8 @@
   "categories": [
     15
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/ValueMelody/melody-auth",
@@ -12,6 +14,21 @@
   "github_stars": "564",
   "logo": "/icons/melody-auth.webp",
   "description": "Melody Auth is an authentication service designed for SSO and user/token management. It supports OAuth2 and a minimal admin UI for managing users, apps, and permissions in self-hosted environments.",
+  "tagline": null,
+  "features": [
+    "OAuth2 provider: Implement single sign-on for multiple applications with OAuth2 protocol support.",
+    "User management: Create and manage user accounts with profiles, passwords, and permissions.",
+    "Application registry: Register and configure OAuth2 client applications with redirect URIs and scopes.",
+    "Token management: Issue and validate access tokens and refresh tokens for authenticated sessions.",
+    "Permission system: Define and assign granular permissions to users and applications.",
+    "Admin interface: Manage users, applications, and permissions through a web-based admin panel.",
+    "Multi-factor authentication: Enhance security with TOTP-based two-factor authentication.",
+    "Session management: Track active user sessions and provide logout functionality.",
+    "Audit logging: Record authentication events and permission changes for security monitoring.",
+    "API access: Programmatically manage users and applications through REST API.",
+    "Custom branding: Customize login pages with your organization's logo and colors.",
+    "LDAP integration: Connect to existing LDAP directories for centralized user authentication."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     80
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/mdshack/shotshare",
@@ -12,6 +14,21 @@
   "github_stars": "168",
   "logo": "/icons/shotshare.webp",
   "description": "Shotshare is a self-hosted screenshot and image sharing service. It lets users quickly upload captures, get shareable links, and manage their image history in a clean web UI.",
+  "tagline": null,
+  "features": [
+    "Screenshot uploads: Quickly uploads screenshots and images via web interface or API.",
+    "Shareable links: Generates short URLs for instant image sharing.",
+    "Direct image hosting: Serves images directly without requiring viewers to visit a page.",
+    "Upload history: Maintains a gallery of all uploaded images for easy access.",
+    "Drag and drop: Supports drag-and-drop file uploads in the browser.",
+    "API access: Provides REST API for integration with screenshot tools like ShareX.",
+    "Custom domains: Hosts images on your own domain for branding.",
+    "Image deletion: Removes uploaded images manually or with automatic expiration.",
+    "No registration: Allows anonymous uploads without requiring user accounts.",
+    "Thumbnail generation: Creates thumbnails for faster gallery loading.",
+    "Storage management: Tracks storage usage and sets upload limits.",
+    "Embed codes: Generates HTML and Markdown embed codes for images."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     165
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/GauthierNelkinsky/ShipShipShip",
@@ -12,6 +14,21 @@
   "github_stars": "177",
   "logo": "/icons/shipshipship.webp",
   "description": "ShipShipShip is a self-hosted deployment dashboard for managing and tracking releases across environments. It helps teams visualize deployments and versions with a simple, opinionated release UI.",
+  "tagline": null,
+  "features": [
+    "Deployment tracking: Visualizes which versions are deployed across environments.",
+    "Release timeline: Displays deployment history with timestamps and version numbers.",
+    "Environment comparison: Shows version differences between dev, staging, and production.",
+    "Team notifications: Alerts team members when new deployments occur.",
+    "Rollback tracking: Records rollback events and reasons for audit purposes.",
+    "Service grouping: Organizes multiple services and microservices in unified view.",
+    "Version badges: Generates embeddable badges showing current deployment status.",
+    "API integration: Connects with CI/CD pipelines to auto-update deployment status.",
+    "Custom environments: Defines unlimited custom environments beyond standard dev/staging/prod.",
+    "Deployment notes: Attaches release notes and changelogs to each deployment.",
+    "Access control: Restricts visibility and editing permissions by team role.",
+    "Webhook support: Triggers external systems on deployment events."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

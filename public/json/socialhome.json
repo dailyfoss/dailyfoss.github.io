@@ -4,6 +4,8 @@
   "categories": [
     148
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "gitlab.com/jaywink/socialhome",
@@ -12,6 +14,21 @@
   "github_stars": "9",
   "logo": "/icons/socialhome.webp",
   "description": "Socialhome is a self-hosted, federated social media platform supporting streams, profiles, and ActivityPub federation. It allows rich content posting and follows in a grid-like UI.",
+  "tagline": null,
+  "features": [
+    "Federated social: Connects with ActivityPub and Diaspora networks.",
+    "Content streams: Displays posts in customizable timeline streams.",
+    "Rich content: Supports text, images, videos, and embedded media in posts.",
+    "Profile pages: Creates personal profile pages with bio and content grid.",
+    "Following system: Follows users across federated social networks.",
+    "Content visibility: Controls post visibility as public, followers-only, or private.",
+    "Hashtag support: Organizes and discovers content with hashtags.",
+    "Reactions: Likes, shares, and comments on posts from federated users.",
+    "Notifications: Alerts on interactions, mentions, and new followers.",
+    "Search functionality: Finds users and content across the network.",
+    "Mobile responsive: Accesses social feed from any device.",
+    "API access: Integrates with third-party clients via API."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

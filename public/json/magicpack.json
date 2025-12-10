@@ -4,6 +4,8 @@
   "categories": [
     165
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/alex-swki/magicpack",
@@ -12,6 +14,19 @@
   "github_stars": "48",
   "logo": "/icons/magicpack.webp",
   "description": "Magicpack is a simple tool for managing image or asset packs through a minimal web interface. It helps developers and designers group and organize graphic resources with easy upload and search.",
+  "tagline": null,
+  "features": [
+    "Asset organization: Group images and graphics into collections for project-based management.",
+    "Bulk upload: Upload multiple files simultaneously to speed up asset library creation.",
+    "Tag system: Apply custom tags to assets for quick filtering and categorization.",
+    "Search interface: Find specific assets using filename, tag, or metadata search.",
+    "Preview generation: Automatically create thumbnails for quick visual identification of assets.",
+    "Download management: Export individual files or entire collections as compressed archives.",
+    "Access control: Set permissions to control who can view, upload, or modify asset packs.",
+    "Metadata editing: Add descriptions, keywords, and custom fields to assets for better organization.",
+    "Version tracking: Keep multiple versions of assets with revision history and rollback capability.",
+    "API access: Integrate asset management into external tools and workflows via REST API."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +40,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

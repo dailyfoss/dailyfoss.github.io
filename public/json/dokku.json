@@ -4,6 +4,8 @@
   "categories": [
     146
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/dokku/dokku",
@@ -12,6 +14,17 @@
   "github_stars": "31583",
   "logo": "/icons/dokku.webp",
   "description": "Dokku is a small PaaS built on Docker that lets you deploy apps using git push. It supports buildpacks, environment config, plugins, and multiple languages, providing a Heroku-like workflow on your own server with minimal overhead.",
+  "tagline": null,
+  "features": [
+    "Git push deployment: Deploy applications by pushing code to a Git remote without manual build steps or configuration.",
+    "Buildpack support: Automatically detect and build Node.js, Python, Ruby, PHP, and other languages using Heroku buildpacks.",
+    "Zero-downtime deploys: Roll out new versions with automatic health checks and traffic switching for uninterrupted service.",
+    "Plugin system: Extend functionality with community plugins for databases, caching, monitoring, and additional services.",
+    "SSL automation: Obtain and renew Let's Encrypt certificates automatically for secure HTTPS connections.",
+    "Environment management: Configure application settings using environment variables without modifying code.",
+    "Database linking: Provision and connect PostgreSQL, MySQL, Redis, and other databases with single commands.",
+    "Domain routing: Map custom domains to applications with automatic proxy configuration and virtual host management."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

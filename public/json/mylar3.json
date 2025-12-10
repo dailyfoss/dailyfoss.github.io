@@ -4,6 +4,8 @@
   "categories": [
     21
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/mylar3/mylar3",
@@ -12,6 +14,21 @@
   "github_stars": "1317",
   "logo": "/icons/mylar3.webp",
   "description": "Mylar3 is an automated comic book downloader and manager. It can monitor series, download issues, and organize comic archives with integration for download clients and metadata tools.",
+  "tagline": null,
+  "features": [
+    "Series Monitoring: Automatically track comic book series and monitor for new issue releases across multiple sources.",
+    "Download Automation: Integrate with download clients like SABnzbd and NZBGet for automated comic book downloading.",
+    "Metadata Management: Fetch and organize comic metadata including covers, descriptions, and publication information.",
+    "Archive Organization: Automatically rename and organize comic files using customizable naming conventions and folder structures.",
+    "Quality Control: Set preferred quality settings and automatically upgrade comics when better versions become available.",
+    "Reading Lists: Create and manage pull lists, reading queues, and custom collections for better library organization.",
+    "Web Interface: Manage your comic collection through a responsive web-based interface accessible from any device.",
+    "Search Integration: Connect with multiple comic databases and indexers to find and download missing issues.",
+    "Notification System: Receive alerts for new releases, download completions, and system events via email or webhooks.",
+    "Statistics Dashboard: View collection statistics, download history, and reading progress with detailed analytics.",
+    "Multi-format Support: Handle various comic archive formats including CBZ, CBR, and PDF files.",
+    "Backup Tools: Export library data and create backups of your comic collection metadata and settings."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

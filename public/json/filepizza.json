@@ -4,6 +4,8 @@
   "categories": [
     61
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/kern/filepizza",
@@ -12,6 +14,18 @@
   "github_stars": "9795",
   "logo": "/icons/filepizza.webp",
   "description": "FilePizza is a peer-to-peer file transfer service built on WebRTC. Sharing begins when a user selects a file and shares a link; no server stores the file. Ideal for fast, browser-based transfer without setup.",
+  "tagline": null,
+  "features": [
+    "P2P Transfer: Peer-to-peer file sharing, WebRTC-based, No server storage. Direct browser-to-browser transfers.",
+    "Privacy: Files never touch the server. Complete privacy.",
+    "Fast: Direct connections for speed. No upload delays.",
+    "No Setup: Works in any modern browser. Instant sharing.",
+    "Real-Time: Transfer while sender is online. Live connections.",
+    "Secure: Encrypted peer connections. Safe transfers.",
+    "No Size Limits: Transfer large files. No restrictions.",
+    "Simple UI: Clean interface. Easy to use.",
+    "Self-Hosted: Run your own instance. Full control."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +39,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

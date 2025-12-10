@@ -4,6 +4,8 @@
   "categories": [
     103
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/emoncms/emoncms",
@@ -12,6 +14,15 @@
   "github_stars": "1299",
   "logo": "/icons/emoncms.webp",
   "description": "Emoncms is a web-based application for logging, graphing, and processing energy and environmental data. Designed for energy monitoring setups, it supports feeds, dashboards, input processing, and integration with IoT devices.",
+  "tagline": null,
+  "features": [
+    "Energy Monitoring: Track power consumption and generation. Understand your energy usage.",
+    "Data Visualization: Beautiful graphs and dashboards for insights. Clear energy patterns.",
+    "Feed Processing: Transform and analyze incoming data streams. Flexible data handling.",
+    "IoT Integration: Connect with energy monitoring devices. Comprehensive system support.",
+    "Environmental Data: Log temperature, humidity, and more. Complete monitoring solution.",
+    "Self-Hosted: Keep your energy data private. Your consumption, your control."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

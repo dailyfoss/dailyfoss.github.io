@@ -4,6 +4,8 @@
   "categories": [
     47
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/composecraft/composecraft",
@@ -12,6 +14,15 @@
   "github_stars": "972",
   "logo": "/icons/compose-craft.webp",
   "description": "ComposeCraft is a web-based GUI for generating and managing Docker Compose files. It lets users visually edit services, volumes, and networks and export YAML, ideal for beginners and system administrators.",
+  "tagline": null,
+  "features": [
+    "Visual Editor: Build Docker Compose files with drag-and-drop interface. No YAML expertise needed.",
+    "Service Management: Configure containers, volumes, and networks visually. Intuitive configuration.",
+    "YAML Export: Generate clean, production-ready compose files. Copy and deploy instantly.",
+    "Beginner Friendly: Perfect for learning Docker Compose concepts. Lower the learning curve.",
+    "Web-Based: No installation required, works in any browser. Start composing immediately.",
+    "Template Library: Pre-built configurations for common services. Deploy popular apps quickly."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

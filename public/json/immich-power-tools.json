@@ -4,6 +4,8 @@
   "categories": [
     120
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/varun-raj/immich-power-tools",
@@ -12,6 +14,17 @@
   "github_stars": "1797",
   "logo": "/icons/immich-power-tools.webp",
   "description": "Immich Power Tools is a collection of maintenance and migration utilities for Immich. It provides scripts and helpers for tasks like deduplication, importing and cleanup, intended for administrators of large photo libraries.",
+  "tagline": null,
+  "features": [
+    "Deduplication: Find and remove duplicate photos to save storage space.",
+    "Bulk Operations: Perform mass edits, moves, or deletions across your library.",
+    "Migration Tools: Import photos from other services or reorganize existing libraries.",
+    "Cleanup Utilities: Remove orphaned files and optimize database performance.",
+    "Batch Processing: Apply operations to thousands of photos efficiently.",
+    "Library Analysis: Generate reports on storage usage, duplicates, and library health.",
+    "Advanced Management: Tools for administrators managing large photo collections.",
+    "Immich Integration: Works directly with Immich API for safe, reliable operations."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     15
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/gregtwallace/certwarden",
@@ -12,6 +14,16 @@
   "github_stars": "448",
   "logo": "/icons/cert-warden.webp",
   "description": "Certwarden is a self-hosted certificate management tool designed to simplify issuing and renewing Let's Encrypt certificates. It provides a web dashboard to manage certs and integrates with ACME challenges and DNS services.",
+  "tagline": null,
+  "features": [
+    "Certificate Management: Simplify SSL/TLS certificate lifecycle. Easy management.",
+    "Let's Encrypt: Automatic certificate issuance and renewal. Free SSL.",
+    "Web Dashboard: Manage all certificates from browser interface. Visual control.",
+    "ACME Integration: Support for ACME challenges and DNS validation. Flexible verification.",
+    "Renewal Automation: Never worry about expired certificates. Set and forget.",
+    "Multi-Domain: Manage certificates for multiple domains. Centralized management.",
+    "Self-Hosted: Keep certificate management in-house. Security control."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +37,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

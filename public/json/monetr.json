@@ -4,6 +4,8 @@
   "categories": [
     22
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/monetr/monetr",
@@ -12,6 +14,17 @@
   "github_stars": "493",
   "logo": "/icons/monetr.webp",
   "description": "Monetr is a self-hosted personal finance management platform that connects to banks to display transaction details, budget categories, and insights. It offers API access and real-time sync with Plaid.",
+  "tagline": null,
+  "features": [
+    "Bank integration: Connect to financial institutions via Plaid for automatic transaction imports and real-time balance updates.",
+    "Budget tracking: Create spending categories with monthly limits and track progress against goals with visual indicators.",
+    "Expense categorization: Automatically classify transactions by type and manually adjust categories for accurate reporting.",
+    "Recurring transactions: Identify and manage subscription payments, bills, and regular income with automated detection.",
+    "Financial insights: View spending trends, category breakdowns, and monthly comparisons through interactive charts.",
+    "Goal planning: Set savings targets and track progress with projected completion dates based on current habits.",
+    "Multi-account support: Manage checking, savings, and credit accounts in a unified dashboard with consolidated views.",
+    "API access: Integrate with external tools or build custom workflows using REST endpoints for programmatic data access."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

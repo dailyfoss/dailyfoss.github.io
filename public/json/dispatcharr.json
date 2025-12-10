@@ -4,6 +4,8 @@
   "categories": [
     166
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Dispatcharr/Dispatcharr",
@@ -12,6 +14,15 @@
   "github_stars": "1654",
   "logo": "/icons/dispatcharr.webp",
   "description": "Dispatcharr automates torrent client selection for media downloads. It automatically assigns downloads to the best available clients based on rules, boosting performance for Sonarr, Radarr, or Lidarr setups.",
+  "tagline": null,
+  "features": [
+    "Smart Client Selection: Automatically route downloads to best available client. Optimized performance.",
+    "Rule-Based Routing: Define custom logic for download assignment. Flexible automation.",
+    "Arr Integration: Works seamlessly with Sonarr, Radarr, and Lidarr. Enhanced media automation.",
+    "Load Balancing: Distribute downloads across multiple clients. Maximize throughput.",
+    "Performance Boost: Faster downloads through intelligent routing. Efficient resource usage.",
+    "Self-Hosted: Complete control over download management. Your automation, your rules."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

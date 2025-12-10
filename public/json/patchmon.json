@@ -4,6 +4,8 @@
   "categories": [
     172
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/PatchMon/PatchMon",
@@ -12,6 +14,19 @@
   "github_stars": "1239",
   "logo": "/icons/patchmon.webp",
   "description": "PatchMon is a self-hosted solution for patch management for small IT teams. It helps track available updates, automate installations, and manage system patching schedules through a clean web UI.",
+  "tagline": null,
+  "features": [
+    "Update tracking: Monitor available system updates across multiple servers and workstations from centralized dashboard",
+    "Automated patching: Schedule and automate patch installations during maintenance windows to reduce manual intervention",
+    "Patch scheduling: Configure maintenance windows and deployment schedules to control when updates are applied to systems",
+    "System inventory: Track installed software, versions, and patch status across infrastructure for compliance reporting",
+    "Compliance reporting: Generate reports on patch status and compliance levels to meet security and regulatory requirements",
+    "Rollback support: Revert problematic patches to previous versions if updates cause issues or compatibility problems",
+    "Multi-OS support: Manage patches across different operating systems including Linux distributions from single interface",
+    "Notification system: Receive alerts for critical updates, failed installations, or systems requiring attention",
+    "Approval workflows: Require manual approval for specific patches before deployment to maintain control over critical systems",
+    "Web dashboard: Clean web interface provides overview of patch status, pending updates, and system health at a glance"
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +40,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

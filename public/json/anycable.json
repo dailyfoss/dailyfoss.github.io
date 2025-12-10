@@ -4,6 +4,8 @@
   "categories": [
     17
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/anycable/anycable",
@@ -12,6 +14,15 @@
   "github_stars": "2202",
   "logo": "/icons/anycable.webp",
   "description": "AnyCable is a scalable WebSocket server that replaces ActionCable for Ruby on Rails apps. It decouples the PubSub layer, works with gRPC, supports multiple languages and drastically improves real-time performance.",
+  "tagline": null,
+  "features": [
+    "Scalable WebSockets: High-performance WebSocket server for Rails applications. Handle thousands of connections.",
+    "ActionCable Replacement: Drop-in replacement with dramatically improved performance. Upgrade seamlessly.",
+    "gRPC Support: Decoupled architecture using gRPC for language flexibility. Not limited to Ruby.",
+    "Multi-Language: Works with applications written in various programming languages. Universal compatibility.",
+    "Real-Time Performance: Optimized for low-latency, high-throughput real-time features. Lightning fast.",
+    "Resource Efficient: Uses significantly less memory than traditional ActionCable. Cost-effective scaling."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

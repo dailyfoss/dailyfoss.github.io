@@ -4,6 +4,8 @@
   "categories": [
     100
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/HaveAGitGat/Tdarr",
@@ -12,6 +14,21 @@
   "github_stars": "3818",
   "logo": "/icons/tdarr.webp",
   "description": "Tdarr is a distributed, self-hosted video transcoding and library optimization platform. It uses plugins, workers, and rules to automatically transcode, scan, and clean up media libraries via a powerful web UI.",
+  "tagline": null,
+  "features": [
+    "Distributed transcoding: Distribute transcoding workload across multiple worker nodes for faster processing.",
+    "Plugin system: Use community plugins or create custom ones to define transcoding rules and workflows.",
+    "Library scanning: Automatically scan media libraries to identify files that need transcoding or optimization.",
+    "Codec conversion: Convert videos between codecs like H.264, H.265, AV1 for compatibility or space savings.",
+    "Health checks: Scan media files for corruption, missing audio tracks, or other issues requiring attention.",
+    "Conditional rules: Apply transcoding rules based on file properties like codec, resolution, bitrate, or container.",
+    "Hardware acceleration: Leverage GPU acceleration for faster transcoding using NVENC, QuickSync, or VAAPI.",
+    "Queue management: Monitor and control transcoding queues with priority settings and manual intervention options.",
+    "Statistics dashboard: View transcoding progress, space saved, and processing statistics in a comprehensive dashboard.",
+    "File organization: Automatically organize and rename files after transcoding based on customizable patterns.",
+    "Staging system: Test transcoding rules on sample files before applying them to entire libraries.",
+    "Notification system: Receive alerts when transcoding jobs complete, fail, or require attention."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

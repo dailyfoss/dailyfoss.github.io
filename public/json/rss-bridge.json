@@ -4,6 +4,8 @@
   "categories": [
     57
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/RSS-Bridge/rss-bridge",
@@ -12,6 +14,21 @@
   "github_stars": "8506",
   "logo": "/icons/rss-bridge.webp",
   "description": "RSS-Bridge is a self-hosted feed generator that fetches content from webpages and delivers custom RSS/Atom feeds. It supports dozens of sites and simplifies subscription management.",
+  "tagline": null,
+  "features": [
+    "Feed generation: Create RSS feeds from websites that don't offer them natively.",
+    "Pre-built bridges: Use ready-made scrapers for popular sites like Twitter, Instagram, and YouTube.",
+    "Custom bridges: Write your own bridges to generate feeds from any website.",
+    "Multiple formats: Output feeds in RSS, Atom, JSON, or HTML formats.",
+    "Parameter support: Customize feed generation with URL parameters for filtering.",
+    "Caching: Store generated feeds temporarily to reduce server load and improve speed.",
+    "Web interface: Browse available bridges and generate feeds through a simple UI.",
+    "API access: Generate feeds programmatically for automation or integration.",
+    "Content filtering: Include or exclude items based on keywords or patterns.",
+    "Image proxying: Serve images through your server to avoid tracking pixels.",
+    "Rate limiting: Control request frequency to avoid overwhelming source websites.",
+    "Error handling: Gracefully handle site changes or temporary unavailability."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

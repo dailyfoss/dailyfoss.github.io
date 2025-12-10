@@ -4,6 +4,8 @@
   "categories": [
     189
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/FlareSolverr/FlareSolverr",
@@ -12,6 +14,18 @@
   "github_stars": "11663",
   "logo": "/icons/flaresolverr.webp",
   "description": "FlareSolverr is a proxy server that bypasses Cloudflare protections by automating browser challenges. It is commonly used with tools like Jackett and Sonarr to access protected scraping targets in self-hosted stacks.",
+  "tagline": null,
+  "features": [
+    "Proxy: Bypass Cloudflare protections, Automate browser challenges, API access. Unblock protected sites.",
+    "Automation: Works with Jackett, Sonarr, Radarr. Seamless integration.",
+    "Self-Hosted: Run your own proxy. Privacy-focused.",
+    "Scraping Support: Access protected targets. Essential for media stacks.",
+    "Headless Browser: Automated challenge solving. No manual intervention.",
+    "API Interface: Easy integration. RESTful endpoints.",
+    "Session Management: Handle cookies and state. Persistent access.",
+    "Multiple Instances: Scale as needed. High availability.",
+    "Docker Support: Easy deployment. Container-ready."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +39,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

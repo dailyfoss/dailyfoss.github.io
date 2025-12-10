@@ -4,6 +4,8 @@
   "categories": [
     102
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/snikket-im/snikket-server",
@@ -12,6 +14,21 @@
   "github_stars": "351",
   "logo": "/icons/snikket.webp",
   "description": "Snikket Server is a self-hosted XMPP-based messaging server aimed at family and small groups. It pairs with mobile clients to provide private chat, group messaging, and voice calls.",
+  "tagline": null,
+  "features": [
+    "XMPP messaging: Provides secure, federated instant messaging via XMPP protocol.",
+    "End-to-end encryption: Encrypts messages with OMEMO for privacy.",
+    "Group chats: Creates encrypted group conversations with multiple participants.",
+    "Voice and video calls: Supports encrypted audio and video calling.",
+    "File sharing: Sends photos, videos, and files through encrypted channels.",
+    "Mobile apps: Native iOS and Android apps with push notifications.",
+    "Easy setup: Simplifies XMPP server deployment with guided configuration.",
+    "Invite system: Generates invitation links for adding family and friends.",
+    "Contact management: Organizes contacts with roster management.",
+    "Message history: Stores message history on server for multi-device sync.",
+    "Custom domain: Uses your own domain for professional messaging addresses.",
+    "Admin dashboard: Manages users and settings through web-based admin panel."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

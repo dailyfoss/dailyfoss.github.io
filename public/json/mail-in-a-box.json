@@ -4,6 +4,8 @@
   "categories": [
     53
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/mail-in-a-box/mailinabox",
@@ -12,6 +14,19 @@
   "github_stars": "15071",
   "logo": "/icons/mail-in-a-box.webp",
   "description": "Mail-in-a-Box is an easy-to-deploy mail server solution for self-hosting. With one command, it configures DNS, SMTP, IMAP, and webmail, turning a cloud or VPS server into a working email server.",
+  "tagline": null,
+  "features": [
+    "One-command setup: Deploy a complete mail server with DNS, SMTP, IMAP, and webmail using a single script.",
+    "Automatic DNS: Configure DNS records automatically including MX, SPF, DKIM, and DMARC for proper email delivery.",
+    "Webmail included: Access email through Roundcube webmail interface without additional configuration.",
+    "SSL certificates: Automatic Let's Encrypt SSL certificate provisioning and renewal for secure connections.",
+    "Spam filtering: Built-in spam and virus scanning to protect mailboxes from unwanted content.",
+    "Backup system: Automated daily backups of mail data with easy restoration options.",
+    "Status monitoring: Dashboard shows system health, certificate status, and configuration warnings.",
+    "Multi-user support: Create and manage multiple email accounts and aliases through the admin panel.",
+    "Greylisting: Reduce spam with greylisting that temporarily rejects mail from unknown senders.",
+    "Mobile compatibility: Full support for IMAP/SMTP on mobile devices and desktop email clients."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +40,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

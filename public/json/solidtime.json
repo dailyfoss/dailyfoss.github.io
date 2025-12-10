@@ -4,6 +4,8 @@
   "categories": [
     16
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/solidtime-io/solidtime",
@@ -12,6 +14,21 @@
   "github_stars": "7703",
   "logo": "/icons/solidtime.webp",
   "description": "Solidtime is a self-hosted time tracking solution focused on team productivity. It provides timesheets, reports, and project-based tracking through a modern, responsive web UI.",
+  "tagline": null,
+  "features": [
+    "Time tracking: Logs work hours with start/stop timers or manual entries.",
+    "Project management: Organizes time entries by projects and tasks.",
+    "Team tracking: Monitors team member hours and productivity.",
+    "Billable hours: Marks time as billable or non-billable for client invoicing.",
+    "Reporting: Generates detailed reports on time spent by project, user, or period.",
+    "Calendar view: Visualizes time entries in calendar format for easy review.",
+    "Export data: Downloads time data as CSV or Excel for external analysis.",
+    "Client portal: Allows clients to view time spent on their projects.",
+    "Budget tracking: Sets project budgets and tracks time against estimates.",
+    "Integrations: Connects with invoicing and project management tools.",
+    "Mobile apps: Tracks time on the go with iOS and Android applications.",
+    "API access: Automates time tracking via REST API."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

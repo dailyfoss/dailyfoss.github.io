@@ -4,6 +4,8 @@
   "categories": [
     76
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/koush/scrypted",
@@ -12,6 +14,21 @@
   "github_stars": "5285",
   "logo": "/icons/scrypted.webp",
   "description": "Scrypted is a self-hosted smart home automation platform for integrating devices like HomeKit, Google Home, and Alexa. It supports plugins, video streams, and custom automation flows.",
+  "tagline": null,
+  "features": [
+    "Smart home integration: Connects devices to HomeKit, Google Home, Alexa, and other platforms.",
+    "Video streaming: Manages camera feeds with transcoding, recording, and remote access.",
+    "Plugin ecosystem: Extends functionality with plugins for devices, protocols, and services.",
+    "Automation engine: Creates complex automation flows with triggers, conditions, and actions.",
+    "Device bridging: Exposes devices from one platform to another for cross-ecosystem control.",
+    "Local processing: Runs AI and video processing locally for privacy and reduced latency.",
+    "Object detection: Identifies people, vehicles, and objects in camera feeds using AI.",
+    "Two-way audio: Enables intercom functionality through supported cameras and doorbells.",
+    "Recording management: Stores and manages video recordings with configurable retention policies.",
+    "Mobile apps: Control devices and view cameras from iOS and Android apps.",
+    "Notification system: Sends alerts for motion, doorbell presses, and automation events.",
+    "Hardware acceleration: Leverages GPU and specialized hardware for efficient video processing."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

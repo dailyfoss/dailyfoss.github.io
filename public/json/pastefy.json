@@ -4,6 +4,8 @@
   "categories": [
     118
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/interaapps/pastefy",
@@ -12,6 +14,18 @@
   "github_stars": "380",
   "logo": "/icons/pastefy.webp",
   "description": "Pastefy is a lightweight and modern pastebin platform with authentication, versioning, and syntax highlighting. It is designed for private or public sharing with a responsive UI.",
+  "tagline": null,
+  "features": [
+    "User authentication: Optional account system allows users to manage pastes, track history, and control access to content",
+    "Paste versioning: Edit pastes and maintain version history to track changes over time and restore previous versions",
+    "Syntax highlighting: Support for numerous programming languages with automatic detection and color-coded syntax display",
+    "Public and private: Choose visibility settings for each paste to share publicly, keep unlisted, or restrict to authenticated users",
+    "Folder organization: Organize pastes into folders for better management and categorization of related content",
+    "Responsive design: Mobile-optimized interface works seamlessly across desktop, tablet, and smartphone devices",
+    "API integration: RESTful API enables programmatic paste creation and retrieval for automation and tool integration",
+    "Expiration control: Set automatic deletion after specified time periods to manage storage and ensure temporary content removal",
+    "Search functionality: Find pastes quickly by title, content, or tags with full-text search across your paste collection"
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +39,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

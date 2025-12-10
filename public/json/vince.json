@@ -4,6 +4,8 @@
   "categories": [
     186
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/vinceanalytics/vince",
@@ -12,6 +14,21 @@
   "github_stars": "1979",
   "logo": "/icons/vince.webp",
   "description": "Vince is a self-hosted privacy-first web analytics platform similar to Plausible. It tracks visits without cookies and provides clear charts and metrics via a minimal dashboard.",
+  "tagline": null,
+  "features": [
+    "Privacy-first analytics: Track website visits without cookies or personal data collection.",
+    "Simple dashboard: View traffic metrics in a clean, minimal dashboard without complexity.",
+    "Page views: Monitor page views, unique visitors, and bounce rates for your websites.",
+    "Referrer tracking: See where visitors come from with referrer and UTM parameter tracking.",
+    "Lightweight script: Use a tiny tracking script that doesn't impact page load performance.",
+    "Real-time data: View current visitor activity and traffic in real-time.",
+    "Multiple sites: Track multiple websites from a single installation with separate dashboards.",
+    "No cookie banners: Avoid GDPR cookie consent requirements with cookieless tracking.",
+    "Geographic data: View visitor locations without tracking individual users.",
+    "Device breakdown: See which devices and browsers visitors use for optimization insights.",
+    "Custom events: Track custom events and conversions to measure specific user actions.",
+    "API access: Access analytics data programmatically through the REST API."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     61
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/drakkan/sftpgo",
@@ -12,6 +14,21 @@
   "github_stars": "11423",
   "logo": "/icons/sftpgo.webp",
   "description": "SFTPGo is a fully featured SFTP, FTP, WebDAV, and HTTP file server. It supports virtual users, storage backends, quotas, and a modern admin web UI, making it ideal for secure self-hosted file transfer.",
+  "tagline": null,
+  "features": [
+    "Multi-protocol support: Serves files via SFTP, FTP, FTPS, WebDAV, and HTTP/S protocols.",
+    "Virtual users: Creates isolated user accounts with individual permissions and quotas.",
+    "Storage backends: Supports local filesystem, S3, Azure Blob, Google Cloud Storage, and more.",
+    "Quota management: Enforces storage limits and bandwidth restrictions per user.",
+    "Web admin UI: Manages users, folders, and settings through a modern web interface.",
+    "Public key authentication: Secures SFTP access with SSH key pairs instead of passwords.",
+    "Virtual folders: Maps multiple storage locations to a single user's directory tree.",
+    "Event hooks: Triggers custom scripts or webhooks on file uploads, downloads, or deletions.",
+    "IP filtering: Restricts access by IP address or network range for enhanced security.",
+    "Two-factor authentication: Adds TOTP-based 2FA for admin and user accounts.",
+    "REST API: Automates user and configuration management via comprehensive API.",
+    "Audit logging: Records all file operations and authentication attempts for compliance."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

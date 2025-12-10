@@ -4,6 +4,8 @@
   "categories": [
     150
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/openspeedtest/Speed-Test",
@@ -12,6 +14,21 @@
   "github_stars": "3234",
   "logo": "/icons/openspeedtest.webp",
   "description": "OpenSpeedTest is a self-hosted internet speed test tool with a responsive web interface. It measures download, upload, and latency through your browser without plugins or dependencies.",
+  "tagline": null,
+  "features": [
+    "Speed Testing: Measure internet download and upload speeds directly through your web browser without plugins.",
+    "Latency Measurement: Test network latency and ping times to assess connection quality and responsiveness.",
+    "Self-hosted Solution: Run your own speed test server for internal network testing and bandwidth monitoring.",
+    "Responsive Interface: Clean, mobile-friendly web interface that works across all devices and screen sizes.",
+    "Real-time Results: View live speed test progress with real-time graphs and instant result display.",
+    "Multiple Protocols: Support for various testing protocols to ensure accurate measurements across different network conditions.",
+    "Historical Data: Store and compare speed test results over time to track network performance trends.",
+    "Custom Configuration: Adjust test parameters including duration, file sizes, and server endpoints for specific needs.",
+    "API Integration: Programmatic access to speed testing functionality for automated monitoring and reporting systems.",
+    "Network Diagnostics: Additional network diagnostic tools including jitter measurement and packet loss detection.",
+    "Multi-server Testing: Test against multiple servers simultaneously to identify the best connection paths.",
+    "Privacy Focused: No external dependencies or data collection, ensuring complete privacy for network testing."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

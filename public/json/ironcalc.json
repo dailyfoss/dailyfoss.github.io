@@ -4,6 +4,8 @@
   "categories": [
     151
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/ironcalc/IronCalc",
@@ -12,6 +14,17 @@
   "github_stars": "2996",
   "logo": "/icons/ironcalc.webp",
   "description": "IronCalc is a self hosted spreadsheet engine and collaboration platform that aims to provide an alternative to proprietary online spreadsheets. It enables sharing, formulas and structured data while keeping documents on your own server.",
+  "tagline": null,
+  "features": [
+    "Spreadsheet Engine: Full-featured spreadsheet with cells, formulas, and formatting.",
+    "Formula Support: Comprehensive formula library compatible with Excel functions.",
+    "Collaboration: Multiple users can work on the same spreadsheet simultaneously.",
+    "Self-Hosted: Keep all spreadsheet data on your own server for privacy.",
+    "Import/Export: Open and save files in Excel and other common formats.",
+    "Web-Based: Access spreadsheets from any device through a web browser.",
+    "Version Control: Track changes and revert to previous versions when needed.",
+    "API Access: Programmatically interact with spreadsheets via REST API."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

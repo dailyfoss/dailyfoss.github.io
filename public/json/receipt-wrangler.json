@@ -4,6 +4,8 @@
   "categories": [
     130
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Receipt-Wrangler/receipt-wrangler-api",
@@ -12,6 +14,21 @@
   "github_stars": "175",
   "logo": "/icons/receipt-wrangler.webp",
   "description": "Receipt Wrangler is a self-hosted tool that scans and parses receipts into structured data. It supports email forwarding, OCR, and expense categorization.",
+  "tagline": null,
+  "features": [
+    "OCR processing: Extract text from receipt images using optical character recognition technology.",
+    "Email forwarding: Send receipts to a dedicated email address for automatic import and processing.",
+    "Data extraction: Parse merchant names, dates, totals, and line items into structured database records.",
+    "Category assignment: Automatically categorize expenses based on merchant or manual rules.",
+    "Multi-currency support: Handle receipts in different currencies with automatic conversion tracking.",
+    "Expense reports: Generate summaries by category, date range, or merchant for tax preparation.",
+    "Receipt storage: Keep digital copies of all receipts organized and searchable in one place.",
+    "Manual editing: Correct OCR errors or add missing information through the web interface.",
+    "Export functionality: Download expense data in CSV or JSON format for accounting software.",
+    "Tag system: Add custom tags to receipts for flexible organization beyond categories.",
+    "Search capabilities: Find receipts by merchant, amount, date, or extracted text content.",
+    "Mobile upload: Photograph receipts with your phone and upload them immediately for processing."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

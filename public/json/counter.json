@@ -4,6 +4,8 @@
   "categories": [
     9
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/ihucos/counter.dev-selfhost",
@@ -12,6 +14,15 @@
   "github_stars": "24",
   "logo": "/icons/counter.webp",
   "description": "Counter is a privacy-first, self-hosted web analytics platform that tracks visits without cookies. It offers basic stats with a lightweight footprint and focuses entirely on privacy and simplicity.",
+  "tagline": null,
+  "features": [
+    "Privacy-First: Track visits without cookies or personal data. Respect user privacy completely.",
+    "Lightweight: Minimal footprint with fast page loads. No performance impact.",
+    "Simple Analytics: Basic stats that matter without complexity. Focus on essentials.",
+    "Cookie-Free: GDPR-compliant tracking without consent banners. Hassle-free compliance.",
+    "Self-Hosted: Complete control over your analytics data. Your data stays yours.",
+    "Easy Setup: Quick deployment with minimal configuration. Start tracking in minutes."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

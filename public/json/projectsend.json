@@ -4,6 +4,8 @@
   "categories": [
     61
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/projectsend/projectsend",
@@ -12,6 +14,21 @@
   "github_stars": "1759",
   "logo": "/icons/projectsend.webp",
   "description": "ProjectSend is a self-hosted file sharing platform that allows organizations to upload files and make them available to specific clients or users. It supports permissions, groups, and secure transfers.",
+  "tagline": null,
+  "features": [
+    "Client management: Create and manage client accounts with individual access to assigned files.",
+    "File uploads: Upload files through web interface or FTP for distribution to clients.",
+    "Permission control: Set granular permissions for who can view, download, or manage specific files.",
+    "Group organization: Organize clients into groups for efficient file distribution to multiple recipients.",
+    "Download tracking: Monitor file downloads with timestamps and client activity logs.",
+    "Email notifications: Automatically notify clients when new files are available for download.",
+    "Expiration dates: Set automatic expiration for file access to enforce time-limited sharing.",
+    "Public links: Generate public download links for sharing files without requiring client accounts.",
+    "Branding options: Customize the interface with your logo and colors for professional presentation.",
+    "Search functionality: Find files quickly using search across filenames, descriptions, and categories.",
+    "Activity reports: Generate reports on file uploads, downloads, and client activity.",
+    "Secure transfers: Protect file transfers with SSL encryption and password-protected downloads."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

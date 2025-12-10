@@ -4,6 +4,8 @@
   "categories": [
     118
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/orhun/rustypaste",
@@ -12,6 +14,21 @@
   "github_stars": "1042",
   "logo": "/icons/rustypaste.webp",
   "description": "RustyPaste is a self-hosted pastebin service written in Rust. It provides secure paste storage with expiration, attachments, and a minimal web interface.",
+  "tagline": null,
+  "features": [
+    "Text pasting: Share code snippets, logs, or text through simple URLs.",
+    "File uploads: Upload and share files with automatic expiration.",
+    "Syntax highlighting: Display code with proper formatting for multiple languages.",
+    "Expiration control: Set automatic deletion times for pastes to manage storage.",
+    "CLI support: Upload pastes from the command line for scripting and automation.",
+    "API access: Integrate paste functionality into applications using REST endpoints.",
+    "Password protection: Secure sensitive pastes with optional passwords.",
+    "One-time pastes: Create pastes that delete after being viewed once.",
+    "Custom URLs: Choose memorable short codes for your pastes.",
+    "Raw view: Access paste content as plain text for downloading or piping.",
+    "Minimal interface: Simple web UI focused on functionality over features.",
+    "Performance: Handle high traffic efficiently with Rust's speed and safety."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

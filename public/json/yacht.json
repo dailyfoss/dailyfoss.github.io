@@ -4,6 +4,8 @@
   "categories": [
     47
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/SelfhostedPro/Yacht",
@@ -12,6 +14,21 @@
   "github_stars": "36",
   "logo": "/icons/yacht.webp",
   "description": "Yacht is a self-hosted web UI for managing Docker containers and compose stacks. It offers app templates, logs, resource views, and update management, acting as a simpler alternative to Portainer for homelabs.",
+  "tagline": null,
+  "features": [
+    "Container management: Start, stop, and restart Docker containers with a clean web interface instead of CLI commands.",
+    "Template library: Deploy popular applications quickly using pre-configured templates with sensible defaults.",
+    "Compose support: Manage multi-container applications defined in docker-compose files through the GUI.",
+    "Resource monitoring: View CPU, memory, and network usage for each container in real-time dashboards.",
+    "Log viewer: Access container logs directly in the browser with filtering and search capabilities.",
+    "Volume management: Create, attach, and manage Docker volumes for persistent data storage across containers.",
+    "Network configuration: Set up custom Docker networks and manage container connectivity through visual tools.",
+    "Update notifications: Receive alerts when newer container images are available for running applications.",
+    "Port mapping: Configure port forwards and expose container services with an intuitive interface.",
+    "Environment variables: Edit container environment variables without rebuilding or restarting from scratch.",
+    "Image management: Pull, remove, and inspect Docker images from registries through the web UI.",
+    "User authentication: Secure access with login credentials and role-based permissions for multi-user environments."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

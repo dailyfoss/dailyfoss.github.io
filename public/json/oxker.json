@@ -4,6 +4,8 @@
   "categories": [
     47
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/mrjackwills/oxker",
@@ -12,6 +14,17 @@
   "github_stars": "1365",
   "logo": "/icons/oxker.webp",
   "description": "Oxker is a self-hosted dashboard for monitoring Docker containers. It provides a clean overview of images, container metrics, statuses, and event logs, ideal for homelab environments.",
+  "tagline": null,
+  "features": [
+    "Container overview: View all running and stopped containers with status, uptime, and resource usage at a glance.",
+    "Resource monitoring: Track CPU, memory, and network usage per container with real-time updates and historical data.",
+    "Log viewing: Access container logs directly from the dashboard with search and filtering capabilities.",
+    "Container control: Start, stop, restart, and remove containers through the web interface without command-line access.",
+    "Image management: List Docker images with size information and remove unused images to free disk space.",
+    "Event tracking: Monitor Docker events like container starts, stops, and errors for system awareness.",
+    "Terminal interface: Run in a text-based UI for lightweight monitoring on servers without graphical environments.",
+    "Multi-host support: Connect to multiple Docker hosts and switch between them from a single dashboard."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

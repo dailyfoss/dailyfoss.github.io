@@ -4,6 +4,8 @@
   "categories": [
     165
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/meceware/wapy.dev",
@@ -12,6 +14,21 @@
   "github_stars": "457",
   "logo": "/icons/wapy-dev.webp",
   "description": "wapy.dev is a self-hosted interface for exploring Python packages and documentation, providing search, metadata views, and examples through a lightweight web UI.",
+  "tagline": null,
+  "features": [
+    "Package search: Quickly find Python packages with fast search across PyPI's extensive package repository.",
+    "Documentation viewer: Browse package documentation, README files, and API references in a clean interface.",
+    "Version comparison: Compare different versions of packages to understand changes and compatibility requirements.",
+    "Dependency visualization: View package dependencies and reverse dependencies to understand the ecosystem.",
+    "Code examples: Access usage examples and code snippets directly from package documentation for quick reference.",
+    "Installation commands: Get copy-paste ready pip install commands with version pinning options.",
+    "Package metadata: View detailed information including author, license, download statistics, and release history.",
+    "Offline mode: Cache frequently accessed packages and documentation for offline development environments.",
+    "Custom repositories: Configure private PyPI mirrors or custom package indexes for enterprise use.",
+    "Syntax highlighting: Read code examples with proper syntax highlighting for better readability.",
+    "Responsive design: Access package information from any device with a mobile-friendly interface.",
+    "Lightweight deployment: Run on minimal resources making it suitable for development containers or edge devices."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

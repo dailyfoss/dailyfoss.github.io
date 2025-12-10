@@ -4,6 +4,8 @@
   "categories": [
     102
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/positive-intentions/chat",
@@ -12,6 +14,21 @@
   "github_stars": "233",
   "logo": "/icons/positive-intentions-chat.webp",
   "description": "Chat is a self-hosted messaging app with user accounts, channels, and real-time communication using WebSockets. It focuses on privacy and supports theming and file transfers through a modern UI.",
+  "tagline": null,
+  "features": [
+    "Real-time messaging: Send and receive messages instantly using WebSocket connections for live communication.",
+    "Channel support: Create public or private channels for topic-based discussions and team collaboration.",
+    "User accounts: Register and manage user accounts with authentication and profile customization.",
+    "File transfers: Share files and images directly in conversations with drag-and-drop support.",
+    "Theme customization: Personalize the interface with custom themes and color schemes.",
+    "Message history: Access complete conversation history with search and filtering capabilities.",
+    "Notifications: Receive alerts for new messages, mentions, and channel activity.",
+    "Privacy focused: Self-hosted deployment ensures complete control over conversation data and user privacy.",
+    "Emoji support: Express yourself with emoji reactions and inline emoji in messages.",
+    "User presence: See who's online and active in real-time with presence indicators.",
+    "Direct messaging: Send private one-on-one messages outside of public channels.",
+    "Message formatting: Format messages with Markdown for rich text, code blocks, and links."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

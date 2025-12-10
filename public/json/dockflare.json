@@ -4,6 +4,8 @@
   "categories": [
     47
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/ChrispyBacon-dev/DockFlare",
@@ -12,6 +14,15 @@
   "github_stars": "1803",
   "logo": "/icons/dockflare.webp",
   "description": "DockFlare is a simple web-based UI for managing and monitoring Docker containers. It displays container logs, stats, and actions via an intuitive dashboard suited for homelab users and container enthusiasts.",
+  "tagline": null,
+  "features": [
+    "Container Monitoring: View status and stats in real-time. Complete visibility.",
+    "Log Viewing: Access container logs through web interface. Easy troubleshooting.",
+    "Container Actions: Start, stop, and restart containers easily. Simple management.",
+    "Intuitive Dashboard: Clean UI designed for homelab users. User-friendly experience.",
+    "Resource Stats: Monitor CPU, memory, and network usage. Performance insights.",
+    "Self-Hosted: Manage your containers from your own dashboard. Complete control."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

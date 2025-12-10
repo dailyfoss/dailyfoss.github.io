@@ -4,6 +4,8 @@
   "categories": [
     152
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/getgrav/grav",
@@ -12,6 +14,17 @@
   "github_stars": "15298",
   "logo": "/icons/grav.webp",
   "description": "Grav is a flat-file CMS that allows users to build websites without a database. It supports themes, plugins, markdown content, and runs extremely fast, suitable for blogs, documentation sites, or landing pages.",
+  "tagline": null,
+  "features": [
+    "Flat-File Architecture: Build websites without database dependencies using markdown and YAML files.",
+    "Fast Performance: Exceptional speed with built-in caching and optimized file-based content delivery.",
+    "Theme System: Choose from hundreds of responsive themes or create custom designs.",
+    "Plugin Ecosystem: Extend functionality with plugins for forms, SEO, e-commerce, and more.",
+    "Markdown Content: Write content in markdown with support for shortcodes and custom formatting.",
+    "Admin Panel: Optional web-based admin interface for content management and configuration.",
+    "Version Control Friendly: Store entire site in Git for easy deployment and collaboration.",
+    "Flexible Deployment: Host on any PHP-enabled server with minimal requirements."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

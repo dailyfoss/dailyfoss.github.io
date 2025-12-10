@@ -4,6 +4,8 @@
   "categories": [
     15
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/steveiliop56/tinyauth",
@@ -12,6 +14,21 @@
   "github_stars": "6125",
   "logo": "/icons/tinyauth.webp",
   "description": "TinyAuth is a self-hosted authentication and authorization service that manages users, roles, and tokens. It exposes a simple admin web UI and APIs to integrate authentication into other services.",
+  "tagline": null,
+  "features": [
+    "User management: Create and manage user accounts with passwords, profiles, and metadata.",
+    "Role-based access: Define roles and permissions to control access to resources and features.",
+    "Token generation: Issue JWT or API tokens for authenticating users in other applications.",
+    "Admin interface: Manage users, roles, and settings through a straightforward web administration panel.",
+    "API integration: Integrate authentication into other services using REST API endpoints.",
+    "OAuth support: Provide OAuth2 authentication for third-party applications and services.",
+    "Session management: Track active sessions and provide logout functionality across applications.",
+    "Password policies: Enforce password complexity requirements and expiration policies for security.",
+    "Multi-factor auth: Add an extra layer of security with optional two-factor authentication support.",
+    "Audit logging: Track authentication events and administrative actions for security monitoring.",
+    "Lightweight: Run with minimal resource requirements suitable for small to medium deployments.",
+    "Self-contained: Deploy as a standalone service without complex dependencies or infrastructure."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

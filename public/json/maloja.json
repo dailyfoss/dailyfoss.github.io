@@ -4,6 +4,8 @@
   "categories": [
     142
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/krateng/maloja",
@@ -12,6 +14,21 @@
   "github_stars": "1569",
   "logo": "/icons/maloja.webp",
   "description": "Maloja is a self-hosted music listening tracker, similar to Last.fm. It tracks play history locally and offers detailed stats, charts, artist history, and API access—all without third-party tracking.",
+  "tagline": null,
+  "features": [
+    "Scrobble tracking: Record every song you listen to with timestamps and metadata for personal analytics.",
+    "Statistics dashboard: View listening trends, top artists, albums, and tracks over customizable time periods.",
+    "API compatibility: Compatible with Last.fm scrobbling clients and supports standard scrobbling protocols.",
+    "Charts and graphs: Visualize listening habits with interactive charts showing patterns over time.",
+    "Artist pages: Browse detailed statistics for individual artists including play counts and history.",
+    "Privacy focused: All data stays on your server with no third-party tracking or data sharing.",
+    "Manual scrobbling: Add or edit scrobbles manually for offline listening or corrections.",
+    "Import functionality: Import existing scrobble history from Last.fm or other services.",
+    "Multi-user support: Track listening for multiple users with separate profiles and statistics.",
+    "Pulse feed: See real-time updates of what you and other users are currently listening to.",
+    "Tag support: Organize music with custom tags and view statistics by genre or mood.",
+    "Export options: Download your complete listening history in standard formats for backup or analysis."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

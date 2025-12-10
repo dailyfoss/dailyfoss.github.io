@@ -4,6 +4,8 @@
   "categories": [
     146
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/caprover/caprover",
@@ -12,6 +14,16 @@
   "github_stars": "14667",
   "logo": "/icons/caprover.webp",
   "description": "CapRover is a one-click app deployment and server management solution that works like Heroku. It runs on Docker and makes it easy to deploy web apps, databases, and static sites using a web UI and CLI.",
+  "tagline": null,
+  "features": [
+    "One-Click Deployment: Deploy apps like Heroku with simple commands. Effortless hosting.",
+    "Docker-Based: Built on Docker for reliable containerization. Modern infrastructure.",
+    "Web UI & CLI: Manage deployments through browser or command line. Flexible control.",
+    "App Templates: Pre-configured templates for popular apps and databases. Quick setup.",
+    "Automatic SSL: Free HTTPS certificates with Let's Encrypt integration. Secure by default.",
+    "Load Balancing: Built-in load balancing for high availability. Scale easily.",
+    "Self-Hosted: Run your own PaaS on any server. Complete control."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +37,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

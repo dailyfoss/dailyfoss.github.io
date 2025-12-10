@@ -4,6 +4,8 @@
   "categories": [
     133
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "codeberg.org/redict/redict",
@@ -12,6 +14,21 @@
   "github_stars": null,
   "logo": "/icons/redict.webp",
   "description": "Redict is a Redis-compatible data store implemented in Rust. It offers memory efficiency, performance, and persistence while maintaining Redis protocol compatibility.",
+  "tagline": null,
+  "features": [
+    "Redis compatibility: Drop-in replacement for Redis with support for existing commands and protocols.",
+    "Memory efficiency: Optimized data structures reduce memory usage compared to traditional Redis.",
+    "Persistence options: Choose between RDB snapshots and AOF logs for data durability.",
+    "Replication support: Set up primary-replica configurations for high availability and read scaling.",
+    "Pub/sub messaging: Implement real-time messaging patterns with channel subscriptions.",
+    "Data structures: Work with strings, lists, sets, sorted sets, and hashes using familiar Redis commands.",
+    "Transactions: Execute multiple commands atomically using MULTI/EXEC blocks.",
+    "Lua scripting: Run server-side scripts for complex operations and atomic workflows.",
+    "Cluster mode: Scale horizontally across multiple nodes with automatic sharding.",
+    "TLS encryption: Secure client connections with SSL/TLS for data in transit.",
+    "Access control: Restrict commands and keys using ACL rules for multi-tenant environments.",
+    "Performance monitoring: Track command statistics and slow queries for optimization."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

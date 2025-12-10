@@ -4,6 +4,8 @@
   "categories": [
     111
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/streetwriters/notesnook-sync-server",
@@ -12,6 +14,21 @@
   "github_stars": "788",
   "logo": "/icons/notesnook.webp",
   "description": "Notesnook sync server provides secure, self-hosted synchronization support for Notesnook clients. It handles encrypted note syncing, device registration, and user accounts without third-party servers.",
+  "tagline": null,
+  "features": [
+    "Encrypted sync: Synchronize notes across devices with end-to-end encryption for privacy.",
+    "Device registration: Manage which devices can access your notes with device authorization.",
+    "User accounts: Handle authentication and user management for Notesnook clients.",
+    "Cross-platform support: Sync notes between Windows, macOS, Linux, iOS, and Android apps.",
+    "Self-hosted backend: Run your own sync server for complete control over note data.",
+    "Zero-knowledge architecture: Server cannot decrypt notes, ensuring only you can read your content.",
+    "Conflict resolution: Automatically handle sync conflicts when editing on multiple devices.",
+    "Backup support: Export encrypted backups for disaster recovery and data portability.",
+    "API compatibility: Works with official Notesnook clients without modification.",
+    "Secure storage: Notes stored with encryption at rest on your server infrastructure.",
+    "Subscription management: Handle user subscriptions and feature access for clients.",
+    "Privacy-focused: No telemetry or tracking, all data stays on your infrastructure."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

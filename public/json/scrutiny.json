@@ -4,6 +4,8 @@
   "categories": [
     103
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/AnalogJ/scrutiny",
@@ -12,6 +14,21 @@
   "github_stars": "6964",
   "logo": "/icons/scrutiny.webp",
   "description": "Scrutiny is a self-hosted S.M.A.R.T. monitoring system for hard drives that includes dashboards, alerts, and analytics for drive health tracking.",
+  "tagline": null,
+  "features": [
+    "S.M.A.R.T. monitoring: Tracks hard drive health metrics using S.M.A.R.T. data from smartctl.",
+    "Dashboard visualization: Displays drive health, temperature, and failure predictions in intuitive charts.",
+    "Alert notifications: Sends email, Slack, or webhook alerts when drives show signs of failure.",
+    "Historical tracking: Stores S.M.A.R.T. metrics over time to identify degradation trends.",
+    "Multi-drive support: Monitors all connected drives including HDDs, SSDs, and NVMe devices.",
+    "Failure prediction: Uses S.M.A.R.T. thresholds and algorithms to predict drive failures.",
+    "Temperature monitoring: Tracks drive temperatures and alerts on overheating conditions.",
+    "Web interface: Access drive health information from any device via responsive web UI.",
+    "Docker support: Deploy as a container with automatic drive detection and monitoring.",
+    "API access: Query drive health data programmatically for integration with other tools.",
+    "Custom thresholds: Configure alert thresholds for specific S.M.A.R.T. attributes.",
+    "Export reports: Generate health reports for documentation and warranty claims."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

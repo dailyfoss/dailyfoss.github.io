@@ -4,6 +4,8 @@
   "categories": [
     21
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/stumpapp/stump",
@@ -12,6 +14,21 @@
   "github_stars": "1831",
   "logo": "/icons/stump.webp",
   "description": "Stump is a self-hosted reading server for comics and ebooks. It supports libraries, reading progress, multiple users, and a polished web reader UI.",
+  "tagline": null,
+  "features": [
+    "Comic library: Organizes digital comics and manga collections.",
+    "Ebook support: Reads EPUB and other ebook formats.",
+    "Web reader: Reads comics in browser with page-turning interface.",
+    "Reading progress: Tracks progress across devices with sync.",
+    "Library scanning: Automatically detects and indexes comic files.",
+    "Metadata management: Edits series, issue numbers, and descriptions.",
+    "User accounts: Creates separate accounts with individual reading lists.",
+    "Collections: Groups related comics into custom collections.",
+    "Search and filter: Finds comics by title, series, author, or tags.",
+    "Mobile apps: Native apps for iOS and Android reading.",
+    "OPDS support: Integrates with OPDS-compatible comic readers.",
+    "File formats: Supports CBZ, CBR, PDF, and other comic formats."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

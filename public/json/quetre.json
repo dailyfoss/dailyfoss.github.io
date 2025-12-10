@@ -4,6 +4,8 @@
   "categories": [
     148
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/zyachel/quetre",
@@ -12,6 +14,21 @@
   "github_stars": "483",
   "logo": "/icons/quetre.webp",
   "description": "Quetre is a lightweight self-hosted proxy front-end for Reddit that removes tracking and ads, offering a clean, privacy-focused browsing experience.",
+  "tagline": null,
+  "features": [
+    "Privacy-focused browsing: Access Reddit content without tracking scripts, cookies, or personalized ads.",
+    "Lightweight interface: Fast page loads with minimal JavaScript for efficient browsing on any device.",
+    "No account required: Browse subreddits, posts, and comments without creating or logging into a Reddit account.",
+    "Custom themes: Switch between light and dark modes for comfortable reading in any environment.",
+    "Direct media viewing: View images and videos inline without redirects to external hosting platforms.",
+    "Subreddit search: Find and explore communities without exposing your interests to Reddit's tracking systems.",
+    "Comment threading: Navigate nested discussions with clear visual hierarchy and collapsible threads.",
+    "Mobile responsive: Optimized layout adapts to smartphones and tablets for on-the-go browsing.",
+    "Instance customization: Configure your own instance with custom branding and default settings.",
+    "No JavaScript fallback: Core functionality works even with JavaScript disabled for maximum privacy.",
+    "RSS feed support: Subscribe to subreddit feeds for updates without visiting the site.",
+    "Proxy configuration: Route requests through your own infrastructure to control data flow and caching."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

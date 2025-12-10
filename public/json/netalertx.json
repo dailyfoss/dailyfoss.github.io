@@ -4,6 +4,8 @@
   "categories": [
     103
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/jokob-sk/NetAlertX",
@@ -12,6 +14,21 @@
   "github_stars": "5104",
   "logo": "/icons/netalertx.webp",
   "description": "NetAlertX is a network scanning and monitoring tool designed for self-hosting. It visualizes devices, alerts users when new devices connect, and integrates with Home Assistant for network awareness.",
+  "tagline": null,
+  "features": [
+    "Network scanning: Automatically discover all devices connected to your local network.",
+    "Device alerts: Receive notifications when new or unknown devices join the network.",
+    "Device identification: Recognize device types, manufacturers, and hostnames from network data.",
+    "Historical tracking: View connection history and track when devices were last seen.",
+    "Home Assistant integration: Send device presence data to Home Assistant for automation triggers.",
+    "Custom notifications: Configure alerts via email, webhooks, or push services for network events.",
+    "Device grouping: Organize devices by type, location, or custom categories for easier management.",
+    "MAC address tracking: Monitor devices by hardware address even when IP addresses change.",
+    "Port scanning: Detect open ports and services running on network devices.",
+    "Network visualization: View topology and device relationships in an interactive dashboard.",
+    "Scheduled scans: Run network discovery on intervals or specific times for continuous monitoring.",
+    "Blocklist management: Flag suspicious devices and track potential security threats on your network."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

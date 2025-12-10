@@ -4,6 +4,8 @@
   "categories": [
     118
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/matze/wastebin",
@@ -12,6 +14,21 @@
   "github_stars": "693",
   "logo": "/icons/wastebin.webp",
   "description": "Wastebin is a simple self-hosted pastebin service for sharing text snippets and logs. It offers syntax highlighting, expiration options, and a minimalistic web UI.",
+  "tagline": null,
+  "features": [
+    "Text sharing: Quickly share code snippets, logs, or text content with automatically generated shareable links.",
+    "Syntax highlighting: Display code with proper syntax highlighting for over 100 programming languages and formats.",
+    "Expiration options: Set automatic deletion times ranging from minutes to never for temporary or permanent pastes.",
+    "Raw text access: Retrieve paste content as plain text via direct URLs for easy integration with scripts and tools.",
+    "Private pastes: Create password-protected pastes that require authentication before viewing content.",
+    "Burn after reading: Enable one-time view mode where pastes self-destruct after being read once.",
+    "API access: Programmatically create and retrieve pastes using a simple REST API for automation workflows.",
+    "No registration: Share content immediately without creating accounts or providing personal information.",
+    "Minimal interface: Focus on functionality with a clean, distraction-free UI that loads quickly.",
+    "Self-hosted privacy: Keep sensitive logs and code snippets on your own infrastructure without third-party exposure.",
+    "Custom URLs: Generate short, memorable URLs for pastes to make sharing easier.",
+    "Line numbering: View code with line numbers for easier reference and discussion in code reviews."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

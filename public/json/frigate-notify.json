@@ -4,6 +4,8 @@
   "categories": [
     112
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/0x2142/frigate-notify",
@@ -12,6 +14,18 @@
   "github_stars": "293",
   "logo": "/icons/frigate-notify.webp",
   "description": "Frigate Notify is a companion tool for sending Frigate camera events into platforms like Apprise or SMS. It supports event triggers, notifications, and media previews for users running local security stacks.",
+  "tagline": null,
+  "features": [
+    "Notifications: Send Frigate events to Apprise or SMS, Event triggers, Media previews. Stay informed of camera activity.",
+    "Multi-Platform: Support various notification services. Flexible alerts.",
+    "Event Filtering: Customize what triggers notifications. Relevant alerts only.",
+    "Security Stack: Perfect for local surveillance. Enhanced monitoring.",
+    "Media Attachments: Include snapshots in alerts. Visual context.",
+    "Custom Templates: Format notifications. Personalized messages.",
+    "Zone-Based: Alert on specific areas. Targeted notifications.",
+    "Cooldown Periods: Prevent alert spam. Smart throttling.",
+    "Self-Hosted: Privacy-focused. Local processing."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +39,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

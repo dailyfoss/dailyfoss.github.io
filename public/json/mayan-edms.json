@@ -4,6 +4,8 @@
   "categories": [
     48
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "gitlab.com/mayan-edms/mayan-edms",
@@ -12,6 +14,21 @@
   "github_stars": "661",
   "logo": "/icons/mayan-edms.webp",
   "description": "Mayan EDMS is an enterprise-grade electronic document management system with OCR, metadata extraction, and workflow automation. It’s designed for archival, search, and compliance needs in self-hosted environments.",
+  "tagline": null,
+  "features": [
+    "OCR processing: Automatically extract text from scanned documents for full-text search and indexing.",
+    "Metadata extraction: Capture document properties, dates, and custom metadata for organization.",
+    "Workflow automation: Define document processing workflows with approval chains and notifications.",
+    "Version control: Track document revisions with complete history and ability to restore previous versions.",
+    "Access control: Set granular permissions on documents and folders based on users and groups.",
+    "Full-text search: Find documents quickly by searching through content, metadata, and tags.",
+    "Document tagging: Apply multiple tags to documents for flexible categorization and filtering.",
+    "Cabinet organization: Structure documents in hierarchical cabinets and folders like physical filing.",
+    "Retention policies: Automatically manage document lifecycle with configurable retention rules.",
+    "Digital signatures: Sign documents electronically with support for various signature standards.",
+    "API integration: Automate document management tasks through comprehensive REST API.",
+    "Multi-format support: Handle PDF, images, Office documents, and many other file types."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

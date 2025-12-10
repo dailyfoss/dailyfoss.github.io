@@ -4,6 +4,8 @@
   "categories": [
     102
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/conversejs/converse.js",
@@ -12,6 +14,15 @@
   "github_stars": "3189",
   "logo": "/icons/converse.webp",
   "description": "Converse.js is an open-source XMPP chat client that runs in the browser. It can connect to any XMPP server and supports multi-user chat, encryption, OMEMO, plugins, and mobile-friendly UI. It is fully open and self-hostable.",
+  "tagline": null,
+  "features": [
+    "XMPP Protocol: Connect to any XMPP server for federated chat. Open standards, no lock-in.",
+    "Browser-Based: No installation needed, runs entirely in the browser. Instant messaging anywhere.",
+    "Multi-User Chat: Join group conversations and chat rooms. Collaborate with teams.",
+    "OMEMO Encryption: End-to-end encrypted messaging for privacy. Secure conversations guaranteed.",
+    "Plugin System: Extend functionality with custom plugins. Tailor to your needs.",
+    "Mobile Friendly: Responsive design works on phones and tablets. Chat on any device."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

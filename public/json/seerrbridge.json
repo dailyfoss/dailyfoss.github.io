@@ -4,6 +4,8 @@
   "categories": [
     112
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Woahai321/SeerrBridge",
@@ -12,6 +14,21 @@
   "github_stars": "236",
   "logo": "/icons/seerrbridge.webp",
   "description": "SeerrBridge is a companion tool that links Seerr with additional media backends, allowing enhanced cross-service interactions and automation for home media setups.",
+  "tagline": null,
+  "features": [
+    "Seerr integration: Connects Seerr with additional media management backends.",
+    "Request forwarding: Routes media requests to appropriate download clients automatically.",
+    "Multi-backend support: Manages connections to multiple Radarr, Sonarr, or similar instances.",
+    "Automation rules: Creates custom workflows for request handling and processing.",
+    "Status synchronization: Keeps request status in sync across connected services.",
+    "Notification relay: Forwards notifications between Seerr and backend services.",
+    "API bridging: Translates API calls between different service versions and formats.",
+    "Load balancing: Distributes requests across multiple backend instances for scalability.",
+    "Error handling: Retries failed requests and provides detailed error reporting.",
+    "Configuration management: Centralized configuration for all connected services.",
+    "Health monitoring: Tracks connectivity and health of all integrated backends.",
+    "Logging system: Records all bridge operations for troubleshooting and auditing."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

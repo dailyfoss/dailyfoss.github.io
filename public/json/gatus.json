@@ -4,6 +4,8 @@
   "categories": [
     173
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/TwiN/gatus",
@@ -12,6 +14,17 @@
   "github_stars": "9241",
   "logo": "/icons/gatus.webp",
   "description": "Gatus is a self-hosted uptime monitoring and health check service. It supports alerting, condition-based checks, and heartbeat monitoring, displaying results in a simple dashboard. Ideal for monitoring internal and external services.",
+  "tagline": null,
+  "features": [
+    "Service Monitoring: Track uptime and health of internal and external services with configurable check intervals.",
+    "Condition-Based Alerts: Define custom conditions and thresholds to trigger alerts via multiple channels.",
+    "Health Checks: Perform HTTP, TCP, ICMP, and DNS checks with response time and status code validation.",
+    "Dashboard View: Monitor all services at a glance through a clean, real-time status dashboard.",
+    "Heartbeat Monitoring: Detect service failures with passive heartbeat checks and timeout alerts.",
+    "Multi-Channel Alerts: Send notifications via Slack, Discord, email, PagerDuty, and other integrations.",
+    "Response Time Tracking: Monitor and visualize service response times with historical data.",
+    "Lightweight Deployment: Single binary with minimal dependencies for easy self-hosted monitoring."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

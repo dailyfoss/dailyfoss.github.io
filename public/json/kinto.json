@@ -4,6 +4,8 @@
   "categories": [
     39
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Kinto/kinto",
@@ -12,6 +14,21 @@
   "github_stars": "4392",
   "logo": "/icons/kinto.webp",
   "description": "Kinto is a lightweight JSON storage service for syncing data across devices. It supports collections, permissions and versioning, and exposes a REST API and simple admin UI, often used for small self hosted sync or configuration backends.",
+  "tagline": null,
+  "features": [
+    "JSON Storage: Store and retrieve JSON documents via RESTful API. Lightweight data backend for applications.",
+    "Collection Management: Organize data into collections with schemas and validation. Structure your data logically.",
+    "Sync Service: Synchronize data across devices with conflict resolution. Keep data consistent everywhere.",
+    "Offline Support: Client libraries with offline-first capabilities. Work without internet connection.",
+    "User Authentication: Built-in authentication with accounts and sessions. Secure access to data.",
+    "Permissions: Fine-grained access control at collection and record level. Control who sees what.",
+    "Versioning: Automatic change history with rollback capabilities. Track data modifications over time.",
+    "Sharing: Share collections and records with other users. Collaborate on data.",
+    "Admin UI: Web interface for browsing and managing data. Visualize stored information.",
+    "Attachments: Store files alongside JSON records. Keep related data together.",
+    "Real-Time: WebSocket support for live data updates. Build reactive applications.",
+    "Client Libraries: Official SDKs for JavaScript, Python, and other languages. Easy integration with apps."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

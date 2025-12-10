@@ -4,6 +4,8 @@
   "categories": [
     34
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/homarr-labs/homarr",
@@ -12,6 +14,17 @@
   "github_stars": "2316",
   "logo": "/icons/homarr.webp",
   "description": "Homarr is a modern self hosted dashboard and homepage that aggregates links, widgets and service status in a grid layout. It includes app detection, search, theming and drag and drop customization for homelab users.",
+  "tagline": null,
+  "features": [
+    "Grid Layout: Organize services and widgets in a flexible, responsive grid system.",
+    "Drag-and-Drop: Customize dashboard layout by dragging tiles to desired positions.",
+    "Service Integration: Connect to popular self-hosted apps with automatic status detection.",
+    "Widget System: Add weather, calendar, RSS feeds, and system stats to your dashboard.",
+    "Search Functionality: Quickly find and launch services with integrated search.",
+    "Theme Customization: Choose from multiple themes or create custom color schemes.",
+    "Multi-User: Create separate dashboards for different users with individual preferences.",
+    "App Detection: Automatically discover and configure services running on your network."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

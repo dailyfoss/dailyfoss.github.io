@@ -4,6 +4,8 @@
   "categories": [
     100
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/LLukas22/Jellyswarrm",
@@ -12,6 +14,12 @@
   "github_stars": "290",
   "logo": "/icons/jellyswarrm.webp",
   "description": "Jellyswarrm is an orchestration and management layer for running Jellyfin on Docker Swarm. It simplifies deploying and scaling media servers by providing templates and scripts tailored for distributed setups.",
+  "tagline": null,
+  "features": [
+    "Swarm Orchestration: Docker Swarm templates, Jellyfin clustering, Load balancing. Scale your media server horizontally.",
+    "Deployment Automation: Pre-configured stacks, Service discovery, Health monitoring. Deploy Jellyfin in minutes.",
+    "High Availability: Distributed architecture, Failover support, Persistent storage. Keep streaming even during failures."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +33,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

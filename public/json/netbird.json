@@ -4,6 +4,8 @@
   "categories": [
     174
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/netbirdio/netbird",
@@ -12,6 +14,21 @@
   "github_stars": "20056",
   "logo": "/icons/netbird.webp",
   "description": "NetBird is a self-hosted WireGuard-based mesh VPN solution that simplifies secure networking across devices. It features identity-based access controls and a web UI for managing peers and networks.",
+  "tagline": null,
+  "features": [
+    "WireGuard-based VPN: Fast, secure mesh networking using modern WireGuard protocol for peer-to-peer connections.",
+    "Zero-config setup: Automatic peer discovery and connection without manual WireGuard configuration.",
+    "Identity-based access: Integrate with SSO providers like Okta, Auth0, or Google for user authentication.",
+    "Network policies: Define access rules and segmentation to control which peers can communicate.",
+    "Cross-platform clients: Native apps for Linux, Windows, macOS, iOS, and Android devices.",
+    "NAT traversal: Connect devices behind firewalls and NAT without port forwarding or public IPs.",
+    "Web management UI: Configure networks, manage peers, and view connection status from a browser.",
+    "Activity monitoring: Track peer connections, data transfer, and network events in real-time.",
+    "Automatic routing: Dynamic route management ensures traffic flows through the optimal path.",
+    "Self-hosted control: Run your own management server for complete data sovereignty and privacy.",
+    "Group management: Organize peers into groups for simplified policy application and access control.",
+    "API access: Automate network management and integrate with existing infrastructure via REST API."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

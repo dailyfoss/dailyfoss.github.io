@@ -4,6 +4,8 @@
   "categories": [
     128
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "codeberg.org/Hyperpipe/Hyperpipe",
@@ -12,6 +14,17 @@
   "github_stars": null,
   "logo": "/icons/hyperpipe.webp",
   "description": "Hyperpipe is a privacy friendly YouTube front end that can be self hosted. It proxies video and audio streams, removes tracking and ads, and presents content in a clean interface for safer watching.",
+  "tagline": null,
+  "features": [
+    "YouTube Proxy: Access YouTube content through a privacy-respecting proxy server.",
+    "Ad-Free Viewing: Watch videos without advertisements or sponsored content.",
+    "No Tracking: Browse and watch without Google tracking your viewing habits.",
+    "Audio Streaming: Stream music from YouTube with audio-only mode to save bandwidth.",
+    "Playlist Support: Create and manage playlists without a YouTube account.",
+    "Search Functionality: Search for videos and channels without leaving the interface.",
+    "Subscription Management: Subscribe to channels and get updates without Google account.",
+    "Self-Hosted Option: Run your own instance for complete privacy and control."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     144
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/benbusby/whoogle-search",
@@ -12,6 +14,21 @@
   "github_stars": "11141",
   "logo": "/icons/whoogle.webp",
   "description": "Whoogle Search is a self-hosted, ad-free, privacy-respecting metasearch engine that proxies Google results. It strips tracking, blocks ads, supports search filters, and can be used as a default search provider across browsers and devices.",
+  "tagline": null,
+  "features": [
+    "Privacy-focused search: Search Google results without tracking, cookies, or personalized ads.",
+    "Ad blocking: Automatically remove all advertisements from search results for a cleaner experience.",
+    "Tracking removal: Strip tracking parameters and redirects from result URLs to protect privacy.",
+    "Custom filters: Configure content filters, safe search settings, and result preferences.",
+    "Dark mode: Switch between light and dark themes for comfortable searching in any environment.",
+    "Search shortcuts: Use bangs and shortcuts for quick searches on specific sites or services.",
+    "No JavaScript required: Core functionality works without JavaScript for maximum compatibility and privacy.",
+    "Custom CSS: Personalize the appearance with custom stylesheets to match your preferences.",
+    "Tor support: Run over Tor network for additional anonymity and privacy protection.",
+    "Instance customization: Configure your own instance with custom branding and default settings.",
+    "Mobile responsive: Search comfortably on smartphones and tablets with an optimized mobile interface.",
+    "OpenSearch integration: Add Whoogle as a search engine in your browser for quick access."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

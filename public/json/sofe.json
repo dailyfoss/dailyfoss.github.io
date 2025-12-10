@@ -4,6 +4,8 @@
   "categories": [
     165
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/chkpwd/sofe",
@@ -12,6 +14,21 @@
   "github_stars": "12",
   "logo": "/icons/sofe.webp",
   "description": "Sofe is a self-hosted feedback and idea board for web apps. It lets users submit, vote, and comment on feature requests via a simple UI, helping prioritize development.",
+  "tagline": null,
+  "features": [
+    "Feature requests: Collects user feedback and feature suggestions.",
+    "Voting system: Allows users to upvote ideas to prioritize development.",
+    "Comment threads: Discusses feature requests with threaded comments.",
+    "Status tracking: Marks requests as planned, in progress, or completed.",
+    "Roadmap view: Displays planned features in public roadmap.",
+    "User authentication: Requires login to submit and vote on ideas.",
+    "Admin moderation: Manages and organizes submitted feedback.",
+    "Email notifications: Alerts users when their requests are updated.",
+    "Search and filter: Finds specific requests by keyword or status.",
+    "Tag organization: Categorizes requests with custom tags.",
+    "Public or private: Controls visibility of feedback board.",
+    "Integration ready: Connects with project management tools via webhooks."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

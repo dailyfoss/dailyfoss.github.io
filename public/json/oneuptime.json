@@ -4,6 +4,8 @@
   "categories": [
     173
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/OneUptime/oneuptime",
@@ -12,6 +14,17 @@
   "github_stars": "6209",
   "logo": "/icons/oneuptime.webp",
   "description": "OneUptime is a complete open-source monitoring and status page service. It provides uptime, workflow tracking, alerts, SLOs, and on-call management for self-hosted or SaaS deployment.",
+  "tagline": null,
+  "features": [
+    "Uptime monitoring: Check website and API availability with HTTP, TCP, and ping monitors from multiple locations.",
+    "Status pages: Create public or private status pages to communicate service health and incidents to users.",
+    "Alert management: Receive notifications via email, SMS, Slack, or webhooks when monitors detect issues or recover.",
+    "On-call scheduling: Manage rotation schedules and escalation policies for incident response teams.",
+    "SLO tracking: Define and monitor service level objectives with automatic reporting on compliance and violations.",
+    "Incident management: Track issues from detection through resolution with timeline, notes, and team collaboration.",
+    "Performance metrics: Collect and visualize response times, uptime percentages, and availability trends over time.",
+    "API monitoring: Test API endpoints with custom headers, authentication, and response validation for comprehensive checks."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

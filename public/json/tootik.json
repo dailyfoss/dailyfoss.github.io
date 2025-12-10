@@ -4,6 +4,8 @@
   "categories": [
     148
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/dimkr/tootik",
@@ -12,6 +14,21 @@
   "github_stars": "185",
   "logo": "/icons/tootik.webp",
   "description": "Tootik is a self-hosted microblogging platform implementing ActivityPub, enabling federated social networking. It provides timelines, posts, and interactions via a simple, lightweight web UI.",
+  "tagline": null,
+  "features": [
+    "ActivityPub federation: Connect with Mastodon, Pleroma, and other federated social networks using ActivityPub protocol.",
+    "Microblogging: Post short updates, thoughts, and content to share with followers across the fediverse.",
+    "Timeline views: Browse home, local, and federated timelines to discover content and conversations.",
+    "Interactions: Like, boost, and reply to posts from users on your instance and across federated servers.",
+    "Following: Follow users from any compatible instance to see their posts in your timeline.",
+    "Lightweight: Run efficiently with minimal resource requirements suitable for personal or small community instances.",
+    "Web interface: Access your social network through a simple, straightforward web interface.",
+    "Privacy controls: Control post visibility with public, unlisted, followers-only, or direct message options.",
+    "Media support: Share images and other media files with posts for richer content sharing.",
+    "Notifications: Receive notifications for mentions, follows, and interactions with your content.",
+    "Search: Find users and posts across your instance and the federated network.",
+    "Profile customization: Set up your profile with bio, avatar, and header image to express your identity."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

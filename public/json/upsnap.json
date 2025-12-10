@@ -4,6 +4,8 @@
   "categories": [
     61
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/seriousm4x/UpSnap",
@@ -12,6 +14,21 @@
   "github_stars": "4228",
   "logo": "/icons/upsnap.webp",
   "description": "UpSnap is a self-hosted Wake-on-LAN and device control dashboard. It discovers devices, lets you wake or ping them, and provides quick access to service URLs in a tidy web UI.",
+  "tagline": null,
+  "features": [
+    "Wake-on-LAN: Wake sleeping devices remotely using Wake-on-LAN magic packets from the web interface.",
+    "Device discovery: Automatically discover devices on your network with network scanning.",
+    "Status monitoring: Check device online status with ping and port checks in real-time.",
+    "Service links: Store and access quick links to device web interfaces and services.",
+    "Device grouping: Organize devices into groups for better management of large networks.",
+    "Custom commands: Execute custom commands on devices for advanced control and automation.",
+    "Web dashboard: Manage all devices through a clean, responsive web interface.",
+    "Mobile-friendly: Control devices from mobile devices with touch-optimized interface.",
+    "Shutdown control: Send shutdown commands to devices that support remote shutdown.",
+    "Port monitoring: Monitor specific ports on devices to check service availability.",
+    "Device notes: Add notes and documentation to devices for reference and organization.",
+    "Quick access: Access frequently used devices and services with a single click."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

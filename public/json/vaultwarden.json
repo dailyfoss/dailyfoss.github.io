@@ -4,6 +4,8 @@
   "categories": [
     117
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/dani-garcia/vaultwarden",
@@ -12,6 +14,21 @@
   "github_stars": "51661",
   "logo": "/icons/vaultwarden.webp",
   "description": "Vaultwarden is a self-hosted Bitwarden-compatible server written in Rust. It provides the backend for web, mobile, and browser clients to store and sync encrypted passwords and secrets.",
+  "tagline": null,
+  "features": [
+    "Password management: Store and sync passwords, passkeys, and credentials across all devices securely.",
+    "Bitwarden compatible: Use official Bitwarden clients on web, desktop, mobile, and browser extensions.",
+    "End-to-end encryption: Encrypt all data with your master password before it leaves your device.",
+    "Secure sharing: Share passwords and notes with other users or organizations with granular permissions.",
+    "Two-factor authentication: Protect your vault with 2FA using TOTP, WebAuthn, or other methods.",
+    "Password generator: Generate strong, random passwords with customizable length and character sets.",
+    "Secure notes: Store sensitive text information like recovery codes or private keys securely.",
+    "File attachments: Attach files to vault items for storing documents and certificates.",
+    "Organizations: Create organizations to share passwords and items with teams or family members.",
+    "Lightweight: Run efficiently with minimal resources compared to official Bitwarden server.",
+    "API access: Integrate with other tools using the Bitwarden-compatible REST API.",
+    "Self-hosted control: Keep all password data on your own infrastructure with complete control."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

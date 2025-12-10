@@ -4,6 +4,8 @@
   "categories": [
     46
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/OpenCut-app/OpenCut",
@@ -12,6 +14,17 @@
   "github_stars": "44159",
   "logo": "/icons/opencut.webp",
   "description": "OpenCut is a self-hosted project planner and scheduling tool focused on makers or fabricators. It provides cut lists, material usage, and order management for workshop environments.",
+  "tagline": null,
+  "features": [
+    "Cut list generation: Create optimized cutting plans from project dimensions to minimize material waste and costs.",
+    "Material tracking: Monitor inventory levels for wood, metal, and other materials with usage history and reorder alerts.",
+    "Project scheduling: Plan fabrication timelines with task dependencies and resource allocation for workshop efficiency.",
+    "Order management: Track customer orders from quote to completion with status updates and delivery scheduling.",
+    "Waste optimization: Calculate best cutting patterns to reduce scrap and maximize yield from stock materials.",
+    "Equipment planning: Assign tools and machines to tasks based on availability and project requirements.",
+    "Cost estimation: Generate accurate quotes by calculating material costs, labor hours, and overhead for each project.",
+    "Export options: Output cut lists and plans to PDF or CSV for shop floor use and integration with CNC systems."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

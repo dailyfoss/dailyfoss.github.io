@@ -4,6 +4,8 @@
   "categories": [
     29
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "gitea.baerentsen.space/FrederikBaerentsen/ComicOPDS",
@@ -12,6 +14,15 @@
   "github_stars": null,
   "logo": "/icons/comicopds.webp",
   "description": "ComicOPDS is a self-hosted OPDS server tailored for comic book libraries. It allows browsing and serving comic book files through OPDS-compatible readers and apps using a streamlined web back end.",
+  "tagline": null,
+  "features": [
+    "OPDS Server: Standard protocol for comic book distribution. Compatible with all major readers.",
+    "Comic Library Management: Organize and serve your comic collection efficiently. Streamlined browsing experience.",
+    "Reader Compatibility: Works with popular OPDS-compatible apps. Read on any device.",
+    "Web Backend: Simple administration through web interface. Easy configuration and management.",
+    "Self-Hosted: Complete control over your comic library. Privacy-focused solution.",
+    "Lightweight: Minimal resource requirements for smooth operation. Perfect for home servers."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

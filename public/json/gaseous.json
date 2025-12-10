@@ -4,6 +4,8 @@
   "categories": [
     17
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/gaseous-project/gaseous-server",
@@ -12,6 +14,17 @@
   "github_stars": "768",
   "logo": "/icons/gaseous.webp",
   "description": "Gaseous Server is a self-hosted platform for running private, ephemeral virtual desktops or apps in the browser. It uses containerized sessions and supports custom apps or databases via WebAssembly or VNC.",
+  "tagline": null,
+  "features": [
+    "Ephemeral Desktops: Launch temporary virtual desktops that automatically destroy after use for enhanced security.",
+    "Browser-Based Access: Access applications and desktops directly through web browsers without client installation.",
+    "Containerized Sessions: Isolate each user session in separate containers for security and resource management.",
+    "On-Demand Workspaces: Spin up temporary workspaces for specific tasks with automatic cleanup.",
+    "WebAssembly Support: Run custom applications in the browser using WebAssembly for near-native performance.",
+    "VNC Integration: Connect to containerized applications via VNC for full desktop environment access.",
+    "Zero Persistence: Ensure no data remains after session termination for privacy and compliance.",
+    "Multi-User Support: Provide isolated, temporary environments for multiple concurrent users."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

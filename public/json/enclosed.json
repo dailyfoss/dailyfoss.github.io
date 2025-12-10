@@ -4,6 +4,8 @@
   "categories": [
     111
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/CorentinTh/enclosed",
@@ -12,6 +14,15 @@
   "github_stars": "1799",
   "logo": "/icons/enclosed.webp",
   "description": "Enclosed is a self-hosted paste and snippet service with an emphasis on encryption and privacy. Users can store text or code snippets and share links while keeping control of retention and access.",
+  "tagline": null,
+  "features": [
+    "Encrypted Snippets: Store text and code with strong encryption. Maximum privacy protection.",
+    "Secure Sharing: Share links with controlled access. Protected snippet distribution.",
+    "Retention Control: Set custom expiration times for pastes. Automatic cleanup.",
+    "Code Highlighting: Syntax highlighting for multiple languages. Developer-friendly display.",
+    "Privacy-First: No tracking or unnecessary data collection. Your snippets stay private.",
+    "Self-Hosted: Run your own paste service. Complete ownership and control."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

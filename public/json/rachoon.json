@@ -4,6 +4,8 @@
   "categories": [
     120
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/ad-on-is/rachoon",
@@ -12,6 +14,21 @@
   "github_stars": "882",
   "logo": "/icons/rachoon.webp",
   "description": "Rachoon is a self-hosted financial planning tool that helps manage budgets, track expenses, and visualize monthly cash flows through a user-friendly web interface.",
+  "tagline": null,
+  "features": [
+    "Budget planning: Create monthly budgets by category to track spending limits and financial goals.",
+    "Expense tracking: Record and categorize transactions to understand where your money goes each month.",
+    "Cash flow visualization: View income and expenses over time with charts and graphs for trend analysis.",
+    "Recurring transactions: Set up automatic entries for regular bills and income to simplify monthly planning.",
+    "Category management: Organize expenses into custom categories that match your spending patterns.",
+    "Multi-currency support: Track finances in different currencies for international accounts and travel expenses.",
+    "Goal setting: Define savings targets and monitor progress toward financial milestones.",
+    "Report generation: Export financial summaries and detailed transaction lists for tax preparation or analysis.",
+    "Mobile responsive: Access your budget and record expenses from any device with a touch-friendly interface.",
+    "Data privacy: Keep all financial information on your own server without sharing with third-party services.",
+    "Import transactions: Upload bank statements in CSV format to quickly populate your expense history.",
+    "Budget alerts: Receive notifications when spending approaches or exceeds category limits."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     191
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/frain-dev/convoy",
@@ -12,6 +14,15 @@
   "github_stars": "2718",
   "logo": "/icons/convoy.webp",
   "description": "Convoy is an open-source webhook service that offers reliable message delivery, retries, filtering, and transformations. Built for high-scale event-driven systems, it integrates with APIs and custom apps.",
+  "tagline": null,
+  "features": [
+    "Reliable Delivery: Automatic retries ensure webhooks reach their destination. Never lose events.",
+    "Event Filtering: Route and filter webhooks based on custom rules. Precise event handling.",
+    "Message Transformation: Modify payloads before delivery with transformations. Flexible integration.",
+    "High Scale: Built to handle millions of webhook deliveries. Enterprise-grade performance.",
+    "API Integration: Connect with any service or custom application. Universal compatibility.",
+    "Self-Hosted: Complete control over your webhook infrastructure. Enhanced security and reliability."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

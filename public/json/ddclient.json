@@ -4,6 +4,8 @@
   "categories": [
     140
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/ddclient/ddclient",
@@ -12,6 +14,15 @@
   "github_stars": "3225",
   "logo": "/icons/ddclient.webp",
   "description": "ddclient is a lightweight dynamic DNS update client written in Perl. It supports multiple DDNS providers to keep your domain pointing to your home server or dynamic IP, running as a CLI or daemon in server environments.",
+  "tagline": null,
+  "features": [
+    "Dynamic DNS Updates: Keep domains pointing to changing IPs automatically. Always accessible.",
+    "Multi-Provider Support: Works with dozens of DDNS services. Choose your preferred provider.",
+    "Lightweight: Minimal resource usage with Perl-based efficiency. Perfect for any server.",
+    "Daemon Mode: Runs continuously in the background. Set and forget operation.",
+    "Home Server Ready: Ideal for self-hosted services with dynamic IPs. Reliable remote access.",
+    "Battle-Tested: Mature, stable solution used for decades. Proven reliability."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

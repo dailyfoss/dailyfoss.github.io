@@ -4,6 +4,8 @@
   "categories": [
     100
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/TheWicklowWolf/SonaShow",
@@ -12,6 +14,21 @@
   "github_stars": "79",
   "logo": "/icons/sonashow.webp",
   "description": "SonaShow is a self-hosted dashboard for displaying Now Playing information from media servers like Jellyfin or Kodi on big screens, ideal for party or ambient displays.",
+  "tagline": null,
+  "features": [
+    "Now playing display: Shows currently playing media from Jellyfin or Kodi.",
+    "Full-screen mode: Displays media information in full-screen for big screens.",
+    "Album artwork: Shows high-resolution cover art for music and movies.",
+    "Metadata display: Presents title, artist, album, and other media details.",
+    "Auto-refresh: Updates display automatically when media changes.",
+    "Customizable layout: Adjusts information layout and styling.",
+    "Multiple sources: Connects to various media server types.",
+    "Screensaver mode: Activates when no media is playing.",
+    "Party mode: Displays track queue and upcoming songs.",
+    "Theme support: Customizes appearance with different color schemes.",
+    "Responsive design: Adapts to different screen sizes and orientations.",
+    "API integration: Polls media servers for real-time playback status."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     165
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/manualdousuario/marreta",
@@ -12,6 +14,21 @@
   "github_stars": "1075",
   "logo": "/icons/marreta.webp",
   "description": "Marreta is a self-hosted tool for managing password backups as encrypted files. It’s designed for simple offline storage and retrieval of credentials in a secure manner, accessible via a minimal UI.",
+  "tagline": null,
+  "features": [
+    "Encrypted storage: Store passwords and credentials in encrypted files for secure offline access.",
+    "Backup management: Create and manage multiple encrypted backup files of your password database.",
+    "Simple interface: Minimal web UI for adding, editing, and retrieving stored credentials.",
+    "Master password: Single master password protects all stored credentials with strong encryption.",
+    "Export functionality: Download encrypted backup files for storage on external media or cloud.",
+    "Import capability: Restore credentials from previously exported encrypted backup files.",
+    "Search function: Quickly find specific credentials by service name or username.",
+    "Category organization: Group passwords by category like work, personal, or financial.",
+    "Password generator: Create strong random passwords with customizable length and complexity.",
+    "Offline access: Access your password vault without internet connection after initial setup.",
+    "No dependencies: Self-contained solution with minimal external dependencies for reliability.",
+    "Audit log: Track when credentials were accessed or modified for security monitoring."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

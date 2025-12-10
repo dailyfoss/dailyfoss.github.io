@@ -4,6 +4,8 @@
   "categories": [
     61
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/jon6fingrs/ghostfile",
@@ -12,6 +14,17 @@
   "github_stars": "58",
   "logo": "/icons/ghostfile.webp",
   "description": "Ghostfile is a simple blog publishing tool for static content backed by plain text or markdown. It exposes a minimal UI for posting, editing, and managing entries, ideal for content-focused workflows.",
+  "tagline": null,
+  "features": [
+    "Static Publishing: Publish blog posts and content backed by plain text or markdown files.",
+    "Markdown Editing: Write and edit content using markdown syntax with a simple editor interface.",
+    "Minimal Interface: Focus on writing with a distraction-free, lightweight blogging UI.",
+    "File-Based Storage: Store posts as individual files for easy backup and version control.",
+    "Content Management: Organize, edit, and manage blog entries through a streamlined web interface.",
+    "No Database Required: Operate without database dependencies using file-based content storage.",
+    "Quick Publishing: Rapidly publish and update content without complex workflows.",
+    "Lightweight Deployment: Minimal resource requirements for simple, content-focused blogging."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

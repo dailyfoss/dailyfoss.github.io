@@ -4,6 +4,8 @@
   "categories": [
     171
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/dubinc/dub",
@@ -12,6 +14,21 @@
   "github_stars": "22731",
   "logo": "/icons/dub.webp",
   "description": "Dub is an open-source link management and URL shortening platform. It supports branded links, analytics, workspaces, and API access, offering a privacy-friendly alternative to commercial link management tools.",
+  "tagline": null,
+  "features": [
+    "URL Shortening: Create short, branded links with custom domains and memorable aliases for better brand recognition.",
+    "Click Analytics: Track detailed click statistics including geographic location, device types, and referrer information.",
+    "Custom Domains: Use your own domain names for shortened links to maintain brand consistency and trust.",
+    "Workspace Management: Organize links into separate workspaces for different projects, teams, or clients.",
+    "QR Code Generation: Automatically generate QR codes for shortened links with customizable styling and branding.",
+    "Link Expiration: Set automatic expiration dates for links with optional redirect destinations after expiry.",
+    "Password Protection: Secure sensitive links with password requirements before allowing access to destinations.",
+    "Bulk Operations: Create, edit, and manage multiple links simultaneously through CSV import and batch processing.",
+    "API Integration: Access all functionality through comprehensive REST APIs for automation and application integration.",
+    "Team Collaboration: Share workspaces with team members and control access permissions for different user roles.",
+    "UTM Parameters: Automatically add tracking parameters to links for better campaign attribution and analytics.",
+    "Link Preview: Generate social media previews with custom titles, descriptions, and images for better engagement."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

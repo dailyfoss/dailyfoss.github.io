@@ -4,6 +4,8 @@
   "categories": [
     "Tidak ditemukan"
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "dovel.email/server/index.html",
@@ -12,6 +14,17 @@
   "github_stars": null,
   "logo": "/icons/dovel.webp",
   "description": "Dovel Server is a self-hosted email service platform that combines modern webmail, spam filtering, and admin tools. It aims to make running personal or small-business mail infrastructure easier while keeping full control of data.",
+  "tagline": null,
+  "features": [
+    "Webmail interface: Access email through a modern browser-based client with responsive design for mobile and desktop.",
+    "Spam filtering: Block unwanted messages using SpamAssassin, DNS blacklists, and customizable filtering rules.",
+    "Domain management: Host email for multiple domains with separate user accounts and mailbox configurations.",
+    "SMTP and IMAP: Send and receive email using standard protocols compatible with all mail clients and devices.",
+    "Admin dashboard: Manage users, domains, and server settings through a centralized web-based control panel.",
+    "Virus scanning: Scan incoming and outgoing messages for malware using ClamAV integration for security.",
+    "Backup tools: Schedule automatic backups of mailboxes and configuration for disaster recovery protection.",
+    "TLS encryption: Secure email transmission with automatic certificate management and encrypted connections."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

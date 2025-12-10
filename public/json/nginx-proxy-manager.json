@@ -4,6 +4,8 @@
   "categories": [
     137
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/NginxProxyManager/nginx-proxy-manager",
@@ -12,6 +14,21 @@
   "github_stars": "30312",
   "logo": "/icons/nginx-proxy-manager.webp",
   "description": "Nginx Proxy Manager is a self-hosted web UI for managing Nginx proxies with SSL support. It offers simple setup for reverse proxies, domain routing, and certificate generation via Let's Encrypt.",
+  "tagline": null,
+  "features": [
+    "Reverse proxy management: Configure Nginx proxies through an intuitive web interface without editing config files.",
+    "SSL certificates: Automatic SSL certificate generation and renewal via Let's Encrypt.",
+    "Domain routing: Route multiple domains to different backend services from a single IP address.",
+    "Access lists: Restrict access to proxied services by IP address or authentication.",
+    "Custom locations: Define URL path-based routing to different backend services.",
+    "WebSocket support: Proxy WebSocket connections for real-time applications.",
+    "HTTP/2 and HTTP/3: Enable modern protocols for improved performance and security.",
+    "Force SSL: Automatically redirect HTTP traffic to HTTPS for secure connections.",
+    "Custom Nginx config: Add advanced Nginx directives for specialized configurations.",
+    "Access logs: View and analyze proxy access logs for troubleshooting and monitoring.",
+    "User management: Create multiple admin users with different permission levels.",
+    "Backup and restore: Export and import proxy configurations for disaster recovery."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

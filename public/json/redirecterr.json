@@ -4,6 +4,8 @@
   "categories": [
     171
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/varthe/Redirecterr",
@@ -12,6 +14,21 @@
   "github_stars": "117",
   "logo": "/icons/redirecterr.webp",
   "description": "Redirecterr is a self-hosted link redirection manager with analytics and link rules. It tracks visits and allows flexible redirects in a clean UI.",
+  "tagline": null,
+  "features": [
+    "Link redirection: Create short, memorable URLs that redirect to longer destination addresses.",
+    "Visit analytics: Track click counts, referrer sources, and geographic data for each redirect link.",
+    "Custom rules: Define conditional redirects based on user agent, location, or time of day.",
+    "Link management: Edit, disable, or delete redirects through an intuitive web interface.",
+    "QR code generation: Create scannable QR codes for each redirect link for offline marketing.",
+    "Expiration dates: Set automatic deactivation times for temporary campaigns or time-limited offers.",
+    "Password protection: Restrict access to sensitive redirects with optional password requirements.",
+    "Click limits: Configure maximum click counts before links automatically expire or deactivate.",
+    "Custom slugs: Choose memorable short codes for your redirect URLs instead of random strings.",
+    "Dashboard reporting: View aggregate statistics and trends across all your redirect links.",
+    "API access: Create and manage redirects programmatically using REST endpoints.",
+    "Export data: Download analytics and link information in CSV format for external analysis."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

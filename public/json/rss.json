@@ -4,6 +4,8 @@
   "categories": [
     57
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "codeberg.org/danb/rss",
@@ -12,6 +14,21 @@
   "github_stars": null,
   "logo": "/icons/rss.webp",
   "description": "RSS is a self-hosted RSS reader and aggregator with mobile-friendly UI, folder support, and simple UI for reading and managing subscription feeds.",
+  "tagline": null,
+  "features": [
+    "Feed aggregation: Subscribe to multiple RSS and Atom feeds in one place.",
+    "Folder organization: Group related feeds into folders for easier management.",
+    "Mobile friendly: Read feeds comfortably on smartphones and tablets.",
+    "Read/unread tracking: Mark articles as read automatically or manually.",
+    "Article search: Find specific articles across all subscribed feeds.",
+    "OPML import: Migrate feed subscriptions from other RSS readers.",
+    "Refresh control: Update feeds manually or on a schedule.",
+    "Starred items: Save important articles for later reference.",
+    "Clean interface: Focus on content with a minimal, distraction-free design.",
+    "Keyboard navigation: Browse feeds and articles efficiently with hotkeys.",
+    "Feed management: Add, remove, or edit feed subscriptions easily.",
+    "Privacy focused: Keep your reading habits private on your own server."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

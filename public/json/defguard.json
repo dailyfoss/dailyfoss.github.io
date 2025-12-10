@@ -4,6 +4,8 @@
   "categories": [
     174
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/DefGuard/defguard",
@@ -12,6 +14,15 @@
   "github_stars": "2429",
   "logo": "/icons/defguard.webp",
   "description": "DefGuard is a modern identity and access management tool for managing WireGuard VPN networks through an intuitive web UI. It includes user management, SSO integrations, and easy provisioning for secure remote access.",
+  "tagline": null,
+  "features": [
+    "WireGuard Management: Intuitive UI for managing VPN networks. Simplified VPN administration.",
+    "User Provisioning: Easy onboarding with automated config generation. Streamlined access management.",
+    "SSO Integration: Connect with existing identity providers. Centralized authentication.",
+    "Access Control: Fine-grained permissions and policies. Secure network access.",
+    "Modern Interface: Clean, responsive web UI. Manage VPN from anywhere.",
+    "Self-Hosted: Complete control over your VPN infrastructure. Privacy-first remote access."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

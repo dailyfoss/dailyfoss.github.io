@@ -4,6 +4,8 @@
   "categories": [
     16
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/MizuchiLabs/mantrae",
@@ -12,6 +14,19 @@
   "github_stars": "367",
   "logo": "/icons/mantrae.webp",
   "description": "Mantrae is a self-hosted tool that helps users create and manage personal mantras for daily inspiration. It organizes affirmations into collections and presents them in a clean interface with reminders.",
+  "tagline": null,
+  "features": [
+    "Mantra collections: Organize affirmations and mantras into themed collections for different purposes.",
+    "Daily reminders: Schedule notifications to display mantras at specific times throughout the day.",
+    "Random selection: Display a random mantra from your collection for daily inspiration.",
+    "Custom mantras: Create and edit personal affirmations with custom text and formatting.",
+    "Desktop app: Native application for Linux, Windows, and macOS with system tray integration.",
+    "Minimal interface: Clean, distraction-free design focuses attention on the mantra content.",
+    "Import/export: Share mantra collections or backup your affirmations in standard formats.",
+    "Meditation timer: Built-in timer for meditation sessions with mantra display.",
+    "Offline access: All mantras stored locally for access without internet connection.",
+    "Customizable display: Adjust font size, colors, and display duration to suit your preferences."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +40,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

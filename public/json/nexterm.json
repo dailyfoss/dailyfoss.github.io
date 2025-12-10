@@ -4,6 +4,8 @@
   "categories": [
     135
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/gnmyt/Nexterm",
@@ -12,6 +14,21 @@
   "github_stars": "3527",
   "logo": "/icons/nexterm.webp",
   "description": "Nexterm is a self-hosted web-based terminal emulator for accessing shells remotely via browser. It supports SSH and offers secure command execution without needing a native terminal client.",
+  "tagline": null,
+  "features": [
+    "Web-based terminal: Access command-line interfaces through a browser without native terminal software.",
+    "SSH connections: Connect to remote servers via SSH with credential management.",
+    "Multiple sessions: Open and manage multiple terminal sessions in tabs or windows.",
+    "Connection profiles: Save server configurations for quick access to frequently used hosts.",
+    "Secure authentication: Support for password, key-based, and two-factor authentication methods.",
+    "Command history: Access previous commands with searchable history across sessions.",
+    "File transfer: Upload and download files between local system and remote servers.",
+    "Customizable appearance: Adjust colors, fonts, and themes for comfortable terminal usage.",
+    "Clipboard integration: Copy and paste text between browser and terminal sessions.",
+    "Session recording: Log terminal sessions for audit trails and troubleshooting.",
+    "Mobile responsive: Access terminals from tablets and smartphones with touch-friendly interface.",
+    "Access control: Manage user permissions and restrict access to specific servers or commands."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     61
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Nasogaa/immich-drop",
@@ -12,6 +14,17 @@
   "github_stars": "427",
   "logo": "/icons/immich-drop.webp",
   "description": "Immich Drop is a simple upload portal for Immich that allows guests to bulk upload photos into a specified album without needing full accounts. It is handy for events or shared collections where many people contribute media.",
+  "tagline": null,
+  "features": [
+    "Guest Uploads: Allow guests to upload photos without creating Immich accounts.",
+    "Bulk Upload: Support multiple file uploads simultaneously for efficient collection.",
+    "Album Integration: Upload directly into specified Immich albums for organization.",
+    "Event Collection: Perfect for weddings, parties, and events where many people contribute photos.",
+    "Simple Interface: Clean, straightforward upload portal that anyone can use.",
+    "No Authentication: Guests can contribute without login credentials or registration.",
+    "Immich Integration: Seamlessly adds photos to your existing Immich library.",
+    "Privacy Control: Maintain control over who can upload and which albums receive photos."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

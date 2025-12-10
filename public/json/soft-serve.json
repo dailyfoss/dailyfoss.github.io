@@ -4,6 +4,8 @@
   "categories": [
     72
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/charmbracelet/soft-serve",
@@ -12,6 +14,21 @@
   "github_stars": "6407",
   "logo": "/icons/soft-serve.webp",
   "description": "Soft Serve is a self-hosted, TUI-first Git server and code forge. It exposes repositories via SSH with a retro terminal UI, and optionally serves a minimal web view.",
+  "tagline": null,
+  "features": [
+    "Git server: Hosts Git repositories with SSH access.",
+    "TUI interface: Browses repositories and code through terminal user interface.",
+    "SSH authentication: Authenticates users via SSH keys for secure access.",
+    "Repository browsing: Views files, commits, and branches in terminal.",
+    "Markdown rendering: Displays README files with formatted markdown in terminal.",
+    "Syntax highlighting: Shows code with language-specific highlighting in TUI.",
+    "Web interface: Optionally serves minimal web view for repository browsing.",
+    "User management: Controls repository access with user permissions.",
+    "Git hooks: Supports server-side Git hooks for automation.",
+    "Clone and push: Provides standard Git operations via SSH.",
+    "Lightweight: Runs efficiently with minimal resource requirements.",
+    "Self-contained: Single binary deployment without external dependencies."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

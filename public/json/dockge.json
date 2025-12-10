@@ -4,6 +4,8 @@
   "categories": [
     47
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/louislam/dockge",
@@ -12,6 +14,15 @@
   "github_stars": "20633",
   "logo": "/icons/dockge.webp",
   "description": "Dockge is a sleek, self-hosted Docker compose manager that provides an intuitive UI for viewing, editing, and managing your Compose stacks. It supports real-time logs, service actions, and deployment functionality.",
+  "tagline": null,
+  "features": [
+    "Compose Management: Visual interface for Docker Compose stacks. Simplified orchestration.",
+    "Real-Time Logs: Stream logs from all services live. Instant debugging.",
+    "Stack Editing: Modify compose files through web UI. No SSH required.",
+    "Service Control: Start, stop, and restart services individually. Granular management.",
+    "Deployment Tools: Deploy new stacks with ease. Streamlined operations.",
+    "Self-Hosted: Beautiful compose manager on your infrastructure. Complete stack control."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

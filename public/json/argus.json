@@ -4,6 +4,8 @@
   "categories": [
     172
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/release-argus/Argus",
@@ -12,6 +14,15 @@
   "github_stars": "496",
   "logo": "/icons/argus.webp",
   "description": "Argus is a self-hosted monitoring and notification system for watching new releases on GitHub and other platforms. It lets users define version checks and send alerts to integrations like Slack, Discord or email.",
+  "tagline": null,
+  "features": [
+    "Release Monitoring: Track new software releases on GitHub and other platforms. Stay updated automatically.",
+    "Version Checks: Define custom rules for detecting version updates. Flexible monitoring.",
+    "Multi-Platform: Monitor releases from GitHub, Docker Hub, and more. Universal coverage.",
+    "Alert Integration: Send notifications to Slack, Discord, email, and webhooks. Get notified your way.",
+    "Web Dashboard: View all monitored projects and their status at a glance. Centralized overview.",
+    "Self-Hosted: Run on your own infrastructure for privacy and control. Your monitoring, your server."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

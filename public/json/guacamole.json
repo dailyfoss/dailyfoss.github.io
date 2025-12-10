@@ -4,6 +4,8 @@
   "categories": [
     135
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/apache/guacamole-server",
@@ -12,6 +14,17 @@
   "github_stars": "3617",
   "logo": "/icons/guacamole.webp",
   "description": "Apache Guacamole is a remote desktop gateway supporting RDP, VNC, SSH, and Kubernetes access via a browser. Users can access desktops and servers securely without client software.",
+  "tagline": null,
+  "features": [
+    "Clientless Access: Connect to remote desktops and servers through any web browser without plugins.",
+    "Protocol Support: Access systems via RDP, VNC, SSH, and Kubernetes with a unified interface.",
+    "Session Recording: Record remote sessions for compliance, training, and security auditing.",
+    "Multi-Factor Authentication: Secure access with TOTP, Duo, or other MFA providers.",
+    "Connection Sharing: Share remote desktop sessions with multiple users simultaneously.",
+    "File Transfer: Upload and download files between local and remote systems during sessions.",
+    "User Management: Centralized user authentication with LDAP, Active Directory, or database backends.",
+    "Connection Profiles: Save connection settings and credentials for quick access to frequently used systems."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

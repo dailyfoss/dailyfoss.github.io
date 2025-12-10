@@ -4,6 +4,8 @@
   "categories": [
     100
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/jmbannon/ytdl-sub",
@@ -12,6 +14,21 @@
   "github_stars": "2608",
   "logo": "/icons/ytdl-sub.webp",
   "description": "ytdl-sub is a self-hosted, automation-focused wrapper for yt-dlp that subscribes to channels and playlists, periodically downloading new content according to defined rules.",
+  "tagline": null,
+  "features": [
+    "Subscription automation: Define channels and playlists to monitor and download new content automatically on a schedule.",
+    "Rule-based filtering: Set criteria for which videos to download based on title, duration, upload date, or metadata.",
+    "Preset configurations: Use pre-built presets for common scenarios like music videos, podcasts, or educational content.",
+    "Media server formatting: Organize downloads with naming conventions and folder structures compatible with Plex and Jellyfin.",
+    "Incremental downloads: Only fetch new videos since the last run to minimize bandwidth and processing time.",
+    "NFO file generation: Create metadata files for media servers with episode numbers, descriptions, and artwork.",
+    "Thumbnail management: Download and organize video thumbnails as poster images for media library displays.",
+    "Subtitle handling: Automatically download and embed subtitles in preferred languages with fallback options.",
+    "Quality presets: Configure default quality settings per subscription to balance file size and video quality.",
+    "Dry run mode: Preview what would be downloaded without actually fetching files to test configurations.",
+    "YAML configuration: Define all subscriptions and rules in human-readable YAML files for version control.",
+    "Notification hooks: Trigger webhooks or scripts when new content is downloaded for integration with other systems."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     135
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/shellhub-io/shellhub",
@@ -12,6 +14,21 @@
   "github_stars": "1849",
   "logo": "/icons/shellhub.webp",
   "description": "ShellHub is a self-hosted platform for managing remote shell access to Linux devices over SSH from a central web interface. It simplifies fleet access with audit logs, tags, and browser-based terminals.",
+  "tagline": null,
+  "features": [
+    "Remote SSH access: Connect to Linux devices via SSH through a centralized web interface.",
+    "Browser terminal: Access device shells directly in the browser without SSH clients.",
+    "Device management: Organize and manage fleets of Linux devices from a single dashboard.",
+    "Session recording: Records SSH sessions for security auditing and compliance.",
+    "Tag-based filtering: Organize devices with tags for easy filtering and bulk operations.",
+    "Public key authentication: Secures device access with SSH key pairs.",
+    "Firewall rules: Control which users can access specific devices or device groups.",
+    "Session sharing: Share terminal sessions with team members for collaboration or support.",
+    "Activity logs: Tracks all connections, commands, and access attempts.",
+    "Multi-user support: Manages team access with individual accounts and permissions.",
+    "Agent deployment: Lightweight agent installs on devices to enable remote access.",
+    "API access: Automates device management and access control via REST API."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     93
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/vectordotdev/vector",
@@ -12,6 +14,21 @@
   "github_stars": "20867",
   "logo": "/icons/vector.webp",
   "description": "Vector is a high-performance observability data pipeline that collects, transforms, and ships logs and metrics. It runs as a self-hosted agent or service and is configured via declarative files and CLI.",
+  "tagline": null,
+  "features": [
+    "Log collection: Collect logs from files, syslog, journald, and other sources with flexible inputs.",
+    "Metrics collection: Gather metrics from Prometheus, StatsD, and other monitoring systems.",
+    "Data transformation: Transform, parse, and enrich observability data with built-in functions.",
+    "Multiple destinations: Ship data to Elasticsearch, Splunk, S3, Kafka, and dozens of other sinks.",
+    "High performance: Process millions of events per second with low resource usage.",
+    "Buffering: Buffer data in memory or on disk to handle downstream outages gracefully.",
+    "Routing: Route data to different destinations based on content, tags, or custom logic.",
+    "Aggregation: Aggregate metrics and logs before shipping to reduce data volume and costs.",
+    "Reliability: Ensure data delivery with acknowledgments, retries, and dead letter queues.",
+    "Configuration: Define pipelines declaratively using TOML, YAML, or JSON configuration files.",
+    "Observability: Monitor Vector itself with built-in metrics and health checks.",
+    "Vendor-neutral: Avoid vendor lock-in with support for open standards and multiple backends."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

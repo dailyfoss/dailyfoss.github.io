@@ -4,6 +4,8 @@
   "categories": [
     166
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/DialmasterOrg/Youtarr",
@@ -12,6 +14,21 @@
   "github_stars": "730",
   "logo": "/icons/youtarr.webp",
   "description": "Youtarr is a self-hosted YouTube request and download manager that coordinates with media servers and Arr tools. Users can request videos, which are then fetched and organized automatically.",
+  "tagline": null,
+  "features": [
+    "Request management: Allow users to request YouTube videos for download through a web interface with approval workflows.",
+    "Automatic downloads: Fetch requested videos automatically using yt-dlp with configurable quality and format settings.",
+    "Media server integration: Organize downloaded content into libraries compatible with Plex, Jellyfin, and Emby.",
+    "Channel subscriptions: Monitor YouTube channels and automatically download new uploads based on defined rules.",
+    "Quality selection: Choose video resolution, audio bitrate, and container formats per request or globally.",
+    "Metadata extraction: Automatically fetch and store video titles, descriptions, thumbnails, and channel information.",
+    "Duplicate detection: Prevent downloading the same video multiple times by checking existing library content.",
+    "Storage management: Set disk space limits and retention policies to automatically remove old or unwatched content.",
+    "User permissions: Control who can request videos, approve downloads, and manage the library with role-based access.",
+    "Download queue: View and manage pending downloads with priority ordering and manual intervention options.",
+    "Notification system: Send alerts when requested videos are downloaded and ready to watch.",
+    "Subtitle support: Automatically download available subtitles and captions in multiple languages alongside videos."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

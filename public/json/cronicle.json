@@ -4,6 +4,8 @@
   "categories": [
     158
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/jhuckaby/Cronicle",
@@ -12,6 +14,15 @@
   "github_stars": "5241",
   "logo": "/icons/cronicle.webp",
   "description": "Cronicle is a self-hosted distributed task scheduler with a web-based GUI for managing jobs across multiple servers. It supports load balancing, per-job permissions, job history, plugins, and notifications.",
+  "tagline": null,
+  "features": [
+    "Distributed Scheduling: Run jobs across multiple servers seamlessly. Scale your automation.",
+    "Load Balancing: Automatically distribute tasks for optimal performance. Efficient resource usage.",
+    "Web-Based GUI: Manage all jobs through intuitive interface. No SSH required.",
+    "Job Permissions: Fine-grained access control per task. Secure team collaboration.",
+    "Plugin System: Extend functionality with custom plugins. Adapt to your needs.",
+    "Notification Support: Alerts via email, Slack, and webhooks. Stay informed everywhere."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

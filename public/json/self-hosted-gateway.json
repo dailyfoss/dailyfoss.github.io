@@ -4,6 +4,8 @@
   "categories": [
     137
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/hintjen/selfhosted-gateway",
@@ -12,6 +14,21 @@
   "github_stars": "1669",
   "logo": "/icons/self-hosted-gateway.webp",
   "description": "Selfhosted-gateway is a Docker-native tunneling solution that exposes local containers to the public internet via a remote WireGuard gateway. It automates reverse proxy setup with NGINX/Caddy and TLS, ideal for securely publishing homelab services.",
+  "tagline": null,
+  "features": [
+    "WireGuard tunneling: Securely exposes local services through encrypted WireGuard VPN tunnels.",
+    "Docker integration: Automatically detects and configures containers with simple labels.",
+    "Reverse proxy automation: Sets up NGINX or Caddy reverse proxies without manual configuration.",
+    "TLS certificates: Automatically provisions and renews Let's Encrypt certificates for HTTPS.",
+    "Remote gateway: Connects homelab services to a public VPS for internet accessibility.",
+    "Zero-trust networking: Isolates services with network segmentation and access controls.",
+    "Dynamic DNS: Updates DNS records automatically when gateway IP addresses change.",
+    "Multi-service support: Exposes multiple containers through a single gateway instance.",
+    "Health checks: Monitors service availability and routes traffic only to healthy backends.",
+    "Traffic logging: Records access logs for security monitoring and troubleshooting.",
+    "Bandwidth control: Implements rate limiting to prevent abuse and manage costs.",
+    "Failover support: Automatically switches to backup gateways if primary becomes unavailable."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

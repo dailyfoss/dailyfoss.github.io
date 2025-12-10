@@ -4,6 +4,8 @@
   "categories": [
     47
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/BeryJu/gravity",
@@ -12,6 +14,17 @@
   "github_stars": "875",
   "logo": "/icons/gravity.webp",
   "description": "Gravity is a lightweight DNS and filtering proxy service for blocking malware, ads, and tracking. Designed for home networks and privacy enthusiasts, it supports per-device rules, stats, and a modern web UI.",
+  "tagline": null,
+  "features": [
+    "DNS Filtering: Block ads, trackers, and malware at the network level before they reach devices.",
+    "Per-Device Rules: Configure different filtering policies for individual devices or groups.",
+    "Modern Interface: Manage DNS settings through a clean, responsive web UI.",
+    "Blocklist Management: Subscribe to curated blocklists or create custom filtering rules.",
+    "Query Logging: View DNS query logs to understand network traffic and troubleshoot issues.",
+    "Statistics Dashboard: Monitor blocked queries, top domains, and filtering effectiveness.",
+    "Privacy Protection: Prevent tracking and telemetry at the DNS level for all network devices.",
+    "Lightweight Proxy: Minimal resource usage suitable for home networks and small offices."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

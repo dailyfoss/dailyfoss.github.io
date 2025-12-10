@@ -4,6 +4,8 @@
   "categories": [
     166
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Unpackerr/unpackerr",
@@ -12,6 +14,21 @@
   "github_stars": "1278",
   "logo": "/icons/unpackerr.webp",
   "description": "Unpackerr is a self-hosted daemon that monitors Sonarr, Radarr, and similar apps and automatically extracts completed downloads. It runs unattended and integrates into existing media automation setups.",
+  "tagline": null,
+  "features": [
+    "Automatic extraction: Extract compressed downloads automatically when Sonarr or Radarr mark them complete.",
+    "Multi-app support: Monitor Sonarr, Radarr, Lidarr, Readarr, and Whisparr simultaneously.",
+    "Archive formats: Support RAR, ZIP, 7z, and other common archive formats for extraction.",
+    "Background operation: Run as a daemon in the background without user intervention.",
+    "Cleanup: Optionally delete archive files after successful extraction to save disk space.",
+    "Event monitoring: Watch for download completion events via API integration with Arr apps.",
+    "Parallel extraction: Extract multiple archives simultaneously for faster processing.",
+    "Error handling: Retry failed extractions and log errors for troubleshooting.",
+    "Password support: Extract password-protected archives when passwords are provided.",
+    "Path mapping: Handle different path structures between download client and media server.",
+    "Notification support: Send notifications when extractions complete or fail.",
+    "Lightweight: Run efficiently with minimal CPU and memory usage for continuous operation."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

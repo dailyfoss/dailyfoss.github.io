@@ -4,6 +4,8 @@
   "categories": [
     39
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/pgadmin-org/pgadmin4",
@@ -12,6 +14,21 @@
   "github_stars": "3333",
   "logo": "/icons/pgadmin.webp",
   "description": "pgAdmin is a popular web-based GUI for managing PostgreSQL databases. It includes advanced tools to create, query, monitor, and maintain databases in a self-hosted or cloud environment.",
+  "tagline": null,
+  "features": [
+    "Database management: Create, modify, and delete PostgreSQL databases with a graphical interface.",
+    "Query tool: Write and execute SQL queries with syntax highlighting, auto-completion, and result visualization.",
+    "Schema browser: Navigate database objects including tables, views, functions, and triggers in a hierarchical tree.",
+    "Visual query builder: Construct complex SQL queries using drag-and-drop interface without writing code.",
+    "Data editing: View and modify table data directly in spreadsheet-like grids with inline editing.",
+    "Backup and restore: Schedule and manage database backups with support for pg_dump and pg_restore.",
+    "User management: Administer database users, roles, and permissions through intuitive dialogs.",
+    "Performance monitoring: Track query execution, connection statistics, and server metrics in real-time.",
+    "Import and export: Transfer data between databases using CSV, JSON, and other formats.",
+    "Multi-server support: Manage multiple PostgreSQL instances from a single interface with connection profiles.",
+    "ERD visualization: Generate entity-relationship diagrams to understand database structure and relationships.",
+    "Extension management: Install and configure PostgreSQL extensions like PostGIS and pg_stat_statements."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

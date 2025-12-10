@@ -4,6 +4,8 @@
   "categories": [
     148
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/bookwyrm-social/bookwyrm",
@@ -12,6 +14,17 @@
   "github_stars": "2600",
   "logo": "/icons/bookwyrm.webp",
   "description": "BookWyrm is a federated social network for tracking and discussing books. Built on ActivityPub, it lets users follow others, share reviews, manage shelves, and join the federated book community using a self-hosted instance.",
+  "tagline": null,
+  "features": [
+    "Federated Social: Connect with book lovers across the fediverse. Decentralized community.",
+    "Book Tracking: Log reading progress and manage virtual bookshelves. Organize your reading.",
+    "Reviews & Ratings: Share thoughts and discover new books. Community insights.",
+    "ActivityPub: Built on open protocol for federation. Interoperable network.",
+    "Reading Lists: Create and share curated book lists. Inspire others.",
+    "Follow Users: Connect with readers who share your interests. Build community.",
+    "Self-Hosted: Run your own instance for privacy and control. Data sovereignty.",
+    "Import Data: Bring your reading history from other platforms. Easy migration."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

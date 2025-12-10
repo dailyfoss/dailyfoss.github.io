@@ -4,6 +4,8 @@
   "categories": [
     37
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/CyferShepard/Jellystat",
@@ -12,6 +14,12 @@
   "github_stars": "1910",
   "logo": "/icons/jellystat.webp",
   "description": "Jellystat is a self hosted analytics dashboard for Jellyfin. It collects playback history, user activity and library statistics, then displays graphs and tables so administrators can understand how their media server is used.",
+  "tagline": null,
+  "features": [
+    "Server Analytics: Playback statistics, User activity tracking, Library insights. Understand your media server usage.",
+    "Visual Dashboards: Interactive charts, Historical trends, Real-time metrics. Monitor server performance at a glance.",
+    "User Insights: Watch patterns, Popular content, Device analytics. Know what your users love."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +33,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

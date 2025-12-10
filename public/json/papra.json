@@ -4,6 +4,8 @@
   "categories": [
     131
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/papra-hq/papra",
@@ -12,6 +14,19 @@
   "github_stars": "2782",
   "logo": "/icons/papra.webp",
   "description": "Papra is a self-hosted document workflow and approval software for teams. It supports configurable pipelines, document metadata, role-based access control, and collaboration.",
+  "tagline": null,
+  "features": [
+    "Approval workflows: Configure multi-stage approval pipelines with sequential or parallel review steps for document processing",
+    "Document metadata: Define custom metadata fields to capture document-specific information and enable structured data collection",
+    "Role-based access: Control who can view, edit, approve, or reject documents based on user roles and organizational hierarchy",
+    "Pipeline configuration: Create custom workflow templates with conditional routing, automated actions, and approval requirements",
+    "Collaboration tools: Comment on documents, mention team members, and track discussions within approval process for context",
+    "Status tracking: Monitor document progress through workflow stages with visual indicators and real-time status updates",
+    "Notification system: Automated alerts notify stakeholders when documents require action, are approved, or reach specific stages",
+    "Audit trail: Complete history of document actions, approvals, and changes for compliance and accountability tracking",
+    "Document templates: Create reusable templates with pre-configured metadata and workflow assignments for standardized processes",
+    "Search and filters: Find documents quickly using filters by status, assignee, date, metadata, or workflow stage"
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +40,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

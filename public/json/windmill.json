@@ -4,6 +4,8 @@
   "categories": [
     196
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/windmill-labs/windmill",
@@ -12,6 +14,21 @@
   "github_stars": "15239",
   "logo": "/icons/windmill.webp",
   "description": "Windmill is an open-source, self-hostable developer platform that turns scripts into production-grade workflows, APIs, and internal apps. It supports multiple languages, scheduling, webhooks, auto-generated UIs, and offers commercial cloud hosting.",
+  "tagline": null,
+  "features": [
+    "Script execution: Run scripts in Python, TypeScript, Go, Bash, or SQL as workflows or APIs instantly.",
+    "Workflow builder: Create complex automation workflows with a visual flow editor and conditional logic.",
+    "Auto-generated UIs: Automatically generate web interfaces for scripts with form inputs and result displays.",
+    "Scheduling: Set up cron-based schedules to run scripts and workflows at specific times or intervals.",
+    "Webhook triggers: Expose scripts as HTTP endpoints that can be called from external systems.",
+    "Secret management: Store API keys, passwords, and credentials securely with encrypted secret storage.",
+    "Version control: Track script changes with Git integration for collaboration and rollback capability.",
+    "Dependency management: Automatically handle package dependencies for Python, npm, and other ecosystems.",
+    "Execution logs: View detailed logs of all script runs with inputs, outputs, and error messages.",
+    "Resource management: Define reusable resources like database connections or API clients across scripts.",
+    "Permission system: Control access to scripts, workflows, and resources with role-based permissions.",
+    "Monitoring dashboard: Track script execution metrics, success rates, and performance in real-time."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

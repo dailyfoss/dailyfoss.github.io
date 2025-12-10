@@ -4,6 +4,8 @@
   "categories": [
     32
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/eznix86/docker-registry-ui",
@@ -12,6 +14,15 @@
   "github_stars": "156",
   "logo": "/icons/container-hub.webp",
   "description": "Docker Registry UI is a user-friendly interface for browsing and managing Docker images from a registry. It supports search, tags, delete operations, and provides a clean and simple dashboard.",
+  "tagline": null,
+  "features": [
+    "Registry Browsing: View all Docker images in your registry at a glance. Clear visual overview.",
+    "Tag Management: Browse and compare different image versions easily. Track your releases.",
+    "Delete Operations: Remove unused images to free up storage space. Keep registry clean.",
+    "Search Functionality: Find images quickly with powerful search. Locate what you need fast.",
+    "Clean Dashboard: Simple, intuitive interface for registry management. No complexity, just results.",
+    "Self-Hosted: Manage your private Docker registry with ease. Complete control over images."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

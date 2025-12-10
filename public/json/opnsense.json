@@ -4,6 +4,8 @@
   "categories": [
     63
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/opnsense/core",
@@ -12,6 +14,17 @@
   "github_stars": "4115",
   "logo": "/icons/opnsense.webp",
   "description": "OPNsense is an open-source firewall and routing platform based on FreeBSD. It includes intrusion detection, VPN, reporting, and a powerful web UI for configuring network-level security.",
+  "tagline": null,
+  "features": [
+    "Firewall rules: Create and manage packet filtering rules with detailed logging and traffic shaping capabilities.",
+    "VPN support: Configure OpenVPN, IPsec, and WireGuard tunnels for secure remote access and site-to-site connections.",
+    "Intrusion detection: Monitor network traffic for malicious activity using Suricata with automatic rule updates.",
+    "Traffic shaping: Control bandwidth allocation per application, user, or network segment for QoS management.",
+    "Web filtering: Block access to categories of websites or specific domains using integrated proxy and DNS filtering.",
+    "High availability: Deploy in failover configurations with CARP for redundant firewall protection.",
+    "Reporting tools: Generate traffic reports, security logs, and performance metrics with customizable dashboards.",
+    "Plugin system: Extend functionality with community plugins for additional services and integrations."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

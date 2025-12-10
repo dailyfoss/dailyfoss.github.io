@@ -4,6 +4,8 @@
   "categories": [
     175
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/mentholmike/wagmios",
@@ -12,6 +14,19 @@
   "github_stars": "47",
   "logo": "/icons/wagmios.webp",
   "description": "Wagmios is a self-hosted dashboard for monitoring crypto wallets or DeFi positions, aggregating balances and metrics into a clear web interface for long-term holders.",
+  "tagline": null,
+  "features": [
+    "Wallet monitoring: Track multiple crypto wallets and DeFi positions across different blockchains in one unified dashboard.",
+    "Balance aggregation: Automatically aggregate token balances and display total portfolio value with real-time price updates.",
+    "Transaction history: View complete transaction logs with timestamps, amounts, and gas fees for comprehensive record keeping.",
+    "Multi-chain support: Monitor assets across Ethereum, Polygon, BSC, and other EVM-compatible networks simultaneously.",
+    "Portfolio analytics: Visualize asset allocation, performance trends, and historical value changes with interactive charts.",
+    "Custom alerts: Set up notifications for balance changes, large transactions, or price movements to stay informed.",
+    "Privacy-focused: Self-hosted solution ensures wallet addresses and holdings remain private without third-party tracking.",
+    "Read-only access: Monitor wallets without requiring private keys or seed phrases for maximum security.",
+    "Export functionality: Generate reports and export data in CSV or JSON formats for tax reporting or analysis.",
+    "Responsive interface: Access your crypto dashboard from any device with a mobile-friendly web interface."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +40,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

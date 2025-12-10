@@ -4,6 +4,8 @@
   "categories": [
     156
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/petio-team/petio",
@@ -12,6 +14,21 @@
   "github_stars": "282",
   "logo": "/icons/petio.webp",
   "description": "Petio is a request management tool integrating with Plex and Overseerr to allow users to request media content. It automates approval workflows and supports multiple media backends.",
+  "tagline": null,
+  "features": [
+    "Media Requests: Users can search and request movies or TV shows to be added to your Plex library through an intuitive interface.",
+    "Approval Workflows: Configure automatic or manual approval processes for media requests based on user roles and quotas.",
+    "Plex Integration: Direct integration with Plex Media Server for authentication, library management, and content availability checking.",
+    "Overseerr Compatibility: Works alongside Overseerr to provide alternative request management with different features and UI.",
+    "User Management: Control access and permissions with user accounts, roles, and request limits for fair resource allocation.",
+    "Request History: Track all media requests with status updates, approval history, and fulfillment tracking.",
+    "Notification System: Alert users when their requests are approved, denied, or available in the library.",
+    "Search Integration: Search across multiple media databases to find and request content with metadata and artwork.",
+    "Mobile Responsive: Optimized interface works seamlessly on mobile devices for requesting content on the go.",
+    "Request Quotas: Set limits on how many requests users can make per time period to manage library growth.",
+    "Quality Profiles: Configure preferred video quality and format settings for automated media downloads.",
+    "Issue Reporting: Users can report problems with existing media for re-download or quality improvement."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

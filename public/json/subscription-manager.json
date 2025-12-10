@@ -4,6 +4,8 @@
   "categories": [
     121
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/dh1011/subscription-manager",
@@ -12,6 +14,21 @@
   "github_stars": "281",
   "logo": "/icons/subscription-manager.webp",
   "description": "subscription-manager is a self-hosted tool for tracking subscriptions and recurring payments. It monitors renewal dates and costs with reminders and summaries.",
+  "tagline": null,
+  "features": [
+    "Subscription tracking: Records all recurring subscriptions and memberships.",
+    "Renewal reminders: Alerts before subscription renewals to avoid unwanted charges.",
+    "Cost calculation: Totals monthly and yearly subscription expenses.",
+    "Payment tracking: Records payment dates and amounts for each subscription.",
+    "Category organization: Groups subscriptions by type or purpose.",
+    "Currency support: Tracks subscriptions in multiple currencies.",
+    "Cancellation tracking: Records when subscriptions were cancelled.",
+    "Free trial monitoring: Tracks trial periods to cancel before billing starts.",
+    "Spending analytics: Visualizes subscription costs with charts and trends.",
+    "Export data: Downloads subscription list for budgeting or tax purposes.",
+    "Sharing options: Tracks shared subscriptions and splits costs.",
+    "Mobile responsive: Manages subscriptions from smartphones and tablets."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     173
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/rajnandan1/kener",
@@ -12,6 +14,21 @@
   "github_stars": "4570",
   "logo": "/icons/kener.webp",
   "description": "Kener is a simple uptime and endpoint monitoring service. It sends requests to configured URLs, records response status and times, and shows checks in a minimal dashboard suitable for monitoring small fleets of services.",
+  "tagline": null,
+  "features": [
+    "Uptime Monitoring: Regular health checks for endpoints with response time tracking. Monitor service availability continuously.",
+    "Status Dashboard: Clean, minimal interface showing service status at a glance. Quick overview of infrastructure health.",
+    "Incident Tracking: Automatic downtime detection with historical incident logs. Track outage patterns over time.",
+    "Response Time Metrics: Monitor and graph response times for performance analysis. Identify slow services quickly.",
+    "Multi-Endpoint: Monitor multiple services and URLs from single dashboard. Centralize monitoring efforts.",
+    "Alert Notifications: Get notified of downtime via email, webhooks, or integrations. Stay informed about outages.",
+    "Public Status Page: Share service status with users through public page. Communicate availability transparently.",
+    "Historical Data: View uptime history and incident reports over time. Analyze reliability trends.",
+    "Custom Checks: Configure HTTP, TCP, and ping checks with custom parameters. Monitor various service types.",
+    "Lightweight: Minimal resource usage with fast, efficient monitoring. Run on modest hardware.",
+    "Configuration as Code: Define monitors in YAML configuration files. Version control your monitoring setup.",
+    "Dark Mode: Eye-friendly dark theme for comfortable viewing. Reduce eye strain during monitoring."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

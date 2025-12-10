@@ -4,6 +4,8 @@
   "categories": [
     129
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/johnwarne/upvote-rss",
@@ -12,6 +14,21 @@
   "github_stars": "317",
   "logo": "/icons/upvote-rss.webp",
   "description": "Upvote RSS is a self-hosted platform that turns RSS feeds into a link-sharing site with voting and discussion, similar to a lightweight social news or Hacker News clone.",
+  "tagline": null,
+  "features": [
+    "RSS aggregation: Import content from RSS feeds automatically for community discussion.",
+    "Voting system: Let users upvote and downvote content to surface the best articles.",
+    "Comment threads: Enable discussions on submitted links with threaded comments.",
+    "User accounts: Support user registration and authentication for voting and commenting.",
+    "Ranking algorithm: Rank content based on votes and time to show trending articles.",
+    "Feed management: Add and manage multiple RSS feeds as content sources.",
+    "Moderation tools: Moderate content and comments to maintain community quality.",
+    "Submission filtering: Filter and organize submissions by source, score, or date.",
+    "Social features: Follow users, save favorite articles, and build a personalized feed.",
+    "Mobile responsive: Access and participate from any device with a responsive design.",
+    "Privacy-focused: Host your own link aggregator without relying on third-party platforms.",
+    "Lightweight: Run efficiently with minimal resources for personal or small community use."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

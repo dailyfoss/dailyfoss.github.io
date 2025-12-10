@@ -4,6 +4,8 @@
   "categories": [
     62
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Sync-in/server",
@@ -12,6 +14,21 @@
   "github_stars": "382",
   "logo": "/icons/sync-in.webp",
   "description": "Sync-in is a self-hosted collaborative note editor with real-time shared pads. It’s a modern take on Etherpad for teams and classrooms.",
+  "tagline": null,
+  "features": [
+    "Real-time collaboration: Edits documents simultaneously with multiple users.",
+    "Shared pads: Creates collaborative text documents accessible via unique URLs.",
+    "Live cursors: Shows other users' cursor positions and selections in real-time.",
+    "Version history: Tracks document changes with timeline and rollback capability.",
+    "Rich text editing: Formats text with bold, italic, lists, and other styling.",
+    "Export options: Downloads pads as plain text, HTML, or Markdown.",
+    "Access control: Protects pads with passwords or restricts to specific users.",
+    "Chat sidebar: Discusses changes with collaborators via built-in chat.",
+    "Syntax highlighting: Supports code editing with language-specific highlighting.",
+    "Mobile responsive: Edits documents from smartphones and tablets.",
+    "No registration: Creates and shares pads without requiring accounts.",
+    "Offline editing: Continues editing when offline with automatic sync on reconnect."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

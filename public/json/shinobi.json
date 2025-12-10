@@ -4,6 +4,8 @@
   "categories": [
     107
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "gitlab.com/Shinobi-Systems/Shinobi",
@@ -12,6 +14,21 @@
   "github_stars": "685",
   "logo": "/icons/shinobi.webp",
   "description": "Shinobi is a self-hosted, web-based CCTV and NVR solution. It supports multiple camera vendors, motion detection, recording, and alerting, aimed at advanced but user-friendly video surveillance setups.",
+  "tagline": null,
+  "features": [
+    "Multi-camera support: Connects to IP cameras from various vendors via RTSP, ONVIF, and HTTP streams.",
+    "Motion detection: Triggers recording and alerts based on configurable motion zones and sensitivity.",
+    "Recording management: Schedules continuous or event-based recording with retention policies.",
+    "Live viewing: Streams multiple camera feeds simultaneously in a grid layout.",
+    "Event timeline: Displays detected motion events with thumbnails for quick review.",
+    "User permissions: Controls access to specific cameras and features with role-based accounts.",
+    "Plugin system: Extends functionality with community plugins for notifications and integrations.",
+    "Mobile access: Responsive web interface works on smartphones and tablets.",
+    "Storage backends: Supports local storage, network shares, and cloud storage options.",
+    "API access: Provides REST API for automation and third-party integrations.",
+    "Alert notifications: Sends alerts via email, webhooks, or push notifications on motion events.",
+    "Hardware acceleration: Leverages GPU encoding for efficient video processing."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

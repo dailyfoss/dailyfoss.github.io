@@ -4,6 +4,8 @@
   "categories": [
     79
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/glauth/glauth",
@@ -12,6 +14,17 @@
   "github_stars": "2757",
   "logo": "/icons/glauth.webp",
   "description": "GLAuth is a lightweight LDAP server designed for simple identity and authentication use cases. It’s ideal for use in homelabs, development environments, and lightweight directory-based user management.",
+  "tagline": null,
+  "features": [
+    "Lightweight LDAP: Minimal LDAP server implementation for authentication and directory services.",
+    "Simple Configuration: Easy setup with configuration files instead of complex directory schemas.",
+    "User Management: Manage users and groups for authentication across multiple services.",
+    "Backend Flexibility: Store user data in config files, databases, or integrate with existing systems.",
+    "Homelab Optimized: Designed for small-scale deployments with minimal resource requirements.",
+    "Standard Compliance: Compatible with LDAP clients and applications expecting standard LDAP protocol.",
+    "Development Friendly: Ideal for development environments and testing LDAP integrations.",
+    "Quick Deployment: Get directory services running in minutes without enterprise complexity."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

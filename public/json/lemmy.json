@@ -4,6 +4,8 @@
   "categories": [
     148
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/LemmyNet/lemmy",
@@ -12,6 +14,13 @@
   "github_stars": "14148",
   "logo": "/icons/lemmy.webp",
   "description": "Lemmy is an open-source, federated alternative to Reddit, built with ActivityPub. It supports communities, posts, moderation, and federation across servers, allowing users full control of their data and interactions.",
+  "tagline": null,
+  "features": [
+    "Federated Communities: ActivityPub protocol, Cross-server interaction, Decentralized network. Join the federated Reddit alternative.",
+    "Community Management: Create communities, Moderation tools, Custom rules. Build and moderate your own spaces.",
+    "Content Sharing: Posts and comments, Voting system, Media support. Share and discuss content freely.",
+    "Self-Hosted: Full data ownership, Privacy control, Custom instance. Run your own Lemmy server."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +34,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

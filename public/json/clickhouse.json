@@ -4,6 +4,8 @@
   "categories": [
     133
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/ClickHouse/ClickHouse",
@@ -12,6 +14,16 @@
   "github_stars": "44494",
   "logo": "/icons/clickhouse.webp",
   "description": "ClickHouse is an open-source columnar database management system for real-time analytics. It’s designed to handle petabytes of data with low latency and offers SQL compatibility, sharding, replication, and clustering options.",
+  "tagline": null,
+  "features": [
+    "Columnar Database: Optimized for real-time analytics queries. Lightning fast.",
+    "Petabyte Scale: Handle massive datasets with low latency. Enterprise-grade.",
+    "SQL Compatible: Use familiar SQL syntax for queries. Easy adoption.",
+    "Sharding & Replication: Built-in clustering for high availability. Scalable architecture.",
+    "Real-Time Analytics: Process and analyze data in real-time. Instant insights.",
+    "Open Source: Transparent, community-driven development. No vendor lock-in.",
+    "Self-Hosted: Run your own analytics database. Complete control."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +37,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

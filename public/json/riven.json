@@ -4,6 +4,8 @@
   "categories": [
     100
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/rivenmedia/riven",
@@ -12,6 +14,21 @@
   "github_stars": "675",
   "logo": "/icons/riven.webp",
   "description": "Riven is a self-hosted media automation platform similar to Sonarr/Radarr but built for managing music, movies, and TV libraries with customizable pipelines.",
+  "tagline": null,
+  "features": [
+    "Media automation: Automatically download and organize movies, TV shows, and music.",
+    "Custom pipelines: Build workflows that match your specific media management needs.",
+    "Multi-source search: Query multiple indexers and trackers simultaneously for content.",
+    "Quality profiles: Define preferred formats, resolutions, and codecs for downloads.",
+    "Library organization: Automatically rename and sort media into structured folders.",
+    "Metadata enrichment: Fetch posters, descriptions, and details from online databases.",
+    "Download monitoring: Track active downloads and manage queue priorities.",
+    "Upgrade automation: Replace existing media with higher quality versions when available.",
+    "Calendar view: See upcoming releases and scheduled downloads on a timeline.",
+    "Notification system: Get alerts when new content is added or downloads complete.",
+    "API integration: Connect to download clients, media servers, and other tools.",
+    "Web interface: Manage your entire media automation setup through a browser."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

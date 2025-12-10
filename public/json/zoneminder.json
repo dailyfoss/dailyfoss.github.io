@@ -4,6 +4,8 @@
   "categories": [
     107
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/ZoneMinder/zoneminder",
@@ -12,6 +14,21 @@
   "github_stars": "5689",
   "logo": "/icons/zoneminder.webp",
   "description": "ZoneMinder is a self-hosted video surveillance system. It captures, monitors, and analyzes video from cameras, supports motion detection and alerting, and exposes a web UI for configuration and viewing.",
+  "tagline": null,
+  "features": [
+    "Camera support: Connect IP cameras, USB webcams, and analog cameras through capture cards with broad protocol support.",
+    "Motion detection: Automatically detect movement in camera feeds and trigger recording or alerts based on sensitivity settings.",
+    "Continuous recording: Record video continuously or only during motion events to balance storage usage and coverage.",
+    "Event management: Review, filter, and export recorded events with timestamps, thumbnails, and motion scores.",
+    "Live monitoring: View multiple camera feeds simultaneously in a grid layout with real-time streaming.",
+    "Zone configuration: Define specific areas within camera views to monitor while ignoring irrelevant motion.",
+    "Alert notifications: Send email or webhook alerts when motion is detected or cameras go offline.",
+    "PTZ control: Control pan, tilt, and zoom functions on supported cameras directly from the web interface.",
+    "Storage management: Configure retention policies to automatically delete old recordings and manage disk space.",
+    "Multi-server support: Distribute camera load across multiple servers and manage them from a central interface.",
+    "Mobile access: View live feeds and recorded events from mobile devices using responsive web interface or apps.",
+    "API integration: Automate camera control and event retrieval using REST API for home automation systems."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

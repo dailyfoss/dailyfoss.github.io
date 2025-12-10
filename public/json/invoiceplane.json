@@ -4,6 +4,8 @@
   "categories": [
     5
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/InvoicePlane/InvoicePlane",
@@ -12,6 +14,17 @@
   "github_stars": "2884",
   "logo": "/icons/invoiceplane.webp",
   "description": "InvoicePlane is a classic self hosted invoicing and billing application. It lets businesses create quotes, invoices, recurring bills and track payments with a straightforward web interface and customizable templates.",
+  "tagline": null,
+  "features": [
+    "Invoice Creation: Generate professional invoices with customizable templates.",
+    "Quote Management: Create and send quotes that can be converted to invoices.",
+    "Payment Tracking: Record payments and track outstanding balances.",
+    "Client Management: Maintain client database with contact information and history.",
+    "Recurring Invoices: Set up automatic recurring billing for subscription services.",
+    "Tax Support: Calculate taxes with configurable tax rates and rules.",
+    "PDF Generation: Export invoices and quotes as PDF documents.",
+    "Multi-Currency: Support international clients with multiple currency options."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

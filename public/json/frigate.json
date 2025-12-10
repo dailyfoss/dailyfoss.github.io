@@ -4,6 +4,8 @@
   "categories": [
     107
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/blakeblackshear/frigate",
@@ -12,6 +14,20 @@
   "github_stars": "27578",
   "logo": "/icons/frigate.webp",
   "description": "Frigate is an NVR (network video recorder) system focused on real-time object detection using AI acceleration. It integrates with Home Assistant, supports MQTT, and processes camera feeds locally for privacy.",
+  "tagline": null,
+  "features": [
+    "NVR: Network video recorder, Real-time object detection, AI acceleration. Smart security camera system.",
+    "Home Assistant: Seamless integration. Smart home ready.",
+    "MQTT Support: Event notifications. Automation-friendly.",
+    "Local Processing: Privacy-focused. No cloud required.",
+    "Object Detection: Person, vehicle, animal recognition. Intelligent alerts.",
+    "Hardware Acceleration: GPU and Coral support. Fast processing.",
+    "Recording: Continuous and event-based. Flexible storage.",
+    "Zones: Define detection areas. Targeted monitoring.",
+    "Snapshots: Capture key moments. Visual records.",
+    "Web UI: Monitor cameras live. Easy access.",
+    "Self-Hosted: Complete privacy. No cloud dependency."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +41,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

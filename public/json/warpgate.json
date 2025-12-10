@@ -4,6 +4,8 @@
   "categories": [
     135
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/warp-tech/warpgate",
@@ -12,6 +14,21 @@
   "github_stars": "6184",
   "logo": "/icons/warpgate.webp",
   "description": "Warpgate is a self-hosted secure access gateway for SSH, RDP, and databases. It provides auditing, session recording, and role-based access via web UI and configuration files.",
+  "tagline": null,
+  "features": [
+    "Protocol support: Provide secure access to SSH, RDP, MySQL, and PostgreSQL connections through a single gateway.",
+    "Session recording: Automatically record all sessions for compliance, auditing, and security review purposes.",
+    "Role-based access: Define granular permissions controlling which users can access specific servers and services.",
+    "Web-based SSH: Access SSH sessions directly from a browser without requiring terminal software on client devices.",
+    "Multi-factor authentication: Enhance security with MFA support including TOTP, WebAuthn, and SSO integration.",
+    "Connection logging: Track all connection attempts, successful logins, and commands executed for audit trails.",
+    "User management: Create and manage users, groups, and access policies through an intuitive web interface.",
+    "Session playback: Review recorded sessions with playback controls to investigate incidents or training purposes.",
+    "IP whitelisting: Restrict access based on source IP addresses or network ranges for additional security layers.",
+    "Certificate management: Handle SSH keys and certificates centrally to simplify credential rotation and revocation.",
+    "Activity monitoring: View real-time active sessions and connection statistics through the admin dashboard.",
+    "Webhook integration: Send notifications to external systems when specific events occur like failed login attempts."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

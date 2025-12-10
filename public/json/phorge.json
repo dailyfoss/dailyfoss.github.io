@@ -4,6 +4,8 @@
   "categories": [
     125
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "we.phorge.it/source/phorge",
@@ -12,6 +14,21 @@
   "github_stars": null,
   "logo": "/icons/phorge.webp",
   "description": "Phorge is a fork of Phabricator that provides a self-hosted platform for code review, task tracking, wikis, and CI. It features developer tools for collaborative software development and project management.",
+  "tagline": null,
+  "features": [
+    "Code review: Review code changes with inline comments, approval workflows, and diff visualization.",
+    "Task tracking: Manage project tasks with priorities, assignments, dependencies, and custom workflows.",
+    "Repository hosting: Host Git, Mercurial, and SVN repositories with web-based browsing and access control.",
+    "Wiki documentation: Create and maintain project documentation with Markdown support and version history.",
+    "Continuous integration: Integrate with build systems to run automated tests on code changes.",
+    "Project management: Organize work with milestones, sprints, and customizable project boards.",
+    "User authentication: Support multiple authentication methods including LDAP, OAuth, and two-factor authentication.",
+    "Herald rules: Automate workflows with conditional triggers for notifications, assignments, and actions.",
+    "Phriction wiki: Built-in wiki system for technical documentation and knowledge sharing.",
+    "Differential reviews: Conduct thorough code reviews with revision tracking and discussion threads.",
+    "Maniphest tasks: Track bugs, features, and work items with customizable fields and statuses.",
+    "Diffusion browser: Browse repository code with syntax highlighting and blame annotations."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

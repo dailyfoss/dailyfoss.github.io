@@ -4,6 +4,8 @@
   "categories": [
     106
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/kieraneglin/pinchflat",
@@ -12,6 +14,21 @@
   "github_stars": "4244",
   "logo": "/icons/pinchflat.webp",
   "description": "Pinchflat is a self-hosted tool for downloading, archiving, and managing YouTube videos. It supports scheduled downloads, playlists, and integration with media servers via a web UI.",
+  "tagline": null,
+  "features": [
+    "YouTube downloads: Download videos from YouTube channels, playlists, and individual URLs with configurable quality settings.",
+    "Scheduled archiving: Automatically check for and download new videos from subscribed channels on a schedule.",
+    "Playlist management: Subscribe to playlists and automatically download new videos as they're added.",
+    "Quality selection: Choose preferred video quality, format, and codec for downloads to balance quality and storage.",
+    "Metadata extraction: Automatically save video metadata including titles, descriptions, thumbnails, and subtitles.",
+    "Media server integration: Organize downloads in formats compatible with Plex, Jellyfin, and other media servers.",
+    "Web interface: Manage subscriptions, monitor downloads, and configure settings through a clean web UI.",
+    "Storage management: Set storage limits and automatically delete old videos to manage disk space.",
+    "Download history: Track all downloaded videos with status, dates, and file locations.",
+    "Subtitle downloads: Automatically download available subtitles in multiple languages alongside videos.",
+    "Channel filtering: Configure rules to download only specific videos based on title, duration, or upload date.",
+    "Notification system: Receive alerts when new videos are downloaded or when errors occur."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

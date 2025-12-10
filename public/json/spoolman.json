@@ -4,6 +4,8 @@
   "categories": [
     3
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Donkie/Spoolman",
@@ -12,6 +14,21 @@
   "github_stars": "1928",
   "logo": "/icons/spoolman.webp",
   "description": "Spoolman is a self-hosted filament spool manager for 3D printers. It tracks remaining filament, costs, and metadata, integrating with print servers like OctoPrint.",
+  "tagline": null,
+  "features": [
+    "Filament tracking: Manages 3D printer filament spools with remaining weight.",
+    "Cost calculation: Tracks filament costs and calculates print expenses.",
+    "Material database: Stores information about filament types, colors, and brands.",
+    "Usage logging: Records filament consumption per print job.",
+    "Low stock alerts: Notifies when spool weight drops below threshold.",
+    "OctoPrint integration: Syncs with OctoPrint for automatic usage tracking.",
+    "Barcode labels: Generates barcode labels for spool identification.",
+    "Purchase history: Tracks when and where filament was purchased.",
+    "Multi-printer support: Manages filament across multiple 3D printers.",
+    "Statistics: Displays usage trends and most-used materials.",
+    "API access: Integrates with print servers via REST API.",
+    "Web interface: Manages spools through browser-based dashboard."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

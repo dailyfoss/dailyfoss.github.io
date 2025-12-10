@@ -4,6 +4,8 @@
   "categories": [
     186
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/plausible/analytics",
@@ -12,6 +14,21 @@
   "github_stars": "23847",
   "logo": "/icons/plausible.webp",
   "description": "Plausible Analytics is a privacy-focused, self-hosted web analytics platform. It offers lightweight tracking, beautiful reports, and is a privacy-friendly alternative to Google Analytics.",
+  "tagline": null,
+  "features": [
+    "Privacy-first analytics: Track website visitors without cookies or personal data collection for GDPR compliance.",
+    "Lightweight script: Under 1KB tracking script loads fast and doesn't impact page performance.",
+    "Real-time dashboard: View live visitor data and traffic sources with instant updates and clean visualizations.",
+    "Goal tracking: Set up custom events and conversion goals to measure user actions and funnel performance.",
+    "UTM parameters: Track campaign performance with automatic UTM parameter parsing and attribution.",
+    "Referrer analysis: See where traffic comes from with detailed referrer and source breakdowns.",
+    "Page analytics: Monitor individual page performance with views, bounce rates, and time on page metrics.",
+    "Device and browser stats: Understand your audience with breakdowns by device type, browser, and operating system.",
+    "Geographic data: View visitor locations by country and region without compromising individual privacy.",
+    "Email reports: Schedule automated email reports with key metrics delivered to stakeholders.",
+    "Multiple sites: Manage analytics for multiple websites from a single dashboard with separate tracking.",
+    "API access: Export data and integrate with other tools using a comprehensive REST API."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

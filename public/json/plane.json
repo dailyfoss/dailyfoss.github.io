@@ -4,6 +4,8 @@
   "categories": [
     125
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/makeplane/plane",
@@ -12,6 +14,21 @@
   "github_stars": "40319",
   "logo": "/icons/plane.webp",
   "description": "Plane is a self-hosted project and issue tracking tool designed for small teams. It features Kanban, timelines, Git syncing, and powerful filters with a sleek UI.",
+  "tagline": null,
+  "features": [
+    "Issue tracking: Create and manage issues with custom fields, priorities, and status workflows.",
+    "Kanban boards: Visualize work with drag-and-drop kanban boards for agile project management.",
+    "Timeline views: Plan projects with Gantt-style timeline views showing dependencies and milestones.",
+    "Git integration: Sync issues with GitHub, GitLab, or Bitbucket for automated status updates from commits.",
+    "Advanced filters: Find issues quickly with powerful filtering by assignee, labels, dates, and custom fields.",
+    "Team collaboration: Mention teammates, add comments, and track activity on issues in real-time.",
+    "Cycle planning: Organize work into sprints or cycles with velocity tracking and burndown charts.",
+    "Custom workflows: Define project-specific workflows and automation rules for issue state transitions.",
+    "Notifications: Receive alerts for issue updates, mentions, and project activity via email or in-app.",
+    "API access: Integrate with external tools using a comprehensive REST API for automation.",
+    "Multiple views: Switch between list, kanban, calendar, and spreadsheet views for different perspectives.",
+    "Project templates: Create reusable project templates with predefined workflows and issue types."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     136
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/roflcoopter/viseron",
@@ -12,6 +14,21 @@
   "github_stars": "2419",
   "logo": "/icons/viseron.webp",
   "description": "Viseron is a self-hosted surveillance system with real-time object detection. It ingests camera streams, performs AI detection, and exposes recorded events and snapshots via a web interface.",
+  "tagline": null,
+  "features": [
+    "Object detection: Detect people, vehicles, and objects in camera streams using AI models.",
+    "Real-time processing: Analyze camera feeds in real-time for immediate detection and alerts.",
+    "Motion detection: Trigger recording and alerts based on motion in specific zones.",
+    "Recording: Record video clips when objects are detected or motion occurs.",
+    "Snapshots: Capture still images of detected events for quick review.",
+    "Web interface: View live streams, recordings, and events through a web dashboard.",
+    "Multiple cameras: Monitor multiple camera streams simultaneously from one interface.",
+    "Zone configuration: Define detection zones to ignore irrelevant areas and reduce false alerts.",
+    "Hardware acceleration: Use GPU acceleration for faster object detection processing.",
+    "Home Assistant integration: Integrate with Home Assistant for smart home automation.",
+    "Notification support: Send alerts via various channels when objects are detected.",
+    "Privacy-focused: Process all video locally without sending data to cloud services."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     193
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/TiddlyWiki/TiddlyWiki5",
@@ -12,6 +14,21 @@
   "github_stars": "8473",
   "logo": "/icons/tiddlywiki.webp",
   "description": "TiddlyWiki is a unique self-contained wiki and personal knowledge base that runs in the browser as a single HTML file. It supports plugins, scripting, and nonlinear note-taking, and can be self-hosted or stored locally.",
+  "tagline": null,
+  "features": [
+    "Single-file wiki: Store your entire wiki in a single HTML file that runs in any web browser.",
+    "Nonlinear notes: Create interconnected notes with bidirectional links for knowledge graph-style organization.",
+    "Plugin system: Extend functionality with hundreds of community plugins for themes, features, and integrations.",
+    "Transclusion: Embed content from one note into another for reusable components and dynamic content.",
+    "Tagging: Organize notes with tags and view tag hierarchies for flexible categorization.",
+    "Search: Find content across all notes using full-text search with filters and advanced queries.",
+    "Macros and scripting: Automate tasks and create custom functionality using built-in macro language.",
+    "Portable: Run from local file system, USB drive, or self-hosted server with no installation required.",
+    "Version control: Track changes with built-in history or use Git for version control of the HTML file.",
+    "Customizable: Modify appearance and behavior extensively through CSS, JavaScript, and configuration.",
+    "Export options: Export individual notes or entire wiki in various formats including HTML, Markdown, or JSON.",
+    "Offline-first: Work completely offline with optional server sync for multi-device access."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

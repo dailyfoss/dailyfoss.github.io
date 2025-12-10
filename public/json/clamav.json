@@ -4,6 +4,8 @@
   "categories": [
     11
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Cisco-Talos/clamav",
@@ -12,6 +14,16 @@
   "github_stars": "5976",
   "logo": "/icons/clamav.webp",
   "description": "ClamAV is an open-source antivirus engine designed for detecting malware, viruses, and threats. It can be used on mail servers, endpoints, and containerized environments, and offers a CLI scanner.",
+  "tagline": null,
+  "features": [
+    "Antivirus Engine: Open-source malware and virus detection. Comprehensive protection.",
+    "Mail Server Protection: Scan email attachments for threats. Secure communication.",
+    "CLI Scanner: Command-line scanning for files and directories. Flexible usage.",
+    "Regular Updates: Frequent virus definition updates. Current protection.",
+    "Cross-Platform: Works on Linux, Windows, and macOS. Universal security.",
+    "Container Support: Scan containerized environments. Modern infrastructure.",
+    "Open Source: Transparent, auditable security code. Trust through verification."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +37,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

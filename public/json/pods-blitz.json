@@ -4,6 +4,8 @@
   "categories": [
     123
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "codeberg.org/pods-blitz/pods-blitz",
@@ -12,6 +14,21 @@
   "github_stars": null,
   "logo": "/icons/pods-blitz.webp",
   "description": "Pods-Blitz is a self-hosted podcatcher that supports RSS feed parsing, episode downloads, and media playback management. It includes a simple web UI for listening and browsing.",
+  "tagline": null,
+  "features": [
+    "RSS feed parsing: Subscribe to podcast feeds and automatically fetch new episodes.",
+    "Episode downloads: Download podcast episodes for offline listening and archival.",
+    "Web player: Stream episodes directly in the browser with playback controls.",
+    "Subscription management: Organize and manage podcast subscriptions in one place.",
+    "Episode queue: Create listening queues to organize episodes you want to hear.",
+    "Playback progress: Track listening progress and resume episodes where you left off.",
+    "Search functionality: Find podcasts and episodes by title, description, or keywords.",
+    "Episode filtering: Filter episodes by date, duration, or played status.",
+    "Storage management: Configure automatic deletion of old episodes to manage disk space.",
+    "OPML support: Import and export podcast subscriptions using standard OPML format.",
+    "Minimal interface: Clean, simple UI focused on essential podcast management features.",
+    "Privacy focused: Self-hosted solution keeps your listening habits private."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

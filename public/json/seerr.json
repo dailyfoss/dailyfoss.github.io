@@ -4,6 +4,8 @@
   "categories": [
     156
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/seerr-team/seerr",
@@ -12,6 +14,21 @@
   "github_stars": "7404",
   "logo": "/icons/seerr.webp",
   "description": "Seerr is a fork of Overseerr, a self-hosted service for managing media requests in Plex, Sonarr, and Radarr setups. It offers user roles, search, and approval workflows.",
+  "tagline": null,
+  "features": [
+    "Media requests: Users can search and request movies or TV shows for download.",
+    "Plex integration: Syncs with Plex libraries to show available content and prevent duplicates.",
+    "Radarr connection: Automatically sends movie requests to Radarr for downloading.",
+    "Sonarr connection: Routes TV show requests to Sonarr with season and episode selection.",
+    "User management: Create accounts with different permission levels and request quotas.",
+    "Approval workflows: Require admin approval for requests before sending to download clients.",
+    "Notification system: Sends alerts via email, Discord, Slack, or Telegram for request updates.",
+    "Discovery features: Browse trending, popular, and upcoming content for easy requesting.",
+    "Request tracking: Monitor request status from submission through download to availability.",
+    "Quality profiles: Users can select preferred quality settings for their requests.",
+    "Multi-language support: Interface available in multiple languages for international users.",
+    "Mobile responsive: Fully functional on mobile devices for requesting content on the go."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

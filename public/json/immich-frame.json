@@ -4,6 +4,8 @@
   "categories": [
     120
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/immichFrame/ImmichFrame",
@@ -12,6 +14,17 @@
   "github_stars": "1502",
   "logo": "/icons/immich-frame.webp",
   "description": "ImmichFrame turns a device into a digital photo frame powered by Immich. It displays selected albums or recent uploads in a slideshow style UI, ideal for wall mounted tablets or always on screens showing your self hosted photo library.",
+  "tagline": null,
+  "features": [
+    "Digital Frame Mode: Transform tablets or displays into beautiful digital photo frames.",
+    "Slideshow Display: Automatically cycle through photos with customizable transition effects.",
+    "Album Selection: Choose specific Immich albums to display on each frame.",
+    "Recent Photos: Show latest uploads for a constantly refreshed display.",
+    "Fullscreen Mode: Distraction-free photo viewing optimized for wall-mounted displays.",
+    "Customizable Timing: Control how long each photo displays before transitioning.",
+    "Immich Integration: Pull photos directly from your Immich library in real-time.",
+    "Always-On Display: Designed for continuous operation on dedicated screens."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

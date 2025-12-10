@@ -4,6 +4,8 @@
   "categories": [
     166
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Reaparr/Reaparr",
@@ -12,6 +14,21 @@
   "github_stars": "573",
   "logo": "/icons/reaparr.webp",
   "description": "Reaparr is a self-hosted automation dashboard for managing Pirate streaming tools like Sonarr and Radarr. It features status overviews, control tools, and link management.",
+  "tagline": null,
+  "features": [
+    "Unified dashboard: Monitor status and health of Sonarr, Radarr, and related services from one interface.",
+    "Quick controls: Start, stop, or restart services without accessing individual application interfaces.",
+    "Status monitoring: View real-time health checks, disk space, and system resource usage.",
+    "Link management: Organize and access all your media automation tools through a centralized hub.",
+    "Activity feed: See recent downloads, imports, and system events across all connected services.",
+    "Search integration: Query multiple indexers and services simultaneously from a single search box.",
+    "Calendar aggregation: View upcoming releases from both Sonarr and Radarr in one unified calendar.",
+    "Queue management: Monitor and control download queues across all connected clients.",
+    "Custom widgets: Add or remove dashboard components to show the information most relevant to you.",
+    "Mobile optimized: Access your automation dashboard from phones and tablets with responsive design.",
+    "Theme customization: Switch between light and dark modes or create custom color schemes.",
+    "API connectivity: Connect to existing Sonarr and Radarr instances using their native APIs."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

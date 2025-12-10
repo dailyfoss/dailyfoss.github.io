@@ -4,6 +4,8 @@
   "categories": [
     117
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/jeffcaldwellca/mkcertWeb",
@@ -12,6 +14,21 @@
   "github_stars": "189",
   "logo": "/icons/mkcert-web-ui.webp",
   "description": "mkcertWeb is a browser-based interface built over mkcert to create local SSL certificates easily. It wraps certificate generation into a clean UI to simplify development environment setup.",
+  "tagline": null,
+  "features": [
+    "Certificate Generation: Create local SSL certificates for development environments through a simple web interface.",
+    "Domain Management: Generate certificates for multiple domains and subdomains with wildcard support.",
+    "Browser Integration: Automatically install root certificates in system trust stores for seamless HTTPS development.",
+    "Development Workflow: Streamline local development setup with one-click certificate creation and installation.",
+    "Certificate Authority: Manage your own local certificate authority for consistent development environment security.",
+    "Export Options: Download certificates in various formats including PEM, CRT, and KEY files for different applications.",
+    "Batch Processing: Generate multiple certificates simultaneously for complex development environments.",
+    "Visual Interface: User-friendly web UI that simplifies the mkcert command-line tool for non-technical users.",
+    "Security Best Practices: Follow industry standards for certificate generation and key management in development.",
+    "Cross-platform Support: Works across Windows, macOS, and Linux development environments consistently.",
+    "Integration Ready: Easy integration with Docker, Nginx, Apache, and other development tools and containers.",
+    "Localhost Testing: Perfect for testing HTTPS functionality on localhost and local network development servers."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

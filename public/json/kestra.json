@@ -4,6 +4,8 @@
   "categories": [
     16
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/kestra-io/kestra",
@@ -12,6 +14,21 @@
   "github_stars": "25017",
   "logo": "/icons/kestra.webp",
   "description": "Kestra is an event driven orchestration and workflow platform. It lets teams define data pipelines and tasks as code, schedule and monitor them, and run at scale on self hosted or managed infrastructure with a comprehensive web UI.",
+  "tagline": null,
+  "features": [
+    "Workflow Orchestration: Event-driven pipelines with task scheduling and dependencies. Automate complex data workflows.",
+    "Visual Flow Editor: Design workflows with drag-and-drop interface or YAML code. Build pipelines visually or programmatically.",
+    "Data Pipelines: ETL operations with database, API, and file system connectors. Build scalable data processing.",
+    "Task Library: Pre-built tasks for common operations and integrations. Accelerate workflow development.",
+    "Execution Monitoring: Real-time tracking of workflow runs with detailed logs. Monitor pipeline health continuously.",
+    "Error Handling: Automatic retries, failure notifications, and recovery strategies. Build resilient workflows.",
+    "Scheduling: Cron-based scheduling and event triggers for workflow execution. Run pipelines on your schedule.",
+    "Version Control: YAML workflow definitions with Git integration. Track changes and collaborate on pipelines.",
+    "Reusable Templates: Create workflow templates for common patterns. Standardize pipeline development.",
+    "Multi-Tenancy: Namespace isolation for teams and projects. Organize workflows by department or project.",
+    "API & CLI: Programmatic workflow management and execution control. Integrate with existing tools.",
+    "Performance Metrics: Track execution times, resource usage, and throughput. Optimize pipeline performance."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

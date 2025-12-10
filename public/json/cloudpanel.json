@@ -4,6 +4,8 @@
   "categories": [
     34
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/cloudpanel-io/cloudpanel-ce",
@@ -12,6 +14,16 @@
   "github_stars": "1697",
   "logo": "/icons/cloudpanel.webp",
   "description": "CloudPanel is an open-source control panel for managing cloud servers. It supports PHP, Node.js, and databases, and includes automatic SSL, firewall, and user-friendly UI for managing production workloads.",
+  "tagline": null,
+  "features": [
+    "Server Control Panel: Manage cloud servers with web interface. Easy administration.",
+    "PHP & Node.js: Support for multiple runtime environments. Flexible hosting.",
+    "Database Management: Built-in database administration tools. Complete control.",
+    "Automatic SSL: Free SSL certificates with Let's Encrypt. Secure by default.",
+    "Firewall: Integrated firewall management for security. Protected servers.",
+    "User-Friendly: Intuitive UI for production workloads. Professional management.",
+    "Open Source: Free control panel for cloud servers. No licensing fees."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +37,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

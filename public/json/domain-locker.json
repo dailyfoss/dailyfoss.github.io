@@ -4,6 +4,8 @@
   "categories": [
     145
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Lissy93/domain-locker",
@@ -12,6 +14,17 @@
   "github_stars": "955",
   "logo": "/icons/domain-locker.webp",
   "description": "Domain Locker is a self-hosted dashboard and monitoring tool for domain names. It tracks expiry dates, DNS configuration, SSL status, and registrar details, helping operators avoid lapses and keep domain information organized.",
+  "tagline": null,
+  "features": [
+    "Expiry tracking: Monitor domain expiration dates with alerts to prevent accidental lapses and loss of ownership.",
+    "DNS monitoring: Check DNS configuration and nameserver settings to ensure proper domain resolution.",
+    "SSL certificate status: Track certificate expiration and validity for domains to maintain secure connections.",
+    "Registrar information: Store and view registrar details, account credentials, and transfer codes in one place.",
+    "WHOIS lookup: Perform automated WHOIS queries to verify registration details and detect unauthorized changes.",
+    "Multi-domain dashboard: Manage portfolios of domains with sortable lists and filtering by status or expiration date.",
+    "Notification system: Receive email or webhook alerts when domains approach expiration or configuration changes occur.",
+    "Privacy protection: Keep sensitive domain information on your own server without sharing with third-party services."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

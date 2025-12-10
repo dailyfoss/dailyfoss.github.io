@@ -4,6 +4,8 @@
   "categories": [
     102
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/zulip/zulip",
@@ -12,6 +14,21 @@
   "github_stars": "23946",
   "logo": "/icons/zulip.webp",
   "description": "Zulip is a self-hosted team chat platform with threaded conversations, topic-based streams, and extensive integrations. It offers web, desktop, and mobile clients, plus a fully managed cloud service for organizations.",
+  "tagline": null,
+  "features": [
+    "Threaded conversations: Organize discussions by topic within streams to maintain context and reduce noise.",
+    "Stream organization: Create public or private streams for teams, projects, or topics with granular permissions.",
+    "Powerful search: Find messages across all conversations with full-text search including filters for streams and topics.",
+    "Rich formatting: Compose messages with Markdown, code blocks, LaTeX math, and emoji for expressive communication.",
+    "Integrations: Connect with GitHub, Jira, Jenkins, and hundreds of other services using webhooks and bots.",
+    "Mobile apps: Access conversations from native iOS and Android apps with full feature parity to the web client.",
+    "Desktop clients: Use dedicated desktop applications for Windows, macOS, and Linux with native notifications.",
+    "Email integration: Receive message notifications via email and reply directly from your inbox.",
+    "Video calls: Start video meetings with integrated Jitsi or BigBlueButton support directly from conversations.",
+    "Guest access: Invite external collaborators with limited access to specific streams without full organization membership.",
+    "Message editing: Edit sent messages with visible edit history to correct mistakes while maintaining transparency.",
+    "Custom emoji: Upload and use custom emoji reactions to add personality and team culture to conversations."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

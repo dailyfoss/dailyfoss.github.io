@@ -4,6 +4,8 @@
   "categories": [
     17
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Brandawg93/PeaNUT",
@@ -12,6 +14,17 @@
   "github_stars": "1149",
   "logo": "/icons/peanut.webp",
   "description": "PeaNUT is a self-hosted network visualization tool that provides insights into connected devices and services within homelab environments. It offers graph views for network topology and metadata.",
+  "tagline": null,
+  "features": [
+    "Network visualization: Interactive graph displays network topology showing connections between devices and services",
+    "Device discovery: Automatically detect and map connected devices, servers, and services across your network",
+    "Service monitoring: Track running services and their relationships to understand dependencies and system architecture",
+    "Metadata display: View detailed information about each device including IP addresses, hostnames, and service details",
+    "Topology mapping: Visual representation of network structure helps identify bottlenecks and plan infrastructure changes",
+    "Homelab focused: Designed specifically for home server environments with features tailored to self-hosted setups",
+    "Real-time updates: Network graph updates automatically as devices come online or offline for current visibility",
+    "Custom grouping: Organize devices into logical groups or categories for better organization of complex networks"
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

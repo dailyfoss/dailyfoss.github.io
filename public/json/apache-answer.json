@@ -4,6 +4,8 @@
   "categories": [
     30
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/apache/answer",
@@ -12,6 +14,16 @@
   "github_stars": "15170",
   "logo": "/icons/apache-answer.webp",
   "description": "Answer is a self-hosted Q&A platform where users ask and answer questions, similar to StackOverflow. It includes tags, markdown, voting, and moderation features, designed for teams or communities who want full data control.",
+  "tagline": null,
+  "features": [
+    "Q&A Platform: Self-hosted knowledge sharing similar to StackOverflow. Build your community.",
+    "Tag System: Organize questions with tags for easy discovery and filtering. Find answers fast.",
+    "Markdown Support: Rich text formatting for questions and answers. Express ideas clearly.",
+    "Voting System: Community-driven quality through upvotes and downvotes. Best answers rise to top.",
+    "Moderation Tools: Built-in features for managing content and users. Maintain quality standards.",
+    "Full Data Control: All community knowledge stored on your own infrastructure. Complete ownership.",
+    "User Reputation: Gamification encourages quality contributions and participation. Engaged community."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +37,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

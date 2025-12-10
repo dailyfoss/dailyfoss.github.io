@@ -4,6 +4,8 @@
   "categories": [
     76
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/zwave-js/zwave-js-ui",
@@ -12,6 +14,21 @@
   "github_stars": "1151",
   "logo": "/icons/z-wave-js-ui.webp",
   "description": "Z-Wave JS UI is a self-hosted control and management UI for Z-Wave networks using Z-Wave JS. It provides node inclusion, configuration, and diagnostics with dashboards and charts.",
+  "tagline": null,
+  "features": [
+    "Node management: Add, remove, and configure Z-Wave devices through an intuitive web interface without command-line tools.",
+    "Network visualization: View your Z-Wave mesh network topology with signal strength and routing information.",
+    "Device configuration: Modify device parameters and settings with detailed descriptions and validation.",
+    "Firmware updates: Update device firmware over-the-air when manufacturers release new versions with bug fixes or features.",
+    "Scene control: Create and trigger scenes that control multiple devices simultaneously for automation scenarios.",
+    "Association management: Configure device associations for direct communication without controller involvement.",
+    "Diagnostic tools: Troubleshoot network issues with ping tests, route analysis, and communication statistics.",
+    "MQTT gateway: Expose Z-Wave devices to MQTT for integration with Home Assistant, Node-RED, and other platforms.",
+    "Value monitoring: Track device values and states in real-time with historical graphs and logging.",
+    "Backup and restore: Export complete network configuration including device settings for disaster recovery.",
+    "Security support: Manage S0 and S2 security for encrypted communication with compatible devices.",
+    "Healing tools: Optimize network performance by rebuilding routes and updating neighbor information automatically."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

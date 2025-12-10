@@ -4,6 +4,8 @@
   "categories": [
     193
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/redimp/otterwiki",
@@ -12,6 +14,21 @@
   "github_stars": "1159",
   "logo": "/icons/otter-wiki.webp",
   "description": "OtterWiki is a lightweight self-hosted wiki engine with a modern UI and Git-based storage. It supports Markdown, version control, and collaborative editing with user access controls.",
+  "tagline": null,
+  "features": [
+    "Markdown Support: Write and edit pages using Markdown syntax with live preview and syntax highlighting.",
+    "Git Integration: Store all content in Git repositories with automatic version control and change tracking.",
+    "Modern Interface: Clean, responsive web interface optimized for both desktop and mobile editing experiences.",
+    "User Management: Control access with user accounts, permissions, and role-based editing capabilities.",
+    "Page History: View complete revision history with diff comparisons and easy rollback to previous versions.",
+    "Search Functionality: Find content quickly with full-text search across all wiki pages and attachments.",
+    "File Attachments: Upload and manage images, documents, and other files with automatic linking and organization.",
+    "Collaborative Editing: Enable multiple users to edit and contribute content with conflict resolution and merge capabilities.",
+    "Custom Themes: Customize appearance with themes and CSS modifications to match organizational branding.",
+    "Export Options: Export wiki content to various formats including PDF, HTML, and Markdown for offline use.",
+    "Lightweight Design: Run efficiently with minimal resource requirements, perfect for small teams and personal use.",
+    "Plugin System: Extend functionality with plugins for additional features like diagrams, charts, and integrations."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

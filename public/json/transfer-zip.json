@@ -4,6 +4,8 @@
   "categories": [
     61
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/robinkarlberg/transfer.zip-web",
@@ -12,6 +14,21 @@
   "github_stars": "1396",
   "logo": "/icons/transfer-zip.webp",
   "description": "transfer.zip-web is a self-hosted file sharing service with drag-and-drop uploads and expiring download links. It aims to provide an easy way to send large files securely.",
+  "tagline": null,
+  "features": [
+    "Drag-and-drop upload: Upload files by dragging them into the browser for effortless sharing.",
+    "Expiring links: Generate download links that automatically expire after a set time or number of downloads.",
+    "Large file support: Share large files that exceed email attachment limits without compression.",
+    "Secure sharing: Share files securely with optional password protection for sensitive content.",
+    "No registration: Share files without requiring recipients to create accounts or sign in.",
+    "Direct downloads: Recipients download files directly without ads, tracking, or unnecessary steps.",
+    "Multiple files: Upload and share multiple files in a single transfer for convenience.",
+    "Link management: View and manage active file shares with the ability to delete or extend expiration.",
+    "Privacy-focused: Host file sharing on your own server without third-party access to content.",
+    "Mobile-friendly: Upload and download files from mobile devices with a responsive interface.",
+    "Bandwidth control: Set limits on download speeds or total bandwidth to manage server resources.",
+    "Simple interface: Share files through a clean, straightforward interface without complexity."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

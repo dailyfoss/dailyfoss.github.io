@@ -4,6 +4,8 @@
   "categories": [
     33
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/payloadcms/payload",
@@ -12,6 +14,19 @@
   "github_stars": "39251",
   "logo": "/icons/payload.webp",
   "description": "Payload is a headless CMS and application framework for building custom APIs, admin UIs, and content workflows. It supports TypeScript, plugins, and self-hosting or cloud deployment.",
+  "tagline": null,
+  "features": [
+    "Headless CMS: API-first content management with flexible content modeling and automatic REST and GraphQL API generation",
+    "TypeScript native: Built with TypeScript for type-safe development, better IDE support, and reduced runtime errors",
+    "Custom admin UI: Auto-generated admin interface based on your schema with customizable components and layouts",
+    "Access control: Granular permissions system controls who can read, create, update, or delete content at field and document levels",
+    "Plugin system: Extend functionality with plugins for SEO, search, storage, authentication, and custom business logic",
+    "Localization support: Built-in multi-language content management with field-level translations and locale-specific publishing",
+    "File management: Upload and manage media files with automatic image optimization, resizing, and cloud storage integration",
+    "Version control: Track content changes over time with version history and ability to restore previous versions",
+    "Webhooks and hooks: Trigger custom logic before or after operations, or send webhooks to external services for automation",
+    "Flexible deployment: Deploy anywhere Node.js runs including self-hosted servers, serverless platforms, or managed cloud services"
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +40,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

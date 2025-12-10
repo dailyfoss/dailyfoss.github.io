@@ -4,6 +4,8 @@
   "categories": [
     166
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/thecfu/scraparr",
@@ -12,6 +14,21 @@
   "github_stars": "321",
   "logo": "/icons/scraparr.webp",
   "description": "Scraparr is a self-hosted tool to scrape and sync metadata for media libraries. It integrates with Radarr/Sonarr and enriches content automatically.",
+  "tagline": null,
+  "features": [
+    "Metadata scraping: Automatically fetches and updates metadata for movies and TV shows.",
+    "Radarr integration: Syncs with Radarr to enrich movie libraries with enhanced metadata.",
+    "Sonarr integration: Connects to Sonarr for TV series metadata enrichment and updates.",
+    "Multiple sources: Aggregates data from TMDB, TVDB, and other metadata providers.",
+    "Poster management: Downloads and organizes high-quality posters and artwork.",
+    "Batch processing: Processes entire libraries efficiently with configurable batch sizes.",
+    "Custom mappings: Override automatic matches with manual metadata assignments.",
+    "Scheduling: Runs metadata updates on configurable schedules to keep libraries current.",
+    "API access: Provides REST API for integration with custom scripts and workflows.",
+    "Duplicate detection: Identifies and resolves duplicate entries in media libraries.",
+    "Language support: Fetches metadata in multiple languages for international content.",
+    "Notification system: Sends alerts on completion, errors, or metadata conflicts."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

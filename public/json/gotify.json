@@ -4,6 +4,8 @@
   "categories": [
     112
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/gotify/server",
@@ -12,6 +14,17 @@
   "github_stars": "14186",
   "logo": "/icons/gotify.webp",
   "description": "Gotify is a self-hosted notification server with WebSocket and REST APIs. Users can send alerts to mobile and desktop via apps or browser interface without relying on third-party notification providers.",
+  "tagline": null,
+  "features": [
+    "Push Notifications: Send real-time alerts to mobile and desktop devices without third-party services.",
+    "WebSocket Support: Receive instant notifications via WebSocket connections for real-time delivery.",
+    "REST API: Simple HTTP API for sending messages from scripts, applications, and services.",
+    "Mobile Apps: Native Android app and web interface for receiving notifications on any device.",
+    "Message Priority: Set priority levels to control notification behavior and display.",
+    "Application Tokens: Generate separate tokens for different services with individual message streams.",
+    "Message History: View and search through notification history in the web interface.",
+    "Self-Hosted Control: Complete ownership of notification infrastructure without external dependencies."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     160
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/dmunozv04/iSponsorBlockTV",
@@ -12,6 +14,17 @@
   "github_stars": "4538",
   "logo": "/icons/isponsorblocktv.webp",
   "description": "iSponsorBlockTV integrates the SponsorBlock database with Jellyfin or other video front ends to automatically skip sponsored segments. It runs alongside your media stack and helps provide ad free viewing of YouTube content on TV interfaces.",
+  "tagline": null,
+  "features": [
+    "Sponsor Skipping: Automatically skip sponsored segments in YouTube videos.",
+    "SponsorBlock Integration: Uses crowdsourced SponsorBlock database for segment detection.",
+    "TV Interface: Works with YouTube on smart TVs and streaming devices.",
+    "Jellyfin Support: Integrates with Jellyfin for YouTube content playback.",
+    "Automatic Detection: Identifies and skips sponsors, intros, outros, and other segments.",
+    "Seamless Experience: Skips happen automatically without user interaction.",
+    "Media Stack Integration: Runs alongside your existing media server infrastructure.",
+    "Ad-Free Viewing: Enjoy YouTube content without interruptions on large screens."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     142
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/FoxxMD/multi-scrobbler",
@@ -12,6 +14,21 @@
   "github_stars": "787",
   "logo": "/icons/multi-scrobbler.webp",
   "description": "Multi-Scrobbler pulls listening data from multiple music services like Spotify and Last.fm and sends scrobbles to multiple platforms. It runs as a self-hosted background service with a minimal web configuration UI.",
+  "tagline": null,
+  "features": [
+    "Multi-source listening: Pull playback data from Spotify, Plex, Jellyfin, Subsonic, and other music services simultaneously.",
+    "Multi-platform scrobbling: Send listening history to Last.fm, ListenBrainz, Maloja, and multiple tracking platforms at once.",
+    "Real-time sync: Scrobble tracks as you listen with minimal delay for accurate listening history across services.",
+    "Duplicate detection: Prevent multiple scrobbles of the same track when listening across different sources.",
+    "Configuration UI: Set up sources and destinations through a web interface without editing configuration files.",
+    "Offline queue: Store scrobbles locally when services are unavailable and sync when connection is restored.",
+    "Custom rules: Filter or modify scrobbles based on artist, album, or track criteria before sending to platforms.",
+    "Background service: Run continuously as a daemon with automatic restart capabilities and minimal resource usage.",
+    "API Integration: Connect with external systems through REST APIs for automated scrobbling and data synchronization.",
+    "Advanced Analytics: Track scrobbling statistics, success rates, and service health with detailed monitoring dashboards.",
+    "Secure Storage: Encrypt authentication tokens and sensitive data with role-based access controls for multi-user environments.",
+    "Bulk Processing: Handle large music libraries with batch scrobbling operations and progress monitoring for historical data."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

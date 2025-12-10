@@ -4,6 +4,8 @@
   "categories": [
     75
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/jovandeginste/workout-tracker",
@@ -12,6 +14,21 @@
   "github_stars": "1174",
   "logo": "/icons/workout-tracker.webp",
   "description": "workout-tracker is a self-hosted fitness log designed for detailed exercise tracking. It records exercises, sets, reps, and notes, and visualizes performance trends through straightforward dashboards.",
+  "tagline": null,
+  "features": [
+    "Exercise logging: Record detailed workout data including exercises, sets, reps, weight, and duration.",
+    "Custom exercises: Add your own exercises with names, descriptions, and muscle group classifications.",
+    "Workout templates: Save frequently used workout routines as templates for quick session starts.",
+    "Performance analytics: View charts and statistics showing strength progression and training volume over time.",
+    "Body measurements: Track weight, body fat percentage, and other metrics alongside workout data.",
+    "Calendar view: See workout history in a calendar format to identify patterns and rest days.",
+    "Personal bests: Automatically detect and highlight new personal records for each exercise.",
+    "Workout notes: Attach notes to sessions to record how you felt, injuries, or training adjustments.",
+    "Multi-user support: Allow multiple users to maintain separate workout logs on one installation.",
+    "Data import: Import workout history from CSV files or other fitness tracking applications.",
+    "Goal setting: Define fitness goals and track progress toward targets like total volume or frequency.",
+    "Export reports: Generate PDF or CSV reports of workout history for sharing with trainers or analysis."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

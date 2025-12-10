@@ -4,6 +4,8 @@
   "categories": [
     34
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/linuxserver/Heimdall",
@@ -12,6 +14,17 @@
   "github_stars": "8830",
   "logo": "/icons/heimdall.webp",
   "description": "Heimdall is a self hosted application dashboard for organizing links to your services. It automatically detects many apps to show status and logos, making a clean, centralized homepage for homelab or server environments.",
+  "tagline": null,
+  "features": [
+    "Application Dashboard: Centralized homepage for organizing links to all your self-hosted services.",
+    "Auto-Detection: Automatically detect and configure popular applications with correct logos and colors.",
+    "Status Monitoring: Display service status and availability directly on dashboard tiles.",
+    "Custom Icons: Use built-in icon library or upload custom logos for your applications.",
+    "Search Functionality: Quickly find and access services with integrated search.",
+    "Multi-User Support: Create separate dashboards for different users with individual preferences.",
+    "Responsive Design: Works seamlessly on desktop, tablet, and mobile devices.",
+    "Easy Configuration: Add and organize services through a simple web interface."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

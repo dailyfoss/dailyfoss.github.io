@@ -4,6 +4,8 @@
   "categories": [
     100
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/jellyfin/jellyfin",
@@ -12,6 +14,19 @@
   "github_stars": "46326",
   "logo": "/icons/jellyfin.webp",
   "description": "Jellyfin is a free, open source media server that organizes and streams movies, shows and music to many devices. It offers multi user libraries, live TV, hardware transcoding and a wide ecosystem of clients, all fully self hosted.",
+  "tagline": null,
+  "features": [
+    "Media Streaming: Movies, TV shows, music, Live TV support. Complete media center.",
+    "Transcoding: Hardware acceleration, Multiple formats, Adaptive streaming. Play anywhere.",
+    "Multi-User: User profiles, Parental controls, Watch history. Family-friendly.",
+    "Clients: Web, mobile, TV apps, Desktop clients. Every platform covered.",
+    "Library Management: Automatic metadata, Artwork fetching, Organization tools. Beautiful libraries.",
+    "Live TV: DVR functionality, EPG support, Recording schedules. Cut the cord.",
+    "Plugins: Extend features, Community add-ons, Custom integrations. Endless customization.",
+    "Sync: Offline downloads, Mobile sync, Resume playback. Watch on the go.",
+    "No Fees: Completely free, No premium tiers, Open source. True freedom.",
+    "Privacy: Self-hosted, No tracking, Your data stays yours. Complete control."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +40,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

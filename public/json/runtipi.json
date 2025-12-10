@@ -4,6 +4,8 @@
   "categories": [
     146
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/runtipi/runtipi",
@@ -12,6 +14,21 @@
   "github_stars": "9083",
   "logo": "/icons/runtipi.webp",
   "description": "Runtipi is a self-hosted app manager designed for homelabs. It allows users to deploy lightweight services with single commands and manage updates through a web UI.",
+  "tagline": null,
+  "features": [
+    "One-click deployment: Install popular self-hosted apps with a single command.",
+    "App marketplace: Browse and deploy from a curated catalog of homelab applications.",
+    "Update management: Keep installed apps up to date with automatic or manual updates.",
+    "Web dashboard: Manage all your apps through a centralized browser interface.",
+    "Docker-based: Run apps in isolated containers for security and easy management.",
+    "Configuration UI: Adjust app settings without editing configuration files.",
+    "Backup support: Create and restore backups of app data and configurations.",
+    "Resource monitoring: View CPU, memory, and storage usage for each app.",
+    "Port management: Automatically handle port assignments to avoid conflicts.",
+    "SSL certificates: Generate and manage HTTPS certificates for secure access.",
+    "User authentication: Protect your dashboard with password or SSO login.",
+    "Lightweight design: Run efficiently on Raspberry Pi and other low-power hardware."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

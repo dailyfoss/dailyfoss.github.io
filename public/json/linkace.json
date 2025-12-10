@@ -4,6 +4,8 @@
   "categories": [
     20
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Kovah/LinkAce",
@@ -12,6 +14,13 @@
   "github_stars": "3168",
   "logo": "/icons/linkace.webp",
   "description": "LinkAce is a self-hosted bookmark archive with tags, notes, link checking, and archive.org integration. It allows saving and organizing web links privately or publicly and supports API and imports.",
+  "tagline": null,
+  "features": [
+    "Bookmark Archive: Save links, Tags and notes, Archive.org integration. Preserve web content permanently.",
+    "Link Checking: Automatic validation, Broken link detection, Status monitoring. Keep bookmarks healthy.",
+    "Organization: Tags and lists, Search functionality, Import/export. Organize bookmarks your way.",
+    "API Access: RESTful API, Browser extensions, Automation support. Integrate with your workflow."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +34,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

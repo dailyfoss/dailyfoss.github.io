@@ -4,6 +4,8 @@
   "categories": [
     120
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/cshum/imagor-studio",
@@ -12,6 +14,17 @@
   "github_stars": "145",
   "logo": "/icons/imagor-studio.webp",
   "description": "Imagor Studio is a web interface for Imagor, an image processing server. It lets users compose and test transformations like resize, crop and filters visually, then generate the corresponding URLs for automated use.",
+  "tagline": null,
+  "features": [
+    "Visual Editor: Compose image transformations visually without writing code.",
+    "Real-Time Preview: See transformation results instantly as you adjust parameters.",
+    "URL Generation: Generate Imagor-compatible URLs for automated image processing.",
+    "Transformation Library: Access resize, crop, blur, rotate, and filter operations.",
+    "Parameter Testing: Test different transformation combinations before deployment.",
+    "Imagor Integration: Seamlessly works with Imagor image processing server.",
+    "Batch Operations: Design transformations that can be applied to multiple images.",
+    "Developer Tool: Bridge between visual design and programmatic image processing."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

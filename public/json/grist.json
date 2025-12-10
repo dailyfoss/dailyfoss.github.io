@@ -4,6 +4,8 @@
   "categories": [
     151
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/gristlabs/grist-core",
@@ -12,6 +14,17 @@
   "github_stars": "10182",
   "logo": "/icons/grist.webp",
   "description": "Grist is a spreadsheet-meets-database platform that offers workflows, data management, and custom views. It can be self-hosted and supports web interface editing, formulas, access control, and APIs.",
+  "tagline": null,
+  "features": [
+    "Hybrid Platform: Combine spreadsheet familiarity with database power for structured data management.",
+    "Custom Views: Create multiple views of the same data including cards, calendars, and charts.",
+    "Formula Support: Use Python-based formulas for complex calculations and data transformations.",
+    "Access Control: Set granular permissions at document, table, and row levels for team collaboration.",
+    "API Integration: Programmatic access to data via REST API for automation and external integrations.",
+    "Workflow Automation: Build custom workflows with triggers, actions, and conditional logic.",
+    "Data Validation: Enforce data types, constraints, and relationships for data integrity.",
+    "Collaborative Editing: Real-time collaboration with multiple users editing simultaneously."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

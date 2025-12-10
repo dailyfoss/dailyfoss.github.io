@@ -4,6 +4,8 @@
   "categories": [
     158
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/dagu-org/dagu",
@@ -12,6 +14,15 @@
   "github_stars": "2885",
   "logo": "/icons/dagu.webp",
   "description": "Dagu is a CSV-based task runner and scheduler that simplifies batch job orchestration with a web UI. It supports workflows, logs, retryable tasks, and file-based configurations for lightweight self-hosted setups.",
+  "tagline": null,
+  "features": [
+    "File-Based Config: Define workflows in simple CSV files. No database required.",
+    "Web Interface: Monitor and control jobs through browser. Visual workflow management.",
+    "Retry Logic: Automatic retries for failed tasks. Resilient job execution.",
+    "Workflow Support: Chain tasks with dependencies. Complex orchestration made simple.",
+    "Execution Logs: Detailed history of all job runs. Full visibility and debugging.",
+    "Lightweight: Minimal resource usage for efficient operation. Perfect for any server."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

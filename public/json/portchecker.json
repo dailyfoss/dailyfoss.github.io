@@ -4,6 +4,8 @@
   "categories": [
     108
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/dsgnr/portchecker.io",
@@ -12,6 +14,21 @@
   "github_stars": "163",
   "logo": "/icons/portchecker.webp",
   "description": "Portchecker.io is a self-hosted utility tool for testing open ports on IPs or domains. It offers a minimal UI and HTTP API for verifying if services are reachable.",
+  "tagline": null,
+  "features": [
+    "Port scanning: Test if specific ports are open on IP addresses or domain names.",
+    "Multiple protocols: Check TCP and UDP ports for various service types.",
+    "Batch checking: Test multiple ports simultaneously for efficient network diagnostics.",
+    "Web interface: Simple web UI for entering targets and viewing results.",
+    "API access: Programmatically check ports using HTTP API for automation and monitoring.",
+    "Response time: Measure connection response times to identify network latency.",
+    "Service detection: Identify common services running on open ports.",
+    "History tracking: View previous port check results for comparison and monitoring.",
+    "Custom timeouts: Configure connection timeout values for different network conditions.",
+    "IP and domain support: Check ports on both IP addresses and domain names.",
+    "Result export: Export port check results in JSON or CSV format for analysis.",
+    "Lightweight tool: Minimal resource usage makes it suitable for running on low-power devices."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

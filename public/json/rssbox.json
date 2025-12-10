@@ -4,6 +4,8 @@
   "categories": [
     129
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/versun/RSSBox",
@@ -12,6 +14,21 @@
   "github_stars": "612",
   "logo": "/icons/rssbox.webp",
   "description": "RSSBox is a self-hosted tool to back up RSS feeds and convert web pages into readable feeds. Supports API, scheduling, and integrations with external readers.",
+  "tagline": null,
+  "features": [
+    "Feed backup: Archive RSS feeds locally to preserve content even if sources disappear.",
+    "Web to RSS: Convert websites without RSS feeds into readable feed formats.",
+    "Scheduled fetching: Automatically check and update feeds at configured intervals.",
+    "API access: Integrate with feed readers and other tools using REST endpoints.",
+    "Content extraction: Parse and clean article content for better readability.",
+    "Feed filtering: Create custom filters to include or exclude specific content.",
+    "Multiple formats: Generate RSS, Atom, or JSON feeds from the same source.",
+    "Reader integration: Connect to popular RSS readers like Feedly or Inoreader.",
+    "Historical archive: Keep old feed items even after they're removed from source feeds.",
+    "Custom rules: Define extraction rules for sites with non-standard layouts.",
+    "Proxy support: Fetch feeds through proxies to avoid rate limits or blocks.",
+    "Export functionality: Download archived feeds in standard formats for migration."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     100
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/chrisbenincasa/tunarr",
@@ -12,6 +14,21 @@
   "github_stars": "1725",
   "logo": "/icons/tunarr.webp",
   "description": "Tunarr is a self-hosted pseudo-live TV channel generator that creates custom channels from Plex or Jellyfin libraries and streams them as continuous linear feeds.",
+  "tagline": null,
+  "features": [
+    "Channel creation: Create custom TV channels from your Plex or Jellyfin media libraries.",
+    "Continuous streaming: Generate linear TV feeds that play continuously like traditional broadcast channels.",
+    "Schedule programming: Build channel schedules with specific shows, movies, or content blocks.",
+    "Multiple channels: Create multiple channels for different genres, themes, or family members.",
+    "Commercial breaks: Insert custom content or filler between programs for authentic TV experience.",
+    "Random playback: Shuffle content within time slots for variety while maintaining schedule structure.",
+    "EPG generation: Generate electronic program guides for compatible TV apps and clients.",
+    "Media server integration: Pull content directly from Plex or Jellyfin without duplicating files.",
+    "Web interface: Configure channels and schedules through an intuitive web-based interface.",
+    "Stream compatibility: Stream to devices that support M3U playlists or IPTV protocols.",
+    "Time-based programming: Schedule different content for different times of day or days of week.",
+    "Filler content: Add bumpers, commercials, or other filler content between programs."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

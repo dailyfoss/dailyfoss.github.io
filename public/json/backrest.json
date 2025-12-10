@@ -4,6 +4,8 @@
   "categories": [
     18
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/garethgeorge/backrest",
@@ -12,6 +14,17 @@
   "github_stars": "4656",
   "logo": "/icons/backrest.webp",
   "description": "Backrest is a user-friendly dashboard for managing PostgreSQL backups using pgBackRest. It gives a visual web interface for configuring, scheduling, and restoring PostgreSQL backups in self-hosted environments.",
+  "tagline": null,
+  "features": [
+    "PostgreSQL Backups: User-friendly dashboard for pgBackRest management. Simplified database backups.",
+    "Visual Interface: Web-based UI for backup configuration. No command line needed.",
+    "Backup Scheduling: Automate backup timing and frequency. Set and forget.",
+    "Restore Operations: Easy database restoration from backups. Quick recovery.",
+    "Backup Monitoring: Track backup status and health. Stay informed.",
+    "Cross-Platform: Works on Linux, Windows, and macOS. Universal compatibility.",
+    "Self-Hosted: Run your own backup management. Complete control.",
+    "Production Ready: Reliable solution for critical databases. Enterprise-grade."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     166
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/VueTorrent/VueTorrent",
@@ -12,6 +14,21 @@
   "github_stars": "6419",
   "logo": "/icons/vuetorrent.webp",
   "description": "VueTorrent is a modern web UI for qBittorrent designed to replace the default interface. It provides a responsive, Vue-based frontend for managing torrents in self-hosted setups.",
+  "tagline": null,
+  "features": [
+    "Modern interface: Replace qBittorrent's default UI with a sleek, modern Vue-based interface.",
+    "Torrent management: Add, pause, resume, and remove torrents with intuitive controls.",
+    "Responsive design: Access and manage torrents from desktop, tablet, or mobile devices.",
+    "Dark mode: Switch between light and dark themes for comfortable viewing.",
+    "Search integration: Search for torrents directly from the interface with built-in search.",
+    "Category management: Organize torrents with categories and tags for better organization.",
+    "Speed controls: Adjust upload and download speed limits globally or per torrent.",
+    "File selection: Choose which files to download from multi-file torrents.",
+    "Statistics: View detailed statistics on download speeds, ratios, and torrent health.",
+    "Sorting and filtering: Sort and filter torrents by status, category, or custom criteria.",
+    "Keyboard shortcuts: Navigate and control torrents efficiently using keyboard shortcuts.",
+    "qBittorrent compatible: Works seamlessly with existing qBittorrent installations as a drop-in replacement."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

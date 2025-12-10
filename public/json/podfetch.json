@@ -4,6 +4,8 @@
   "categories": [
     123
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/SamTV12345/PodFetch",
@@ -12,6 +14,21 @@
   "github_stars": "449",
   "logo": "/icons/podfetch.webp",
   "description": "PodFetch is a self-hosted podcast downloader and sync server that manages RSS feeds, handles episodes storage, and provides a web interface for browsing and downloading.",
+  "tagline": null,
+  "features": [
+    "Podcast downloads: Automatically download episodes from subscribed podcast RSS feeds.",
+    "RSS feed management: Subscribe to and manage multiple podcast feeds from one interface.",
+    "Episode storage: Store downloaded episodes with organized file structure for easy access.",
+    "Web interface: Browse podcasts and episodes through a clean web-based UI.",
+    "Automatic updates: Check feeds regularly for new episodes and download them automatically.",
+    "Download scheduling: Configure when and how often to check for new episodes.",
+    "Storage management: Set storage limits and automatically delete old episodes to save space.",
+    "Episode filtering: Configure rules to download only specific episodes based on criteria.",
+    "Metadata extraction: Save episode metadata including titles, descriptions, and artwork.",
+    "Playback support: Stream episodes directly in the browser without downloading to device.",
+    "OPML import: Import podcast subscriptions from other apps using OPML format.",
+    "API access: Integrate with other applications using REST API for automation."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

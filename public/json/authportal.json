@@ -4,6 +4,8 @@
   "categories": [
     15
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/modom-ofn/auth-portal",
@@ -12,6 +14,17 @@
   "github_stars": "76",
   "logo": "/icons/authportal.webp",
   "description": "Auth Portal is a customizable authentication portal for Kubernetes clusters and reverse proxies, allowing self-registration, password resets, and user management via UI or API.",
+  "tagline": null,
+  "features": [
+    "Authentication Portal: Customizable auth gateway for Kubernetes and proxies. Flexible access control.",
+    "Self-Registration: Allow users to create their own accounts. Reduced admin overhead.",
+    "Password Management: Users can reset passwords independently. Self-service security.",
+    "User Management: Admin interface for account administration. Centralized control.",
+    "Kubernetes Integration: Native support for K8s clusters. Cloud-native.",
+    "Reverse Proxy: Works with popular proxy solutions. Easy integration.",
+    "API Access: Manage users programmatically. Automation-ready.",
+    "Customizable: Adapt portal to your branding and needs. Tailored experience."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

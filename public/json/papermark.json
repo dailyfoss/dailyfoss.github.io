@@ -4,6 +4,8 @@
   "categories": [
     48
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/mfts/papermark",
@@ -12,6 +14,19 @@
   "github_stars": "7926",
   "logo": "/icons/papermark.webp",
   "description": "Papermark is a self-hosted document analytics platform that gives insights into how PDFs are viewed. It supports secure sharing, view tracking, and integrates with tools like email and Slack.",
+  "tagline": null,
+  "features": [
+    "Document analytics: Track how recipients interact with shared PDFs including page views, time spent, and engagement patterns",
+    "Secure sharing: Generate unique, time-limited links for document sharing with optional password protection and access controls",
+    "View notifications: Receive real-time alerts when recipients open, view, or complete reading your shared documents",
+    "Page-level tracking: See which specific pages were viewed, how long readers spent on each page, and which sections were skipped",
+    "Custom branding: Add your logo and brand colors to document viewing pages for professional, branded sharing experiences",
+    "Link expiration: Set expiration dates on shared links to automatically revoke access after specified time period",
+    "Email integration: Send documents directly via email with tracking enabled, or integrate with email tools for automated workflows",
+    "Slack notifications: Connect with Slack to receive document view notifications in channels or direct messages for team visibility",
+    "Download control: Enable or disable document downloads per link to control how recipients can save and share files",
+    "Viewer analytics: Collect data on viewer location, device type, and browser to understand audience and optimize content"
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +40,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

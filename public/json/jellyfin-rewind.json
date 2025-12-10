@@ -4,6 +4,8 @@
   "categories": [
     100
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Chaphasilor/jellyfin-rewind",
@@ -12,6 +14,12 @@
   "github_stars": "293",
   "logo": "/icons/jellyfin-rewind.webp",
   "description": "Jellyfin Rewind is a companion tool for Jellyfin that generates recap or rewind highlight clips from your media library. It creates short retrospective videos from watched items, adding a fun way to revisit your collection.",
+  "tagline": null,
+  "features": [
+    "Recap Generation: Automated highlight videos, Year-in-review clips, Watch history summaries. Relive your media journey.",
+    "Jellyfin Integration: Direct server connection, Playback data analysis, Metadata enrichment. Seamless companion tool.",
+    "Shareable Content: Export recap videos, Social media ready, Customizable themes. Share your viewing stats."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +33,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

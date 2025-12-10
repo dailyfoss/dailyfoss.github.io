@@ -4,6 +4,8 @@
   "categories": [
     103
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/MauriceNino/dashdot",
@@ -12,6 +14,15 @@
   "github_stars": "3229",
   "logo": "/icons/dash.webp",
   "description": "Dashdot is a modern, customizable dashboard for monitoring system health. It provides resource graphs, hardware info, network stats, and works with systems running Docker or Linux, all in a polished web UI.",
+  "tagline": null,
+  "features": [
+    "System Monitoring: Real-time CPU, RAM, and disk usage graphs. Complete visibility.",
+    "Hardware Info: Detailed information about your system components. Know your setup.",
+    "Network Stats: Track bandwidth and connection statistics. Monitor traffic patterns.",
+    "Modern Design: Polished, customizable interface. Beautiful and functional.",
+    "Docker Support: Monitor containerized environments easily. Perfect for modern stacks.",
+    "Self-Hosted: Run your own system dashboard. Privacy-focused monitoring."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

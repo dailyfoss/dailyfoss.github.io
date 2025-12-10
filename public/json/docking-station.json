@@ -4,6 +4,8 @@
   "categories": [
     47
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/LooLzzz/docking-station",
@@ -12,6 +14,15 @@
   "github_stars": "401",
   "logo": "/icons/docking-station.webp",
   "description": "Docking Station is a self-hosted UI for managing Docker Compose environments. It allows starting, stopping, and monitoring services in real-time, suitable for personal servers and developers.",
+  "tagline": null,
+  "features": [
+    "Compose UI: Manage Docker Compose environments visually. Simplified operations.",
+    "Service Monitoring: Track service status in real-time. Stay informed instantly.",
+    "Quick Actions: Start, stop, and restart services easily. Efficient control.",
+    "Developer-Friendly: Perfect for personal servers and development. Built for developers.",
+    "Real-Time Updates: See changes as they happen. Live monitoring.",
+    "Self-Hosted: Run your compose manager privately. Your services, your dashboard."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

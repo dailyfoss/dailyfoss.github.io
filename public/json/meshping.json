@@ -4,6 +4,8 @@
   "categories": [
     173
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Svedrin/meshping",
@@ -12,6 +14,21 @@
   "github_stars": "133",
   "logo": "/icons/meshping.webp",
   "description": "MeshPing is a peer-to-peer networking monitoring tool that detects connectivity issues across mesh nodes. It’s suitable for monitoring decentralized or distributed networks in self-hosted environments.",
+  "tagline": null,
+  "features": [
+    "Mesh monitoring: Track connectivity between all nodes in a mesh network topology.",
+    "Latency measurement: Monitor ping times and latency between mesh nodes in real-time.",
+    "Connectivity visualization: View network topology and connection status in graphical format.",
+    "Outage detection: Automatically identify when nodes become unreachable or connections fail.",
+    "Historical data: Track network performance over time with historical latency and uptime data.",
+    "Alert system: Configure notifications for connectivity issues or performance degradation.",
+    "Multi-node support: Monitor networks with dozens or hundreds of interconnected nodes.",
+    "Peer-to-peer testing: Each node pings others to create a complete connectivity matrix.",
+    "Dashboard view: See overall network health and identify problem areas at a glance.",
+    "Export functionality: Download network performance data for analysis or reporting.",
+    "Lightweight agents: Minimal resource usage on monitored nodes for efficient operation.",
+    "Decentralized architecture: Suitable for monitoring distributed or mesh network deployments."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     165
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/rapidforge-io/release",
@@ -12,6 +14,21 @@
   "github_stars": "17",
   "logo": "/icons/rapidforge.webp",
   "description": "Release is a self-hosted DevOps platform that automates environment creation, previews, and deployments with a focus on simplifying cloud-native workflows via UI or API.",
+  "tagline": null,
+  "features": [
+    "Environment automation: Create isolated development, staging, and production environments with a single command.",
+    "Preview deployments: Generate temporary environments for pull requests to test changes before merging.",
+    "Container orchestration: Deploy applications to Kubernetes clusters with automated configuration and scaling.",
+    "CI/CD integration: Connect to GitHub, GitLab, or Bitbucket for automatic deployments on code changes.",
+    "Infrastructure as code: Define environments using declarative configuration files for reproducible deployments.",
+    "Resource management: Monitor CPU, memory, and storage usage across all environments from a central dashboard.",
+    "Rollback support: Quickly revert to previous versions when deployments fail or issues are discovered.",
+    "Secret management: Store and inject environment variables and credentials securely into applications.",
+    "Multi-cloud support: Deploy to AWS, GCP, Azure, or on-premises infrastructure from the same platform.",
+    "Team collaboration: Share environments and deployment controls with team members using role-based access.",
+    "API-first design: Automate workflows and integrate with existing tools using comprehensive REST APIs.",
+    "Cost tracking: Monitor cloud spending per environment to optimize resource allocation and budgets."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

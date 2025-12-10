@@ -4,6 +4,8 @@
   "categories": [
     90
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/datarhei/restreamer",
@@ -12,6 +14,21 @@
   "github_stars": "4729",
   "logo": "/icons/restreamer.webp",
   "description": "Restreamer is a self-hosted video streaming server that allows live streaming from RTMP, SRT, or WebRTC sources. It offers transcoding, recording, and multi-platform streaming via a clean web UI.",
+  "tagline": null,
+  "features": [
+    "Multi-protocol input: Accept streams from RTMP, SRT, WebRTC, and HTTP sources.",
+    "Live transcoding: Convert video formats and resolutions in real-time for different platforms.",
+    "Multi-platform streaming: Broadcast simultaneously to YouTube, Twitch, Facebook, and custom RTMP servers.",
+    "Recording: Save live streams to disk for later playback or archival.",
+    "Web UI: Configure and monitor streams through an intuitive browser-based interface.",
+    "Overlay support: Add logos, text, or images to streams before broadcasting.",
+    "Audio mixing: Combine multiple audio sources or add background music to streams.",
+    "Adaptive bitrate: Generate multiple quality levels for viewers with different bandwidth.",
+    "Stream monitoring: View real-time statistics on bitrate, viewers, and stream health.",
+    "Scheduled streaming: Start and stop broadcasts automatically at configured times.",
+    "Authentication: Protect streams with password or token-based access control.",
+    "Low latency: Minimize delay between capture and playback for interactive streaming."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

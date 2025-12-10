@@ -4,6 +4,8 @@
   "categories": [
     118
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/szabodanika/microbin",
@@ -12,6 +14,17 @@
   "github_stars": "3964",
   "logo": "/icons/microbin.webp",
   "description": "Microbin is a self-hosted pastebin service that allows sharing text or code snippets with optional expiration. It supports private pastes, syntax highlighting, and a minimal, fast web UI.",
+  "tagline": null,
+  "features": [
+    "Text sharing: Create pastes for code snippets, logs, or notes with unique URLs for easy sharing.",
+    "Syntax highlighting: Display code with language-specific formatting for improved readability across 100+ languages.",
+    "Expiration control: Set pastes to automatically delete after a specified time or number of views for temporary sharing.",
+    "Private pastes: Create password-protected pastes that require authentication before viewing content.",
+    "Raw text access: Retrieve paste content as plain text via direct URLs for command-line tools and scripts.",
+    "File uploads: Share small files alongside text content for comprehensive information sharing in one paste.",
+    "Burn after reading: Configure pastes to self-destruct after first view for sensitive information sharing.",
+    "Minimal footprint: Run with low memory and CPU requirements, suitable for resource-constrained environments."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

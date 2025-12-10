@@ -4,6 +4,8 @@
   "categories": [
     93
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "gitlab.com/glitchtip/glitchtip-backend",
@@ -12,6 +14,17 @@
   "github_stars": "306",
   "logo": "/icons/glitchtip.webp",
   "description": "Glitchtip is a self-hosted alternative to Sentry for error monitoring and performance tracing. It supports multiple language SDKs, dashboards, and alerts, providing complete visibility into app errors and crashes.",
+  "tagline": null,
+  "features": [
+    "Error Tracking: Capture and aggregate application errors with detailed stack traces and context.",
+    "Performance Monitoring: Track transaction performance and identify slow operations in your applications.",
+    "Multi-Language SDKs: Support for Python, JavaScript, PHP, Ruby, and other popular languages.",
+    "Sentry Compatible: Drop-in replacement for Sentry with compatible SDK and API.",
+    "Issue Management: Group similar errors, assign to team members, and track resolution status.",
+    "Release Tracking: Monitor error rates across different application versions and deployments.",
+    "Alert Configuration: Set up notifications for new errors or performance degradation.",
+    "Self-Hosted Privacy: Keep all error data and user information on your own infrastructure."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

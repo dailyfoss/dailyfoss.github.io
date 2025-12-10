@@ -4,14 +4,27 @@
   "categories": [
     21
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Smaug6739/Alexandrie",
   "website": "alexandrie-hub.fr",
   "source_code": "github.com/Smaug6739/Alexandrie",
-  "github_stars": "861",
+  "github_stars": "862",
   "logo": "/icons/alexandrie.webp",
   "description": "Alexandrie is a Rust-based self-hosted crates registry, designed as an alternative to crates.io. It lets users host their own Rust package repository with search, publishing, and web browsing support, ideal for private package hosting.",
+  "tagline": null,
+  "features": [
+    "Private Registry: Host your own Rust crates repository independently. Alternative to crates.io.",
+    "Package Publishing: Publish and manage Rust packages with cargo integration. Seamless workflow.",
+    "Search Functionality: Fast search across all hosted crates and versions. Find packages instantly.",
+    "Web Interface: Browse packages through clean, intuitive web UI. Easy package discovery.",
+    "Access Control: Manage who can publish and access your packages. Secure your proprietary code.",
+    "Version Management: Handle multiple versions and dependencies automatically. Reliable dependency resolution.",
+    "Built in Rust: Fast, safe, and reliable implementation in Rust. Performance you can trust.",
+    "Self-Hosted: Complete control over your Rust package infrastructure. Your code, your server."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

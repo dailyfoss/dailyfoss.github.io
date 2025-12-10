@@ -4,6 +4,8 @@
   "categories": [
     172
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/crazy-max/diun",
@@ -12,6 +14,15 @@
   "github_stars": "4173",
   "logo": "/icons/diun.webp",
   "description": "Diun (Docker Image Update Notifier) is a CLI and webhook-based tool that notifies you when Docker images are updated. It's ideal for automated maintenance and integrates well with CI/CD pipelines.",
+  "tagline": null,
+  "features": [
+    "Update Notifications: Get alerted when Docker images are updated. Stay informed automatically.",
+    "Multi-Platform: Monitor images from Docker Hub, GHCR, and private registries. Universal coverage.",
+    "Webhook Integration: Trigger actions when updates are detected. Automated workflows.",
+    "CI/CD Ready: Perfect for automated maintenance pipelines. DevOps-friendly tool.",
+    "Flexible Notifications: Send alerts via email, Slack, Discord, and more. Choose your channel.",
+    "Lightweight: Minimal resource usage for efficient monitoring. Run anywhere Docker runs."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

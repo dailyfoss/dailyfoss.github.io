@@ -4,6 +4,8 @@
   "categories": [
     46
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/xibosignage/xibo",
@@ -12,6 +14,21 @@
   "github_stars": "669",
   "logo": "/icons/xibo.webp",
   "description": "Xibo is a self-hosted digital signage platform for designing, scheduling, and delivering content to remote displays. It provides a CMS web UI and various players to run media on screens in organizations.",
+  "tagline": null,
+  "features": [
+    "Content scheduling: Plan and automate when specific content appears on displays with flexible calendar-based scheduling.",
+    "Layout designer: Create custom screen layouts with drag-and-drop widgets for images, videos, text, and web content.",
+    "Multi-display management: Control hundreds of remote displays from a single web interface with grouping and tagging.",
+    "Media library: Organize images, videos, and documents in a centralized library with version control and metadata.",
+    "Player support: Deploy content to Windows, Android, Linux, and web-based players with automatic synchronization.",
+    "Proof of play: Track what content played on which displays and when for compliance and reporting.",
+    "User permissions: Define granular access controls for content creators, schedulers, and administrators.",
+    "Dynamic content: Display live data feeds, weather, social media, and RSS content that updates automatically.",
+    "Campaign management: Group layouts into campaigns with priority rules and dayparting for targeted messaging.",
+    "Remote monitoring: Check player status, connectivity, and health metrics from the central dashboard.",
+    "Template library: Start quickly with pre-built templates for common signage scenarios and industries.",
+    "API integration: Connect external systems and automate content updates using comprehensive REST APIs."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

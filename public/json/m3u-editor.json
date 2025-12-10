@@ -4,6 +4,8 @@
   "categories": [
     59
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/sparkison/m3u-editor",
@@ -12,6 +14,19 @@
   "github_stars": "441",
   "logo": "/icons/m3u-editor.webp",
   "description": "M3U Editor is a web-based tool for editing and managing M3U playlists. Useful for IPTV and media streaming setups, it allows sorting, filtering, and customizing entries for media players.",
+  "tagline": null,
+  "features": [
+    "Playlist editing: Import and modify M3U/M3U8 playlists with drag-and-drop reordering for IPTV and media streaming.",
+    "Channel filtering: Search and filter entries by name, group, or URL to quickly locate specific streams.",
+    "Bulk operations: Apply changes to multiple entries at once, including deletion, grouping, and metadata updates.",
+    "EPG integration: Link electronic program guide data to channels for enhanced viewing information.",
+    "Export options: Save edited playlists in multiple formats compatible with various media players.",
+    "Group management: Organize channels into custom categories for easier navigation and access.",
+    "Duplicate detection: Identify and remove duplicate entries to keep playlists clean and efficient.",
+    "URL validation: Check stream URLs for availability and responsiveness before saving.",
+    "Backup and restore: Create playlist backups to prevent data loss during editing sessions.",
+    "Multi-format support: Handle various playlist formats including M3U, M3U8, and XSPF files."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +40,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

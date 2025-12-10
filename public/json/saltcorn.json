@@ -4,6 +4,8 @@
   "categories": [
     110
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/saltcorn/saltcorn",
@@ -12,6 +14,21 @@
   "github_stars": "1967",
   "logo": "/icons/saltcorn.webp",
   "description": "Saltcorn is a self-hosted no-code platform for building database-backed apps with visual builders. It includes roles, permissions, plugins, and a powerful UI for custom apps.",
+  "tagline": null,
+  "features": [
+    "No-code builder: Create database-driven applications using visual builders without writing code.",
+    "Database management: Design tables, relationships, and schemas through an intuitive interface.",
+    "Custom views: Build forms, lists, and detail pages with drag-and-drop components.",
+    "Role-based access: Define user roles and permissions to control data and feature access.",
+    "Plugin system: Extend functionality with community plugins or create custom extensions.",
+    "Workflow automation: Automate business logic with triggers, actions, and scheduled tasks.",
+    "API generation: Automatically generates REST APIs for all tables and custom endpoints.",
+    "Multi-database support: Works with PostgreSQL and SQLite for flexible deployment options.",
+    "Mobile responsive: Applications adapt automatically to mobile, tablet, and desktop screens.",
+    "Data validation: Enforce data integrity with built-in and custom validation rules.",
+    "File uploads: Handle file attachments with configurable storage and access controls.",
+    "Theming support: Customize appearance with themes and CSS overrides for branding."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

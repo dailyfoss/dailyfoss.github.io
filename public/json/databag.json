@@ -4,6 +4,8 @@
   "categories": [
     102
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/balzack/databag",
@@ -12,6 +14,15 @@
   "github_stars": "1365",
   "logo": "/icons/databag.webp",
   "description": "Databag is a federated, self-hosted messaging platform for private groups. It supports encrypted messaging, groups, video calls, and ActivityPub federation, all via a user-friendly web and mobile interface.",
+  "tagline": null,
+  "features": [
+    "Federated Messaging: Connect with users across different servers. Decentralized communication.",
+    "End-to-End Encryption: Private conversations with strong encryption. Secure messaging.",
+    "Group Chats: Create private groups for team communication. Collaborate securely.",
+    "Video Calls: Built-in video conferencing capabilities. All-in-one platform.",
+    "ActivityPub Support: Integrate with the fediverse. Open protocol compatibility.",
+    "Self-Hosted: Own your messaging platform completely. No corporate surveillance."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

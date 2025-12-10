@@ -4,6 +4,8 @@
   "categories": [
     9
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/metabase/metabase",
@@ -12,6 +14,21 @@
   "github_stars": "44856",
   "logo": "/icons/metabase.webp",
   "description": "Metabase is an open-source data exploration and BI tool that lets users build dashboards and run queries without SQL. It supports self-hosted and cloud deployments, with a clean, intuitive UI and permission-based access.",
+  "tagline": null,
+  "features": [
+    "Visual query builder: Create database queries using a point-and-click interface without writing SQL.",
+    "Dashboard creation: Build interactive dashboards with charts, tables, and visualizations.",
+    "SQL editor: Write custom SQL queries with syntax highlighting and auto-completion for advanced users.",
+    "Database connections: Connect to PostgreSQL, MySQL, MongoDB, and dozens of other data sources.",
+    "Scheduled reports: Automatically generate and email reports on a recurring schedule.",
+    "Data visualization: Create bar charts, line graphs, pie charts, maps, and other visual representations.",
+    "Drill-down analysis: Click through visualizations to explore underlying data in detail.",
+    "User permissions: Control access to databases, tables, and dashboards with role-based permissions.",
+    "Embedding: Embed dashboards and charts in external applications or websites.",
+    "Alert system: Set up alerts that trigger when data meets specific conditions.",
+    "Mobile responsive: View and interact with dashboards from mobile devices.",
+    "API access: Programmatically query data and manage resources through REST API."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

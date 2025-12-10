@@ -4,6 +4,8 @@
   "categories": [
     79
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/kanidm/kanidm",
@@ -12,6 +14,21 @@
   "github_stars": "4298",
   "logo": "/icons/kanidm.webp",
   "description": "Kanidm is an identity management system and LDAP compatible directory service. It aims to provide secure, modern authentication and authorization features for self hosted infrastructure with both CLI and web administration tools.",
+  "tagline": null,
+  "features": [
+    "Identity Management: User and group administration with LDAP compatibility and modern authentication protocols. Centralize identity infrastructure.",
+    "OAuth2 & OIDC: Standards-based authentication for web applications and APIs. Enable single sign-on across services.",
+    "Multi-Factor Authentication: Support for TOTP, WebAuthn, and hardware security keys. Strengthen account security.",
+    "LDAP Server: LDAP-compatible directory service for legacy application integration. Bridge modern and traditional systems.",
+    "Role-Based Access: Fine-grained permissions and policy-based authorization. Control resource access precisely.",
+    "CLI & Web UI: Manage identities through command-line tools or web interface. Choose your preferred workflow.",
+    "API Access: RESTful API for programmatic identity management and automation. Integrate with existing tools.",
+    "Audit Logging: Comprehensive logs of authentication events and administrative actions. Track security-relevant activities.",
+    "Password Policies: Enforce password complexity, expiration, and history requirements. Maintain security standards.",
+    "Group Management: Nested groups, dynamic membership, and group-based permissions. Organize users efficiently.",
+    "Session Management: Control active sessions, force logouts, and manage device trust. Maintain security posture.",
+    "Self-Service: Users can update profiles, reset passwords, and manage MFA devices. Reduce administrative overhead."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

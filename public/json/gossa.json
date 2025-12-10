@@ -4,6 +4,8 @@
   "categories": [
     60
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/pldubouilh/gossa",
@@ -12,6 +14,17 @@
   "github_stars": "1045",
   "logo": "/icons/gossa.webp",
   "description": "Gossa is a fast self-hosted file sharing application. It supports drag-and-drop uploads, directory browsing, public links, and real-time change detection through a clean web UI. Designed for easy file hosting and sharing.",
+  "tagline": null,
+  "features": [
+    "Drag-and-Drop Uploads: Upload files by dragging them directly into the browser interface.",
+    "Directory Browsing: Navigate folder structures with a clean, file-explorer-style interface.",
+    "Real-Time Updates: Automatically detect and display file system changes without page refresh.",
+    "Public Link Sharing: Generate shareable links for files and folders with optional access controls.",
+    "Fast Performance: Lightweight Go-based server with minimal overhead and quick response times.",
+    "File Preview: View images, videos, and documents directly in the browser.",
+    "Search Functionality: Quickly find files across your hosted directories.",
+    "Simple Deployment: Single binary with no database requirements for easy setup."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

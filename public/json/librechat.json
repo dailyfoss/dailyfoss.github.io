@@ -4,6 +4,8 @@
   "categories": [
     102
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/danny-avila/LibreChat",
@@ -12,6 +14,13 @@
   "github_stars": "32205",
   "logo": "/icons/librechat.webp",
   "description": "LibreChat is an open-source alternative to ChatGPT which supports custom models, connectors, and real-time messaging. It offers flexibility to integrate AI chat functionality in a self-hosted or cloud environment.",
+  "tagline": null,
+  "features": [
+    "AI Chat Interface: ChatGPT-like experience, Multiple AI models, Custom connectors. Flexible AI chat platform.",
+    "Model Support: OpenAI, Anthropic, Local models, Custom endpoints. Connect to any AI provider.",
+    "Conversation Management: Chat history, Multi-conversation, Search and organize. Manage AI interactions efficiently.",
+    "Self-Hosted: Privacy-focused, API key control, Custom deployment. Run your own AI chat service."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +34,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

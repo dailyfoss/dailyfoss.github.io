@@ -4,6 +4,8 @@
   "categories": [
     57
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/TheBigRoomXXL/tinyfeed",
@@ -12,6 +14,21 @@
   "github_stars": "298",
   "logo": "/icons/tinyfeed.webp",
   "description": "Tinyfeed is a self-hosted minimal RSS reader with focus on simplicity. It fetches feeds on a schedule and presents them in a clean, distraction-free web interface.",
+  "tagline": null,
+  "features": [
+    "RSS aggregation: Subscribe to RSS and Atom feeds from blogs, news sites, and other sources.",
+    "Scheduled fetching: Automatically fetch new feed items on a configurable schedule without manual refreshes.",
+    "Clean interface: Read articles in a distraction-free interface focused on content consumption.",
+    "Feed management: Add, remove, and organize feeds with folders or categories for better organization.",
+    "Unread tracking: Track which articles you've read with automatic marking and manual controls.",
+    "Article filtering: Filter articles by feed, date, or read status to focus on relevant content.",
+    "Minimal design: Navigate a simple, lightweight interface that loads quickly and stays out of your way.",
+    "OPML import: Import feed subscriptions from other readers using standard OPML format.",
+    "Mobile-friendly: Read feeds on mobile devices with a responsive design optimized for small screens.",
+    "Privacy-focused: Fetch feeds server-side to avoid tracking and maintain privacy while reading.",
+    "Keyboard navigation: Navigate articles and feeds efficiently using keyboard shortcuts.",
+    "Lightweight deployment: Run with minimal server resources suitable for personal use or small groups."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

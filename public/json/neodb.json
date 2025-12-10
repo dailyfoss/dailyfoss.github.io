@@ -4,6 +4,8 @@
   "categories": [
     148
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/neodb-social/neodb",
@@ -12,6 +14,21 @@
   "github_stars": "736",
   "logo": "/icons/neodb.webp",
   "description": "Neodb is a social cataloging platform for movies, books, and music inspired by Douban. It enables self-hosted users to track and rate media collections with feeds, comments, and lists.",
+  "tagline": null,
+  "features": [
+    "Media cataloging: Track movies, books, music, games, and podcasts in a unified collection.",
+    "Rating system: Rate and review media with customizable scoring and written feedback.",
+    "Activity feeds: Follow other users and see their reviews, ratings, and collection updates.",
+    "Lists and collections: Organize media into custom lists like watchlists, favorites, or themed collections.",
+    "Social features: Comment on reviews, like posts, and interact with other users' content.",
+    "Import/export: Migrate data from Douban or other platforms with bulk import tools.",
+    "Metadata fetching: Automatically retrieve information, covers, and details from external databases.",
+    "Progress tracking: Mark media as watching, reading, or listening with progress indicators.",
+    "Recommendations: Discover new content based on your ratings and similar users' preferences.",
+    "Privacy controls: Set visibility for reviews and collections as public, followers-only, or private.",
+    "Search and filters: Find media by title, creator, genre, year, or other attributes.",
+    "ActivityPub support: Connect with federated social networks for broader content sharing."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

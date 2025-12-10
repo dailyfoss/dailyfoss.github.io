@@ -4,6 +4,8 @@
   "categories": [
     91
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/schlagmichdoch/PairDrop",
@@ -12,6 +14,18 @@
   "github_stars": "9358",
   "logo": "/icons/pairdrop.webp",
   "description": "PairDrop is a self-hosted AirDrop-like file transfer tool using WebRTC. It allows fast device-to-device sharing over your own network without third-party services.",
+  "tagline": null,
+  "features": [
+    "WebRTC file transfer: Peer-to-peer sharing using WebRTC for fast, direct transfers without server intermediaries",
+    "Cross-platform compatibility: Works across desktop and mobile browsers on any operating system",
+    "Local network discovery: Automatically detects nearby devices on the same network for instant pairing",
+    "No file size limits: Transfer files of any size without cloud storage restrictions or upload limits",
+    "End-to-end encryption: All transfers are encrypted during transmission for privacy between sender and receiver",
+    "Text and link sharing: Share clipboard text, URLs, and messages alongside files for quick information exchange",
+    "Progressive web app: Install as PWA on mobile devices for app-like experience with offline capabilities",
+    "No account required: Start sharing immediately without registration for quick transfers and guest access",
+    "Room codes: Create private rooms with custom codes to connect devices across different networks securely"
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +39,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

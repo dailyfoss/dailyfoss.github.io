@@ -4,6 +4,8 @@
   "categories": [
     159
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/go-vikunja/vikunja",
@@ -12,6 +14,21 @@
   "github_stars": "2793",
   "logo": "/icons/vikunja.webp",
   "description": "Vikunja is a self-hosted, open-source to-do and project management platform. It offers lists, kanban boards, sharing, and reminders, with mobile apps, a web client, and an API.",
+  "tagline": null,
+  "features": [
+    "Task lists: Organize tasks into lists and projects for structured task management.",
+    "Kanban boards: Visualize workflow with kanban boards and drag-and-drop task movement.",
+    "Due dates: Set deadlines for tasks with calendar views and overdue highlighting.",
+    "Reminders: Receive notifications for upcoming tasks and deadlines via email or push.",
+    "Subtasks: Break down complex tasks into subtasks with nested checklists.",
+    "Labels and priorities: Categorize and prioritize tasks with custom labels and priority levels.",
+    "Team collaboration: Share lists with team members and assign tasks to collaborators.",
+    "Attachments: Add files and documents to tasks for complete context and reference.",
+    "Recurring tasks: Set up tasks that repeat daily, weekly, or on custom schedules.",
+    "Mobile apps: Access tasks from Android devices with native mobile applications.",
+    "CalDAV sync: Sync tasks with calendar applications using CalDAV protocol.",
+    "API access: Integrate with other tools using the comprehensive REST API."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

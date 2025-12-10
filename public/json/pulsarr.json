@@ -4,6 +4,8 @@
   "categories": [
     166
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/jamcalli/Pulsarr",
@@ -12,6 +14,21 @@
   "github_stars": "456",
   "logo": "/icons/pulsarr.webp",
   "description": "Pulsarr is a self-hosted browser extension and web UI that integrates with Radarr, Sonarr, and similar tools to streamline adding and managing media releases across your setup.",
+  "tagline": null,
+  "features": [
+    "Browser extension: Add media to Radarr and Sonarr directly from IMDb, TMDB, and other websites.",
+    "Quick add interface: Streamline adding movies and TV shows with one-click integration.",
+    "Web dashboard: Manage media additions and monitor *arr applications from a unified interface.",
+    "Search integration: Search for media across multiple sources and add to your library instantly.",
+    "Quality profile selection: Choose quality profiles and root folders when adding new media.",
+    "Batch operations: Add multiple movies or TV shows simultaneously for efficient library building.",
+    "Notification system: Receive alerts when media is added, downloaded, or encounters issues.",
+    "Watchlist sync: Automatically import and add media from IMDb or Trakt watchlists.",
+    "Custom filters: Set default filters for quality, size, and other criteria when adding media.",
+    "Mobile responsive: Add and manage media from mobile devices with an optimized interface.",
+    "Multi-instance support: Connect to multiple Radarr and Sonarr instances from a single interface.",
+    "Activity history: Track all media additions with timestamps and status updates."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

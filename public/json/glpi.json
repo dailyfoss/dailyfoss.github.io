@@ -4,6 +4,8 @@
   "categories": [
     146
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/glpi-project/glpi",
@@ -12,6 +14,17 @@
   "github_stars": "5378",
   "logo": "/icons/glpi.webp",
   "description": "GLPI is a full-featured IT asset and service management platform that includes helpdesk, inventory, documentation, and automation tools. It is widely used in enterprise environments to manage IT assets and service requests.",
+  "tagline": null,
+  "features": [
+    "Asset Management: Track hardware, software, and licenses across your entire IT infrastructure.",
+    "Helpdesk Ticketing: Manage service requests and incidents with a full-featured ticketing system.",
+    "Inventory Automation: Automatically discover and inventory network devices and computers.",
+    "Knowledge Base: Build internal documentation and solutions for common IT issues.",
+    "Contract Management: Track vendor contracts, warranties, and maintenance agreements.",
+    "Project Management: Plan and track IT projects with tasks, milestones, and resource allocation.",
+    "Reporting Dashboard: Generate reports on assets, tickets, and IT service metrics.",
+    "Plugin Ecosystem: Extend functionality with hundreds of community and commercial plugins."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

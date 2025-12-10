@@ -4,6 +4,8 @@
   "categories": [
     73
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/grocy/grocy",
@@ -12,6 +14,17 @@
   "github_stars": "8474",
   "logo": "/icons/grocy.webp",
   "description": "Grocy is a self-hosted grocery and household management solution. It tracks inventory, shopping lists, chores, tasks, and meal planning through a clean and responsive web UI with barcode support.",
+  "tagline": null,
+  "features": [
+    "Inventory Tracking: Monitor food and household items with quantity tracking and expiration dates.",
+    "Shopping Lists: Create and manage shopping lists with automatic suggestions based on inventory.",
+    "Meal Planning: Plan meals and automatically generate shopping lists from recipes.",
+    "Barcode Scanning: Add products quickly using barcode scanner via mobile app or webcam.",
+    "Recipe Management: Store recipes with ingredients and automatically track inventory usage.",
+    "Chore Tracking: Schedule and track household chores and maintenance tasks.",
+    "Battery Management: Monitor battery-powered devices and track battery replacements.",
+    "Waste Reduction: Reduce food waste by tracking expiration dates and consumption patterns."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

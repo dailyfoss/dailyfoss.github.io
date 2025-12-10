@@ -4,6 +4,8 @@
   "categories": [
     37
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/jamesread/StencilBox",
@@ -12,6 +14,21 @@
   "github_stars": "61",
   "logo": "/icons/stencilbox.webp",
   "description": "StencilBox is a self-hosted visual editor for creating SVG stencils and diagrams, offering drag-and-drop elements and export options.",
+  "tagline": null,
+  "features": [
+    "SVG editor: Creates and edits SVG stencils and diagrams visually.",
+    "Drag-and-drop: Adds shapes and elements with intuitive drag-and-drop interface.",
+    "Shape library: Provides pre-built shapes for flowcharts, diagrams, and designs.",
+    "Layer management: Organizes elements in layers for complex compositions.",
+    "Export options: Saves designs as SVG, PNG, or PDF formats.",
+    "Grid and guides: Aligns elements precisely with grid and guide lines.",
+    "Color picker: Applies colors to shapes with visual color picker.",
+    "Text support: Adds and styles text labels within diagrams.",
+    "Grouping: Groups multiple elements for easier manipulation.",
+    "Undo/redo: Reverts changes with unlimited undo and redo history.",
+    "Responsive canvas: Adjusts canvas size for different output requirements.",
+    "Template system: Starts projects from pre-made templates."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

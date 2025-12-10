@@ -4,6 +4,8 @@
   "categories": [
     102
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/element-hq/synapse",
@@ -12,6 +14,21 @@
   "github_stars": "3220",
   "logo": "/icons/synapse.webp",
   "description": "Synapse is a reference Matrix homeserver implementation, enabling self-hosted federated chat. It powers encrypted messaging, VoIP, and bridging with a robust API surface.",
+  "tagline": null,
+  "features": [
+    "Matrix homeserver: Hosts Matrix chat server for federated messaging.",
+    "End-to-end encryption: Encrypts messages and calls with Olm and Megolm protocols.",
+    "Federation: Connects with other Matrix servers for decentralized communication.",
+    "Room management: Creates public and private chat rooms with customizable permissions.",
+    "Voice and video: Supports encrypted voice and video calls via WebRTC.",
+    "File sharing: Sends encrypted files and media through chat rooms.",
+    "Bridges: Connects to IRC, Slack, Discord, and other platforms via bridges.",
+    "User directory: Searches for users across federated Matrix network.",
+    "Admin API: Manages server, users, and rooms via comprehensive REST API.",
+    "Push notifications: Sends notifications to mobile devices for new messages.",
+    "SSO integration: Authenticates users via SAML, OAuth, or LDAP.",
+    "Moderation tools: Provides admin controls for managing users and content."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

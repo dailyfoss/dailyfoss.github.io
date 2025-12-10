@@ -4,6 +4,8 @@
   "categories": [
     146
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Dokploy/dokploy",
@@ -12,6 +14,21 @@
   "github_stars": "27663",
   "logo": "/icons/dokploy.webp",
   "description": "Dokploy is a self-hosted platform for deploying applications using a modern web UI. It supports Docker-based deployments, databases, custom domains, SSL, and secrets, aiming to simplify app hosting for individuals and small teams.",
+  "tagline": null,
+  "features": [
+    "Application Deployment: Deploy applications from Git repositories with automatic builds and Docker containerization.",
+    "Database Management: Provision and manage PostgreSQL, MySQL, MongoDB, and Redis databases with backup automation.",
+    "Domain Configuration: Set up custom domains with automatic SSL certificate generation and renewal via Let's Encrypt.",
+    "Environment Variables: Secure management of application secrets and environment variables with encryption.",
+    "Monitoring Dashboard: Real-time application monitoring with logs, metrics, and health status visualization.",
+    "Git Integration: Connect with GitHub, GitLab, and other Git providers for automated deployments on code changes.",
+    "Load Balancing: Built-in load balancer with health checks and automatic failover for high availability.",
+    "Backup System: Automated database and application backups with configurable retention policies.",
+    "Team Collaboration: Multi-user support with role-based access control and project sharing capabilities.",
+    "Resource Management: Monitor and control CPU, memory, and storage usage with scaling recommendations.",
+    "CI/CD Pipeline: Integrated continuous integration and deployment with custom build scripts and testing.",
+    "One-click Apps: Pre-configured application templates for popular frameworks and services with instant deployment."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

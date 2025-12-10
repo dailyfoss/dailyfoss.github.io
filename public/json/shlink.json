@@ -4,6 +4,8 @@
   "categories": [
     171
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/shlinkio/shlink",
@@ -12,6 +14,21 @@
   "github_stars": "4489",
   "logo": "/icons/shlink.webp",
   "description": "Shlink is a self-hosted URL shortener providing detailed visit analytics, QR codes, and REST APIs. It can back multiple domains and integrates easily with automation and external frontends.",
+  "tagline": null,
+  "features": [
+    "URL shortening: Creates short links with custom or auto-generated slugs.",
+    "Visit analytics: Tracks clicks, referrers, locations, and devices for each short link.",
+    "QR code generation: Automatically creates QR codes for every shortened URL.",
+    "Multi-domain support: Manages short links across multiple custom domains.",
+    "REST API: Provides comprehensive API for programmatic link creation and management.",
+    "Link expiration: Sets automatic expiration dates or maximum visit counts for links.",
+    "Tag organization: Groups short links with tags for easier management and filtering.",
+    "Redirect rules: Configures custom redirect behavior based on device, location, or language.",
+    "Real-time stats: Displays live visit statistics and geographic distribution.",
+    "Import tools: Migrates existing short links from other URL shortener services.",
+    "Access control: Protects links with passwords or restricts access by IP address.",
+    "Web interface: Manages links through optional web UI or third-party frontends."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

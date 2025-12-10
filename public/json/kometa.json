@@ -4,6 +4,8 @@
   "categories": [
     100
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Kometa-Team/Kometa",
@@ -12,6 +14,21 @@
   "github_stars": "3054",
   "logo": "/icons/kometa.webp",
   "description": "Kometa is a metadata and library management tool for Plex or related media servers. It uses configuration files and scripts to create collections, apply artwork and keep libraries organized automatically, tailored for self hosted media setups.",
+  "tagline": null,
+  "features": [
+    "Automatic Collections: Create dynamic collections based on genres, actors, directors, and more. Organize libraries intelligently.",
+    "Artwork Management: Apply posters, backgrounds, and overlays to media automatically. Keep libraries visually appealing.",
+    "Metadata Enhancement: Enrich media metadata from multiple sources like TMDb and IMDb. Improve library information.",
+    "YAML Configuration: Define library management rules in version-controlled YAML files. Automate maintenance declaratively.",
+    "Scheduled Updates: Run maintenance tasks on schedules to keep libraries current. Set and forget automation.",
+    "Template System: Use community templates or create custom ones for common patterns. Standardize library organization.",
+    "Overlay Support: Add rating, resolution, and audio overlays to posters. Visual indicators for media quality.",
+    "Award Collections: Automatically create collections for Oscar winners, Emmy winners, and more. Highlight acclaimed content.",
+    "Trending Content: Build collections of trending movies and shows automatically. Discover what's popular.",
+    "Multi-Library: Manage multiple Plex libraries from single configuration. Centralize library automation.",
+    "Dry Run Mode: Preview changes before applying to libraries. Test configurations safely.",
+    "Detailed Logging: Comprehensive logs of all operations and changes. Track what Kometa does."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

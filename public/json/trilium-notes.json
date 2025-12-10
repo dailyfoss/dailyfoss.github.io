@@ -4,6 +4,8 @@
   "categories": [
     111
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/TriliumNext/Trilium",
@@ -12,6 +14,21 @@
   "github_stars": "33334",
   "logo": "/icons/trilium-notes.webp",
   "description": "Trilium Next is a self-hosted hierarchical note-taking and knowledge management app. It supports rich text, relations, scripting, and synchronization, with desktop clients and a powerful web interface.",
+  "tagline": null,
+  "features": [
+    "Hierarchical notes: Organize notes in a tree structure with unlimited nesting for complex knowledge bases.",
+    "Rich text editing: Create notes with formatting, images, tables, and embedded content using a WYSIWYG editor.",
+    "Note relations: Link notes together with typed relationships for building knowledge graphs and connections.",
+    "Scripting: Automate tasks and extend functionality using JavaScript within notes for custom behavior.",
+    "Synchronization: Sync notes across devices using built-in sync server for access anywhere.",
+    "Desktop clients: Use native desktop applications for Windows, Mac, and Linux with offline access.",
+    "Web interface: Access notes through a powerful web interface when away from your desktop.",
+    "Encryption: Protect sensitive notes with encryption at rest for privacy and security.",
+    "Version history: Track changes to notes over time with automatic versioning and rollback capability.",
+    "Full-text search: Find content across all notes using fast full-text search with filters.",
+    "Templates: Create note templates for consistent structure in recurring note types.",
+    "Export options: Export notes individually or in bulk to HTML, Markdown, or other formats."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

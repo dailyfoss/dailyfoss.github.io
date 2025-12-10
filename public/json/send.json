@@ -4,6 +4,8 @@
   "categories": [
     61
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "gitlab.com/timvisee/send",
@@ -12,6 +14,21 @@
   "github_stars": "290",
   "logo": "/icons/send.webp",
   "description": "timvisee/send is a community-maintained fork of Mozilla Send, a self-hosted encrypted file sharing service with expiring links. Files are end-to-end encrypted in the browser and can be shared via short URLs.",
+  "tagline": null,
+  "features": [
+    "Encrypted file sharing: End-to-end encrypts files in the browser before upload.",
+    "Expiring links: Automatically deletes files after download count or time limit.",
+    "Password protection: Optionally secure shared files with passwords.",
+    "Large file support: Handles files up to 2.5GB with chunked uploads.",
+    "No registration: Share files without creating accounts or logging in.",
+    "Download tracking: Shows how many times a file has been downloaded.",
+    "Custom expiration: Set custom time limits from 5 minutes to 7 days.",
+    "Browser-based encryption: All encryption happens client-side for maximum privacy.",
+    "Simple interface: Clean, minimal UI focused on quick file sharing.",
+    "Mobile friendly: Works on smartphones and tablets for sharing on the go.",
+    "Self-hosted control: Full control over data storage and retention policies.",
+    "Open source: Community-maintained fork with active development and security updates."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

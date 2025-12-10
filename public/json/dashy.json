@@ -4,6 +4,8 @@
   "categories": [
     34
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Lissy93/dashy",
@@ -12,6 +14,15 @@
   "github_stars": "23291",
   "logo": "/icons/dashy.webp",
   "description": "Dashy is a highly configurable self-hosted dashboard for organizing links, services, and status widgets. It supports themes, authentication, custom YAML config, and integrates seamlessly with homelab setups.",
+  "tagline": null,
+  "features": [
+    "Highly Configurable: Customize every aspect with YAML config. Total control over layout.",
+    "Service Organization: Group and categorize links and services. Perfect homelab dashboard.",
+    "Status Widgets: Monitor service health at a glance. Real-time availability.",
+    "Theme Support: Choose from multiple themes or create your own. Beautiful customization.",
+    "Authentication: Secure access with built-in auth options. Protected dashboard.",
+    "Self-Hosted: Complete ownership of your dashboard. Privacy and independence."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     18
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/kopia/kopia",
@@ -12,6 +14,21 @@
   "github_stars": "11953",
   "logo": "/icons/kopia.webp",
   "description": "Kopia is an open source backup tool for files and snapshots. It supports encryption, deduplication and multiple storage backends, with both CLI and web UI, enabling safe incremental backups on self hosted infrastructure.",
+  "tagline": null,
+  "features": [
+    "Encrypted Backups: End-to-end AES-256 encryption with password or key-based protection. Secure your backup data completely.",
+    "Deduplication: Content-based deduplication for space-efficient storage. Save storage with smart compression.",
+    "Incremental Backups: Fast incremental backups that only store changed data. Minimize backup time and storage.",
+    "Multiple Backends: Support for S3, Azure, Google Cloud, local drives, and more. Backup to any destination.",
+    "Snapshot Management: Create point-in-time snapshots with retention policies. Maintain backup history efficiently.",
+    "Fast Restores: Quick file and directory restoration from any snapshot. Recover data when needed.",
+    "Web UI: Browser-based interface for backup management and monitoring. Manage backups visually.",
+    "CLI Tools: Powerful command-line interface for automation and scripting. Integrate with existing workflows.",
+    "Scheduled Backups: Automatic backups on schedules with policy-based retention. Set and forget protection.",
+    "Compression: Built-in compression to reduce backup size and transfer time. Optimize storage usage.",
+    "Cross-Platform: Support for Windows, macOS, and Linux systems. Backup any platform.",
+    "Verification: Automatic backup verification to ensure data integrity. Trust your backups are valid."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     69
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Phalcode/gamevault-app",
@@ -12,6 +14,17 @@
   "github_stars": "697",
   "logo": "/icons/gamevault.webp",
   "description": "GameVault is a self-hosted gaming launcher and library manager. It scans games, provides metadata, launch buttons, and remote play support. Supports Windows and Linux builds, with a slick UI for organizing your collection.",
+  "tagline": null,
+  "features": [
+    "Game Library Management: Organize and catalog your game collection with automatic metadata and artwork retrieval.",
+    "Remote Launcher: Launch games remotely from any device with cross-platform Windows and Linux support.",
+    "Metadata Enrichment: Automatically fetch game details, cover art, and descriptions for your library.",
+    "Remote Play: Stream and play games from your server with built-in remote play capabilities.",
+    "Cross-Platform Support: Deploy on Windows or Linux with native builds for both operating systems.",
+    "Collection Browser: Browse your game library through a polished, modern web interface.",
+    "Automatic Scanning: Detect and index games from configured directories with minimal manual input.",
+    "Personal Gaming Hub: Centralize your gaming collection in a self-hosted platform with full control."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

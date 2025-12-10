@@ -4,6 +4,8 @@
   "categories": [
     145
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/chaitin/SafeLine",
@@ -12,6 +14,21 @@
   "github_stars": "19496",
   "logo": "/icons/safeline.webp",
   "description": "SafeLine is a self-hosted security platform that detects web application attacks using AI. It includes dashboards, threat intelligence, and supports scalable deployment.",
+  "tagline": null,
+  "features": [
+    "AI-powered detection: Uses machine learning to identify web application attacks and zero-day threats.",
+    "Web application firewall: Protects against OWASP Top 10 vulnerabilities including SQL injection and XSS.",
+    "Real-time monitoring: Displays live traffic analysis and threat detection in comprehensive dashboards.",
+    "Threat intelligence: Integrates global threat feeds to block known malicious IPs and attack patterns.",
+    "Custom rules: Create and deploy custom security rules tailored to your application's needs.",
+    "Attack visualization: Provides detailed attack timelines and geographic distribution maps.",
+    "API protection: Secures REST and GraphQL APIs with rate limiting and input validation.",
+    "SSL/TLS termination: Handles HTTPS traffic with automatic certificate management.",
+    "Logging and alerts: Sends notifications via email, Slack, or webhooks for security events.",
+    "Performance optimization: Minimal latency impact with efficient request processing and caching.",
+    "Compliance reporting: Generates audit logs and reports for security compliance requirements.",
+    "Multi-site support: Protects multiple domains and applications from a single deployment."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

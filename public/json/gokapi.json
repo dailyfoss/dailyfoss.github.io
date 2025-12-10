@@ -4,6 +4,8 @@
   "categories": [
     61
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Forceu/Gokapi",
@@ -12,6 +14,17 @@
   "github_stars": "2447",
   "logo": "/icons/gokapi.webp",
   "description": "Gokapi is a self-hosted file sharing app with short-lived, password-protected upload links. It focuses on privacy, simplicity, and fast linking, suitable for small team or personal workflows.",
+  "tagline": null,
+  "features": [
+    "Expiring Links: Generate file upload links that automatically expire after a set time or download count.",
+    "Password Protection: Secure shared files with optional password requirements for access.",
+    "Privacy-Focused: No tracking or analytics, keeping file sharing simple and private.",
+    "Upload Management: Control file size limits, expiration times, and download limits per link.",
+    "Simple Workflow: Quick file sharing for teams without complex permission systems.",
+    "Download Tracking: Monitor how many times files have been downloaded before expiration.",
+    "Clean Interface: Minimal, distraction-free UI for fast file sharing operations.",
+    "Self-Hosted Security: Keep shared files on your infrastructure with full control over retention."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

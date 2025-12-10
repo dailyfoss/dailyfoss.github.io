@@ -4,6 +4,8 @@
   "categories": [
     146
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/kubero-dev/kubero",
@@ -12,6 +14,21 @@
   "github_stars": "4019",
   "logo": "/icons/kubero.webp",
   "description": "Kubero is a self hosted Heroku like platform for deploying applications to Kubernetes clusters. It provides a developer focused UI, git based deployments and environment management to simplify app hosting on K8s.",
+  "tagline": null,
+  "features": [
+    "Kubernetes PaaS: Heroku-like platform for deploying apps to Kubernetes clusters. Simplify K8s complexity.",
+    "Git-Based Deployment: Push code to Git and automatically deploy to Kubernetes. Streamlined deployment workflow.",
+    "Environment Management: Separate dev, staging, and production environments. Manage app lifecycle stages.",
+    "Buildpack Support: Automatic detection and building with Cloud Native Buildpacks. Deploy without Dockerfiles.",
+    "Web UI: Developer-friendly interface for managing apps and deployments. Visual Kubernetes management.",
+    "Pipeline Automation: Automated build, test, and deployment pipelines. CI/CD built-in.",
+    "Environment Variables: Manage configuration and secrets per environment. Secure app configuration.",
+    "Scaling: Manual and automatic scaling of application instances. Handle varying load.",
+    "Logs & Monitoring: View application logs and metrics from dashboard. Debug and monitor apps.",
+    "Database Add-ons: Provision databases and services for applications. Simplify infrastructure setup.",
+    "Custom Domains: Configure custom domains with SSL certificates. Professional app URLs.",
+    "Rollback: Easy rollback to previous deployments when issues occur. Recover from bad deploys quickly."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

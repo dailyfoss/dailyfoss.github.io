@@ -4,6 +4,8 @@
   "categories": [
     116
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/mrmn2/PdfDing",
@@ -12,6 +14,18 @@
   "github_stars": "1445",
   "logo": "/icons/pdfding.webp",
   "description": "PdfDing is a self-hosted PDF toolkit supporting operations like merging, splitting, rotating, and compressing PDFs. It provides a drag-and-drop web UI for ease of use.",
+  "tagline": null,
+  "features": [
+    "PDF merging: Combine multiple PDF files into single document while preserving formatting and page order",
+    "PDF splitting: Extract specific pages or split PDFs into separate files based on page ranges or intervals",
+    "Page rotation: Rotate individual pages or entire documents by 90, 180, or 270 degrees for correct orientation",
+    "PDF compression: Reduce file size by optimizing images and removing unnecessary data while maintaining acceptable quality",
+    "Drag-and-drop interface: Intuitive web UI allows file uploads and page reordering through simple drag-and-drop interactions",
+    "Batch processing: Apply operations to multiple PDFs simultaneously for efficient bulk document manipulation",
+    "Privacy focused: All processing happens on your server without uploading files to third-party services",
+    "No file size limits: Process PDFs of any size without restrictions imposed by cloud-based services",
+    "Page reordering: Rearrange pages within PDFs by dragging thumbnails to create custom document structures"
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +39,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

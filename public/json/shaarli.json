@@ -4,6 +4,8 @@
   "categories": [
     20
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/shaarli/Shaarli",
@@ -12,6 +14,21 @@
   "github_stars": "3753",
   "logo": "/icons/shaarli.webp",
   "description": "Shaarli is a self-hosted bookmark manager and link sharing application. It allows tagging, private or public links, and simple theming, providing a minimal alternative to online bookmarking services.",
+  "tagline": null,
+  "features": [
+    "Bookmark management: Save and organize web links with titles, descriptions, and tags.",
+    "Tagging system: Categorize bookmarks with multiple tags for flexible organization.",
+    "Public or private: Control visibility of individual bookmarks or entire collections.",
+    "RSS feeds: Generates RSS feeds for sharing bookmarks with others or syncing to readers.",
+    "Full-text search: Find bookmarks quickly by searching titles, descriptions, tags, or URLs.",
+    "Import and export: Migrate bookmarks from browsers or other services via standard formats.",
+    "Markdown support: Format bookmark descriptions with markdown for rich text.",
+    "Daily links: Automatically creates daily pages aggregating bookmarks by date.",
+    "Permalink structure: Generates clean, permanent URLs for individual bookmarks.",
+    "Theme customization: Modify appearance with custom CSS or choose from available themes.",
+    "Plugin system: Extends functionality with community plugins for additional features.",
+    "No database required: Stores all data in flat files for simple deployment and backup."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

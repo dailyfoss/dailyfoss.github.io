@@ -4,6 +4,8 @@
   "categories": [
     173
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/statping-ng/statping-ng",
@@ -12,6 +14,21 @@
   "github_stars": "1882",
   "logo": "/icons/statping-ng.webp",
   "description": "Statping-ng is a self-hosted status page and monitoring platform. It pings services, records uptime, and presents results with historical graphs and alerts.",
+  "tagline": null,
+  "features": [
+    "Service monitoring: Checks HTTP, TCP, ICMP, and other service types for availability.",
+    "Status page: Displays public-facing status page for service uptime.",
+    "Uptime tracking: Records historical uptime percentages and downtime incidents.",
+    "Response time graphs: Visualizes service response times over various periods.",
+    "Alert notifications: Sends alerts via email, Slack, Discord, or webhooks on failures.",
+    "Incident management: Logs and displays service incidents with timestamps.",
+    "Custom checks: Creates custom monitoring checks with flexible intervals.",
+    "API monitoring: Tests API endpoints and validates response codes and content.",
+    "SSL certificate monitoring: Alerts on expiring SSL certificates.",
+    "Mobile responsive: Manages monitoring and views status from mobile devices.",
+    "Multi-user support: Allows team members to manage services with different permissions.",
+    "Export metrics: Provides Prometheus metrics endpoint for external monitoring."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

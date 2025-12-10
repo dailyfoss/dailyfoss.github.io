@@ -4,6 +4,8 @@
   "categories": [
     23
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "gitlab.com/davical-project/davical",
@@ -12,6 +14,15 @@
   "github_stars": "104",
   "logo": "/icons/davical.webp",
   "description": "DAViCal is a CalDAV server that allows shared calendar management for desktop and mobile clients. Designed for personal and organizational use, it integrates with clients like Thunderbird, iOS, and Android calendar apps.",
+  "tagline": null,
+  "features": [
+    "CalDAV Server: Standard protocol for calendar synchronization. Universal compatibility.",
+    "Shared Calendars: Collaborate on schedules with teams. Coordinated planning.",
+    "Multi-Client Support: Works with Thunderbird, iOS, Android, and more. Use your favorite app.",
+    "Personal & Organizational: Suitable for individuals and businesses. Scales with needs.",
+    "Event Management: Full calendar functionality with reminders. Complete scheduling solution.",
+    "Self-Hosted: Keep your calendar data private. No cloud dependency."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

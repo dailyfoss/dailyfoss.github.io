@@ -4,6 +4,8 @@
   "categories": [
     100
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/music-assistant/server",
@@ -12,6 +14,17 @@
   "github_stars": "1041",
   "logo": "/icons/music-assistant.webp",
   "description": "Music Assistant is a self-hosted music management and streaming platform that integrates with Home Assistant. It pulls media from services like Spotify or local libraries into structured playlists and collections.",
+  "tagline": null,
+  "features": [
+    "Multi-source integration: Aggregate music from Spotify, local files, and streaming services into a unified library.",
+    "Home Assistant integration: Control playback on smart speakers and devices through Home Assistant automations.",
+    "Playlist management: Create and sync playlists across different music sources with automatic metadata matching.",
+    "Multi-room audio: Stream synchronized music to multiple speakers and zones throughout your home.",
+    "Library organization: Browse music by artist, album, genre, or playlist with automatic metadata enrichment.",
+    "Queue management: Build dynamic playback queues mixing tracks from different sources and services seamlessly.",
+    "Player support: Stream to Chromecast, Sonos, AirPlay, and other network audio devices from one interface.",
+    "Offline playback: Cache music locally for playback without internet connection or streaming service availability."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

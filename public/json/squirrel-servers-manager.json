@@ -4,6 +4,8 @@
   "categories": [
     146
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/SquirrelCorporation/SquirrelServersManager",
@@ -12,6 +14,21 @@
   "github_stars": "987",
   "logo": "/icons/squirrel-servers-manager.webp",
   "description": "Squirrel Servers Manager is a self-hosted management platform for servers and containers built on Ansible and Docker. It provides a unified GUI to configure, deploy, and monitor infrastructure.",
+  "tagline": null,
+  "features": [
+    "Server management: Manages multiple servers from centralized dashboard.",
+    "Ansible integration: Executes Ansible playbooks for configuration management.",
+    "Docker control: Manages Docker containers and images across servers.",
+    "Service monitoring: Tracks service status and resource usage in real-time.",
+    "Inventory management: Organizes servers into groups and environments.",
+    "Playbook execution: Runs automation tasks with visual playbook builder.",
+    "SSH access: Connects to servers via web-based SSH terminal.",
+    "File management: Browses and edits files on remote servers.",
+    "User permissions: Controls access with role-based permissions for team members.",
+    "Scheduled tasks: Automates recurring maintenance with cron-like scheduling.",
+    "Audit logs: Records all actions and changes for compliance.",
+    "API access: Automates server management via REST API."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

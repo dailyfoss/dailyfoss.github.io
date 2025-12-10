@@ -4,6 +4,8 @@
   "categories": [
     69
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/DonutWare/Fladder",
@@ -12,6 +14,18 @@
   "github_stars": "1354",
   "logo": "/icons/fladder.webp",
   "description": "Fladder is a self-hosted file-sharing platform for sending files quickly and securely via the browser. It supports drag-and-drop uploads and download links with expiration, designed for quick file transfer workflows.",
+  "tagline": null,
+  "features": [
+    "File Sharing: Quick browser-based transfers, Drag-and-drop uploads, Expiration links. Fast secure file sharing.",
+    "Link Generation: Create shareable download links. Easy distribution.",
+    "Expiration Control: Set link lifetimes. Temporary sharing.",
+    "Self-Hosted: Private file transfer. No third-party services.",
+    "Password Protection: Secure your shares. Controlled access.",
+    "Upload Tracking: Monitor file transfers. Usage insights.",
+    "Mobile Apps: Android and iOS support. Share anywhere.",
+    "Desktop Apps: Native applications. Seamless experience.",
+    "Simple UI: Clean interface. Easy to use."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +39,7 @@
           "ios": true
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

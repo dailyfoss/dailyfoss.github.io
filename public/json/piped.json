@@ -4,6 +4,8 @@
   "categories": [
     100
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/TeamPiped/Piped",
@@ -12,6 +14,21 @@
   "github_stars": "9596",
   "logo": "/icons/piped.webp",
   "description": "Piped is a privacy-friendly YouTube frontend that can be self-hosted. It offers ad-free, tracking-free access with clean UI, subscriptions, and streaming without Google's infrastructure.",
+  "tagline": null,
+  "features": [
+    "Privacy-focused streaming: Watch YouTube videos without tracking, ads, or Google account requirements.",
+    "Subscription management: Subscribe to channels and receive updates without a YouTube account.",
+    "Playlist support: Create and manage playlists independently from YouTube's infrastructure.",
+    "Video quality selection: Choose preferred video quality and format for streaming or downloading.",
+    "SponsorBlock integration: Automatically skip sponsored segments, intros, and outros in videos.",
+    "Comments viewing: Read video comments without exposing your identity or activity to Google.",
+    "Feed customization: View subscriptions in a chronological feed without algorithmic recommendations.",
+    "Instance federation: Connect to multiple Piped instances for redundancy and load distribution.",
+    "Proxy streaming: Stream videos through proxy servers to hide your IP address from YouTube.",
+    "Import subscriptions: Transfer YouTube subscriptions using export files for easy migration.",
+    "Lightweight interface: Fast, minimal UI designed for efficient video browsing and playback.",
+    "Mobile optimized: Responsive design works seamlessly on smartphones and tablets."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

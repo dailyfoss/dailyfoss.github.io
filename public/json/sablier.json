@@ -4,6 +4,8 @@
   "categories": [
     55
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/sablierapp/sablier",
@@ -12,6 +14,21 @@
   "github_stars": "2379",
   "logo": "/icons/sablier.webp",
   "description": "Sablier is a self-hosted tool for managing time-based governance tasks for DAOs. It automates schedules, streams, and proposal processes through an intuitive web UI.",
+  "tagline": null,
+  "features": [
+    "Dynamic scaling: Automatically start and stop containers based on traffic to reduce resource usage and costs.",
+    "Reverse proxy integration: Works seamlessly with Traefik and other proxies to manage container lifecycle.",
+    "Session persistence: Maintains user sessions during container startup with customizable loading pages.",
+    "Multi-strategy support: Choose between blocking, dynamic, or throttle strategies for different workload patterns.",
+    "Resource optimization: Reduces idle container overhead by shutting down unused services after configurable timeouts.",
+    "Health monitoring: Tracks container health and readiness before routing traffic to ensure reliability.",
+    "Custom themes: Personalize loading screens with custom HTML, CSS, and branding during container startup.",
+    "API control: Programmatically manage container states and scaling policies via REST API.",
+    "Metrics export: Exposes Prometheus metrics for monitoring scaling events and container lifecycle.",
+    "Label-based config: Configure scaling behavior through simple Docker labels without complex configuration files.",
+    "Multi-container support: Manage multiple services simultaneously with independent scaling policies.",
+    "Graceful shutdown: Ensures proper cleanup and state preservation when stopping containers."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

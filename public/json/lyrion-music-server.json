@@ -4,6 +4,8 @@
   "categories": [
     100
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/LMS-Community/slimserver",
@@ -12,6 +14,17 @@
   "github_stars": "1556",
   "logo": "/icons/lyrion-music-server.webp",
   "description": "Slimserver (Logitech Media Server) is a self-hosted streaming platform for music playback. It supports multi-room audio, plugins, and a variety of streaming clients for local or networked media collections.",
+  "tagline": null,
+  "features": [
+    "Music Streaming: Local library streaming, Multi-format support, High-quality audio. Stream your music collection.",
+    "Multi-Room Audio: Synchronized playback, Multiple zones, Group players. Play music throughout your home.",
+    "Plugin System: Extend functionality, Streaming services, Custom features. Add capabilities with plugins.",
+    "Client Support: Web interface, Mobile apps, Hardware players. Access music from any device.",
+    "Library Management: Automatic scanning, Metadata management, Playlist support. Organize your music library.",
+    "Internet Radio: Stream radio stations, Podcast support, Online services. Access online audio content.",
+    "Remote Access: Web-based control, Mobile control, API access. Control playback from anywhere.",
+    "Open Source: Community-driven, Active development, Free forever. Mature music server platform."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     60
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/coderaiser/cloudcmd",
@@ -12,6 +14,16 @@
   "github_stars": "1970",
   "logo": "/icons/cloud-commander.webp",
   "description": "CloudCMD is a file manager for browsers with a built-in text editor and terminal, providing easy access to local or remote files via SSH. It’s self-hostable and great for managing servers and development environments.",
+  "tagline": null,
+  "features": [
+    "Browser File Manager: Manage files through web browser. No desktop needed.",
+    "Built-in Editor: Text editor for code and configuration files. Edit anywhere.",
+    "Terminal Access: Integrated terminal for command execution. Complete control.",
+    "SSH Support: Access remote files via SSH. Secure connections.",
+    "Server Management: Perfect for managing servers and development environments. Admin tool.",
+    "Self-Hosted: Run your own file manager. Complete privacy.",
+    "Developer-Friendly: Built for developers and sysadmins. Power user features."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +37,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

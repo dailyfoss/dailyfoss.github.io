@@ -4,6 +4,8 @@
   "categories": [
     53
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/stalwartlabs/stalwart",
@@ -12,6 +14,21 @@
   "github_stars": "10583",
   "logo": "/icons/stalwart.webp",
   "description": "Stalwart Mail Server is a modern self-hosted email platform with IMAP, JMAP, and SMTP support. It focuses on performance, security, and ease of deployment.",
+  "tagline": null,
+  "features": [
+    "IMAP server: Provides full-featured IMAP4rev2 support for email clients.",
+    "JMAP protocol: Implements modern JMAP protocol for efficient email sync.",
+    "SMTP server: Handles incoming and outgoing email with advanced routing.",
+    "Spam filtering: Blocks spam with built-in filters and external integration.",
+    "Sieve scripting: Automates email filtering with Sieve script support.",
+    "Full-text search: Searches emails quickly with indexed full-text search.",
+    "Encryption support: Handles TLS/SSL for secure email transmission.",
+    "Multiple domains: Hosts email for multiple domains from single instance.",
+    "Quota management: Enforces storage limits per user or domain.",
+    "Authentication: Supports various auth methods including OAuth2 and LDAP.",
+    "High performance: Handles thousands of concurrent connections efficiently.",
+    "Web admin: Manages server configuration through web-based interface."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

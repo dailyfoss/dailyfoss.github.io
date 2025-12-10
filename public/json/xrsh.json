@@ -4,6 +4,8 @@
   "categories": [
     135
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "forgejo.isvery.ninja/xrsh/xrsh",
@@ -12,6 +14,21 @@
   "github_stars": null,
   "logo": "/icons/xrsh.webp",
   "description": "xrsh is a self-hosted remote shell access platform that exposes command-line environments through a browser-based terminal, letting users reach remote systems securely without native SSH clients.",
+  "tagline": null,
+  "features": [
+    "Browser-based terminal: Access remote shells through any modern web browser without installing SSH clients.",
+    "Secure connections: Establish encrypted SSH connections over HTTPS with certificate-based authentication.",
+    "Session persistence: Resume disconnected terminal sessions automatically when network connectivity returns.",
+    "Multi-tab support: Open multiple terminal sessions in browser tabs for parallel remote work.",
+    "Copy-paste functionality: Transfer text between local clipboard and remote terminal with keyboard shortcuts.",
+    "Responsive design: Use terminals on mobile devices and tablets with touch-optimized controls.",
+    "Customizable appearance: Adjust font sizes, color schemes, and terminal dimensions for comfortable viewing.",
+    "Keyboard mapping: Configure custom key bindings and shortcuts to match local terminal preferences.",
+    "Connection profiles: Save frequently used SSH configurations for quick access to remote systems.",
+    "Audit logging: Record terminal sessions for security compliance and troubleshooting purposes.",
+    "File transfer: Upload and download files through the web interface alongside terminal access.",
+    "Authentication methods: Support password, public key, and two-factor authentication for secure access."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     148
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "codeberg.org/rimu/pyfedi",
@@ -12,6 +14,21 @@
   "github_stars": null,
   "logo": "/icons/piefed.webp",
   "description": "PyFedi is a Python-based self-hosted federated server framework that integrates ActivityPub capabilities for building social applications.",
+  "tagline": null,
+  "features": [
+    "ActivityPub protocol: Federate with other ActivityPub-compatible platforms like Mastodon and Lemmy.",
+    "Community creation: Create and moderate communities for topic-based discussions and content sharing.",
+    "Post aggregation: Aggregate posts from federated instances into a unified feed.",
+    "Voting system: Upvote and downvote posts and comments to surface quality content.",
+    "Moderation tools: Manage communities with tools for removing content, banning users, and setting rules.",
+    "User profiles: Customize profiles with bios, avatars, and activity history.",
+    "Cross-instance interaction: Comment, vote, and interact with content from other federated servers.",
+    "Privacy controls: Configure post visibility and control who can see and interact with your content.",
+    "Markdown support: Format posts and comments with Markdown for rich text formatting.",
+    "Notification system: Receive alerts for replies, mentions, and community activity.",
+    "Search functionality: Find posts, comments, and communities across federated instances.",
+    "Custom themes: Personalize the interface appearance with theme options and customization."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

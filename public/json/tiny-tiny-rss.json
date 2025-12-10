@@ -4,6 +4,8 @@
   "categories": [
     57
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/tt-rss/tt-rss",
@@ -12,6 +14,21 @@
   "github_stars": "468",
   "logo": "/icons/tiny-tiny-rss.webp",
   "description": "Tiny Tiny RSS (tt-rss) is a self-hosted web-based RSS/Atom feed reader. It supports filters, plugins, multiple users, and mobile-friendly themes, giving full control over news aggregation.",
+  "tagline": null,
+  "features": [
+    "Feed aggregation: Subscribe to unlimited RSS and Atom feeds from news sites, blogs, and podcasts.",
+    "Multi-user: Support multiple users with individual subscriptions, preferences, and reading history.",
+    "Filters: Create powerful filters to automatically tag, mark, or hide articles based on content or source.",
+    "Plugin system: Extend functionality with plugins for features like sharing, archiving, or custom integrations.",
+    "Mobile themes: Access feeds from mobile devices with responsive themes optimized for touch interfaces.",
+    "Keyboard shortcuts: Navigate articles and feeds efficiently using comprehensive keyboard shortcuts.",
+    "Article sharing: Share interesting articles via email, social media, or custom sharing services.",
+    "OPML support: Import and export feed subscriptions using standard OPML format for portability.",
+    "Feed categories: Organize feeds into categories and folders for better management of large subscription lists.",
+    "Search: Find articles across all feeds using full-text search with date and feed filters.",
+    "API access: Integrate with mobile apps and third-party clients using the compatible API.",
+    "Content filtering: Block unwanted content with regex-based filters and scoring systems."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     159
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/nextcloud/tasks",
@@ -12,6 +14,21 @@
   "github_stars": "647",
   "logo": "/icons/nextcloud-tasks.webp",
   "description": "Nextcloud Tasks is a to-do and task-tracking app that syncs with CalDAV and supports subtasks, due dates, and lists. It works across devices within the Nextcloud ecosystem.",
+  "tagline": null,
+  "features": [
+    "Task management: Create, organize, and track to-do items with descriptions and notes.",
+    "CalDAV sync: Synchronize tasks across devices using standard CalDAV protocol.",
+    "Due dates: Set deadlines for tasks with reminders and overdue notifications.",
+    "Subtasks: Break down complex tasks into smaller, manageable subtasks.",
+    "Priority levels: Mark tasks with priority indicators for importance ranking.",
+    "List organization: Group tasks into multiple lists for projects or categories.",
+    "Progress tracking: Mark tasks as complete and track completion percentage for subtasks.",
+    "Mobile apps: Access and manage tasks from iOS and Android devices.",
+    "Calendar integration: View task due dates alongside events in Nextcloud Calendar.",
+    "Sharing: Collaborate on task lists by sharing with other Nextcloud users.",
+    "Nextcloud integration: Unified interface and authentication within Nextcloud ecosystem.",
+    "Offline support: Edit tasks without internet connection with automatic sync when online."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

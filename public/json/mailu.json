@@ -4,6 +4,8 @@
   "categories": [
     53
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Mailu/Mailu",
@@ -12,6 +14,21 @@
   "github_stars": "6948",
   "logo": "/icons/mailu.webp",
   "description": "Mailu is a lightweight, self-hosted mail server solution built from Docker components. It includes webmail, admin UI, and optional components like antivirus and LDAP, ideal for private email hosting.",
+  "tagline": null,
+  "features": [
+    "Modular architecture: Choose which components to deploy including webmail, antivirus, and webdav.",
+    "Admin interface: Manage domains, users, and aliases through a clean web-based control panel.",
+    "Antivirus scanning: Optional ClamAV integration for scanning incoming and outgoing email attachments.",
+    "Webmail options: Choose between Roundcube or Rainloop for webmail interface.",
+    "LDAP support: Integrate with existing LDAP directories for centralized user authentication.",
+    "Rate limiting: Protect against abuse with configurable sending limits per user or domain.",
+    "TLS encryption: Enforce encrypted connections for both incoming and outgoing mail traffic.",
+    "Fetchmail integration: Retrieve mail from external accounts and deliver to local mailboxes.",
+    "Docker-based: All components run in Docker containers for easy deployment and updates.",
+    "Multi-domain hosting: Host email for multiple domains from a single Mailu instance.",
+    "Sieve filtering: Users can create custom mail filtering rules using Sieve scripts.",
+    "Quota management: Set storage limits per mailbox to control disk usage."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

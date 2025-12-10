@@ -4,6 +4,8 @@
   "categories": [
     148
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "codeberg.org/superseriousbusiness/gotosocial",
@@ -12,6 +14,17 @@
   "github_stars": null,
   "logo": "/icons/gotosocial.webp",
   "description": "GoToSocial is a self-hosted, federated social network server compatible with Mastodon and ActivityPub. It focuses on lightweight deployment and better moderation tools for smaller communities and individuals.",
+  "tagline": null,
+  "features": [
+    "Federated Network: Connect with Mastodon, Pleroma, and other ActivityPub-compatible social networks.",
+    "Lightweight Server: Minimal resource requirements designed for single-user or small community instances.",
+    "Mastodon Compatible: Use existing Mastodon mobile apps and clients with GoToSocial backend.",
+    "Enhanced Moderation: Advanced moderation tools for managing content and user interactions.",
+    "Privacy Controls: Granular privacy settings for posts, followers, and account visibility.",
+    "Media Support: Share images, videos, and audio with customizable upload limits.",
+    "Custom Emojis: Add and use custom emoji reactions and expressions.",
+    "API Access: Full ActivityPub and Mastodon-compatible API for client applications."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

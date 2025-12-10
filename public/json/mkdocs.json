@@ -4,6 +4,8 @@
   "categories": [
     152
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/mkdocs/mkdocs",
@@ -12,6 +14,17 @@
   "github_stars": "21409",
   "logo": "/icons/mkdocs.webp",
   "description": "MkDocs is a static site generator designed for building documentation using Markdown. It features a live preview server, theming options, and a large plugin ecosystem, making it ideal for technical docs.",
+  "tagline": null,
+  "features": [
+    "Markdown authoring: Write documentation in plain Markdown files organized in a simple folder structure.",
+    "Live preview: Run a development server that automatically reloads when you edit documentation files.",
+    "Theme support: Choose from Material, ReadTheDocs, and other themes or create custom designs with templates.",
+    "Plugin system: Extend functionality with plugins for search, PDF generation, diagrams, and content processing.",
+    "Navigation control: Define site structure in a YAML config file with automatic sidebar and menu generation.",
+    "Search integration: Add full-text search to documentation sites without external services using built-in indexing.",
+    "Static output: Generate fast, SEO-friendly HTML sites that can be hosted anywhere without server requirements.",
+    "GitHub Pages: Deploy documentation directly to GitHub Pages with simple configuration and automated workflows."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

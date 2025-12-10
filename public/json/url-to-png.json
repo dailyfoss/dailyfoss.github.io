@@ -4,6 +4,8 @@
   "categories": [
     59
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/jasonraimondi/url-to-png",
@@ -12,6 +14,21 @@
   "github_stars": "229",
   "logo": "/icons/url-to-png.webp",
   "description": "url-to-png is a self-hosted microservice to capture full-page screenshots of URLs and return PNG images. It exposes a simple HTTP API and optional minimal web form for ad-hoc use.",
+  "tagline": null,
+  "features": [
+    "Screenshot API: Capture website screenshots via simple HTTP API calls with URL parameters.",
+    "Full-page capture: Render complete web pages including content below the fold.",
+    "Custom dimensions: Specify viewport width and height for screenshots of any size.",
+    "Format options: Return screenshots as PNG images with configurable quality settings.",
+    "JavaScript rendering: Execute JavaScript on pages before capturing for dynamic content.",
+    "Custom delays: Wait for specified time before capturing to allow content to load.",
+    "Headless browser: Use headless Chrome for accurate rendering of modern web pages.",
+    "Caching: Cache screenshots to improve performance for repeated requests.",
+    "Web interface: Test screenshot capture through an optional simple web form.",
+    "Microservice architecture: Deploy as a lightweight microservice for integration into larger systems.",
+    "Docker deployment: Run easily in containers for scalable screenshot generation.",
+    "API authentication: Protect the service with optional API key authentication."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

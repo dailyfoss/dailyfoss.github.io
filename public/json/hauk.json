@@ -4,6 +4,8 @@
   "categories": [
     92
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/bilde2910/Hauk",
@@ -12,6 +14,17 @@
   "github_stars": "869",
   "logo": "/icons/hauk.webp",
   "description": "Hauk is a self-hosted real-time location sharing app. It lets users share live location via temporary links without third-party tracking, suitable for safety or coordination during travel.",
+  "tagline": null,
+  "features": [
+    "Real-Time Sharing: Share your live location with friends or family through temporary, secure links.",
+    "Temporary Links: Generate time-limited sharing links that automatically expire after a set duration.",
+    "Privacy-Focused: No third-party tracking or data collection, all location data stays on your server.",
+    "Android App: Native mobile app for easy location sharing from your smartphone.",
+    "Map Display: View shared locations on interactive maps with real-time position updates.",
+    "Group Sharing: Share location with multiple people simultaneously for coordinated activities.",
+    "Safety Feature: Ideal for travel safety, letting trusted contacts know your whereabouts.",
+    "Self-Hosted Control: Complete ownership of location data without relying on commercial services."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

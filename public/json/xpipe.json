@@ -4,6 +4,8 @@
   "categories": [
     135
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/xpipe-io/xpipe",
@@ -12,6 +14,21 @@
   "github_stars": "12090",
   "logo": "/icons/xpipe.webp",
   "description": "xpipe is a self-hosted tool and GUI for managing remote connections and development environments. It centralizes SSH, containers, and tunneling, giving developers a consistent interface across projects and machines.",
+  "tagline": null,
+  "features": [
+    "Connection management: Store and organize SSH, Docker, Kubernetes, and other remote connections in a unified interface.",
+    "Shell integration: Launch terminal sessions directly from the GUI with saved credentials and connection profiles.",
+    "File browser: Navigate remote filesystems with a graphical file manager that supports drag-and-drop transfers.",
+    "Container access: Connect to Docker containers and Kubernetes pods without memorizing complex CLI commands.",
+    "Tunnel management: Create and manage SSH tunnels and port forwards through an intuitive visual interface.",
+    "Script execution: Run saved scripts across multiple remote systems simultaneously with output aggregation.",
+    "Credential vault: Securely store passwords, SSH keys, and certificates with encrypted local storage.",
+    "Connection sharing: Export and import connection profiles to share configurations across teams or devices.",
+    "Multi-platform support: Run on Windows, macOS, and Linux with consistent functionality and interface.",
+    "Session history: Review past connections and commands with searchable logs and quick reconnect options.",
+    "Environment variables: Define and inject environment variables per connection for consistent remote workflows.",
+    "Custom protocols: Extend functionality with plugins to support additional connection types and tools."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

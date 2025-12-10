@@ -4,6 +4,8 @@
   "categories": [
     165
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/kittendevv/Invio",
@@ -12,6 +14,17 @@
   "github_stars": "275",
   "logo": "/icons/invio.webp",
   "description": "Invio is a self hosted URL shortener and branded link management service. It generates short links, tracks clicks and referrers, and provides a minimal dashboard so teams can manage campaigns without relying on third party link platforms.",
+  "tagline": null,
+  "features": [
+    "URL Shortening: Create short, memorable links for long URLs.",
+    "Click Analytics: Track clicks, referrers, and geographic data for each link.",
+    "Branded Links: Use custom domains for professional, branded short URLs.",
+    "Link Management: Edit, disable, or delete links from a centralized dashboard.",
+    "QR Code Generation: Automatically generate QR codes for each shortened link.",
+    "Campaign Tracking: Organize links by campaign for marketing analytics.",
+    "API Access: Programmatically create and manage links via REST API.",
+    "Self-Hosted Privacy: Keep all link data and analytics on your own infrastructure."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

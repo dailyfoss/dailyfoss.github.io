@@ -4,6 +4,8 @@
   "categories": [
     60
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/mickael-kerjean/filestash",
@@ -12,6 +14,19 @@
   "github_stars": "13149",
   "logo": "/icons/filestash.webp",
   "description": "Filestash connects to cloud or FTP servers and exposes them through a user-friendly web UI. It supports WebDAV, S3, Git, Dropbox, and others with a single centralized UX. Aimed at developers and teams that need unified access.",
+  "tagline": null,
+  "features": [
+    "Universal Access: Connect to S3, FTP, WebDAV, Git, Dropbox, Unified web UI. One interface for all storage.",
+    "Multi-Protocol: Support for many backends. Maximum flexibility.",
+    "Developer-Friendly: API access and integrations. Built for teams.",
+    "Centralized UX: Single interface for everything. Simplified workflows.",
+    "File Previews: View documents, images, videos. Rich media support.",
+    "Text Editor: Edit files directly. Built-in functionality.",
+    "Plugin System: Extend with custom backends. Highly extensible.",
+    "Authentication: LDAP, OAuth, and more. Enterprise-ready.",
+    "Mobile-Optimized: Works on all devices. Responsive design.",
+    "Self-Hosted: Complete control. Privacy-focused."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +40,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

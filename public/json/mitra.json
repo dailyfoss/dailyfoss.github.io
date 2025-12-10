@@ -4,6 +4,8 @@
   "categories": [
     148
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "codeberg.org/silverpill/mitra",
@@ -12,6 +14,17 @@
   "github_stars": null,
   "logo": "/icons/mitra.webp",
   "description": "Mitra is a lightweight ActivityPub-powered microblogging platform with simplified posting, federation, and privacy controls. It’s self-hosted and designed to be easy to deploy while remaining efficient.",
+  "tagline": null,
+  "features": [
+    "ActivityPub federation: Connect with Mastodon, Pleroma, and other fediverse platforms to share posts across networks.",
+    "Microblogging: Publish short posts with text, images, and links in a Twitter-like interface for quick updates.",
+    "Privacy controls: Set post visibility to public, followers-only, or direct messages for granular audience control.",
+    "Lightweight design: Run efficiently with minimal resource requirements compared to heavier fediverse platforms.",
+    "Follow system: Build a timeline by following users from your instance or across the federated network.",
+    "Media attachments: Upload images and files to posts with automatic thumbnail generation and optimization.",
+    "Hashtag support: Tag posts for discoverability and browse trending topics across the fediverse.",
+    "Simple deployment: Install and configure quickly with straightforward setup process and minimal dependencies."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

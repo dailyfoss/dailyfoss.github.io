@@ -4,6 +4,8 @@
   "categories": [
     107
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/tvheadend/tvheadend",
@@ -12,6 +14,21 @@
   "github_stars": "3271",
   "logo": "/icons/tvheadend.webp",
   "description": "Tvheadend is a self-hosted TV streaming server and recorder for DVB, ATSC, IPTV and more. It offers channel management, EPG, recording rules, and streaming to clients via an integrated web interface.",
+  "tagline": null,
+  "features": [
+    "Live TV streaming: Stream live TV from DVB, ATSC, IPTV, or other sources to network clients.",
+    "Recording: Schedule and record TV programs with series recording and conflict resolution.",
+    "EPG support: Display electronic program guides from various sources for easy program browsing.",
+    "Multi-tuner: Support multiple TV tuners simultaneously for watching and recording different channels.",
+    "Transcoding: Transcode streams on-the-fly for compatibility with different devices and bandwidth.",
+    "Web interface: Manage channels, recordings, and settings through a comprehensive web interface.",
+    "Client support: Stream to various clients including Kodi, VLC, and mobile apps.",
+    "Channel management: Scan, organize, and configure TV channels with custom numbering and grouping.",
+    "Recording rules: Set up complex recording rules based on title, genre, or other criteria.",
+    "Timeshift: Pause and rewind live TV with timeshift buffer functionality.",
+    "User management: Support multiple users with individual channel access and recording permissions.",
+    "DVR functionality: Full-featured DVR with series recording, conflict management, and storage management."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

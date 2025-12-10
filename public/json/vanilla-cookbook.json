@@ -4,6 +4,8 @@
   "categories": [
     131
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/jt196/vanilla-cookbook",
@@ -12,6 +14,21 @@
   "github_stars": "69",
   "logo": "/icons/vanilla-cookbook.webp",
   "description": "Vanilla Cookbook is a self-hosted recipe manager tailored for simple, ingredient-focused cooking. It lets users store, categorize, and browse recipes through a clean web interface.",
+  "tagline": null,
+  "features": [
+    "Recipe storage: Store recipes with ingredients, instructions, and cooking notes.",
+    "Simple interface: Navigate a clean, minimalist interface focused on cooking essentials.",
+    "Ingredient focus: Organize recipes by key ingredients for easy meal planning.",
+    "Category system: Categorize recipes by type, cuisine, or custom categories.",
+    "Search functionality: Find recipes quickly using search by name or ingredients.",
+    "Recipe browsing: Browse your recipe collection with filtering and sorting options.",
+    "Mobile-friendly: Access recipes from kitchen tablets or phones with responsive design.",
+    "Image support: Add photos to recipes for visual reference while cooking.",
+    "Print-friendly: Print recipes in a clean format for offline use in the kitchen.",
+    "Privacy-focused: Keep all recipes on your own server without external dependencies.",
+    "Quick entry: Add new recipes easily with straightforward input forms.",
+    "Lightweight: Run with minimal resources suitable for personal or family use."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     151
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/nextcloud/tables",
@@ -12,6 +14,21 @@
   "github_stars": "182",
   "logo": "/icons/nextcloud-tables.webp",
   "description": "Nextcloud Tables allows users to create database-like tables with custom fields, filtering, and permissions directly in Nextcloud. It's ideal for low-code data tracking within a self-hosted ecosystem.",
+  "tagline": null,
+  "features": [
+    "Custom tables: Create database-like tables with custom columns and data types.",
+    "Field types: Support for text, numbers, dates, selections, checkboxes, and more.",
+    "Data filtering: Filter rows by column values with multiple conditions and operators.",
+    "Sorting options: Order data by any column in ascending or descending order.",
+    "Row management: Add, edit, delete, and duplicate rows with spreadsheet-like interface.",
+    "Sharing and permissions: Share tables with users or groups with view or edit access.",
+    "Import/export: Load data from CSV files or export tables for backup and analysis.",
+    "Views and layouts: Create different views of the same data with custom filters and columns.",
+    "Collaboration: Multiple users can edit tables simultaneously with real-time updates.",
+    "API access: Integrate tables with external applications via REST API.",
+    "Nextcloud integration: Access tables from Nextcloud interface with unified authentication.",
+    "Low-code solution: Build simple databases and tracking systems without programming knowledge."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

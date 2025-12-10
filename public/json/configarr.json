@@ -4,6 +4,8 @@
   "categories": [
     16
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/raydak-labs/configarr",
@@ -12,6 +14,15 @@
   "github_stars": "459",
   "logo": "/icons/configarr.webp",
   "description": "Configarr is a backup and restore configuration management tool for services like Sonarr, Radarr, and others. It helps automate config backups and restore processes across your deployment stack.",
+  "tagline": null,
+  "features": [
+    "Automated Backups: Schedule regular configuration backups for Arr services. Never lose settings again.",
+    "Easy Restoration: Restore configurations with a single command. Disaster recovery simplified.",
+    "Multi-Service Support: Works with Sonarr, Radarr, Lidarr, and more. Unified backup solution.",
+    "Version Control: Track configuration changes over time. Roll back when needed.",
+    "Cross-Platform: Deploy on any system running your Arr stack. Flexible deployment options.",
+    "Self-Hosted: Keep sensitive configuration data under your control. Enhanced security and privacy."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

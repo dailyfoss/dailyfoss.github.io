@@ -4,6 +4,8 @@
   "categories": [
     146
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/semaphoreio/semaphore",
@@ -12,6 +14,21 @@
   "github_stars": "1401",
   "logo": "/icons/semaphore.webp",
   "description": "Semaphore (by semaphoreio) provides components for CI/CD pipelines and job orchestration. It focuses on integrating code repositories with build and deploy workflows through a modern web and API-driven interface.",
+  "tagline": null,
+  "features": [
+    "CI/CD pipelines: Build, test, and deploy code with automated workflow pipelines.",
+    "Repository integration: Connects to GitHub, GitLab, and Bitbucket for source control.",
+    "Parallel execution: Runs multiple jobs simultaneously to reduce build times.",
+    "Docker support: Build and test applications in Docker containers for consistency.",
+    "Deployment automation: Deploy to cloud platforms, servers, or Kubernetes clusters.",
+    "Environment management: Define separate environments for development, staging, and production.",
+    "Secret management: Securely store and inject credentials, API keys, and tokens.",
+    "Build caching: Speeds up builds by caching dependencies and artifacts.",
+    "Status notifications: Sends build results via email, Slack, or webhooks.",
+    "Branch workflows: Configure different pipelines for feature branches, PRs, and main branch.",
+    "Test reporting: Displays test results, coverage, and failure details in the UI.",
+    "Audit logs: Tracks all pipeline executions and configuration changes for compliance."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     51
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/SolidInvoice/SolidInvoice",
@@ -12,6 +14,21 @@
   "github_stars": "828",
   "logo": "/icons/solidinvoice.webp",
   "description": "SolidInvoice is a self-hosted invoicing and billing application for freelancers and small businesses. It supports quotes, recurring invoices, payments, and client management.",
+  "tagline": null,
+  "features": [
+    "Invoice creation: Generates professional invoices with customizable templates.",
+    "Quote management: Creates quotes that convert to invoices upon acceptance.",
+    "Recurring invoices: Automates billing for subscriptions and retainer clients.",
+    "Payment tracking: Records payments and tracks outstanding balances.",
+    "Client management: Maintains client database with contact and billing information.",
+    "Tax calculations: Handles multiple tax rates and automatic tax calculations.",
+    "Payment gateways: Integrates with PayPal, Stripe, and other payment processors.",
+    "Expense tracking: Records business expenses and attaches to projects.",
+    "Time tracking: Logs billable hours and converts to invoice line items.",
+    "Multi-currency: Supports invoicing in multiple currencies with exchange rates.",
+    "Email notifications: Sends invoice and payment reminders automatically.",
+    "Reporting: Generates financial reports for income, expenses, and taxes."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

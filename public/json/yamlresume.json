@@ -4,6 +4,8 @@
   "categories": [
     19
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/yamlresume/yamlresume",
@@ -12,6 +14,21 @@
   "github_stars": "1064",
   "logo": "/icons/yamlresume.webp",
   "description": "yamlresume lets you define resumes in YAML and generate presentable documents or websites from them. It’s a self-hosted, text-first workflow that keeps CVs versionable and easy to maintain.",
+  "tagline": null,
+  "features": [
+    "YAML-based editing: Define resume content in structured YAML files that are easy to read, edit, and version control.",
+    "Multiple output formats: Generate PDF, HTML, and Markdown versions of your resume from a single source file.",
+    "Template system: Choose from various professional templates or create custom designs for different industries.",
+    "Version control friendly: Track resume changes in Git with clear diffs and maintain multiple versions for different roles.",
+    "Automated generation: Build resumes automatically in CI/CD pipelines or with local scripts for consistent formatting.",
+    "Section customization: Include or exclude sections like education, experience, and skills based on job requirements.",
+    "Multi-language support: Maintain translations of your resume in different languages within the same project.",
+    "Metadata management: Store structured data about skills, dates, and achievements for easy updates and reuse.",
+    "Web hosting: Deploy generated HTML resumes to static hosting for a personal portfolio website.",
+    "Print optimization: Generate print-ready PDFs with proper page breaks and formatting for physical distribution.",
+    "Schema validation: Ensure resume data follows the correct structure with built-in validation and error checking.",
+    "Export flexibility: Customize output styling with CSS and templates to match personal branding preferences."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

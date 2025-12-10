@@ -4,6 +4,8 @@
   "categories": [
     111
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/coderamp-labs/pad.ws",
@@ -12,6 +14,17 @@
   "github_stars": "3696",
   "logo": "/icons/pad-ws.webp",
   "description": "Pad.ws is a self-hosted collaborative Markdown note editor inspired by Etherpad. It supports real-time editing, sharing, and document versioning with a minimalist interface.",
+  "tagline": null,
+  "features": [
+    "Real-time collaboration: Multiple users edit the same Markdown document simultaneously with live cursor tracking and instant synchronization across all connected clients.",
+    "Markdown editing: Native Markdown support with syntax highlighting and live preview makes it easy to format documents while writing.",
+    "Version history: Automatic version tracking allows you to review changes over time and restore previous document states when needed.",
+    "Shareable links: Generate unique URLs for each document to share with collaborators, enabling quick access without account requirements.",
+    "Minimalist interface: Clean, distraction-free editor focused on writing and collaboration without unnecessary UI elements.",
+    "Export formats: Download documents in multiple formats including Markdown, HTML, and plain text for use in other applications.",
+    "No registration: Start editing immediately without creating accounts, reducing friction for quick collaborative sessions.",
+    "Self-hosted privacy: Full control over your data with self-hosted deployment ensures documents remain on your infrastructure."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

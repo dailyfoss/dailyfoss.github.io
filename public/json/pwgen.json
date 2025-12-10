@@ -4,6 +4,8 @@
   "categories": [
     117
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/jocxfin/pwgen",
@@ -12,6 +14,21 @@
   "github_stars": "82",
   "logo": "/icons/pwgen.webp",
   "description": "Pwgen is a self-hosted tool for generating secure passwords and managing custom wordlists and templates. It offers a minimal web interface for quick password creation.",
+  "tagline": null,
+  "features": [
+    "Password generation: Create strong, random passwords with customizable length and character sets.",
+    "Custom templates: Define password templates with specific patterns and requirements.",
+    "Wordlist support: Generate memorable passphrases using custom or built-in wordlists.",
+    "Strength indicators: Evaluate password strength with visual indicators and entropy calculations.",
+    "Batch generation: Create multiple passwords simultaneously for bulk provisioning.",
+    "Character options: Include or exclude uppercase, lowercase, numbers, and special characters.",
+    "Pronounceable passwords: Generate passwords that are easier to remember while maintaining security.",
+    "Web interface: Access password generation through a simple, minimal web interface.",
+    "API access: Programmatically generate passwords for integration with other systems.",
+    "Copy to clipboard: Quickly copy generated passwords with one-click functionality.",
+    "No storage: Passwords are generated on-demand without storing or logging any data.",
+    "Customizable rules: Set minimum requirements for character types and password complexity."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

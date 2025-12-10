@@ -4,6 +4,8 @@
   "categories": [
     111
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/vrtmrz/obsidian-livesync",
@@ -12,6 +14,17 @@
   "github_stars": "8585",
   "logo": "/icons/obsidian-livesync.webp",
   "description": "obsidian-livesync is a self-hosted sync server for Obsidian vaults, enabling real-time collaboration across devices without cloud services. It supports encryption and conflict resolution.",
+  "tagline": null,
+  "features": [
+    "Real-time sync: Keep Obsidian vaults synchronized across desktop and mobile devices with automatic change detection.",
+    "End-to-end encryption: Protect note content with client-side encryption before transmission to the sync server.",
+    "Conflict resolution: Detect and merge conflicting edits when the same note is modified on multiple devices simultaneously.",
+    "Self-hosted control: Run your own sync server to maintain complete ownership of note data without cloud dependencies.",
+    "Version history: Access previous versions of notes to recover deleted content or review document evolution.",
+    "Selective sync: Choose which folders or files to synchronize per device for managing large vaults efficiently.",
+    "Plugin compatibility: Work alongside other Obsidian plugins without interfering with community extensions or themes.",
+    "Offline support: Continue editing notes without connection and sync changes automatically when network is restored."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

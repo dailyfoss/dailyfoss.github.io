@@ -4,6 +4,8 @@
   "categories": [
     102
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/ergochat/ergo",
@@ -12,6 +14,15 @@
   "github_stars": "2965",
   "logo": "/icons/ergo.webp",
   "description": "Ergo is a modern IRC server that adds features like accounts, history replay, TLS, and SASL while remaining compatible with traditional IRC clients. It’s built to be easy to operate for communities and networks.",
+  "tagline": null,
+  "features": [
+    "Modern IRC: Classic protocol with contemporary features. Best of both worlds.",
+    "Account System: Persistent identities and authentication. Reliable user management.",
+    "History Replay: Catch up on missed messages. Never lose context.",
+    "TLS & SASL: Secure connections and authentication. Protected communications.",
+    "Easy Operation: Simple to deploy and maintain. Admin-friendly server.",
+    "Self-Hosted: Run your own IRC network. Complete community control."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

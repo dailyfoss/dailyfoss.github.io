@@ -4,6 +4,8 @@
   "categories": [
     75
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/kyantech/Palmr",
@@ -12,6 +14,18 @@
   "github_stars": "2101",
   "logo": "/icons/palmr.webp",
   "description": "Palmr is a self-hosted personal finance tool built on Next.js. It offers expense tracking, budget categories, and insights with a modern, customizable web UI and a responsive design.",
+  "tagline": null,
+  "features": [
+    "Expense tracking: Log and categorize expenses with detailed metadata including date, amount, category, and notes",
+    "Budget categories: Create custom categories with spending limits to monitor and control expenses across different areas",
+    "Financial insights: Visual dashboards and charts display spending patterns, trends, and budget performance",
+    "Recurring transactions: Automate entry of regular expenses and income with templates for subscriptions and bills",
+    "Multi-currency support: Track finances in multiple currencies with automatic conversion rates for international transactions",
+    "Transaction search: Powerful filtering and search to quickly find transactions by date, category, amount, or description",
+    "Export reports: Generate financial reports in CSV or PDF format for tax preparation and record keeping",
+    "Responsive design: Mobile-optimized interface allows expense tracking on any device for logging on the go",
+    "Data privacy: Self-hosted deployment ensures complete control over sensitive financial data without third-party access"
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +39,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

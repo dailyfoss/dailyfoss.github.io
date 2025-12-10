@@ -4,6 +4,8 @@
   "categories": [
     62
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/polius/FileSync",
@@ -12,6 +14,18 @@
   "github_stars": "722",
   "logo": "/icons/filesync.webp",
   "description": "FileSync is a CLI-based file synchronization tool for replicating local or remote directories. Built to automate sync tasks with fast operations and minimal configuration. Ideal for use in cron jobs or automated backups.",
+  "tagline": null,
+  "features": [
+    "Synchronization: Replicate local or remote directories, Fast operations, Minimal configuration. Automated file sync.",
+    "CLI-Based: Perfect for automation. Scriptable workflows.",
+    "Cron-Friendly: Schedule sync tasks. Hands-free backups.",
+    "Efficient: Fast sync operations. Minimal resource usage.",
+    "Bidirectional: Two-way sync support. Keep directories in sync.",
+    "Filtering: Exclude files and patterns. Selective sync.",
+    "Conflict Resolution: Handle file conflicts. Smart merging.",
+    "Logging: Track sync operations. Audit trail.",
+    "Cross-Platform: Works on all systems. Universal tool."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +39,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

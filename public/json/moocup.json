@@ -4,6 +4,8 @@
   "categories": [
     165
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/jellydeck/moocup",
@@ -12,6 +14,17 @@
   "github_stars": "258",
   "logo": "/icons/moocup.webp",
   "description": "Moocup is a self-hosted mockup generator allowing users to insert images into templated scenes for product previews. It supports custom assets and a lightweight UI that runs entirely in the browser.",
+  "tagline": null,
+  "features": [
+    "Template library: Choose from pre-built mockup scenes for devices, packaging, and marketing materials.",
+    "Image insertion: Upload designs and automatically fit them into template perspectives with proper scaling.",
+    "Browser-based rendering: Generate mockups entirely in the client without server processing for instant results.",
+    "Custom templates: Add your own mockup scenes by defining image placement zones and background assets.",
+    "Export options: Download finished mockups as high-resolution PNG or JPG files for presentations and portfolios.",
+    "No watermarks: Create professional product previews without branding or usage restrictions on output images.",
+    "Batch processing: Generate multiple variations by swapping designs across different template scenes quickly.",
+    "Lightweight hosting: Deploy as static files with no backend requirements for simple maintenance and scaling."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

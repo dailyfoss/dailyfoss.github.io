@@ -4,6 +4,8 @@
   "categories": [
     27
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/opencloud-eu/opencloud",
@@ -12,6 +14,17 @@
   "github_stars": "4332",
   "logo": "/icons/opencloud.webp",
   "description": "OpenCloud is a self-hosted private cloud solution that provides file storage, collaborative editors, email, chat, and more through a browser-based interface, similar to Nextcloud.",
+  "tagline": null,
+  "features": [
+    "File storage: Upload, organize, and share files with folder structures and permission controls for team collaboration.",
+    "Document editing: Collaborate on documents, spreadsheets, and presentations using integrated office suite compatibility.",
+    "Calendar and contacts: Manage schedules and address books with CalDAV and CardDAV sync to mobile devices.",
+    "Email integration: Access email accounts through webmail interface with IMAP support for unified communication.",
+    "Chat and video: Communicate with team members using built-in messaging and video conferencing capabilities.",
+    "App ecosystem: Extend functionality with community apps for notes, tasks, bookmarks, and specialized workflows.",
+    "Mobile sync: Access files and data from iOS and Android devices with native apps for offline availability.",
+    "External storage: Connect to S3, FTP, and other storage backends to unify access across multiple systems."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

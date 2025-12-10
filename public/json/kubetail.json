@@ -4,6 +4,8 @@
   "categories": [
     103
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/kubetail-org/kubetail",
@@ -12,6 +14,21 @@
   "github_stars": "1558",
   "logo": "/icons/kubetail.webp",
   "description": "Kubetail is a tool for tailing logs from multiple Kubernetes pods at once. It aggregates logs in a single stream, easing debugging in distributed systems, and is typically used as a CLI in terminal workflows.",
+  "tagline": null,
+  "features": [
+    "Multi-Pod Logs: Tail logs from multiple Kubernetes pods simultaneously. Debug distributed applications efficiently.",
+    "Single Stream: Aggregate logs into unified stream with pod identification. See all logs in one view.",
+    "Real-Time Tailing: Live log streaming as new entries are written. Monitor applications in real-time.",
+    "Pod Selection: Select pods by name, label selector, or deployment. Target specific workloads.",
+    "Namespace Filtering: Filter logs by Kubernetes namespace. Focus on relevant applications.",
+    "Color Coding: Distinguish pods with color-coded output. Identify log sources quickly.",
+    "Search & Filter: Search log content and filter by patterns. Find specific log entries.",
+    "Container Selection: Choose specific containers within pods to tail. Narrow focus to relevant logs.",
+    "Context Lines: Show surrounding context for matched log lines. Understand log context better.",
+    "Timestamp Display: Show timestamps for log entries. Track when events occurred.",
+    "CLI Tool: Lightweight command-line tool for terminal workflows. Integrate with existing tools.",
+    "Kubernetes Native: Works with any Kubernetes cluster via kubectl. No additional setup required."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

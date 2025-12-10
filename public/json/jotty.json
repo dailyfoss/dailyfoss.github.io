@@ -4,6 +4,8 @@
   "categories": [
     120
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/fccview/rwmarkable",
@@ -12,6 +14,12 @@
   "github_stars": "6",
   "logo": "/icons/jotty.webp",
   "description": "rwmarkable provides self hosted tools and utilities for working with the reMarkable tablet, such as managing documents or notes. It helps power users integrate the device more tightly with their personal infrastructure.",
+  "tagline": null,
+  "features": [
+    "Tablet Integration: reMarkable device sync, Document transfer, Note management. Bridge your tablet to your infrastructure.",
+    "File Management: Upload and download, Organize notebooks, Backup notes. Control your reMarkable content.",
+    "Self-Hosted Sync: Private cloud storage, Automated backups, Version control. Own your digital notes."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +33,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

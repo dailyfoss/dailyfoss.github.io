@@ -4,6 +4,8 @@
   "categories": [
     114
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/SigNoz/signoz",
@@ -12,6 +14,21 @@
   "github_stars": "24836",
   "logo": "/icons/signoz.webp",
   "description": "SigNoz is an open-source observability platform for metrics, logs, and traces, built as a self-hosted alternative to Datadog and New Relic. It supports OpenTelemetry, dashboards, and alerting.",
+  "tagline": null,
+  "features": [
+    "Distributed tracing: Visualizes request flows across microservices with trace timelines.",
+    "Metrics monitoring: Collects and displays application and infrastructure metrics in dashboards.",
+    "Log management: Aggregates logs from multiple sources with search and filtering.",
+    "OpenTelemetry native: Built on OpenTelemetry for vendor-neutral instrumentation.",
+    "Custom dashboards: Creates visualizations with charts, graphs, and tables for metrics.",
+    "Alert rules: Configures alerts based on metrics, traces, or log patterns.",
+    "Service maps: Automatically generates topology maps showing service dependencies.",
+    "Query builder: Builds complex queries with visual interface or PromQL-like syntax.",
+    "Anomaly detection: Identifies unusual patterns in metrics and traces automatically.",
+    "Data retention: Configures retention policies for traces, metrics, and logs separately.",
+    "Team collaboration: Shares dashboards and alerts across team members.",
+    "ClickHouse backend: Uses ClickHouse for fast querying of large observability datasets."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

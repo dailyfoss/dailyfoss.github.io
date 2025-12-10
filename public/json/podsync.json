@@ -4,6 +4,8 @@
   "categories": [
     123
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/mxpv/podsync",
@@ -12,6 +14,21 @@
   "github_stars": "1794",
   "logo": "/icons/podsync.webp",
   "description": "Podsync is a self-hosted YouTube-to-podcast converter that turns YouTube channels into RSS feeds. It downloads and serves audio files, making content available in podcast apps.",
+  "tagline": null,
+  "features": [
+    "YouTube to podcast: Convert YouTube channels and playlists into podcast RSS feeds.",
+    "Audio extraction: Extract audio from YouTube videos and serve as podcast episodes.",
+    "RSS feed generation: Create standard RSS feeds compatible with all podcast apps.",
+    "Automatic updates: Monitor YouTube channels for new videos and add them to feeds automatically.",
+    "Multiple channels: Convert multiple YouTube channels into separate podcast feeds.",
+    "Quality selection: Configure audio quality and format for downloaded content.",
+    "Episode metadata: Include video titles, descriptions, and thumbnails in podcast feeds.",
+    "Storage management: Automatically delete old episodes to manage disk space usage.",
+    "Custom feed URLs: Serve podcast feeds on custom URLs for easy subscription.",
+    "Vimeo support: Convert Vimeo channels in addition to YouTube content.",
+    "Episode filtering: Configure rules to include only specific videos based on criteria.",
+    "Podcast app compatible: Works with Apple Podcasts, Spotify, and other standard podcast clients."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

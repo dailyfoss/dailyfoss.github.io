@@ -4,6 +4,8 @@
   "categories": [
     133
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/postgres/postgres",
@@ -12,6 +14,21 @@
   "github_stars": "19274",
   "logo": "/icons/postgresql.webp",
   "description": "PostgreSQL is a powerful open-source relational database management system featuring advanced SQL capabilities, extensions, robust concurrency, and replication. It runs on all major platforms and supports extensive integrations.",
+  "tagline": null,
+  "features": [
+    "ACID compliance: Ensure data integrity with full support for atomic transactions, consistency, isolation, and durability.",
+    "Advanced SQL: Execute complex queries with support for CTEs, window functions, JSON operations, and full-text search.",
+    "Extensibility: Add custom functions, data types, and operators using procedural languages like PL/pgSQL and PL/Python.",
+    "Replication: Implement high availability with streaming replication, logical replication, and failover capabilities.",
+    "Partitioning: Improve query performance on large tables with declarative partitioning and automatic partition management.",
+    "Foreign data wrappers: Query external data sources including other databases, files, and APIs as if they were local tables.",
+    "JSONB support: Store and query JSON documents with indexing and efficient binary storage format.",
+    "Concurrent access: Handle thousands of concurrent connections with MVCC for non-blocking reads and writes.",
+    "PostGIS extension: Add geospatial capabilities for storing and querying geographic data with spatial indexes.",
+    "Performance optimization: Utilize query planner, parallel queries, and JIT compilation for optimal execution speed.",
+    "Security features: Protect data with SSL connections, row-level security, and comprehensive authentication methods.",
+    "Backup and recovery: Ensure data safety with point-in-time recovery, continuous archiving, and backup tools."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     72
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/thomiceli/opengist",
@@ -12,6 +14,21 @@
   "github_stars": "2835",
   "logo": "/icons/opengist.webp",
   "description": "OpenGist is a self-hosted alternative to GitHub Gist. It lets users create and manage code snippets with syntax highlighting, versioning, and a web-based editor.",
+  "tagline": null,
+  "features": [
+    "Code Snippets: Create and manage code snippets with syntax highlighting for over 100 programming languages.",
+    "Version Control: Track changes to snippets with Git-based versioning and diff visualization.",
+    "Web Editor: Edit code directly in the browser with syntax highlighting, auto-completion, and keyboard shortcuts.",
+    "Public/Private Gists: Control snippet visibility with public sharing or private access for sensitive code.",
+    "Fork and Clone: Fork existing snippets to create variations and clone repositories for local development.",
+    "Search Engine: Find snippets quickly using full-text search across code content, titles, and descriptions.",
+    "User Management: Support multiple users with individual accounts, profiles, and snippet collections.",
+    "API Access: Programmatic access to all functionality through REST APIs for automation and integration.",
+    "Embed Support: Embed snippets in external websites and documentation with customizable styling.",
+    "Raw File Access: Direct access to raw snippet content for command-line tools and automated processing.",
+    "Comment System: Add comments and discussions to snippets for collaboration and code review.",
+    "Export Options: Download snippets as files or archives for backup and offline access."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

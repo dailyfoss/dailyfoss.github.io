@@ -4,6 +4,8 @@
   "categories": [
     137
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/linuxserver/docker-swag",
@@ -12,6 +14,21 @@
   "github_stars": "3511",
   "logo": "/icons/swag.webp",
   "description": "SWAG (Secure Web Application Gateway) is a Docker image that bundles Nginx, Let’s Encrypt, and security defaults to provide a secure reverse proxy and SSL gateway for self-hosted services.",
+  "tagline": null,
+  "features": [
+    "Reverse proxy: Routes traffic to multiple backend services from single entry point.",
+    "Let's Encrypt: Automatically obtains and renews SSL certificates.",
+    "Nginx-based: Built on proven Nginx web server for reliability and performance.",
+    "Pre-configured security: Includes security headers, rate limiting, and fail2ban integration.",
+    "Subdomain routing: Routes requests to different services based on subdomains.",
+    "Authentication: Adds authentication layer to services with Authelia or basic auth.",
+    "DuckDNS support: Integrates with DuckDNS for dynamic DNS updates.",
+    "Config templates: Provides pre-made configs for popular self-hosted applications.",
+    "Wildcard certificates: Supports wildcard SSL certificates for multiple subdomains.",
+    "GeoIP blocking: Blocks traffic from specific countries or regions.",
+    "ModSecurity: Includes web application firewall for additional protection.",
+    "Docker integration: Designed specifically for Docker-based service deployments."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

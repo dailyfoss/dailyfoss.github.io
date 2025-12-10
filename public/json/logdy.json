@@ -4,6 +4,8 @@
   "categories": [
     93
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/logdyhq/logdy-core",
@@ -12,6 +14,13 @@
   "github_stars": "2004",
   "logo": "/icons/logdy.webp",
   "description": "Logdy Core is a platform for collecting and analyzing logs in real-time from distributed systems. It features streaming dashboards, filterable views, and storage that works in both cloud and self-hosted environments.",
+  "tagline": null,
+  "features": [
+    "Real-Time Logs: Streaming dashboards, Live updates, Instant visibility. Monitor logs as they happen.",
+    "Filtering & Search: Advanced filters, Full-text search, Query builder. Find relevant logs quickly.",
+    "Distributed Systems: Multi-source collection, Centralized view, Scalable architecture. Handle logs from anywhere.",
+    "Flexible Deployment: Cloud or self-hosted, Docker support, Easy setup. Deploy where you need it."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +34,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

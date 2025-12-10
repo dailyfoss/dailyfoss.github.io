@@ -4,6 +4,8 @@
   "categories": [
     103
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/zabbix/zabbix",
@@ -12,6 +14,21 @@
   "github_stars": "5447",
   "logo": "/icons/zabbix.webp",
   "description": "Zabbix is an enterprise-grade self-hosted monitoring platform for servers, applications, and networks. It collects metrics, sends alerts, and visualizes data on dashboards, with both on-prem and cloud-hosted offerings.",
+  "tagline": null,
+  "features": [
+    "Agent-based monitoring: Deploy lightweight agents on servers to collect detailed system metrics and application data.",
+    "Agentless monitoring: Monitor network devices, services, and applications using SNMP, IPMI, and other protocols without agents.",
+    "Custom metrics: Define and collect custom metrics using scripts, APIs, or database queries for specialized monitoring.",
+    "Alerting system: Configure multi-level escalations with email, SMS, and webhook notifications based on trigger conditions.",
+    "Dashboard builder: Create custom dashboards with graphs, maps, and widgets to visualize infrastructure health.",
+    "Template library: Use pre-built monitoring templates for common applications and devices or create custom templates.",
+    "Distributed monitoring: Scale to thousands of hosts using proxy servers that aggregate data from remote locations.",
+    "Trend analysis: Store historical data and analyze long-term trends with built-in reporting and forecasting.",
+    "Network discovery: Automatically detect and add new devices to monitoring using network scanning and SNMP discovery.",
+    "SLA reporting: Track service level agreements with uptime calculations and availability reports.",
+    "API integration: Automate configuration and data retrieval using comprehensive REST API for external integrations.",
+    "High availability: Deploy in clustered configurations with failover support for mission-critical monitoring."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

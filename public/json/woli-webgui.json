@@ -4,6 +4,8 @@
   "categories": [
     75
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/RemyFV/WoLi-webgui",
@@ -12,6 +14,21 @@
   "github_stars": "55",
   "logo": "/icons/woli-webgui.webp",
   "description": "WoLi-webgui is a self-hosted web interface for managing Wake-on-LAN actions. It lets you add devices, trigger wake requests, and organize targets into a convenient dashboard for remote power control at home or in small offices.",
+  "tagline": null,
+  "features": [
+    "Device management: Store MAC addresses and device names for quick access to your network machines.",
+    "Wake-on-LAN packets: Send magic packets to wake devices remotely from anywhere on your network.",
+    "Dashboard view: See all registered devices in a clean interface with status indicators.",
+    "Grouping: Organize devices into groups like servers, workstations, or media centers for easier management.",
+    "Quick wake: One-click wake buttons for each device eliminate the need for command-line tools.",
+    "Status checking: Ping devices to verify if they're online before attempting to wake them.",
+    "Scheduled wake: Set up automated wake schedules for devices that need regular power-on times.",
+    "Mobile access: Manage and wake devices from smartphones or tablets via responsive web UI.",
+    "Multi-subnet support: Wake devices across different network segments with proper routing configuration.",
+    "Authentication: Protect the interface with password authentication to prevent unauthorized wake requests.",
+    "Wake history: View logs of wake attempts and their timestamps for troubleshooting.",
+    "Broadcast configuration: Configure broadcast addresses for networks with specific routing requirements."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

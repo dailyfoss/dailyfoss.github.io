@@ -4,6 +4,8 @@
   "categories": [
     22
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/DumbWareio/DumbBudget",
@@ -12,6 +14,17 @@
   "github_stars": "265",
   "logo": "/icons/dumbbudget.webp",
   "description": "DumbBudget is a simple budgeting and expense tracker built to be self-hosted. It lets users define categories, record transactions, and review monthly summaries through a clean, no-frills web dashboard.",
+  "tagline": null,
+  "features": [
+    "Category management: Create custom spending categories to organize expenses according to your budget structure.",
+    "Transaction logging: Record income and expenses with date, amount, and category for accurate financial tracking.",
+    "Monthly summaries: View spending totals by category and compare against previous months to identify trends.",
+    "Budget limits: Set spending caps for each category and receive visual indicators when approaching limits.",
+    "Simple interface: Manage finances through a straightforward dashboard without complex features or navigation.",
+    "Data privacy: Store all financial information on your own server without sharing with external services.",
+    "Quick entry: Add transactions rapidly with minimal fields to capture expenses as they occur.",
+    "Export reports: Download transaction history and summaries for tax preparation or external analysis."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

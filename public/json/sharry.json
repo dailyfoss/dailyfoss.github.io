@@ -4,6 +4,8 @@
   "categories": [
     61
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/eikek/sharry",
@@ -12,6 +14,21 @@
   "github_stars": "1217",
   "logo": "/icons/sharry.webp",
   "description": "Sharry is a self-hosted file sharing application that lets users upload files and share links with expiration and optional passwords. It supports user accounts, quotas, and a polished web interface.",
+  "tagline": null,
+  "features": [
+    "File uploads: Share files of any size with automatic chunking for large transfers.",
+    "Expiring links: Set time-based expiration for shared files to auto-delete after period.",
+    "Password protection: Secure shared files with optional passwords for recipient access.",
+    "User accounts: Create accounts with individual quotas and sharing permissions.",
+    "Anonymous sharing: Allow guest uploads without requiring account creation.",
+    "Download limits: Restrict number of downloads per shared link.",
+    "Email notifications: Send share links directly to recipients via email.",
+    "Alias management: Create memorable aliases for share links instead of random strings.",
+    "Upload tracking: Monitor who downloaded files and when for accountability.",
+    "Storage quotas: Enforce per-user storage limits to manage disk usage.",
+    "REST API: Automate file sharing and management via comprehensive API.",
+    "Mobile friendly: Upload and download files from mobile devices with responsive design."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

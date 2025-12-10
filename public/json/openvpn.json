@@ -4,6 +4,8 @@
   "categories": [
     174
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/OpenVPN/openvpn",
@@ -12,6 +14,17 @@
   "github_stars": "12882",
   "logo": "/icons/openvpn.webp",
   "description": "OpenVPN is an open-source VPN protocol and software suite that enables secure point-to-point and site-to-site connections. It features strong encryption, cross-platform support, and can be deployed on self-hosted servers.",
+  "tagline": null,
+  "features": [
+    "Secure tunneling: Encrypt all network traffic between clients and servers using AES-256 and other strong ciphers.",
+    "Cross-platform clients: Connect from Windows, macOS, Linux, iOS, and Android devices with official client applications.",
+    "Certificate authentication: Use PKI with client certificates for strong authentication without password vulnerabilities.",
+    "Site-to-site VPN: Connect entire networks securely for branch office connectivity or cloud integration.",
+    "Split tunneling: Route only specific traffic through the VPN while allowing direct internet access for other connections.",
+    "Dynamic IP support: Maintain VPN connections even when client IP addresses change on mobile or residential networks.",
+    "Compression: Reduce bandwidth usage with LZO compression for faster performance on limited connections.",
+    "Logging and monitoring: Track connection events, bandwidth usage, and authentication attempts for security auditing."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

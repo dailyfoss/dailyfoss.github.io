@@ -4,6 +4,8 @@
   "categories": [
     17
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/pocketbase/pocketbase",
@@ -12,6 +14,21 @@
   "github_stars": "54042",
   "logo": "/icons/pocketbase.webp",
   "description": "PocketBase is a backend-as-a-service in a single executable. It offers database, auth, file storage, and real-time API, ideal for building self-hosted app backends quickly.",
+  "tagline": null,
+  "features": [
+    "Single executable: Deploy entire backend in one file without external dependencies or complex setup.",
+    "Built-in database: SQLite database included with admin UI for managing collections and records.",
+    "Authentication: User authentication with email/password, OAuth2, and custom auth providers.",
+    "File storage: Upload and serve files with automatic thumbnail generation and access control.",
+    "Real-time API: Subscribe to database changes with WebSocket connections for live updates.",
+    "REST API: Automatically generated REST API for all database collections with filtering and sorting.",
+    "Admin dashboard: Manage database schema, users, and settings through a web-based admin panel.",
+    "Access rules: Define granular access control rules using JavaScript expressions for security.",
+    "Hooks and events: Extend functionality with custom hooks that run before or after database operations.",
+    "Email templates: Customize email templates for verification, password reset, and notifications.",
+    "Backup and export: Export database and files for backup or migration to other instances.",
+    "JavaScript SDK: Official JavaScript/TypeScript SDK for easy integration with frontend applications."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

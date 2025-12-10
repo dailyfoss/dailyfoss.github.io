@@ -4,6 +4,8 @@
   "categories": [
     93
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/amir20/dozzle",
@@ -12,6 +14,17 @@
   "github_stars": "10407",
   "logo": "/icons/dozzle.webp",
   "description": "Dozzle is a lightweight, real-time log viewer for Docker containers. It runs as a container and provides a web UI to browse and filter logs across containers, making it easy to debug and monitor running services.",
+  "tagline": null,
+  "features": [
+    "Real-time logs: Stream container logs live in the browser with automatic updates as new entries appear.",
+    "Multi-container view: Browse logs from all running containers in a single interface with quick switching.",
+    "Search and filter: Find specific log entries using text search and filter by container, time range, or log level.",
+    "Log streaming: Follow logs in real-time similar to docker logs -f without command-line access.",
+    "Container stats: View CPU, memory, and network usage for each container alongside log output.",
+    "Multi-host support: Connect to multiple Docker hosts and view logs across distributed container environments.",
+    "No dependencies: Run as a single lightweight container without databases or complex configuration requirements.",
+    "Authentication support: Protect log access with basic auth or proxy authentication for secure multi-user environments."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     135
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Trugamr/wol",
@@ -12,6 +14,21 @@
   "github_stars": "647",
   "logo": "/icons/wol.webp",
   "description": "wol is a small self-hosted tool for sending Wake-on-LAN packets to machines on your network. It provides a simple interface to store hosts and wake them remotely, making remote power management easier for homelab setups.",
+  "tagline": null,
+  "features": [
+    "Host storage: Save device MAC addresses and friendly names for repeated wake operations.",
+    "Magic packet sending: Transmit Wake-on-LAN packets to power on compatible network devices remotely.",
+    "Simple interface: Minimal UI focused on quick device wake without unnecessary complexity.",
+    "Network discovery: Scan local network to detect devices and their MAC addresses automatically.",
+    "Batch operations: Wake multiple devices simultaneously with a single action.",
+    "Command-line support: Use CLI commands for scripting and automation alongside the web interface.",
+    "Port configuration: Customize WOL packet destination ports for non-standard network setups.",
+    "Lightweight deployment: Minimal resource footprint suitable for running on low-power devices.",
+    "Cross-platform: Works on Linux, Windows, and macOS for flexible deployment options.",
+    "JSON configuration: Store device configurations in simple JSON files for easy backup and migration.",
+    "No database required: File-based storage eliminates the need for database setup and maintenance.",
+    "Docker ready: Deploy quickly with pre-built Docker images and simple configuration."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

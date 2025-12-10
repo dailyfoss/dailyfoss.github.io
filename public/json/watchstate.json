@@ -4,6 +4,8 @@
   "categories": [
     175
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/arabcoders/watchstate",
@@ -12,6 +14,21 @@
   "github_stars": "1183",
   "logo": "/icons/watchstate.webp",
   "description": "Watchstate is a self-hosted TV and movie tracking service that stores watch history and progress, giving an overview of what you’ve seen and what is next.",
+  "tagline": null,
+  "features": [
+    "Watch history sync: Synchronize watch progress across multiple media servers including Plex, Jellyfin, and Emby.",
+    "Multi-server support: Connect and sync watch states between different media server instances seamlessly.",
+    "Episode tracking: Automatically track which episodes you've watched and resume from where you left off.",
+    "Conflict resolution: Handle watch state conflicts intelligently when the same content is watched on different servers.",
+    "Manual adjustments: Override automatic tracking with manual episode marking for complete control.",
+    "Metadata matching: Accurately match content across servers using TMDB, TVDB, or IMDB identifiers.",
+    "Scheduled sync: Configure automatic synchronization intervals to keep watch states current without manual intervention.",
+    "Webhook support: Trigger syncs automatically when content is played using webhooks from media servers.",
+    "Dry run mode: Preview sync operations before applying changes to avoid accidental data modifications.",
+    "Detailed logging: Review sync history and troubleshoot issues with comprehensive activity logs.",
+    "Selective sync: Choose specific libraries or content types to sync while excluding others.",
+    "API access: Integrate with custom applications using the REST API for advanced automation scenarios."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     145
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/wiredoor/wiredoor",
@@ -12,6 +14,21 @@
   "github_stars": "1507",
   "logo": "/icons/wiredoor.webp",
   "description": "Wiredoor is a self-hosted WireGuard management panel that provides a web UI for configuring peers, networks, and access rules. It aims to simplify VPN orchestration and monitoring across multiple WireGuard endpoints.",
+  "tagline": null,
+  "features": [
+    "Peer management: Add, edit, and remove WireGuard peers through an intuitive web interface.",
+    "QR code generation: Generate QR codes for mobile clients to quickly import VPN configurations.",
+    "Network visualization: View connected peers and their status in a centralized dashboard.",
+    "Access control: Define rules and permissions to control which peers can access specific resources.",
+    "Multi-server support: Manage multiple WireGuard servers from a single control panel.",
+    "Configuration export: Export peer configurations for manual deployment or backup purposes.",
+    "Connection monitoring: Track active connections and bandwidth usage per peer in real-time.",
+    "User authentication: Secure the management interface with user accounts and role-based access.",
+    "Automatic key generation: Generate public and private keys automatically when creating new peers.",
+    "IP address management: Assign and track IP addresses across your WireGuard network topology.",
+    "Audit logging: Record configuration changes and access events for security and compliance.",
+    "API access: Integrate with automation tools via REST API for programmatic peer management."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     165
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/fosrl/pangolin",
@@ -12,6 +14,19 @@
   "github_stars": "16612",
   "logo": "/icons/pangolin.webp",
   "description": "Pangolin is a self-hosted, lightweight URL shortener with analytics and custom redirects. It includes a clean web interface and link management features for private or team use.",
+  "tagline": null,
+  "features": [
+    "URL shortening: Create short, memorable links from long URLs with custom aliases or auto-generated codes",
+    "Click analytics: Track link performance with detailed metrics including click counts, referrers, geographic data, and device info",
+    "Custom redirects: Configure advanced redirect rules including time-based, geographic, or device-specific routing",
+    "Link management: Organize and manage all shortened URLs from centralized dashboard with search and filtering",
+    "QR code generation: Automatically generate QR codes for shortened links to enable mobile scanning and offline sharing",
+    "Link expiration: Set expiration dates on links for time-sensitive campaigns or temporary access control",
+    "Password protection: Add password requirements to shortened links for secure sharing of sensitive content",
+    "API access: RESTful API enables programmatic link creation and management for integration with other tools",
+    "Custom domains: Use your own domain names for branded short links that maintain identity and build trust",
+    "Team collaboration: Multi-user support with role-based permissions for team-based link management and analytics"
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +40,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

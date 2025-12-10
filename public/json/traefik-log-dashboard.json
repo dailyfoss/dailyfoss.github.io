@@ -4,6 +4,8 @@
   "categories": [
     137
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/hhftechnology/traefik-log-dashboard",
@@ -12,6 +14,21 @@
   "github_stars": "524",
   "logo": "/icons/traefik-log-dashboard.webp",
   "description": "traefik-log-dashboard is a self-hosted interface to parse and visualize Traefik logs. It transforms logs into charts and tables to help analyze traffic patterns, errors, and backend performance.",
+  "tagline": null,
+  "features": [
+    "Log parsing: Parse Traefik access logs automatically to extract meaningful metrics and insights.",
+    "Traffic visualization: View traffic patterns with charts showing requests over time, status codes, and response times.",
+    "Error analysis: Identify and analyze errors with breakdowns by status code, endpoint, and frequency.",
+    "Performance metrics: Monitor backend response times and identify slow endpoints or performance issues.",
+    "Top endpoints: See which routes receive the most traffic and which generate the most errors.",
+    "Client analysis: Analyze traffic by client IP, user agent, or geographic location for usage insights.",
+    "Time-based filtering: Filter logs by date range to focus on specific time periods or incidents.",
+    "Status code breakdown: View distribution of HTTP status codes to understand request success rates.",
+    "Backend performance: Compare performance across different backend services to identify bottlenecks.",
+    "Real-time updates: See new log entries and updated statistics as Traefik processes requests.",
+    "Export reports: Export charts and data for sharing or inclusion in reports and documentation.",
+    "Custom queries: Filter logs using custom criteria to answer specific questions about traffic patterns."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

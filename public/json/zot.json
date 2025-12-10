@@ -4,6 +4,8 @@
   "categories": [
     32
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/project-zot/zot",
@@ -12,6 +14,21 @@
   "github_stars": "1582",
   "logo": "/icons/zot.webp",
   "description": "zot is a self-hosted OCI image registry focused on simplicity, security, and cloud-native workflows. It supports replication, access control, and a minimal web UI and APIs for managing container images.",
+  "tagline": null,
+  "features": [
+    "OCI compliance: Store and distribute container images following Open Container Initiative standards for compatibility.",
+    "Image replication: Synchronize images between registries for disaster recovery and geographic distribution.",
+    "Access control: Define granular permissions for repositories with support for authentication and authorization.",
+    "Vulnerability scanning: Integrate with security scanners to identify vulnerabilities in stored container images.",
+    "Garbage collection: Automatically remove unused image layers and manifests to reclaim storage space.",
+    "Image signing: Support content trust and image signing for verifying image authenticity and integrity.",
+    "Web interface: Browse repositories, tags, and image details through a minimal web UI for quick inspection.",
+    "API compatibility: Work with Docker CLI, Podman, and other OCI-compliant tools without modifications.",
+    "Storage backends: Choose between local filesystem, S3, or other storage backends for image layer storage.",
+    "Metrics export: Expose Prometheus metrics for monitoring registry performance and usage patterns.",
+    "Webhook notifications: Trigger external systems when images are pushed, deleted, or modified in the registry.",
+    "Minimal footprint: Run efficiently with low resource requirements suitable for edge deployments and small teams."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     15
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/simple-login/app",
@@ -12,6 +14,21 @@
   "github_stars": "6244",
   "logo": "/icons/simplelogin.webp",
   "description": "SimpleLogin is an email aliasing and forwarding service that can be self-hosted or used as SaaS. It protects your real address using aliases, custom domains, and browser and mobile integrations.",
+  "tagline": null,
+  "features": [
+    "Email aliasing: Creates unlimited email aliases that forward to your real address.",
+    "Custom domains: Uses your own domains for professional-looking aliases.",
+    "Reply anonymously: Sends emails from aliases without revealing your real address.",
+    "Browser extensions: Generates aliases instantly from Chrome, Firefox, and Safari.",
+    "Mobile apps: Manages aliases on iOS and Android with native applications.",
+    "PGP encryption: Encrypts forwarded emails with your PGP key for enhanced privacy.",
+    "Alias directories: Organizes aliases into folders for different purposes or projects.",
+    "Catch-all domains: Automatically creates aliases for any address at your custom domain.",
+    "Block senders: Stops unwanted emails by blocking specific senders per alias.",
+    "Mailbox routing: Routes different aliases to different email accounts.",
+    "Activity monitoring: Tracks which aliases receive emails and from whom.",
+    "Import tools: Migrates aliases from other email aliasing services."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

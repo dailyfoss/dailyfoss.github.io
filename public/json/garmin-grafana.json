@@ -4,6 +4,8 @@
   "categories": [
     103
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/arpanghosh8453/garmin-grafana",
@@ -12,6 +14,17 @@
   "github_stars": "2450",
   "logo": "/icons/garmin-grafana.webp",
   "description": "Garmin-Grafana is a self-hosted pipeline that extracts Garmin health metrics and visualizes them in Grafana dashboards. It lets users monitor activity, sleep, and performance without uploading personal data to third-party clouds.",
+  "tagline": null,
+  "features": [
+    "Garmin Data Export: Extract health and fitness metrics from Garmin devices for self-hosted analysis.",
+    "Grafana Dashboards: Visualize activity, sleep, heart rate, and performance data in customizable Grafana dashboards.",
+    "Privacy-Focused: Keep personal health data on your own infrastructure without third-party cloud services.",
+    "Activity Tracking: Monitor daily steps, distance, calories, and exercise sessions with detailed charts.",
+    "Sleep Analysis: Track sleep patterns, quality, and duration with historical trend visualization.",
+    "Performance Metrics: Analyze training load, VO2 max, recovery time, and other advanced fitness indicators.",
+    "Automated Sync: Schedule automatic data extraction from Garmin Connect for continuous monitoring.",
+    "Historical Trends: View long-term health and fitness trends with flexible time-range analysis."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

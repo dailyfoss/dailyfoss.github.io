@@ -4,6 +4,8 @@
   "categories": [
     151
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/teableio/teable",
@@ -12,6 +14,21 @@
   "github_stars": "20503",
   "logo": "/icons/teable.webp",
   "description": "Teable is an open-source, self-hosted Airtable alternative with relational tables, views, and collaboration features. It provides forms, filters, and integrations through a modern web UI and REST API, with optional managed hosting.",
+  "tagline": null,
+  "features": [
+    "Relational tables: Create interconnected tables with relationships, lookups, and rollups for complex data modeling.",
+    "Multiple views: Display data in grid, kanban, gallery, calendar, or form views to match different workflows.",
+    "Collaboration: Work together in real-time with team members on shared bases with granular permission controls.",
+    "Forms: Generate public or private forms from tables to collect data from users without database access.",
+    "Filtering and sorting: Apply complex filters and multi-level sorting to focus on relevant data subsets.",
+    "REST API: Access and manipulate data programmatically through a comprehensive REST API for integrations.",
+    "Field types: Use rich field types including text, numbers, dates, attachments, checkboxes, and formulas.",
+    "Formulas: Calculate values dynamically using spreadsheet-like formulas with functions and field references.",
+    "Automation: Trigger actions automatically based on data changes or schedules for workflow automation.",
+    "Import and export: Import data from CSV, Excel, or other sources and export in multiple formats.",
+    "Templates: Start quickly with pre-built templates for common use cases like project management or CRM.",
+    "Self-hosted or cloud: Choose between self-hosting for full control or managed cloud hosting for convenience."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

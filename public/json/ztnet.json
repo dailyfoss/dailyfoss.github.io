@@ -4,6 +4,8 @@
   "categories": [
     174
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/sinamics/ztnet",
@@ -12,6 +14,21 @@
   "github_stars": "985",
   "logo": "/icons/ztnet.webp",
   "description": "ztnet is a self-hosted controller and management UI for ZeroTier networks. It lets administrators manage networks, members, and access rules via a central, easy-to-use web dashboard.",
+  "tagline": null,
+  "features": [
+    "Network management: Create and configure ZeroTier networks with custom IP ranges and routing rules from a web dashboard.",
+    "Member authorization: Approve or deny device join requests and manage which devices can access each network.",
+    "Access rules: Define flow rules to control traffic between network members with firewall-like policies.",
+    "Network monitoring: View connected members, their IP addresses, and connection status in real-time.",
+    "Multi-network support: Manage multiple ZeroTier networks from a single controller instance for different use cases.",
+    "User accounts: Create accounts for team members with permissions to manage specific networks or view-only access.",
+    "Device metadata: Add descriptions and tags to network members for easier identification and organization.",
+    "Route configuration: Set up custom routes to bridge ZeroTier networks with physical networks or other subnets.",
+    "DNS management: Configure DNS settings for networks to enable name resolution between members.",
+    "Audit logging: Track all network changes, member additions, and administrative actions for security compliance.",
+    "API access: Automate network management and member provisioning using REST API endpoints.",
+    "Backup and restore: Export network configurations for disaster recovery or migration to other controllers."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     165
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Raiper34/spooty",
@@ -12,6 +14,21 @@
   "github_stars": "129",
   "logo": "/icons/spooty.webp",
   "description": "Spooty is a self-hosted request and metadata dashboard for Spotify-linked media libraries, helping manage playlists and discover tracks for local collections.",
+  "tagline": null,
+  "features": [
+    "Spotify integration: Connects to Spotify for playlist and track data.",
+    "Request system: Allows users to request songs for local music library.",
+    "Playlist syncing: Syncs Spotify playlists to local collection.",
+    "Track metadata: Fetches detailed information about requested tracks.",
+    "Download coordination: Coordinates with download tools for music acquisition.",
+    "Duplicate detection: Avoids requesting songs already in library.",
+    "User management: Handles multiple users with individual request histories.",
+    "Request queue: Manages pending requests with priority ordering.",
+    "Approval workflow: Requires admin approval for requests before processing.",
+    "Statistics: Displays most requested artists and tracks.",
+    "Web interface: Manages requests through browser-based dashboard.",
+    "API access: Integrates with music management tools via REST API."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

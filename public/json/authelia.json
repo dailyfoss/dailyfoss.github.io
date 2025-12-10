@@ -4,14 +4,27 @@
   "categories": [
     15
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/authelia/authelia",
   "website": "www.authelia.com",
   "source_code": "github.com/authelia/authelia",
-  "github_stars": "26026",
+  "github_stars": "26039",
   "logo": "/icons/authelia.webp",
   "description": "Authelia is an authentication and authorization server providing 2FA, SSO, and role-based access for web apps. It integrates with reverse proxies and supports LDAP, OAuth, and self-hosted identity management.",
+  "tagline": null,
+  "features": [
+    "Authentication Server: Centralized auth for all your applications. Single sign-on.",
+    "Two-Factor Auth: Add 2FA security to any application. Enhanced protection.",
+    "SSO Support: Single sign-on across multiple services. One login, many apps.",
+    "Reverse Proxy Integration: Works with Traefik, Nginx, and others. Easy integration.",
+    "LDAP Support: Connect to existing directory services. Enterprise-ready.",
+    "OAuth Integration: Modern authentication protocols supported. Standard compliance.",
+    "Role-Based Access: Control who can access what. Granular permissions.",
+    "Self-Hosted: Complete control over authentication infrastructure. Security in your hands."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

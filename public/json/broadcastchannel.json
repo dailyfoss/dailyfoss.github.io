@@ -4,6 +4,8 @@
   "categories": [
     102
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/ccbikai/BroadcastChannel",
@@ -12,6 +14,17 @@
   "github_stars": "1889",
   "logo": "/icons/broadcastchannel.webp",
   "description": "BroadcastChannel is a self-hosted tool leveraging the browser's BroadcastChannel API to sync real-time messages and state across tabs or windows in a simple way, suitable for lightweight data syncing.",
+  "tagline": null,
+  "features": [
+    "Tab Synchronization: Sync messages and state across browser tabs. Real-time updates.",
+    "BroadcastChannel API: Leverages native browser API for efficiency. No external dependencies.",
+    "Lightweight: Minimal overhead for simple data syncing. Fast performance.",
+    "Real-Time: Instant message propagation across tabs. Immediate updates.",
+    "Self-Hosted: Deploy your own synchronization service. Complete control.",
+    "Simple Integration: Easy to implement in web applications. Developer-friendly.",
+    "Cross-Tab State: Share application state between windows. Unified experience.",
+    "Browser-Native: Uses standard web APIs for compatibility. No plugins needed."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     112
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Beast12/who-rang",
@@ -12,6 +14,21 @@
   "github_stars": "207",
   "logo": "/icons/whorang.webp",
   "description": "who-rang turns your smart doorbell into an AI-powered visitor identification system. It uses face recognition and multiple AI providers to classify visitors, log events, and present rich analytics via a self-hosted web dashboard.",
+  "tagline": null,
+  "features": [
+    "Visitor identification: Use AI-powered face recognition to identify people at your door automatically.",
+    "Multi-provider support: Integrate with various AI services including OpenAI, Google Vision, or local models.",
+    "Event logging: Record all doorbell events with timestamps, images, and identification results.",
+    "Real-time alerts: Receive notifications when someone rings the doorbell with visitor identification details.",
+    "Visitor database: Build a database of known visitors with names, photos, and visit history.",
+    "Unknown detection: Get alerted when unrecognized individuals appear at your door for security monitoring.",
+    "Analytics dashboard: View statistics on visitor frequency, peak times, and identification accuracy.",
+    "Image storage: Store doorbell camera snapshots for review and training the recognition system.",
+    "Privacy controls: Configure data retention policies and manage stored visitor information.",
+    "Integration support: Connect with popular smart doorbell brands and camera systems.",
+    "Custom notifications: Set up different alert types for family members, delivery personnel, or strangers.",
+    "Historical search: Search past events by date, person, or identification confidence level."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

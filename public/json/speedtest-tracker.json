@@ -4,6 +4,8 @@
   "categories": [
     150
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/alexjustesen/speedtest-tracker",
@@ -12,6 +14,21 @@
   "github_stars": "4627",
   "logo": "/icons/speedtest-tracker.webp",
   "description": "Speedtest Tracker is a self-hosted utility that runs scheduled internet speed tests and visualizes results over time with graphs and statistics.",
+  "tagline": null,
+  "features": [
+    "Automated speed tests: Runs internet speed tests on configurable schedules.",
+    "Historical data: Stores speed test results for long-term trend analysis.",
+    "Download and upload: Measures both download and upload speeds.",
+    "Ping latency: Records ping times and jitter measurements.",
+    "ISP tracking: Monitors performance across different ISPs or connections.",
+    "Graphs and charts: Visualizes speed trends over time with interactive charts.",
+    "Threshold alerts: Sends notifications when speeds drop below defined thresholds.",
+    "Multiple servers: Tests against different Speedtest.net servers.",
+    "Export data: Downloads test results as CSV for external analysis.",
+    "API access: Triggers tests and retrieves results via REST API.",
+    "Mobile responsive: Views results and manages tests from any device.",
+    "Comparison tools: Compares current speeds against historical averages."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

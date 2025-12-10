@@ -14,6 +14,17 @@
   "github_stars": "4544",
   "logo": "/icons/ackee.webp",
   "description": "Ackee is an open-source, self-hosted web analytics tool built with Node.js and MongoDB, designed for privacy-conscious users. Unlike many mainstream analytics platforms, it does not rely on tracking cookies or unique user identifiers and puts your data firmly in your own control. It provides a clean, minimal dashboard interface to monitor key metrics (like page views, referrers, session durations) and supports a fully documented GraphQL API for custom integrations.",
+  "tagline": null,
+  "features": [
+    "Privacy-Focused: Cookieless tracking respects visitor privacy, no personal data collection. Ethical analytics done right.",
+    "Anonymous Metrics: Aggregate data without identifying individual users. Insights without invasion.",
+    "Clean Dashboard: Elegant interface displays key metrics at a glance. Understand your traffic instantly.",
+    "Essential Tracking: Monitor page views, referrers, and session duration. All the data you actually need.",
+    "GraphQL API: Powerful API for custom integrations and advanced reporting. Extend functionality as needed.",
+    "Data Ownership: All analytics stored on your own server infrastructure. Complete control guaranteed.",
+    "Reliable Stack: Built on Node.js and MongoDB for consistent performance. Stable and dependable.",
+    "GDPR Compliant: Fully meets privacy regulations worldwide. No legal concerns."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -27,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     18
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/offen/docker-volume-backup",
@@ -12,6 +14,15 @@
   "github_stars": "3181",
   "logo": "/icons/docker-volume-backup.webp",
   "description": "Docker Volume Backup is a tool that allows scheduled backups of Docker volumes to cloud storage or local file systems. It includes retention policies, encryption, and supports running in a container itself.",
+  "tagline": null,
+  "features": [
+    "Scheduled Backups: Automatic volume backups on custom schedules. Set and forget protection.",
+    "Cloud Storage Support: Backup to S3, Azure, GCS, and more. Flexible storage options.",
+    "Encryption: Secure backups with built-in encryption. Protected data at rest.",
+    "Retention Policies: Automatically clean up old backups. Efficient storage management.",
+    "Container-Native: Runs as a Docker container itself. Easy deployment.",
+    "Self-Hosted: Complete control over backup process and data. Your volumes, your backups."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

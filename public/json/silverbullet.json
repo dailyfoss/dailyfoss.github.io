@@ -4,6 +4,8 @@
   "categories": [
     111
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/silverbulletmd/silverbullet",
@@ -12,6 +14,21 @@
   "github_stars": "4266",
   "logo": "/icons/silverbullet.webp",
   "description": "SilverBullet is a self-hosted, file-based personal knowledge base and note-taking tool. It uses Markdown, plugins, and a web UI to provide a wiki-like experience on top of local or synced files.",
+  "tagline": null,
+  "features": [
+    "File-based storage: Stores notes as plain Markdown files for portability and version control.",
+    "Wiki-style linking: Creates bidirectional links between notes with [[wiki-link]] syntax.",
+    "Plugin system: Extends functionality with JavaScript plugins for custom features.",
+    "Live preview: Edits Markdown with instant rendering and syntax highlighting.",
+    "Full-text search: Finds content across all notes with fast indexed search.",
+    "Templates: Creates reusable note templates for consistent structure.",
+    "Task management: Tracks todos and tasks with checkbox syntax and queries.",
+    "Mobile responsive: Access and edit notes from smartphones and tablets.",
+    "Sync support: Works with file sync services like Syncthing or Git for multi-device access.",
+    "Query language: Filters and displays note data with powerful query syntax.",
+    "Code blocks: Supports syntax highlighting for dozens of programming languages.",
+    "Offline capable: Functions as a progressive web app with offline editing support."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     27
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/owncloud/ocis",
@@ -12,6 +14,17 @@
   "github_stars": "1820",
   "logo": "/icons/owncloud-infinite-scale.webp",
   "description": "OCIS (OwnCloud Infinite Scale) is a modern, scalable, self-hosted file synchronization and collaboration platform. It’s built in Go and offers advanced permissions, sharing, and cloud-native architecture.",
+  "tagline": null,
+  "features": [
+    "File synchronization: Keep files in sync across desktop and mobile devices with automatic conflict resolution.",
+    "Advanced sharing: Share files and folders with granular permissions including expiration dates and password protection.",
+    "Collaborative editing: Edit documents in real-time with other users using integrated office suite compatibility.",
+    "Scalable architecture: Deploy on cloud-native infrastructure with microservices that scale independently based on load.",
+    "Version control: Track file changes over time and restore previous versions when needed for data recovery.",
+    "External storage: Connect to S3, WebDAV, and other storage backends to unify access across multiple systems.",
+    "Mobile apps: Access and sync files from iOS and Android devices with native applications for offline use.",
+    "API access: Integrate with custom applications using WebDAV and REST APIs for programmatic file management."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     173
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/healthchecks/healthchecks",
@@ -12,6 +14,17 @@
   "github_stars": "9672",
   "logo": "/icons/healthchecks.webp",
   "description": "Healthchecks is a self hosted cron job and heartbeat monitoring service. You ping unique URLs from your scripts, containers or IoT devices and Healthchecks alerts you when jobs fail or run late, via email, chat, or webhooks.",
+  "tagline": null,
+  "features": [
+    "Cron Monitoring: Track scheduled jobs and receive alerts when they fail to run or complete.",
+    "Heartbeat Checks: Monitor long-running processes with periodic ping requirements.",
+    "Multi-Channel Alerts: Send notifications via email, Slack, Discord, PagerDuty, and 20+ integrations.",
+    "Grace Periods: Configure acceptable delays before triggering alerts for flexible scheduling.",
+    "Status Dashboard: View all monitored jobs and their current status at a glance.",
+    "API Access: Integrate monitoring into scripts and applications with simple HTTP pings.",
+    "Failure Detection: Automatically detect when jobs run late, fail, or stop reporting.",
+    "Historical Logs: Review ping history and downtime incidents for troubleshooting."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

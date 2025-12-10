@@ -4,6 +4,8 @@
   "categories": [
     13
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/speaches-ai/speaches",
@@ -12,6 +14,21 @@
   "github_stars": "2661",
   "logo": "/icons/speaches.webp",
   "description": "Speaches is a self-hosted transcription and speech-to-text platform. It processes audio files or streams and provides text output, timestamps, and export options via a web interface.",
+  "tagline": null,
+  "features": [
+    "Speech-to-text: Transcribes audio files into text with high accuracy.",
+    "Multiple languages: Supports transcription in dozens of languages.",
+    "Timestamp generation: Adds timestamps to transcripts for easy navigation.",
+    "Audio formats: Processes MP3, WAV, FLAC, and other common audio formats.",
+    "Batch processing: Transcribes multiple files simultaneously.",
+    "Speaker diarization: Identifies and labels different speakers in audio.",
+    "Punctuation: Automatically adds punctuation to transcribed text.",
+    "Export options: Downloads transcripts as TXT, SRT, or VTT formats.",
+    "Web interface: Uploads and manages transcription jobs through browser.",
+    "API access: Integrates transcription into other applications via REST API.",
+    "Privacy focused: Processes audio locally without sending to external services.",
+    "Model selection: Chooses between speed and accuracy with different AI models."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

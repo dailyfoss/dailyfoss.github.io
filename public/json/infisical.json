@@ -4,6 +4,8 @@
   "categories": [
     117
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Infisical/infisical",
@@ -12,6 +14,17 @@
   "github_stars": "23866",
   "logo": "/icons/infisical.webp",
   "description": "Infisical is an open source secret management platform for developers. It centralizes environment variables and secrets, provides access controls, audits and integrations with CI, and is available as both a cloud and self hosted solution.",
+  "tagline": null,
+  "features": [
+    "Centralized Secrets: Store API keys, passwords, and environment variables in one secure location.",
+    "Environment Management: Organize secrets by environment (dev, staging, production).",
+    "CI/CD Integration: Inject secrets into GitHub Actions, GitLab CI, and other pipelines.",
+    "Access Controls: Define granular permissions for who can read or modify secrets.",
+    "Audit Logging: Track all secret access and modifications for compliance.",
+    "Version History: View and rollback to previous versions of secrets.",
+    "SDK Support: Integrate with applications using official SDKs for multiple languages.",
+    "Self-Hosted or Cloud: Choose between self-hosting or managed cloud deployment."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

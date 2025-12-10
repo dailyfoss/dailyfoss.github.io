@@ -4,6 +4,8 @@
   "categories": [
     62
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/syncthing/syncthing",
@@ -12,6 +14,21 @@
   "github_stars": "78092",
   "logo": "/icons/syncthing.webp",
   "description": "Syncthing is a peer-to-peer file synchronization tool that securely syncs folders across devices without a central server, using a web UI and background service.",
+  "tagline": null,
+  "features": [
+    "Peer-to-peer sync: Synchronizes files directly between devices without central server.",
+    "Selective sync: Chooses which folders to sync on each device for storage management.",
+    "Conflict resolution: Handles file conflicts with versioning and conflict copies.",
+    "Encrypted transfer: Protects data in transit with TLS encryption between devices.",
+    "File versioning: Keeps historical versions of files with configurable retention policies.",
+    "Ignore patterns: Excludes files and folders from sync using .stignore files.",
+    "Relay support: Connects devices behind NAT or firewalls using relay servers.",
+    "Discovery methods: Finds devices via local discovery, global discovery, or static addresses.",
+    "Bandwidth control: Limits upload and download speeds to manage network usage.",
+    "Web interface: Manages sync configuration through built-in web UI.",
+    "Cross-platform: Runs on Windows, macOS, Linux, Android, and BSD systems.",
+    "Folder sharing: Shares folders with specific devices using unique folder IDs."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

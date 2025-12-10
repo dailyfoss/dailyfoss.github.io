@@ -4,6 +4,8 @@
   "categories": [
     174
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/WGDashboard/WGDashboard",
@@ -12,6 +14,21 @@
   "github_stars": "3172",
   "logo": "/icons/wgdashboard.webp",
   "description": "WGDashboard is a self-hosted control panel for WireGuard. It manages configurations, peers, and keys, and shows connection status in a web dashboard, simplifying the administration of WireGuard servers for homelabs and small networks.",
+  "tagline": null,
+  "features": [
+    "Configuration management: Create and edit WireGuard configurations through a user-friendly web dashboard.",
+    "Peer administration: Add, remove, or modify peers with automatic key pair generation and validation.",
+    "Real-time monitoring: View active connections, bandwidth usage, and peer status with live updates.",
+    "Multi-configuration: Manage multiple WireGuard interfaces and configurations from a single dashboard.",
+    "QR code display: Generate QR codes for mobile client setup with automatic configuration encoding.",
+    "Peer search: Find specific peers quickly using search and filtering across large peer lists.",
+    "Configuration backup: Export and import configurations for backup or migration to other servers.",
+    "Access control: Secure the dashboard with password authentication and optional two-factor authentication.",
+    "Peer grouping: Organize peers into groups or categories for better management of large deployments.",
+    "Traffic statistics: View historical bandwidth usage with charts showing trends over time.",
+    "Ping monitoring: Check peer connectivity and latency directly from the dashboard.",
+    "Dark mode: Switch between light and dark themes for comfortable viewing in different environments."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

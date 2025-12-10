@@ -4,6 +4,8 @@
   "categories": [
     137
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/requestly/requestly",
@@ -12,6 +14,21 @@
   "github_stars": "5646",
   "logo": "/icons/requestly.webp",
   "description": "Requestly is a self-hosted tool to intercept, modify, and mock network requests. It includes advanced rules, debugging tools, and a browser-like UI for developers.",
+  "tagline": null,
+  "features": [
+    "Request interception: Capture and modify HTTP/HTTPS requests before they reach servers.",
+    "Response mocking: Return custom responses for testing without backend changes.",
+    "Header modification: Add, remove, or change request and response headers dynamically.",
+    "URL redirection: Redirect requests to different endpoints for testing or debugging.",
+    "Query parameter manipulation: Modify URL parameters on the fly to test different scenarios.",
+    "Request blocking: Block specific requests to simulate failures or test error handling.",
+    "Script injection: Insert custom JavaScript into pages for testing or debugging.",
+    "Session recording: Capture network activity for later analysis and debugging.",
+    "Rule management: Create and organize modification rules with conditions and priorities.",
+    "Browser extension: Install extensions for Chrome and Firefox to intercept browser traffic.",
+    "Team collaboration: Share rules and configurations with team members for consistent testing.",
+    "API testing: Test REST APIs by modifying requests and responses without code changes."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

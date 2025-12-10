@@ -4,6 +4,8 @@
   "categories": [
     111
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Nezreka/SoulSync",
@@ -12,6 +14,21 @@
   "github_stars": "524",
   "logo": "/icons/soulsync.webp",
   "description": "SoulSync is an automated music discovery and collection manager that syncs playlists from Spotify, Tidal, or YouTube to your local library and media servers via Soulseek and slskd.",
+  "tagline": null,
+  "features": [
+    "Playlist syncing: Automatically downloads music from Spotify, Tidal, or YouTube playlists.",
+    "Soulseek integration: Searches and downloads tracks via Soulseek P2P network.",
+    "Quality preferences: Prioritizes FLAC or high-bitrate MP3 downloads.",
+    "Metadata tagging: Adds proper ID3 tags to downloaded music files.",
+    "Library organization: Organizes files by artist, album, and track structure.",
+    "Duplicate detection: Avoids downloading songs already in your library.",
+    "Automated monitoring: Checks playlists regularly for new additions.",
+    "Media server sync: Updates Plex, Jellyfin, or other servers after downloads.",
+    "Search fallbacks: Tries multiple search strategies to find rare tracks.",
+    "Download queue: Manages multiple simultaneous downloads efficiently.",
+    "Notification system: Alerts when new music is downloaded.",
+    "Web interface: Monitors and controls sync operations through browser."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

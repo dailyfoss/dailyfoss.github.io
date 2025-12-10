@@ -4,6 +4,8 @@
   "categories": [
     75
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/bscott/subtrackr",
@@ -12,6 +14,21 @@
   "github_stars": "286",
   "logo": "/icons/subtrackr.webp",
   "description": "Subtrackr is a self-hosted subscription tracker with support for categories, billing cycles, and charts, enabling users to keep an eye on recurring expenses.",
+  "tagline": null,
+  "features": [
+    "Subscription logging: Tracks all recurring payments and subscriptions.",
+    "Billing cycle tracking: Monitors monthly, yearly, and custom billing periods.",
+    "Cost visualization: Displays spending with charts and category breakdowns.",
+    "Renewal alerts: Sends notifications before upcoming subscription renewals.",
+    "Category management: Organizes subscriptions into custom categories.",
+    "Payment history: Records all past payments for each subscription.",
+    "Budget planning: Calculates total subscription costs for budget forecasting.",
+    "Currency conversion: Handles subscriptions in different currencies.",
+    "Trial tracking: Monitors free trials to avoid unexpected charges.",
+    "Cancellation notes: Records reasons and dates for cancelled subscriptions.",
+    "Export reports: Downloads subscription data as CSV or PDF.",
+    "Mobile access: Manages subscriptions from smartphones and tablets."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

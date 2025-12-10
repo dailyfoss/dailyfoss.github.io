@@ -4,6 +4,8 @@
   "categories": [
     9
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/arp242/goatcounter",
@@ -12,6 +14,17 @@
   "github_stars": "5308",
   "logo": "/icons/goatcounter.webp",
   "description": "GoatCounter is a lightweight and privacy-friendly web analytics tool. It provides basic metrics, referrers, and pagesviews without collecting personal data, designed to be a simple alternative to Google Analytics.",
+  "tagline": null,
+  "features": [
+    "Privacy-Friendly Analytics: Track website visits without cookies or personal data collection.",
+    "Essential Metrics: Monitor page views, unique visitors, referrers, and popular pages.",
+    "No Cookie Consent: Compliant with GDPR and privacy regulations without requiring cookie banners.",
+    "Lightweight Script: Minimal JavaScript footprint with negligible impact on page load times.",
+    "Real-Time Data: View visitor statistics and trends as they happen.",
+    "Referrer Tracking: Understand where your traffic comes from without invasive tracking.",
+    "Simple Dashboard: Clean, focused interface showing only the metrics that matter.",
+    "Self-Hosted Control: Keep all analytics data on your own server with complete ownership."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

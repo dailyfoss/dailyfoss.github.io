@@ -4,6 +4,8 @@
   "categories": [
     69
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/JMBeresford/retrom",
@@ -12,6 +14,21 @@
   "github_stars": "1600",
   "logo": "/icons/retrom.webp",
   "description": "Retrom is a self-hosted retro gaming management system with collections, metadata, and a web dashboard to organize and track ROMs across platforms.",
+  "tagline": null,
+  "features": [
+    "ROM library management: Organize retro game ROMs by platform, genre, and custom categories.",
+    "Metadata fetching: Automatically download game information, box art, and descriptions.",
+    "Multi-platform support: Manage games from NES, SNES, Genesis, PlayStation, and dozens of other systems.",
+    "Web dashboard: Browse and search your collection through a responsive browser interface.",
+    "Collection tracking: Mark games as owned, completed, or on your wishlist.",
+    "Duplicate detection: Identify and manage duplicate ROMs across your library.",
+    "Search functionality: Find games quickly by title, platform, or metadata.",
+    "Custom tags: Add personal tags to games for flexible organization.",
+    "Statistics: View collection size, completion rates, and platform breakdowns.",
+    "Import tools: Bulk import ROMs from folders with automatic organization.",
+    "Backup management: Track which ROMs are backed up and where.",
+    "API access: Integrate with emulators or other tools using REST endpoints."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

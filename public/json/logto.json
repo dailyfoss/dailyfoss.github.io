@@ -4,6 +4,8 @@
   "categories": [
     79
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/logto-io/logto",
@@ -12,6 +14,17 @@
   "github_stars": "11150",
   "logo": "/icons/logto.webp",
   "description": "Logto is an identity and user management platform tailored for modern apps. It provides authentication, authorization, SSO, and built-in UI components while supporting self-hosting as well as cloud deployments.",
+  "tagline": null,
+  "features": [
+    "Authentication: OAuth 2.0, OIDC support, Social login providers. Secure user authentication for modern apps.",
+    "User Management: User profiles, Role-based access, Permission control. Manage identities centrally.",
+    "Single Sign-On: SSO across applications, Session management, Unified login. One login for all your apps.",
+    "Built-In UI: Pre-built login pages, Customizable themes, Mobile-responsive. Ready-to-use authentication UI.",
+    "Multi-Tenant: Organization support, Tenant isolation, Custom branding. Build SaaS applications easily.",
+    "API Access: RESTful APIs, SDKs for popular frameworks, Webhook support. Integrate authentication programmatically.",
+    "Security: MFA support, Password policies, Audit logs. Enterprise-grade security features.",
+    "Self-Hosted: Full data control, Privacy-focused, Custom deployment. Own your identity infrastructure."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     90
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Chocobozzz/PeerTube",
@@ -12,6 +14,19 @@
   "github_stars": "14249",
   "logo": "/icons/peertube.webp",
   "description": "PeerTube is a decentralized, federated video hosting platform based on ActivityPub. It supports streaming, playlists, federation, and custom instances, providing a self-hosted alternative to YouTube.",
+  "tagline": null,
+  "features": [
+    "Federated video hosting: ActivityPub protocol enables federation with other PeerTube instances and Fediverse platforms for decentralized distribution",
+    "Video streaming: Adaptive bitrate streaming with multiple quality options ensures smooth playback across different connection speeds",
+    "Peer-to-peer delivery: WebTorrent technology distributes bandwidth load among viewers, reducing server costs for popular videos",
+    "Playlists and channels: Organize videos into playlists and channels for structured content presentation and easier discovery",
+    "Live streaming: Broadcast live video with chat integration and automatic VOD archiving after streams end",
+    "Video transcoding: Automatic conversion to multiple resolutions and formats ensures compatibility across devices and bandwidth conditions",
+    "Comments and moderation: Built-in commenting system with moderation tools to manage community interactions and filter spam",
+    "Privacy controls: Set videos as public, unlisted, or private with password protection and access restrictions",
+    "Plugin system: Extend functionality with plugins for themes, analytics, monetization, and custom features",
+    "Mobile apps: Companion apps for iOS and Android enable video watching and channel management on mobile devices"
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +40,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

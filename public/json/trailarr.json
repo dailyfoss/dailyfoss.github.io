@@ -4,6 +4,8 @@
   "categories": [
     166
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/nandyalu/trailarr",
@@ -12,6 +14,21 @@
   "github_stars": "302",
   "logo": "/icons/trailarr.webp",
   "description": "Trailarr is a self-hosted utility that syncs and manages media requests between Trakt and Arr-based media managers, helping keep watchlists and automation rules aligned.",
+  "tagline": null,
+  "features": [
+    "Trakt integration: Sync watchlists and collections from Trakt to your media automation setup.",
+    "Arr synchronization: Automatically add items from Trakt to Radarr, Sonarr, or other Arr applications.",
+    "Watchlist monitoring: Monitor Trakt watchlists for new additions and sync them to media managers.",
+    "Bidirectional sync: Keep Trakt and Arr applications in sync with changes reflected in both directions.",
+    "Collection management: Sync Trakt collections to ensure your media library matches your curated lists.",
+    "Automatic updates: Run synchronization on a schedule to keep everything up to date without manual intervention.",
+    "Filtering rules: Define rules to control which items get synced based on criteria like rating or genre.",
+    "Status tracking: Monitor sync status and see which items have been successfully added or skipped.",
+    "Multiple profiles: Support multiple Trakt accounts or Arr instances for complex setups.",
+    "Web interface: Configure and monitor synchronization through a straightforward web interface.",
+    "Notification support: Receive alerts when new items are synced or errors occur.",
+    "Lightweight operation: Run continuously with minimal resource usage for automated synchronization."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

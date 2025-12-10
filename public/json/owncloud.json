@@ -4,6 +4,8 @@
   "categories": [
     27
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/owncloud/core",
@@ -12,6 +14,21 @@
   "github_stars": "8691",
   "logo": "/icons/owncloud.webp",
   "description": "ownCloud is an open-source platform for file sync and sharing. It offers desktop and mobile clients, user management, versioning, and plugins for collaborative work in self-hosted deployments.",
+  "tagline": null,
+  "features": [
+    "File Synchronization: Sync files across devices with desktop and mobile clients for seamless access anywhere.",
+    "Collaborative Sharing: Share files and folders with users or groups with granular permission controls and expiration dates.",
+    "Version Control: Maintain file history with automatic versioning and easy rollback to previous versions.",
+    "User Management: Comprehensive user and group management with LDAP integration and role-based access controls.",
+    "Web Interface: Full-featured web interface for file management, sharing, and administration from any browser.",
+    "Mobile Apps: Native iOS and Android applications with offline access and automatic photo backup capabilities.",
+    "Plugin Ecosystem: Extend functionality with hundreds of apps including calendar, contacts, and document editing.",
+    "Enterprise Features: Advanced security, compliance tools, and integration options for business environments.",
+    "External Storage: Connect to external storage systems including FTP, SMB, and cloud storage providers.",
+    "Encryption Support: Client-side and server-side encryption options to protect sensitive data at rest and in transit.",
+    "Activity Monitoring: Track file activities, user actions, and system events with comprehensive logging and notifications.",
+    "API Integration: Full REST and WebDAV APIs for custom integrations and third-party application connectivity."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

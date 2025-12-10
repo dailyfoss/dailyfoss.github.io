@@ -4,6 +4,8 @@
   "categories": [
     165
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/runs-on/runs-on",
@@ -12,6 +14,21 @@
   "github_stars": "1065",
   "logo": "/icons/runson.webp",
   "description": "Runs On is a self-hosted platform for running GitHub Actions runners on your own infrastructure, allowing full control over CI environments and secrets.",
+  "tagline": null,
+  "features": [
+    "Self-hosted runners: Run GitHub Actions workflows on your own infrastructure.",
+    "Cost control: Avoid GitHub-hosted runner costs by using your own hardware.",
+    "Custom environments: Configure runners with specific tools, dependencies, or configurations.",
+    "Secrets management: Keep sensitive credentials on your infrastructure instead of GitHub.",
+    "Scalable architecture: Add or remove runner capacity based on workflow demands.",
+    "Multiple repositories: Share runners across multiple GitHub repositories or organizations.",
+    "Workflow isolation: Run jobs in isolated environments for security and consistency.",
+    "Resource monitoring: Track CPU, memory, and disk usage across runner instances.",
+    "Auto-scaling: Automatically provision runners when workflows are queued.",
+    "Network control: Run workflows behind firewalls or with access to internal resources.",
+    "Compliance support: Meet regulatory requirements by keeping CI/CD on-premises.",
+    "Dashboard interface: Monitor runner status and job execution through a web UI."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     18
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/backuppc/backuppc",
@@ -12,6 +14,17 @@
   "github_stars": "1551",
   "logo": "/icons/backuppc.webp",
   "description": "BackupPC is a high-performance network backup system designed for servers and desktops. It features disk-based storage, deduplication, a web interface, and extensive scheduling for hands-off data protection.",
+  "tagline": null,
+  "features": [
+    "Network Backup: High-performance backup for servers and desktops. Comprehensive protection.",
+    "Deduplication: Save storage space with intelligent deduplication. Efficient storage.",
+    "Disk-Based Storage: Fast backup and restore from disk. Quick recovery.",
+    "Web Interface: Manage backups through browser. Easy administration.",
+    "Automated Scheduling: Set it and forget it backup schedules. Hands-off protection.",
+    "Multiple Protocols: Support for SMB, rsync, and more. Flexible connectivity.",
+    "Compression: Reduce backup size with compression. Save space.",
+    "Self-Hosted: Complete control over backup infrastructure. Data sovereignty."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     100
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/arabcoders/ytptube",
@@ -12,6 +14,21 @@
   "github_stars": "755",
   "logo": "/icons/ytptube.webp",
   "description": "ytptube is a self-hosted interface and automation tool for downloading and organizing YouTube content, exposing a simple web UI and configuration for recurring downloads.",
+  "tagline": null,
+  "features": [
+    "Channel monitoring: Subscribe to YouTube channels and automatically download new videos as they're published.",
+    "Web dashboard: Manage subscriptions, view download history, and configure settings through a clean web interface.",
+    "Download scheduling: Set specific times for downloads to run to avoid peak network usage hours.",
+    "Quality profiles: Define preferred video quality and format settings per channel or globally.",
+    "Storage organization: Automatically organize downloaded videos into folders by channel, date, or custom patterns.",
+    "Metadata preservation: Save video descriptions, upload dates, and channel information alongside downloaded files.",
+    "Duplicate prevention: Skip videos that have already been downloaded to avoid wasting bandwidth and storage.",
+    "Playlist support: Monitor and download entire playlists with automatic updates when new videos are added.",
+    "Selective downloads: Filter which videos to download based on title keywords, duration, or upload date.",
+    "Bandwidth limiting: Throttle download speeds to prevent saturating network connections during active use.",
+    "Notification system: Receive alerts when new videos are downloaded or when errors occur during processing.",
+    "API integration: Control downloads and manage subscriptions programmatically using REST API endpoints."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

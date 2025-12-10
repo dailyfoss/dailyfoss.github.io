@@ -4,6 +4,8 @@
   "categories": [
     62
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/crazy-max/ftpgrab",
@@ -12,6 +14,19 @@
   "github_stars": "537",
   "logo": "/icons/ftpgrab.webp",
   "description": "FTPGrab is a CLI utility that monitors FTP/SFTP directories and downloads new files automatically. Designed for automation tasks and syncing workflows in combination with cron or container execution.",
+  "tagline": null,
+  "features": [
+    "FTP Sync: Monitor FTP/SFTP directories, Automatic downloads, Cron-friendly. Automated file synchronization.",
+    "Automation: Perfect for scheduled tasks. Hands-free operation.",
+    "Container-Ready: Run in Docker. Easy deployment.",
+    "Workflow Integration: Sync remote files locally. Reliable transfers.",
+    "Incremental Sync: Download only new files. Efficient transfers.",
+    "Filtering: Include/exclude patterns. Selective sync.",
+    "Notifications: Alert on completion. Stay informed.",
+    "Logging: Track sync operations. Audit trail.",
+    "Multi-Server: Monitor multiple sources. Centralized sync.",
+    "Self-Hosted: Complete control. Privacy-focused."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +40,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

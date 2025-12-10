@@ -4,6 +4,8 @@
   "categories": [
     121
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "open.greenhost.net/stackspin/stackspin",
@@ -12,6 +14,21 @@
   "github_stars": null,
   "logo": "/icons/stackspin.webp",
   "description": "Stackspin is a self-hosted Kubernetes-based platform for deploying curated open-source applications. It provides tooling and configuration for running a managed app stack.",
+  "tagline": null,
+  "features": [
+    "Kubernetes platform: Deploys curated open-source apps on Kubernetes clusters.",
+    "App catalog: Provides pre-configured applications ready for deployment.",
+    "Helm charts: Uses Helm for standardized app packaging and deployment.",
+    "Multi-tenancy: Isolates apps and data for different users or organizations.",
+    "Automated backups: Backs up application data automatically to configured storage.",
+    "SSL management: Handles SSL certificates automatically with cert-manager.",
+    "Resource limits: Enforces CPU and memory limits per application.",
+    "Monitoring: Integrates Prometheus and Grafana for observability.",
+    "Single sign-on: Provides unified authentication across deployed applications.",
+    "Storage management: Manages persistent volumes for application data.",
+    "Update management: Handles application updates with rollback capability.",
+    "CLI tools: Manages platform and apps via command-line interface."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

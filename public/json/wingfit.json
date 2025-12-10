@@ -4,6 +4,8 @@
   "categories": [
     75
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/itskovacs/wingfit",
@@ -12,6 +14,21 @@
   "github_stars": "414",
   "logo": "/icons/wingfit.webp",
   "description": "Wingfit is a self-hosted fitness and workout tracking app. It lets users define routines, record sessions, and view progress over time in a clean web interface optimized for both desktop and mobile devices.",
+  "tagline": null,
+  "features": [
+    "Workout logging: Record exercise sessions with exercises, sets, reps, and weights for comprehensive tracking.",
+    "Routine builder: Create custom workout routines that can be reused and modified over time.",
+    "Progress tracking: Monitor strength gains and performance improvements with charts and statistics.",
+    "Exercise library: Access a database of common exercises with instructions and muscle group information.",
+    "Session history: Review past workouts to see what you did and how you performed.",
+    "Personal records: Track personal bests for each exercise to measure long-term progress.",
+    "Rest timer: Built-in timer to manage rest periods between sets and maintain workout intensity.",
+    "Mobile responsive: Access your workout data from any device with a responsive web interface.",
+    "Data export: Export workout history and statistics for backup or analysis in external tools.",
+    "Multi-user support: Allow multiple users to track their individual fitness journeys on one instance.",
+    "Custom exercises: Add your own exercises beyond the default library to match your training style.",
+    "Body metrics: Log weight, body measurements, and other metrics alongside workout data."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

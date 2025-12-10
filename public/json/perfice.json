@@ -4,6 +4,8 @@
   "categories": [
     103
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/p0lloc/perfice",
@@ -12,6 +14,21 @@
   "github_stars": "371",
   "logo": "/icons/perfice.webp",
   "description": "Perfice is a minimal self-hosted time tracking system that allows users to log work hours, generate reports, and visualize time spent across tasks and projects.",
+  "tagline": null,
+  "features": [
+    "Time Logging: Track work hours with start/stop timers or manual entry for accurate time recording across tasks and projects.",
+    "Project Organization: Group time entries by projects and tasks for structured tracking of different work streams.",
+    "Report Generation: Create detailed reports showing time spent by project, task, or date range for billing and analysis.",
+    "Visual Analytics: Charts and graphs display time distribution patterns to identify productivity trends and time allocation.",
+    "Export Functionality: Download time data in CSV or PDF format for invoicing, payroll, or external reporting systems.",
+    "Minimal Interface: Clean, distraction-free UI focuses on quick time entry without unnecessary complexity.",
+    "Tag System: Apply tags to time entries for flexible categorization beyond project and task hierarchies.",
+    "Calendar View: Visualize logged time on a calendar to see work patterns and identify gaps in time tracking.",
+    "Multi-User Support: Track time for multiple team members with individual accounts and consolidated reporting.",
+    "Billable Hours: Mark time entries as billable or non-billable for accurate client invoicing and cost tracking.",
+    "Time Rounding: Configure automatic rounding rules for time entries to match billing increments and standards.",
+    "API Access: Integrate with external tools and automate time tracking workflows through REST API endpoints."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

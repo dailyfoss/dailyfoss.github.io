@@ -4,6 +4,8 @@
   "categories": [
     39
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/psviderski/unregistry",
@@ -12,6 +14,21 @@
   "github_stars": "4118",
   "logo": "/icons/unregistry.webp",
   "description": "Unregistry is a self-hosted Docker registry browser that presents images, tags, and metadata from container registries in a user-friendly web interface.",
+  "tagline": null,
+  "features": [
+    "Registry browsing: Browse Docker registry contents through a user-friendly web interface.",
+    "Image listing: View all images stored in your Docker registry with metadata and details.",
+    "Tag management: See all tags for each image with creation dates and sizes.",
+    "Metadata display: View image manifests, layers, and configuration details.",
+    "Search functionality: Search for images and tags across your registry quickly.",
+    "Multi-registry: Connect to multiple Docker registries from a single interface.",
+    "Image details: Inspect image layers, sizes, and digest information for troubleshooting.",
+    "Tag deletion: Delete unused tags to reclaim storage space in your registry.",
+    "Visual interface: Navigate registry contents visually instead of using command-line tools.",
+    "Authentication support: Connect to registries with authentication requirements securely.",
+    "Responsive design: Access registry browser from desktop or mobile devices.",
+    "Read-only mode: Browse registry contents safely without accidental modifications."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

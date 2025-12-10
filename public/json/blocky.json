@@ -4,6 +4,8 @@
   "categories": [
     36
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/0xERR0R/blocky",
@@ -12,6 +14,17 @@
   "github_stars": "5789",
   "logo": "/icons/blocky.webp",
   "description": "Blocky is a fast and lightweight DNS proxy with support for ad blocking, filtering, caching, and customizable blocking strategies. It is ideal for home networks and can be installed within Docker or Kubernetes environments.",
+  "tagline": null,
+  "features": [
+    "DNS Proxy: Fast, lightweight DNS server with advanced features. Network-level control.",
+    "Ad Blocking: Block ads and trackers at the DNS level. Clean browsing.",
+    "Custom Filtering: Create personalized blocking rules and strategies. Tailored protection.",
+    "DNS Caching: Improve performance with intelligent caching. Faster responses.",
+    "Multiple Blocklists: Support for extensive blocklist libraries. Comprehensive blocking.",
+    "Docker Ready: Easy deployment in containerized environments. Simple setup.",
+    "Kubernetes Support: Native integration for K8s deployments. Cloud-native.",
+    "Home Network: Ideal for protecting entire home networks. Family-friendly."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

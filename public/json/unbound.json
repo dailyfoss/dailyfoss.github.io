@@ -4,6 +4,8 @@
   "categories": [
     36
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/NLnetLabs/unbound",
@@ -12,6 +14,21 @@
   "github_stars": "4060",
   "logo": "/icons/unbound.webp",
   "description": "Unbound is a high-performance, validating, caching DNS resolver focused on security and privacy. It runs as a daemon on servers and devices and is configured via files and CLI tools.",
+  "tagline": null,
+  "features": [
+    "Recursive resolver: Resolve DNS queries by querying authoritative servers directly without forwarding.",
+    "DNSSEC validation: Validate DNSSEC signatures to ensure DNS responses are authentic and unmodified.",
+    "Caching: Cache DNS responses to improve performance and reduce query latency for repeated lookups.",
+    "Privacy-focused: Query root servers directly to avoid exposing DNS queries to third-party resolvers.",
+    "High performance: Handle thousands of queries per second with efficient caching and threading.",
+    "Access control: Define which clients can query the resolver using IP-based access lists.",
+    "DNS-over-TLS: Support encrypted DNS queries using DNS-over-TLS for privacy protection.",
+    "Local zones: Define local DNS zones for internal network resolution and custom overrides.",
+    "Forwarding: Optionally forward specific domains to designated DNS servers for split-horizon setups.",
+    "Statistics: Monitor query statistics and cache performance through built-in reporting.",
+    "Lightweight: Run efficiently with minimal memory and CPU usage suitable for embedded devices.",
+    "Configuration files: Configure all settings through text files for version control and automation."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

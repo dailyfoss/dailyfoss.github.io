@@ -4,6 +4,8 @@
   "categories": [
     173
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/louislam/uptime-kuma",
@@ -12,6 +14,21 @@
   "github_stars": "79427",
   "logo": "/icons/uptime-kuma.webp",
   "description": "Uptime Kuma is a self-hosted monitoring and status page solution. It supports HTTP, ping, DNS, and more checks, sending notifications and rendering a beautiful status page for your services.",
+  "tagline": null,
+  "features": [
+    "Multi-protocol monitoring: Monitor HTTP, HTTPS, TCP, ping, DNS, and more with flexible check types.",
+    "Status pages: Create beautiful public or private status pages to communicate service health to users.",
+    "Notifications: Send alerts via 90+ notification channels including email, Slack, Discord, and webhooks.",
+    "Response time tracking: Track and visualize response times with charts showing performance trends.",
+    "Certificate monitoring: Monitor SSL certificate expiration and receive alerts before certificates expire.",
+    "Uptime statistics: View uptime percentages and availability statistics for all monitored services.",
+    "Maintenance windows: Schedule maintenance windows to pause alerts during planned downtime.",
+    "Multi-user: Support multiple users with individual accounts and notification preferences.",
+    "Docker monitoring: Monitor Docker containers and receive alerts when containers stop or fail.",
+    "Keyword monitoring: Check for specific keywords in HTTP responses to verify content correctness.",
+    "Mobile app: Access monitoring dashboard from iOS and Android mobile apps.",
+    "API access: Integrate with other tools using the REST API for custom automation and reporting."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

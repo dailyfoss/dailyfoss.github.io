@@ -4,6 +4,8 @@
   "categories": [
     165
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/kWeglinski/OmniPoly",
@@ -12,6 +14,17 @@
   "github_stars": "95",
   "logo": "/icons/omnipoly.webp",
   "description": "OmniPoly is a self-hosted flashcard and spaced repetition tool with support for image and text content. It includes tagging, review scheduling, and a clean UI for personal study workflows.",
+  "tagline": null,
+  "features": [
+    "Flashcard creation: Build study cards with text and images on both sides for versatile learning materials.",
+    "Spaced repetition: Review cards on an optimized schedule that adapts to your performance for better retention.",
+    "Tag organization: Categorize flashcards with multiple tags to create custom study sets and filter by topic.",
+    "Progress tracking: Monitor review statistics and success rates to identify areas needing more practice.",
+    "Image support: Add diagrams, photos, or illustrations to cards for visual learning and memory association.",
+    "Custom decks: Organize flashcards into separate decks by subject, course, or learning goal for structured study.",
+    "Review scheduling: See upcoming reviews and daily study goals based on the spaced repetition algorithm.",
+    "Self-hosted data: Keep all study materials and progress on your own server for privacy and offline access."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

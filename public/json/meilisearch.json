@@ -4,6 +4,8 @@
   "categories": [
     144
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/meilisearch/meilisearch",
@@ -12,6 +14,21 @@
   "github_stars": "54825",
   "logo": "/icons/meilisearch.webp",
   "description": "Meilisearch is a lightning-fast, open-source search engine with instant results and typo tolerance. It exposes a simple REST API and is designed for simplicity, enabling developers to self-host a search service easily.",
+  "tagline": null,
+  "features": [
+    "Instant search: Return search results in milliseconds with as-you-type search experience.",
+    "Typo tolerance: Automatically handle typos and misspellings to return relevant results.",
+    "Faceted search: Filter results by categories, tags, or custom attributes for refined searching.",
+    "Highlighting: Automatically highlight matching terms in search results for better visibility.",
+    "Ranking rules: Customize result relevance with configurable ranking and sorting criteria.",
+    "Multi-language support: Search across content in multiple languages with language-specific optimizations.",
+    "Synonyms: Define synonym groups to improve search accuracy and user experience.",
+    "Geo-search: Filter and sort results by geographic location with radius-based queries.",
+    "REST API: Simple HTTP API makes integration straightforward for any application.",
+    "Dashboard UI: Built-in web interface for testing searches and managing indexes.",
+    "Tenant isolation: Support multiple indexes with separate data and configurations.",
+    "High performance: Written in Rust for exceptional speed and low resource usage."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

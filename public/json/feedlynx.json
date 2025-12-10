@@ -4,6 +4,8 @@
   "categories": [
     57
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/wezm/feedlynx",
@@ -12,6 +14,17 @@
   "github_stars": "93",
   "logo": "/icons/feedlynx.webp",
   "description": "FeedLynx is a small self-hosted service for subscribing a website’s feed directly into a user’s feed reader via web-based subscriptions. It provides a simple UI and acts as a helper between visitors and feed applications.",
+  "tagline": null,
+  "features": [
+    "Feed Subscription: Web-based feed subscriptions, Simple UI, Direct reader integration. Easy feed discovery.",
+    "Helper Service: Bridge between websites and readers. Seamless subscription flow.",
+    "Self-Hosted: Run your own subscription service. Privacy-focused.",
+    "Visitor-Friendly: One-click feed subscriptions. User-friendly experience.",
+    "Multiple Readers: Support various RSS clients. Universal compatibility.",
+    "Custom Branding: Personalize the interface. Your style.",
+    "Lightweight: Minimal server requirements. Quick deployment.",
+    "Open Protocol: Standard feed formats. Wide support."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

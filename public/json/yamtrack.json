@@ -4,6 +4,8 @@
   "categories": [
     75
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/FuzzyGrim/Yamtrack",
@@ -12,6 +14,21 @@
   "github_stars": "1648",
   "logo": "/icons/yamtrack.webp",
   "description": "Yamtrack is a self-hosted media and activity tracker that logs what you watch, read, or play. It aggregates entries into timelines and statistics, giving a personal overview of consumption habits.",
+  "tagline": null,
+  "features": [
+    "Media logging: Track movies, TV shows, books, games, and other media you consume with manual or automated entries.",
+    "Timeline view: Visualize your consumption history on an interactive timeline showing what you watched or read when.",
+    "Statistics dashboard: View insights about your habits including total hours, favorite genres, and consumption patterns.",
+    "Rating system: Rate and review media items to remember your opinions and discover personal preferences over time.",
+    "Import functionality: Bulk import viewing history from streaming services and reading lists from other platforms.",
+    "Custom categories: Create personalized categories and tags to organize media beyond standard classifications.",
+    "Progress tracking: Monitor ongoing series, books, or games with completion percentages and episode counts.",
+    "Search and filter: Find past entries quickly with powerful search across titles, dates, and custom metadata.",
+    "Export data: Download your complete tracking history in JSON or CSV format for backup or analysis.",
+    "Privacy focused: Keep all consumption data on your own server without sharing with third-party services.",
+    "API integration: Connect with media databases like TMDB or IGDB to automatically fetch metadata and cover art.",
+    "Yearly summaries: Generate annual reports showing your most-watched genres, longest binges, and consumption trends."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     106
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/slskd/slskd",
@@ -12,6 +14,21 @@
   "github_stars": "2357",
   "logo": "/icons/slskd.webp",
   "description": "slskd is a modern self-hosted Soulseek client daemon with a web UI. It allows searching, downloading, and managing peer-to-peer music transfers on headless servers.",
+  "tagline": null,
+  "features": [
+    "Soulseek client: Connects to Soulseek network for peer-to-peer music sharing.",
+    "Web interface: Manages searches and downloads through modern browser-based UI.",
+    "Search functionality: Searches the network for music files by artist, album, or track.",
+    "Download queue: Manages multiple simultaneous downloads with priority controls.",
+    "Upload sharing: Shares your music library with other Soulseek users.",
+    "User browsing: Browses other users' shared files and libraries.",
+    "Wishlist tracking: Monitors searches automatically and downloads when files appear.",
+    "Transfer management: Controls upload and download speeds and connection limits.",
+    "File organization: Automatically organizes downloaded files by artist and album.",
+    "Headless operation: Runs as a daemon on servers without graphical interface.",
+    "API access: Integrates with other tools via REST API for automation.",
+    "Multi-user support: Allows multiple users to access the same instance with separate settings."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

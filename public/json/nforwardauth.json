@@ -4,6 +4,8 @@
   "categories": [
     15
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/nosduco/nforwardauth",
@@ -12,6 +14,21 @@
   "github_stars": "151",
   "logo": "/icons/nforwardauth.webp",
   "description": "nForwardAuth is a self-hosted identity provider and authentication proxy that centralizes login through OAuth2 with routing rules and session forwarding. Designed for protecting internal apps.",
+  "tagline": null,
+  "features": [
+    "OAuth2 authentication: Centralize login using OAuth2 providers like Google, GitHub, or custom IdPs.",
+    "Forward auth proxy: Protect internal applications by intercepting requests and validating sessions.",
+    "Routing rules: Define which applications require authentication and which are publicly accessible.",
+    "Session management: Handle user sessions with secure cookies and token validation.",
+    "SSO experience: Single sign-on across multiple applications with one authentication.",
+    "Access control: Restrict application access based on user groups, roles, or email domains.",
+    "Logout handling: Centralized logout that clears sessions across all protected applications.",
+    "Custom redirects: Configure post-login and post-logout redirect URLs for user flow.",
+    "Header injection: Pass user information to backend applications via HTTP headers.",
+    "Reverse proxy integration: Works with Traefik, Nginx, and other reverse proxies.",
+    "Lightweight design: Minimal resource footprint suitable for edge deployment.",
+    "Self-hosted control: Keep authentication data and user sessions on your own infrastructure."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

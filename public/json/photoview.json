@@ -4,6 +4,8 @@
   "categories": [
     120
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/photoview/photoview",
@@ -12,6 +14,21 @@
   "github_stars": "6269",
   "logo": "/icons/photoview.webp",
   "description": "Photoview is a simple and fast self-hosted photo gallery for personal use. It includes automatic scanning, albums, tag browsing, and supports WebDAV and mobile-friendly interfaces.",
+  "tagline": null,
+  "features": [
+    "Automatic scanning: Continuously monitor directories for new photos and automatically index them.",
+    "Album organization: Create and manage albums with drag-and-drop photo organization.",
+    "Tag browsing: Filter and search photos using EXIF tags, keywords, and custom metadata.",
+    "WebDAV support: Access your photo library through WebDAV for integration with file managers and apps.",
+    "Mobile-friendly: Responsive design optimized for browsing photos on smartphones and tablets.",
+    "Multi-user support: Create separate accounts with individual libraries and sharing permissions.",
+    "Thumbnail generation: Automatically create optimized thumbnails for fast loading and browsing.",
+    "Slideshow mode: View photos in fullscreen slideshow with configurable timing and transitions.",
+    "EXIF data display: View camera settings, location, and technical details for each photo.",
+    "Sharing links: Generate public or password-protected links to share albums with others.",
+    "Fast performance: Optimized database queries and caching ensure quick loading even with large libraries.",
+    "Video playback: Play video files directly in the browser with HTML5 video player support."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     80
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/CaramelFur/Picsur",
@@ -12,6 +14,21 @@
   "github_stars": "1201",
   "logo": "/icons/picsur.webp",
   "description": "Picsur is a self-hosted image hosting service that allows users to upload and manage pictures with expiration, album support, and direct links in a modern interface.",
+  "tagline": null,
+  "features": [
+    "Image hosting: Upload and host images with direct links for embedding in websites and applications.",
+    "Album support: Organize images into albums for better management and sharing.",
+    "Expiration settings: Configure automatic deletion of images after a specified time period.",
+    "User accounts: Create accounts to manage personal image collections and upload history.",
+    "Image optimization: Automatically compress and optimize images to reduce file size and bandwidth.",
+    "Multiple formats: Support for JPEG, PNG, GIF, WebP, and other common image formats.",
+    "Shareable links: Generate permanent or temporary links to share images publicly or privately.",
+    "API access: Upload and manage images programmatically using a RESTful API.",
+    "Thumbnail generation: Automatically create thumbnails for faster loading in galleries and previews.",
+    "Access controls: Set permissions to control who can view, upload, or manage images.",
+    "Storage management: Monitor storage usage and set quotas to prevent excessive disk consumption.",
+    "Embed codes: Generate HTML and Markdown embed codes for easy integration into content."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

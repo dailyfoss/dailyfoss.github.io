@@ -4,6 +4,8 @@
   "categories": [
     135
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/nirui/sshwifty",
@@ -12,6 +14,21 @@
   "github_stars": "2941",
   "logo": "/icons/sshwifty.webp",
   "description": "Sshwifty is a self-hosted SSH and Telnet client running in the browser, allowing secure terminal sessions through a web interface without a traditional client installed.",
+  "tagline": null,
+  "features": [
+    "Browser SSH: Connects to SSH servers directly from web browser.",
+    "Telnet support: Accesses Telnet servers alongside SSH connections.",
+    "Multiple sessions: Opens multiple SSH connections in tabs simultaneously.",
+    "Terminal emulation: Provides full terminal emulation with color and formatting support.",
+    "File transfer: Uploads and downloads files via SFTP in browser.",
+    "Authentication: Supports password, public key, and keyboard-interactive auth.",
+    "Session persistence: Maintains connections across browser refreshes.",
+    "Responsive design: Works on desktop and mobile browsers.",
+    "Clipboard integration: Copies and pastes text between browser and terminal.",
+    "Configurable: Customizes appearance, fonts, and connection settings.",
+    "No plugins: Works without browser plugins or extensions.",
+    "Secure connections: Encrypts all traffic between browser and server."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

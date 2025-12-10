@@ -4,6 +4,8 @@
   "categories": [
     193
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/xwiki/xwiki-platform",
@@ -12,6 +14,21 @@
   "github_stars": "1175",
   "logo": "/icons/xwiki.webp",
   "description": "XWiki is a powerful self-hosted enterprise wiki and knowledge management platform. It supports structured data, scripting, extensions, and fine-grained permissions, and can be deployed on-premises or via hosted services.",
+  "tagline": null,
+  "features": [
+    "Structured content: Create pages with custom data structures using classes and properties for database-like organization.",
+    "Advanced permissions: Control access at page, space, and element levels with user groups and fine-grained rules.",
+    "Extension ecosystem: Install applications and macros from the extension repository to add functionality without coding.",
+    "Scripting support: Embed Velocity, Groovy, and JavaScript code in pages for dynamic content and automation.",
+    "Version control: Track all page changes with full revision history, diff viewing, and rollback capabilities.",
+    "Multi-wiki support: Host multiple independent wikis on a single installation with shared or separate user bases.",
+    "WYSIWYG editor: Edit pages with a visual editor or switch to wiki markup for advanced formatting control.",
+    "Search and indexing: Find content quickly with full-text search across pages, attachments, and metadata.",
+    "Application builder: Create custom applications within the wiki using forms, databases, and templates without external tools.",
+    "LDAP integration: Authenticate users against Active Directory or other LDAP servers for centralized identity management.",
+    "REST API: Access and modify wiki content programmatically for integration with external systems and workflows.",
+    "Notification system: Subscribe to page changes and receive email or in-app notifications for collaborative editing."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

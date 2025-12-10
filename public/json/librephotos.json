@@ -4,6 +4,8 @@
   "categories": [
     120
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/LibrePhotos/librephotos",
@@ -12,6 +14,13 @@
   "github_stars": "7853",
   "logo": "/icons/librephotos.webp",
   "description": "LibrePhotos is a self-hosted photo management platform, similar to Google Photos. It automatically organizes photos using AI, supports face recognition, timelines, tagging, and maps, while protecting user privacy.",
+  "tagline": null,
+  "features": [
+    "AI Organization: Automatic photo tagging, Face recognition, Object detection. Organize photos intelligently.",
+    "Timeline & Maps: Photo timelines, Location mapping, Travel visualization. Browse photos by time and place.",
+    "Privacy-Focused: Self-hosted, No cloud tracking, Full data control. Google Photos alternative you own.",
+    "Search & Filter: Full-text search, Advanced filters, Smart albums. Find any photo instantly."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +34,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

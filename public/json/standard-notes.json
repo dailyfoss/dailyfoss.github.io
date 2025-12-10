@@ -4,6 +4,8 @@
   "categories": [
     111
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/standardnotes/app",
@@ -12,6 +14,21 @@
   "github_stars": "6155",
   "logo": "/icons/standard-notes.webp",
   "description": "Standard Notes is an end-to-end encrypted note-taking app with cross-platform clients and extensible editors. It can sync via official cloud or self-hosted servers for full data ownership.",
+  "tagline": null,
+  "features": [
+    "End-to-end encryption: Encrypts all notes client-side before syncing to server.",
+    "Cross-platform sync: Syncs notes across desktop, mobile, and web applications.",
+    "Rich editors: Extends with editors for Markdown, code, spreadsheets, and more.",
+    "Tag organization: Organizes notes with nested tags and smart filters.",
+    "Version history: Accesses previous versions of notes for recovery and comparison.",
+    "Offline access: Works fully offline with automatic sync when connection returns.",
+    "Themes: Customizes appearance with various themes and color schemes.",
+    "Two-factor auth: Secures account with 2FA for additional protection.",
+    "File attachments: Attaches encrypted files to notes with cloud storage.",
+    "Listed blogging: Publishes notes as blog posts with Listed integration.",
+    "Import tools: Migrates notes from Evernote, Bear, and other apps.",
+    "Self-hosting option: Runs your own sync server for complete data control."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

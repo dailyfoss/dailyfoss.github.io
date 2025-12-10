@@ -4,6 +4,8 @@
   "categories": [
     148
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/MbinOrg/mbin",
@@ -12,6 +14,21 @@
   "github_stars": "362",
   "logo": "/icons/mbin.webp",
   "description": "Mbin is a federated blogging and discussion platform using ActivityPub. It allows multi-topic communities, rich posts, comments, moderation, and federation features similar to Mastodon or Lemmy.",
+  "tagline": null,
+  "features": [
+    "Federated platform: Connect with other ActivityPub instances to share content across the fediverse.",
+    "Multi-topic communities: Create and moderate topic-based communities for focused discussions.",
+    "Rich post format: Share text, links, images, and videos with formatting and embedded media.",
+    "Comment threads: Engage in nested comment discussions with voting and sorting options.",
+    "Moderation tools: Remove content, ban users, and manage community rules with comprehensive mod tools.",
+    "User profiles: Customize profiles with bio, avatar, and view posting history and statistics.",
+    "Voting system: Upvote and downvote posts and comments to surface quality content.",
+    "Subscription management: Follow specific communities or users to curate your content feed.",
+    "Cross-posting: Share content across multiple communities simultaneously.",
+    "Search functionality: Find posts, comments, and communities using full-text search.",
+    "Mobile responsive: Access and participate from any device with responsive web interface.",
+    "API access: Build custom clients or integrations using the ActivityPub-compatible API."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

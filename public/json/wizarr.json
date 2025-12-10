@@ -4,6 +4,8 @@
   "categories": [
     165
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/wizarrrr/wizarr",
@@ -12,6 +14,21 @@
   "github_stars": "2437",
   "logo": "/icons/wizarr.webp",
   "description": "Wizarr is a self-hosted invite management portal for media servers like Jellyfin and Plex. It streamlines onboarding by generating invite links, collecting user details, and provisioning accounts via a friendly web front-end.",
+  "tagline": null,
+  "features": [
+    "Invite generation: Create unique invite links with expiration dates and usage limits for controlled access.",
+    "Media server integration: Connect with Jellyfin, Plex, and Emby to automate user provisioning.",
+    "Custom onboarding: Design welcome pages with instructions, rules, and server information for new users.",
+    "Request management: Review and approve user requests before granting media server access.",
+    "Usage tracking: Monitor invite link usage and see which invites have been claimed.",
+    "Bulk invites: Generate multiple invite codes at once for events or group onboarding.",
+    "User profiles: Collect user information during signup to maintain organized member records.",
+    "Expiration controls: Set time-based or usage-based limits on invites to maintain security.",
+    "Discord integration: Sync with Discord servers to verify membership before granting access.",
+    "Custom branding: Personalize the invite portal with your own logo, colors, and messaging.",
+    "Email notifications: Send automated emails to new users with setup instructions and credentials.",
+    "Analytics dashboard: View statistics on invite usage, user growth, and onboarding completion rates."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

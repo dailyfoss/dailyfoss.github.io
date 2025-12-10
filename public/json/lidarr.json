@@ -4,6 +4,8 @@
   "categories": [
     105
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Lidarr/Lidarr",
@@ -12,6 +14,13 @@
   "github_stars": "4769",
   "logo": "/icons/lidarr.webp",
   "description": "Lidarr is an automated music management and download system. It integrates with download clients and metadata providers to automatically fetch albums or tracks while organizing your local music library.",
+  "tagline": null,
+  "features": [
+    "Music Automation: Automatic album downloads, Artist tracking, Release monitoring. Build your music library automatically.",
+    "Metadata Management: MusicBrainz integration, Album art, Tag editing. Keep music metadata perfect.",
+    "Quality Profiles: Preferred formats, Bitrate selection, Upgrade automation. Get the quality you want.",
+    "Integration: Download client support, Notification services, API access. Connect to your media stack."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +34,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

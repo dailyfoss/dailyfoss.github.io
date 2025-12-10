@@ -4,6 +4,8 @@
   "categories": [
     100
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/ErsatzTV/ErsatzTV",
@@ -12,6 +14,15 @@
   "github_stars": "2318",
   "logo": "/icons/ersatztv.webp",
   "description": "ErsatzTV lets you build pseudo-live TV channels from your local media library. It schedules content into linear streams, outputs via IPTV or other endpoints, and works alongside media servers like Jellyfin or Emby.",
+  "tagline": null,
+  "features": [
+    "Live TV Channels: Create linear streams from local media. Personal TV network.",
+    "Content Scheduling: Program your channels like real TV. Nostalgic viewing experience.",
+    "IPTV Output: Stream to any IPTV-compatible player. Universal compatibility.",
+    "Media Server Integration: Works with Jellyfin, Emby, and Plex. Enhanced media experience.",
+    "Channel Customization: Build themed channels and playlists. Creative programming control.",
+    "Self-Hosted: Run your own TV station. Your content, your schedule."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

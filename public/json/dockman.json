@@ -4,6 +4,8 @@
   "categories": [
     47
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/RA341/dockman",
@@ -12,6 +14,15 @@
   "github_stars": "481",
   "logo": "/icons/dockman.webp",
   "description": "Dockman is a lightweight TUI and CLI tool for managing Docker containers and images. It offers a curses-based interface for viewing logs, stats, and executing commands without a web UI.",
+  "tagline": null,
+  "features": [
+    "Terminal UI: Curses-based interface for Docker management. No web browser needed.",
+    "Lightweight: Minimal resource usage for efficient operation. Perfect for SSH sessions.",
+    "Log Access: View container logs in terminal. Quick troubleshooting.",
+    "Stats Display: Monitor resource usage in real-time. Performance visibility.",
+    "Command Execution: Run commands in containers directly. Full control from terminal.",
+    "CLI-Friendly: Perfect for terminal enthusiasts. Keyboard-driven workflow."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

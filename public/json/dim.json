@@ -4,6 +4,8 @@
   "categories": [
     100
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Dusk-Labs/dim",
@@ -12,6 +14,15 @@
   "github_stars": "4021",
   "logo": "/icons/dim.webp",
   "description": "Dim is an open-source personal media manager designed to organize local media files and tag them with metadata. It includes a responsive web UI and indexing support, tailored for use alongside tools like Jellyfin.",
+  "tagline": null,
+  "features": [
+    "Media Organization: Tag and categorize local media files. Structured library management.",
+    "Metadata Enrichment: Automatic fetching of movie and show information. Beautiful library presentation.",
+    "Responsive UI: Browse your collection on any device. Access media anywhere.",
+    "Jellyfin Integration: Works alongside popular media servers. Enhanced media experience.",
+    "Fast Indexing: Quick scanning of large media libraries. Efficient processing.",
+    "Self-Hosted: Keep your media metadata private. Your collection, your control."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

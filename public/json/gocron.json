@@ -4,6 +4,8 @@
   "categories": [
     158
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/flohoss/gocron",
@@ -12,6 +14,17 @@
   "github_stars": "473",
   "logo": "/icons/gocron.webp",
   "description": "GoCron is a self-hosted cron web UI and API for scheduling jobs. It offers job logs, history, a scheduler interface, and runs as a lightweight web server on local systems.",
+  "tagline": null,
+  "features": [
+    "Web-Based Scheduler: Manage cron jobs through an intuitive web interface instead of crontab files.",
+    "Job History: View execution history, logs, and status for all scheduled tasks.",
+    "Execution Logs: Capture stdout and stderr from job runs for debugging and monitoring.",
+    "Flexible Scheduling: Define schedules using cron syntax or simple interval-based timing.",
+    "Job Management: Create, edit, enable, disable, and delete scheduled jobs from the UI.",
+    "API Access: Programmatically manage jobs via REST API for automation and integration.",
+    "Lightweight Server: Minimal resource requirements suitable for always-on operation.",
+    "Email Notifications: Receive alerts when jobs fail or complete successfully."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

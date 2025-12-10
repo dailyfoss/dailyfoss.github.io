@@ -4,6 +4,8 @@
   "categories": [
     69
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/games-on-whales/wolf",
@@ -12,6 +14,17 @@
   "github_stars": "1434",
   "logo": "/icons/games-on-whales.webp",
   "description": "WOLF (Whales On Linux Framework) orchestrates Docker containers that simulate Windows gaming environments for Linux. It helps automate game installations via Wine or Proton in self-contained sandboxed setups.",
+  "tagline": null,
+  "features": [
+    "Container Orchestration: Automate Docker-based Windows gaming environments with Wine or Proton integration for seamless Linux gameplay.",
+    "Game Streaming: Stream Windows games on Linux without dual-boot using self-contained sandboxed setups.",
+    "Automated Installation: Simplify game deployment with automated Wine or Proton configurations in isolated containers.",
+    "Linux Gaming Framework: Run Windows games natively on Linux through containerized environments with minimal configuration.",
+    "Sandbox Environments: Isolate game installations in Docker containers for clean, reproducible gaming setups.",
+    "Remote Play Support: Enable remote streaming of Windows games from Linux hosts with low-latency performance.",
+    "Proton Integration: Leverage Valve's Proton compatibility layer for enhanced Windows game support on Linux.",
+    "Self-Hosted Gaming: Deploy your own game streaming infrastructure without relying on cloud services."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

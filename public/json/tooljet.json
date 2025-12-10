@@ -4,6 +4,8 @@
   "categories": [
     110
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/ToolJet/ToolJet",
@@ -12,6 +14,21 @@
   "github_stars": "37024",
   "logo": "/icons/tooljet.webp",
   "description": "ToolJet is an open-source low-code platform to build internal apps using a drag-and-drop UI. It connects to databases and APIs, supports role-based access, and can be self-hosted or used as a managed cloud service.",
+  "tagline": null,
+  "features": [
+    "Drag-and-drop builder: Create internal tools using a visual interface without writing extensive code.",
+    "Database connections: Connect to PostgreSQL, MySQL, MongoDB, and other databases for data access.",
+    "API integration: Integrate with REST APIs, GraphQL endpoints, and third-party services seamlessly.",
+    "Pre-built components: Use ready-made UI components like tables, forms, charts, and buttons for rapid development.",
+    "Custom queries: Write SQL, JavaScript, or Python queries to fetch and manipulate data from connected sources.",
+    "Role-based access: Define user roles and permissions to control access to apps and data.",
+    "Workflows: Automate business processes with visual workflow builder and event triggers.",
+    "Mobile responsive: Build apps that work on desktop, tablet, and mobile devices automatically.",
+    "Version control: Track changes to applications with built-in version history and rollback capabilities.",
+    "Collaboration: Work with team members on app development with real-time collaboration features.",
+    "Self-hosted or cloud: Deploy on your infrastructure for full control or use managed cloud for convenience.",
+    "Marketplace: Access pre-built templates and plugins from the community marketplace for faster development."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

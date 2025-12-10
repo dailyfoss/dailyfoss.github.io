@@ -4,6 +4,8 @@
   "categories": [
     152
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/facebook/docusaurus",
@@ -12,6 +14,17 @@
   "github_stars": "62893",
   "logo": "/icons/docusaurus.webp",
   "description": "Docusaurus is a static site generator optimized for documentation websites. It uses Markdown and React to build versioned docs, blogs, and landing pages, and ships with localization, search integrations, and theming for developer documentation portals.",
+  "tagline": null,
+  "features": [
+    "Markdown documentation: Write docs in Markdown with MDX support for embedding React components and interactive elements.",
+    "Version control: Maintain multiple documentation versions simultaneously for different product releases with easy switching.",
+    "Built-in search: Index content automatically with Algolia DocSearch integration for fast, relevant search results.",
+    "Internationalization: Translate documentation into multiple languages with locale-specific routing and content management.",
+    "Blog integration: Publish release notes, tutorials, and updates using the built-in blog with RSS feed generation.",
+    "Custom themes: Modify appearance with CSS variables or create completely custom themes using React components.",
+    "Plugin ecosystem: Extend functionality with community plugins for analytics, sitemap generation, and content processing.",
+    "Fast performance: Generate optimized static sites with code splitting, prefetching, and progressive web app capabilities."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

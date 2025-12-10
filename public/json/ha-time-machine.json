@@ -4,6 +4,8 @@
   "categories": [
     76
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/saihgupr/HomeAssistantTimeMachine",
@@ -12,6 +14,17 @@
   "github_stars": "540",
   "logo": "/icons/ha-time-machine.webp",
   "description": "HomeAssistant Time Machine allows Home Assistant users to view historical states and visualize past configurations of their smart home setup via snapshots. Useful for debugging automations or state changes.",
+  "tagline": null,
+  "features": [
+    "Historical States: View past states of all Home Assistant entities at any point in time.",
+    "Configuration Snapshots: Access previous configurations to understand what changed and when.",
+    "Automation Debugging: Troubleshoot automations by reviewing historical triggers and state changes.",
+    "Timeline Visualization: Navigate through your smart home's history with an intuitive timeline interface.",
+    "State Comparison: Compare entity states across different time periods to identify patterns.",
+    "Backup Analysis: Review configuration backups and restore points with detailed state information.",
+    "Troubleshooting Tool: Diagnose issues by examining exactly what happened during specific incidents.",
+    "Data Retention: Maintain long-term historical data for analysis and debugging purposes."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

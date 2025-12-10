@@ -4,6 +4,8 @@
   "categories": [
     27
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/haiwen/seafile",
@@ -12,6 +14,21 @@
   "github_stars": "14041",
   "logo": "/icons/seafile.webp",
   "description": "Seafile is a self-hosted file sync and share platform with high performance and efficient storage. It supports team collaboration, versioning, and desktop/mobile clients.",
+  "tagline": null,
+  "features": [
+    "File synchronization: Syncs files across devices with efficient delta transfers and conflict resolution.",
+    "Team collaboration: Share libraries with groups for collaborative file management and editing.",
+    "Version control: Tracks file history with snapshots and allows rollback to previous versions.",
+    "End-to-end encryption: Protects sensitive data with client-side encryption for secure storage.",
+    "Desktop clients: Native apps for Windows, macOS, and Linux with selective sync.",
+    "Mobile apps: Access and sync files from iOS and Android devices with offline support.",
+    "Online editing: Edit documents directly in the browser with integrated office suite.",
+    "File locking: Prevents concurrent edits with automatic file locking during modifications.",
+    "Sharing controls: Create public or password-protected links with expiration dates.",
+    "Storage efficiency: Uses block-level deduplication to minimize storage requirements.",
+    "LDAP integration: Connects to existing directory services for centralized user management.",
+    "Audit logs: Tracks file access, modifications, and sharing activities for compliance."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

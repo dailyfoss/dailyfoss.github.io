@@ -4,6 +4,8 @@
   "categories": [
     17
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/ente-io/ente",
@@ -12,6 +14,15 @@
   "github_stars": "23111",
   "logo": "/icons/ente-photos.webp",
   "description": "Ente is an end-to-end encrypted photo and file backup solution with open-source clients. It lets users back up and browse media across devices while keeping encryption keys under their control, and also offers a hosted cloud service.",
+  "tagline": null,
+  "features": [
+    "End-to-End Encryption: Photos encrypted before leaving your device. Zero-knowledge security.",
+    "Cross-Device Sync: Access media on all your devices seamlessly. Synchronized everywhere.",
+    "Open-Source Clients: Transparent, auditable code. Trust through verification.",
+    "Automatic Backup: Never lose precious memories. Continuous protection.",
+    "Key Control: You hold the encryption keys, not us. True privacy guaranteed.",
+    "Self-Hosted Option: Run your own backup server. Complete data sovereignty."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

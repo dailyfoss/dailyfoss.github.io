@@ -4,6 +4,8 @@
   "categories": [
     173
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/kuvasz-uptime/kuvasz",
@@ -12,6 +14,21 @@
   "github_stars": "458",
   "logo": "/icons/kuvasz.webp",
   "description": "Kuvasz is an uptime monitoring and incident notification service. It regularly checks endpoints, records availability metrics and sends alerts when services go down, providing a central dashboard for small to medium infrastructures.",
+  "tagline": null,
+  "features": [
+    "Uptime Monitoring: Regular health checks for endpoints with availability tracking. Monitor service uptime continuously.",
+    "Response Time Tracking: Measure and graph response times for performance monitoring. Identify slow services.",
+    "Incident Detection: Automatic downtime detection with incident creation. Know when services fail.",
+    "Alert Notifications: Email and webhook notifications for downtime events. Get notified immediately.",
+    "Escalation Policies: Configure alert escalation for critical services. Ensure issues are addressed.",
+    "Status Dashboard: Central view of all monitored services and their status. Track infrastructure health.",
+    "Historical Data: View uptime history and incident reports over time. Analyze reliability trends.",
+    "SSL Monitoring: Check SSL certificate validity and expiration dates. Prevent certificate issues.",
+    "Multi-Protocol: Monitor HTTP, HTTPS, TCP, and ICMP endpoints. Support various service types.",
+    "Check Intervals: Configure monitoring frequency per endpoint. Balance accuracy and resource usage.",
+    "Maintenance Windows: Schedule maintenance periods to suppress alerts. Avoid false alarms.",
+    "API Access: Programmatic monitoring management and status queries. Integrate with existing tools."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

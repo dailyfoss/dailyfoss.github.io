@@ -4,6 +4,8 @@
   "categories": [
     100
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/kamilkosek/jellyplist",
@@ -12,6 +14,12 @@
   "github_stars": "377",
   "logo": "/icons/jellyplist.webp",
   "description": "jellyplist is a tool to convert playlists between Jellyfin and other media players or formats. It helps maintain consistent playlists across devices and applications by importing and exporting different playlist standards.",
+  "tagline": null,
+  "features": [
+    "Playlist Conversion: Import from multiple formats, Export to standard types, Jellyfin synchronization. Universal playlist compatibility.",
+    "Format Support: M3U, PLS, XSPF formats, Metadata preservation, Path translation. Handle any playlist standard.",
+    "Sync Management: Cross-device playlists, Automatic updates, Batch operations. Keep your music organized everywhere."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +33,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

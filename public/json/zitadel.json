@@ -4,6 +4,8 @@
   "categories": [
     79
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/zitadel/zitadel",
@@ -12,6 +14,21 @@
   "github_stars": "12338",
   "logo": "/icons/zitadel.webp",
   "description": "Zitadel is a self-hosted identity and access management platform with OpenID Connect and OAuth 2.0 support. It offers multi-tenant projects, roles, and login flows and is available both self-hosted and as a managed cloud service.",
+  "tagline": null,
+  "features": [
+    "Multi-tenancy: Manage multiple organizations and projects with isolated user bases and configurations in one instance.",
+    "OpenID Connect: Implement modern authentication flows with full OIDC support for web and mobile applications.",
+    "OAuth 2.0: Secure API access with standard OAuth flows including authorization code, client credentials, and device flow.",
+    "User management: Create and manage users with customizable profile fields, metadata, and authentication methods.",
+    "Role-based access: Define granular roles and permissions that control access to applications and resources.",
+    "Custom login flows: Configure authentication requirements including MFA, passwordless, and social login per application.",
+    "Branding customization: Personalize login pages, emails, and user interfaces with custom logos, colors, and text.",
+    "Audit logging: Track all authentication events, user actions, and administrative changes for compliance and security.",
+    "API-first design: Manage all aspects of identity and access through comprehensive REST and gRPC APIs.",
+    "Self-service portal: Allow users to manage their profiles, sessions, and security settings through a dedicated interface.",
+    "External identity providers: Integrate with Google, GitHub, Azure AD, and other providers for federated authentication.",
+    "Token management: Issue, validate, and revoke access tokens with configurable expiration and refresh policies."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

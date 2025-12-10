@@ -4,6 +4,8 @@
   "categories": [
     165
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/JonasHiltl/openchangelog",
@@ -12,6 +14,17 @@
   "github_stars": "258",
   "logo": "/icons/openchangelog.webp",
   "description": "OpenChangelog is a web-based tool to track and publish changelogs for software projects. It supports version tagging, team collaboration, and markdown-based entry submissions in a self-hosted UI.",
+  "tagline": null,
+  "features": [
+    "Version tracking: Organize changelog entries by release version with automatic sorting and chronological display.",
+    "Markdown support: Write changelog entries using markdown formatting for rich text and code examples.",
+    "Team collaboration: Allow multiple team members to draft, review, and publish changelog entries together.",
+    "Public pages: Generate shareable changelog pages for users to view product updates and release history.",
+    "Entry categories: Tag changes as features, fixes, improvements, or breaking changes for clear communication.",
+    "Draft management: Save unpublished entries and schedule releases before making them visible to users.",
+    "API integration: Automate changelog updates from CI/CD pipelines or version control systems using REST endpoints.",
+    "Custom branding: Customize the appearance of public changelog pages to match your product's design and identity."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

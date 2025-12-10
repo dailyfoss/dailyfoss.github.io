@@ -4,6 +4,8 @@
   "categories": [
     48
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/ciur/papermerge",
@@ -12,6 +14,18 @@
   "github_stars": "2828",
   "logo": "/icons/papermerge.webp",
   "description": "Papermerge is a document management system designed to scan, classify, and OCR documents, storing them in a searchable, organized structure with tagging and export support.",
+  "tagline": null,
+  "features": [
+    "OCR processing: Automatic optical character recognition converts scanned documents and images into searchable, selectable text",
+    "Document classification: Organize documents into folders and categories with hierarchical structure for logical filing",
+    "Tag management: Apply multiple tags to documents for flexible categorization and cross-referencing across different schemes",
+    "Full-text search: Search across all document content including OCR-extracted text to quickly locate specific information",
+    "Document viewer: Built-in PDF and image viewer with zoom, rotation, and page navigation for reviewing without downloads",
+    "Metadata extraction: Automatically extract and index document metadata including dates, titles, and custom fields",
+    "Export options: Download documents individually or in bulk with original formatting preserved for external use or backup",
+    "User permissions: Control document access with user-level permissions to secure sensitive information in multi-user environments",
+    "Version history: Track document changes over time and restore previous versions when needed for audit trails or error recovery"
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +39,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

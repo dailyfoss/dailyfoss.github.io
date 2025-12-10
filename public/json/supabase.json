@@ -4,6 +4,8 @@
   "categories": [
     121
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/supabase/supabase",
@@ -12,6 +14,21 @@
   "github_stars": "94244",
   "logo": "/icons/supabase.webp",
   "description": "Supabase is an open-source Firebase alternative providing Postgres, authentication, storage, and real-time APIs. It can be self-hosted or used as a fully managed cloud service.",
+  "tagline": null,
+  "features": [
+    "PostgreSQL database: Provides full-featured Postgres with extensions and custom functions.",
+    "Authentication: Built-in user management with email, OAuth, and magic link support.",
+    "Real-time subscriptions: Broadcasts database changes to connected clients instantly.",
+    "Storage API: Manages file uploads with access control and CDN integration.",
+    "Auto-generated APIs: Creates REST and GraphQL APIs automatically from database schema.",
+    "Row-level security: Implements fine-grained access control using Postgres policies.",
+    "Edge functions: Runs serverless TypeScript functions at the edge for custom logic.",
+    "Database migrations: Manages schema changes with version-controlled migrations.",
+    "Dashboard UI: Provides web interface for database management and monitoring.",
+    "Client libraries: Offers SDKs for JavaScript, Python, Dart, and other languages.",
+    "Vector embeddings: Supports pgvector extension for AI and similarity search.",
+    "Backup and restore: Automated backups with point-in-time recovery options."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

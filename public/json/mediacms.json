@@ -4,6 +4,8 @@
   "categories": [
     120
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/mediacms-io/mediacms",
@@ -12,6 +14,21 @@
   "github_stars": "4496",
   "logo": "/icons/mediacms.webp",
   "description": "MediaCMS is an open-source media sharing platform that enables users to upload, transcode, and stream videos and photos. It includes advanced admin controls, metadata, and API, ideal for content hosting.",
+  "tagline": null,
+  "features": [
+    "Video transcoding: Automatically convert uploaded videos to multiple formats and resolutions for streaming.",
+    "Photo management: Upload and organize images with albums, tags, and metadata.",
+    "Streaming server: Deliver video content with adaptive bitrate streaming for optimal playback.",
+    "User management: Support multiple users with profiles, upload quotas, and permission levels.",
+    "Content moderation: Review and approve user uploads before publication with moderation queue.",
+    "Search functionality: Find media by title, description, tags, or uploader using full-text search.",
+    "Embed support: Generate embed codes to share videos on external websites and platforms.",
+    "Comment system: Enable discussions on media with threaded comments and moderation tools.",
+    "Analytics dashboard: Track views, engagement, and popular content with detailed statistics.",
+    "API access: Integrate with external applications using comprehensive REST API.",
+    "Subtitle support: Upload and display subtitles in multiple languages for video content.",
+    "Mobile responsive: Access and upload media from any device with adaptive interface."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

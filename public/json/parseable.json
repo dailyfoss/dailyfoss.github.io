@@ -4,6 +4,8 @@
   "categories": [
     93
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/parseablehq/parseable",
@@ -12,6 +14,19 @@
   "github_stars": "2282",
   "logo": "/icons/parseable.webp",
   "description": "Parseable is an open-source, self-hosted log management system built for low-cost ingestion, querying, and retention. It offers real-time analytics, dashboards, and S3 support.",
+  "tagline": null,
+  "features": [
+    "Log ingestion: High-performance log collection from multiple sources with support for various formats and protocols",
+    "Real-time analytics: Query and analyze logs in real-time with SQL-like syntax for immediate insights into system behavior",
+    "S3 storage: Store logs in S3-compatible object storage for cost-effective, scalable long-term retention",
+    "Custom dashboards: Build visual dashboards with charts and graphs to monitor key metrics and log patterns over time",
+    "Query language: Powerful query syntax enables complex filtering, aggregation, and analysis of log data for troubleshooting",
+    "Low-cost operation: Optimized architecture minimizes storage and compute costs compared to traditional log management solutions",
+    "Retention policies: Configure automatic log retention and deletion rules to manage storage costs and comply with data policies",
+    "API access: RESTful API enables programmatic log ingestion, querying, and integration with external tools and workflows",
+    "Alert configuration: Set up alerts based on log patterns or thresholds to proactively detect and respond to issues",
+    "Multi-tenant support: Isolate logs by tenant or application with separate namespaces for secure multi-team deployments"
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +40,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

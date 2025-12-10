@@ -4,6 +4,8 @@
   "categories": [
     23
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/sabre-io/Baikal",
@@ -12,6 +14,17 @@
   "github_stars": "2961",
   "logo": "/icons/baikal.webp",
   "description": "Baikal is a lightweight CalDAV and CardDAV server that enables users to host their own calendars and contact lists. Ideal for minimal self-hosted setups, it supports syncing with desktop and mobile clients via standard protocols.",
+  "tagline": null,
+  "features": [
+    "CalDAV Server: Host your own calendar server. Independent scheduling.",
+    "CardDAV Support: Manage contacts on your own server. Private address book.",
+    "Calendar Sync: Sync calendars across all devices. Universal access.",
+    "Contact Sync: Keep contacts updated everywhere. Seamless synchronization.",
+    "Lightweight: Minimal resource requirements. Efficient operation.",
+    "Client Compatible: Works with desktop and mobile calendar apps. Universal compatibility.",
+    "Standard Protocols: Uses CalDAV and CardDAV standards. Wide support.",
+    "Self-Hosted: Complete control over your calendar and contacts. Data privacy."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

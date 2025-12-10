@@ -4,6 +4,8 @@
   "categories": [
     72
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "codeberg.org/forgejo/forgejo",
@@ -12,6 +14,19 @@
   "github_stars": null,
   "logo": "/icons/forgejo.webp",
   "description": "Forgejo is a lightweight, self-hosted Git forge forked from Gitea. It enables code hosting, issues, CI, and container registry support with a familiar web interface and a focus on community-driven governance.",
+  "tagline": null,
+  "features": [
+    "Git Hosting: Self-hosted Git forge, Issues and pull requests, CI/CD support. Complete code collaboration platform.",
+    "Container Registry: Built-in package hosting. Integrated workflows.",
+    "Lightweight: Fast and efficient. Minimal resources.",
+    "Community-Driven: Open governance model. Transparent development.",
+    "Gitea Fork: Familiar interface. Easy migration.",
+    "Actions: Built-in CI/CD pipelines. Automated workflows.",
+    "Wiki: Documentation hosting. Knowledge management.",
+    "Organizations: Team collaboration. Project organization.",
+    "Webhooks: Integrate with external tools. Extensible platform.",
+    "API: Full REST API. Automation-ready."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +40,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

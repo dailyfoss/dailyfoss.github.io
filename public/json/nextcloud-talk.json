@@ -4,6 +4,8 @@
   "categories": [
     176
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/nextcloud/spreed",
@@ -12,6 +14,21 @@
   "github_stars": "2033",
   "logo": "/icons/nextcloud-talk.webp",
   "description": "Nextcloud Talk (Spreed) is a self-hosted communication platform with video, audio, chat, screen sharing, and WebRTC infrastructure, integrated directly into the Nextcloud stack.",
+  "tagline": null,
+  "features": [
+    "Video conferencing: Host video calls with multiple participants using WebRTC technology.",
+    "Audio calls: Make voice-only calls for lower bandwidth usage or audio-focused meetings.",
+    "Screen sharing: Share your screen or specific windows with call participants.",
+    "Chat messaging: Send text messages, emojis, and files in conversation threads.",
+    "Group conversations: Create public or private chat rooms for team communication.",
+    "Mobile apps: Native iOS and Android apps for calls and messaging on the go.",
+    "Call recording: Record video meetings for later review or sharing with absent participants.",
+    "Virtual backgrounds: Blur or replace your background during video calls for privacy.",
+    "Breakout rooms: Split large meetings into smaller groups for focused discussions.",
+    "Lobby mode: Control meeting access by admitting participants from a waiting room.",
+    "File sharing: Share Nextcloud files directly in conversations with preview and download.",
+    "Nextcloud integration: Unified authentication and seamless integration with other Nextcloud apps."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

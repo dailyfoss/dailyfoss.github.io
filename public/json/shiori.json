@@ -4,6 +4,8 @@
   "categories": [
     129
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/go-shiori/shiori",
@@ -12,6 +14,21 @@
   "github_stars": "11097",
   "logo": "/icons/shiori.webp",
   "description": "Shiori is a self-hosted bookmark manager inspired by Pocket. It can be used via CLI or web UI, saving pages, snapshots, and tags while providing import/export features.",
+  "tagline": null,
+  "features": [
+    "Bookmark management: Save web pages with titles, descriptions, and tags for organization.",
+    "Page archiving: Creates offline snapshots of bookmarked pages for permanent access.",
+    "Full-text search: Finds bookmarks by searching titles, content, tags, or URLs.",
+    "Tag organization: Categorizes bookmarks with multiple tags for flexible filtering.",
+    "CLI and web UI: Manage bookmarks via command line or modern web interface.",
+    "Import and export: Migrates bookmarks from browsers using standard HTML format.",
+    "Portable storage: Stores all data in a single SQLite database file for easy backup.",
+    "Reader mode: Displays saved pages in clean, distraction-free reading view.",
+    "Multi-user support: Creates separate accounts with individual bookmark collections.",
+    "Browser extensions: Quick-save bookmarks from Chrome and Firefox with official extensions.",
+    "REST API: Automates bookmark management and integrates with other tools.",
+    "Thumbnail generation: Automatically captures page screenshots for visual identification."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

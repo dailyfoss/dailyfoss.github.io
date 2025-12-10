@@ -4,6 +4,8 @@
   "categories": [
     166
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Dictionarry-Hub/profilarr",
@@ -12,6 +14,21 @@
   "github_stars": "1449",
   "logo": "/icons/profilarr.webp",
   "description": "Profilarr is a self-hosted automation tool for managing Plex libraries and related services like Sonarr and Radarr. It allows defining scanning and repair tasks through a web UI.",
+  "tagline": null,
+  "features": [
+    "Library automation: Automate Plex library scanning, maintenance, and optimization tasks.",
+    "Sonarr integration: Connect with Sonarr to manage TV show quality profiles and library organization.",
+    "Radarr integration: Integrate with Radarr for movie quality management and automated upgrades.",
+    "Quality profiles: Define and enforce quality standards across your media library automatically.",
+    "Scheduled tasks: Configure automated scanning, repair, and optimization on custom schedules.",
+    "Web interface: Manage all automation tasks through a clean, intuitive web dashboard.",
+    "Media analysis: Analyze library content for quality issues, missing metadata, and optimization opportunities.",
+    "Upgrade automation: Automatically replace lower-quality media with higher-quality versions when available.",
+    "Notification system: Receive alerts when tasks complete, errors occur, or manual intervention is needed.",
+    "Custom rules: Create custom automation rules based on file size, quality, codec, and other criteria.",
+    "Batch operations: Perform bulk operations on library content for efficient management.",
+    "Activity logging: Track all automation activities with detailed logs for troubleshooting and auditing."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     72
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/go-gitea/gitea",
@@ -12,6 +14,17 @@
   "github_stars": "52372",
   "logo": "/icons/gitea.webp",
   "description": "Gitea is a self-hosted Git service providing code hosting, pull requests, issues, CI, and container registry in a lightweight binary. It offers a polished web UI and runs on modest hardware, ideal for developer teams.",
+  "tagline": null,
+  "features": [
+    "Git Repository Hosting: Host unlimited Git repositories with a polished web interface and Git protocol support.",
+    "Pull Requests: Review code changes with inline comments, approvals, and merge conflict resolution.",
+    "Issue Tracking: Manage bugs and features with labels, milestones, and project boards.",
+    "Built-In CI/CD: Run automated workflows with Gitea Actions compatible with GitHub Actions syntax.",
+    "Container Registry: Host Docker images and OCI containers with integrated package management.",
+    "Lightweight Binary: Single executable with minimal resource requirements runs on modest hardware.",
+    "Organization Management: Create teams, manage permissions, and organize repositories by organization.",
+    "API Access: Comprehensive REST API for automation and integration with external tools."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

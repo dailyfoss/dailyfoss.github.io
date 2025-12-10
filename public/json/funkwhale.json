@@ -4,6 +4,8 @@
   "categories": [
     106
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "dev.funkwhale.audio/funkwhale/funkwhale",
@@ -12,6 +14,19 @@
   "github_stars": null,
   "logo": "/icons/funkwhale.webp",
   "description": "Funkwhale is a self-hosted, federated audio streaming platform for sharing and listening to music. It supports playlists, user uploads, and ActivityPub federation, providing a decentralized alternative to SoundCloud.",
+  "tagline": null,
+  "features": [
+    "Audio Streaming: Self-hosted music platform, Federated sharing, Playlists and uploads. Decentralized SoundCloud alternative.",
+    "ActivityPub: Connect with other instances. Federated network.",
+    "User Uploads: Share your music. Community-driven.",
+    "Privacy-Focused: Own your audio library. No tracking.",
+    "Playlists: Create and share collections. Organized listening.",
+    "Radio Mode: Discover new music. Automated playback.",
+    "Podcasts: Host and stream shows. Versatile platform.",
+    "Mobile Apps: Listen on the go. Full mobile support.",
+    "Import: Upload your library. Easy migration.",
+    "Self-Hosted: Complete control. Data ownership."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +40,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

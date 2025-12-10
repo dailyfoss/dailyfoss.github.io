@@ -4,6 +4,8 @@
   "categories": [
     136
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/skrashevich/double-take",
@@ -12,6 +14,21 @@
   "github_stars": "663",
   "logo": "/icons/double-take.webp",
   "description": "Double Take is a face detection and recognition hub that integrates multiple detection engines with home automation systems. It lets you review captures, confirm faces, and route events to platforms like Home Assistant.",
+  "tagline": null,
+  "features": [
+    "Face Detection: Advanced facial recognition using multiple detection engines for accurate identification.",
+    "Home Automation: Seamless integration with Home Assistant and other smart home platforms for automated responses.",
+    "Multiple Engines: Support for various detection backends including Frigate, DeepStack, and CompreFace.",
+    "Review Interface: Web-based interface to review, confirm, or reject face detection results with training capabilities.",
+    "Real-time Processing: Process camera feeds in real-time with configurable detection sensitivity and thresholds.",
+    "Event Routing: Route detection events to external systems with customizable webhooks and API calls.",
+    "Training System: Improve accuracy by training the system with confirmed positive and negative detections.",
+    "Camera Integration: Connect with multiple IP cameras and video sources for comprehensive monitoring coverage.",
+    "Notification System: Send alerts via email, push notifications, or webhooks when specific faces are detected.",
+    "Privacy Controls: Local processing ensures facial data remains on your own infrastructure without cloud dependencies.",
+    "Statistics Dashboard: View detection statistics, accuracy metrics, and system performance with detailed analytics.",
+    "Backup Management: Export and import training data and configurations for system backup and migration."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

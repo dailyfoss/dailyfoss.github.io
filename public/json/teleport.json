@@ -4,6 +4,8 @@
   "categories": [
     135
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/gravitational/teleport",
@@ -12,6 +14,21 @@
   "github_stars": "19476",
   "logo": "/icons/teleport.webp",
   "description": "Teleport is a self-hosted secure access platform for SSH, Kubernetes, databases, and web apps. It centralizes identity-based access, auditing, and session recording with CLI tooling, web UI, and APIs, and is also available as a cloud service.",
+  "tagline": null,
+  "features": [
+    "Unified access: Provide single sign-on access to SSH servers, Kubernetes clusters, databases, and web applications.",
+    "Identity-based access: Authenticate users with SSO providers like Okta, GitHub, or SAML for centralized identity management.",
+    "Session recording: Record all SSH and Kubernetes sessions for compliance, auditing, and security review.",
+    "Certificate-based auth: Use short-lived certificates instead of static credentials for improved security posture.",
+    "Access requests: Implement approval workflows for privileged access with just-in-time permission elevation.",
+    "Web UI: Access infrastructure resources through a browser-based interface without installing client tools.",
+    "CLI tools: Use command-line tools for SSH, database, and Kubernetes access with seamless authentication.",
+    "Audit logging: Maintain comprehensive audit logs of all access events and administrative actions.",
+    "Role-based access: Define granular roles and permissions to control who can access which resources.",
+    "Database access: Connect to databases securely with automatic credential rotation and session monitoring.",
+    "Kubernetes access: Access Kubernetes clusters with identity-aware authentication and RBAC integration.",
+    "Cloud or self-hosted: Deploy on your infrastructure or use the managed cloud service for simplified operations."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

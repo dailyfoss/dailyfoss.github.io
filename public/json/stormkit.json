@@ -4,6 +4,8 @@
   "categories": [
     121
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/stormkit-io/app-stormkit-io",
@@ -12,6 +14,21 @@
   "github_stars": "97",
   "logo": "/icons/stormkit.webp",
   "description": "Stormkit is a serverless hosting and CI/CD platform for front-end apps with a management dashboard and API. The core service is SaaS; the repo provides app configuration and tooling.",
+  "tagline": null,
+  "features": [
+    "Serverless hosting: Deploys front-end applications to serverless infrastructure.",
+    "Git integration: Connects to GitHub, GitLab, or Bitbucket repositories.",
+    "Automatic deployments: Triggers builds on git push or pull requests.",
+    "Preview environments: Creates temporary environments for each pull request.",
+    "Custom domains: Configures custom domains with automatic SSL certificates.",
+    "Environment variables: Manages secrets and config per environment.",
+    "Build optimization: Optimizes builds for performance and size.",
+    "CDN distribution: Serves static assets via global CDN.",
+    "Analytics: Tracks deployment metrics and visitor statistics.",
+    "Team collaboration: Manages projects with team members and permissions.",
+    "Rollback support: Reverts to previous deployments with one click.",
+    "API access: Automates deployments via REST API."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

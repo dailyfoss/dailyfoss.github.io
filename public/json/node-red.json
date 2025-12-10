@@ -4,6 +4,8 @@
   "categories": [
     16
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/node-red/node-red",
@@ -12,6 +14,21 @@
   "github_stars": "22411",
   "logo": "/icons/node-red.webp",
   "description": "Node-RED is a flow-based programming tool used for wiring IoT devices and APIs together visually. It offers a browser editor and can be deployed self-hosted to automate workflows, events, and integrations.",
+  "tagline": null,
+  "features": [
+    "Flow-based programming: Wire together devices, APIs, and services using a visual drag-and-drop editor.",
+    "Browser-based editor: Design and deploy flows from any device with a web browser.",
+    "Node library: Access thousands of pre-built nodes for protocols, platforms, and services.",
+    "IoT integration: Connect to MQTT, HTTP, WebSockets, and hardware devices for automation.",
+    "Function nodes: Write custom JavaScript code within flows for complex logic and transformations.",
+    "Dashboard creation: Build web-based dashboards with charts, gauges, and controls for monitoring.",
+    "Message routing: Process and route data between nodes with filtering, splitting, and joining.",
+    "Scheduling: Trigger flows on schedules, intervals, or in response to external events.",
+    "Context storage: Persist data across flow executions with flow, global, or node-level context.",
+    "Debugging tools: Monitor message flow, inspect data, and troubleshoot with built-in debug nodes.",
+    "Import/export: Share flows as JSON for version control, backup, or community sharing.",
+    "Extensible: Create custom nodes or install community contributions for specialized functionality."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

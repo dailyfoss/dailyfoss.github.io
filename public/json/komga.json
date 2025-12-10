@@ -4,6 +4,8 @@
   "categories": [
     95
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/gotson/komga",
@@ -12,6 +14,21 @@
   "github_stars": "5646",
   "logo": "/icons/komga.webp",
   "description": "Komga is a self hosted comics and manga server. It organizes libraries, tracks reading progress, supports multiple users and provides a responsive reader interface, similar to what Jellyfin or Plex offer for video.",
+  "tagline": null,
+  "features": [
+    "Comics & Manga Server: Self-hosted digital library for comics, manga, and graphic novels. Your personal comic server.",
+    "Format Support: Read CBZ, CBR, PDF, EPUB, and other comic formats. Support for all common file types.",
+    "Web Reader: Built-in responsive reader with page-by-page and continuous scroll modes. Read on any device.",
+    "Reading Progress: Automatic progress tracking with resume from last page. Never lose your place.",
+    "Library Scanning: Automatic library scanning with series and collection detection. Organize comics effortlessly.",
+    "Metadata Management: Fetch and edit metadata, covers, and series information. Maintain accurate library details.",
+    "Multi-User: Individual user accounts with separate reading progress and preferences. Share library with family.",
+    "OPDS Support: Access library through OPDS-compatible comic readers. Use your preferred reading app.",
+    "Collections: Organize comics into custom collections and reading lists. Curate your reading experience.",
+    "Search & Filter: Advanced search with filters for publishers, genres, and reading status. Find comics quickly.",
+    "API Access: RESTful API for integrations and custom applications. Extend functionality as needed.",
+    "Duplicate Detection: Identify and manage duplicate files in library. Keep library clean and organized."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

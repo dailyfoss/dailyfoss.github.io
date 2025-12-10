@@ -4,6 +4,8 @@
   "categories": [
     117
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/cupcakearmy/cryptgeon",
@@ -12,6 +14,15 @@
   "github_stars": "1285",
   "logo": "/icons/cryptgeon.webp",
   "description": "Cryptgeon is a self-hosted note sharing service focused on encryption and automatic expiration. Users can create messages or files that auto-delete after being viewed, ideal for private link sharing via a temporary UI.",
+  "tagline": null,
+  "features": [
+    "End-to-End Encryption: Messages encrypted before leaving your browser. Zero-knowledge security.",
+    "Auto-Expiration: Notes self-destruct after being read once. Perfect for sensitive data.",
+    "File Sharing: Share encrypted files with automatic deletion. Secure temporary transfers.",
+    "No Registration: Create and share notes without accounts. Instant privacy.",
+    "Time Limits: Set custom expiration times for messages. Control data lifetime.",
+    "Self-Hosted: Run your own secure note service. Complete privacy control."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

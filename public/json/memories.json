@@ -4,6 +4,8 @@
   "categories": [
     120
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/pulsejet/memories",
@@ -12,6 +14,21 @@
   "github_stars": "3652",
   "logo": "/icons/memories.webp",
   "description": "Memories is a self-hosted photo and video backup tool with web UI for media browsing. It supports deduplication, metadata, face and object recognition while syncing from multiple devices.",
+  "tagline": null,
+  "features": [
+    "Photo backup: Automatically sync photos and videos from mobile devices to your server.",
+    "Face recognition: Identify and group photos by detected faces for easy person-based browsing.",
+    "Object detection: Automatically tag photos with detected objects, scenes, and activities.",
+    "Timeline view: Browse your photo collection chronologically with smooth infinite scrolling.",
+    "Album organization: Create and manage albums to group related photos and videos.",
+    "Metadata extraction: Read and display EXIF data including location, camera settings, and timestamps.",
+    "Deduplication: Automatically detect and handle duplicate photos to save storage space.",
+    "Map view: View photos on a map based on GPS coordinates from image metadata.",
+    "Search functionality: Find photos by date, location, people, or detected objects.",
+    "Sharing: Generate secure links to share albums or individual photos with others.",
+    "Mobile apps: Access your photo library from iOS and Android devices with native apps.",
+    "Video support: Store and stream videos with thumbnail generation and playback controls."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

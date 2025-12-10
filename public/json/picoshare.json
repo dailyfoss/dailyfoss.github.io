@@ -4,6 +4,8 @@
   "categories": [
     61
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/mtlynch/picoshare",
@@ -12,6 +14,21 @@
   "github_stars": "2767",
   "logo": "/icons/picoshare.webp",
   "description": "PicoShare is a self-hosted file sharing app designed for minimal configuration. It supports drag-and-drop uploads, shareable links, and expiration controls with a clean UI.",
+  "tagline": null,
+  "features": [
+    "Drag-and-drop uploads: Upload files by dragging them into the browser for quick sharing.",
+    "Shareable links: Generate unique URLs for each uploaded file to share with others.",
+    "Expiration controls: Set automatic expiration dates for shared files to limit access duration.",
+    "Password protection: Secure file links with passwords to restrict access to authorized users.",
+    "Download tracking: Monitor how many times files have been downloaded and by whom.",
+    "File management: View, organize, and delete uploaded files through a clean web interface.",
+    "Storage limits: Configure maximum file sizes and total storage quotas per user or globally.",
+    "Guest uploads: Allow anonymous users to upload files without creating accounts.",
+    "Minimal configuration: Deploy with sensible defaults requiring little to no setup.",
+    "API access: Programmatically upload and manage files using a simple REST API.",
+    "Custom branding: Personalize the interface with custom logos and color schemes.",
+    "Access logs: Track file access and uploads with detailed logging for security and auditing."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

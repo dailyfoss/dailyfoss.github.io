@@ -4,6 +4,8 @@
   "categories": [
     88
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/WeblateOrg/weblate",
@@ -12,6 +14,21 @@
   "github_stars": "5582",
   "logo": "/icons/weblate.webp",
   "description": "Weblate is a self-hosted continuous localization platform for translating software and websites. It integrates with Git, offers translation editors, and can also be used as a hosted service.",
+  "tagline": null,
+  "features": [
+    "Translation management: Coordinate software and website translations across multiple languages in one platform.",
+    "Git integration: Sync directly with Git repositories to keep translations in version control alongside code.",
+    "Translation memory: Reuse previous translations automatically to maintain consistency and speed up work.",
+    "Machine translation: Leverage services like Google Translate, DeepL, or Microsoft Translator for initial drafts.",
+    "Quality checks: Automatically detect translation issues like missing placeholders, formatting errors, or inconsistencies.",
+    "Glossary support: Maintain terminology glossaries to ensure consistent translation of technical terms.",
+    "Collaborative workflow: Enable multiple translators to work simultaneously with conflict resolution and review processes.",
+    "Context information: Provide translators with screenshots, source code context, and comments for accurate translations.",
+    "API access: Automate translation workflows and integrate with CI/CD pipelines using the REST API.",
+    "Format support: Handle various file formats including PO, JSON, XLIFF, Android XML, iOS strings, and more.",
+    "Translation statistics: Track progress with detailed metrics showing completion rates per language and component.",
+    "Access control: Define translator roles and permissions to control who can translate or review specific projects."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     34
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/caddymanager/caddymanager",
@@ -12,6 +14,15 @@
   "github_stars": "756",
   "logo": "/icons/caddymanager.webp",
   "description": "CaddyManager is a GUI-based dashboard for managing Caddy web servers. It visualizes configurations, enables site deployment, SSL settings, and reverse proxy control through a friendly interface without editing plain configs.",
+  "tagline": null,
+  "features": [
+    "GUI Management: Visual dashboard for Caddy server configuration. No config files needed.",
+    "Site Deployment: Deploy websites through friendly interface. Point and click.",
+    "SSL Settings: Manage SSL certificates visually. Easy security.",
+    "Reverse Proxy: Configure reverse proxies without editing configs. Visual setup.",
+    "Configuration Visualization: See your Caddy setup at a glance. Clear overview.",
+    "User-Friendly: Manage Caddy without command line expertise. Accessible to all."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

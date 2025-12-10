@@ -4,6 +4,8 @@
   "categories": [
     135
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/m1k1o/neko",
@@ -12,6 +14,21 @@
   "github_stars": "16101",
   "logo": "/icons/neko.webp",
   "description": "Neko is a self-hosted virtual browser running in Docker. It streams browser sessions as video to clients over WebRTC, making it ideal for collaboration, testing, or remote browsing with shared access.",
+  "tagline": null,
+  "features": [
+    "Virtual browser streaming: Run browsers in Docker containers and stream sessions via WebRTC to multiple users.",
+    "Shared control: Multiple users can view and control the same browser session simultaneously.",
+    "Multiple browser support: Choose from Firefox, Chromium, or other browsers for different use cases.",
+    "Low latency: WebRTC technology provides near-instant response times for interactive browsing.",
+    "Access control: Manage who can view or control sessions with user permissions and locks.",
+    "File upload/download: Transfer files between local machines and the virtual browser environment.",
+    "Clipboard sync: Copy and paste content between local system and remote browser session.",
+    "Audio streaming: Share browser audio with all connected users in real-time.",
+    "Session persistence: Keep browser state and tabs alive between user connections.",
+    "Collaborative testing: Test websites together with team members in a shared environment.",
+    "Privacy isolation: Browse from a containerized environment separate from your main system.",
+    "Custom resolutions: Adjust virtual display size to match different device viewports for testing."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

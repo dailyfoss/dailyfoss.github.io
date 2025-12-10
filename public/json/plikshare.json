@@ -4,6 +4,8 @@
   "categories": [
     61
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/damian-krychowski/plikshare",
@@ -12,6 +14,21 @@
   "github_stars": "86",
   "logo": "/icons/plikshare.webp",
   "description": "PlikShare is a self-hosted file sharing and upload system with expiration, public links, and optional password protection. It’s designed for simplicity and speed.",
+  "tagline": null,
+  "features": [
+    "File uploads: Upload files through web interface with drag-and-drop support.",
+    "Expiration settings: Set automatic expiration times for uploaded files to manage storage.",
+    "Password protection: Secure file links with passwords to restrict access to authorized users.",
+    "Public links: Generate shareable URLs for easy file distribution to others.",
+    "Download tracking: Monitor how many times files have been downloaded.",
+    "File management: View, organize, and delete uploaded files through the web interface.",
+    "Storage quotas: Configure maximum file sizes and total storage limits per user.",
+    "Guest uploads: Allow anonymous file uploads without requiring user accounts.",
+    "Multiple file upload: Upload multiple files simultaneously for efficient sharing.",
+    "API access: Programmatically upload and manage files using REST API endpoints.",
+    "Custom branding: Personalize the interface with logos and custom styling.",
+    "Access logs: Track file access and upload activity for security and auditing."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

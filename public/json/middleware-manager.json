@@ -4,6 +4,8 @@
   "categories": [
     146
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/hhftechnology/middleware-manager",
@@ -12,6 +14,17 @@
   "github_stars": "391",
   "logo": "/icons/middleware-manager.webp",
   "description": "Middleware Manager is a self-hosted control panel for managing and monitoring middleware services in distributed environments. It offers a dashboard, logs, and integration with Kubernetes and cloud providers.",
+  "tagline": null,
+  "features": [
+    "Service dashboard: Monitor health, status, and performance of middleware components across distributed infrastructure.",
+    "Log aggregation: Collect and search logs from multiple services in a centralized interface for faster debugging.",
+    "Configuration management: Update service settings and environment variables without direct server access or restarts.",
+    "Kubernetes integration: Deploy and manage middleware on K8s clusters with automated health checks and scaling.",
+    "Cloud provider support: Connect to AWS, Azure, and GCP to manage services across hybrid and multi-cloud environments.",
+    "Alert notifications: Receive warnings about service failures, resource limits, or performance degradation via email or webhooks.",
+    "Deployment history: Track configuration changes and rollbacks with audit logs showing who made changes and when.",
+    "API endpoints: Automate management tasks and integrate with CI/CD pipelines using REST API for programmatic control."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

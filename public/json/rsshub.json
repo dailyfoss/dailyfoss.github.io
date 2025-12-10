@@ -4,6 +4,8 @@
   "categories": [
     57
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/DIYgod/RSSHub",
@@ -12,6 +14,21 @@
   "github_stars": "40240",
   "logo": "/icons/rsshub.webp",
   "description": "RSSHub is a powerful self-hosted RSS generator that fetches content from virtually any site using custom scrapers. It offers modular routes and integrations for personalized feed tracking.",
+  "tagline": null,
+  "features": [
+    "Universal feed generation: Create RSS feeds from thousands of websites using custom routes.",
+    "Modular architecture: Add new feed sources by writing simple route modules.",
+    "Social media support: Generate feeds from Twitter, Instagram, Reddit, and other platforms.",
+    "News aggregation: Follow news sites, blogs, and publications without native RSS.",
+    "Content extraction: Parse and clean article content for distraction-free reading.",
+    "Multimedia feeds: Track YouTube channels, podcasts, and video platforms.",
+    "E-commerce monitoring: Follow product updates and price changes on shopping sites.",
+    "Developer tools: Track GitHub releases, commits, and issues via RSS.",
+    "Caching system: Store generated feeds to improve performance and reduce scraping load.",
+    "Authentication support: Access feeds from sites requiring login credentials.",
+    "Custom parameters: Filter and customize feeds using URL query parameters.",
+    "API documentation: Browse comprehensive docs for all available routes and options."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

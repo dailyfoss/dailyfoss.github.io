@@ -4,6 +4,8 @@
   "categories": [
     112
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/rcourtman/Pulse",
@@ -12,6 +14,21 @@
   "github_stars": "3010",
   "logo": "/icons/pulse.webp",
   "description": "Pulse is a self-hosted status dashboard that shows the uptime and current status of various services. It includes configurable checks, notifications, and a lightweight UI.",
+  "tagline": null,
+  "features": [
+    "Service monitoring: Track uptime and availability of websites, APIs, and network services.",
+    "Status dashboard: Display current status of all monitored services in a clean, public-facing interface.",
+    "Configurable checks: Set up HTTP, TCP, ping, and custom checks with flexible intervals and timeouts.",
+    "Notification alerts: Receive notifications via email, Slack, or webhooks when services go down.",
+    "Incident history: View historical uptime data and incident timelines for all monitored services.",
+    "Response time tracking: Monitor and graph response times to identify performance degradation.",
+    "Multi-location checks: Verify service availability from multiple geographic locations.",
+    "Maintenance windows: Schedule maintenance periods to suppress alerts during planned downtime.",
+    "Public status page: Share service status with users through a customizable public page.",
+    "SSL certificate monitoring: Track SSL certificate expiration and receive alerts before renewal.",
+    "Lightweight design: Minimal resource usage suitable for monitoring dozens of services.",
+    "API access: Programmatically manage monitors and retrieve status data via REST API."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

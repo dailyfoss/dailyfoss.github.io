@@ -4,6 +4,8 @@
   "categories": [
     59
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/TheNickOfTime/handbrake-web",
@@ -12,6 +14,17 @@
   "github_stars": "558",
   "logo": "/icons/handbrake-web.webp",
   "description": "Handbrake-Web is a web-based UI for the HandBrake video transcoder, allowing users to queue conversions, set presets, and manage encoding jobs without the desktop GUI.",
+  "tagline": null,
+  "features": [
+    "Web Interface: Browser-based control, No desktop app needed, Remote access. Transcode from anywhere.",
+    "Queue Management: Batch processing, Priority ordering, Progress tracking. Handle multiple files.",
+    "Presets: Built-in profiles, Custom settings, Device optimization. Perfect output every time.",
+    "Format Support: MP4, MKV, WebM, Multiple codecs. Convert anything.",
+    "Quality Control: Bitrate settings, Resolution options, Compression levels. Fine-tune output.",
+    "Hardware Acceleration: GPU encoding, Faster processing, Efficient transcoding. Save time.",
+    "Monitoring: Real-time progress, ETA display, Resource usage. Stay informed.",
+    "Scheduling: Automated jobs, Folder watching, Batch operations. Set and forget."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

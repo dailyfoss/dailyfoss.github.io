@@ -4,6 +4,8 @@
   "categories": [
     96
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/mayanayza/netvisor",
@@ -12,6 +14,21 @@
   "github_stars": "2148",
   "logo": "/icons/netvisor.webp",
   "description": "NetVisor is a self-hosted network visualization and analytics tool that provides charts and insights into network activity, bandwidth usage, and device behavior with a beautiful UI.",
+  "tagline": null,
+  "features": [
+    "Network visualization: Interactive charts and graphs display network activity and traffic patterns.",
+    "Bandwidth monitoring: Track data usage by device, protocol, or time period for capacity planning.",
+    "Device analytics: View detailed statistics for each connected device including traffic and connections.",
+    "Traffic analysis: Identify bandwidth-heavy applications and services consuming network resources.",
+    "Historical data: Store and review network metrics over time to identify trends and anomalies.",
+    "Beautiful UI: Modern, intuitive interface makes complex network data easy to understand.",
+    "Real-time updates: Live dashboards refresh automatically to show current network state.",
+    "Protocol breakdown: See traffic distribution across HTTP, HTTPS, DNS, and other protocols.",
+    "Top talkers: Identify devices or services generating the most network traffic.",
+    "Custom time ranges: Analyze network behavior over specific periods from hours to months.",
+    "Export reports: Generate network usage reports for documentation or billing purposes.",
+    "Lightweight deployment: Minimal resource requirements suitable for running on network edge devices."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

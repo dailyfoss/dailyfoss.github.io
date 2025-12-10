@@ -4,6 +4,8 @@
   "categories": [
     61
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Drop-OSS/drop",
@@ -12,6 +14,17 @@
   "github_stars": "548",
   "logo": "/icons/drop.webp",
   "description": "Drop is a minimalist, self-hosted file sharing service that allows drag-and-drop uploads and generates shareable links. It focuses on simplicity and speed, making it a handy replacement for generic file-drop services.",
+  "tagline": null,
+  "features": [
+    "Drag-and-drop upload: Share files by dragging them into the browser window for instant upload without forms.",
+    "Shareable links: Generate unique URLs for each uploaded file that can be shared with others for download.",
+    "Expiration options: Set automatic deletion times for files to ensure temporary shares don't persist indefinitely.",
+    "No registration: Upload and share files without creating accounts or providing personal information.",
+    "File preview: View images and text files directly in the browser before downloading to verify content.",
+    "Upload limits: Configure maximum file sizes and storage quotas to control resource usage on your server.",
+    "Clean interface: Focus on file sharing with a minimal design that loads quickly and works on all devices.",
+    "Self-hosted privacy: Keep uploaded files on your own infrastructure without relying on third-party services."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     166
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/jaypyles/Scraperr",
@@ -12,6 +14,21 @@
   "github_stars": "4746",
   "logo": "/icons/scraperr.webp",
   "description": "Scraperr is a self-hosted metadata fetcher for Plex, Kodi, and Jellyfin that uses various APIs to enrich posters, summaries, and metadata in media libraries.",
+  "tagline": null,
+  "features": [
+    "Multi-platform support: Enriches metadata for Plex, Kodi, Jellyfin, and Emby libraries.",
+    "Poster collections: Downloads and organizes posters, backdrops, and artwork from multiple sources.",
+    "Automated scanning: Monitors library changes and updates metadata automatically.",
+    "Custom templates: Apply custom naming and organization templates for consistent metadata.",
+    "Quality filtering: Selects highest quality images based on resolution and aspect ratio.",
+    "API aggregation: Combines data from TMDB, TVDB, OMDb, and Fanart.tv for comprehensive metadata.",
+    "Missing content detection: Identifies media files with incomplete or missing metadata.",
+    "Web interface: Manage scraping jobs and review metadata through a modern web UI.",
+    "Selective scraping: Choose specific libraries, folders, or items to update.",
+    "Metadata backup: Preserves existing metadata before updates for easy rollback.",
+    "Performance tuning: Configurable rate limiting and concurrent requests to respect API quotas.",
+    "Statistics dashboard: View scraping progress, success rates, and library coverage metrics."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

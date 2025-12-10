@@ -4,6 +4,8 @@
   "categories": [
     166
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Jackett/Jackett",
@@ -12,6 +14,12 @@
   "github_stars": "14445",
   "logo": "/icons/jackett.webp",
   "description": "Jackett acts as a proxy between torrent indexers and apps like Sonarr or Radarr. It translates queries into many tracker specific formats, providing a single unified API so self hosted media automation stacks can search dozens of sources.",
+  "tagline": null,
+  "features": [
+    "Indexer Proxy: Unified API for torrent trackers, Multi-source search, Automation integration. Connect dozens of indexers to your media stack.",
+    "Query Translation: Convert searches to tracker formats, Standardized responses, Cross-platform compatibility. One API for all trackers.",
+    "Media Automation: Sonarr and Radarr integration, Automatic downloads, Release monitoring. Streamline your media workflow."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +33,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

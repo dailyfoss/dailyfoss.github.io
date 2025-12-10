@@ -4,6 +4,8 @@
   "categories": [
     91
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/oppiliappan/lurker",
@@ -12,6 +14,17 @@
   "github_stars": "280",
   "logo": "/icons/lurker.webp",
   "description": "Lurker monitors files and directories for changes and executes shell commands, scripts, or hooks. It’s ideal for build pipelines, development workflows, or automated tasks triggered by file system events.",
+  "tagline": null,
+  "features": [
+    "File Monitoring: Watch files and directories, Detect changes, Real-time notifications. Monitor file system events.",
+    "Command Execution: Run shell commands, Execute scripts, Custom hooks. Automate tasks on file changes.",
+    "Pattern Matching: Glob patterns, File filters, Selective monitoring. Watch only what matters.",
+    "Build Automation: Trigger builds, Run tests, Deploy changes. Automate development workflows.",
+    "Lightweight: Minimal resource usage, Fast response, Efficient monitoring. Simple file watcher tool.",
+    "Configuration: YAML config, Multiple watchers, Custom rules. Flexible monitoring setup.",
+    "Cross-Platform: Linux, macOS, Windows support. Works on any operating system.",
+    "Development Tool: Hot reload, Auto-compile, Test automation. Essential for development pipelines."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

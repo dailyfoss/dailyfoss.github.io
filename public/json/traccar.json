@@ -4,6 +4,8 @@
   "categories": [
     92
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/traccar/traccar",
@@ -12,6 +14,21 @@
   "github_stars": "6705",
   "logo": "/icons/traccar.webp",
   "description": "Traccar is a self-hosted GPS tracking platform that collects location data from various devices and mobile apps. It features real-time map views, alerts, and reports via a rich web UI and mobile-friendly tools, plus a hosted cloud option.",
+  "tagline": null,
+  "features": [
+    "Real-time tracking: View device locations on interactive maps with live updates and position history.",
+    "Multi-device support: Track hundreds of different GPS device models and mobile apps simultaneously.",
+    "Geofencing: Define geographic boundaries and receive alerts when devices enter or exit zones.",
+    "Reports: Generate detailed reports on trips, stops, mileage, and device activity for any time period.",
+    "Alerts: Set up notifications for speeding, geofence violations, device offline, and other events.",
+    "Mobile apps: Track devices using official Android and iOS apps that report location to your server.",
+    "Route playback: Replay historical routes with timeline controls to review past trips and movements.",
+    "Multi-user: Support multiple users with individual permissions and device access controls.",
+    "Web interface: Access tracking features through a modern, responsive web interface from any browser.",
+    "API access: Integrate tracking data into other applications using the comprehensive REST API.",
+    "Computed attributes: Calculate custom values like fuel consumption or engine hours from device data.",
+    "Cloud or self-hosted: Choose between self-hosting for privacy or using the managed cloud service."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

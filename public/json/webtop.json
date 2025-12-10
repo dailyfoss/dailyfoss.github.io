@@ -4,6 +4,8 @@
   "categories": [
     43
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/linuxserver/docker-webtop",
@@ -12,6 +14,21 @@
   "github_stars": "3714",
   "logo": "/icons/webtop.webp",
   "description": "docker-webtop provides a full Linux desktop environment in a browser via a Docker container. It’s ideal for remote GUI access, development environments, or lightweight workstation use.",
+  "tagline": null,
+  "features": [
+    "Full desktop environment: Access a complete Linux desktop with KDE, XFCE, or other desktop environments in your browser.",
+    "Application support: Run GUI applications including browsers, IDEs, office suites, and development tools.",
+    "Persistent storage: Save files and settings that persist across container restarts for continuous workflows.",
+    "Multi-user access: Create isolated desktop environments for multiple users with separate configurations.",
+    "Copy-paste support: Transfer text and data between your local machine and the remote desktop seamlessly.",
+    "Audio support: Stream audio from desktop applications to your browser for multimedia applications.",
+    "File transfer: Upload and download files between your local system and the remote desktop environment.",
+    "Custom resolution: Adjust desktop resolution dynamically to match your browser window or display preferences.",
+    "Keyboard mapping: Use your local keyboard layout with proper key mapping for international users.",
+    "Clipboard sync: Synchronize clipboard content between local and remote environments for productivity.",
+    "Resource isolation: Run resource-intensive applications in containers without affecting your host system.",
+    "Quick deployment: Launch a full desktop environment in seconds using Docker with minimal configuration."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     145
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/HydroshieldMKII/Guardian",
@@ -12,6 +14,17 @@
   "github_stars": "109",
   "logo": "/icons/guardian.webp",
   "description": "Guardian is a self-hosted web dashboard for monitoring Docker containers and system metrics. It provides a clean UI for viewing container state, logs, and resource usage in real-time.",
+  "tagline": null,
+  "features": [
+    "Container Monitoring: Track Docker container status, health, and resource consumption in real-time.",
+    "Log Viewing: Access container logs directly from the web interface for troubleshooting.",
+    "Resource Metrics: Monitor CPU, memory, and network usage for each running container.",
+    "Container Management: Start, stop, restart, and remove containers from the dashboard.",
+    "System Overview: View host system metrics alongside container statistics.",
+    "Clean Interface: Simple, intuitive dashboard focused on essential container information.",
+    "Real-Time Updates: Automatic refresh of container status and metrics without page reload.",
+    "Lightweight Deployment: Minimal overhead suitable for running alongside monitored containers."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

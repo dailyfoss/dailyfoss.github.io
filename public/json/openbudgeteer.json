@@ -4,6 +4,8 @@
   "categories": [
     22
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/TheAxelander/OpenBudgeteer",
@@ -12,6 +14,17 @@
   "github_stars": "895",
   "logo": "/icons/openbudgeteer.webp",
   "description": "OpenBudgeteer is a self-hosted personal budgeting tool inspired by YNAB. It allows managing envelopes, categories, and expenses across months using a clean, responsive interface.",
+  "tagline": null,
+  "features": [
+    "Envelope budgeting: Allocate income to spending categories using zero-based budgeting principles for better control.",
+    "Transaction import: Upload bank statements in CSV format for automatic categorization and reconciliation.",
+    "Monthly planning: Set budget amounts for each category and track spending progress throughout the month.",
+    "Category management: Create custom spending groups and subcategories to match your financial structure.",
+    "Responsive design: Access your budget from desktop or mobile browsers with an interface that adapts to screen size.",
+    "Multi-account support: Track checking, savings, and credit accounts separately while maintaining unified budget categories.",
+    "Reporting tools: View spending trends, category breakdowns, and historical comparisons to understand financial patterns.",
+    "Data ownership: Keep all financial information on your own server without sharing with third-party services."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

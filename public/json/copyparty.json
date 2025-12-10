@@ -4,6 +4,8 @@
   "categories": [
     61
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/9001/copyparty",
@@ -12,6 +14,15 @@
   "github_stars": "38701",
   "logo": "/icons/copyparty.webp",
   "description": "Copyparty is a self-hosted file server that combines SFTP-like features with web-based uploads, browsing, and file management without dependencies. It is lightweight, supports drag-and-drop, and has built-in media players.",
+  "tagline": null,
+  "features": [
+    "Web File Server: Upload and download files through browser interface. No client software needed.",
+    "Drag-and-Drop: Intuitive file uploads with drag-and-drop support. Effortless file sharing.",
+    "Media Players: Built-in audio and video players for streaming. Preview files instantly.",
+    "Zero Dependencies: Single binary with no external requirements. Deploy in seconds.",
+    "SFTP-Like Features: Advanced file management through web interface. Power user friendly.",
+    "Lightweight: Minimal resource usage for efficient operation. Perfect for any server."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

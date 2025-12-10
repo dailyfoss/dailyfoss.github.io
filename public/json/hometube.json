@@ -4,6 +4,8 @@
   "categories": [
     106
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/EgalitarianMonkey/hometube",
@@ -12,6 +14,17 @@
   "github_stars": "486",
   "logo": "/icons/hometube.webp",
   "description": "Hometube is a self hosted YouTube like interface for watching local video files. It scans directories, generates thumbnails and presents videos in a responsive grid, making a private streaming front end for your media library.",
+  "tagline": null,
+  "features": [
+    "YouTube-Style Interface: Browse local videos with a familiar, grid-based layout.",
+    "Automatic Scanning: Scan directories and automatically index video files.",
+    "Thumbnail Generation: Create video thumbnails for visual browsing experience.",
+    "Responsive Grid: Adaptive layout that works on desktop, tablet, and mobile devices.",
+    "Video Playback: Stream videos directly in the browser with HTML5 player.",
+    "Metadata Display: Show video duration, file size, and other information.",
+    "Search Functionality: Find videos quickly by filename or metadata.",
+    "Private Streaming: Host your own video platform without uploading to public services."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

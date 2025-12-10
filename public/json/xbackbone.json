@@ -4,6 +4,8 @@
   "categories": [
     61
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/sergix44/XBackBone",
@@ -12,6 +14,21 @@
   "github_stars": "1102",
   "logo": "/icons/xbackbone.webp",
   "description": "XBackBone is a self-hosted file hosting and sharing platform with short links, drag-and-drop uploads, multi-user support, and integrations with share clients and screenshot tools.",
+  "tagline": null,
+  "features": [
+    "Drag-and-drop uploads: Upload files directly from your browser with intuitive drag-and-drop functionality for quick sharing.",
+    "Short link generation: Automatically create shortened URLs for uploaded files to simplify sharing and tracking.",
+    "Multi-user support: Manage multiple user accounts with individual storage quotas and permission controls.",
+    "Screenshot tool integration: Connect with ShareX, Flameshot, and other screenshot utilities for instant uploads.",
+    "Custom upload clients: Use built-in API support to integrate with third-party upload clients and automation tools.",
+    "Storage management: Monitor disk usage, set file retention policies, and manage uploaded content through an admin dashboard.",
+    "Public and private sharing: Control file visibility with public links or password-protected private shares.",
+    "Media preview: View images, videos, and documents directly in the browser without downloading.",
+    "Upload history: Track all uploads with timestamps, file sizes, and access statistics for each user.",
+    "API access: Programmatically upload and manage files using a RESTful API for automation workflows.",
+    "Theme customization: Personalize the interface with custom themes and branding options.",
+    "LDAP authentication: Integrate with existing directory services for centralized user management."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

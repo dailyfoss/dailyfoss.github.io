@@ -4,6 +4,8 @@
   "categories": [
     103
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/google/cadvisor",
@@ -12,6 +14,15 @@
   "github_stars": "18629",
   "logo": "/icons/cadvisor.webp",
   "description": "cAdvisor (Container Advisor) provides insights into running containers’ resource usage and performance. It helps admins monitor CPU, memory, and process metrics in real time, and integrates with Prometheus and Grafana.",
+  "tagline": null,
+  "features": [
+    "Container Monitoring: Real-time insights into container resource usage. Complete visibility.",
+    "Performance Metrics: Track CPU, memory, network, and disk usage. Comprehensive monitoring.",
+    "Prometheus Integration: Export metrics to Prometheus for long-term storage. Powerful analytics.",
+    "Grafana Compatible: Visualize metrics with Grafana dashboards. Beautiful graphs.",
+    "Real-Time Data: Live performance monitoring of running containers. Instant insights.",
+    "Google-Developed: Trusted tool from Google for container monitoring. Industry standard."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

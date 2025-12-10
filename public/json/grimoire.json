@@ -4,6 +4,8 @@
   "categories": [
     111
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/goniszewski/grimoire",
@@ -12,6 +14,17 @@
   "github_stars": "2671",
   "logo": "/icons/grimoire.webp",
   "description": "Grimoire is a self-hosted note-taking and wiki platform for medieval or fantasy-style digital journaling. It supports markdown, tagging, linking, and timelines through a storytelling-oriented interface.",
+  "tagline": null,
+  "features": [
+    "Bookmark Management: Save and organize web bookmarks with tags, descriptions, and full-text search.",
+    "Link Archiving: Automatically capture webpage snapshots to preserve content even if originals disappear.",
+    "Tag Organization: Categorize bookmarks with flexible tagging system for easy retrieval.",
+    "Full-Text Search: Search through bookmark titles, descriptions, and archived page content.",
+    "Browser Extensions: Save bookmarks directly from your browser with dedicated extensions.",
+    "Import/Export: Migrate bookmarks from browsers or other bookmark managers via standard formats.",
+    "Sharing Options: Share bookmark collections publicly or with specific users.",
+    "Self-Hosted Privacy: Keep your browsing history and bookmarks on your own infrastructure."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     146
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/rundeck/rundeck",
@@ -12,6 +14,21 @@
   "github_stars": "5954",
   "logo": "/icons/rundeck.webp",
   "description": "Rundeck is a self-hosted automation platform for operations and DevOps teams. It provides scheduling, orchestration, and access control for running jobs and workflows via UI or API.",
+  "tagline": null,
+  "features": [
+    "Job scheduling: Run automated tasks on schedules or triggers across infrastructure.",
+    "Workflow orchestration: Chain multiple commands and scripts into complex workflows.",
+    "Node management: Execute jobs across multiple servers from a central interface.",
+    "Access control: Define who can run, view, or modify jobs using role-based permissions.",
+    "Web UI: Create and manage jobs through an intuitive browser-based interface.",
+    "API integration: Trigger jobs and retrieve results programmatically via REST API.",
+    "Execution history: View logs and results from all previous job runs.",
+    "Notification system: Send alerts to Slack, email, or webhooks when jobs complete or fail.",
+    "Plugin architecture: Extend functionality with community or custom plugins.",
+    "SSH execution: Run commands on remote servers using SSH without manual login.",
+    "Variable support: Pass parameters to jobs for flexible, reusable automation.",
+    "Audit logging: Track who ran which jobs and when for compliance and troubleshooting."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

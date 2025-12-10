@@ -4,6 +4,8 @@
   "categories": [
     157
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/nextcloud/forms",
@@ -12,6 +14,21 @@
   "github_stars": "354",
   "logo": "/icons/nextcloud-forms.webp",
   "description": "Nextcloud Forms is a privacy-friendly alternative to Google Forms. It allows creating custom forms, sharing links, and collecting responses, fully integrated into self-hosted Nextcloud.",
+  "tagline": null,
+  "features": [
+    "Form builder: Create custom forms with multiple question types including text, multiple choice, and dropdowns.",
+    "Anonymous responses: Collect submissions without requiring user authentication for public surveys.",
+    "Response collection: Gather and organize form submissions with timestamps and user information.",
+    "Export results: Download responses as CSV or Excel files for analysis and reporting.",
+    "Question logic: Show or hide questions based on previous answers for dynamic forms.",
+    "Required fields: Mark questions as mandatory to ensure complete submissions.",
+    "Shareable links: Generate public URLs for forms that can be shared via email or social media.",
+    "Response limits: Set submission deadlines or maximum response counts to close forms automatically.",
+    "Privacy-focused: All data stays on your Nextcloud server with no third-party tracking.",
+    "Nextcloud integration: Access forms directly from Nextcloud interface with unified user management.",
+    "Real-time updates: View new responses as they arrive without refreshing the page.",
+    "Form templates: Save and reuse form structures for recurring surveys or feedback collection."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     34
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/gethomepage/homepage",
@@ -12,6 +14,17 @@
   "github_stars": "27096",
   "logo": "/icons/homepage.webp",
   "description": "Homepage is a customizable, YAML driven dashboard for homelab services. It supports widgets for system stats, media libraries, monitoring tools and dynamic service discovery, serving as a central control panel for your infrastructure.",
+  "tagline": null,
+  "features": [
+    "YAML Configuration: Define your entire dashboard layout and services in simple YAML files.",
+    "Service Widgets: Display real-time data from Sonarr, Radarr, Plex, and 100+ other services.",
+    "Docker Integration: Automatically discover and monitor Docker containers on your system.",
+    "System Stats: Show CPU, memory, disk usage, and network statistics.",
+    "Kubernetes Support: Monitor pods, deployments, and cluster resources.",
+    "Custom API Widgets: Create widgets for any service with a REST API.",
+    "Bookmarks: Organize frequently accessed links in customizable bookmark groups.",
+    "Search Integration: Add search bars for Google, DuckDuckGo, or custom search engines."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

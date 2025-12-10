@@ -4,6 +4,8 @@
   "categories": [
     84
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/inventree/InvenTree",
@@ -12,6 +14,17 @@
   "github_stars": "6078",
   "logo": "/icons/inventree.webp",
   "description": "InvenTree is an open source inventory management system for manufacturing and electronics projects. It tracks parts, stock, suppliers, builds and BOMs, with granular locations and a modern web UI suited for labs, makerspaces and small companies.",
+  "tagline": null,
+  "features": [
+    "Parts Management: Track components, assemblies, and finished products with detailed specifications.",
+    "Stock Control: Monitor inventory levels across multiple locations with low-stock alerts.",
+    "BOM Management: Create and manage bill of materials for assemblies and products.",
+    "Supplier Integration: Track suppliers, purchase orders, and pricing information.",
+    "Build Orders: Manage production builds with material allocation and tracking.",
+    "Location Tracking: Organize inventory across warehouses, shelves, and bins.",
+    "Barcode Support: Generate and scan barcodes for efficient inventory operations.",
+    "API Access: Integrate with other systems using comprehensive REST API."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

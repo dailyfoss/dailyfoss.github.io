@@ -4,6 +4,8 @@
   "categories": [
     60
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/diskoverdata/diskover-community",
@@ -12,6 +14,15 @@
   "github_stars": "1722",
   "logo": "/icons/diskover.webp",
   "description": "Diskover is a web-based file system indexer and analytics tool used to scan storage, categorize data, and visualize usage patterns. It’s popular in media production and enterprise environments for optimizing data storage.",
+  "tagline": null,
+  "features": [
+    "Storage Analytics: Visualize disk usage patterns and trends. Understand your data.",
+    "File System Indexing: Fast scanning of large storage systems. Comprehensive file discovery.",
+    "Data Categorization: Automatically classify files by type and age. Organized insights.",
+    "Usage Optimization: Identify wasted space and old files. Reclaim storage efficiently.",
+    "Enterprise-Ready: Built for media production and large environments. Scales to petabytes.",
+    "Self-Hosted: Keep storage analytics data private. Your files, your insights."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

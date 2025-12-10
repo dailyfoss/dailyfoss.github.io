@@ -4,6 +4,8 @@
   "categories": [
     47
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/GhostWriters/DockSTARTer",
@@ -12,6 +14,15 @@
   "github_stars": "2496",
   "logo": "/icons/dockstarter.webp",
   "description": "DockSTARTer helps users get started with home server apps by automating the configuration of Docker containers using templates. It supports media servers, automation tools, and is ideal for beginner self-hosters.",
+  "tagline": null,
+  "features": [
+    "Automated Setup: Configure home server apps automatically. Beginner-friendly deployment.",
+    "Template Library: Pre-configured containers for popular apps. Quick stack building.",
+    "Media Server Focus: Perfect for Plex, Sonarr, Radarr, and more. Complete media stack.",
+    "Guided Configuration: Step-by-step setup process. Easy for newcomers.",
+    "Best Practices: Implements recommended configurations. Optimized deployments.",
+    "Self-Hosted: Build your home server with confidence. Simplified self-hosting."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

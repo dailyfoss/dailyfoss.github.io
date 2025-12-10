@@ -4,6 +4,8 @@
   "categories": [
     91
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/RoastSlav/quickdrop",
@@ -12,6 +14,21 @@
   "github_stars": "326",
   "logo": "/icons/quickdrop.webp",
   "description": "QuickDrop is a self-hosted file sharing app optimized for dropping large files across devices over local network or public access. It has a straightforward UI and supports drag-and-drop transfers.",
+  "tagline": null,
+  "features": [
+    "Drag-and-drop uploads: Transfer files by dragging them into the browser window for instant sharing.",
+    "Large file support: Handle multi-gigabyte files without size restrictions or compression.",
+    "Local network optimization: Transfer files at full LAN speeds between devices on the same network.",
+    "Public access mode: Generate shareable links for external recipients to download files securely.",
+    "No registration required: Start sharing files immediately without creating accounts or profiles.",
+    "Mobile friendly: Upload and download files from smartphones and tablets with a touch-optimized interface.",
+    "Temporary storage: Set automatic expiration times for shared files to manage disk space.",
+    "Direct downloads: Recipients download files directly without intermediate upload services or redirects.",
+    "Progress tracking: Monitor upload and download progress with real-time speed and time estimates.",
+    "Multiple file selection: Share entire folders or multiple files in a single transfer session.",
+    "Password protection: Secure shared files with optional passwords to restrict access.",
+    "Self-hosted control: Maintain complete ownership of your data without relying on third-party services."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

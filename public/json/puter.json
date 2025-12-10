@@ -4,6 +4,8 @@
   "categories": [
     34
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/HeyPuter/puter",
@@ -12,6 +14,21 @@
   "github_stars": "37652",
   "logo": "/icons/puter.webp",
   "description": "Puter is a self-hosted browser-based desktop environment that simulates a full operating system in the browser. It includes a virtual file system, apps, terminal, desktop, and multi-user support.",
+  "tagline": null,
+  "features": [
+    "Browser-based desktop: Access a full desktop environment through any web browser without installation.",
+    "Virtual file system: Store and organize files in a cloud-like file system with folders and permissions.",
+    "Built-in applications: Use pre-installed apps including text editor, terminal, file manager, and media player.",
+    "Terminal access: Execute commands in a web-based terminal with support for common Unix utilities.",
+    "Multi-user support: Create separate user accounts with isolated environments and file storage.",
+    "App marketplace: Install additional applications and tools from a curated marketplace.",
+    "File sharing: Share files and folders with other users or generate public download links.",
+    "Drag-and-drop interface: Manage files and windows with familiar desktop interactions.",
+    "Customizable desktop: Personalize wallpapers, themes, and desktop layouts to match preferences.",
+    "Real-time collaboration: Work on files simultaneously with other users in shared workspaces.",
+    "API access: Build custom applications that integrate with the Puter environment and file system.",
+    "Mobile responsive: Access your desktop environment from tablets and smartphones with touch optimization."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

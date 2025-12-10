@@ -4,6 +4,8 @@
   "categories": [
     103
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/SonarSource/sonarqube",
@@ -12,6 +14,21 @@
   "github_stars": "10085",
   "logo": "/icons/sonarqube.webp",
   "description": "SonarQube is a code quality and security analysis platform. It scans codebases for bugs, vulnerabilities, and code smells, presenting dashboards, trends, and gating rules for CI pipelines.",
+  "tagline": null,
+  "features": [
+    "Code quality analysis: Scans code for bugs, vulnerabilities, and code smells.",
+    "Security scanning: Detects security vulnerabilities and injection flaws.",
+    "Multi-language support: Analyzes 30+ programming languages including Java, C#, Python, and JavaScript.",
+    "Quality gates: Enforces quality standards by blocking builds that don't meet criteria.",
+    "Technical debt tracking: Calculates and visualizes technical debt across projects.",
+    "Code coverage: Integrates with test coverage tools to track test completeness.",
+    "Duplicate detection: Identifies duplicated code blocks for refactoring opportunities.",
+    "CI/CD integration: Connects with Jenkins, GitLab CI, GitHub Actions, and other pipelines.",
+    "Historical trends: Displays code quality evolution over time with charts.",
+    "Pull request decoration: Comments on PRs with quality issues and metrics.",
+    "Custom rules: Creates organization-specific quality rules and profiles.",
+    "Portfolio management: Organizes and compares quality across multiple projects."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     145
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/crowdsecurity/crowdsec",
@@ -12,6 +14,15 @@
   "github_stars": "11768",
   "logo": "/icons/crowdsec.webp",
   "description": "CrowdSec is a collaborative, open-source security engine that detects and blocks malicious traffic. It uses behavior-based detection and shares threat intelligence with the community while enabling self-hosted deployment.",
+  "tagline": null,
+  "features": [
+    "Behavior Detection: Identify threats based on patterns, not signatures. Catch new attacks.",
+    "Collaborative Security: Share threat intelligence with global community. Stronger together.",
+    "Automatic Blocking: Stop malicious traffic before it reaches services. Proactive protection.",
+    "Multi-Service Support: Protect web servers, SSH, databases, and more. Universal security.",
+    "Bouncer System: Deploy countermeasures across firewalls and proxies. Flexible defense.",
+    "Self-Hosted: Keep security data and decisions under your control. Privacy-focused protection."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

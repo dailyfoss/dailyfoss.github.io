@@ -4,6 +4,8 @@
   "categories": [
     186
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/msgbyte/tianji",
@@ -12,6 +14,21 @@
   "github_stars": "2851",
   "logo": "/icons/tianji.webp",
   "description": "Tianji is a self-hosted website analytics and monitoring platform focused on privacy. It tracks visits, referrers, uptime, and performance, presenting insights in a modern, lightweight dashboard.",
+  "tagline": null,
+  "features": [
+    "Website analytics: Track page views, visitors, and referrers without cookies or invasive tracking methods.",
+    "Uptime monitoring: Monitor website and service availability with configurable check intervals and alerting.",
+    "Performance tracking: Measure page load times and performance metrics to identify optimization opportunities.",
+    "Privacy-focused: Collect analytics data without personal information or tracking individual users across sessions.",
+    "Real-time dashboard: View current visitor activity and system status in a live-updating dashboard.",
+    "Custom events: Track custom events and conversions to measure specific user actions and goals.",
+    "Multiple sites: Monitor multiple websites and services from a single installation with separate dashboards.",
+    "Lightweight script: Use a minimal tracking script that doesn't impact page load performance.",
+    "Alerts: Receive notifications when monitored services go down or performance degrades.",
+    "Historical data: Access historical analytics and uptime data to identify trends and patterns over time.",
+    "Geographic insights: View visitor locations and traffic sources without compromising individual privacy.",
+    "API access: Integrate analytics data into other tools using the REST API for custom reporting."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

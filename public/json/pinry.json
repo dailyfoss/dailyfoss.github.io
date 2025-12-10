@@ -4,6 +4,8 @@
   "categories": [
     80
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/pinry/pinry",
@@ -12,6 +14,21 @@
   "github_stars": "3292",
   "logo": "/icons/pinry.webp",
   "description": "Pinry is a self-hosted image pinboard app similar to Pinterest. It includes tagging, boards, and user profiles, ideal for organizing image collections or inspiration boards.",
+  "tagline": null,
+  "features": [
+    "Image pinning: Save images from the web or upload directly to create visual collections.",
+    "Board organization: Create boards to organize pins by theme, project, or category.",
+    "Tag system: Apply tags to pins for additional categorization and searchability.",
+    "User profiles: Customize profiles with avatars, bios, and public pin collections.",
+    "Social features: Follow other users, like pins, and discover content from the community.",
+    "Browser bookmarklet: Pin images from any website using a simple bookmarklet tool.",
+    "Grid layout: Display pins in a responsive masonry grid that adapts to different screen sizes.",
+    "Search functionality: Find pins by tags, descriptions, or board names across all collections.",
+    "Privacy controls: Set boards as public or private to control who can view your pins.",
+    "Image metadata: Automatically extract and display image dimensions, source URLs, and descriptions.",
+    "Multi-user support: Host a pinboard for multiple users with individual accounts and collections.",
+    "API access: Programmatically create and manage pins using a RESTful API."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

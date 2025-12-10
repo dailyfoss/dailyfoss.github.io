@@ -4,6 +4,8 @@
   "categories": [
     62
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/AkashRajpurohit/git-sync",
@@ -12,6 +14,17 @@
   "github_stars": "649",
   "logo": "/icons/git-sync.webp",
   "description": "Git-Sync is a CLI tool that schedules and automates synchronization between local directories and Git repositories. It works well for backups, content syncing, and versioning lightweight deployments.",
+  "tagline": null,
+  "features": [
+    "Directory Synchronization: Automatically sync local directories to Git repositories for version control.",
+    "Scheduled Automation: Configure automatic sync intervals to keep repositories up to date.",
+    "Version Control Integration: Leverage Git's versioning for file history and rollback capabilities.",
+    "Conflict Resolution: Handle file conflicts with configurable merge strategies.",
+    "Selective Syncing: Choose specific files or directories to include or exclude from synchronization.",
+    "Lightweight Deployment: Minimal resource usage suitable for continuous background operation.",
+    "Content Versioning: Track changes to configuration files, documents, and other content over time.",
+    "Backup Strategy: Use Git remotes as backup destinations for important local files."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

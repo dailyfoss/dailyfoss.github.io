@@ -4,6 +4,8 @@
   "categories": [
     37
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/grafana/grafana",
@@ -12,6 +14,17 @@
   "github_stars": "71154",
   "logo": "/icons/grafana.webp",
   "description": "Grafana is a powerful data visualization and dashboarding platform that integrates with various data sources. It allows teams to build and share dashboards, alerts, and monitoring views. Available for self-hosting or managed cloud.",
+  "tagline": null,
+  "features": [
+    "Data Visualization: Create interactive dashboards with charts, graphs, and custom visualizations.",
+    "Multi-Source Support: Connect to Prometheus, InfluxDB, Elasticsearch, MySQL, PostgreSQL, and dozens of other data sources.",
+    "Alerting System: Configure alerts with multiple notification channels including email, Slack, and PagerDuty.",
+    "Dashboard Sharing: Share dashboards with teams, export as JSON, or embed in other applications.",
+    "Plugin Ecosystem: Extend functionality with community and commercial plugins for data sources and panels.",
+    "Query Builder: Visual query editor and support for native query languages for each data source.",
+    "User Management: Role-based access control with teams, organizations, and folder permissions.",
+    "Cloud or Self-Hosted: Choose between managed Grafana Cloud or self-hosted deployment."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

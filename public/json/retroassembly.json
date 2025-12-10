@@ -4,6 +4,8 @@
   "categories": [
     89
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/arianrhodsandlot/retroassembly",
@@ -12,6 +14,21 @@
   "github_stars": "642",
   "logo": "/icons/retroassembly.webp",
   "description": "RetroAssembly is a self-hosted web-based IDE for writing assembly programs. It supports syntax highlighting, debugging, and multi-platform code support in a retro-style UI.",
+  "tagline": null,
+  "features": [
+    "Web-based IDE: Write and edit assembly code directly in your browser without local tools.",
+    "Syntax highlighting: Color-coded assembly instructions for improved readability.",
+    "Multi-architecture support: Write code for x86, ARM, MIPS, and other processor architectures.",
+    "Real-time assembly: See machine code output as you type assembly instructions.",
+    "Debugging tools: Step through code execution and inspect register values.",
+    "Code examples: Learn from built-in examples demonstrating common assembly patterns.",
+    "Export functionality: Download assembled binaries or hex dumps for use elsewhere.",
+    "Retro aesthetics: Enjoy a nostalgic terminal-style interface reminiscent of classic computers.",
+    "Keyboard shortcuts: Navigate and edit code efficiently with customizable hotkeys.",
+    "Error highlighting: Identify syntax errors and invalid instructions immediately.",
+    "Register visualization: Monitor CPU register states during code execution.",
+    "Shareable links: Share code snippets with others via URLs for collaboration or teaching."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

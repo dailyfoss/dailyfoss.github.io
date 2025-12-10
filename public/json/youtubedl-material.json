@@ -4,6 +4,8 @@
   "categories": [
     100
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Tzahi12345/YoutubeDL-Material",
@@ -12,6 +14,21 @@
   "github_stars": "3095",
   "logo": "/icons/youtubedl-material.webp",
   "description": "YoutubeDL-Material is a self-hosted web front-end for yt-dlp/youtube-dl. It lets users queue, download, and manage videos and audio from many sites, storing them in organized folders with metadata.",
+  "tagline": null,
+  "features": [
+    "Web interface: Download videos and audio from YouTube and hundreds of other sites through a modern browser UI.",
+    "Queue management: Add multiple URLs to a download queue and process them sequentially or in parallel.",
+    "Format selection: Choose video quality, audio-only downloads, or specific formats before starting downloads.",
+    "Subscription system: Subscribe to channels and playlists to automatically download new content as it's published.",
+    "Archive mode: Track previously downloaded videos to avoid duplicates when monitoring channels.",
+    "Metadata organization: Store videos with proper filenames, thumbnails, and metadata in organized folder structures.",
+    "User accounts: Create multiple users with individual download histories, subscriptions, and storage quotas.",
+    "Download history: Review all past downloads with search, filtering, and re-download capabilities.",
+    "Audio extraction: Download audio-only files in MP3, M4A, or other formats for music and podcast archiving.",
+    "Playlist support: Download entire playlists or channels with a single URL and automatic indexing.",
+    "Custom arguments: Pass advanced yt-dlp arguments for specialized download scenarios and edge cases.",
+    "API access: Trigger downloads programmatically using REST API endpoints for automation and integrations."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

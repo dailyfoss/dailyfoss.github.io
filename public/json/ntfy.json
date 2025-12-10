@@ -4,6 +4,8 @@
   "categories": [
     112
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/binwiederhier/ntfy",
@@ -12,6 +14,21 @@
   "github_stars": "27607",
   "logo": "/icons/ntfy.webp",
   "description": "ntfy is a self-hosted notification system that lets you send push notifications via HTTP or CLI without registration. It supports web UI, mobile clients, and topics for real-time messaging.",
+  "tagline": null,
+  "features": [
+    "Simple notifications: Send push notifications via HTTP PUT/POST without registration or API keys.",
+    "Topic-based: Subscribe to topics to receive notifications without user accounts.",
+    "Multi-platform: Web UI, Android, iOS apps, and CLI for receiving notifications anywhere.",
+    "Instant delivery: Real-time push notifications using HTTP streaming or WebSockets.",
+    "Attachments: Send images, files, or links with notifications for rich content.",
+    "Priority levels: Set notification urgency from silent to critical with custom sounds.",
+    "Scheduled delivery: Delay notifications to send at specific times or after intervals.",
+    "Action buttons: Add clickable buttons to notifications for quick actions or links.",
+    "Email notifications: Receive notifications via email as fallback or preference.",
+    "Access control: Protect topics with passwords or tokens for private notifications.",
+    "Self-hosted or public: Run your own server or use the public ntfy.sh service.",
+    "No dependencies: Single binary deployment with built-in web server and storage."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

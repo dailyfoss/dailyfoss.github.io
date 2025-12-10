@@ -4,6 +4,8 @@
   "categories": [
     106
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/btahir/next-beats",
@@ -12,6 +14,21 @@
   "github_stars": "148",
   "logo": "/icons/nextbeats.webp",
   "description": "Next-Beats is a self-hosted collaborative DJ platform with virtual decks and live mixing capabilities. It’s designed for real-time music collaboration over the web.",
+  "tagline": null,
+  "features": [
+    "Virtual DJ decks: Dual deck interface for mixing and beatmatching tracks in real-time.",
+    "Real-time collaboration: Multiple users can DJ together with synchronized playback and controls.",
+    "Audio library: Upload and organize music tracks for mixing sessions.",
+    "Crossfader control: Smooth transitions between tracks with adjustable crossfade curves.",
+    "BPM detection: Automatic tempo analysis helps match beats between tracks.",
+    "Waveform display: Visual representation of audio helps identify breaks, drops, and transitions.",
+    "Cue points: Set markers in tracks for quick navigation and precise mixing.",
+    "Effects processing: Apply filters, delays, and other effects to enhance mixes.",
+    "Live streaming: Broadcast DJ sessions to listeners via web audio streaming.",
+    "Session recording: Capture mixes for playback, sharing, or archival purposes.",
+    "Web-based interface: No software installation required, works in any modern browser.",
+    "Low latency: Optimized audio engine provides responsive controls for live mixing."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

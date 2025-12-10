@@ -4,6 +4,8 @@
   "categories": [
     193
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/requarks/wiki",
@@ -12,6 +14,21 @@
   "github_stars": "27431",
   "logo": "/icons/wiki-js.webp",
   "description": "Wiki.js is a modern, self-hosted wiki platform with a rich editor, authentication, search, and versioning. It supports multiple backends, integrations, and themes, and can be self-hosted or used via commercial cloud hosting.",
+  "tagline": null,
+  "features": [
+    "Rich editor: Create content with a powerful WYSIWYG editor, markdown, or code editor based on preference.",
+    "Authentication options: Support multiple authentication methods including LDAP, OAuth, SAML, and local accounts.",
+    "Search engine: Find content instantly with powerful full-text search powered by Elasticsearch or database search.",
+    "Version control: Track all page changes with Git integration for complete revision history and rollback capability.",
+    "Multi-language: Create content in multiple languages with automatic language detection and switching.",
+    "Asset management: Upload and organize images, documents, and media files with a built-in asset manager.",
+    "Access control: Define granular permissions controlling who can read, write, or manage specific pages or sections.",
+    "Themes and customization: Choose from multiple themes or create custom designs to match your brand.",
+    "API access: Integrate with other systems using the GraphQL API for automation and custom integrations.",
+    "Storage backends: Store content in PostgreSQL, MySQL, SQLite, or SQL Server based on your infrastructure.",
+    "Module system: Extend functionality with authentication modules, storage engines, and rendering engines.",
+    "Analytics integration: Track page views and user engagement with built-in analytics or external services."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

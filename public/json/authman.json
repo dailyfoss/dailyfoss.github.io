@@ -4,6 +4,8 @@
   "categories": [
     79
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/simular/authman-server",
@@ -12,6 +14,17 @@
   "github_stars": "8",
   "logo": "/icons/authman.webp",
   "description": "AuthMan is a lightweight identity management service that offers user provisioning, login, and SSO features. It is built for self-hosting and includes API endpoints and minimal web UI for administration.",
+  "tagline": null,
+  "features": [
+    "Identity Management: Lightweight user provisioning and management. Simple IAM.",
+    "SSO Features: Single sign-on for your applications. Unified access.",
+    "User Provisioning: Create and manage user accounts centrally. Streamlined administration.",
+    "API Endpoints: Programmatic access for integrations. Developer-friendly.",
+    "Web Administration: Minimal UI for user management. Clean interface.",
+    "Login Service: Centralized authentication for apps. Consistent security.",
+    "Self-Hosted: Run your own identity service. Complete control.",
+    "Lightweight: Minimal resource requirements. Efficient operation."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

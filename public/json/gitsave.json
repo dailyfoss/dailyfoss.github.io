@@ -4,6 +4,8 @@
   "categories": [
     62
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/TimWitzdam/GitSave",
@@ -12,6 +14,17 @@
   "github_stars": "270",
   "logo": "/icons/gitsave.webp",
   "description": "GitSave automates backing up Git repositories using Python, allowing users to sync or archive their repos on defined schedules. It’s CLI-based, lightweight, and integrates easily into cron jobs or CI systems.",
+  "tagline": null,
+  "features": [
+    "Automated Backups: Schedule automatic backups of Git repositories to protect against data loss.",
+    "Repository Syncing: Sync multiple repositories on defined schedules with configurable intervals.",
+    "CLI-Based Tool: Lightweight Python script for easy integration into cron jobs or CI systems.",
+    "Multiple Remotes: Back up to multiple remote locations for redundancy and disaster recovery.",
+    "Incremental Backups: Efficient backup process using Git's native incremental capabilities.",
+    "Configuration Files: Define backup targets and schedules through simple configuration files.",
+    "Logging and Monitoring: Track backup success and failures with detailed logging output.",
+    "Cross-Platform: Works on Linux, macOS, and Windows with minimal dependencies."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

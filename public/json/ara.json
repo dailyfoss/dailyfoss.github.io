@@ -4,6 +4,8 @@
   "categories": [
     114
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/ansible-community/ara",
@@ -12,6 +14,15 @@
   "github_stars": "1974",
   "logo": "/icons/ara.webp",
   "description": "ARA Records Ansible is a reporting and visualization tool that records Ansible playbooks’ results and displays them on a dashboard or API for easier analysis and tracking.",
+  "tagline": null,
+  "features": [
+    "Ansible Reporting: Record and visualize Ansible playbook execution results. Track automation history.",
+    "Dashboard View: Web-based interface for browsing playbook runs and tasks. Easy analysis.",
+    "API Access: Query playbook data programmatically for custom integrations. Flexible reporting.",
+    "Detailed Logs: Capture complete execution details for troubleshooting. Never lose context.",
+    "Search and Filter: Quickly find specific playbook runs or task results. Efficient navigation.",
+    "Self-Hosted: Keep your automation data on your own infrastructure. Complete privacy."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

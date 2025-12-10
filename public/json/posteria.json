@@ -4,6 +4,8 @@
   "categories": [
     21
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/jeremehancock/Posteria",
@@ -12,6 +14,21 @@
   "github_stars": "173",
   "logo": "/icons/posteria.webp",
   "description": "Posteria is a self-hosted web interface for managing and visualizing PostgreSQL databases. It provides insights, performance metrics, and SQL tools in a user-friendly UI.",
+  "tagline": null,
+  "features": [
+    "Database visualization: View PostgreSQL database structure with interactive schema diagrams and relationships.",
+    "Performance metrics: Monitor query performance, connection statistics, and resource usage in real-time.",
+    "SQL editor: Execute queries with syntax highlighting, auto-completion, and result formatting.",
+    "Query history: Access previously executed queries with timestamps and execution statistics.",
+    "Table browser: Browse table data with pagination, sorting, and filtering capabilities.",
+    "Index analysis: Identify missing indexes and optimization opportunities to improve query performance.",
+    "Connection management: Manage multiple PostgreSQL connections with saved credentials and quick switching.",
+    "Export functionality: Export query results and table data in CSV, JSON, and other formats.",
+    "User-friendly interface: Clean, modern UI designed for developers and database administrators.",
+    "Query insights: Analyze slow queries and get recommendations for performance improvements.",
+    "Database statistics: View database size, table counts, and storage usage metrics.",
+    "Role management: Visualize and manage database roles, permissions, and access controls."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     60
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/filebrowser/filebrowser",
@@ -12,6 +14,19 @@
   "github_stars": "32319",
   "logo": "/icons/file-browser.webp",
   "description": "Filebrowser is a web-based file manager you can run on your own server. It supports uploads, directory browsing, previews, permissions, and can connect to local or cloud storage. Designed to simplify remote file management.",
+  "tagline": null,
+  "features": [
+    "File Management: Web-based file browser, Upload and download, Directory navigation. Remote file access made easy.",
+    "Previews: View files in browser. Quick content inspection.",
+    "Permissions: User-based access control. Secure file sharing.",
+    "Storage Support: Local and cloud storage. Flexible backends.",
+    "Cross-Platform: Works on Linux, Windows, and macOS. Universal compatibility.",
+    "Search: Find files and folders. Powerful filtering.",
+    "Bulk Operations: Move, copy, delete multiple files. Efficient management.",
+    "Custom Commands: Run scripts on files. Extensible functionality.",
+    "Sharing: Generate public links. Easy distribution.",
+    "Responsive UI: Works on mobile and desktop. Access anywhere."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +40,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

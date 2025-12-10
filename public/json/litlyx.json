@@ -4,6 +4,8 @@
   "categories": [
     186
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Litlyx/litlyx",
@@ -12,6 +14,15 @@
   "github_stars": "1641",
   "logo": "/icons/litlyx.webp",
   "description": "Litlyx is a self-hosted alternative to Google Analytics with privacy-focused metrics tracking. It’s lightweight, GDPR-compliant, and can be deployed easily with a clean dashboard for traffic analysis.",
+  "tagline": null,
+  "features": [
+    "Web Analytics: Monitor web traffic and user sessions with a GA-like dashboard to easily track conversion, web vitals, and revenue metrics.",
+    "Privacy Controls: Ensure GDPR and CCPA compliance with cookieless tracking, data anonymization, and no personal data collection for ethical analytics.",
+    "Lightweight Tracking: Minimal script size under 1KB ensures fast page loads without impacting site performance or user experience.",
+    "User Attribution: Track user journeys with referral source attribution, UTM parameters, and cross-domain tracking for accurate marketing ROI.",
+    "Custom Dashboards: Build tailored visualizations with real-time data updates to monitor KPIs and traffic patterns relevant to your site.",
+    "Self-Hosted: Full data control with custom deployment options and no third-party dependencies to own your analytics infrastructure."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

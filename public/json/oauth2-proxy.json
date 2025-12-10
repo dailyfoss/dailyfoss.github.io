@@ -4,6 +4,8 @@
   "categories": [
     15
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/oauth2-proxy/oauth2-proxy",
@@ -12,6 +14,17 @@
   "github_stars": "13376",
   "logo": "/icons/oauth2-proxy.webp",
   "description": "OAuth2 Proxy is a reverse proxy that provides authentication using OAuth2 providers like Google or GitHub. It sits in front of apps to enforce login without modifying their code; suitable for self-hosted setups.",
+  "tagline": null,
+  "features": [
+    "OAuth2 authentication: Protect applications by requiring login through Google, GitHub, GitLab, or other OAuth providers.",
+    "Reverse proxy: Sit in front of existing applications to add authentication without modifying their source code.",
+    "Email whitelisting: Restrict access to specific email addresses or domains for controlled user authorization.",
+    "Session management: Maintain user sessions with configurable timeouts and automatic token refresh for seamless access.",
+    "Header injection: Pass user information to backend applications via HTTP headers for identity-aware features.",
+    "Multiple providers: Support various OAuth2 and OIDC providers simultaneously for flexible authentication options.",
+    "TLS termination: Handle HTTPS connections and certificate management at the proxy layer for simplified deployment.",
+    "Kubernetes integration: Deploy as an ingress controller or sidecar container for cloud-native authentication patterns."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

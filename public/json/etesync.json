@@ -4,6 +4,8 @@
   "categories": [
     23
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/etesync/server",
@@ -12,6 +14,15 @@
   "github_stars": "1701",
   "logo": "/icons/etesync.webp",
   "description": "EteSync Server provides a self-hosted backend for secure, end-to-end encrypted contacts, calendars, and tasks. It works with EteSync clients to keep personal information synchronized across devices while preserving privacy.",
+  "tagline": null,
+  "features": [
+    "End-to-End Encryption: Contacts and calendars encrypted on device. Zero-knowledge privacy.",
+    "Cross-Device Sync: Keep data synchronized across all devices. Seamless access everywhere.",
+    "CalDAV & CardDAV: Standard protocols for compatibility. Works with existing apps.",
+    "Task Management: Encrypted to-do lists and tasks. Private productivity.",
+    "Client Apps: Native apps for Android, iOS, and desktop. Complete ecosystem.",
+    "Self-Hosted: Run your own sync server. Complete data sovereignty."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

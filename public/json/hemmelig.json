@@ -4,6 +4,8 @@
   "categories": [
     117
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/HemmeligOrg/Hemmelig.app",
@@ -12,6 +14,17 @@
   "github_stars": "991",
   "logo": "/icons/hemmelig.webp",
   "description": "Hemmelig is a self hosted secret sharing application for sending encrypted notes that expire after viewing or a set time. It is useful for delivering passwords or confidential messages without leaving data on third party services.",
+  "tagline": null,
+  "features": [
+    "Encrypted Sharing: Share secrets with end-to-end encryption for maximum security.",
+    "Auto-Expiration: Set secrets to expire after being viewed once or after a time limit.",
+    "Password Protection: Add an additional password layer for extra security on sensitive secrets.",
+    "Burn After Reading: Secrets are automatically deleted after the first view.",
+    "No Registration: Share secrets without requiring recipients to create accounts.",
+    "Audit Trail: Track when secrets were created and accessed for accountability.",
+    "Custom Expiry: Set flexible expiration times from minutes to days.",
+    "Self-Hosted Security: Keep sensitive data on your own infrastructure without third-party access."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

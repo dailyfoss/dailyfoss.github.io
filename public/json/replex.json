@@ -4,6 +4,8 @@
   "categories": [
     166
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/lostb1t/replex",
@@ -12,6 +14,21 @@
   "github_stars": "259",
   "logo": "/icons/replex.webp",
   "description": "Replex is a self-hosted tool for replicating Plex libraries between servers or users for sharing media collections and metadata while maintaining organization.",
+  "tagline": null,
+  "features": [
+    "Library replication: Copy entire Plex libraries between servers while preserving metadata and organization.",
+    "Metadata sync: Transfer posters, descriptions, ratings, and custom fields across Plex instances.",
+    "User sharing: Share your media collection with other Plex users without duplicating files.",
+    "Selective sync: Choose specific libraries or content to replicate based on filters.",
+    "Automated updates: Keep replicated libraries in sync with source changes automatically.",
+    "Bandwidth optimization: Transfer only metadata and library structure, not actual media files.",
+    "Multi-server support: Manage replication between multiple Plex servers from one interface.",
+    "Collection preservation: Maintain custom collections and playlists during replication.",
+    "Watch status sync: Optionally sync viewing progress and watched status across servers.",
+    "Schedule control: Configure replication to run at specific times to minimize server load.",
+    "Conflict resolution: Handle duplicate content intelligently when syncing libraries.",
+    "API integration: Connect directly to Plex APIs for reliable and secure data transfer."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

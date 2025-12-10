@@ -4,6 +4,8 @@
   "categories": [
     103
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/prometheus/prometheus",
@@ -12,6 +14,21 @@
   "github_stars": "61627",
   "logo": "/icons/prometheus.webp",
   "description": "Prometheus is a leading open-source system monitoring and alerting toolkit. It collects metrics via pull-based scraping, stores them efficiently, and uses PromQL for powerful queries and visualizations.",
+  "tagline": null,
+  "features": [
+    "Metric collection: Scrape metrics from instrumented applications and infrastructure using pull-based model.",
+    "Time-series database: Store metrics efficiently with compression and retention policies for long-term data.",
+    "PromQL queries: Write powerful queries using PromQL to analyze and aggregate metric data.",
+    "Service discovery: Automatically discover and monitor targets using Kubernetes, Consul, and other integrations.",
+    "Alerting rules: Define alert conditions that trigger notifications when thresholds are exceeded.",
+    "Multi-dimensional data: Label metrics with key-value pairs for flexible filtering and aggregation.",
+    "Visualization: Built-in expression browser and integration with Grafana for creating dashboards.",
+    "Federation: Aggregate metrics from multiple Prometheus servers for centralized monitoring.",
+    "Exporters: Collect metrics from third-party systems using hundreds of community-maintained exporters.",
+    "High availability: Deploy multiple Prometheus instances for redundancy and reliability.",
+    "Recording rules: Pre-compute expensive queries and store results for faster dashboard loading.",
+    "API access: Query metrics programmatically using HTTP API for custom integrations and automation."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

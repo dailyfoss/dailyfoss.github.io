@@ -4,6 +4,8 @@
   "categories": [
     61
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/diced/zipline",
@@ -12,6 +14,21 @@
   "github_stars": "2675",
   "logo": "/icons/zipline.webp",
   "description": "Zipline is a self-hosted file sharing and paste service with short URLs, drag-and-drop uploads, and image support. It features authentication, statistics, and extensibility through a polished web UI.",
+  "tagline": null,
+  "features": [
+    "File uploads: Share files quickly with drag-and-drop uploads or paste images directly from clipboard.",
+    "Short URLs: Generate memorable short links for uploaded files to simplify sharing and tracking.",
+    "Image hosting: Upload and share images with direct links suitable for embedding in forums and websites.",
+    "Paste service: Create text pastes with syntax highlighting for code snippets and formatted content.",
+    "User authentication: Secure your instance with user accounts and API keys for controlled access.",
+    "Upload statistics: Track views, downloads, and bandwidth usage for each uploaded file with detailed analytics.",
+    "Custom domains: Configure custom domains for short URLs to match your branding preferences.",
+    "File management: Organize, rename, and delete uploaded files through a clean web dashboard.",
+    "Expiration settings: Set automatic deletion times for uploads to manage storage and maintain privacy.",
+    "ShareX integration: Connect with ShareX and other screenshot tools for instant uploads with custom configurations.",
+    "Embed support: Generate embed codes for images and files to display content on external websites.",
+    "API access: Upload and manage files programmatically using REST API endpoints for automation workflows."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     106
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Yooooomi/your_spotify",
@@ -12,6 +14,21 @@
   "github_stars": "4068",
   "logo": "/icons/your-spotify.webp",
   "description": "your_spotify is a self-hosted dashboard and statistics platform for Spotify accounts. It imports listening history, visualizes top tracks and artists, and offers insights into listening habits over time.",
+  "tagline": null,
+  "features": [
+    "Listening history: Import and store your complete Spotify listening history with timestamps and track details.",
+    "Top tracks analysis: Discover your most-played songs across different time periods with play count rankings.",
+    "Artist statistics: View your favorite artists with listening time, track counts, and discovery timelines.",
+    "Genre breakdown: Analyze your music taste by genre with visual charts showing distribution and trends.",
+    "Temporal insights: See when you listen most with hourly, daily, and monthly activity heatmaps.",
+    "Playlist analytics: Understand playlist composition with statistics on duration, diversity, and listening patterns.",
+    "Comparison tools: Compare listening habits across different time periods to track evolving music preferences.",
+    "Album tracking: Monitor complete album plays and discover your most-listened albums over time.",
+    "Discovery metrics: Track when you first discovered artists and songs to understand your music exploration journey.",
+    "Export functionality: Download your listening data in JSON or CSV format for external analysis.",
+    "Privacy control: Keep all listening data on your own server without sharing with third-party analytics services.",
+    "Automatic sync: Continuously import new listening history from Spotify to maintain up-to-date statistics."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

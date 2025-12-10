@@ -4,6 +4,8 @@
   "categories": [
     79
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/cerbos/cerbos",
@@ -12,6 +14,16 @@
   "github_stars": "4155",
   "logo": "/icons/cerbos.webp",
   "description": "Cerbos is a self-hosted authorization layer that decouples permissions from application code. It supports policy-as-code via YAML, and can be embedded in microservices, securing APIs and internal apps.",
+  "tagline": null,
+  "features": [
+    "Authorization Layer: Decouple permissions from application code. Clean architecture.",
+    "Policy-as-Code: Define permissions in YAML files. Version controlled.",
+    "Microservices Ready: Embed in any service or API. Flexible deployment.",
+    "Fine-Grained Control: Detailed permission rules and conditions. Precise access.",
+    "API Security: Protect APIs with centralized authorization. Consistent security.",
+    "Developer-Friendly: Easy integration with existing apps. Minimal friction.",
+    "Self-Hosted: Run authorization on your infrastructure. Complete control."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +37,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     112
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Notifiarr/notifiarr",
@@ -12,6 +14,21 @@
   "github_stars": "779",
   "logo": "/icons/notifiarr.webp",
   "description": "Notifiarr integrates self-hosted media systems like Plex, Radarr, and Sonarr with alerts, stats, and automation. It sends user notifications and status updates across devices via a configurable UI.",
+  "tagline": null,
+  "features": [
+    "Media server integration: Connect Plex, Radarr, Sonarr, Lidarr, and other *arr applications.",
+    "Discord notifications: Send alerts and updates to Discord channels with rich embeds.",
+    "Custom triggers: Configure notifications for downloads, upgrades, health checks, and more.",
+    "Statistics dashboard: View media library stats, activity, and system health in one place.",
+    "Remote control: Manage media applications remotely through Discord bot commands.",
+    "Health monitoring: Track application status and receive alerts when services go down.",
+    "Request management: Handle media requests from users with approval workflows.",
+    "Calendar integration: View upcoming releases and scheduled downloads in calendar format.",
+    "Multi-server support: Monitor and manage multiple media servers from a single instance.",
+    "Custom reactions: Set up automated actions in response to media server events.",
+    "User notifications: Alert users when their requested content becomes available.",
+    "Activity logs: Track all notifications and actions for troubleshooting and auditing."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

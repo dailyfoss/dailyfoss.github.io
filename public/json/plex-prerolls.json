@@ -4,6 +4,8 @@
   "categories": [
     100
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/nwithan8/plex-prerolls",
@@ -12,6 +14,21 @@
   "github_stars": "80",
   "logo": "/icons/plex-prerolls.webp",
   "description": "Plex Prerolls is a self-hosted tool to manage and randomize video clips as prerolls in Plex Media Server. It includes custom rules and scheduling through a simple UI.",
+  "tagline": null,
+  "features": [
+    "Preroll management: Organize and manage video clips to play before movies in Plex.",
+    "Randomization: Randomly select prerolls from your collection for variety in each viewing.",
+    "Scheduling rules: Configure prerolls to play based on date, season, or custom schedules.",
+    "Multiple collections: Create separate preroll collections for different occasions or themes.",
+    "Plex integration: Automatically update Plex server configuration with selected prerolls.",
+    "Web interface: Manage prerolls through an intuitive web-based control panel.",
+    "Preview playback: Preview preroll videos before adding them to rotation.",
+    "Weight settings: Assign probability weights to prerolls for more or less frequent playback.",
+    "Holiday themes: Automatically switch to holiday-themed prerolls based on calendar dates.",
+    "File validation: Verify preroll files are compatible with Plex before adding to rotation.",
+    "Backup and restore: Export and import preroll configurations for easy migration or backup.",
+    "Activity logging: Track which prerolls have been played and when for rotation management."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

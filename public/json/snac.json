@@ -4,6 +4,8 @@
   "categories": [
     148
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "codeberg.org/grunfink/snac2",
@@ -12,6 +14,21 @@
   "github_stars": null,
   "logo": "/icons/snac.webp",
   "description": "snac2 is a minimalist self-hosted microblogging server implementing ActivityPub. It provides a lightweight interface for posting and federating with the Fediverse.",
+  "tagline": null,
+  "features": [
+    "ActivityPub federation: Connects with Mastodon, Pleroma, and other Fediverse platforms.",
+    "Minimalist design: Provides lightweight microblogging with minimal resource usage.",
+    "Timeline feeds: Displays home, local, and federated timelines for content discovery.",
+    "Post creation: Publishes text posts with mentions, hashtags, and media attachments.",
+    "Following system: Follows users across the Fediverse with automatic updates.",
+    "Notifications: Alerts on mentions, follows, and interactions from other users.",
+    "Media uploads: Attaches images and files to posts with automatic processing.",
+    "No database: Stores all data in flat files for simplicity and portability.",
+    "Single-user focus: Optimized for personal instances rather than large communities.",
+    "RSS feeds: Generates RSS feeds for posts and timelines.",
+    "Custom CSS: Personalizes appearance with custom stylesheets.",
+    "Low maintenance: Requires minimal configuration and administration."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

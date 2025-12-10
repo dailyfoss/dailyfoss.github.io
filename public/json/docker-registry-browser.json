@@ -4,6 +4,8 @@
   "categories": [
     32
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/klausmeyer/docker-registry-browser",
@@ -12,6 +14,15 @@
   "github_stars": "647",
   "logo": "/icons/docker-registry-browser.webp",
   "description": "Docker Registry Browser provides a web-based UI for browsing, analyzing, and deleting Docker images from a private registry. It offers tagging, search, and simple deployment via Docker.",
+  "tagline": null,
+  "features": [
+    "Registry Browsing: View all images in your private registry. Clear visual overview.",
+    "Image Analysis: Inspect layers, tags, and metadata. Detailed image information.",
+    "Delete Operations: Remove unwanted images to free space. Clean registry management.",
+    "Search Functionality: Find images quickly with powerful search. Locate what you need fast.",
+    "Tag Management: Browse and compare different versions. Track your releases.",
+    "Self-Hosted: Manage your private Docker registry easily. Complete control over images."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

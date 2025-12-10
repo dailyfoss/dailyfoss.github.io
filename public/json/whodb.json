@@ -4,6 +4,8 @@
   "categories": [
     39
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/clidey/whodb",
@@ -12,6 +14,21 @@
   "github_stars": "4354",
   "logo": "/icons/whodb.webp",
   "description": "WhoDB is a next-generation, self-hostable database explorer with chat-style querying. It connects to Postgres, MySQL, SQLite, MongoDB, Redis and more, providing a modern interface for browsing schemas, running queries, and visualizing results.",
+  "tagline": null,
+  "features": [
+    "Multi-database support: Connect to PostgreSQL, MySQL, SQLite, MongoDB, Redis, and other popular databases.",
+    "Chat-style querying: Write queries using natural language or SQL with an intuitive chat interface.",
+    "Schema browser: Explore database structures, tables, columns, and relationships through an interactive tree view.",
+    "Query execution: Run SQL queries with syntax highlighting, auto-completion, and result visualization.",
+    "Data visualization: View query results as tables, charts, or graphs for better data understanding.",
+    "Connection management: Save and manage multiple database connections with secure credential storage.",
+    "Query history: Access previously executed queries for quick re-running or reference.",
+    "Export functionality: Export query results to CSV, JSON, or Excel formats for reporting or analysis.",
+    "Table editing: Modify data directly in the interface with inline editing and validation.",
+    "Performance monitoring: View query execution times and optimize slow queries with explain plans.",
+    "Dark mode: Switch between light and dark themes for comfortable viewing in different lighting conditions.",
+    "Responsive design: Access your databases from any device with a mobile-friendly interface."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

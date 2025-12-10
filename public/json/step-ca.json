@@ -4,6 +4,8 @@
   "categories": [
     15
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/smallstep/certificates",
@@ -12,6 +14,21 @@
   "github_stars": "7897",
   "logo": "/icons/step-ca.webp",
   "description": "Smallstep Certificates is a self-hosted, ACME-compatible certificate authority and identity system. It automates certificate issuance and rotation for machines and services via CLI and APIs.",
+  "tagline": null,
+  "features": [
+    "Certificate authority: Issues and manages X.509 certificates for internal infrastructure.",
+    "ACME protocol: Automates certificate issuance with Let's Encrypt-compatible ACME.",
+    "Short-lived certificates: Issues certificates with short lifespans for enhanced security.",
+    "Automatic renewal: Renews certificates automatically before expiration.",
+    "Multiple provisioners: Supports ACME, OAuth, OIDC, and other authentication methods.",
+    "SSH certificates: Issues SSH certificates for secure server and user authentication.",
+    "API access: Manages certificates programmatically via REST API.",
+    "Hardware security: Integrates with HSMs and cloud KMS for key protection.",
+    "Certificate templates: Defines custom certificate profiles and policies.",
+    "Audit logging: Tracks all certificate operations for compliance.",
+    "CLI tools: Manages CA and certificates with command-line utilities.",
+    "Webhook notifications: Triggers external systems on certificate events."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

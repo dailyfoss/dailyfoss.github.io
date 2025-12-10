@@ -4,6 +4,8 @@
   "categories": [
     111
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/enchant97/note-mark",
@@ -12,6 +14,21 @@
   "github_stars": "615",
   "logo": "/icons/note-mark.webp",
   "description": "NoteMark is a Markdown-based note-taking system for quick writing and organizing ideas. It supports syntax highlighting, tagging, and a minimalist self-hosted UI ideal for personal usage.",
+  "tagline": null,
+  "features": [
+    "Markdown editor: Write notes using Markdown syntax with live preview rendering.",
+    "Syntax highlighting: Code blocks display with language-specific syntax coloring.",
+    "Tag system: Organize notes with tags for quick filtering and categorization.",
+    "Full-text search: Find notes instantly by searching titles, content, or tags.",
+    "Minimalist UI: Clean, distraction-free interface focused on writing and reading.",
+    "Note linking: Create connections between related notes with wiki-style links.",
+    "Version history: Track changes to notes and restore previous versions if needed.",
+    "Export options: Download notes as Markdown, HTML, or PDF for sharing or backup.",
+    "Dark mode: Eye-friendly theme for comfortable writing in low-light conditions.",
+    "Keyboard shortcuts: Navigate and edit notes efficiently with customizable hotkeys.",
+    "Lightweight deployment: Minimal resource requirements suitable for personal servers.",
+    "Privacy-first: All notes stored locally on your server with no external dependencies."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

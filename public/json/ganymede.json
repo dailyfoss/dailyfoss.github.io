@@ -4,6 +4,8 @@
   "categories": [
     176
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Zibbp/ganymede",
@@ -12,6 +14,17 @@
   "github_stars": "875",
   "logo": "/icons/ganymede.webp",
   "description": "Ganymede is an open-source tool for archiving Twitch VODs and clips with metadata and transcoding. It works with Cloudflare R2 or local storage and provides a web UI for browsing archived content.",
+  "tagline": null,
+  "features": [
+    "VOD Archiving: Automatically download and archive Twitch VODs and clips before they expire or are deleted.",
+    "Chat Preservation: Capture and store chat logs alongside video content for complete stream archives.",
+    "Metadata Storage: Save stream metadata including titles, descriptions, timestamps, and viewer counts.",
+    "Video Transcoding: Transcode archived content to optimize storage space and playback compatibility.",
+    "Cloud Storage Support: Integrate with Cloudflare R2 or local storage for flexible archive management.",
+    "Web Interface: Browse and search archived streams through a dedicated web UI with filtering options.",
+    "Automated Downloads: Schedule automatic archiving of favorite channels and streamers.",
+    "Self-Hosted Archive: Maintain your own Twitch content archive independent of platform retention policies."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

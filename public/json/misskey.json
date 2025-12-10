@@ -4,6 +4,8 @@
   "categories": [
     148
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/misskey-dev/misskey",
@@ -12,6 +14,21 @@
   "github_stars": "10851",
   "logo": "/icons/misskey.webp",
   "description": "Misskey is a modern, decentralized social media platform built with ActivityPub. It supports real-time interactions, reactions, custom emoji, themes, and federation across servers.",
+  "tagline": null,
+  "features": [
+    "Decentralized Social: ActivityPub-based federation allowing communication across different Misskey and Mastodon instances.",
+    "Real-time Interactions: Live timeline updates, instant notifications, and real-time chat functionality.",
+    "Custom Reactions: Express yourself with custom emoji reactions beyond traditional likes and shares.",
+    "Rich Media Support: Share images, videos, audio files, and documents with built-in media viewer and gallery.",
+    "Advanced Timeline: Multiple timeline views including local, federated, and custom lists with filtering options.",
+    "Theme Customization: Extensive theming system with custom CSS support and community-created themes.",
+    "Note Formatting: Rich text editing with Markdown support, mentions, hashtags, and content warnings.",
+    "Privacy Controls: Granular privacy settings for posts including follower-only, unlisted, and direct messages.",
+    "Moderation Tools: Comprehensive moderation features including content filtering, user blocking, and instance management.",
+    "API Integration: Full REST API for third-party clients, bots, and custom integrations.",
+    "Drive Storage: Built-in file storage system for managing uploaded media and documents with organization features.",
+    "Community Features: Create and manage communities, polls, and events with advanced engagement tools."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     79
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/keycloak/keycloak",
@@ -12,6 +14,21 @@
   "github_stars": "31466",
   "logo": "/icons/keycloak.webp",
   "description": "Keycloak is an open source identity and access management solution. It provides SSO, OAuth2 and OpenID Connect, user federation and fine grained authorization policies, and can be self hosted or used as part of managed offerings.",
+  "tagline": null,
+  "features": [
+    "Single Sign-On: SSO across applications with OAuth2, OIDC, and SAML protocols. One login for all services.",
+    "Identity Brokering: Integrate with external identity providers like Google, GitHub, and LDAP. Federate authentication sources.",
+    "User Federation: Connect to existing user databases and LDAP directories. Leverage existing identity stores.",
+    "Social Login: Enable login with social providers like Facebook, Twitter, and LinkedIn. Simplify user onboarding.",
+    "Multi-Factor Authentication: Support for OTP, SMS, and hardware tokens. Strengthen account security.",
+    "Fine-Grained Authorization: Role-based access control with custom policies and permissions. Control resource access precisely.",
+    "Admin Console: Web-based interface for managing users, roles, and realms. Centralize identity administration.",
+    "User Account Management: Self-service account management with password reset and profile updates. Empower users to manage accounts.",
+    "Customizable Themes: Brand login pages and emails with custom themes. Match your organization's identity.",
+    "Event Logging: Comprehensive audit logs of authentication and admin events. Track security-relevant activities.",
+    "Client Adapters: Official adapters for Java, JavaScript, and other platforms. Easy application integration.",
+    "High Availability: Clustering support for scalable, fault-tolerant deployments. Run at enterprise scale."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     185
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/IgnisDa/ryot",
@@ -12,6 +14,21 @@
   "github_stars": "2855",
   "logo": "/icons/ryot.webp",
   "description": "Ryot is a self-hosted media tracking application for movies and shows, integrating with TMDB and Trakt. It includes playlists, search, and a smart dashboard UI.",
+  "tagline": null,
+  "features": [
+    "Media tracking: Track movies, TV shows, books, and games you've watched, read, or played.",
+    "TMDB integration: Fetch metadata, posters, and details from The Movie Database.",
+    "Trakt sync: Synchronize your watch history and ratings with Trakt.tv.",
+    "Custom lists: Create playlists and collections to organize your media.",
+    "Progress tracking: Mark episodes as watched and track completion status for series.",
+    "Rating system: Rate content and view your personal rating history.",
+    "Search functionality: Find media across multiple databases from one interface.",
+    "Dashboard overview: See your recent activity and statistics at a glance.",
+    "Recommendations: Get suggestions based on your viewing history and preferences.",
+    "Calendar view: Track upcoming releases for shows and movies you follow.",
+    "Import/export: Migrate data from other tracking services or back up your library.",
+    "Multi-user support: Create separate accounts for family members with individual tracking."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     193
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/sbrl/Pepperminty-Wiki",
@@ -12,6 +14,21 @@
   "github_stars": "204",
   "logo": "/icons/pepperminty-wiki.webp",
   "description": "Pepperminty Wiki is a single-file wiki engine written in PHP designed for easy self-hosting. It supports Markdown content, version control, and customizable themes in a lightweight package.",
+  "tagline": null,
+  "features": [
+    "Single-File Deployment: Entire wiki engine contained in one PHP file for extremely simple installation and portability.",
+    "Markdown Support: Write wiki pages in Markdown with syntax highlighting and live preview for easy content creation.",
+    "Version Control: Track page changes over time with built-in version history and the ability to restore previous revisions.",
+    "Search Functionality: Full-text search across all wiki pages to quickly find information regardless of page structure.",
+    "Custom Themes: Personalize wiki appearance with customizable CSS themes and layout options.",
+    "File Uploads: Attach images and files to wiki pages for embedded media and downloadable resources.",
+    "User Management: Optional authentication system with user accounts and permissions for controlled editing access.",
+    "Lightweight Design: Minimal resource requirements make it suitable for shared hosting or low-power servers.",
+    "Export Options: Download wiki content in various formats for backup or migration to other platforms.",
+    "Module System: Extend functionality with optional modules for features like comments, statistics, and advanced search.",
+    "Page Linking: Create internal wiki links automatically with simple syntax for building interconnected knowledge bases.",
+    "Recent Changes: Track all wiki activity with a chronological feed of edits, new pages, and user contributions."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

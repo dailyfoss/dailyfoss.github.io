@@ -4,6 +4,8 @@
   "categories": [
     102
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/xdFNLeaks/managebot",
@@ -12,6 +14,19 @@
   "github_stars": "21",
   "logo": "/icons/managebot.webp",
   "description": "Managebot is a minimal self-hosted Telegram bot for managing to-do lists, schedules, and commands through chat. It’s lightweight and ideal for self-hosted bot workflows with minimal setup.",
+  "tagline": null,
+  "features": [
+    "Telegram integration: Manage tasks and schedules directly through Telegram chat commands.",
+    "To-do lists: Create and track personal task lists with completion status and priorities.",
+    "Command system: Execute predefined commands for common actions through simple text messages.",
+    "Reminder notifications: Set up time-based reminders that send alerts via Telegram.",
+    "Schedule management: View and organize upcoming events and deadlines in a timeline.",
+    "Multi-user support: Allow multiple Telegram users to interact with the bot simultaneously.",
+    "Custom commands: Define personalized bot commands for frequently used actions or queries.",
+    "Task filtering: Search and filter tasks by status, date, or category for quick access.",
+    "Lightweight deployment: Minimal resource requirements make it ideal for small servers or VPS.",
+    "Privacy focused: All data stays on your server with no third-party access to your tasks."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +40,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

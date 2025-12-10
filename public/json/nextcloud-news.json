@@ -4,6 +4,8 @@
   "categories": [
     57
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/nextcloud/news",
@@ -12,6 +14,21 @@
   "github_stars": "946",
   "logo": "/icons/nextcloud-news.webp",
   "description": "Nextcloud News is an RSS/Atom feed reader app integrated into a Nextcloud instance. It can sync across devices, categorize feeds, and offers simple offline reading capabilities.",
+  "tagline": null,
+  "features": [
+    "RSS/Atom reader: Subscribe to news feeds and blogs with automatic update checking.",
+    "Feed organization: Group feeds into folders for structured content management.",
+    "Cross-device sync: Read articles on web, desktop, or mobile with synchronized read status.",
+    "Offline reading: Download articles for reading without internet connection on mobile apps.",
+    "Unread management: Mark articles as read automatically or manually with flexible options.",
+    "Star articles: Save favorite articles for later reference or archival.",
+    "Keyboard navigation: Browse feeds efficiently with customizable keyboard shortcuts.",
+    "Feed discovery: Find and subscribe to feeds from website URLs automatically.",
+    "Import/export: Migrate subscriptions from other readers using OPML format.",
+    "API access: Connect third-party RSS clients via compatible API for extended functionality.",
+    "Nextcloud integration: Unified authentication and interface within Nextcloud ecosystem.",
+    "Compact view: Choose between expanded or compact article layouts for reading preference."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

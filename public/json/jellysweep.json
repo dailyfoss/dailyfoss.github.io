@@ -4,6 +4,8 @@
   "categories": [
     100
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/jon4hz/jellysweep",
@@ -12,6 +14,12 @@
   "github_stars": "128",
   "logo": "/icons/jellysweep.webp",
   "description": "jellysweep is a cleanup tool for Jellyfin libraries. It scans media collections for missing, duplicate or orphaned entries and helps administrators keep their metadata and files tidy in large self hosted libraries.",
+  "tagline": null,
+  "features": [
+    "Library Cleanup: Find orphaned files, Detect duplicates, Remove missing entries. Maintain a clean media library.",
+    "Metadata Repair: Fix broken links, Update missing data, Validate file paths. Keep your library metadata accurate.",
+    "Automated Scanning: Scheduled cleanups, Batch operations, Detailed reports. Maintain library health effortlessly."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +33,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

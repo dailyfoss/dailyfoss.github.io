@@ -4,6 +4,8 @@
   "categories": [
     93
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/getsentry/sentry",
@@ -12,6 +14,21 @@
   "github_stars": "42626",
   "logo": "/icons/sentry.webp",
   "description": "Sentry is an application monitoring and error tracking platform for web, mobile, and backend services. It captures exceptions, performance data, and alerts, and can be deployed self-hosted or consumed as a SaaS.",
+  "tagline": null,
+  "features": [
+    "Error tracking: Captures and aggregates exceptions from web, mobile, and backend applications.",
+    "Performance monitoring: Tracks transaction traces, slow queries, and bottlenecks across services.",
+    "Release tracking: Associates errors with specific releases for regression detection.",
+    "Source maps: Deobfuscates minified JavaScript errors with automatic source map support.",
+    "Breadcrumbs: Records user actions and events leading up to errors for context.",
+    "Issue grouping: Automatically groups similar errors to reduce noise and prioritize fixes.",
+    "Alert rules: Configures notifications based on error frequency, severity, or custom conditions.",
+    "Team collaboration: Assign issues, add comments, and track resolution progress.",
+    "Integration ecosystem: Connects with Slack, Jira, GitHub, and dozens of other tools.",
+    "Custom tags: Add metadata to events for filtering and analysis by environment, user, or feature.",
+    "Performance insights: Identifies slow database queries, API calls, and rendering issues.",
+    "User feedback: Collects user reports directly from error pages for additional context."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

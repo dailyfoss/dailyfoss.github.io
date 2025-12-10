@@ -4,6 +4,8 @@
   "categories": [
     166
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/StuffAnThings/qbit_manage",
@@ -12,6 +14,21 @@
   "github_stars": "1290",
   "logo": "/icons/qbit-manage.webp",
   "description": "qBitManage is a self-hosted utility for managing qBittorrent automatically. It handles categories, tags, and cleanup operations via API with simple config and CLI usage.",
+  "tagline": null,
+  "features": [
+    "Automated categorization: Organize torrents by content type, tracker, or custom rules to maintain a structured download library.",
+    "Tag management: Apply and remove tags automatically based on torrent status, age, or seeding ratio for easier filtering.",
+    "Cleanup operations: Remove stalled, orphaned, or completed torrents based on configurable criteria to free up disk space.",
+    "Cross-seed detection: Identify and manage duplicate content across multiple trackers to optimize seeding efficiency.",
+    "Ratio management: Monitor and enforce seeding ratios per tracker or category to meet private tracker requirements.",
+    "Schedule automation: Run management tasks on a cron schedule to keep your qBittorrent instance organized without manual intervention.",
+    "API integration: Connect directly to qBittorrent's Web API for real-time torrent management and status updates.",
+    "YAML configuration: Define all rules and settings in a simple YAML file for version control and easy deployment.",
+    "Dry-run mode: Preview changes before applying them to avoid accidental deletions or modifications.",
+    "Multi-instance support: Manage multiple qBittorrent instances from a single configuration file.",
+    "Custom filters: Create complex filtering rules using torrent metadata, tracker information, and download statistics.",
+    "Logging and reporting: Track all automated actions with detailed logs for auditing and troubleshooting."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

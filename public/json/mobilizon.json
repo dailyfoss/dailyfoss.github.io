@@ -4,6 +4,8 @@
   "categories": [
     55
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "framagit.org/kaihuri/mobilizon",
@@ -12,6 +14,17 @@
   "github_stars": null,
   "logo": "/icons/mobilizon.webp",
   "description": "Mobilizon is a decentralized event management and group organizing platform. It allows users to create, manage, and share events in a federated, privacy-friendly environment with custom groups.",
+  "tagline": null,
+  "features": [
+    "Event creation: Organize gatherings with date, location, description, and RSVP tracking for attendee management.",
+    "Federation support: Share events across Mobilizon instances and discover activities from other federated servers.",
+    "Group management: Create communities with membership controls, discussion spaces, and shared event calendars.",
+    "Privacy options: Set events as public, unlisted, or private to control visibility and attendance permissions.",
+    "RSVP tracking: Collect attendance confirmations and manage participant lists with automatic notifications.",
+    "Event discovery: Browse public events by location, category, or date to find activities in your area.",
+    "Recurring events: Schedule repeating activities with customizable frequency and exception handling.",
+    "ActivityPub integration: Connect with the fediverse to reach wider audiences beyond your local instance."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

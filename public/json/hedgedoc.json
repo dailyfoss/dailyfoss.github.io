@@ -4,6 +4,8 @@
   "categories": [
     196
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/hedgedoc/hedgedoc",
@@ -12,6 +14,17 @@
   "github_stars": "6730",
   "logo": "/icons/hedgedoc.webp",
   "description": "HedgeDoc is an open source collaborative markdown editor that lets multiple users write documents in real time. It supports slide decks, diagrams, media embeds, and integrates easily into self hosted knowledge or documentation stacks.",
+  "tagline": null,
+  "features": [
+    "Real-Time Collaboration: Multiple users can edit the same document simultaneously with live cursor tracking.",
+    "Markdown Editor: Write in markdown with live preview and syntax highlighting.",
+    "Presentation Mode: Convert documents into slide decks with reveal.js integration.",
+    "Diagram Support: Embed flowcharts, sequence diagrams, and graphs using Mermaid and other tools.",
+    "Media Embeds: Include images, videos, and external content directly in documents.",
+    "Version History: Track changes and revert to previous versions when needed.",
+    "Export Options: Download documents as PDF, HTML, or markdown files.",
+    "Permission Control: Share documents publicly, with specific users, or keep them private."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

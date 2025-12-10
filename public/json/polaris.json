@@ -4,6 +4,8 @@
   "categories": [
     100
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/agersant/polaris",
@@ -12,6 +14,21 @@
   "github_stars": "2449",
   "logo": "/icons/polaris.webp",
   "description": "Polaris is a self-hosted music streaming server with a sleek web UI. It serves Music library content over the browser or app and supports playlists, search, and metadata.",
+  "tagline": null,
+  "features": [
+    "Music streaming: Stream your music library to web browsers and mobile devices.",
+    "Library organization: Automatically organize music by artist, album, and genre with metadata.",
+    "Playlist management: Create and manage playlists for different moods and occasions.",
+    "Search functionality: Find songs, albums, and artists quickly with full-text search.",
+    "Album artwork: Display album covers and artist images fetched from online databases.",
+    "Audio transcoding: Convert audio formats on-the-fly for compatibility with all devices.",
+    "User accounts: Create separate accounts for family members with individual libraries and playlists.",
+    "Mobile apps: Access your music from iOS and Android devices with native applications.",
+    "Random playback: Shuffle songs or albums for variety in listening experience.",
+    "Queue management: Build and modify playback queues with drag-and-drop controls.",
+    "Offline sync: Download music to mobile devices for offline listening without internet.",
+    "Last.fm scrobbling: Track listening history and scrobble plays to Last.fm for statistics."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

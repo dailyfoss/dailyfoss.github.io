@@ -4,6 +4,8 @@
   "categories": [
     55
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/cpvalente/ontime",
@@ -12,6 +14,17 @@
   "github_stars": "778",
   "logo": "/icons/ontime.webp",
   "description": "Ontime is a self-hosted time tracking and visualization tool. It logs work sessions, generates reports, and provides a simple UI for freelancers or small teams to manage time and productivity.",
+  "tagline": null,
+  "features": [
+    "Time tracking: Log work sessions with start and stop times for accurate recording of billable hours.",
+    "Project organization: Categorize time entries by project, client, or task for structured time management.",
+    "Reporting tools: Generate summaries of hours worked by period, project, or team member for billing and analysis.",
+    "Timer interface: Start and stop timers with one click to capture time as you work without manual entry.",
+    "Manual entries: Add time retroactively for work completed when the timer wasn't running.",
+    "Export data: Download time reports as CSV or PDF for invoicing, payroll, or client reporting.",
+    "Team tracking: Monitor time logged by multiple users for project management and capacity planning.",
+    "Visualization: View time distribution with charts and graphs to identify patterns and optimize productivity."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

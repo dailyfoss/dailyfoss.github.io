@@ -4,6 +4,8 @@
   "categories": [
     85
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/kanboard/kanboard",
@@ -12,6 +14,21 @@
   "github_stars": "9332",
   "logo": "/icons/kanboard.webp",
   "description": "Kanboard is a lean project management tool focused on visualizing work. It offers swimlanes, automations, subtasks and plugins, with a self hosted web interface designed for teams adopting kanban methodologies.",
+  "tagline": null,
+  "features": [
+    "Visual Workflow: Kanban boards with swimlanes, drag-and-drop cards, and customizable columns. Visualize work in progress effectively.",
+    "Task Automation: Automatic actions, workflow triggers, and event-based rules. Reduce manual work with smart automation.",
+    "Subtasks: Break down complex tasks into manageable subtasks with progress tracking. Organize work hierarchically.",
+    "Time Tracking: Built-in time tracking, task duration estimates, and time spent reports. Monitor project hours accurately.",
+    "Plugin System: Extend functionality with plugins, custom integrations, and third-party extensions. Adapt to your workflow needs.",
+    "Multi-User: User roles, permissions, and team collaboration features. Coordinate work across teams.",
+    "Analytics: Burndown charts, cycle time, and lead time metrics. Measure team performance and productivity.",
+    "Search & Filter: Advanced search, custom filters, and saved queries. Find tasks quickly in large projects.",
+    "Recurring Tasks: Automatically create tasks on schedules for routine work. Automate repetitive project activities.",
+    "Custom Fields: Add project-specific metadata to tasks with custom fields. Track information relevant to your workflow.",
+    "Email Integration: Create tasks from emails and receive notifications. Stay connected to your projects.",
+    "Export & Import: Backup projects and migrate data with export/import tools. Maintain data portability."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

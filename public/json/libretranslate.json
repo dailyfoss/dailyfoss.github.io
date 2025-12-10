@@ -4,6 +4,8 @@
   "categories": [
     88
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/LibreTranslate/LibreTranslate",
@@ -12,6 +14,13 @@
   "github_stars": "13232",
   "logo": "/icons/libretranslate.webp",
   "description": "LibreTranslate is a self-hosted, free machine translation API and web UI. It supports multiple languages, integrates models like Argos, and can run entirely locally, offering a privacy-friendly alternative to cloud translation APIs.",
+  "tagline": null,
+  "features": [
+    "Machine Translation: Multi-language support, Neural models, High accuracy. Translate text privately.",
+    "API & Web UI: RESTful API, Web interface, Easy integration. Use via browser or programmatically.",
+    "Offline Capable: Run locally, No cloud dependency, Privacy-first. Translate without sending data externally.",
+    "Open Models: Argos Translate, Custom models, Community-driven. Free and open-source translation."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +34,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

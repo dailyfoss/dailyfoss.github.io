@@ -4,6 +4,8 @@
   "categories": [
     196
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/mnfst/manifest",
@@ -12,6 +14,19 @@
   "github_stars": "3220",
   "logo": "/icons/manifest.webp",
   "description": "Manifest is a self-hosted manifest generator used for build pipelines and package release management. It provides developers a consistent framework for producing metadata across multi-project builds.",
+  "tagline": null,
+  "features": [
+    "Manifest generation: Automatically create build manifests with version, dependencies, and metadata.",
+    "Multi-project support: Manage manifests across multiple projects from a centralized interface.",
+    "Version tracking: Record build versions, timestamps, and commit hashes for release management.",
+    "Dependency mapping: Document project dependencies and their versions in structured format.",
+    "Template system: Use customizable templates to standardize manifest structure across projects.",
+    "CI/CD integration: Generate manifests as part of automated build pipelines and workflows.",
+    "Export formats: Output manifests in JSON, YAML, or custom formats for different tools.",
+    "Change history: Track modifications to manifests over time with version control integration.",
+    "Validation rules: Ensure manifest completeness and correctness with configurable validation.",
+    "API access: Programmatically generate and retrieve manifests through REST API endpoints."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +40,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

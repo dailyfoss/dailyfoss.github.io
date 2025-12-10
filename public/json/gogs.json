@@ -4,6 +4,8 @@
   "categories": [
     72
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/gogs/gogs",
@@ -12,6 +14,17 @@
   "github_stars": "47293",
   "logo": "/icons/gogs.webp",
   "description": "Gogs is a simple, self-hosted Git service with a fast UI and minimal resource usage. It supports code hosting, pull requests, issues, and runs easily on small servers, intended for personal or small team use.",
+  "tagline": null,
+  "features": [
+    "Minimal Git Hosting: Self-hosted Git service with extremely low resource requirements and fast performance.",
+    "Simple Interface: Clean, straightforward web UI focused on essential Git operations.",
+    "Pull Requests: Review and merge code changes with basic pull request functionality.",
+    "Issue Tracking: Track bugs and features with a lightweight issue management system.",
+    "Repository Management: Create, fork, and manage Git repositories through the web interface.",
+    "User Management: Support for multiple users and organizations with basic permission controls.",
+    "Webhook Support: Trigger external services on push, pull request, and other repository events.",
+    "Small Server Friendly: Runs efficiently on Raspberry Pi and other low-powered hardware."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

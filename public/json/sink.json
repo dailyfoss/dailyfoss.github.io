@@ -4,6 +4,8 @@
   "categories": [
     112
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/ccbikai/Sink",
@@ -12,6 +14,21 @@
   "github_stars": "5903",
   "logo": "/icons/sink.webp",
   "description": "Sink is a self-hosted URL shortener and redirection service. It offers basic analytics, custom slugs, and a modern simple UI for managing links.",
+  "tagline": null,
+  "features": [
+    "URL shortening: Creates short links with custom or random slugs.",
+    "Click analytics: Tracks total clicks, unique visitors, and referrer sources.",
+    "Custom slugs: Allows personalized short link paths for branding.",
+    "Link expiration: Sets automatic expiration dates for temporary links.",
+    "QR codes: Generates QR codes for each shortened URL.",
+    "API access: Provides REST API for programmatic link creation and management.",
+    "Simple interface: Manages links through clean, minimal web UI.",
+    "No registration: Creates links without requiring user accounts.",
+    "Link editing: Updates destination URLs without changing the short link.",
+    "Statistics dashboard: Displays click trends and geographic distribution.",
+    "Bulk operations: Creates or manages multiple links simultaneously.",
+    "Export data: Downloads link statistics and history for analysis."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

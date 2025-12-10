@@ -4,6 +4,8 @@
   "categories": [
     129
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/wallabag/wallabag",
@@ -12,6 +14,21 @@
   "github_stars": "12222",
   "logo": "/icons/wallabag.webp",
   "description": "Wallabag is a self-hosted read-it-later service. It saves articles from the web, cleans them up for reading, and organizes content with tags and full-text search, with mobile apps and browser integrations available.",
+  "tagline": null,
+  "features": [
+    "Article saving: Capture web articles with a single click using browser extensions or bookmarklets for later reading.",
+    "Content extraction: Automatically strip ads, navigation, and clutter to present clean, readable article text.",
+    "Full-text search: Quickly find saved articles using powerful search across titles, content, and tags.",
+    "Tagging system: Organize articles with custom tags for easy categorization and retrieval.",
+    "Reading progress: Track reading status with archive, favorite, and unread markers to manage your reading queue.",
+    "Mobile apps: Access your reading list on iOS and Android with native apps that sync seamlessly.",
+    "RSS feeds: Generate RSS feeds from your saved articles or tags for integration with feed readers.",
+    "Annotations: Highlight text and add notes directly within articles for research or reference purposes.",
+    "Multi-user support: Create separate accounts for family members or team members with individual reading lists.",
+    "Import/export: Migrate from Pocket, Instapaper, or other services with built-in import tools and export options.",
+    "Reading time estimates: See estimated reading time for each article to plan your reading sessions effectively.",
+    "Offline access: Download articles for offline reading when traveling or in areas with poor connectivity."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

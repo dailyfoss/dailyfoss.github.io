@@ -4,6 +4,8 @@
   "categories": [
     23
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "code.in0rdr.ch/hivedav/",
@@ -12,6 +14,17 @@
   "github_stars": null,
   "logo": "/icons/hivedav.webp",
   "description": "HiveDAV is a lightweight DAV server for syncing calendars, contacts and files with CalDAV and CardDAV capable clients. It aims to be simple to deploy and maintain for self hosted personal or small office groupware setups.",
+  "tagline": null,
+  "features": [
+    "CalDAV Server: Sync calendars across devices using the standard CalDAV protocol.",
+    "CardDAV Server: Share and sync contacts with CardDAV-compatible clients.",
+    "Cross-Platform: Works with iOS, Android, macOS, Windows, and Linux calendar/contact apps.",
+    "Lightweight Design: Minimal resource requirements suitable for small servers or Raspberry Pi.",
+    "Multi-User Support: Host calendars and contacts for multiple users with separate accounts.",
+    "Standards Compliant: Full implementation of CalDAV and CardDAV specifications.",
+    "Easy Deployment: Simple setup and configuration for personal or small office use.",
+    "Privacy-Focused: Keep your calendar and contact data on your own infrastructure."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

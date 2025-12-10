@@ -4,6 +4,8 @@
   "categories": [
     145
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/PrivateCaptcha/PrivateCaptcha",
@@ -12,6 +14,21 @@
   "github_stars": "102",
   "logo": "/icons/private-captcha.webp",
   "description": "PrivateCaptcha is a self-hosted CAPTCHA system designed to prevent unwanted submissions without relying on third-party services. It supports customizable widgets and easy integration for privacy-conscious apps.",
+  "tagline": null,
+  "features": [
+    "Self-hosted verification: Prevent spam and bot submissions without relying on third-party CAPTCHA services.",
+    "Privacy protection: No user data sent to external services, ensuring complete privacy compliance.",
+    "Customizable widgets: Configure CAPTCHA appearance and difficulty to match your application design.",
+    "Easy integration: Simple API and JavaScript widgets for quick integration into web forms.",
+    "Multiple challenge types: Support for image-based, text-based, and mathematical challenges.",
+    "Accessibility options: Provide alternative verification methods for users with disabilities.",
+    "Rate limiting: Built-in protection against brute-force attempts and automated attacks.",
+    "Analytics dashboard: Monitor CAPTCHA solve rates, failure patterns, and potential attack attempts.",
+    "Lightweight implementation: Minimal resource usage and fast loading times for optimal user experience.",
+    "API access: Programmatically verify CAPTCHA responses for server-side validation.",
+    "Multi-language support: Display challenges in multiple languages for global audiences.",
+    "Session management: Track verification status across user sessions to prevent repeated challenges."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

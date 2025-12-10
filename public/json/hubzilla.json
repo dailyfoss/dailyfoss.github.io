@@ -4,6 +4,8 @@
   "categories": [
     148
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "framagit.org/hubzilla/core",
@@ -12,6 +14,17 @@
   "github_stars": null,
   "logo": "/icons/hubzilla.webp",
   "description": "Hubzilla is a decentralized social networking platform that supports forums, file sharing, webpages and chat. It uses the Zot protocol for identity nomadicity and privacy, and can federate with other social platforms.",
+  "tagline": null,
+  "features": [
+    "Decentralized Platform: Run your own social network node that federates with other Hubzilla instances.",
+    "Nomadic Identity: Move your identity between servers without losing connections or content.",
+    "Multiple Features: Combine social networking, forums, file sharing, and webpages in one platform.",
+    "Zot Protocol: Advanced federation protocol with strong privacy and identity features.",
+    "Access Control: Granular permissions for posts, files, and pages with flexible privacy settings.",
+    "Cloud Storage: Built-in file storage with WebDAV support for easy file management.",
+    "CMS Capabilities: Create and publish web pages and wikis alongside social content.",
+    "ActivityPub Support: Federate with Mastodon, Pleroma, and other ActivityPub networks."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

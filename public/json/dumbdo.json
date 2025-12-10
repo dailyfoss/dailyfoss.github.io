@@ -4,6 +4,8 @@
   "categories": [
     159
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/DumbWareio/DumbDo",
@@ -12,6 +14,17 @@
   "github_stars": "147",
   "logo": "/icons/dumbdo.webp",
   "description": "DumbDo is a basic self-hosted to-do list app. It focuses on straightforward task management with lists, completion status, and a clutter-free interface designed for users who want local control over their task data.",
+  "tagline": null,
+  "features": [
+    "Task lists: Create multiple lists to organize tasks by project, context, or priority for structured workflow.",
+    "Completion tracking: Mark tasks as done and view completion history to monitor productivity over time.",
+    "Simple interface: Focus on task management without distractions from unnecessary features or complex navigation.",
+    "Local data storage: Keep all task information on your own server for privacy and control over personal data.",
+    "Quick entry: Add new tasks rapidly with minimal clicks to capture ideas and action items as they arise.",
+    "List management: Rename, delete, or reorder lists to adapt your organization system as needs change.",
+    "Mobile responsive: Access and update tasks from any device with a browser that adapts to screen size.",
+    "No dependencies: Run with minimal server requirements and no external services for straightforward deployment."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     190
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/caddyserver/caddy",
@@ -12,6 +14,16 @@
   "github_stars": "68357",
   "logo": "/icons/caddy.webp",
   "description": "Caddy is a powerful HTTP server designed with automatic HTTPS, easy configuration, and excellent performance out of the box. It’s extensible, production-ready, and popular among developers for hosting websites and APIs securely.",
+  "tagline": null,
+  "features": [
+    "Automatic HTTPS: SSL certificates obtained and renewed automatically. Zero-config security.",
+    "Easy Configuration: Simple, intuitive config file format. No complexity.",
+    "High Performance: Excellent performance out of the box. Fast and efficient.",
+    "Reverse Proxy: Built-in reverse proxy capabilities. Flexible routing.",
+    "Extensible: Plugin system for custom functionality. Unlimited possibilities.",
+    "Production-Ready: Battle-tested for hosting websites and APIs. Reliable service.",
+    "Cross-Platform: Works on Linux, Windows, and more. Universal compatibility."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +37,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

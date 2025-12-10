@@ -4,6 +4,8 @@
   "categories": [
     166
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/plexguide/Huntarr.io",
@@ -12,6 +14,17 @@
   "github_stars": "2603",
   "logo": "/icons/huntarr.webp",
   "description": "Huntarr.io is a self hosted request management tool for media libraries. It allows users to request movies or shows and integrates with automation tools like Radarr and Sonarr to streamline adding content to your servers.",
+  "tagline": null,
+  "features": [
+    "Request Management: Allow users to request movies and TV shows for your media library.",
+    "Radarr Integration: Automatically send movie requests to Radarr for download.",
+    "Sonarr Integration: Forward TV show requests to Sonarr for automated acquisition.",
+    "User Interface: Clean, intuitive interface for browsing and requesting content.",
+    "Request Approval: Optional approval workflow before requests are sent to automation tools.",
+    "Search Integration: Search for content using TMDb or TVDb databases.",
+    "Request History: Track all requests with status updates and completion notifications.",
+    "Multi-User Support: Manage requests from multiple users with individual accounts."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

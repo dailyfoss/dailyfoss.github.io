@@ -4,6 +4,8 @@
   "categories": [
     172
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Notifiarr/dockwatch",
@@ -12,6 +14,15 @@
   "github_stars": "264",
   "logo": "/icons/dockwatch.webp",
   "description": "Dockwatch monitors Docker container lifecycle events and sends notifications via services like Discord, Telegram, or Email. It helps administrators stay informed about container restarts, fails, or updates through webhooks.",
+  "tagline": null,
+  "features": [
+    "Lifecycle Monitoring: Track container starts, stops, and restarts. Complete event visibility.",
+    "Multi-Channel Notifications: Send alerts via Discord, Telegram, Email, and more. Stay informed everywhere.",
+    "Webhook Support: Integrate with custom notification systems. Flexible alerting.",
+    "Failure Detection: Get notified when containers fail. Immediate problem awareness.",
+    "Update Tracking: Monitor container updates and changes. Stay informed of modifications.",
+    "Self-Hosted: Run your own container monitoring. Complete control over alerts."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

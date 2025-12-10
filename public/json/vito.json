@@ -4,6 +4,8 @@
   "categories": [
     146
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/vitodeploy/vito",
@@ -12,6 +14,21 @@
   "github_stars": "2804",
   "logo": "/icons/vito.webp",
   "description": "Vito is a self-hosted deployment and release dashboard for web services. It organizes environments, releases, and health checks into a unified web interface for teams.",
+  "tagline": null,
+  "features": [
+    "Deployment tracking: Track deployments across multiple environments and services.",
+    "Release management: Manage releases with version tracking and deployment history.",
+    "Environment organization: Organize services by environment like staging, production, and development.",
+    "Health monitoring: Monitor service health and availability with status checks.",
+    "Deployment history: View complete deployment history with timestamps and changelogs.",
+    "Team dashboard: Provide a unified view of all deployments for team visibility.",
+    "Release notes: Document releases with notes and change descriptions for team communication.",
+    "Status indicators: See deployment status at a glance with visual health indicators.",
+    "Multi-service: Manage multiple services and applications from one dashboard.",
+    "Rollback tracking: Track rollbacks and deployment failures for incident analysis.",
+    "Web interface: Access deployment information through a modern web interface.",
+    "API integration: Integrate with CI/CD pipelines using the REST API."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

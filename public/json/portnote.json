@@ -4,6 +4,8 @@
   "categories": [
     111
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/crocofied/PortNote",
@@ -12,6 +14,21 @@
   "github_stars": "1192",
   "logo": "/icons/portnote.webp",
   "description": "PortNote is a self-hosted password manager with note encryption. It stores sensitive notes securely via browser with categories, search, and a clean UI for personal use.",
+  "tagline": null,
+  "features": [
+    "Encrypted storage: Store sensitive notes and passwords with client-side encryption for maximum security.",
+    "Category organization: Organize notes into custom categories for structured information management.",
+    "Search functionality: Quickly find notes and passwords using full-text search across all entries.",
+    "Password generation: Generate strong, random passwords with customizable length and character requirements.",
+    "Browser-based access: Access your encrypted notes from any device through a web browser interface.",
+    "Export and backup: Export notes and passwords for backup or migration to other systems.",
+    "Clean interface: Minimal, distraction-free UI focuses on quick note access and password retrieval.",
+    "Multi-user support: Create separate accounts for different users with isolated encrypted storage.",
+    "Auto-lock feature: Automatically lock the interface after inactivity to protect sensitive information.",
+    "Secure sharing: Share specific notes with other users while maintaining encryption and access control.",
+    "Audit logging: Track access and modifications to sensitive notes for security monitoring.",
+    "Mobile responsive: Optimized interface works seamlessly on smartphones and tablets."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     110
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/woodpecker-ci/woodpecker",
@@ -12,6 +14,21 @@
   "github_stars": "5867",
   "logo": "/icons/woodpecker-ci.webp",
   "description": "Woodpecker CI is a self-hosted continuous integration system based on pipelines defined in YAML. It integrates with Git repositories, runs builds in containers, and reports results through a lightweight web UI and webhooks.",
+  "tagline": null,
+  "features": [
+    "Pipeline as code: Define build pipelines in YAML files stored alongside your source code.",
+    "Git integration: Connect with GitHub, GitLab, Gitea, and other Git platforms for automatic builds.",
+    "Container-based builds: Execute each pipeline step in isolated Docker containers for consistency.",
+    "Parallel execution: Run multiple pipeline steps concurrently to reduce build times.",
+    "Secret management: Store sensitive credentials securely and inject them into builds as needed.",
+    "Matrix builds: Test across multiple versions, platforms, or configurations in a single pipeline.",
+    "Plugin system: Extend functionality with community plugins for deployments, notifications, and testing.",
+    "Webhook triggers: Start builds automatically on push, pull request, or tag events from your repository.",
+    "Build artifacts: Store and retrieve build outputs between pipeline steps or for later download.",
+    "Status reporting: Send build results back to Git platforms as commit statuses and pull request comments.",
+    "Multi-agent: Scale build capacity by running multiple agent workers across different machines.",
+    "Web interface: Monitor builds, view logs, and manage repositories through a clean web dashboard."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

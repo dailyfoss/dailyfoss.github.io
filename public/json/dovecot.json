@@ -4,6 +4,8 @@
   "categories": [
     53
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/dovecot/core",
@@ -12,6 +14,17 @@
   "github_stars": "1143",
   "logo": "/icons/dovecot.webp",
   "description": "Dovecot is a widely used open-source IMAP and POP3 email server focused on security and performance. It runs as a daemon on Unix-like systems, providing mailbox storage, authentication, and extensible plugins for mail infrastructures.",
+  "tagline": null,
+  "features": [
+    "IMAP and POP3: Retrieve email from mailboxes using standard protocols compatible with all major mail clients.",
+    "High performance: Handle thousands of concurrent connections with efficient indexing and caching for fast mailbox access.",
+    "Flexible authentication: Support multiple backends including LDAP, SQL databases, and PAM for user verification.",
+    "Mailbox formats: Store messages in Maildir, mbox, or dbox formats with automatic conversion and migration tools.",
+    "Sieve filtering: Process incoming mail with server-side rules for sorting, forwarding, and automated responses.",
+    "Plugin architecture: Extend functionality with modules for quota management, full-text search, and replication.",
+    "Security hardening: Run with minimal privileges and support TLS encryption to protect credentials and message content.",
+    "Quota enforcement: Limit mailbox sizes per user or domain with configurable warnings and rejection policies."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

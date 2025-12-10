@@ -4,6 +4,8 @@
   "categories": [
     166
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/nzbgetcom/nzbget",
@@ -12,6 +14,21 @@
   "github_stars": "547",
   "logo": "/icons/nzbget.webp",
   "description": "NZBGet is a Usenet downloader optimized for performance and low resource usage. It supports automation scripts, web UI, scheduling, and multi-threading with a lightweight daemon for self-hosting.",
+  "tagline": null,
+  "features": [
+    "Usenet downloading: Efficient binary file downloading from Usenet newsgroups using NZB files.",
+    "Multi-threading: Parallel connections maximize download speed and bandwidth utilization.",
+    "Web interface: Manage downloads, view queue, and configure settings through browser UI.",
+    "Post-processing: Automatically unpack, verify, and organize downloads with custom scripts.",
+    "RSS feeds: Subscribe to feeds for automatic downloading of new releases.",
+    "Scheduling: Set download speed limits and schedules to manage bandwidth usage.",
+    "Priority queue: Organize downloads by priority with pause, resume, and reorder capabilities.",
+    "Duplicate detection: Avoid downloading the same content multiple times with smart checking.",
+    "Repair and verification: Automatic PAR2 verification and repair of damaged downloads.",
+    "Extension scripts: Customize behavior with Python or shell scripts for specialized workflows.",
+    "Low resource usage: Optimized C++ code runs efficiently on low-power devices like NAS.",
+    "API access: Integrate with Sonarr, Radarr, and other automation tools via JSON-RPC API."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

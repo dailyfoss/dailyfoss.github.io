@@ -4,6 +4,8 @@
   "categories": [
     118
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/PrivateBin/PrivateBin",
@@ -12,6 +14,21 @@
   "github_stars": "7802",
   "logo": "/icons/privatebin.webp",
   "description": "PrivateBin is a self-hosted pastebin where the server has no knowledge of pasted data. Supports client-side encryption, expiration, and password protection for sharing text securely.",
+  "tagline": null,
+  "features": [
+    "Client-side encryption: Encrypt data in the browser before sending to the server for zero-knowledge security.",
+    "Expiration options: Set automatic deletion after time periods or after first read for temporary sharing.",
+    "Password protection: Add optional passwords to pastes for additional access control.",
+    "Syntax highlighting: Display code with syntax highlighting for multiple programming languages.",
+    "Burn after reading: Automatically delete pastes after they're viewed once for maximum privacy.",
+    "File attachments: Upload and share files alongside text with client-side encryption.",
+    "Discussion threads: Enable comments on pastes for collaborative discussions while maintaining encryption.",
+    "QR code generation: Generate QR codes for easy sharing of paste links on mobile devices.",
+    "Markdown support: Format text with Markdown for rich content presentation.",
+    "No database required: Optionally store pastes as encrypted files on disk without database dependencies.",
+    "Open discussion: Create public pastes that anyone can comment on while preserving anonymity.",
+    "API access: Programmatically create and retrieve pastes using a simple API interface."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

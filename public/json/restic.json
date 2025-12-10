@@ -4,6 +4,8 @@
   "categories": [
     18
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/restic/restic",
@@ -12,6 +14,21 @@
   "github_stars": "31100",
   "logo": "/icons/restic.webp",
   "description": "Restic is a secure, fast, self-hosted backup client. It supports encryption, deduplication, multiple backends, and CLI operations for efficient backup and restore workflows.",
+  "tagline": null,
+  "features": [
+    "Encrypted backups: Protect data with AES-256 encryption before uploading to storage.",
+    "Deduplication: Save storage space by identifying and storing only unique data blocks.",
+    "Multiple backends: Back up to local disks, SFTP, S3, Azure, Google Cloud, and more.",
+    "Incremental backups: Transfer only changed data to minimize backup time and bandwidth.",
+    "Snapshot management: Create point-in-time snapshots and restore to any previous state.",
+    "Compression: Reduce backup size with built-in compression algorithms.",
+    "Verification: Check backup integrity with cryptographic hashes to detect corruption.",
+    "Selective restore: Recover individual files or directories without restoring entire backups.",
+    "Cross-platform: Run on Linux, macOS, Windows, and BSD with consistent functionality.",
+    "Retention policies: Automatically remove old snapshots based on age or count limits.",
+    "Mount support: Access backup snapshots as read-only filesystems using FUSE.",
+    "CLI interface: Automate backup workflows with scriptable command-line operations."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

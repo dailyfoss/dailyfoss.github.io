@@ -4,6 +4,8 @@
   "categories": [
     18
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/duplicati/duplicati",
@@ -12,6 +14,17 @@
   "github_stars": "13703",
   "logo": "/icons/duplicati.webp",
   "description": "Duplicati is a backup client that stores encrypted, incremental backups on cloud storage services or local disks. It has a web interface for scheduling, restoring, and configuring backup jobs, and runs well on headless servers.",
+  "tagline": null,
+  "features": [
+    "Encrypted backups: Protect data with AES-256 encryption before uploading to storage destinations for security.",
+    "Incremental backups: Store only changed blocks to minimize storage space and bandwidth usage over time.",
+    "Cloud storage support: Back up to S3, Google Drive, Dropbox, OneDrive, and 20+ other cloud providers or local destinations.",
+    "Scheduling: Automate backup jobs to run daily, weekly, or on custom schedules without manual intervention.",
+    "Deduplication: Eliminate redundant data across backups to reduce storage costs and improve efficiency.",
+    "Retention policies: Configure automatic deletion of old backups based on age or count to manage storage limits.",
+    "Web interface: Configure, monitor, and restore backups through a browser-based dashboard from any device.",
+    "Disaster recovery: Restore individual files, folders, or complete systems from any backup point in time."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

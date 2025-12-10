@@ -4,6 +4,8 @@
   "categories": [
     112
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/getmaxun/maxun",
@@ -12,6 +14,21 @@
   "github_stars": "14003",
   "logo": "/icons/maxun.webp",
   "description": "Maxun is a self-hosted personal knowledge base that organizes thoughts, notes, and bookmarks into a structured context graph. It features tagging, hierarchical navigation, and a minimal UI for modern workflows.",
+  "tagline": null,
+  "features": [
+    "Knowledge graph: Visualize connections between notes, bookmarks, and ideas in an interactive graph.",
+    "Hierarchical navigation: Organize information in nested structures with parent-child relationships.",
+    "Tag system: Apply multiple tags to items for flexible cross-referencing and filtering.",
+    "Bookmark management: Save and organize web links with automatic metadata extraction.",
+    "Note taking: Capture thoughts and information with rich text formatting and Markdown support.",
+    "Search functionality: Find any item quickly using full-text search across all content types.",
+    "Context preservation: Maintain relationships between related items to preserve knowledge context.",
+    "Quick capture: Rapidly add new items with keyboard shortcuts and browser extensions.",
+    "Export options: Download your knowledge base in standard formats for backup or migration.",
+    "Privacy focused: Self-hosted solution keeps your personal knowledge completely private.",
+    "Mobile responsive: Access and manage your knowledge base from any device.",
+    "API access: Integrate with other tools or build custom workflows using the REST API."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     69
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/volantvm/flint",
@@ -12,6 +14,18 @@
   "github_stars": "1444",
   "logo": "/icons/flint.webp",
   "description": "Flint is a lightweight self-hosted leveled log viewer designed for distributed systems. It helps developers visualize and search logs across environments with a web UI for filtering and navigation.",
+  "tagline": null,
+  "features": [
+    "Log Viewing: Leveled log visualization, Distributed system support, Web UI for filtering. Simplified log analysis.",
+    "Search: Find logs quickly. Powerful filtering.",
+    "Multi-Environment: Track logs across systems. Centralized viewing.",
+    "Developer-Friendly: Built for debugging. Essential dev tool.",
+    "Real-Time: Live log streaming. Instant updates.",
+    "Level Filtering: Focus on errors or warnings. Targeted analysis.",
+    "Time Range: View specific periods. Historical analysis.",
+    "Export: Download logs for analysis. Data portability.",
+    "Lightweight: Minimal overhead. Efficient monitoring."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +39,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

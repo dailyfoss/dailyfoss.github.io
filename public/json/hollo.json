@@ -4,6 +4,8 @@
   "categories": [
     148
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/fedify-dev/hollo",
@@ -12,6 +14,17 @@
   "github_stars": "425",
   "logo": "/icons/hollo.webp",
   "description": "Hollo is a minimal ActivityPub compatible social server from the Fedify project. It is intended as a reference implementation for building federated apps and offers a small, understandable codebase for experimentation.",
+  "tagline": null,
+  "features": [
+    "ActivityPub Server: Minimal implementation of ActivityPub protocol for federated social networking.",
+    "Reference Implementation: Clean, understandable codebase designed for learning and experimentation.",
+    "Federation Support: Connect with Mastodon, Pleroma, and other ActivityPub-compatible platforms.",
+    "Lightweight Design: Minimal dependencies and simple architecture for easy deployment.",
+    "Developer-Friendly: Well-documented code ideal for understanding federated protocols.",
+    "Fedify Project: Part of the Fedify ecosystem for building federated applications.",
+    "Educational Tool: Perfect for developers learning about decentralized social networks.",
+    "Extensible Base: Use as a foundation for building custom federated applications."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

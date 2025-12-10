@@ -4,6 +4,8 @@
   "categories": [
     34
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/need4swede/Portall",
@@ -12,6 +14,21 @@
   "github_stars": "772",
   "logo": "/icons/portall.webp",
   "description": "Portall is a self-hosted dashboard that displays shortcuts to internal apps, stats, and widgets. Designed for homelab users, it simplifies navigation across multiple services.",
+  "tagline": null,
+  "features": [
+    "Service dashboard: Display shortcuts to all your self-hosted services in one place.",
+    "Custom widgets: Add widgets for system stats, weather, RSS feeds, and other information.",
+    "Link organization: Group services into categories for better organization and navigation.",
+    "Status monitoring: Check service availability with health checks and uptime indicators.",
+    "Custom icons: Use custom icons and logos for each service for visual identification.",
+    "Search functionality: Quickly find services by name with built-in search.",
+    "Responsive design: Access dashboard from any device with mobile-optimized layout.",
+    "Bookmarklets: Add services easily with browser bookmarklets or manual entry.",
+    "Theme customization: Personalize appearance with custom colors, backgrounds, and layouts.",
+    "Multi-user support: Create separate dashboards for different users or family members.",
+    "Quick launch: Open services in new tabs or windows with single-click access.",
+    "Import and export: Backup and restore dashboard configuration with JSON export."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

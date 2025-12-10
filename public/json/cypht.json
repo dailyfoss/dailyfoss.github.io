@@ -4,6 +4,8 @@
   "categories": [
     53
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/cypht-org/cypht",
@@ -12,6 +14,15 @@
   "github_stars": "1363",
   "logo": "/icons/cypht.webp",
   "description": "Cypht is a lightweight, browser-based email client that supports IMAP, SMTP, and multiple accounts. It offers unified inboxes, module-based views, and customization for self-hosted or remote deployment.",
+  "tagline": null,
+  "features": [
+    "Multi-Account Support: Manage multiple email accounts in one place. Unified inbox experience.",
+    "IMAP & SMTP: Full protocol support for sending and receiving. Universal compatibility.",
+    "Lightweight Design: Fast performance with minimal resources. Efficient email management.",
+    "Module-Based: Customize interface with modular components. Tailor to your needs.",
+    "Browser-Based: Access email from any device with a browser. No client installation.",
+    "Self-Hosted: Complete control over your email interface. Privacy-focused solution."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

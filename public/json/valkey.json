@@ -4,6 +4,8 @@
   "categories": [
     133
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/valkey-io/valkey",
@@ -12,6 +14,21 @@
   "github_stars": "23852",
   "logo": "/icons/valkey.webp",
   "description": "Valkey is an open-source, Redis-compatible in-memory key-value store designed as a community-driven successor. It offers high performance and is operated via command-line tools and Redis protocol clients.",
+  "tagline": null,
+  "features": [
+    "Redis compatibility: Drop-in replacement for Redis with full protocol compatibility.",
+    "In-memory storage: Store data in memory for microsecond latency and high throughput.",
+    "Data structures: Support strings, lists, sets, sorted sets, hashes, and more.",
+    "Persistence: Persist data to disk with RDB snapshots and AOF logging for durability.",
+    "Replication: Set up primary-replica replication for high availability and read scaling.",
+    "Pub/sub messaging: Implement real-time messaging with publish/subscribe channels.",
+    "Transactions: Execute multiple commands atomically with MULTI/EXEC transactions.",
+    "Lua scripting: Run server-side Lua scripts for complex operations and atomic workflows.",
+    "Clustering: Scale horizontally with automatic sharding across multiple nodes.",
+    "High performance: Handle millions of operations per second with optimized C implementation.",
+    "Community-driven: Open-source project maintained by the community without vendor lock-in.",
+    "CLI tools: Manage and interact with the server using command-line tools and clients."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     23
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/sabre-io/dav",
@@ -12,6 +14,21 @@
   "github_stars": "1660",
   "logo": "/icons/sabre-dav.webp",
   "description": "SabreDAV is a WebDAV server framework in PHP for exposing files and calendars over HTTP. It’s used in many self-hosted apps like ownCloud and Nextcloud.",
+  "tagline": null,
+  "features": [
+    "WebDAV server: Provides standards-compliant WebDAV protocol implementation for file access over HTTP.",
+    "CalDAV support: Enables calendar synchronization across devices using the CalDAV protocol.",
+    "CardDAV support: Manages contacts with CardDAV for seamless address book syncing.",
+    "Plugin architecture: Extend functionality with custom plugins for authentication, storage, and features.",
+    "Access control: Implements fine-grained permissions and authentication mechanisms for secure access.",
+    "Property storage: Supports custom WebDAV properties for metadata and extended attributes.",
+    "Locking mechanism: Prevents concurrent edit conflicts with WebDAV locking support.",
+    "PHP framework: Built as a reusable library for integrating WebDAV into existing PHP applications.",
+    "Standards compliance: Follows RFC specifications for WebDAV, CalDAV, and CardDAV protocols.",
+    "Event system: Hooks into server events for custom logging, validation, and processing.",
+    "Multi-backend storage: Supports various storage backends including filesystem, database, and custom adapters.",
+    "Quota management: Enforces storage limits and tracks usage per user or collection."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

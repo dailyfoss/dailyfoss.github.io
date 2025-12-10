@@ -4,6 +4,8 @@
   "categories": [
     144
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/quickwit-oss/quickwit",
@@ -12,6 +14,21 @@
   "github_stars": "10606",
   "logo": "/icons/quickwit.webp",
   "description": "Quickwit is a cloud-native search engine for large-scale log storage and querying. It offers web-based query UI, REST APIs, and is optimized for low storage costs and fast indexing.",
+  "tagline": null,
+  "features": [
+    "Cloud-native architecture: Designed for object storage like S3 to minimize infrastructure costs and maximize scalability.",
+    "Fast indexing: Ingest millions of logs per second with distributed indexing across multiple nodes.",
+    "Full-text search: Query logs using Elasticsearch-compatible syntax for familiar search operations.",
+    "Web query UI: Execute searches and visualize results through an intuitive browser-based interface.",
+    "REST API: Integrate log search into applications and dashboards using standard HTTP endpoints.",
+    "Cost-optimized storage: Store petabytes of logs at a fraction of traditional search engine costs.",
+    "Time-based partitioning: Automatically organize data by time ranges for efficient querying and retention management.",
+    "Distributed architecture: Scale horizontally by adding nodes to handle increased log volume and query load.",
+    "Schema flexibility: Define custom fields and data types to match your log structure and search requirements.",
+    "Retention policies: Configure automatic deletion of old data to comply with regulations and manage storage costs.",
+    "Aggregation queries: Analyze log patterns with grouping, counting, and statistical operations.",
+    "OpenTelemetry support: Ingest traces and logs from modern observability tools using standard protocols."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

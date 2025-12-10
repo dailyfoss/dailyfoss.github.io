@@ -4,6 +4,8 @@
   "categories": [
     123
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/madeofpendletonwool/PinePods",
@@ -12,6 +14,21 @@
   "github_stars": "733",
   "logo": "/icons/pinepods.webp",
   "description": "PinePods is a self-hosted podcast management tool for browsing, organizing, and streaming audio content. It features episode tracking, metadata, and a sleek UI for personal use.",
+  "tagline": null,
+  "features": [
+    "Podcast subscriptions: Subscribe to podcasts via RSS feeds and automatically receive new episode updates.",
+    "Episode streaming: Stream podcast episodes directly in the browser or mobile app without downloading.",
+    "Playback controls: Resume playback from where you left off with progress tracking across devices.",
+    "Episode downloads: Download episodes for offline listening on mobile devices or desktop.",
+    "Search and discovery: Find new podcasts by searching titles, descriptions, and categories.",
+    "Playlist creation: Create custom playlists combining episodes from different podcasts.",
+    "Listening statistics: Track listening time, favorite podcasts, and episode completion rates.",
+    "Multi-user support: Create separate accounts for family members with individual subscriptions and history.",
+    "Mobile apps: Native Android app with full feature parity to the web interface.",
+    "OPML import/export: Transfer podcast subscriptions between apps using standard OPML format.",
+    "Episode notes: View show notes, links, and chapter markers embedded in podcast episodes.",
+    "Playback speed: Adjust playback speed from 0.5x to 3x for faster or slower listening."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

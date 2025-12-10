@@ -4,6 +4,8 @@
   "categories": [
     193
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/ryanlelek/Raneto",
@@ -12,6 +14,21 @@
   "github_stars": "2856",
   "logo": "/icons/raneto.webp",
   "description": "Raneto is a self-hosted Markdown-powered knowledge base and documentation system. It supports search, categories, and page editing without a database.",
+  "tagline": null,
+  "features": [
+    "Markdown-powered: Write documentation in plain Markdown files for easy editing and version control.",
+    "No database required: Store all content as files on disk for simple backups and portability.",
+    "Full-text search: Find information quickly across all documentation pages with built-in search.",
+    "Category organization: Group related pages into categories for logical navigation structure.",
+    "Live editing: Update documentation through the web interface without restarting the server.",
+    "Syntax highlighting: Display code examples with proper formatting for multiple programming languages.",
+    "Custom themes: Modify the appearance with CSS and templates to match your brand.",
+    "Access control: Protect sensitive documentation with password authentication and user management.",
+    "Git integration: Track changes to documentation by storing Markdown files in a Git repository.",
+    "Table of contents: Automatically generate navigation from your folder structure and file names.",
+    "Metadata support: Add titles, descriptions, and sorting information using YAML front matter.",
+    "Responsive design: Read documentation comfortably on desktops, tablets, and mobile devices."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

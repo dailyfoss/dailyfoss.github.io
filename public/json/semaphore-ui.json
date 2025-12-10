@@ -4,6 +4,8 @@
   "categories": [
     146
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/semaphoreui/semaphore",
@@ -12,6 +14,21 @@
   "github_stars": "12897",
   "logo": "/icons/semaphore-ui.webp",
   "description": "Semaphore is a self-hosted web UI for running Ansible playbooks and managing inventories, keys, and environments. It centralizes automation tasks in a modern dashboard with role-based access for teams.",
+  "tagline": null,
+  "features": [
+    "Ansible web UI: Run Ansible playbooks through an intuitive web interface.",
+    "Inventory management: Organize and manage hosts, groups, and variables visually.",
+    "Playbook execution: Trigger playbook runs with custom variables and tags.",
+    "Task templates: Create reusable task templates for common automation workflows.",
+    "SSH key management: Store and manage SSH keys securely for host authentication.",
+    "Environment variables: Define environment-specific variables for different deployments.",
+    "Execution history: View logs and results of past playbook runs with filtering.",
+    "Role-based access: Control who can view, edit, or execute specific playbooks.",
+    "Scheduling: Run playbooks on schedules or trigger them via webhooks.",
+    "Real-time output: Stream playbook execution output live in the browser.",
+    "Multi-project support: Organize playbooks and inventories into separate projects.",
+    "Notification system: Send alerts on playbook completion or failure via email or webhooks."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

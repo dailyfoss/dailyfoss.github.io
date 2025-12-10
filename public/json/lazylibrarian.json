@@ -4,6 +4,8 @@
   "categories": [
     21
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "gitlab.com/LazyLibrarian/LazyLibrarian",
@@ -12,6 +14,13 @@
   "github_stars": "352",
   "logo": "/icons/lazylibrarian.webp",
   "description": "LazyLibrarian is an automated ebook and audiobook manager similar to Sonarr but for books. It tracks authors, manages wanted lists, and integrates with downloaders and metadata providers to build a self hosted library automatically.",
+  "tagline": null,
+  "features": [
+    "Book Automation: Author tracking, Automatic downloads, Release monitoring. Build your ebook library automatically.",
+    "Metadata Integration: GoodReads support, Cover art, Book details. Rich information for every book.",
+    "Audiobook Support: Audiobook downloads, Dual format tracking, Unified library. Manage ebooks and audiobooks together.",
+    "Downloader Integration: NZB and torrent support, Quality preferences, Format selection. Flexible download options."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +34,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

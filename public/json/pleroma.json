@@ -4,6 +4,8 @@
   "categories": [
     148
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "git.pleroma.social/pleroma/pleroma",
@@ -12,6 +14,21 @@
   "github_stars": null,
   "logo": "/icons/pleroma.webp",
   "description": "Pleroma is a lightweight federated social network built using Elixir and Phoenix. It supports ActivityPub federation, custom themes, chat, and scalable self-hosted deployments.",
+  "tagline": null,
+  "features": [
+    "Federated social network: Connect with users across Mastodon, Pleroma, and other ActivityPub platforms.",
+    "Lightweight architecture: Built with Elixir for efficient resource usage and scalability on modest hardware.",
+    "Custom themes: Personalize the interface with custom CSS themes and color schemes.",
+    "Rich media posts: Share text, images, videos, and polls with followers in your timeline.",
+    "Chat functionality: Send direct messages and participate in group chats with other users.",
+    "Content warnings: Add content warnings to posts for sensitive material with collapsible previews.",
+    "Emoji reactions: React to posts with custom emoji beyond standard likes and favorites.",
+    "Moderation tools: Manage your instance with user blocking, reporting, and content filtering.",
+    "Multiple frontends: Choose from various web interfaces including Pleroma-FE, Mastodon-FE, and others.",
+    "Media proxy: Proxy external media through your server for privacy and caching benefits.",
+    "Custom emoji: Upload and use custom emoji unique to your instance for community identity.",
+    "API compatibility: Support for Mastodon API enables use of third-party mobile apps and clients."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

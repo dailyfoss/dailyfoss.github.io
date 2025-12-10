@@ -4,6 +4,8 @@
   "categories": [
     148
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/civilblur/youlag",
@@ -12,6 +14,21 @@
   "github_stars": "138",
   "logo": "/icons/youlag.webp",
   "description": "Youlag is a self-hosted latency and response tracking tool for services, visualizing delays and outages over time. It aims to provide quick, intuitive insight into user-perceived performance.",
+  "tagline": null,
+  "features": [
+    "Latency monitoring: Measure response times for web services and APIs to identify performance degradation.",
+    "Visual dashboards: View latency trends over time with charts and graphs that highlight spikes and patterns.",
+    "Multi-endpoint tracking: Monitor multiple services simultaneously from a single dashboard for comprehensive oversight.",
+    "Alert thresholds: Set latency limits that trigger notifications when services exceed acceptable response times.",
+    "Historical data: Store and analyze past performance metrics to identify long-term trends and recurring issues.",
+    "Uptime tracking: Monitor service availability alongside latency to get a complete picture of reliability.",
+    "Geographic testing: Measure response times from different locations to understand regional performance variations.",
+    "Custom intervals: Configure how frequently each service is checked to balance accuracy with resource usage.",
+    "Status pages: Generate public or private status pages showing current and historical service performance.",
+    "Export reports: Download performance data in CSV or JSON format for external analysis and reporting.",
+    "Lightweight monitoring: Run checks with minimal overhead to avoid impacting the services being monitored.",
+    "Browser extension: Track latency directly from your browser to measure real user experience metrics."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     120
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/photoprism/photoprism",
@@ -12,6 +14,21 @@
   "github_stars": "38881",
   "logo": "/icons/photoprism.webp",
   "description": "PhotoPrism is a self-hosted AI-powered photo organizer that automatically tags and indexes images using machine learning. It supports RAW formats, browsing, search, and has a polished UI for photographers.",
+  "tagline": null,
+  "features": [
+    "AI-powered tagging: Automatically classify and tag photos using machine learning for objects, scenes, and faces.",
+    "RAW format support: Process and display RAW files from professional cameras with embedded preview generation.",
+    "Facial recognition: Identify and group photos by people with automatic face detection and clustering.",
+    "Geolocation mapping: View photos on interactive maps based on GPS metadata and organize by location.",
+    "Duplicate detection: Automatically identify and manage duplicate photos to save storage space.",
+    "Album organization: Create albums and collections to organize photos beyond folder structures.",
+    "Advanced search: Find photos using natural language queries combining tags, dates, locations, and metadata.",
+    "Mobile apps: Access your library from iOS and Android devices with native mobile applications.",
+    "Video support: Index and play video files alongside photos with thumbnail generation and metadata extraction.",
+    "Privacy controls: Share albums with customizable access controls and password protection.",
+    "Metadata editing: Modify EXIF data, titles, descriptions, and tags directly in the interface.",
+    "Import automation: Automatically organize and index new photos added to watched directories."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

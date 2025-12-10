@@ -4,6 +4,8 @@
   "categories": [
     120
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/SmilyOrg/photofield",
@@ -12,6 +14,21 @@
   "github_stars": "532",
   "logo": "/icons/photofield.webp",
   "description": "Photofield is a self-hosted gallery viewer that displays images in a dynamic, zoomable canvas layout. Ideal for browsing large photo collections with intuitive navigation and a fluid UI.",
+  "tagline": null,
+  "features": [
+    "Zoomable canvas: Display photos on an infinite, zoomable canvas for intuitive browsing of large collections.",
+    "Dynamic layout: Automatically arrange images in visually appealing layouts based on metadata and relationships.",
+    "Fast navigation: Smoothly pan and zoom through thousands of photos with hardware-accelerated rendering.",
+    "Metadata support: Display EXIF data including location, date, camera settings, and custom tags.",
+    "Timeline view: Organize photos chronologically with visual timeline navigation and date clustering.",
+    "Folder scanning: Automatically index photos from local directories with real-time updates.",
+    "Search and filter: Find photos by date, location, camera, or custom metadata fields.",
+    "Lightweight design: Minimal resource usage enables smooth performance even on low-power devices.",
+    "Keyboard shortcuts: Navigate and control the interface efficiently with customizable keyboard commands.",
+    "Responsive interface: Adapts to different screen sizes for desktop, tablet, and mobile viewing.",
+    "Privacy focused: All processing happens locally with no external services or data collection.",
+    "RAW format support: View and browse RAW image files from professional cameras alongside standard formats."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

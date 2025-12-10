@@ -4,6 +4,8 @@
   "categories": [
     124
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/syeopite/priviblur",
@@ -12,6 +14,21 @@
   "github_stars": "137",
   "logo": "/icons/priviblur.webp",
   "description": "PriviBlur is a self-hosted tool for face blurring in videos and images. It supports configurable filters and batch processing through a browser interface, designed to enhance privacy for shared media.",
+  "tagline": null,
+  "features": [
+    "Face detection: Automatically detect faces in images and videos using machine learning algorithms.",
+    "Automatic blurring: Apply blur effects to detected faces to protect privacy in shared media.",
+    "Batch processing: Process multiple images or videos simultaneously for efficient privacy protection.",
+    "Configurable filters: Adjust blur intensity, detection sensitivity, and processing parameters.",
+    "Video support: Blur faces in video files frame-by-frame with optimized processing.",
+    "Browser interface: Upload and process media through an intuitive web-based interface.",
+    "Preview mode: Review detected faces and blur effects before finalizing changes.",
+    "Manual adjustments: Manually select or deselect faces for blurring when automatic detection needs refinement.",
+    "Format support: Process common image formats (JPEG, PNG) and video formats (MP4, AVI).",
+    "Privacy focused: All processing happens locally on your server without sending data to external services.",
+    "Export options: Download processed media with faces blurred for sharing or publication.",
+    "Lightweight design: Minimal resource requirements suitable for personal or small-scale use."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

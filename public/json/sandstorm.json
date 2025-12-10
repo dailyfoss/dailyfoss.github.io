@@ -4,6 +4,8 @@
   "categories": [
     121
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/sandstorm-io/sandstorm",
@@ -12,6 +14,21 @@
   "github_stars": "6967",
   "logo": "/icons/sandstorm.webp",
   "description": "Sandstorm is a self-hosted platform to run web apps securely in isolated sandboxes. It includes app packaging, updates, and permissions control, ideal for personal cloud services.",
+  "tagline": null,
+  "features": [
+    "App sandboxing: Runs each application in isolated containers for enhanced security.",
+    "One-click installs: Deploy web apps from the app market with a single click.",
+    "Automatic updates: Keeps installed apps up-to-date with automatic version management.",
+    "Granular permissions: Control app access to data and resources with fine-grained permissions.",
+    "Sharing controls: Share app instances with specific users or groups with customizable access levels.",
+    "Single sign-on: Unified authentication across all installed apps with OAuth and LDAP support.",
+    "App packaging: Package any web app using the Sandstorm packaging format for distribution.",
+    "Resource isolation: Prevents apps from interfering with each other through strict resource limits.",
+    "Backup and restore: Export and import app data for migration and disaster recovery.",
+    "Mobile friendly: Access and manage apps from mobile devices with responsive interfaces.",
+    "Activity logs: Track app usage and access patterns for security auditing.",
+    "Custom domains: Map custom domains to individual app instances for professional deployment."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

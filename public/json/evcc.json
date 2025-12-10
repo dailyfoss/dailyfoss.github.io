@@ -4,6 +4,8 @@
   "categories": [
     175
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/evcc-io/evcc",
@@ -12,6 +14,15 @@
   "github_stars": "5819",
   "logo": "/icons/evcc.webp",
   "description": "evcc is an EV charging controller that optimizes car charging based on solar production, tariffs, and household loads. It connects to wallboxes, inverters, and meters, and offers a web UI to monitor and configure charging behavior.",
+  "tagline": null,
+  "features": [
+    "Solar Optimization: Charge your EV with excess solar power. Maximize self-consumption.",
+    "Tariff Awareness: Charge during cheap electricity periods. Minimize charging costs.",
+    "Wallbox Control: Manage charging stations intelligently. Smart power distribution.",
+    "Load Management: Balance household and EV consumption. Prevent grid overload.",
+    "Web Dashboard: Monitor and control charging remotely. Complete visibility.",
+    "Self-Hosted: Run your own EV charging controller. Complete energy independence."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

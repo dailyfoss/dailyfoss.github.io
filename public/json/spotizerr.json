@@ -4,6 +4,8 @@
   "categories": [
     166
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "lavaforge.org/spotizerr/spotizerr",
@@ -12,6 +14,21 @@
   "github_stars": null,
   "logo": "/icons/spotizerr.webp",
   "description": "Spotizerr is a self-hosted tool connecting Spotify data with Overseerr-style request workflows, allowing users to request tracks or albums in curated collections.",
+  "tagline": null,
+  "features": [
+    "Spotify requests: Allows users to request tracks or albums from Spotify.",
+    "Request management: Organizes and prioritizes music requests.",
+    "Overseerr-style UI: Provides familiar interface for media requests.",
+    "User permissions: Controls who can request and approve music.",
+    "Download automation: Triggers downloads when requests are approved.",
+    "Library integration: Checks existing library to avoid duplicates.",
+    "Request history: Tracks all past requests and their status.",
+    "Approval workflow: Requires admin approval before processing requests.",
+    "Notification system: Alerts users when requests are fulfilled.",
+    "Search functionality: Searches Spotify catalog for music to request.",
+    "Collection management: Organizes requested music into collections.",
+    "API integration: Connects with music download and management tools."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

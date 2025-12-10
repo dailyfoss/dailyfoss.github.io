@@ -4,6 +4,8 @@
   "categories": [
     173
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/0xfurai/peekaping",
@@ -12,6 +14,18 @@
   "github_stars": "876",
   "logo": "/icons/peekaping.webp",
   "description": "PeekAPing is a self-hosted monitoring tool for running health checks on websites and services. It provides uptime tracking, performance data, and alerting over a custom web UI.",
+  "tagline": null,
+  "features": [
+    "Uptime monitoring: Track website and service availability with configurable check intervals and historical uptime statistics",
+    "Health checks: Monitor HTTP endpoints, TCP ports, and custom protocols to verify service health and responsiveness",
+    "Performance metrics: Measure response times, latency, and performance trends to identify slowdowns and optimization opportunities",
+    "Alert system: Receive notifications via email, Slack, or webhooks when services go down or performance degrades",
+    "Status dashboard: Clean web interface displays current status and historical data for all monitored services at a glance",
+    "Custom intervals: Configure check frequency per service from seconds to hours based on criticality and requirements",
+    "SSL monitoring: Track SSL certificate expiration dates and receive alerts before certificates expire",
+    "Response validation: Verify not just availability but also response content to detect partial outages or misconfigurations",
+    "Historical data: Store and visualize uptime history with charts showing trends, incidents, and performance over time"
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +39,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

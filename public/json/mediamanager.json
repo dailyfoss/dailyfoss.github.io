@@ -4,6 +4,8 @@
   "categories": [
     60
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/maxdorninger/MediaManager",
@@ -12,6 +14,21 @@
   "github_stars": "2058",
   "logo": "/icons/mediamanager.webp",
   "description": "MediaManager is a media collection organizer and categorizer. It provides a web interface to upload, tag, group, and browse files such as images, videos, and documents in a self-hosted environment.",
+  "tagline": null,
+  "features": [
+    "File upload: Upload images, videos, and documents through drag-and-drop or file browser.",
+    "Tag system: Apply custom tags to files for flexible categorization and filtering.",
+    "Category organization: Group media into categories and subcategories for structured browsing.",
+    "Search functionality: Find files quickly by name, tags, or metadata using full-text search.",
+    "Preview generation: Automatically create thumbnails and previews for visual file identification.",
+    "Bulk operations: Tag, move, or delete multiple files simultaneously for efficient management.",
+    "Metadata editing: Add descriptions, titles, and custom fields to files for better organization.",
+    "Access control: Set permissions to control who can view, upload, or modify files.",
+    "Gallery view: Browse media in grid or list layouts with sorting and filtering options.",
+    "Download management: Download individual files or entire collections as compressed archives.",
+    "Storage monitoring: Track disk usage and available space across media libraries.",
+    "API access: Integrate media management into external applications via REST API."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

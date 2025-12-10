@@ -4,6 +4,8 @@
   "categories": [
     171
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/YOURLS/YOURLS",
@@ -12,6 +14,21 @@
   "github_stars": "11724",
   "logo": "/icons/yourls.webp",
   "description": "YOURLS is a self-hosted URL shortener that generates short links with optional custom keywords and stats. It supports plugins, APIs, and multiple users, offering a private alternative to public shortening services.",
+  "tagline": null,
+  "features": [
+    "Custom keywords: Create memorable short URLs with custom keywords instead of random character strings.",
+    "Click statistics: Track clicks, referrers, and geographic data for each shortened link to measure engagement.",
+    "Private or public: Run as a private shortener for personal use or open it to the public with optional registration.",
+    "Plugin system: Extend functionality with community plugins for features like QR codes, previews, and integrations.",
+    "API access: Shorten URLs programmatically using the REST API for automation and third-party integrations.",
+    "Bookmarklet: Install a browser bookmarklet to shorten the current page URL with one click.",
+    "Multi-user support: Create accounts for team members with individual statistics and link management.",
+    "Link management: Edit, delete, or update destination URLs for existing short links without changing the short URL.",
+    "Search functionality: Find shortened links quickly by searching keywords, destinations, or creation dates.",
+    "Password protection: Restrict access to specific short links with password requirements for sensitive content.",
+    "Duplicate detection: Automatically reuse existing short URLs when the same long URL is submitted multiple times.",
+    "Database flexibility: Choose between MySQL and other database backends for storage based on your infrastructure."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

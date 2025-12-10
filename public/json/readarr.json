@@ -4,6 +4,8 @@
   "categories": [
     21
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Readarr/Readarr",
@@ -12,6 +14,21 @@
   "github_stars": "3385",
   "logo": "/icons/readarr.webp",
   "description": "Readarr is a self-hosted ebook and audiobook collection manager for Usenet and torrents. It integrates with Calibre, tracks authors, and automates downloads via indexers.",
+  "tagline": null,
+  "features": [
+    "Author tracking: Monitor favorite authors and automatically download new releases when they're published.",
+    "Calibre integration: Sync with Calibre libraries to manage metadata and convert between ebook formats.",
+    "Quality profiles: Define preferred formats like EPUB, MOBI, or AZW3 and prioritize audiobook quality.",
+    "Automated downloads: Search Usenet and torrent indexers to grab books as soon as they become available.",
+    "Metadata management: Fetch book covers, descriptions, and publication details from GoodReads and other sources.",
+    "Series tracking: Follow book series and get notified when new installments are released.",
+    "Import lists: Automatically add books from GoodReads lists, reading challenges, or custom sources.",
+    "Library organization: Rename and sort downloaded books into a consistent folder structure.",
+    "Search indexers: Connect to multiple indexers simultaneously to find rare or hard-to-find titles.",
+    "Upgrade monitoring: Replace existing books with better quality versions or preferred formats when available.",
+    "Calendar view: See upcoming book releases from tracked authors on a visual timeline.",
+    "Notifications: Send alerts to Discord, Telegram, or email when new books are added or downloaded."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

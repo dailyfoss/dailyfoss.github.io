@@ -4,6 +4,8 @@
   "categories": [
     146
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/stephondoestech/unraid-config-guardian",
@@ -12,6 +14,21 @@
   "github_stars": "135",
   "logo": "/icons/unraid-guardian.webp",
   "description": "Unraid Config Guardian is a self-hosted utility that monitors and backs up Unraid configuration files, helping detect changes and protect server settings from accidental loss.",
+  "tagline": null,
+  "features": [
+    "Configuration backup: Automatically backup Unraid configuration files on a schedule.",
+    "Change detection: Monitor configuration files for changes and alert when modifications occur.",
+    "Version history: Maintain historical versions of configuration files for rollback capability.",
+    "Automated monitoring: Run continuously to detect and backup configuration changes automatically.",
+    "Restore capability: Restore previous configuration versions when needed for recovery.",
+    "Alert notifications: Send alerts when configuration changes are detected for security awareness.",
+    "Scheduled backups: Configure backup frequency to balance protection with storage usage.",
+    "File comparison: Compare current configuration with previous versions to identify changes.",
+    "Unraid integration: Designed specifically for Unraid servers with knowledge of critical config files.",
+    "Disaster recovery: Protect against accidental configuration loss or corruption.",
+    "Lightweight operation: Run with minimal impact on server resources.",
+    "Simple setup: Install and configure quickly to start protecting your Unraid configuration."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

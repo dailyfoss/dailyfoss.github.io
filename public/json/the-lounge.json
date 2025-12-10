@@ -4,6 +4,8 @@
   "categories": [
     102
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/thelounge/thelounge",
@@ -12,6 +14,21 @@
   "github_stars": "6068",
   "logo": "/icons/the-lounge.webp",
   "description": "The Lounge is a self-hosted, always-online web IRC client. It keeps you connected to IRC networks and provides a modern multi-user interface, letting you access chat from any device using a browser.",
+  "tagline": null,
+  "features": [
+    "Always-online: Stay connected to IRC networks 24/7 even when your browser is closed.",
+    "Multi-user: Support multiple users with individual accounts, connections, and preferences on one server.",
+    "Web-based: Access IRC from any device using a modern web browser without installing client software.",
+    "Message history: Scroll back through message history that persists across sessions and devices.",
+    "Push notifications: Receive notifications for mentions and private messages even when not actively viewing.",
+    "File uploads: Share files and images directly in channels with automatic hosting and preview generation.",
+    "Link previews: View automatic previews for shared links including images, videos, and website metadata.",
+    "Multiple networks: Connect to multiple IRC networks simultaneously from a single interface.",
+    "Responsive design: Use on desktop, tablet, or mobile with a touch-friendly responsive interface.",
+    "Themes: Customize appearance with built-in themes or create your own for personalized styling.",
+    "Search: Find messages across channels and networks using full-text search with filters.",
+    "SASL authentication: Connect securely to IRC networks using SASL for authenticated connections."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

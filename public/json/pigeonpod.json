@@ -4,6 +4,8 @@
   "categories": [
     123
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/aizhimou/pigeon-pod",
@@ -12,6 +14,21 @@
   "github_stars": "631",
   "logo": "/icons/pigeonpod.webp",
   "description": "Pigeon Pod is a self-hosted web app for tracking podcasts and episodes, offering tags, lists, and listening history for enthusiasts who want privacy and custom organization.",
+  "tagline": null,
+  "features": [
+    "Podcast tracking: Subscribe to podcasts and track new episodes with automatic feed updates.",
+    "Episode management: Mark episodes as played, favorite, or queue them for later listening.",
+    "Custom tags: Organize podcasts with custom tags for flexible categorization beyond folders.",
+    "Listening history: Track which episodes you've listened to with timestamps and progress tracking.",
+    "Search functionality: Find podcasts and episodes by title, description, or custom metadata.",
+    "RSS feed support: Subscribe to any podcast using standard RSS or Atom feed URLs.",
+    "List creation: Create custom lists to organize podcasts by theme, priority, or listening schedule.",
+    "Privacy focused: Self-hosted solution keeps your listening habits and subscriptions private.",
+    "Import and export: Transfer podcast subscriptions using OPML format for backup or migration.",
+    "Web player: Stream episodes directly in the browser without downloading files.",
+    "Episode notes: Add personal notes and ratings to episodes for future reference.",
+    "Notification system: Get alerts when new episodes are available from subscribed podcasts."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

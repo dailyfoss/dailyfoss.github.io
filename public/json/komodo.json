@@ -4,6 +4,8 @@
   "categories": [
     146
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/moghtech/komodo",
@@ -12,6 +14,21 @@
   "github_stars": "8750",
   "logo": "/icons/komodo.webp",
   "description": "Komodo is a modern web based status page and incident management platform. It allows teams to display service health, schedule maintenance and communicate outages, running fully self hosted for privacy conscious organizations.",
+  "tagline": null,
+  "features": [
+    "Status Pages: Public-facing status pages showing service health and uptime. Keep users informed about availability.",
+    "Incident Management: Create, update, and resolve incidents with timeline tracking. Manage outages transparently.",
+    "Maintenance Scheduling: Schedule and communicate planned maintenance windows. Set user expectations proactively.",
+    "Service Monitoring: Monitor services with health checks and uptime tracking. Detect issues automatically.",
+    "Component Groups: Organize services into logical groups and categories. Structure status page clearly.",
+    "Subscriber Notifications: Email and webhook notifications for incidents and updates. Alert stakeholders automatically.",
+    "Custom Branding: Customize status page appearance with logos and colors. Match your brand identity.",
+    "Historical Data: View incident history and uptime statistics over time. Track reliability trends.",
+    "Multi-Language: Support for multiple languages on status pages. Serve international audiences.",
+    "API Access: Programmatic incident management and status updates. Automate status communication.",
+    "Self-Hosted: Complete control over status page infrastructure and data. Own your communication platform.",
+    "Metrics Display: Show response times and performance metrics on status page. Provide transparency beyond uptime."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

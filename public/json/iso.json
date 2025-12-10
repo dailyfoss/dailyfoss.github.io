@@ -4,6 +4,8 @@
   "categories": [
     165
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Coyenn/iso",
@@ -12,6 +14,17 @@
   "github_stars": "151",
   "logo": "/icons/iso.webp",
   "description": "iso is a small self hosted bookmark and link management service. It allows saving URLs with tags and notes, searching through them and organizing reading material via a clean, keyboard friendly interface.",
+  "tagline": null,
+  "features": [
+    "Bookmark Storage: Save URLs with titles, descriptions, and custom notes.",
+    "Tag Organization: Categorize bookmarks with flexible tagging system.",
+    "Full-Text Search: Search through bookmark titles, URLs, and notes instantly.",
+    "Keyboard Navigation: Efficient keyboard shortcuts for power users.",
+    "Reading List: Mark bookmarks as read or unread to track your reading progress.",
+    "Clean Interface: Minimal, distraction-free design focused on functionality.",
+    "Import/Export: Migrate bookmarks from browsers or other bookmark managers.",
+    "Self-Hosted: Keep your reading list and bookmarks on your own server."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

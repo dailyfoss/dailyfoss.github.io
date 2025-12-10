@@ -4,6 +4,8 @@
   "categories": [
     117
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/algolia/sup3rS3cretMes5age",
@@ -12,6 +14,21 @@
   "github_stars": "556",
   "logo": "/icons/sup3r-s3cret-mes5age.webp",
   "description": "sup3rS3cretMes5age is a self-hosted tool to create secret, expiring links to messages. It encrypts content and only decrypts client-side when the link is opened.",
+  "tagline": null,
+  "features": [
+    "Secret messages: Creates one-time links to encrypted messages that self-destruct.",
+    "Client-side encryption: Encrypts messages in browser before sending to server.",
+    "One-time access: Destroys messages after first viewing for security.",
+    "Time expiration: Sets automatic expiration for messages after specified duration.",
+    "Password protection: Optionally requires password to decrypt and view messages.",
+    "No registration: Creates secret messages without accounts or authentication.",
+    "Burn notification: Optionally notifies sender when message is read.",
+    "Custom expiration: Chooses from preset durations or sets custom expiration time.",
+    "Simple interface: Creates and shares secret links with minimal steps.",
+    "Mobile friendly: Works on smartphones for secure message sharing on the go.",
+    "No server storage: Server never stores decryption keys or message content.",
+    "Open source: Auditable code ensures security and privacy claims."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     49
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/24eme/signaturepdf",
@@ -12,6 +14,21 @@
   "github_stars": "695",
   "logo": "/icons/signature-pdf.webp",
   "description": "signaturepdf is a self-hosted tool to digitally sign PDFs from the browser. Users can upload, place signatures, and download signed documents without sending files to third-party services.",
+  "tagline": null,
+  "features": [
+    "Browser-based signing: Signs PDFs entirely in the browser without server uploads.",
+    "Signature drawing: Creates signatures by drawing with mouse or touchscreen.",
+    "Text signatures: Generates typed signatures with customizable fonts.",
+    "Image signatures: Uploads signature images from files for placement on PDFs.",
+    "Multi-page support: Places signatures on any page of multi-page documents.",
+    "Signature positioning: Drag and resize signature placement with visual editor.",
+    "Date stamping: Automatically adds signing date alongside signatures.",
+    "Privacy focused: Processes PDFs client-side without storing documents on server.",
+    "No registration: Signs documents without creating accounts or logging in.",
+    "Download signed PDFs: Saves signed documents directly to your device.",
+    "Mobile friendly: Works on smartphones and tablets for signing on the go.",
+    "Multiple signatures: Adds multiple signatures to different pages or locations."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

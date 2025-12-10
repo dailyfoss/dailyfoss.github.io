@@ -4,6 +4,8 @@
   "categories": [
     124
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/pommee/goaway",
@@ -12,6 +14,17 @@
   "github_stars": "641",
   "logo": "/icons/goaway.webp",
   "description": "GoAway is a small reverse proxy written in Go that provides access control and custom HTTP responses. It's designed for small deployments where simplicity and performance are necessary.",
+  "tagline": null,
+  "features": [
+    "Reverse Proxy: Route HTTP traffic to backend services with minimal configuration.",
+    "Access Control: Restrict access based on IP addresses, headers, or custom rules.",
+    "Custom Responses: Define custom HTTP responses for specific routes or conditions.",
+    "Lightweight Design: Minimal resource usage written in Go for high performance.",
+    "Simple Configuration: Easy setup with straightforward configuration files.",
+    "SSL/TLS Support: Terminate SSL connections and proxy to backend services.",
+    "Request Logging: Track incoming requests for debugging and monitoring purposes.",
+    "Small Deployments: Ideal for personal projects and small-scale infrastructure."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

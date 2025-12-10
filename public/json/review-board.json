@@ -4,6 +4,8 @@
   "categories": [
     125
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/reviewboard/reviewboard",
@@ -12,6 +14,21 @@
   "github_stars": "1677",
   "logo": "/icons/review-board.webp",
   "description": "Review Board is a self-hosted code review tool that integrates with Git, SVN, and Mercurial. It includes inline comments, diff views, and workflow tracking for engineering teams.",
+  "tagline": null,
+  "features": [
+    "Code review workflow: Submit, review, and approve code changes before merging to main branches.",
+    "Inline comments: Add feedback directly on specific lines of code in diff views.",
+    "Diff visualization: View side-by-side or unified diffs with syntax highlighting.",
+    "VCS integration: Connect to Git, SVN, Mercurial, and Perforce repositories.",
+    "Review requests: Create formal review requests with descriptions and reviewers.",
+    "Issue tracking: Link reviews to bug reports or feature requests for context.",
+    "Email notifications: Alert reviewers when new changes are submitted or comments added.",
+    "Review history: Track all feedback and revisions throughout the review process.",
+    "Pre-commit reviews: Catch issues before code enters the repository.",
+    "Access control: Define who can submit, review, or approve changes based on roles.",
+    "Dashboard views: Monitor pending reviews and team activity from a central interface.",
+    "API integration: Automate review workflows with REST API endpoints."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     96
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/dietrichmax/docker-staticmaps",
@@ -12,6 +14,15 @@
   "github_stars": "105",
   "logo": "/icons/docker-staticmaps.webp",
   "description": "Docker Static Maps is a simple system for hosting static maps and tile images for web apps, without relying on external services. Useful for mapping features in web and embedded applications.",
+  "tagline": null,
+  "features": [
+    "Static Map Hosting: Serve map tiles without external dependencies. Complete independence.",
+    "Offline Capability: Maps work without internet connection. Reliable availability.",
+    "Web App Ready: Perfect for embedding in applications. Easy integration.",
+    "No External Services: Avoid third-party map API costs. Cost-effective solution.",
+    "Tile Server: Host your own map tile infrastructure. Full control over maps.",
+    "Self-Hosted: Keep map data and requests private. No tracking or limits."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

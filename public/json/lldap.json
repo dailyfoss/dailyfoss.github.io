@@ -4,6 +4,8 @@
   "categories": [
     79
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/lldap/lldap",
@@ -12,6 +14,13 @@
   "github_stars": "5784",
   "logo": "/icons/lldap.webp",
   "description": "LLDAP is a lightweight LDAP identity provider written in Rust for small-scale deployments. It supports web-based admin, users, groups, and integration with platforms expecting LDAP, perfect for homelabs or SMEs.",
+  "tagline": null,
+  "features": [
+    "Lightweight LDAP: Minimal resource usage, Fast performance, Easy setup. LDAP for small deployments.",
+    "Web Administration: User management, Group management, Web-based UI. Manage identity from browser.",
+    "LDAP Compatible: Standard protocol, Wide integration, Drop-in replacement. Works with existing tools.",
+    "Rust-Based: Memory safe, High performance, Reliable. Modern LDAP implementation."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +34,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     166
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/giuseppe99barchetta/SuggestArr",
@@ -12,6 +14,21 @@
   "github_stars": "829",
   "logo": "/icons/suggestarr.webp",
   "description": "SuggestArr is a self-hosted recommendation tool for Plex/Radarr libraries that suggests content to watch next based on ratings and history.",
+  "tagline": null,
+  "features": [
+    "Content recommendations: Suggests movies and shows based on viewing history.",
+    "Plex integration: Analyzes Plex watch history for personalized suggestions.",
+    "Rating analysis: Uses ratings to improve recommendation accuracy.",
+    "Genre preferences: Learns preferred genres and themes over time.",
+    "Similar content: Finds movies and shows similar to favorites.",
+    "Trending content: Highlights popular and trending media.",
+    "Watchlist generation: Creates suggested watchlists for easy queuing.",
+    "Multi-user support: Provides personalized recommendations per user.",
+    "Radarr integration: Sends movie recommendations directly to Radarr.",
+    "Sonarr integration: Adds TV show suggestions to Sonarr automatically.",
+    "Discovery tools: Helps discover hidden gems in your library.",
+    "Web interface: Browses and manages recommendations through browser."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

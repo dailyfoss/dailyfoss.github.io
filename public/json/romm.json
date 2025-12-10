@@ -4,6 +4,8 @@
   "categories": [
     69
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/rommapp/romm",
@@ -12,6 +14,21 @@
   "github_stars": "7169",
   "logo": "/icons/romm.webp",
   "description": "ROMM is a self-hosted ROM manager for emulators, allowing users to manage and browse ROM libraries via a responsive web UI. It supports tagging, metadata, and organizing by platform.",
+  "tagline": null,
+  "features": [
+    "ROM organization: Manage game ROMs organized by platform with automatic sorting.",
+    "Metadata scraping: Fetch game titles, descriptions, and artwork from online databases.",
+    "Platform support: Handle ROMs from dozens of retro gaming systems in one library.",
+    "Web interface: Browse your collection through a modern, responsive web UI.",
+    "Search and filter: Find games quickly by title, platform, or custom tags.",
+    "Tag system: Add custom tags to games for personalized organization.",
+    "Cover art display: View game box art and screenshots in grid or list layouts.",
+    "Multi-user support: Create separate accounts for family members with individual collections.",
+    "File management: Upload, delete, or move ROMs through the web interface.",
+    "Duplicate detection: Identify and manage duplicate ROMs across your library.",
+    "Statistics dashboard: View collection size and breakdown by platform.",
+    "Mobile responsive: Access and browse your ROM library from any device."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

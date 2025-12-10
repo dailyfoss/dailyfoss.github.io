@@ -4,6 +4,8 @@
   "categories": [
     52
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Dolibarr/dolibarr",
@@ -12,6 +14,17 @@
   "github_stars": "6727",
   "logo": "/icons/dolibarr.webp",
   "description": "Dolibarr is an open-source ERP and CRM suite aimed at small and medium businesses. It includes modules for invoicing, accounting, inventory, HR, projects, and more, enabling companies to centralize operations in a self-hosted web interface.",
+  "tagline": null,
+  "features": [
+    "Customer management: Track contacts, companies, and sales opportunities with integrated CRM tools for relationship building.",
+    "Invoicing system: Generate quotes, orders, and invoices with customizable templates and automated payment tracking.",
+    "Inventory control: Manage stock levels, warehouses, and product catalogs with barcode support and reorder alerts.",
+    "Project tracking: Plan tasks, allocate resources, and monitor project progress with time logging and milestone management.",
+    "Accounting integration: Record transactions, manage bank accounts, and generate financial reports for business oversight.",
+    "HR management: Handle employee records, leave requests, and expense reports within the unified platform.",
+    "Modular architecture: Enable only the features your business needs by activating specific modules from the extensive library.",
+    "Multi-language support: Operate in over 50 languages with localized interfaces and currency handling for global businesses."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

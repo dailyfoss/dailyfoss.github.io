@@ -4,6 +4,8 @@
   "categories": [
     50
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/pyload/pyload",
@@ -12,6 +14,21 @@
   "github_stars": "3638",
   "logo": "/icons/pyload.webp",
   "description": "pyLoad is a self-hosted download manager focused on file hosting services and automation. It supports plugins, scheduling, and a web UI for queue management and link handling.",
+  "tagline": null,
+  "features": [
+    "Multi-host support: Download from hundreds of file hosting services including Mega, Rapidgator, and MediaFire.",
+    "Queue management: Organize downloads in queues with priorities, categories, and scheduling.",
+    "Plugin system: Extend functionality with plugins for new hosters, captcha solvers, and automation.",
+    "Captcha solving: Automatically solve captchas using OCR or integration with solving services.",
+    "Link extraction: Extract download links from container files like DLC, CCF, and RSDF.",
+    "Scheduled downloads: Set download times to take advantage of off-peak hours or unlimited bandwidth periods.",
+    "Web interface: Manage downloads through a responsive web UI accessible from any device.",
+    "Account management: Store premium account credentials for faster downloads and no waiting times.",
+    "Automatic reconnection: Handle connection interruptions with automatic retry and resume capabilities.",
+    "Download limits: Set bandwidth limits and concurrent download restrictions to manage network usage.",
+    "API access: Control downloads programmatically using a RESTful API for automation.",
+    "Notification system: Receive alerts when downloads complete, fail, or require captcha solving."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

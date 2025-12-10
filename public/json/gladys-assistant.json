@@ -4,6 +4,8 @@
   "categories": [
     76
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/GladysAssistant/Gladys",
@@ -12,6 +14,17 @@
   "github_stars": "2947",
   "logo": "/icons/gladys-assistant.webp",
   "description": "Gladys is an open-source, privacy-focused home assistant that integrates smart home devices using workflows, scenes, and automations. It supports MQTT, Zigbee, Z-Wave, and cloudless control designed for personal servers.",
+  "tagline": null,
+  "features": [
+    "Privacy-Focused Control: Manage smart home devices without cloud dependencies or data sharing.",
+    "Protocol Support: Integrate devices via MQTT, Zigbee, Z-Wave, and other popular protocols.",
+    "Scenes and Automations: Create complex workflows and automations triggered by time, sensors, or events.",
+    "Device Integration: Connect lights, sensors, cameras, and appliances from multiple manufacturers.",
+    "Dashboard Interface: Monitor and control your home through a customizable web dashboard.",
+    "Local Processing: All automation logic runs locally on your server for reliability and privacy.",
+    "Moderation Tools: Advanced controls for managing device access and automation rules.",
+    "Community Plugins: Extend functionality with community-developed integrations and features."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

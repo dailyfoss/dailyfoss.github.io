@@ -4,6 +4,8 @@
   "categories": [
     165
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/lminlone/repliqate",
@@ -12,6 +14,21 @@
   "github_stars": "219",
   "logo": "/icons/repliqate.webp",
   "description": "Repliqate is a self-hosted tool for copying content across multiple storage systems with configurable rules. It’s designed for automating replication tasks in multiple environments.",
+  "tagline": null,
+  "features": [
+    "Multi-storage replication: Copy data across local disks, network shares, and cloud storage providers.",
+    "Rule-based automation: Define custom rules for what content to replicate and where.",
+    "Scheduled tasks: Run replication jobs on a schedule to keep backups current.",
+    "Incremental sync: Transfer only changed files to minimize bandwidth and time.",
+    "Conflict handling: Automatically resolve or flag conflicts when files differ between sources.",
+    "Verification checks: Validate data integrity after replication using checksums.",
+    "Parallel transfers: Speed up replication by copying multiple files simultaneously.",
+    "Filtering options: Include or exclude files based on patterns, size, or modification date.",
+    "Logging and reporting: Track all replication activities with detailed logs for auditing.",
+    "Retry logic: Automatically retry failed transfers to handle temporary network issues.",
+    "Bandwidth throttling: Limit transfer speeds to avoid saturating network connections.",
+    "Web dashboard: Monitor replication status and configure jobs through a browser interface."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

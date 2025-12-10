@@ -4,6 +4,8 @@
   "categories": [
     186
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/matomo-org/matomo",
@@ -12,6 +14,21 @@
   "github_stars": "21088",
   "logo": "/icons/matomo.webp",
   "description": "Matomo is a self-hosted web analytics platform that respects user privacy while providing detailed insights into web traffic. It supports tracking, heatmaps, A/B testing, and integrates with many CMS and eCommerce tools.",
+  "tagline": null,
+  "features": [
+    "Privacy-focused analytics: Track website visitors while respecting privacy with GDPR-compliant data collection.",
+    "Real-time reports: Monitor current visitors, page views, and user actions as they happen.",
+    "Heatmaps: Visualize where users click, scroll, and interact on your web pages.",
+    "A/B testing: Run experiments to compare different versions of pages and measure conversion impact.",
+    "Goal tracking: Define and measure conversion goals like form submissions or purchases.",
+    "E-commerce analytics: Track product views, cart additions, and revenue with detailed transaction data.",
+    "Custom dimensions: Add custom data points to track specific user attributes or behaviors.",
+    "Segment analysis: Filter and analyze visitor data by demographics, behavior, or custom criteria.",
+    "Campaign tracking: Measure effectiveness of marketing campaigns with UTM parameter support.",
+    "API access: Extract analytics data programmatically or integrate with other tools via REST API.",
+    "Multi-site support: Manage analytics for multiple websites from a single Matomo installation.",
+    "Plugin ecosystem: Extend functionality with official and community-developed plugins."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     53
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/mailcow/mailcow-dockerized",
@@ -12,6 +14,21 @@
   "github_stars": "11663",
   "logo": "/icons/mailcow.webp",
   "description": "Mailcow is a complete mail server suite packaged with Docker. It includes Postfix, Dovecot, SOGo, and SpamAssassin, offering full email services with a modern admin UI for domain and mailbox management.",
+  "tagline": null,
+  "features": [
+    "Complete mail server: Includes Postfix, Dovecot, SOGo webmail, and spam filtering in one Docker stack.",
+    "Domain management: Host multiple email domains with independent settings and user management.",
+    "Webmail interface: Access email through SOGo's modern webmail client with calendar and contacts.",
+    "Spam protection: Integrated SpamAssassin and Rspamd for effective spam and malware filtering.",
+    "DKIM and SPF: Automatic configuration of email authentication to improve deliverability.",
+    "Quarantine management: Review and release quarantined messages through the admin interface.",
+    "Two-factor authentication: Secure user accounts with TOTP-based 2FA for enhanced security.",
+    "API access: Automate mailbox and domain management through a comprehensive REST API.",
+    "Backup integration: Built-in backup tools for mailboxes, settings, and configuration data.",
+    "Monitoring dashboard: Track mail server health, queue status, and resource usage in real-time.",
+    "Alias management: Create email aliases and catch-all addresses for flexible mail routing.",
+    "Mobile sync: Support for ActiveSync protocol enables native mobile email client integration."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     121
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/syncloud/platform",
@@ -12,6 +14,21 @@
   "github_stars": "424",
   "logo": "/icons/syncloud.webp",
   "description": "Syncloud platform provides images and management tools for running self-hosted applications on supported hardware devices with an app store and web admin interface.",
+  "tagline": null,
+  "features": [
+    "App marketplace: Installs self-hosted apps with one-click from curated catalog.",
+    "Hardware images: Provides pre-built images for Raspberry Pi and other devices.",
+    "Automatic updates: Keeps apps and system updated automatically.",
+    "Domain management: Configures custom domains or uses provided subdomains.",
+    "SSL certificates: Automatically obtains and renews Let's Encrypt certificates.",
+    "Backup and restore: Backs up app data and restores to new devices.",
+    "User management: Creates and manages user accounts across installed apps.",
+    "Web admin: Manages device and apps through browser-based interface.",
+    "External storage: Connects external drives for expanded storage capacity.",
+    "Port forwarding: Configures automatic port forwarding via UPnP.",
+    "VPN access: Provides secure remote access to services via built-in VPN.",
+    "App isolation: Runs each app in isolated environment for security."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

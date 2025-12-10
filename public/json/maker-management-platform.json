@@ -4,6 +4,8 @@
   "categories": [
     196
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Maker-Management-Platform/agent",
@@ -12,6 +14,21 @@
   "github_stars": "29",
   "logo": "/icons/maker-management-platform.webp",
   "description": "Maker Agent is part of an open-source ERP platform for makers and small businesses. It automates purchase orders, production workflows, and inventory movement and runs via self-hosted web infrastructure.",
+  "tagline": null,
+  "features": [
+    "Purchase order automation: Generate and track purchase orders for materials and components automatically.",
+    "Production workflows: Define and manage manufacturing processes with task dependencies and scheduling.",
+    "Inventory tracking: Monitor stock levels, locations, and movements across warehouses and production lines.",
+    "Bill of materials: Create and maintain BOMs for products with component requirements and quantities.",
+    "Supplier management: Track vendor information, pricing, lead times, and order history.",
+    "Work order system: Create production jobs with resource allocation and progress tracking.",
+    "Cost tracking: Calculate production costs including materials, labor, and overhead for accurate pricing.",
+    "Quality control: Record inspections, defects, and quality metrics throughout the manufacturing process.",
+    "Reporting dashboard: View key metrics like production efficiency, inventory turnover, and order status.",
+    "Multi-location support: Manage operations across multiple facilities with centralized visibility.",
+    "API integration: Connect with external systems for accounting, shipping, or e-commerce platforms.",
+    "User permissions: Control access to features based on roles like admin, production, or purchasing."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     102
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/mattermost/mattermost",
@@ -12,6 +14,21 @@
   "github_stars": "34565",
   "logo": "/icons/mattermost.webp",
   "description": "Mattermost is an open-source collaboration and messaging platform for teams. It offers chat, file sharing, integrations, and compliance tooling with enterprise features that can be deployed self-hosted or as SaaS.",
+  "tagline": null,
+  "features": [
+    "Team messaging: Organize conversations in channels for teams, projects, or topics with threaded replies.",
+    "Direct messaging: Send private messages to individuals or create group conversations.",
+    "File sharing: Upload and share documents, images, and files with inline previews and search.",
+    "Video calls: Start voice and video calls directly from channels or direct messages.",
+    "Integrations: Connect with hundreds of tools including Jira, GitHub, GitLab, and Zoom.",
+    "Custom slash commands: Create shortcuts for common actions or integrate with external services.",
+    "Mobile apps: Access Mattermost on iOS and Android with full feature parity to desktop.",
+    "Search functionality: Find messages, files, and conversations using powerful search with filters.",
+    "Compliance features: Meet regulatory requirements with data retention, e-discovery, and audit logs.",
+    "Role-based permissions: Control access to channels and features based on user roles and teams.",
+    "Custom branding: Customize the interface with your organization's colors, logos, and themes.",
+    "High availability: Deploy in clustered configurations for enterprise-grade reliability and scale."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

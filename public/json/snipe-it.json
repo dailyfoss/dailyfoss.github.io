@@ -4,6 +4,8 @@
   "categories": [
     84
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/grokability/snipe-it",
@@ -12,6 +14,21 @@
   "github_stars": "13084",
   "logo": "/icons/snipe-it.webp",
   "description": "Snipe-IT is a self-hosted IT asset management platform for tracking hardware, software, and accessories. It supports barcodes, audit logs, and role-based access via a web UI.",
+  "tagline": null,
+  "features": [
+    "Asset tracking: Manages hardware, software licenses, and accessories with detailed records.",
+    "Check-in/check-out: Tracks asset assignments to users with history and due dates.",
+    "Barcode scanning: Generates and scans barcodes for quick asset identification.",
+    "Maintenance tracking: Schedules and logs maintenance activities for equipment.",
+    "Depreciation: Calculates asset depreciation using multiple accounting methods.",
+    "Audit logs: Records all changes and actions for compliance and accountability.",
+    "Custom fields: Adds organization-specific fields to asset records.",
+    "Email notifications: Sends alerts for check-outs, due dates, and low inventory.",
+    "Reporting tools: Generates reports on assets, users, locations, and activity.",
+    "LDAP integration: Syncs users from Active Directory or LDAP servers.",
+    "API access: Automates asset management via comprehensive REST API.",
+    "Mobile app: Manages assets on the go with iOS and Android applications."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

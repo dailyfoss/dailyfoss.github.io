@@ -4,6 +4,8 @@
   "categories": [
     18
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/eduardolat/pgbackweb",
@@ -12,6 +14,21 @@
   "github_stars": "2398",
   "logo": "/icons/pg-back-web.webp",
   "description": "PgBackWeb is a web-based interface for managing PostgreSQL backups using pgBackRest. It allows scheduling, restoring, and managing backup operations through a modern self-hosted UI.",
+  "tagline": null,
+  "features": [
+    "Backup scheduling: Automate PostgreSQL backups with configurable schedules for full, incremental, and differential backups.",
+    "Web interface: Manage all backup operations through a modern, responsive web UI without command-line access.",
+    "Restore operations: Quickly restore databases to specific points in time with guided recovery workflows.",
+    "Backup monitoring: Track backup status, success rates, and storage usage with dashboard visualizations.",
+    "Multiple databases: Configure and manage backups for multiple PostgreSQL instances from a single interface.",
+    "Retention policies: Automatically delete old backups based on age or count to manage storage efficiently.",
+    "Email notifications: Receive alerts when backups fail, complete, or require attention.",
+    "Compression support: Reduce backup size with built-in compression options to save storage space.",
+    "Encryption: Secure backup data with encryption at rest and in transit for compliance and security.",
+    "Storage backends: Store backups locally or on remote storage like S3, Azure Blob, or network shares.",
+    "Backup verification: Automatically test backup integrity to ensure successful recovery when needed.",
+    "Audit logging: Track all backup and restore operations with detailed logs for compliance and troubleshooting."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

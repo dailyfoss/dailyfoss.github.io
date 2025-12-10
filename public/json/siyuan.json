@@ -4,6 +4,8 @@
   "categories": [
     111
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/siyuan-note/siyuan",
@@ -12,6 +14,21 @@
   "github_stars": "39568",
   "logo": "/icons/siyuan.webp",
   "description": "SiYuan is a privacy-friendly, self-hosted note-taking and personal knowledge management app. It offers block-based editing, graph views, and sync across devices via desktop and web clients.",
+  "tagline": null,
+  "features": [
+    "Block-based editing: Treats every paragraph, heading, and element as a referenceable block.",
+    "Bidirectional links: Creates connections between notes with automatic backlink tracking.",
+    "Graph visualization: Displays note relationships in interactive knowledge graphs.",
+    "Multi-device sync: Synchronizes notes across desktop and mobile devices via cloud or WebDAV.",
+    "Version history: Tracks changes with snapshots and allows rollback to previous versions.",
+    "Template system: Creates reusable templates for consistent note structure.",
+    "Database views: Queries and displays note data in tables, lists, and galleries.",
+    "Flashcards: Generates spaced repetition flashcards from note content for learning.",
+    "Plugin marketplace: Extends functionality with community plugins and themes.",
+    "Export options: Exports notes as Markdown, PDF, HTML, or Word documents.",
+    "Local-first: Stores all data locally with optional cloud sync for privacy.",
+    "AI integration: Connects to AI services for content generation and assistance."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

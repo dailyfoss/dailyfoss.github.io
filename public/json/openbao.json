@@ -4,6 +4,8 @@
   "categories": [
     117
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/openbao/openbao",
@@ -12,6 +14,21 @@
   "github_stars": "4982",
   "logo": "/icons/openbao.webp",
   "description": "OpenBao is a community-driven fork of HashiCorp Vault designed for secure secret management. It supports encryption, key management, access control, and API-driven workflows in self-hosted environments.",
+  "tagline": null,
+  "features": [
+    "Secret Management: Store and manage sensitive data like passwords, API keys, and certificates with encryption at rest.",
+    "Dynamic Secrets: Generate temporary credentials for databases, cloud services, and applications with automatic rotation.",
+    "Access Control: Implement fine-grained policies and role-based access control for secure secret distribution.",
+    "Encryption Services: Provide encryption-as-a-service for applications without exposing encryption keys to clients.",
+    "Authentication Methods: Support multiple authentication backends including LDAP, OAuth, and certificate-based auth.",
+    "Audit Logging: Maintain detailed logs of all secret access and operations for compliance and security monitoring.",
+    "High Availability: Deploy in clustered configurations with automatic failover and data replication capabilities.",
+    "API Integration: Access all functionality through comprehensive REST APIs for automation and application integration.",
+    "Key Management: Generate, rotate, and manage cryptographic keys with hardware security module support.",
+    "Transit Encryption: Encrypt data in transit without storing it, providing cryptographic services to applications.",
+    "Identity Management: Manage identities across different systems and automatically assign appropriate permissions.",
+    "Plugin Architecture: Extend functionality with custom plugins for specialized secret engines and authentication methods."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

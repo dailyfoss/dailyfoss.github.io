@@ -4,6 +4,8 @@
   "categories": [
     146
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/YunoHost/yunohost",
@@ -12,6 +14,21 @@
   "github_stars": "2737",
   "logo": "/icons/yunohost.webp",
   "description": "YunoHost is a self-hosted server management platform aimed at making self-hosting simple. It offers a web admin panel and app catalog to install, configure, and update many services on a single box.",
+  "tagline": null,
+  "features": [
+    "Application catalog: Install popular self-hosted applications with one click from a curated catalog of tested packages.",
+    "Web administration: Manage server settings, users, domains, and applications through an intuitive web interface.",
+    "User management: Create accounts with email addresses and control access to installed applications per user.",
+    "Domain configuration: Set up multiple domains and subdomains with automatic DNS configuration and SSL certificates.",
+    "Automatic backups: Schedule regular backups of applications and data with easy restoration options.",
+    "Email server: Run a complete email stack with webmail, SMTP, IMAP, and spam filtering configured automatically.",
+    "SSL certificates: Obtain and renew Let's Encrypt certificates automatically for all configured domains.",
+    "Single sign-on: Access all installed applications with one set of credentials using integrated LDAP authentication.",
+    "Update management: Keep the system and all installed applications up to date with centralized update notifications.",
+    "Port management: Automatically handle port forwarding and firewall rules for installed applications.",
+    "Command-line tools: Manage the server using CLI commands for advanced configuration and automation.",
+    "Multi-architecture support: Deploy on x86, ARM, and Raspberry Pi hardware with consistent functionality."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

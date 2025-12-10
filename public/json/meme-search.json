@@ -4,6 +4,8 @@
   "categories": [
     143
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/neonwatty/meme-search",
@@ -12,6 +14,21 @@
   "github_stars": "613",
   "logo": "/icons/meme-search.webp",
   "description": "Meme Search is a self-hosted tool that indexes meme images, extracts text using OCR, and allows fast search through a simple web interface, making it easy to find memes stored in a personal collection.",
+  "tagline": null,
+  "features": [
+    "OCR indexing: Extract text from meme images using optical character recognition for searchability.",
+    "Image upload: Add memes to your collection through drag-and-drop or bulk upload.",
+    "Text search: Find memes by searching for text that appears in the image.",
+    "Tag system: Apply custom tags to memes for categorization and filtering.",
+    "Thumbnail generation: Automatically create thumbnails for fast browsing of large collections.",
+    "Quick preview: View full-size memes without leaving the search interface.",
+    "Duplicate detection: Identify and manage duplicate memes in your collection.",
+    "Batch processing: Index multiple memes simultaneously for faster collection building.",
+    "Export functionality: Download individual memes or entire search results as archives.",
+    "Mobile responsive: Search and browse memes from any device with responsive interface.",
+    "Privacy focused: All memes and search data stored locally on your server.",
+    "Lightweight: Minimal resource requirements make it suitable for small servers or personal use."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     48
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/paperless-ngx/paperless-ngx",
@@ -12,6 +14,19 @@
   "github_stars": "34702",
   "logo": "/icons/paperless-ngx.webp",
   "description": "Paperless-ngx is a modern self-hosted document management system. It automates scanning, OCR, tagging, and storage of documents with a user-friendly UI and robust search features.",
+  "tagline": null,
+  "features": [
+    "Automated OCR: Optical character recognition automatically extracts text from scanned documents and images for full-text search",
+    "Document tagging: Organize documents with custom tags, correspondents, and document types for flexible categorization",
+    "Consumption folder: Monitor designated folders for new documents and automatically import, process, and index them",
+    "Advanced search: Powerful search with filters, boolean operators, and full-text queries to quickly locate documents",
+    "Email integration: Import documents directly from email attachments by forwarding messages to dedicated mailbox",
+    "Mobile app support: Companion mobile apps for iOS and Android enable document scanning and access from smartphones",
+    "Custom metadata: Define custom fields and metadata schemas to capture document-specific information beyond standard attributes",
+    "Workflow automation: Create rules to automatically tag, rename, or route documents based on content, sender, or criteria",
+    "Multi-user access: User management with permissions controls who can view, edit, or delete documents for secure collaboration",
+    "API and webhooks: RESTful API and webhook support enable integration with external tools and custom automation workflows"
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +40,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

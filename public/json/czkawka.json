@@ -4,6 +4,8 @@
   "categories": [
     59
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/qarmin/czkawka",
@@ -12,6 +14,15 @@
   "github_stars": "27359",
   "logo": "/icons/czkawka.webp",
   "description": "Czkawka is a fast, cross-platform tool for finding duplicate files, similar photos, empty folders, and more. It features a CLI and GUI and is designed for efficiency using Rust and multithreading support.",
+  "tagline": null,
+  "features": [
+    "Duplicate Detection: Find identical files quickly and accurately. Reclaim wasted storage.",
+    "Similar Photos: Identify near-duplicate images intelligently. Clean photo collections.",
+    "Empty Folders: Locate and remove unused directories. Organize file systems.",
+    "Fast Performance: Rust-powered speed with multithreading. Process large drives quickly.",
+    "CLI & GUI: Choose command-line or graphical interface. Flexible usage options.",
+    "Cross-Platform: Works on Linux, Windows, and macOS. Universal compatibility."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

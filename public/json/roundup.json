@@ -4,6 +4,8 @@
   "categories": [
     156
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/roundup-tracker/roundup",
@@ -12,6 +14,21 @@
   "github_stars": "38",
   "logo": "/icons/roundup.webp",
   "description": "Roundup is a self-hosted issue tracker with a flexible schema, email support, and web-based interface for managing tasks and issues in software or business workflows.",
+  "tagline": null,
+  "features": [
+    "Issue tracking: Create and manage bug reports, feature requests, and tasks.",
+    "Flexible schema: Customize fields, statuses, and workflows to match your process.",
+    "Email integration: Create or update issues by sending emails to the tracker.",
+    "Web interface: Access and manage issues through a browser-based UI.",
+    "Search and filter: Find issues using powerful queries across all fields.",
+    "File attachments: Upload documents, screenshots, or logs to issues.",
+    "User management: Control access with roles and permissions for different team members.",
+    "Activity tracking: View complete history of changes and comments on each issue.",
+    "Custom workflows: Define status transitions and required fields for different issue types.",
+    "Notification system: Send email alerts when issues are created, updated, or assigned.",
+    "Reporting: Generate summaries and statistics on issue status and resolution times.",
+    "Template support: Create issue templates for common bug reports or requests."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     20
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/bouncepaw/betula",
@@ -12,6 +14,17 @@
   "github_stars": "117",
   "logo": "/icons/betula.webp",
   "description": "Betula is a minimal, plain-text-based personal bookmark manager designed to organize URLs into a tree-like structure. Focused on privacy and simplicity, it’s ideal for self-hosters who prefer lightweight tooling.",
+  "tagline": null,
+  "features": [
+    "Tree Structure: Organize bookmarks in hierarchical tree format. Logical organization.",
+    "Plain Text: Simple, lightweight text-based storage for portability. No database complexity.",
+    "Privacy-Focused: Self-hosted solution keeps bookmarks completely private. Your links, your control.",
+    "Minimal Design: Clean interface without unnecessary features. Simplicity first.",
+    "Fast Performance: Lightweight architecture ensures quick loading. No bloat.",
+    "Easy Backup: Plain text files make backing up trivial. Simple data management.",
+    "Tag Support: Organize with flexible tagging system. Find bookmarks quickly.",
+    "Self-Hosted: Run on your own infrastructure for complete ownership. Full control."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

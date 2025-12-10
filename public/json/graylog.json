@@ -4,6 +4,8 @@
   "categories": [
     93
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Graylog2/graylog2-server",
@@ -12,6 +14,17 @@
   "github_stars": "7895",
   "logo": "/icons/graylog.webp",
   "description": "Graylog is a self-hosted log management and SIEM platform for collecting, indexing, and analyzing log data. It includes dashboards, alerts, log search, and integrates with Elasticsearch and MongoDB for monitoring large systems.",
+  "tagline": null,
+  "features": [
+    "Log Management: Collect, index, and analyze log data from servers, applications, and network devices.",
+    "SIEM Capabilities: Security information and event management with threat detection and correlation.",
+    "Elasticsearch Backend: Leverage Elasticsearch for powerful full-text search and log indexing.",
+    "Real-Time Analysis: Search and analyze logs in real-time with sub-second query response.",
+    "Dashboard Creation: Build custom dashboards with widgets for visualizing log data and metrics.",
+    "Alert Configuration: Set up alerts based on log patterns, thresholds, and anomaly detection.",
+    "Stream Processing: Route and process logs with pipelines, extractors, and enrichment rules.",
+    "Scalable Architecture: Horizontal scaling to handle millions of log messages per second."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     96
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/javedh-dev/tracktor",
@@ -12,6 +14,21 @@
   "github_stars": "676",
   "logo": "/icons/tracktor.webp",
   "description": "Tracktor is a self-hosted package and shipment tracking web app that aggregates tracking information from multiple carriers, presenting statuses and history in a unified dashboard.",
+  "tagline": null,
+  "features": [
+    "Multi-carrier tracking: Track packages from multiple shipping carriers in one unified dashboard.",
+    "Automatic updates: Fetch tracking updates automatically at regular intervals without manual checking.",
+    "Status aggregation: View all package statuses at a glance with color-coded indicators and summaries.",
+    "Delivery notifications: Receive alerts when packages are delivered, out for delivery, or encounter issues.",
+    "History tracking: Maintain complete tracking history for all packages including past deliveries.",
+    "Carrier detection: Automatically detect carrier from tracking numbers for seamless package addition.",
+    "Unified interface: Manage all shipments through a single web interface regardless of carrier.",
+    "Search and filter: Find specific packages using search and filter by status, carrier, or date.",
+    "Archive management: Archive delivered packages to keep the active list clean while preserving records.",
+    "Mobile-friendly: Check package status from mobile devices with a responsive design.",
+    "Privacy-focused: Track packages on your own server without sharing tracking data with third parties.",
+    "Bulk import: Add multiple tracking numbers at once for efficient package management."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     137
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/haproxy/haproxy",
@@ -12,6 +14,19 @@
   "github_stars": "6143",
   "logo": "/icons/haproxy.webp",
   "description": "HAProxy is a high-performance TCP/HTTP load balancer and reverse proxy server designed for high availability and scalability. Commonly used in production to expose microservices and secure backend connections.",
+  "tagline": null,
+  "features": [
+    "Load Balancing: Distribute traffic, Multiple algorithms, Health checks. Scale effortlessly.",
+    "High Availability: Failover support, Zero downtime, Redundancy. Always online.",
+    "SSL/TLS: Certificate management, SNI support, Encryption. Secure connections.",
+    "Performance: Extremely fast, Low latency, High throughput. Handle millions of requests.",
+    "Monitoring: Real-time stats, Detailed metrics, Web dashboard. Full visibility.",
+    "ACLs: Flexible routing rules, Content switching, Request filtering. Precise control.",
+    "Compression: Gzip support, Bandwidth savings, Faster delivery. Optimize traffic.",
+    "Sticky Sessions: Session persistence, Cookie-based, IP-based. Maintain state.",
+    "Rate Limiting: DDoS protection, Request throttling, Abuse prevention. Stay protected.",
+    "Production Ready: Battle-tested, Enterprise-grade, Trusted worldwide. Deploy with confidence."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +40,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

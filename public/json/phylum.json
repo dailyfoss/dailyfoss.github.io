@@ -4,6 +4,8 @@
   "categories": [
     165
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "codeberg.org/shroff/phylum",
@@ -12,6 +14,21 @@
   "github_stars": null,
   "logo": "/icons/phylum.webp",
   "description": "Phylum is a static analysis tool that runs as a self-hosted web app, designed to evaluate software supply chain risks by analyzing dependencies and code security.",
+  "tagline": null,
+  "features": [
+    "Dependency analysis: Scan project dependencies to identify security vulnerabilities and supply chain risks.",
+    "Risk scoring: Assign risk scores to packages based on security, quality, and maintenance indicators.",
+    "Vulnerability detection: Identify known CVEs and security issues in third-party dependencies.",
+    "License compliance: Track and report on software licenses to ensure compliance with organizational policies.",
+    "Package monitoring: Continuously monitor dependencies for new vulnerabilities and updates.",
+    "Web dashboard: View analysis results and risk reports through an intuitive web interface.",
+    "Multi-language support: Analyze dependencies from npm, PyPI, Maven, and other package ecosystems.",
+    "CI/CD integration: Integrate security checks into build pipelines to catch issues before deployment.",
+    "Historical tracking: Monitor how dependency risks change over time with trend analysis.",
+    "Policy enforcement: Define and enforce security policies for acceptable dependency risk levels.",
+    "Detailed reports: Generate comprehensive reports on package security, quality, and maintainability.",
+    "Alert notifications: Receive notifications when high-risk dependencies are detected in projects."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

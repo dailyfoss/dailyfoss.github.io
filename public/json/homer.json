@@ -4,6 +4,8 @@
   "categories": [
     34
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/bastienwirtz/homer",
@@ -12,6 +14,17 @@
   "github_stars": "10885",
   "logo": "/icons/homer.webp",
   "description": "Homer is a simple static homepage for organizing links and small informational widgets. Configuration is done via a YAML file and the resulting single page site can be hosted on any web server, ideal for lightweight dashboards.",
+  "tagline": null,
+  "features": [
+    "Static Site: Generate a fast, static homepage that can be hosted anywhere.",
+    "YAML Configuration: Define all links and settings in a single, easy-to-edit YAML file.",
+    "No Backend Required: Pure HTML/CSS/JS with no server-side processing needed.",
+    "Service Icons: Automatic icon fetching or use custom icons for your services.",
+    "Search Bar: Built-in search to quickly find services across all categories.",
+    "Keyboard Navigation: Navigate your dashboard efficiently with keyboard shortcuts.",
+    "Offline Support: Works without internet connection once loaded.",
+    "Minimal Resources: Extremely lightweight with fast load times on any device."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

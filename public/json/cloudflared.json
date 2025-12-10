@@ -4,6 +4,8 @@
   "categories": [
     137
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/cloudflare/cloudflared",
@@ -12,6 +14,16 @@
   "github_stars": "12197",
   "logo": "/icons/cloudflared.webp",
   "description": "Cloudflared is a command-line client used to connect your private services securely to Cloudflare's network using tunnels. It enables exposing local apps, SSH, and RDP without exposing ports publicly.",
+  "tagline": null,
+  "features": [
+    "Cloudflare Tunnels: Securely expose local services to internet. No port forwarding.",
+    "Zero Trust Access: Connect services without public IP exposure. Enhanced security.",
+    "SSH & RDP: Tunnel SSH and RDP connections securely. Protected access.",
+    "Local Apps: Expose local applications safely. Development friendly.",
+    "Command-Line: Powerful CLI for tunnel management. Developer tool.",
+    "Cross-Platform: Works on Linux, Windows, and macOS. Universal compatibility.",
+    "Cloudflare Network: Leverage Cloudflare's global network. Fast and reliable."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +37,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

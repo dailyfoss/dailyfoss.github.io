@@ -4,6 +4,8 @@
   "categories": [
     102
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/simplex-chat/simplex-chat",
@@ -12,6 +14,21 @@
   "github_stars": "10006",
   "logo": "/icons/simplex-chat.webp",
   "description": "SimpleX Chat is a privacy-focused messaging platform with E2E encryption and no identifiers. It provides mobile and desktop clients, and can use self-hosted servers as transport nodes.",
+  "tagline": null,
+  "features": [
+    "No identifiers: Operates without phone numbers, emails, or usernames for maximum privacy.",
+    "End-to-end encryption: Encrypts all messages, calls, and files with double-ratchet protocol.",
+    "Self-hosted servers: Run your own relay servers for complete control over message routing.",
+    "Disappearing messages: Sets automatic message deletion after specified time periods.",
+    "Group chats: Creates encrypted group conversations with admin controls.",
+    "Voice and video calls: Supports encrypted audio and video calls between users.",
+    "File sharing: Sends encrypted files and media through the chat interface.",
+    "Desktop and mobile: Available on Linux, Windows, macOS, iOS, and Android.",
+    "Incognito profiles: Creates temporary identities for specific conversations.",
+    "Database encryption: Protects local message history with password encryption.",
+    "No metadata leakage: Designed to minimize metadata collection and correlation.",
+    "Open protocol: Uses open-source protocol allowing third-party client development."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

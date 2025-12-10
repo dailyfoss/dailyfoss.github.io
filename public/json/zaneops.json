@@ -4,6 +4,8 @@
   "categories": [
     146
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/zane-ops/zane-ops",
@@ -12,6 +14,21 @@
   "github_stars": "1188",
   "logo": "/icons/zaneops.webp",
   "description": "zane-ops is a self-hosted operations dashboard for monitoring services and deployments. It aggregates status, logs, and metrics into a unified web interface for small teams or homelabs.",
+  "tagline": null,
+  "features": [
+    "Service monitoring: Track the health and status of deployed services with real-time availability checks.",
+    "Deployment tracking: View deployment history, rollback options, and current versions across all services.",
+    "Log aggregation: Collect and search logs from multiple services in a centralized interface with filtering.",
+    "Metrics dashboard: Visualize resource usage, request rates, and performance metrics for all monitored services.",
+    "Alert configuration: Set up notifications for service failures, performance degradation, or deployment issues.",
+    "Container management: Monitor Docker containers and orchestration platforms with detailed resource metrics.",
+    "Environment overview: Get a unified view of development, staging, and production environments in one dashboard.",
+    "Incident tracking: Document and track incidents with timelines, affected services, and resolution steps.",
+    "Team collaboration: Share access with team members and assign responsibilities for service ownership.",
+    "API integration: Connect with CI/CD pipelines and deployment tools to automatically update service status.",
+    "Custom checks: Define health checks and monitoring rules specific to your application requirements.",
+    "Historical data: Review past performance and incidents to identify patterns and improve reliability."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

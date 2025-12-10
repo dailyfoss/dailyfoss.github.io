@@ -4,6 +4,8 @@
   "categories": [
     191
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/hook0/hook0",
@@ -12,6 +14,17 @@
   "github_stars": "1252",
   "logo": "/icons/hook0.webp",
   "description": "Hook0 is a self hosted webhook service that centralizes outbound webhooks for your applications. It offers event routing, retries and history, along with a clear web UI and API for managing subscriber endpoints securely.",
+  "tagline": null,
+  "features": [
+    "Webhook Management: Centralize all outbound webhooks from your applications in one service.",
+    "Event Routing: Route events to multiple subscriber endpoints based on event types.",
+    "Automatic Retries: Retry failed webhook deliveries with exponential backoff.",
+    "Delivery History: Track all webhook attempts with timestamps and response codes.",
+    "Endpoint Management: Add, remove, and configure subscriber endpoints through web UI or API.",
+    "Payload Transformation: Transform event payloads before delivery to subscribers.",
+    "Security Features: Sign webhooks with HMAC signatures for verification.",
+    "Rate Limiting: Control delivery rates to prevent overwhelming subscriber endpoints."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

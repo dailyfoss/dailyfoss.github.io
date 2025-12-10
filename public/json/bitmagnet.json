@@ -4,6 +4,8 @@
   "categories": [
     166
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/bitmagnet-io/bitmagnet",
@@ -12,6 +14,17 @@
   "github_stars": "3603",
   "logo": "/icons/bitmagnet.webp",
   "description": "BitMagnet is an open-source torrent metadata indexer and DHT crawler that collects and structures BitTorrent data. It includes a web UI for browsing and analyzing torrent metadata, with an option to self-host and extend via API.",
+  "tagline": null,
+  "features": [
+    "Torrent Indexer: Collect and structure BitTorrent metadata automatically. Comprehensive indexing.",
+    "DHT Crawler: Discover torrents through distributed hash table crawling. Decentralized discovery.",
+    "Web Interface: Browse and search torrent metadata through clean UI. Easy exploration.",
+    "Metadata Analysis: Analyze and categorize torrent information. Organized data.",
+    "API Access: Programmatic access for custom integrations and tools. Extend functionality.",
+    "Self-Hosted: Run your own torrent metadata database. Complete control.",
+    "Search Functionality: Fast, powerful search across indexed torrents. Find anything quickly.",
+    "Cross-Platform: Works on Linux, Windows, macOS, and Android. Universal compatibility."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     92
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/garanda21/geoposler",
@@ -12,6 +14,17 @@
   "github_stars": "32",
   "logo": "/icons/geoposler.webp",
   "description": "Geoposler is a self-hosted GPS tracking and location monitoring system that integrates with devices to track live positions on maps. Useful for fleet tracking or personal location sharing in private setups.",
+  "tagline": null,
+  "features": [
+    "Live GPS Tracking: Monitor real-time GPS positions from connected devices on interactive maps.",
+    "Map Visualization: Display tracked locations on OpenStreetMap or other map providers with customizable markers.",
+    "Private Sharing: Share location data with selected users without relying on third-party services.",
+    "Fleet Management: Track multiple vehicles or devices simultaneously for fleet coordination.",
+    "Location History: Store and review historical location data with timeline playback.",
+    "Device Integration: Connect GPS trackers, smartphones, and IoT devices for position reporting.",
+    "Geofencing: Define geographic boundaries and receive alerts when devices enter or exit zones.",
+    "Self-Hosted Privacy: Maintain complete control over location data without cloud service dependencies."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

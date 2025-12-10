@@ -4,6 +4,8 @@
   "categories": [
     83
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/esphome/esphome",
@@ -12,6 +14,15 @@
   "github_stars": "10175",
   "logo": "/icons/esphome.webp",
   "description": "ESPHome is a system for controlling ESP-based devices using simple YAML configuration. It compiles firmware, manages OTA updates, and integrates with Home Assistant, making custom smart-home devices approachable without deep embedded coding.",
+  "tagline": null,
+  "features": [
+    "YAML Configuration: Define device behavior with simple config files. No coding required.",
+    "OTA Updates: Update firmware wirelessly over the air. Convenient maintenance.",
+    "Home Assistant Integration: Seamless connection with Home Assistant. Perfect smart home pairing.",
+    "ESP Device Support: Works with ESP8266 and ESP32 chips. Wide hardware compatibility.",
+    "Custom Sensors: Create DIY smart devices easily. Endless possibilities.",
+    "Self-Hosted: Complete control over your IoT devices. Privacy-focused automation."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

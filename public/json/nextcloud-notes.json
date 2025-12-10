@@ -4,6 +4,8 @@
   "categories": [
     111
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/nextcloud/notes",
@@ -12,6 +14,21 @@
   "github_stars": "695",
   "logo": "/icons/nextcloud-notes.webp",
   "description": "Nextcloud Notes is a self-hosted note-taking application that uses Markdown with simple editing and sharing features. Notes sync across devices through the Nextcloud ecosystem.",
+  "tagline": null,
+  "features": [
+    "Markdown editing: Write notes with Markdown syntax and live preview rendering.",
+    "Cross-device sync: Access and edit notes from web, desktop, and mobile apps.",
+    "Category organization: Group notes into categories for structured knowledge management.",
+    "Full-text search: Find notes instantly by searching titles or content.",
+    "Offline access: Edit notes without internet connection with automatic sync when online.",
+    "Version history: View and restore previous versions of notes from edit history.",
+    "Note sharing: Share notes with other Nextcloud users or via public links.",
+    "Mobile apps: Native iOS and Android apps for note-taking on the go.",
+    "Simple interface: Distraction-free editor focused on writing and organizing content.",
+    "File storage: Notes stored as plain text files in Nextcloud for easy backup and portability.",
+    "Nextcloud integration: Seamless authentication and file access within Nextcloud ecosystem.",
+    "Dark mode: Eye-friendly theme for comfortable writing in low-light environments."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

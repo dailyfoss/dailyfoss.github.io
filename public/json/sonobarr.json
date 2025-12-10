@@ -4,6 +4,8 @@
   "categories": [
     166
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Dodelidoo-Labs/sonobarr",
@@ -12,6 +14,21 @@
   "github_stars": "221",
   "logo": "/icons/sonobarr.webp",
   "description": "Sonobarr is a self-hosted status and health dashboard for Sonarr/Radarr setups. It aggregates information, errors, and stats into a quick-glance bar-style UI.",
+  "tagline": null,
+  "features": [
+    "Status dashboard: Displays health status of Sonarr and Radarr instances.",
+    "Error monitoring: Shows recent errors and warnings from arr services.",
+    "Queue overview: Displays download queue status and progress.",
+    "Disk space: Monitors available storage across media libraries.",
+    "Calendar view: Shows upcoming releases and downloads.",
+    "Service stats: Displays library counts and recent activity.",
+    "Multi-instance: Monitors multiple Sonarr and Radarr servers.",
+    "Compact display: Presents information in space-efficient bar layout.",
+    "Auto-refresh: Updates status automatically at configurable intervals.",
+    "Alert indicators: Highlights issues requiring attention.",
+    "Mobile responsive: Views status from smartphones and tablets.",
+    "API integration: Connects to arr services via their REST APIs."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     19
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/writefreely/writefreely",
@@ -12,6 +14,21 @@
   "github_stars": "4981",
   "logo": "/icons/writefreely.webp",
   "description": "WriteFreely is a minimalist, self-hosted blogging and writing platform. It supports multiple users, federated ActivityPub publishing, clean typography, and privacy-focused configuration for communities or individuals.",
+  "tagline": null,
+  "features": [
+    "Minimalist editor: Write in a distraction-free Markdown editor focused on content over formatting.",
+    "Multi-user blogs: Host multiple writers on a single instance with individual blogs or shared publications.",
+    "ActivityPub federation: Publish posts to the fediverse so followers on Mastodon and other platforms can read them.",
+    "Custom domains: Map personal domains to individual blogs for professional branding.",
+    "Privacy focused: No tracking, ads, or analytics by default to respect reader and writer privacy.",
+    "Anonymous posting: Allow writers to publish without requiring accounts or personal information.",
+    "Clean typography: Present content with readable fonts and layouts optimized for long-form reading.",
+    "RSS feeds: Automatically generate RSS feeds for each blog so readers can subscribe via feed readers.",
+    "Cross-posting: Syndicate posts to other platforms like Medium or WordPress with built-in integrations.",
+    "Customizable themes: Modify blog appearance with CSS to match your aesthetic preferences.",
+    "Paid subscriptions: Enable optional paid memberships for readers to support writers financially.",
+    "Export content: Download all posts in Markdown format for backup or migration to other platforms."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

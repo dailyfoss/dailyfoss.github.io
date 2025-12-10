@@ -4,6 +4,8 @@
   "categories": [
     100
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Tautulli/Tautulli",
@@ -12,6 +14,21 @@
   "github_stars": "6227",
   "logo": "/icons/tautulli.webp",
   "description": "Tautulli is a self-hosted monitoring and analytics tool for Plex Media Server. It tracks user activity, watch history, performance, and library stats, providing rich reports and notifications via an intuitive web dashboard and API.",
+  "tagline": null,
+  "features": [
+    "Activity monitoring: Track real-time and historical Plex playback activity across all users and devices.",
+    "Watch statistics: View detailed statistics on what content is watched, when, and by whom with rich visualizations.",
+    "User analytics: Analyze individual user behavior including watch time, favorite content, and viewing patterns.",
+    "Library insights: Monitor library growth, popular content, and media statistics across movies, TV shows, and music.",
+    "Notifications: Send customizable alerts via email, Discord, Slack, or other services for playback events and server issues.",
+    "Performance tracking: Monitor server performance metrics including transcoding, bandwidth usage, and resource consumption.",
+    "Recently added: Track newly added content to your libraries with automatic notifications to users.",
+    "Playback history: Access complete playback history with filtering, search, and export capabilities for analysis.",
+    "Newsletter generation: Create and send automated newsletters to users highlighting new content and statistics.",
+    "API access: Integrate with other tools using the comprehensive REST API for custom automation and reporting.",
+    "Geolocation tracking: View where users are streaming from with IP geolocation and connection details.",
+    "Custom scripts: Trigger custom scripts based on playback events for advanced automation and integrations."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

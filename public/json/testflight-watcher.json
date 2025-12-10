@@ -4,6 +4,8 @@
   "categories": [
     172
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/MaximilianGT500/testflight-watcher",
@@ -12,6 +14,21 @@
   "github_stars": "17",
   "logo": "/icons/testflight-watcher.webp",
   "description": "testflight-watcher is a self-hosted tool that monitors TestFlight public betas and alerts when new spots are available or builds are updated, helping users catch limited beta openings automatically.",
+  "tagline": null,
+  "features": [
+    "Beta monitoring: Monitor TestFlight public beta programs for availability and new build releases.",
+    "Instant alerts: Receive notifications immediately when beta slots open up or new builds are published.",
+    "Multiple apps: Track multiple TestFlight apps simultaneously from a single dashboard.",
+    "Automatic checking: Poll TestFlight at configurable intervals to catch openings as soon as they happen.",
+    "Notification channels: Send alerts via email, Telegram, Discord, or webhooks to your preferred platform.",
+    "Build tracking: Track version numbers and build updates to stay informed of app development progress.",
+    "Availability history: View historical data on when beta slots were available and how quickly they filled.",
+    "Custom intervals: Configure check frequency per app to balance responsiveness with API rate limits.",
+    "Status dashboard: View current status of all monitored apps in a centralized web interface.",
+    "Quiet hours: Disable notifications during specific times to avoid alerts during sleep or work hours.",
+    "Link generation: Get direct TestFlight links in notifications for immediate beta access.",
+    "Lightweight operation: Run efficiently with minimal resource usage for continuous monitoring."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

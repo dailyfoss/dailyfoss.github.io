@@ -4,6 +4,8 @@
   "categories": [
     146
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/portainer/portainer",
@@ -12,6 +14,21 @@
   "github_stars": "35637",
   "logo": "/icons/portainer.webp",
   "description": "Portainer is a self-hosted management UI for Docker, Kubernetes, and container environments. It simplifies container deployments, monitoring, and orchestrating services across endpoints.",
+  "tagline": null,
+  "features": [
+    "Container management: Deploy, start, stop, and remove Docker containers through a web interface.",
+    "Kubernetes support: Manage Kubernetes clusters with visual tools for deployments and services.",
+    "Stack deployment: Deploy multi-container applications using Docker Compose or Kubernetes manifests.",
+    "Image management: Pull, push, and manage container images from registries.",
+    "Volume management: Create and manage persistent storage volumes for container data.",
+    "Network configuration: Set up and manage container networks with custom configurations.",
+    "User access control: Define teams and roles with granular permissions for multi-user environments.",
+    "Registry management: Connect to multiple container registries including Docker Hub and private registries.",
+    "Template library: Deploy applications quickly using pre-configured templates for common services.",
+    "Resource monitoring: View CPU, memory, and network usage for containers and hosts.",
+    "Log viewing: Access container logs directly in the interface for troubleshooting.",
+    "Multi-endpoint: Manage multiple Docker hosts and Kubernetes clusters from a single dashboard."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

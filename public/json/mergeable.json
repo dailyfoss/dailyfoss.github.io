@@ -4,6 +4,8 @@
   "categories": [
     165
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/pvcnt/mergeable",
@@ -12,6 +14,21 @@
   "github_stars": "101",
   "logo": "/icons/mergeable.webp",
   "description": "Mergeable is a self-hosted change request and merge management system for Git repositories. It allows teams to manage merge requests with approval workflows and integrates with Git servers.",
+  "tagline": null,
+  "features": [
+    "Merge request management: Track and review code changes with pull request workflows.",
+    "Approval workflows: Configure required approvals before merges can be completed.",
+    "Git integration: Connect to Git servers like GitLab, Gitea, or GitHub for repository access.",
+    "Code review tools: Comment on specific lines, suggest changes, and discuss modifications.",
+    "Status checks: Integrate with CI/CD pipelines to require passing tests before merge.",
+    "Branch protection: Enforce rules like required reviews or status checks on protected branches.",
+    "Conflict detection: Identify merge conflicts and provide tools for resolution.",
+    "Activity tracking: View history of comments, approvals, and changes on each merge request.",
+    "Notification system: Alert reviewers and authors about new requests, comments, or approvals.",
+    "Search and filtering: Find merge requests by status, author, reviewer, or branch name.",
+    "API access: Automate merge request workflows through programmatic API.",
+    "Multi-repository support: Manage merge requests across multiple Git repositories."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

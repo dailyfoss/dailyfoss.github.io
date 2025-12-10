@@ -4,6 +4,8 @@
   "categories": [
     93
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/grafana/loki",
@@ -12,6 +14,13 @@
   "github_stars": "27099",
   "logo": "/icons/loki.webp",
   "description": "Loki is a horizontally scalable, multi-tenant log aggregation system inspired by Prometheus. It stores and queries logs efficiently, offering Grafana integration and a simple query language for observability.",
+  "tagline": null,
+  "features": [
+    "Log Aggregation: Horizontally scalable, Multi-tenant, Efficient storage. Collect logs from all services.",
+    "Grafana Integration: Native visualization, Query builder, Dashboards. Explore logs visually.",
+    "LogQL: Powerful query language, Label-based filtering, Metrics extraction. Find what you need quickly.",
+    "Cost-Effective: Index-free, Object storage, Low overhead. Affordable log management at scale."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +34,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     165
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/hywax/mafl",
@@ -12,6 +14,19 @@
   "github_stars": "621",
   "logo": "/icons/mafl.webp",
   "description": "Mafl is a self-hosted feed and blog aggregator similar to Feedly. It allows subscribing to RSS/Atom feeds, filtering stories, and reading articles via a simple responsive web interface.",
+  "tagline": null,
+  "features": [
+    "RSS aggregation: Subscribe to multiple RSS and Atom feeds from blogs, news sites, and podcasts in one interface.",
+    "Article filtering: Create custom filters to show only relevant content based on keywords or sources.",
+    "Read tracking: Mark articles as read or unread to maintain your reading progress across sessions.",
+    "Responsive design: Access your feeds from any device with a mobile-friendly, adaptive interface.",
+    "OPML import/export: Migrate feed subscriptions easily from other readers using standard OPML format.",
+    "Search functionality: Find specific articles across all subscriptions using full-text search.",
+    "Folder organization: Group related feeds into folders for better content management.",
+    "Keyboard shortcuts: Navigate and manage articles efficiently with customizable keyboard commands.",
+    "Article preview: Read content directly in the interface without visiting external websites.",
+    "Feed discovery: Find and subscribe to new feeds through built-in search and recommendations."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +40,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

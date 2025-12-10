@@ -4,6 +4,8 @@
   "categories": [
     121
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/dribdat/dribdat",
@@ -12,6 +14,17 @@
   "github_stars": "80",
   "logo": "/icons/dribdat.webp",
   "description": "Dribdat is a platform for organizing hackathons and collaborative events. It lets organizers list projects, collect submissions, track team progress, and showcase results, all in a self-hosted, developer-friendly web application.",
+  "tagline": null,
+  "features": [
+    "Project submissions: Allow participants to register teams and submit project ideas with descriptions and links.",
+    "Progress tracking: Monitor team activity and project development throughout the event with status updates.",
+    "Challenge management: Define hackathon themes, categories, and judging criteria for organized competition structure.",
+    "Team formation: Help participants find collaborators and join projects based on skills and interests.",
+    "Live dashboard: Display all active projects on a public page for attendees and judges to browse and vote.",
+    "Integration support: Connect with GitHub, GitLab, and other platforms to automatically pull project updates.",
+    "Judging tools: Provide scoring interfaces and criteria checklists for fair and structured project evaluation.",
+    "Event scheduling: Publish agendas, workshops, and milestone deadlines to keep participants informed throughout the hackathon."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

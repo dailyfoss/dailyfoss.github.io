@@ -4,6 +4,8 @@
   "categories": [
     53
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/mjl-/mox",
@@ -12,6 +14,17 @@
   "github_stars": "5303",
   "logo": "/icons/mox.webp",
   "description": "Mox is a self-hosted email server supporting SMTP and IMAP with modern features like DKIM, DANE, and automated TLS. It’s designed to be simple and secure, with text-based configuration and minimal dependencies.",
+  "tagline": null,
+  "features": [
+    "SMTP and IMAP: Send and receive email with full protocol support for modern mail clients and mobile devices.",
+    "DKIM signing: Authenticate outgoing messages with cryptographic signatures to improve deliverability and prevent spoofing.",
+    "DANE support: Secure mail transport with DNS-based certificate validation for enhanced encryption between servers.",
+    "Automated TLS: Obtain and renew certificates automatically using ACME protocol for encrypted connections without manual setup.",
+    "Spam filtering: Block unwanted messages using reputation lists, content analysis, and customizable rules.",
+    "Text configuration: Define server settings in human-readable config files without complex GUI or database dependencies.",
+    "Web interface: Manage accounts, view logs, and configure domains through a built-in administrative dashboard.",
+    "Minimal dependencies: Run on standard Linux systems with few external requirements for simplified deployment and maintenance."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     91
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/SnapDrop/snapdrop",
@@ -12,6 +14,21 @@
   "github_stars": "19611",
   "logo": "/icons/snapdrop.webp",
   "description": "Snapdrop is a self-hosted web-based file sharing app that behaves like AirDrop in the browser. Devices on the same network can instantly exchange files without accounts.",
+  "tagline": null,
+  "features": [
+    "Local file sharing: Transfers files between devices on the same network instantly.",
+    "No installation: Works entirely in the browser without apps or software.",
+    "Peer-to-peer transfer: Sends files directly between devices without server storage.",
+    "Cross-platform: Shares files between Windows, Mac, Linux, iOS, and Android.",
+    "Multiple files: Sends multiple files or folders in a single transfer.",
+    "Device discovery: Automatically detects nearby devices on the same network.",
+    "Text sharing: Sends text snippets and clipboard content between devices.",
+    "Progressive web app: Installs as PWA for quick access from home screen.",
+    "No file size limits: Transfers files of any size limited only by device storage.",
+    "Privacy focused: Doesn't store files on server or track user activity.",
+    "Responsive design: Works seamlessly on desktop and mobile browsers.",
+    "Room codes: Creates private rooms for sharing with specific devices."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

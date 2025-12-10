@@ -4,6 +4,8 @@
   "categories": [
     66
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/NodeBB/NodeBB",
@@ -12,6 +14,21 @@
   "github_stars": "14856",
   "logo": "/icons/nodebb.webp",
   "description": "NodeBB is a modern, lightweight forum platform built on Node.js. It supports real-time updates, plugins, SSO, and themes and can be self-hosted or deployed as a managed cloud service.",
+  "tagline": null,
+  "features": [
+    "Modern forum platform: Create discussion boards with categories, topics, and threaded replies.",
+    "Real-time updates: See new posts and replies instantly without page refreshes using WebSockets.",
+    "Plugin ecosystem: Extend functionality with hundreds of community plugins for features and integrations.",
+    "Theme customization: Customize appearance with themes or create custom designs with templates.",
+    "User management: Handle registration, profiles, reputation, and moderation tools.",
+    "SSO integration: Connect with OAuth providers or LDAP for unified authentication.",
+    "Mobile responsive: Optimized interface works seamlessly on phones, tablets, and desktops.",
+    "Search functionality: Find topics and posts quickly with full-text search and filters.",
+    "Notification system: Alert users of replies, mentions, and activity via email or push notifications.",
+    "Moderation tools: Flag content, ban users, and manage spam with built-in moderation features.",
+    "Analytics dashboard: Track forum activity, user engagement, and popular content.",
+    "Multi-language: Support international communities with translation plugins and RTL languages."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

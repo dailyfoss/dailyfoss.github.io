@@ -4,6 +4,8 @@
   "categories": [
     191
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/adnanh/webhook",
@@ -12,6 +14,21 @@
   "github_stars": "11411",
   "logo": "/icons/webhook.webp",
   "description": "webhook is a self-hosted lightweight HTTP server that executes shell commands in response to webhooks. It allows defining rules and payload filters via JSON configuration and is controlled through CLI.",
+  "tagline": null,
+  "features": [
+    "HTTP endpoint creation: Define custom webhook URLs that trigger shell commands or scripts when called.",
+    "Payload filtering: Set up rules to validate incoming webhook payloads before executing commands.",
+    "JSON configuration: Define webhooks using simple JSON files with parameters, headers, and execution rules.",
+    "Request validation: Verify webhook authenticity using HMAC signatures, tokens, or IP whitelisting.",
+    "Command execution: Run shell scripts, system commands, or custom executables in response to webhook triggers.",
+    "Environment variables: Pass webhook payload data to scripts as environment variables for dynamic processing.",
+    "Response customization: Return custom HTTP responses with specific status codes and body content.",
+    "Logging system: Track all webhook invocations with detailed logs including payloads and execution results.",
+    "Concurrent handling: Process multiple webhook requests simultaneously with configurable worker limits.",
+    "Regex matching: Use regular expressions to match and extract data from webhook payloads.",
+    "Lightweight deployment: Minimal resource usage makes it suitable for running on edge devices or containers.",
+    "Security focused: Run commands with specific user permissions and implement rate limiting to prevent abuse."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     145
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/fail2ban/fail2ban",
@@ -12,6 +14,15 @@
   "github_stars": "16181",
   "logo": "/icons/fail2ban.webp",
   "description": "Fail2Ban scans log files to detect malicious login attempts and automatically updates firewall rules to block offending IPs. It is widely used to protect SSH and other services on Linux servers with minimal configuration.",
+  "tagline": null,
+  "features": [
+    "Security: Automatic IP blocking, Brute-force protection, Real-time threat response. Protect your services from attacks.",
+    "Log Monitoring: Scans system logs continuously. Detects malicious patterns instantly.",
+    "Firewall Integration: Updates iptables automatically. Seamless security enforcement.",
+    "Multi-Service Support: Protects SSH, web servers, and more. Comprehensive coverage.",
+    "Customizable Rules: Define your own filters and actions. Flexible security policies.",
+    "Email Alerts: Get notified of bans and attacks. Stay informed."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

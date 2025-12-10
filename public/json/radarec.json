@@ -4,6 +4,8 @@
   "categories": [
     100
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/TheWicklowWolf/RadaRec",
@@ -12,6 +14,21 @@
   "github_stars": "64",
   "logo": "/icons/radarec.webp",
   "description": "RadaRec is a self-hosted recording manager for Radarr/Sonarr media downloads. It logs requests, tracks history, and manages recordings through a centralized interface.",
+  "tagline": null,
+  "features": [
+    "Request logging: Track all movie and show requests sent to Radarr and Sonarr with timestamps and status.",
+    "Download history: View complete history of media acquisitions including quality, size, and source.",
+    "Centralized dashboard: Monitor multiple Radarr and Sonarr instances from a single interface.",
+    "Search tracking: Record what users searched for and whether content was found or requested.",
+    "Statistics reporting: Analyze download patterns, popular requests, and system performance over time.",
+    "User management: Track which users requested specific content for accountability and usage insights.",
+    "Failed download alerts: Get notified when downloads fail or require manual intervention.",
+    "Quality monitoring: Ensure downloaded content meets your quality standards and upgrade criteria.",
+    "API integration: Connect seamlessly to Radarr and Sonarr APIs for real-time data synchronization.",
+    "Custom filters: Search and filter recording history by date, user, quality, or status.",
+    "Export functionality: Download reports in CSV or JSON format for external analysis.",
+    "Retention management: Configure how long to keep historical records before automatic cleanup."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

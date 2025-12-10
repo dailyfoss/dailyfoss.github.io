@@ -4,6 +4,8 @@
   "categories": [
     5
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/InvoiceShelf/InvoiceShelf",
@@ -12,6 +14,17 @@
   "github_stars": "1500",
   "logo": "/icons/invoiceshelf.webp",
   "description": "InvoiceShelf is an open source invoicing, estimates and billing solution. It supports customer management, PDF invoices, taxes and discounts, with a responsive web UI intended to be self hosted for complete control of financial records.",
+  "tagline": null,
+  "features": [
+    "Invoice Management: Create, send, and track invoices with professional templates.",
+    "Estimates and Quotes: Generate estimates that can be converted to invoices.",
+    "Customer Portal: Clients can view invoices and make payments through dedicated portal.",
+    "Tax Calculations: Automatic tax calculations with support for multiple tax rates.",
+    "Discount Management: Apply percentage or fixed discounts to line items or totals.",
+    "Payment Integration: Accept online payments through Stripe and other gateways.",
+    "Expense Tracking: Record business expenses and attach receipts.",
+    "Reporting: Generate financial reports for income, expenses, and taxes."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

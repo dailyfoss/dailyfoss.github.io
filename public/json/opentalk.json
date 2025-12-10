@@ -4,6 +4,8 @@
   "categories": [
     176
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "gitlab.opencode.de/opentalk/ot-setup",
@@ -12,6 +14,21 @@
   "github_stars": null,
   "logo": "/icons/opentalk.webp",
   "description": "OpenTalk is a self-hosted video conferencing solution built with privacy-first principles. It includes meeting rooms, screen sharing, chat, and customizable deployment via Docker and Kubernetes.",
+  "tagline": null,
+  "features": [
+    "Video Conferencing: Host secure video meetings with HD quality, noise cancellation, and bandwidth optimization.",
+    "Privacy First: Self-hosted solution ensuring complete control over meeting data and participant information.",
+    "Screen Sharing: Share entire screens or specific applications with high-quality streaming and annotation tools.",
+    "Chat Integration: Built-in text chat with file sharing, emoji reactions, and message history during meetings.",
+    "Meeting Rooms: Create persistent virtual rooms with custom settings, access controls, and recurring schedules.",
+    "Recording Capabilities: Record meetings locally with automatic transcription and searchable content indexing.",
+    "Mobile Support: Join meetings from smartphones and tablets with full feature parity and optimized interfaces.",
+    "Breakout Rooms: Split large meetings into smaller groups with automatic or manual participant assignment.",
+    "Whiteboard Tools: Collaborate on shared whiteboards with drawing tools, shapes, and real-time synchronization.",
+    "Calendar Integration: Connect with existing calendar systems for automatic meeting scheduling and reminders.",
+    "Custom Branding: Apply organization logos, themes, and custom domains for professional meeting experiences.",
+    "API Access: Integrate with external systems through REST APIs for automated meeting management and analytics."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

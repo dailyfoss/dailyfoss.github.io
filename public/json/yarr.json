@@ -4,6 +4,8 @@
   "categories": [
     57
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/nkanaev/yarr",
@@ -12,6 +14,21 @@
   "github_stars": "3625",
   "logo": "/icons/yarr.webp",
   "description": "yarr (yet another RSS reader) is a self-hosted web-based feed reader. It fetches RSS/Atom feeds on a schedule, supports tags and search, and presents content in a clean, keyboard-friendly UI.",
+  "tagline": null,
+  "features": [
+    "Feed aggregation: Subscribe to RSS and Atom feeds from blogs, news sites, and podcasts in one unified reader.",
+    "Automatic updates: Fetch new articles on a configurable schedule without manual refreshing or polling.",
+    "Keyboard navigation: Navigate articles, mark as read, and manage feeds using efficient keyboard shortcuts.",
+    "Tag organization: Group feeds with custom tags for better organization and filtered reading views.",
+    "Full-text search: Find articles across all subscribed feeds using keyword search with instant results.",
+    "Read/unread tracking: Automatically mark articles as read when viewed and maintain reading progress across sessions.",
+    "OPML import/export: Migrate feed subscriptions from other readers or backup your collection in standard format.",
+    "Minimal interface: Focus on content with a clean, distraction-free design that prioritizes readability.",
+    "Single binary deployment: Run the entire application from one executable file without complex dependencies.",
+    "Local storage: Store all articles and feed data in a local SQLite database for fast access and privacy.",
+    "Article filtering: Hide or highlight articles based on keywords, sources, or custom rules to reduce noise.",
+    "Mobile responsive: Read feeds comfortably on phones and tablets with a responsive web interface."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

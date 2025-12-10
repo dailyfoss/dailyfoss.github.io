@@ -4,6 +4,8 @@
   "categories": [
     140
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/qdm12/ddns-updater",
@@ -12,6 +14,15 @@
   "github_stars": "2747",
   "logo": "/icons/ddns-updater.webp",
   "description": "DDNS-Updater is a dockerized dynamic DNS updater that works with many providers. It has a simple web UI for configuration, handles IPv4/IPv6, and is easy to deploy alongside other self-hosted services.",
+  "tagline": null,
+  "features": [
+    "Web UI Configuration: Simple interface for managing DDNS settings. No config file editing.",
+    "IPv4 & IPv6 Support: Handle both IP versions seamlessly. Future-proof solution.",
+    "Docker-Native: Designed for containerized environments. Easy deployment alongside services.",
+    "Multiple Providers: Support for numerous DDNS services. Flexible provider choice.",
+    "Status Monitoring: Track update success and failures. Full visibility into operations.",
+    "Self-Hosted: Run your own DDNS updater. Complete control over domain updates."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

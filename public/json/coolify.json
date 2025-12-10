@@ -4,6 +4,8 @@
   "categories": [
     146
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/coollabsio/coolify",
@@ -12,6 +14,15 @@
   "github_stars": "48142",
   "logo": "/icons/coolify.webp",
   "description": "Coolify is an open-source alternative to Heroku and Netlify designed for self-hosters. It provides an easy-to-use UI for deploying applications, databases, and static sites on your own infrastructure using Docker or Kubernetes.",
+  "tagline": null,
+  "features": [
+    "Heroku Alternative: Deploy apps with the same ease as Heroku. No vendor lock-in.",
+    "One-Click Deployments: Launch applications, databases, and sites instantly. Simplified deployment process.",
+    "Docker & Kubernetes: Support for both container orchestration platforms. Choose your stack.",
+    "Git Integration: Automatic deployments from GitHub, GitLab, and Bitbucket. CI/CD built-in.",
+    "Database Management: Deploy and manage PostgreSQL, MySQL, MongoDB, and more. Complete stack solution.",
+    "Self-Hosted: Run your own PaaS on any infrastructure. Full control, zero monthly fees."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

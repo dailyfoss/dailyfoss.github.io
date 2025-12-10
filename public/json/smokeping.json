@@ -4,6 +4,8 @@
   "categories": [
     173
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/oetiker/SmokePing",
@@ -12,6 +14,21 @@
   "github_stars": "1730",
   "logo": "/icons/smokeping.webp",
   "description": "SmokePing is a latency monitoring tool for network links. It runs scheduled pings and visualizes performance and packet loss in RRD graphs via a web interface.",
+  "tagline": null,
+  "features": [
+    "Latency monitoring: Measures network latency with continuous ping tests.",
+    "Packet loss tracking: Detects and visualizes packet loss over time.",
+    "RRD graphs: Displays historical latency data in detailed time-series graphs.",
+    "Multiple targets: Monitors multiple hosts or network endpoints simultaneously.",
+    "Smoke visualization: Shows latency distribution with unique smoke-like graph rendering.",
+    "Alert thresholds: Configures alerts when latency exceeds defined thresholds.",
+    "DNS monitoring: Tests DNS resolution times alongside network latency.",
+    "Multi-protocol support: Monitors via ICMP, TCP, DNS, and other protocols.",
+    "Historical data: Stores years of latency data for long-term trend analysis.",
+    "Hierarchical targets: Organizes monitored hosts in tree structure for large networks.",
+    "Web interface: Views graphs and statistics through built-in web server.",
+    "Custom probes: Extends monitoring with custom probe modules for specific tests."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

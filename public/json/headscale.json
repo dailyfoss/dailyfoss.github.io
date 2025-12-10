@@ -4,6 +4,8 @@
   "categories": [
     174
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/juanfont/headscale",
@@ -12,6 +14,17 @@
   "github_stars": "33362",
   "logo": "/icons/headscale.webp",
   "description": "Headscale is an open-source control server for Tailscale networks. It manages lightweight peer-to-peer VPN meshes using WireGuard, enabling private secure networking without relying on external cloud services.",
+  "tagline": null,
+  "features": [
+    "Tailscale Compatible: Open-source control server compatible with Tailscale clients across all platforms.",
+    "WireGuard Mesh: Build secure peer-to-peer VPN networks using modern WireGuard protocol.",
+    "Self-Hosted Control: Run your own coordination server without relying on Tailscale's cloud service.",
+    "Zero Configuration: Automatic NAT traversal and firewall penetration for seamless connectivity.",
+    "Cross-Platform: Connect devices running Linux, macOS, Windows, iOS, and Android.",
+    "Access Control: Define which devices can communicate using flexible ACL policies.",
+    "Lightweight: Minimal resource usage with efficient connection management.",
+    "Private Networking: Create secure networks for accessing home services or connecting remote sites."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

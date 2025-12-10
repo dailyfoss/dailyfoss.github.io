@@ -4,6 +4,8 @@
   "categories": [
     135
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Termix-SSH/Termix",
@@ -12,6 +14,21 @@
   "github_stars": "8034",
   "logo": "/icons/termix.webp",
   "description": "Termix is a self-hosted SSH management platform that exposes terminals in the browser. It lets admins organize hosts, manage keys, and open shell sessions directly from a web interface.",
+  "tagline": null,
+  "features": [
+    "Browser-based SSH: Access SSH terminals directly in your web browser without installing client software.",
+    "Host management: Organize and manage SSH hosts with groups, tags, and custom connection settings.",
+    "Key management: Store and manage SSH keys securely with support for multiple keys per host.",
+    "Multi-session: Open multiple SSH sessions simultaneously in tabs for efficient server management.",
+    "Connection sharing: Share terminal sessions with team members for collaborative troubleshooting and pair administration.",
+    "Web interface: Access your servers from any device with a modern, responsive web interface.",
+    "Session persistence: Maintain SSH sessions even when closing the browser with automatic reconnection.",
+    "Command history: Access command history across sessions for quick reference and repeated operations.",
+    "File transfer: Upload and download files through the web interface using SFTP integration.",
+    "Custom themes: Personalize the terminal appearance with color schemes and font customization.",
+    "Mobile support: Manage servers from mobile devices with touch-optimized controls and keyboard.",
+    "Access control: Define user permissions and restrict access to specific hosts or host groups."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": true
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

@@ -4,6 +4,8 @@
   "categories": [
     118
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/cglatot/pasta",
@@ -12,6 +14,17 @@
   "github_stars": "390",
   "logo": "/icons/pasta.webp",
   "description": "Pasta is a simple self-hosted pastebin service for storing text snippets. It supports themes, expiration, and syntax highlighting with a minimal web interface.",
+  "tagline": null,
+  "features": [
+    "Text snippet storage: Store and share code snippets, logs, or text content with unique URLs for easy reference",
+    "Syntax highlighting: Automatic code highlighting for multiple programming languages improves readability and code review",
+    "Expiration options: Set pastes to expire after specified time period or number of views for temporary sharing",
+    "Theme support: Choose from multiple color themes including light and dark modes for comfortable viewing",
+    "Private pastes: Create unlisted pastes that are only accessible via direct link, not shown in public listings",
+    "Raw text view: Access paste content as plain text for easy copying, downloading, or integration with command-line tools",
+    "No registration: Create and share pastes immediately without account creation for quick, anonymous sharing",
+    "Minimal interface: Clean, distraction-free UI focuses on content with simple navigation and fast loading times"
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +38,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

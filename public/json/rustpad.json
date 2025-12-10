@@ -4,6 +4,8 @@
   "categories": [
     196
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/ekzhang/rustpad",
@@ -12,6 +14,21 @@
   "github_stars": "3912",
   "logo": "/icons/rustpad.webp",
   "description": "Rustpad is a collaborative code editor designed to be self-hosted. It includes real-time synchronization and multi-user support using WebSockets in a minimal UI.",
+  "tagline": null,
+  "features": [
+    "Real-time collaboration: Edit code simultaneously with multiple users seeing changes instantly.",
+    "WebSocket sync: Use efficient WebSocket connections for low-latency synchronization.",
+    "Syntax highlighting: View code with proper formatting for multiple programming languages.",
+    "Minimal interface: Focus on coding with a clean, distraction-free editor.",
+    "No registration: Start collaborating immediately without creating accounts.",
+    "Shareable links: Invite others to edit by sharing a simple URL.",
+    "Cursor tracking: See where other users are editing in real-time.",
+    "Version history: Track changes and revert to previous versions if needed.",
+    "Keyboard shortcuts: Navigate and edit efficiently with standard editor hotkeys.",
+    "Mobile support: Edit code from tablets and smartphones with touch-optimized controls.",
+    "Self-hosted privacy: Keep all code on your own server without third-party access.",
+    "Lightweight: Run efficiently with minimal server resources using Rust backend."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +42,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,

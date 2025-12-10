@@ -4,6 +4,8 @@
   "categories": [
     137
   ],
+  "sponsored": false,
+  "sponsored_expired": null,
   "date_created": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/Tecnativa/docker-socket-proxy",
@@ -12,6 +14,15 @@
   "github_stars": "2082",
   "logo": "/icons/docker-socket-proxy.webp",
   "description": "Docker Socket Proxy is a secure proxy for the Docker socket, designed to expose only specific actions through HTTP. It helps isolate and restrict container management operations safely using granular authorization.",
+  "tagline": null,
+  "features": [
+    "Secure Socket Access: Safely expose Docker socket over HTTP. Controlled container management.",
+    "Granular Authorization: Restrict specific Docker API actions. Fine-grained security control.",
+    "Isolation Layer: Protect Docker daemon from direct exposure. Enhanced security posture.",
+    "HTTP Proxy: Access Docker operations through standard HTTP. Easy integration.",
+    "Permission Control: Define exactly which operations are allowed. Minimize attack surface.",
+    "Self-Hosted: Run your own secure Docker proxy. Complete control over access."
+  ],
   "install_methods": [
     {
       "platform": {
@@ -25,8 +36,7 @@
           "ios": false
         },
         "web_app": false,
-        "browser_extension": false,
-        "cli_only": false
+        "browser_extension": false
       },
       "hosting": {
         "self_hosted": false,
