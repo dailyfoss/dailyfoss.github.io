@@ -1,20 +1,28 @@
 {
   "name": "romm",
   "slug": "romm",
+  "tagline": null,
+  "description": "ROMM is a self-hosted ROM manager for emulators, allowing users to manage and browse ROM libraries via a responsive web UI. It supports tagging, metadata, and organizing by platform.",
   "categories": [
     69
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/rommapp/romm",
-  "website": "romm.app",
-  "source_code": "github.com/rommapp/romm",
-  "github_stars": "7209",
-  "logo": "/icons/romm.webp",
-  "description": "ROMM is a self-hosted ROM manager for emulators, allowing users to manage and browse ROM libraries via a responsive web UI. It supports tagging, metadata, and organizing by platform.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "4.4.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-19",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 7216
+  },
+  "resources": {
+    "website": "https://romm.app",
+    "documentation": "https://github.com/rommapp/romm",
+    "source_code": "https://github.com/rommapp/romm",
+    "logo": "/icons/romm.webp",
+    "issues": "https://github.com/rommapp/romm/issues",
+    "releases": "https://github.com/rommapp/romm/releases"
+  },
   "features": [
     "ROM organization: Manage game ROMs organized by platform with automatic sorting.",
     "Metadata scraping: Fetch game titles, descriptions, and artwork from online databases.",
@@ -29,69 +37,45 @@
     "Statistics dashboard: View collection size and breakdown by platform.",
     "Mobile responsive: Access and browse your ROM library from any device."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

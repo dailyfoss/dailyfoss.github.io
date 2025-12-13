@@ -1,20 +1,28 @@
 {
   "name": "invidious",
   "slug": "invidious",
+  "tagline": null,
+  "description": "Invidious is a privacy focused alternative front end for YouTube. It proxies video, search and subscriptions without ads or tracking, supports RSS feeds and multiple clients, and can be self hosted as a lightweight video portal.",
   "categories": [
     100
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/iv-org/invidious",
-  "website": "invidious.io",
-  "source_code": "github.com/iv-org/invidious",
-  "github_stars": "18256",
-  "logo": "/icons/invidious.webp",
-  "description": "Invidious is a privacy focused alternative front end for YouTube. It proxies video, search and subscriptions without ads or tracking, supports RSS feeds and multiple clients, and can be self hosted as a lightweight video portal.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v2.20250913.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-13",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 18258
+  },
+  "resources": {
+    "website": "https://invidious.io",
+    "documentation": "https://github.com/iv-org/invidious",
+    "source_code": "https://github.com/iv-org/invidious",
+    "logo": "/icons/invidious.webp",
+    "issues": "https://github.com/iv-org/invidious/issues",
+    "releases": "https://github.com/iv-org/invidious/releases"
+  },
   "features": [
     "Privacy Protection: Watch YouTube without Google tracking your viewing habits.",
     "Ad-Free Experience: No advertisements or sponsored content interrupting videos.",
@@ -25,69 +33,45 @@
     "Audio-Only Mode: Listen to videos without loading video streams to save bandwidth.",
     "Multiple Instances: Connect to public instances or self-host your own."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

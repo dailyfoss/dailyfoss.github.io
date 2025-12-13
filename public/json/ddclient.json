@@ -1,20 +1,28 @@
 {
   "name": "ddclient",
   "slug": "ddclient",
+  "tagline": null,
+  "description": "ddclient is a lightweight dynamic DNS update client written in Perl. It supports multiple DDNS providers to keep your domain pointing to your home server or dynamic IP, running as a CLI or daemon in server environments.",
   "categories": [
     140
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/ddclient/ddclient",
-  "website": "ddclient.net",
-  "source_code": "github.com/ddclient/ddclient",
-  "github_stars": "3234",
-  "logo": "/icons/ddclient.webp",
-  "description": "ddclient is a lightweight dynamic DNS update client written in Perl. It supports multiple DDNS providers to keep your domain pointing to your home server or dynamic IP, running as a CLI or daemon in server environments.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-2.0",
+    "version": "v4.0.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-01-19",
+    "date_last_commit": "2025-01-19",
+    "github_stars": 3235
+  },
+  "resources": {
+    "website": "https://ddclient.net",
+    "documentation": "https://github.com/ddclient/ddclient",
+    "source_code": "https://github.com/ddclient/ddclient",
+    "logo": "/icons/ddclient.webp",
+    "issues": "https://github.com/ddclient/ddclient/issues",
+    "releases": "https://github.com/ddclient/ddclient/releases"
+  },
   "features": [
     "Dynamic DNS Updates: Keep domains pointing to changing IPs automatically. Always accessible.",
     "Multi-Provider Support: Works with dozens of DDNS services. Choose your preferred provider.",
@@ -23,69 +31,45 @@
     "Home Server Ready: Ideal for self-hosted services with dynamic IPs. Reliable remote access.",
     "Battle-Tested: Mature, stable solution used for decades. Proven reliability."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

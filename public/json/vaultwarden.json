@@ -1,20 +1,29 @@
 {
   "name": "vaultwarden",
   "slug": "vaultwarden",
+  "tagline": null,
+  "description": "Vaultwarden is a self-hosted Bitwarden-compatible server written in Rust. It provides the backend for web, mobile, and browser clients to store and sync encrypted passwords and secrets.",
   "categories": [
     117
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/dani-garcia/vaultwarden",
-  "website": "github.com/dani-garcia/vaultwarden",
-  "source_code": "github.com/dani-garcia/vaultwarden",
-  "github_stars": "51881",
-  "logo": "/icons/vaultwarden.webp",
-  "description": "Vaultwarden is a self-hosted Bitwarden-compatible server written in Rust. It provides the backend for web, mobile, and browser clients to store and sync encrypted passwords and secrets.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "1.34.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-07-30",
+    "date_last_commit": "2025-12-07",
+    "github_stars": 51893
+  },
+  "resources": {
+    "website": "https://github.com/dani-garcia/vaultwarden",
+    "documentation": "https://github.com/dani-garcia/vaultwarden",
+    "source_code": "https://github.com/dani-garcia/vaultwarden",
+    "logo": "/icons/vaultwarden.webp",
+    "issues": "https://github.com/dani-garcia/vaultwarden/issues",
+    "releases": "https://github.com/dani-garcia/vaultwarden/releases",
+    "logo_light": "/icons/vaultwarden-light.webp"
+  },
   "features": [
     "Password management: Store and sync passwords, passkeys, and credentials across all devices securely.",
     "Bitwarden compatible: Use official Bitwarden clients on web, desktop, mobile, and browser extensions.",
@@ -29,69 +38,45 @@
     "API access: Integrate with other tools using the Bitwarden-compatible REST API.",
     "Self-hosted control: Keep all password data on your own infrastructure with complete control."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

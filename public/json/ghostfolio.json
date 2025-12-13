@@ -1,20 +1,28 @@
 {
   "name": "ghostfolio",
   "slug": "ghostfolio",
+  "tagline": null,
+  "description": "Ghostfolio is a self-hosted investment and portfolio tracker with detailed analytics, portfolio breakdowns, and financial dashboards. It supports multiple brokers and integrates live data with a privacy-first approach.",
   "categories": [
     185
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/ghostfolio/ghostfolio",
-  "website": "Ghostfol.io",
-  "source_code": "github.com/ghostfolio/ghostfolio",
-  "github_stars": "7049",
-  "logo": "/icons/ghostfolio.webp",
-  "description": "Ghostfolio is a self-hosted investment and portfolio tracker with detailed analytics, portfolio breakdowns, and financial dashboards. It supports multiple brokers and integrates live data with a privacy-first approach.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "2.222.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-07",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 7052
+  },
+  "resources": {
+    "website": "https://Ghostfol.io",
+    "documentation": "https://github.com/ghostfolio/ghostfolio",
+    "source_code": "https://github.com/ghostfolio/ghostfolio",
+    "logo": "/icons/ghostfolio.webp",
+    "issues": "https://github.com/ghostfolio/ghostfolio/issues",
+    "releases": "https://github.com/ghostfolio/ghostfolio/releases"
+  },
   "features": [
     "Portfolio Tracking: Monitor investment portfolios across multiple brokers and asset classes in one platform.",
     "Financial Analytics: Analyze performance, allocation, dividends, and returns with detailed charts and metrics.",
@@ -25,69 +33,45 @@
     "Performance Metrics: Track historical returns, volatility, and benchmark comparisons over time.",
     "Transaction History: Record and review all investment transactions with detailed reporting."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

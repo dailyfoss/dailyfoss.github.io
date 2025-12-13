@@ -1,20 +1,28 @@
 {
   "name": "dumbbudget",
   "slug": "dumbbudget",
+  "tagline": null,
+  "description": "DumbBudget is a simple budgeting and expense tracker built to be self-hosted. It lets users define categories, record transactions, and review monthly summaries through a clean, no-frills web dashboard.",
   "categories": [
     22
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/DumbWareio/DumbBudget",
-  "website": "github.com/DumbWareio/DumbBudget",
-  "source_code": "github.com/DumbWareio/DumbBudget",
-  "github_stars": "266",
-  "logo": "/icons/dumbbudget.webp",
-  "description": "DumbBudget is a simple budgeting and expense tracker built to be self-hosted. It lets users define categories, record transactions, and review monthly summaries through a clean, no-frills web dashboard.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-11-03",
+    "github_stars": 266
+  },
+  "resources": {
+    "website": "https://github.com/DumbWareio/DumbBudget",
+    "documentation": "https://github.com/DumbWareio/DumbBudget",
+    "source_code": "https://github.com/DumbWareio/DumbBudget",
+    "logo": "/icons/dumbbudget.webp",
+    "issues": "https://github.com/DumbWareio/DumbBudget/issues",
+    "releases": null
+  },
   "features": [
     "Category management: Create custom spending categories to organize expenses according to your budget structure.",
     "Transaction logging: Record income and expenses with date, amount, and category for accurate financial tracking.",
@@ -25,69 +33,45 @@
     "Quick entry: Add transactions rapidly with minimal fields to capture expenses as they occur.",
     "Export reports: Download transaction history and summaries for tax preparation or external analysis."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

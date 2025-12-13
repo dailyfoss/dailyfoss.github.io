@@ -8,10 +8,10 @@ import { Card } from "./card";
 import handleCopy from "../handle-copy";
 
 type CodeCopyButtonProps = {
-  children: React.ReactNode;  // YAML / command
-  label?: string;             // teks untuk toast, default "code"
-  collapsible?: boolean;      // enable collapse functionality
-  defaultCollapsed?: boolean; // start collapsed
+  children: React.ReactNode;
+  label?: string;
+  collapsible?: boolean;
+  defaultCollapsed?: boolean;
 };
 
 export default function CodeCopyButton({
@@ -54,6 +54,15 @@ export default function CodeCopyButton({
     await handleCopy(label, value);
     setHasCopied(true);
   };
+
+  // Split content into lines for line numbering
+  const contentString = typeof children === "string"
+    ? children
+    : Array.isArray(children)
+      ? children.join("")
+      : String(children ?? "");
+  
+  const lines = contentString.split('\n');
 
   return (
     <div className="mt-4">
@@ -101,12 +110,27 @@ export default function CodeCopyButton({
           </button>
         </div>
 
-        {/* Area kode/YAML */}
+        {/* Area kode/YAML with line numbers */}
         <div className={cn(
-          "overflow-x-auto whitespace-pre-wrap break-all text-sm p-4 pr-24 transition-all",
+          "overflow-x-auto text-sm transition-all",
           isCollapsed && "max-h-32 overflow-hidden"
         )}>
-          {!isMobile && children ? children : "Copy Config File Path"}
+          {!isMobile && children ? (
+            <div className="flex">
+              {/* Line numbers column - not selectable */}
+              <div className="select-none py-4 pl-4 pr-3 text-muted-foreground/50 text-right border-r border-border/30 bg-muted/20 font-mono text-xs leading-relaxed">
+                {lines.map((_, index) => (
+                  <div key={index}>{index + 1}</div>
+                ))}
+              </div>
+              {/* Code content column - selectable */}
+              <div className="flex-1 py-4 pl-4 pr-24 whitespace-pre-wrap break-all font-mono text-xs leading-relaxed">
+                {children}
+              </div>
+            </div>
+          ) : (
+            <div className="p-4 pr-24">Copy Config File Path</div>
+          )}
         </div>
 
         {/* Gradient overlay when collapsed */}

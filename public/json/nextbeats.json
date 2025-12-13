@@ -1,20 +1,28 @@
 {
   "name": "nextbeats",
   "slug": "nextbeats",
+  "tagline": null,
+  "description": "Next-Beats is a self-hosted collaborative DJ platform with virtual decks and live mixing capabilities. It’s designed for real-time music collaboration over the web.",
   "categories": [
     106
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/btahir/next-beats",
-  "website": "nextbeats.vercel.app",
-  "source_code": "github.com/btahir/next-beats",
-  "github_stars": "150",
-  "logo": "/icons/nextbeats.webp",
-  "description": "Next-Beats is a self-hosted collaborative DJ platform with virtual decks and live mixing capabilities. It’s designed for real-time music collaboration over the web.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2024-11-24",
+    "github_stars": 150
+  },
+  "resources": {
+    "website": "https://nextbeats.vercel.app",
+    "documentation": "https://github.com/btahir/next-beats",
+    "source_code": "https://github.com/btahir/next-beats",
+    "logo": "/icons/nextbeats.webp",
+    "issues": "https://github.com/btahir/next-beats/issues",
+    "releases": null
+  },
   "features": [
     "Virtual DJ decks: Dual deck interface for mixing and beatmatching tracks in real-time.",
     "Real-time collaboration: Multiple users can DJ together with synchronized playback and controls.",
@@ -29,69 +37,45 @@
     "Web-based interface: No software installation required, works in any modern browser.",
     "Low latency: Optimized audio engine provides responsive controls for live mixing."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

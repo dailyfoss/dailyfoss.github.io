@@ -1,20 +1,28 @@
 {
   "name": "sprout-track",
   "slug": "sprout-track",
+  "tagline": null,
+  "description": "Sprout Track is a self-hosted habit and activity tracker that visualizes progress with streaks and charts. It’s designed for personal growth tracking via a web UI.",
   "categories": [
     75
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Oak-and-Sprout/sprout-track",
-  "website": "www.sprout-track.com",
-  "source_code": "github.com/Oak-and-Sprout/sprout-track",
-  "github_stars": "166",
-  "logo": "/icons/sprout-track.webp",
-  "description": "Sprout Track is a self-hosted habit and activity tracker that visualizes progress with streaks and charts. It’s designed for personal growth tracking via a web UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "0.96.30",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-05",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 166
+  },
+  "resources": {
+    "website": "https://www.sprout-track.com",
+    "documentation": "https://github.com/Oak-and-Sprout/sprout-track",
+    "source_code": "https://github.com/Oak-and-Sprout/sprout-track",
+    "logo": "/icons/sprout-track.webp",
+    "issues": "https://github.com/Oak-and-Sprout/sprout-track/issues",
+    "releases": "https://github.com/Oak-and-Sprout/sprout-track/releases"
+  },
   "features": [
     "Habit tracking: Logs daily habits and activities for consistency.",
     "Streak visualization: Displays habit streaks with calendar heatmaps.",
@@ -29,69 +37,45 @@
     "Mobile responsive: Logs habits from smartphones throughout the day.",
     "Privacy focused: Stores all data locally without external tracking."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

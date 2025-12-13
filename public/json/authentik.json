@@ -1,20 +1,28 @@
 {
   "name": "authentik",
   "slug": "authentik",
+  "tagline": null,
+  "description": "Authentik is a self-hosted identity provider and access management platform that supports OAuth 2.0, SAML, and LDAP. It targets enterprises and self-hosters looking for a keycloak alternative with modern UI.",
   "categories": [
     79
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/goauthentik/authentik",
-  "website": "goauthentik.io",
-  "source_code": "github.com/goauthentik/authentik",
-  "github_stars": "19218",
-  "logo": "/icons/authentik.webp",
-  "description": "Authentik is a self-hosted identity provider and access management platform that supports OAuth 2.0, SAML, and LDAP. It targets enterprises and self-hosters looking for a keycloak alternative with modern UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "version/2025.10.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-19",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 19221
+  },
+  "resources": {
+    "website": "https://goauthentik.io",
+    "documentation": "https://github.com/goauthentik/authentik",
+    "source_code": "https://github.com/goauthentik/authentik",
+    "logo": "/icons/authentik.webp",
+    "issues": "https://github.com/goauthentik/authentik/issues",
+    "releases": "https://github.com/goauthentik/authentik/releases"
+  },
   "features": [
     "Identity Provider: Complete authentication and access management. Enterprise-grade security.",
     "OAuth 2.0 & SAML: Support for modern authentication protocols. Standard compliance.",
@@ -25,69 +33,45 @@
     "Multi-Tenancy: Support multiple organizations from one instance. Scalable architecture.",
     "Self-Hosted: Complete control over identity management. Data sovereignty."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

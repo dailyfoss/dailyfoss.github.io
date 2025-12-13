@@ -1,20 +1,28 @@
 {
   "name": "firefly-iii",
   "slug": "firefly-iii",
+  "tagline": null,
+  "description": "Firefly III is a self-hosted personal finance manager designed for budgeting, expense tracking, and visual reporting. It supports multiple accounts, currencies, APIs, and detailed categorization. GDPR-compliant for full financial privacy.",
   "categories": [
     22
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/firefly-iii/firefly-iii",
-  "website": "firefly-iii.org/",
-  "source_code": "github.com/firefly-iii/firefly-iii",
-  "github_stars": "21711",
-  "logo": "/icons/firefly-iii.webp",
-  "description": "Firefly III is a self-hosted personal finance manager designed for budgeting, expense tracking, and visual reporting. It supports multiple accounts, currencies, APIs, and detailed categorization. GDPR-compliant for full financial privacy.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v6.4.9",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-28",
+    "date_last_commit": "2025-12-08",
+    "github_stars": 21716
+  },
+  "resources": {
+    "website": "https://firefly-iii.org/",
+    "documentation": "https://github.com/firefly-iii/firefly-iii",
+    "source_code": "https://github.com/firefly-iii/firefly-iii",
+    "logo": "/icons/firefly-iii.webp",
+    "issues": "https://github.com/firefly-iii/firefly-iii/issues",
+    "releases": "https://github.com/firefly-iii/firefly-iii/releases"
+  },
   "features": [
     "Finance: Personal finance manager, Budgeting and expense tracking, Visual reporting. Complete financial control.",
     "Multi-Account: Support multiple accounts and currencies. Global finance management.",
@@ -23,69 +31,45 @@
     "GDPR-Compliant: Full financial privacy. Your data stays yours.",
     "Self-Hosted: Complete ownership of financial data. Maximum security."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

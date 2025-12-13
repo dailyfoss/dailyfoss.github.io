@@ -1,20 +1,28 @@
 {
   "name": "shellhub",
   "slug": "shellhub",
+  "tagline": null,
+  "description": "ShellHub is a self-hosted platform for managing remote shell access to Linux devices over SSH from a central web interface. It simplifies fleet access with audit logs, tags, and browser-based terminals.",
   "categories": [
     135
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/shellhub-io/shellhub",
-  "website": "shellhub.io",
-  "source_code": "github.com/shellhub-io/shellhub",
-  "github_stars": "1857",
-  "logo": "/icons/shellhub.webp",
-  "description": "ShellHub is a self-hosted platform for managing remote shell access to Linux devices over SSH from a central web interface. It simplifies fleet access with audit logs, tags, and browser-based terminals.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v0.21.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-05",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 1857
+  },
+  "resources": {
+    "website": "https://shellhub.io",
+    "documentation": "https://github.com/shellhub-io/shellhub",
+    "source_code": "https://github.com/shellhub-io/shellhub",
+    "logo": "/icons/shellhub.webp",
+    "issues": "https://github.com/shellhub-io/shellhub/issues",
+    "releases": "https://github.com/shellhub-io/shellhub/releases"
+  },
   "features": [
     "Remote SSH access: Connect to Linux devices via SSH through a centralized web interface.",
     "Browser terminal: Access device shells directly in the browser without SSH clients.",
@@ -29,69 +37,45 @@
     "Agent deployment: Lightweight agent installs on devices to enable remote access.",
     "API access: Automates device management and access control via REST API."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

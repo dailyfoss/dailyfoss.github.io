@@ -1,20 +1,28 @@
 {
   "name": "briefing",
   "slug": "briefing",
+  "tagline": null,
+  "description": "Briefing is a presentation and slideshow tool allowing users to write content in Markdown and render it as web slides. It’s self-hosted and ideal for technical presentations, documentation, and quick slide generation.",
   "categories": [
     109
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/holtwick/briefing",
-  "website": "brie.fi/ng",
-  "source_code": "github.com/holtwick/briefing",
-  "github_stars": "1585",
-  "logo": "/icons/briefing.webp",
-  "description": "Briefing is a presentation and slideshow tool allowing users to write content in Markdown and render it as web slides. It’s self-hosted and ideal for technical presentations, documentation, and quick slide generation.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v3.1.12",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-03",
+    "date_last_commit": "2025-12-03",
+    "github_stars": 1585
+  },
+  "resources": {
+    "website": "https://brie.fi/ng",
+    "documentation": "https://github.com/holtwick/briefing",
+    "source_code": "https://github.com/holtwick/briefing",
+    "logo": "/icons/briefing.webp",
+    "issues": "https://github.com/holtwick/briefing/issues",
+    "releases": "https://github.com/holtwick/briefing/releases"
+  },
   "features": [
     "Markdown Slides: Write presentations in markdown format. Simple authoring.",
     "Web Rendering: Present slides directly in web browser. No software needed.",
@@ -25,69 +33,45 @@
     "Code Highlighting: Syntax highlighting for code snippets. Professional appearance.",
     "Easy Sharing: Share presentations via simple URLs. Instant distribution."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

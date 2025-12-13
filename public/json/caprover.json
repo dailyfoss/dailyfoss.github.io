@@ -1,20 +1,28 @@
 {
   "name": "caprover",
   "slug": "caprover",
+  "tagline": null,
+  "description": "CapRover is a one-click app deployment and server management solution that works like Heroku. It runs on Docker and makes it easy to deploy web apps, databases, and static sites using a web UI and CLI.",
   "categories": [
     146
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/caprover/caprover",
-  "website": "CapRover.com",
-  "source_code": "github.com/caprover/caprover",
-  "github_stars": "14683",
-  "logo": "/icons/caprover.webp",
-  "description": "CapRover is a one-click app deployment and server management solution that works like Heroku. It runs on Docker and makes it easy to deploy web apps, databases, and static sites using a web UI and CLI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "v.14.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-11",
+    "date_last_commit": "2025-12-04",
+    "github_stars": 14686
+  },
+  "resources": {
+    "website": "https://CapRover.com",
+    "documentation": "https://github.com/caprover/caprover",
+    "source_code": "https://github.com/caprover/caprover",
+    "logo": "/icons/caprover.webp",
+    "issues": "https://github.com/caprover/caprover/issues",
+    "releases": "https://github.com/caprover/caprover/releases"
+  },
   "features": [
     "One-Click Deployment: Deploy apps like Heroku with simple commands. Effortless hosting.",
     "Docker-Based: Built on Docker for reliable containerization. Modern infrastructure.",
@@ -24,69 +32,45 @@
     "Load Balancing: Built-in load balancing for high availability. Scale easily.",
     "Self-Hosted: Run your own PaaS on any server. Complete control."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "bar-assistant",
   "slug": "bar-assistant",
+  "tagline": null,
+  "description": "Bar Assistant is a self-hosted cocktail recipe and inventory management app designed for professional bartenders or enthusiasts. It lets users track available ingredients, manage recipes, and plan menus through a mobile-friendly UI.",
   "categories": [
     52
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/karlomikus/bar-assistant",
-  "website": "barassistant.app",
-  "source_code": "github.com/karlomikus/bar-assistant",
-  "github_stars": "928",
-  "logo": "/icons/bar-assistant.webp",
-  "description": "Bar Assistant is a self-hosted cocktail recipe and inventory management app designed for professional bartenders or enthusiasts. It lets users track available ingredients, manage recipes, and plan menus through a mobile-friendly UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v5.9.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-25",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 929
+  },
+  "resources": {
+    "website": "https://barassistant.app",
+    "documentation": "https://github.com/karlomikus/bar-assistant",
+    "source_code": "https://github.com/karlomikus/bar-assistant",
+    "logo": "/icons/bar-assistant.webp",
+    "issues": "https://github.com/karlomikus/bar-assistant/issues",
+    "releases": "https://github.com/karlomikus/bar-assistant/releases"
+  },
   "features": [
     "Cocktail Recipes: Manage extensive cocktail recipe database. Complete mixology library.",
     "Inventory Tracking: Track available ingredients and stock levels. Know what you have.",
@@ -25,69 +33,45 @@
     "Ingredient Database: Comprehensive ingredient catalog. Complete reference.",
     "Self-Hosted: Keep your recipe collection private. Complete control."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

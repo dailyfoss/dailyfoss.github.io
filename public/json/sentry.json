@@ -1,20 +1,28 @@
 {
   "name": "sentry",
   "slug": "sentry",
+  "tagline": null,
+  "description": "Sentry is an application monitoring and error tracking platform for web, mobile, and backend services. It captures exceptions, performance data, and alerts, and can be deployed self-hosted or consumed as a SaaS.",
   "categories": [
     93
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/getsentry/sentry",
-  "website": "sentry.io",
-  "source_code": "github.com/getsentry/sentry",
-  "github_stars": "42671",
-  "logo": "/icons/sentry.webp",
-  "description": "Sentry is an application monitoring and error tracking platform for web, mobile, and backend services. It captures exceptions, performance data, and alerts, and can be deployed self-hosted or consumed as a SaaS.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "25.11.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-01",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 42672
+  },
+  "resources": {
+    "website": "https://sentry.io",
+    "documentation": "https://github.com/getsentry/sentry",
+    "source_code": "https://github.com/getsentry/sentry",
+    "logo": "/icons/sentry.webp",
+    "issues": "https://github.com/getsentry/sentry/issues",
+    "releases": "https://github.com/getsentry/sentry/releases"
+  },
   "features": [
     "Error tracking: Captures and aggregates exceptions from web, mobile, and backend applications.",
     "Performance monitoring: Tracks transaction traces, slow queries, and bottlenecks across services.",
@@ -29,69 +37,45 @@
     "Performance insights: Identifies slow database queries, API calls, and rendering issues.",
     "User feedback: Collects user reports directly from error pages for additional context."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

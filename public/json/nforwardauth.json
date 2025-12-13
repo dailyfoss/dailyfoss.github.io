@@ -1,20 +1,28 @@
 {
   "name": "nforwardauth",
   "slug": "nforwardauth",
+  "tagline": "",
+  "description": "nForwardAuth is a self-hosted identity provider and authentication proxy that centralizes login through OAuth2 with routing rules and session forwarding. Designed for protecting internal apps.",
   "categories": [
     15
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/nosduco/nforwardauth",
-  "website": "github.com/nosduco/nforwardauth",
-  "source_code": "github.com/nosduco/nforwardauth",
-  "github_stars": "151",
-  "logo": "/icons/nforwardauth.webp",
-  "description": "nForwardAuth is a self-hosted identity provider and authentication proxy that centralizes login through OAuth2 with routing rules and session forwarding. Designed for protecting internal apps.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v1.5.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-06-13",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 151
+  },
+  "resources": {
+    "website": null,
+    "documentation": null,
+    "source_code": "https://github.com/nosduco/nforwardauth",
+    "logo": "/icons/nforwardauth.webp",
+    "issues": "https://github.com/nosduco/nforwardauth/issues",
+    "releases": "https://github.com/nosduco/nforwardauth/releases"
+  },
   "features": [
     "OAuth2 authentication: Centralize login using OAuth2 providers like Google, GitHub, or custom IdPs.",
     "Forward auth proxy: Protect internal applications by intercepting requests and validating sessions.",
@@ -29,69 +37,45 @@
     "Lightweight design: Minimal resource footprint suitable for edge deployment.",
     "Self-hosted control: Keep authentication data and user sessions on your own infrastructure."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

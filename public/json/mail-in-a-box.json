@@ -1,20 +1,28 @@
 {
   "name": "mail-in-a-box",
   "slug": "mail-in-a-box",
+  "tagline": null,
+  "description": "Mail-in-a-Box is an easy-to-deploy mail server solution for self-hosting. With one command, it configures DNS, SMTP, IMAP, and webmail, turning a cloud or VPS server into a working email server.",
   "categories": [
     53
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/mail-in-a-box/mailinabox",
-  "website": "mailinabox.email",
-  "source_code": "github.com/mail-in-a-box/mailinabox",
-  "github_stars": "15077",
-  "logo": "/icons/mail-in-a-box.webp",
-  "description": "Mail-in-a-Box is an easy-to-deploy mail server solution for self-hosting. With one command, it configures DNS, SMTP, IMAP, and webmail, turning a cloud or VPS server into a working email server.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "CC0-1.0",
+    "version": "v73",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-07-11",
+    "date_last_commit": "2025-07-28",
+    "github_stars": 15077
+  },
+  "resources": {
+    "website": "https://mailinabox.email",
+    "documentation": "https://github.com/mail-in-a-box/mailinabox",
+    "source_code": "https://github.com/mail-in-a-box/mailinabox",
+    "logo": "/icons/mail-in-a-box.webp",
+    "issues": "https://github.com/mail-in-a-box/mailinabox/issues",
+    "releases": "https://github.com/mail-in-a-box/mailinabox/releases"
+  },
   "features": [
     "One-command setup: Deploy a complete mail server with DNS, SMTP, IMAP, and webmail using a single script.",
     "Automatic DNS: Configure DNS records automatically including MX, SPF, DKIM, and DMARC for proper email delivery.",
@@ -27,69 +35,45 @@
     "Greylisting: Reduce spam with greylisting that temporarily rejects mail from unknown senders.",
     "Mobile compatibility: Full support for IMAP/SMTP on mobile devices and desktop email clients."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

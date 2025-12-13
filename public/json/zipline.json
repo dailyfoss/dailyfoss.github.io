@@ -1,20 +1,28 @@
 {
   "name": "zipline",
   "slug": "zipline",
+  "tagline": null,
+  "description": "Zipline is a self-hosted file sharing and paste service with short URLs, drag-and-drop uploads, and image support. It features authentication, statistics, and extensibility through a polished web UI.",
   "categories": [
     61
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/diced/zipline",
-  "website": "zipline.diced.sh",
-  "source_code": "github.com/diced/zipline",
-  "github_stars": "2688",
-  "logo": "/icons/zipline.webp",
-  "description": "Zipline is a self-hosted file sharing and paste service with short URLs, drag-and-drop uploads, and image support. It features authentication, statistics, and extensibility through a polished web UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v4.3.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-17",
+    "date_last_commit": "2025-12-09",
+    "github_stars": 2690
+  },
+  "resources": {
+    "website": "https://zipline.diced.sh",
+    "documentation": "https://github.com/diced/zipline",
+    "source_code": "https://github.com/diced/zipline",
+    "logo": "/icons/zipline.webp",
+    "issues": "https://github.com/diced/zipline/issues",
+    "releases": "https://github.com/diced/zipline/releases"
+  },
   "features": [
     "File uploads: Share files quickly with drag-and-drop uploads or paste images directly from clipboard.",
     "Short URLs: Generate memorable short links for uploaded files to simplify sharing and tracking.",
@@ -29,69 +37,45 @@
     "Embed support: Generate embed codes for images and files to display content on external websites.",
     "API access: Upload and manage files programmatically using REST API endpoints for automation workflows."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

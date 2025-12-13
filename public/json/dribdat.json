@@ -1,20 +1,28 @@
 {
   "name": "dribdat",
   "slug": "dribdat",
+  "tagline": "",
+  "description": "Dribdat is a platform for organizing hackathons and collaborative events. It lets organizers list projects, collect submissions, track team progress, and showcase results, all in a self-hosted, developer-friendly web application.",
   "categories": [
     121
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/dribdat/dribdat",
-  "website": "dribdat.cc",
-  "source_code": "github.com/dribdat/dribdat",
-  "github_stars": "80",
-  "logo": "/icons/dribdat.webp",
-  "description": "Dribdat is a platform for organizing hackathons and collaborative events. It lets organizers list projects, collect submissions, track team progress, and showcase results, all in a self-hosted, developer-friendly web application.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.9.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-13",
+    "date_last_commit": "2025-11-19",
+    "github_stars": 80
+  },
+  "resources": {
+    "website": "https://dribdat.cc",
+    "documentation": "https://dribdat.cc",
+    "source_code": "https://github.com/dribdat/dribdat",
+    "logo": "/icons/dribdat.webp",
+    "issues": "https://github.com/dribdat/dribdat/issues",
+    "releases": "https://github.com/dribdat/dribdat/releases"
+  },
   "features": [
     "Project submissions: Allow participants to register teams and submit project ideas with descriptions and links.",
     "Progress tracking: Monitor team activity and project development throughout the event with status updates.",
@@ -25,69 +33,45 @@
     "Judging tools: Provide scoring interfaces and criteria checklists for fair and structured project evaluation.",
     "Event scheduling: Publish agendas, workshops, and milestone deadlines to keep participants informed throughout the hackathon."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

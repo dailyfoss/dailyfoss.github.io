@@ -1,20 +1,28 @@
 {
   "name": "auto-mcs",
   "slug": "auto-mcs",
+  "tagline": null,
+  "description": "Auto-MCS is a GUI-based tool for automatically deploying and configuring Minecraft servers with mod support. It reduces the manual setup process and is suitable for gaming communities and self-hosters.",
   "categories": [
     165
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/macarooni-man/auto-mcs",
-  "website": "www.auto-mcs.com",
-  "source_code": "github.com/macarooni-man/auto-mcs",
-  "github_stars": "348",
-  "logo": "/icons/auto-mcs.webp",
-  "description": "Auto-MCS is a GUI-based tool for automatically deploying and configuring Minecraft servers with mod support. It reduces the manual setup process and is suitable for gaming communities and self-hosters.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v2.3.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-15",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 349
+  },
+  "resources": {
+    "website": "https://www.auto-mcs.com",
+    "documentation": "https://github.com/macarooni-man/auto-mcs",
+    "source_code": "https://github.com/macarooni-man/auto-mcs",
+    "logo": "/icons/auto-mcs.webp",
+    "issues": "https://github.com/macarooni-man/auto-mcs/issues",
+    "releases": "https://github.com/macarooni-man/auto-mcs/releases"
+  },
   "features": [
     "Minecraft Server Management: Automated deployment and configuration. Easy server setup.",
     "Mod Support: Install and manage mods automatically. Enhanced gameplay.",
@@ -25,69 +33,45 @@
     "Cross-Platform: Desktop apps for Linux, Windows, and macOS. Universal compatibility.",
     "Self-Hosted: Run your own Minecraft servers. Complete ownership."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": true,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

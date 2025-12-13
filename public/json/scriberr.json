@@ -1,20 +1,28 @@
 {
   "name": "scriberr",
   "slug": "scriberr",
+  "tagline": null,
+  "description": "Scriberr is a self-hosted note-taking app with hierarchical organization, tags, and markdown support. It’s built for productivity with an intuitive web interface.",
   "categories": [
     111
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/rishikanthc/Scriberr",
-  "website": "scriberr.app",
-  "source_code": "github.com/rishikanthc/Scriberr",
-  "github_stars": "1545",
-  "logo": "/icons/scriberr.webp",
-  "description": "Scriberr is a self-hosted note-taking app with hierarchical organization, tags, and markdown support. It’s built for productivity with an intuitive web interface.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v1.1.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-05",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 1545
+  },
+  "resources": {
+    "website": "https://scriberr.app",
+    "documentation": "https://github.com/rishikanthc/Scriberr",
+    "source_code": "https://github.com/rishikanthc/Scriberr",
+    "logo": "/icons/scriberr.webp",
+    "issues": "https://github.com/rishikanthc/Scriberr/issues",
+    "releases": "https://github.com/rishikanthc/Scriberr/releases"
+  },
   "features": [
     "Hierarchical notes: Organize notes in nested folders and categories for structured knowledge management.",
     "Markdown editor: Write and format notes using markdown with live preview.",
@@ -29,69 +37,45 @@
     "Dark mode: Switch between light and dark themes for comfortable reading.",
     "Mobile access: Access and edit notes from mobile devices with responsive design."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

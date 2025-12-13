@@ -1,20 +1,28 @@
 {
   "name": "amnezia",
   "slug": "amnezia",
+  "tagline": null,
+  "description": "Amnezia VPN allows users to create their own private VPN server with a simple interface. It uses Docker containers for modular configuration and supports custom protocols to evade censorship and improve privacy.",
   "categories": [
     174
   ],
-  "sponsored": true,
-  "sponsored_expired": "2025-11-20",
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/amnezia-vpn/amnezia-client",
-  "website": "amnezia.org",
-  "source_code": "github.com/amnezia-vpn/amnezia-client",
-  "github_stars": "9175",
-  "logo": "/icons/amnezia.webp",
-  "description": "Amnezia VPN allows users to create their own private VPN server with a simple interface. It uses Docker containers for modular configuration and supports custom protocols to evade censorship and improve privacy.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": true,
+    "license": "GPL-3.0",
+    "version": "4.8.11.4",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-17",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 9176
+  },
+  "resources": {
+    "website": "https://amnezia.org",
+    "documentation": "https://github.com/amnezia-vpn/amnezia-client",
+    "source_code": "https://github.com/amnezia-vpn/amnezia-client",
+    "logo": "/icons/amnezia.webp",
+    "issues": "https://github.com/amnezia-vpn/amnezia-client/issues",
+    "releases": "https://github.com/amnezia-vpn/amnezia-client/releases"
+  },
   "features": [
     "Private VPN Server: Create your own VPN server with simple setup. Full control over your connection.",
     "Censorship Evasion: Custom protocols designed to bypass internet restrictions. Access the open internet.",
@@ -25,69 +33,45 @@
     "Protocol Variety: Multiple VPN protocols including custom obfuscation options. Adapt to any situation.",
     "Cost-Effective: Use any VPS provider to run your personal VPN. Affordable privacy solution."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": true,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": true,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

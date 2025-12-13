@@ -1,20 +1,28 @@
 {
   "name": "anonymousoverflow",
   "slug": "anonymous-overflow",
+  "tagline": null,
+  "description": "AnonymousOverflow provides a privacy-friendly alternative interface for browsing StackOverflow without ads, tracking, or scripts. It is focused on accessibility and preserving Q&A content for anonymous public consumption.",
   "categories": [
     149
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/httpjamesm/AnonymousOverflow",
-  "website": "aohub.httpjames.space",
-  "source_code": "github.com/httpjamesm/AnonymousOverflow",
-  "github_stars": "350",
-  "logo": "/icons/anonymous-overflow.webp",
-  "description": "AnonymousOverflow provides a privacy-friendly alternative interface for browsing StackOverflow without ads, tracking, or scripts. It is focused on accessibility and preserving Q&A content for anonymous public consumption.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MPL-2.0",
+    "version": "v1.13.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-08-24",
+    "date_last_commit": "2025-12-03",
+    "github_stars": 350
+  },
+  "resources": {
+    "website": "https://aohub.httpjames.space",
+    "documentation": "https://github.com/httpjamesm/AnonymousOverflow",
+    "source_code": "https://github.com/httpjamesm/AnonymousOverflow",
+    "logo": "/icons/anonymous-overflow.webp",
+    "issues": "https://github.com/httpjamesm/AnonymousOverflow/issues",
+    "releases": "https://github.com/httpjamesm/AnonymousOverflow/releases"
+  },
   "features": [
     "Privacy-Friendly Browsing: View StackOverflow content without ads, tracking, or scripts. Browse anonymously and safely.",
     "Clean Interface: Focused on accessibility and readability for Q&A content. Distraction-free learning.",
@@ -22,69 +30,45 @@
     "Lightweight: Minimal resource usage with fast page loads. Efficient performance.",
     "Content Preservation: Access valuable Q&A content in a privacy-respecting way. Knowledge without compromise."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "slink",
   "slug": "slink",
+  "tagline": null,
+  "description": "Slink is a self-hosted link shortener and micro-landing-page generator. It supports custom domains, analytics, and a straightforward management UI.",
   "categories": [
     171
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/andrii-kryvoviaz/slink",
-  "website": "docs.slinkapp.io",
-  "source_code": "github.com/andrii-kryvoviaz/slink",
-  "github_stars": "1203",
-  "logo": "/icons/slink.webp",
-  "description": "Slink is a self-hosted link shortener and micro-landing-page generator. It supports custom domains, analytics, and a straightforward management UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v1.8.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-11",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 1211
+  },
+  "resources": {
+    "website": "https://docs.slinkapp.io",
+    "documentation": "https://github.com/andrii-kryvoviaz/slink",
+    "source_code": "https://github.com/andrii-kryvoviaz/slink",
+    "logo": "/icons/slink.webp",
+    "issues": "https://github.com/andrii-kryvoviaz/slink/issues",
+    "releases": "https://github.com/andrii-kryvoviaz/slink/releases"
+  },
   "features": [
     "URL shortening: Creates short links with custom or auto-generated slugs.",
     "Landing pages: Builds micro-landing pages with multiple links and content blocks.",
@@ -29,69 +37,45 @@
     "Team collaboration: Shares link management across team members with permissions.",
     "Export data: Downloads analytics and link data for external analysis."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

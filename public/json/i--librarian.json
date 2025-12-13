@@ -1,20 +1,28 @@
 {
   "name": "i-librarian",
   "slug": "i--librarian",
+  "tagline": null,
+  "description": "I Librarian is a web based reference and document manager for researchers. It stores PDFs, annotations and bibliographic data, supports full text search and citation export, and can be deployed as a private literature database.",
   "categories": [
     193
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/mkucej/i-librarian-free",
-  "website": "i-librarian.net",
-  "source_code": "github.com/mkucej/i-librarian-free",
-  "github_stars": "319",
-  "logo": "/icons/i--librarian.webp",
-  "description": "I Librarian is a web based reference and document manager for researchers. It stores PDFs, annotations and bibliographic data, supports full text search and citation export, and can be deployed as a private literature database.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "5.11.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-02",
+    "date_last_commit": "2025-12-02",
+    "github_stars": 319
+  },
+  "resources": {
+    "website": "https://i-librarian.net",
+    "documentation": "https://github.com/mkucej/i-librarian-free",
+    "source_code": "https://github.com/mkucej/i-librarian-free",
+    "logo": "/icons/i--librarian.webp",
+    "issues": "https://github.com/mkucej/i-librarian-free/issues",
+    "releases": "https://github.com/mkucej/i-librarian-free/releases"
+  },
   "features": [
     "PDF Management: Store and organize research papers and documents in a centralized library.",
     "Annotation Tools: Highlight and annotate PDFs directly within the web interface.",
@@ -25,69 +33,45 @@
     "Project Organization: Group related papers into projects for research workflows.",
     "Private Database: Self-hosted solution for complete control over your research library."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

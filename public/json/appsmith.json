@@ -1,20 +1,28 @@
 {
   "name": "appsmith",
   "slug": "appsmith",
+  "tagline": null,
+  "description": "Appsmith is a low-code platform for building internal tools quickly using drag-and-drop widgets, custom queries, and REST/GraphQL integrations. It can be self-hosted and includes role-based access, versioning, and triggers.",
   "categories": [
     110
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/appsmithorg/appsmith",
-  "website": "www.appsmith.com",
-  "source_code": "github.com/appsmithorg/appsmith",
-  "github_stars": "38616",
-  "logo": "/icons/appsmith.webp",
-  "description": "Appsmith is a low-code platform for building internal tools quickly using drag-and-drop widgets, custom queries, and REST/GraphQL integrations. It can be self-hosted and includes role-based access, versioning, and triggers.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v1.93",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-04",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 38622
+  },
+  "resources": {
+    "website": "https://www.appsmith.com",
+    "documentation": "https://github.com/appsmithorg/appsmith",
+    "source_code": "https://github.com/appsmithorg/appsmith",
+    "logo": "/icons/appsmith.webp",
+    "issues": "https://github.com/appsmithorg/appsmith/issues",
+    "releases": "https://github.com/appsmithorg/appsmith/releases"
+  },
   "features": [
     "Low-Code Platform: Build internal tools quickly with drag-and-drop widgets. Ship faster.",
     "Database Integration: Connect to REST APIs, GraphQL, and databases seamlessly. Universal connectivity.",
@@ -24,69 +32,45 @@
     "Pre-Built Widgets: Extensive library of UI components ready to use. Build beautiful interfaces.",
     "Self-Hosted: Deploy on your infrastructure for complete data control. Privacy guaranteed."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

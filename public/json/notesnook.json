@@ -1,20 +1,28 @@
 {
   "name": "notesnook",
   "slug": "notesnook",
+  "tagline": null,
+  "description": "Notesnook sync server provides secure, self-hosted synchronization support for Notesnook clients. It handles encrypted note syncing, device registration, and user accounts without third-party servers.",
   "categories": [
     111
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/streetwriters/notesnook-sync-server",
-  "website": "notesnook.com/",
-  "source_code": "github.com/streetwriters/notesnook-sync-server",
-  "github_stars": "789",
-  "logo": "/icons/notesnook.webp",
-  "description": "Notesnook sync server provides secure, self-hosted synchronization support for Notesnook clients. It handles encrypted note syncing, device registration, and user accounts without third-party servers.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-11-28",
+    "github_stars": 789
+  },
+  "resources": {
+    "website": "https://notesnook.com/",
+    "documentation": "https://github.com/streetwriters/notesnook-sync-server",
+    "source_code": "https://github.com/streetwriters/notesnook-sync-server",
+    "logo": "/icons/notesnook.webp",
+    "issues": "https://github.com/streetwriters/notesnook-sync-server/issues",
+    "releases": null
+  },
   "features": [
     "Encrypted sync: Synchronize notes across devices with end-to-end encryption for privacy.",
     "Device registration: Manage which devices can access your notes with device authorization.",
@@ -29,69 +37,45 @@
     "Subscription management: Handle user subscriptions and feature access for clients.",
     "Privacy-focused: No telemetry or tracking, all data stays on your infrastructure."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": true,
-    "mobile": true,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "poznote",
   "slug": "poznote",
+  "tagline": null,
+  "description": "Poznote is a self-hosted personal note-taking platform with Markdown support, folders, tags, and a focus on simplicity and privacy. It uses a lightweight interface for managing text-based knowledge.",
   "categories": [
     111
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/timothepoznanski/poznote",
-  "website": "poznote.com",
-  "source_code": "github.com/timothepoznanski/poznote",
-  "github_stars": "164",
-  "logo": "/icons/poznote.webp",
-  "description": "Poznote is a self-hosted personal note-taking platform with Markdown support, folders, tags, and a focus on simplicity and privacy. It uses a lightweight interface for managing text-based knowledge.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "1.10.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-12",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 170
+  },
+  "resources": {
+    "website": "https://poznote.com",
+    "documentation": "https://github.com/timothepoznanski/poznote",
+    "source_code": "https://github.com/timothepoznanski/poznote",
+    "logo": "/icons/poznote.webp",
+    "issues": "https://github.com/timothepoznanski/poznote/issues",
+    "releases": "https://github.com/timothepoznanski/poznote/releases"
+  },
   "features": [
     "Markdown support: Write notes in Markdown with live preview and syntax highlighting.",
     "Folder organization: Organize notes into hierarchical folders for structured knowledge management.",
@@ -29,69 +37,45 @@
     "Mobile responsive: Access and edit notes from any device with an optimized mobile interface.",
     "Keyboard shortcuts: Navigate and edit notes efficiently with customizable keyboard commands."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

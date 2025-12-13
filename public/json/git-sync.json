@@ -1,20 +1,28 @@
 {
   "name": "git-sync",
   "slug": "git-sync",
+  "tagline": null,
+  "description": "Git-Sync is a CLI tool that schedules and automates synchronization between local directories and Git repositories. It works well for backups, content syncing, and versioning lightweight deployments.",
   "categories": [
     62
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/AkashRajpurohit/git-sync",
-  "website": "github.com/AkashRajpurohit/git-sync/wiki",
-  "source_code": "github.com/AkashRajpurohit/git-sync",
-  "github_stars": "653",
-  "logo": "/icons/git-sync.webp",
-  "description": "Git-Sync is a CLI tool that schedules and automates synchronization between local directories and Git repositories. It works well for backups, content syncing, and versioning lightweight deployments.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.20.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-08-04",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 654
+  },
+  "resources": {
+    "website": "https://github.com/AkashRajpurohit/git-sync/wiki",
+    "documentation": "https://github.com/AkashRajpurohit/git-sync",
+    "source_code": "https://github.com/AkashRajpurohit/git-sync",
+    "logo": "/icons/git-sync.webp",
+    "issues": "https://github.com/AkashRajpurohit/git-sync/issues",
+    "releases": "https://github.com/AkashRajpurohit/git-sync/releases"
+  },
   "features": [
     "Directory Synchronization: Automatically sync local directories to Git repositories for version control.",
     "Scheduled Automation: Configure automatic sync intervals to keep repositories up to date.",
@@ -25,69 +33,45 @@
     "Content Versioning: Track changes to configuration files, documents, and other content over time.",
     "Backup Strategy: Use Git remotes as backup destinations for important local files."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

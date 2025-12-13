@@ -1,20 +1,28 @@
 {
   "name": "pinry",
   "slug": "pinry",
+  "tagline": null,
+  "description": "Pinry is a self-hosted image pinboard app similar to Pinterest. It includes tagging, boards, and user profiles, ideal for organizing image collections or inspiration boards.",
   "categories": [
     80
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/pinry/pinry",
-  "website": "pinry.github.io/pinry/",
-  "source_code": "github.com/pinry/pinry",
-  "github_stars": "3296",
-  "logo": "/icons/pinry.webp",
-  "description": "Pinry is a self-hosted image pinboard app similar to Pinterest. It includes tagging, boards, and user profiles, ideal for organizing image collections or inspiration boards.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "BSD-2-Clause",
+    "version": "v2.1.13",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-10-03",
+    "date_last_commit": "2025-07-09",
+    "github_stars": 3297
+  },
+  "resources": {
+    "website": "https://pinry.github.io/pinry/",
+    "documentation": "https://github.com/pinry/pinry",
+    "source_code": "https://github.com/pinry/pinry",
+    "logo": "/icons/pinry.webp",
+    "issues": "https://github.com/pinry/pinry/issues",
+    "releases": "https://github.com/pinry/pinry/releases"
+  },
   "features": [
     "Image pinning: Save images from the web or upload directly to create visual collections.",
     "Board organization: Create boards to organize pins by theme, project, or category.",
@@ -29,69 +37,45 @@
     "Multi-user support: Host a pinboard for multiple users with individual accounts and collections.",
     "API access: Programmatically create and manage pins using a RESTful API."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

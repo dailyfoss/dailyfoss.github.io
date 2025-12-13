@@ -1,20 +1,28 @@
 {
   "name": "viseron",
   "slug": "viseron",
+  "tagline": null,
+  "description": "Viseron is a self-hosted surveillance system with real-time object detection. It ingests camera streams, performs AI detection, and exposes recorded events and snapshots via a web interface.",
   "categories": [
     136
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/roflcoopter/viseron",
-  "website": "github.com/roflcoopter/viseron",
-  "source_code": "github.com/roflcoopter/viseron",
-  "github_stars": "2428",
-  "logo": "/icons/viseron.webp",
-  "description": "Viseron is a self-hosted surveillance system with real-time object detection. It ingests camera streams, performs AI detection, and exposes recorded events and snapshots via a web interface.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v3.4.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-12",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 2429
+  },
+  "resources": {
+    "website": "https://github.com/roflcoopter/viseron",
+    "documentation": "https://github.com/roflcoopter/viseron",
+    "source_code": "https://github.com/roflcoopter/viseron",
+    "logo": "/icons/viseron.webp",
+    "issues": "https://github.com/roflcoopter/viseron/issues",
+    "releases": "https://github.com/roflcoopter/viseron/releases"
+  },
   "features": [
     "Object detection: Detect people, vehicles, and objects in camera streams using AI models.",
     "Real-time processing: Analyze camera feeds in real-time for immediate detection and alerts.",
@@ -29,69 +37,45 @@
     "Notification support: Send alerts via various channels when objects are detected.",
     "Privacy-focused: Process all video locally without sending data to cloud services."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

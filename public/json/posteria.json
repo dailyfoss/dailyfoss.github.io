@@ -1,20 +1,28 @@
 {
   "name": "posteria",
   "slug": "posteria",
+  "tagline": null,
+  "description": "Posteria is a self-hosted web interface for managing and visualizing PostgreSQL databases. It provides insights, performance metrics, and SQL tools in a user-friendly UI.",
   "categories": [
     21
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/jeremehancock/Posteria",
-  "website": "posteria.app",
-  "source_code": "github.com/jeremehancock/Posteria",
-  "github_stars": "174",
-  "logo": "/icons/posteria.webp",
-  "description": "Posteria is a self-hosted web interface for managing and visualizing PostgreSQL databases. It provides insights, performance metrics, and SQL tools in a user-friendly UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-11-17",
+    "github_stars": 176
+  },
+  "resources": {
+    "website": "https://posteria.app",
+    "documentation": "https://github.com/jeremehancock/Posteria",
+    "source_code": "https://github.com/jeremehancock/Posteria",
+    "logo": "/icons/posteria.webp",
+    "issues": "https://github.com/jeremehancock/Posteria/issues",
+    "releases": null
+  },
   "features": [
     "Database visualization: View PostgreSQL database structure with interactive schema diagrams and relationships.",
     "Performance metrics: Monitor query performance, connection statistics, and resource usage in real-time.",
@@ -29,69 +37,45 @@
     "Database statistics: View database size, table counts, and storage usage metrics.",
     "Role management: Visualize and manage database roles, permissions, and access controls."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "anyappstart",
   "slug": "anyappstart",
+  "tagline": null,
+  "description": "AnyAppStart is a simple launcher that helps you organize and start self-hosted apps or services from a unified web dashboard. It’s easy to configure and ideal for managing local or cloud-based applications and scripts.",
   "categories": [
     165
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/aceberg/AnyAppStart",
-  "website": "github.com/aceberg/AnyAppStart",
-  "source_code": "github.com/aceberg/AnyAppStart",
-  "github_stars": "188",
-  "logo": "/icons/anyappstart.webp",
-  "description": "AnyAppStart is a simple launcher that helps you organize and start self-hosted apps or services from a unified web dashboard. It’s easy to configure and ideal for managing local or cloud-based applications and scripts.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "0.1.6",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-07-09",
+    "date_last_commit": "2025-09-19",
+    "github_stars": 188
+  },
+  "resources": {
+    "website": "https://github.com/aceberg/AnyAppStart",
+    "documentation": "https://github.com/aceberg/AnyAppStart",
+    "source_code": "https://github.com/aceberg/AnyAppStart",
+    "logo": "/icons/anyappstart.webp",
+    "issues": "https://github.com/aceberg/AnyAppStart/issues",
+    "releases": "https://github.com/aceberg/AnyAppStart/releases"
+  },
   "features": [
     "Unified Dashboard: Launch all your self-hosted apps from one central location. Everything at your fingertips.",
     "Easy Configuration: Simple setup for organizing local and cloud-based applications. Get started quickly.",
@@ -22,69 +30,45 @@
     "Custom Launchers: Create custom shortcuts for applications and scripts. Personalize your workflow.",
     "Web-Based: Access your app launcher from any device with a browser. Universal accessibility."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": true,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": true,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "immich",
   "slug": "immich",
+  "tagline": null,
+  "description": "Immich is a self hosted photo and video backup solution for mobile and desktop. It offers automatic uploads, face recognition, maps, albums and multi user support, providing a private alternative to big cloud photo services.",
   "categories": [
     120
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/immich-app/immich",
-  "website": "immich.app",
-  "source_code": "github.com/immich-app/immich",
-  "github_stars": "86320",
-  "logo": "/icons/immich.webp",
-  "description": "Immich is a self hosted photo and video backup solution for mobile and desktop. It offers automatic uploads, face recognition, maps, albums and multi user support, providing a private alternative to big cloud photo services.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v2.3.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-20",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 86355
+  },
+  "resources": {
+    "website": "https://immich.app",
+    "documentation": "https://github.com/immich-app/immich",
+    "source_code": "https://github.com/immich-app/immich",
+    "logo": "/icons/immich.webp",
+    "issues": "https://github.com/immich-app/immich/issues",
+    "releases": "https://github.com/immich-app/immich/releases"
+  },
   "features": [
     "Photo Backup: Automatic mobile uploads, Background sync, Original quality preservation. Never lose a memory.",
     "Face Recognition: AI-powered face detection, Person grouping, Smart search. Find people instantly.",
@@ -28,69 +36,45 @@
     "Privacy: Self-hosted storage, No cloud dependency, Complete control. Your photos, your server.",
     "Machine Learning: Local AI processing, Object recognition, Smart categorization. Intelligent organization."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": true,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": true,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,29 @@
 {
   "name": "misskey",
   "slug": "misskey",
+  "tagline": null,
+  "description": "Misskey is a modern, decentralized social media platform built with ActivityPub. It supports real-time interactions, reactions, custom emoji, themes, and federation across servers.",
   "categories": [
     148
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/misskey-dev/misskey",
-  "website": "misskey-hub.net/",
-  "source_code": "github.com/misskey-dev/misskey",
-  "github_stars": "10862",
-  "logo": "/icons/misskey.webp",
-  "description": "Misskey is a modern, decentralized social media platform built with ActivityPub. It supports real-time interactions, reactions, custom emoji, themes, and federation across servers.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "2025.12.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-06",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 10862
+  },
+  "resources": {
+    "website": "https://misskey-hub.net/",
+    "documentation": "https://github.com/misskey-dev/misskey",
+    "source_code": "https://github.com/misskey-dev/misskey",
+    "logo": "/icons/misskey.webp",
+    "issues": "https://github.com/misskey-dev/misskey/issues",
+    "releases": "https://github.com/misskey-dev/misskey/releases",
+    "logo_light": "/icons/misskey-light.webp"
+  },
   "features": [
     "Decentralized Social: ActivityPub-based federation allowing communication across different Misskey and Mastodon instances.",
     "Real-time Interactions: Live timeline updates, instant notifications, and real-time chat functionality.",
@@ -29,69 +38,45 @@
     "Drive Storage: Built-in file storage system for managing uploaded media and documents with organization features.",
     "Community Features: Create and manage communities, polls, and events with advanced engagement tools."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

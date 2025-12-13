@@ -1,20 +1,28 @@
 {
   "name": "fitbit-health-dashboard",
   "slug": "fitbit-health-dashboard",
+  "tagline": null,
+  "description": "Fitbit-Grafana is a monitoring stack that extracts Fitbit data and visualizes it using Grafana dashboards. Great for individuals who want to self-host personal health analytics while keeping their activity data private.",
   "categories": [
     103
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/arpanghosh8453/fitbit-grafana",
-  "website": "github.com/arpanghosh8453/fitbit-grafana",
-  "source_code": "github.com/arpanghosh8453/fitbit-grafana",
-  "github_stars": "772",
-  "logo": "/icons/fitbit-health-dashboard.webp",
-  "description": "Fitbit-Grafana is a monitoring stack that extracts Fitbit data and visualizes it using Grafana dashboards. Great for individuals who want to self-host personal health analytics while keeping their activity data private.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "BSD-4-Clause",
+    "version": "v1.1.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-04-04",
+    "date_last_commit": "2025-11-23",
+    "github_stars": 772
+  },
+  "resources": {
+    "website": "https://github.com/arpanghosh8453/fitbit-grafana",
+    "documentation": "https://github.com/arpanghosh8453/fitbit-grafana",
+    "source_code": "https://github.com/arpanghosh8453/fitbit-grafana",
+    "logo": "/icons/fitbit-health-dashboard.webp",
+    "issues": "https://github.com/arpanghosh8453/fitbit-grafana/issues",
+    "releases": "https://github.com/arpanghosh8453/fitbit-grafana/releases"
+  },
   "features": [
     "Health Analytics: Extract Fitbit data, Grafana visualization, Personal health monitoring. Self-hosted fitness tracking.",
     "Data Privacy: Keep health data private. No cloud dependencies.",
@@ -27,69 +35,45 @@
     "Steps and Distance: Track daily activity. Fitness goals.",
     "Self-Hosted: Your health data stays private. Complete control."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

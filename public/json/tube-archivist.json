@@ -1,20 +1,28 @@
 {
   "name": "tube-archivist",
   "slug": "tube-archivist",
+  "tagline": null,
+  "description": "TubeArchivist is a self-hosted YouTube archiving and management solution. It downloads videos, indexes metadata, and offers search, playlists, and a web player to build a personal YouTube library.",
   "categories": [
     100
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/tubearchivist/tubearchivist",
-  "website": "www.tubearchivist.com",
-  "source_code": "github.com/tubearchivist/tubearchivist",
-  "github_stars": "7294",
-  "logo": "/icons/tube-archivist.webp",
-  "description": "TubeArchivist is a self-hosted YouTube archiving and management solution. It downloads videos, indexes metadata, and offers search, playlists, and a web player to build a personal YouTube library.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v0.5.8",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-08",
+    "date_last_commit": "2025-12-08",
+    "github_stars": 7295
+  },
+  "resources": {
+    "website": "https://www.tubearchivist.com",
+    "documentation": "https://github.com/tubearchivist/tubearchivist",
+    "source_code": "https://github.com/tubearchivist/tubearchivist",
+    "logo": "/icons/tube-archivist.webp",
+    "issues": "https://github.com/tubearchivist/tubearchivist/issues",
+    "releases": "https://github.com/tubearchivist/tubearchivist/releases"
+  },
   "features": [
     "YouTube downloading: Download videos from YouTube channels and playlists automatically.",
     "Metadata indexing: Index video metadata including titles, descriptions, tags, and thumbnails for searchability.",
@@ -29,69 +37,45 @@
     "Scheduled downloads: Set up automatic download schedules to keep your archive up to date.",
     "Statistics: View statistics on your archive including total videos, storage used, and channel breakdowns."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

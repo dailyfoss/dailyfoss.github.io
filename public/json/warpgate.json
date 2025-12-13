@@ -1,20 +1,28 @@
 {
   "name": "warpgate",
   "slug": "warpgate",
+  "tagline": null,
+  "description": "Warpgate is a self-hosted secure access gateway for SSH, RDP, and databases. It provides auditing, session recording, and role-based access via web UI and configuration files.",
   "categories": [
     135
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/warp-tech/warpgate",
-  "website": "warpgate.null.page",
-  "source_code": "github.com/warp-tech/warpgate",
-  "github_stars": "6205",
-  "logo": "/icons/warpgate.webp",
-  "description": "Warpgate is a self-hosted secure access gateway for SSH, RDP, and databases. It provides auditing, session recording, and role-based access via web UI and configuration files.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v0.18.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-02",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 6207
+  },
+  "resources": {
+    "website": "https://warpgate.null.page",
+    "documentation": "https://github.com/warp-tech/warpgate",
+    "source_code": "https://github.com/warp-tech/warpgate",
+    "logo": "/icons/warpgate.webp",
+    "issues": "https://github.com/warp-tech/warpgate/issues",
+    "releases": "https://github.com/warp-tech/warpgate/releases"
+  },
   "features": [
     "Protocol support: Provide secure access to SSH, RDP, MySQL, and PostgreSQL connections through a single gateway.",
     "Session recording: Automatically record all sessions for compliance, auditing, and security review purposes.",
@@ -29,69 +37,45 @@
     "Activity monitoring: View real-time active sessions and connection statistics through the admin dashboard.",
     "Webhook integration: Send notifications to external systems when specific events occur like failed login attempts."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": true,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

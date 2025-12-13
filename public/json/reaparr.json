@@ -1,20 +1,28 @@
 {
   "name": "reaparr",
   "slug": "reaparr",
+  "tagline": null,
+  "description": "Reaparr is a self-hosted automation dashboard for managing Pirate streaming tools like Sonarr and Radarr. It features status overviews, control tools, and link management.",
   "categories": [
     166
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Reaparr/Reaparr",
-  "website": "www.reaparr.rocks",
-  "source_code": "github.com/Reaparr/Reaparr",
-  "github_stars": "575",
-  "logo": "/icons/reaparr.webp",
-  "description": "Reaparr is a self-hosted automation dashboard for managing Pirate streaming tools like Sonarr and Radarr. It features status overviews, control tools, and link management.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v0.34.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-19",
+    "date_last_commit": "2025-11-30",
+    "github_stars": 576
+  },
+  "resources": {
+    "website": "https://www.reaparr.rocks",
+    "documentation": "https://github.com/Reaparr/Reaparr",
+    "source_code": "https://github.com/Reaparr/Reaparr",
+    "logo": "/icons/reaparr.webp",
+    "issues": "https://github.com/Reaparr/Reaparr/issues",
+    "releases": "https://github.com/Reaparr/Reaparr/releases"
+  },
   "features": [
     "Unified dashboard: Monitor status and health of Sonarr, Radarr, and related services from one interface.",
     "Quick controls: Start, stop, or restart services without accessing individual application interfaces.",
@@ -29,69 +37,45 @@
     "Theme customization: Switch between light and dark modes or create custom color schemes.",
     "API connectivity: Connect to existing Sonarr and Radarr instances using their native APIs."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

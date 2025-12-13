@@ -1,20 +1,29 @@
 {
   "name": "beaver-habit-tracker",
   "slug": "beaver-habit-tracker",
+  "tagline": null,
+  "description": "BeaverHabits is a self-hosted habit tracker that features streaks, graphs, and customizable habit schedules. It is designed to help users build routines and stay motivated using simple tracking and visual cues.",
   "categories": [
     74
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/daya0576/beaverhabits",
-  "website": "github.com/daya0576/beaverhabits",
-  "source_code": "github.com/daya0576/beaverhabits",
-  "github_stars": "1580",
-  "logo": "/icons/beaver-habit-tracker.webp",
-  "description": "BeaverHabits is a self-hosted habit tracker that features streaks, graphs, and customizable habit schedules. It is designed to help users build routines and stay motivated using simple tracking and visual cues.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "BSD-3-Clause",
+    "version": "v0.8.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-02",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 1581
+  },
+  "resources": {
+    "website": "https://github.com/daya0576/beaverhabits",
+    "documentation": "https://github.com/daya0576/beaverhabits",
+    "source_code": "https://github.com/daya0576/beaverhabits",
+    "logo": "/icons/beaver-habit-tracker.webp",
+    "issues": "https://github.com/daya0576/beaverhabits/issues",
+    "releases": "https://github.com/daya0576/beaverhabits/releases",
+    "logo_light": "/icons/beaver-habit-tracker-light.webp"
+  },
   "features": [
     "Habit Tracking: Build and maintain positive habits. Consistent progress.",
     "Streak Monitoring: Track consecutive days of habit completion. Stay motivated.",
@@ -25,69 +34,45 @@
     "Self-Hosted: Keep your habit data completely private. Personal growth.",
     "Simple Tracking: Easy logging of daily habits. Minimal friction."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

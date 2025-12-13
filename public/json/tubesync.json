@@ -1,20 +1,29 @@
 {
   "name": "tubesync",
   "slug": "tubesync",
+  "tagline": null,
+  "description": "Tubesync is a self-hosted tool that syncs YouTube channels and playlists to media servers like Jellyfin, downloading and organizing videos automatically with minimal configuration.",
   "categories": [
     120
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/meeb/tubesync",
-  "website": "github.com/meeb/tubesync",
-  "source_code": "github.com/meeb/tubesync",
-  "github_stars": "2538",
-  "logo": "/icons/tubesync.webp",
-  "description": "Tubesync is a self-hosted tool that syncs YouTube channels and playlists to media servers like Jellyfin, downloading and organizing videos automatically with minimal configuration.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v0.15.12",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-02",
+    "date_last_commit": "2025-12-02",
+    "github_stars": 2537
+  },
+  "resources": {
+    "website": "https://github.com/meeb/tubesync",
+    "documentation": "https://github.com/meeb/tubesync",
+    "source_code": "https://github.com/meeb/tubesync",
+    "logo": "/icons/tubesync.webp",
+    "issues": "https://github.com/meeb/tubesync/issues",
+    "releases": "https://github.com/meeb/tubesync/releases",
+    "logo_light": "/icons/tubesync-light.webp"
+  },
   "features": [
     "Channel synchronization: Automatically sync YouTube channels to your media server library.",
     "Playlist support: Download entire playlists and keep them updated as new videos are added.",
@@ -29,69 +38,45 @@
     "Minimal configuration: Get started quickly with sensible defaults and simple setup process.",
     "Background operation: Run continuously in the background with minimal resource usage."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

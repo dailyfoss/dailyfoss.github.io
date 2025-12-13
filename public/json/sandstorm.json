@@ -1,20 +1,28 @@
 {
   "name": "sandstorm",
   "slug": "sandstorm",
+  "tagline": null,
+  "description": "Sandstorm is a self-hosted platform to run web apps securely in isolated sandboxes. It includes app packaging, updates, and permissions control, ideal for personal cloud services.",
   "categories": [
     121
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/sandstorm-io/sandstorm",
-  "website": "sandstorm.org",
-  "source_code": "github.com/sandstorm-io/sandstorm",
-  "github_stars": "6970",
-  "logo": "/icons/sandstorm.webp",
-  "description": "Sandstorm is a self-hosted platform to run web apps securely in isolated sandboxes. It includes app packaging, updates, and permissions control, ideal for personal cloud services.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-11-13",
+    "github_stars": 6970
+  },
+  "resources": {
+    "website": "https://sandstorm.org",
+    "documentation": "https://github.com/sandstorm-io/sandstorm",
+    "source_code": "https://github.com/sandstorm-io/sandstorm",
+    "logo": "/icons/sandstorm.webp",
+    "issues": "https://github.com/sandstorm-io/sandstorm/issues",
+    "releases": null
+  },
   "features": [
     "App sandboxing: Runs each application in isolated containers for enhanced security.",
     "One-click installs: Deploy web apps from the app market with a single click.",
@@ -29,69 +37,45 @@
     "Activity logs: Track app usage and access patterns for security auditing.",
     "Custom domains: Map custom domains to individual app instances for professional deployment."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

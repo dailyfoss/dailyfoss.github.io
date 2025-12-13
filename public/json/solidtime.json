@@ -1,20 +1,29 @@
 {
   "name": "solidtime",
   "slug": "solidtime",
+  "tagline": null,
+  "description": "Solidtime is a self-hosted time tracking solution focused on team productivity. It provides timesheets, reports, and project-based tracking through a modern, responsive web UI.",
   "categories": [
     16
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/solidtime-io/solidtime",
-  "website": "www.solidtime.io",
-  "source_code": "github.com/solidtime-io/solidtime",
-  "github_stars": "7722",
-  "logo": "/icons/solidtime.webp",
-  "description": "Solidtime is a self-hosted time tracking solution focused on team productivity. It provides timesheets, reports, and project-based tracking through a modern, responsive web UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v0.10.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-10",
+    "date_last_commit": "2025-12-09",
+    "github_stars": 7726
+  },
+  "resources": {
+    "website": "https://www.solidtime.io",
+    "documentation": "https://github.com/solidtime-io/solidtime",
+    "source_code": "https://github.com/solidtime-io/solidtime",
+    "logo": "/icons/solidtime.webp",
+    "issues": "https://github.com/solidtime-io/solidtime/issues",
+    "releases": "https://github.com/solidtime-io/solidtime/releases",
+    "logo_light": "/icons/solidtime-light.webp"
+  },
   "features": [
     "Time tracking: Logs work hours with start/stop timers or manual entries.",
     "Project management: Organizes time entries by projects and tasks.",
@@ -29,69 +38,45 @@
     "Mobile apps: Tracks time on the go with iOS and Android applications.",
     "API access: Automates time tracking via REST API."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

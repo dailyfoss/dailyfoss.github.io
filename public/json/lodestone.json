@@ -1,20 +1,28 @@
 {
   "name": "lodestone",
   "slug": "lodestone",
+  "tagline": null,
+  "description": "Lodestone is an adaptive knowledge management platform designed to organize and connect concepts, documents, and relationships. It supports visual linking, collaborative knowledge graphs, and self-hosted knowledge bases.",
   "categories": [
     165
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Lodestone-Team/lodestone",
-  "website": "www.lodestone.cc/",
-  "source_code": "github.com/Lodestone-Team/lodestone",
-  "github_stars": "1178",
-  "logo": "/icons/lodestone.webp",
-  "description": "Lodestone is an adaptive knowledge management platform designed to organize and connect concepts, documents, and relationships. It supports visual linking, collaborative knowledge graphs, and self-hosted knowledge bases.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v0.5.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-06-21",
+    "date_last_commit": "2024-10-28",
+    "github_stars": 1178
+  },
+  "resources": {
+    "website": "https://www.lodestone.cc/",
+    "documentation": "https://github.com/Lodestone-Team/lodestone",
+    "source_code": "https://github.com/Lodestone-Team/lodestone",
+    "logo": "/icons/lodestone.webp",
+    "issues": "https://github.com/Lodestone-Team/lodestone/issues",
+    "releases": "https://github.com/Lodestone-Team/lodestone/releases"
+  },
   "features": [
     "Knowledge Management: Visual linking, Concept organization, Relationship mapping. Build connected knowledge bases.",
     "Knowledge Graphs: Interactive visualization, Node connections, Exploration tools. See the big picture.",
@@ -25,69 +33,45 @@
     "Search & Discovery: Full-text search, Graph exploration, Related concepts. Find information quickly.",
     "Version History: Track changes, Restore versions, Audit trail. Never lose knowledge."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "compose-craft",
   "slug": "compose-craft",
+  "tagline": "",
+  "description": "ComposeCraft is a web-based GUI for generating and managing Docker Compose files. It lets users visually edit services, volumes, and networks and export YAML, ideal for beginners and system administrators.",
   "categories": [
     47
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/composecraft/composecraft",
-  "website": "composecraft.com",
-  "source_code": "github.com/composecraft/composecraft",
-  "github_stars": "972",
-  "logo": "/icons/compose-craft.webp",
-  "description": "ComposeCraft is a web-based GUI for generating and managing Docker Compose files. It lets users visually edit services, volumes, and networks and export YAML, ideal for beginners and system administrators.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "1.0.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-01-27",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 973
+  },
+  "resources": {
+    "website": "https://composecraft.com",
+    "documentation": "https://composecraft.com",
+    "source_code": "https://github.com/composecraft/composecraft",
+    "logo": "/icons/compose-craft.webp",
+    "issues": "https://github.com/composecraft/composecraft/issues",
+    "releases": "https://github.com/composecraft/composecraft/releases"
+  },
   "features": [
     "Visual Editor: Build Docker Compose files with drag-and-drop interface. No YAML expertise needed.",
     "Service Management: Configure containers, volumes, and networks visually. Intuitive configuration.",
@@ -23,69 +31,45 @@
     "Web-Based: No installation required, works in any browser. Start composing immediately.",
     "Template Library: Pre-built configurations for common services. Deploy popular apps quickly."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

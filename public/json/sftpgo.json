@@ -1,20 +1,28 @@
 {
   "name": "sftpgo",
   "slug": "sftpgo",
+  "tagline": null,
+  "description": "SFTPGo is a fully featured SFTP, FTP, WebDAV, and HTTP file server. It supports virtual users, storage backends, quotas, and a modern admin web UI, making it ideal for secure self-hosted file transfer.",
   "categories": [
     61
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/drakkan/sftpgo",
-  "website": "sftpgo.com",
-  "source_code": "github.com/drakkan/sftpgo",
-  "github_stars": "11452",
-  "logo": "/icons/sftpgo.webp",
-  "description": "SFTPGo is a fully featured SFTP, FTP, WebDAV, and HTTP file server. It supports virtual users, storage backends, quotas, and a modern admin web UI, making it ideal for secure self-hosted file transfer.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v2.7.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-23",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 11454
+  },
+  "resources": {
+    "website": "https://sftpgo.com",
+    "documentation": "https://github.com/drakkan/sftpgo",
+    "source_code": "https://github.com/drakkan/sftpgo",
+    "logo": "/icons/sftpgo.webp",
+    "issues": "https://github.com/drakkan/sftpgo/issues",
+    "releases": "https://github.com/drakkan/sftpgo/releases"
+  },
   "features": [
     "Multi-protocol support: Serves files via SFTP, FTP, FTPS, WebDAV, and HTTP/S protocols.",
     "Virtual users: Creates isolated user accounts with individual permissions and quotas.",
@@ -29,69 +37,45 @@
     "REST API: Automates user and configuration management via comprehensive API.",
     "Audit logging: Records all file operations and authentication attempts for compliance."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

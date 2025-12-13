@@ -1,20 +1,28 @@
 {
   "name": "nextcloud",
   "slug": "nextcloud",
+  "tagline": null,
+  "description": "Nextcloud Server is a self-hosted file sync and share platform with extensible app ecosystem. It provides file storage, collaboration tools, and access control with full privacy and security.",
   "categories": [
     27
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/nextcloud/server",
-  "website": "nextcloud.com",
-  "source_code": "github.com/nextcloud/server",
-  "github_stars": "33582",
-  "logo": "/icons/nextcloud.webp",
-  "description": "Nextcloud Server is a self-hosted file sync and share platform with extensible app ecosystem. It provides file storage, collaboration tools, and access control with full privacy and security.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v31.0.12",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-11",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 33587
+  },
+  "resources": {
+    "website": "https://nextcloud.com",
+    "documentation": "https://github.com/nextcloud/server",
+    "source_code": "https://github.com/nextcloud/server",
+    "logo": "/icons/nextcloud.webp",
+    "issues": "https://github.com/nextcloud/server/issues",
+    "releases": "https://github.com/nextcloud/server/releases"
+  },
   "features": [
     "File sync and share: Synchronize files across devices with selective sync and automatic conflict resolution.",
     "Collaborative editing: Work on documents simultaneously with real-time updates and version tracking.",
@@ -29,69 +37,45 @@
     "Federation: Share files and collaborate with users on other Nextcloud instances securely.",
     "Two-factor authentication: Enhance security with TOTP, WebAuthn, or other 2FA methods."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

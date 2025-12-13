@@ -1,20 +1,28 @@
 {
   "name": "piwigo",
   "slug": "piwigo",
+  "tagline": null,
+  "description": "Piwigo is a self-hosted photo gallery and management platform. It includes tagging, albums, metadata, and plugins for organizing and sharing large image collections.",
   "categories": [
     120
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Piwigo/Piwigo",
-  "website": "piwigo.org",
-  "source_code": "github.com/Piwigo/Piwigo",
-  "github_stars": "3651",
-  "logo": "/icons/piwigo.webp",
-  "description": "Piwigo is a self-hosted photo gallery and management platform. It includes tagging, albums, metadata, and plugins for organizing and sharing large image collections.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-2.0",
+    "version": "16.1.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-02",
+    "date_last_commit": "2025-12-08",
+    "github_stars": 3651
+  },
+  "resources": {
+    "website": "https://piwigo.org",
+    "documentation": "https://github.com/Piwigo/Piwigo",
+    "source_code": "https://github.com/Piwigo/Piwigo",
+    "logo": "/icons/piwigo.webp",
+    "issues": "https://github.com/Piwigo/Piwigo/issues",
+    "releases": "https://github.com/Piwigo/Piwigo/releases"
+  },
   "features": [
     "Album organization: Create hierarchical album structures to organize photos by events, dates, or themes.",
     "Batch uploads: Upload multiple photos simultaneously with drag-and-drop or FTP for large collections.",
@@ -29,69 +37,45 @@
     "Watermarking: Automatically apply watermarks to photos for copyright protection and branding.",
     "Statistics and analytics: Track photo views, popular albums, and visitor activity with built-in analytics."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

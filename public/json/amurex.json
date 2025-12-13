@@ -1,20 +1,29 @@
 {
   "name": "amurex",
   "slug": "amurex",
+  "tagline": "",
+  "description": "Amurex is the backend system behind memory-based AI assistants. It provides neural memory and intelligent recall features using a flexible API and vector database, aimed at building personalized knowledge-driven AI apps.",
   "categories": [
     13
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/thepersonalaicompany/amurex-backend",
-  "website": "api.amurex.ai",
-  "source_code": "github.com/thepersonalaicompany/amurex-backend",
-  "github_stars": "136",
-  "logo": "/icons/amurex.webp",
-  "description": "Amurex is the backend system behind memory-based AI assistants. It provides neural memory and intelligent recall features using a flexible API and vector database, aimed at building personalized knowledge-driven AI apps.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-04-06",
+    "github_stars": 136
+  },
+  "resources": {
+    "website": "https://api.amurex.ai",
+    "documentation": "https://api.amurex.ai",
+    "source_code": "https://github.com/thepersonalaicompany/amurex-backend",
+    "logo": "/icons/amurex.webp",
+    "issues": "https://github.com/thepersonalaicompany/amurex-backend/issues",
+    "releases": null,
+    "logo_light": "/icons/amurex-light.webp"
+  },
   "features": [
     "Neural Memory: AI assistants with long-term memory capabilities. Context that persists.",
     "Intelligent Recall: Retrieve relevant information from past conversations automatically. Never repeat yourself.",
@@ -25,69 +34,45 @@
     "Scalable: Handle growing memory requirements as usage increases. Grows with you.",
     "Developer-Friendly: Well-documented API for rapid integration. Start building quickly."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

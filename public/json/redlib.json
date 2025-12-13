@@ -1,20 +1,28 @@
 {
   "name": "redlib",
   "slug": "redlib",
+  "tagline": null,
+  "description": "RedLib is a lightweight and privacy-respecting front-end for Reddit, offering a clean UI to browse content without ads or tracking. It can be self-hosted and customized.",
   "categories": [
     149
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/redlib-org/redlib",
-  "website": "github.com/redlib-org/redlib",
-  "source_code": "github.com/redlib-org/redlib",
-  "github_stars": "2892",
-  "logo": "/icons/redlib.webp",
-  "description": "RedLib is a lightweight and privacy-respecting front-end for Reddit, offering a clean UI to browse content without ads or tracking. It can be self-hosted and customized.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v0.36.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-03-20",
+    "date_last_commit": "2025-10-06",
+    "github_stars": 2896
+  },
+  "resources": {
+    "website": "https://github.com/redlib-org/redlib",
+    "documentation": "https://github.com/redlib-org/redlib",
+    "source_code": "https://github.com/redlib-org/redlib",
+    "logo": "/icons/redlib.webp",
+    "issues": "https://github.com/redlib-org/redlib/issues",
+    "releases": "https://github.com/redlib-org/redlib/releases"
+  },
   "features": [
     "Privacy-focused browsing: Access Reddit content without tracking scripts, cookies, or personalized ads.",
     "Lightweight interface: Fast page loads with minimal JavaScript for efficient browsing on any device.",
@@ -29,69 +37,45 @@
     "RSS feed support: Subscribe to subreddit feeds for updates without visiting the site.",
     "Proxy configuration: Route requests through your own infrastructure to control data flow and caching."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

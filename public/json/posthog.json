@@ -1,20 +1,28 @@
 {
   "name": "posthog",
   "slug": "posthog",
+  "tagline": null,
+  "description": "PostHog is an open-source product analytics suite with heatmaps, session recording, event tracking, and feature flags. It's self-hostable or cloud-based, offering privacy-friendly data ownership for growth teams.",
   "categories": [
     186
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/PostHog/posthog",
-  "website": "posthog.com",
-  "source_code": "github.com/PostHog/posthog",
-  "github_stars": "30416",
-  "logo": "/icons/posthog.webp",
-  "description": "PostHog is an open-source product analytics suite with heatmaps, session recording, event tracking, and feature flags. It's self-hostable or cloud-based, offering privacy-friendly data ownership for growth teams.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "posthog-cli-v0.5.17",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-12",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 30420
+  },
+  "resources": {
+    "website": "https://posthog.com",
+    "documentation": "https://github.com/PostHog/posthog",
+    "source_code": "https://github.com/PostHog/posthog",
+    "logo": "/icons/posthog.webp",
+    "issues": "https://github.com/PostHog/posthog/issues",
+    "releases": "https://github.com/PostHog/posthog/releases"
+  },
   "features": [
     "Event Tracking: Capture user interactions with flexible event instrumentation supporting both autocapture and manual tracking to analyze behavior patterns across your application.",
     "Session Replay: Record and replay user sessions to understand navigation flows, identify friction points, and debug issues with full context of user interactions.",
@@ -27,69 +35,45 @@
     "User Profiles: Build unified customer profiles by aggregating events, properties, and behavioral data to enable personalized experiences and targeted campaigns.",
     "Privacy Controls: Ensure GDPR and CCPA compliance with built-in consent management, data anonymization, and configurable retention policies for user data."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

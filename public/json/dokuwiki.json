@@ -1,20 +1,28 @@
 {
   "name": "dokuwiki",
   "slug": "dokuwiki",
+  "tagline": null,
+  "description": "DokuWiki is a simple, file-based wiki engine designed for documentation, knowledge bases, and intranets. It stores content in plain text files, offers plugins and templates, and requires no database, making it easy to run on modest servers.",
   "categories": [
     193
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/dokuwiki/dokuwiki",
-  "website": "http://www.dokuwiki.org",
-  "source_code": "github.com/dokuwiki/dokuwiki",
-  "github_stars": "4484",
-  "logo": "/icons/dokuwiki.webp",
-  "description": "DokuWiki is a simple, file-based wiki engine designed for documentation, knowledge bases, and intranets. It stores content in plain text files, offers plugins and templates, and requires no database, making it easy to run on modest servers.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-2.0",
+    "version": "release-2025-05-14b",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-09",
+    "date_last_commit": "2025-12-09",
+    "github_stars": 4485
+  },
+  "resources": {
+    "website": "http://www.dokuwiki.org",
+    "documentation": "https://github.com/dokuwiki/dokuwiki",
+    "source_code": "https://github.com/dokuwiki/dokuwiki",
+    "logo": "/icons/dokuwiki.webp",
+    "issues": "https://github.com/dokuwiki/dokuwiki/issues",
+    "releases": "https://github.com/dokuwiki/dokuwiki/releases"
+  },
   "features": [
     "Analytics Dashboard: Visual metrics and usage statistics with customizable charts to track performance and user engagement.",
     "Mobile Optimization: Responsive design with touch-friendly interfaces and offline sync capabilities for seamless mobile access.",
@@ -22,69 +30,45 @@
     "Theme Customization: Multiple UI themes and layout options with custom branding support to match organizational identity.",
     "Backup Automation: Scheduled backups with encryption and cloud storage integration to ensure data protection and disaster recovery."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

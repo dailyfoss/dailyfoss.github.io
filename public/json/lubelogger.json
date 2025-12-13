@@ -1,20 +1,28 @@
 {
   "name": "lubelogger",
   "slug": "lubelogger",
+  "tagline": null,
+  "description": "LubeLog helps car owners track maintenance, repairs, and fuel usage across multiple vehicles. Its self-hosted web UI includes reporting and reminders for keeping vehicle service history in one place.",
   "categories": [
     175
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/hargata/lubelog",
-  "website": "lubelogger.com",
-  "source_code": "github.com/hargata/lubelog",
-  "github_stars": "2086",
-  "logo": "/icons/lubelogger.webp",
-  "description": "LubeLog helps car owners track maintenance, repairs, and fuel usage across multiple vehicles. Its self-hosted web UI includes reporting and reminders for keeping vehicle service history in one place.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v1.5.5",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-30",
+    "date_last_commit": "2025-12-03",
+    "github_stars": 2093
+  },
+  "resources": {
+    "website": "https://lubelogger.com",
+    "documentation": "https://github.com/hargata/lubelog",
+    "source_code": "https://github.com/hargata/lubelog",
+    "logo": "/icons/lubelogger.webp",
+    "issues": "https://github.com/hargata/lubelog/issues",
+    "releases": "https://github.com/hargata/lubelog/releases"
+  },
   "features": [
     "Maintenance Tracking: Service records, Repair history, Parts replacement. Track all vehicle maintenance activities.",
     "Fuel Logging: Fuel consumption, Cost tracking, Efficiency analysis. Monitor fuel usage and expenses.",
@@ -25,69 +33,45 @@
     "Reporting: Maintenance history, Cost summaries, Export data. Generate comprehensive vehicle reports.",
     "Self-Hosted: Privacy-focused, Full data control, No subscriptions. Own your vehicle maintenance data."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "ryot",
   "slug": "ryot",
+  "tagline": null,
+  "description": "Ryot is a self-hosted media tracking application for movies and shows, integrating with TMDB and Trakt. It includes playlists, search, and a smart dashboard UI.",
   "categories": [
     185
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/IgnisDa/ryot",
-  "website": "ryot.io",
-  "source_code": "github.com/IgnisDa/ryot",
-  "github_stars": "2867",
-  "logo": "/icons/ryot.webp",
-  "description": "Ryot is a self-hosted media tracking application for movies and shows, integrating with TMDB and Trakt. It includes playlists, search, and a smart dashboard UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v9.5.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-20",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 2868
+  },
+  "resources": {
+    "website": "https://ryot.io",
+    "documentation": "https://github.com/IgnisDa/ryot",
+    "source_code": "https://github.com/IgnisDa/ryot",
+    "logo": "/icons/ryot.webp",
+    "issues": "https://github.com/IgnisDa/ryot/issues",
+    "releases": "https://github.com/IgnisDa/ryot/releases"
+  },
   "features": [
     "Media tracking: Track movies, TV shows, books, and games you've watched, read, or played.",
     "TMDB integration: Fetch metadata, posters, and details from The Movie Database.",
@@ -29,69 +37,45 @@
     "Import/export: Migrate data from other tracking services or back up your library.",
     "Multi-user support: Create separate accounts for family members with individual tracking."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

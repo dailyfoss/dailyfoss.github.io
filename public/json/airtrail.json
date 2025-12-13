@@ -1,20 +1,28 @@
 {
   "name": "airtrail",
   "slug": "airtrail",
+  "tagline": null,
+  "description": "AirTrail is a personalized flight logbook app for pilots. It allows storing flight entries, tracking totals and hours, and visualizing flight activity. It also includes privacy-first self-hosting features and import/export options.",
   "categories": [
     65
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/johanohly/AirTrail",
-  "website": "http://airtrail.johan.ohly.dk",
-  "source_code": "github.com/johanohly/AirTrail",
-  "github_stars": "794",
-  "logo": "/icons/airtrail.webp",
-  "description": "AirTrail is a personalized flight logbook app for pilots. It allows storing flight entries, tracking totals and hours, and visualizing flight activity. It also includes privacy-first self-hosting features and import/export options.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v3.3.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-23",
+    "date_last_commit": "2025-12-08",
+    "github_stars": 795
+  },
+  "resources": {
+    "website": "http://airtrail.johan.ohly.dk",
+    "documentation": "https://github.com/johanohly/AirTrail",
+    "source_code": "https://github.com/johanohly/AirTrail",
+    "logo": "/icons/airtrail.webp",
+    "issues": "https://github.com/johanohly/AirTrail/issues",
+    "releases": "https://github.com/johanohly/AirTrail/releases"
+  },
   "features": [
     "Flight Logging: Store detailed flight entries with comprehensive data tracking. Your complete aviation history.",
     "Hours Tracking: Automatically calculate and track total flight hours and time. Stay current with requirements.",
@@ -25,69 +33,45 @@
     "Multi-Aircraft: Track flights across different aircraft types and registrations. Manage your entire fleet.",
     "Regulatory Compliance: Maintain records that meet aviation authority requirements. Stay audit-ready."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

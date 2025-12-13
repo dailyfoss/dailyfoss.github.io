@@ -1,20 +1,28 @@
 {
   "name": "cupdate",
   "slug": "cupdate",
+  "tagline": "",
+  "description": "cupdate is a tool for automatically checking and updating containers, with support for Docker and container environments. It is designed for efficient maintenance using a simple CLI interface for updates and notifications.",
   "categories": [
     172
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/AlexGustafsson/cupdate",
-  "website": "alexgustafsson.github.io/cupdate/",
-  "source_code": "github.com/AlexGustafsson/cupdate",
-  "github_stars": "282",
-  "logo": "/icons/cupdate.webp",
-  "description": "cupdate is a tool for automatically checking and updating containers, with support for Docker and container environments. It is designed for efficient maintenance using a simple CLI interface for updates and notifications.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.22.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-19",
+    "date_last_commit": "2025-12-08",
+    "github_stars": 282
+  },
+  "resources": {
+    "website": "https://alexgustafsson.github.io/cupdate/",
+    "documentation": "https://alexgustafsson.github.io/cupdate/",
+    "source_code": "https://github.com/AlexGustafsson/cupdate",
+    "logo": "/icons/cupdate.webp",
+    "issues": "https://github.com/AlexGustafsson/cupdate/issues",
+    "releases": "https://github.com/AlexGustafsson/cupdate/releases"
+  },
   "features": [
     "Automatic Updates: Check for container updates automatically. Stay current effortlessly.",
     "Docker Support: Works seamlessly with Docker environments. Native integration.",
@@ -23,69 +31,45 @@
     "Efficient Maintenance: Reduce manual update checking time. Streamlined operations.",
     "Self-Hosted: Manage container updates on your infrastructure. Complete control."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

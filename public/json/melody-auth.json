@@ -1,20 +1,28 @@
 {
   "name": "melody-auth",
   "slug": "melody-auth",
+  "tagline": null,
+  "description": "Melody Auth is an authentication service designed for SSO and user/token management. It supports OAuth2 and a minimal admin UI for managing users, apps, and permissions in self-hosted environments.",
   "categories": [
     15
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/ValueMelody/melody-auth",
-  "website": "auth.valuemelody.com/",
-  "source_code": "github.com/ValueMelody/melody-auth",
-  "github_stars": "565",
-  "logo": "/icons/melody-auth.webp",
-  "description": "Melody Auth is an authentication service designed for SSO and user/token management. It supports OAuth2 and a minimal admin UI for managing users, apps, and permissions in self-hosted environments.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v1.3.7",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-21",
+    "date_last_commit": "2025-12-02",
+    "github_stars": 565
+  },
+  "resources": {
+    "website": "https://auth.valuemelody.com/",
+    "documentation": "https://github.com/ValueMelody/melody-auth",
+    "source_code": "https://github.com/ValueMelody/melody-auth",
+    "logo": "/icons/melody-auth.webp",
+    "issues": "https://github.com/ValueMelody/melody-auth/issues",
+    "releases": "https://github.com/ValueMelody/melody-auth/releases"
+  },
   "features": [
     "OAuth2 provider: Implement single sign-on for multiple applications with OAuth2 protocol support.",
     "User management: Create and manage user accounts with profiles, passwords, and permissions.",
@@ -29,69 +37,45 @@
     "Custom branding: Customize login pages with your organization's logo and colors.",
     "LDAP integration: Connect to existing LDAP directories for centralized user authentication."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

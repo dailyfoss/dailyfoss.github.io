@@ -1,20 +1,28 @@
 {
   "name": "authelia",
   "slug": "authelia",
+  "tagline": null,
+  "description": "Authelia is an authentication and authorization server providing 2FA, SSO, and role-based access for web apps. It integrates with reverse proxies and supports LDAP, OAuth, and self-hosted identity management.",
   "categories": [
     15
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/authelia/authelia",
-  "website": "www.authelia.com",
-  "source_code": "github.com/authelia/authelia",
-  "github_stars": "26082",
-  "logo": "/icons/authelia.webp",
-  "description": "Authelia is an authentication and authorization server providing 2FA, SSO, and role-based access for web apps. It integrates with reverse proxies and supports LDAP, OAuth, and self-hosted identity management.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v4.39.15",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-29",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 26085
+  },
+  "resources": {
+    "website": "https://www.authelia.com",
+    "documentation": "https://github.com/authelia/authelia",
+    "source_code": "https://github.com/authelia/authelia",
+    "logo": "/icons/authelia.webp",
+    "issues": "https://github.com/authelia/authelia/issues",
+    "releases": "https://github.com/authelia/authelia/releases"
+  },
   "features": [
     "Authentication Server: Centralized auth for all your applications. Single sign-on.",
     "Two-Factor Auth: Add 2FA security to any application. Enhanced protection.",
@@ -25,69 +33,45 @@
     "Role-Based Access: Control who can access what. Granular permissions.",
     "Self-Hosted: Complete control over authentication infrastructure. Security in your hands."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

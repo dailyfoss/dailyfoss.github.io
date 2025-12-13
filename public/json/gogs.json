@@ -1,20 +1,28 @@
 {
   "name": "gogs",
   "slug": "gogs",
+  "tagline": null,
+  "description": "Gogs is a simple, self-hosted Git service with a fast UI and minimal resource usage. It supports code hosting, pull requests, issues, and runs easily on small servers, intended for personal or small team use.",
   "categories": [
     72
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/gogs/gogs",
-  "website": "gogs.io",
-  "source_code": "github.com/gogs/gogs",
-  "github_stars": "47313",
-  "logo": "/icons/gogs.webp",
-  "description": "Gogs is a simple, self-hosted Git service with a fast UI and minimal resource usage. It supports code hosting, pull requests, issues, and runs easily on small servers, intended for personal or small team use.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.13.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-06-09",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 47320
+  },
+  "resources": {
+    "website": "https://gogs.io",
+    "documentation": "https://github.com/gogs/gogs",
+    "source_code": "https://github.com/gogs/gogs",
+    "logo": "/icons/gogs.webp",
+    "issues": "https://github.com/gogs/gogs/issues",
+    "releases": "https://github.com/gogs/gogs/releases"
+  },
   "features": [
     "Minimal Git Hosting: Self-hosted Git service with extremely low resource requirements and fast performance.",
     "Simple Interface: Clean, straightforward web UI focused on essential Git operations.",
@@ -25,69 +33,45 @@
     "Webhook Support: Trigger external services on push, pull request, and other repository events.",
     "Small Server Friendly: Runs efficiently on Raspberry Pi and other low-powered hardware."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

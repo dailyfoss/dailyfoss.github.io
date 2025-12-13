@@ -1,20 +1,28 @@
 {
   "name": "openbudgeteer",
   "slug": "openbudgeteer",
+  "tagline": null,
+  "description": "OpenBudgeteer is a self-hosted personal budgeting tool inspired by YNAB. It allows managing envelopes, categories, and expenses across months using a clean, responsive interface.",
   "categories": [
     22
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/TheAxelander/OpenBudgeteer",
-  "website": "theaxelander.github.io",
-  "source_code": "github.com/TheAxelander/OpenBudgeteer",
-  "github_stars": "896",
-  "logo": "/icons/openbudgeteer.webp",
-  "description": "OpenBudgeteer is a self-hosted personal budgeting tool inspired by YNAB. It allows managing envelopes, categories, and expenses across months using a clean, responsive interface.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "1.10",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-04-30",
+    "date_last_commit": "2025-12-01",
+    "github_stars": 896
+  },
+  "resources": {
+    "website": "https://theaxelander.github.io",
+    "documentation": "https://github.com/TheAxelander/OpenBudgeteer",
+    "source_code": "https://github.com/TheAxelander/OpenBudgeteer",
+    "logo": "/icons/openbudgeteer.webp",
+    "issues": "https://github.com/TheAxelander/OpenBudgeteer/issues",
+    "releases": "https://github.com/TheAxelander/OpenBudgeteer/releases"
+  },
   "features": [
     "Envelope budgeting: Allocate income to spending categories using zero-based budgeting principles for better control.",
     "Transaction import: Upload bank statements in CSV format for automatic categorization and reconciliation.",
@@ -25,69 +33,45 @@
     "Reporting tools: View spending trends, category breakdowns, and historical comparisons to understand financial patterns.",
     "Data ownership: Keep all financial information on your own server without sharing with third-party services."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

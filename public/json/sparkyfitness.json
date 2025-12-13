@@ -1,20 +1,28 @@
 {
   "name": "sparkyfitness",
   "slug": "sparkyfitness",
+  "tagline": null,
+  "description": "SparkyFitness is a self-hosted fitness tracker that logs workouts, goals, and progress over time. It includes stats and charts in a web UI suited for personal training logs.",
   "categories": [
     75
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/CodeWithCJ/SparkyFitness",
-  "website": "github.com/CodeWithCJ/SparkyFitness",
-  "source_code": "github.com/CodeWithCJ/SparkyFitness",
-  "github_stars": "1786",
-  "logo": "/icons/sparkyfitness.webp",
-  "description": "SparkyFitness is a self-hosted fitness tracker that logs workouts, goals, and progress over time. It includes stats and charts in a web UI suited for personal training logs.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "v0.15.9.8",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-07",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 1790
+  },
+  "resources": {
+    "website": "https://github.com/CodeWithCJ/SparkyFitness",
+    "documentation": "https://github.com/CodeWithCJ/SparkyFitness",
+    "source_code": "https://github.com/CodeWithCJ/SparkyFitness",
+    "logo": "/icons/sparkyfitness.webp",
+    "issues": "https://github.com/CodeWithCJ/SparkyFitness/issues",
+    "releases": "https://github.com/CodeWithCJ/SparkyFitness/releases"
+  },
   "features": [
     "Workout logging: Records exercises, sets, reps, and weights for each session.",
     "Exercise library: Provides database of exercises with instructions and muscle groups.",
@@ -29,69 +37,45 @@
     "Export data: Downloads workout history for backup or analysis.",
     "Mobile app: Logs workouts from gym with Android application."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": true,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": true,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

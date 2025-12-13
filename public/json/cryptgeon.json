@@ -1,20 +1,29 @@
 {
   "name": "cryptgeon",
   "slug": "cryptgeon",
+  "tagline": null,
+  "description": "Cryptgeon is a self-hosted note sharing service focused on encryption and automatic expiration. Users can create messages or files that auto-delete after being viewed, ideal for private link sharing via a temporary UI.",
   "categories": [
     117
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/cupcakearmy/cryptgeon",
-  "website": "cryptgeon.org/",
-  "source_code": "github.com/cupcakearmy/cryptgeon",
-  "github_stars": "1293",
-  "logo": "/icons/cryptgeon.webp",
-  "description": "Cryptgeon is a self-hosted note sharing service focused on encryption and automatic expiration. Users can create messages or files that auto-delete after being viewed, ideal for private link sharing via a temporary UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v2.9.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-02-27",
+    "date_last_commit": "2025-04-04",
+    "github_stars": 1296
+  },
+  "resources": {
+    "website": "https://cryptgeon.org/",
+    "documentation": "https://github.com/cupcakearmy/cryptgeon",
+    "source_code": "https://github.com/cupcakearmy/cryptgeon",
+    "logo": "/icons/cryptgeon.webp",
+    "issues": "https://github.com/cupcakearmy/cryptgeon/issues",
+    "releases": "https://github.com/cupcakearmy/cryptgeon/releases",
+    "logo_light": "/icons/cryptgeon-light.webp"
+  },
   "features": [
     "End-to-End Encryption: Messages encrypted before leaving your browser. Zero-knowledge security.",
     "Auto-Expiration: Notes self-destruct after being read once. Perfect for sensitive data.",
@@ -23,69 +32,45 @@
     "Time Limits: Set custom expiration times for messages. Control data lifetime.",
     "Self-Hosted: Run your own secure note service. Complete privacy control."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

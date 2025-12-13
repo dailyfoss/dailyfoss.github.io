@@ -1,20 +1,29 @@
 {
   "name": "karakeep",
   "slug": "karakeep",
+  "tagline": null,
+  "description": "Karakeep is a home automation dashboard and control interface. It aggregates device statuses, scenes and automations into a single web UI, aiming to simplify management of self hosted smart home stacks.",
   "categories": [
     111
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/karakeep-app/karakeep",
-  "website": "karakeep.app",
-  "source_code": "github.com/karakeep-app/karakeep",
-  "github_stars": "21816",
-  "logo": "/icons/karakeep.webp",
-  "description": "Karakeep is a home automation dashboard and control interface. It aggregates device statuses, scenes and automations into a single web UI, aiming to simplify management of self hosted smart home stacks.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v0.29.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-12",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 21825
+  },
+  "resources": {
+    "website": "https://karakeep.app",
+    "documentation": "https://github.com/karakeep-app/karakeep",
+    "source_code": "https://github.com/karakeep-app/karakeep",
+    "logo": "/icons/karakeep.webp",
+    "issues": "https://github.com/karakeep-app/karakeep/issues",
+    "releases": "https://github.com/karakeep-app/karakeep/releases",
+    "logo_light": "/icons/karakeep-light.webp"
+  },
   "features": [
     "Unified Dashboard: Control all smart home devices from a single interface. Simplify home automation management.",
     "Device Control: Toggle lights, adjust thermostats, and control switches directly. Manage devices with one click.",
@@ -29,69 +38,45 @@
     "Notification System: Receive alerts for device events, automation triggers, and system issues. Stay informed about home status.",
     "User Permissions: Control access levels for different household members. Secure your smart home system."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

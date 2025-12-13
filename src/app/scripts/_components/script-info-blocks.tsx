@@ -1,16 +1,19 @@
 "use client";
 
-import { CalendarPlus, Crown, Eye, LayoutGrid, Star, TrendingUp } from "lucide-react";
+import { CalendarPlus, Crown, Eye, LayoutGrid, Star, TrendingUp, Tag } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 
 import type { Category, Script } from "@/lib/types";
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { mostPopularScripts } from "@/config/site-config";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { extractDate } from "@/lib/time";
+import { useRepositoryStatus } from "@/hooks/use-repository-status";
+import { getRelativeTime } from "@/lib/version-utils";
 
 const ITEMS_PER_PAGE = 6;
 const ITEMS_PER_PAGE_LARGE = 6;
@@ -31,14 +34,114 @@ function formatStarCount(stars?: string | number): string | null {
   return num.toString();
 }
 
+// Helper function to format relative time from days
+function getRelativeTimeFromDays(days: number | null): string {
+  if (days === null) return 'unknown time';
+  
+  if (days === 0) return 'today';
+  if (days === 1) return 'yesterday';
+  if (days < 7) return `${days} days ago`;
+  if (days < 30) {
+    const weeks = Math.floor(days / 7);
+    return weeks === 1 ? '1 week ago' : `${weeks} weeks ago`;
+  }
+  if (days < 365) {
+    const months = Math.floor(days / 30);
+    return months === 1 ? '1 month ago' : `${months} months ago`;
+  }
+  
+  const years = Math.floor(days / 365);
+  return years === 1 ? '1 year ago' : `${years} years ago`;
+}
+
+// ⬇️ Compact version for metadata rows with repository status
+function RepositoryStatusCompact({ script }: { script: Script }) {
+  const { repositoryInfo, loading } = useRepositoryStatus(script);
+
+  if (loading || !repositoryInfo) {
+    return null;
+  }
+
+  const releaseDate = repositoryInfo.lastRelease?.toLocaleDateString('en-US', { 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  });
+  
+  const commitDate = repositoryInfo.lastCommit?.toLocaleDateString('en-US', { 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  });
+
+  return (
+    <div className="flex items-center gap-3 text-xs">
+      {repositoryInfo.lastRelease && (
+        <TooltipProvider>
+          <Tooltip delayDuration={200}>
+            <TooltipTrigger asChild>
+              <span className="flex items-center gap-1 cursor-help">
+                <Tag className="h-3 w-3" />
+                Released {getRelativeTimeFromDays(repositoryInfo.daysSinceLastRelease)}
+              </span>
+            </TooltipTrigger>
+            <TooltipContent side="bottom" className="font-medium">
+              <p>Last release: {releaseDate}</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      )}
+      {repositoryInfo.lastCommit && (
+        <TooltipProvider>
+          <Tooltip delayDuration={200}>
+            <TooltipTrigger asChild>
+              <span className="flex items-center gap-1 cursor-help">
+                <span className="text-xs">{repositoryInfo.statusIcon}</span>
+                Last commit {getRelativeTimeFromDays(repositoryInfo.daysSinceLastCommit)}
+              </span>
+            </TooltipTrigger>
+            <TooltipContent side="bottom" className="font-medium">
+              <p>Last commit: {commitDate}</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      )}
+    </div>
+  );
+}
+
 // ⬇️ Simple icon loader with fallback
-function AppIcon({ src, name, size = 64 }: { src?: string | null; name: string; size?: number }) {
+function AppIcon({ src, src_light, name, size = 64 }: { src?: string | null; src_light?: string | null; name: string; size?: number }) {
   const [showFallback, setShowFallback] = useState(!src || src.trim() === "");
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+
+  // Detect theme changes
+  useEffect(() => {
+    const checkTheme = () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      setTheme(isDark ? 'dark' : 'light');
+    };
+
+    checkTheme();
+    
+    // Watch for theme changes
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Get the appropriate logo based on theme
+  // In dark mode, use light variant if available (for visibility)
+  const currentSrc = (theme === 'dark' && src_light) ? src_light : src;
 
   // Reset fallback state when src changes
   useEffect(() => {
-    setShowFallback(!src || src.trim() === "");
-  }, [src]);
+    setShowFallback(!currentSrc || currentSrc.trim() === "");
+  }, [currentSrc]);
 
   if (showFallback) {
     return (
@@ -50,7 +153,7 @@ function AppIcon({ src, name, size = 64 }: { src?: string | null; name: string; 
 
   return (
     <img
-      src={src!}
+      src={currentSrc || ''}
       width={size}
       height={size}
       alt={`${name} icon`}
@@ -66,16 +169,13 @@ function getScriptBadges(script: Script, allCategories: Category[]): string[] {
   const badges: string[] = [];
 
   // Add hosting info
-  if (script.install_methods && script.install_methods.length > 0) {
-    const hosting = script.install_methods[0]?.hosting;
-    if (hosting) {
-      if (hosting.self_hosted)
-        badges.push("Self-hosted");
-      if (hosting.managed_cloud)
-        badges.push("Managed-cloud");
-      if (hosting.saas)
-        badges.push("SaaS");
-    }
+  if (script.hosting_options) {
+    if (script.hosting_options.self_hosted)
+      badges.push("Self-hosted");
+    if (script.hosting_options.managed_cloud)
+      badges.push("Managed-cloud");
+    if (script.hosting_options.saas)
+      badges.push("SaaS");
   }
 
   // Add categories
@@ -90,18 +190,15 @@ function getScriptBadges(script: Script, allCategories: Category[]): string[] {
   }
 
   // Add platform info
-  if (script.install_methods && script.install_methods.length > 0) {
-    const platform = script.install_methods[0]?.platform;
-    if (platform) {
-      if (platform.desktop?.linux || platform.desktop?.windows || platform.desktop?.macos)
-        badges.push("Desktop");
-      if (platform.mobile?.android || platform.mobile?.ios)
-        badges.push("Mobile");
-      if (platform.web_app)
-        badges.push("Web");
-      if (platform.browser_extension)
-        badges.push("Browser Extension");
-    }
+  if (script.platform_support) {
+    if (script.platform_support.desktop?.linux || script.platform_support.desktop?.windows || script.platform_support.desktop?.macos)
+      badges.push("Desktop");
+    if (script.platform_support.mobile?.android || script.platform_support.mobile?.ios)
+      badges.push("Mobile");
+    if (script.platform_support.web_app)
+      badges.push("Web");
+    if (script.platform_support.browser_extension)
+      badges.push("Browser Extension");
   }
 
   return badges.slice(0, 3); // Limit to 3 badges
@@ -157,14 +254,19 @@ export function FeaturedScripts({ items }: { items: Category[] }) {
             <CardHeader>
               <CardTitle className="flex items-start gap-3">
                 <div className="flex h-16 w-16 min-w-16 items-center justify-center rounded-xl bg-gradient-to-br from-accent/40 to-accent/60 p-1 shadow-md ring-1 ring-amber-500/30">
-                  <AppIcon src={script.logo} name={script.name || script.slug} />
+                  <AppIcon src={script.resources?.logo} src_light={script.resources?.logo_light} name={script.name || script.slug} />
                 </div>
                 <div className="flex flex-col flex-1 min-w-0">
                   <h3 className="font-semibold text-base line-clamp-1 mb-1">{script.name}</h3>
-                  <p className="text-xs text-muted-foreground flex items-center gap-1">
-                    <CalendarPlus className="h-3 w-3" />
-                    {extractDate(script.date_created)}
-                  </p>
+                  <div className="flex flex-col gap-1">
+                    <p className="text-xs text-muted-foreground flex items-center gap-1">
+                      <CalendarPlus className="h-3 w-3" />
+                      Added {extractDate(script.metadata?.date_app_added || "")}
+                    </p>
+                    <div className="text-xs text-muted-foreground">
+                      <RepositoryStatusCompact script={script} />
+                    </div>
+                  </div>
                 </div>
               </CardTitle>
             </CardHeader>
@@ -217,7 +319,7 @@ export function LatestScripts({ items }: { items: Category[] }) {
     });
 
     return Array.from(uniqueScriptsMap.values()).sort(
-      (a, b) => new Date(b.date_created).getTime() - new Date(a.date_created).getTime(),
+      (a, b) => new Date(b.metadata?.date_app_added || 0).getTime() - new Date(a.metadata?.date_app_added || 0).getTime(),
     );
   }, [items]);
 
@@ -268,15 +370,15 @@ export function LatestScripts({ items }: { items: Category[] }) {
               <CardHeader className="pb-2">
                 <CardTitle className="flex items-start gap-3">
                   <div className="flex h-16 w-16 min-w-16 items-center justify-center rounded-xl bg-gradient-to-br from-accent/40 to-accent/60 p-1 shadow-md">
-                    <AppIcon src={script.logo} name={script.name || script.slug} size={64} />
+                    <AppIcon src={script.resources?.logo} src_light={script.resources?.logo_light} name={script.name || script.slug} size={64} />
                   </div>
                   <div className="flex flex-col flex-1 min-w-0 gap-1">
                     <h3 className="font-semibold text-base line-clamp-1">{script.name}</h3>
                     {/* Metadata row (compact) */}
                     <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                      <span className="flex items-center gap-1" title={script.date_created}>
+                      <span className="flex items-center gap-1" title={script.metadata?.date_app_added || ""}>
                         <CalendarPlus className="h-3 w-3" />
-                        {extractDate(script.date_created)}
+                        {extractDate(script.metadata?.date_app_added || "")}
                       </span>
                       {formatStarCount((script as any).github_stars) && (
                         <span className="flex items-center gap-1">
@@ -341,15 +443,15 @@ export function MostViewedScripts({ items }: { items: Category[] }) {
               <CardHeader className="pb-2">
                 <CardTitle className="flex items-start gap-3">
                   <div className="flex h-16 w-16 min-w-16 items-center justify-center rounded-xl bg-gradient-to-br from-accent/40 to-accent/60 p-1 shadow-md">
-                    <AppIcon src={script.logo} name={script.name || script.slug} size={64} />
+                    <AppIcon src={script.resources?.logo} src_light={script.resources?.logo_light} name={script.name || script.slug} size={64} />
                   </div>
                   <div className="flex flex-col flex-1 min-w-0 gap-1">
                     <h3 className="font-semibold text-base line-clamp-1">{script.name}</h3>
                     {/* Metadata row (compact) */}
                     <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                      <span className="flex items-center gap-1" title={script.date_created}>
+                      <span className="flex items-center gap-1" title={script.metadata?.date_app_added || ""}>
                         <CalendarPlus className="h-3 w-3" />
-                        {extractDate(script.date_created)}
+                        {extractDate(script.metadata?.date_app_added || "")}
                       </span>
                       {formatStarCount((script as any).github_stars) && (
                         <span className="flex items-center gap-1">
@@ -435,7 +537,7 @@ export function TrendingScripts({ items }: { items: Category[] }) {
     thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
 
     return Array.from(uniqueScriptsMap.values())
-      .filter(script => new Date(script.date_created) >= thirtyDaysAgo)
+      .filter(script => new Date(script.metadata?.date_app_added || 0) >= thirtyDaysAgo)
       .sort((a, b) => {
         // Sort 100% by Plausible visitor count
         const visitorsA = viewCounts[a.slug] || 0;
@@ -444,7 +546,7 @@ export function TrendingScripts({ items }: { items: Category[] }) {
         // Sort by visitors first, then by date for ties
         if (visitorsB !== visitorsA)
           return visitorsB - visitorsA;
-        return new Date(b.date_created).getTime() - new Date(a.date_created).getTime();
+        return new Date(b.metadata?.date_app_added || 0).getTime() - new Date(a.metadata?.date_app_added || 0).getTime();
       });
   }, [items, viewCounts]);
 
@@ -494,15 +596,15 @@ export function TrendingScripts({ items }: { items: Category[] }) {
               <CardHeader className="pb-2">
                 <CardTitle className="flex items-start gap-3">
                   <div className="flex h-16 w-16 min-w-16 items-center justify-center rounded-xl bg-gradient-to-br from-accent/40 to-accent/60 p-1 shadow-md">
-                    <AppIcon src={script.logo} name={script.name || script.slug} size={64} />
+                    <AppIcon src={script.resources?.logo} src_light={script.resources?.logo_light} name={script.name || script.slug} size={64} />
                   </div>
                   <div className="flex flex-col flex-1 min-w-0 gap-1">
                     <h3 className="font-semibold text-base line-clamp-1">{script.name}</h3>
                     {/* Metadata row (compact) */}
                     <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                      <span className="flex items-center gap-1" title={script.date_created}>
+                      <span className="flex items-center gap-1" title={script.metadata?.date_app_added || ""}>
                         <CalendarPlus className="h-3 w-3" />
-                        {extractDate(script.date_created)}
+                        {extractDate(script.metadata?.date_app_added || "")}
                       </span>
                       {formatStarCount((script as any).github_stars) && (
                         <span className="flex items-center gap-1">
@@ -576,10 +678,9 @@ export function PopularScripts({ items }: { items: Category[] }) {
 
     // Helper to count deployment methods
     const countDeploymentMethods = (script: Script): number => {
-      const deployment = script.install_methods?.[0]?.deployment;
-      if (!deployment)
+      if (!script.deployment_methods)
         return 0;
-      return Object.values(deployment).filter(Boolean).length;
+      return Object.values(script.deployment_methods).filter(Boolean).length;
     };
 
     // Calculate popularity score: GitHub stars (80%) + deployment versatility (20%)
@@ -649,15 +750,15 @@ export function PopularScripts({ items }: { items: Category[] }) {
               <CardHeader className="pb-2">
                 <CardTitle className="flex items-start gap-3">
                   <div className="flex h-16 w-16 min-w-16 items-center justify-center rounded-xl bg-gradient-to-br from-accent/40 to-accent/60 p-1 shadow-md">
-                    <AppIcon src={script.logo} name={script.name || script.slug} size={64} />
+                    <AppIcon src={script.resources?.logo} src_light={script.resources?.logo_light} name={script.name || script.slug} size={64} />
                   </div>
                   <div className="flex flex-col flex-1 min-w-0 gap-1">
                     <h3 className="font-semibold text-base line-clamp-1">{script.name}</h3>
                     {/* Metadata row (compact) */}
                     <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                      <span className="flex items-center gap-1" title={script.date_created}>
+                      <span className="flex items-center gap-1" title={script.metadata?.date_app_added || ""}>
                         <CalendarPlus className="h-3 w-3" />
-                        {extractDate(script.date_created)}
+                        {extractDate(script.metadata?.date_app_added || "")}
                       </span>
                       {formatStarCount((script as any).github_stars) && (
                         <span className="flex items-center gap-1">

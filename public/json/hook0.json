@@ -1,20 +1,28 @@
 {
   "name": "hook0",
   "slug": "hook0",
+  "tagline": null,
+  "description": "Hook0 is a self hosted webhook service that centralizes outbound webhooks for your applications. It offers event routing, retries and history, along with a clear web UI and API for managing subscriber endpoints securely.",
   "categories": [
     191
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/hook0/hook0",
-  "website": "www.hook0.com",
-  "source_code": "github.com/hook0/hook0",
-  "github_stars": "1258",
-  "logo": "/icons/hook0.webp",
-  "description": "Hook0 is a self hosted webhook service that centralizes outbound webhooks for your applications. It offers event routing, retries and history, along with a clear web UI and API for managing subscriber endpoints securely.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-12",
+    "github_stars": 1260
+  },
+  "resources": {
+    "website": "https://www.hook0.com",
+    "documentation": "https://github.com/hook0/hook0",
+    "source_code": "https://github.com/hook0/hook0",
+    "logo": "/icons/hook0.webp",
+    "issues": "https://github.com/hook0/hook0/issues",
+    "releases": null
+  },
   "features": [
     "Webhook Management: Centralize all outbound webhooks from your applications in one service.",
     "Event Routing: Route events to multiple subscriber endpoints based on event types.",
@@ -25,69 +33,45 @@
     "Security Features: Sign webhooks with HMAC signatures for verification.",
     "Rate Limiting: Control delivery rates to prevent overwhelming subscriber endpoints."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

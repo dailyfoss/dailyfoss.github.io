@@ -6,12 +6,12 @@
   ],
   "sponsored": false,
   "sponsored_expired": null,
-  "date_created": "2025-11-23",
+  "date_app_added": "2025-11-23",
   "interface_port": null,
   "documentation": "github.com/mnfst/manifest",
   "website": "manifest.build",
-  "source_code": "github.com/mnfst/manifest",
-  "github_stars": "3226",
+  "source_code": "https://github.com/mnfst/manifest",
+  "github_stars": "3222",
   "logo": "/icons/manifest.webp",
   "description": "Manifest is a self-hosted manifest generator used for build pipelines and package release management. It provides developers a consistent framework for producing metadata across multi-project builds.",
   "tagline": null,
@@ -91,5 +91,66 @@
       "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
       "terraform": "/public/manifest/dummy/main.tf"
     }
-  }
+  },
+  "repository_status": {
+    "status": "active",
+    "last_commit": "2025-12-10T21:50:24Z",
+    "last_release": "2025-10-26T14:38:15Z",
+    "version": "manifest@4.17.13",
+    "is_archived": false,
+    "stars": 3222,
+    "updated_at": "2025-12-11T16:19:31.263Z"
+  },
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "manifest@4.17.13",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-26",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 3226
+  },
+  "resources": {
+    "website": "https://manifest.build",
+    "documentation": "https://github.com/mnfst/manifest",
+    "source_code": "https://github.com/mnfst/manifest",
+    "logo": "/icons/manifest.webp",
+    "issues": "https://github.com/mnfst/manifest/issues",
+    "releases": "https://github.com/mnfst/manifest/releases"
+  },
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": true,
+    "docker": true,
+    "docker_compose": true,
+    "helm": true,
+    "kubernetes": true,
+    "terraform": true
+  },
+  "manifests": {}
 }

@@ -1,20 +1,28 @@
 {
   "name": "guacamole",
   "slug": "guacamole",
+  "tagline": null,
+  "description": "Apache Guacamole is a remote desktop gateway supporting RDP, VNC, SSH, and Kubernetes access via a browser. Users can access desktops and servers securely without client software.",
   "categories": [
     135
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/apache/guacamole-server",
-  "website": "github.com/apache/guacamole-server",
-  "source_code": "github.com/apache/guacamole-server",
-  "github_stars": "3625",
-  "logo": "/icons/guacamole.webp",
-  "description": "Apache Guacamole is a remote desktop gateway supporting RDP, VNC, SSH, and Kubernetes access via a browser. Users can access desktops and servers securely without client software.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-11-05",
+    "github_stars": 3625
+  },
+  "resources": {
+    "website": "https://github.com/apache/guacamole-server",
+    "documentation": "https://github.com/apache/guacamole-server",
+    "source_code": "https://github.com/apache/guacamole-server",
+    "logo": "/icons/guacamole.webp",
+    "issues": "https://github.com/apache/guacamole-server/issues",
+    "releases": null
+  },
   "features": [
     "Clientless Access: Connect to remote desktops and servers through any web browser without plugins.",
     "Protocol Support: Access systems via RDP, VNC, SSH, and Kubernetes with a unified interface.",
@@ -25,69 +33,45 @@
     "User Management: Centralized user authentication with LDAP, Active Directory, or database backends.",
     "Connection Profiles: Save connection settings and credentials for quick access to frequently used systems."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": true,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "nextcloud-social",
   "slug": "nextcloud-social",
+  "tagline": "",
+  "description": "Nextcloud Social is a federated social media app using ActivityPub. It enables posts, follows, and interaction with other platforms like Mastodon—all within the Nextcloud infrastructure.",
   "categories": [
     148
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/nextcloud/social",
-  "website": "apps.nextcloud.com/apps/social",
-  "source_code": "github.com/nextcloud/social",
-  "github_stars": "499",
-  "logo": "/icons/nextcloud-social.webp",
-  "description": "Nextcloud Social is a federated social media app using ActivityPub. It enables posts, follows, and interaction with other platforms like Mastodon—all within the Nextcloud infrastructure.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": null,
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": null,
+    "github_stars": null
+  },
+  "resources": {
+    "website": null,
+    "documentation": null,
+    "source_code": "https://github.com/nextcloud/social",
+    "logo": "/icons/nextcloud-social.webp",
+    "issues": null,
+    "releases": null
+  },
   "features": [
     "ActivityPub federation: Connect with Mastodon, Pleroma, and other federated social networks.",
     "Post creation: Share text, images, and links with followers on your timeline.",
@@ -29,69 +37,45 @@
     "Nextcloud integration: Unified authentication and interface within Nextcloud ecosystem.",
     "Self-hosted control: Own your social media presence and data on your own infrastructure."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

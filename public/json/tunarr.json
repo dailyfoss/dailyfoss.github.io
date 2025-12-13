@@ -1,20 +1,28 @@
 {
   "name": "tunarr",
   "slug": "tunarr",
+  "tagline": null,
+  "description": "Tunarr is a self-hosted pseudo-live TV channel generator that creates custom channels from Plex or Jellyfin libraries and streams them as continuous linear feeds.",
   "categories": [
     100
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/chrisbenincasa/tunarr",
-  "website": "tunarr.com/",
-  "source_code": "github.com/chrisbenincasa/tunarr",
-  "github_stars": "1737",
-  "logo": "/icons/tunarr.webp",
-  "description": "Tunarr is a self-hosted pseudo-live TV channel generator that creates custom channels from Plex or Jellyfin libraries and streams them as continuous linear feeds.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Zlib",
+    "version": "v1.0.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-12",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 1740
+  },
+  "resources": {
+    "website": "https://tunarr.com/",
+    "documentation": "https://github.com/chrisbenincasa/tunarr",
+    "source_code": "https://github.com/chrisbenincasa/tunarr",
+    "logo": "/icons/tunarr.webp",
+    "issues": "https://github.com/chrisbenincasa/tunarr/issues",
+    "releases": "https://github.com/chrisbenincasa/tunarr/releases"
+  },
   "features": [
     "Channel creation: Create custom TV channels from your Plex or Jellyfin media libraries.",
     "Continuous streaming: Generate linear TV feeds that play continuously like traditional broadcast channels.",
@@ -29,69 +37,45 @@
     "Time-based programming: Schedule different content for different times of day or days of week.",
     "Filler content: Add bumpers, commercials, or other filler content between programs."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

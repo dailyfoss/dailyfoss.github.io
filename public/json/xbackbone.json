@@ -1,20 +1,28 @@
 {
   "name": "xbackbone",
   "slug": "xbackbone",
+  "tagline": null,
+  "description": "XBackBone is a self-hosted file hosting and sharing platform with short links, drag-and-drop uploads, multi-user support, and integrations with share clients and screenshot tools.",
   "categories": [
     61
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/sergix44/XBackBone",
-  "website": "xbackbone.app",
-  "source_code": "github.com/sergix44/XBackBone",
-  "github_stars": "1103",
-  "logo": "/icons/xbackbone.webp",
-  "description": "XBackBone is a self-hosted file hosting and sharing platform with short links, drag-and-drop uploads, multi-user support, and integrations with share clients and screenshot tools.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "3.8.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-01-26",
+    "date_last_commit": "2025-11-21",
+    "github_stars": 1103
+  },
+  "resources": {
+    "website": "https://xbackbone.app",
+    "documentation": "https://github.com/sergix44/XBackBone",
+    "source_code": "https://github.com/sergix44/XBackBone",
+    "logo": "/icons/xbackbone.webp",
+    "issues": "https://github.com/sergix44/XBackBone/issues",
+    "releases": "https://github.com/sergix44/XBackBone/releases"
+  },
   "features": [
     "Drag-and-drop uploads: Upload files directly from your browser with intuitive drag-and-drop functionality for quick sharing.",
     "Short link generation: Automatically create shortened URLs for uploaded files to simplify sharing and tracking.",
@@ -29,69 +37,45 @@
     "Theme customization: Personalize the interface with custom themes and branding options.",
     "LDAP authentication: Integrate with existing directory services for centralized user management."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

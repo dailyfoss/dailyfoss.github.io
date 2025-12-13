@@ -1,20 +1,28 @@
 {
   "name": "zabbix",
   "slug": "zabbix",
+  "tagline": null,
+  "description": "Zabbix is an enterprise-grade self-hosted monitoring platform for servers, applications, and networks. It collects metrics, sends alerts, and visualizes data on dashboards, with both on-prem and cloud-hosted offerings.",
   "categories": [
     103
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/zabbix/zabbix",
-  "website": "www.zabbix.com/",
-  "source_code": "github.com/zabbix/zabbix",
-  "github_stars": "5462",
-  "logo": "/icons/zabbix.webp",
-  "description": "Zabbix is an enterprise-grade self-hosted monitoring platform for servers, applications, and networks. It collects metrics, sends alerts, and visualizes data on dashboards, with both on-prem and cloud-hosted offerings.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-12",
+    "github_stars": 5464
+  },
+  "resources": {
+    "website": "https://www.zabbix.com/",
+    "documentation": "https://github.com/zabbix/zabbix",
+    "source_code": "https://github.com/zabbix/zabbix",
+    "logo": "/icons/zabbix.webp",
+    "issues": "https://github.com/zabbix/zabbix/issues",
+    "releases": null
+  },
   "features": [
     "Agent-based monitoring: Deploy lightweight agents on servers to collect detailed system metrics and application data.",
     "Agentless monitoring: Monitor network devices, services, and applications using SNMP, IPMI, and other protocols without agents.",
@@ -29,69 +37,45 @@
     "API integration: Automate configuration and data retrieval using comprehensive REST API for external integrations.",
     "High availability: Deploy in clustered configurations with failover support for mission-critical monitoring."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

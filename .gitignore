@@ -31,11 +31,17 @@ yarn-debug.log*
 yarn-error.log*
 
 # # local env files
-# .env*.local
-# .env
+.env*.local
+.env
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# temporary workflow files
+changed_files.txt
+.update-versions-summary.md
+.update-stargazers-summary.md
+METADATA_UPDATE_SUMMARY.md

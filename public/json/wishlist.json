@@ -1,20 +1,28 @@
 {
   "name": "cmintey-wishlist",
   "slug": "wishlist",
+  "tagline": null,
+  "description": "wishlist is a self-hosted wish list manager where users can track items they want, share lists with friends or family, and avoid duplicate gifts. It focuses on simplicity, privacy, and easy sharing through a web-based interface.",
   "categories": [
     194
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/cmintey/wishlist",
-  "website": "github.com/cmintey/wishlist",
-  "source_code": "github.com/cmintey/wishlist",
-  "github_stars": "398",
-  "logo": "/icons/wishlist.webp",
-  "description": "wishlist is a self-hosted wish list manager where users can track items they want, share lists with friends or family, and avoid duplicate gifts. It focuses on simplicity, privacy, and easy sharing through a web-based interface.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.56.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-06",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 400
+  },
+  "resources": {
+    "website": "https://github.com/cmintey/wishlist",
+    "documentation": "https://github.com/cmintey/wishlist",
+    "source_code": "https://github.com/cmintey/wishlist",
+    "logo": "/icons/wishlist.webp",
+    "issues": "https://github.com/cmintey/wishlist/issues",
+    "releases": "https://github.com/cmintey/wishlist/releases"
+  },
   "features": [
     "Item management: Add items with names, descriptions, links, and prices to organize your wishes.",
     "List sharing: Share wish lists with family and friends via unique URLs without requiring accounts.",
@@ -29,69 +37,45 @@
     "Import links: Automatically fetch item details when pasting product URLs from popular retailers.",
     "Notification system: Get notified when items are claimed or when someone views your list."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "sshwifty",
   "slug": "sshwifty",
+  "tagline": null,
+  "description": "Sshwifty is a self-hosted SSH and Telnet client running in the browser, allowing secure terminal sessions through a web interface without a traditional client installed.",
   "categories": [
     135
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/nirui/sshwifty",
-  "website": "github.com/nirui/sshwifty",
-  "source_code": "github.com/nirui/sshwifty",
-  "github_stars": "2949",
-  "logo": "/icons/sshwifty.webp",
-  "description": "Sshwifty is a self-hosted SSH and Telnet client running in the browser, allowing secure terminal sessions through a web interface without a traditional client installed.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "0.4.2-beta-release-prebuild",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-03",
+    "date_last_commit": "2025-12-06",
+    "github_stars": 2949
+  },
+  "resources": {
+    "website": "https://github.com/nirui/sshwifty",
+    "documentation": "https://github.com/nirui/sshwifty",
+    "source_code": "https://github.com/nirui/sshwifty",
+    "logo": "/icons/sshwifty.webp",
+    "issues": "https://github.com/nirui/sshwifty/issues",
+    "releases": "https://github.com/nirui/sshwifty/releases"
+  },
   "features": [
     "Browser SSH: Connects to SSH servers directly from web browser.",
     "Telnet support: Accesses Telnet servers alongside SSH connections.",
@@ -29,69 +37,45 @@
     "No plugins: Works without browser plugins or extensions.",
     "Secure connections: Encrypts all traffic between browser and server."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

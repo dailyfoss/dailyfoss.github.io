@@ -1,20 +1,28 @@
 {
   "name": "lunalytics",
   "slug": "lunalytics",
+  "tagline": "",
+  "description": "Lunalytics is a self-hosted analytics dashboard with built-in metrics tracking and visual reporting. It enables event capturing, KPIs, and interactive charts for better insights into user behavior and product usage.",
   "categories": [
     186
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/KSJaay/Lunalytics",
-  "website": "lunalytics.xyz",
-  "source_code": "github.com/KSJaay/Lunalytics",
-  "github_stars": "652",
-  "logo": "/icons/lunalytics.webp",
-  "description": "Lunalytics is a self-hosted analytics dashboard with built-in metrics tracking and visual reporting. It enables event capturing, KPIs, and interactive charts for better insights into user behavior and product usage.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "0.10.16",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-03",
+    "date_last_commit": "2025-12-10",
+    "github_stars": 653
+  },
+  "resources": {
+    "website": "https://lunalytics.xyz",
+    "documentation": "https://lunalytics.xyz",
+    "source_code": "https://github.com/KSJaay/Lunalytics",
+    "logo": "/icons/lunalytics.webp",
+    "issues": "https://github.com/KSJaay/Lunalytics/issues",
+    "releases": "https://github.com/KSJaay/Lunalytics/releases"
+  },
   "features": [
     "Event Tracking: Capture user interactions with flexible event instrumentation to analyze behavior patterns and product usage across your application.",
     "Visual Reporting: Interactive charts and graphs provide clear insights into KPIs, trends, and user engagement metrics at a glance.",
@@ -23,69 +31,45 @@
     "Self-Hosted: Full data control with custom deployment options to own your analytics infrastructure and ensure data privacy.",
     "API Access: Integrate analytics data with external tools via REST APIs for custom reporting and automated workflows."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

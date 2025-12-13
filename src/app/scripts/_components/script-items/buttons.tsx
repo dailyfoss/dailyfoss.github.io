@@ -45,19 +45,19 @@ type LinkItem = {
 };
 
 export default function Buttons({ item }: { item: Script }) {
-  const isCtOrDefault = ["ct"].includes(item.type);
+  const isCtOrDefault = item.type ? ["ct"].includes(item.type) : false;
   const installSourceUrl = isCtOrDefault ? generateInstallSourceUrl(item.slug) : null;
   const updateSourceUrl = isCtOrDefault ? generateUpdateUrl(item.slug) : null;
-  const sourceUrl = !isCtOrDefault ? generateSourceUrl(item.slug, item.type) : null;
+  const sourceUrl = !isCtOrDefault && item.type ? generateSourceUrl(item.slug, item.type) : null;
 
   const links = [
-    item.website && {
-      href: item.website,
+    item.resources?.website && {
+      href: item.resources.website,
       icon: <Globe className="h-4 w-4" />,
       text: "Website",
     },
-    item.documentation && {
-      href: item.documentation,
+    item.resources?.documentation && {
+      href: item.resources.documentation,
       icon: <BookOpenText className="h-4 w-4" />,
       text: "Documentation",
     },

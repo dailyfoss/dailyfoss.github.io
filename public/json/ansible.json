@@ -1,20 +1,28 @@
 {
   "name": "ansible",
   "slug": "ansible",
+  "tagline": null,
+  "description": "Ansible is a widely-used IT automation and configuration management tool that coordinates server provisioning, application deployment, and orchestration using YAML-based playbooks. It is agentless and works over SSH.",
   "categories": [
     146
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/ansible/ansible",
-  "website": "www.ansible.com/",
-  "source_code": "github.com/ansible/ansible",
-  "github_stars": "67294",
-  "logo": "/icons/ansible.webp",
-  "description": "Ansible is a widely-used IT automation and configuration management tool that coordinates server provisioning, application deployment, and orchestration using YAML-based playbooks. It is agentless and works over SSH.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v2.20.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-09",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 67297
+  },
+  "resources": {
+    "website": "https://www.ansible.com/",
+    "documentation": "https://github.com/ansible/ansible",
+    "source_code": "https://github.com/ansible/ansible",
+    "logo": "/icons/ansible.webp",
+    "issues": "https://github.com/ansible/ansible/issues",
+    "releases": "https://github.com/ansible/ansible/releases"
+  },
   "features": [
     "IT Automation: Automate server provisioning, configuration, and application deployment. Reduce manual work dramatically.",
     "YAML Playbooks: Define infrastructure as code using simple, readable YAML syntax. Easy to learn and maintain.",
@@ -24,69 +32,45 @@
     "Idempotent: Run playbooks repeatedly with consistent, predictable results. Safe automation.",
     "Community Support: Massive ecosystem with shared roles and playbooks. Never start from scratch."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

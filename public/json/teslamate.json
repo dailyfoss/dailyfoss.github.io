@@ -1,20 +1,28 @@
 {
   "name": "teslamate",
   "slug": "teslamate",
+  "tagline": null,
+  "description": "TeslaMate is a self-hosted data logger and visualization platform for Tesla vehicles. It records drives, charges, and states via the Tesla API and exposes dashboards and statistics through Grafana and its own web interface.",
   "categories": [
     175
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/teslamate-org/teslamate",
-  "website": "docs.teslamate.org",
-  "source_code": "github.com/teslamate-org/teslamate",
-  "github_stars": "7399",
-  "logo": "/icons/teslamate.webp",
-  "description": "TeslaMate is a self-hosted data logger and visualization platform for Tesla vehicles. It records drives, charges, and states via the Tesla API and exposes dashboards and statistics through Grafana and its own web interface.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v2.2.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-06",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 7402
+  },
+  "resources": {
+    "website": "https://docs.teslamate.org",
+    "documentation": "https://github.com/teslamate-org/teslamate",
+    "source_code": "https://github.com/teslamate-org/teslamate",
+    "logo": "/icons/teslamate.webp",
+    "issues": "https://github.com/teslamate-org/teslamate/issues",
+    "releases": "https://github.com/teslamate-org/teslamate/releases"
+  },
   "features": [
     "Drive logging: Automatically record all drives with route, distance, duration, and energy consumption data.",
     "Charge tracking: Monitor charging sessions including location, duration, energy added, and cost calculations.",
@@ -29,69 +37,45 @@
     "API integration: Connect to Tesla API to retrieve real-time vehicle data and historical information.",
     "Privacy controls: Keep all vehicle data on your own server with no third-party access or cloud dependencies."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

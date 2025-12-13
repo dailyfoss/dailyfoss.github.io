@@ -1,20 +1,28 @@
 {
   "name": "seerrbridge",
   "slug": "seerrbridge",
+  "tagline": null,
+  "description": "SeerrBridge is a companion tool that links Seerr with additional media backends, allowing enhanced cross-service interactions and automation for home media setups.",
   "categories": [
     112
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Woahai321/SeerrBridge",
-  "website": "soluify.com",
-  "source_code": "github.com/Woahai321/SeerrBridge",
-  "github_stars": "239",
-  "logo": "/icons/seerrbridge.webp",
-  "description": "SeerrBridge is a companion tool that links Seerr with additional media backends, allowing enhanced cross-service interactions and automation for home media setups.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.7.5",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-28",
+    "date_last_commit": "2025-12-06",
+    "github_stars": 239
+  },
+  "resources": {
+    "website": "https://soluify.com",
+    "documentation": "https://github.com/Woahai321/SeerrBridge",
+    "source_code": "https://github.com/Woahai321/SeerrBridge",
+    "logo": "/icons/seerrbridge.webp",
+    "issues": "https://github.com/Woahai321/SeerrBridge/issues",
+    "releases": "https://github.com/Woahai321/SeerrBridge/releases"
+  },
   "features": [
     "Seerr integration: Connects Seerr with additional media management backends.",
     "Request forwarding: Routes media requests to appropriate download clients automatically.",
@@ -29,69 +37,45 @@
     "Health monitoring: Tracks connectivity and health of all integrated backends.",
     "Logging system: Records all bridge operations for troubleshooting and auditing."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

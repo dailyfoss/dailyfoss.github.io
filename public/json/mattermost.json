@@ -1,20 +1,29 @@
 {
   "name": "mattermost",
   "slug": "mattermost",
+  "tagline": null,
+  "description": "Mattermost is an open-source collaboration and messaging platform for teams. It offers chat, file sharing, integrations, and compliance tooling with enterprise features that can be deployed self-hosted or as SaaS.",
   "categories": [
     102
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/mattermost/mattermost",
-  "website": "mattermost.com",
-  "source_code": "github.com/mattermost/mattermost",
-  "github_stars": "34620",
-  "logo": "/icons/mattermost.webp",
-  "description": "Mattermost is an open-source collaboration and messaging platform for teams. It offers chat, file sharing, integrations, and compliance tooling with enterprise features that can be deployed self-hosted or as SaaS.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "v11.1.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-21",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 34623
+  },
+  "resources": {
+    "website": "https://mattermost.com",
+    "documentation": "https://github.com/mattermost/mattermost",
+    "source_code": "https://github.com/mattermost/mattermost",
+    "logo": "/icons/mattermost.webp",
+    "issues": "https://github.com/mattermost/mattermost/issues",
+    "releases": "https://github.com/mattermost/mattermost/releases",
+    "logo_light": "/icons/mattermost-light.webp"
+  },
   "features": [
     "Team messaging: Organize conversations in channels for teams, projects, or topics with threaded replies.",
     "Direct messaging: Send private messages to individuals or create group conversations.",
@@ -29,69 +38,45 @@
     "Custom branding: Customize the interface with your organization's colors, logos, and themes.",
     "High availability: Deploy in clustered configurations for enterprise-grade reliability and scale."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

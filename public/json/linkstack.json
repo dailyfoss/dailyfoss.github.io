@@ -1,89 +1,73 @@
 {
   "name": "linkstack",
   "slug": "linkstack",
+  "tagline": null,
+  "description": "LinkStack is a self-hosted link management tool that generates a personal or business link-in-bio page. It supports theming, branding, analytics, and multiple profiles, ideal for social media consolidation.",
   "categories": [
     171
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/LinkStackOrg/LinkStack",
-  "website": "linkstack.org",
-  "source_code": "github.com/LinkStackOrg/LinkStack",
-  "github_stars": "3260",
-  "logo": "/icons/linkstack.webp",
-  "description": "LinkStack is a self-hosted link management tool that generates a personal or business link-in-bio page. It supports theming, branding, analytics, and multiple profiles, ideal for social media consolidation.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v4.8.4",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-12-10",
+    "date_last_commit": "2025-12-07",
+    "github_stars": 3260
+  },
+  "resources": {
+    "website": "https://linkstack.org",
+    "documentation": "https://github.com/LinkStackOrg/LinkStack",
+    "source_code": "https://github.com/LinkStackOrg/LinkStack",
+    "logo": "/icons/linkstack.webp",
+    "issues": "https://github.com/LinkStackOrg/LinkStack/issues",
+    "releases": "https://github.com/LinkStackOrg/LinkStack/releases"
+  },
   "features": [
     "Link-in-Bio: Personal landing page, Multiple links, Social consolidation. One link for all your content.",
     "Customization: Custom themes, Branding options, Profile styling. Match your personal brand.",
     "Analytics: Click tracking, Visitor stats, Performance metrics. Understand link engagement.",
     "Multi-Profile: Multiple pages, User management, Team support. Manage multiple link pages."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

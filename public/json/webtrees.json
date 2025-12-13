@@ -1,20 +1,28 @@
 {
   "name": "webtrees",
   "slug": "webtrees",
+  "tagline": null,
+  "description": "webtrees is a self-hosted genealogy application that lets users build and explore family trees online. It supports GEDCOM imports, collaboration, and detailed person records via a web interface.",
   "categories": [
     71
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/fisharebest/webtrees",
-  "website": "webtrees.net",
-  "source_code": "github.com/fisharebest/webtrees",
-  "github_stars": "677",
-  "logo": "/icons/webtrees.webp",
-  "description": "webtrees is a self-hosted genealogy application that lets users build and explore family trees online. It supports GEDCOM imports, collaboration, and detailed person records via a web interface.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "2.2.4",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-08-04",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 677
+  },
+  "resources": {
+    "website": "https://webtrees.net",
+    "documentation": "https://github.com/fisharebest/webtrees",
+    "source_code": "https://github.com/fisharebest/webtrees",
+    "logo": "/icons/webtrees.webp",
+    "issues": "https://github.com/fisharebest/webtrees/issues",
+    "releases": "https://github.com/fisharebest/webtrees/releases"
+  },
   "features": [
     "Family tree building: Create comprehensive family trees with individuals, relationships, and multiple generations.",
     "GEDCOM support: Import and export family data using the standard GEDCOM format for compatibility with other tools.",
@@ -29,69 +37,45 @@
     "Custom themes: Personalize the appearance with themes and color schemes to match family preferences.",
     "Search functionality: Find individuals quickly by name, date, place, or other attributes across the entire tree."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

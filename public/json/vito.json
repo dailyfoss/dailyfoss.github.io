@@ -1,20 +1,29 @@
 {
   "name": "vito",
   "slug": "vito",
+  "tagline": null,
+  "description": "Vito is a self-hosted deployment and release dashboard for web services. It organizes environments, releases, and health checks into a unified web interface for teams.",
   "categories": [
     146
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/vitodeploy/vito",
-  "website": "vitodeploy.com",
-  "source_code": "github.com/vitodeploy/vito",
-  "github_stars": "2814",
-  "logo": "/icons/vito.webp",
-  "description": "Vito is a self-hosted deployment and release dashboard for web services. It organizes environments, releases, and health checks into a unified web interface for teams.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "3.17.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-10",
+    "date_last_commit": "2025-12-10",
+    "github_stars": 2814
+  },
+  "resources": {
+    "website": "https://vitodeploy.com",
+    "documentation": "https://github.com/vitodeploy/vito",
+    "source_code": "https://github.com/vitodeploy/vito",
+    "logo": "/icons/vito.webp",
+    "issues": "https://github.com/vitodeploy/vito/issues",
+    "releases": "https://github.com/vitodeploy/vito/releases",
+    "logo_light": "/icons/vito-light.webp"
+  },
   "features": [
     "Deployment tracking: Track deployments across multiple environments and services.",
     "Release management: Manage releases with version tracking and deployment history.",
@@ -29,69 +38,45 @@
     "Web interface: Access deployment information through a modern web interface.",
     "API integration: Integrate with CI/CD pipelines using the REST API."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

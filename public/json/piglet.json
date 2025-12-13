@@ -1,20 +1,28 @@
 {
   "name": "piglet",
   "slug": "piglet",
+  "tagline": "",
+  "description": "Piglet is a self-hosted service for creating and managing digital flashcards and quizzes. It includes spaced repetition, deck management, and a study UI built for personal or educational use.",
   "categories": [
     165
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/k3nd0x/piglet",
-  "website": "github.com/k3nd0x/piglet",
-  "source_code": "github.com/k3nd0x/piglet",
-  "github_stars": "110",
-  "logo": "/icons/piglet.webp",
-  "description": "Piglet is a self-hosted service for creating and managing digital flashcards and quizzes. It includes spaced repetition, deck management, and a study UI built for personal or educational use.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v1.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-06-26",
+    "date_last_commit": "2025-01-10",
+    "github_stars": 110
+  },
+  "resources": {
+    "website": "https://hub.docker.com/r/k3nd0x/piglet",
+    "documentation": "https://hub.docker.com/r/k3nd0x/piglet",
+    "source_code": "https://github.com/k3nd0x/piglet",
+    "logo": "/icons/piglet.webp",
+    "issues": "https://github.com/k3nd0x/piglet/issues",
+    "releases": "https://github.com/k3nd0x/piglet/releases"
+  },
   "features": [
     "Flashcard creation: Create digital flashcards with questions, answers, and optional images.",
     "Spaced repetition: Automatically schedule card reviews using spaced repetition algorithms for optimal retention.",
@@ -29,69 +37,45 @@
     "Custom scheduling: Adjust spaced repetition intervals to match your learning preferences.",
     "Performance analytics: View detailed statistics on learning progress and retention rates."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

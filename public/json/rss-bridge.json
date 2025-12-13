@@ -1,20 +1,28 @@
 {
   "name": "rss-bridge",
   "slug": "rss-bridge",
+  "tagline": null,
+  "description": "RSS-Bridge is a self-hosted feed generator that fetches content from webpages and delivers custom RSS/Atom feeds. It supports dozens of sites and simplifies subscription management.",
   "categories": [
     57
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/RSS-Bridge/rss-bridge",
-  "website": "rss-bridge.org/bridge01/",
-  "source_code": "github.com/RSS-Bridge/rss-bridge",
-  "github_stars": "8517",
-  "logo": "/icons/rss-bridge.webp",
-  "description": "RSS-Bridge is a self-hosted feed generator that fetches content from webpages and delivers custom RSS/Atom feeds. It supports dozens of sites and simplifies subscription management.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Unlicense",
+    "version": "2025-08-05",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-08-05",
+    "date_last_commit": "2025-11-21",
+    "github_stars": 8519
+  },
+  "resources": {
+    "website": "https://rss-bridge.org/bridge01/",
+    "documentation": "https://github.com/RSS-Bridge/rss-bridge",
+    "source_code": "https://github.com/RSS-Bridge/rss-bridge",
+    "logo": "/icons/rss-bridge.webp",
+    "issues": "https://github.com/RSS-Bridge/rss-bridge/issues",
+    "releases": "https://github.com/RSS-Bridge/rss-bridge/releases"
+  },
   "features": [
     "Feed generation: Create RSS feeds from websites that don't offer them natively.",
     "Pre-built bridges: Use ready-made scrapers for popular sites like Twitter, Instagram, and YouTube.",
@@ -29,69 +37,45 @@
     "Rate limiting: Control request frequency to avoid overwhelming source websites.",
     "Error handling: Gracefully handle site changes or temporary unavailability."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

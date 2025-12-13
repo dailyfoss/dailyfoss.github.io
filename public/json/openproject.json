@@ -1,20 +1,28 @@
 {
   "name": "openproject",
   "slug": "openproject",
+  "tagline": null,
+  "description": "OpenProject is an open-source project management platform supporting agile boards, Gantt charts, time tracking, and team collaboration. It can be self-hosted or run as SaaS, serving as an enterprise-grade alternative to Jira.",
   "categories": [
     125
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/opf/openproject",
-  "website": "www.openproject.org",
-  "source_code": "github.com/opf/openproject",
-  "github_stars": "13342",
-  "logo": "/icons/openproject.webp",
-  "description": "OpenProject is an open-source project management platform supporting agile boards, Gantt charts, time tracking, and team collaboration. It can be self-hosted or run as SaaS, serving as an enterprise-grade alternative to Jira.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v16.6.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-11",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 13344
+  },
+  "resources": {
+    "website": "https://www.openproject.org",
+    "documentation": "https://github.com/opf/openproject",
+    "source_code": "https://github.com/opf/openproject",
+    "logo": "/icons/openproject.webp",
+    "issues": "https://github.com/opf/openproject/issues",
+    "releases": "https://github.com/opf/openproject/releases"
+  },
   "features": [
     "Agile boards: Manage sprints and backlogs with Scrum and Kanban views for iterative development workflows.",
     "Gantt charts: Visualize project timelines with dependencies, milestones, and critical path analysis for planning.",
@@ -25,69 +33,45 @@
     "Budget tracking: Monitor project costs against estimates with expense logging and financial reporting capabilities.",
     "API integration: Connect with external tools and automate workflows using REST API for custom business processes."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

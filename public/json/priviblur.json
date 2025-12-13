@@ -1,20 +1,28 @@
 {
   "name": "priviblur",
   "slug": "priviblur",
+  "tagline": "",
+  "description": "PriviBlur is a self-hosted tool for face blurring in videos and images. It supports configurable filters and batch processing through a browser interface, designed to enhance privacy for shared media.",
   "categories": [
     124
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/syeopite/priviblur",
-  "website": "github.com/syeopite/priviblur",
-  "source_code": "github.com/syeopite/priviblur",
-  "github_stars": "137",
-  "logo": "/icons/priviblur.webp",
-  "description": "PriviBlur is a self-hosted tool for face blurring in videos and images. It supports configurable filters and batch processing through a browser interface, designed to enhance privacy for shared media.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v0.3.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-03-10",
+    "date_last_commit": "2025-11-24",
+    "github_stars": 137
+  },
+  "resources": {
+    "website": null,
+    "documentation": null,
+    "source_code": "https://github.com/syeopite/priviblur",
+    "logo": "/icons/priviblur.webp",
+    "issues": "https://github.com/syeopite/priviblur/issues",
+    "releases": "https://github.com/syeopite/priviblur/releases"
+  },
   "features": [
     "Face detection: Automatically detect faces in images and videos using machine learning algorithms.",
     "Automatic blurring: Apply blur effects to detected faces to protect privacy in shared media.",
@@ -29,69 +37,45 @@
     "Export options: Download processed media with faces blurred for sharing or publication.",
     "Lightweight design: Minimal resource requirements suitable for personal or small-scale use."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "glance",
   "slug": "glance",
+  "tagline": null,
+  "description": "Glance is a dynamic homepage and dashboard builder for self-hosted setups. It allows users to display widgets for services, schedules, weather, or links, all configured via simple YAML files.",
   "categories": [
     37
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/glanceapp/glance",
-  "website": "github.com/glanceapp/glance",
-  "source_code": "github.com/glanceapp/glance",
-  "github_stars": "30291",
-  "logo": "/icons/glance.webp",
-  "description": "Glance is a dynamic homepage and dashboard builder for self-hosted setups. It allows users to display widgets for services, schedules, weather, or links, all configured via simple YAML files.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v0.8.4",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-06-10",
+    "date_last_commit": "2025-12-10",
+    "github_stars": 30309
+  },
+  "resources": {
+    "website": "https://github.com/glanceapp/glance",
+    "documentation": "https://github.com/glanceapp/glance",
+    "source_code": "https://github.com/glanceapp/glance",
+    "logo": "/icons/glance.webp",
+    "issues": "https://github.com/glanceapp/glance/issues",
+    "releases": "https://github.com/glanceapp/glance/releases"
+  },
   "features": [
     "Dynamic Homepage: Build customizable homepages with real-time data from various services.",
     "Widget System: Display weather, calendars, RSS feeds, bookmarks, and service status in modular widgets.",
@@ -25,69 +33,45 @@
     "Theme Support: Customize colors and appearance to match your preferences.",
     "Lightweight Performance: Fast loading and minimal resource usage for always-on dashboard displays."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

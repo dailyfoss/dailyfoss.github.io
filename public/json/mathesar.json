@@ -1,20 +1,28 @@
 {
   "name": "mathesar",
   "slug": "mathesar",
+  "tagline": null,
+  "description": "Mathesar is a web-based data management and visualization tool built on PostgreSQL. It lets users explore, edit, and collaborate on database tables without technical expertise, ideal for small organizations.",
   "categories": [
     133
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/mathesar-foundation/mathesar",
-  "website": "mathesar.org/",
-  "source_code": "github.com/mathesar-foundation/mathesar",
-  "github_stars": "4675",
-  "logo": "/icons/mathesar.webp",
-  "description": "Mathesar is a web-based data management and visualization tool built on PostgreSQL. It lets users explore, edit, and collaborate on database tables without technical expertise, ideal for small organizations.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "0.7.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-11",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 4675
+  },
+  "resources": {
+    "website": "https://mathesar.org/",
+    "documentation": "https://github.com/mathesar-foundation/mathesar",
+    "source_code": "https://github.com/mathesar-foundation/mathesar",
+    "logo": "/icons/mathesar.webp",
+    "issues": "https://github.com/mathesar-foundation/mathesar/issues",
+    "releases": "https://github.com/mathesar-foundation/mathesar/releases"
+  },
   "features": [
     "Visual database interface: Browse and edit PostgreSQL tables through an intuitive spreadsheet-like UI.",
     "No-code queries: Build complex database queries using visual filters and joins without writing SQL.",
@@ -29,69 +37,45 @@
     "Schema designer: Create and modify table structures, columns, and relationships through the UI.",
     "API access: Interact with your data programmatically through automatically generated REST APIs."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

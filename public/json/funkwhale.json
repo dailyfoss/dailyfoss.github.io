@@ -1,20 +1,28 @@
 {
   "name": "funkwhale",
   "slug": "funkwhale",
+  "tagline": "",
+  "description": "Funkwhale is a self-hosted, federated audio streaming platform for sharing and listening to music. It supports playlists, user uploads, and ActivityPub federation, providing a decentralized alternative to SoundCloud.",
   "categories": [
     106
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "dev.funkwhale.audio/funkwhale/funkwhale",
-  "website": "www.funkwhale.audio/",
-  "source_code": "dev.funkwhale.audio/funkwhale/funkwhale",
-  "github_stars": null,
-  "logo": "/icons/funkwhale.webp",
-  "description": "Funkwhale is a self-hosted, federated audio streaming platform for sharing and listening to music. It supports playlists, user uploads, and ActivityPub federation, providing a decentralized alternative to SoundCloud.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": null,
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": null,
+    "github_stars": null
+  },
+  "resources": {
+    "website": null,
+    "documentation": null,
+    "source_code": "https://dev.funkwhale.audio/funkwhale/funkwhale",
+    "logo": "/icons/funkwhale.webp",
+    "issues": null,
+    "releases": null
+  },
   "features": [
     "Audio Streaming: Self-hosted music platform, Federated sharing, Playlists and uploads. Decentralized SoundCloud alternative.",
     "ActivityPub: Connect with other instances. Federated network.",
@@ -27,69 +35,45 @@
     "Import: Upload your library. Easy migration.",
     "Self-Hosted: Complete control. Data ownership."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "rocket-chat",
   "slug": "rocket-chat",
+  "tagline": null,
+  "description": "Rocket.Chat is a self-hosted team chat platform with channels, direct messages, video calls, and third-party integrations. It supports federation, plugins, and mobile apps.",
   "categories": [
     102
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/RocketChat/Rocket.Chat",
-  "website": "rocket.chat/",
-  "source_code": "github.com/RocketChat/Rocket.Chat",
-  "github_stars": "44076",
-  "logo": "/icons/rocket-chat.webp",
-  "description": "Rocket.Chat is a self-hosted team chat platform with channels, direct messages, video calls, and third-party integrations. It supports federation, plugins, and mobile apps.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "7.13.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-09",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 44081
+  },
+  "resources": {
+    "website": "https://rocket.chat/",
+    "documentation": "https://github.com/RocketChat/Rocket.Chat",
+    "source_code": "https://github.com/RocketChat/Rocket.Chat",
+    "logo": "/icons/rocket-chat.webp",
+    "issues": "https://github.com/RocketChat/Rocket.Chat/issues",
+    "releases": "https://github.com/RocketChat/Rocket.Chat/releases"
+  },
   "features": [
     "Team messaging: Communicate with colleagues through channels and direct messages.",
     "Video conferencing: Start audio and video calls directly from chat conversations.",
@@ -29,69 +37,45 @@
     "Screen sharing: Share your screen during video calls for presentations or support.",
     "Message threading: Keep conversations organized with threaded replies."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

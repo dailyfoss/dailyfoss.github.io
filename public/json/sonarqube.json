@@ -1,20 +1,28 @@
 {
   "name": "sonarqube",
   "slug": "sonarqube",
+  "tagline": null,
+  "description": "SonarQube is a code quality and security analysis platform. It scans codebases for bugs, vulnerabilities, and code smells, presenting dashboards, trends, and gating rules for CI pipelines.",
   "categories": [
     103
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/SonarSource/sonarqube",
-  "website": "http://www.sonarqube.org",
-  "source_code": "github.com/SonarSource/sonarqube",
-  "github_stars": "10094",
-  "logo": "/icons/sonarqube.webp",
-  "description": "SonarQube is a code quality and security analysis platform. It scans codebases for bugs, vulnerabilities, and code smells, presenting dashboards, trends, and gating rules for CI pipelines.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "LGPL-3.0",
+    "version": "25.11.0.114957",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-05",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 10095
+  },
+  "resources": {
+    "website": "http://www.sonarqube.org",
+    "documentation": "https://github.com/SonarSource/sonarqube",
+    "source_code": "https://github.com/SonarSource/sonarqube",
+    "logo": "/icons/sonarqube.webp",
+    "issues": "https://github.com/SonarSource/sonarqube/issues",
+    "releases": "https://github.com/SonarSource/sonarqube/releases"
+  },
   "features": [
     "Code quality analysis: Scans code for bugs, vulnerabilities, and code smells.",
     "Security scanning: Detects security vulnerabilities and injection flaws.",
@@ -29,69 +37,45 @@
     "Custom rules: Creates organization-specific quality rules and profiles.",
     "Portfolio management: Organizes and compares quality across multiple projects."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

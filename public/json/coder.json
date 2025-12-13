@@ -1,20 +1,28 @@
 {
   "name": "coder",
   "slug": "coder",
+  "tagline": null,
+  "description": "Coder is an enterprise-ready developer workspace management platform that lets teams run cloud-based VS Code and JetBrains environments. It supports infrastructure provisioning and integrates with AWS, Kubernetes, and Terraform.",
   "categories": [
     43
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/coder/coder",
-  "website": "coder.com",
-  "source_code": "github.com/coder/coder",
-  "github_stars": "11684",
-  "logo": "/icons/coder.webp",
-  "description": "Coder is an enterprise-ready developer workspace management platform that lets teams run cloud-based VS Code and JetBrains environments. It supports infrastructure provisioning and integrates with AWS, Kubernetes, and Terraform.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v2.28.6",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-09",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 11693
+  },
+  "resources": {
+    "website": "https://coder.com",
+    "documentation": "https://github.com/coder/coder",
+    "source_code": "https://github.com/coder/coder",
+    "logo": "/icons/coder.webp",
+    "issues": "https://github.com/coder/coder/issues",
+    "releases": "https://github.com/coder/coder/releases"
+  },
   "features": [
     "Cloud Workspaces: Run VS Code and JetBrains IDEs in the cloud. Code from anywhere.",
     "Infrastructure Provisioning: Automated setup with Terraform integration. Consistent environments every time.",
@@ -23,69 +31,45 @@
     "Resource Management: Control compute resources and costs efficiently. Optimize spending automatically.",
     "Team Collaboration: Share workspaces and standardize development environments. Everyone stays in sync."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": true,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": true,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "feeds-fun",
   "slug": "feeds-fun",
+  "tagline": null,
+  "description": "feeds.fun is a self-hosted RSS reading and aggregation tool focused on playful UX. It lets users subscribe to feeds, mark items as read, and browse posts in a colorful interface while keeping everything under their own control.",
   "categories": [
     127
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Tiendil/feeds.fun",
-  "website": "feeds.fun",
-  "source_code": "github.com/Tiendil/feeds.fun",
-  "github_stars": "294",
-  "logo": "/icons/feeds-fun.webp",
-  "description": "feeds.fun is a self-hosted RSS reading and aggregation tool focused on playful UX. It lets users subscribe to feeds, mark items as read, and browse posts in a colorful interface while keeping everything under their own control.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-11",
+    "github_stars": 294
+  },
+  "resources": {
+    "website": "https://feeds.fun",
+    "documentation": "https://github.com/Tiendil/feeds.fun",
+    "source_code": "https://github.com/Tiendil/feeds.fun",
+    "logo": "/icons/feeds-fun.webp",
+    "issues": "https://github.com/Tiendil/feeds.fun/issues",
+    "releases": null
+  },
   "features": [
     "RSS Reading: Playful user experience, Colorful interface, Mark as read functionality. Fun feed browsing.",
     "Feed Aggregation: Subscribe to multiple sources. Centralized content.",
@@ -26,69 +34,45 @@
     "Responsive Design: Works on all devices. Mobile-optimized.",
     "Search: Find articles quickly. Powerful filtering."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

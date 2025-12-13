@@ -1,20 +1,28 @@
 {
   "name": "kill-the-newsletter",
   "slug": "kill-the-newsletter",
+  "tagline": null,
+  "description": "Kill the Newsletter is a tiny web app that turns email newsletters into Atom feeds. Users create unique addresses, subscribe to newsletters with them, then read issues in an RSS reader instead of their inbox.",
   "categories": [
     109
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/leafac/kill-the-newsletter",
-  "website": "kill-the-newsletter.com",
-  "source_code": "github.com/leafac/kill-the-newsletter",
-  "github_stars": "2872",
-  "logo": "/icons/kill-the-newsletter.webp",
-  "description": "Kill the Newsletter is a tiny web app that turns email newsletters into Atom feeds. Users create unique addresses, subscribe to newsletters with them, then read issues in an RSS reader instead of their inbox.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v2.0.8",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-08-01",
+    "date_last_commit": "2025-12-04",
+    "github_stars": 2872
+  },
+  "resources": {
+    "website": "https://kill-the-newsletter.com",
+    "documentation": "https://github.com/leafac/kill-the-newsletter",
+    "source_code": "https://github.com/leafac/kill-the-newsletter",
+    "logo": "/icons/kill-the-newsletter.webp",
+    "issues": "https://github.com/leafac/kill-the-newsletter/issues",
+    "releases": "https://github.com/leafac/kill-the-newsletter/releases"
+  },
   "features": [
     "Email to RSS: Convert email newsletters into Atom/RSS feeds automatically. Read newsletters in your RSS reader.",
     "Unique Addresses: Generate unique email addresses for each newsletter subscription. Organize subscriptions separately.",
@@ -27,69 +35,45 @@
     "HTML Content: Preserve newsletter formatting and images in feed entries. Read as intended by publishers.",
     "Self-Hosted: Run your own instance for complete control and privacy. Own your newsletter infrastructure."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

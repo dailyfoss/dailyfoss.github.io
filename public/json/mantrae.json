@@ -1,20 +1,28 @@
 {
   "name": "mantrae",
   "slug": "mantrae",
+  "tagline": null,
+  "description": "Mantrae is a self-hosted tool that helps users create and manage personal mantras for daily inspiration. It organizes affirmations into collections and presents them in a clean interface with reminders.",
   "categories": [
     16
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/MizuchiLabs/mantrae",
-  "website": "mizuchilabs.github.io/mantrae/",
-  "source_code": "github.com/MizuchiLabs/mantrae",
-  "github_stars": "372",
-  "logo": "/icons/mantrae.webp",
-  "description": "Mantrae is a self-hosted tool that helps users create and manage personal mantras for daily inspiration. It organizes affirmations into collections and presents them in a clean interface with reminders.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.8.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-08",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 372
+  },
+  "resources": {
+    "website": "https://mizuchilabs.github.io/mantrae/",
+    "documentation": "https://github.com/MizuchiLabs/mantrae",
+    "source_code": "https://github.com/MizuchiLabs/mantrae",
+    "logo": "/icons/mantrae.webp",
+    "issues": "https://github.com/MizuchiLabs/mantrae/issues",
+    "releases": "https://github.com/MizuchiLabs/mantrae/releases"
+  },
   "features": [
     "Mantra collections: Organize affirmations and mantras into themed collections for different purposes.",
     "Daily reminders: Schedule notifications to display mantras at specific times throughout the day.",
@@ -27,69 +35,45 @@
     "Offline access: All mantras stored locally for access without internet connection.",
     "Customizable display: Adjust font size, colors, and display duration to suit your preferences."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

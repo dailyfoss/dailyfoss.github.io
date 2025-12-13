@@ -1,20 +1,28 @@
 {
   "name": "photoview",
   "slug": "photoview",
+  "tagline": null,
+  "description": "Photoview is a simple and fast self-hosted photo gallery for personal use. It includes automatic scanning, albums, tag browsing, and supports WebDAV and mobile-friendly interfaces.",
   "categories": [
     120
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/photoview/photoview",
-  "website": "photoview.github.io/",
-  "source_code": "github.com/photoview/photoview",
-  "github_stars": "6276",
-  "logo": "/icons/photoview.webp",
-  "description": "Photoview is a simple and fast self-hosted photo gallery for personal use. It includes automatic scanning, albums, tag browsing, and supports WebDAV and mobile-friendly interfaces.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v2.4.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-06-23",
+    "date_last_commit": "2025-12-08",
+    "github_stars": 6277
+  },
+  "resources": {
+    "website": "https://photoview.github.io/",
+    "documentation": "https://github.com/photoview/photoview",
+    "source_code": "https://github.com/photoview/photoview",
+    "logo": "/icons/photoview.webp",
+    "issues": "https://github.com/photoview/photoview/issues",
+    "releases": "https://github.com/photoview/photoview/releases"
+  },
   "features": [
     "Automatic scanning: Continuously monitor directories for new photos and automatically index them.",
     "Album organization: Create and manage albums with drag-and-drop photo organization.",
@@ -29,69 +37,45 @@
     "Fast performance: Optimized database queries and caching ensure quick loading even with large libraries.",
     "Video playback: Play video files directly in the browser with HTML5 video player support."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

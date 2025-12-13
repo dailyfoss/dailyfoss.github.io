@@ -1,20 +1,28 @@
 {
   "name": "filesync",
   "slug": "filesync",
+  "tagline": null,
+  "description": "FileSync is a CLI-based file synchronization tool for replicating local or remote directories. Built to automate sync tasks with fast operations and minimal configuration. Ideal for use in cron jobs or automated backups.",
   "categories": [
     62
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/polius/FileSync",
-  "website": "filesync.app",
-  "source_code": "github.com/polius/FileSync",
-  "github_stars": "723",
-  "logo": "/icons/filesync.webp",
-  "description": "FileSync is a CLI-based file synchronization tool for replicating local or remote directories. Built to automate sync tasks with fast operations and minimal configuration. Ideal for use in cron jobs or automated backups.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v.3.2.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-13",
+    "date_last_commit": "2025-09-14",
+    "github_stars": 725
+  },
+  "resources": {
+    "website": "https://filesync.app",
+    "documentation": "https://github.com/polius/FileSync",
+    "source_code": "https://github.com/polius/FileSync",
+    "logo": "/icons/filesync.webp",
+    "issues": "https://github.com/polius/FileSync/issues",
+    "releases": "https://github.com/polius/FileSync/releases"
+  },
   "features": [
     "Synchronization: Replicate local or remote directories, Fast operations, Minimal configuration. Automated file sync.",
     "CLI-Based: Perfect for automation. Scriptable workflows.",
@@ -26,69 +34,45 @@
     "Logging: Track sync operations. Audit trail.",
     "Cross-Platform: Works on all systems. Universal tool."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

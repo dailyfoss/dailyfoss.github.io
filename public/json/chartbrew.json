@@ -1,20 +1,28 @@
 {
   "name": "chartbrew",
   "slug": "chartbrew",
+  "tagline": null,
+  "description": "Chartbrew is a self-hosted platform for creating live dashboards and charts from databases and APIs. It allows scheduling syncs, building templates, team collaboration, and embedding visualizations anywhere via web UI.",
   "categories": [
     9
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/chartbrew/chartbrew",
-  "website": "chartbrew.com",
-  "source_code": "github.com/chartbrew/chartbrew",
-  "github_stars": "3505",
-  "logo": "/icons/chartbrew.webp",
-  "description": "Chartbrew is a self-hosted platform for creating live dashboards and charts from databases and APIs. It allows scheduling syncs, building templates, team collaboration, and embedding visualizations anywhere via web UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "v4.7.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-11",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 3518
+  },
+  "resources": {
+    "website": "https://chartbrew.com",
+    "documentation": "https://github.com/chartbrew/chartbrew",
+    "source_code": "https://github.com/chartbrew/chartbrew",
+    "logo": "/icons/chartbrew.webp",
+    "issues": "https://github.com/chartbrew/chartbrew/issues",
+    "releases": "https://github.com/chartbrew/chartbrew/releases"
+  },
   "features": [
     "Live Dashboards: Create real-time dashboards from databases and APIs. Dynamic visualization.",
     "Data Connections: Connect to PostgreSQL, MySQL, MongoDB, and APIs. Universal integration.",
@@ -24,69 +32,45 @@
     "Embeddable: Embed charts anywhere with iframe support. Flexible sharing.",
     "Self-Hosted: Keep your analytics data private. Complete control."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

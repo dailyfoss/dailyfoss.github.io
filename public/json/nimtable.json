@@ -1,20 +1,28 @@
 {
   "name": "nimtable",
   "slug": "nimtable",
+  "tagline": null,
+  "description": "Nimtable is a minimal self-hosted spreadsheet app written in Nim. It provides a lightweight interface for editing and organizing simple tabular data in the browser.",
   "categories": [
     151
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/nimtable/nimtable",
-  "website": "github.com/nimtable/nimtable",
-  "source_code": "github.com/nimtable/nimtable",
-  "github_stars": "406",
-  "logo": "/icons/nimtable.webp",
-  "description": "Nimtable is a minimal self-hosted spreadsheet app written in Nim. It provides a lightweight interface for editing and organizing simple tabular data in the browser.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-03",
+    "github_stars": 406
+  },
+  "resources": {
+    "website": "https://github.com/nimtable/nimtable",
+    "documentation": "https://github.com/nimtable/nimtable",
+    "source_code": "https://github.com/nimtable/nimtable",
+    "logo": "/icons/nimtable.webp",
+    "issues": "https://github.com/nimtable/nimtable/issues",
+    "releases": null
+  },
   "features": [
     "Spreadsheet interface: Edit tabular data in a familiar grid layout with rows and columns.",
     "Cell editing: Click to edit cells with support for text, numbers, and formulas.",
@@ -29,69 +37,45 @@
     "Browser-based: Access spreadsheets from any device with a web browser.",
     "Privacy-focused: All data stays on your server with no external dependencies or tracking."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

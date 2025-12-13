@@ -1,20 +1,28 @@
 {
   "name": "kanboard",
   "slug": "kanboard",
+  "tagline": null,
+  "description": "Kanboard is a lean project management tool focused on visualizing work. It offers swimlanes, automations, subtasks and plugins, with a self hosted web interface designed for teams adopting kanban methodologies.",
   "categories": [
     85
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/kanboard/kanboard",
-  "website": "kanboard.org",
-  "source_code": "github.com/kanboard/kanboard",
-  "github_stars": "9338",
-  "logo": "/icons/kanboard.webp",
-  "description": "Kanboard is a lean project management tool focused on visualizing work. It offers swimlanes, automations, subtasks and plugins, with a self hosted web interface designed for teams adopting kanban methodologies.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v1.2.48",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-18",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 9343
+  },
+  "resources": {
+    "website": "https://kanboard.org",
+    "documentation": "https://github.com/kanboard/kanboard",
+    "source_code": "https://github.com/kanboard/kanboard",
+    "logo": "/icons/kanboard.webp",
+    "issues": "https://github.com/kanboard/kanboard/issues",
+    "releases": "https://github.com/kanboard/kanboard/releases"
+  },
   "features": [
     "Visual Workflow: Kanban boards with swimlanes, drag-and-drop cards, and customizable columns. Visualize work in progress effectively.",
     "Task Automation: Automatic actions, workflow triggers, and event-based rules. Reduce manual work with smart automation.",
@@ -29,69 +37,45 @@
     "Email Integration: Create tasks from emails and receive notifications. Stay connected to your projects.",
     "Export & Import: Backup projects and migrate data with export/import tools. Maintain data portability."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

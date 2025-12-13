@@ -1,20 +1,28 @@
 {
   "name": "zen-notes",
   "slug": "zen-notes",
+  "tagline": null,
+  "description": "Zen is a self-hosted personal productivity and journaling app that blends tasks, notes, and reflections in a calm interface. It aims to reduce friction and distraction while tracking daily work and thoughts.",
   "categories": [
     196
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/sheshbabu/zen",
-  "website": "www.sheshbabu.com/zen/",
-  "source_code": "github.com/sheshbabu/zen",
-  "github_stars": "980",
-  "logo": "/icons/zen-notes.webp",
-  "description": "Zen is a self-hosted personal productivity and journaling app that blends tasks, notes, and reflections in a calm interface. It aims to reduce friction and distraction while tracking daily work and thoughts.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-11-05",
+    "github_stars": 980
+  },
+  "resources": {
+    "website": "https://www.sheshbabu.com/zen/",
+    "documentation": "https://github.com/sheshbabu/zen",
+    "source_code": "https://github.com/sheshbabu/zen",
+    "logo": "/icons/zen-notes.webp",
+    "issues": "https://github.com/sheshbabu/zen/issues",
+    "releases": null
+  },
   "features": [
     "Task management: Create and organize tasks with due dates, priorities, and completion tracking in a minimal interface.",
     "Daily journaling: Write daily reflections and notes that are automatically organized by date for easy review.",
@@ -29,69 +37,45 @@
     "Keyboard shortcuts: Navigate and manage content efficiently with comprehensive keyboard navigation.",
     "Recurring tasks: Set up repeating tasks that automatically regenerate on completion or schedule."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

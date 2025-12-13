@@ -1,20 +1,28 @@
 {
   "name": "clean-slate",
   "slug": "clean-slate",
+  "tagline": null,
+  "description": "CleanSlate is a self-hosted app designed for habit tracking and lifestyle improvement. It allows users to log daily routines, visualize progress, and set goals for habit formation via an intuitive web interface.",
   "categories": [
     165
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/successible/cleanslate",
-  "website": "cleanslate.sh",
-  "source_code": "github.com/successible/cleanslate",
-  "github_stars": "190",
-  "logo": "/icons/clean-slate.webp",
-  "description": "CleanSlate is a self-hosted app designed for habit tracking and lifestyle improvement. It allows users to log daily routines, visualize progress, and set goals for habit formation via an intuitive web interface.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v4.0.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-04",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 190
+  },
+  "resources": {
+    "website": "https://cleanslate.sh",
+    "documentation": "https://github.com/successible/cleanslate",
+    "source_code": "https://github.com/successible/cleanslate",
+    "logo": "/icons/clean-slate.webp",
+    "issues": "https://github.com/successible/cleanslate/issues",
+    "releases": "https://github.com/successible/cleanslate/releases"
+  },
   "features": [
     "Habit Tracking: Log daily routines and habits. Build consistency.",
     "Progress Visualization: See your habit streaks and progress. Stay motivated.",
@@ -23,69 +31,45 @@
     "Lifestyle Improvement: Focus on building better habits. Personal growth.",
     "Self-Hosted: Keep your habit data completely private. Personal journey."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

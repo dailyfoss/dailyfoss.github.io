@@ -1,20 +1,28 @@
 {
   "name": "frigate-notify",
   "slug": "frigate-notify",
+  "tagline": null,
+  "description": "Frigate Notify is a companion tool for sending Frigate camera events into platforms like Apprise or SMS. It supports event triggers, notifications, and media previews for users running local security stacks.",
   "categories": [
     112
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/0x2142/frigate-notify",
-  "website": "frigate-notify.0x2142.com/",
-  "source_code": "github.com/0x2142/frigate-notify",
-  "github_stars": "294",
-  "logo": "/icons/frigate-notify.webp",
-  "description": "Frigate Notify is a companion tool for sending Frigate camera events into platforms like Apprise or SMS. It supports event triggers, notifications, and media previews for users running local security stacks.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.5.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-16",
+    "date_last_commit": "2025-12-08",
+    "github_stars": 295
+  },
+  "resources": {
+    "website": "https://frigate-notify.0x2142.com/",
+    "documentation": "https://github.com/0x2142/frigate-notify",
+    "source_code": "https://github.com/0x2142/frigate-notify",
+    "logo": "/icons/frigate-notify.webp",
+    "issues": "https://github.com/0x2142/frigate-notify/issues",
+    "releases": "https://github.com/0x2142/frigate-notify/releases"
+  },
   "features": [
     "Notifications: Send Frigate events to Apprise or SMS, Event triggers, Media previews. Stay informed of camera activity.",
     "Multi-Platform: Support various notification services. Flexible alerts.",
@@ -26,69 +34,45 @@
     "Cooldown Periods: Prevent alert spam. Smart throttling.",
     "Self-Hosted: Privacy-focused. Local processing."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

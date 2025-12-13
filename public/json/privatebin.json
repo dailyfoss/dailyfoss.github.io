@@ -1,20 +1,28 @@
 {
   "name": "privatebin",
   "slug": "privatebin",
+  "tagline": null,
+  "description": "PrivateBin is a self-hosted pastebin where the server has no knowledge of pasted data. Supports client-side encryption, expiration, and password protection for sharing text securely.",
   "categories": [
     118
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/PrivateBin/PrivateBin",
-  "website": "privatebin.info/",
-  "source_code": "github.com/PrivateBin/PrivateBin",
-  "github_stars": "7824",
-  "logo": "/icons/privatebin.webp",
-  "description": "PrivateBin is a self-hosted pastebin where the server has no knowledge of pasted data. Supports client-side encryption, expiration, and password protection for sharing text securely.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "2.0.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-12",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 7826
+  },
+  "resources": {
+    "website": "https://privatebin.info/",
+    "documentation": "https://github.com/PrivateBin/PrivateBin",
+    "source_code": "https://github.com/PrivateBin/PrivateBin",
+    "logo": "/icons/privatebin.webp",
+    "issues": "https://github.com/PrivateBin/PrivateBin/issues",
+    "releases": "https://github.com/PrivateBin/PrivateBin/releases"
+  },
   "features": [
     "Client-side encryption: Encrypt data in the browser before sending to the server for zero-knowledge security.",
     "Expiration options: Set automatic deletion after time periods or after first read for temporary sharing.",
@@ -29,69 +37,45 @@
     "Open discussion: Create public pastes that anyone can comment on while preserving anonymity.",
     "API access: Programmatically create and retrieve pastes using a simple API interface."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

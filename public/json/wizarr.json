@@ -1,20 +1,28 @@
 {
   "name": "wizarr",
   "slug": "wizarr",
+  "tagline": null,
+  "description": "Wizarr is a self-hosted invite management portal for media servers like Jellyfin and Plex. It streamlines onboarding by generating invite links, collecting user details, and provisioning accounts via a friendly web front-end.",
   "categories": [
     165
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/wizarrrr/wizarr",
-  "website": "docs.wizarr.dev",
-  "source_code": "github.com/wizarrrr/wizarr",
-  "github_stars": "2453",
-  "logo": "/icons/wizarr.webp",
-  "description": "Wizarr is a self-hosted invite management portal for media servers like Jellyfin and Plex. It streamlines onboarding by generating invite links, collecting user details, and provisioning accounts via a friendly web front-end.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v2025.12.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-09",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 2454
+  },
+  "resources": {
+    "website": "https://docs.wizarr.dev",
+    "documentation": "https://github.com/wizarrrr/wizarr",
+    "source_code": "https://github.com/wizarrrr/wizarr",
+    "logo": "/icons/wizarr.webp",
+    "issues": "https://github.com/wizarrrr/wizarr/issues",
+    "releases": "https://github.com/wizarrrr/wizarr/releases"
+  },
   "features": [
     "Invite generation: Create unique invite links with expiration dates and usage limits for controlled access.",
     "Media server integration: Connect with Jellyfin, Plex, and Emby to automate user provisioning.",
@@ -29,69 +37,45 @@
     "Email notifications: Send automated emails to new users with setup instructions and credentials.",
     "Analytics dashboard: View statistics on invite usage, user growth, and onboarding completion rates."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

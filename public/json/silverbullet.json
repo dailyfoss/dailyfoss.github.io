@@ -1,20 +1,28 @@
 {
   "name": "silverbullet",
   "slug": "silverbullet",
+  "tagline": null,
+  "description": "SilverBullet is a self-hosted, file-based personal knowledge base and note-taking tool. It uses Markdown, plugins, and a web UI to provide a wiki-like experience on top of local or synced files.",
   "categories": [
     111
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/silverbulletmd/silverbullet",
-  "website": "silverbullet.md",
-  "source_code": "github.com/silverbulletmd/silverbullet",
-  "github_stars": "4289",
-  "logo": "/icons/silverbullet.webp",
-  "description": "SilverBullet is a self-hosted, file-based personal knowledge base and note-taking tool. It uses Markdown, plugins, and a web UI to provide a wiki-like experience on top of local or synced files.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "2.3.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-24",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 4291
+  },
+  "resources": {
+    "website": "https://silverbullet.md",
+    "documentation": "https://github.com/silverbulletmd/silverbullet",
+    "source_code": "https://github.com/silverbulletmd/silverbullet",
+    "logo": "/icons/silverbullet.webp",
+    "issues": "https://github.com/silverbulletmd/silverbullet/issues",
+    "releases": "https://github.com/silverbulletmd/silverbullet/releases"
+  },
   "features": [
     "File-based storage: Stores notes as plain Markdown files for portability and version control.",
     "Wiki-style linking: Creates bidirectional links between notes with [[wiki-link]] syntax.",
@@ -29,69 +37,45 @@
     "Code blocks: Supports syntax highlighting for dozens of programming languages.",
     "Offline capable: Functions as a progressive web app with offline editing support."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -5,7 +5,6 @@ import Link from "next/link";
 import type { Category } from "@/lib/types";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { formattedBadge } from "@/components/command-menu";
 import { cn } from "@/lib/utils";
 
 import { ScriptLogo } from "./script-logo";
@@ -165,10 +164,13 @@ export default function ScriptAccordion({
                         }}
                       >
                         <div className="flex items-center">
-                          <ScriptLogo logo={script.logo} name={script.name} />
+                          <ScriptLogo 
+                            logo={script.resources?.logo} 
+                            logo_light={script.resources?.logo_light}
+                            name={script.name} 
+                          />
                           <span className="flex items-center gap-2">{script.name}</span>
                         </div>
-                        {formattedBadge(script.type)}
                       </Link>
                     </div>
                   ))}

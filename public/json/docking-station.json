@@ -1,20 +1,28 @@
 {
   "name": "docking-station",
   "slug": "docking-station",
+  "tagline": null,
+  "description": "Docking Station is a self-hosted UI for managing Docker Compose environments. It allows starting, stopping, and monitoring services in real-time, suitable for personal servers and developers.",
   "categories": [
     47
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/LooLzzz/docking-station",
-  "website": "github.com/LooLzzz/docking-station",
-  "source_code": "github.com/LooLzzz/docking-station",
-  "github_stars": "402",
-  "logo": "/icons/docking-station.webp",
-  "description": "Docking Station is a self-hosted UI for managing Docker Compose environments. It allows starting, stopping, and monitoring services in real-time, suitable for personal servers and developers.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": null,
+    "version": "v0.5.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-03-17",
+    "date_last_commit": "2025-03-17",
+    "github_stars": 402
+  },
+  "resources": {
+    "website": "https://github.com/LooLzzz/docking-station",
+    "documentation": "https://github.com/LooLzzz/docking-station",
+    "source_code": "https://github.com/LooLzzz/docking-station",
+    "logo": "/icons/docking-station.webp",
+    "issues": "https://github.com/LooLzzz/docking-station/issues",
+    "releases": "https://github.com/LooLzzz/docking-station/releases"
+  },
   "features": [
     "Compose UI: Manage Docker Compose environments visually. Simplified operations.",
     "Service Monitoring: Track service status in real-time. Stay informed instantly.",
@@ -23,69 +31,45 @@
     "Real-Time Updates: See changes as they happen. Live monitoring.",
     "Self-Hosted: Run your compose manager privately. Your services, your dashboard."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

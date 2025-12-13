@@ -1,20 +1,28 @@
 {
   "name": "teemii",
   "slug": "teemii",
+  "tagline": null,
+  "description": "Teemii is a self-hosted team and project management board with tasks, statuses, and collaboration features. It provides a simple, responsive web UI for managing workloads and progress across teams.",
   "categories": [
     165
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/dokkaner/teemii",
-  "website": "www.teemii.io",
-  "source_code": "github.com/dokkaner/teemii",
-  "github_stars": "440",
-  "logo": "/icons/teemii.webp",
-  "description": "Teemii is a self-hosted team and project management board with tasks, statuses, and collaboration features. It provides a simple, responsive web UI for managing workloads and progress across teams.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.8.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-01-15",
+    "date_last_commit": "2024-01-15",
+    "github_stars": 440
+  },
+  "resources": {
+    "website": "https://www.teemii.io",
+    "documentation": "https://github.com/dokkaner/teemii",
+    "source_code": "https://github.com/dokkaner/teemii",
+    "logo": "/icons/teemii.webp",
+    "issues": "https://github.com/dokkaner/teemii/issues",
+    "releases": "https://github.com/dokkaner/teemii/releases"
+  },
   "features": [
     "Project boards: Organize work into projects with customizable boards for different teams or initiatives.",
     "Task management: Create and assign tasks with descriptions, due dates, and priority levels for clear accountability.",
@@ -29,69 +37,45 @@
     "Filtering: Filter tasks by assignee, status, priority, or custom criteria to focus on relevant work.",
     "Activity tracking: Monitor recent changes and updates across projects to stay informed of progress."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

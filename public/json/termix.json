@@ -1,20 +1,28 @@
 {
   "name": "termix",
   "slug": "termix",
+  "tagline": null,
+  "description": "Termix is a self-hosted SSH management platform that exposes terminals in the browser. It lets admins organize hosts, manage keys, and open shell sessions directly from a web interface.",
   "categories": [
     135
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Termix-SSH/Termix",
-  "website": "docs.termix.site/",
-  "source_code": "github.com/Termix-SSH/Termix",
-  "github_stars": "8213",
-  "logo": "/icons/termix.webp",
-  "description": "Termix is a self-hosted SSH management platform that exposes terminals in the browser. It lets admins organize hosts, manage keys, and open shell sessions directly from a web interface.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "release-1.9.0-tag",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-17",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 8226
+  },
+  "resources": {
+    "website": "https://docs.termix.site/",
+    "documentation": "https://github.com/Termix-SSH/Termix",
+    "source_code": "https://github.com/Termix-SSH/Termix",
+    "logo": "/icons/termix.webp",
+    "issues": "https://github.com/Termix-SSH/Termix/issues",
+    "releases": "https://github.com/Termix-SSH/Termix/releases"
+  },
   "features": [
     "Browser-based SSH: Access SSH terminals directly in your web browser without installing client software.",
     "Host management: Organize and manage SSH hosts with groups, tags, and custom connection settings.",
@@ -29,69 +37,45 @@
     "Mobile support: Manage servers from mobile devices with touch-optimized controls and keyboard.",
     "Access control: Define user permissions and restrict access to specific hosts or host groups."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": true,
-          "ios": true
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": true,
+      "ios": true
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "gomft",
   "slug": "gomft",
+  "tagline": null,
+  "description": "GoMFT provides a command-line interface for reading and processing NTFS Master File Table (MFT) entries. Useful for forensics and investigations in file integrity or recovery cases.",
   "categories": [
     165
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/StarFleetCPTN/GoMFT",
-  "website": "github.com/StarFleetCPTN/GoMFT",
-  "source_code": "github.com/StarFleetCPTN/GoMFT",
-  "github_stars": "635",
-  "logo": "/icons/gomft.webp",
-  "description": "GoMFT provides a command-line interface for reading and processing NTFS Master File Table (MFT) entries. Useful for forensics and investigations in file integrity or recovery cases.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.2.11",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-04-12",
+    "date_last_commit": "2025-04-20",
+    "github_stars": 635
+  },
+  "resources": {
+    "website": "https://github.com/StarFleetCPTN/GoMFT",
+    "documentation": "https://github.com/StarFleetCPTN/GoMFT",
+    "source_code": "https://github.com/StarFleetCPTN/GoMFT",
+    "logo": "/icons/gomft.webp",
+    "issues": "https://github.com/StarFleetCPTN/GoMFT/issues",
+    "releases": "https://github.com/StarFleetCPTN/GoMFT/releases"
+  },
   "features": [
     "MFT Parsing: Read and process NTFS Master File Table entries for forensic analysis.",
     "Forensic Investigation: Extract file metadata, timestamps, and attributes from NTFS volumes.",
@@ -25,69 +33,45 @@
     "Timeline Construction: Build file system timelines from MFT timestamps for incident response.",
     "Cross-Platform: Analyze NTFS volumes from Linux, macOS, or Windows systems."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

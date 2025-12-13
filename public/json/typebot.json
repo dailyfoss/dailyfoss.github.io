@@ -1,20 +1,29 @@
 {
   "name": "typebot",
   "slug": "typebot",
+  "tagline": null,
+  "description": "Typebot is a self-hosted conversational form and chatbot builder that lets you design flows visually and embed them on websites. It supports integrations and webhooks and is also available as a cloud service.",
   "categories": [
     157
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/baptisteArno/typebot.io",
-  "website": "typebot.io",
-  "source_code": "github.com/baptisteArno/typebot.io",
-  "github_stars": "9461",
-  "logo": "/icons/typebot.webp",
-  "description": "Typebot is a self-hosted conversational form and chatbot builder that lets you design flows visually and embed them on websites. It supports integrations and webhooks and is also available as a cloud service.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "v3.14.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-12",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 9461
+  },
+  "resources": {
+    "website": "https://typebot.io",
+    "documentation": "https://github.com/baptisteArno/typebot.io",
+    "source_code": "https://github.com/baptisteArno/typebot.io",
+    "logo": "/icons/typebot.webp",
+    "issues": "https://github.com/baptisteArno/typebot.io/issues",
+    "releases": "https://github.com/baptisteArno/typebot.io/releases",
+    "logo_light": "/icons/typebot-light.webp"
+  },
   "features": [
     "Visual flow builder: Design conversational flows using a drag-and-drop visual interface without coding.",
     "Conversational forms: Create engaging forms that feel like conversations for better user experience.",
@@ -29,69 +38,45 @@
     "Self-hosted or cloud: Deploy on your infrastructure for control or use managed cloud for convenience.",
     "Template library: Start quickly with pre-built templates for common use cases like lead generation or surveys."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

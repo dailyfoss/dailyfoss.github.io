@@ -1,20 +1,28 @@
 {
   "name": "typemill",
   "slug": "typemill",
+  "tagline": null,
+  "description": "Typemill is a self-hosted flat-file CMS optimized for documentation and small websites. It provides a Markdown editor, navigation management, and themes through a straightforward web interface.",
   "categories": [
     19
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/typemill/typemill",
-  "website": "typemill.net",
-  "source_code": "github.com/typemill/typemill",
-  "github_stars": "563",
-  "logo": "/icons/typemill.webp",
-  "description": "Typemill is a self-hosted flat-file CMS optimized for documentation and small websites. It provides a Markdown editor, navigation management, and themes through a straightforward web interface.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v2.19.4",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-02",
+    "date_last_commit": "2025-12-02",
+    "github_stars": 563
+  },
+  "resources": {
+    "website": "https://typemill.net",
+    "documentation": "https://github.com/typemill/typemill",
+    "source_code": "https://github.com/typemill/typemill",
+    "logo": "/icons/typemill.webp",
+    "issues": "https://github.com/typemill/typemill/issues",
+    "releases": "https://github.com/typemill/typemill/releases"
+  },
   "features": [
     "Flat-file storage: Store content in Markdown files without requiring a database for simplicity.",
     "Markdown editor: Write and edit content using Markdown with live preview and formatting toolbar.",
@@ -29,69 +37,45 @@
     "Responsive design: Deliver mobile-friendly websites that work on all devices automatically.",
     "Simple deployment: Deploy easily on any web server with PHP support and minimal requirements."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

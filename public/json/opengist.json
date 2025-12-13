@@ -1,20 +1,28 @@
 {
   "name": "opengist",
   "slug": "opengist",
+  "tagline": null,
+  "description": "OpenGist is a self-hosted alternative to GitHub Gist. It lets users create and manage code snippets with syntax highlighting, versioning, and a web-based editor.",
   "categories": [
     72
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/thomiceli/opengist",
-  "website": "opengist.io",
-  "source_code": "github.com/thomiceli/opengist",
-  "github_stars": "2848",
-  "logo": "/icons/opengist.webp",
-  "description": "OpenGist is a self-hosted alternative to GitHub Gist. It lets users create and manage code snippets with syntax highlighting, versioning, and a web-based editor.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v1.11.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-30",
+    "date_last_commit": "2025-10-31",
+    "github_stars": 2849
+  },
+  "resources": {
+    "website": "https://opengist.io",
+    "documentation": "https://github.com/thomiceli/opengist",
+    "source_code": "https://github.com/thomiceli/opengist",
+    "logo": "/icons/opengist.webp",
+    "issues": "https://github.com/thomiceli/opengist/issues",
+    "releases": "https://github.com/thomiceli/opengist/releases"
+  },
   "features": [
     "Code Snippets: Create and manage code snippets with syntax highlighting for over 100 programming languages.",
     "Version Control: Track changes to snippets with Git-based versioning and diff visualization.",
@@ -29,69 +37,45 @@
     "Comment System: Add comments and discussions to snippets for collaboration and code review.",
     "Export Options: Download snippets as files or archives for backup and offline access."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

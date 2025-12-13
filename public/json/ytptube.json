@@ -1,20 +1,28 @@
 {
   "name": "ytptube",
   "slug": "ytptube",
+  "tagline": null,
+  "description": "ytptube is a self-hosted interface and automation tool for downloading and organizing YouTube content, exposing a simple web UI and configuration for recurring downloads.",
   "categories": [
     100
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/arabcoders/ytptube",
-  "website": "github.com/arabcoders/ytptube",
-  "source_code": "github.com/arabcoders/ytptube",
-  "github_stars": "758",
-  "logo": "/icons/ytptube.webp",
-  "description": "ytptube is a self-hosted interface and automation tool for downloading and organizing YouTube content, exposing a simple web UI and configuration for recurring downloads.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v1.0.10",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-07",
+    "date_last_commit": "2025-12-08",
+    "github_stars": 758
+  },
+  "resources": {
+    "website": "https://github.com/arabcoders/ytptube",
+    "documentation": "https://github.com/arabcoders/ytptube",
+    "source_code": "https://github.com/arabcoders/ytptube",
+    "logo": "/icons/ytptube.webp",
+    "issues": "https://github.com/arabcoders/ytptube/issues",
+    "releases": "https://github.com/arabcoders/ytptube/releases"
+  },
   "features": [
     "Channel monitoring: Subscribe to YouTube channels and automatically download new videos as they're published.",
     "Web dashboard: Manage subscriptions, view download history, and configure settings through a clean web interface.",
@@ -29,69 +37,45 @@
     "Notification system: Receive alerts when new videos are downloaded or when errors occur during processing.",
     "API integration: Control downloads and manage subscriptions programmatically using REST API endpoints."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,89 +1,73 @@
 {
   "name": "linuxgsm",
   "slug": "linuxgsm",
+  "tagline": null,
+  "description": "LinuxGSM is a CLI tool to deploy and manage dedicated game servers. It supports over 100 games and simplifies installation, updates, backups, and monitoring using a terminal-first interface.",
   "categories": [
     69
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/GameServerManagers/LinuxGSM",
-  "website": "linuxgsm.com",
-  "source_code": "github.com/GameServerManagers/LinuxGSM",
-  "github_stars": "4692",
-  "logo": "/icons/linuxgsm.webp",
-  "description": "LinuxGSM is a CLI tool to deploy and manage dedicated game servers. It supports over 100 games and simplifies installation, updates, backups, and monitoring using a terminal-first interface.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v25.2.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-08",
+    "date_last_commit": "2025-11-24",
+    "github_stars": 4692
+  },
+  "resources": {
+    "website": "https://linuxgsm.com",
+    "documentation": "https://github.com/GameServerManagers/LinuxGSM",
+    "source_code": "https://github.com/GameServerManagers/LinuxGSM",
+    "logo": "/icons/linuxgsm.webp",
+    "issues": "https://github.com/GameServerManagers/LinuxGSM/issues",
+    "releases": "https://github.com/GameServerManagers/LinuxGSM/releases"
+  },
   "features": [
     "Game Server Management: 100+ game support, Easy installation, Automated updates. Deploy game servers quickly.",
     "CLI Interface: Terminal-based, Script automation, Batch operations. Manage servers efficiently.",
     "Monitoring & Backups: Server monitoring, Automatic backups, Alert notifications. Keep servers running smoothly.",
     "Multi-Server: Manage multiple servers, Centralized control, Resource monitoring. Run entire game server fleets."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": true,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

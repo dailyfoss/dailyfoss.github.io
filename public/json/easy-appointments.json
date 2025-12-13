@@ -1,20 +1,28 @@
 {
   "name": "easy-appointments",
   "slug": "easy-appointments",
+  "tagline": null,
+  "description": "Easy!Appointments is an online appointment scheduling system that lets customers book services with staff. It supports calendars, email notifications, working hours, and is popular with small businesses running self-hosted booking pages.",
   "categories": [
     24
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/alextselegidis/easyappointments",
-  "website": "easyappointments.org",
-  "source_code": "github.com/alextselegidis/easyappointments",
-  "github_stars": "3982",
-  "logo": "/icons/easy-appointments.webp",
-  "description": "Easy!Appointments is an online appointment scheduling system that lets customers book services with staff. It supports calendars, email notifications, working hours, and is popular with small businesses running self-hosted booking pages.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "1.5.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-15",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 3985
+  },
+  "resources": {
+    "website": "https://easyappointments.org",
+    "documentation": "https://github.com/alextselegidis/easyappointments",
+    "source_code": "https://github.com/alextselegidis/easyappointments",
+    "logo": "/icons/easy-appointments.webp",
+    "issues": "https://github.com/alextselegidis/easyappointments/issues",
+    "releases": "https://github.com/alextselegidis/easyappointments/releases"
+  },
   "features": [
     "Online Booking: Customers schedule appointments 24/7. No phone calls needed.",
     "Calendar Management: View and manage staff schedules easily. Organized appointment tracking.",
@@ -23,69 +31,45 @@
     "Small Business Ready: Perfect for salons, clinics, and consultants. Professional booking solution.",
     "Self-Hosted: Run your booking system privately. Complete control over customer data."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

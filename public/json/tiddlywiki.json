@@ -1,20 +1,29 @@
 {
   "name": "tiddlywiki",
   "slug": "tiddlywiki",
+  "tagline": null,
+  "description": "TiddlyWiki is a unique self-contained wiki and personal knowledge base that runs in the browser as a single HTML file. It supports plugins, scripting, and nonlinear note-taking, and can be self-hosted or stored locally.",
   "categories": [
     193
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/TiddlyWiki/TiddlyWiki5",
-  "website": "tiddlywiki.com/",
-  "source_code": "github.com/TiddlyWiki/TiddlyWiki5",
-  "github_stars": "8479",
-  "logo": "/icons/tiddlywiki.webp",
-  "description": "TiddlyWiki is a unique self-contained wiki and personal knowledge base that runs in the browser as a single HTML file. It supports plugins, scripting, and nonlinear note-taking, and can be self-hosted or stored locally.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-09",
+    "github_stars": 8481
+  },
+  "resources": {
+    "website": "https://tiddlywiki.com/",
+    "documentation": "https://github.com/TiddlyWiki/TiddlyWiki5",
+    "source_code": "https://github.com/TiddlyWiki/TiddlyWiki5",
+    "logo": "/icons/tiddlywiki.webp",
+    "issues": "https://github.com/TiddlyWiki/TiddlyWiki5/issues",
+    "releases": null,
+    "logo_light": "/icons/tiddlywiki-light.webp"
+  },
   "features": [
     "Single-file wiki: Store your entire wiki in a single HTML file that runs in any web browser.",
     "Nonlinear notes: Create interconnected notes with bidirectional links for knowledge graph-style organization.",
@@ -29,69 +38,45 @@
     "Export options: Export individual notes or entire wiki in various formats including HTML, Markdown, or JSON.",
     "Offline-first: Work completely offline with optional server sync for multi-device access."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

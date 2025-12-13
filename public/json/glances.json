@@ -1,20 +1,28 @@
 {
   "name": "glances",
   "slug": "glances",
+  "tagline": null,
+  "description": "Glances is a cross-platform system monitoring tool that displays real-time metrics in a TUI or web UI. It monitors CPU, memory, disk, and network metrics and includes a built-in REST API for remote data access.",
   "categories": [
     103
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/nicolargo/glances",
-  "website": "http://nicolargo.github.io/glances/",
-  "source_code": "github.com/nicolargo/glances",
-  "github_stars": "30880",
-  "logo": "/icons/glances.webp",
-  "description": "Glances is a cross-platform system monitoring tool that displays real-time metrics in a TUI or web UI. It monitors CPU, memory, disk, and network metrics and includes a built-in REST API for remote data access.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "v4.4.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-05",
+    "date_last_commit": "2025-12-09",
+    "github_stars": 30882
+  },
+  "resources": {
+    "website": "http://nicolargo.github.io/glances/",
+    "documentation": "https://github.com/nicolargo/glances",
+    "source_code": "https://github.com/nicolargo/glances",
+    "logo": "/icons/glances.webp",
+    "issues": "https://github.com/nicolargo/glances/issues",
+    "releases": "https://github.com/nicolargo/glances/releases"
+  },
   "features": [
     "Real-Time Monitoring: Track CPU, memory, disk, network, and process metrics with live updates.",
     "Multiple Interfaces: Access via terminal UI, web interface, or REST API for flexible monitoring.",
@@ -25,69 +33,45 @@
     "Plugin Architecture: Extend functionality with plugins for additional metrics and integrations.",
     "Remote Monitoring: Monitor multiple servers from a central dashboard via client-server mode."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

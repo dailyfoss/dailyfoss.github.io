@@ -1,20 +1,28 @@
 {
   "name": "positive-intentions-chat",
   "slug": "positive-intentions-chat",
+  "tagline": "",
+  "description": "Chat is a self-hosted messaging app with user accounts, channels, and real-time communication using WebSockets. It focuses on privacy and supports theming and file transfers through a modern UI.",
   "categories": [
     102
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/positive-intentions/chat",
-  "website": "github.com/positive-intentions/chat",
-  "source_code": "github.com/positive-intentions/chat",
-  "github_stars": "233",
-  "logo": "/icons/positive-intentions-chat.webp",
-  "description": "Chat is a self-hosted messaging app with user accounts, channels, and real-time communication using WebSockets. It focuses on privacy and supports theming and file transfers through a modern UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-11-14",
+    "github_stars": 233
+  },
+  "resources": {
+    "website": "https://chat.positive-intentions.com",
+    "documentation": "https://chat.positive-intentions.com",
+    "source_code": "https://github.com/positive-intentions/chat",
+    "logo": "/icons/positive-intentions-chat.webp",
+    "issues": "https://github.com/positive-intentions/chat/issues",
+    "releases": null
+  },
   "features": [
     "Real-time messaging: Send and receive messages instantly using WebSocket connections for live communication.",
     "Channel support: Create public or private channels for topic-based discussions and team collaboration.",
@@ -29,69 +37,45 @@
     "Direct messaging: Send private one-on-one messages outside of public channels.",
     "Message formatting: Format messages with Markdown for rich text, code blocks, and links."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

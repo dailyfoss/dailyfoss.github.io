@@ -1,20 +1,28 @@
 {
   "name": "filerise",
   "slug": "filerise",
+  "tagline": null,
+  "description": "FileRise is an online self-hosted document viewer and converter supporting office documents, PDFs, and images with export capabilities. Built for quick previewing and sharing across teams without relying on third-party services.",
   "categories": [
     165
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/error311/FileRise",
-  "website": "demo.filerise.net",
-  "source_code": "github.com/error311/FileRise",
-  "github_stars": "667",
-  "logo": "/icons/filerise.webp",
-  "description": "FileRise is an online self-hosted document viewer and converter supporting office documents, PDFs, and images with export capabilities. Built for quick previewing and sharing across teams without relying on third-party services.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v2.5.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-10",
+    "date_last_commit": "2025-12-10",
+    "github_stars": 668
+  },
+  "resources": {
+    "website": "https://demo.filerise.net",
+    "documentation": "https://github.com/error311/FileRise",
+    "source_code": "https://github.com/error311/FileRise",
+    "logo": "/icons/filerise.webp",
+    "issues": "https://github.com/error311/FileRise/issues",
+    "releases": "https://github.com/error311/FileRise/releases"
+  },
   "features": [
     "Document Viewer: Preview office documents and PDFs, Image viewing, Export capabilities. Quick document access without downloads.",
     "Format Support: Multiple document types. Universal compatibility.",
@@ -26,69 +34,45 @@
     "Annotations: Add comments and notes. Collaborative review.",
     "Version Control: Track document changes. History management."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "trip",
   "slug": "trip",
+  "tagline": null,
+  "description": "Trip is a self-hosted trip planning and travel log application. It helps organize itineraries, notes, and expenses for journeys, offering a convenient web UI for planning and documentation.",
   "categories": [
     96
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/itskovacs/trip",
-  "website": "itskovacs-trip.netlify.app/",
-  "source_code": "github.com/itskovacs/trip",
-  "github_stars": "708",
-  "logo": "/icons/trip.webp",
-  "description": "Trip is a self-hosted trip planning and travel log application. It helps organize itineraries, notes, and expenses for journeys, offering a convenient web UI for planning and documentation.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "1.34.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-28",
+    "date_last_commit": "2025-11-28",
+    "github_stars": 708
+  },
+  "resources": {
+    "website": "https://itskovacs-trip.netlify.app/",
+    "documentation": "https://github.com/itskovacs/trip",
+    "source_code": "https://github.com/itskovacs/trip",
+    "logo": "/icons/trip.webp",
+    "issues": "https://github.com/itskovacs/trip/issues",
+    "releases": "https://github.com/itskovacs/trip/releases"
+  },
   "features": [
     "Itinerary planning: Plan trip itineraries with activities, accommodations, and transportation details.",
     "Travel notes: Document travel experiences with notes, photos, and memories for each trip.",
@@ -29,69 +37,45 @@
     "Mobile access: Plan and document trips from mobile devices with a responsive interface.",
     "Privacy-focused: Keep all travel data on your own server with complete control."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

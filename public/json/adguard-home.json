@@ -1,20 +1,28 @@
 {
   "name": "adguard-home",
   "slug": "adguard-home",
+  "tagline": null,
+  "description": "AdGuard Home is a network-wide software for blocking ads and tracking, operating as a DNS server and providing a web-based interface to filter content for all devices on the network. It can be self-hosted and customized for family or enterprise networks.",
   "categories": [
     7
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/AdguardTeam/AdGuardHome",
-  "website": "adguard.com/adguard-home/overview.html",
-  "source_code": "github.com/AdguardTeam/AdGuardHome",
-  "github_stars": "31380",
-  "logo": "/icons/adguard-home.webp",
-  "description": "AdGuard Home is a network-wide software for blocking ads and tracking, operating as a DNS server and providing a web-based interface to filter content for all devices on the network. It can be self-hosted and customized for family or enterprise networks.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v0.107.71",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-08",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 31386
+  },
+  "resources": {
+    "website": "https://adguard.com/adguard-home/overview.html",
+    "documentation": "https://github.com/AdguardTeam/AdGuardHome",
+    "source_code": "https://github.com/AdguardTeam/AdGuardHome",
+    "logo": "/icons/adguard-home.webp",
+    "issues": "https://github.com/AdguardTeam/AdGuardHome/issues",
+    "releases": "https://github.com/AdguardTeam/AdGuardHome/releases"
+  },
   "features": [
     "Network-Wide Protection: Block ads and trackers for all devices from one location. Protect your entire home or office.",
     "Web Management: Intuitive interface for configuring DNS and filtering settings. Control everything from your browser.",
@@ -25,69 +33,45 @@
     "Encrypted DNS: Support for DNS-over-HTTPS, DNS-over-TLS, and DNSCrypt. Enhanced privacy and security.",
     "Cross-Platform: Install on Linux, Windows, macOS, or any compatible system. Works everywhere."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "paperless-ai",
   "slug": "paperless-ai",
+  "tagline": null,
+  "description": "Paperless AI is an enhanced fork of Paperless designed for intelligent document scanning, OCR, and metadata tagging, enabling smarter search over digitized documents in a self-hosted setup.",
   "categories": [
     48
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/clusterzx/paperless-ai",
-  "website": "clusterzx.github.io/paperless-ai/",
-  "source_code": "github.com/clusterzx/paperless-ai",
-  "github_stars": "4719",
-  "logo": "/icons/paperless-ai.webp",
-  "description": "Paperless AI is an enhanced fork of Paperless designed for intelligent document scanning, OCR, and metadata tagging, enabling smarter search over digitized documents in a self-hosted setup.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v3.0.9",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-04",
+    "date_last_commit": "2025-12-02",
+    "github_stars": 4721
+  },
+  "resources": {
+    "website": "https://clusterzx.github.io/paperless-ai/",
+    "documentation": "https://github.com/clusterzx/paperless-ai",
+    "source_code": "https://github.com/clusterzx/paperless-ai",
+    "logo": "/icons/paperless-ai.webp",
+    "issues": "https://github.com/clusterzx/paperless-ai/issues",
+    "releases": "https://github.com/clusterzx/paperless-ai/releases"
+  },
   "features": [
     "AI-powered OCR: Advanced optical character recognition with machine learning extracts text from scanned documents with high accuracy",
     "Intelligent tagging: Automatic metadata extraction and tag suggestions based on document content to improve organization",
@@ -27,69 +35,45 @@
     "Secure storage: Encrypted document storage with access controls ensures sensitive information remains protected",
     "API integration: RESTful API enables integration with other systems for automated document submission and retrieval"
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

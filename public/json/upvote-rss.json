@@ -1,20 +1,28 @@
 {
   "name": "upvote-rss",
   "slug": "upvote-rss",
+  "tagline": null,
+  "description": "Upvote RSS is a self-hosted platform that turns RSS feeds into a link-sharing site with voting and discussion, similar to a lightweight social news or Hacker News clone.",
   "categories": [
     129
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/johnwarne/upvote-rss",
-  "website": "www.upvote-rss.com/",
-  "source_code": "github.com/johnwarne/upvote-rss",
-  "github_stars": "357",
-  "logo": "/icons/upvote-rss.webp",
-  "description": "Upvote RSS is a self-hosted platform that turns RSS feeds into a link-sharing site with voting and discussion, similar to a lightweight social news or Hacker News clone.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v1.8.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-22",
+    "date_last_commit": "2025-09-22",
+    "github_stars": 361
+  },
+  "resources": {
+    "website": "https://www.upvote-rss.com/",
+    "documentation": "https://github.com/johnwarne/upvote-rss",
+    "source_code": "https://github.com/johnwarne/upvote-rss",
+    "logo": "/icons/upvote-rss.webp",
+    "issues": "https://github.com/johnwarne/upvote-rss/issues",
+    "releases": "https://github.com/johnwarne/upvote-rss/releases"
+  },
   "features": [
     "RSS aggregation: Import content from RSS feeds automatically for community discussion.",
     "Voting system: Let users upvote and downvote content to surface the best articles.",
@@ -29,69 +37,45 @@
     "Privacy-focused: Host your own link aggregator without relying on third-party platforms.",
     "Lightweight: Run efficiently with minimal resources for personal or small community use."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

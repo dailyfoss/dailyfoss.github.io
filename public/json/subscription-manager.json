@@ -1,20 +1,28 @@
 {
   "name": "subscription-manager",
   "slug": "subscription-manager",
+  "tagline": null,
+  "description": "subscription-manager is a self-hosted tool for tracking subscriptions and recurring payments. It monitors renewal dates and costs with reminders and summaries.",
   "categories": [
     121
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/dh1011/subscription-manager",
-  "website": "github.com/dh1011/subscription-manager",
-  "source_code": "github.com/dh1011/subscription-manager",
-  "github_stars": "285",
-  "logo": "/icons/subscription-manager.webp",
-  "description": "subscription-manager is a self-hosted tool for tracking subscriptions and recurring payments. It monitors renewal dates and costs with reminders and summaries.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "2.0.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-01-20",
+    "date_last_commit": "2025-09-20",
+    "github_stars": 286
+  },
+  "resources": {
+    "website": "https://github.com/dh1011/subscription-manager",
+    "documentation": "https://github.com/dh1011/subscription-manager",
+    "source_code": "https://github.com/dh1011/subscription-manager",
+    "logo": "/icons/subscription-manager.webp",
+    "issues": "https://github.com/dh1011/subscription-manager/issues",
+    "releases": "https://github.com/dh1011/subscription-manager/releases"
+  },
   "features": [
     "Subscription tracking: Records all recurring subscriptions and memberships.",
     "Renewal reminders: Alerts before subscription renewals to avoid unwanted charges.",
@@ -29,69 +37,45 @@
     "Sharing options: Tracks shared subscriptions and splits costs.",
     "Mobile responsive: Manages subscriptions from smartphones and tablets."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

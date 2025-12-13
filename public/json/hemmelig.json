@@ -1,20 +1,28 @@
 {
   "name": "hemmelig",
   "slug": "hemmelig",
+  "tagline": null,
+  "description": "Hemmelig is a self hosted secret sharing application for sending encrypted notes that expire after viewing or a set time. It is useful for delivering passwords or confidential messages without leaving data on third party services.",
   "categories": [
     117
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/HemmeligOrg/Hemmelig.app",
-  "website": "hemmelig.app",
-  "source_code": "github.com/HemmeligOrg/Hemmelig.app",
-  "github_stars": "1013",
-  "logo": "/icons/hemmelig.webp",
-  "description": "Hemmelig is a self hosted secret sharing application for sending encrypted notes that expire after viewing or a set time. It is useful for delivering passwords or confidential messages without leaving data on third party services.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "v7.0.13",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-12",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 1025
+  },
+  "resources": {
+    "website": "https://hemmelig.app",
+    "documentation": "https://github.com/HemmeligOrg/Hemmelig.app",
+    "source_code": "https://github.com/HemmeligOrg/Hemmelig.app",
+    "logo": "/icons/hemmelig.webp",
+    "issues": "https://github.com/HemmeligOrg/Hemmelig.app/issues",
+    "releases": "https://github.com/HemmeligOrg/Hemmelig.app/releases"
+  },
   "features": [
     "Encrypted Sharing: Share secrets with end-to-end encryption for maximum security.",
     "Auto-Expiration: Set secrets to expire after being viewed once or after a time limit.",
@@ -25,69 +33,45 @@
     "Custom Expiry: Set flexible expiration times from minutes to days.",
     "Self-Hosted Security: Keep sensitive data on your own infrastructure without third-party access."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

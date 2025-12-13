@@ -1,20 +1,28 @@
 {
   "name": "oauth2-proxy",
   "slug": "oauth2-proxy",
+  "tagline": null,
+  "description": "OAuth2 Proxy is a reverse proxy that provides authentication using OAuth2 providers like Google or GitHub. It sits in front of apps to enforce login without modifying their code; suitable for self-hosted setups.",
   "categories": [
     15
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/oauth2-proxy/oauth2-proxy",
-  "website": "oauth2-proxy.github.io/oauth2-proxy",
-  "source_code": "github.com/oauth2-proxy/oauth2-proxy",
-  "github_stars": "13423",
-  "logo": "/icons/oauth2-proxy.webp",
-  "description": "OAuth2 Proxy is a reverse proxy that provides authentication using OAuth2 providers like Google or GitHub. It sits in front of apps to enforce login without modifying their code; suitable for self-hosted setups.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v7.13.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-08",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 13424
+  },
+  "resources": {
+    "website": "https://oauth2-proxy.github.io/oauth2-proxy",
+    "documentation": "https://github.com/oauth2-proxy/oauth2-proxy",
+    "source_code": "https://github.com/oauth2-proxy/oauth2-proxy",
+    "logo": "/icons/oauth2-proxy.webp",
+    "issues": "https://github.com/oauth2-proxy/oauth2-proxy/issues",
+    "releases": "https://github.com/oauth2-proxy/oauth2-proxy/releases"
+  },
   "features": [
     "OAuth2 authentication: Protect applications by requiring login through Google, GitHub, GitLab, or other OAuth providers.",
     "Reverse proxy: Sit in front of existing applications to add authentication without modifying their source code.",
@@ -25,69 +33,45 @@
     "TLS termination: Handle HTTPS connections and certificate management at the proxy layer for simplified deployment.",
     "Kubernetes integration: Deploy as an ingress controller or sidecar container for cloud-native authentication patterns."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

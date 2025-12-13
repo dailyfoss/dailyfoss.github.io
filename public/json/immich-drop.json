@@ -1,20 +1,28 @@
 {
   "name": "immich-drop",
   "slug": "immich-drop",
+  "tagline": null,
+  "description": "Immich Drop is a simple upload portal for Immich that allows guests to bulk upload photos into a specified album without needing full accounts. It is handy for events or shared collections where many people contribute media.",
   "categories": [
     61
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Nasogaa/immich-drop",
-  "website": "github.com/Nasogaa/immich-drop",
-  "source_code": "github.com/Nasogaa/immich-drop",
-  "github_stars": "431",
-  "logo": "/icons/immich-drop.webp",
-  "description": "Immich Drop is a simple upload portal for Immich that allows guests to bulk upload photos into a specified album without needing full accounts. It is handy for events or shared collections where many people contribute media.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.5.0-beta",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-03",
+    "date_last_commit": "2025-10-03",
+    "github_stars": 432
+  },
+  "resources": {
+    "website": "https://github.com/Nasogaa/immich-drop",
+    "documentation": "https://github.com/Nasogaa/immich-drop",
+    "source_code": "https://github.com/Nasogaa/immich-drop",
+    "logo": "/icons/immich-drop.webp",
+    "issues": "https://github.com/Nasogaa/immich-drop/issues",
+    "releases": "https://github.com/Nasogaa/immich-drop/releases"
+  },
   "features": [
     "Guest Uploads: Allow guests to upload photos without creating Immich accounts.",
     "Bulk Upload: Support multiple file uploads simultaneously for efficient collection.",
@@ -25,69 +33,45 @@
     "Immich Integration: Seamlessly adds photos to your existing Immich library.",
     "Privacy Control: Maintain control over who can upload and which albums receive photos."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

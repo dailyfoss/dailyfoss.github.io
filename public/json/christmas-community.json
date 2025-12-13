@@ -1,20 +1,28 @@
 {
   "name": "christmas-community",
   "slug": "christmas-community",
+  "tagline": null,
+  "description": "Christmas Community is a self-hosted advent calendar and holiday activity tracker platform. It includes user submissions, countdowns, and decorated layouts designed for hosting community-driven holiday content.",
   "categories": [
     148
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Wingysam/Christmas-Community",
-  "website": "github.com/Wingysam/Christmas-Community",
-  "source_code": "github.com/Wingysam/Christmas-Community",
-  "github_stars": "392",
-  "logo": "/icons/christmas-community.webp",
-  "description": "Christmas Community is a self-hosted advent calendar and holiday activity tracker platform. It includes user submissions, countdowns, and decorated layouts designed for hosting community-driven holiday content.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-10-10",
+    "github_stars": 392
+  },
+  "resources": {
+    "website": "https://github.com/Wingysam/Christmas-Community",
+    "documentation": "https://github.com/Wingysam/Christmas-Community",
+    "source_code": "https://github.com/Wingysam/Christmas-Community",
+    "logo": "/icons/christmas-community.webp",
+    "issues": "https://github.com/Wingysam/Christmas-Community/issues",
+    "releases": null
+  },
   "features": [
     "Advent Calendar: Digital advent calendar for holiday activities. Festive countdown.",
     "User Submissions: Community-driven holiday content. Collaborative celebration.",
@@ -23,69 +31,45 @@
     "Community Platform: Host holiday activities for groups. Shared traditions.",
     "Self-Hosted: Run your own holiday community. Complete control."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

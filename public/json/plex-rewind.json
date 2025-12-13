@@ -1,20 +1,28 @@
 {
   "name": "plex-rewind",
   "slug": "plex-rewind",
+  "tagline": null,
+  "description": "Plex-Rewind is a self-hosted tool that generates recap clips from shows in Plex. It extracts key scenes to create summaries, helping viewers refresh before watching the next episode.",
   "categories": [
     100
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/RaunoT/plex-rewind",
-  "website": "github.com/RaunoT/plex-rewind",
-  "source_code": "github.com/RaunoT/plex-rewind",
-  "github_stars": "268",
-  "logo": "/icons/plex-rewind.webp",
-  "description": "Plex-Rewind is a self-hosted tool that generates recap clips from shows in Plex. It extracts key scenes to create summaries, helping viewers refresh before watching the next episode.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v5.1.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-04",
+    "date_last_commit": "2025-12-06",
+    "github_stars": 268
+  },
+  "resources": {
+    "website": "https://github.com/RaunoT/plex-rewind",
+    "documentation": "https://github.com/RaunoT/plex-rewind",
+    "source_code": "https://github.com/RaunoT/plex-rewind",
+    "logo": "/icons/plex-rewind.webp",
+    "issues": "https://github.com/RaunoT/plex-rewind/issues",
+    "releases": "https://github.com/RaunoT/plex-rewind/releases"
+  },
   "features": [
     "Recap generation: Automatically create recap videos from previous episodes of TV shows.",
     "Scene extraction: Identify and extract key scenes from episodes for summary content.",
@@ -29,69 +37,45 @@
     "Metadata integration: Add recap videos to Plex with proper metadata and thumbnails.",
     "Scheduling: Set up automated recap generation on a schedule for new content."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,89 +1,73 @@
 {
   "name": "linkwarden",
   "slug": "linkwarden",
+  "tagline": null,
+  "description": "Linkwarden is a modern, self-hosted bookmarking and archiving tool. It takes snapshots of pages (PDF/web archive), stores metadata, and offers search and tagging—ideal for researchers, writers, and web archivers.",
   "categories": [
     20
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/linkwarden/linkwarden",
-  "website": "linkwarden.app",
-  "source_code": "github.com/linkwarden/linkwarden",
-  "github_stars": "16203",
-  "logo": "/icons/linkwarden.webp",
-  "description": "Linkwarden is a modern, self-hosted bookmarking and archiving tool. It takes snapshots of pages (PDF/web archive), stores metadata, and offers search and tagging—ideal for researchers, writers, and web archivers.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v2.13.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-11",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 16219
+  },
+  "resources": {
+    "website": "https://linkwarden.app",
+    "documentation": "https://github.com/linkwarden/linkwarden",
+    "source_code": "https://github.com/linkwarden/linkwarden",
+    "logo": "/icons/linkwarden.webp",
+    "issues": "https://github.com/linkwarden/linkwarden/issues",
+    "releases": "https://github.com/linkwarden/linkwarden/releases"
+  },
   "features": [
     "Page Archiving: PDF snapshots, Web archives, Permanent storage. Preserve web content forever.",
     "Metadata Extraction: Automatic tagging, Full-text search, Rich previews. Find archived content easily.",
     "Research Tools: Collections, Annotations, Sharing. Perfect for researchers and writers.",
     "Modern Interface: Clean design, Fast search, Mobile-friendly. Beautiful bookmark management."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

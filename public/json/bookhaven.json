@@ -1,20 +1,29 @@
 {
   "name": "bookhaven",
   "slug": "bookhaven",
+  "tagline": "",
+  "description": "BookHaven is a self-hosted eBook library designed to organize and manage digital books. It offers an intuitive web interface for browsing, filtering, and tracking reading progress and integrates with OPDS readers.",
   "categories": [
     21
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/HrBingR/BookHaven",
-  "website": "github.com/HrBingR/BookHaven",
-  "source_code": "github.com/HrBingR/BookHaven",
-  "github_stars": "108",
-  "logo": "/icons/bookhaven.webp",
-  "description": "BookHaven is a self-hosted eBook library designed to organize and manage digital books. It offers an intuitive web interface for browsing, filtering, and tracking reading progress and integrates with OPDS readers.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-11-23",
+    "github_stars": 108
+  },
+  "resources": {
+    "website": null,
+    "documentation": null,
+    "source_code": "https://github.com/HrBingR/BookHaven",
+    "logo": "/icons/bookhaven.webp",
+    "issues": "https://github.com/HrBingR/BookHaven/issues",
+    "releases": null,
+    "logo_light": "/icons/bookhaven-light.webp"
+  },
   "features": [
     "eBook Library: Organize and manage your digital book collection. Complete cataloging.",
     "Web Interface: Intuitive browsing and filtering through web UI. Easy navigation.",
@@ -25,69 +34,45 @@
     "Self-Hosted: Keep your library private on your own server. Complete ownership.",
     "Multi-Format: Support for various eBook formats. Flexible compatibility."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

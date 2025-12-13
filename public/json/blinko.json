@@ -1,20 +1,28 @@
 {
   "name": "blinko",
   "slug": "blinko",
+  "tagline": null,
+  "description": "Blinko is a privacy-first, plain text note-taking and publishing tool that organizes content as markdown files. It focuses on fast writing, local storage, and simple publishing, ideal for journals, blogs, and personal portfolios.",
   "categories": [
     111
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/blinkospace/blinko",
-  "website": "blinko.space",
-  "source_code": "github.com/blinkospace/blinko",
-  "github_stars": "7533",
-  "logo": "/icons/blinko.webp",
-  "description": "Blinko is a privacy-first, plain text note-taking and publishing tool that organizes content as markdown files. It focuses on fast writing, local storage, and simple publishing, ideal for journals, blogs, and personal portfolios.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "1.7.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-01",
+    "date_last_commit": "2025-12-01",
+    "github_stars": 7535
+  },
+  "resources": {
+    "website": "https://blinko.space",
+    "documentation": "https://github.com/blinkospace/blinko",
+    "source_code": "https://github.com/blinkospace/blinko",
+    "logo": "/icons/blinko.webp",
+    "issues": "https://github.com/blinkospace/blinko/issues",
+    "releases": "https://github.com/blinkospace/blinko/releases"
+  },
   "features": [
     "Plain Text Notes: Write and organize notes in markdown format. Simple and portable.",
     "Privacy-First: Local storage keeps your notes completely private. No cloud dependency.",
@@ -25,69 +33,45 @@
     "Local Files: Notes stored as plain markdown files. Easy backup and migration.",
     "Lightweight: Fast, responsive performance without bloat. Efficient design."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": true,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": true,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

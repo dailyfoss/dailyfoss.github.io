@@ -1,20 +1,28 @@
 {
   "name": "cypht",
   "slug": "cypht",
+  "tagline": null,
+  "description": "Cypht is a lightweight, browser-based email client that supports IMAP, SMTP, and multiple accounts. It offers unified inboxes, module-based views, and customization for self-hosted or remote deployment.",
   "categories": [
     53
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/cypht-org/cypht",
-  "website": "http://cypht.org",
-  "source_code": "github.com/cypht-org/cypht",
-  "github_stars": "1376",
-  "logo": "/icons/cypht.webp",
-  "description": "Cypht is a lightweight, browser-based email client that supports IMAP, SMTP, and multiple accounts. It offers unified inboxes, module-based views, and customization for self-hosted or remote deployment.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "LGPL-2.1",
+    "version": "v2.5.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-10",
+    "date_last_commit": "2025-12-10",
+    "github_stars": 1377
+  },
+  "resources": {
+    "website": "http://cypht.org",
+    "documentation": "https://github.com/cypht-org/cypht",
+    "source_code": "https://github.com/cypht-org/cypht",
+    "logo": "/icons/cypht.webp",
+    "issues": "https://github.com/cypht-org/cypht/issues",
+    "releases": "https://github.com/cypht-org/cypht/releases"
+  },
   "features": [
     "Multi-Account Support: Manage multiple email accounts in one place. Unified inbox experience.",
     "IMAP & SMTP: Full protocol support for sending and receiving. Universal compatibility.",
@@ -23,69 +31,45 @@
     "Browser-Based: Access email from any device with a browser. No client installation.",
     "Self-Hosted: Complete control over your email interface. Privacy-focused solution."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

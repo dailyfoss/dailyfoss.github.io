@@ -1,20 +1,29 @@
 {
   "name": "commafeed",
   "slug": "commafeed",
+  "tagline": "",
+  "description": "CommaFeed is a self-hosted RSS feed reader and Google Reader replacement. It provides categories, filtering, sharing, and a sleek UI with mobile support. Designed for users who want to keep control of their news feeds.",
   "categories": [
     57
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Athou/commafeed",
-  "website": "www.commafeed.com",
-  "source_code": "github.com/Athou/commafeed",
-  "github_stars": "3296",
-  "logo": "/icons/commafeed.webp",
-  "description": "CommaFeed is a self-hosted RSS feed reader and Google Reader replacement. It provides categories, filtering, sharing, and a sleek UI with mobile support. Designed for users who want to keep control of their news feeds.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "5.12.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-20",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 3296
+  },
+  "resources": {
+    "website": "https://www.commafeed.com",
+    "documentation": "https://www.commafeed.com",
+    "source_code": "https://github.com/Athou/commafeed",
+    "logo": "/icons/commafeed.webp",
+    "issues": "https://github.com/Athou/commafeed/issues",
+    "releases": "https://github.com/Athou/commafeed/releases",
+    "logo_light": "/icons/commafeed-light.webp"
+  },
   "features": [
     "Google Reader Replacement: Familiar interface for former Google Reader users. Smooth transition guaranteed.",
     "Category Organization: Group feeds into custom categories for easy navigation. Stay organized effortlessly.",
@@ -23,69 +32,45 @@
     "Sharing Features: Share interesting articles with friends and colleagues. Built-in social features.",
     "Self-Hosted: Own your news feed data and reading history. Complete privacy control."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

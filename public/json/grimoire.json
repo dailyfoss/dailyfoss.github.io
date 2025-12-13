@@ -1,20 +1,28 @@
 {
   "name": "grimoire",
   "slug": "grimoire",
+  "tagline": null,
+  "description": "Grimoire is a self-hosted note-taking and wiki platform for medieval or fantasy-style digital journaling. It supports markdown, tagging, linking, and timelines through a storytelling-oriented interface.",
   "categories": [
     111
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/goniszewski/grimoire",
-  "website": "grimoire.pro",
-  "source_code": "github.com/goniszewski/grimoire",
-  "github_stars": "2676",
-  "logo": "/icons/grimoire.webp",
-  "description": "Grimoire is a self-hosted note-taking and wiki platform for medieval or fantasy-style digital journaling. It supports markdown, tagging, linking, and timelines through a storytelling-oriented interface.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.5.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-02-21",
+    "date_last_commit": "2025-06-25",
+    "github_stars": 2676
+  },
+  "resources": {
+    "website": "https://grimoire.pro",
+    "documentation": "https://github.com/goniszewski/grimoire",
+    "source_code": "https://github.com/goniszewski/grimoire",
+    "logo": "/icons/grimoire.webp",
+    "issues": "https://github.com/goniszewski/grimoire/issues",
+    "releases": "https://github.com/goniszewski/grimoire/releases"
+  },
   "features": [
     "Bookmark Management: Save and organize web bookmarks with tags, descriptions, and full-text search.",
     "Link Archiving: Automatically capture webpage snapshots to preserve content even if originals disappear.",
@@ -25,69 +33,45 @@
     "Sharing Options: Share bookmark collections publicly or with specific users.",
     "Self-Hosted Privacy: Keep your browsing history and bookmarks on your own infrastructure."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

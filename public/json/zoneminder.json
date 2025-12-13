@@ -1,20 +1,28 @@
 {
   "name": "zoneminder",
   "slug": "zoneminder",
+  "tagline": null,
+  "description": "ZoneMinder is a self-hosted video surveillance system. It captures, monitors, and analyzes video from cameras, supports motion detection and alerting, and exposes a web UI for configuration and viewing.",
   "categories": [
     107
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/ZoneMinder/zoneminder",
-  "website": "http://www.zoneminder.com/",
-  "source_code": "github.com/ZoneMinder/zoneminder",
-  "github_stars": "5694",
-  "logo": "/icons/zoneminder.webp",
-  "description": "ZoneMinder is a self-hosted video surveillance system. It captures, monitors, and analyzes video from cameras, supports motion detection and alerting, and exposes a web UI for configuration and viewing.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-2.0",
+    "version": "1.36.36",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-03",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 5694
+  },
+  "resources": {
+    "website": "http://www.zoneminder.com/",
+    "documentation": "https://github.com/ZoneMinder/zoneminder",
+    "source_code": "https://github.com/ZoneMinder/zoneminder",
+    "logo": "/icons/zoneminder.webp",
+    "issues": "https://github.com/ZoneMinder/zoneminder/issues",
+    "releases": "https://github.com/ZoneMinder/zoneminder/releases"
+  },
   "features": [
     "Camera support: Connect IP cameras, USB webcams, and analog cameras through capture cards with broad protocol support.",
     "Motion detection: Automatically detect movement in camera feeds and trigger recording or alerts based on sensitivity settings.",
@@ -29,69 +37,45 @@
     "Mobile access: View live feeds and recorded events from mobile devices using responsive web interface or apps.",
     "API integration: Automate camera control and event retrieval using REST API for home automation systems."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

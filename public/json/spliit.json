@@ -1,20 +1,28 @@
 {
   "name": "spliit",
   "slug": "spliit",
+  "tagline": null,
+  "description": "Spliit is a self-hosted bill splitting and expense sharing app for groups. It helps track balances, settlements, and shared purchases through a tidy web UI.",
   "categories": [
     115
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/spliit-app/spliit",
-  "website": "spliit.app",
-  "source_code": "github.com/spliit-app/spliit",
-  "github_stars": "2373",
-  "logo": "/icons/spliit.webp",
-  "description": "Spliit is a self-hosted bill splitting and expense sharing app for groups. It helps track balances, settlements, and shared purchases through a tidy web UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "1.19.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-06",
+    "date_last_commit": "2025-12-06",
+    "github_stars": 2374
+  },
+  "resources": {
+    "website": "https://spliit.app",
+    "documentation": "https://github.com/spliit-app/spliit",
+    "source_code": "https://github.com/spliit-app/spliit",
+    "logo": "/icons/spliit.webp",
+    "issues": "https://github.com/spliit-app/spliit/issues",
+    "releases": "https://github.com/spliit-app/spliit/releases"
+  },
   "features": [
     "Expense splitting: Divides bills and expenses among group members.",
     "Group management: Creates groups for trips, roommates, or shared expenses.",
@@ -29,69 +37,45 @@
     "Email notifications: Alerts members when expenses are added or settled.",
     "Mobile friendly: Manages expenses from smartphones and tablets."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

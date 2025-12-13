@@ -1,20 +1,28 @@
 {
   "name": "solidinvoice",
   "slug": "solidinvoice",
+  "tagline": null,
+  "description": "SolidInvoice is a self-hosted invoicing and billing application for freelancers and small businesses. It supports quotes, recurring invoices, payments, and client management.",
   "categories": [
     51
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/SolidInvoice/SolidInvoice",
-  "website": "solidinvoice.co",
-  "source_code": "github.com/SolidInvoice/SolidInvoice",
-  "github_stars": "829",
-  "logo": "/icons/solidinvoice.webp",
-  "description": "SolidInvoice is a self-hosted invoicing and billing application for freelancers and small businesses. It supports quotes, recurring invoices, payments, and client management.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "2.3.11",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-09",
+    "date_last_commit": "2025-12-09",
+    "github_stars": 829
+  },
+  "resources": {
+    "website": "https://solidinvoice.co",
+    "documentation": "https://github.com/SolidInvoice/SolidInvoice",
+    "source_code": "https://github.com/SolidInvoice/SolidInvoice",
+    "logo": "/icons/solidinvoice.webp",
+    "issues": "https://github.com/SolidInvoice/SolidInvoice/issues",
+    "releases": "https://github.com/SolidInvoice/SolidInvoice/releases"
+  },
   "features": [
     "Invoice creation: Generates professional invoices with customizable templates.",
     "Quote management: Creates quotes that convert to invoices upon acceptance.",
@@ -29,69 +37,45 @@
     "Email notifications: Sends invoice and payment reminders automatically.",
     "Reporting: Generates financial reports for income, expenses, and taxes."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

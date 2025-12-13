@@ -1,20 +1,28 @@
 {
   "name": "openspeedtest",
   "slug": "openspeedtest",
+  "tagline": null,
+  "description": "OpenSpeedTest is a self-hosted internet speed test tool with a responsive web interface. It measures download, upload, and latency through your browser without plugins or dependencies.",
   "categories": [
     150
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/openspeedtest/Speed-Test",
-  "website": "openspeedtest.com",
-  "source_code": "github.com/openspeedtest/Speed-Test",
-  "github_stars": "3246",
-  "logo": "/icons/openspeedtest.webp",
-  "description": "OpenSpeedTest is a self-hosted internet speed test tool with a responsive web interface. It measures download, upload, and latency through your browser without plugins or dependencies.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2024-06-04",
+    "github_stars": 3246
+  },
+  "resources": {
+    "website": "https://openspeedtest.com",
+    "documentation": "https://github.com/openspeedtest/Speed-Test",
+    "source_code": "https://github.com/openspeedtest/Speed-Test",
+    "logo": "/icons/openspeedtest.webp",
+    "issues": "https://github.com/openspeedtest/Speed-Test/issues",
+    "releases": "https://github.com/openspeedtest/Speed-Test/releases"
+  },
   "features": [
     "Speed Testing: Measure internet download and upload speeds directly through your web browser without plugins.",
     "Latency Measurement: Test network latency and ping times to assess connection quality and responsiveness.",
@@ -29,69 +37,45 @@
     "Multi-server Testing: Test against multiple servers simultaneously to identify the best connection paths.",
     "Privacy Focused: No external dependencies or data collection, ensuring complete privacy for network testing."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

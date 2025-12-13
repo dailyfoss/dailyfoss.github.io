@@ -1,20 +1,28 @@
 {
   "name": "dynamodb-dashboard",
   "slug": "dynamodb-dashboard",
+  "tagline": null,
+  "description": "DynamoDB Dashboard is a web UI for visualizing and inspecting AWS DynamoDB tables. It helps developers browse items, run queries, and understand data structures without relying solely on the AWS console.",
   "categories": [
     39
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/kritish-dhaubanjar/dynamodb-dashboard",
-  "website": "github.com/kritish-dhaubanjar/dynamodb-dashboard",
-  "source_code": "github.com/kritish-dhaubanjar/dynamodb-dashboard",
-  "github_stars": "48",
-  "logo": "/icons/dynamodb-dashboard.webp",
-  "description": "DynamoDB Dashboard is a web UI for visualizing and inspecting AWS DynamoDB tables. It helps developers browse items, run queries, and understand data structures without relying solely on the AWS console.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v1.24.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-23",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 48
+  },
+  "resources": {
+    "website": "https://github.com/kritish-dhaubanjar/dynamodb-dashboard",
+    "documentation": "https://github.com/kritish-dhaubanjar/dynamodb-dashboard",
+    "source_code": "https://github.com/kritish-dhaubanjar/dynamodb-dashboard",
+    "logo": "/icons/dynamodb-dashboard.webp",
+    "issues": "https://github.com/kritish-dhaubanjar/dynamodb-dashboard/issues",
+    "releases": "https://github.com/kritish-dhaubanjar/dynamodb-dashboard/releases"
+  },
   "features": [
     "Table browsing: View all DynamoDB tables in your AWS account with item counts and key schema information.",
     "Item inspection: Browse table contents with pagination and view individual items with all attributes displayed.",
@@ -25,69 +33,45 @@
     "Local development: Test against DynamoDB Local or production tables from a unified interface during development.",
     "Lightweight deployment: Run as a simple web application without heavy dependencies or complex setup requirements."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

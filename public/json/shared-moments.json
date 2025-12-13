@@ -1,20 +1,28 @@
 {
   "name": "shared-moments",
   "slug": "shared-moments",
+  "tagline": "",
+  "description": "SharedMoments is a self-hosted web app for couples to privately collect and relive photos, videos, and milestones. It supports galleries, timelines, countdowns, and shared lists in a romantic, tailored interface.",
   "categories": [
     120
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/tech-kev/SharedMoments",
-  "website": "github.com/tech-kev/SharedMoments",
-  "source_code": "github.com/tech-kev/SharedMoments",
-  "github_stars": "62",
-  "logo": "/icons/shared-moments.webp",
-  "description": "SharedMoments is a self-hosted web app for couples to privately collect and relive photos, videos, and milestones. It supports galleries, timelines, countdowns, and shared lists in a romantic, tailored interface.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v1.3.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-08-08",
+    "date_last_commit": "2024-08-08",
+    "github_stars": 62
+  },
+  "resources": {
+    "website": null,
+    "documentation": null,
+    "source_code": "https://github.com/tech-kev/SharedMoments",
+    "logo": "/icons/shared-moments.webp",
+    "issues": "https://github.com/tech-kev/SharedMoments/issues",
+    "releases": "https://github.com/tech-kev/SharedMoments/releases"
+  },
   "features": [
     "Photo galleries: Upload and organize photos in private albums for couples.",
     "Video storage: Store and play video memories with secure, private access.",
@@ -29,69 +37,45 @@
     "Export options: Download your memories for backup or printing.",
     "Romantic themes: Customizable interface with couple-focused design elements."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "owncloud-infinite-scale",
   "slug": "owncloud-infinite-scale",
+  "tagline": null,
+  "description": "OCIS (OwnCloud Infinite Scale) is a modern, scalable, self-hosted file synchronization and collaboration platform. It’s built in Go and offers advanced permissions, sharing, and cloud-native architecture.",
   "categories": [
     27
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/owncloud/ocis",
-  "website": "doc.owncloud.com/ocis/next/",
-  "source_code": "github.com/owncloud/ocis",
-  "github_stars": "1824",
-  "logo": "/icons/owncloud-infinite-scale.webp",
-  "description": "OCIS (OwnCloud Infinite Scale) is a modern, scalable, self-hosted file synchronization and collaboration platform. It’s built in Go and offers advanced permissions, sharing, and cloud-native architecture.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v7.3.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-25",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 1824
+  },
+  "resources": {
+    "website": "https://doc.owncloud.com/ocis/next/",
+    "documentation": "https://github.com/owncloud/ocis",
+    "source_code": "https://github.com/owncloud/ocis",
+    "logo": "/icons/owncloud-infinite-scale.webp",
+    "issues": "https://github.com/owncloud/ocis/issues",
+    "releases": "https://github.com/owncloud/ocis/releases"
+  },
   "features": [
     "File synchronization: Keep files in sync across desktop and mobile devices with automatic conflict resolution.",
     "Advanced sharing: Share files and folders with granular permissions including expiration dates and password protection.",
@@ -25,69 +33,45 @@
     "Mobile apps: Access and sync files from iOS and Android devices with native applications for offline use.",
     "API access: Integrate with custom applications using WebDAV and REST APIs for programmatic file management."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

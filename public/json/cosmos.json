@@ -1,20 +1,28 @@
 {
   "name": "cosmos-server",
   "slug": "cosmos",
+  "tagline": null,
+  "description": "Cosmos Server is a self-hosted platform that provides a lightweight framework for building and hosting AI-powered services. It simplifies deploying web services using containers with an elegant UI.",
   "categories": [
     34
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/azukaar/Cosmos-Server",
-  "website": "cosmos-cloud.io",
-  "source_code": "github.com/azukaar/Cosmos-Server",
-  "github_stars": "5284",
-  "logo": "/icons/cosmos.webp",
-  "description": "Cosmos Server is a self-hosted platform that provides a lightweight framework for building and hosting AI-powered services. It simplifies deploying web services using containers with an elegant UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "v0.18.4",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-04-05",
+    "date_last_commit": "2025-11-05",
+    "github_stars": 5285
+  },
+  "resources": {
+    "website": "https://cosmos-cloud.io",
+    "documentation": "https://github.com/azukaar/Cosmos-Server",
+    "source_code": "https://github.com/azukaar/Cosmos-Server",
+    "logo": "/icons/cosmos.webp",
+    "issues": "https://github.com/azukaar/Cosmos-Server/issues",
+    "releases": "https://github.com/azukaar/Cosmos-Server/releases"
+  },
   "features": [
     "Container Management: Deploy and manage Docker containers with ease. Simplified orchestration.",
     "Elegant UI: Beautiful interface for service management. Intuitive and modern design.",
@@ -23,69 +31,45 @@
     "Web Services: Host websites, APIs, and applications effortlessly. All-in-one solution.",
     "Self-Hosted: Complete control over your service infrastructure. Privacy and independence."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

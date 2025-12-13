@@ -1,20 +1,28 @@
 {
   "name": "gossa",
   "slug": "gossa",
+  "tagline": null,
+  "description": "Gossa is a fast self-hosted file sharing application. It supports drag-and-drop uploads, directory browsing, public links, and real-time change detection through a clean web UI. Designed for easy file hosting and sharing.",
   "categories": [
     60
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/pldubouilh/gossa",
-  "website": "github.com/pldubouilh/gossa",
-  "source_code": "github.com/pldubouilh/gossa",
-  "github_stars": "1046",
-  "logo": "/icons/gossa.webp",
-  "description": "Gossa is a fast self-hosted file sharing application. It supports drag-and-drop uploads, directory browsing, public links, and real-time change detection through a clean web UI. Designed for easy file hosting and sharing.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v1.1.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-08-30",
+    "date_last_commit": "2025-07-21",
+    "github_stars": 1047
+  },
+  "resources": {
+    "website": "https://github.com/pldubouilh/gossa",
+    "documentation": "https://github.com/pldubouilh/gossa",
+    "source_code": "https://github.com/pldubouilh/gossa",
+    "logo": "/icons/gossa.webp",
+    "issues": "https://github.com/pldubouilh/gossa/issues",
+    "releases": "https://github.com/pldubouilh/gossa/releases"
+  },
   "features": [
     "Drag-and-Drop Uploads: Upload files by dragging them directly into the browser interface.",
     "Directory Browsing: Navigate folder structures with a clean, file-explorer-style interface.",
@@ -25,69 +33,45 @@
     "Search Functionality: Quickly find files across your hosted directories.",
     "Simple Deployment: Single binary with no database requirements for easy setup."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

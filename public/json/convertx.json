@@ -1,20 +1,28 @@
 {
   "name": "convertx",
   "slug": "convertx",
+  "tagline": null,
+  "description": "ConvertX is a self-hosted web video converter utility that allows users to upload media files and convert them to different formats using FFmpeg, through a graphical UI for ease of use.",
   "categories": [
     59
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/C4illin/ConvertX",
-  "website": "github.com/C4illin/ConvertX",
-  "source_code": "github.com/C4illin/ConvertX",
-  "github_stars": "10000",
-  "logo": "/icons/convertx.webp",
-  "description": "ConvertX is a self-hosted web video converter utility that allows users to upload media files and convert them to different formats using FFmpeg, through a graphical UI for ease of use.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v0.16.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-01",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 10205
+  },
+  "resources": {
+    "website": "https://github.com/C4illin/ConvertX",
+    "documentation": "https://github.com/C4illin/ConvertX",
+    "source_code": "https://github.com/C4illin/ConvertX",
+    "logo": "/icons/convertx.webp",
+    "issues": "https://github.com/C4illin/ConvertX/issues",
+    "releases": "https://github.com/C4illin/ConvertX/releases"
+  },
   "features": [
     "Video Conversion: Transform media files between formats using FFmpeg. Professional quality output.",
     "Web Interface: Upload and convert files through simple browser UI. No command-line needed.",
@@ -23,69 +31,45 @@
     "Self-Hosted: Process sensitive media files on your own server. Complete privacy control.",
     "Easy Setup: Simple deployment with minimal configuration. Start converting in minutes."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

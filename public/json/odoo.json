@@ -1,20 +1,28 @@
 {
   "name": "odoo",
   "slug": "odoo",
+  "tagline": null,
+  "description": "Odoo is an open-source suite of business apps including CRM, accounting, inventory, manufacturing, HR, and e-commerce. It can be self-hosted or used via SaaS with a powerful admin UI and thousands of modules.",
   "categories": [
     52
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/odoo/odoo",
-  "website": "www.odoo.com",
-  "source_code": "github.com/odoo/odoo",
-  "github_stars": "47793",
-  "logo": "/icons/odoo.webp",
-  "description": "Odoo is an open-source suite of business apps including CRM, accounting, inventory, manufacturing, HR, and e-commerce. It can be self-hosted or used via SaaS with a powerful admin UI and thousands of modules.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-13",
+    "github_stars": 47803
+  },
+  "resources": {
+    "website": "https://www.odoo.com",
+    "documentation": "https://github.com/odoo/odoo",
+    "source_code": "https://github.com/odoo/odoo",
+    "logo": "/icons/odoo.webp",
+    "issues": "https://github.com/odoo/odoo/issues",
+    "releases": null
+  },
   "features": [
     "Business Suite: Comprehensive ERP solution covering CRM, accounting, inventory, HR, and project management in one platform.",
     "Modular Architecture: Install only needed modules from thousands of available apps to customize functionality for specific business needs.",
@@ -29,69 +37,45 @@
     "Multi-company Support: Manage multiple companies or subsidiaries within a single Odoo instance with shared resources.",
     "Advanced Reporting: Generate detailed business reports and analytics with customizable dashboards and KPI tracking."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

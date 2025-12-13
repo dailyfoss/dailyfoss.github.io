@@ -1,20 +1,28 @@
 {
   "name": "flaresolverr",
   "slug": "flaresolverr",
+  "tagline": null,
+  "description": "FlareSolverr is a proxy server that bypasses Cloudflare protections by automating browser challenges. It is commonly used with tools like Jackett and Sonarr to access protected scraping targets in self-hosted stacks.",
   "categories": [
     189
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/FlareSolverr/FlareSolverr",
-  "website": "github.com/FlareSolverr/FlareSolverr",
-  "source_code": "github.com/FlareSolverr/FlareSolverr",
-  "github_stars": "11717",
-  "logo": "/icons/flaresolverr.webp",
-  "description": "FlareSolverr is a proxy server that bypasses Cloudflare protections by automating browser challenges. It is commonly used with tools like Jackett and Sonarr to access protected scraping targets in self-hosted stacks.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v3.4.6",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-29",
+    "date_last_commit": "2025-12-09",
+    "github_stars": 11728
+  },
+  "resources": {
+    "website": "https://github.com/FlareSolverr/FlareSolverr",
+    "documentation": "https://github.com/FlareSolverr/FlareSolverr",
+    "source_code": "https://github.com/FlareSolverr/FlareSolverr",
+    "logo": "/icons/flaresolverr.webp",
+    "issues": "https://github.com/FlareSolverr/FlareSolverr/issues",
+    "releases": "https://github.com/FlareSolverr/FlareSolverr/releases"
+  },
   "features": [
     "Proxy: Bypass Cloudflare protections, Automate browser challenges, API access. Unblock protected sites.",
     "Automation: Works with Jackett, Sonarr, Radarr. Seamless integration.",
@@ -26,69 +34,45 @@
     "Multiple Instances: Scale as needed. High availability.",
     "Docker Support: Easy deployment. Container-ready."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

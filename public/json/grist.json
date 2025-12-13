@@ -1,20 +1,28 @@
 {
   "name": "grist",
   "slug": "grist",
+  "tagline": null,
+  "description": "Grist is a spreadsheet-meets-database platform that offers workflows, data management, and custom views. It can be self-hosted and supports web interface editing, formulas, access control, and APIs.",
   "categories": [
     151
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/gristlabs/grist-core",
-  "website": "www.getgrist.com",
-  "source_code": "github.com/gristlabs/grist-core",
-  "github_stars": "10216",
-  "logo": "/icons/grist.webp",
-  "description": "Grist is a spreadsheet-meets-database platform that offers workflows, data management, and custom views. It can be self-hosted and supports web interface editing, formulas, access control, and APIs.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v1.7.8",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-26",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 10224
+  },
+  "resources": {
+    "website": "https://www.getgrist.com",
+    "documentation": "https://github.com/gristlabs/grist-core",
+    "source_code": "https://github.com/gristlabs/grist-core",
+    "logo": "/icons/grist.webp",
+    "issues": "https://github.com/gristlabs/grist-core/issues",
+    "releases": "https://github.com/gristlabs/grist-core/releases"
+  },
   "features": [
     "Hybrid Platform: Combine spreadsheet familiarity with database power for structured data management.",
     "Custom Views: Create multiple views of the same data including cards, calendars, and charts.",
@@ -25,69 +33,45 @@
     "Data Validation: Enforce data types, constraints, and relationships for data integrity.",
     "Collaborative Editing: Real-time collaboration with multiple users editing simultaneously."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

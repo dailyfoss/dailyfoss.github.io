@@ -1,20 +1,28 @@
 {
   "name": "headscale",
   "slug": "headscale",
+  "tagline": null,
+  "description": "Headscale is an open-source control server for Tailscale networks. It manages lightweight peer-to-peer VPN meshes using WireGuard, enabling private secure networking without relying on external cloud services.",
   "categories": [
     174
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/juanfont/headscale",
-  "website": "github.com/juanfont/headscale",
-  "source_code": "github.com/juanfont/headscale",
-  "github_stars": "33468",
-  "logo": "/icons/headscale.webp",
-  "description": "Headscale is an open-source control server for Tailscale networks. It manages lightweight peer-to-peer VPN meshes using WireGuard, enabling private secure networking without relying on external cloud services.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "BSD-3-Clause",
+    "version": "v0.27.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-11",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 33477
+  },
+  "resources": {
+    "website": "https://github.com/juanfont/headscale",
+    "documentation": "https://github.com/juanfont/headscale",
+    "source_code": "https://github.com/juanfont/headscale",
+    "logo": "/icons/headscale.webp",
+    "issues": "https://github.com/juanfont/headscale/issues",
+    "releases": "https://github.com/juanfont/headscale/releases"
+  },
   "features": [
     "Tailscale Compatible: Open-source control server compatible with Tailscale clients across all platforms.",
     "WireGuard Mesh: Build secure peer-to-peer VPN networks using modern WireGuard protocol.",
@@ -25,69 +33,45 @@
     "Lightweight: Minimal resource usage with efficient connection management.",
     "Private Networking: Create secure networks for accessing home services or connecting remote sites."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

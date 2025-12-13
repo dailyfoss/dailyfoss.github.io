@@ -1,20 +1,28 @@
 {
   "name": "picoshare",
   "slug": "picoshare",
+  "tagline": null,
+  "description": "PicoShare is a self-hosted file sharing app designed for minimal configuration. It supports drag-and-drop uploads, shareable links, and expiration controls with a clean UI.",
   "categories": [
     61
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/mtlynch/picoshare",
-  "website": "github.com/mtlynch/picoshare",
-  "source_code": "github.com/mtlynch/picoshare",
-  "github_stars": "2774",
-  "logo": "/icons/picoshare.webp",
-  "description": "PicoShare is a self-hosted file sharing app designed for minimal configuration. It supports drag-and-drop uploads, shareable links, and expiration controls with a clean UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "1.5.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-08-24",
+    "date_last_commit": "2025-10-21",
+    "github_stars": 2775
+  },
+  "resources": {
+    "website": "https://github.com/mtlynch/picoshare",
+    "documentation": "https://github.com/mtlynch/picoshare",
+    "source_code": "https://github.com/mtlynch/picoshare",
+    "logo": "/icons/picoshare.webp",
+    "issues": "https://github.com/mtlynch/picoshare/issues",
+    "releases": "https://github.com/mtlynch/picoshare/releases"
+  },
   "features": [
     "Drag-and-drop uploads: Upload files by dragging them into the browser for quick sharing.",
     "Shareable links: Generate unique URLs for each uploaded file to share with others.",
@@ -29,69 +37,45 @@
     "Custom branding: Personalize the interface with custom logos and color schemes.",
     "Access logs: Track file access and uploads with detailed logging for security and auditing."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

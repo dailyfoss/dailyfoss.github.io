@@ -1,20 +1,28 @@
 {
   "name": "double-take",
   "slug": "double-take",
+  "tagline": null,
+  "description": "Double Take is a face detection and recognition hub that integrates multiple detection engines with home automation systems. It lets you review captures, confirm faces, and route events to platforms like Home Assistant.",
   "categories": [
     136
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/skrashevich/double-take",
-  "website": "github.com/skrashevich/double-take",
-  "source_code": "github.com/skrashevich/double-take",
-  "github_stars": "665",
-  "logo": "/icons/double-take.webp",
-  "description": "Double Take is a face detection and recognition hub that integrates multiple detection engines with home automation systems. It lets you review captures, confirm faces, and route events to platforms like Home Assistant.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v1.13.11.8",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2023-11-20",
+    "date_last_commit": "2024-08-05",
+    "github_stars": 665
+  },
+  "resources": {
+    "website": "https://github.com/skrashevich/double-take",
+    "documentation": "https://github.com/skrashevich/double-take",
+    "source_code": "https://github.com/skrashevich/double-take",
+    "logo": "/icons/double-take.webp",
+    "issues": "https://github.com/skrashevich/double-take/issues",
+    "releases": "https://github.com/skrashevich/double-take/releases"
+  },
   "features": [
     "Face Detection: Advanced facial recognition using multiple detection engines for accurate identification.",
     "Home Automation: Seamless integration with Home Assistant and other smart home platforms for automated responses.",
@@ -29,69 +37,45 @@
     "Statistics Dashboard: View detection statistics, accuracy metrics, and system performance with detailed analytics.",
     "Backup Management: Export and import training data and configurations for system backup and migration."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

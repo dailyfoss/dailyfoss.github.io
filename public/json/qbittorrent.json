@@ -1,20 +1,28 @@
 {
   "name": "qbittorrent",
   "slug": "qbittorrent",
+  "tagline": null,
+  "description": "qBittorrent is a free and open-source BitTorrent client with a built-in search engine, sequential downloading, integrated RSS, and remote control via web UI. It runs on all major desktop platforms.",
   "categories": [
     166
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/qbittorrent/qBittorrent",
-  "website": "www.qbittorrent.org",
-  "source_code": "github.com/qbittorrent/qBittorrent",
-  "github_stars": "34407",
-  "logo": "/icons/qbittorrent.webp",
-  "description": "qBittorrent is a free and open-source BitTorrent client with a built-in search engine, sequential downloading, integrated RSS, and remote control via web UI. It runs on all major desktop platforms.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-10",
+    "github_stars": 34423
+  },
+  "resources": {
+    "website": "https://www.qbittorrent.org",
+    "documentation": "https://github.com/qbittorrent/qBittorrent",
+    "source_code": "https://github.com/qbittorrent/qBittorrent",
+    "logo": "/icons/qbittorrent.webp",
+    "issues": "https://github.com/qbittorrent/qBittorrent/issues",
+    "releases": null
+  },
   "features": [
     "Built-in search: Query multiple torrent sites simultaneously from the application without opening a browser.",
     "Sequential downloading: Download files in order for streaming media while the torrent is still active.",
@@ -29,69 +37,45 @@
     "Encryption support: Enable protocol encryption to bypass ISP throttling and improve privacy.",
     "Cross-platform: Run on Windows, macOS, and Linux with consistent features and interface across all platforms."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "geoposler",
   "slug": "geoposler",
+  "tagline": "",
+  "description": "Geoposler is a self-hosted GPS tracking and location monitoring system that integrates with devices to track live positions on maps. Useful for fleet tracking or personal location sharing in private setups.",
   "categories": [
     92
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/garanda21/geoposler",
-  "website": "github.com/garanda21/geoposler",
-  "source_code": "github.com/garanda21/geoposler",
-  "github_stars": "32",
-  "logo": "/icons/geoposler.webp",
-  "description": "Geoposler is a self-hosted GPS tracking and location monitoring system that integrates with devices to track live positions on maps. Useful for fleet tracking or personal location sharing in private setups.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.1.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-04-07",
+    "date_last_commit": "2025-04-07",
+    "github_stars": 32
+  },
+  "resources": {
+    "website": null,
+    "documentation": null,
+    "source_code": "https://github.com/garanda21/geoposler",
+    "logo": "/icons/geoposler.webp",
+    "issues": "https://github.com/garanda21/geoposler/issues",
+    "releases": "https://github.com/garanda21/geoposler/releases"
+  },
   "features": [
     "Live GPS Tracking: Monitor real-time GPS positions from connected devices on interactive maps.",
     "Map Visualization: Display tracked locations on OpenStreetMap or other map providers with customizable markers.",
@@ -25,69 +33,45 @@
     "Geofencing: Define geographic boundaries and receive alerts when devices enter or exit zones.",
     "Self-Hosted Privacy: Maintain complete control over location data without cloud service dependencies."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

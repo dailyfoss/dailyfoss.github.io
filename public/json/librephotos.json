@@ -1,89 +1,73 @@
 {
   "name": "librephotos",
   "slug": "librephotos",
+  "tagline": null,
+  "description": "LibrePhotos is a self-hosted photo management platform, similar to Google Photos. It automatically organizes photos using AI, supports face recognition, timelines, tagging, and maps, while protecting user privacy.",
   "categories": [
     120
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/LibrePhotos/librephotos",
-  "website": "github.com/LibrePhotos/librephotos",
-  "source_code": "github.com/LibrePhotos/librephotos",
-  "github_stars": "7855",
-  "logo": "/icons/librephotos.webp",
-  "description": "LibrePhotos is a self-hosted photo management platform, similar to Google Photos. It automatically organizes photos using AI, supports face recognition, timelines, tagging, and maps, while protecting user privacy.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-11",
+    "github_stars": 7856
+  },
+  "resources": {
+    "website": "https://github.com/LibrePhotos/librephotos",
+    "documentation": "https://github.com/LibrePhotos/librephotos",
+    "source_code": "https://github.com/LibrePhotos/librephotos",
+    "logo": "/icons/librephotos.webp",
+    "issues": "https://github.com/LibrePhotos/librephotos/issues",
+    "releases": null
+  },
   "features": [
     "AI Organization: Automatic photo tagging, Face recognition, Object detection. Organize photos intelligently.",
     "Timeline & Maps: Photo timelines, Location mapping, Travel visualization. Browse photos by time and place.",
     "Privacy-Focused: Self-hosted, No cloud tracking, Full data control. Google Photos alternative you own.",
     "Search & Filter: Full-text search, Advanced filters, Smart albums. Find any photo instantly."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "ticky",
   "slug": "ticky",
+  "tagline": null,
+  "description": "Ticky is a self-hosted issue and ticket tracker that enables teams to record, categorize, and resolve tasks. It features status boards, comments, and a simple web interface suitable for small teams or personal projects.",
   "categories": [
     85
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/dkorecko/Ticky",
-  "website": "github.com/dkorecko/Ticky",
-  "source_code": "github.com/dkorecko/Ticky",
-  "github_stars": "254",
-  "logo": "/icons/ticky.webp",
-  "description": "Ticky is a self-hosted issue and ticket tracker that enables teams to record, categorize, and resolve tasks. It features status boards, comments, and a simple web interface suitable for small teams or personal projects.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v1.15.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-25",
+    "date_last_commit": "2025-11-25",
+    "github_stars": 254
+  },
+  "resources": {
+    "website": "https://github.com/dkorecko/Ticky",
+    "documentation": "https://github.com/dkorecko/Ticky",
+    "source_code": "https://github.com/dkorecko/Ticky",
+    "logo": "/icons/ticky.webp",
+    "issues": "https://github.com/dkorecko/Ticky/issues",
+    "releases": "https://github.com/dkorecko/Ticky/releases"
+  },
   "features": [
     "Issue tracking: Create and manage issues with titles, descriptions, and detailed information for problem resolution.",
     "Status boards: Organize issues on boards with customizable status columns for workflow visualization.",
@@ -29,69 +37,45 @@
     "Attachment support: Add files and screenshots to issues for better documentation and context.",
     "Resolution tracking: Mark issues as resolved and maintain history for reference and reporting."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

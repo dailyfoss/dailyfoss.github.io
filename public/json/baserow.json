@@ -1,20 +1,28 @@
 {
   "name": "baserow",
   "slug": "baserow",
+  "tagline": null,
+  "description": "Baserow is an open-source no-code database platform and Airtable alternative that allows users to build rich apps and collaborative databases via a spreadsheet-like interface. Self-hosted or SaaS options available.",
   "categories": [
     151
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "gitlab.com/baserow/baserow",
-  "website": "baserow.io/",
-  "source_code": "gitlab.com/baserow/baserow",
-  "github_stars": "2269",
-  "logo": "/icons/baserow.webp",
-  "description": "Baserow is an open-source no-code database platform and Airtable alternative that allows users to build rich apps and collaborative databases via a spreadsheet-like interface. Self-hosted or SaaS options available.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": null,
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": null,
+    "github_stars": 2269
+  },
+  "resources": {
+    "website": "https://baserow.io/",
+    "documentation": "https://gitlab.com/baserow/baserow",
+    "source_code": "https://gitlab.com/baserow/baserow",
+    "logo": "/icons/baserow.webp",
+    "issues": "https://gitlab.com/baserow/baserow/issues",
+    "releases": "https://gitlab.com/baserow/baserow/releases"
+  },
   "features": [
     "No-Code Database: Build databases without coding knowledge. Spreadsheet-like interface.",
     "Airtable Alternative: Open-source alternative with similar features. No subscription fees.",
@@ -25,69 +33,45 @@
     "Self-Hosted: Complete control over your data and databases. Data sovereignty.",
     "SaaS Option: Choose between self-hosted or cloud. Flexible deployment."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

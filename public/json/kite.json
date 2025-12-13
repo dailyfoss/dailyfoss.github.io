@@ -1,20 +1,28 @@
 {
   "name": "kite-kubernetes",
   "slug": "kite",
+  "tagline": null,
+  "description": "Kite is a self hosted knowledge base and note taking platform. It supports markdown, hierarchical organization and search, providing a simple way to document processes, ideas or internal documentation for teams.",
   "categories": [
     165
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/zxh326/kite",
-  "website": "github.com/zxh326/kite",
-  "source_code": "github.com/zxh326/kite",
-  "github_stars": "1802",
-  "logo": "/icons/kite.webp",
-  "description": "Kite is a self hosted knowledge base and note taking platform. It supports markdown, hierarchical organization and search, providing a simple way to document processes, ideas or internal documentation for teams.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v0.7.5",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-12",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 1815
+  },
+  "resources": {
+    "website": "https://github.com/zxh326/kite",
+    "documentation": "https://github.com/zxh326/kite",
+    "source_code": "https://github.com/zxh326/kite",
+    "logo": "/icons/kite.webp",
+    "issues": "https://github.com/zxh326/kite/issues",
+    "releases": "https://github.com/zxh326/kite/releases"
+  },
   "features": [
     "Markdown Documentation: Write documentation in markdown with syntax highlighting. Create rich content easily.",
     "Hierarchical Organization: Organize pages in nested folders and categories. Structure knowledge logically.",
@@ -29,69 +37,45 @@
     "Mobile Responsive: Access documentation from any device. Read and edit on the go.",
     "API Access: Programmatic access to documentation for integrations. Automate documentation workflows."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

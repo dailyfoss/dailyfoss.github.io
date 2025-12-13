@@ -1,20 +1,28 @@
 {
   "name": "davis",
   "slug": "davis",
+  "tagline": null,
+  "description": "Davis is a self-hosted, minimalist CalDAV web client compatible with servers like Nextcloud and DAViCal. It offers a clean calendar UI with basic editing and sync functionality across devices.",
   "categories": [
     24
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/tchapi/davis",
-  "website": "github.com/users/tchapi/projects/1/views/1",
-  "source_code": "github.com/tchapi/davis",
-  "github_stars": "581",
-  "logo": "/icons/davis.webp",
-  "description": "Davis is a self-hosted, minimalist CalDAV web client compatible with servers like Nextcloud and DAViCal. It offers a clean calendar UI with basic editing and sync functionality across devices.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v5.3.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-01",
+    "date_last_commit": "2025-11-01",
+    "github_stars": 581
+  },
+  "resources": {
+    "website": "https://github.com/users/tchapi/projects/1/views/1",
+    "documentation": "https://github.com/tchapi/davis",
+    "source_code": "https://github.com/tchapi/davis",
+    "logo": "/icons/davis.webp",
+    "issues": "https://github.com/tchapi/davis/issues",
+    "releases": "https://github.com/tchapi/davis/releases"
+  },
   "features": [
     "CalDAV Client: Web-based calendar interface for CalDAV servers. Browser access anywhere.",
     "Minimalist Design: Clean, focused UI without distractions. Simple and effective.",
@@ -23,69 +31,45 @@
     "Cross-Device Sync: Access your calendar from any device. Seamless synchronization.",
     "Self-Hosted: Run your own calendar web client. Privacy-focused solution."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

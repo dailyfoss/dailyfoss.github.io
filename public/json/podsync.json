@@ -1,20 +1,28 @@
 {
   "name": "podsync",
   "slug": "podsync",
+  "tagline": null,
+  "description": "Podsync is a self-hosted YouTube-to-podcast converter that turns YouTube channels into RSS feeds. It downloads and serves audio files, making content available in podcast apps.",
   "categories": [
     123
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/mxpv/podsync",
-  "website": "github.com/mxpv/podsync",
-  "source_code": "github.com/mxpv/podsync",
-  "github_stars": "1798",
-  "logo": "/icons/podsync.webp",
-  "description": "Podsync is a self-hosted YouTube-to-podcast converter that turns YouTube channels into RSS feeds. It downloads and serves audio files, making content available in podcast apps.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v2.8.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-07-14",
+    "date_last_commit": "2025-12-09",
+    "github_stars": 1799
+  },
+  "resources": {
+    "website": "https://github.com/mxpv/podsync",
+    "documentation": "https://github.com/mxpv/podsync",
+    "source_code": "https://github.com/mxpv/podsync",
+    "logo": "/icons/podsync.webp",
+    "issues": "https://github.com/mxpv/podsync/issues",
+    "releases": "https://github.com/mxpv/podsync/releases"
+  },
   "features": [
     "YouTube to podcast: Convert YouTube channels and playlists into podcast RSS feeds.",
     "Audio extraction: Extract audio from YouTube videos and serve as podcast episodes.",
@@ -29,69 +37,45 @@
     "Episode filtering: Configure rules to include only specific videos based on criteria.",
     "Podcast app compatible: Works with Apple Podcasts, Spotify, and other standard podcast clients."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

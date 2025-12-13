@@ -1,20 +1,28 @@
 {
   "name": "checkmate",
   "slug": "checkmate",
+  "tagline": null,
+  "description": "Checkmate is a self-hosted uptime and performance monitoring platform. It checks websites or APIs, sends alerts on downtime, and provides dashboards for visualizing availability history and performance data.",
   "categories": [
     165
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/bluewave-labs/Checkmate",
-  "website": "checkmate.so/",
-  "source_code": "github.com/bluewave-labs/Checkmate",
-  "github_stars": "8682",
-  "logo": "/icons/checkmate.webp",
-  "description": "Checkmate is a self-hosted uptime and performance monitoring platform. It checks websites or APIs, sends alerts on downtime, and provides dashboards for visualizing availability history and performance data.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v3.2.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-18",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 8683
+  },
+  "resources": {
+    "website": "https://checkmate.so/",
+    "documentation": "https://github.com/bluewave-labs/Checkmate",
+    "source_code": "https://github.com/bluewave-labs/Checkmate",
+    "logo": "/icons/checkmate.webp",
+    "issues": "https://github.com/bluewave-labs/Checkmate/issues",
+    "releases": "https://github.com/bluewave-labs/Checkmate/releases"
+  },
   "features": [
     "Uptime Monitoring: Check website and API availability continuously. Stay online.",
     "Downtime Alerts: Instant notifications when services go down. Quick response.",
@@ -24,69 +32,45 @@
     "Status Pages: Public status pages for transparency. Customer communication.",
     "Self-Hosted: Keep monitoring data on your infrastructure. Data privacy."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

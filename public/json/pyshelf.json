@@ -1,20 +1,28 @@
 {
   "name": "pyshelf",
   "slug": "pyshelf",
+  "tagline": "",
+  "description": "pyShelf is a lightweight self-hosted media management tool designed for organizing ebooks and publications. It allows browsing and downloading through a simple web UI.",
   "categories": [
     21
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/th3r00t/pyShelf",
-  "website": "github.com/th3r00t/pyShelf",
-  "source_code": "github.com/th3r00t/pyShelf",
-  "github_stars": "525",
-  "logo": "/icons/pyshelf.webp",
-  "description": "pyShelf is a lightweight self-hosted media management tool designed for organizing ebooks and publications. It allows browsing and downloading through a simple web UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-08-14",
+    "github_stars": 525
+  },
+  "resources": {
+    "website": null,
+    "documentation": null,
+    "source_code": "https://github.com/th3r00t/pyShelf",
+    "logo": "/icons/pyshelf.webp",
+    "issues": "https://github.com/th3r00t/pyShelf/issues",
+    "releases": null
+  },
   "features": [
     "Ebook organization: Organize and manage digital book collections with metadata and cover images.",
     "Format support: Handle multiple ebook formats including EPUB, PDF, MOBI, and AZW.",
@@ -29,69 +37,45 @@
     "Mobile responsive: Access and download books from mobile devices with an optimized interface.",
     "Bulk operations: Add multiple books simultaneously and perform batch metadata updates."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

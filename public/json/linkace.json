@@ -1,89 +1,73 @@
 {
   "name": "linkace",
   "slug": "linkace",
+  "tagline": null,
+  "description": "LinkAce is a self-hosted bookmark archive with tags, notes, link checking, and archive.org integration. It allows saving and organizing web links privately or publicly and supports API and imports.",
   "categories": [
     20
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Kovah/LinkAce",
-  "website": "www.linkace.org",
-  "source_code": "github.com/Kovah/LinkAce",
-  "github_stars": "3173",
-  "logo": "/icons/linkace.webp",
-  "description": "LinkAce is a self-hosted bookmark archive with tags, notes, link checking, and archive.org integration. It allows saving and organizing web links privately or publicly and supports API and imports.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v2.4.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-21",
+    "date_last_commit": "2025-11-26",
+    "github_stars": 3173
+  },
+  "resources": {
+    "website": "https://www.linkace.org",
+    "documentation": "https://github.com/Kovah/LinkAce",
+    "source_code": "https://github.com/Kovah/LinkAce",
+    "logo": "/icons/linkace.webp",
+    "issues": "https://github.com/Kovah/LinkAce/issues",
+    "releases": "https://github.com/Kovah/LinkAce/releases"
+  },
   "features": [
     "Bookmark Archive: Save links, Tags and notes, Archive.org integration. Preserve web content permanently.",
     "Link Checking: Automatic validation, Broken link detection, Status monitoring. Keep bookmarks healthy.",
     "Organization: Tags and lists, Search functionality, Import/export. Organize bookmarks your way.",
     "API Access: RESTful API, Browser extensions, Automation support. Integrate with your workflow."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

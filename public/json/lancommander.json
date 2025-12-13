@@ -1,20 +1,29 @@
 {
   "name": "lancommander",
   "slug": "lancommander",
+  "tagline": null,
+  "description": "LANCommander is a self hosted platform for managing and launching games over a local network. It centralizes game files, metadata and launch configurations so LAN parties or shared setups can quickly start multiplayer sessions.",
   "categories": [
     69
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/LANCommander/LANCommander",
-  "website": "lancommander.app",
-  "source_code": "github.com/LANCommander/LANCommander",
-  "github_stars": "351",
-  "logo": "/icons/lancommander.webp",
-  "description": "LANCommander is a self hosted platform for managing and launching games over a local network. It centralizes game files, metadata and launch configurations so LAN parties or shared setups can quickly start multiplayer sessions.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v1.1.6",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-05-06",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 351
+  },
+  "resources": {
+    "website": "https://lancommander.app",
+    "documentation": "https://github.com/LANCommander/LANCommander",
+    "source_code": "https://github.com/LANCommander/LANCommander",
+    "logo": "/icons/lancommander.webp",
+    "issues": "https://github.com/LANCommander/LANCommander/issues",
+    "releases": "https://github.com/LANCommander/LANCommander/releases",
+    "logo_light": "/icons/lancommander-light.webp"
+  },
   "features": [
     "Game Library: Centralized game storage, Metadata management, Cover art. Organize LAN party games.",
     "Quick Launch: One-click game start, Configuration management, Multiplayer setup. Start gaming faster.",
@@ -25,69 +34,45 @@
     "Version Control: Game updates, Patch management, Rollback support. Keep games current.",
     "User Profiles: Player accounts, Game preferences, Personal libraries. Individual gaming experiences."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

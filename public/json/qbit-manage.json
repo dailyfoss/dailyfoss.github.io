@@ -1,20 +1,28 @@
 {
   "name": "qbit-manage",
   "slug": "qbit-manage",
+  "tagline": null,
+  "description": "qBitManage is a self-hosted utility for managing qBittorrent automatically. It handles categories, tags, and cleanup operations via API with simple config and CLI usage.",
   "categories": [
     166
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/StuffAnThings/qbit_manage",
-  "website": "github.com/StuffAnThings/qbit_manage",
-  "source_code": "github.com/StuffAnThings/qbit_manage",
-  "github_stars": "1297",
-  "logo": "/icons/qbit-manage.webp",
-  "description": "qBitManage is a self-hosted utility for managing qBittorrent automatically. It handles categories, tags, and cleanup operations via API with simple config and CLI usage.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v4.6.5",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-29",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 1299
+  },
+  "resources": {
+    "website": "https://github.com/StuffAnThings/qbit_manage",
+    "documentation": "https://github.com/StuffAnThings/qbit_manage",
+    "source_code": "https://github.com/StuffAnThings/qbit_manage",
+    "logo": "/icons/qbit-manage.webp",
+    "issues": "https://github.com/StuffAnThings/qbit_manage/issues",
+    "releases": "https://github.com/StuffAnThings/qbit_manage/releases"
+  },
   "features": [
     "Automated categorization: Organize torrents by content type, tracker, or custom rules to maintain a structured download library.",
     "Tag management: Apply and remove tags automatically based on torrent status, age, or seeding ratio for easier filtering.",
@@ -29,69 +37,45 @@
     "Custom filters: Create complex filtering rules using torrent metadata, tracker information, and download statistics.",
     "Logging and reporting: Track all automated actions with detailed logs for auditing and troubleshooting."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

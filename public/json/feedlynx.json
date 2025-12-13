@@ -1,20 +1,28 @@
 {
   "name": "feedlynx",
   "slug": "feedlynx",
+  "tagline": "",
+  "description": "FeedLynx is a small self-hosted service for subscribing a website’s feed directly into a user’s feed reader via web-based subscriptions. It provides a simple UI and acts as a helper between visitors and feed applications.",
   "categories": [
     57
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/wezm/feedlynx",
-  "website": "github.com/wezm/feedlynx",
-  "source_code": "github.com/wezm/feedlynx",
-  "github_stars": "93",
-  "logo": "/icons/feedlynx.webp",
-  "description": "FeedLynx is a small self-hosted service for subscribing a website’s feed directly into a user’s feed reader via web-based subscriptions. It provides a simple UI and acts as a helper between visitors and feed applications.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "0.3.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-08-09",
+    "date_last_commit": "2025-11-19",
+    "github_stars": 93
+  },
+  "resources": {
+    "website": null,
+    "documentation": null,
+    "source_code": "https://github.com/wezm/feedlynx",
+    "logo": "/icons/feedlynx.webp",
+    "issues": "https://github.com/wezm/feedlynx/issues",
+    "releases": "https://github.com/wezm/feedlynx/releases"
+  },
   "features": [
     "Feed Subscription: Web-based feed subscriptions, Simple UI, Direct reader integration. Easy feed discovery.",
     "Helper Service: Bridge between websites and readers. Seamless subscription flow.",
@@ -25,69 +33,45 @@
     "Lightweight: Minimal server requirements. Quick deployment.",
     "Open Protocol: Standard feed formats. Wide support."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": true,
-    "hosting": false,
-    "ui_interface": true
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

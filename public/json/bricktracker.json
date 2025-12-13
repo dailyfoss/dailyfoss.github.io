@@ -1,20 +1,28 @@
 {
   "name": "bricktracker",
   "slug": "bricktracker",
+  "tagline": "",
+  "description": "BrickTracker is a web app for managing and cataloging LEGO and similar construction sets. It allows users to organize collections, record set ownership, and track missing pieces using a simple UI.",
   "categories": [
     84
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "gitea.baerentsen.space/FrederikBaerentsen/BrickTracker",
-  "website": "gitea.baerentsen.space/FrederikBaerentsen/BrickTracker",
-  "source_code": "gitea.baerentsen.space/FrederikBaerentsen/BrickTracker",
-  "github_stars": null,
-  "logo": "/icons/bricktracker.webp",
-  "description": "BrickTracker is a web app for managing and cataloging LEGO and similar construction sets. It allows users to organize collections, record set ownership, and track missing pieces using a simple UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": null,
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": null,
+    "github_stars": null
+  },
+  "resources": {
+    "website": null,
+    "documentation": null,
+    "source_code": "https://gitea.baerentsen.space/FrederikBaerentsen/BrickTracker",
+    "logo": "/icons/bricktracker.webp",
+    "issues": null,
+    "releases": null
+  },
   "features": [
     "LEGO Cataloging: Manage and organize your LEGO collection. Complete inventory.",
     "Set Tracking: Record ownership and track missing pieces. Know what you have.",
@@ -25,69 +33,45 @@
     "Search Functionality: Find sets and pieces quickly. Instant discovery.",
     "Hobby Management: Perfect for LEGO enthusiasts and collectors. Built for fans."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

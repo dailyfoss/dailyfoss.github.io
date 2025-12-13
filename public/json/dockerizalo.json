@@ -1,20 +1,28 @@
 {
   "name": "dockerizalo",
   "slug": "dockerizalo",
+  "tagline": "",
+  "description": "Dockerizalo provides an easy way to deploy and orchestrate Docker-based apps using pre-configured stacks. It includes automated setup scripts and templates for self-hosting common tools and services.",
   "categories": [
     165
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/undernightcore/dockerizalo",
-  "website": "github.com/undernightcore/dockerizalo",
-  "source_code": "github.com/undernightcore/dockerizalo",
-  "github_stars": "486",
-  "logo": "/icons/dockerizalo.webp",
-  "description": "Dockerizalo provides an easy way to deploy and orchestrate Docker-based apps using pre-configured stacks. It includes automated setup scripts and templates for self-hosting common tools and services.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v1.5.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-07-08",
+    "date_last_commit": "2025-07-08",
+    "github_stars": 486
+  },
+  "resources": {
+    "website": null,
+    "documentation": null,
+    "source_code": "https://github.com/undernightcore/dockerizalo",
+    "logo": "/icons/dockerizalo.webp",
+    "issues": "https://github.com/undernightcore/dockerizalo/issues",
+    "releases": "https://github.com/undernightcore/dockerizalo/releases"
+  },
   "features": [
     "Pre-Configured Stacks: Deploy popular apps with ready-made templates. Instant deployment.",
     "Automated Setup: Scripts handle complex configuration automatically. No manual setup needed.",
@@ -23,69 +31,45 @@
     "Homelab Ready: Perfect for personal server environments. Build your stack quickly.",
     "Self-Hosted: Deploy everything on your infrastructure. Complete control and privacy."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

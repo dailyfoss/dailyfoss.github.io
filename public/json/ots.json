@@ -1,20 +1,29 @@
 {
   "name": "ots",
   "slug": "ots",
+  "tagline": null,
+  "description": "OTS (One Time Secret) is a self-hosted service for securely sharing sensitive information. Links expire after viewing, preventing reuse. It's ideal for sending passwords or credentials with privacy.",
   "categories": [
     117
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Luzifer/ots",
-  "website": "ots.fyi",
-  "source_code": "github.com/Luzifer/ots",
-  "github_stars": "697",
-  "logo": "/icons/ots.webp",
-  "description": "OTS (One Time Secret) is a self-hosted service for securely sharing sensitive information. Links expire after viewing, preventing reuse. It's ideal for sending passwords or credentials with privacy.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v1.20.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-14",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 697
+  },
+  "resources": {
+    "website": "https://ots.fyi",
+    "documentation": "https://github.com/Luzifer/ots",
+    "source_code": "https://github.com/Luzifer/ots",
+    "logo": "/icons/ots.webp",
+    "issues": "https://github.com/Luzifer/ots/issues",
+    "releases": "https://github.com/Luzifer/ots/releases",
+    "logo_light": "/icons/ots-light.webp"
+  },
   "features": [
     "One-time links: Generate URLs that expire immediately after being viewed once to prevent reuse.",
     "Encryption: Encrypt secrets client-side before transmission so the server never sees plaintext content.",
@@ -25,69 +34,45 @@
     "API access: Integrate secret sharing into applications and scripts using simple REST endpoints.",
     "Self-hosted privacy: Keep sensitive data on your own infrastructure without trusting third-party services."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

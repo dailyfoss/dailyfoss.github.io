@@ -1,20 +1,28 @@
 {
   "name": "yamlresume",
   "slug": "yamlresume",
+  "tagline": null,
+  "description": "yamlresume lets you define resumes in YAML and generate presentable documents or websites from them. It’s a self-hosted, text-first workflow that keeps CVs versionable and easy to maintain.",
   "categories": [
     19
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/yamlresume/yamlresume",
-  "website": "yamlresume.dev",
-  "source_code": "github.com/yamlresume/yamlresume",
-  "github_stars": "1072",
-  "logo": "/icons/yamlresume.webp",
-  "description": "yamlresume lets you define resumes in YAML and generate presentable documents or websites from them. It’s a self-hosted, text-first workflow that keeps CVs versionable and easy to maintain.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.8.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-28",
+    "date_last_commit": "2025-12-01",
+    "github_stars": 1072
+  },
+  "resources": {
+    "website": "https://yamlresume.dev",
+    "documentation": "https://github.com/yamlresume/yamlresume",
+    "source_code": "https://github.com/yamlresume/yamlresume",
+    "logo": "/icons/yamlresume.webp",
+    "issues": "https://github.com/yamlresume/yamlresume/issues",
+    "releases": "https://github.com/yamlresume/yamlresume/releases"
+  },
   "features": [
     "YAML-based editing: Define resume content in structured YAML files that are easy to read, edit, and version control.",
     "Multiple output formats: Generate PDF, HTML, and Markdown versions of your resume from a single source file.",
@@ -29,69 +37,45 @@
     "Schema validation: Ensure resume data follows the correct structure with built-in validation and error checking.",
     "Export flexibility: Customize output styling with CSS and templates to match personal branding preferences."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

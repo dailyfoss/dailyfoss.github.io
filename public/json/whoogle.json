@@ -1,20 +1,28 @@
 {
   "name": "whoogle",
   "slug": "whoogle",
+  "tagline": null,
+  "description": "Whoogle Search is a self-hosted, ad-free, privacy-respecting metasearch engine that proxies Google results. It strips tracking, blocks ads, supports search filters, and can be used as a default search provider across browsers and devices.",
   "categories": [
     144
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/benbusby/whoogle-search",
-  "website": "pypi.org/project/whoogle-search/",
-  "source_code": "github.com/benbusby/whoogle-search",
-  "github_stars": "11152",
-  "logo": "/icons/whoogle.webp",
-  "description": "Whoogle Search is a self-hosted, ad-free, privacy-respecting metasearch engine that proxies Google results. It strips tracking, blocks ads, supports search filters, and can be used as a default search provider across browsers and devices.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v1.1.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-26",
+    "date_last_commit": "2025-12-09",
+    "github_stars": 11152
+  },
+  "resources": {
+    "website": "https://pypi.org/project/whoogle-search/",
+    "documentation": "https://github.com/benbusby/whoogle-search",
+    "source_code": "https://github.com/benbusby/whoogle-search",
+    "logo": "/icons/whoogle.webp",
+    "issues": "https://github.com/benbusby/whoogle-search/issues",
+    "releases": "https://github.com/benbusby/whoogle-search/releases"
+  },
   "features": [
     "Privacy-focused search: Search Google results without tracking, cookies, or personalized ads.",
     "Ad blocking: Automatically remove all advertisements from search results for a cleaner experience.",
@@ -29,69 +37,45 @@
     "Mobile responsive: Search comfortably on smartphones and tablets with an optimized mobile interface.",
     "OpenSearch integration: Add Whoogle as a search engine in your browser for quick access."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

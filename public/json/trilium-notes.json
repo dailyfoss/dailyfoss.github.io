@@ -1,20 +1,28 @@
 {
   "name": "trilium-notes",
   "slug": "trilium-notes",
+  "tagline": null,
+  "description": "Trilium Next is a self-hosted hierarchical note-taking and knowledge management app. It supports rich text, relations, scripting, and synchronization, with desktop clients and a powerful web interface.",
   "categories": [
     111
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/TriliumNext/Trilium",
-  "website": "triliumnotes.org",
-  "source_code": "github.com/TriliumNext/Trilium",
-  "github_stars": "33461",
-  "logo": "/icons/trilium-notes.webp",
-  "description": "Trilium Next is a self-hosted hierarchical note-taking and knowledge management app. It supports rich text, relations, scripting, and synchronization, with desktop clients and a powerful web interface.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v0.100.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-05",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 33468
+  },
+  "resources": {
+    "website": "https://triliumnotes.org",
+    "documentation": "https://github.com/TriliumNext/Trilium",
+    "source_code": "https://github.com/TriliumNext/Trilium",
+    "logo": "/icons/trilium-notes.webp",
+    "issues": "https://github.com/TriliumNext/Trilium/issues",
+    "releases": "https://github.com/TriliumNext/Trilium/releases"
+  },
   "features": [
     "Hierarchical notes: Organize notes in a tree structure with unlimited nesting for complex knowledge bases.",
     "Rich text editing: Create notes with formatting, images, tables, and embedded content using a WYSIWYG editor.",
@@ -29,69 +37,45 @@
     "Templates: Create note templates for consistent structure in recurring note types.",
     "Export options: Export notes individually or in bulk to HTML, Markdown, or other formats."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

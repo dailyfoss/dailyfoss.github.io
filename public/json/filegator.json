@@ -1,20 +1,28 @@
 {
   "name": "filegator",
   "slug": "filegator",
+  "tagline": null,
+  "description": "FileGator is a multi-user, web-based file manager for self-hosted servers. It includes drag-and-drop uploads, folder permissions, and responsive UI, making it suitable for internal file sharing or shared storage access.",
   "categories": [
     60
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/filegator/filegator",
-  "website": "filegator.io",
-  "source_code": "github.com/filegator/filegator",
-  "github_stars": "2845",
-  "logo": "/icons/filegator.webp",
-  "description": "FileGator is a multi-user, web-based file manager for self-hosted servers. It includes drag-and-drop uploads, folder permissions, and responsive UI, making it suitable for internal file sharing or shared storage access.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v7.13.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-02-25",
+    "date_last_commit": "2025-07-01",
+    "github_stars": 2845
+  },
+  "resources": {
+    "website": "https://filegator.io",
+    "documentation": "https://github.com/filegator/filegator",
+    "source_code": "https://github.com/filegator/filegator",
+    "logo": "/icons/filegator.webp",
+    "issues": "https://github.com/filegator/filegator/issues",
+    "releases": "https://github.com/filegator/filegator/releases"
+  },
   "features": [
     "File Management: Multi-user web file manager, Drag-and-drop uploads, Folder permissions. Shared storage access simplified.",
     "Responsive UI: Works on desktop and mobile. Access anywhere.",
@@ -26,69 +34,45 @@
     "Text Editor: Edit files in browser. Quick modifications.",
     "Customizable: Themes and plugins. Extensible platform."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

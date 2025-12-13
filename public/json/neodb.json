@@ -1,20 +1,28 @@
 {
   "name": "neodb",
   "slug": "neodb",
+  "tagline": null,
+  "description": "Neodb is a social cataloging platform for movies, books, and music inspired by Douban. It enables self-hosted users to track and rate media collections with feeds, comments, and lists.",
   "categories": [
     148
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/neodb-social/neodb",
-  "website": "neodb.net",
-  "source_code": "github.com/neodb-social/neodb",
-  "github_stars": "739",
-  "logo": "/icons/neodb.webp",
-  "description": "Neodb is a social cataloging platform for movies, books, and music inspired by Douban. It enables self-hosted users to track and rate media collections with feeds, comments, and lists.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "0.12.5",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-12",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 739
+  },
+  "resources": {
+    "website": "https://neodb.net",
+    "documentation": "https://github.com/neodb-social/neodb",
+    "source_code": "https://github.com/neodb-social/neodb",
+    "logo": "/icons/neodb.webp",
+    "issues": "https://github.com/neodb-social/neodb/issues",
+    "releases": "https://github.com/neodb-social/neodb/releases"
+  },
   "features": [
     "Media cataloging: Track movies, books, music, games, and podcasts in a unified collection.",
     "Rating system: Rate and review media with customizable scoring and written feedback.",
@@ -29,69 +37,45 @@
     "Search and filters: Find media by title, creator, genre, year, or other attributes.",
     "ActivityPub support: Connect with federated social networks for broader content sharing."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

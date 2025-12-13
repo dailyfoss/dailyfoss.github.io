@@ -1,20 +1,29 @@
 {
   "name": "dagu",
   "slug": "dagu",
+  "tagline": null,
+  "description": "Dagu is a CSV-based task runner and scheduler that simplifies batch job orchestration with a web UI. It supports workflows, logs, retryable tasks, and file-based configurations for lightweight self-hosted setups.",
   "categories": [
     158
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/dagu-org/dagu",
-  "website": "dagu.cloud",
-  "source_code": "github.com/dagu-org/dagu",
-  "github_stars": "2917",
-  "logo": "/icons/dagu.webp",
-  "description": "Dagu is a CSV-based task runner and scheduler that simplifies batch job orchestration with a web UI. It supports workflows, logs, retryable tasks, and file-based configurations for lightweight self-hosted setups.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v1.26.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-10",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 2918
+  },
+  "resources": {
+    "website": "https://dagu.cloud",
+    "documentation": "https://github.com/dagu-org/dagu",
+    "source_code": "https://github.com/dagu-org/dagu",
+    "logo": "/icons/dagu.webp",
+    "issues": "https://github.com/dagu-org/dagu/issues",
+    "releases": "https://github.com/dagu-org/dagu/releases",
+    "logo_light": "/icons/dagu-light.webp"
+  },
   "features": [
     "File-Based Config: Define workflows in simple CSV files. No database required.",
     "Web Interface: Monitor and control jobs through browser. Visual workflow management.",
@@ -23,69 +32,45 @@
     "Execution Logs: Detailed history of all job runs. Full visibility and debugging.",
     "Lightweight: Minimal resource usage for efficient operation. Perfect for any server."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

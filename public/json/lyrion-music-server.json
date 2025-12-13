@@ -1,20 +1,28 @@
 {
   "name": "lyrion-music-server",
   "slug": "lyrion-music-server",
+  "tagline": null,
+  "description": "Slimserver (Logitech Media Server) is a self-hosted streaming platform for music playback. It supports multi-room audio, plugins, and a variety of streaming clients for local or networked media collections.",
   "categories": [
     100
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/LMS-Community/slimserver",
-  "website": "lyrion.org",
-  "source_code": "github.com/LMS-Community/slimserver",
-  "github_stars": "1561",
-  "logo": "/icons/lyrion-music-server.webp",
-  "description": "Slimserver (Logitech Media Server) is a self-hosted streaming platform for music playback. It supports multi-room audio, plugins, and a variety of streaming clients for local or networked media collections.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-12",
+    "github_stars": 1561
+  },
+  "resources": {
+    "website": "https://lyrion.org",
+    "documentation": "https://github.com/LMS-Community/slimserver",
+    "source_code": "https://github.com/LMS-Community/slimserver",
+    "logo": "/icons/lyrion-music-server.webp",
+    "issues": "https://github.com/LMS-Community/slimserver/issues",
+    "releases": null
+  },
   "features": [
     "Music Streaming: Local library streaming, Multi-format support, High-quality audio. Stream your music collection.",
     "Multi-Room Audio: Synchronized playback, Multiple zones, Group players. Play music throughout your home.",
@@ -25,69 +33,45 @@
     "Remote Access: Web-based control, Mobile control, API access. Control playback from anywhere.",
     "Open Source: Community-driven, Active development, Free forever. Mature music server platform."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

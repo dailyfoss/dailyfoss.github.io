@@ -1,20 +1,28 @@
 {
   "name": "omnitools",
   "slug": "omnitools",
+  "tagline": null,
+  "description": "Omni Tools is a lightweight toolbox web app offering JSON viewer, URL encoder, image compressor, and more utilities for developers or productivity enthusiasts in a self-hosted environment.",
   "categories": [
     165
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/iib0011/omni-tools",
-  "website": "omnitools.app",
-  "source_code": "github.com/iib0011/omni-tools",
-  "github_stars": "7794",
-  "logo": "/icons/omnitools.webp",
-  "description": "Omni Tools is a lightweight toolbox web app offering JSON viewer, URL encoder, image compressor, and more utilities for developers or productivity enthusiasts in a self-hosted environment.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.6.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-02",
+    "date_last_commit": "2025-12-10",
+    "github_stars": 7795
+  },
+  "resources": {
+    "website": "https://omnitools.app",
+    "documentation": "https://github.com/iib0011/omni-tools",
+    "source_code": "https://github.com/iib0011/omni-tools",
+    "logo": "/icons/omnitools.webp",
+    "issues": "https://github.com/iib0011/omni-tools/issues",
+    "releases": "https://github.com/iib0011/omni-tools/releases"
+  },
   "features": [
     "Developer Utilities: Collection of essential tools including JSON formatter, URL encoder, hash generators, and text converters.",
     "Image Processing: Compress, resize, and convert images between formats with quality controls and batch processing.",
@@ -29,69 +37,45 @@
     "URL Utilities: Encode, decode, and parse URLs with parameter extraction and validation features.",
     "Lightweight Interface: Fast, responsive web interface that works offline without external dependencies or tracking."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

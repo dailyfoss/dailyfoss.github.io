@@ -1,20 +1,28 @@
 {
   "name": "snipe-it",
   "slug": "snipe-it",
+  "tagline": null,
+  "description": "Snipe-IT is a self-hosted IT asset management platform for tracking hardware, software, and accessories. It supports barcodes, audit logs, and role-based access via a web UI.",
   "categories": [
     84
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/grokability/snipe-it",
-  "website": "snipeitapp.com",
-  "source_code": "github.com/grokability/snipe-it",
-  "github_stars": "13122",
-  "logo": "/icons/snipe-it.webp",
-  "description": "Snipe-IT is a self-hosted IT asset management platform for tracking hardware, software, and accessories. It supports barcodes, audit logs, and role-based access via a web UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v8.3.7",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-12",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 13124
+  },
+  "resources": {
+    "website": "https://snipeitapp.com",
+    "documentation": "https://github.com/grokability/snipe-it",
+    "source_code": "https://github.com/grokability/snipe-it",
+    "logo": "/icons/snipe-it.webp",
+    "issues": "https://github.com/grokability/snipe-it/issues",
+    "releases": "https://github.com/grokability/snipe-it/releases"
+  },
   "features": [
     "Asset tracking: Manages hardware, software licenses, and accessories with detailed records.",
     "Check-in/check-out: Tracks asset assignments to users with history and due dates.",
@@ -29,69 +37,45 @@
     "API access: Automates asset management via comprehensive REST API.",
     "Mobile app: Manages assets on the go with iOS and Android applications."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "gitsave",
   "slug": "gitsave",
+  "tagline": "",
+  "description": "GitSave automates backing up Git repositories using Python, allowing users to sync or archive their repos on defined schedules. It’s CLI-based, lightweight, and integrates easily into cron jobs or CI systems.",
   "categories": [
     62
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/TimWitzdam/GitSave",
-  "website": "github.com/TimWitzdam/GitSave",
-  "source_code": "github.com/TimWitzdam/GitSave",
-  "github_stars": "270",
-  "logo": "/icons/gitsave.webp",
-  "description": "GitSave automates backing up Git repositories using Python, allowing users to sync or archive their repos on defined schedules. It’s CLI-based, lightweight, and integrates easily into cron jobs or CI systems.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "1.3.6",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-19",
+    "date_last_commit": "2025-10-19",
+    "github_stars": 270
+  },
+  "resources": {
+    "website": null,
+    "documentation": null,
+    "source_code": "https://github.com/TimWitzdam/GitSave",
+    "logo": "/icons/gitsave.webp",
+    "issues": "https://github.com/TimWitzdam/GitSave/issues",
+    "releases": "https://github.com/TimWitzdam/GitSave/releases"
+  },
   "features": [
     "Automated Backups: Schedule automatic backups of Git repositories to protect against data loss.",
     "Repository Syncing: Sync multiple repositories on defined schedules with configurable intervals.",
@@ -25,69 +33,45 @@
     "Logging and Monitoring: Track backup success and failures with detailed logging output.",
     "Cross-Platform: Works on Linux, macOS, and Windows with minimal dependencies."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

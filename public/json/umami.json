@@ -1,20 +1,29 @@
 {
   "name": "umami",
   "slug": "umami",
+  "tagline": null,
+  "description": "Umami is a self-hosted, privacy-friendly web analytics platform. It uses a small tracking script and offers clean dashboards, goal tracking, and multi-site support, with an optional hosted cloud service.",
   "categories": [
     186
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/umami-software/umami",
-  "website": "umami.is",
-  "source_code": "github.com/umami-software/umami",
-  "github_stars": "34101",
-  "logo": "/icons/umami.webp",
-  "description": "Umami is a self-hosted, privacy-friendly web analytics platform. It uses a small tracking script and offers clean dashboards, goal tracking, and multi-site support, with an optional hosted cloud service.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v3.0.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-12",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 34110
+  },
+  "resources": {
+    "website": "https://umami.is",
+    "documentation": "https://github.com/umami-software/umami",
+    "source_code": "https://github.com/umami-software/umami",
+    "logo": "/icons/umami.webp",
+    "issues": "https://github.com/umami-software/umami/issues",
+    "releases": "https://github.com/umami-software/umami/releases",
+    "logo_light": "/icons/umami-light.webp"
+  },
   "features": [
     "Web Analytics: Monitor web traffic and user sessions with a GA-like dashboard to easily track conversion, web vitals, and revenue metrics.",
     "Privacy Controls: Ensure GDPR and CCPA compliance with built-in consent management, data anonymization, and configurable retention policies for user data.",
@@ -25,69 +34,45 @@
     "Team Collaboration: Share insights with role-based access controls, collaborative annotations on charts, and scheduled report delivery to keep stakeholders aligned.",
     "API Integrations: Connect with third-party tools via REST APIs, webhooks, and native integrations to centralize data and automate workflows across your stack."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

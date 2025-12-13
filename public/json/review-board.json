@@ -1,20 +1,28 @@
 {
   "name": "review-board",
   "slug": "review-board",
+  "tagline": "",
+  "description": "Review Board is a self-hosted code review tool that integrates with Git, SVN, and Mercurial. It includes inline comments, diff views, and workflow tracking for engineering teams.",
   "categories": [
     125
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/reviewboard/reviewboard",
-  "website": "www.reviewboard.org/",
-  "source_code": "github.com/reviewboard/reviewboard",
-  "github_stars": "1677",
-  "logo": "/icons/review-board.webp",
-  "description": "Review Board is a self-hosted code review tool that integrates with Git, SVN, and Mercurial. It includes inline comments, diff views, and workflow tracking for engineering teams.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "release-7.0.4",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-08-06",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 1677
+  },
+  "resources": {
+    "website": "https://www.reviewboard.org/",
+    "documentation": "https://www.reviewboard.org/",
+    "source_code": "https://github.com/reviewboard/reviewboard",
+    "logo": "/icons/review-board.webp",
+    "issues": "https://github.com/reviewboard/reviewboard/issues",
+    "releases": "https://github.com/reviewboard/reviewboard/releases"
+  },
   "features": [
     "Code review workflow: Submit, review, and approve code changes before merging to main branches.",
     "Inline comments: Add feedback directly on specific lines of code in diff views.",
@@ -29,69 +37,45 @@
     "Dashboard views: Monitor pending reviews and team activity from a central interface.",
     "API integration: Automate review workflows with REST API endpoints."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

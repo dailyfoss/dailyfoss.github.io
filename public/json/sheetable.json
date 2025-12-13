@@ -1,20 +1,28 @@
 {
   "name": "sheetable",
   "slug": "sheetable",
+  "tagline": "",
+  "description": "SheetAble is a self-hosted music sheet organizer for musicians. It manages PDF sheet music, supports tagging, search, and setlists, and offers a responsive web UI suitable for tablets on music stands.",
   "categories": [
     105
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/SheetAble/SheetAble",
-  "website": "sheetable.net",
-  "source_code": "github.com/SheetAble/SheetAble",
-  "github_stars": "396",
-  "logo": "/icons/sheetable.webp",
-  "description": "SheetAble is a self-hosted music sheet organizer for musicians. It manages PDF sheet music, supports tagging, search, and setlists, and offers a responsive web UI suitable for tablets on music stands.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v0.8.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2023-01-14",
+    "date_last_commit": "2025-02-08",
+    "github_stars": 396
+  },
+  "resources": {
+    "website": "https://sheetable.net",
+    "documentation": "https://sheetable.net",
+    "source_code": "https://github.com/SheetAble/SheetAble",
+    "logo": "/icons/sheetable.webp",
+    "issues": "https://github.com/SheetAble/SheetAble/issues",
+    "releases": "https://github.com/SheetAble/SheetAble/releases"
+  },
   "features": [
     "Sheet library: Organize PDF sheet music in a searchable digital library.",
     "Tagging system: Categorize sheets by composer, genre, difficulty, or custom tags.",
@@ -29,69 +37,45 @@
     "Favorites: Mark frequently used sheets for quick access.",
     "Export options: Download sheets or setlists for offline use or printing."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

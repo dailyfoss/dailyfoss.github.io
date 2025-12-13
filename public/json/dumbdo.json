@@ -1,20 +1,28 @@
 {
   "name": "dumbdo",
   "slug": "dumbdo",
+  "tagline": null,
+  "description": "DumbDo is a basic self-hosted to-do list app. It focuses on straightforward task management with lists, completion status, and a clutter-free interface designed for users who want local control over their task data.",
   "categories": [
     159
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/DumbWareio/DumbDo",
-  "website": "github.com/DumbWareio/DumbDo",
-  "source_code": "github.com/DumbWareio/DumbDo",
-  "github_stars": "148",
-  "logo": "/icons/dumbdo.webp",
-  "description": "DumbDo is a basic self-hosted to-do list app. It focuses on straightforward task management with lists, completion status, and a clutter-free interface designed for users who want local control over their task data.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-08-27",
+    "github_stars": 148
+  },
+  "resources": {
+    "website": "https://github.com/DumbWareio/DumbDo",
+    "documentation": "https://github.com/DumbWareio/DumbDo",
+    "source_code": "https://github.com/DumbWareio/DumbDo",
+    "logo": "/icons/dumbdo.webp",
+    "issues": "https://github.com/DumbWareio/DumbDo/issues",
+    "releases": null
+  },
   "features": [
     "Task lists: Create multiple lists to organize tasks by project, context, or priority for structured workflow.",
     "Completion tracking: Mark tasks as done and view completion history to monitor productivity over time.",
@@ -25,69 +33,45 @@
     "Mobile responsive: Access and update tasks from any device with a browser that adapts to screen size.",
     "No dependencies: Run with minimal server requirements and no external services for straightforward deployment."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

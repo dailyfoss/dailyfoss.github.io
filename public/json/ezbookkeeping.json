@@ -1,20 +1,28 @@
 {
   "name": "ezbookkeeping",
   "slug": "ezbookkeeping",
+  "tagline": null,
+  "description": "ezBookkeeping is a self-hosted bookkeeping and finance management app. It tracks income, expenses, categories, accounts, and budgets, with charts and reports to help individuals or small businesses manage money.",
   "categories": [
     5
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/mayswind/ezbookkeeping",
-  "website": "ezbookkeeping.mayswind.net",
-  "source_code": "github.com/mayswind/ezbookkeeping",
-  "github_stars": "3293",
-  "logo": "/icons/ezbookkeeping.webp",
-  "description": "ezBookkeeping is a self-hosted bookkeeping and finance management app. It tracks income, expenses, categories, accounts, and budgets, with charts and reports to help individuals or small businesses manage money.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v1.2.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-09",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 3297
+  },
+  "resources": {
+    "website": "https://ezbookkeeping.mayswind.net",
+    "documentation": "https://github.com/mayswind/ezbookkeeping",
+    "source_code": "https://github.com/mayswind/ezbookkeeping",
+    "logo": "/icons/ezbookkeeping.webp",
+    "issues": "https://github.com/mayswind/ezbookkeeping/issues",
+    "releases": "https://github.com/mayswind/ezbookkeeping/releases"
+  },
   "features": [
     "Income & Expense Tracking: Monitor all financial transactions. Complete money management.",
     "Budget Management: Set and track spending limits. Stay within budget.",
@@ -23,69 +31,45 @@
     "Small Business Ready: Perfect for individuals and small businesses. Scalable solution.",
     "Self-Hosted: Keep your financial data private. Your books, your control."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

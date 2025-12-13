@@ -1,20 +1,28 @@
 {
   "name": "statping-ng",
   "slug": "statping-ng",
+  "tagline": null,
+  "description": "Statping-ng is a self-hosted status page and monitoring platform. It pings services, records uptime, and presents results with historical graphs and alerts.",
   "categories": [
     173
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/statping-ng/statping-ng",
-  "website": "statping-ng.github.io",
-  "source_code": "github.com/statping-ng/statping-ng",
-  "github_stars": "1886",
-  "logo": "/icons/statping-ng.webp",
-  "description": "Statping-ng is a self-hosted status page and monitoring platform. It pings services, records uptime, and presents results with historical graphs and alerts.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v0.93.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-06-04",
+    "date_last_commit": "2025-06-04",
+    "github_stars": 1887
+  },
+  "resources": {
+    "website": "https://statping-ng.github.io",
+    "documentation": "https://github.com/statping-ng/statping-ng",
+    "source_code": "https://github.com/statping-ng/statping-ng",
+    "logo": "/icons/statping-ng.webp",
+    "issues": "https://github.com/statping-ng/statping-ng/issues",
+    "releases": "https://github.com/statping-ng/statping-ng/releases"
+  },
   "features": [
     "Service monitoring: Checks HTTP, TCP, ICMP, and other service types for availability.",
     "Status page: Displays public-facing status page for service uptime.",
@@ -29,69 +37,45 @@
     "Multi-user support: Allows team members to manage services with different permissions.",
     "Export metrics: Provides Prometheus metrics endpoint for external monitoring."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

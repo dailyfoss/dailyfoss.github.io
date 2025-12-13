@@ -1,20 +1,28 @@
 {
   "name": "kavita",
   "slug": "kavita",
+  "tagline": null,
+  "description": "Kavita is a self hosted digital library for manga, comics, light novels and books. It supports reading progress, collections, metadata and multiple users with a rich responsive reader optimized for various devices.",
   "categories": [
     95
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Kareadita/Kavita",
-  "website": "http://www.kavitareader.com",
-  "source_code": "github.com/Kareadita/Kavita",
-  "github_stars": "9374",
-  "logo": "/icons/kavita.webp",
-  "description": "Kavita is a self hosted digital library for manga, comics, light novels and books. It supports reading progress, collections, metadata and multiple users with a rich responsive reader optimized for various devices.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v0.8.8.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-23",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 9375
+  },
+  "resources": {
+    "website": "http://www.kavitareader.com",
+    "documentation": "https://github.com/Kareadita/Kavita",
+    "source_code": "https://github.com/Kareadita/Kavita",
+    "logo": "/icons/kavita.webp",
+    "issues": "https://github.com/Kareadita/Kavita/issues",
+    "releases": "https://github.com/Kareadita/Kavita/releases"
+  },
   "features": [
     "Multi-Format Support: Read manga, comics, books, and light novels in various formats. Unified library for all reading material.",
     "Web Reader: Built-in responsive reader with page-by-page and continuous scroll modes. Read comfortably on any device.",
@@ -29,69 +37,45 @@
     "Search & Filter: Advanced search with filters for genres, formats, and reading status. Find content quickly.",
     "Dark Mode: Eye-friendly dark theme for comfortable night reading. Reduce eye strain."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

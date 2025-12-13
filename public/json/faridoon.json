@@ -1,20 +1,28 @@
 {
   "name": "faridoon",
   "slug": "faridoon",
+  "tagline": "",
+  "description": "Faridoon is a self-hosted journaling and note-taking application that emphasizes a calm writing experience and long-term personal knowledge storage. It uses a browser interface and local storage for privacy-respecting journaling.",
   "categories": [
     165
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/jamesread/Faridoon",
-  "website": "jamesread.github.io/Faridoon/",
-  "source_code": "github.com/jamesread/Faridoon",
-  "github_stars": "48",
-  "logo": "/icons/faridoon.webp",
-  "description": "Faridoon is a self-hosted journaling and note-taking application that emphasizes a calm writing experience and long-term personal knowledge storage. It uses a browser interface and local storage for privacy-respecting journaling.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "1.2.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-06-08",
+    "date_last_commit": "2025-06-09",
+    "github_stars": 48
+  },
+  "resources": {
+    "website": "https://jamesread.github.io/Faridoon/",
+    "documentation": "https://jamesread.github.io/Faridoon/",
+    "source_code": "https://github.com/jamesread/Faridoon",
+    "logo": "/icons/faridoon.webp",
+    "issues": "https://github.com/jamesread/Faridoon/issues",
+    "releases": "https://github.com/jamesread/Faridoon/releases"
+  },
   "features": [
     "Note-Taking: Calm writing experience, Personal journaling, Long-term knowledge storage. Your thoughts, your space.",
     "Privacy-First: Local storage, No third-party tracking. Complete data ownership.",
@@ -26,69 +34,45 @@
     "Tagging: Categorize your thoughts. Easy retrieval.",
     "Export: Backup your notes. Data portability."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "chiyogami",
   "slug": "chiyogami",
+  "tagline": "",
+  "description": "Chiyogami is a minimal, aesthetic note-taking and journaling web app with markdown support and keyboard shortcuts. It lets users manage plain text notes with elegant design and simple folder-based organization.",
   "categories": [
     21
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/rhee876527/chiyogami",
-  "website": "chiyogami.myaddr.dev",
-  "source_code": "github.com/rhee876527/chiyogami",
-  "github_stars": "67",
-  "logo": "/icons/chiyogami.webp",
-  "description": "Chiyogami is a minimal, aesthetic note-taking and journaling web app with markdown support and keyboard shortcuts. It lets users manage plain text notes with elegant design and simple folder-based organization.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "BSD-3-Clause",
+    "version": "1.5.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-27",
+    "date_last_commit": "2025-12-09",
+    "github_stars": 67
+  },
+  "resources": {
+    "website": "https://chiyogami.myaddr.dev",
+    "documentation": "https://chiyogami.myaddr.dev",
+    "source_code": "https://github.com/rhee876527/chiyogami",
+    "logo": "/icons/chiyogami.webp",
+    "issues": "https://github.com/rhee876527/chiyogami/issues",
+    "releases": "https://github.com/rhee876527/chiyogami/releases"
+  },
   "features": [
     "Aesthetic Notes: Beautiful, minimal note-taking interface. Elegant design.",
     "Markdown Support: Write notes in markdown format. Rich formatting.",
@@ -24,69 +32,45 @@
     "Journaling: Perfect for daily journaling and thoughts. Personal reflection.",
     "Self-Hosted: Keep your notes completely private. Data ownership."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

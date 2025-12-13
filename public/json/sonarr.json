@@ -1,20 +1,28 @@
 {
   "name": "sonarr",
   "slug": "sonarr",
+  "tagline": null,
+  "description": "Sonarr is a self-hosted TV series manager that automatically downloads, renames, and organizes episodes for Usenet and torrent users, integrating with indexers and media servers.",
   "categories": [
     104
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Sonarr/Sonarr",
-  "website": "sonarr.tv",
-  "source_code": "github.com/Sonarr/Sonarr",
-  "github_stars": "12820",
-  "logo": "/icons/sonarr.webp",
-  "description": "Sonarr is a self-hosted TV series manager that automatically downloads, renames, and organizes episodes for Usenet and torrent users, integrating with indexers and media servers.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v4.0.16.2944",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-05",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 12826
+  },
+  "resources": {
+    "website": "https://sonarr.tv",
+    "documentation": "https://github.com/Sonarr/Sonarr",
+    "source_code": "https://github.com/Sonarr/Sonarr",
+    "logo": "/icons/sonarr.webp",
+    "issues": "https://github.com/Sonarr/Sonarr/issues",
+    "releases": "https://github.com/Sonarr/Sonarr/releases"
+  },
   "features": [
     "Automated downloads: Monitors RSS feeds and automatically downloads new episodes.",
     "Quality profiles: Defines preferred quality settings and upgrade rules for episodes.",
@@ -29,69 +37,45 @@
     "Multi-language: Searches for episodes in multiple languages with subtitle support.",
     "API access: Provides REST API for automation and third-party app integration."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

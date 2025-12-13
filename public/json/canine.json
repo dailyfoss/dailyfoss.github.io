@@ -1,20 +1,28 @@
 {
   "name": "canine",
   "slug": "canine",
+  "tagline": null,
+  "description": "Canine is a tool for managing dog data including health records, medical history, and microchip info. It provides a simple UI for pet owners or veterinarians and supports self-hosting to keep sensitive data private.",
   "categories": [
     147
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/CanineHQ/canine",
-  "website": "canine.sh",
-  "source_code": "github.com/CanineHQ/canine",
-  "github_stars": "2612",
-  "logo": "/icons/canine.webp",
-  "description": "Canine is a tool for managing dog data including health records, medical history, and microchip info. It provides a simple UI for pet owners or veterinarians and supports self-hosting to keep sensitive data private.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-13",
+    "github_stars": 2612
+  },
+  "resources": {
+    "website": "https://canine.sh",
+    "documentation": "https://github.com/CanineHQ/canine",
+    "source_code": "https://github.com/CanineHQ/canine",
+    "logo": "/icons/canine.webp",
+    "issues": "https://github.com/CanineHQ/canine/issues",
+    "releases": null
+  },
   "features": [
     "Pet Health Records: Manage dog health records and medical history. Complete pet care.",
     "Medical Tracking: Track vaccinations, medications, and vet visits. Never miss appointments.",
@@ -23,69 +31,45 @@
     "Self-Hosted: Keep sensitive pet data completely private. Data security.",
     "Veterinary Tool: Useful for both pet owners and veterinarians. Professional solution."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

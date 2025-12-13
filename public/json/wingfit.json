@@ -1,20 +1,28 @@
 {
   "name": "wingfit",
   "slug": "wingfit",
+  "tagline": null,
+  "description": "Wingfit is a self-hosted fitness and workout tracking app. It lets users define routines, record sessions, and view progress over time in a clean web interface optimized for both desktop and mobile devices.",
   "categories": [
     75
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/itskovacs/wingfit",
-  "website": "wingfit.fr",
-  "source_code": "github.com/itskovacs/wingfit",
-  "github_stars": "417",
-  "logo": "/icons/wingfit.webp",
-  "description": "Wingfit is a self-hosted fitness and workout tracking app. It lets users define routines, record sessions, and view progress over time in a clean web interface optimized for both desktop and mobile devices.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "5.3.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-08-11",
+    "date_last_commit": "2025-08-11",
+    "github_stars": 418
+  },
+  "resources": {
+    "website": "https://wingfit.fr",
+    "documentation": "https://github.com/itskovacs/wingfit",
+    "source_code": "https://github.com/itskovacs/wingfit",
+    "logo": "/icons/wingfit.webp",
+    "issues": "https://github.com/itskovacs/wingfit/issues",
+    "releases": "https://github.com/itskovacs/wingfit/releases"
+  },
   "features": [
     "Workout logging: Record exercise sessions with exercises, sets, reps, and weights for comprehensive tracking.",
     "Routine builder: Create custom workout routines that can be reused and modified over time.",
@@ -29,69 +37,45 @@
     "Custom exercises: Add your own exercises beyond the default library to match your training style.",
     "Body metrics: Log weight, body measurements, and other metrics alongside workout data."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

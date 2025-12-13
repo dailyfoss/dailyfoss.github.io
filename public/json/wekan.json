@@ -1,20 +1,28 @@
 {
   "name": "wekan",
   "slug": "wekan",
+  "tagline": null,
+  "description": "Wekan is an open-source, Trello-like kanban board for managing tasks and projects. It offers boards, lists, cards, swimlanes, and permissions, and can be deployed self-hosted or via various hosted providers for teams of any size.",
   "categories": [
     85
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/wekan/wekan",
-  "website": "wekan.fi",
-  "source_code": "github.com/wekan/wekan",
-  "github_stars": "20732",
-  "logo": "/icons/wekan.webp",
-  "description": "Wekan is an open-source, Trello-like kanban board for managing tasks and projects. It offers boards, lists, cards, swimlanes, and permissions, and can be deployed self-hosted or via various hosted providers for teams of any size.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v8.17",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-06",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 20731
+  },
+  "resources": {
+    "website": "https://wekan.fi",
+    "documentation": "https://github.com/wekan/wekan",
+    "source_code": "https://github.com/wekan/wekan",
+    "logo": "/icons/wekan.webp",
+    "issues": "https://github.com/wekan/wekan/issues",
+    "releases": "https://github.com/wekan/wekan/releases"
+  },
   "features": [
     "Kanban boards: Organize tasks visually with customizable boards, lists, and cards for project management.",
     "Drag-and-drop: Move cards between lists effortlessly to update task status and workflow progression.",
@@ -29,69 +37,45 @@
     "Import/export: Migrate boards from Trello or export data in JSON format for backup or analysis.",
     "Access control: Set board permissions to control who can view, edit, or administer specific boards."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": true,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": true,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,29 @@
 {
   "name": "rustpad",
   "slug": "rustpad",
+  "tagline": null,
+  "description": "Rustpad is a collaborative code editor designed to be self-hosted. It includes real-time synchronization and multi-user support using WebSockets in a minimal UI.",
   "categories": [
     196
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/ekzhang/rustpad",
-  "website": "rustpad.io",
-  "source_code": "github.com/ekzhang/rustpad",
-  "github_stars": "3917",
-  "logo": "/icons/rustpad.webp",
-  "description": "Rustpad is a collaborative code editor designed to be self-hosted. It includes real-time synchronization and multi-user support using WebSockets in a minimal UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-02-02",
+    "github_stars": 3917
+  },
+  "resources": {
+    "website": "https://rustpad.io",
+    "documentation": "https://github.com/ekzhang/rustpad",
+    "source_code": "https://github.com/ekzhang/rustpad",
+    "logo": "/icons/rustpad.webp",
+    "issues": "https://github.com/ekzhang/rustpad/issues",
+    "releases": null,
+    "logo_light": "/icons/rustpad-light.webp"
+  },
   "features": [
     "Real-time collaboration: Edit code simultaneously with multiple users seeing changes instantly.",
     "WebSocket sync: Use efficient WebSocket connections for low-latency synchronization.",
@@ -29,69 +38,45 @@
     "Self-hosted privacy: Keep all code on your own server without third-party access.",
     "Lightweight: Run efficiently with minimal server resources using Rust backend."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

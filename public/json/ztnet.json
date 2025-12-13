@@ -1,20 +1,28 @@
 {
   "name": "ztnet",
   "slug": "ztnet",
+  "tagline": null,
+  "description": "ztnet is a self-hosted controller and management UI for ZeroTier networks. It lets administrators manage networks, members, and access rules via a central, easy-to-use web dashboard.",
   "categories": [
     174
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/sinamics/ztnet",
-  "website": "ztnet.network",
-  "source_code": "github.com/sinamics/ztnet",
-  "github_stars": "996",
-  "logo": "/icons/ztnet.webp",
-  "description": "ztnet is a self-hosted controller and management UI for ZeroTier networks. It lets administrators manage networks, members, and access rules via a central, easy-to-use web dashboard.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v0.7.12",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-07",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 997
+  },
+  "resources": {
+    "website": "https://ztnet.network",
+    "documentation": "https://github.com/sinamics/ztnet",
+    "source_code": "https://github.com/sinamics/ztnet",
+    "logo": "/icons/ztnet.webp",
+    "issues": "https://github.com/sinamics/ztnet/issues",
+    "releases": "https://github.com/sinamics/ztnet/releases"
+  },
   "features": [
     "Network management: Create and configure ZeroTier networks with custom IP ranges and routing rules from a web dashboard.",
     "Member authorization: Approve or deny device join requests and manage which devices can access each network.",
@@ -29,69 +37,45 @@
     "API access: Automate network management and member provisioning using REST API endpoints.",
     "Backup and restore: Export network configurations for disaster recovery or migration to other controllers."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

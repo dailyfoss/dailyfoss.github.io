@@ -1,20 +1,28 @@
 {
   "name": "endurain",
   "slug": "endurain",
+  "tagline": null,
+  "description": "Endurain is a self-hosted training log for endurance sports such as running and cycling. It tracks workouts, distances, and performance metrics over time, giving athletes insight into their training volume and trends.",
   "categories": [
     165
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/joaovitoriasilva/endurain",
-  "website": "docs.endurain.com/",
-  "source_code": "github.com/joaovitoriasilva/endurain",
-  "github_stars": "1541",
-  "logo": "/icons/endurain.webp",
-  "description": "Endurain is a self-hosted training log for endurance sports such as running and cycling. It tracks workouts, distances, and performance metrics over time, giving athletes insight into their training volume and trends.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v0.16.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-11",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 1543
+  },
+  "resources": {
+    "website": "https://docs.endurain.com/",
+    "documentation": "https://github.com/joaovitoriasilva/endurain",
+    "source_code": "https://github.com/joaovitoriasilva/endurain",
+    "logo": "/icons/endurain.webp",
+    "issues": "https://github.com/joaovitoriasilva/endurain/issues",
+    "releases": "https://github.com/joaovitoriasilva/endurain/releases"
+  },
   "features": [
     "Training Log: Track workouts for running and cycling. Comprehensive activity records.",
     "Performance Metrics: Monitor distance, pace, and progress. Data-driven training.",
@@ -23,69 +31,45 @@
     "Personal Records: Track PRs and achievements. Celebrate your progress.",
     "Self-Hosted: Keep your training data private. Your fitness, your control."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

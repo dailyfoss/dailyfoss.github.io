@@ -1,20 +1,28 @@
 {
   "name": "docker-volume-backup",
   "slug": "docker-volume-backup",
+  "tagline": null,
+  "description": "Docker Volume Backup is a tool that allows scheduled backups of Docker volumes to cloud storage or local file systems. It includes retention policies, encryption, and supports running in a container itself.",
   "categories": [
     18
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/offen/docker-volume-backup",
-  "website": "offen.github.io/docker-volume-backup/",
-  "source_code": "github.com/offen/docker-volume-backup",
-  "github_stars": "3192",
-  "logo": "/icons/docker-volume-backup.webp",
-  "description": "Docker Volume Backup is a tool that allows scheduled backups of Docker volumes to cloud storage or local file systems. It includes retention policies, encryption, and supports running in a container itself.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MPL-2.0",
+    "version": "v2.46.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-09",
+    "date_last_commit": "2025-12-09",
+    "github_stars": 3194
+  },
+  "resources": {
+    "website": "https://offen.github.io/docker-volume-backup/",
+    "documentation": "https://github.com/offen/docker-volume-backup",
+    "source_code": "https://github.com/offen/docker-volume-backup",
+    "logo": "/icons/docker-volume-backup.webp",
+    "issues": "https://github.com/offen/docker-volume-backup/issues",
+    "releases": "https://github.com/offen/docker-volume-backup/releases"
+  },
   "features": [
     "Scheduled Backups: Automatic volume backups on custom schedules. Set and forget protection.",
     "Cloud Storage Support: Backup to S3, Azure, GCS, and more. Flexible storage options.",
@@ -23,69 +31,45 @@
     "Container-Native: Runs as a Docker container itself. Easy deployment.",
     "Self-Hosted: Complete control over backup process and data. Your volumes, your backups."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

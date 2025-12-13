@@ -1,20 +1,29 @@
 {
   "name": "pigallery2",
   "slug": "pigallery2",
+  "tagline": null,
+  "description": "PiGallery2 is a fast static gallery generator and viewer designed for hosting image collections on a server or NAS. It offers hierarchical browsing, tagging, and a responsive UI.",
   "categories": [
     120
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/bpatrik/pigallery2",
-  "website": "http://bpatrik.github.io/pigallery2/",
-  "source_code": "github.com/bpatrik/pigallery2",
-  "github_stars": "2071",
-  "logo": "/icons/pigallery2.webp",
-  "description": "PiGallery2 is a fast static gallery generator and viewer designed for hosting image collections on a server or NAS. It offers hierarchical browsing, tagging, and a responsive UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "3.1.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-07",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 2073
+  },
+  "resources": {
+    "website": "http://bpatrik.github.io/pigallery2/",
+    "documentation": "https://github.com/bpatrik/pigallery2",
+    "source_code": "https://github.com/bpatrik/pigallery2",
+    "logo": "/icons/pigallery2.webp",
+    "issues": "https://github.com/bpatrik/pigallery2/issues",
+    "releases": "https://github.com/bpatrik/pigallery2/releases",
+    "logo_light": "/icons/pigallery2-light.webp"
+  },
   "features": [
     "Static generation: Generate static gallery pages for fast loading without server-side processing.",
     "Hierarchical browsing: Navigate photos organized by folder structure with breadcrumb navigation.",
@@ -29,69 +38,45 @@
     "Performance optimized: Designed for hosting large photo collections on NAS or low-power servers.",
     "Face detection: Automatically detect and tag faces in photos for people-based organization."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

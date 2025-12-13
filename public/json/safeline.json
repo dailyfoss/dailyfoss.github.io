@@ -1,20 +1,28 @@
 {
   "name": "safeline",
   "slug": "safeline",
+  "tagline": null,
+  "description": "SafeLine is a self-hosted security platform that detects web application attacks using AI. It includes dashboards, threat intelligence, and supports scalable deployment.",
   "categories": [
     145
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/chaitin/SafeLine",
-  "website": "ly.safepoint.cloud/fUxS0GW",
-  "source_code": "github.com/chaitin/SafeLine",
-  "github_stars": "19561",
-  "logo": "/icons/safeline.webp",
-  "description": "SafeLine is a self-hosted security platform that detects web application attacks using AI. It includes dashboards, threat intelligence, and supports scalable deployment.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v9.2.7",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-05",
+    "date_last_commit": "2025-11-05",
+    "github_stars": 19562
+  },
+  "resources": {
+    "website": "https://ly.safepoint.cloud/fUxS0GW",
+    "documentation": "https://github.com/chaitin/SafeLine",
+    "source_code": "https://github.com/chaitin/SafeLine",
+    "logo": "/icons/safeline.webp",
+    "issues": "https://github.com/chaitin/SafeLine/issues",
+    "releases": "https://github.com/chaitin/SafeLine/releases"
+  },
   "features": [
     "AI-powered detection: Uses machine learning to identify web application attacks and zero-day threats.",
     "Web application firewall: Protects against OWASP Top 10 vulnerabilities including SQL injection and XSS.",
@@ -29,69 +37,45 @@
     "Compliance reporting: Generates audit logs and reports for security compliance requirements.",
     "Multi-site support: Protects multiple domains and applications from a single deployment."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

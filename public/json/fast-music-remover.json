@@ -1,20 +1,28 @@
 {
   "name": "fast-music-remover",
   "slug": "fast-music-remover",
+  "tagline": null,
+  "description": "fast-music-remover is a command-line tool that detects and removes background music from audio using machine learning models. It is geared towards podcasters, editors, and creators who need quick vocal isolation.",
   "categories": [
     59
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/omeryusufyagci/fast-music-remover",
-  "website": "github.com/omeryusufyagci/fast-music-remover",
-  "source_code": "github.com/omeryusufyagci/fast-music-remover",
-  "github_stars": "678",
-  "logo": "/icons/fast-music-remover.webp",
-  "description": "fast-music-remover is a command-line tool that detects and removes background music from audio using machine learning models. It is geared towards podcasters, editors, and creators who need quick vocal isolation.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-01-15",
+    "github_stars": 679
+  },
+  "resources": {
+    "website": "https://github.com/omeryusufyagci/fast-music-remover",
+    "documentation": "https://github.com/omeryusufyagci/fast-music-remover",
+    "source_code": "https://github.com/omeryusufyagci/fast-music-remover",
+    "logo": "/icons/fast-music-remover.webp",
+    "issues": "https://github.com/omeryusufyagci/fast-music-remover/issues",
+    "releases": null
+  },
   "features": [
     "Audio Processing: Remove background music from audio, Vocal isolation using ML, Fast processing. Clean audio extraction.",
     "Content Creation: Perfect for podcasters and editors. Professional results.",
@@ -25,69 +33,45 @@
     "Fast Performance: Quick processing times. Efficient workflow.",
     "Self-Hosted: Run locally. Privacy-focused processing."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

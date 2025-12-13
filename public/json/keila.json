@@ -1,20 +1,28 @@
 {
   "name": "keila",
   "slug": "keila",
+  "tagline": null,
+  "description": "Keila is an open source email marketing and newsletter tool. It enables list management, campaign design and sending, and basic analytics, providing a self hosted alternative for small organizations that want control over subscriber data.",
   "categories": [
     109
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/pentacent/keila",
-  "website": "keila.io",
-  "source_code": "github.com/pentacent/keila",
-  "github_stars": "1899",
-  "logo": "/icons/keila.webp",
-  "description": "Keila is an open source email marketing and newsletter tool. It enables list management, campaign design and sending, and basic analytics, providing a self hosted alternative for small organizations that want control over subscriber data.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "0.17.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-03-14",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 1899
+  },
+  "resources": {
+    "website": "https://keila.io",
+    "documentation": "https://github.com/pentacent/keila",
+    "source_code": "https://github.com/pentacent/keila",
+    "logo": "/icons/keila.webp",
+    "issues": "https://github.com/pentacent/keila/issues",
+    "releases": "https://github.com/pentacent/keila/releases"
+  },
   "features": [
     "Email Campaigns: Create and send newsletters with visual template editor. Send professional emails to subscribers.",
     "List Management: Organize subscribers into lists with import and export tools. Manage your audience effectively.",
@@ -29,69 +37,45 @@
     "API Access: Programmatic campaign management and subscriber operations. Integrate with existing systems.",
     "Multi-User: Team accounts with role-based permissions for collaboration. Manage campaigns together."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

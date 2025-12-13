@@ -1,20 +1,28 @@
 {
   "name": "bugsink",
   "slug": "bugsink",
+  "tagline": null,
+  "description": "Bugsink is a self-hosted error monitoring and reporting tool for receiving error logs from applications and visualizing them in a clean UI. Ideal for dev teams who want to keep everything in-house.",
   "categories": [
     93
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/bugsink/bugsink",
-  "website": "www.bugsink.com/",
-  "source_code": "github.com/bugsink/bugsink",
-  "github_stars": "1288",
-  "logo": "/icons/bugsink.webp",
-  "description": "Bugsink is a self-hosted error monitoring and reporting tool for receiving error logs from applications and visualizing them in a clean UI. Ideal for dev teams who want to keep everything in-house.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "2.0.6",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-08",
+    "date_last_commit": "2025-12-09",
+    "github_stars": 1289
+  },
+  "resources": {
+    "website": "https://www.bugsink.com/",
+    "documentation": "https://github.com/bugsink/bugsink",
+    "source_code": "https://github.com/bugsink/bugsink",
+    "logo": "/icons/bugsink.webp",
+    "issues": "https://github.com/bugsink/bugsink/issues",
+    "releases": "https://github.com/bugsink/bugsink/releases"
+  },
   "features": [
     "Error Monitoring: Receive and track application errors in real-time. Catch bugs fast.",
     "Clean Visualization: View error logs through intuitive web interface. Easy debugging.",
@@ -24,69 +32,45 @@
     "Self-Hosted: Keep error data on your own infrastructure. Complete privacy.",
     "In-House Solution: Perfect for teams wanting data control. No third-party access."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

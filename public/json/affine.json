@@ -1,20 +1,29 @@
 {
   "name": "affine",
   "slug": "affine",
+  "tagline": null,
+  "description": "AFFiNE is a collaborative, privacy-focused workspace that combines note-taking, whiteboarding, and database organization. It offers real-time sync, offline editing, and AI-assisted features, designed to be a self-hosted modern productivity tool.",
   "categories": [
     196
   ],
-  "sponsored": true,
-  "sponsored_expired": "2025-12-31",
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/toeverything/AFFiNE",
-  "website": "affine.pro",
-  "source_code": "github.com/toeverything/AFFiNE",
-  "github_stars": "60664",
-  "logo": "/icons/affine.webp",
-  "description": "AFFiNE is a collaborative, privacy-focused workspace that combines note-taking, whiteboarding, and database organization. It offers real-time sync, offline editing, and AI-assisted features, designed to be a self-hosted modern productivity tool.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": true,
+    "license": "NOASSERTION",
+    "version": "v0.25.7",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-09",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 60679
+  },
+  "resources": {
+    "website": "https://affine.pro",
+    "documentation": "https://github.com/toeverything/AFFiNE",
+    "source_code": "https://github.com/toeverything/AFFiNE",
+    "logo": "/icons/affine.webp",
+    "issues": "https://github.com/toeverything/AFFiNE/issues",
+    "releases": "https://github.com/toeverything/AFFiNE/releases",
+    "logo_light": "/icons/affine-light.webp"
+  },
   "features": [
     "Unified Workspace: Combines note-taking, visual whiteboarding, and databases in one place. Everything you need for knowledge management.",
     "Real-Time Sync: Changes appear instantly across all your devices. Work seamlessly from anywhere.",
@@ -25,69 +34,45 @@
     "Native Apps: Desktop applications optimized for Linux, Windows, and macOS. Superior performance on every platform.",
     "Modern Interface: Clean, intuitive design that minimizes distractions. Focus on what matters most."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

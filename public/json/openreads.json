@@ -1,20 +1,28 @@
 {
   "name": "openreads",
   "slug": "openreads",
+  "tagline": null,
+  "description": "OpenReads is a self-hosted reading tracker that lets users track reading progress, manage book lists, and log reading habits. It features a clean, intuitive web interface built for reading enthusiasts.",
   "categories": [
     96
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/mateusz-bak/openreads",
-  "website": "github.com/mateusz-bak/openreads",
-  "source_code": "github.com/mateusz-bak/openreads",
-  "github_stars": "1379",
-  "logo": "/icons/openreads.webp",
-  "description": "OpenReads is a self-hosted reading tracker that lets users track reading progress, manage book lists, and log reading habits. It features a clean, intuitive web interface built for reading enthusiasts.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-2.0",
+    "version": "v2.11.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-09",
+    "date_last_commit": "2025-10-20",
+    "github_stars": 1379
+  },
+  "resources": {
+    "website": "https://github.com/mateusz-bak/openreads",
+    "documentation": "https://github.com/mateusz-bak/openreads",
+    "source_code": "https://github.com/mateusz-bak/openreads",
+    "logo": "/icons/openreads.webp",
+    "issues": "https://github.com/mateusz-bak/openreads/issues",
+    "releases": "https://github.com/mateusz-bak/openreads/releases"
+  },
   "features": [
     "Reading progress: Track current page or percentage completion for books in progress with visual indicators.",
     "Book lists: Organize titles into custom shelves like to-read, currently reading, and finished for library management.",
@@ -25,69 +33,45 @@
     "Search and filter: Find books quickly by title, author, or genre with sorting options for large collections.",
     "Import and export: Transfer reading data between devices or backup your library using standard file formats."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": true,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": true,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

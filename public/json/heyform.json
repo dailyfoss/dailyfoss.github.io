@@ -1,20 +1,28 @@
 {
   "name": "heyform",
   "slug": "heyform",
+  "tagline": null,
+  "description": "HeyForm is an open source form builder and survey platform. It provides a modern drag and drop interface, logic rules and response analytics, suitable for contact forms, feedback and lead collection in self hosted environments.",
   "categories": [
     157
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/heyform/heyform",
-  "website": "heyform.net",
-  "source_code": "github.com/heyform/heyform",
-  "github_stars": "8507",
-  "logo": "/icons/heyform.webp",
-  "description": "HeyForm is an open source form builder and survey platform. It provides a modern drag and drop interface, logic rules and response analytics, suitable for contact forms, feedback and lead collection in self hosted environments.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v3.0.0-rc.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-28",
+    "date_last_commit": "2025-11-25",
+    "github_stars": 8507
+  },
+  "resources": {
+    "website": "https://heyform.net",
+    "documentation": "https://github.com/heyform/heyform",
+    "source_code": "https://github.com/heyform/heyform",
+    "logo": "/icons/heyform.webp",
+    "issues": "https://github.com/heyform/heyform/issues",
+    "releases": "https://github.com/heyform/heyform/releases"
+  },
   "features": [
     "Drag-and-Drop Builder: Create forms visually by dragging field types onto the canvas.",
     "Conditional Logic: Show or hide questions based on previous answers for dynamic forms.",
@@ -25,69 +33,45 @@
     "Notification System: Receive email alerts when new responses are submitted.",
     "Data Export: Download responses as CSV or Excel for further analysis."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

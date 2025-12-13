@@ -1,20 +1,28 @@
 {
   "name": "rssbox",
   "slug": "rssbox",
+  "tagline": null,
+  "description": "RSSBox is a self-hosted tool to back up RSS feeds and convert web pages into readable feeds. Supports API, scheduling, and integrations with external readers.",
   "categories": [
     129
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/versun/RSSBox",
-  "website": "rssbox.app",
-  "source_code": "github.com/versun/RSSBox",
-  "github_stars": "615",
-  "logo": "/icons/rssbox.webp",
-  "description": "RSSBox is a self-hosted tool to back up RSS feeds and convert web pages into readable feeds. Supports API, scheduling, and integrations with external readers.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "2025.12.13",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-12",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 615
+  },
+  "resources": {
+    "website": "https://rssbox.app",
+    "documentation": "https://github.com/versun/RSSBox",
+    "source_code": "https://github.com/versun/RSSBox",
+    "logo": "/icons/rssbox.webp",
+    "issues": "https://github.com/versun/RSSBox/issues",
+    "releases": "https://github.com/versun/RSSBox/releases"
+  },
   "features": [
     "Feed backup: Archive RSS feeds locally to preserve content even if sources disappear.",
     "Web to RSS: Convert websites without RSS feeds into readable feed formats.",
@@ -29,69 +37,45 @@
     "Proxy support: Fetch feeds through proxies to avoid rate limits or blocks.",
     "Export functionality: Download archived feeds in standard formats for migration."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

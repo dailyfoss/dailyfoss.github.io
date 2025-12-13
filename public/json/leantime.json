@@ -1,89 +1,73 @@
 {
   "name": "leantime",
   "slug": "leantime",
+  "tagline": null,
+  "description": "Leantime is an open-source project management system designed for teams and startups. It combines lean methodology with strategic planning, task management, idea boards, and reporting—all in a modern self-hosted web UI.",
   "categories": [
     125
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Leantime/leantime",
-  "website": "leantime.io",
-  "source_code": "github.com/Leantime/leantime",
-  "github_stars": "8721",
-  "logo": "/icons/leantime.webp",
-  "description": "Leantime is an open-source project management system designed for teams and startups. It combines lean methodology with strategic planning, task management, idea boards, and reporting—all in a modern self-hosted web UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v3.5.12",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-08-15",
+    "date_last_commit": "2025-11-30",
+    "github_stars": 8725
+  },
+  "resources": {
+    "website": "https://leantime.io",
+    "documentation": "https://github.com/Leantime/leantime",
+    "source_code": "https://github.com/Leantime/leantime",
+    "logo": "/icons/leantime.webp",
+    "issues": "https://github.com/Leantime/leantime/issues",
+    "releases": "https://github.com/Leantime/leantime/releases"
+  },
   "features": [
     "Project Management: Task tracking, Milestone planning, Team collaboration. Manage projects with lean methodology.",
     "Strategic Planning: Goal setting, Idea boards, Roadmap visualization. Align team efforts with strategy.",
     "Time Tracking: Log work hours, Project time reports, Resource allocation. Track time spent on tasks.",
     "Reporting: Progress dashboards, Analytics, Custom reports. Monitor project health and team performance."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "vanilla-cookbook",
   "slug": "vanilla-cookbook",
+  "tagline": "",
+  "description": "Vanilla Cookbook is a self-hosted recipe manager tailored for simple, ingredient-focused cooking. It lets users store, categorize, and browse recipes through a clean web interface.",
   "categories": [
     131
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/jt196/vanilla-cookbook",
-  "website": "github.com/jt196/vanilla-cookbook",
-  "source_code": "github.com/jt196/vanilla-cookbook",
-  "github_stars": "69",
-  "logo": "/icons/vanilla-cookbook.webp",
-  "description": "Vanilla Cookbook is a self-hosted recipe manager tailored for simple, ingredient-focused cooking. It lets users store, categorize, and browse recipes through a clean web interface.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v1.2.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-08-23",
+    "date_last_commit": "2025-09-10",
+    "github_stars": 69
+  },
+  "resources": {
+    "website": null,
+    "documentation": null,
+    "source_code": "https://github.com/jt196/vanilla-cookbook",
+    "logo": "/icons/vanilla-cookbook.webp",
+    "issues": "https://github.com/jt196/vanilla-cookbook/issues",
+    "releases": "https://github.com/jt196/vanilla-cookbook/releases"
+  },
   "features": [
     "Recipe storage: Store recipes with ingredients, instructions, and cooking notes.",
     "Simple interface: Navigate a clean, minimalist interface focused on cooking essentials.",
@@ -29,69 +37,45 @@
     "Quick entry: Add new recipes easily with straightforward input forms.",
     "Lightweight: Run with minimal resources suitable for personal or family use."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

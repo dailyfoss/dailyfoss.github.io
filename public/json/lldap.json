@@ -1,89 +1,74 @@
 {
   "name": "lldap",
   "slug": "lldap",
+  "tagline": null,
+  "description": "LLDAP is a lightweight LDAP identity provider written in Rust for small-scale deployments. It supports web-based admin, users, groups, and integration with platforms expecting LDAP, perfect for homelabs or SMEs.",
   "categories": [
     79
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/lldap/lldap",
-  "website": "github.com/lldap/lldap",
-  "source_code": "github.com/lldap/lldap",
-  "github_stars": "5802",
-  "logo": "/icons/lldap.webp",
-  "description": "LLDAP is a lightweight LDAP identity provider written in Rust for small-scale deployments. It supports web-based admin, users, groups, and integration with platforms expecting LDAP, perfect for homelabs or SMEs.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v0.6.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-08-17",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 5806
+  },
+  "resources": {
+    "website": "https://github.com/lldap/lldap",
+    "documentation": "https://github.com/lldap/lldap",
+    "source_code": "https://github.com/lldap/lldap",
+    "logo": "/icons/lldap.webp",
+    "issues": "https://github.com/lldap/lldap/issues",
+    "releases": "https://github.com/lldap/lldap/releases",
+    "logo_light": "/icons/lldap-light.webp"
+  },
   "features": [
     "Lightweight LDAP: Minimal resource usage, Fast performance, Easy setup. LDAP for small deployments.",
     "Web Administration: User management, Group management, Web-based UI. Manage identity from browser.",
     "LDAP Compatible: Standard protocol, Wide integration, Drop-in replacement. Works with existing tools.",
     "Rust-Based: Memory safe, High performance, Reliable. Modern LDAP implementation."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

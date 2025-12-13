@@ -1,20 +1,28 @@
 {
   "name": "recommendarr",
   "slug": "recommendarr",
+  "tagline": null,
+  "description": "Recommendarr is a self-hosted tool that recommends movies and shows from your media library based on ratings and usage. It integrates with Plex, Radarr, and Sonarr.",
   "categories": [
     166
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/fingerthief/recommendarr",
-  "website": "github.com/fingerthief/recommendarr",
-  "source_code": "github.com/fingerthief/recommendarr",
-  "github_stars": "981",
-  "logo": "/icons/recommendarr.webp",
-  "description": "Recommendarr is a self-hosted tool that recommends movies and shows from your media library based on ratings and usage. It integrates with Plex, Radarr, and Sonarr.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "1.4.4",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-04-13",
+    "date_last_commit": "2025-04-14",
+    "github_stars": 981
+  },
+  "resources": {
+    "website": "https://github.com/fingerthief/recommendarr",
+    "documentation": "https://github.com/fingerthief/recommendarr",
+    "source_code": "https://github.com/fingerthief/recommendarr",
+    "logo": "/icons/recommendarr.webp",
+    "issues": "https://github.com/fingerthief/recommendarr/issues",
+    "releases": "https://github.com/fingerthief/recommendarr/releases"
+  },
   "features": [
     "Smart recommendations: Suggest movies and shows based on viewing history and ratings from your Plex library.",
     "Plex integration: Analyze watch history and user ratings to understand preferences and patterns.",
@@ -29,69 +37,45 @@
     "Notification system: Get alerts when highly-rated content matching your preferences becomes available.",
     "API access: Build custom integrations or automate recommendation workflows using REST endpoints."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

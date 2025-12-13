@@ -1,20 +1,28 @@
 {
   "name": "baikal",
   "slug": "baikal",
+  "tagline": null,
+  "description": "Baikal is a lightweight CalDAV and CardDAV server that enables users to host their own calendars and contact lists. Ideal for minimal self-hosted setups, it supports syncing with desktop and mobile clients via standard protocols.",
   "categories": [
     23
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/sabre-io/Baikal",
-  "website": "sabre.io/baikal/",
-  "source_code": "github.com/sabre-io/Baikal",
-  "github_stars": "2965",
-  "logo": "/icons/baikal.webp",
-  "description": "Baikal is a lightweight CalDAV and CardDAV server that enables users to host their own calendars and contact lists. Ideal for minimal self-hosted setups, it supports syncing with desktop and mobile clients via standard protocols.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "0.11.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-30",
+    "date_last_commit": "2025-12-10",
+    "github_stars": 2966
+  },
+  "resources": {
+    "website": "https://sabre.io/baikal/",
+    "documentation": "https://github.com/sabre-io/Baikal",
+    "source_code": "https://github.com/sabre-io/Baikal",
+    "logo": "/icons/baikal.webp",
+    "issues": "https://github.com/sabre-io/Baikal/issues",
+    "releases": "https://github.com/sabre-io/Baikal/releases"
+  },
   "features": [
     "CalDAV Server: Host your own calendar server. Independent scheduling.",
     "CardDAV Support: Manage contacts on your own server. Private address book.",
@@ -25,69 +33,45 @@
     "Standard Protocols: Uses CalDAV and CardDAV standards. Wide support.",
     "Self-Hosted: Complete control over your calendar and contacts. Data privacy."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

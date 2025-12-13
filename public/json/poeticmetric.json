@@ -1,20 +1,28 @@
 {
   "name": "poeticmetric",
   "slug": "poeticmetric",
+  "tagline": "",
+  "description": "PoeticMetric is a privacy-friendly, self-hosted web analytics platform. It tracks visits without cookies, focusing on privacy and lightweight performance insights with a clean UI.",
   "categories": [
     186
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/th0th/poeticmetric",
-  "website": "poeticmetric.com",
-  "source_code": "github.com/th0th/poeticmetric",
-  "github_stars": "266",
-  "logo": "/icons/poeticmetric.webp",
-  "description": "PoeticMetric is a privacy-friendly, self-hosted web analytics platform. It tracks visits without cookies, focusing on privacy and lightweight performance insights with a clean UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v2.0.0-beta.4",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-06",
+    "date_last_commit": "2025-12-06",
+    "github_stars": 267
+  },
+  "resources": {
+    "website": "https://poeticmetric.com",
+    "documentation": "https://poeticmetric.com",
+    "source_code": "https://github.com/th0th/poeticmetric",
+    "logo": "/icons/poeticmetric.webp",
+    "issues": "https://github.com/th0th/poeticmetric/issues",
+    "releases": "https://github.com/th0th/poeticmetric/releases"
+  },
   "features": [
     "Cookie-free tracking: Monitor website visitors without cookies for privacy compliance.",
     "Privacy-first design: Collect only essential metrics without personal data or fingerprinting.",
@@ -29,69 +37,45 @@
     "Multiple sites: Manage analytics for multiple websites from a single installation.",
     "GDPR compliant: Built-in privacy features ensure compliance with data protection regulations."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

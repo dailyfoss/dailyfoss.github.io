@@ -1,20 +1,28 @@
 {
   "name": "wordpress",
   "slug": "wordpress",
+  "tagline": null,
+  "description": "WordPress is a widely-used content management system for building self-hosted websites and blogs. It offers themes, plugins, user management, REST APIs, and an extensible editor, powering everything from simple sites to complex portals.",
   "categories": [
     19
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/WordPress/WordPress",
-  "website": "wordpress.org",
-  "source_code": "github.com/WordPress/WordPress",
-  "github_stars": "20715",
-  "logo": "/icons/wordpress.webp",
-  "description": "WordPress is a widely-used content management system for building self-hosted websites and blogs. It offers themes, plugins, user management, REST APIs, and an extensible editor, powering everything from simple sites to complex portals.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-12",
+    "github_stars": 20715
+  },
+  "resources": {
+    "website": "https://wordpress.org",
+    "documentation": "https://github.com/WordPress/WordPress",
+    "source_code": "https://github.com/WordPress/WordPress",
+    "logo": "/icons/wordpress.webp",
+    "issues": "https://github.com/WordPress/WordPress/issues",
+    "releases": null
+  },
   "features": [
     "Content editor: Create and edit posts and pages with a block-based visual editor or classic text interface.",
     "Theme system: Customize site appearance with thousands of free and premium themes or build custom designs.",
@@ -29,69 +37,45 @@
     "Scheduled publishing: Set posts to publish automatically at specific dates and times.",
     "Revision history: Track content changes over time and restore previous versions when needed."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

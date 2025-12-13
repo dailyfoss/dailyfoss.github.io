@@ -1,20 +1,28 @@
 {
   "name": "papermark",
   "slug": "papermark",
+  "tagline": null,
+  "description": "Papermark is a self-hosted document analytics platform that gives insights into how PDFs are viewed. It supports secure sharing, view tracking, and integrates with tools like email and Slack.",
   "categories": [
     48
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/mfts/papermark",
-  "website": "papermark.com",
-  "source_code": "github.com/mfts/papermark",
-  "github_stars": "7935",
-  "logo": "/icons/papermark.webp",
-  "description": "Papermark is a self-hosted document analytics platform that gives insights into how PDFs are viewed. It supports secure sharing, view tracking, and integrates with tools like email and Slack.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "v0.22.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-06",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 7936
+  },
+  "resources": {
+    "website": "https://papermark.com",
+    "documentation": "https://github.com/mfts/papermark",
+    "source_code": "https://github.com/mfts/papermark",
+    "logo": "/icons/papermark.webp",
+    "issues": "https://github.com/mfts/papermark/issues",
+    "releases": "https://github.com/mfts/papermark/releases"
+  },
   "features": [
     "Document analytics: Track how recipients interact with shared PDFs including page views, time spent, and engagement patterns",
     "Secure sharing: Generate unique, time-limited links for document sharing with optional password protection and access controls",
@@ -27,69 +35,45 @@
     "Download control: Enable or disable document downloads per link to control how recipients can save and share files",
     "Viewer analytics: Collect data on viewer location, device type, and browser to understand audience and optimize content"
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

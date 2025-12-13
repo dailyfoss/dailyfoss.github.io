@@ -1,20 +1,28 @@
 {
   "name": "boxarr",
   "slug": "boxarr",
+  "tagline": null,
+  "description": "Boxarr provides an easy-to-use web UI for managing Docker Compose stacks. It helps users control, monitor, and visualize self-hosted containers and applications through configuration groupings and environment presets.",
   "categories": [
     13
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/iongpt/boxarr",
-  "website": "github.com/iongpt/boxarr",
-  "source_code": "github.com/iongpt/boxarr",
-  "github_stars": "200",
-  "logo": "/icons/boxarr.webp",
-  "description": "Boxarr provides an easy-to-use web UI for managing Docker Compose stacks. It helps users control, monitor, and visualize self-hosted containers and applications through configuration groupings and environment presets.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v1.5.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-15",
+    "date_last_commit": "2025-09-15",
+    "github_stars": 200
+  },
+  "resources": {
+    "website": "https://github.com/iongpt/boxarr",
+    "documentation": "https://github.com/iongpt/boxarr",
+    "source_code": "https://github.com/iongpt/boxarr",
+    "logo": "/icons/boxarr.webp",
+    "issues": "https://github.com/iongpt/boxarr/issues",
+    "releases": "https://github.com/iongpt/boxarr/releases"
+  },
   "features": [
     "Docker Management: Control Docker Compose stacks through web UI. Visual management.",
     "Stack Monitoring: Monitor container status and resource usage. Real-time visibility.",
@@ -25,69 +33,45 @@
     "Visual Control: See all your containers at a glance. Clear overview.",
     "Easy Setup: Quick deployment for Docker environments. Start managing quickly."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

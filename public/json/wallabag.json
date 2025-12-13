@@ -1,20 +1,29 @@
 {
   "name": "wallabag",
   "slug": "wallabag",
+  "tagline": null,
+  "description": "Wallabag is a self-hosted read-it-later service. It saves articles from the web, cleans them up for reading, and organizes content with tags and full-text search, with mobile apps and browser integrations available.",
   "categories": [
     129
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/wallabag/wallabag",
-  "website": "wallabag.org",
-  "source_code": "github.com/wallabag/wallabag",
-  "github_stars": "12244",
-  "logo": "/icons/wallabag.webp",
-  "description": "Wallabag is a self-hosted read-it-later service. It saves articles from the web, cleans them up for reading, and organizes content with tags and full-text search, with mobile apps and browser integrations available.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "2.6.14",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-07",
+    "date_last_commit": "2025-12-08",
+    "github_stars": 12246
+  },
+  "resources": {
+    "website": "https://wallabag.org",
+    "documentation": "https://github.com/wallabag/wallabag",
+    "source_code": "https://github.com/wallabag/wallabag",
+    "logo": "/icons/wallabag.webp",
+    "issues": "https://github.com/wallabag/wallabag/issues",
+    "releases": "https://github.com/wallabag/wallabag/releases",
+    "logo_light": "/icons/wallabag-light.webp"
+  },
   "features": [
     "Article saving: Capture web articles with a single click using browser extensions or bookmarklets for later reading.",
     "Content extraction: Automatically strip ads, navigation, and clutter to present clean, readable article text.",
@@ -29,69 +38,45 @@
     "Reading time estimates: See estimated reading time for each article to plan your reading sessions effectively.",
     "Offline access: Download articles for offline reading when traveling or in areas with poor connectivity."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

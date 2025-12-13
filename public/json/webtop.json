@@ -1,20 +1,28 @@
 {
   "name": "linuxserver-webtop",
   "slug": "webtop",
+  "tagline": null,
+  "description": "docker-webtop provides a full Linux desktop environment in a browser via a Docker container. It’s ideal for remote GUI access, development environments, or lightweight workstation use.",
   "categories": [
     43
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/linuxserver/docker-webtop",
-  "website": "github.com/linuxserver/docker-webtop",
-  "source_code": "github.com/linuxserver/docker-webtop",
-  "github_stars": "3722",
-  "logo": "/icons/webtop.webp",
-  "description": "docker-webtop provides a full Linux desktop environment in a browser via a Docker container. It’s ideal for remote GUI access, development environments, or lightweight workstation use.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "fb4deef3-ls271",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-09",
+    "date_last_commit": "2025-12-09",
+    "github_stars": 3723
+  },
+  "resources": {
+    "website": "https://github.com/linuxserver/docker-webtop",
+    "documentation": "https://github.com/linuxserver/docker-webtop",
+    "source_code": "https://github.com/linuxserver/docker-webtop",
+    "logo": "/icons/webtop.webp",
+    "issues": "https://github.com/linuxserver/docker-webtop/issues",
+    "releases": "https://github.com/linuxserver/docker-webtop/releases"
+  },
   "features": [
     "Full desktop environment: Access a complete Linux desktop with KDE, XFCE, or other desktop environments in your browser.",
     "Application support: Run GUI applications including browsers, IDEs, office suites, and development tools.",
@@ -29,69 +37,45 @@
     "Resource isolation: Run resource-intensive applications in containers without affecting your host system.",
     "Quick deployment: Launch a full desktop environment in seconds using Docker with minimal configuration."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": true,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

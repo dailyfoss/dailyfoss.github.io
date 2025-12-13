@@ -1,20 +1,28 @@
 {
   "name": "zammad",
   "slug": "zammad",
+  "tagline": null,
+  "description": "Zammad is a self-hosted helpdesk and ticketing system. It integrates with email, chat, and telephony, supports multi-channel tickets, and exposes a modern web UI and APIs, alongside commercial cloud hosting.",
   "categories": [
     156
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/zammad/zammad",
-  "website": "zammad.org",
-  "source_code": "github.com/zammad/zammad",
-  "github_stars": "5264",
-  "logo": "/icons/zammad.webp",
-  "description": "Zammad is a self-hosted helpdesk and ticketing system. It integrates with email, chat, and telephony, supports multi-channel tickets, and exposes a modern web UI and APIs, alongside commercial cloud hosting.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-12",
+    "github_stars": 5266
+  },
+  "resources": {
+    "website": "https://zammad.org",
+    "documentation": "https://github.com/zammad/zammad",
+    "source_code": "https://github.com/zammad/zammad",
+    "logo": "/icons/zammad.webp",
+    "issues": "https://github.com/zammad/zammad/issues",
+    "releases": null
+  },
   "features": [
     "Multi-channel ticketing: Manage support requests from email, chat, phone, and social media in one unified interface.",
     "Email integration: Convert incoming emails to tickets automatically with threading and attachment handling.",
@@ -29,69 +37,45 @@
     "Mobile apps: Access tickets and respond to customers from iOS and Android devices with native applications.",
     "API access: Integrate with external systems and automate ticket creation using comprehensive REST APIs."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "managebot",
   "slug": "managebot",
+  "tagline": "",
+  "description": "Managebot is a minimal self-hosted Telegram bot for managing to-do lists, schedules, and commands through chat. It’s lightweight and ideal for self-hosted bot workflows with minimal setup.",
   "categories": [
     102
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/xdFNLeaks/managebot",
-  "website": "github.com/xdFNLeaks/managebot",
-  "source_code": "github.com/xdFNLeaks/managebot",
-  "github_stars": "21",
-  "logo": "/icons/managebot.webp",
-  "description": "Managebot is a minimal self-hosted Telegram bot for managing to-do lists, schedules, and commands through chat. It’s lightweight and ideal for self-hosted bot workflows with minimal setup.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v1.0.4",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-01-21",
+    "date_last_commit": "2024-01-21",
+    "github_stars": 21
+  },
+  "resources": {
+    "website": null,
+    "documentation": null,
+    "source_code": "https://github.com/xdFNLeaks/managebot",
+    "logo": "/icons/managebot.webp",
+    "issues": "https://github.com/xdFNLeaks/managebot/issues",
+    "releases": "https://github.com/xdFNLeaks/managebot/releases"
+  },
   "features": [
     "Telegram integration: Manage tasks and schedules directly through Telegram chat commands.",
     "To-do lists: Create and track personal task lists with completion status and priorities.",
@@ -27,69 +35,45 @@
     "Lightweight deployment: Minimal resource requirements make it ideal for small servers or VPS.",
     "Privacy focused: All data stays on your server with no third-party access to your tasks."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "palmr",
   "slug": "palmr",
+  "tagline": null,
+  "description": "Palmr is a self-hosted personal finance tool built on Next.js. It offers expense tracking, budget categories, and insights with a modern, customizable web UI and a responsive design.",
   "categories": [
     75
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/kyantech/Palmr",
-  "website": "palmr.kyantech.com.br",
-  "source_code": "github.com/kyantech/Palmr",
-  "github_stars": "2118",
-  "logo": "/icons/palmr.webp",
-  "description": "Palmr is a self-hosted personal finance tool built on Next.js. It offers expense tracking, budget categories, and insights with a modern, customizable web UI and a responsive design.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v3.3.2-beta",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-10",
+    "date_last_commit": "2025-12-10",
+    "github_stars": 2118
+  },
+  "resources": {
+    "website": "https://palmr.kyantech.com.br",
+    "documentation": "https://github.com/kyantech/Palmr",
+    "source_code": "https://github.com/kyantech/Palmr",
+    "logo": "/icons/palmr.webp",
+    "issues": "https://github.com/kyantech/Palmr/issues",
+    "releases": "https://github.com/kyantech/Palmr/releases"
+  },
   "features": [
     "Expense tracking: Log and categorize expenses with detailed metadata including date, amount, category, and notes",
     "Budget categories: Create custom categories with spending limits to monitor and control expenses across different areas",
@@ -26,69 +34,45 @@
     "Responsive design: Mobile-optimized interface allows expense tracking on any device for logging on the go",
     "Data privacy: Self-hosted deployment ensures complete control over sensitive financial data without third-party access"
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

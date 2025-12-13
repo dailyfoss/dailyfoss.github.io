@@ -1,20 +1,28 @@
 {
   "name": "damselfly",
   "slug": "damselfly",
+  "tagline": null,
+  "description": "Damselfly is a self-hosted photo and video management app with AI-powered tagging and search features. It includes facial recognition, bulk processing, and a responsive UI for browsing media collections efficiently.",
   "categories": [
     120
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Webreaper/Damselfly",
-  "website": "github.com/Webreaper/Damselfly",
-  "source_code": "github.com/Webreaper/Damselfly",
-  "github_stars": "1719",
-  "logo": "/icons/damselfly.webp",
-  "description": "Damselfly is a self-hosted photo and video management app with AI-powered tagging and search features. It includes facial recognition, bulk processing, and a responsive UI for browsing media collections efficiently.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "4.2.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-01-07",
+    "date_last_commit": "2025-11-19",
+    "github_stars": 1719
+  },
+  "resources": {
+    "website": "https://github.com/Webreaper/Damselfly",
+    "documentation": "https://github.com/Webreaper/Damselfly",
+    "source_code": "https://github.com/Webreaper/Damselfly",
+    "logo": "/icons/damselfly.webp",
+    "issues": "https://github.com/Webreaper/Damselfly/issues",
+    "releases": "https://github.com/Webreaper/Damselfly/releases"
+  },
   "features": [
     "AI-Powered Tagging: Automatic image recognition and labeling. Organize photos effortlessly.",
     "Facial Recognition: Identify and group people automatically. Find photos by person.",
@@ -23,69 +31,45 @@
     "Responsive UI: Beautiful interface that works on all devices. Browse anywhere, anytime.",
     "Self-Hosted: Keep your photos private on your server. Complete control over memories."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

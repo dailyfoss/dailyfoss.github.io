@@ -1,20 +1,28 @@
 {
   "name": "velld",
   "slug": "velld",
+  "tagline": null,
+  "description": "velld is a self-hosted personal dashboard for organizing notes, tasks, and links. It provides a simple, customizable homepage-like interface optimized for everyday productivity.",
   "categories": [
     165
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/dendianugerah/velld",
-  "website": "velld.vercel.app",
-  "source_code": "github.com/dendianugerah/velld",
-  "github_stars": "420",
-  "logo": "/icons/velld.webp",
-  "description": "velld is a self-hosted personal dashboard for organizing notes, tasks, and links. It provides a simple, customizable homepage-like interface optimized for everyday productivity.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-08",
+    "github_stars": 422
+  },
+  "resources": {
+    "website": "https://velld.vercel.app",
+    "documentation": "https://github.com/dendianugerah/velld",
+    "source_code": "https://github.com/dendianugerah/velld",
+    "logo": "/icons/velld.webp",
+    "issues": "https://github.com/dendianugerah/velld/issues",
+    "releases": null
+  },
   "features": [
     "Personal dashboard: Organize daily information in a customizable homepage-style dashboard.",
     "Note taking: Jot down quick notes and ideas with a simple note-taking interface.",
@@ -29,69 +37,45 @@
     "Simple setup: Get started quickly with minimal configuration and intuitive interface.",
     "Daily productivity: Centralize daily tools and information in one convenient location."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

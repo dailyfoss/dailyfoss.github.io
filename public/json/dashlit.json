@@ -1,20 +1,28 @@
 {
   "name": "dashlit",
   "slug": "dashlit",
+  "tagline": null,
+  "description": "Dashlit is a minimalist dashboard for collecting and displaying custom metrics, built for developers and homelab users. It supports widgets, Markdown, and embeds, designed for low-overhead setup and rapid data visualization.",
   "categories": [
     37
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/codewec/dashlit",
-  "website": "dashlit.cwec.dev/",
-  "source_code": "github.com/codewec/dashlit",
-  "github_stars": "306",
-  "logo": "/icons/dashlit.webp",
-  "description": "Dashlit is a minimalist dashboard for collecting and displaying custom metrics, built for developers and homelab users. It supports widgets, Markdown, and embeds, designed for low-overhead setup and rapid data visualization.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.0.6",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-06-30",
+    "date_last_commit": "2025-06-30",
+    "github_stars": 305
+  },
+  "resources": {
+    "website": "https://dashlit.cwec.dev/",
+    "documentation": "https://github.com/codewec/dashlit",
+    "source_code": "https://github.com/codewec/dashlit",
+    "logo": "/icons/dashlit.webp",
+    "issues": "https://github.com/codewec/dashlit/issues",
+    "releases": "https://github.com/codewec/dashlit/releases"
+  },
   "features": [
     "Custom Metrics: Display any data you want to track. Flexible visualization.",
     "Widget System: Build dashboards with modular components. Compose your view.",
@@ -23,69 +31,45 @@
     "Low Overhead: Minimal setup and resource usage. Quick deployment.",
     "Developer Friendly: Built for technical users and homelab enthusiasts. Speaks your language."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

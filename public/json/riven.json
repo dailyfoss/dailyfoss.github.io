@@ -1,20 +1,29 @@
 {
   "name": "riven",
   "slug": "riven",
+  "tagline": null,
+  "description": "Riven is a self-hosted media automation platform similar to Sonarr/Radarr but built for managing music, movies, and TV libraries with customizable pipelines.",
   "categories": [
     100
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/rivenmedia/riven",
-  "website": "riven.tv",
-  "source_code": "github.com/rivenmedia/riven",
-  "github_stars": "679",
-  "logo": "/icons/riven.webp",
-  "description": "Riven is a self-hosted media automation platform similar to Sonarr/Radarr but built for managing music, movies, and TV libraries with customizable pipelines.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v0.23.6",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-08-24",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 679
+  },
+  "resources": {
+    "website": "https://riven.tv",
+    "documentation": "https://github.com/rivenmedia/riven",
+    "source_code": "https://github.com/rivenmedia/riven",
+    "logo": "/icons/riven.webp",
+    "issues": "https://github.com/rivenmedia/riven/issues",
+    "releases": "https://github.com/rivenmedia/riven/releases",
+    "logo_light": "/icons/riven-light.webp"
+  },
   "features": [
     "Media automation: Automatically download and organize movies, TV shows, and music.",
     "Custom pipelines: Build workflows that match your specific media management needs.",
@@ -29,69 +38,45 @@
     "API integration: Connect to download clients, media servers, and other tools.",
     "Web interface: Manage your entire media automation setup through a browser."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

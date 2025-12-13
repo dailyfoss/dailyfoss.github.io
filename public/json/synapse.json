@@ -1,20 +1,29 @@
 {
   "name": "synapse",
   "slug": "synapse",
+  "tagline": null,
+  "description": "Synapse is a reference Matrix homeserver implementation, enabling self-hosted federated chat. It powers encrypted messaging, VoIP, and bridging with a robust API surface.",
   "categories": [
     102
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/element-hq/synapse",
-  "website": "element-hq.github.io/synapse",
-  "source_code": "github.com/element-hq/synapse",
-  "github_stars": "3238",
-  "logo": "/icons/synapse.webp",
-  "description": "Synapse is a reference Matrix homeserver implementation, enabling self-hosted federated chat. It powers encrypted messaging, VoIP, and bridging with a robust API surface.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v1.144.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-09",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 3239
+  },
+  "resources": {
+    "website": "https://element-hq.github.io/synapse",
+    "documentation": "https://github.com/element-hq/synapse",
+    "source_code": "https://github.com/element-hq/synapse",
+    "logo": "/icons/synapse.webp",
+    "issues": "https://github.com/element-hq/synapse/issues",
+    "releases": "https://github.com/element-hq/synapse/releases",
+    "logo_light": "/icons/synapse-light.webp"
+  },
   "features": [
     "Matrix homeserver: Hosts Matrix chat server for federated messaging.",
     "End-to-end encryption: Encrypts messages and calls with Olm and Megolm protocols.",
@@ -29,69 +38,45 @@
     "SSO integration: Authenticates users via SAML, OAuth, or LDAP.",
     "Moderation tools: Provides admin controls for managing users and content."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

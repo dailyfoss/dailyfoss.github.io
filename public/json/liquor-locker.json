@@ -1,20 +1,28 @@
 {
   "name": "liquor-locker",
   "slug": "liquor-locker",
+  "tagline": "",
+  "description": "Liquor Locker is a simple web app to manage personal wine or liquor collections. It supports bottle tracking, tagging, and notes, with a sleek modern UI built for self-hosting and personal consumption tracking.",
   "categories": [
     130
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/nguyenjessev/liquor-locker",
-  "website": "github.com/nguyenjessev/liquor-locker",
-  "source_code": "github.com/nguyenjessev/liquor-locker",
-  "github_stars": "58",
-  "logo": "/icons/liquor-locker.webp",
-  "description": "Liquor Locker is a simple web app to manage personal wine or liquor collections. It supports bottle tracking, tagging, and notes, with a sleek modern UI built for self-hosting and personal consumption tracking.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "BSD-3-Clause",
+    "version": "v2.1.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-01",
+    "date_last_commit": "2025-11-21",
+    "github_stars": 58
+  },
+  "resources": {
+    "website": null,
+    "documentation": null,
+    "source_code": "https://github.com/nguyenjessev/liquor-locker",
+    "logo": "/icons/liquor-locker.webp",
+    "issues": "https://github.com/nguyenjessev/liquor-locker/issues",
+    "releases": "https://github.com/nguyenjessev/liquor-locker/releases"
+  },
   "features": [
     "Collection Management: Track bottles, Tagging system, Tasting notes. Organize your wine and spirits.",
     "Inventory Tracking: Bottle locations, Consumption history, Stock levels. Know what you have.",
@@ -25,69 +33,45 @@
     "Consumption History: Drinking log, Occasion notes, Date tracking. Remember special moments.",
     "Search & Filter: Advanced search, Category filters, Quick find. Navigate your collection."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

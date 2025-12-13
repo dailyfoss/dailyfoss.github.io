@@ -1,20 +1,28 @@
 {
   "name": "mealie",
   "slug": "mealie",
+  "tagline": null,
+  "description": "Mealie is a self-hosted recipe management app that supports meal planning, shopping lists, and nutritional tracking. It offers multiple import methods, multi-user support, and a polished web UI.",
   "categories": [
     131
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/mealie-recipes/mealie",
-  "website": "docs.mealie.io",
-  "source_code": "github.com/mealie-recipes/mealie",
-  "github_stars": "10789",
-  "logo": "/icons/mealie.webp",
-  "description": "Mealie is a self-hosted recipe management app that supports meal planning, shopping lists, and nutritional tracking. It offers multiple import methods, multi-user support, and a polished web UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v3.7.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-13",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 10793
+  },
+  "resources": {
+    "website": "https://docs.mealie.io",
+    "documentation": "https://github.com/mealie-recipes/mealie",
+    "source_code": "https://github.com/mealie-recipes/mealie",
+    "logo": "/icons/mealie.webp",
+    "issues": "https://github.com/mealie-recipes/mealie/issues",
+    "releases": "https://github.com/mealie-recipes/mealie/releases"
+  },
   "features": [
     "Recipe management: Store and organize recipes with ingredients, instructions, and photos.",
     "Meal planning: Plan meals for the week with drag-and-drop calendar interface.",
@@ -29,69 +37,45 @@
     "Mobile app: Access recipes and shopping lists on mobile devices with dedicated apps.",
     "API access: Integrate with smart home devices or other tools through REST API."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

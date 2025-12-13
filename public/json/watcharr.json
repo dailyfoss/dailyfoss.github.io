@@ -1,20 +1,28 @@
 {
   "name": "watcharr",
   "slug": "watcharr",
+  "tagline": null,
+  "description": "Watcharr is a self-hosted media watchlist and tracking app. It lets users manage movies and series they want to watch, sync with external services, and see stats in a clean UI.",
   "categories": [
     166
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/sbondCo/Watcharr",
-  "website": "watcharr.app",
-  "source_code": "github.com/sbondCo/Watcharr",
-  "github_stars": "1143",
-  "logo": "/icons/watcharr.webp",
-  "description": "Watcharr is a self-hosted media watchlist and tracking app. It lets users manage movies and series they want to watch, sync with external services, and see stats in a clean UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v2.1.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-07-15",
+    "date_last_commit": "2025-12-02",
+    "github_stars": 1143
+  },
+  "resources": {
+    "website": "https://watcharr.app",
+    "documentation": "https://github.com/sbondCo/Watcharr",
+    "source_code": "https://github.com/sbondCo/Watcharr",
+    "logo": "/icons/watcharr.webp",
+    "issues": "https://github.com/sbondCo/Watcharr/issues",
+    "releases": "https://github.com/sbondCo/Watcharr/releases"
+  },
   "features": [
     "Watchlist management: Create and organize lists of movies and TV shows you want to watch across streaming platforms.",
     "Progress tracking: Mark episodes as watched and track your progress through TV series automatically.",
@@ -29,69 +37,45 @@
     "Mobile responsive: Manage your watchlist from any device with a fully responsive web interface.",
     "Export options: Export your watchlist data for backup or migration to other services."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

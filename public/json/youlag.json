@@ -1,20 +1,28 @@
 {
   "name": "youlag",
   "slug": "youlag",
+  "tagline": null,
+  "description": "Youlag is a self-hosted latency and response tracking tool for services, visualizing delays and outages over time. It aims to provide quick, intuitive insight into user-perceived performance.",
   "categories": [
     148
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/civilblur/youlag",
-  "website": "github.com/civilblur/youlag",
-  "source_code": "github.com/civilblur/youlag",
-  "github_stars": "140",
-  "logo": "/icons/youlag.webp",
-  "description": "Youlag is a self-hosted latency and response tracking tool for services, visualizing delays and outages over time. It aims to provide quick, intuitive insight into user-perceived performance.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v3.0.7",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-01",
+    "date_last_commit": "2025-11-01",
+    "github_stars": 140
+  },
+  "resources": {
+    "website": "https://github.com/civilblur/youlag",
+    "documentation": "https://github.com/civilblur/youlag",
+    "source_code": "https://github.com/civilblur/youlag",
+    "logo": "/icons/youlag.webp",
+    "issues": "https://github.com/civilblur/youlag/issues",
+    "releases": "https://github.com/civilblur/youlag/releases"
+  },
   "features": [
     "Latency monitoring: Measure response times for web services and APIs to identify performance degradation.",
     "Visual dashboards: View latency trends over time with charts and graphs that highlight spikes and patterns.",
@@ -29,69 +37,45 @@
     "Lightweight monitoring: Run checks with minimal overhead to avoid impacting the services being monitored.",
     "Browser extension: Track latency directly from your browser to measure real user experience metrics."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": true,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

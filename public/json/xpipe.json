@@ -1,20 +1,28 @@
 {
   "name": "xpipe",
   "slug": "xpipe",
+  "tagline": null,
+  "description": "xpipe is a self-hosted tool and GUI for managing remote connections and development environments. It centralizes SSH, containers, and tunneling, giving developers a consistent interface across projects and machines.",
   "categories": [
     135
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/xpipe-io/xpipe",
-  "website": "xpipe.io",
-  "source_code": "github.com/xpipe-io/xpipe",
-  "github_stars": "12114",
-  "logo": "/icons/xpipe.webp",
-  "description": "xpipe is a self-hosted tool and GUI for managing remote connections and development environments. It centralizes SSH, containers, and tunneling, giving developers a consistent interface across projects and machines.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "19.6",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-06",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 12115
+  },
+  "resources": {
+    "website": "https://xpipe.io",
+    "documentation": "https://github.com/xpipe-io/xpipe",
+    "source_code": "https://github.com/xpipe-io/xpipe",
+    "logo": "/icons/xpipe.webp",
+    "issues": "https://github.com/xpipe-io/xpipe/issues",
+    "releases": "https://github.com/xpipe-io/xpipe/releases"
+  },
   "features": [
     "Connection management: Store and organize SSH, Docker, Kubernetes, and other remote connections in a unified interface.",
     "Shell integration: Launch terminal sessions directly from the GUI with saved credentials and connection profiles.",
@@ -29,69 +37,45 @@
     "Environment variables: Define and inject environment variables per connection for consistent remote workflows.",
     "Custom protocols: Extend functionality with plugins to support additional connection types and tools."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": true,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

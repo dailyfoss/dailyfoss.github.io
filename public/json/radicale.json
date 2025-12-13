@@ -1,20 +1,28 @@
 {
   "name": "radicale",
   "slug": "radicale",
+  "tagline": null,
+  "description": "Radicale is a self-hosted CalDAV and CardDAV server for contact and calendar syncing across devices. It’s lightweight and easy to deploy with a minimal configuration.",
   "categories": [
     23
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Kozea/Radicale",
-  "website": "radicale.org",
-  "source_code": "github.com/Kozea/Radicale",
-  "github_stars": "4179",
-  "logo": "/icons/radicale.webp",
-  "description": "Radicale is a self-hosted CalDAV and CardDAV server for contact and calendar syncing across devices. It’s lightweight and easy to deploy with a minimal configuration.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v3.5.9",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-29",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 4179
+  },
+  "resources": {
+    "website": "https://radicale.org",
+    "documentation": "https://github.com/Kozea/Radicale",
+    "source_code": "https://github.com/Kozea/Radicale",
+    "logo": "/icons/radicale.webp",
+    "issues": "https://github.com/Kozea/Radicale/issues",
+    "releases": "https://github.com/Kozea/Radicale/releases"
+  },
   "features": [
     "CalDAV support: Sync calendars across devices using the standard CalDAV protocol.",
     "CardDAV support: Share and synchronize contacts between phones, computers, and tablets.",
@@ -29,69 +37,45 @@
     "HTTPS support: Encrypt connections with TLS to protect sensitive calendar and contact information.",
     "Minimal configuration: Get started quickly with sensible defaults and a simple configuration file."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

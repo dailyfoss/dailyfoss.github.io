@@ -1,20 +1,29 @@
 {
   "name": "kanba",
   "slug": "kanba",
+  "tagline": null,
+  "description": "Kanba is a kanban style project and task management application with multi user support. It lets teams organize boards, track work in progress and comment on tasks, offering a Trello like experience on self hosted infrastructure.",
   "categories": [
     85
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Kanba-co/kanba",
-  "website": "kanba.co",
-  "source_code": "github.com/Kanba-co/kanba",
-  "github_stars": "468",
-  "logo": "/icons/kanba.webp",
-  "description": "Kanba is a kanban style project and task management application with multi user support. It lets teams organize boards, track work in progress and comment on tasks, offering a Trello like experience on self hosted infrastructure.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "1.0.8",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-08-11",
+    "date_last_commit": "2025-10-20",
+    "github_stars": 468
+  },
+  "resources": {
+    "website": "https://kanba.co",
+    "documentation": "https://github.com/Kanba-co/kanba",
+    "source_code": "https://github.com/Kanba-co/kanba",
+    "logo": "/icons/kanba.webp",
+    "issues": "https://github.com/Kanba-co/kanba/issues",
+    "releases": "https://github.com/Kanba-co/kanba/releases",
+    "logo_light": "/icons/kanba-light.webp"
+  },
   "features": [
     "Kanban Boards: Visual task management with drag-and-drop cards and multiple boards. Organize work Trello-style.",
     "Team Collaboration: Multi-user support with task comments and activity tracking. Coordinate team projects effectively.",
@@ -29,69 +38,45 @@
     "Search & Filter: Find tasks quickly with advanced search and filtering options. Navigate large projects efficiently.",
     "Notifications: Get alerts for task assignments, comments, and due dates. Stay on top of your work."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

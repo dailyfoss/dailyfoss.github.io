@@ -1,20 +1,28 @@
 {
   "name": "zipcaptions",
   "slug": "zipcaptions",
+  "tagline": "",
+  "description": "zip-captions is a self-hosted utility that collects and packages subtitle or caption files into zip archives for distribution or backup, often used alongside media automation workflows.",
   "categories": [
     59
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/jptrsn/zip-captions",
-  "website": "zipcaptions.app",
-  "source_code": "github.com/jptrsn/zip-captions",
-  "github_stars": "56",
-  "logo": "/icons/zipcaptions.webp",
-  "description": "zip-captions is a self-hosted utility that collects and packages subtitle or caption files into zip archives for distribution or backup, often used alongside media automation workflows.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-05-20",
+    "github_stars": 56
+  },
+  "resources": {
+    "website": "https://zipcaptions.app",
+    "documentation": "https://zipcaptions.app",
+    "source_code": "https://github.com/jptrsn/zip-captions",
+    "logo": "/icons/zipcaptions.webp",
+    "issues": "https://github.com/jptrsn/zip-captions/issues",
+    "releases": null
+  },
   "features": [
     "Subtitle collection: Gather subtitle and caption files from multiple sources into organized collections.",
     "Archive creation: Package collected subtitles into zip files for easy distribution and backup.",
@@ -29,69 +37,45 @@
     "Download management: Generate download links for created archives with optional expiration times.",
     "Storage organization: Automatically organize subtitle archives by media type, date, or custom categories."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

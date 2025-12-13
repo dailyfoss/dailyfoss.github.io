@@ -1,20 +1,28 @@
 {
   "name": "code-server",
   "slug": "code-server",
+  "tagline": null,
+  "description": "Code-Server allows you to run VS Code in the browser via a self-hosted server. It enables remote development on lightweight machines or servers and supports extensions, terminals, and SSH for cloud-based coding workflows.",
   "categories": [
     43
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/coder/code-server",
-  "website": "coder.com",
-  "source_code": "github.com/coder/code-server",
-  "github_stars": "75325",
-  "logo": "/icons/code-server.webp",
-  "description": "Code-Server allows you to run VS Code in the browser via a self-hosted server. It enables remote development on lightweight machines or servers and supports extensions, terminals, and SSH for cloud-based coding workflows.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v4.106.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-01",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 75332
+  },
+  "resources": {
+    "website": "https://coder.com",
+    "documentation": "https://github.com/coder/code-server",
+    "source_code": "https://github.com/coder/code-server",
+    "logo": "/icons/code-server.webp",
+    "issues": "https://github.com/coder/code-server/issues",
+    "releases": "https://github.com/coder/code-server/releases"
+  },
   "features": [
     "Browser-Based VS Code: Full VS Code experience in any browser. Code on any device.",
     "Remote Development: Access powerful servers from lightweight machines. Develop on tablets or Chromebooks.",
@@ -23,69 +31,45 @@
     "Self-Hosted: Run on your own infrastructure for complete control. Your code stays private.",
     "Cross-Platform: Works on Linux, macOS, and cloud servers. Deploy anywhere you need."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

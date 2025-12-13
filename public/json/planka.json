@@ -1,20 +1,28 @@
 {
   "name": "planka",
   "slug": "planka",
+  "tagline": null,
+  "description": "Planka is a lightweight self-hosted kanban board for managing tasks and projects. It includes drag-and-drop cards, user assignments, labels, and a clean UI akin to Trello.",
   "categories": [
     85
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/plankanban/planka",
-  "website": "docs.planka.cloud",
-  "source_code": "github.com/plankanban/planka",
-  "github_stars": "11190",
-  "logo": "/icons/planka.webp",
-  "description": "Planka is a lightweight self-hosted kanban board for managing tasks and projects. It includes drag-and-drop cards, user assignments, labels, and a clean UI akin to Trello.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "v2.0.0-rc.4",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-04",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 11192
+  },
+  "resources": {
+    "website": "https://docs.planka.cloud",
+    "documentation": "https://github.com/plankanban/planka",
+    "source_code": "https://github.com/plankanban/planka",
+    "logo": "/icons/planka.webp",
+    "issues": "https://github.com/plankanban/planka/issues",
+    "releases": "https://github.com/plankanban/planka/releases"
+  },
   "features": [
     "Kanban boards: Organize tasks in boards with customizable lists and drag-and-drop card management.",
     "Card assignments: Assign tasks to team members with due dates and priority indicators.",
@@ -29,69 +37,45 @@
     "Search functionality: Find cards quickly by searching titles, descriptions, and comments.",
     "Mobile responsive: Access and manage boards from mobile devices with an optimized interface."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

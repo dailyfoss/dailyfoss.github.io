@@ -1,20 +1,28 @@
 {
   "name": "stoat",
   "slug": "stoat",
+  "tagline": null,
+  "description": "StoatChat is a self-hosted chat platform with channels, direct messages, and file sharing. It aims to be lightweight and easy to deploy for small communities.",
   "categories": [
     102
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/stoatchat/stoatchat",
-  "website": "github.com/stoatchat/stoatchat",
-  "source_code": "github.com/stoatchat/stoatchat",
-  "github_stars": "1790",
-  "logo": "/icons/stoat.webp",
-  "description": "StoatChat is a self-hosted chat platform with channels, direct messages, and file sharing. It aims to be lightweight and easy to deploy for small communities.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "20250807-1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-08-07",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 1792
+  },
+  "resources": {
+    "website": "https://github.com/stoatchat/stoatchat",
+    "documentation": "https://github.com/stoatchat/stoatchat",
+    "source_code": "https://github.com/stoatchat/stoatchat",
+    "logo": "/icons/stoat.webp",
+    "issues": "https://github.com/stoatchat/stoatchat/issues",
+    "releases": "https://github.com/stoatchat/stoatchat/releases"
+  },
   "features": [
     "Text channels: Creates channels for organized topic-based discussions.",
     "Direct messaging: Sends private messages to individuals or groups.",
@@ -29,69 +37,45 @@
     "Mobile responsive: Chats from smartphones and tablets.",
     "Open source: Auditable code for security and customization."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "dockman",
   "slug": "dockman",
+  "tagline": "",
+  "description": "Dockman is a lightweight TUI and CLI tool for managing Docker containers and images. It offers a curses-based interface for viewing logs, stats, and executing commands without a web UI.",
   "categories": [
     47
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/RA341/dockman",
-  "website": "dockman.radn.dev/",
-  "source_code": "github.com/RA341/dockman",
-  "github_stars": "481",
-  "logo": "/icons/dockman.webp",
-  "description": "Dockman is a lightweight TUI and CLI tool for managing Docker containers and images. It offers a curses-based interface for viewing logs, stats, and executing commands without a web UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v2.5.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-07",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 481
+  },
+  "resources": {
+    "website": "https://dockman.radn.dev/",
+    "documentation": "https://dockman.radn.dev/",
+    "source_code": "https://github.com/RA341/dockman",
+    "logo": "/icons/dockman.webp",
+    "issues": "https://github.com/RA341/dockman/issues",
+    "releases": "https://github.com/RA341/dockman/releases"
+  },
   "features": [
     "Terminal UI: Curses-based interface for Docker management. No web browser needed.",
     "Lightweight: Minimal resource usage for efficient operation. Perfect for SSH sessions.",
@@ -23,69 +31,45 @@
     "Command Execution: Run commands in containers directly. Full control from terminal.",
     "CLI-Friendly: Perfect for terminal enthusiasts. Keyboard-driven workflow."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

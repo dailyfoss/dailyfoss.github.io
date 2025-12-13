@@ -1,20 +1,28 @@
 {
   "name": "argus",
   "slug": "argus",
+  "tagline": null,
+  "description": "Argus is a self-hosted monitoring and notification system for watching new releases on GitHub and other platforms. It lets users define version checks and send alerts to integrations like Slack, Discord or email.",
   "categories": [
     172
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/release-argus/Argus",
-  "website": "release-argus.io",
-  "source_code": "github.com/release-argus/Argus",
-  "github_stars": "502",
-  "logo": "/icons/argus.webp",
-  "description": "Argus is a self-hosted monitoring and notification system for watching new releases on GitHub and other platforms. It lets users define version checks and send alerts to integrations like Slack, Discord or email.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "0.27.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-09",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 504
+  },
+  "resources": {
+    "website": "https://release-argus.io",
+    "documentation": "https://github.com/release-argus/Argus",
+    "source_code": "https://github.com/release-argus/Argus",
+    "logo": "/icons/argus.webp",
+    "issues": "https://github.com/release-argus/Argus/issues",
+    "releases": "https://github.com/release-argus/Argus/releases"
+  },
   "features": [
     "Release Monitoring: Track new software releases on GitHub and other platforms. Stay updated automatically.",
     "Version Checks: Define custom rules for detecting version updates. Flexible monitoring.",
@@ -23,69 +31,45 @@
     "Web Dashboard: View all monitored projects and their status at a glance. Centralized overview.",
     "Self-Hosted: Run on your own infrastructure for privacy and control. Your monitoring, your server."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "gitea",
   "slug": "gitea",
+  "tagline": null,
+  "description": "Gitea is a self-hosted Git service providing code hosting, pull requests, issues, CI, and container registry in a lightweight binary. It offers a polished web UI and runs on modest hardware, ideal for developer teams.",
   "categories": [
     72
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/go-gitea/gitea",
-  "website": "gitea.com",
-  "source_code": "github.com/go-gitea/gitea",
-  "github_stars": "52475",
-  "logo": "/icons/gitea.webp",
-  "description": "Gitea is a self-hosted Git service providing code hosting, pull requests, issues, CI, and container registry in a lightweight binary. It offers a polished web UI and runs on modest hardware, ideal for developer teams.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v1.25.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-22",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 52487
+  },
+  "resources": {
+    "website": "https://gitea.com",
+    "documentation": "https://github.com/go-gitea/gitea",
+    "source_code": "https://github.com/go-gitea/gitea",
+    "logo": "/icons/gitea.webp",
+    "issues": "https://github.com/go-gitea/gitea/issues",
+    "releases": "https://github.com/go-gitea/gitea/releases"
+  },
   "features": [
     "Git Repository Hosting: Host unlimited Git repositories with a polished web interface and Git protocol support.",
     "Pull Requests: Review code changes with inline comments, approvals, and merge conflict resolution.",
@@ -25,69 +33,45 @@
     "Organization Management: Create teams, manage permissions, and organize repositories by organization.",
     "API Access: Comprehensive REST API for automation and integration with external tools."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "ntfy",
   "slug": "ntfy",
+  "tagline": null,
+  "description": "ntfy is a self-hosted notification system that lets you send push notifications via HTTP or CLI without registration. It supports web UI, mobile clients, and topics for real-time messaging.",
   "categories": [
     112
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/binwiederhier/ntfy",
-  "website": "ntfy.sh",
-  "source_code": "github.com/binwiederhier/ntfy",
-  "github_stars": "27708",
-  "logo": "/icons/ntfy.webp",
-  "description": "ntfy is a self-hosted notification system that lets you send push notifications via HTTP or CLI without registration. It supports web UI, mobile clients, and topics for real-time messaging.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v2.15.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-16",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 27714
+  },
+  "resources": {
+    "website": "https://ntfy.sh",
+    "documentation": "https://github.com/binwiederhier/ntfy",
+    "source_code": "https://github.com/binwiederhier/ntfy",
+    "logo": "/icons/ntfy.webp",
+    "issues": "https://github.com/binwiederhier/ntfy/issues",
+    "releases": "https://github.com/binwiederhier/ntfy/releases"
+  },
   "features": [
     "Simple notifications: Send push notifications via HTTP PUT/POST without registration or API keys.",
     "Topic-based: Subscribe to topics to receive notifications without user accounts.",
@@ -29,69 +37,45 @@
     "Self-hosted or public: Run your own server or use the public ntfy.sh service.",
     "No dependencies: Single binary deployment with built-in web server and storage."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "clickhouse",
   "slug": "clickhouse",
+  "tagline": null,
+  "description": "ClickHouse is an open-source columnar database management system for real-time analytics. It’s designed to handle petabytes of data with low latency and offers SQL compatibility, sharding, replication, and clustering options.",
   "categories": [
     133
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/ClickHouse/ClickHouse",
-  "website": "clickhouse.com",
-  "source_code": "github.com/ClickHouse/ClickHouse",
-  "github_stars": "44624",
-  "logo": "/icons/clickhouse.webp",
-  "description": "ClickHouse is an open-source columnar database management system for real-time analytics. It’s designed to handle petabytes of data with low latency and offers SQL compatibility, sharding, replication, and clustering options.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v25.3.10.19-lts",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-10",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 44638
+  },
+  "resources": {
+    "website": "https://clickhouse.com",
+    "documentation": "https://github.com/ClickHouse/ClickHouse",
+    "source_code": "https://github.com/ClickHouse/ClickHouse",
+    "logo": "/icons/clickhouse.webp",
+    "issues": "https://github.com/ClickHouse/ClickHouse/issues",
+    "releases": "https://github.com/ClickHouse/ClickHouse/releases"
+  },
   "features": [
     "Columnar Database: Optimized for real-time analytics queries. Lightning fast.",
     "Petabyte Scale: Handle massive datasets with low latency. Enterprise-grade.",
@@ -24,69 +32,45 @@
     "Open Source: Transparent, community-driven development. No vendor lock-in.",
     "Self-Hosted: Run your own analytics database. Complete control."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

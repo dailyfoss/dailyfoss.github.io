@@ -1,20 +1,28 @@
 {
   "name": "pastefy",
   "slug": "pastefy",
+  "tagline": null,
+  "description": "Pastefy is a lightweight and modern pastebin platform with authentication, versioning, and syntax highlighting. It is designed for private or public sharing with a responsive UI.",
   "categories": [
     118
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/interaapps/pastefy",
-  "website": "github.com/interaapps/pastefy",
-  "source_code": "github.com/interaapps/pastefy",
-  "github_stars": "384",
-  "logo": "/icons/pastefy.webp",
-  "description": "Pastefy is a lightweight and modern pastebin platform with authentication, versioning, and syntax highlighting. It is designed for private or public sharing with a responsive UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "7.1.5",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-15",
+    "date_last_commit": "2025-10-15",
+    "github_stars": 384
+  },
+  "resources": {
+    "website": "https://github.com/interaapps/pastefy",
+    "documentation": "https://github.com/interaapps/pastefy",
+    "source_code": "https://github.com/interaapps/pastefy",
+    "logo": "/icons/pastefy.webp",
+    "issues": "https://github.com/interaapps/pastefy/issues",
+    "releases": "https://github.com/interaapps/pastefy/releases"
+  },
   "features": [
     "User authentication: Optional account system allows users to manage pastes, track history, and control access to content",
     "Paste versioning: Edit pastes and maintain version history to track changes over time and restore previous versions",
@@ -26,69 +34,45 @@
     "Expiration control: Set automatic deletion after specified time periods to manage storage and ensure temporary content removal",
     "Search functionality: Find pastes quickly by title, content, or tags with full-text search across your paste collection"
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

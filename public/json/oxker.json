@@ -1,20 +1,28 @@
 {
   "name": "oxker",
   "slug": "oxker",
+  "tagline": null,
+  "description": "Oxker is a self-hosted dashboard for monitoring Docker containers. It provides a clean overview of images, container metrics, statuses, and event logs, ideal for homelab environments.",
   "categories": [
     47
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/mrjackwills/oxker",
-  "website": "github.com/mrjackwills/oxker",
-  "source_code": "github.com/mrjackwills/oxker",
-  "github_stars": "1377",
-  "logo": "/icons/oxker.webp",
-  "description": "Oxker is a self-hosted dashboard for monitoring Docker containers. It provides a clean overview of images, container metrics, statuses, and event logs, ideal for homelab environments.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.12.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-28",
+    "date_last_commit": "2025-09-28",
+    "github_stars": 1378
+  },
+  "resources": {
+    "website": "https://github.com/mrjackwills/oxker",
+    "documentation": "https://github.com/mrjackwills/oxker",
+    "source_code": "https://github.com/mrjackwills/oxker",
+    "logo": "/icons/oxker.webp",
+    "issues": "https://github.com/mrjackwills/oxker/issues",
+    "releases": "https://github.com/mrjackwills/oxker/releases"
+  },
   "features": [
     "Container overview: View all running and stopped containers with status, uptime, and resource usage at a glance.",
     "Resource monitoring: Track CPU, memory, and network usage per container with real-time updates and historical data.",
@@ -25,69 +33,45 @@
     "Terminal interface: Run in a text-based UI for lightweight monitoring on servers without graphical environments.",
     "Multi-host support: Connect to multiple Docker hosts and switch between them from a single dashboard."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

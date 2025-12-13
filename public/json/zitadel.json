@@ -1,20 +1,28 @@
 {
   "name": "zitadel",
   "slug": "zitadel",
+  "tagline": null,
+  "description": "Zitadel is a self-hosted identity and access management platform with OpenID Connect and OAuth 2.0 support. It offers multi-tenant projects, roles, and login flows and is available both self-hosted and as a managed cloud service.",
   "categories": [
     79
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/zitadel/zitadel",
-  "website": "zitadel.com",
-  "source_code": "github.com/zitadel/zitadel",
-  "github_stars": "12423",
-  "logo": "/icons/zitadel.webp",
-  "description": "Zitadel is a self-hosted identity and access management platform with OpenID Connect and OAuth 2.0 support. It offers multi-tenant projects, roles, and login flows and is available both self-hosted and as a managed cloud service.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v4.7.5",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-12",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 12430
+  },
+  "resources": {
+    "website": "https://zitadel.com",
+    "documentation": "https://github.com/zitadel/zitadel",
+    "source_code": "https://github.com/zitadel/zitadel",
+    "logo": "/icons/zitadel.webp",
+    "issues": "https://github.com/zitadel/zitadel/issues",
+    "releases": "https://github.com/zitadel/zitadel/releases"
+  },
   "features": [
     "Multi-tenancy: Manage multiple organizations and projects with isolated user bases and configurations in one instance.",
     "OpenID Connect: Implement modern authentication flows with full OIDC support for web and mobile applications.",
@@ -29,69 +37,45 @@
     "External identity providers: Integrate with Google, GitHub, Azure AD, and other providers for federated authentication.",
     "Token management: Issue, validate, and revoke access tokens with configurable expiration and refresh policies."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

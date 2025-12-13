@@ -1,20 +1,28 @@
 {
   "name": "manyfold",
   "slug": "manyfold",
+  "tagline": null,
+  "description": "Manyfold is a self-hosted, multi-user 3D model repository for sharing and previewing STL files. It includes 3D previews, categories, user permissions, and integrations for organizing models in teams.",
   "categories": [
     48
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/manyfold3d/manyfold",
-  "website": "manyfold.app",
-  "source_code": "github.com/manyfold3d/manyfold",
-  "github_stars": "1567",
-  "logo": "/icons/manyfold.webp",
-  "description": "Manyfold is a self-hosted, multi-user 3D model repository for sharing and previewing STL files. It includes 3D previews, categories, user permissions, and integrations for organizing models in teams.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.129.4",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-28",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 1569
+  },
+  "resources": {
+    "website": "https://manyfold.app",
+    "documentation": "https://github.com/manyfold3d/manyfold",
+    "source_code": "https://github.com/manyfold3d/manyfold",
+    "logo": "/icons/manyfold.webp",
+    "issues": "https://github.com/manyfold3d/manyfold/issues",
+    "releases": "https://github.com/manyfold3d/manyfold/releases"
+  },
   "features": [
     "3D model preview: View STL, OBJ, and other 3D file formats directly in the browser without downloads.",
     "Multi-user access: Support multiple users with individual accounts and permission levels.",
@@ -29,69 +37,45 @@
     "Storage management: Monitor disk usage and organize files across multiple storage locations.",
     "API access: Integrate with slicing software or other tools through REST API."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

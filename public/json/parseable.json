@@ -1,20 +1,28 @@
 {
   "name": "parseable",
   "slug": "parseable",
+  "tagline": null,
+  "description": "Parseable is an open-source, self-hosted log management system built for low-cost ingestion, querying, and retention. It offers real-time analytics, dashboards, and S3 support.",
   "categories": [
     93
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/parseablehq/parseable",
-  "website": "parseable.com",
-  "source_code": "github.com/parseablehq/parseable",
-  "github_stars": "2284",
-  "logo": "/icons/parseable.webp",
-  "description": "Parseable is an open-source, self-hosted log management system built for low-cost ingestion, querying, and retention. It offers real-time analytics, dashboards, and S3 support.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v2.5.4",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-11",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 2285
+  },
+  "resources": {
+    "website": "https://parseable.com",
+    "documentation": "https://github.com/parseablehq/parseable",
+    "source_code": "https://github.com/parseablehq/parseable",
+    "logo": "/icons/parseable.webp",
+    "issues": "https://github.com/parseablehq/parseable/issues",
+    "releases": "https://github.com/parseablehq/parseable/releases"
+  },
   "features": [
     "Log ingestion: High-performance log collection from multiple sources with support for various formats and protocols",
     "Real-time analytics: Query and analyze logs in real-time with SQL-like syntax for immediate insights into system behavior",
@@ -27,69 +35,45 @@
     "Alert configuration: Set up alerts based on log patterns or thresholds to proactively detect and respond to issues",
     "Multi-tenant support: Isolate logs by tenant or application with separate namespaces for secure multi-team deployments"
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

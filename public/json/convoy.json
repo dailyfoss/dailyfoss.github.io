@@ -1,20 +1,28 @@
 {
   "name": "convoy",
   "slug": "convoy",
+  "tagline": null,
+  "description": "Convoy is an open-source webhook service that offers reliable message delivery, retries, filtering, and transformations. Built for high-scale event-driven systems, it integrates with APIs and custom apps.",
   "categories": [
     191
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/frain-dev/convoy",
-  "website": "getconvoy.io",
-  "source_code": "github.com/frain-dev/convoy",
-  "github_stars": "2722",
-  "logo": "/icons/convoy.webp",
-  "description": "Convoy is an open-source webhook service that offers reliable message delivery, retries, filtering, and transformations. Built for high-scale event-driven systems, it integrates with APIs and custom apps.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "v25.11.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-17",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 2722
+  },
+  "resources": {
+    "website": "https://getconvoy.io",
+    "documentation": "https://github.com/frain-dev/convoy",
+    "source_code": "https://github.com/frain-dev/convoy",
+    "logo": "/icons/convoy.webp",
+    "issues": "https://github.com/frain-dev/convoy/issues",
+    "releases": "https://github.com/frain-dev/convoy/releases"
+  },
   "features": [
     "Reliable Delivery: Automatic retries ensure webhooks reach their destination. Never lose events.",
     "Event Filtering: Route and filter webhooks based on custom rules. Precise event handling.",
@@ -23,69 +31,45 @@
     "API Integration: Connect with any service or custom application. Universal compatibility.",
     "Self-Hosted: Complete control over your webhook infrastructure. Enhanced security and reliability."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

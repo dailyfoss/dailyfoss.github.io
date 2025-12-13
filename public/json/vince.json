@@ -1,20 +1,28 @@
 {
   "name": "vince",
   "slug": "vince",
+  "tagline": null,
+  "description": "Vince is a self-hosted privacy-first web analytics platform similar to Plausible. It tracks visits without cookies and provides clear charts and metrics via a minimal dashboard.",
   "categories": [
     186
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/vinceanalytics/vince",
-  "website": "www.vinceanalytics.com/",
-  "source_code": "github.com/vinceanalytics/vince",
-  "github_stars": "1984",
-  "logo": "/icons/vince.webp",
-  "description": "Vince is a self-hosted privacy-first web analytics platform similar to Plausible. It tracks visits without cookies and provides clear charts and metrics via a minimal dashboard.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v1.11.8",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-01",
+    "date_last_commit": "2025-09-01",
+    "github_stars": 1984
+  },
+  "resources": {
+    "website": "https://www.vinceanalytics.com/",
+    "documentation": "https://github.com/vinceanalytics/vince",
+    "source_code": "https://github.com/vinceanalytics/vince",
+    "logo": "/icons/vince.webp",
+    "issues": "https://github.com/vinceanalytics/vince/issues",
+    "releases": "https://github.com/vinceanalytics/vince/releases"
+  },
   "features": [
     "Privacy-first analytics: Track website visits without cookies or personal data collection.",
     "Simple dashboard: View traffic metrics in a clean, minimal dashboard without complexity.",
@@ -29,69 +37,45 @@
     "Custom events: Track custom events and conversions to measure specific user actions.",
     "API access: Access analytics data programmatically through the REST API."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

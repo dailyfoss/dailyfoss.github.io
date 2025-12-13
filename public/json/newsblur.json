@@ -1,20 +1,28 @@
 {
   "name": "newsblur",
   "slug": "newsblur",
+  "tagline": null,
+  "description": "NewsBlur is a feature-rich, self-hosted RSS reader with social features, saved stories, and training filters. It supports folders, tags, web and mobile clients, and optional hosted services.",
   "categories": [
     57
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/samuelclay/NewsBlur",
-  "website": "http://www.newsblur.com",
-  "source_code": "github.com/samuelclay/NewsBlur",
-  "github_stars": "7212",
-  "logo": "/icons/newsblur.webp",
-  "description": "NewsBlur is a feature-rich, self-hosted RSS reader with social features, saved stories, and training filters. It supports folders, tags, web and mobile clients, and optional hosted services.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "Android_13.11.4",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-04",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 7212
+  },
+  "resources": {
+    "website": "http://www.newsblur.com",
+    "documentation": "https://github.com/samuelclay/NewsBlur",
+    "source_code": "https://github.com/samuelclay/NewsBlur",
+    "logo": "/icons/newsblur.webp",
+    "issues": "https://github.com/samuelclay/NewsBlur/issues",
+    "releases": "https://github.com/samuelclay/NewsBlur/releases"
+  },
   "features": [
     "RSS feed reader: Subscribe to and organize feeds from blogs, news sites, and podcasts.",
     "Intelligence training: Train filters to highlight or hide stories based on keywords, authors, or tags.",
@@ -29,69 +37,45 @@
     "Import/export: Migrate feeds from other readers using OPML format for easy transitions.",
     "Statistics dashboard: View reading habits, feed activity, and subscription analytics over time."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": true,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": true,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

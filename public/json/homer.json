@@ -1,20 +1,28 @@
 {
   "name": "homer",
   "slug": "homer",
+  "tagline": null,
+  "description": "Homer is a simple static homepage for organizing links and small informational widgets. Configuration is done via a YAML file and the resulting single page site can be hosted on any web server, ideal for lightweight dashboards.",
   "categories": [
     34
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/bastienwirtz/homer",
-  "website": "github.com/bastienwirtz/homer",
-  "source_code": "github.com/bastienwirtz/homer",
-  "github_stars": "10911",
-  "logo": "/icons/homer.webp",
-  "description": "Homer is a simple static homepage for organizing links and small informational widgets. Configuration is done via a YAML file and the resulting single page site can be hosted on any web server, ideal for lightweight dashboards.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v25.11.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-16",
+    "date_last_commit": "2025-11-23",
+    "github_stars": 10914
+  },
+  "resources": {
+    "website": "https://github.com/bastienwirtz/homer",
+    "documentation": "https://github.com/bastienwirtz/homer",
+    "source_code": "https://github.com/bastienwirtz/homer",
+    "logo": "/icons/homer.webp",
+    "issues": "https://github.com/bastienwirtz/homer/issues",
+    "releases": "https://github.com/bastienwirtz/homer/releases"
+  },
   "features": [
     "Static Site: Generate a fast, static homepage that can be hosted anywhere.",
     "YAML Configuration: Define all links and settings in a single, easy-to-edit YAML file.",
@@ -25,69 +33,45 @@
     "Offline Support: Works without internet connection once loaded.",
     "Minimal Resources: Extremely lightweight with fast load times on any device."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

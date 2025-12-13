@@ -1,20 +1,28 @@
 {
   "name": "opnform",
   "slug": "opnform",
+  "tagline": null,
+  "description": "OpnForm is an open-source, Airtable-like form builder that allows users to create, share, and collect responses with an integrated UI. It supports REST APIs and can be self-hosted for full data control.",
   "categories": [
     157
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/OpnForm/OpnForm",
-  "website": "opnform.com",
-  "source_code": "github.com/OpnForm/OpnForm",
-  "github_stars": "3041",
-  "logo": "/icons/opnform.webp",
-  "description": "OpnForm is an open-source, Airtable-like form builder that allows users to create, share, and collect responses with an integrated UI. It supports REST APIs and can be self-hosted for full data control.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "v1.12.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-24",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 3041
+  },
+  "resources": {
+    "website": "https://opnform.com",
+    "documentation": "https://github.com/OpnForm/OpnForm",
+    "source_code": "https://github.com/OpnForm/OpnForm",
+    "logo": "/icons/opnform.webp",
+    "issues": "https://github.com/OpnForm/OpnForm/issues",
+    "releases": "https://github.com/OpnForm/OpnForm/releases"
+  },
   "features": [
     "Form Builder: Drag-and-drop form creation with multiple field types, validation rules, and conditional logic.",
     "Response Management: Collect, view, and export form responses with filtering, sorting, and analytics capabilities.",
@@ -29,69 +37,45 @@
     "Response Validation: Real-time form validation with custom error messages and data quality controls.",
     "Analytics Dashboard: View submission statistics, completion rates, and user engagement metrics with visual charts."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

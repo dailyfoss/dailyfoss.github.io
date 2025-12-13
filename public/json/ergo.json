@@ -1,20 +1,28 @@
 {
   "name": "ergo",
   "slug": "ergo",
+  "tagline": null,
+  "description": "Ergo is a modern IRC server that adds features like accounts, history replay, TLS, and SASL while remaining compatible with traditional IRC clients. It’s built to be easy to operate for communities and networks.",
   "categories": [
     102
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/ergochat/ergo",
-  "website": "ergo.chat/",
-  "source_code": "github.com/ergochat/ergo",
-  "github_stars": "2986",
-  "logo": "/icons/ergo.webp",
-  "description": "Ergo is a modern IRC server that adds features like accounts, history replay, TLS, and SASL while remaining compatible with traditional IRC clients. It’s built to be easy to operate for communities and networks.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v2.16.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-05-18",
+    "date_last_commit": "2025-12-08",
+    "github_stars": 2986
+  },
+  "resources": {
+    "website": "https://ergo.chat/",
+    "documentation": "https://github.com/ergochat/ergo",
+    "source_code": "https://github.com/ergochat/ergo",
+    "logo": "/icons/ergo.webp",
+    "issues": "https://github.com/ergochat/ergo/issues",
+    "releases": "https://github.com/ergochat/ergo/releases"
+  },
   "features": [
     "Modern IRC: Classic protocol with contemporary features. Best of both worlds.",
     "Account System: Persistent identities and authentication. Reliable user management.",
@@ -23,69 +31,45 @@
     "Easy Operation: Simple to deploy and maintain. Admin-friendly server.",
     "Self-Hosted: Run your own IRC network. Complete community control."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

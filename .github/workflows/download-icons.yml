@@ -1,0 +1,118 @@
+name: Download Icons
+
+on:
+  schedule:
+    # Run every day at 3 pm UTC
+    - cron: '0 15 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  download-icons:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Download icons
+        run: node tools/download-icons.js
+
+      - name: Validate changed files
+        id: validate
+        run: |
+          # Get list of changed files
+          changed_files=$(git diff --name-only HEAD)
+          
+          # Check if any files changed
+          if [ -z "$changed_files" ]; then
+            echo "valid=false" >> $GITHUB_OUTPUT
+            echo "reason=no_changes" >> $GITHUB_OUTPUT
+            echo "No changes detected"
+            exit 0
+          fi
+          
+          # Count changes
+          icon_count=$(echo "$changed_files" | grep "^public/icons/.*\.webp$" | wc -l)
+          json_count=$(echo "$changed_files" | grep "^public/json/.*\.json$" | wc -l)
+          
+          # Validate that only icons and JSON files changed
+          invalid_files=$(echo "$changed_files" | grep -v "^public/icons/.*\.webp$" | grep -v "^public/json/.*\.json$" || true)
+          
+          if [ -n "$invalid_files" ]; then
+            echo "valid=false" >> $GITHUB_OUTPUT
+            echo "reason=invalid_files" >> $GITHUB_OUTPUT
+            echo "Invalid files changed:"
+            echo "$invalid_files"
+            exit 0
+          fi
+          
+          echo "valid=true" >> $GITHUB_OUTPUT
+          echo "icon_count=$icon_count" >> $GITHUB_OUTPUT
+          echo "json_count=$json_count" >> $GITHUB_OUTPUT
+          echo "All validations passed"
+
+      - name: Create Pull Request
+        id: create-pr
+        if: steps.validate.outputs.valid == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore(assets): download application icons'
+          branch: automated/download-icons
+          delete-branch: true
+          title: 'chore(assets): download application icons'
+          body: |
+            ## Automated Icon Downloads
+            
+            This PR downloads application icons from the CDN and updates JSON files with local icon paths.
+            
+            ### What's Updated
+            
+            - Downloaded icons from `https://cdn.jsdelivr.net/gh/selfhst/icons/webp`
+            - Saved icons to `public/icons/` directory
+            - Updated JSON files to reference local icon paths
+            
+            ### Changes Summary
+            
+            - **Icons downloaded**: ${{ steps.validate.outputs.icon_count }} files
+            - **JSON files updated**: ${{ steps.validate.outputs.json_count }} files
+            
+            ---
+            
+            ### Validation
+            
+            ✅ Only `public/icons/*.webp` and `public/json/*.json` were modified
+            ✅ Auto-merge enabled - will merge automatically
+            
+            ### Automation Details
+            
+            - **Workflow**: `.github/workflows/download-icons.yml`
+            - **Schedule**: Daily at 3 PM UTC
+            - **Script**: `tools/download-icons.js`
+            - **Triggered**: ${{ github.event_name == 'schedule' && 'Scheduled run' || 'Manual trigger' }}
+            
+            ---
+            
+            *This PR was automatically created and will auto-merge after validation.*
+          labels: |
+            automated
+            assets
+            icons
+
+      - name: Enable auto-merge
+        if: steps.create-pr.outputs.pull-request-number
+        run: |
+          gh pr merge ${{ steps.create-pr.outputs.pull-request-number }} --auto --squash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

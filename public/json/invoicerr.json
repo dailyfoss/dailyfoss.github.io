@@ -1,20 +1,29 @@
 {
   "name": "invoicerr",
   "slug": "invoicerr",
+  "tagline": null,
+  "description": "Invoicerr is a lightweight invoicing and client management tool that can be self hosted. It focuses on simple creation of invoices, client lists and payment tracking, offering a clean UI for freelancers and micro businesses.",
   "categories": [
     5
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Impre-visible/invoicerr",
-  "website": "github.com/Impre-visible/invoicerr",
-  "source_code": "github.com/Impre-visible/invoicerr",
-  "github_stars": "408",
-  "logo": "/icons/invoicerr.webp",
-  "description": "Invoicerr is a lightweight invoicing and client management tool that can be self hosted. It focuses on simple creation of invoices, client lists and payment tracking, offering a clean UI for freelancers and micro businesses.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v1.4.1f",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-11",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 412
+  },
+  "resources": {
+    "website": "https://github.com/Impre-visible/invoicerr",
+    "documentation": "https://github.com/Impre-visible/invoicerr",
+    "source_code": "https://github.com/Impre-visible/invoicerr",
+    "logo": "/icons/invoicerr.webp",
+    "issues": "https://github.com/Impre-visible/invoicerr/issues",
+    "releases": "https://github.com/Impre-visible/invoicerr/releases",
+    "logo_light": "/icons/invoicerr-light.webp"
+  },
   "features": [
     "Simple Invoicing: Create invoices quickly with a streamlined, no-frills interface.",
     "Client Database: Store client information and billing details in one place.",
@@ -25,69 +34,45 @@
     "Lightweight Design: Fast performance with minimal resource requirements.",
     "Freelancer-Friendly: Perfect for solo entrepreneurs and micro businesses."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

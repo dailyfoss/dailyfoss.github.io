@@ -1,20 +1,28 @@
 {
   "name": "plane",
   "slug": "plane",
+  "tagline": null,
+  "description": "Plane is a self-hosted project and issue tracking tool designed for small teams. It features Kanban, timelines, Git syncing, and powerful filters with a sleek UI.",
   "categories": [
     125
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/makeplane/plane",
-  "website": "http://plane.so",
-  "source_code": "github.com/makeplane/plane",
-  "github_stars": "40429",
-  "logo": "/icons/plane.webp",
-  "description": "Plane is a self-hosted project and issue tracking tool designed for small teams. It features Kanban, timelines, Git syncing, and powerful filters with a sleek UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v1.2.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-12",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 40462
+  },
+  "resources": {
+    "website": "http://plane.so",
+    "documentation": "https://github.com/makeplane/plane",
+    "source_code": "https://github.com/makeplane/plane",
+    "logo": "/icons/plane.webp",
+    "issues": "https://github.com/makeplane/plane/issues",
+    "releases": "https://github.com/makeplane/plane/releases"
+  },
   "features": [
     "Issue tracking: Create and manage issues with custom fields, priorities, and status workflows.",
     "Kanban boards: Visualize work with drag-and-drop kanban boards for agile project management.",
@@ -29,69 +37,45 @@
     "Multiple views: Switch between list, kanban, calendar, and spreadsheet views for different perspectives.",
     "Project templates: Create reusable project templates with predefined workflows and issue types."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

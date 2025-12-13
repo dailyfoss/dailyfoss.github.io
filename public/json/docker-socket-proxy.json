@@ -1,20 +1,28 @@
 {
   "name": "docker-socket-proxy",
   "slug": "docker-socket-proxy",
+  "tagline": null,
+  "description": "Docker Socket Proxy is a secure proxy for the Docker socket, designed to expose only specific actions through HTTP. It helps isolate and restrict container management operations safely using granular authorization.",
   "categories": [
     137
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Tecnativa/docker-socket-proxy",
-  "website": "github.com/Tecnativa/docker-socket-proxy",
-  "source_code": "github.com/Tecnativa/docker-socket-proxy",
-  "github_stars": "2094",
-  "logo": "/icons/docker-socket-proxy.webp",
-  "description": "Docker Socket Proxy is a secure proxy for the Docker socket, designed to expose only specific actions through HTTP. It helps isolate and restrict container management operations safely using granular authorization.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v0.4.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-05",
+    "date_last_commit": "2025-09-05",
+    "github_stars": 2095
+  },
+  "resources": {
+    "website": "https://github.com/Tecnativa/docker-socket-proxy",
+    "documentation": "https://github.com/Tecnativa/docker-socket-proxy",
+    "source_code": "https://github.com/Tecnativa/docker-socket-proxy",
+    "logo": "/icons/docker-socket-proxy.webp",
+    "issues": "https://github.com/Tecnativa/docker-socket-proxy/issues",
+    "releases": "https://github.com/Tecnativa/docker-socket-proxy/releases"
+  },
   "features": [
     "Secure Socket Access: Safely expose Docker socket over HTTP. Controlled container management.",
     "Granular Authorization: Restrict specific Docker API actions. Fine-grained security control.",
@@ -23,69 +31,45 @@
     "Permission Control: Define exactly which operations are allowed. Minimize attack surface.",
     "Self-Hosted: Run your own secure Docker proxy. Complete control over access."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

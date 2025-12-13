@@ -1,89 +1,73 @@
 {
   "name": "lightweight-music-server",
   "slug": "lightweight-music-server",
+  "tagline": null,
+  "description": "LMS is a lightweight and fast self-hosted music streaming server with Last.fm scrobbling, playlist support, and web-based playback. It allows fully-private music streaming from your own server to any device.",
   "categories": [
     100
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/epoupon/lms",
-  "website": "http://lms-demo.poupon.dev",
-  "source_code": "github.com/epoupon/lms",
-  "github_stars": "1500",
-  "logo": "/icons/lightweight-music-server.webp",
-  "description": "LMS is a lightweight and fast self-hosted music streaming server with Last.fm scrobbling, playlist support, and web-based playback. It allows fully-private music streaming from your own server to any device.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v3.73.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-08",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 1501
+  },
+  "resources": {
+    "website": "http://lms-demo.poupon.dev",
+    "documentation": "https://github.com/epoupon/lms",
+    "source_code": "https://github.com/epoupon/lms",
+    "logo": "/icons/lightweight-music-server.webp",
+    "issues": "https://github.com/epoupon/lms/issues",
+    "releases": "https://github.com/epoupon/lms/releases"
+  },
   "features": [
     "Music Streaming: Web-based playback, Fast performance, Low resource usage. Lightweight music server.",
     "Last.fm Integration: Scrobbling support, Music discovery, Listening history. Track what you listen to.",
     "Playlist Management: Create playlists, Smart playlists, Queue management. Organize your music listening.",
     "Multi-User: User accounts, Personal libraries, Access control. Share music with family."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

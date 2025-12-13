@@ -1,20 +1,28 @@
 {
   "name": "mafl",
   "slug": "mafl",
+  "tagline": null,
+  "description": "Mafl is a self-hosted feed and blog aggregator similar to Feedly. It allows subscribing to RSS/Atom feeds, filtering stories, and reading articles via a simple responsive web interface.",
   "categories": [
     165
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/hywax/mafl",
-  "website": "mafl.hywax.space",
-  "source_code": "github.com/hywax/mafl",
-  "github_stars": "625",
-  "logo": "/icons/mafl.webp",
-  "description": "Mafl is a self-hosted feed and blog aggregator similar to Feedly. It allows subscribing to RSS/Atom feeds, filtering stories, and reading articles via a simple responsive web interface.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.15.4",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-07-13",
+    "date_last_commit": "2025-10-26",
+    "github_stars": 625
+  },
+  "resources": {
+    "website": "https://mafl.hywax.space",
+    "documentation": "https://github.com/hywax/mafl",
+    "source_code": "https://github.com/hywax/mafl",
+    "logo": "/icons/mafl.webp",
+    "issues": "https://github.com/hywax/mafl/issues",
+    "releases": "https://github.com/hywax/mafl/releases"
+  },
   "features": [
     "RSS aggregation: Subscribe to multiple RSS and Atom feeds from blogs, news sites, and podcasts in one interface.",
     "Article filtering: Create custom filters to show only relevant content based on keywords or sources.",
@@ -27,69 +35,45 @@
     "Article preview: Read content directly in the interface without visiting external websites.",
     "Feed discovery: Find and subscribe to new feeds through built-in search and recommendations."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

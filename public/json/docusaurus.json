@@ -1,20 +1,28 @@
 {
   "name": "docusaurus",
   "slug": "docusaurus",
+  "tagline": null,
+  "description": "Docusaurus is a static site generator optimized for documentation websites. It uses Markdown and React to build versioned docs, blogs, and landing pages, and ships with localization, search integrations, and theming for developer documentation portals.",
   "categories": [
     152
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/facebook/docusaurus",
-  "website": "docusaurus.io",
-  "source_code": "github.com/facebook/docusaurus",
-  "github_stars": "62969",
-  "logo": "/icons/docusaurus.webp",
-  "description": "Docusaurus is a static site generator optimized for documentation websites. It uses Markdown and React to build versioned docs, blogs, and landing pages, and ships with localization, search integrations, and theming for developer documentation portals.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v3.9.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-17",
+    "date_last_commit": "2025-12-09",
+    "github_stars": 62975
+  },
+  "resources": {
+    "website": "https://docusaurus.io",
+    "documentation": "https://github.com/facebook/docusaurus",
+    "source_code": "https://github.com/facebook/docusaurus",
+    "logo": "/icons/docusaurus.webp",
+    "issues": "https://github.com/facebook/docusaurus/issues",
+    "releases": "https://github.com/facebook/docusaurus/releases"
+  },
   "features": [
     "Markdown documentation: Write docs in Markdown with MDX support for embedding React components and interactive elements.",
     "Version control: Maintain multiple documentation versions simultaneously for different product releases with easy switching.",
@@ -25,69 +33,45 @@
     "Plugin ecosystem: Extend functionality with community plugins for analytics, sitemap generation, and content processing.",
     "Fast performance: Generate optimized static sites with code splitting, prefetching, and progressive web app capabilities."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

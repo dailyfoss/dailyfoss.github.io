@@ -1,20 +1,28 @@
 {
   "name": "4ga-boards",
   "slug": "4ga-boards",
+  "tagline": null,
+  "description": "4gaBoards is an open-source, self-hostable Kanban-style task-management web app designed for real-time collaboration. It features dark mode, intuitive drag-&-drop boards with multi-level hierarchy (projects → boards → lists → cards → tasks), advanced Markdown editing, import/export support (including from Trello), and simplified wide-screen UI with minimal clutter. Built with React/Redux on the front end and Sails.js/Knex/PostgreSQL on the back end, 4gaBoards is published under the MIT License and supports Docker / Kubernetes deployment.",
   "categories": [
     69
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/RARgames/4gaBoards",
-  "website": "4gaboards.com",
-  "source_code": "github.com/RARgames/4gaBoards",
-  "github_stars": "415",
-  "logo": "/icons/4ga-boards.webp",
-  "description": "4gaBoards is an open-source, self-hostable Kanban-style task-management web app designed for real-time collaboration. It features dark mode, intuitive drag-&-drop boards with multi-level hierarchy (projects → boards → lists → cards → tasks), advanced Markdown editing, import/export support (including from Trello), and simplified wide-screen UI with minimal clutter. Built with React/Redux on the front end and Sails.js/Knex/PostgreSQL on the back end, 4gaBoards is published under the MIT License and supports Docker / Kubernetes deployment.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v3.2.16",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-02",
+    "date_last_commit": "2025-12-08",
+    "github_stars": 416
+  },
+  "resources": {
+    "website": "https://4gaboards.com",
+    "documentation": "https://github.com/RARgames/4gaBoards",
+    "source_code": "https://github.com/RARgames/4gaBoards",
+    "logo": "/icons/4ga-boards.webp",
+    "issues": "https://github.com/RARgames/4gaBoards/issues",
+    "releases": "https://github.com/RARgames/4gaBoards/releases"
+  },
   "features": [
     "Real-Time Collaboration: Work together on visual Kanban boards with instant updates. Team productivity amplified.",
     "Flexible Hierarchy: Organize from high-level projects down to granular tasks. Structure that scales with you.",
@@ -25,69 +33,45 @@
     "Clean Design: Wide-screen interface minimizes clutter and distractions. Focus on what matters.",
     "Stable Foundation: React, Redux, and PostgreSQL ensure reliable performance. Built to last."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "stencilbox",
   "slug": "stencilbox",
+  "tagline": null,
+  "description": "StencilBox is a self-hosted visual editor for creating SVG stencils and diagrams, offering drag-and-drop elements and export options.",
   "categories": [
     37
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/jamesread/StencilBox",
-  "website": "jamesread.github.io/StencilBox/",
-  "source_code": "github.com/jamesread/StencilBox",
-  "github_stars": "62",
-  "logo": "/icons/stencilbox.webp",
-  "description": "StencilBox is a self-hosted visual editor for creating SVG stencils and diagrams, offering drag-and-drop elements and export options.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "2.4.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-06",
+    "date_last_commit": "2025-10-10",
+    "github_stars": 63
+  },
+  "resources": {
+    "website": "https://jamesread.github.io/StencilBox/",
+    "documentation": "https://github.com/jamesread/StencilBox",
+    "source_code": "https://github.com/jamesread/StencilBox",
+    "logo": "/icons/stencilbox.webp",
+    "issues": "https://github.com/jamesread/StencilBox/issues",
+    "releases": "https://github.com/jamesread/StencilBox/releases"
+  },
   "features": [
     "SVG editor: Creates and edits SVG stencils and diagrams visually.",
     "Drag-and-drop: Adds shapes and elements with intuitive drag-and-drop interface.",
@@ -29,69 +37,45 @@
     "Responsive canvas: Adjusts canvas size for different output requirements.",
     "Template system: Starts projects from pre-made templates."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

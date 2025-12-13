@@ -1,20 +1,28 @@
 {
   "name": "komga",
   "slug": "komga",
+  "tagline": null,
+  "description": "Komga is a self hosted comics and manga server. It organizes libraries, tracks reading progress, supports multiple users and provides a responsive reader interface, similar to what Jellyfin or Plex offer for video.",
   "categories": [
     95
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/gotson/komga",
-  "website": "komga.org",
-  "source_code": "github.com/gotson/komga",
-  "github_stars": "5660",
-  "logo": "/icons/komga.webp",
-  "description": "Komga is a self hosted comics and manga server. It organizes libraries, tracks reading progress, supports multiple users and provides a responsive reader interface, similar to what Jellyfin or Plex offer for video.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "1.23.6",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-28",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 5661
+  },
+  "resources": {
+    "website": "https://komga.org",
+    "documentation": "https://github.com/gotson/komga",
+    "source_code": "https://github.com/gotson/komga",
+    "logo": "/icons/komga.webp",
+    "issues": "https://github.com/gotson/komga/issues",
+    "releases": "https://github.com/gotson/komga/releases"
+  },
   "features": [
     "Comics & Manga Server: Self-hosted digital library for comics, manga, and graphic novels. Your personal comic server.",
     "Format Support: Read CBZ, CBR, PDF, EPUB, and other comic formats. Support for all common file types.",
@@ -29,69 +37,45 @@
     "API Access: RESTful API for integrations and custom applications. Extend functionality as needed.",
     "Duplicate Detection: Identify and manage duplicate files in library. Keep library clean and organized."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

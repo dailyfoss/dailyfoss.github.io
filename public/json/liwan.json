@@ -1,20 +1,29 @@
 {
   "name": "liwan",
   "slug": "liwan",
+  "tagline": null,
+  "description": "Liwan is a lightweight YouTube front-end. It provides ad-free playback, basic privacy filters, and a clean UI for browsing and viewing, ideal for those looking to avoid tracking in video consumption.",
   "categories": [
     27
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/explodingcamera/liwan",
-  "website": "liwan.dev",
-  "source_code": "github.com/explodingcamera/liwan",
-  "github_stars": "136",
-  "logo": "/icons/liwan.webp",
-  "description": "Liwan is a lightweight YouTube front-end. It provides ad-free playback, basic privacy filters, and a clean UI for browsing and viewing, ideal for those looking to avoid tracking in video consumption.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "liwan-v1.3.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-11",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 137
+  },
+  "resources": {
+    "website": "https://liwan.dev",
+    "documentation": "https://github.com/explodingcamera/liwan",
+    "source_code": "https://github.com/explodingcamera/liwan",
+    "logo": "/icons/liwan.webp",
+    "issues": "https://github.com/explodingcamera/liwan/issues",
+    "releases": "https://github.com/explodingcamera/liwan/releases",
+    "logo_light": "/icons/liwan-light.webp"
+  },
   "features": [
     "YouTube Frontend: Ad-free viewing, Privacy filters, Clean interface. Watch YouTube without tracking.",
     "Lightweight: Fast loading, Minimal resources, Simple design. Efficient video browsing.",
@@ -25,69 +34,45 @@
     "Search Functionality: Video search, Channel browsing, Trending content. Find what you want.",
     "Subscription Management: Follow channels, Track uploads, Personalized feed. Stay updated on favorites."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

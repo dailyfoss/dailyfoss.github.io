@@ -1,20 +1,28 @@
 {
   "name": "quickwit",
   "slug": "quickwit",
+  "tagline": null,
+  "description": "Quickwit is a cloud-native search engine for large-scale log storage and querying. It offers web-based query UI, REST APIs, and is optimized for low storage costs and fast indexing.",
   "categories": [
     144
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/quickwit-oss/quickwit",
-  "website": "quickwit.io",
-  "source_code": "github.com/quickwit-oss/quickwit",
-  "github_stars": "10633",
-  "logo": "/icons/quickwit.webp",
-  "description": "Quickwit is a cloud-native search engine for large-scale log storage and querying. It offers web-based query UI, REST APIs, and is optimized for low storage costs and fast indexing.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v0.8.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-06-17",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 10634
+  },
+  "resources": {
+    "website": "https://quickwit.io",
+    "documentation": "https://github.com/quickwit-oss/quickwit",
+    "source_code": "https://github.com/quickwit-oss/quickwit",
+    "logo": "/icons/quickwit.webp",
+    "issues": "https://github.com/quickwit-oss/quickwit/issues",
+    "releases": "https://github.com/quickwit-oss/quickwit/releases"
+  },
   "features": [
     "Cloud-native architecture: Designed for object storage like S3 to minimize infrastructure costs and maximize scalability.",
     "Fast indexing: Ingest millions of logs per second with distributed indexing across multiple nodes.",
@@ -29,69 +37,45 @@
     "Aggregation queries: Analyze log patterns with grouping, counting, and statistical operations.",
     "OpenTelemetry support: Ingest traces and logs from modern observability tools using standard protocols."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

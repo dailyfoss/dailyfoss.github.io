@@ -1,20 +1,28 @@
 {
   "name": "youtarr",
   "slug": "youtarr",
+  "tagline": null,
+  "description": "Youtarr is a self-hosted YouTube request and download manager that coordinates with media servers and Arr tools. Users can request videos, which are then fetched and organized automatically.",
   "categories": [
     166
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/DialmasterOrg/Youtarr",
-  "website": "github.com/DialmasterOrg/Youtarr",
-  "source_code": "github.com/DialmasterOrg/Youtarr",
-  "github_stars": "737",
-  "logo": "/icons/youtarr.webp",
-  "description": "Youtarr is a self-hosted YouTube request and download manager that coordinates with media servers and Arr tools. Users can request videos, which are then fetched and organized automatically.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "ISC",
+    "version": "v1.55.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-10",
+    "date_last_commit": "2025-12-10",
+    "github_stars": 737
+  },
+  "resources": {
+    "website": "https://github.com/DialmasterOrg/Youtarr",
+    "documentation": "https://github.com/DialmasterOrg/Youtarr",
+    "source_code": "https://github.com/DialmasterOrg/Youtarr",
+    "logo": "/icons/youtarr.webp",
+    "issues": "https://github.com/DialmasterOrg/Youtarr/issues",
+    "releases": "https://github.com/DialmasterOrg/Youtarr/releases"
+  },
   "features": [
     "Request management: Allow users to request YouTube videos for download through a web interface with approval workflows.",
     "Automatic downloads: Fetch requested videos automatically using yt-dlp with configurable quality and format settings.",
@@ -29,69 +37,45 @@
     "Notification system: Send alerts when requested videos are downloaded and ready to watch.",
     "Subtitle support: Automatically download available subtitles and captions in multiple languages alongside videos."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

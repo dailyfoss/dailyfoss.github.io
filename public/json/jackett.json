@@ -1,88 +1,73 @@
 {
   "name": "jackett",
   "slug": "jackett",
+  "tagline": null,
+  "description": "Jackett acts as a proxy between torrent indexers and apps like Sonarr or Radarr. It translates queries into many tracker specific formats, providing a single unified API so self hosted media automation stacks can search dozens of sources.",
   "categories": [
     166
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Jackett/Jackett",
-  "website": "github.com/Jackett/Jackett",
-  "source_code": "github.com/Jackett/Jackett",
-  "github_stars": "14494",
-  "logo": "/icons/jackett.webp",
-  "description": "Jackett acts as a proxy between torrent indexers and apps like Sonarr or Radarr. It translates queries into many tracker specific formats, providing a single unified API so self hosted media automation stacks can search dozens of sources.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-2.0",
+    "version": "v0.24.441",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-12",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 14501
+  },
+  "resources": {
+    "website": "https://github.com/Jackett/Jackett",
+    "documentation": "https://github.com/Jackett/Jackett",
+    "source_code": "https://github.com/Jackett/Jackett",
+    "logo": "/icons/jackett.webp",
+    "issues": "https://github.com/Jackett/Jackett/issues",
+    "releases": "https://github.com/Jackett/Jackett/releases",
+    "logo_light": "/icons/jackett-light.webp"
+  },
   "features": [
     "Indexer Proxy: Unified API for torrent trackers, Multi-source search, Automation integration. Connect dozens of indexers to your media stack.",
     "Query Translation: Convert searches to tracker formats, Standardized responses, Cross-platform compatibility. One API for all trackers.",
     "Media Automation: Sonarr and Radarr integration, Automatic downloads, Release monitoring. Streamline your media workflow."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

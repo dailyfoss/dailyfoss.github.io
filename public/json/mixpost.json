@@ -1,20 +1,28 @@
 {
   "name": "mixpost",
   "slug": "mixpost",
+  "tagline": null,
+  "description": "Mixpost is an open-source social media management tool for scheduling and publishing content across multiple platforms. It features content calendars, team collaboration, and a modern web UI for marketing workflows.",
   "categories": [
     109
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/inovector/mixpost",
-  "website": "mixpost.app",
-  "source_code": "github.com/inovector/mixpost",
-  "github_stars": "2764",
-  "logo": "/icons/mixpost.webp",
-  "description": "Mixpost is an open-source social media management tool for scheduling and publishing content across multiple platforms. It features content calendars, team collaboration, and a modern web UI for marketing workflows.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "2.4.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-13",
+    "date_last_commit": "2025-11-13",
+    "github_stars": 2764
+  },
+  "resources": {
+    "website": "https://mixpost.app",
+    "documentation": "https://github.com/inovector/mixpost",
+    "source_code": "https://github.com/inovector/mixpost",
+    "logo": "/icons/mixpost.webp",
+    "issues": "https://github.com/inovector/mixpost/issues",
+    "releases": "https://github.com/inovector/mixpost/releases"
+  },
   "features": [
     "Multi-platform posting: Schedule and publish content to Facebook, Twitter, Instagram, and LinkedIn from one interface.",
     "Content calendar: Visualize scheduled posts across all platforms in a calendar view for strategic planning.",
@@ -25,69 +33,45 @@
     "Analytics tracking: Monitor post performance with engagement metrics and audience insights across platforms.",
     "Hashtag management: Save and organize hashtag sets for consistent branding and improved content discoverability."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

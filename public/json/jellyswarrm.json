@@ -1,88 +1,72 @@
 {
   "name": "jellyswarrm",
   "slug": "jellyswarrm",
+  "tagline": null,
+  "description": "Jellyswarrm is an orchestration and management layer for running Jellyfin on Docker Swarm. It simplifies deploying and scaling media servers by providing templates and scripts tailored for distributed setups.",
   "categories": [
     100
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/LLukas22/Jellyswarrm",
-  "website": "github.com/LLukas22/Jellyswarrm",
-  "source_code": "github.com/LLukas22/Jellyswarrm",
-  "github_stars": "341",
-  "logo": "/icons/jellyswarrm.webp",
-  "description": "Jellyswarrm is an orchestration and management layer for running Jellyfin on Docker Swarm. It simplifies deploying and scaling media servers by providing templates and scripts tailored for distributed setups.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-2.0",
+    "version": "v0.2.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-07",
+    "date_last_commit": "2025-12-07",
+    "github_stars": 347
+  },
+  "resources": {
+    "website": "https://github.com/LLukas22/Jellyswarrm",
+    "documentation": "https://github.com/LLukas22/Jellyswarrm",
+    "source_code": "https://github.com/LLukas22/Jellyswarrm",
+    "logo": "/icons/jellyswarrm.webp",
+    "issues": "https://github.com/LLukas22/Jellyswarrm/issues",
+    "releases": "https://github.com/LLukas22/Jellyswarrm/releases"
+  },
   "features": [
     "Swarm Orchestration: Docker Swarm templates, Jellyfin clustering, Load balancing. Scale your media server horizontally.",
     "Deployment Automation: Pre-configured stacks, Service discovery, Health monitoring. Deploy Jellyfin in minutes.",
     "High Availability: Distributed architecture, Failover support, Persistent storage. Keep streaming even during failures."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "willow",
   "slug": "willow",
+  "tagline": null,
+  "description": "Willow is a self-hosted journaling and well-being tracker designed to help users log moods, thoughts, and reflections. It emphasizes privacy, elegant design, and simple insights presented through a calming, distraction-free web interface.",
   "categories": [
     165
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/HeyWillow/willow",
-  "website": "heywillow.io/",
-  "source_code": "github.com/HeyWillow/willow",
-  "github_stars": "2920",
-  "logo": "/icons/willow.webp",
-  "description": "Willow is a self-hosted journaling and well-being tracker designed to help users log moods, thoughts, and reflections. It emphasizes privacy, elegant design, and simple insights presented through a calming, distraction-free web interface.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "0.4.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-05-26",
+    "date_last_commit": "2025-07-03",
+    "github_stars": 2921
+  },
+  "resources": {
+    "website": "https://heywillow.io/",
+    "documentation": "https://github.com/HeyWillow/willow",
+    "source_code": "https://github.com/HeyWillow/willow",
+    "logo": "/icons/willow.webp",
+    "issues": "https://github.com/HeyWillow/willow/issues",
+    "releases": "https://github.com/HeyWillow/willow/releases"
+  },
   "features": [
     "Daily journaling: Record thoughts, moods, and reflections in a private digital journal.",
     "Mood tracking: Log emotional states with customizable mood indicators and track patterns over time.",
@@ -29,69 +37,45 @@
     "Mobile responsive: Journal from any device with a responsive design optimized for phones and tablets.",
     "Data visualization: View mood trends and journaling patterns with simple charts and statistics."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

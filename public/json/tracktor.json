@@ -1,20 +1,29 @@
 {
   "name": "tracktor",
   "slug": "tracktor",
+  "tagline": null,
+  "description": "Tracktor is a self-hosted package and shipment tracking web app that aggregates tracking information from multiple carriers, presenting statuses and history in a unified dashboard.",
   "categories": [
     96
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/javedh-dev/tracktor",
-  "website": "tracktor.bytedge.in",
-  "source_code": "github.com/javedh-dev/tracktor",
-  "github_stars": "683",
-  "logo": "/icons/tracktor.webp",
-  "description": "Tracktor is a self-hosted package and shipment tracking web app that aggregates tracking information from multiple carriers, presenting statuses and history in a unified dashboard.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "0.5.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-05",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 684
+  },
+  "resources": {
+    "website": "https://tracktor.bytedge.in",
+    "documentation": "https://github.com/javedh-dev/tracktor",
+    "source_code": "https://github.com/javedh-dev/tracktor",
+    "logo": "/icons/tracktor.webp",
+    "issues": "https://github.com/javedh-dev/tracktor/issues",
+    "releases": "https://github.com/javedh-dev/tracktor/releases",
+    "logo_light": "/icons/tracktor-light.webp"
+  },
   "features": [
     "Multi-carrier tracking: Track packages from multiple shipping carriers in one unified dashboard.",
     "Automatic updates: Fetch tracking updates automatically at regular intervals without manual checking.",
@@ -29,69 +38,45 @@
     "Privacy-focused: Track packages on your own server without sharing tracking data with third parties.",
     "Bulk import: Add multiple tracking numbers at once for efficient package management."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

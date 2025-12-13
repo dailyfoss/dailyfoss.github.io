@@ -1,20 +1,28 @@
 {
   "name": "podfetch",
   "slug": "podfetch",
+  "tagline": null,
+  "description": "PodFetch is a self-hosted podcast downloader and sync server that manages RSS feeds, handles episodes storage, and provides a web interface for browsing and downloading.",
   "categories": [
     123
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/SamTV12345/PodFetch",
-  "website": "samtv12345.github.io/PodFetch",
-  "source_code": "github.com/SamTV12345/PodFetch",
-  "github_stars": "450",
-  "logo": "/icons/podfetch.webp",
-  "description": "PodFetch is a self-hosted podcast downloader and sync server that manages RSS feeds, handles episodes storage, and provides a web interface for browsing and downloading.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v4.9.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-27",
+    "date_last_commit": "2025-12-08",
+    "github_stars": 450
+  },
+  "resources": {
+    "website": "https://samtv12345.github.io/PodFetch",
+    "documentation": "https://github.com/SamTV12345/PodFetch",
+    "source_code": "https://github.com/SamTV12345/PodFetch",
+    "logo": "/icons/podfetch.webp",
+    "issues": "https://github.com/SamTV12345/PodFetch/issues",
+    "releases": "https://github.com/SamTV12345/PodFetch/releases"
+  },
   "features": [
     "Podcast downloads: Automatically download episodes from subscribed podcast RSS feeds.",
     "RSS feed management: Subscribe to and manage multiple podcast feeds from one interface.",
@@ -29,69 +37,45 @@
     "OPML import: Import podcast subscriptions from other apps using OPML format.",
     "API access: Integrate with other applications using REST API for automation."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

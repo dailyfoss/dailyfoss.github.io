@@ -1,20 +1,28 @@
 {
   "name": "flame",
   "slug": "flame",
+  "tagline": null,
+  "description": "Flame is a personal dashboard for managing links and monitoring self-hosted services. It supports dynamic links, icons, widgets, and a sleek UI that works well as a browser homepage for homelab and server environments.",
   "categories": [
     34
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/pawelmalak/flame",
-  "website": "github.com/pawelmalak/flame",
-  "source_code": "github.com/pawelmalak/flame",
-  "github_stars": "6127",
-  "logo": "/icons/flame.webp",
-  "description": "Flame is a personal dashboard for managing links and monitoring self-hosted services. It supports dynamic links, icons, widgets, and a sleek UI that works well as a browser homepage for homelab and server environments.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v2.3.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2023-07-23",
+    "date_last_commit": "2024-07-03",
+    "github_stars": 6128
+  },
+  "resources": {
+    "website": "https://github.com/pawelmalak/flame",
+    "documentation": "https://github.com/pawelmalak/flame",
+    "source_code": "https://github.com/pawelmalak/flame",
+    "logo": "/icons/flame.webp",
+    "issues": "https://github.com/pawelmalak/flame/issues",
+    "releases": "https://github.com/pawelmalak/flame/releases"
+  },
   "features": [
     "Dashboard: Personal homepage for services, Link management, Dynamic widgets. Central hub for your homelab.",
     "Service Monitoring: Track self-hosted apps. Live status updates.",
@@ -27,69 +35,45 @@
     "Docker Integration: Auto-discover services. Smart detection.",
     "Multi-User: Support multiple profiles. Family-friendly."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

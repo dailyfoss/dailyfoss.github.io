@@ -1,20 +1,28 @@
 {
   "name": "diun",
   "slug": "diun",
+  "tagline": null,
+  "description": "Diun (Docker Image Update Notifier) is a CLI and webhook-based tool that notifies you when Docker images are updated. It's ideal for automated maintenance and integrates well with CI/CD pipelines.",
   "categories": [
     172
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/crazy-max/diun",
-  "website": "crazymax.dev/diun/",
-  "source_code": "github.com/crazy-max/diun",
-  "github_stars": "4187",
-  "logo": "/icons/diun.webp",
-  "description": "Diun (Docker Image Update Notifier) is a CLI and webhook-based tool that notifies you when Docker images are updated. It's ideal for automated maintenance and integrates well with CI/CD pipelines.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v4.30.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-08-31",
+    "date_last_commit": "2025-12-01",
+    "github_stars": 4188
+  },
+  "resources": {
+    "website": "https://crazymax.dev/diun/",
+    "documentation": "https://github.com/crazy-max/diun",
+    "source_code": "https://github.com/crazy-max/diun",
+    "logo": "/icons/diun.webp",
+    "issues": "https://github.com/crazy-max/diun/issues",
+    "releases": "https://github.com/crazy-max/diun/releases"
+  },
   "features": [
     "Update Notifications: Get alerted when Docker images are updated. Stay informed automatically.",
     "Multi-Platform: Monitor images from Docker Hub, GHCR, and private registries. Universal coverage.",
@@ -23,69 +31,45 @@
     "Flexible Notifications: Send alerts via email, Slack, Discord, and more. Choose your channel.",
     "Lightweight: Minimal resource usage for efficient monitoring. Run anywhere Docker runs."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

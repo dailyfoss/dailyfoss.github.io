@@ -1,20 +1,28 @@
 {
   "name": "receipt-wrangler",
   "slug": "receipt-wrangler",
+  "tagline": null,
+  "description": "Receipt Wrangler is a self-hosted tool that scans and parses receipts into structured data. It supports email forwarding, OCR, and expense categorization.",
   "categories": [
     130
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Receipt-Wrangler/receipt-wrangler-api",
-  "website": "github.com/Receipt-Wrangler/receipt-wrangler-api",
-  "source_code": "github.com/Receipt-Wrangler/receipt-wrangler-api",
-  "github_stars": "176",
-  "logo": "/icons/receipt-wrangler.webp",
-  "description": "Receipt Wrangler is a self-hosted tool that scans and parses receipts into structured data. It supports email forwarding, OCR, and expense categorization.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v6.6.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-06",
+    "date_last_commit": "2025-11-20",
+    "github_stars": 177
+  },
+  "resources": {
+    "website": "https://github.com/Receipt-Wrangler/receipt-wrangler-api",
+    "documentation": "https://github.com/Receipt-Wrangler/receipt-wrangler-api",
+    "source_code": "https://github.com/Receipt-Wrangler/receipt-wrangler-api",
+    "logo": "/icons/receipt-wrangler.webp",
+    "issues": "https://github.com/Receipt-Wrangler/receipt-wrangler-api/issues",
+    "releases": "https://github.com/Receipt-Wrangler/receipt-wrangler-api/releases"
+  },
   "features": [
     "OCR processing: Extract text from receipt images using optical character recognition technology.",
     "Email forwarding: Send receipts to a dedicated email address for automatic import and processing.",
@@ -29,69 +37,45 @@
     "Search capabilities: Find receipts by merchant, amount, date, or extracted text content.",
     "Mobile upload: Photograph receipts with your phone and upload them immediately for processing."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

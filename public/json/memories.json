@@ -1,20 +1,28 @@
 {
   "name": "memories",
   "slug": "memories",
+  "tagline": null,
+  "description": "Memories is a self-hosted photo and video backup tool with web UI for media browsing. It supports deduplication, metadata, face and object recognition while syncing from multiple devices.",
   "categories": [
     120
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/pulsejet/memories",
-  "website": "memories.gallery",
-  "source_code": "github.com/pulsejet/memories",
-  "github_stars": "3655",
-  "logo": "/icons/memories.webp",
-  "description": "Memories is a self-hosted photo and video backup tool with web UI for media browsing. It supports deduplication, metadata, face and object recognition while syncing from multiple devices.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v7.7.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-04",
+    "date_last_commit": "2025-12-10",
+    "github_stars": 3656
+  },
+  "resources": {
+    "website": "https://memories.gallery",
+    "documentation": "https://github.com/pulsejet/memories",
+    "source_code": "https://github.com/pulsejet/memories",
+    "logo": "/icons/memories.webp",
+    "issues": "https://github.com/pulsejet/memories/issues",
+    "releases": "https://github.com/pulsejet/memories/releases"
+  },
   "features": [
     "Photo backup: Automatically sync photos and videos from mobile devices to your server.",
     "Face recognition: Identify and group photos by detected faces for easy person-based browsing.",
@@ -29,69 +37,45 @@
     "Mobile apps: Access your photo library from iOS and Android devices with native apps.",
     "Video support: Store and stream videos with thumbnail generation and playback controls."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

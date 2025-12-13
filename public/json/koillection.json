@@ -1,20 +1,28 @@
 {
   "name": "koillection",
   "slug": "koillection",
+  "tagline": null,
+  "description": "Koillection is a self hosted collection manager for physical or digital items such as books, games or gadgets. It lets users catalog items with images, metadata and tags and browse their collections in a customizable web interface.",
   "categories": [
     80
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/benjaminjonard/koillection",
-  "website": "github.com/koillection/koillection/wiki",
-  "source_code": "github.com/benjaminjonard/koillection",
-  "github_stars": "1024",
-  "logo": "/icons/koillection.webp",
-  "description": "Koillection is a self hosted collection manager for physical or digital items such as books, games or gadgets. It lets users catalog items with images, metadata and tags and browse their collections in a customizable web interface.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "1.7.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-08-28",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 1025
+  },
+  "resources": {
+    "website": "https://github.com/koillection/koillection/wiki",
+    "documentation": "https://github.com/benjaminjonard/koillection",
+    "source_code": "https://github.com/benjaminjonard/koillection",
+    "logo": "/icons/koillection.webp",
+    "issues": "https://github.com/benjaminjonard/koillection/issues",
+    "releases": "https://github.com/benjaminjonard/koillection/releases"
+  },
   "features": [
     "Collection Management: Catalog physical items like books, games, and collectibles. Organize your possessions digitally.",
     "Custom Fields: Define custom metadata fields for different collection types. Track information relevant to you.",
@@ -29,69 +37,45 @@
     "Multi-User: Share collections with family or friends with user accounts. Collaborate on cataloging.",
     "Mobile Responsive: Access and update collections from smartphones. Catalog items anywhere."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

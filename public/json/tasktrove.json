@@ -1,20 +1,28 @@
 {
   "name": "tasktrove",
   "slug": "tasktrove",
+  "tagline": null,
+  "description": "TaskTrove is a self-hosted personal task and project management app with boards, lists, due dates, and tags in a straightforward interface.",
   "categories": [
     159
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/dohsimpson/TaskTrove",
-  "website": "tasktrove.io",
-  "source_code": "github.com/dohsimpson/TaskTrove",
-  "github_stars": "889",
-  "logo": "/icons/tasktrove.webp",
-  "description": "TaskTrove is a self-hosted personal task and project management app with boards, lists, due dates, and tags in a straightforward interface.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "v0.11.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-06",
+    "date_last_commit": "2025-12-06",
+    "github_stars": 889
+  },
+  "resources": {
+    "website": "https://tasktrove.io",
+    "documentation": "https://github.com/dohsimpson/TaskTrove",
+    "source_code": "https://github.com/dohsimpson/TaskTrove",
+    "logo": "/icons/tasktrove.webp",
+    "issues": "https://github.com/dohsimpson/TaskTrove/issues",
+    "releases": "https://github.com/dohsimpson/TaskTrove/releases"
+  },
   "features": [
     "Board organization: Organize work using boards for different projects or areas with customizable layouts.",
     "List management: Create lists within boards to represent workflow stages or task categories.",
@@ -29,69 +37,45 @@
     "Archive completed: Archive finished tasks to keep boards clean while preserving historical records.",
     "Quick add: Create new tasks rapidly with keyboard shortcuts and minimal required fields."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

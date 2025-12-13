@@ -1,20 +1,28 @@
 {
   "name": "cookcli",
   "slug": "cookcli",
+  "tagline": null,
+  "description": "CookCLI is a command-line tool for parsing, scaling, and organizing recipes using CookLang format. It's ideal for developers or chefs wanting to automate recipe management and cooking workflows.",
   "categories": [
     131
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/cooklang/cookcli",
-  "website": "cooklang.org",
-  "source_code": "github.com/cooklang/cookcli",
-  "github_stars": "1039",
-  "logo": "/icons/cookcli.webp",
-  "description": "CookCLI is a command-line tool for parsing, scaling, and organizing recipes using CookLang format. It's ideal for developers or chefs wanting to automate recipe management and cooking workflows.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.19.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-28",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 1041
+  },
+  "resources": {
+    "website": "https://cooklang.org",
+    "documentation": "https://github.com/cooklang/cookcli",
+    "source_code": "https://github.com/cooklang/cookcli",
+    "logo": "/icons/cookcli.webp",
+    "issues": "https://github.com/cooklang/cookcli/issues",
+    "releases": "https://github.com/cooklang/cookcli/releases"
+  },
   "features": [
     "Recipe Parsing: Convert CookLang format into structured data. Standardized recipe management.",
     "Automatic Scaling: Adjust ingredient quantities for any serving size. Perfect portions every time.",
@@ -23,69 +31,45 @@
     "Format Conversion: Export recipes to various formats. Share recipes anywhere.",
     "Workflow Automation: Integrate recipes into cooking apps and systems. Build custom solutions."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

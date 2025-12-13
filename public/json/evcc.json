@@ -1,20 +1,28 @@
 {
   "name": "evcc",
   "slug": "evcc",
+  "tagline": null,
+  "description": "evcc is an EV charging controller that optimizes car charging based on solar production, tariffs, and household loads. It connects to wallboxes, inverters, and meters, and offers a web UI to monitor and configure charging behavior.",
   "categories": [
     175
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/evcc-io/evcc",
-  "website": "evcc.io",
-  "source_code": "github.com/evcc-io/evcc",
-  "github_stars": "5845",
-  "logo": "/icons/evcc.webp",
-  "description": "evcc is an EV charging controller that optimizes car charging based on solar production, tariffs, and household loads. It connects to wallboxes, inverters, and meters, and offers a web UI to monitor and configure charging behavior.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "0.211.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-10",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 5847
+  },
+  "resources": {
+    "website": "https://evcc.io",
+    "documentation": "https://github.com/evcc-io/evcc",
+    "source_code": "https://github.com/evcc-io/evcc",
+    "logo": "/icons/evcc.webp",
+    "issues": "https://github.com/evcc-io/evcc/issues",
+    "releases": "https://github.com/evcc-io/evcc/releases"
+  },
   "features": [
     "Solar Optimization: Charge your EV with excess solar power. Maximize self-consumption.",
     "Tariff Awareness: Charge during cheap electricity periods. Minimize charging costs.",
@@ -23,69 +31,45 @@
     "Web Dashboard: Monitor and control charging remotely. Complete visibility.",
     "Self-Hosted: Run your own EV charging controller. Complete energy independence."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

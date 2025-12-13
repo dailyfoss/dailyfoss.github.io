@@ -1,20 +1,29 @@
 {
   "name": "biblioreads",
   "slug": "biblioreads",
+  "tagline": null,
+  "description": "BiblioReads is a simple, self-hosted reading tracker designed for book lovers to log books, track reading progress, and view reading statistics. It features a clean UI and lightweight backend that’s easy to deploy.",
   "categories": [
     21
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/nesaku/BiblioReads",
-  "website": "biblioreads.eu.org",
-  "source_code": "github.com/nesaku/BiblioReads",
-  "github_stars": "277",
-  "logo": "/icons/biblioreads.webp",
-  "description": "BiblioReads is a simple, self-hosted reading tracker designed for book lovers to log books, track reading progress, and view reading statistics. It features a clean UI and lightweight backend that’s easy to deploy.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-04",
+    "github_stars": 278
+  },
+  "resources": {
+    "website": "https://biblioreads.eu.org",
+    "documentation": "https://github.com/nesaku/BiblioReads",
+    "source_code": "https://github.com/nesaku/BiblioReads",
+    "logo": "/icons/biblioreads.webp",
+    "issues": "https://github.com/nesaku/BiblioReads/issues",
+    "releases": null,
+    "logo_light": "/icons/biblioreads-light.webp"
+  },
   "features": [
     "Reading Tracker: Log books and track reading progress effortlessly. Never lose your place.",
     "Reading Statistics: View insights into your reading habits and patterns. Understand your reading.",
@@ -25,69 +34,45 @@
     "Progress Tracking: Monitor how far you've read in each book. Stay motivated.",
     "Easy Deployment: Quick setup with straightforward installation. Start tracking quickly."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

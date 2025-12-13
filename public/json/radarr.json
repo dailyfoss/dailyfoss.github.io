@@ -1,20 +1,28 @@
 {
   "name": "radarr",
   "slug": "radarr",
+  "tagline": null,
+  "description": "Radarr is a self-hosted movie collection manager for Usenet and BitTorrent users. It monitors RSS feeds, searches for movies, and automatically downloads and renames content.",
   "categories": [
     104
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Radarr/Radarr",
-  "website": "radarr.video",
-  "source_code": "github.com/Radarr/Radarr",
-  "github_stars": "12605",
-  "logo": "/icons/radarr.webp",
-  "description": "Radarr is a self-hosted movie collection manager for Usenet and BitTorrent users. It monitors RSS feeds, searches for movies, and automatically downloads and renames content.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v6.0.4.10291",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-16",
+    "date_last_commit": "2025-12-10",
+    "github_stars": 12615
+  },
+  "resources": {
+    "website": "https://radarr.video",
+    "documentation": "https://github.com/Radarr/Radarr",
+    "source_code": "https://github.com/Radarr/Radarr",
+    "logo": "/icons/radarr.webp",
+    "issues": "https://github.com/Radarr/Radarr/issues",
+    "releases": "https://github.com/Radarr/Radarr/releases"
+  },
   "features": [
     "Automated downloads: Monitor RSS feeds and automatically grab movies when they become available.",
     "Quality profiles: Define preferred resolutions, codecs, and file sizes to download the right version.",
@@ -29,69 +37,45 @@
     "Notifications: Send alerts to Discord, Slack, or other services when movies are added or downloaded.",
     "API access: Build custom integrations and automation using the comprehensive REST API."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

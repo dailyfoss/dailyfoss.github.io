@@ -1,20 +1,28 @@
 {
   "name": "restic",
   "slug": "restic",
+  "tagline": null,
+  "description": "Restic is a secure, fast, self-hosted backup client. It supports encryption, deduplication, multiple backends, and CLI operations for efficient backup and restore workflows.",
   "categories": [
     18
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/restic/restic",
-  "website": "restic.net",
-  "source_code": "github.com/restic/restic",
-  "github_stars": "31182",
-  "logo": "/icons/restic.webp",
-  "description": "Restic is a secure, fast, self-hosted backup client. It supports encryption, deduplication, multiple backends, and CLI operations for efficient backup and restore workflows.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "BSD-2-Clause",
+    "version": "v0.18.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-21",
+    "date_last_commit": "2025-12-03",
+    "github_stars": 31186
+  },
+  "resources": {
+    "website": "https://restic.net",
+    "documentation": "https://github.com/restic/restic",
+    "source_code": "https://github.com/restic/restic",
+    "logo": "/icons/restic.webp",
+    "issues": "https://github.com/restic/restic/issues",
+    "releases": "https://github.com/restic/restic/releases"
+  },
   "features": [
     "Encrypted backups: Protect data with AES-256 encryption before uploading to storage.",
     "Deduplication: Save storage space by identifying and storing only unique data blocks.",
@@ -29,69 +37,45 @@
     "Mount support: Access backup snapshots as read-only filesystems using FUSE.",
     "CLI interface: Automate backup workflows with scriptable command-line operations."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

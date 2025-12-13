@@ -1,20 +1,28 @@
 {
   "name": "self-hosted-gateway",
   "slug": "self-hosted-gateway",
+  "tagline": null,
+  "description": "Selfhosted-gateway is a Docker-native tunneling solution that exposes local containers to the public internet via a remote WireGuard gateway. It automates reverse proxy setup with NGINX/Caddy and TLS, ideal for securely publishing homelab services.",
   "categories": [
     137
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/hintjen/selfhosted-gateway",
-  "website": "gethomerun.app",
-  "source_code": "github.com/hintjen/selfhosted-gateway",
-  "github_stars": "1672",
-  "logo": "/icons/self-hosted-gateway.webp",
-  "description": "Selfhosted-gateway is a Docker-native tunneling solution that exposes local containers to the public internet via a remote WireGuard gateway. It automates reverse proxy setup with NGINX/Caddy and TLS, ideal for securely publishing homelab services.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-03-28",
+    "github_stars": 1672
+  },
+  "resources": {
+    "website": "https://gethomerun.app",
+    "documentation": "https://github.com/hintjen/selfhosted-gateway",
+    "source_code": "https://github.com/hintjen/selfhosted-gateway",
+    "logo": "/icons/self-hosted-gateway.webp",
+    "issues": "https://github.com/hintjen/selfhosted-gateway/issues",
+    "releases": null
+  },
   "features": [
     "WireGuard tunneling: Securely exposes local services through encrypted WireGuard VPN tunnels.",
     "Docker integration: Automatically detects and configures containers with simple labels.",
@@ -29,69 +37,45 @@
     "Bandwidth control: Implements rate limiting to prevent abuse and manage costs.",
     "Failover support: Automatically switches to backup gateways if primary becomes unavailable."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

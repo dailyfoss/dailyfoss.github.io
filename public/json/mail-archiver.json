@@ -1,20 +1,29 @@
 {
   "name": "mail-archiver",
   "slug": "mail-archiver",
+  "tagline": null,
+  "description": "Mail Archiver is a small self-hosted solution that captures and archives emails for permanent searchable storage. It supports IMAP fetching and full-text search for compliance or personal records.",
   "categories": [
     53
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/s1t5/mail-archiver",
-  "website": "github.com/s1t5/mail-archiver",
-  "source_code": "github.com/s1t5/mail-archiver",
-  "github_stars": "1182",
-  "logo": "/icons/mail-archiver.webp",
-  "description": "Mail Archiver is a small self-hosted solution that captures and archives emails for permanent searchable storage. It supports IMAP fetching and full-text search for compliance or personal records.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "2512.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-08",
+    "date_last_commit": "2025-12-09",
+    "github_stars": 1190
+  },
+  "resources": {
+    "website": "https://github.com/s1t5/mail-archiver",
+    "documentation": "https://github.com/s1t5/mail-archiver",
+    "source_code": "https://github.com/s1t5/mail-archiver",
+    "logo": "/icons/mail-archiver.webp",
+    "issues": "https://github.com/s1t5/mail-archiver/issues",
+    "releases": "https://github.com/s1t5/mail-archiver/releases",
+    "logo_light": "/icons/mail-archiver-light.webp"
+  },
   "features": [
     "IMAP fetching: Automatically retrieve and archive emails from multiple IMAP accounts.",
     "Full-text search: Search archived messages by subject, sender, content, or attachment names.",
@@ -27,69 +36,45 @@
     "Web interface: Browse and search archived emails through a clean, responsive web UI.",
     "Scheduled archiving: Set up automatic archival jobs to run at specified intervals."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

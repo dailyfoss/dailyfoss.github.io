@@ -1,20 +1,28 @@
 {
   "name": "serpbear",
   "slug": "serpbear",
+  "tagline": null,
+  "description": "SerpBear is a self-hosted SEO rank tracker that monitors keyword positions across search engines. It offers charts, projects, and scheduled checks via a clean, mobile-friendly web UI.",
   "categories": [
     186
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/towfiqi/serpbear",
-  "website": "docs.serpbear.com/",
-  "source_code": "github.com/towfiqi/serpbear",
-  "github_stars": "1764",
-  "logo": "/icons/serpbear.webp",
-  "description": "SerpBear is a self-hosted SEO rank tracker that monitors keyword positions across search engines. It offers charts, projects, and scheduled checks via a clean, mobile-friendly web UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v2.0.7",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-02-23",
+    "date_last_commit": "2025-02-23",
+    "github_stars": 1766
+  },
+  "resources": {
+    "website": "https://docs.serpbear.com/",
+    "documentation": "https://github.com/towfiqi/serpbear",
+    "source_code": "https://github.com/towfiqi/serpbear",
+    "logo": "/icons/serpbear.webp",
+    "issues": "https://github.com/towfiqi/serpbear/issues",
+    "releases": "https://github.com/towfiqi/serpbear/releases"
+  },
   "features": [
     "Keyword tracking: Monitors search engine rankings for target keywords across Google and other engines.",
     "Position history: Charts ranking changes over time to identify trends and opportunities.",
@@ -29,69 +37,45 @@
     "API access: Query ranking data programmatically for custom dashboards or integrations.",
     "Mobile responsive: Access and manage keyword tracking from any device."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

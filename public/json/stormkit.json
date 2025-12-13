@@ -1,20 +1,28 @@
 {
   "name": "stormkit",
   "slug": "stormkit",
+  "tagline": "",
+  "description": "Stormkit is a serverless hosting and CI/CD platform for front-end apps with a management dashboard and API. The core service is SaaS; the repo provides app configuration and tooling.",
   "categories": [
     121
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/stormkit-io/app-stormkit-io",
-  "website": "app.stormkit.io",
-  "source_code": "github.com/stormkit-io/app-stormkit-io",
-  "github_stars": "97",
-  "logo": "/icons/stormkit.webp",
-  "description": "Stormkit is a serverless hosting and CI/CD platform for front-end apps with a management dashboard and API. The core service is SaaS; the repo provides app configuration and tooling.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v1.21.5",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-28",
+    "date_last_commit": "2025-11-07",
+    "github_stars": 97
+  },
+  "resources": {
+    "website": "https://app.stormkit.io",
+    "documentation": "https://app.stormkit.io",
+    "source_code": "https://github.com/stormkit-io/app-stormkit-io",
+    "logo": "/icons/stormkit.webp",
+    "issues": "https://github.com/stormkit-io/app-stormkit-io/issues",
+    "releases": "https://github.com/stormkit-io/app-stormkit-io/releases"
+  },
   "features": [
     "Serverless hosting: Deploys front-end applications to serverless infrastructure.",
     "Git integration: Connects to GitHub, GitLab, or Bitbucket repositories.",
@@ -29,69 +37,45 @@
     "Rollback support: Reverts to previous deployments with one click.",
     "API access: Automates deployments via REST API."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

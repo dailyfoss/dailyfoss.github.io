@@ -1,20 +1,28 @@
 {
   "name": "games-on-whales",
   "slug": "games-on-whales",
+  "tagline": null,
+  "description": "WOLF (Whales On Linux Framework) orchestrates Docker containers that simulate Windows gaming environments for Linux. It helps automate game installations via Wine or Proton in self-contained sandboxed setups.",
   "categories": [
     69
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/games-on-whales/wolf",
-  "website": "games-on-whales.github.io/wolf/stable/",
-  "source_code": "github.com/games-on-whales/wolf",
-  "github_stars": "1440",
-  "logo": "/icons/games-on-whales.webp",
-  "description": "WOLF (Whales On Linux Framework) orchestrates Docker containers that simulate Windows gaming environments for Linux. It helps automate game installations via Wine or Proton in self-contained sandboxed setups.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v2024.07",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-07-10",
+    "date_last_commit": "2025-12-09",
+    "github_stars": 1440
+  },
+  "resources": {
+    "website": "https://games-on-whales.github.io/wolf/stable/",
+    "documentation": "https://github.com/games-on-whales/wolf",
+    "source_code": "https://github.com/games-on-whales/wolf",
+    "logo": "/icons/games-on-whales.webp",
+    "issues": "https://github.com/games-on-whales/wolf/issues",
+    "releases": "https://github.com/games-on-whales/wolf/releases"
+  },
   "features": [
     "Container Orchestration: Automate Docker-based Windows gaming environments with Wine or Proton integration for seamless Linux gameplay.",
     "Game Streaming: Stream Windows games on Linux without dual-boot using self-contained sandboxed setups.",
@@ -25,69 +33,45 @@
     "Proton Integration: Leverage Valve's Proton compatibility layer for enhanced Windows game support on Linux.",
     "Self-Hosted Gaming: Deploy your own game streaming infrastructure without relying on cloud services."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": true,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

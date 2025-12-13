@@ -1,20 +1,28 @@
 {
   "name": "ampache",
   "slug": "ampache",
+  "tagline": "",
+  "description": "Ampache is a self-hosted web-based music streaming server. It allows users to stream, browse, and share music and videos from any web browser or compatible client. It supports multi-user access, playlists, and API integrations.",
   "categories": [
     106
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/ampache/ampache",
-  "website": "http://ampache.org",
-  "source_code": "github.com/ampache/ampache",
-  "github_stars": "3741",
-  "logo": "/icons/ampache.webp",
-  "description": "Ampache is a self-hosted web-based music streaming server. It allows users to stream, browse, and share music and videos from any web browser or compatible client. It supports multi-user access, playlists, and API integrations.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "7.7.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-08-19",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 3741
+  },
+  "resources": {
+    "website": "http://ampache.org",
+    "documentation": "http://ampache.org",
+    "source_code": "https://github.com/ampache/ampache",
+    "logo": "/icons/ampache.webp",
+    "issues": "https://github.com/ampache/ampache/issues",
+    "releases": "https://github.com/ampache/ampache/releases"
+  },
   "features": [
     "Music Streaming: Stream your entire music library from any web browser. Your music, anywhere.",
     "Video Support: Play videos alongside your music collection. Complete media server.",
@@ -25,69 +33,45 @@
     "Transcoding: Automatic format conversion for device compatibility. Play anywhere, any format.",
     "Web Interface: Clean, responsive design works on all devices. Beautiful music experience."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

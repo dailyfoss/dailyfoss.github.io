@@ -1,20 +1,28 @@
 {
   "name": "sunshine",
   "slug": "sunshine",
+  "tagline": null,
+  "description": "Sunshine is a self-hosted game streaming host that works with Moonlight and similar clients. It captures and streams your desktop or games with low-latency encoding.",
   "categories": [
     135
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/LizardByte/Sunshine",
-  "website": "http://app.lizardbyte.dev/Sunshine/",
-  "source_code": "github.com/LizardByte/Sunshine",
-  "github_stars": "32245",
-  "logo": "/icons/sunshine.webp",
-  "description": "Sunshine is a self-hosted game streaming host that works with Moonlight and similar clients. It captures and streams your desktop or games with low-latency encoding.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v2025.924.154138",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-24",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 32265
+  },
+  "resources": {
+    "website": "http://app.lizardbyte.dev/Sunshine/",
+    "documentation": "https://github.com/LizardByte/Sunshine",
+    "source_code": "https://github.com/LizardByte/Sunshine",
+    "logo": "/icons/sunshine.webp",
+    "issues": "https://github.com/LizardByte/Sunshine/issues",
+    "releases": "https://github.com/LizardByte/Sunshine/releases"
+  },
   "features": [
     "Game streaming: Streams PC games to Moonlight clients on various devices.",
     "Low latency: Optimizes encoding and network protocols for minimal input lag.",
@@ -29,69 +37,45 @@
     "Custom apps: Defines custom applications and games for streaming.",
     "Authentication: Secures access with PIN codes and client pairing."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

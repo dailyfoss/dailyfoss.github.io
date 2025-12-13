@@ -1,20 +1,29 @@
 {
   "name": "hollo",
   "slug": "hollo",
+  "tagline": "",
+  "description": "Hollo is a minimal ActivityPub compatible social server from the Fedify project. It is intended as a reference implementation for building federated apps and offers a small, understandable codebase for experimentation.",
   "categories": [
     148
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/fedify-dev/hollo",
-  "website": "docs.hollo.social/",
-  "source_code": "github.com/fedify-dev/hollo",
-  "github_stars": "425",
-  "logo": "/icons/hollo.webp",
-  "description": "Hollo is a minimal ActivityPub compatible social server from the Fedify project. It is intended as a reference implementation for building federated apps and offers a small, understandable codebase for experimentation.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "0.6.18",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-15",
+    "date_last_commit": "2025-12-10",
+    "github_stars": 426
+  },
+  "resources": {
+    "website": "https://docs.hollo.social/",
+    "documentation": "https://docs.hollo.social/",
+    "source_code": "https://github.com/fedify-dev/hollo",
+    "logo": "/icons/hollo.webp",
+    "issues": "https://github.com/fedify-dev/hollo/issues",
+    "releases": "https://github.com/fedify-dev/hollo/releases",
+    "logo_light": "/icons/hollo-light.webp"
+  },
   "features": [
     "ActivityPub Server: Minimal implementation of ActivityPub protocol for federated social networking.",
     "Reference Implementation: Clean, understandable codebase designed for learning and experimentation.",
@@ -25,69 +34,45 @@
     "Educational Tool: Perfect for developers learning about decentralized social networks.",
     "Extensible Base: Use as a foundation for building custom federated applications."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

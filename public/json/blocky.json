@@ -1,20 +1,28 @@
 {
   "name": "blocky",
   "slug": "blocky",
+  "tagline": null,
+  "description": "Blocky is a fast and lightweight DNS proxy with support for ad blocking, filtering, caching, and customizable blocking strategies. It is ideal for home networks and can be installed within Docker or Kubernetes environments.",
   "categories": [
     36
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/0xERR0R/blocky",
-  "website": "0xERR0R.github.io/blocky/",
-  "source_code": "github.com/0xERR0R/blocky",
-  "github_stars": "5804",
-  "logo": "/icons/blocky.webp",
-  "description": "Blocky is a fast and lightweight DNS proxy with support for ad blocking, filtering, caching, and customizable blocking strategies. It is ideal for home networks and can be installed within Docker or Kubernetes environments.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v0.28.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-18",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 5805
+  },
+  "resources": {
+    "website": "https://0xERR0R.github.io/blocky/",
+    "documentation": "https://github.com/0xERR0R/blocky",
+    "source_code": "https://github.com/0xERR0R/blocky",
+    "logo": "/icons/blocky.webp",
+    "issues": "https://github.com/0xERR0R/blocky/issues",
+    "releases": "https://github.com/0xERR0R/blocky/releases"
+  },
   "features": [
     "DNS Proxy: Fast, lightweight DNS server with advanced features. Network-level control.",
     "Ad Blocking: Block ads and trackers at the DNS level. Clean browsing.",
@@ -25,69 +33,45 @@
     "Kubernetes Support: Native integration for K8s deployments. Cloud-native.",
     "Home Network: Ideal for protecting entire home networks. Family-friendly."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

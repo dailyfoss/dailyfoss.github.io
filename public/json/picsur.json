@@ -1,20 +1,28 @@
 {
   "name": "picsur",
   "slug": "picsur",
+  "tagline": null,
+  "description": "Picsur is a self-hosted image hosting service that allows users to upload and manage pictures with expiration, album support, and direct links in a modern interface.",
   "categories": [
     80
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/CaramelFur/Picsur",
-  "website": "picsur.org/",
-  "source_code": "github.com/CaramelFur/Picsur",
-  "github_stars": "1200",
-  "logo": "/icons/picsur.webp",
-  "description": "Picsur is a self-hosted image hosting service that allows users to upload and manage pictures with expiration, album support, and direct links in a modern interface.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "0.5.6",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-11-01",
+    "date_last_commit": "2025-10-12",
+    "github_stars": 1200
+  },
+  "resources": {
+    "website": "https://picsur.org/",
+    "documentation": "https://github.com/CaramelFur/Picsur",
+    "source_code": "https://github.com/CaramelFur/Picsur",
+    "logo": "/icons/picsur.webp",
+    "issues": "https://github.com/CaramelFur/Picsur/issues",
+    "releases": "https://github.com/CaramelFur/Picsur/releases"
+  },
   "features": [
     "Image hosting: Upload and host images with direct links for embedding in websites and applications.",
     "Album support: Organize images into albums for better management and sharing.",
@@ -29,69 +37,45 @@
     "Storage management: Monitor storage usage and set quotas to prevent excessive disk consumption.",
     "Embed codes: Generate HTML and Markdown embed codes for easy integration into content."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

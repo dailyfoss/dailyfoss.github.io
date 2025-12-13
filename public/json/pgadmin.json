@@ -1,20 +1,28 @@
 {
   "name": "pgadmin",
   "slug": "pgadmin",
+  "tagline": null,
+  "description": "pgAdmin is a popular web-based GUI for managing PostgreSQL databases. It includes advanced tools to create, query, monitor, and maintain databases in a self-hosted or cloud environment.",
   "categories": [
     39
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/pgadmin-org/pgadmin4",
-  "website": "www.pgadmin.org",
-  "source_code": "github.com/pgadmin-org/pgadmin4",
-  "github_stars": "3345",
-  "logo": "/icons/pgadmin.webp",
-  "description": "pgAdmin is a popular web-based GUI for managing PostgreSQL databases. It includes advanced tools to create, query, monitor, and maintain databases in a self-hosted or cloud environment.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-12",
+    "github_stars": 3348
+  },
+  "resources": {
+    "website": "https://www.pgadmin.org",
+    "documentation": "https://github.com/pgadmin-org/pgadmin4",
+    "source_code": "https://github.com/pgadmin-org/pgadmin4",
+    "logo": "/icons/pgadmin.webp",
+    "issues": "https://github.com/pgadmin-org/pgadmin4/issues",
+    "releases": null
+  },
   "features": [
     "Database management: Create, modify, and delete PostgreSQL databases with a graphical interface.",
     "Query tool: Write and execute SQL queries with syntax highlighting, auto-completion, and result visualization.",
@@ -29,69 +37,45 @@
     "ERD visualization: Generate entity-relationship diagrams to understand database structure and relationships.",
     "Extension management: Install and configure PostgreSQL extensions like PostGIS and pg_stat_statements."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,89 +1,73 @@
 {
   "name": "librum",
   "slug": "librum",
+  "tagline": "",
+  "description": "Librum is a self-hosted eBook reader and digital library manager. It allows organizing, searching, and reading ebooks directly from the browser, with support for multiple formats and synced reading progress.",
   "categories": [
     21
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Librum-Reader/Librum",
-  "website": "librumreader.com",
-  "source_code": "github.com/Librum-Reader/Librum",
-  "github_stars": "5208",
-  "logo": "/icons/librum.webp",
-  "description": "Librum is a self-hosted eBook reader and digital library manager. It allows organizing, searching, and reading ebooks directly from the browser, with support for multiple formats and synced reading progress.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v.0.12.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-03-29",
+    "date_last_commit": "2025-07-08",
+    "github_stars": 5209
+  },
+  "resources": {
+    "website": "https://librumreader.com",
+    "documentation": "https://librumreader.com",
+    "source_code": "https://github.com/Librum-Reader/Librum",
+    "logo": "/icons/librum.webp",
+    "issues": "https://github.com/Librum-Reader/Librum/issues",
+    "releases": "https://github.com/Librum-Reader/Librum/releases"
+  },
   "features": [
     "eBook Reader: Multi-format support, Browser-based reading, Synced progress. Read ebooks anywhere.",
     "Library Management: Organize books, Search and filter, Metadata management. Build your digital library.",
     "Reading Features: Bookmarks, Annotations, Customizable display. Comfortable reading experience.",
     "Cross-Device Sync: Reading progress sync, Cloud storage, Multi-device access. Continue reading on any device."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

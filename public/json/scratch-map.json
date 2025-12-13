@@ -1,20 +1,29 @@
 {
   "name": "scratch-map",
   "slug": "scratch-map",
+  "tagline": "",
+  "description": "Scratch Map is a self-hosted microblogging platform similar to Twitter with markdown support, media uploads, and a responsive UI.",
   "categories": [
     96
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/ad3m3r5/scratch-map",
-  "website": "github.com/ad3m3r5/scratch-map",
-  "source_code": "github.com/ad3m3r5/scratch-map",
-  "github_stars": "371",
-  "logo": "/icons/scratch-map.webp",
-  "description": "Scratch Map is a self-hosted microblogging platform similar to Twitter with markdown support, media uploads, and a responsive UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "1.2.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-12-09",
+    "date_last_commit": "2024-12-09",
+    "github_stars": 371
+  },
+  "resources": {
+    "website": null,
+    "documentation": null,
+    "source_code": "https://github.com/ad3m3r5/scratch-map",
+    "logo": "/icons/scratch-map.webp",
+    "issues": "https://github.com/ad3m3r5/scratch-map/issues",
+    "releases": "https://github.com/ad3m3r5/scratch-map/releases",
+    "logo_light": "/icons/scratch-map-light.webp"
+  },
   "features": [
     "Travel tracking: Mark countries and regions visited on an interactive world map.",
     "Visual progress: See percentage of world explored with color-coded territories.",
@@ -29,69 +38,45 @@
     "Collaborative maps: Share editing access with travel partners for joint trip tracking.",
     "Offline support: Cache map data for viewing and editing without internet connection."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "kener",
   "slug": "kener",
+  "tagline": null,
+  "description": "Kener is a simple uptime and endpoint monitoring service. It sends requests to configured URLs, records response status and times, and shows checks in a minimal dashboard suitable for monitoring small fleets of services.",
   "categories": [
     173
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/rajnandan1/kener",
-  "website": "kener.ing/",
-  "source_code": "github.com/rajnandan1/kener",
-  "github_stars": "4575",
-  "logo": "/icons/kener.webp",
-  "description": "Kener is a simple uptime and endpoint monitoring service. It sends requests to configured URLs, records response status and times, and shows checks in a minimal dashboard suitable for monitoring small fleets of services.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "3.2.19",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-08-06",
+    "date_last_commit": "2025-10-17",
+    "github_stars": 4576
+  },
+  "resources": {
+    "website": "https://kener.ing/",
+    "documentation": "https://github.com/rajnandan1/kener",
+    "source_code": "https://github.com/rajnandan1/kener",
+    "logo": "/icons/kener.webp",
+    "issues": "https://github.com/rajnandan1/kener/issues",
+    "releases": "https://github.com/rajnandan1/kener/releases"
+  },
   "features": [
     "Uptime Monitoring: Regular health checks for endpoints with response time tracking. Monitor service availability continuously.",
     "Status Dashboard: Clean, minimal interface showing service status at a glance. Quick overview of infrastructure health.",
@@ -29,69 +37,45 @@
     "Configuration as Code: Define monitors in YAML configuration files. Version control your monitoring setup.",
     "Dark Mode: Eye-friendly dark theme for comfortable viewing. Reduce eye strain during monitoring."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

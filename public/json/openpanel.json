@@ -1,20 +1,28 @@
 {
   "name": "openpanel",
   "slug": "openpanel",
+  "tagline": null,
+  "description": "OpenPanel is a self-hosted control panel for managing web hosting environments. It supports domain management, email, databases, and integrates with web servers, ideal for self-hosted VPS setups.",
   "categories": [
     34
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/stefanpejcic/OpenPanel",
-  "website": "openpanel.com",
-  "source_code": "github.com/stefanpejcic/OpenPanel",
-  "github_stars": "576",
-  "logo": "/icons/openpanel.webp",
-  "description": "OpenPanel is a self-hosted control panel for managing web hosting environments. It supports domain management, email, databases, and integrates with web servers, ideal for self-hosted VPS setups.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": null,
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-12",
+    "github_stars": 577
+  },
+  "resources": {
+    "website": "https://openpanel.com",
+    "documentation": "https://github.com/stefanpejcic/OpenPanel",
+    "source_code": "https://github.com/stefanpejcic/OpenPanel",
+    "logo": "/icons/openpanel.webp",
+    "issues": "https://github.com/stefanpejcic/OpenPanel/issues",
+    "releases": "https://github.com/stefanpejcic/OpenPanel/releases"
+  },
   "features": [
     "Domain management: Add, configure, and manage multiple domains with DNS settings and SSL certificate automation.",
     "Email hosting: Create email accounts, forwarders, and manage mailboxes with webmail access for hosted domains.",
@@ -25,69 +33,45 @@
     "Backup management: Schedule automatic backups of websites, databases, and email with one-click restoration.",
     "Resource monitoring: Track disk usage, bandwidth consumption, and server performance metrics per account and globally."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": true,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

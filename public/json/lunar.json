@@ -1,20 +1,28 @@
 {
   "name": "lunar",
   "slug": "lunar",
+  "tagline": null,
+  "description": "Lunar is a headless eCommerce platform for Laravel developers. It offers advanced catalog management, custom product types, carts, checkout APIs, and a customizable admin interface for complete flexibility.",
   "categories": [
     51
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/lunarphp/lunar",
-  "website": "lunarphp.com",
-  "source_code": "github.com/lunarphp/lunar",
-  "github_stars": "3353",
-  "logo": "/icons/lunar.webp",
-  "description": "Lunar is a headless eCommerce platform for Laravel developers. It offers advanced catalog management, custom product types, carts, checkout APIs, and a customizable admin interface for complete flexibility.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "1.2.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-11",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 3353
+  },
+  "resources": {
+    "website": "https://lunarphp.com",
+    "documentation": "https://github.com/lunarphp/lunar",
+    "source_code": "https://github.com/lunarphp/lunar",
+    "logo": "/icons/lunar.webp",
+    "issues": "https://github.com/lunarphp/lunar/issues",
+    "releases": "https://github.com/lunarphp/lunar/releases"
+  },
   "features": [
     "Headless Commerce: API-first architecture, Custom frontends, Flexible integration. Build any shopping experience.",
     "Product Management: Custom product types, Variant support, Inventory tracking. Manage complex product catalogs.",
@@ -25,69 +33,45 @@
     "Laravel Integration: Native Laravel package, Eloquent models, Blade components. Built for Laravel developers.",
     "Extensible: Plugin system, Custom fields, Event hooks. Extend functionality to match your needs."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

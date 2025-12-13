@@ -1,20 +1,28 @@
 {
   "name": "discourse",
   "slug": "discourse",
+  "tagline": null,
+  "description": "Discourse is a modern forum platform built for hosting online communities. It supports real-time notifications, threaded discussions, and plugins, with a responsive UI for mobile and desktop, and can be self-hosted or cloud-managed.",
   "categories": [
     66
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/discourse/discourse",
-  "website": "www.discourse.org",
-  "source_code": "github.com/discourse/discourse",
-  "github_stars": "45766",
-  "logo": "/icons/discourse.webp",
-  "description": "Discourse is a modern forum platform built for hosting online communities. It supports real-time notifications, threaded discussions, and plugins, with a responsive UI for mobile and desktop, and can be self-hosted or cloud-managed.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-2.0",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-13",
+    "github_stars": 45771
+  },
+  "resources": {
+    "website": "https://www.discourse.org",
+    "documentation": "https://github.com/discourse/discourse",
+    "source_code": "https://github.com/discourse/discourse",
+    "logo": "/icons/discourse.webp",
+    "issues": "https://github.com/discourse/discourse/issues",
+    "releases": null
+  },
   "features": [
     "Modern Forums: Real-time discussions with threaded conversations. Engaging community platform.",
     "Mobile Responsive: Perfect experience on phones and tablets. Discuss anywhere, anytime.",
@@ -23,69 +31,45 @@
     "Moderation Tools: Powerful features for managing communities. Keep discussions healthy.",
     "Self-Hosted: Own your community platform completely. No third-party control over discussions."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

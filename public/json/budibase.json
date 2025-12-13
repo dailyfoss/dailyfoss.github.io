@@ -1,20 +1,28 @@
 {
   "name": "budibase",
   "slug": "budibase",
+  "tagline": null,
+  "description": "Budibase is a low-code platform for building business apps without code. It includes a UI builder, database integration, automations, and the ability to self-host or use their cloud service for internal tool development.",
   "categories": [
     110
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Budibase/budibase",
-  "website": "budibase.com",
-  "source_code": "github.com/Budibase/budibase",
-  "github_stars": "27432",
-  "logo": "/icons/budibase.webp",
-  "description": "Budibase is a low-code platform for building business apps without code. It includes a UI builder, database integration, automations, and the ability to self-host or use their cloud service for internal tool development.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "3.23.39",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-10",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 27433
+  },
+  "resources": {
+    "website": "https://budibase.com",
+    "documentation": "https://github.com/Budibase/budibase",
+    "source_code": "https://github.com/Budibase/budibase",
+    "logo": "/icons/budibase.webp",
+    "issues": "https://github.com/Budibase/budibase/issues",
+    "releases": "https://github.com/Budibase/budibase/releases"
+  },
   "features": [
     "Low-Code Platform: Build business apps without writing code. Rapid development.",
     "UI Builder: Drag-and-drop interface designer for custom apps. Visual development.",
@@ -25,69 +33,45 @@
     "Cloud Option: Choose between self-hosted or managed cloud. Flexible deployment.",
     "API Access: Programmatic access for custom integrations. Developer-friendly."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

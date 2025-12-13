@@ -1,20 +1,28 @@
 {
   "name": "quickdrop",
   "slug": "quickdrop",
+  "tagline": null,
+  "description": "QuickDrop is a self-hosted file sharing app optimized for dropping large files across devices over local network or public access. It has a straightforward UI and supports drag-and-drop transfers.",
   "categories": [
     91
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/RoastSlav/quickdrop",
-  "website": "github.com/RoastSlav/quickdrop",
-  "source_code": "github.com/RoastSlav/quickdrop",
-  "github_stars": "328",
-  "logo": "/icons/quickdrop.webp",
-  "description": "QuickDrop is a self-hosted file sharing app optimized for dropping large files across devices over local network or public access. It has a straightforward UI and supports drag-and-drop transfers.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v1.4.5",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-06-26",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 328
+  },
+  "resources": {
+    "website": "https://github.com/RoastSlav/quickdrop",
+    "documentation": "https://github.com/RoastSlav/quickdrop",
+    "source_code": "https://github.com/RoastSlav/quickdrop",
+    "logo": "/icons/quickdrop.webp",
+    "issues": "https://github.com/RoastSlav/quickdrop/issues",
+    "releases": "https://github.com/RoastSlav/quickdrop/releases"
+  },
   "features": [
     "Drag-and-drop uploads: Transfer files by dragging them into the browser window for instant sharing.",
     "Large file support: Handle multi-gigabyte files without size restrictions or compression.",
@@ -29,69 +37,45 @@
     "Password protection: Secure shared files with optional passwords to restrict access.",
     "Self-hosted control: Maintain complete ownership of your data without relying on third-party services."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

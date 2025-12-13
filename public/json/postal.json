@@ -1,20 +1,28 @@
 {
   "name": "postal",
   "slug": "postal",
+  "tagline": null,
+  "description": "Postal is a self-hosted mail delivery platform designed for sending and managing large volumes of email. It supports SMTP, webhooks, message logging, and domain management with full control over infrastructure.",
   "categories": [
     53
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/postalserver/postal",
-  "website": "postalserver.io",
-  "source_code": "github.com/postalserver/postal",
-  "github_stars": "16119",
-  "logo": "/icons/postal.webp",
-  "description": "Postal is a self-hosted mail delivery platform designed for sending and managing large volumes of email. It supports SMTP, webhooks, message logging, and domain management with full control over infrastructure.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "3.3.4",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-06-20",
+    "date_last_commit": "2025-12-05",
+    "github_stars": 16120
+  },
+  "resources": {
+    "website": "https://postalserver.io",
+    "documentation": "https://github.com/postalserver/postal",
+    "source_code": "https://github.com/postalserver/postal",
+    "logo": "/icons/postal.webp",
+    "issues": "https://github.com/postalserver/postal/issues",
+    "releases": "https://github.com/postalserver/postal/releases"
+  },
   "features": [
     "SMTP delivery: Send transactional and marketing emails through a reliable SMTP server infrastructure.",
     "Webhook integration: Receive real-time notifications for delivery events, bounces, and opens via webhooks.",
@@ -29,69 +37,45 @@
     "Multi-organization: Support multiple organizations or clients with isolated email infrastructure and credentials.",
     "Rate limiting: Control sending rates per domain or organization to prevent abuse and maintain deliverability."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

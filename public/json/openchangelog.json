@@ -1,20 +1,29 @@
 {
   "name": "openchangelog",
   "slug": "openchangelog",
+  "tagline": null,
+  "description": "OpenChangelog is a web-based tool to track and publish changelogs for software projects. It supports version tagging, team collaboration, and markdown-based entry submissions in a self-hosted UI.",
   "categories": [
     165
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/JonasHiltl/openchangelog",
-  "website": "openchangelog.com",
-  "source_code": "github.com/JonasHiltl/openchangelog",
-  "github_stars": "259",
-  "logo": "/icons/openchangelog.webp",
-  "description": "OpenChangelog is a web-based tool to track and publish changelogs for software projects. It supports version tagging, team collaboration, and markdown-based entry submissions in a self-hosted UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v0.7.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-18",
+    "date_last_commit": "2025-11-18",
+    "github_stars": 259
+  },
+  "resources": {
+    "website": "https://openchangelog.com",
+    "documentation": "https://github.com/JonasHiltl/openchangelog",
+    "source_code": "https://github.com/JonasHiltl/openchangelog",
+    "logo": "/icons/openchangelog.webp",
+    "issues": "https://github.com/JonasHiltl/openchangelog/issues",
+    "releases": "https://github.com/JonasHiltl/openchangelog/releases",
+    "logo_light": "/icons/openchangelog-light.webp"
+  },
   "features": [
     "Version tracking: Organize changelog entries by release version with automatic sorting and chronological display.",
     "Markdown support: Write changelog entries using markdown formatting for rich text and code examples.",
@@ -25,69 +34,45 @@
     "API integration: Automate changelog updates from CI/CD pipelines or version control systems using REST endpoints.",
     "Custom branding: Customize the appearance of public changelog pages to match your product's design and identity."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

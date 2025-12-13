@@ -1,89 +1,73 @@
 {
   "name": "loki",
   "slug": "loki",
+  "tagline": null,
+  "description": "Loki is a horizontally scalable, multi-tenant log aggregation system inspired by Prometheus. It stores and queries logs efficiently, offering Grafana integration and a simple query language for observability.",
   "categories": [
     93
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/grafana/loki",
-  "website": "grafana.com/loki",
-  "source_code": "github.com/grafana/loki",
-  "github_stars": "27137",
-  "logo": "/icons/loki.webp",
-  "description": "Loki is a horizontally scalable, multi-tenant log aggregation system inspired by Prometheus. It stores and queries logs efficiently, offering Grafana integration and a simple query language for observability.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v3.6.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-11",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 27140
+  },
+  "resources": {
+    "website": "https://grafana.com/loki",
+    "documentation": "https://github.com/grafana/loki",
+    "source_code": "https://github.com/grafana/loki",
+    "logo": "/icons/loki.webp",
+    "issues": "https://github.com/grafana/loki/issues",
+    "releases": "https://github.com/grafana/loki/releases"
+  },
   "features": [
     "Log Aggregation: Horizontally scalable, Multi-tenant, Efficient storage. Collect logs from all services.",
     "Grafana Integration: Native visualization, Query builder, Dashboards. Explore logs visually.",
     "LogQL: Powerful query language, Label-based filtering, Metrics extraction. Find what you need quickly.",
     "Cost-Effective: Index-free, Object storage, Low overhead. Affordable log management at scale."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

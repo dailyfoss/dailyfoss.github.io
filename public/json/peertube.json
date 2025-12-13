@@ -1,20 +1,28 @@
 {
   "name": "peertube",
   "slug": "peertube",
+  "tagline": null,
+  "description": "PeerTube is a decentralized, federated video hosting platform based on ActivityPub. It supports streaming, playlists, federation, and custom instances, providing a self-hosted alternative to YouTube.",
   "categories": [
     90
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Chocobozzz/PeerTube",
-  "website": "joinpeertube.org/",
-  "source_code": "github.com/Chocobozzz/PeerTube",
-  "github_stars": "14326",
-  "logo": "/icons/peertube.webp",
-  "description": "PeerTube is a decentralized, federated video hosting platform based on ActivityPub. It supports streaming, playlists, federation, and custom instances, providing a self-hosted alternative to YouTube.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v8.0.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-09",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 14332
+  },
+  "resources": {
+    "website": "https://joinpeertube.org/",
+    "documentation": "https://github.com/Chocobozzz/PeerTube",
+    "source_code": "https://github.com/Chocobozzz/PeerTube",
+    "logo": "/icons/peertube.webp",
+    "issues": "https://github.com/Chocobozzz/PeerTube/issues",
+    "releases": "https://github.com/Chocobozzz/PeerTube/releases"
+  },
   "features": [
     "Federated video hosting: ActivityPub protocol enables federation with other PeerTube instances and Fediverse platforms for decentralized distribution",
     "Video streaming: Adaptive bitrate streaming with multiple quality options ensures smooth playback across different connection speeds",
@@ -27,69 +35,45 @@
     "Plugin system: Extend functionality with plugins for themes, analytics, monetization, and custom features",
     "Mobile apps: Companion apps for iOS and Android enable video watching and channel management on mobile devices"
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

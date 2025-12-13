@@ -1,20 +1,28 @@
 {
   "name": "tianji",
   "slug": "tianji",
+  "tagline": null,
+  "description": "Tianji is a self-hosted website analytics and monitoring platform focused on privacy. It tracks visits, referrers, uptime, and performance, presenting insights in a modern, lightweight dashboard.",
   "categories": [
     186
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/msgbyte/tianji",
-  "website": "tianji.dev",
-  "source_code": "github.com/msgbyte/tianji",
-  "github_stars": "2860",
-  "logo": "/icons/tianji.webp",
-  "description": "Tianji is a self-hosted website analytics and monitoring platform focused on privacy. It tracks visits, referrers, uptime, and performance, presenting insights in a modern, lightweight dashboard.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v1.30.22",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-11",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 2860
+  },
+  "resources": {
+    "website": "https://tianji.dev",
+    "documentation": "https://github.com/msgbyte/tianji",
+    "source_code": "https://github.com/msgbyte/tianji",
+    "logo": "/icons/tianji.webp",
+    "issues": "https://github.com/msgbyte/tianji/issues",
+    "releases": "https://github.com/msgbyte/tianji/releases"
+  },
   "features": [
     "Website analytics: Track page views, visitors, and referrers without cookies or invasive tracking methods.",
     "Uptime monitoring: Monitor website and service availability with configurable check intervals and alerting.",
@@ -29,69 +37,45 @@
     "Geographic insights: View visitor locations and traffic sources without compromising individual privacy.",
     "API access: Integrate analytics data into other tools using the REST API for custom reporting."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

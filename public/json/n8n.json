@@ -1,20 +1,28 @@
 {
   "name": "n8n",
   "slug": "n8n",
+  "tagline": null,
+  "description": "n8n is a workflow automation platform and alternative to Zapier, enabling self-hosted automations with node-based editing. It offers integrations, triggers, custom code, and an extensible runtime.",
   "categories": [
     110
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/n8n-io/n8n",
-  "website": "n8n.io",
-  "source_code": "github.com/n8n-io/n8n",
-  "github_stars": "162219",
-  "logo": "/icons/n8n.webp",
-  "description": "n8n is a workflow automation platform and alternative to Zapier, enabling self-hosted automations with node-based editing. It offers integrations, triggers, custom code, and an extensible runtime.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "n8n@1.123.5",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-10",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 162331
+  },
+  "resources": {
+    "website": "https://n8n.io",
+    "documentation": "https://github.com/n8n-io/n8n",
+    "source_code": "https://github.com/n8n-io/n8n",
+    "logo": "/icons/n8n.webp",
+    "issues": "https://github.com/n8n-io/n8n/issues",
+    "releases": "https://github.com/n8n-io/n8n/releases"
+  },
   "features": [
     "Visual workflow editor: Drag-and-drop interface for building automation workflows without code, connecting nodes to create complex logic flows.",
     "400+ integrations: Pre-built connectors for popular services including databases, APIs, cloud platforms, and productivity tools.",
@@ -29,69 +37,45 @@
     "Community nodes: Extend functionality with community-built integrations and custom node packages.",
     "API access: Programmatically manage workflows and executions via REST API for advanced automation."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

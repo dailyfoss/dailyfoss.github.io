@@ -1,20 +1,28 @@
 {
   "name": "keycloak",
   "slug": "keycloak",
+  "tagline": null,
+  "description": "Keycloak is an open source identity and access management solution. It provides SSO, OAuth2 and OpenID Connect, user federation and fine grained authorization policies, and can be self hosted or used as part of managed offerings.",
   "categories": [
     79
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/keycloak/keycloak",
-  "website": "www.keycloak.org",
-  "source_code": "github.com/keycloak/keycloak",
-  "github_stars": "31600",
-  "logo": "/icons/keycloak.webp",
-  "description": "Keycloak is an open source identity and access management solution. It provides SSO, OAuth2 and OpenID Connect, user federation and fine grained authorization policies, and can be self hosted or used as part of managed offerings.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "26.4.7",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-01",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 31609
+  },
+  "resources": {
+    "website": "https://www.keycloak.org",
+    "documentation": "https://github.com/keycloak/keycloak",
+    "source_code": "https://github.com/keycloak/keycloak",
+    "logo": "/icons/keycloak.webp",
+    "issues": "https://github.com/keycloak/keycloak/issues",
+    "releases": "https://github.com/keycloak/keycloak/releases"
+  },
   "features": [
     "Single Sign-On: SSO across applications with OAuth2, OIDC, and SAML protocols. One login for all services.",
     "Identity Brokering: Integrate with external identity providers like Google, GitHub, and LDAP. Federate authentication sources.",
@@ -29,69 +37,45 @@
     "Client Adapters: Official adapters for Java, JavaScript, and other platforms. Easy application integration.",
     "High Availability: Clustering support for scalable, fault-tolerant deployments. Run at enterprise scale."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

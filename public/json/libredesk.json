@@ -1,89 +1,73 @@
 {
   "name": "libredesk",
   "slug": "libredesk",
+  "tagline": null,
+  "description": "LibreDesk is a ticketing system that helps manage customer interactions, support issues, and service requests. Completely self-hosted, it features a clean dashboard, email integration, and user management tools.",
   "categories": [
     156
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/abhinavxd/libredesk",
-  "website": "libredesk.io",
-  "source_code": "github.com/abhinavxd/libredesk",
-  "github_stars": "1847",
-  "logo": "/icons/libredesk.webp",
-  "description": "LibreDesk is a ticketing system that helps manage customer interactions, support issues, and service requests. Completely self-hosted, it features a clean dashboard, email integration, and user management tools.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v0.8.5-beta",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-12",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 1849
+  },
+  "resources": {
+    "website": "https://libredesk.io",
+    "documentation": "https://github.com/abhinavxd/libredesk",
+    "source_code": "https://github.com/abhinavxd/libredesk",
+    "logo": "/icons/libredesk.webp",
+    "issues": "https://github.com/abhinavxd/libredesk/issues",
+    "releases": "https://github.com/abhinavxd/libredesk/releases"
+  },
   "features": [
     "Ticket Management: Support tickets, Issue tracking, Status workflows. Manage customer support efficiently.",
     "Email Integration: Ticket creation from email, Email notifications, Unified inbox. Handle support via email seamlessly.",
     "User Management: Customer accounts, Agent roles, Permission control. Organize your support team.",
     "Dashboard: Ticket overview, Performance metrics, Activity tracking. Monitor support operations at a glance."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

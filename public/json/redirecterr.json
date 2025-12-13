@@ -1,20 +1,28 @@
 {
   "name": "redirecterr",
   "slug": "redirecterr",
+  "tagline": null,
+  "description": "Redirecterr is a self-hosted link redirection manager with analytics and link rules. It tracks visits and allows flexible redirects in a clean UI.",
   "categories": [
     171
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/varthe/Redirecterr",
-  "website": "github.com/varthe/Redirecterr",
-  "source_code": "github.com/varthe/Redirecterr",
-  "github_stars": "118",
-  "logo": "/icons/redirecterr.webp",
-  "description": "Redirecterr is a self-hosted link redirection manager with analytics and link rules. It tracks visits and allows flexible redirects in a clean UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": null,
+    "version": "2.0.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-21",
+    "date_last_commit": "2025-10-05",
+    "github_stars": 118
+  },
+  "resources": {
+    "website": "https://github.com/varthe/Redirecterr",
+    "documentation": "https://github.com/varthe/Redirecterr",
+    "source_code": "https://github.com/varthe/Redirecterr",
+    "logo": "/icons/redirecterr.webp",
+    "issues": "https://github.com/varthe/Redirecterr/issues",
+    "releases": "https://github.com/varthe/Redirecterr/releases"
+  },
   "features": [
     "Link redirection: Create short, memorable URLs that redirect to longer destination addresses.",
     "Visit analytics: Track click counts, referrer sources, and geographic data for each redirect link.",
@@ -29,69 +37,45 @@
     "API access: Create and manage redirects programmatically using REST endpoints.",
     "Export data: Download analytics and link information in CSV format for external analysis."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

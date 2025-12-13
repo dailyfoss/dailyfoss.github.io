@@ -1,20 +1,28 @@
 {
   "name": "bazarr",
   "slug": "bazarr",
+  "tagline": null,
+  "description": "Bazarr is a companion tool to Radarr and Sonarr that automatically downloads and manages subtitles for media libraries. It supports many subtitle providers, languages, and integrates with Plex, Jellyfin, and Emby.",
   "categories": [
     155
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/morpheus65535/bazarr",
-  "website": "www.bazarr.media",
-  "source_code": "github.com/morpheus65535/bazarr",
-  "github_stars": "3581",
-  "logo": "/icons/bazarr.webp",
-  "description": "Bazarr is a companion tool to Radarr and Sonarr that automatically downloads and manages subtitles for media libraries. It supports many subtitle providers, languages, and integrates with Plex, Jellyfin, and Emby.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v1.5.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-20",
+    "date_last_commit": "2025-12-10",
+    "github_stars": 3581
+  },
+  "resources": {
+    "website": "https://www.bazarr.media",
+    "documentation": "https://github.com/morpheus65535/bazarr",
+    "source_code": "https://github.com/morpheus65535/bazarr",
+    "logo": "/icons/bazarr.webp",
+    "issues": "https://github.com/morpheus65535/bazarr/issues",
+    "releases": "https://github.com/morpheus65535/bazarr/releases"
+  },
   "features": [
     "Subtitle Management: Automatically download subtitles for your media. Complete coverage.",
     "Radarr & Sonarr: Companion tool for movie and TV automation. Perfect integration.",
@@ -25,69 +33,45 @@
     "Quality Control: Choose subtitle quality and format preferences. Customizable.",
     "Self-Hosted: Run your own subtitle management. Complete control."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

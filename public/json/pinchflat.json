@@ -1,20 +1,28 @@
 {
   "name": "pinchflat",
   "slug": "pinchflat",
+  "tagline": null,
+  "description": "Pinchflat is a self-hosted tool for downloading, archiving, and managing YouTube videos. It supports scheduled downloads, playlists, and integration with media servers via a web UI.",
   "categories": [
     106
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/kieraneglin/pinchflat",
-  "website": "github.com/kieraneglin/pinchflat",
-  "source_code": "github.com/kieraneglin/pinchflat",
-  "github_stars": "4285",
-  "logo": "/icons/pinchflat.webp",
-  "description": "Pinchflat is a self-hosted tool for downloading, archiving, and managing YouTube videos. It supports scheduled downloads, playlists, and integration with media servers via a web UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v2025.9.26",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-26",
+    "date_last_commit": "2025-09-28",
+    "github_stars": 4286
+  },
+  "resources": {
+    "website": "https://github.com/kieraneglin/pinchflat",
+    "documentation": "https://github.com/kieraneglin/pinchflat",
+    "source_code": "https://github.com/kieraneglin/pinchflat",
+    "logo": "/icons/pinchflat.webp",
+    "issues": "https://github.com/kieraneglin/pinchflat/issues",
+    "releases": "https://github.com/kieraneglin/pinchflat/releases"
+  },
   "features": [
     "YouTube downloads: Download videos from YouTube channels, playlists, and individual URLs with configurable quality settings.",
     "Scheduled archiving: Automatically check for and download new videos from subscribed channels on a schedule.",
@@ -29,69 +37,45 @@
     "Channel filtering: Configure rules to download only specific videos based on title, duration, or upload date.",
     "Notification system: Receive alerts when new videos are downloaded or when errors occur."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

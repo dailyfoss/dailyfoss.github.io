@@ -1,20 +1,28 @@
 {
   "name": "medama",
   "slug": "medama",
+  "tagline": null,
+  "description": "Medama is a UI-first, self-hosted error tracking and monitoring tool for developers. It offers stack traces, session replay, and alerts to help diagnose issues in applications without relying on external services.",
   "categories": [
     21
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/medama-io/medama",
-  "website": "oss.medama.io",
-  "source_code": "github.com/medama-io/medama",
-  "github_stars": "573",
-  "logo": "/icons/medama.webp",
-  "description": "Medama is a UI-first, self-hosted error tracking and monitoring tool for developers. It offers stack traces, session replay, and alerts to help diagnose issues in applications without relying on external services.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": null,
+    "version": "v0.6.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-08-17",
+    "date_last_commit": "2025-11-08",
+    "github_stars": 575
+  },
+  "resources": {
+    "website": "https://oss.medama.io",
+    "documentation": "https://github.com/medama-io/medama",
+    "source_code": "https://github.com/medama-io/medama",
+    "logo": "/icons/medama.webp",
+    "issues": "https://github.com/medama-io/medama/issues",
+    "releases": "https://github.com/medama-io/medama/releases"
+  },
   "features": [
     "Error tracking: Capture and log application errors with detailed stack traces and context.",
     "Session replay: Record and replay user sessions to understand how errors occurred.",
@@ -29,69 +37,45 @@
     "SDK support: Integrate with JavaScript, Python, Ruby, and other language SDKs.",
     "Dashboard analytics: View error trends, affected users, and resolution status at a glance."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

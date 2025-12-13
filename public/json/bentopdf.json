@@ -1,20 +1,28 @@
 {
   "name": "bentopdf",
   "slug": "bentopdf",
+  "tagline": null,
+  "description": "Bentopdf is a utility that converts Markdown documents into polished, print-ready PDF outputs using custom style templates. It’s ideal for authors, documentation teams, and developers needing minimal formatting tools.",
   "categories": [
     116
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/alam00000/bentopdf",
-  "website": "bentopdf.com/",
-  "source_code": "github.com/alam00000/bentopdf",
-  "github_stars": "7087",
-  "logo": "/icons/bentopdf.webp",
-  "description": "Bentopdf is a utility that converts Markdown documents into polished, print-ready PDF outputs using custom style templates. It’s ideal for authors, documentation teams, and developers needing minimal formatting tools.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v1.11.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-11",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 7130
+  },
+  "resources": {
+    "website": "https://bentopdf.com/",
+    "documentation": "https://github.com/alam00000/bentopdf",
+    "source_code": "https://github.com/alam00000/bentopdf",
+    "logo": "/icons/bentopdf.webp",
+    "issues": "https://github.com/alam00000/bentopdf/issues",
+    "releases": "https://github.com/alam00000/bentopdf/releases"
+  },
   "features": [
     "Markdown to PDF: Convert markdown documents to polished PDFs. Professional output.",
     "Custom Templates: Use style templates for consistent formatting. Branded documents.",
@@ -25,69 +33,45 @@
     "Batch Processing: Convert multiple documents efficiently. Save time.",
     "Self-Hosted: Run your own conversion service. Complete control."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

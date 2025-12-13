@@ -1,20 +1,28 @@
 {
   "name": "gramps",
   "slug": "gramps",
+  "tagline": null,
+  "description": "Gramps is a self-hosted genealogy software that manages family relationships, events, and documents. It supports reporting, charts, media attachments, and offers both desktop apps and web deployments.",
   "categories": [
     71
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/gramps-project/gramps",
-  "website": "gramps-project.org/",
-  "source_code": "github.com/gramps-project/gramps",
-  "github_stars": "2738",
-  "logo": "/icons/gramps.webp",
-  "description": "Gramps is a self-hosted genealogy software that manages family relationships, events, and documents. It supports reporting, charts, media attachments, and offers both desktop apps and web deployments.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-2.0",
+    "version": "v6.0.6",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-08",
+    "date_last_commit": "2025-12-08",
+    "github_stars": 2739
+  },
+  "resources": {
+    "website": "https://gramps-project.org/",
+    "documentation": "https://github.com/gramps-project/gramps",
+    "source_code": "https://github.com/gramps-project/gramps",
+    "logo": "/icons/gramps.webp",
+    "issues": "https://github.com/gramps-project/gramps/issues",
+    "releases": "https://github.com/gramps-project/gramps/releases"
+  },
   "features": [
     "Family Tree Management: Build and maintain detailed family trees with relationships, events, and sources.",
     "Report Generation: Create family history reports, charts, and books in various formats.",
@@ -25,69 +33,45 @@
     "Web Publishing: Generate static websites from your family tree for online sharing.",
     "Cross-Platform: Available as desktop application and web deployment for flexible access."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

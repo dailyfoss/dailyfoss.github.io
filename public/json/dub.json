@@ -1,20 +1,28 @@
 {
   "name": "dub",
   "slug": "dub",
+  "tagline": null,
+  "description": "Dub is an open-source link management and URL shortening platform. It supports branded links, analytics, workspaces, and API access, offering a privacy-friendly alternative to commercial link management tools.",
   "categories": [
     171
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/dubinc/dub",
-  "website": "dub.co",
-  "source_code": "github.com/dubinc/dub",
-  "github_stars": "22755",
-  "logo": "/icons/dub.webp",
-  "description": "Dub is an open-source link management and URL shortening platform. It supports branded links, analytics, workspaces, and API access, offering a privacy-friendly alternative to commercial link management tools.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-13",
+    "github_stars": 22757
+  },
+  "resources": {
+    "website": "https://dub.co",
+    "documentation": "https://github.com/dubinc/dub",
+    "source_code": "https://github.com/dubinc/dub",
+    "logo": "/icons/dub.webp",
+    "issues": "https://github.com/dubinc/dub/issues",
+    "releases": null
+  },
   "features": [
     "URL Shortening: Create short, branded links with custom domains and memorable aliases for better brand recognition.",
     "Click Analytics: Track detailed click statistics including geographic location, device types, and referrer information.",
@@ -29,69 +37,45 @@
     "UTM Parameters: Automatically add tracking parameters to links for better campaign attribution and analytics.",
     "Link Preview: Generate social media previews with custom titles, descriptions, and images for better engagement."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

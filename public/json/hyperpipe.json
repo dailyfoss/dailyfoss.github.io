@@ -1,20 +1,28 @@
 {
   "name": "hyperpipe",
   "slug": "hyperpipe",
+  "tagline": "",
+  "description": "Hyperpipe is a privacy friendly YouTube front end that can be self hosted. It proxies video and audio streams, removes tracking and ads, and presents content in a clean interface for safer watching.",
   "categories": [
     128
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "codeberg.org/Hyperpipe/Hyperpipe",
-  "website": "hyperpipe.surge.sh",
-  "source_code": "codeberg.org/Hyperpipe/Hyperpipe",
-  "github_stars": null,
-  "logo": "/icons/hyperpipe.webp",
-  "description": "Hyperpipe is a privacy friendly YouTube front end that can be self hosted. It proxies video and audio streams, removes tracking and ads, and presents content in a clean interface for safer watching.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": null,
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": null,
+    "github_stars": null
+  },
+  "resources": {
+    "website": null,
+    "documentation": null,
+    "source_code": "https://codeberg.org/Hyperpipe/Hyperpipe",
+    "logo": "/icons/hyperpipe.webp",
+    "issues": null,
+    "releases": null
+  },
   "features": [
     "YouTube Proxy: Access YouTube content through a privacy-respecting proxy server.",
     "Ad-Free Viewing: Watch videos without advertisements or sponsored content.",
@@ -25,69 +33,45 @@
     "Subscription Management: Subscribe to channels and get updates without Google account.",
     "Self-Hosted Option: Run your own instance for complete privacy and control."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

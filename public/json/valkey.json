@@ -1,20 +1,28 @@
 {
   "name": "valkey",
   "slug": "valkey",
+  "tagline": null,
+  "description": "Valkey is an open-source, Redis-compatible in-memory key-value store designed as a community-driven successor. It offers high performance and is operated via command-line tools and Redis protocol clients.",
   "categories": [
     133
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/valkey-io/valkey",
-  "website": "valkey.io",
-  "source_code": "github.com/valkey-io/valkey",
-  "github_stars": "23923",
-  "logo": "/icons/valkey.webp",
-  "description": "Valkey is an open-source, Redis-compatible in-memory key-value store designed as a community-driven successor. It offers high performance and is operated via command-line tools and Redis protocol clients.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "9.0.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-09",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 23927
+  },
+  "resources": {
+    "website": "https://valkey.io",
+    "documentation": "https://github.com/valkey-io/valkey",
+    "source_code": "https://github.com/valkey-io/valkey",
+    "logo": "/icons/valkey.webp",
+    "issues": "https://github.com/valkey-io/valkey/issues",
+    "releases": "https://github.com/valkey-io/valkey/releases"
+  },
   "features": [
     "Redis compatibility: Drop-in replacement for Redis with full protocol compatibility.",
     "In-memory storage: Store data in memory for microsecond latency and high throughput.",
@@ -29,69 +37,45 @@
     "Community-driven: Open-source project maintained by the community without vendor lock-in.",
     "CLI tools: Manage and interact with the server using command-line tools and clients."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

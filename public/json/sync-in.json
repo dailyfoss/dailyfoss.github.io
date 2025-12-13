@@ -1,20 +1,28 @@
 {
   "name": "sync-in",
   "slug": "sync-in",
+  "tagline": null,
+  "description": "Sync-in is a self-hosted collaborative note editor with real-time shared pads. It’s a modern take on Etherpad for teams and classrooms.",
   "categories": [
     62
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Sync-in/server",
-  "website": "sync-in.com",
-  "source_code": "github.com/Sync-in/server",
-  "github_stars": "433",
-  "logo": "/icons/sync-in.webp",
-  "description": "Sync-in is a self-hosted collaborative note editor with real-time shared pads. It’s a modern take on Etherpad for teams and classrooms.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v1.9.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-07",
+    "date_last_commit": "2025-12-07",
+    "github_stars": 438
+  },
+  "resources": {
+    "website": "https://sync-in.com",
+    "documentation": "https://github.com/Sync-in/server",
+    "source_code": "https://github.com/Sync-in/server",
+    "logo": "/icons/sync-in.webp",
+    "issues": "https://github.com/Sync-in/server/issues",
+    "releases": "https://github.com/Sync-in/server/releases"
+  },
   "features": [
     "Real-time collaboration: Edits documents simultaneously with multiple users.",
     "Shared pads: Creates collaborative text documents accessible via unique URLs.",
@@ -29,69 +37,45 @@
     "No registration: Creates and shares pads without requiring accounts.",
     "Offline editing: Continues editing when offline with automatic sync on reconnect."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

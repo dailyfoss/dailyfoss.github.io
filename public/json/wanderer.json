@@ -1,20 +1,28 @@
 {
   "name": "wanderer",
   "slug": "wanderer",
+  "tagline": null,
+  "description": "Wanderer is a self-hosted feed and content reader that aggregates blog posts, newsletters, and articles into one place with a calm, focused reading interface.",
   "categories": [
     96
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Flomp/wanderer",
-  "website": "wanderer.to",
-  "source_code": "github.com/Flomp/wanderer",
-  "github_stars": "3141",
-  "logo": "/icons/wanderer.webp",
-  "description": "Wanderer is a self-hosted feed and content reader that aggregates blog posts, newsletters, and articles into one place with a calm, focused reading interface.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v0.18.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-19",
+    "date_last_commit": "2025-12-02",
+    "github_stars": 3143
+  },
+  "resources": {
+    "website": "https://wanderer.to",
+    "documentation": "https://github.com/Flomp/wanderer",
+    "source_code": "https://github.com/Flomp/wanderer",
+    "logo": "/icons/wanderer.webp",
+    "issues": "https://github.com/Flomp/wanderer/issues",
+    "releases": "https://github.com/Flomp/wanderer/releases"
+  },
   "features": [
     "Feed aggregation: Collect blog posts, newsletters, and articles from multiple sources into a unified reading interface.",
     "RSS support: Subscribe to RSS and Atom feeds from your favorite websites and blogs for automatic content updates.",
@@ -29,69 +37,45 @@
     "Article sharing: Share interesting articles via email or generate shareable links for friends and colleagues.",
     "Auto-cleanup: Automatically remove old articles after a specified period to keep your reading list manageable."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

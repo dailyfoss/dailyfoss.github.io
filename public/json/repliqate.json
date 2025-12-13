@@ -1,20 +1,28 @@
 {
   "name": "repliqate",
   "slug": "repliqate",
+  "tagline": "",
+  "description": "Repliqate is a self-hosted tool for copying content across multiple storage systems with configurable rules. It’s designed for automating replication tasks in multiple environments.",
   "categories": [
     165
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/lminlone/repliqate",
-  "website": "lminlone.github.io/repliqate/",
-  "source_code": "github.com/lminlone/repliqate",
-  "github_stars": "219",
-  "logo": "/icons/repliqate.webp",
-  "description": "Repliqate is a self-hosted tool for copying content across multiple storage systems with configurable rules. It’s designed for automating replication tasks in multiple environments.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.2.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-12",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 220
+  },
+  "resources": {
+    "website": "https://lminlone.github.io/repliqate/",
+    "documentation": "https://lminlone.github.io/repliqate/",
+    "source_code": "https://github.com/lminlone/repliqate",
+    "logo": "/icons/repliqate.webp",
+    "issues": "https://github.com/lminlone/repliqate/issues",
+    "releases": "https://github.com/lminlone/repliqate/releases"
+  },
   "features": [
     "Multi-storage replication: Copy data across local disks, network shares, and cloud storage providers.",
     "Rule-based automation: Define custom rules for what content to replicate and where.",
@@ -29,69 +37,45 @@
     "Bandwidth throttling: Limit transfer speeds to avoid saturating network connections.",
     "Web dashboard: Monitor replication status and configure jobs through a browser interface."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

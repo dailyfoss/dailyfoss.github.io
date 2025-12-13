@@ -31,7 +31,7 @@ const initialScript: Script = {
   name: "",
   slug: "",
   categories: [],
-  date_created: "",
+  date_added: "",
   interface_port: null,
   documentation: null,
   website: null,
@@ -161,16 +161,16 @@ export default function JSONGenerator() {
 
   const handleDateSelect = useCallback(
     (date: Date | undefined) => {
-      updateScript("date_created", format(date || new Date(), "yyyy-MM-dd"));
+      updateScript("date_added", format(date || new Date(), "yyyy-MM-dd"));
     },
     [updateScript],
   );
 
   const formattedDate = useMemo(() => {
-    if (!script.date_created)
+    if (!script.date_added)
       return undefined;
     try {
-      const d = new Date(script.date_created);
+      const d = new Date(script.date_added);
       if (Number.isNaN(d.getTime()))
         return undefined;
       return format(d, "PPP");
@@ -178,7 +178,7 @@ export default function JSONGenerator() {
     catch {
       return undefined;
     }
-  }, [script.date_created]);
+  }, [script.date_added]);
 
   const validationAlert = useMemo(
     () => (
@@ -306,7 +306,7 @@ export default function JSONGenerator() {
                 <PopoverTrigger asChild className="flex-1">
                   <Button
                     variant="outline"
-                    className={cn("pl-3 text-left font-normal w-full", !script.date_created && "text-muted-foreground")}
+                    className={cn("pl-3 text-left font-normal w-full", !script.date_added && "text-muted-foreground")}
                   >
                     {formattedDate || <span>Pick a date</span>}
                     <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
@@ -315,7 +315,7 @@ export default function JSONGenerator() {
                 <PopoverContent className="w-auto p-0" align="start">
                   <Calendar
                     mode="single"
-                    selected={script.date_created ? new Date(script.date_created) : undefined}
+                    selected={script.date_added ? new Date(script.date_added) : undefined}
                     onSelect={handleDateSelect}
                     initialFocus
                   />

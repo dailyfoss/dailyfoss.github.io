@@ -1,20 +1,28 @@
 {
   "name": "signature-pdf",
   "slug": "signature-pdf",
+  "tagline": null,
+  "description": "signaturepdf is a self-hosted tool to digitally sign PDFs from the browser. Users can upload, place signatures, and download signed documents without sending files to third-party services.",
   "categories": [
     49
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/24eme/signaturepdf",
-  "website": "pdf.24eme.fr",
-  "source_code": "github.com/24eme/signaturepdf",
-  "github_stars": "700",
-  "logo": "/icons/signature-pdf.webp",
-  "description": "signaturepdf is a self-hosted tool to digitally sign PDFs from the browser. Users can upload, place signatures, and download signed documents without sending files to third-party services.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v1.9.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-03",
+    "date_last_commit": "2025-12-05",
+    "github_stars": 701
+  },
+  "resources": {
+    "website": "https://pdf.24eme.fr",
+    "documentation": "https://github.com/24eme/signaturepdf",
+    "source_code": "https://github.com/24eme/signaturepdf",
+    "logo": "/icons/signature-pdf.webp",
+    "issues": "https://github.com/24eme/signaturepdf/issues",
+    "releases": "https://github.com/24eme/signaturepdf/releases"
+  },
   "features": [
     "Browser-based signing: Signs PDFs entirely in the browser without server uploads.",
     "Signature drawing: Creates signatures by drawing with mouse or touchscreen.",
@@ -29,69 +37,45 @@
     "Mobile friendly: Works on smartphones and tablets for signing on the go.",
     "Multiple signatures: Adds multiple signatures to different pages or locations."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

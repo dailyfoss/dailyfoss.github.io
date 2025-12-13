@@ -1,20 +1,28 @@
 {
   "name": "dollardollar-bill-y-all",
   "slug": "dollardollar-bill-y-all",
+  "tagline": null,
+  "description": "DollarDollar is a personal finance tracker that helps users log income and expenses, categorize transactions, and visualize budgets over time. It focuses on simplicity and privacy by running as a self-hosted web application.",
   "categories": [
     22
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/harung1993/dollardollar",
-  "website": "github.com/harung1993/dollardollar",
-  "source_code": "github.com/harung1993/dollardollar",
-  "github_stars": "318",
-  "logo": "/icons/dollardollar-bill-y-all.webp",
-  "description": "DollarDollar is a personal finance tracker that helps users log income and expenses, categorize transactions, and visualize budgets over time. It focuses on simplicity and privacy by running as a self-hosted web application.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v4.3.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-04-24",
+    "date_last_commit": "2025-12-02",
+    "github_stars": 318
+  },
+  "resources": {
+    "website": "https://github.com/harung1993/dollardollar",
+    "documentation": "https://github.com/harung1993/dollardollar",
+    "source_code": "https://github.com/harung1993/dollardollar",
+    "logo": "/icons/dollardollar-bill-y-all.webp",
+    "issues": "https://github.com/harung1993/dollardollar/issues",
+    "releases": "https://github.com/harung1993/dollardollar/releases"
+  },
   "features": [
     "Analytics Dashboard: Visual metrics and usage statistics with customizable charts to track performance and user engagement.",
     "Mobile Optimization: Responsive design with touch-friendly interfaces and offline sync capabilities for seamless mobile access.",
@@ -22,69 +30,45 @@
     "Theme Customization: Multiple UI themes and layout options with custom branding support to match organizational identity.",
     "Backup Automation: Scheduled backups with encryption and cloud storage integration to ensure data protection and disaster recovery."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

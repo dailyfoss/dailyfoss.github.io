@@ -1,20 +1,28 @@
 {
   "name": "restreamer",
   "slug": "restreamer",
+  "tagline": null,
+  "description": "Restreamer is a self-hosted video streaming server that allows live streaming from RTMP, SRT, or WebRTC sources. It offers transcoding, recording, and multi-platform streaming via a clean web UI.",
   "categories": [
     90
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/datarhei/restreamer",
-  "website": "docs.datarhei.com/restreamer/",
-  "source_code": "github.com/datarhei/restreamer",
-  "github_stars": "4738",
-  "logo": "/icons/restreamer.webp",
-  "description": "Restreamer is a self-hosted video streaming server that allows live streaming from RTMP, SRT, or WebRTC sources. It offers transcoding, recording, and multi-platform streaming via a clean web UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v2.12.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-09-13",
+    "date_last_commit": "2025-03-03",
+    "github_stars": 4738
+  },
+  "resources": {
+    "website": "https://docs.datarhei.com/restreamer/",
+    "documentation": "https://github.com/datarhei/restreamer",
+    "source_code": "https://github.com/datarhei/restreamer",
+    "logo": "/icons/restreamer.webp",
+    "issues": "https://github.com/datarhei/restreamer/issues",
+    "releases": "https://github.com/datarhei/restreamer/releases"
+  },
   "features": [
     "Multi-protocol input: Accept streams from RTMP, SRT, WebRTC, and HTTP sources.",
     "Live transcoding: Convert video formats and resolutions in real-time for different platforms.",
@@ -29,69 +37,45 @@
     "Authentication: Protect streams with password or token-based access control.",
     "Low latency: Minimize delay between capture and playback for interactive streaming."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

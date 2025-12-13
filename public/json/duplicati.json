@@ -1,20 +1,28 @@
 {
   "name": "duplicati",
   "slug": "duplicati",
+  "tagline": null,
+  "description": "Duplicati is a backup client that stores encrypted, incremental backups on cloud storage services or local disks. It has a web interface for scheduling, restoring, and configuring backup jobs, and runs well on headless servers.",
   "categories": [
     18
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/duplicati/duplicati",
-  "website": "github.com/duplicati/duplicati",
-  "source_code": "github.com/duplicati/duplicati",
-  "github_stars": "13726",
-  "logo": "/icons/duplicati.webp",
-  "description": "Duplicati is a backup client that stores encrypted, incremental backups on cloud storage services or local disks. It has a web interface for scheduling, restoring, and configuring backup jobs, and runs well on headless servers.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v2.2.0.1_stable_2025-11-09",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-09",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 13731
+  },
+  "resources": {
+    "website": "https://github.com/duplicati/duplicati",
+    "documentation": "https://github.com/duplicati/duplicati",
+    "source_code": "https://github.com/duplicati/duplicati",
+    "logo": "/icons/duplicati.webp",
+    "issues": "https://github.com/duplicati/duplicati/issues",
+    "releases": "https://github.com/duplicati/duplicati/releases"
+  },
   "features": [
     "Encrypted backups: Protect data with AES-256 encryption before uploading to storage destinations for security.",
     "Incremental backups: Store only changed blocks to minimize storage space and bandwidth usage over time.",
@@ -25,69 +33,45 @@
     "Web interface: Configure, monitor, and restore backups through a browser-based dashboard from any device.",
     "Disaster recovery: Restore individual files, folders, or complete systems from any backup point in time."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

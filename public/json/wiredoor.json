@@ -1,20 +1,28 @@
 {
   "name": "wiredoor",
   "slug": "wiredoor",
+  "tagline": null,
+  "description": "Wiredoor is a self-hosted WireGuard management panel that provides a web UI for configuring peers, networks, and access rules. It aims to simplify VPN orchestration and monitoring across multiple WireGuard endpoints.",
   "categories": [
     145
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/wiredoor/wiredoor",
-  "website": "www.wiredoor.net",
-  "source_code": "github.com/wiredoor/wiredoor",
-  "github_stars": "1512",
-  "logo": "/icons/wiredoor.webp",
-  "description": "Wiredoor is a self-hosted WireGuard management panel that provides a web UI for configuring peers, networks, and access rules. It aims to simplify VPN orchestration and monitoring across multiple WireGuard endpoints.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v1.6.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-11",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 1512
+  },
+  "resources": {
+    "website": "https://www.wiredoor.net",
+    "documentation": "https://github.com/wiredoor/wiredoor",
+    "source_code": "https://github.com/wiredoor/wiredoor",
+    "logo": "/icons/wiredoor.webp",
+    "issues": "https://github.com/wiredoor/wiredoor/issues",
+    "releases": "https://github.com/wiredoor/wiredoor/releases"
+  },
   "features": [
     "Peer management: Add, edit, and remove WireGuard peers through an intuitive web interface.",
     "QR code generation: Generate QR codes for mobile clients to quickly import VPN configurations.",
@@ -29,69 +37,45 @@
     "Audit logging: Record configuration changes and access events for security and compliance.",
     "API access: Integrate with automation tools via REST API for programmatic peer management."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

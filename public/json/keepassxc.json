@@ -1,20 +1,28 @@
 {
   "name": "keepassxc",
   "slug": "keepassxc",
+  "tagline": null,
+  "description": "KeePassXC is a cross platform password manager that stores credentials in encrypted local databases. It supports browser integration, auto typing, hardware keys and syncing via self chosen storage, giving users full control over their secrets.",
   "categories": [
     117
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/keepassxreboot/keepassxc",
-  "website": "keepassxc.org/",
-  "source_code": "github.com/keepassxreboot/keepassxc",
-  "github_stars": "25130",
-  "logo": "/icons/keepassxc.webp",
-  "description": "KeePassXC is a cross platform password manager that stores credentials in encrypted local databases. It supports browser integration, auto typing, hardware keys and syncing via self chosen storage, giving users full control over their secrets.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "2.7.11",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-23",
+    "date_last_commit": "2025-12-06",
+    "github_stars": 25138
+  },
+  "resources": {
+    "website": "https://keepassxc.org/",
+    "documentation": "https://github.com/keepassxreboot/keepassxc",
+    "source_code": "https://github.com/keepassxreboot/keepassxc",
+    "logo": "/icons/keepassxc.webp",
+    "issues": "https://github.com/keepassxreboot/keepassxc/issues",
+    "releases": "https://github.com/keepassxreboot/keepassxc/releases"
+  },
   "features": [
     "Encrypted Database: AES-256 encryption for password database with master password protection. Military-grade security for credentials.",
     "Password Generator: Create strong, random passwords with customizable rules and patterns. Never use weak passwords again.",
@@ -29,69 +37,45 @@
     "Cross-Platform: Native applications for Windows, macOS, and Linux with consistent interface. Use on any desktop system.",
     "Import & Export: Migrate from other password managers with import tools. Switch without losing data."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

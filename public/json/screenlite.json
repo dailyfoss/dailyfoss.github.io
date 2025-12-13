@@ -1,20 +1,28 @@
 {
   "name": "screenlite",
   "slug": "screenlite",
+  "tagline": null,
+  "description": "Screenlite is a self-hosted digital signage tool that allows displaying custom media and messages on remote screens. It includes scheduling and multi-screen management.",
   "categories": [
     176
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/screenlite/screenlite",
-  "website": "screenlite.org",
-  "source_code": "github.com/screenlite/screenlite",
-  "github_stars": "319",
-  "logo": "/icons/screenlite.webp",
-  "description": "Screenlite is a self-hosted digital signage tool that allows displaying custom media and messages on remote screens. It includes scheduling and multi-screen management.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-02",
+    "github_stars": 319
+  },
+  "resources": {
+    "website": "https://screenlite.org",
+    "documentation": "https://github.com/screenlite/screenlite",
+    "source_code": "https://github.com/screenlite/screenlite",
+    "logo": "/icons/screenlite.webp",
+    "issues": "https://github.com/screenlite/screenlite/issues",
+    "releases": null
+  },
   "features": [
     "Digital signage: Display custom content on remote screens for advertising or information.",
     "Content scheduling: Schedule media playback by time, date, or recurring patterns.",
@@ -29,69 +37,45 @@
     "User permissions: Assign roles for content creation, approval, and display management.",
     "Analytics: Track content impressions and display performance metrics."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

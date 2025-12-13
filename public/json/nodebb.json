@@ -1,20 +1,28 @@
 {
   "name": "nodebb",
   "slug": "nodebb",
+  "tagline": null,
+  "description": "NodeBB is a modern, lightweight forum platform built on Node.js. It supports real-time updates, plugins, SSO, and themes and can be self-hosted or deployed as a managed cloud service.",
   "categories": [
     66
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/NodeBB/NodeBB",
-  "website": "nodebb.org",
-  "source_code": "github.com/NodeBB/NodeBB",
-  "github_stars": "14865",
-  "logo": "/icons/nodebb.webp",
-  "description": "NodeBB is a modern, lightweight forum platform built on Node.js. It supports real-time updates, plugins, SSO, and themes and can be self-hosted or deployed as a managed cloud service.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v4.7.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-26",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 14865
+  },
+  "resources": {
+    "website": "https://nodebb.org",
+    "documentation": "https://github.com/NodeBB/NodeBB",
+    "source_code": "https://github.com/NodeBB/NodeBB",
+    "logo": "/icons/nodebb.webp",
+    "issues": "https://github.com/NodeBB/NodeBB/issues",
+    "releases": "https://github.com/NodeBB/NodeBB/releases"
+  },
   "features": [
     "Modern forum platform: Create discussion boards with categories, topics, and threaded replies.",
     "Real-time updates: See new posts and replies instantly without page refreshes using WebSockets.",
@@ -29,69 +37,45 @@
     "Analytics dashboard: Track forum activity, user engagement, and popular content.",
     "Multi-language: Support international communities with translation plugins and RTL languages."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

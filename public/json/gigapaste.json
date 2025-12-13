@@ -1,20 +1,28 @@
 {
   "name": "gigapaste",
   "slug": "gigapaste",
+  "tagline": "",
+  "description": "GigaPaste is a self-hosted pastebin application that supports syntax highlighting, expiration controls, and public or private snippets. Ideal for sharing logs, code, or notes within development or teaching environments.",
   "categories": [
     118
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/NRicode/GigaPaste",
-  "website": "github.com/NRicode/GigaPaste",
-  "source_code": "github.com/NRicode/GigaPaste",
-  "github_stars": "2",
-  "logo": "/icons/gigapaste.webp",
-  "description": "GigaPaste is a self-hosted pastebin application that supports syntax highlighting, expiration controls, and public or private snippets. Ideal for sharing logs, code, or notes within development or teaching environments.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": null,
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2024-12-12",
+    "github_stars": 2
+  },
+  "resources": {
+    "website": null,
+    "documentation": null,
+    "source_code": "https://github.com/NRicode/GigaPaste",
+    "logo": "/icons/gigapaste.webp",
+    "issues": "https://github.com/NRicode/GigaPaste/issues",
+    "releases": null
+  },
   "features": [
     "Syntax Highlighting: Display code snippets with language-specific syntax highlighting for improved readability.",
     "Expiration Controls: Set automatic expiration times for pastes to ensure temporary sharing and cleanup.",
@@ -25,69 +33,45 @@
     "Self-Hosted Security: Keep shared content on your own infrastructure without third-party dependencies.",
     "Team Collaboration: Facilitate code review and debugging by sharing snippets internally."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

@@ -1,16 +1,16 @@
 "use client";
 
-import { BookOpenText, CalendarDays, CloudUpload, Code, Globe, Layers, LayoutGrid, Monitor, Stars, X } from "lucide-react";
+import { BookOpenText, Tag, Code, Globe, Layers, LayoutGrid, Monitor, Stars, X, Activity, CheckCircle, RefreshCcw, Clock3, Moon, Archive, Hexagon } from "lucide-react";
 import { Suspense, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 
-import type { AppVersion, Script } from "@/lib/types";
+import type { Script } from "@/lib/types";
 
-import { cleanSlug } from "@/lib/utils/resource-utils";
 import { Separator } from "@/components/ui/separator";
-import { useVersions } from "@/hooks/use-versions";
-import { extractDate } from "@/lib/time";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { useRepositoryStatus } from "@/hooks/use-repository-status";
+import { formatRelativeTime } from "@/lib/repository-status";
 
 import DefaultPassword from "./script-items/default-password";
 import InstallCommand from "./script-items/install-command";
@@ -24,9 +24,11 @@ type ScriptItemProps = {
   setSelectedScript: (script: string | null) => void;
 };
 
-type InstallMethodWithPlatform = Script["install_methods"][0];
+type InstallMethodWithPlatform = any;
 
 function SecondaryMeta({ item }: { item: Script }) {
+  const { repositoryInfo, loading } = useRepositoryStatus(item);
+  
   // Helper function to ensure URL has proper protocol
   const ensureHttps = (url: string): string => {
     if (!url)
@@ -37,61 +39,86 @@ function SecondaryMeta({ item }: { item: Script }) {
     return `https://${url}`;
   };
 
-  const parts: { label: string; href?: string; icon: React.ReactNode }[] = [];
+  const parts: { id: string; label: string; href?: string; icon: React.ReactNode; tooltip?: string }[] = [];
 
-  // 🗓 Added
-  if (item.date_created) {
+  // 🏷️ Last Release
+  if (!loading && repositoryInfo?.lastRelease) {
+    const releaseTime = formatRelativeTime(repositoryInfo.lastRelease);
+    const releaseLabel = releaseTime === 'today' ? releaseTime : releaseTime.replace(' ago', '') + ' ago';
+    const releaseDate = repositoryInfo.lastRelease.toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    });
     parts.push({
-      label: `Added ${extractDate(item.date_created)}`,
-      icon: <CalendarDays className="h-5 w-5 text-foreground/60" />,
+      id: 'last-release',
+      label: releaseLabel,
+      icon: <Tag className="h-5 w-5 text-foreground/60" />,
+      tooltip: `Last release: ${releaseDate}`,
+    });
+  }
+
+  // 🏷️ Last Commit
+  if (!loading && repositoryInfo?.lastCommit) {
+    const commitTime = formatRelativeTime(repositoryInfo.lastCommit);
+    const commitLabel = commitTime === 'today' ? commitTime : commitTime.replace(' ago', '') + ' ago';
+    const commitDate = repositoryInfo.lastCommit.toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    });
+    parts.push({
+      id: 'last-commit',
+      label: commitLabel,
+      icon: <Hexagon className="h-5 w-5 text-foreground/60" />,
+      tooltip: `Last commit: ${commitDate}`,
     });
   }
 
   // 🌐 Website
-  if (item.website) {
+  if (item.resources?.website) {
     parts.push({
+      id: 'website',
       label: "Website",
-      href: ensureHttps(item.website),
+      href: item.resources.website,
       icon: <Globe className="h-5 w-5 text-foreground/60" />,
     });
   }
 
   // 📖 Docs
-  if (item.documentation) {
+  if (item.resources?.documentation) {
     parts.push({
+      id: 'docs',
       label: "Docs",
-      href: ensureHttps(item.documentation),
+      href: item.resources.documentation,
       icon: <BookOpenText className="h-5 w-5 text-foreground/60" />,
     });
   }
 
   // 💻 Source code
-  const sourceCode = (item as any).source_code;
-  if (sourceCode) {
+  if (item.resources?.source_code) {
     parts.push({
+      id: 'source-code',
       label: "Source code",
-      href: ensureHttps(sourceCode),
+      href: item.resources.source_code,
       icon: <Code className="h-5 w-5 text-foreground/60" />,
     });
   }
 
   // ⭐ Github stars
-  const githubStars = (item as any).github_stars;
-  if (githubStars) {
+  if (item.metadata?.github_stars) {
     // Format star count (e.g., 3663 -> "3.7k")
-    const formatStars = (stars: string | number): string => {
-      const num = typeof stars === "string" ? Number.parseInt(stars, 10) : stars;
-      if (isNaN(num))
-        return stars.toString();
-      if (num >= 1000000)
-        return `${(num / 1000000).toFixed(1)}m`;
-      if (num >= 1000)
-        return `${(num / 1000).toFixed(1)}k`;
-      return num.toString();
+    const formatStars = (stars: number): string => {
+      if (stars >= 1000000)
+        return `${(stars / 1000000).toFixed(1)}m`;
+      if (stars >= 1000)
+        return `${(stars / 1000).toFixed(1)}k`;
+      return stars.toString();
     };
 
     parts.push({
-      label: formatStars(githubStars),
+      id: 'github-stars',
+      label: formatStars(item.metadata.github_stars),
       href: "",
       icon: <Stars className="h-5 w-5 text-foreground/60" />,
     });
@@ -109,27 +136,56 @@ function SecondaryMeta({ item }: { item: Script }) {
     >
       {parts.map((p, i) => (
         <div
-          key={p.label}
+          key={p.id}
           className="flex items-center gap-1.5 group transition-colors"
         >
           {i > 0 && <span className="mx-1 text-muted-foreground/60">•</span>}
-          <span className="flex items-center gap-1.5">
-            {p.icon}
-            {p.href
-              ? (
-                <a
-                  href={p.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-md bg-accent/10 px-2 py-0.5 text-primary transition-all hover:bg-accent/20 hover:text-primary"
-                >
-                  {p.label}
-                </a>
-              )
-              : (
-                <span>{p.label}</span>
-              )}
-          </span>
+          {p.tooltip ? (
+            <TooltipProvider>
+              <Tooltip delayDuration={200}>
+                <TooltipTrigger asChild>
+                  <span className="flex items-center gap-1.5 cursor-help">
+                    {p.icon}
+                    {p.href
+                      ? (
+                        <a
+                          href={p.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="rounded-md bg-accent/10 px-2 py-0.5 text-primary transition-all hover:bg-accent/20 hover:text-primary"
+                        >
+                          {p.label}
+                        </a>
+                      )
+                      : (
+                        <span>{p.label}</span>
+                      )}
+                  </span>
+                </TooltipTrigger>
+                <TooltipContent side="bottom" className="font-medium">
+                  <p>{p.tooltip}</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          ) : (
+            <span className="flex items-center gap-1.5">
+              {p.icon}
+              {p.href
+                ? (
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-md bg-accent/10 px-2 py-0.5 text-primary transition-all hover:bg-accent/20 hover:text-primary"
+                  >
+                    {p.label}
+                  </a>
+                )
+                : (
+                  <span>{p.label}</span>
+                )}
+            </span>
+          )}
         </div>
       ))}
     </motion.div>
@@ -181,14 +237,14 @@ function PlatformRow({
   );
 }
 
-function PlatformSummary({ method }: { method?: InstallMethodWithPlatform }) {
-  if (!method)
-    return null;
+function PlatformSummary({ item }: { item: Script }) {
+  const platform = item.platform_support;
+  const hosting = item.hosting_options;
+  const deployment = item.deployment_methods;
+  const ui = item.interfaces;
 
-  const platform = method.platform;
-  const hosting = method.hosting;
-  const deployment = method.deployment;
-  const ui = method.ui;
+  if (!platform && !hosting && !deployment && !ui)
+    return null;
 
   // Combine Desktop + Mobile into "Platforms"
   const platforms = [
@@ -227,7 +283,7 @@ function PlatformSummary({ method }: { method?: InstallMethodWithPlatform }) {
   }
 
   return (
-    <div className="mt-4 flex flex-col space-y-3 rounded-lg bg-accent/5 p-4 border border-border/30">
+    <div className="flex flex-col space-y-3 rounded-lg bg-accent/5 p-4 border border-border/50 w-full">
       <div className="text-[13px] font-bold text-foreground/90 mb-1">
         Platform & Deployment
       </div>
@@ -245,7 +301,7 @@ function PlatformSummary({ method }: { method?: InstallMethodWithPlatform }) {
         <PlatformRow
           label="Deployment"
           items={deploymentItems}
-          icon={<CloudUpload className="h-4 w-4" />}
+          icon={<Code className="h-4 w-4" />}
           variant="outline"
         />
       )}
@@ -260,19 +316,118 @@ function PlatformSummary({ method }: { method?: InstallMethodWithPlatform }) {
       )}
     </div>
   );
+} 
+
+// Get status tooltip text
+function getStatusTooltip(status: string): string {
+  switch (status) {
+    case 'active':
+      return 'Active: Actively Updated within 30 days';
+    case 'regular':
+      return 'Regular: Regularly Updated within 6 months';
+    case 'occasional':
+      return 'Occasional: Occasionally Updated within 1 year';
+    case 'dormant':
+      return 'Dormant: No Updates in the last 1 year';
+    case 'archived':
+      return 'Archived: Read Only, no longer maintained';
+    default:
+      return 'Status Unknown';
+  }
 }
 
-function ScriptHeader({ item }: { item: Script }) {
-  const [showFallback, setShowFallback] = useState(!item.logo || item.logo.trim() === "");
-  const defaultInstallMethod = item.install_methods?.[0] as InstallMethodWithPlatform | undefined;
+function RepositoryActivityIndicator({ item }: { item: Script }) {
+  const { repositoryInfo, loading } = useRepositoryStatus(item);
 
-  // Reset fallback state when item changes
+  if (loading) {
+    return (
+      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+        <div className="animate-pulse h-4 w-4 bg-muted rounded-full" />
+        <span>Checking repository status...</span>
+      </div>
+    );
+  }
+
+  if (!repositoryInfo || repositoryInfo.status === 'unknown') {
+    return null;
+  }
+
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'active':
+        return 'text-green-600 bg-green-50 border-green-200 dark:text-green-400 dark:bg-green-950 dark:border-green-800';
+      case 'regular':
+        return 'text-amber-600 bg-amber-50 border-amber-200 dark:text-amber-400 dark:bg-amber-950 dark:border-amber-800';
+      case 'occasional':
+        return 'text-orange-600 bg-orange-50 border-orange-200 dark:text-orange-400 dark:bg-orange-950 dark:border-orange-800';
+      case 'dormant':
+        return 'text-red-600 bg-red-50 border-red-200 dark:text-red-400 dark:bg-red-950 dark:border-red-800';
+      case 'archived':
+        return 'text-gray-600 bg-gray-50 border-gray-200 dark:text-gray-400 dark:bg-gray-950 dark:border-gray-800';
+      default:
+        return 'text-gray-600 bg-gray-50 border-gray-200 dark:text-gray-400 dark:bg-gray-950 dark:border-gray-800';
+    }
+  };
+
+  const getStatusIcon = (status: string) => {
+    const iconProps = { className: "h-4 w-4" };
+    
+    switch (status) {
+      case 'active':
+        return <Activity {...iconProps} />;
+      case 'regular':
+        return <RefreshCcw {...iconProps} />;
+      case 'occasional':
+        return <Clock3 {...iconProps} />;
+      case 'dormant':
+        return <Moon {...iconProps} />;
+      case 'archived':
+        return <Archive {...iconProps} />;
+      default:
+        return <Activity {...iconProps} />;
+    }
+  };
+}
+
+
+
+function ScriptHeader({ item }: { item: Script }) {
+  const [showFallback, setShowFallback] = useState(!item.resources?.logo || item.resources.logo.trim() === "");
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const { repositoryInfo, loading } = useRepositoryStatus(item);
+
+  // Detect theme changes
   useEffect(() => {
-    setShowFallback(!item.logo || item.logo.trim() === "");
-  }, [item.logo, item.slug]);
+    const checkTheme = () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      setTheme(isDark ? 'dark' : 'light');
+    };
+
+    checkTheme();
+    
+    // Watch for theme changes
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Get the appropriate logo based on theme
+  // In dark mode, use light variant if available (for visibility)
+  const currentLogo = (theme === 'dark' && item.resources?.logo_light) 
+    ? item.resources.logo_light 
+    : item.resources?.logo || '';
+
+  // Reset fallback state when item or logo changes
+  useEffect(() => {
+    setShowFallback(!currentLogo || currentLogo.trim() === "");
+  }, [currentLogo, item.slug]);
 
   return (
-    <div className="-m-8 mb-0 p-8 rounded-t-xl bg-gradient-to-br from-card/50 to-accent/10 border-b">
+    <div className="-m-8 mb-0 p-8 rounded-t-xl bg-gradient-to-br from-card/50 to-accent/10">
       <div className="flex flex-col lg:flex-row gap-6 w-full">
         <div className="flex flex-col md:flex-row gap-6 flex-grow">
           <div className="flex-shrink-0 self-start relative h-28 w-28 rounded-xl bg-gradient-to-br from-accent/40 to-accent/60 shadow-lg transition-transform hover:scale-105 overflow-hidden p-3">
@@ -282,7 +437,7 @@ function ScriptHeader({ item }: { item: Script }) {
               </div>
             ) : (
               <img
-                src={item.logo!}
+                src={currentLogo}
                 width={112}
                 height={112}
                 alt={item.name}
@@ -296,20 +451,70 @@ function ScriptHeader({ item }: { item: Script }) {
             <div className="space-y-3">
               <div className="flex items-start justify-between">
                 <div className="space-y-3">
-                  <h1 className="text-4xl font-bold tracking-tight flex items-center gap-3">
-                    {item.name}
-                    <VersionInfo item={item} />
-                    {/* <span className="inline-flex items-center rounded-md bg-accent/30 px-2 py-1 text-sm">
-                    {getDisplayValueFromType(item.type)}
-                  </span> */}
-                  </h1>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <h1 className="text-4xl font-extrabold tracking-tight flex items-center gap-2">
+                      {item.name}
+                      {/* Status Badge - conditional based on repository status */}
+                      {!loading && repositoryInfo && repositoryInfo.status !== 'unknown' && (
+                        <TooltipProvider>
+                          <Tooltip delayDuration={200}>
+                            <TooltipTrigger asChild>
+                              <motion.span
+                                initial={{ scale: 0.8, opacity: 0 }}
+                                animate={{ scale: 1, opacity: 1 }}
+                                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                className="inline-flex items-center justify-center cursor-help"
+                              >
+                                {repositoryInfo.status === 'active' && (
+                                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-green-500 dark:bg-green-600 text-white shadow-sm">
+                                    <CheckCircle className="h-4 w-4 stroke-[3]" />
+                                  </div>
+                                )}
+                                {repositoryInfo.status === 'regular' && (
+                                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-amber-500 dark:bg-amber-600 text-white shadow-sm">
+                                    <RefreshCcw className="h-4 w-4 stroke-[3]" />
+                                  </div>
+                                )}
+                                {repositoryInfo.status === 'occasional' && (
+                                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-orange-500 dark:bg-orange-600 text-white shadow-sm">
+                                    <Clock3 className="h-4 w-4 stroke-[3]" />
+                                  </div>
+                                )}
+                                {repositoryInfo.status === 'dormant' && (
+                                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-red-500 dark:bg-red-600 text-white shadow-sm">
+                                    <Moon className="h-4 w-4 stroke-[3]" />
+                                  </div>
+                                )}
+                                {repositoryInfo.status === 'archived' && (
+                                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-gray-500 dark:bg-gray-600 text-white shadow-sm">
+                                    <Archive className="h-4 w-4 stroke-[3]" />
+                                  </div>
+                                )}
+                              </motion.span>
+                            </TooltipTrigger>
+                            <TooltipContent side="bottom" className="font-medium">
+                              <p>{getStatusTooltip(repositoryInfo.status)}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
+                      )}
+                    </h1>
+                    {/* Optional version badge */}
+                    {!loading && repositoryInfo?.version && (
+                      <span className="text-[1.05rem] font-mono font-semibold text-foreground/90 tracking-tight">
+                        {repositoryInfo.version}
+                      </span>
+                    )}
+                  </div>
 
                   <SecondaryMeta item={item} />
-                  <Separator className="my-4" />
+                  <div className="mt-3">
+                    <RepositoryActivityIndicator item={item} />
+                  </div>
                 </div>
               </div>
-
-              <PlatformSummary method={defaultInstallMethod} />
+              
+              <PlatformSummary item={item} />
             </div>
           </div>
         </div>
@@ -319,24 +524,6 @@ function ScriptHeader({ item }: { item: Script }) {
       </div>
     </div>
   );
-}
-
-function VersionInfo({ item }: { item: Script }) {
-  const { data: versions = [], isLoading } = useVersions();
-
-  if (isLoading || versions.length === 0) {
-    return <p className="text-sm text-muted-foreground">Loading versions...</p>;
-  }
-
-  const matchedVersion = versions.find((v: AppVersion) => {
-    const cleanName = v.name.replace(/[^a-z0-9]/gi, "").toLowerCase();
-    return cleanName === cleanSlug(item.slug) || cleanName.includes(cleanSlug(item.slug));
-  });
-
-  if (!matchedVersion)
-    return null;
-
-  return <span className="font-medium text-sm">{matchedVersion.version}</span>;
 }
 
 export function ScriptItem({ item, setSelectedScript }: ScriptItemProps) {
@@ -374,12 +561,12 @@ export function ScriptItem({ item, setSelectedScript }: ScriptItemProps) {
               <ScriptHeader item={item} />
             </Suspense>
 
-            <Separator />
+            <Separator className="my-8" />
 
             <Description item={item} />
             <Alerts item={item} />
 
-            <Separator />
+            <Separator className="my-8" />
 
             <div className="mt-6 rounded-lg border shadow-md">
               <div className="flex gap-3 px-5 py-3 bg-accent/25">

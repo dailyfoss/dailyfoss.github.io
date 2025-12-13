@@ -1,20 +1,28 @@
 {
   "name": "adguardhome-sync",
   "slug": "adguardhome-sync",
+  "tagline": null,
+  "description": "AdGuardHome Sync automatically synchronizes exact config and filter settings across multiple AdGuard Home instances. It helps users running multi-router or distributed setups manage consistent filtering rules without manual effort.",
   "categories": [
     7
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/bakito/adguardhome-sync",
-  "website": "github.com/bakito/adguardhome-sync",
-  "source_code": "github.com/bakito/adguardhome-sync",
-  "github_stars": "1432",
-  "logo": "/icons/adguardhome-sync.webp",
-  "description": "AdGuardHome Sync automatically synchronizes exact config and filter settings across multiple AdGuard Home instances. It helps users running multi-router or distributed setups manage consistent filtering rules without manual effort.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v0.8.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-24",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 1431
+  },
+  "resources": {
+    "website": "https://github.com/bakito/adguardhome-sync",
+    "documentation": "https://github.com/bakito/adguardhome-sync",
+    "source_code": "https://github.com/bakito/adguardhome-sync",
+    "logo": "/icons/adguardhome-sync.webp",
+    "issues": "https://github.com/bakito/adguardhome-sync/issues",
+    "releases": "https://github.com/bakito/adguardhome-sync/releases"
+  },
   "features": [
     "Automatic Sync: Keep all AdGuard Home instances perfectly synchronized. Set it and forget it.",
     "Unified Configuration: Filtering rules and settings replicate across all servers. One change, everywhere updated.",
@@ -25,69 +33,45 @@
     "Lightweight: Minimal resource usage with straightforward deployment. Won't slow down your system.",
     "Cross-Platform: Works seamlessly across different operating systems. Universal compatibility."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

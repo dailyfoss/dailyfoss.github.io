@@ -1,20 +1,28 @@
 {
   "name": "the-lounge",
   "slug": "the-lounge",
+  "tagline": null,
+  "description": "The Lounge is a self-hosted, always-online web IRC client. It keeps you connected to IRC networks and provides a modern multi-user interface, letting you access chat from any device using a browser.",
   "categories": [
     102
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/thelounge/thelounge",
-  "website": "thelounge.chat",
-  "source_code": "github.com/thelounge/thelounge",
-  "github_stars": "6066",
-  "logo": "/icons/the-lounge.webp",
-  "description": "The Lounge is a self-hosted, always-online web IRC client. It keeps you connected to IRC networks and provides a modern multi-user interface, letting you access chat from any device using a browser.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v4.4.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-04-06",
+    "date_last_commit": "2025-12-03",
+    "github_stars": 6067
+  },
+  "resources": {
+    "website": "https://thelounge.chat",
+    "documentation": "https://github.com/thelounge/thelounge",
+    "source_code": "https://github.com/thelounge/thelounge",
+    "logo": "/icons/the-lounge.webp",
+    "issues": "https://github.com/thelounge/thelounge/issues",
+    "releases": "https://github.com/thelounge/thelounge/releases"
+  },
   "features": [
     "Always-online: Stay connected to IRC networks 24/7 even when your browser is closed.",
     "Multi-user: Support multiple users with individual accounts, connections, and preferences on one server.",
@@ -29,69 +37,45 @@
     "Search: Find messages across channels and networks using full-text search with filters.",
     "SASL authentication: Connect securely to IRC networks using SASL for authenticated connections."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

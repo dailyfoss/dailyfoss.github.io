@@ -1,20 +1,28 @@
 {
   "name": "loggifly",
   "slug": "loggifly",
+  "tagline": null,
+  "description": "LoggiFly is a self-hosted aviation logbook system for pilots and aviators. It allows easy logging of flight time, aircraft, and route information with report generation and customization options.",
   "categories": [
     92
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/clemcer/LoggiFly",
-  "website": "clemcer.github.io/LoggiFly/",
-  "source_code": "github.com/clemcer/LoggiFly",
-  "github_stars": "1384",
-  "logo": "/icons/loggifly.webp",
-  "description": "LoggiFly is a self-hosted aviation logbook system for pilots and aviators. It allows easy logging of flight time, aircraft, and route information with report generation and customization options.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v1.7.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-24",
+    "date_last_commit": "2025-12-06",
+    "github_stars": 1392
+  },
+  "resources": {
+    "website": "https://clemcer.github.io/LoggiFly/",
+    "documentation": "https://github.com/clemcer/LoggiFly",
+    "source_code": "https://github.com/clemcer/LoggiFly",
+    "logo": "/icons/loggifly.webp",
+    "issues": "https://github.com/clemcer/LoggiFly/issues",
+    "releases": "https://github.com/clemcer/LoggiFly/releases"
+  },
   "features": [
     "Flight Logging: Track flight time, Aircraft details, Route information. Digital pilot logbook.",
     "Report Generation: Flight reports, Hour summaries, Custom exports. Professional aviation records.",
@@ -25,69 +33,45 @@
     "Hour Totals: Automatic calculations, Category breakdowns, Currency tracking. Stay current.",
     "Export Options: PDF reports, CSV export, Regulatory formats. Share and backup your logbook."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

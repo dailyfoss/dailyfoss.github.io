@@ -1,20 +1,28 @@
 {
   "name": "dokemon",
   "slug": "dokemon",
+  "tagline": "",
+  "description": "Dokemon is a Kubernetes cluster monitoring and management dashboard. It visualizes workloads, namespaces, resources, and events in an accessible web interface, making cluster status and troubleshooting more approachable for platform teams.",
   "categories": [
     47
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/productiveops/dokemon",
-  "website": "dokemon.dev",
-  "source_code": "github.com/productiveops/dokemon",
-  "github_stars": "752",
-  "logo": "/icons/dokemon.webp",
-  "description": "Dokemon is a Kubernetes cluster monitoring and management dashboard. It visualizes workloads, namespaces, resources, and events in an accessible web interface, making cluster status and troubleshooting more approachable for platform teams.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "1.5.9",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-02-07",
+    "date_last_commit": "2024-02-21",
+    "github_stars": 752
+  },
+  "resources": {
+    "website": "https://dokemon.dev",
+    "documentation": "https://dokemon.dev",
+    "source_code": "https://github.com/productiveops/dokemon",
+    "logo": "/icons/dokemon.webp",
+    "issues": "https://github.com/productiveops/dokemon/issues",
+    "releases": "https://github.com/productiveops/dokemon/releases"
+  },
   "features": [
     "Cluster visualization: View all Kubernetes resources including pods, services, and deployments in a unified dashboard.",
     "Namespace management: Switch between namespaces and filter resources by scope for organized multi-tenant environments.",
@@ -25,69 +33,45 @@
     "RBAC integration: Respect Kubernetes permissions to show only resources accessible to the authenticated user.",
     "Multi-cluster support: Connect to multiple Kubernetes environments and switch between them from a single interface."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

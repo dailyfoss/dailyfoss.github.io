@@ -1,20 +1,29 @@
 {
   "name": "owncloud",
   "slug": "owncloud",
+  "tagline": null,
+  "description": "ownCloud is an open-source platform for file sync and sharing. It offers desktop and mobile clients, user management, versioning, and plugins for collaborative work in self-hosted deployments.",
   "categories": [
     27
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/owncloud/core",
-  "website": "owncloud.com",
-  "source_code": "github.com/owncloud/core",
-  "github_stars": "8695",
-  "logo": "/icons/owncloud.webp",
-  "description": "ownCloud is an open-source platform for file sync and sharing. It offers desktop and mobile clients, user management, versioning, and plugins for collaborative work in self-hosted deployments.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-13",
+    "github_stars": 8696
+  },
+  "resources": {
+    "website": "https://owncloud.com",
+    "documentation": "https://github.com/owncloud/core",
+    "source_code": "https://github.com/owncloud/core",
+    "logo": "/icons/owncloud.webp",
+    "issues": "https://github.com/owncloud/core/issues",
+    "releases": null,
+    "logo_light": "/icons/owncloud-light.webp"
+  },
   "features": [
     "File Synchronization: Sync files across devices with desktop and mobile clients for seamless access anywhere.",
     "Collaborative Sharing: Share files and folders with users or groups with granular permission controls and expiration dates.",
@@ -29,69 +38,45 @@
     "Activity Monitoring: Track file activities, user actions, and system events with comprehensive logging and notifications.",
     "API Integration: Full REST and WebDAV APIs for custom integrations and third-party application connectivity."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

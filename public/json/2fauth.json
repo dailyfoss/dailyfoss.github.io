@@ -1,19 +1,29 @@
 {
   "name": "2fauth",
   "slug": "2fauth",
+  "tagline": "A clean, privacy-focused alternative to Google Authenticator with multi-device support.",
+  "description": "2FAuth is an open-source, self-hosted web application built to manage your two-factor authentication (2FA) accounts and generate their security codes (TOTP/HOTP and Steam Guard). It supports features like adding accounts via QR code or manually, organising accounts into groups, encryption of sensitive data, auto-logout on inactivity, and single-user usage. It's designed for both mobile and desktop access, giving you an alternative to smartphone-only apps like Google Authenticator—so you can run 2FAuth on your own server, backup your database, and avoid relying solely on a mobile device.",
   "categories": [
     2
   ],
-  "sponsored": true,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Bubka/2FAuth",
-  "website": "docs.2fauth.app",
-  "source_code": "github.com/Bubka/2FAuth",
-  "github_stars": "3582",
-  "logo": "/icons/2fauth.webp",
-  "description": "2FAuth is an open-source, self-hosted web application built to manage your two-factor authentication (2FA) accounts and generate their security codes (TOTP/HOTP and Steam Guard). It supports features like adding accounts via QR code or manually, organising accounts into groups, encryption of sensitive data, auto-logout on inactivity, and single-user usage. It's designed for both mobile and desktop access, giving you an alternative to smartphone-only apps like Google Authenticator—so you can run 2FAuth on your own server, backup your database, and avoid relying solely on a mobile device.",
-  "tagline": "A clean, privacy-focused alternative to Google Authenticator with multi-device support.",
+  "metadata": {
+    "sponsored": true,
+    "license": "AGPL-3.0",
+    "version": "v5.6.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-21",
+    "date_last_commit": "2025-12-10",
+    "github_stars": 3582
+  },
+  "resources": {
+    "website": "https://docs.2fauth.app",
+    "documentation": "https://github.com/Bubka/2FAuth",
+    "source_code": "https://github.com/Bubka/2FAuth",
+    "logo": "/icons/2fauth.webp",
+    "issues": "https://github.com/Bubka/2FAuth/issues",
+    "releases": "https://github.com/Bubka/2FAuth/releases",
+    "logo_light": "/icons/2fauth-light.webp"
+  },
   "features": [
     "Send notifications via HTTP/CLI (PUT/POST) & REST API",
     "Priorities, action buttons, icons, tags & emoji",
@@ -23,54 +33,51 @@
     "#OpenSource & self-hosted (run on your own server)",
     "Advanced API: scheduled & cached messages, filters, multi-topic, auth"
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": true,
-          "ios": true
-        },
-        "web_app": true,
-        "browser_extension": true,
-        "cli_only": true
-      },
-      "hosting": {
-        "self_hosted": true,
-        "managed_cloud": true,
-        "saas": false
-      },
-      "ui": {
-        "cli": true,
-        "gui": true,
-        "web_ui": true,
-        "api": true,
-        "tui": true
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "manifest_path": {
-    "script": "/manifests/2fauth/script.sh",
-    "docker_compose": "/manifests/2fauth/docker-compose.yaml",
-    "helm": "/manifests/2fauth/helm.yaml",
-    "kubernetes": "/manifests/2fauth/k8s-deployment.yaml",
-    "terraform": "/manifests/2fauth/main.tf"
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": true,
+      "ios": true
+    },
+    "web_app": true,
+    "browser_extension": true,
+    "cli_only": true
+  },
+  "hosting_options": {
+    "self_hosted": true,
+    "managed_cloud": true,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": true,
+    "gui": true,
+    "web_ui": true,
+    "api": true,
+    "tui": true
+  },
+  "deployment_methods": {
+    "script": true,
+    "docker": true,
+    "docker_compose": true,
+    "helm": true,
+    "kubernetes": true,
+    "terraform": true
+  },
+  "manifests": {
+    "script": "/manifests/dummy/script.sh",
+    "docker_compose": "/manifests/dummy/docker-compose.yaml",
+    "helm": "/manifests/dummy/helm.yaml",
+    "kubernetes": "/manifests/dummy/k8s-deployment.yaml",
+    "terraform": "/manifests/dummy/main.tf"
   },
   "default_credentials": {
     "username": null,
     "password": null
   },
-  "notes": []
+  "notes": [],
+  "repository_status": null
 }

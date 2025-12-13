@@ -1,20 +1,28 @@
 {
   "name": "metube",
   "slug": "metube",
+  "tagline": null,
+  "description": "MeTube is a self-hosted YouTube downloader with a simple web UI to download and convert videos or audio from YouTube and similar sites. It supports batch downloads, playlists, and custom formats.",
   "categories": [
     100
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/alexta69/metube",
-  "website": "github.com/alexta69/metube",
-  "source_code": "github.com/alexta69/metube",
-  "github_stars": "11073",
-  "logo": "/icons/metube.webp",
-  "description": "MeTube is a self-hosted YouTube downloader with a simple web UI to download and convert videos or audio from YouTube and similar sites. It supports batch downloads, playlists, and custom formats.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "2025.12.09",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-09",
+    "date_last_commit": "2025-12-09",
+    "github_stars": 11073
+  },
+  "resources": {
+    "website": "https://github.com/alexta69/metube",
+    "documentation": "https://github.com/alexta69/metube",
+    "source_code": "https://github.com/alexta69/metube",
+    "logo": "/icons/metube.webp",
+    "issues": "https://github.com/alexta69/metube/issues",
+    "releases": "https://github.com/alexta69/metube/releases"
+  },
   "features": [
     "Video downloads: Download videos from YouTube and hundreds of other supported sites.",
     "Audio extraction: Extract audio-only files in MP3, M4A, or other formats from videos.",
@@ -29,69 +37,45 @@
     "Progress tracking: Monitor download speed, progress, and estimated completion time.",
     "API access: Automate downloads or integrate with other tools through REST API."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

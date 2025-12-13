@@ -1,89 +1,73 @@
 {
   "name": "logdy",
   "slug": "logdy",
+  "tagline": null,
+  "description": "Logdy Core is a platform for collecting and analyzing logs in real-time from distributed systems. It features streaming dashboards, filterable views, and storage that works in both cloud and self-hosted environments.",
   "categories": [
     93
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/logdyhq/logdy-core",
-  "website": "logdy.dev",
-  "source_code": "github.com/logdyhq/logdy-core",
-  "github_stars": "2007",
-  "logo": "/icons/logdy.webp",
-  "description": "Logdy Core is a platform for collecting and analyzing logs in real-time from distributed systems. It features streaming dashboards, filterable views, and storage that works in both cloud and self-hosted environments.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v0.17.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-06-02",
+    "date_last_commit": "2025-08-25",
+    "github_stars": 2008
+  },
+  "resources": {
+    "website": "https://logdy.dev",
+    "documentation": "https://github.com/logdyhq/logdy-core",
+    "source_code": "https://github.com/logdyhq/logdy-core",
+    "logo": "/icons/logdy.webp",
+    "issues": "https://github.com/logdyhq/logdy-core/issues",
+    "releases": "https://github.com/logdyhq/logdy-core/releases"
+  },
   "features": [
     "Real-Time Logs: Streaming dashboards, Live updates, Instant visibility. Monitor logs as they happen.",
     "Filtering & Search: Advanced filters, Full-text search, Query builder. Find relevant logs quickly.",
     "Distributed Systems: Multi-source collection, Centralized view, Scalable architecture. Handle logs from anywhere.",
     "Flexible Deployment: Cloud or self-hosted, Docker support, Easy setup. Deploy where you need it."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

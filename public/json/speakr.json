@@ -1,20 +1,28 @@
 {
   "name": "speakr",
   "slug": "speakr",
+  "tagline": null,
+  "description": "Speakr is a self-hosted text-to-speech service with a web UI for entering text and generating audio files. It can integrate into other apps via a simple HTTP API.",
   "categories": [
     102
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/murtaza-nasir/speakr",
-  "website": "github.com/murtaza-nasir/speakr",
-  "source_code": "github.com/murtaza-nasir/speakr",
-  "github_stars": "2444",
-  "logo": "/icons/speakr.webp",
-  "description": "Speakr is a self-hosted text-to-speech service with a web UI for entering text and generating audio files. It can integrate into other apps via a simple HTTP API.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v0.6.5-alpha",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-03",
+    "date_last_commit": "2025-12-05",
+    "github_stars": 2449
+  },
+  "resources": {
+    "website": "https://github.com/murtaza-nasir/speakr",
+    "documentation": "https://github.com/murtaza-nasir/speakr",
+    "source_code": "https://github.com/murtaza-nasir/speakr",
+    "logo": "/icons/speakr.webp",
+    "issues": "https://github.com/murtaza-nasir/speakr/issues",
+    "releases": "https://github.com/murtaza-nasir/speakr/releases"
+  },
   "features": [
     "Text-to-speech: Converts text into natural-sounding speech audio.",
     "Multiple voices: Offers various voice options with different accents and styles.",
@@ -29,69 +37,45 @@
     "Batch processing: Converts multiple text inputs to audio files.",
     "Preview playback: Listens to generated speech before downloading."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "many-notes",
   "slug": "many-notes",
+  "tagline": null,
+  "description": "Many Notes is a plain-text, Markdown-based note-taking platform with a focus on full control and simplicity. It allows organizing notes into folders with tags and supports self-hosted syncing and search.",
   "categories": [
     111
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/brufdev/many-notes",
-  "website": "github.com/brufdev/many-notes",
-  "source_code": "github.com/brufdev/many-notes",
-  "github_stars": "869",
-  "logo": "/icons/many-notes.webp",
-  "description": "Many Notes is a plain-text, Markdown-based note-taking platform with a focus on full control and simplicity. It allows organizing notes into folders with tags and supports self-hosted syncing and search.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.15.5",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-08",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 870
+  },
+  "resources": {
+    "website": "https://github.com/brufdev/many-notes",
+    "documentation": "https://github.com/brufdev/many-notes",
+    "source_code": "https://github.com/brufdev/many-notes",
+    "logo": "/icons/many-notes.webp",
+    "issues": "https://github.com/brufdev/many-notes/issues",
+    "releases": "https://github.com/brufdev/many-notes/releases"
+  },
   "features": [
     "Markdown editing: Write notes in plain Markdown with syntax highlighting and preview.",
     "Folder organization: Structure notes in a hierarchical folder system for logical grouping.",
@@ -29,69 +37,45 @@
     "Privacy focused: Complete control over your data with self-hosted deployment.",
     "Lightweight: Minimal resource requirements make it fast and responsive on any device."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "inventree",
   "slug": "inventree",
+  "tagline": null,
+  "description": "InvenTree is an open source inventory management system for manufacturing and electronics projects. It tracks parts, stock, suppliers, builds and BOMs, with granular locations and a modern web UI suited for labs, makerspaces and small companies.",
   "categories": [
     84
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/inventree/InvenTree",
-  "website": "docs.inventree.org",
-  "source_code": "github.com/inventree/InvenTree",
-  "github_stars": "6101",
-  "logo": "/icons/inventree.webp",
-  "description": "InvenTree is an open source inventory management system for manufacturing and electronics projects. It tracks parts, stock, suppliers, builds and BOMs, with granular locations and a modern web UI suited for labs, makerspaces and small companies.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "1.1.6",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-26",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 6103
+  },
+  "resources": {
+    "website": "https://docs.inventree.org",
+    "documentation": "https://github.com/inventree/InvenTree",
+    "source_code": "https://github.com/inventree/InvenTree",
+    "logo": "/icons/inventree.webp",
+    "issues": "https://github.com/inventree/InvenTree/issues",
+    "releases": "https://github.com/inventree/InvenTree/releases"
+  },
   "features": [
     "Parts Management: Track components, assemblies, and finished products with detailed specifications.",
     "Stock Control: Monitor inventory levels across multiple locations with low-stock alerts.",
@@ -25,69 +33,45 @@
     "Barcode Support: Generate and scan barcodes for efficient inventory operations.",
     "API Access: Integrate with other systems using comprehensive REST API."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

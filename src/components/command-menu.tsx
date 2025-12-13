@@ -19,21 +19,6 @@ import { cn } from "@/lib/utils";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip";
 import { DialogTitle } from "./ui/dialog";
 import { Button } from "./ui/button";
-import { Badge } from "./ui/badge";
-
-export function formattedBadge(type: string) {
-  switch (type) {
-    case "vm":
-      return <Badge className="text-blue-500/75 border-blue-500/75">VM</Badge>;
-    case "ct":
-      return <Badge className="text-yellow-500/75 border-yellow-500/75">LXC</Badge>;
-    case "pve":
-      return <Badge className="text-orange-500/75 border-orange-500/75">PVE</Badge>;
-    case "addon":
-      return <Badge className="text-green-500/75 border-green-500/75">ADDON</Badge>;
-  }
-  return null;
-}
 
 function getRandomScript(categories: Category[], previouslySelected: Set<string> = new Set()): Script | null {
   const allScripts = categories.flatMap(cat => cat.scripts || []);
@@ -203,7 +188,7 @@ function CommandMenu() {
               {scripts.map(script => (
                 <CommandItem
                   key={`script:${script.slug}`}
-                  value={`${script.name}-${script.type}`}
+                  value={`${script.name}`}
                   onSelect={() => {
                     setOpen(false);
                     router.push(`/scripts?id=${script.slug}`);
@@ -218,9 +203,13 @@ function CommandMenu() {
                   }}
                 >
                   <div className="flex gap-2 items-center" onClick={() => setOpen(false)}>
-                    <ScriptLogo logo={script.logo} name={script.name} className="w-5 h-5" />
+                    <ScriptLogo 
+                      logo={script.resources?.logo} 
+                      logo_light={script.resources?.logo_light}
+                      name={script.name} 
+                      className="w-5 h-5" 
+                    />
                     <span>{script.name}</span>
-                    <span>{formattedBadge(script.type)}</span>
                   </div>
                 </CommandItem>
               ))}

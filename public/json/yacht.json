@@ -1,20 +1,28 @@
 {
   "name": "yacht",
   "slug": "yacht",
+  "tagline": null,
+  "description": "Yacht is a self-hosted web UI for managing Docker containers and compose stacks. It offers app templates, logs, resource views, and update management, acting as a simpler alternative to Portainer for homelabs.",
   "categories": [
     47
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/SelfhostedPro/Yacht",
-  "website": "github.com/SelfhostedPro/Yacht",
-  "source_code": "github.com/SelfhostedPro/Yacht",
-  "github_stars": "37",
-  "logo": "/icons/yacht.webp",
-  "description": "Yacht is a self-hosted web UI for managing Docker containers and compose stacks. It offers app templates, logs, resource views, and update management, acting as a simpler alternative to Portainer for homelabs.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-08",
+    "github_stars": 37
+  },
+  "resources": {
+    "website": "https://github.com/SelfhostedPro/Yacht",
+    "documentation": "https://github.com/SelfhostedPro/Yacht",
+    "source_code": "https://github.com/SelfhostedPro/Yacht",
+    "logo": "/icons/yacht.webp",
+    "issues": "https://github.com/SelfhostedPro/Yacht/issues",
+    "releases": null
+  },
   "features": [
     "Container management: Start, stop, and restart Docker containers with a clean web interface instead of CLI commands.",
     "Template library: Deploy popular applications quickly using pre-configured templates with sensible defaults.",
@@ -29,69 +37,45 @@
     "Image management: Pull, remove, and inspect Docker images from registries through the web UI.",
     "User authentication: Secure access with login credentials and role-based permissions for multi-user environments."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

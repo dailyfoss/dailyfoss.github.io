@@ -1,20 +1,28 @@
 {
   "name": "filestash",
   "slug": "filestash",
+  "tagline": null,
+  "description": "Filestash connects to cloud or FTP servers and exposes them through a user-friendly web UI. It supports WebDAV, S3, Git, Dropbox, and others with a single centralized UX. Aimed at developers and teams that need unified access.",
   "categories": [
     60
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/mickael-kerjean/filestash",
-  "website": "www.filestash.app/",
-  "source_code": "github.com/mickael-kerjean/filestash",
-  "github_stars": "13169",
-  "logo": "/icons/filestash.webp",
-  "description": "Filestash connects to cloud or FTP servers and exposes them through a user-friendly web UI. It supports WebDAV, S3, Git, Dropbox, and others with a single centralized UX. Aimed at developers and teams that need unified access.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-11",
+    "github_stars": 13173
+  },
+  "resources": {
+    "website": "https://www.filestash.app/",
+    "documentation": "https://github.com/mickael-kerjean/filestash",
+    "source_code": "https://github.com/mickael-kerjean/filestash",
+    "logo": "/icons/filestash.webp",
+    "issues": "https://github.com/mickael-kerjean/filestash/issues",
+    "releases": null
+  },
   "features": [
     "Universal Access: Connect to S3, FTP, WebDAV, Git, Dropbox, Unified web UI. One interface for all storage.",
     "Multi-Protocol: Support for many backends. Maximum flexibility.",
@@ -27,69 +35,45 @@
     "Mobile-Optimized: Works on all devices. Responsive design.",
     "Self-Hosted: Complete control. Privacy-focused."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

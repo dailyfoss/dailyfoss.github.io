@@ -1,20 +1,28 @@
 {
   "name": "scrutiny",
   "slug": "scrutiny",
+  "tagline": null,
+  "description": "Scrutiny is a self-hosted S.M.A.R.T. monitoring system for hard drives that includes dashboards, alerts, and analytics for drive health tracking.",
   "categories": [
     103
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/AnalogJ/scrutiny",
-  "website": "github.com/AnalogJ/scrutiny",
-  "source_code": "github.com/AnalogJ/scrutiny",
-  "github_stars": "6986",
-  "logo": "/icons/scrutiny.webp",
-  "description": "Scrutiny is a self-hosted S.M.A.R.T. monitoring system for hard drives that includes dashboards, alerts, and analytics for drive health tracking.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.8.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-04-08",
+    "date_last_commit": "2025-10-19",
+    "github_stars": 6988
+  },
+  "resources": {
+    "website": "https://github.com/AnalogJ/scrutiny",
+    "documentation": "https://github.com/AnalogJ/scrutiny",
+    "source_code": "https://github.com/AnalogJ/scrutiny",
+    "logo": "/icons/scrutiny.webp",
+    "issues": "https://github.com/AnalogJ/scrutiny/issues",
+    "releases": "https://github.com/AnalogJ/scrutiny/releases"
+  },
   "features": [
     "S.M.A.R.T. monitoring: Tracks hard drive health metrics using S.M.A.R.T. data from smartctl.",
     "Dashboard visualization: Displays drive health, temperature, and failure predictions in intuitive charts.",
@@ -29,69 +37,45 @@
     "Custom thresholds: Configure alert thresholds for specific S.M.A.R.T. attributes.",
     "Export reports: Generate health reports for documentation and warranty claims."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

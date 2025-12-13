@@ -1,20 +1,28 @@
 {
   "name": "dweebui",
   "slug": "dweebui",
+  "tagline": null,
+  "description": "DweebUI is a playful, customizable web dashboard for presenting information widgets, links, and status blocks. It’s designed for self-hosted homepages, homelabs, or personal start pages with a retro-inspired style.",
   "categories": [
     82
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/lllllllillllllillll/DweebUI",
-  "website": "www.dweebui.com/",
-  "source_code": "github.com/lllllllillllllillll/DweebUI",
-  "github_stars": "1037",
-  "logo": "/icons/dweebui.webp",
-  "description": "DweebUI is a playful, customizable web dashboard for presenting information widgets, links, and status blocks. It’s designed for self-hosted homepages, homelabs, or personal start pages with a retro-inspired style.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.60",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-06-09",
+    "date_last_commit": "2025-06-25",
+    "github_stars": 1037
+  },
+  "resources": {
+    "website": "https://www.dweebui.com/",
+    "documentation": "https://github.com/lllllllillllllillll/DweebUI",
+    "source_code": "https://github.com/lllllllillllllillll/DweebUI",
+    "logo": "/icons/dweebui.webp",
+    "issues": "https://github.com/lllllllillllllillll/DweebUI/issues",
+    "releases": "https://github.com/lllllllillllllillll/DweebUI/releases"
+  },
   "features": [
     "Retro Dashboard: Playful, retro-inspired interface design with customizable themes and nostalgic styling elements.",
     "Widget System: Create custom information widgets displaying system stats, weather, links, and personal content.",
@@ -29,69 +37,45 @@
     "Configuration Files: Simple JSON-based configuration for easy setup and version control integration.",
     "Privacy Focused: Self-hosted solution with no external tracking or data collection requirements."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "kontoj",
   "slug": "kontoj",
+  "tagline": "",
+  "description": "Kontoj is a self hosted accounting and finance management system focused on double entry bookkeeping. It allows recording transactions, accounts and various reports to support small business or personal finance workflows.",
   "categories": [
     5
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/galaksiotech/kontoj",
-  "website": "kontoj.galaksio.tech",
-  "source_code": "github.com/galaksiotech/kontoj",
-  "github_stars": "8",
-  "logo": "/icons/kontoj.webp",
-  "description": "Kontoj is a self hosted accounting and finance management system focused on double entry bookkeeping. It allows recording transactions, accounts and various reports to support small business or personal finance workflows.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v2.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-07-29",
+    "date_last_commit": "2024-07-29",
+    "github_stars": 8
+  },
+  "resources": {
+    "website": "https://kontoj.galaksio.tech",
+    "documentation": "https://kontoj.galaksio.tech",
+    "source_code": "https://github.com/galaksiotech/kontoj",
+    "logo": "/icons/kontoj.webp",
+    "issues": "https://github.com/galaksiotech/kontoj/issues",
+    "releases": "https://github.com/galaksiotech/kontoj/releases"
+  },
   "features": [
     "Double-Entry Bookkeeping: Accurate accounting with double-entry transaction recording. Professional financial records.",
     "Account Management: Chart of accounts with customizable account types and categories. Organize finances logically.",
@@ -29,69 +37,45 @@
     "Audit Trail: Complete history of all transactions and changes. Maintain accountability.",
     "Export Data: Export financial data to CSV, PDF, and other formats. Share with accountants or stakeholders."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

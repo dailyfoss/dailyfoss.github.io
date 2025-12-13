@@ -1,20 +1,28 @@
 {
   "name": "fittrackee",
   "slug": "fittrackee",
+  "tagline": null,
+  "description": "FitTrackee is an open-source sports tracker with a privacy-first approach. It supports GPX files, map views, stats, and calorie tracking for running, cycling, and hiking. Everything runs locally on your own server.",
   "categories": [
     75
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/SamR1/FitTrackee",
-  "website": "docs.fittrackee.org",
-  "source_code": "github.com/SamR1/FitTrackee",
-  "github_stars": "1019",
-  "logo": "/icons/fittrackee.webp",
-  "description": "FitTrackee is an open-source sports tracker with a privacy-first approach. It supports GPX files, map views, stats, and calorie tracking for running, cycling, and hiking. Everything runs locally on your own server.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v1.0.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-05",
+    "date_last_commit": "2025-12-10",
+    "github_stars": 1020
+  },
+  "resources": {
+    "website": "https://docs.fittrackee.org",
+    "documentation": "https://github.com/SamR1/FitTrackee",
+    "source_code": "https://github.com/SamR1/FitTrackee",
+    "logo": "/icons/fittrackee.webp",
+    "issues": "https://github.com/SamR1/FitTrackee/issues",
+    "releases": "https://github.com/SamR1/FitTrackee/releases"
+  },
   "features": [
     "Sports Tracking: Privacy-first activity tracker, GPX file support, Map views and stats. Self-hosted fitness monitoring.",
     "Activity Types: Running, cycling, hiking support. Multi-sport tracking.",
@@ -27,69 +35,45 @@
     "Export: Download GPX files. Data portability.",
     "Multi-User: Support multiple athletes. Family-friendly."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

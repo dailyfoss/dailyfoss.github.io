@@ -1,20 +1,28 @@
 {
   "name": "overseerr",
   "slug": "overseerr",
+  "tagline": null,
+  "description": "Overseerr is a user-friendly request management system built to interact with Radarr, Sonarr, and Plex. It lets users request content for download and automates approvals and metadata fetching.",
   "categories": [
     156
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/sct/overseerr",
-  "website": "overseerr.dev",
-  "source_code": "github.com/sct/overseerr",
-  "github_stars": "4910",
-  "logo": "/icons/overseerr.webp",
-  "description": "Overseerr is a user-friendly request management system built to interact with Radarr, Sonarr, and Plex. It lets users request content for download and automates approvals and metadata fetching.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v1.34.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-03-26",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 4913
+  },
+  "resources": {
+    "website": "https://overseerr.dev",
+    "documentation": "https://github.com/sct/overseerr",
+    "source_code": "https://github.com/sct/overseerr",
+    "logo": "/icons/overseerr.webp",
+    "issues": "https://github.com/sct/overseerr/issues",
+    "releases": "https://github.com/sct/overseerr/releases"
+  },
   "features": [
     "Content requests: Allow users to search and request movies or TV shows for addition to your media library.",
     "Radarr and Sonarr integration: Automatically send approved requests to download managers for processing and monitoring.",
@@ -25,69 +33,45 @@
     "Metadata display: Show movie posters, descriptions, ratings, and trailers from TMDB for informed request decisions.",
     "Request tracking: Monitor the status of pending, approved, and completed requests with detailed progress information."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "voxmedia-coral",
   "slug": "coral",
+  "tagline": null,
+  "description": "Talk by Coral Project is an open-source comment platform that enables publishers to manage comment sections with moderation, identity tools, plugins, and spam filtering. It’s easy to self-host and integrates well across platforms.",
   "categories": [
     30
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/coralproject/talk",
-  "website": "coralproject.net",
-  "source_code": "github.com/coralproject/talk",
-  "github_stars": "1964",
-  "logo": "/icons/coral.webp",
-  "description": "Talk by Coral Project is an open-source comment platform that enables publishers to manage comment sections with moderation, identity tools, plugins, and spam filtering. It’s easy to self-host and integrates well across platforms.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "v9.11.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-09",
+    "date_last_commit": "2025-12-10",
+    "github_stars": 1964
+  },
+  "resources": {
+    "website": "https://coralproject.net",
+    "documentation": "https://github.com/coralproject/talk",
+    "source_code": "https://github.com/coralproject/talk",
+    "logo": "/icons/coral.webp",
+    "issues": "https://github.com/coralproject/talk/issues",
+    "releases": "https://github.com/coralproject/talk/releases"
+  },
   "features": [
     "Comment Moderation: Powerful tools for managing community discussions. Keep conversations healthy.",
     "Spam Filtering: Automatic detection and blocking of spam comments. Clean comment sections.",
@@ -23,69 +31,45 @@
     "Publisher Tools: Designed for news sites and content platforms. Professional comment management.",
     "Self-Hosted: Own your community data and interactions. Complete control over discussions."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

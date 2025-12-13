@@ -1,20 +1,29 @@
 {
   "name": "runson",
   "slug": "runson",
+  "tagline": null,
+  "description": "Runs On is a self-hosted platform for running GitHub Actions runners on your own infrastructure, allowing full control over CI environments and secrets.",
   "categories": [
     165
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/runs-on/runs-on",
-  "website": "runs-on.com",
-  "source_code": "github.com/runs-on/runs-on",
-  "github_stars": "1078",
-  "logo": "/icons/runson.webp",
-  "description": "Runs On is a self-hosted platform for running GitHub Actions runners on your own infrastructure, allowing full control over CI environments and secrets.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v2.10.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-21",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 1078
+  },
+  "resources": {
+    "website": "https://runs-on.com",
+    "documentation": "https://github.com/runs-on/runs-on",
+    "source_code": "https://github.com/runs-on/runs-on",
+    "logo": "/icons/runson.webp",
+    "issues": "https://github.com/runs-on/runs-on/issues",
+    "releases": "https://github.com/runs-on/runs-on/releases",
+    "logo_light": "/icons/runson-light.webp"
+  },
   "features": [
     "Self-hosted runners: Run GitHub Actions workflows on your own infrastructure.",
     "Cost control: Avoid GitHub-hosted runner costs by using your own hardware.",
@@ -29,69 +38,45 @@
     "Compliance support: Meet regulatory requirements by keeping CI/CD on-premises.",
     "Dashboard interface: Monitor runner status and job execution through a web UI."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

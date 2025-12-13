@@ -1,20 +1,29 @@
 {
   "name": "clipcascade",
   "slug": "clipcascade",
+  "tagline": null,
+  "description": "ClipCascade is a self-hosted image uploader with link sharing and gallery features. It's designed to simplify uploading to cloud storage while maintaining full privacy and control, ideal for personal use.",
   "categories": [
     132
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Sathvik-Rao/ClipCascade",
-  "website": "clipcascade.sathvik.dev",
-  "source_code": "github.com/Sathvik-Rao/ClipCascade",
-  "github_stars": "1254",
-  "logo": "/icons/clipcascade.webp",
-  "description": "ClipCascade is a self-hosted image uploader with link sharing and gallery features. It's designed to simplify uploading to cloud storage while maintaining full privacy and control, ideal for personal use.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "3.1.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-08-07",
+    "date_last_commit": "2025-10-25",
+    "github_stars": 1264
+  },
+  "resources": {
+    "website": "https://clipcascade.sathvik.dev",
+    "documentation": "https://github.com/Sathvik-Rao/ClipCascade",
+    "source_code": "https://github.com/Sathvik-Rao/ClipCascade",
+    "logo": "/icons/clipcascade.webp",
+    "issues": "https://github.com/Sathvik-Rao/ClipCascade/issues",
+    "releases": "https://github.com/Sathvik-Rao/ClipCascade/releases",
+    "logo_light": "/icons/clipcascade-light.webp"
+  },
   "features": [
     "Image Uploader: Simple, private image upload service. Easy sharing.",
     "Link Sharing: Generate shareable links for uploads. Quick distribution.",
@@ -24,69 +33,45 @@
     "Cross-Platform: Apps for desktop, mobile, and web. Upload anywhere.",
     "Personal Use: Designed for individual file sharing. Simple solution."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": true,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": true,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

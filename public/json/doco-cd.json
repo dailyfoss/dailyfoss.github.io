@@ -1,20 +1,28 @@
 {
   "name": "doco-cd",
   "slug": "doco-cd",
+  "tagline": null,
+  "description": "Doco-CD is a lightweight continuous deployment helper for containerized apps. It focuses on simple configuration and automating rollouts with minimal infrastructure, ideal for small projects wanting Git-ops style deployments without heavy tooling.",
   "categories": [
     146
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/kimdre/doco-cd",
-  "website": "github.com/kimdre/doco-cd",
-  "source_code": "github.com/kimdre/doco-cd",
-  "github_stars": "979",
-  "logo": "/icons/doco-cd.webp",
-  "description": "Doco-CD is a lightweight continuous deployment helper for containerized apps. It focuses on simple configuration and automating rollouts with minimal infrastructure, ideal for small projects wanting Git-ops style deployments without heavy tooling.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v0.54.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-07",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 982
+  },
+  "resources": {
+    "website": "https://github.com/kimdre/doco-cd",
+    "documentation": "https://github.com/kimdre/doco-cd",
+    "source_code": "https://github.com/kimdre/doco-cd",
+    "logo": "/icons/doco-cd.webp",
+    "issues": "https://github.com/kimdre/doco-cd/issues",
+    "releases": "https://github.com/kimdre/doco-cd/releases"
+  },
   "features": [
     "Git-based deployments: Trigger container updates automatically when pushing to configured repository branches.",
     "Docker Compose support: Deploy multi-container applications using familiar compose file syntax and orchestration.",
@@ -25,69 +33,45 @@
     "Deployment logs: Track build output and container startup messages to diagnose issues during rollout.",
     "Secret handling: Inject environment variables and credentials securely without storing them in repository files."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

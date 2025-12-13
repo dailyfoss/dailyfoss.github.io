@@ -14,22 +14,6 @@ const defaultLogo = "/default-logo_dark.png"; // Fallback logo path
 const MAX_DESCRIPTION_LENGTH = 100; // Set max length for description
 const MAX_LOGOS = 5; // Max logos to display at once
 
-function formattedBadge(type: string) {
-  switch (type) {
-    case "vm":
-      return <Badge className="text-blue-500/75 border-blue-500/75 badge">VM</Badge>;
-    case "ct":
-      return <Badge className="text-yellow-500/75 border-yellow-500/75 badge">LXC</Badge>;
-    case "pve":
-      return <Badge className="text-orange-500/75 border-orange-500/75 badge">PVE</Badge>;
-    case "addon":
-      return <Badge className="text-green-500/75 border-green-500/75 badge">ADDON</Badge>;
-    case "dc":
-      return <Badge className="text-green-500/75 border-green-500/75 badge">Docker Compose</Badge>;
-  }
-  return null;
-}
-
 function CategoryView() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [selectedCategoryIndex, setSelectedCategoryIndex] = useState<number | null>(null);
@@ -209,7 +193,7 @@ function CategoryView() {
                         {script.name}
                       </h3>
                       <img
-                        src={script.logo || defaultLogo}
+                        src={script.resources?.logo || defaultLogo}
                         alt={script.name || "Script logo"}
                         loading="lazy"
                         className="h-12 w-12 object-contain mx-auto"
@@ -217,7 +201,7 @@ function CategoryView() {
                       <p className="text-sm text-gray-500 text-center">
                         <b>Created at:</b>
                         {" "}
-                        {script.date_created || "No date available"}
+                        {script.date_app_added || "No date available"}
                       </p>
                       <p
                         className="text-sm text-gray-700 hover:text-gray-900 text-center transition-colors duration-300"
@@ -282,7 +266,7 @@ function CategoryView() {
                           .map((script, i) => (
                             <div key={i} className="flex flex-col items-center">
                               <img
-                                src={script.logo || defaultLogo}
+                                src={script.resources?.logo || defaultLogo}
                                 alt={script.name || "Script logo"}
                                 title={script.name}
                                 loading="lazy"
@@ -292,7 +276,6 @@ function CategoryView() {
                                   handleScriptClick(script.slug);
                                 }}
                               />
-                              {formattedBadge(script.type)}
                             </div>
                           ))}
                       <Button

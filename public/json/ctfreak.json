@@ -1,20 +1,28 @@
 {
   "name": "ctfreak",
   "slug": "ctfreak",
+  "tagline": "",
+  "description": "CTFreak is a self-hosted Task Scheduler and automation platform featuring a clean web UI for running scripts, automating tasks, and building scheduled pipelines without relying on cron or external services. Ideal for developers and teams.",
   "categories": [
     "Tidak ditemukan"
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "ctfreak.com/",
-  "website": "ctfreak.com/",
-  "source_code": "ctfreak.com/",
-  "github_stars": null,
-  "logo": "/icons/ctfreak.webp",
-  "description": "CTFreak is a self-hosted Task Scheduler and automation platform featuring a clean web UI for running scripts, automating tasks, and building scheduled pipelines without relying on cron or external services. Ideal for developers and teams.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": null,
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": null,
+    "github_stars": null
+  },
+  "resources": {
+    "website": null,
+    "documentation": null,
+    "source_code": "https://ctfreak.com/",
+    "logo": "/icons/ctfreak.webp",
+    "issues": null,
+    "releases": null
+  },
   "features": [
     "Task Automation: Schedule and run scripts without cron complexity. Simplified workflow management.",
     "Clean Web UI: Intuitive interface for managing all tasks. No command-line needed.",
@@ -23,69 +31,45 @@
     "Developer Friendly: Built for technical teams and automation. Speaks your language.",
     "Self-Hosted: Complete control over your automation platform. Your tasks, your server."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "prowlarr",
   "slug": "prowlarr",
+  "tagline": null,
+  "description": "Prowlarr is a self-hosted indexer manager for Usenet and torrent indexers. It integrates with Radarr, Sonarr, and Lidarr for managing indexer sources and fetching metadata via a unified UI.",
   "categories": [
     166
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Prowlarr/Prowlarr",
-  "website": "prowlarr.com",
-  "source_code": "github.com/Prowlarr/Prowlarr",
-  "github_stars": "5616",
-  "logo": "/icons/prowlarr.webp",
-  "description": "Prowlarr is a self-hosted indexer manager for Usenet and torrent indexers. It integrates with Radarr, Sonarr, and Lidarr for managing indexer sources and fetching metadata via a unified UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v2.3.0.5236",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-16",
+    "date_last_commit": "2025-11-16",
+    "github_stars": 5622
+  },
+  "resources": {
+    "website": "https://prowlarr.com",
+    "documentation": "https://github.com/Prowlarr/Prowlarr",
+    "source_code": "https://github.com/Prowlarr/Prowlarr",
+    "logo": "/icons/prowlarr.webp",
+    "issues": "https://github.com/Prowlarr/Prowlarr/issues",
+    "releases": "https://github.com/Prowlarr/Prowlarr/releases"
+  },
   "features": [
     "Indexer management: Centrally manage Usenet and torrent indexers for all your *arr applications.",
     "Automatic sync: Synchronize indexer configurations across Radarr, Sonarr, Lidarr, and Readarr automatically.",
@@ -29,69 +37,45 @@
     "History tracking: View search history and indexer usage across all connected applications.",
     "Flaresolverr support: Bypass Cloudflare protection on indexers using Flaresolverr integration."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

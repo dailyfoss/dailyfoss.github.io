@@ -1,20 +1,29 @@
 {
   "name": "minio",
   "slug": "minio",
+  "tagline": null,
+  "description": "MinIO is a high-performance, self-hosted object storage solution compatible with the S3 API. It's ideal for cloud-native apps, providing scalable, distributed storage with client libraries and a web UI.",
   "categories": [
     113
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/minio/minio",
-  "website": "min.io/download?license=agpl&platform=linux",
-  "source_code": "github.com/minio/minio",
-  "github_stars": "59182",
-  "logo": "/icons/minio.webp",
-  "description": "MinIO is a high-performance, self-hosted object storage solution compatible with the S3 API. It's ideal for cloud-native apps, providing scalable, distributed storage with client libraries and a web UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "RELEASE.2025-10-15T17-29-55Z",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-16",
+    "date_last_commit": "2025-12-03",
+    "github_stars": 59187
+  },
+  "resources": {
+    "website": "https://min.io/download?license=agpl&platform=linux",
+    "documentation": "https://github.com/minio/minio",
+    "source_code": "https://github.com/minio/minio",
+    "logo": "/icons/minio.webp",
+    "issues": "https://github.com/minio/minio/issues",
+    "releases": "https://github.com/minio/minio/releases",
+    "logo_light": "/icons/minio-light.webp"
+  },
   "features": [
     "Analytics Dashboard: Visual metrics and usage statistics with customizable charts to track performance and user engagement.",
     "Mobile Optimization: Responsive design with touch-friendly interfaces and offline sync capabilities for seamless mobile access.",
@@ -22,69 +31,45 @@
     "Theme Customization: Multiple UI themes and layout options with custom branding support to match organizational identity.",
     "Backup Automation: Scheduled backups with encryption and cloud storage integration to ensure data protection and disaster recovery."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": true,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

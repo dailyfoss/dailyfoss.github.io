@@ -1,20 +1,28 @@
 {
   "name": "tamari",
   "slug": "tamari",
+  "tagline": "",
+  "description": "Tamari is a self-hosted habit and routine tracker with streaks, reminders, and goal management. It provides a clean, mobile-friendly dashboard for daily tracking.",
   "categories": [
     34
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/alexbates/Tamari",
-  "website": "tamariapp.com",
-  "source_code": "github.com/alexbates/Tamari",
-  "github_stars": "105",
-  "logo": "/icons/tamari.webp",
-  "description": "Tamari is a self-hosted habit and routine tracker with streaks, reminders, and goal management. It provides a clean, mobile-friendly dashboard for daily tracking.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v1.4",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-02",
+    "date_last_commit": "2025-11-25",
+    "github_stars": 105
+  },
+  "resources": {
+    "website": "https://tamariapp.com",
+    "documentation": "https://tamariapp.com",
+    "source_code": "https://github.com/alexbates/Tamari",
+    "logo": "/icons/tamari.webp",
+    "issues": "https://github.com/alexbates/Tamari/issues",
+    "releases": "https://github.com/alexbates/Tamari/releases"
+  },
   "features": [
     "Habit tracking: Build and maintain daily habits with visual streak counters to stay motivated and consistent.",
     "Routine management: Organize morning, evening, or custom routines with flexible scheduling and completion tracking.",
@@ -29,69 +37,45 @@
     "Historical data: Access complete history of all habits and routines to see long-term patterns and growth.",
     "Flexible scheduling: Set habits for specific days, frequencies, or custom intervals that match your lifestyle."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

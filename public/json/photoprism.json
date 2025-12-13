@@ -1,20 +1,28 @@
 {
   "name": "photoprism",
   "slug": "photoprism",
+  "tagline": null,
+  "description": "PhotoPrism is a self-hosted AI-powered photo organizer that automatically tags and indexes images using machine learning. It supports RAW formats, browsing, search, and has a polished UI for photographers.",
   "categories": [
     120
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/photoprism/photoprism",
-  "website": "www.photoprism.app",
-  "source_code": "github.com/photoprism/photoprism",
-  "github_stars": "38918",
-  "logo": "/icons/photoprism.webp",
-  "description": "PhotoPrism is a self-hosted AI-powered photo organizer that automatically tags and indexes images using machine learning. It supports RAW formats, browsing, search, and has a polished UI for photographers.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "251130-b3068414c",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-01",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 38926
+  },
+  "resources": {
+    "website": "https://www.photoprism.app",
+    "documentation": "https://github.com/photoprism/photoprism",
+    "source_code": "https://github.com/photoprism/photoprism",
+    "logo": "/icons/photoprism.webp",
+    "issues": "https://github.com/photoprism/photoprism/issues",
+    "releases": "https://github.com/photoprism/photoprism/releases"
+  },
   "features": [
     "AI-powered tagging: Automatically classify and tag photos using machine learning for objects, scenes, and faces.",
     "RAW format support: Process and display RAW files from professional cameras with embedded preview generation.",
@@ -29,69 +37,45 @@
     "Metadata editing: Modify EXIF data, titles, descriptions, and tags directly in the interface.",
     "Import automation: Automatically organize and index new photos added to watched directories."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

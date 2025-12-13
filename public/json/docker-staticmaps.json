@@ -1,20 +1,28 @@
 {
   "name": "docker-staticmaps",
   "slug": "docker-staticmaps",
+  "tagline": null,
+  "description": "Docker Static Maps is a simple system for hosting static maps and tile images for web apps, without relying on external services. Useful for mapping features in web and embedded applications.",
   "categories": [
     96
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/dietrichmax/docker-staticmaps",
-  "website": "github.com/dietrichmax/docker-staticmaps",
-  "source_code": "github.com/dietrichmax/docker-staticmaps",
-  "github_stars": "106",
-  "logo": "/icons/docker-staticmaps.webp",
-  "description": "Docker Static Maps is a simple system for hosting static maps and tile images for web apps, without relying on external services. Useful for mapping features in web and embedded applications.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v0.8.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-03",
+    "date_last_commit": "2025-12-04",
+    "github_stars": 106
+  },
+  "resources": {
+    "website": "https://github.com/dietrichmax/docker-staticmaps",
+    "documentation": "https://github.com/dietrichmax/docker-staticmaps",
+    "source_code": "https://github.com/dietrichmax/docker-staticmaps",
+    "logo": "/icons/docker-staticmaps.webp",
+    "issues": "https://github.com/dietrichmax/docker-staticmaps/issues",
+    "releases": "https://github.com/dietrichmax/docker-staticmaps/releases"
+  },
   "features": [
     "Static Map Hosting: Serve map tiles without external dependencies. Complete independence.",
     "Offline Capability: Maps work without internet connection. Reliable availability.",
@@ -23,69 +31,45 @@
     "Tile Server: Host your own map tile infrastructure. Full control over maps.",
     "Self-Hosted: Keep map data and requests private. No tracking or limits."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

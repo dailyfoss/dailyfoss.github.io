@@ -1,20 +1,28 @@
 {
   "name": "music-assistant",
   "slug": "music-assistant",
+  "tagline": null,
+  "description": "Music Assistant is a self-hosted music management and streaming platform that integrates with Home Assistant. It pulls media from services like Spotify or local libraries into structured playlists and collections.",
   "categories": [
     100
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/music-assistant/server",
-  "website": "music-assistant.io",
-  "source_code": "github.com/music-assistant/server",
-  "github_stars": "1059",
-  "logo": "/icons/music-assistant.webp",
-  "description": "Music Assistant is a self-hosted music management and streaming platform that integrates with Home Assistant. It pulls media from services like Spotify or local libraries into structured playlists and collections.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "2.6.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-14",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 1060
+  },
+  "resources": {
+    "website": "https://music-assistant.io",
+    "documentation": "https://github.com/music-assistant/server",
+    "source_code": "https://github.com/music-assistant/server",
+    "logo": "/icons/music-assistant.webp",
+    "issues": "https://github.com/music-assistant/server/issues",
+    "releases": "https://github.com/music-assistant/server/releases"
+  },
   "features": [
     "Multi-source integration: Aggregate music from Spotify, local files, and streaming services into a unified library.",
     "Home Assistant integration: Control playback on smart speakers and devices through Home Assistant automations.",
@@ -25,69 +33,45 @@
     "Player support: Stream to Chromecast, Sonos, AirPlay, and other network audio devices from one interface.",
     "Offline playback: Cache music locally for playback without internet connection or streaming service availability."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

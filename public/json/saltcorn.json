@@ -1,20 +1,28 @@
 {
   "name": "saltcorn",
   "slug": "saltcorn",
+  "tagline": null,
+  "description": "Saltcorn is a self-hosted no-code platform for building database-backed apps with visual builders. It includes roles, permissions, plugins, and a powerful UI for custom apps.",
   "categories": [
     110
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/saltcorn/saltcorn",
-  "website": "saltcorn.com/",
-  "source_code": "github.com/saltcorn/saltcorn",
-  "github_stars": "1969",
-  "logo": "/icons/saltcorn.webp",
-  "description": "Saltcorn is a self-hosted no-code platform for building database-backed apps with visual builders. It includes roles, permissions, plugins, and a powerful UI for custom apps.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-12",
+    "github_stars": 1969
+  },
+  "resources": {
+    "website": "https://saltcorn.com/",
+    "documentation": "https://github.com/saltcorn/saltcorn",
+    "source_code": "https://github.com/saltcorn/saltcorn",
+    "logo": "/icons/saltcorn.webp",
+    "issues": "https://github.com/saltcorn/saltcorn/issues",
+    "releases": null
+  },
   "features": [
     "No-code builder: Create database-driven applications using visual builders without writing code.",
     "Database management: Design tables, relationships, and schemas through an intuitive interface.",
@@ -29,69 +37,45 @@
     "File uploads: Handle file attachments with configurable storage and access controls.",
     "Theming support: Customize appearance with themes and CSS overrides for branding."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

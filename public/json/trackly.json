@@ -1,20 +1,28 @@
 {
   "name": "trackly",
   "slug": "trackly",
+  "tagline": "",
+  "description": "Trackly is a self-hosted service for tracking habits or metrics over time. It records entries and renders charts and summaries to help visualize personal progress.",
   "categories": [
     75
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/7eventy7/trackly",
-  "website": "github.com/7eventy7/trackly",
-  "source_code": "github.com/7eventy7/trackly",
-  "github_stars": "59",
-  "logo": "/icons/trackly.webp",
-  "description": "Trackly is a self-hosted service for tracking habits or metrics over time. It records entries and renders charts and summaries to help visualize personal progress.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v1.1.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-11-16",
+    "date_last_commit": "2025-12-02",
+    "github_stars": 59
+  },
+  "resources": {
+    "website": null,
+    "documentation": null,
+    "source_code": "https://github.com/7eventy7/trackly",
+    "logo": "/icons/trackly.webp",
+    "issues": "https://github.com/7eventy7/trackly/issues",
+    "releases": "https://github.com/7eventy7/trackly/releases"
+  },
   "features": [
     "Habit tracking: Record daily habits and metrics to build consistency and monitor progress over time.",
     "Metric logging: Track quantifiable metrics like weight, mood, or custom measurements with flexible data types.",
@@ -29,69 +37,45 @@
     "Mobile-friendly: Log entries from mobile devices with a responsive interface.",
     "Export data: Export tracking data for backup or analysis in external tools."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

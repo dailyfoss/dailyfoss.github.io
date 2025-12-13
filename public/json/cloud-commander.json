@@ -1,20 +1,28 @@
 {
   "name": "cloud-commander",
   "slug": "cloud-commander",
+  "tagline": "",
+  "description": "CloudCMD is a file manager for browsers with a built-in text editor and terminal, providing easy access to local or remote files via SSH. It’s self-hostable and great for managing servers and development environments.",
   "categories": [
     60
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/coderaiser/cloudcmd",
-  "website": "cloudcmd.io",
-  "source_code": "github.com/coderaiser/cloudcmd",
-  "github_stars": "1970",
-  "logo": "/icons/cloud-commander.webp",
-  "description": "CloudCMD is a file manager for browsers with a built-in text editor and terminal, providing easy access to local or remote files via SSH. It’s self-hostable and great for managing servers and development environments.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v19.0.16",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-05",
+    "date_last_commit": "2025-12-05",
+    "github_stars": 1971
+  },
+  "resources": {
+    "website": "https://cloudcmd.io",
+    "documentation": "https://cloudcmd.io",
+    "source_code": "https://github.com/coderaiser/cloudcmd",
+    "logo": "/icons/cloud-commander.webp",
+    "issues": "https://github.com/coderaiser/cloudcmd/issues",
+    "releases": "https://github.com/coderaiser/cloudcmd/releases"
+  },
   "features": [
     "Browser File Manager: Manage files through web browser. No desktop needed.",
     "Built-in Editor: Text editor for code and configuration files. Edit anywhere.",
@@ -24,69 +32,45 @@
     "Self-Hosted: Run your own file manager. Complete privacy.",
     "Developer-Friendly: Built for developers and sysadmins. Power user features."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

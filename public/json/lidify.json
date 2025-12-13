@@ -1,20 +1,28 @@
 {
   "name": "lidify",
   "slug": "lidify",
+  "tagline": null,
+  "description": "Lidify is a self-hosted LightFM-based recommender service for media or user-content platforms. It helps generate personalized suggestions based on user behavior and historical data within privacy-controlled environments.",
   "categories": [
     105
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/TheWicklowWolf/Lidify",
-  "website": "github.com/TheWicklowWolf/Lidify",
-  "source_code": "github.com/TheWicklowWolf/Lidify",
-  "github_stars": "444",
-  "logo": "/icons/lidify.webp",
-  "description": "Lidify is a self-hosted LightFM-based recommender service for media or user-content platforms. It helps generate personalized suggestions based on user behavior and historical data within privacy-controlled environments.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.2.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-02-14",
+    "date_last_commit": "2025-10-14",
+    "github_stars": 445
+  },
+  "resources": {
+    "website": "https://github.com/TheWicklowWolf/Lidify",
+    "documentation": "https://github.com/TheWicklowWolf/Lidify",
+    "source_code": "https://github.com/TheWicklowWolf/Lidify",
+    "logo": "/icons/lidify.webp",
+    "issues": "https://github.com/TheWicklowWolf/Lidify/issues",
+    "releases": "https://github.com/TheWicklowWolf/Lidify/releases"
+  },
   "features": [
     "Recommendation Engine: LightFM-based suggestions, User behavior analysis, Personalized content. Generate smart recommendations.",
     "Privacy-Controlled: Self-hosted, No external tracking, Local processing. Keep user data private.",
@@ -25,69 +33,45 @@
     "API Integration: RESTful endpoints, Easy integration, Custom implementations. Connect to any platform.",
     "Performance Optimization: Fast inference, Scalable architecture, Efficient processing. Handle large catalogs."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "invoiceplane",
   "slug": "invoiceplane",
+  "tagline": null,
+  "description": "InvoicePlane is a classic self hosted invoicing and billing application. It lets businesses create quotes, invoices, recurring bills and track payments with a straightforward web interface and customizable templates.",
   "categories": [
     5
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/InvoicePlane/InvoicePlane",
-  "website": "www.invoiceplane.com",
-  "source_code": "github.com/InvoicePlane/InvoicePlane",
-  "github_stars": "2890",
-  "logo": "/icons/invoiceplane.webp",
-  "description": "InvoicePlane is a classic self hosted invoicing and billing application. It lets businesses create quotes, invoices, recurring bills and track payments with a straightforward web interface and customizable templates.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "v1.6.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-08-05",
+    "date_last_commit": "2025-12-04",
+    "github_stars": 2890
+  },
+  "resources": {
+    "website": "https://www.invoiceplane.com",
+    "documentation": "https://github.com/InvoicePlane/InvoicePlane",
+    "source_code": "https://github.com/InvoicePlane/InvoicePlane",
+    "logo": "/icons/invoiceplane.webp",
+    "issues": "https://github.com/InvoicePlane/InvoicePlane/issues",
+    "releases": "https://github.com/InvoicePlane/InvoicePlane/releases"
+  },
   "features": [
     "Invoice Creation: Generate professional invoices with customizable templates.",
     "Quote Management: Create and send quotes that can be converted to invoices.",
@@ -25,69 +33,45 @@
     "PDF Generation: Export invoices and quotes as PDF documents.",
     "Multi-Currency: Support international clients with multiple currency options."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

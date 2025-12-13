@@ -133,20 +133,13 @@ function ScriptContent() {
   }, []);
 
   const matchesFilters = (script: Script): boolean => {
-    if (!script.install_methods || script.install_methods.length === 0) {
-      return filters.platforms.size === 0
-        && filters.deployments.size === 0
-        && filters.hosting.size === 0
-        && filters.ui.size === 0;
-    }
+    const platform = script.platform_support;
+    const hosting = script.hosting_options;
+    const deployment = script.deployment_methods;
+    const ui = script.interfaces;
 
-    const method = script.install_methods[0];
-    const platform = method?.platform;
-    const hosting = method?.hosting;
-    const deployment = method?.deployment;
-    const ui = method?.ui;
-
-    if (!method) {
+    // If no metadata at all, only match if no filters are active
+    if (!platform && !hosting && !deployment && !ui) {
       return filters.platforms.size === 0
         && filters.deployments.size === 0
         && filters.hosting.size === 0
@@ -220,8 +213,7 @@ function ScriptContent() {
       // Check quick filter
       let matchesQuickFilter = true;
       if (quickFilter) {
-        const method = script.install_methods?.[0];
-        const platform = method?.platform;
+        const platform = script.platform_support;
         switch (quickFilter) {
           case "desktop":
             matchesQuickFilter = !!(platform?.desktop?.linux || platform?.desktop?.windows || platform?.desktop?.macos);

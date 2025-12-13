@@ -1,20 +1,28 @@
 {
   "name": "stash",
   "slug": "stash",
+  "tagline": null,
+  "description": "Stash is a self-hosted media manager for adult content, providing tagging, scene detection, scrapers, and a modern web interface to organize large libraries.",
   "categories": [
     127
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/stashapp/stash",
-  "website": "stashapp.cc/",
-  "source_code": "github.com/stashapp/stash",
-  "github_stars": "11397",
-  "logo": "/icons/stash.webp",
-  "description": "Stash is a self-hosted media manager for adult content, providing tagging, scene detection, scrapers, and a modern web interface to organize large libraries.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v0.29.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-06",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 11401
+  },
+  "resources": {
+    "website": "https://stashapp.cc/",
+    "documentation": "https://github.com/stashapp/stash",
+    "source_code": "https://github.com/stashapp/stash",
+    "logo": "/icons/stash.webp",
+    "issues": "https://github.com/stashapp/stash/issues",
+    "releases": "https://github.com/stashapp/stash/releases"
+  },
   "features": [
     "Media library: Organizes and catalogs adult video collections with metadata.",
     "Scene detection: Automatically detects and splits videos into individual scenes.",
@@ -29,69 +37,45 @@
     "Advanced search: Filters content by performers, tags, studios, and custom criteria.",
     "Statistics: Displays library statistics and viewing history analytics."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

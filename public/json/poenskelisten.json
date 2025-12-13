@@ -1,20 +1,28 @@
 {
   "name": "poenskelisten",
   "slug": "poenskelisten",
+  "tagline": "",
+  "description": "Poenskelisten is a simple self-hosted wishlist app for organizing and sharing gift ideas with others. It includes sorting, sharing links, and a minimal UI for personal use.",
   "categories": [
     194
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/aunefyren/poenskelisten",
-  "website": "github.com/aunefyren/poenskelisten",
-  "source_code": "github.com/aunefyren/poenskelisten",
-  "github_stars": "173",
-  "logo": "/icons/poenskelisten.webp",
-  "description": "Poenskelisten is a simple self-hosted wishlist app for organizing and sharing gift ideas with others. It includes sorting, sharing links, and a minimal UI for personal use.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v2.2.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-05",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 173
+  },
+  "resources": {
+    "website": null,
+    "documentation": null,
+    "source_code": "https://github.com/aunefyren/poenskelisten",
+    "logo": "/icons/poenskelisten.webp",
+    "issues": "https://github.com/aunefyren/poenskelisten/issues",
+    "releases": "https://github.com/aunefyren/poenskelisten/releases"
+  },
   "features": [
     "Wishlist creation: Create and manage personal wishlists for gifts and desired items.",
     "Item details: Add product names, descriptions, links, and prices to wishlist items.",
@@ -29,69 +37,45 @@
     "Notes and comments: Add personal notes or let others leave comments on items.",
     "Mobile responsive: Access and manage wishlists from any device with optimized interface."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

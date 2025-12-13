@@ -1,20 +1,28 @@
 {
   "name": "caddymanager",
   "slug": "caddymanager",
+  "tagline": null,
+  "description": "CaddyManager is a GUI-based dashboard for managing Caddy web servers. It visualizes configurations, enables site deployment, SSL settings, and reverse proxy control through a friendly interface without editing plain configs.",
   "categories": [
     34
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/caddymanager/caddymanager",
-  "website": "github.com/caddymanager/caddymanager",
-  "source_code": "github.com/caddymanager/caddymanager",
-  "github_stars": "768",
-  "logo": "/icons/caddymanager.webp",
-  "description": "CaddyManager is a GUI-based dashboard for managing Caddy web servers. It visualizes configurations, enables site deployment, SSL settings, and reverse proxy control through a friendly interface without editing plain configs.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "0.0.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-07",
+    "date_last_commit": "2025-11-23",
+    "github_stars": 769
+  },
+  "resources": {
+    "website": "https://github.com/caddymanager/caddymanager",
+    "documentation": "https://github.com/caddymanager/caddymanager",
+    "source_code": "https://github.com/caddymanager/caddymanager",
+    "logo": "/icons/caddymanager.webp",
+    "issues": "https://github.com/caddymanager/caddymanager/issues",
+    "releases": "https://github.com/caddymanager/caddymanager/releases"
+  },
   "features": [
     "GUI Management: Visual dashboard for Caddy server configuration. No config files needed.",
     "Site Deployment: Deploy websites through friendly interface. Point and click.",
@@ -23,69 +31,45 @@
     "Configuration Visualization: See your Caddy setup at a glance. Clear overview.",
     "User-Friendly: Manage Caddy without command line expertise. Accessible to all."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

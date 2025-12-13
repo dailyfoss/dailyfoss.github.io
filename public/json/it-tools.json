@@ -1,20 +1,28 @@
 {
   "name": "it-tools",
   "slug": "it-tools",
+  "tagline": null,
+  "description": "IT Tools is a collection of handy web tools for developers and system administrators, such as encoders, hashers, JWT decoders and network utilities. It can be self hosted as an all in one Swiss army knife for everyday tasks.",
   "categories": [
     165
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/CorentinTh/it-tools",
-  "website": "it-tools.tech",
-  "source_code": "github.com/CorentinTh/it-tools",
-  "github_stars": "35337",
-  "logo": "/icons/it-tools.webp",
-  "description": "IT Tools is a collection of handy web tools for developers and system administrators, such as encoders, hashers, JWT decoders and network utilities. It can be self hosted as an all in one Swiss army knife for everyday tasks.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v2024.10.22-7ca5933",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-10-22",
+    "date_last_commit": "2025-12-03",
+    "github_stars": 35361
+  },
+  "resources": {
+    "website": "https://it-tools.tech",
+    "documentation": "https://github.com/CorentinTh/it-tools",
+    "source_code": "https://github.com/CorentinTh/it-tools",
+    "logo": "/icons/it-tools.webp",
+    "issues": "https://github.com/CorentinTh/it-tools/issues",
+    "releases": "https://github.com/CorentinTh/it-tools/releases"
+  },
   "features": [
     "Encoding Tools: Base64, URL, HTML encoding and decoding utilities.",
     "Hash Generators: MD5, SHA, and other cryptographic hash functions.",
@@ -25,69 +33,45 @@
     "UUID Generator: Create UUIDs and other unique identifiers.",
     "All-in-One: 80+ tools in a single, self-hosted web application."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

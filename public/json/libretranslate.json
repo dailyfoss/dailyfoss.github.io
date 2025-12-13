@@ -1,89 +1,73 @@
 {
   "name": "libretranslate",
   "slug": "libretranslate",
+  "tagline": null,
+  "description": "LibreTranslate is a self-hosted, free machine translation API and web UI. It supports multiple languages, integrates models like Argos, and can run entirely locally, offering a privacy-friendly alternative to cloud translation APIs.",
   "categories": [
     88
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/LibreTranslate/LibreTranslate",
-  "website": "libretranslate.com",
-  "source_code": "github.com/LibreTranslate/LibreTranslate",
-  "github_stars": "13277",
-  "logo": "/icons/libretranslate.webp",
-  "description": "LibreTranslate is a self-hosted, free machine translation API and web UI. It supports multiple languages, integrates models like Argos, and can run entirely locally, offering a privacy-friendly alternative to cloud translation APIs.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v1.8.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-04",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 13284
+  },
+  "resources": {
+    "website": "https://libretranslate.com",
+    "documentation": "https://github.com/LibreTranslate/LibreTranslate",
+    "source_code": "https://github.com/LibreTranslate/LibreTranslate",
+    "logo": "/icons/libretranslate.webp",
+    "issues": "https://github.com/LibreTranslate/LibreTranslate/issues",
+    "releases": "https://github.com/LibreTranslate/LibreTranslate/releases"
+  },
   "features": [
     "Machine Translation: Multi-language support, Neural models, High accuracy. Translate text privately.",
     "API & Web UI: RESTful API, Web interface, Easy integration. Use via browser or programmatically.",
     "Offline Capable: Run locally, No cloud dependency, Privacy-first. Translate without sending data externally.",
     "Open Models: Argos Translate, Custom models, Community-driven. Free and open-source translation."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": true,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

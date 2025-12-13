@@ -1,20 +1,28 @@
 {
   "name": "hymnoscribe",
   "slug": "hymnoscribe",
+  "tagline": "",
+  "description": "HymnoScribe is a hymn and song management application for churches or music leaders. It organizes lyrics, chords and sets, and provides a web interface for planning services and exporting or displaying song sheets.",
   "categories": [
     196
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Revisor01/HymnoScribe",
-  "website": "hymnoscribe.de",
-  "source_code": "github.com/Revisor01/HymnoScribe",
-  "github_stars": "6",
-  "logo": "/icons/hymnoscribe.webp",
-  "description": "HymnoScribe is a hymn and song management application for churches or music leaders. It organizes lyrics, chords and sets, and provides a web interface for planning services and exporting or displaying song sheets.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "1.4.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-08-08",
+    "date_last_commit": "2025-07-26",
+    "github_stars": 6
+  },
+  "resources": {
+    "website": "https://hymnoscribe.de",
+    "documentation": "https://hymnoscribe.de",
+    "source_code": "https://github.com/Revisor01/HymnoScribe",
+    "logo": "/icons/hymnoscribe.webp",
+    "issues": "https://github.com/Revisor01/HymnoScribe/issues",
+    "releases": "https://github.com/Revisor01/HymnoScribe/releases"
+  },
   "features": [
     "Song Library: Organize hymns and worship songs with lyrics, chords, and metadata.",
     "Chord Charts: Display and edit chord progressions for musicians and worship teams.",
@@ -25,69 +33,45 @@
     "Search Functionality: Find songs quickly by title, lyrics, or theme.",
     "Team Collaboration: Share setlists and song arrangements with worship team members."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

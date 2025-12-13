@@ -1,20 +1,28 @@
 {
   "name": "node-red",
   "slug": "node-red",
+  "tagline": null,
+  "description": "Node-RED is a flow-based programming tool used for wiring IoT devices and APIs together visually. It offers a browser editor and can be deployed self-hosted to automate workflows, events, and integrations.",
   "categories": [
     16
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/node-red/node-red",
-  "website": "http://nodered.org",
-  "source_code": "github.com/node-red/node-red",
-  "github_stars": "22439",
-  "logo": "/icons/node-red.webp",
-  "description": "Node-RED is a flow-based programming tool used for wiring IoT devices and APIs together visually. It offers a browser editor and can be deployed self-hosted to automate workflows, events, and integrations.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "4.1.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-03",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 22440
+  },
+  "resources": {
+    "website": "http://nodered.org",
+    "documentation": "https://github.com/node-red/node-red",
+    "source_code": "https://github.com/node-red/node-red",
+    "logo": "/icons/node-red.webp",
+    "issues": "https://github.com/node-red/node-red/issues",
+    "releases": "https://github.com/node-red/node-red/releases"
+  },
   "features": [
     "Flow-based programming: Wire together devices, APIs, and services using a visual drag-and-drop editor.",
     "Browser-based editor: Design and deploy flows from any device with a web browser.",
@@ -29,69 +37,45 @@
     "Import/export: Share flows as JSON for version control, backup, or community sharing.",
     "Extensible: Create custom nodes or install community contributions for specialized functionality."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

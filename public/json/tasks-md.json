@@ -1,20 +1,28 @@
 {
   "name": "tasks-md",
   "slug": "tasks-md",
+  "tagline": null,
+  "description": "Tasks.md is a self-hosted Markdown-based task manager using plain text files. It offers a web UI to view, filter, and update tasks while keeping storage in Git-friendly format.",
   "categories": [
     111
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/BaldissaraMatheus/Tasks.md",
-  "website": "github.com/BaldissaraMatheus/Tasks.md",
-  "source_code": "github.com/BaldissaraMatheus/Tasks.md",
-  "github_stars": "1937",
-  "logo": "/icons/tasks-md.webp",
-  "description": "Tasks.md is a self-hosted Markdown-based task manager using plain text files. It offers a web UI to view, filter, and update tasks while keeping storage in Git-friendly format.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "3.2.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-20",
+    "date_last_commit": "2025-11-20",
+    "github_stars": 1938
+  },
+  "resources": {
+    "website": "https://github.com/BaldissaraMatheus/Tasks.md",
+    "documentation": "https://github.com/BaldissaraMatheus/Tasks.md",
+    "source_code": "https://github.com/BaldissaraMatheus/Tasks.md",
+    "logo": "/icons/tasks-md.webp",
+    "issues": "https://github.com/BaldissaraMatheus/Tasks.md/issues",
+    "releases": "https://github.com/BaldissaraMatheus/Tasks.md/releases"
+  },
   "features": [
     "Markdown storage: Store tasks in plain text Markdown files that remain readable and editable outside the application.",
     "Git-friendly format: Track task changes with version control systems using human-readable diff-friendly file formats.",
@@ -29,69 +37,45 @@
     "Search functionality: Find tasks quickly using full-text search across all files and metadata.",
     "Bulk operations: Update multiple tasks at once with batch editing for efficient task management."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

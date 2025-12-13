@@ -1,20 +1,28 @@
 {
   "name": "simplex-chat",
   "slug": "simplex-chat",
+  "tagline": null,
+  "description": "SimpleX Chat is a privacy-focused messaging platform with E2E encryption and no identifiers. It provides mobile and desktop clients, and can use self-hosted servers as transport nodes.",
   "categories": [
     102
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/simplex-chat/simplex-chat",
-  "website": "simplex.chat",
-  "source_code": "github.com/simplex-chat/simplex-chat",
-  "github_stars": "10033",
-  "logo": "/icons/simplex-chat.webp",
-  "description": "SimpleX Chat is a privacy-focused messaging platform with E2E encryption and no identifiers. It provides mobile and desktop clients, and can use self-hosted servers as transport nodes.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v6.4.7",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-02",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 10038
+  },
+  "resources": {
+    "website": "https://simplex.chat",
+    "documentation": "https://github.com/simplex-chat/simplex-chat",
+    "source_code": "https://github.com/simplex-chat/simplex-chat",
+    "logo": "/icons/simplex-chat.webp",
+    "issues": "https://github.com/simplex-chat/simplex-chat/issues",
+    "releases": "https://github.com/simplex-chat/simplex-chat/releases"
+  },
   "features": [
     "No identifiers: Operates without phone numbers, emails, or usernames for maximum privacy.",
     "End-to-end encryption: Encrypts all messages, calls, and files with double-ratchet protocol.",
@@ -29,69 +37,45 @@
     "No metadata leakage: Designed to minimize metadata collection and correlation.",
     "Open protocol: Uses open-source protocol allowing third-party client development."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": true,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": true,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

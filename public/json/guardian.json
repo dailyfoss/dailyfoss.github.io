@@ -1,20 +1,28 @@
 {
   "name": "guardian-plex",
   "slug": "guardian",
+  "tagline": "",
+  "description": "Guardian is a self-hosted web dashboard for monitoring Docker containers and system metrics. It provides a clean UI for viewing container state, logs, and resource usage in real-time.",
   "categories": [
     145
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/HydroshieldMKII/Guardian",
-  "website": "github.com/HydroshieldMKII/Guardian",
-  "source_code": "github.com/HydroshieldMKII/Guardian",
-  "github_stars": "109",
-  "logo": "/icons/guardian.webp",
-  "description": "Guardian is a self-hosted web dashboard for monitoring Docker containers and system metrics. It provides a clean UI for viewing container state, logs, and resource usage in real-time.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": null,
+    "version": "v1.3.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-05",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 110
+  },
+  "resources": {
+    "website": null,
+    "documentation": null,
+    "source_code": "https://github.com/HydroshieldMKII/Guardian",
+    "logo": "/icons/guardian.webp",
+    "issues": "https://github.com/HydroshieldMKII/Guardian/issues",
+    "releases": "https://github.com/HydroshieldMKII/Guardian/releases"
+  },
   "features": [
     "Container Monitoring: Track Docker container status, health, and resource consumption in real-time.",
     "Log Viewing: Access container logs directly from the web interface for troubleshooting.",
@@ -25,69 +33,45 @@
     "Real-Time Updates: Automatic refresh of container status and metrics without page reload.",
     "Lightweight Deployment: Minimal overhead suitable for running alongside monitored containers."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

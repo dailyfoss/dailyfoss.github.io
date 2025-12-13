@@ -1,20 +1,28 @@
 {
   "name": "komodo",
   "slug": "komodo",
+  "tagline": null,
+  "description": "Komodo is a modern web based status page and incident management platform. It allows teams to display service health, schedule maintenance and communicate outages, running fully self hosted for privacy conscious organizations.",
   "categories": [
     146
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/moghtech/komodo",
-  "website": "komo.do",
-  "source_code": "github.com/moghtech/komodo",
-  "github_stars": "8934",
-  "logo": "/icons/komodo.webp",
-  "description": "Komodo is a modern web based status page and incident management platform. It allows teams to display service health, schedule maintenance and communicate outages, running fully self hosted for privacy conscious organizations.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v1.19.5",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-27",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 8953
+  },
+  "resources": {
+    "website": "https://komo.do",
+    "documentation": "https://github.com/moghtech/komodo",
+    "source_code": "https://github.com/moghtech/komodo",
+    "logo": "/icons/komodo.webp",
+    "issues": "https://github.com/moghtech/komodo/issues",
+    "releases": "https://github.com/moghtech/komodo/releases"
+  },
   "features": [
     "Status Pages: Public-facing status pages showing service health and uptime. Keep users informed about availability.",
     "Incident Management: Create, update, and resolve incidents with timeline tracking. Manage outages transparently.",
@@ -29,69 +37,45 @@
     "Self-Hosted: Complete control over status page infrastructure and data. Own your communication platform.",
     "Metrics Display: Show response times and performance metrics on status page. Provide transparency beyond uptime."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

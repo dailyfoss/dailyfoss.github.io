@@ -1,20 +1,28 @@
 {
   "name": "metabase",
   "slug": "metabase",
+  "tagline": null,
+  "description": "Metabase is an open-source data exploration and BI tool that lets users build dashboards and run queries without SQL. It supports self-hosted and cloud deployments, with a clean, intuitive UI and permission-based access.",
   "categories": [
     9
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/metabase/metabase",
-  "website": "metabase.com",
-  "source_code": "github.com/metabase/metabase",
-  "github_stars": "44931",
-  "logo": "/icons/metabase.webp",
-  "description": "Metabase is an open-source data exploration and BI tool that lets users build dashboards and run queries without SQL. It supports self-hosted and cloud deployments, with a clean, intuitive UI and permission-based access.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "v0.57.6",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-11",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 44936
+  },
+  "resources": {
+    "website": "https://metabase.com",
+    "documentation": "https://github.com/metabase/metabase",
+    "source_code": "https://github.com/metabase/metabase",
+    "logo": "/icons/metabase.webp",
+    "issues": "https://github.com/metabase/metabase/issues",
+    "releases": "https://github.com/metabase/metabase/releases"
+  },
   "features": [
     "Visual query builder: Create database queries using a point-and-click interface without writing SQL.",
     "Dashboard creation: Build interactive dashboards with charts, tables, and visualizations.",
@@ -29,69 +37,45 @@
     "Mobile responsive: View and interact with dashboards from mobile devices.",
     "API access: Programmatically query data and manage resources through REST API."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

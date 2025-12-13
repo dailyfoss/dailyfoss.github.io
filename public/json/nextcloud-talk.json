@@ -1,20 +1,28 @@
 {
   "name": "nextcloud-talk",
   "slug": "nextcloud-talk",
+  "tagline": null,
+  "description": "Nextcloud Talk (Spreed) is a self-hosted communication platform with video, audio, chat, screen sharing, and WebRTC infrastructure, integrated directly into the Nextcloud stack.",
   "categories": [
     176
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/nextcloud/spreed",
-  "website": "nextcloud.com/talk",
-  "source_code": "github.com/nextcloud/spreed",
-  "github_stars": "2036",
-  "logo": "/icons/nextcloud-talk.webp",
-  "description": "Nextcloud Talk (Spreed) is a self-hosted communication platform with video, audio, chat, screen sharing, and WebRTC infrastructure, integrated directly into the Nextcloud stack.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v22.0.5",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-11",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 2036
+  },
+  "resources": {
+    "website": "https://nextcloud.com/talk",
+    "documentation": "https://github.com/nextcloud/spreed",
+    "source_code": "https://github.com/nextcloud/spreed",
+    "logo": "/icons/nextcloud-talk.webp",
+    "issues": "https://github.com/nextcloud/spreed/issues",
+    "releases": "https://github.com/nextcloud/spreed/releases"
+  },
   "features": [
     "Video conferencing: Host video calls with multiple participants using WebRTC technology.",
     "Audio calls: Make voice-only calls for lower bandwidth usage or audio-focused meetings.",
@@ -29,69 +37,45 @@
     "File sharing: Share Nextcloud files directly in conversations with preview and download.",
     "Nextcloud integration: Unified authentication and seamless integration with other Nextcloud apps."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

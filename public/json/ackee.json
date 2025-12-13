@@ -1,20 +1,28 @@
 {
   "name": "ackee",
   "slug": "ackee",
+  "tagline": null,
+  "description": "Ackee is an open-source, self-hosted web analytics tool built with Node.js and MongoDB, designed for privacy-conscious users. Unlike many mainstream analytics platforms, it does not rely on tracking cookies or unique user identifiers and puts your data firmly in your own control. It provides a clean, minimal dashboard interface to monitor key metrics (like page views, referrers, session durations) and supports a fully documented GraphQL API for custom integrations.",
   "categories": [
     186
   ],
-  "sponsored": true,
-  "date_created": "2025-11-23",
-  "sponsored_expired": "2025-12-31",
-  "interface_port": null,
-  "documentation": "github.com/electerious/Ackee",
-  "website": "ackee.electerious.com",
-  "source_code": "github.com/electerious/Ackee",
-  "github_stars": "4549",
-  "logo": "/icons/ackee.webp",
-  "description": "Ackee is an open-source, self-hosted web analytics tool built with Node.js and MongoDB, designed for privacy-conscious users. Unlike many mainstream analytics platforms, it does not rely on tracking cookies or unique user identifiers and puts your data firmly in your own control. It provides a clean, minimal dashboard interface to monitor key metrics (like page views, referrers, session durations) and supports a fully documented GraphQL API for custom integrations.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": true,
+    "license": "MIT",
+    "version": "v3.5.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-19",
+    "date_last_commit": "2025-12-07",
+    "github_stars": 4550
+  },
+  "resources": {
+    "website": "https://ackee.electerious.com",
+    "documentation": "https://github.com/electerious/Ackee",
+    "source_code": "https://github.com/electerious/Ackee",
+    "logo": "/icons/ackee.webp",
+    "issues": "https://github.com/electerious/Ackee/issues",
+    "releases": "https://github.com/electerious/Ackee/releases"
+  },
   "features": [
     "Privacy-Focused: Cookieless tracking respects visitor privacy, no personal data collection. Ethical analytics done right.",
     "Anonymous Metrics: Aggregate data without identifying individual users. Insights without invasion.",
@@ -25,69 +33,45 @@
     "Reliable Stack: Built on Node.js and MongoDB for consistent performance. Stable and dependable.",
     "GDPR Compliant: Fully meets privacy regulations worldwide. No legal concerns."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

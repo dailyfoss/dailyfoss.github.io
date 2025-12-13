@@ -1,20 +1,28 @@
 {
   "name": "pocket-id",
   "slug": "pocket-id",
+  "tagline": null,
+  "description": "Pocket ID is a self-hosted authentication provider using QR codes and secure tokens. It enables passwordless login and account management with privacy focused on local control.",
   "categories": [
     15
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/pocket-id/pocket-id",
-  "website": "pocket-id.org",
-  "source_code": "github.com/pocket-id/pocket-id",
-  "github_stars": "5402",
-  "logo": "/icons/pocket-id.webp",
-  "description": "Pocket ID is a self-hosted authentication provider using QR codes and secure tokens. It enables passwordless login and account management with privacy focused on local control.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "BSD-2-Clause",
+    "version": "v1.16.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-30",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 5410
+  },
+  "resources": {
+    "website": "https://pocket-id.org",
+    "documentation": "https://github.com/pocket-id/pocket-id",
+    "source_code": "https://github.com/pocket-id/pocket-id",
+    "logo": "/icons/pocket-id.webp",
+    "issues": "https://github.com/pocket-id/pocket-id/issues",
+    "releases": "https://github.com/pocket-id/pocket-id/releases"
+  },
   "features": [
     "Passwordless authentication: Log in using QR codes and secure tokens without passwords.",
     "QR code login: Scan QR codes with mobile device for quick and secure authentication.",
@@ -29,69 +37,45 @@
     "Custom branding: Personalize login pages with custom logos and color schemes.",
     "API access: Integrate with applications using REST API for programmatic authentication."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

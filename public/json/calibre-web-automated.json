@@ -1,20 +1,28 @@
 {
   "name": "calibre-web-automated",
   "slug": "calibre-web-automated",
+  "tagline": null,
+  "description": "Calibre-Web-Automated is an extended version of Calibre-Web that automatically syncs eBooks from external sources and repositories. It’s great for readers and libraries that want hands-free library management.",
   "categories": [
     21
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/crocodilestick/Calibre-Web-Automated",
-  "website": "github.com/crocodilestick/Calibre-Web-Automated",
-  "source_code": "github.com/crocodilestick/Calibre-Web-Automated",
-  "github_stars": "4158",
-  "logo": "/icons/calibre-web-automated.webp",
-  "description": "Calibre-Web-Automated is an extended version of Calibre-Web that automatically syncs eBooks from external sources and repositories. It’s great for readers and libraries that want hands-free library management.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "V3.1.4",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-08-12",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 4164
+  },
+  "resources": {
+    "website": "https://github.com/crocodilestick/Calibre-Web-Automated",
+    "documentation": "https://github.com/crocodilestick/Calibre-Web-Automated",
+    "source_code": "https://github.com/crocodilestick/Calibre-Web-Automated",
+    "logo": "/icons/calibre-web-automated.webp",
+    "issues": "https://github.com/crocodilestick/Calibre-Web-Automated/issues",
+    "releases": "https://github.com/crocodilestick/Calibre-Web-Automated/releases"
+  },
   "features": [
     "Automated Syncing: Automatically sync eBooks from external sources. Hands-free library growth.",
     "Calibre-Web Extended: Enhanced version with automation features. More powerful.",
@@ -23,69 +31,45 @@
     "Self-Hosted: Keep your eBook library completely private. Data ownership.",
     "Reader-Friendly: Perfect for avid readers wanting automated library. Convenient reading."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

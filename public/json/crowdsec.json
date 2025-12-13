@@ -1,20 +1,28 @@
 {
   "name": "crowdsec",
   "slug": "crowdsec",
+  "tagline": null,
+  "description": "CrowdSec is a collaborative, open-source security engine that detects and blocks malicious traffic. It uses behavior-based detection and shares threat intelligence with the community while enabling self-hosted deployment.",
   "categories": [
     145
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/crowdsecurity/crowdsec",
-  "website": "crowdsec.net",
-  "source_code": "github.com/crowdsecurity/crowdsec",
-  "github_stars": "11822",
-  "logo": "/icons/crowdsec.webp",
-  "description": "CrowdSec is a collaborative, open-source security engine that detects and blocks malicious traffic. It uses behavior-based detection and shares threat intelligence with the community while enabling self-hosted deployment.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v1.7.4",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-04",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 11826
+  },
+  "resources": {
+    "website": "https://crowdsec.net",
+    "documentation": "https://github.com/crowdsecurity/crowdsec",
+    "source_code": "https://github.com/crowdsecurity/crowdsec",
+    "logo": "/icons/crowdsec.webp",
+    "issues": "https://github.com/crowdsecurity/crowdsec/issues",
+    "releases": "https://github.com/crowdsecurity/crowdsec/releases"
+  },
   "features": [
     "Behavior Detection: Identify threats based on patterns, not signatures. Catch new attacks.",
     "Collaborative Security: Share threat intelligence with global community. Stronger together.",
@@ -23,69 +31,45 @@
     "Bouncer System: Deploy countermeasures across firewalls and proxies. Flexible defense.",
     "Self-Hosted: Keep security data and decisions under your control. Privacy-focused protection."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

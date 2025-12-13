@@ -1,20 +1,28 @@
 {
   "name": "bigbluebutton",
   "slug": "bigbluebutton",
+  "tagline": null,
+  "description": "BigBlueButton is an open-source virtual classroom system designed for online teaching. It supports real-time audio, video, whiteboards, breakout rooms, and recording, all accessible through a web browser with no client software required.",
   "categories": [
     176
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/bigbluebutton/bigbluebutton",
-  "website": "bigbluebutton.org",
-  "source_code": "github.com/bigbluebutton/bigbluebutton",
-  "github_stars": "8975",
-  "logo": "/icons/bigbluebutton.webp",
-  "description": "BigBlueButton is an open-source virtual classroom system designed for online teaching. It supports real-time audio, video, whiteboards, breakout rooms, and recording, all accessible through a web browser with no client software required.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "LGPL-3.0",
+    "version": "v3.0.18",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-03",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 8975
+  },
+  "resources": {
+    "website": "https://bigbluebutton.org",
+    "documentation": "https://github.com/bigbluebutton/bigbluebutton",
+    "source_code": "https://github.com/bigbluebutton/bigbluebutton",
+    "logo": "/icons/bigbluebutton.webp",
+    "issues": "https://github.com/bigbluebutton/bigbluebutton/issues",
+    "releases": "https://github.com/bigbluebutton/bigbluebutton/releases"
+  },
   "features": [
     "Virtual Classroom: Complete online teaching platform with real-time interaction. Education reimagined.",
     "Audio & Video: High-quality conferencing with screen sharing capabilities. Crystal clear communication.",
@@ -25,69 +33,45 @@
     "Polling & Quizzes: Engage students with interactive assessments. Real-time feedback.",
     "Open Source: Self-host for complete control over your virtual classroom. Privacy and customization."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

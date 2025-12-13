@@ -1,20 +1,28 @@
 {
   "name": "redis-commander",
   "slug": "redis-commander",
+  "tagline": null,
+  "description": "Redis Commander is a self-hosted web UI for browsing and managing Redis databases. It displays keys, values, TTLs, and supports CRUD operations for easier debugging.",
   "categories": [
     39
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/joeferner/redis-commander",
-  "website": "http://joeferner.github.io/redis-commander/",
-  "source_code": "github.com/joeferner/redis-commander",
-  "github_stars": "3934",
-  "logo": "/icons/redis-commander.webp",
-  "description": "Redis Commander is a self-hosted web UI for browsing and managing Redis databases. It displays keys, values, TTLs, and supports CRUD operations for easier debugging.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-11-26",
+    "github_stars": 3935
+  },
+  "resources": {
+    "website": "http://joeferner.github.io/redis-commander/",
+    "documentation": "https://github.com/joeferner/redis-commander",
+    "source_code": "https://github.com/joeferner/redis-commander",
+    "logo": "/icons/redis-commander.webp",
+    "issues": "https://github.com/joeferner/redis-commander/issues",
+    "releases": null
+  },
   "features": [
     "Key browsing: Navigate Redis databases with a tree view showing all keys organized by pattern.",
     "Value editing: View and modify string, list, set, hash, and sorted set values through the web interface.",
@@ -29,69 +37,45 @@
     "Read-only mode: Prevent accidental modifications by enabling view-only access to production databases.",
     "Authentication support: Connect to password-protected Redis instances with credential management."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

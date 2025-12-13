@@ -1,20 +1,28 @@
 {
   "name": "appflowy",
   "slug": "appflowy",
+  "tagline": null,
+  "description": "AppFlowy is an open-source alternative to Notion and Airtable that enables users to manage notes, documents, databases, and tasks in a secure and self-hosted way. It supports extensible Markdown editing and offline-first syncing.",
   "categories": [
     196
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/AppFlowy-IO/AppFlowy",
-  "website": "appflowy.com",
-  "source_code": "github.com/AppFlowy-IO/AppFlowy",
-  "github_stars": "66930",
-  "logo": "/icons/appflowy.webp",
-  "description": "AppFlowy is an open-source alternative to Notion and Airtable that enables users to manage notes, documents, databases, and tasks in a secure and self-hosted way. It supports extensible Markdown editing and offline-first syncing.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "0.10.6",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-05",
+    "date_last_commit": "2025-12-05",
+    "github_stars": 66938
+  },
+  "resources": {
+    "website": "https://appflowy.com",
+    "documentation": "https://github.com/AppFlowy-IO/AppFlowy",
+    "source_code": "https://github.com/AppFlowy-IO/AppFlowy",
+    "logo": "/icons/appflowy.webp",
+    "issues": "https://github.com/AppFlowy-IO/AppFlowy/issues",
+    "releases": "https://github.com/AppFlowy-IO/AppFlowy/releases"
+  },
   "features": [
     "Notion Alternative: Open-source workspace for notes, docs, databases, and tasks. All-in-one productivity.",
     "Offline-First: Work without internet, sync automatically when connected. Never lose productivity.",
@@ -24,69 +32,45 @@
     "Cross-Platform: Native apps for desktop and mobile platforms. Work anywhere.",
     "Customizable: Tailor the workspace to match your workflow and preferences. Make it yours."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": true,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": true,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

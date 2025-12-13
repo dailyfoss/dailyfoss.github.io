@@ -1,20 +1,28 @@
 {
   "name": "silex",
   "slug": "silex",
+  "tagline": null,
+  "description": "Silex is a self-hosted website builder and CMS that runs entirely in the browser. Users can visually design responsive websites with drag-and-drop elements and publish static sites easily.",
   "categories": [
     152
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/silexlabs/Silex",
-  "website": "www.silex.me",
-  "source_code": "github.com/silexlabs/Silex",
-  "github_stars": "2681",
-  "logo": "/icons/silex.webp",
-  "description": "Silex is a self-hosted website builder and CMS that runs entirely in the browser. Users can visually design responsive websites with drag-and-drop elements and publish static sites easily.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v3.4.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-30",
+    "date_last_commit": "2025-12-09",
+    "github_stars": 2682
+  },
+  "resources": {
+    "website": "https://www.silex.me",
+    "documentation": "https://github.com/silexlabs/Silex",
+    "source_code": "https://github.com/silexlabs/Silex",
+    "logo": "/icons/silex.webp",
+    "issues": "https://github.com/silexlabs/Silex/issues",
+    "releases": "https://github.com/silexlabs/Silex/releases"
+  },
   "features": [
     "Visual website builder: Creates websites with drag-and-drop elements without coding.",
     "Responsive design: Automatically adapts layouts for desktop, tablet, and mobile screens.",
@@ -29,69 +37,45 @@
     "Form builder: Designs contact forms with customizable fields and validation.",
     "Publishing options: Publishes to FTP, GitHub Pages, or other hosting services."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

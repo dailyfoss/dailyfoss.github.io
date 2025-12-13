@@ -1,20 +1,29 @@
 {
   "name": "investbrain",
   "slug": "investbrain",
+  "tagline": "",
+  "description": "Investbrain is a self hosted investment tracking and analytics tool. It aggregates portfolio positions, prices and performance, then displays charts and summaries to help individual investors understand risk, returns, and diversification over time.",
   "categories": [
     185
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/investbrainapp/investbrain",
-  "website": "investbra.in",
-  "source_code": "github.com/investbrainapp/investbrain",
-  "github_stars": "623",
-  "logo": "/icons/investbrain.webp",
-  "description": "Investbrain is a self hosted investment tracking and analytics tool. It aggregates portfolio positions, prices and performance, then displays charts and summaries to help individual investors understand risk, returns, and diversification over time.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "v1.2.4",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-07",
+    "date_last_commit": "2025-11-20",
+    "github_stars": 624
+  },
+  "resources": {
+    "website": "https://investbra.in",
+    "documentation": "https://investbra.in",
+    "source_code": "https://github.com/investbrainapp/investbrain",
+    "logo": "/icons/investbrain.webp",
+    "issues": "https://github.com/investbrainapp/investbrain/issues",
+    "releases": "https://github.com/investbrainapp/investbrain/releases",
+    "logo_light": "/icons/investbrain-light.webp"
+  },
   "features": [
     "Portfolio Tracking: Monitor all your investments in stocks, bonds, and other assets.",
     "Performance Analytics: Analyze returns, volatility, and risk metrics over time.",
@@ -25,69 +34,45 @@
     "Privacy-Focused: Keep all financial data on your own server.",
     "Custom Reports: Generate detailed reports on portfolio performance and holdings."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

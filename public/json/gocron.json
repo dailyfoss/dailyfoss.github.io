@@ -1,20 +1,28 @@
 {
   "name": "gocron",
   "slug": "gocron",
+  "tagline": null,
+  "description": "GoCron is a self-hosted cron web UI and API for scheduling jobs. It offers job logs, history, a scheduler interface, and runs as a lightweight web server on local systems.",
   "categories": [
     158
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/flohoss/gocron",
-  "website": "github.com/flohoss/gocron",
-  "source_code": "github.com/flohoss/gocron",
-  "github_stars": "474",
-  "logo": "/icons/gocron.webp",
-  "description": "GoCron is a self-hosted cron web UI and API for scheduling jobs. It offers job logs, history, a scheduler interface, and runs as a lightweight web server on local systems.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.9.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-12",
+    "date_last_commit": "2025-12-02",
+    "github_stars": 474
+  },
+  "resources": {
+    "website": "https://github.com/flohoss/gocron",
+    "documentation": "https://github.com/flohoss/gocron",
+    "source_code": "https://github.com/flohoss/gocron",
+    "logo": "/icons/gocron.webp",
+    "issues": "https://github.com/flohoss/gocron/issues",
+    "releases": "https://github.com/flohoss/gocron/releases"
+  },
   "features": [
     "Web-Based Scheduler: Manage cron jobs through an intuitive web interface instead of crontab files.",
     "Job History: View execution history, logs, and status for all scheduled tasks.",
@@ -25,69 +33,45 @@
     "Lightweight Server: Minimal resource requirements suitable for always-on operation.",
     "Email Notifications: Receive alerts when jobs fail or complete successfully."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

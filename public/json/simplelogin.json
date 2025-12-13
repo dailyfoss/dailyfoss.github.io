@@ -1,20 +1,28 @@
 {
   "name": "simplelogin",
   "slug": "simplelogin",
+  "tagline": null,
+  "description": "SimpleLogin is an email aliasing and forwarding service that can be self-hosted or used as SaaS. It protects your real address using aliases, custom domains, and browser and mobile integrations.",
   "categories": [
     15
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/simple-login/app",
-  "website": "simplelogin.io",
-  "source_code": "github.com/simple-login/app",
-  "github_stars": "6256",
-  "logo": "/icons/simplelogin.webp",
-  "description": "SimpleLogin is an email aliasing and forwarding service that can be self-hosted or used as SaaS. It protects your real address using aliases, custom domains, and browser and mobile integrations.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v4.74.4",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-21",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 6258
+  },
+  "resources": {
+    "website": "https://simplelogin.io",
+    "documentation": "https://github.com/simple-login/app",
+    "source_code": "https://github.com/simple-login/app",
+    "logo": "/icons/simplelogin.webp",
+    "issues": "https://github.com/simple-login/app/issues",
+    "releases": "https://github.com/simple-login/app/releases"
+  },
   "features": [
     "Email aliasing: Creates unlimited email aliases that forward to your real address.",
     "Custom domains: Uses your own domains for professional-looking aliases.",
@@ -29,69 +37,45 @@
     "Activity monitoring: Tracks which aliases receive emails and from whom.",
     "Import tools: Migrates aliases from other email aliasing services."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

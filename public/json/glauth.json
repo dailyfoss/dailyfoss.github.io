@@ -1,20 +1,28 @@
 {
   "name": "glauth",
   "slug": "glauth",
+  "tagline": null,
+  "description": "GLAuth is a lightweight LDAP server designed for simple identity and authentication use cases. It’s ideal for use in homelabs, development environments, and lightweight directory-based user management.",
   "categories": [
     79
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/glauth/glauth",
-  "website": "github.com/glauth/glauth",
-  "source_code": "github.com/glauth/glauth",
-  "github_stars": "2761",
-  "logo": "/icons/glauth.webp",
-  "description": "GLAuth is a lightweight LDAP server designed for simple identity and authentication use cases. It’s ideal for use in homelabs, development environments, and lightweight directory-based user management.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v2.4.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-04-28",
+    "date_last_commit": "2025-08-04",
+    "github_stars": 2761
+  },
+  "resources": {
+    "website": "https://github.com/glauth/glauth",
+    "documentation": "https://github.com/glauth/glauth",
+    "source_code": "https://github.com/glauth/glauth",
+    "logo": "/icons/glauth.webp",
+    "issues": "https://github.com/glauth/glauth/issues",
+    "releases": "https://github.com/glauth/glauth/releases"
+  },
   "features": [
     "Lightweight LDAP: Minimal LDAP server implementation for authentication and directory services.",
     "Simple Configuration: Easy setup with configuration files instead of complex directory schemas.",
@@ -25,69 +33,45 @@
     "Development Friendly: Ideal for development environments and testing LDAP integrations.",
     "Quick Deployment: Get directory services running in minutes without enterprise complexity."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

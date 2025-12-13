@@ -1,20 +1,28 @@
 {
   "name": "cerbos",
   "slug": "cerbos",
+  "tagline": null,
+  "description": "Cerbos is a self-hosted authorization layer that decouples permissions from application code. It supports policy-as-code via YAML, and can be embedded in microservices, securing APIs and internal apps.",
   "categories": [
     79
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/cerbos/cerbos",
-  "website": "cerbos.dev",
-  "source_code": "github.com/cerbos/cerbos",
-  "github_stars": "4163",
-  "logo": "/icons/cerbos.webp",
-  "description": "Cerbos is a self-hosted authorization layer that decouples permissions from application code. It supports policy-as-code via YAML, and can be embedded in microservices, securing APIs and internal apps.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v0.49.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-10",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 4163
+  },
+  "resources": {
+    "website": "https://cerbos.dev",
+    "documentation": "https://github.com/cerbos/cerbos",
+    "source_code": "https://github.com/cerbos/cerbos",
+    "logo": "/icons/cerbos.webp",
+    "issues": "https://github.com/cerbos/cerbos/issues",
+    "releases": "https://github.com/cerbos/cerbos/releases"
+  },
   "features": [
     "Authorization Layer: Decouple permissions from application code. Clean architecture.",
     "Policy-as-Code: Define permissions in YAML files. Version controlled.",
@@ -24,69 +32,45 @@
     "Developer-Friendly: Easy integration with existing apps. Minimal friction.",
     "Self-Hosted: Run authorization on your infrastructure. Complete control."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

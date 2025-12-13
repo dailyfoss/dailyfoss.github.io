@@ -1,20 +1,28 @@
 {
   "name": "signoz",
   "slug": "signoz",
+  "tagline": null,
+  "description": "SigNoz is an open-source observability platform for metrics, logs, and traces, built as a self-hosted alternative to Datadog and New Relic. It supports OpenTelemetry, dashboards, and alerting.",
   "categories": [
     114
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/SigNoz/signoz",
-  "website": "signoz.io",
-  "source_code": "github.com/SigNoz/signoz",
-  "github_stars": "24907",
-  "logo": "/icons/signoz.webp",
-  "description": "SigNoz is an open-source observability platform for metrics, logs, and traces, built as a self-hosted alternative to Datadog and New Relic. It supports OpenTelemetry, dashboards, and alerting.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "v0.104.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-03",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 24912
+  },
+  "resources": {
+    "website": "https://signoz.io",
+    "documentation": "https://github.com/SigNoz/signoz",
+    "source_code": "https://github.com/SigNoz/signoz",
+    "logo": "/icons/signoz.webp",
+    "issues": "https://github.com/SigNoz/signoz/issues",
+    "releases": "https://github.com/SigNoz/signoz/releases"
+  },
   "features": [
     "Distributed tracing: Visualizes request flows across microservices with trace timelines.",
     "Metrics monitoring: Collects and displays application and infrastructure metrics in dashboards.",
@@ -29,69 +37,45 @@
     "Team collaboration: Shares dashboards and alerts across team members.",
     "ClickHouse backend: Uses ClickHouse for fast querying of large observability datasets."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "maintainerr",
   "slug": "maintainerr",
+  "tagline": null,
+  "description": "Maintainerr is a dashboard and event log viewer for monitoring a suite of self-hosted media servers. It connects to services like Jellyfin, Radarr, and Sonarr to track updates, downloads, and system status.",
   "categories": [
     120
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Maintainerr/Maintainerr",
-  "website": "maintainerr.info",
-  "source_code": "github.com/Maintainerr/Maintainerr",
-  "github_stars": "1430",
-  "logo": "/icons/maintainerr.webp",
-  "description": "Maintainerr is a dashboard and event log viewer for monitoring a suite of self-hosted media servers. It connects to services like Jellyfin, Radarr, and Sonarr to track updates, downloads, and system status.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v2.24.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-07",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 1431
+  },
+  "resources": {
+    "website": "https://maintainerr.info",
+    "documentation": "https://github.com/Maintainerr/Maintainerr",
+    "source_code": "https://github.com/Maintainerr/Maintainerr",
+    "logo": "/icons/maintainerr.webp",
+    "issues": "https://github.com/Maintainerr/Maintainerr/issues",
+    "releases": "https://github.com/Maintainerr/Maintainerr/releases"
+  },
   "features": [
     "Media server monitoring: Track status and events from Jellyfin, Plex, Radarr, and Sonarr in one dashboard.",
     "Event logging: View detailed logs of downloads, updates, and system events across all connected services.",
@@ -27,69 +35,45 @@
     "Alert system: Configure notifications for important events like failed downloads or service outages.",
     "Activity timeline: Review historical events and changes across your media infrastructure."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

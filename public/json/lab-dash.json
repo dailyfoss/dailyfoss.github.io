@@ -1,20 +1,28 @@
 {
   "name": "lab-dash",
   "slug": "lab-dash",
+  "tagline": null,
+  "description": "Lab Dash is a dashboard for lab environments and research teams. It aggregates important links, status widgets and notes into a central page, helping labs keep equipment, documents and tools organized and easily accessible.",
   "categories": [
     37
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/AnthonyGress/lab-dash",
-  "website": "github.com/AnthonyGress/lab-dash",
-  "source_code": "github.com/AnthonyGress/lab-dash",
-  "github_stars": "246",
-  "logo": "/icons/lab-dash.webp",
-  "description": "Lab Dash is a dashboard for lab environments and research teams. It aggregates important links, status widgets and notes into a central page, helping labs keep equipment, documents and tools organized and easily accessible.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v1.3.4",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-04",
+    "date_last_commit": "2025-11-04",
+    "github_stars": 250
+  },
+  "resources": {
+    "website": "https://github.com/AnthonyGress/lab-dash",
+    "documentation": "https://github.com/AnthonyGress/lab-dash",
+    "source_code": "https://github.com/AnthonyGress/lab-dash",
+    "logo": "/icons/lab-dash.webp",
+    "issues": "https://github.com/AnthonyGress/lab-dash/issues",
+    "releases": "https://github.com/AnthonyGress/lab-dash/releases"
+  },
   "features": [
     "Lab Dashboard: Centralized links, Status widgets, Team notes. Organize lab resources in one place.",
     "Equipment Tracking: Device status, Maintenance schedules, Usage logs. Monitor lab equipment efficiently.",
@@ -25,69 +33,45 @@
     "Custom Layout: Personalized dashboard, Widget arrangement, User preferences. Tailor the interface to your workflow.",
     "Mobile Access: Responsive design, Mobile-friendly, On-the-go access. Check lab status from anywhere."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

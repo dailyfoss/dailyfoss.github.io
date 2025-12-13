@@ -1,20 +1,28 @@
 {
   "name": "cobalt",
   "slug": "cobalt",
+  "tagline": null,
+  "description": "Cobalt is a self-hosted scratchpad and note-taking platform optimized for developers and teams. It supports real-time collaboration, tagging, markdown, and version history — and can run as a lightweight single binary.",
   "categories": [
     171
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/imputnet/cobalt",
-  "website": "cobalt.tools",
-  "source_code": "github.com/imputnet/cobalt",
-  "github_stars": "37553",
-  "logo": "/icons/cobalt.webp",
-  "description": "Cobalt is a self-hosted scratchpad and note-taking platform optimized for developers and teams. It supports real-time collaboration, tagging, markdown, and version history — and can run as a lightweight single binary.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-06",
+    "github_stars": 37559
+  },
+  "resources": {
+    "website": "https://cobalt.tools",
+    "documentation": "https://github.com/imputnet/cobalt",
+    "source_code": "https://github.com/imputnet/cobalt",
+    "logo": "/icons/cobalt.webp",
+    "issues": "https://github.com/imputnet/cobalt/issues",
+    "releases": null
+  },
   "features": [
     "Real-Time Collaboration: Work together on notes and documents simultaneously. Perfect for team brainstorming.",
     "Markdown Support: Write with full markdown formatting and syntax highlighting. Developer-friendly documentation.",
@@ -23,69 +31,45 @@
     "Lightweight Binary: Single executable with minimal dependencies. Deploy in seconds.",
     "Self-Hosted: Complete control over your data and privacy. Your notes, your server."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

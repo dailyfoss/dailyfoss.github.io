@@ -1,20 +1,28 @@
 {
   "name": "movary",
   "slug": "movary",
+  "tagline": null,
+  "description": "Movary is a self-hosted movie tracking and stats platform using the Trakt API. It allows users to track watched movies, generate charts, and explore statistics with a self-hosted database and UI.",
   "categories": [
     104
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/leepeuker/movary",
-  "website": "github.com/leepeuker/movary",
-  "source_code": "github.com/leepeuker/movary",
-  "github_stars": "648",
-  "logo": "/icons/movary.webp",
-  "description": "Movary is a self-hosted movie tracking and stats platform using the Trakt API. It allows users to track watched movies, generate charts, and explore statistics with a self-hosted database and UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "0.69.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-30",
+    "date_last_commit": "2025-11-28",
+    "github_stars": 648
+  },
+  "resources": {
+    "website": "https://github.com/leepeuker/movary",
+    "documentation": "https://github.com/leepeuker/movary",
+    "source_code": "https://github.com/leepeuker/movary",
+    "logo": "/icons/movary.webp",
+    "issues": "https://github.com/leepeuker/movary/issues",
+    "releases": "https://github.com/leepeuker/movary/releases"
+  },
   "features": [
     "Watch tracking: Log movies you've watched with dates and ratings to build a personal viewing history.",
     "Trakt integration: Sync your watch history with Trakt to maintain consistent data across platforms and services.",
@@ -25,69 +33,45 @@
     "Year in review: Generate annual summaries showing total movies watched, top genres, and viewing milestones.",
     "Self-hosted data: Keep your viewing history and preferences on your own server for complete privacy control."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,89 +1,73 @@
 {
   "name": "localai",
   "slug": "localai",
+  "tagline": null,
+  "description": "LocalAI is a self-hosted artificial intelligence inference engine that runs LLMs locally with no external API calls. It supports model selection, GPU acceleration, and provides an API compatible with OpenAI.",
   "categories": [
     13
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/mudler/LocalAI",
-  "website": "localai.io",
-  "source_code": "github.com/mudler/LocalAI",
-  "github_stars": "40059",
-  "logo": "/icons/localai.webp",
-  "description": "LocalAI is a self-hosted artificial intelligence inference engine that runs LLMs locally with no external API calls. It supports model selection, GPU acceleration, and provides an API compatible with OpenAI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v3.8.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-26",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 40070
+  },
+  "resources": {
+    "website": "https://localai.io",
+    "documentation": "https://github.com/mudler/LocalAI",
+    "source_code": "https://github.com/mudler/LocalAI",
+    "logo": "/icons/localai.webp",
+    "issues": "https://github.com/mudler/LocalAI/issues",
+    "releases": "https://github.com/mudler/LocalAI/releases"
+  },
   "features": [
     "Local LLM Inference: Run AI models locally, No external API calls, GPU acceleration. Private AI on your hardware.",
     "OpenAI Compatible: Drop-in replacement API, Compatible clients, Easy migration. Use existing tools with local models.",
     "Model Support: Multiple LLM formats, Custom models, Model management. Flexible AI model deployment.",
     "Self-Hosted: Complete privacy, No data sharing, Offline capable. Own your AI infrastructure."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

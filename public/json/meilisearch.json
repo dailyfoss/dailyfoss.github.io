@@ -1,20 +1,28 @@
 {
   "name": "meilisearch",
   "slug": "meilisearch",
+  "tagline": null,
+  "description": "Meilisearch is a lightning-fast, open-source search engine with instant results and typo tolerance. It exposes a simple REST API and is designed for simplicity, enabling developers to self-host a search service easily.",
   "categories": [
     144
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/meilisearch/meilisearch",
-  "website": "www.meilisearch.com",
-  "source_code": "github.com/meilisearch/meilisearch",
-  "github_stars": "54917",
-  "logo": "/icons/meilisearch.webp",
-  "description": "Meilisearch is a lightning-fast, open-source search engine with instant results and typo tolerance. It exposes a simple REST API and is designed for simplicity, enabling developers to self-host a search service easily.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "v1.29.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-08",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 54923
+  },
+  "resources": {
+    "website": "https://www.meilisearch.com",
+    "documentation": "https://github.com/meilisearch/meilisearch",
+    "source_code": "https://github.com/meilisearch/meilisearch",
+    "logo": "/icons/meilisearch.webp",
+    "issues": "https://github.com/meilisearch/meilisearch/issues",
+    "releases": "https://github.com/meilisearch/meilisearch/releases"
+  },
   "features": [
     "Instant search: Return search results in milliseconds with as-you-type search experience.",
     "Typo tolerance: Automatically handle typos and misspellings to return relevant results.",
@@ -29,69 +37,45 @@
     "Tenant isolation: Support multiple indexes with separate data and configurations.",
     "High performance: Written in Rust for exceptional speed and low resource usage."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

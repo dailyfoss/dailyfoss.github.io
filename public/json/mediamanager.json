@@ -1,20 +1,28 @@
 {
   "name": "mediamanager",
   "slug": "mediamanager",
+  "tagline": null,
+  "description": "MediaManager is a media collection organizer and categorizer. It provides a web interface to upload, tag, group, and browse files such as images, videos, and documents in a self-hosted environment.",
   "categories": [
     60
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/maxdorninger/MediaManager",
-  "website": "github.com/maxdorninger/MediaManager",
-  "source_code": "github.com/maxdorninger/MediaManager",
-  "github_stars": "2596",
-  "logo": "/icons/mediamanager.webp",
-  "description": "MediaManager is a media collection organizer and categorizer. It provides a web interface to upload, tag, group, and browse files such as images, videos, and documents in a self-hosted environment.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v1.10.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-07",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 2616
+  },
+  "resources": {
+    "website": "https://github.com/maxdorninger/MediaManager",
+    "documentation": "https://github.com/maxdorninger/MediaManager",
+    "source_code": "https://github.com/maxdorninger/MediaManager",
+    "logo": "/icons/mediamanager.webp",
+    "issues": "https://github.com/maxdorninger/MediaManager/issues",
+    "releases": "https://github.com/maxdorninger/MediaManager/releases"
+  },
   "features": [
     "File upload: Upload images, videos, and documents through drag-and-drop or file browser.",
     "Tag system: Apply custom tags to files for flexible categorization and filtering.",
@@ -29,69 +37,45 @@
     "Storage monitoring: Track disk usage and available space across media libraries.",
     "API access: Integrate media management into external applications via REST API."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

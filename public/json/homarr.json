@@ -1,20 +1,28 @@
 {
   "name": "homarr",
   "slug": "homarr",
+  "tagline": null,
+  "description": "Homarr is a modern self hosted dashboard and homepage that aggregates links, widgets and service status in a grid layout. It includes app detection, search, theming and drag and drop customization for homelab users.",
   "categories": [
     34
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/homarr-labs/homarr",
-  "website": "homarr.dev",
-  "source_code": "github.com/homarr-labs/homarr",
-  "github_stars": "2356",
-  "logo": "/icons/homarr.webp",
-  "description": "Homarr is a modern self hosted dashboard and homepage that aggregates links, widgets and service status in a grid layout. It includes app detection, search, theming and drag and drop customization for homelab users.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v1.46.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-12",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 2361
+  },
+  "resources": {
+    "website": "https://homarr.dev",
+    "documentation": "https://github.com/homarr-labs/homarr",
+    "source_code": "https://github.com/homarr-labs/homarr",
+    "logo": "/icons/homarr.webp",
+    "issues": "https://github.com/homarr-labs/homarr/issues",
+    "releases": "https://github.com/homarr-labs/homarr/releases"
+  },
   "features": [
     "Grid Layout: Organize services and widgets in a flexible, responsive grid system.",
     "Drag-and-Drop: Customize dashboard layout by dragging tiles to desired positions.",
@@ -25,69 +33,45 @@
     "Multi-User: Create separate dashboards for different users with individual preferences.",
     "App Detection: Automatically discover and configure services running on your network."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

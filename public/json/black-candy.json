@@ -1,20 +1,28 @@
 {
   "name": "black-candy",
   "slug": "black-candy",
+  "tagline": null,
+  "description": "BlackCandy is a self-hosted music streaming server that works with your personal music library. It provides multi-user support, playlist management, and a friendly web UI, making it a lightweight music streaming alternative.",
   "categories": [
     106
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/blackcandy-org/blackcandy",
-  "website": "github.com/blackcandy-org/blackcandy",
-  "source_code": "github.com/blackcandy-org/blackcandy",
-  "github_stars": "4019",
-  "logo": "/icons/black-candy.webp",
-  "description": "BlackCandy is a self-hosted music streaming server that works with your personal music library. It provides multi-user support, playlist management, and a friendly web UI, making it a lightweight music streaming alternative.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v3.1.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-06-18",
+    "date_last_commit": "2025-12-03",
+    "github_stars": 4023
+  },
+  "resources": {
+    "website": "https://github.com/blackcandy-org/blackcandy",
+    "documentation": "https://github.com/blackcandy-org/blackcandy",
+    "source_code": "https://github.com/blackcandy-org/blackcandy",
+    "logo": "/icons/black-candy.webp",
+    "issues": "https://github.com/blackcandy-org/blackcandy/issues",
+    "releases": "https://github.com/blackcandy-org/blackcandy/releases"
+  },
   "features": [
     "Music Streaming: Stream your personal music library from anywhere. Your music, everywhere.",
     "Multi-User Support: Create accounts for family and friends. Share your library.",
@@ -25,69 +33,45 @@
     "Lightweight: Minimal resource usage for efficient streaming. Fast performance.",
     "Self-Hosted: Complete control over your music collection. Privacy guaranteed."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

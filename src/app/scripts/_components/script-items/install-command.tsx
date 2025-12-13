@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import type { Script } from "@/lib/types";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Alert, AlertDescription } from "@/components/ui/alert";
 import CodeCopyButton from "@/components/ui/code-copy-button";
 
 // Tab metadata with icons and descriptions
@@ -49,8 +48,7 @@ function buildStaticUrl(path: string) {
 }
 
 export default function InstallCommand({ item }: { item: Script }) {
-  const manifest = item.manifest_path ?? {};
-  const slug = item.slug ?? "my-app";
+  const manifest = item.manifests ?? {};
 
   const [scriptContent, setScriptContent] = useState<string | null>(null);
   const [scriptLoading, setScriptLoading] = useState(false);
@@ -169,30 +167,6 @@ export default function InstallCommand({ item }: { item: Script }) {
     );
   }, [manifest.terraform]);
 
-  const renderDockercomposeInfo = () => (
-    <Alert className="mt-3 mb-3">
-      <Info className="h-4 w-4" />
-      <AlertDescription className="text-sm">
-        <strong>How to use this Docker Compose manifest:</strong>
-        {" "}
-        Save the content below as
-        {" "}
-        <code>docker-compose.yml</code>
-        {" "}
-        in an empty
-        folder, then run
-        {" "}
-        <code>docker compose up -d</code>
-        {" "}
-        (or
-        {" "}
-        <code>docker-compose up -d</code>
-        {" "}
-        on older setups).
-      </AlertDescription>
-    </Alert>
-  );
-
   return (
     <div className="px-4 py-3">
       <Tabs defaultValue={defaultTab} className="w-full">
@@ -230,7 +204,7 @@ export default function InstallCommand({ item }: { item: Script }) {
         </TabsList>
 
         {hasScript && (
-          <TabsContent value="script" className="mt-0 space-y-3">
+          <TabsContent value="script" className="mt-0 space-y-3 min-h-[400px]">
             <p className="text-xs text-muted-foreground italic">
               {TAB_CONFIG.script.description}
             </p>
@@ -253,20 +227,10 @@ export default function InstallCommand({ item }: { item: Script }) {
         )}
 
         {hasDockerCompose && (
-          <TabsContent value="docker_compose" className="mt-0 space-y-3">
+          <TabsContent value="docker_compose" className="mt-0 space-y-3 min-h-[400px]">
             <p className="text-xs text-muted-foreground italic">
               {TAB_CONFIG.docker_compose.description}
             </p>
-            <div className="rounded-md bg-blue-500/5 px-3 py-2 text-xs text-foreground/80 border border-blue-500/20">
-              <Info className="h-3 w-3 inline mr-1.5 text-blue-500" />
-              Save as
-              {" "}
-              <code className="text-[11px] bg-muted px-1.5 py-0.5 rounded">docker-compose.yml</code>
-              {" "}
-              and run
-              {" "}
-              <code className="text-[11px] bg-muted px-1.5 py-0.5 rounded">docker compose up -d</code>
-            </div>
             {manifest.docker_compose && (
               <div className="rounded-md bg-muted/30 px-3 py-2 text-xs text-muted-foreground border border-border/40">
                 <Info className="h-3 w-3 inline mr-1.5" />
@@ -282,7 +246,7 @@ export default function InstallCommand({ item }: { item: Script }) {
         )}
 
         {hasHelm && (
-          <TabsContent value="helm" className="mt-0 space-y-3">
+          <TabsContent value="helm" className="mt-0 space-y-3 min-h-[400px]">
             <p className="text-xs text-muted-foreground italic">
               {TAB_CONFIG.helm.description}
             </p>
@@ -301,7 +265,7 @@ export default function InstallCommand({ item }: { item: Script }) {
         )}
 
         {hasKubernetes && (
-          <TabsContent value="kubernetes" className="mt-0 space-y-3">
+          <TabsContent value="kubernetes" className="mt-0 space-y-3 min-h-[400px]">
             <p className="text-xs text-muted-foreground italic">
               {TAB_CONFIG.kubernetes.description}
             </p>
@@ -320,7 +284,7 @@ export default function InstallCommand({ item }: { item: Script }) {
         )}
 
         {hasTerraform && (
-          <TabsContent value="terraform" className="mt-0 space-y-3">
+          <TabsContent value="terraform" className="mt-0 space-y-3 min-h-[400px]">
             <p className="text-xs text-muted-foreground italic">
               {TAB_CONFIG.terraform.description}
             </p>

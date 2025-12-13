@@ -1,20 +1,28 @@
 {
   "name": "graylog",
   "slug": "graylog",
+  "tagline": null,
+  "description": "Graylog is a self-hosted log management and SIEM platform for collecting, indexing, and analyzing log data. It includes dashboards, alerts, log search, and integrates with Elasticsearch and MongoDB for monitoring large systems.",
   "categories": [
     93
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Graylog2/graylog2-server",
-  "website": "www.graylog.org",
-  "source_code": "github.com/Graylog2/graylog2-server",
-  "github_stars": "7903",
-  "logo": "/icons/graylog.webp",
-  "description": "Graylog is a self-hosted log management and SIEM platform for collecting, indexing, and analyzing log data. It includes dashboards, alerts, log search, and integrates with Elasticsearch and MongoDB for monitoring large systems.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-12",
+    "github_stars": 7904
+  },
+  "resources": {
+    "website": "https://www.graylog.org",
+    "documentation": "https://github.com/Graylog2/graylog2-server",
+    "source_code": "https://github.com/Graylog2/graylog2-server",
+    "logo": "/icons/graylog.webp",
+    "issues": "https://github.com/Graylog2/graylog2-server/issues",
+    "releases": null
+  },
   "features": [
     "Log Management: Collect, index, and analyze log data from servers, applications, and network devices.",
     "SIEM Capabilities: Security information and event management with threat detection and correlation.",
@@ -25,69 +33,45 @@
     "Stream Processing: Route and process logs with pipelines, extractors, and enrichment rules.",
     "Scalable Architecture: Horizontal scaling to handle millions of log messages per second."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

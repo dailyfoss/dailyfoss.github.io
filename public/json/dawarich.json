@@ -1,20 +1,28 @@
 {
   "name": "dawarich",
   "slug": "dawarich",
+  "tagline": null,
+  "description": "Dawarich is a self-hosted travel tracker that visualizes trips and visited places on an interactive world map. It supports multiple trips, photos, tags, and timeframes, making it ideal for travelers to document their adventures privately.",
   "categories": [
     3
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Freika/dawarich",
-  "website": "dawarich.app",
-  "source_code": "github.com/Freika/dawarich",
-  "github_stars": "7448",
-  "logo": "/icons/dawarich.webp",
-  "description": "Dawarich is a self-hosted travel tracker that visualizes trips and visited places on an interactive world map. It supports multiple trips, photos, tags, and timeframes, making it ideal for travelers to document their adventures privately.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "0.36.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-06",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 7450
+  },
+  "resources": {
+    "website": "https://dawarich.app",
+    "documentation": "https://github.com/Freika/dawarich",
+    "source_code": "https://github.com/Freika/dawarich",
+    "logo": "/icons/dawarich.webp",
+    "issues": "https://github.com/Freika/dawarich/issues",
+    "releases": "https://github.com/Freika/dawarich/releases"
+  },
   "features": [
     "Travel Visualization: Display trips on interactive world maps. See your adventures come to life.",
     "Photo Integration: Attach photos to locations and trips. Visual travel memories.",
@@ -23,69 +31,45 @@
     "Timeline View: Browse your travels chronologically. Relive your journey.",
     "Self-Hosted: Complete control over your travel documentation. Your adventures, your data."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

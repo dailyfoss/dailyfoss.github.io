@@ -1,20 +1,28 @@
 {
   "name": "teable",
   "slug": "teable",
+  "tagline": null,
+  "description": "Teable is an open-source, self-hosted Airtable alternative with relational tables, views, and collaboration features. It provides forms, filters, and integrations through a modern web UI and REST API, with optional managed hosting.",
   "categories": [
     151
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/teableio/teable",
-  "website": "teable.ai",
-  "source_code": "github.com/teableio/teable",
-  "github_stars": "20530",
-  "logo": "/icons/teable.webp",
-  "description": "Teable is an open-source, self-hosted Airtable alternative with relational tables, views, and collaboration features. It provides forms, filters, and integrations through a modern web UI and REST API, with optional managed hosting.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "v1.10.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-15",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 20534
+  },
+  "resources": {
+    "website": "https://teable.ai",
+    "documentation": "https://github.com/teableio/teable",
+    "source_code": "https://github.com/teableio/teable",
+    "logo": "/icons/teable.webp",
+    "issues": "https://github.com/teableio/teable/issues",
+    "releases": "https://github.com/teableio/teable/releases"
+  },
   "features": [
     "Relational tables: Create interconnected tables with relationships, lookups, and rollups for complex data modeling.",
     "Multiple views: Display data in grid, kanban, gallery, calendar, or form views to match different workflows.",
@@ -29,69 +37,45 @@
     "Templates: Start quickly with pre-built templates for common use cases like project management or CRM.",
     "Self-hosted or cloud: Choose between self-hosting for full control or managed cloud hosting for convenience."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

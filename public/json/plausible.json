@@ -1,20 +1,28 @@
 {
   "name": "plausible",
   "slug": "plausible",
+  "tagline": null,
+  "description": "Plausible Analytics is a privacy-focused, self-hosted web analytics platform. It offers lightweight tracking, beautiful reports, and is a privacy-friendly alternative to Google Analytics.",
   "categories": [
     186
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/plausible/analytics",
-  "website": "plausible.io",
-  "source_code": "github.com/plausible/analytics",
-  "github_stars": "23900",
-  "logo": "/icons/plausible.webp",
-  "description": "Plausible Analytics is a privacy-focused, self-hosted web analytics platform. It offers lightweight tracking, beautiful reports, and is a privacy-friendly alternative to Google Analytics.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v3.1.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-13",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 23905
+  },
+  "resources": {
+    "website": "https://plausible.io",
+    "documentation": "https://github.com/plausible/analytics",
+    "source_code": "https://github.com/plausible/analytics",
+    "logo": "/icons/plausible.webp",
+    "issues": "https://github.com/plausible/analytics/issues",
+    "releases": "https://github.com/plausible/analytics/releases"
+  },
   "features": [
     "Privacy-first analytics: Track website visitors without cookies or personal data collection for GDPR compliance.",
     "Lightweight script: Under 1KB tracking script loads fast and doesn't impact page performance.",
@@ -29,69 +37,45 @@
     "Multiple sites: Manage analytics for multiple websites from a single dashboard with separate tracking.",
     "API access: Export data and integrate with other tools using a comprehensive REST API."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

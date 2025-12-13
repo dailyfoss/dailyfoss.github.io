@@ -1,20 +1,28 @@
 {
   "name": "transfer-zip",
   "slug": "transfer-zip",
+  "tagline": null,
+  "description": "transfer.zip-web is a self-hosted file sharing service with drag-and-drop uploads and expiring download links. It aims to provide an easy way to send large files securely.",
   "categories": [
     61
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/robinkarlberg/transfer.zip-web",
-  "website": "transfer.zip",
-  "source_code": "github.com/robinkarlberg/transfer.zip-web",
-  "github_stars": "1399",
-  "logo": "/icons/transfer-zip.webp",
-  "description": "transfer.zip-web is a self-hosted file sharing service with drag-and-drop uploads and expiring download links. It aims to provide an easy way to send large files securely.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-03",
+    "github_stars": 1399
+  },
+  "resources": {
+    "website": "https://transfer.zip",
+    "documentation": "https://github.com/robinkarlberg/transfer.zip-web",
+    "source_code": "https://github.com/robinkarlberg/transfer.zip-web",
+    "logo": "/icons/transfer-zip.webp",
+    "issues": "https://github.com/robinkarlberg/transfer.zip-web/issues",
+    "releases": null
+  },
   "features": [
     "Drag-and-drop upload: Upload files by dragging them into the browser for effortless sharing.",
     "Expiring links: Generate download links that automatically expire after a set time or number of downloads.",
@@ -29,69 +37,45 @@
     "Bandwidth control: Set limits on download speeds or total bandwidth to manage server resources.",
     "Simple interface: Share files through a clean, straightforward interface without complexity."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

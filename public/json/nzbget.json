@@ -1,20 +1,28 @@
 {
   "name": "nzbget",
   "slug": "nzbget",
+  "tagline": null,
+  "description": "NZBGet is a Usenet downloader optimized for performance and low resource usage. It supports automation scripts, web UI, scheduling, and multi-threading with a lightweight daemon for self-hosting.",
   "categories": [
     166
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/nzbgetcom/nzbget",
-  "website": "nzbget.com",
-  "source_code": "github.com/nzbgetcom/nzbget",
-  "github_stars": "552",
-  "logo": "/icons/nzbget.webp",
-  "description": "NZBGet is a Usenet downloader optimized for performance and low resource usage. It supports automation scripts, web UI, scheduling, and multi-threading with a lightweight daemon for self-hosting.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-2.0",
+    "version": "v25.4",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-09",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 553
+  },
+  "resources": {
+    "website": "https://nzbget.com",
+    "documentation": "https://github.com/nzbgetcom/nzbget",
+    "source_code": "https://github.com/nzbgetcom/nzbget",
+    "logo": "/icons/nzbget.webp",
+    "issues": "https://github.com/nzbgetcom/nzbget/issues",
+    "releases": "https://github.com/nzbgetcom/nzbget/releases"
+  },
   "features": [
     "Usenet downloading: Efficient binary file downloading from Usenet newsgroups using NZB files.",
     "Multi-threading: Parallel connections maximize download speed and bandwidth utilization.",
@@ -29,69 +37,45 @@
     "Low resource usage: Optimized C++ code runs efficiently on low-power devices like NAS.",
     "API access: Integrate with Sonarr, Radarr, and other automation tools via JSON-RPC API."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": true,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": true,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "sup3rS3cretMes5age",
   "slug": "sup3r-s3cret-mes5age",
+  "tagline": "",
+  "description": "sup3rS3cretMes5age is a self-hosted tool to create secret, expiring links to messages. It encrypts content and only decrypts client-side when the link is opened.",
   "categories": [
     117
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/algolia/sup3rS3cretMes5age",
-  "website": "github.com/algolia/sup3rS3cretMes5age",
-  "source_code": "github.com/algolia/sup3rS3cretMes5age",
-  "github_stars": "556",
-  "logo": "/icons/sup3r-s3cret-mes5age.webp",
-  "description": "sup3rS3cretMes5age is a self-hosted tool to create secret, expiring links to messages. It encrypts content and only decrypts client-side when the link is opened.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.4.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-01",
+    "date_last_commit": "2025-12-01",
+    "github_stars": 557
+  },
+  "resources": {
+    "website": null,
+    "documentation": null,
+    "source_code": "https://github.com/algolia/sup3rS3cretMes5age",
+    "logo": "/icons/sup3r-s3cret-mes5age.webp",
+    "issues": "https://github.com/algolia/sup3rS3cretMes5age/issues",
+    "releases": "https://github.com/algolia/sup3rS3cretMes5age/releases"
+  },
   "features": [
     "Secret messages: Creates one-time links to encrypted messages that self-destruct.",
     "Client-side encryption: Encrypts messages in browser before sending to server.",
@@ -29,69 +37,45 @@
     "No server storage: Server never stores decryption keys or message content.",
     "Open source: Auditable code ensures security and privacy claims."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

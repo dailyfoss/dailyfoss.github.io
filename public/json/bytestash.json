@@ -1,20 +1,28 @@
 {
   "name": "bytestash",
   "slug": "bytestash",
+  "tagline": null,
+  "description": "ByteStash is a self-hosted personal data warehouse designed to store notes, documents, or files in an organized searchable format. It offers a clean web interface and API access, ideal for centralizing personal data in a private cloud.",
   "categories": [
     27
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/jordan-dalby/ByteStash",
-  "website": "github.com/jordan-dalby/ByteStash",
-  "source_code": "github.com/jordan-dalby/ByteStash",
-  "github_stars": "1912",
-  "logo": "/icons/bytestash.webp",
-  "description": "ByteStash is a self-hosted personal data warehouse designed to store notes, documents, or files in an organized searchable format. It offers a clean web interface and API access, ideal for centralizing personal data in a private cloud.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v1.5.9",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-06",
+    "date_last_commit": "2025-11-22",
+    "github_stars": 1913
+  },
+  "resources": {
+    "website": "https://github.com/jordan-dalby/ByteStash",
+    "documentation": "https://github.com/jordan-dalby/ByteStash",
+    "source_code": "https://github.com/jordan-dalby/ByteStash",
+    "logo": "/icons/bytestash.webp",
+    "issues": "https://github.com/jordan-dalby/ByteStash/issues",
+    "releases": "https://github.com/jordan-dalby/ByteStash/releases"
+  },
   "features": [
     "Data Warehouse: Personal storage for notes, documents, and files. Centralized organization.",
     "Searchable Format: Powerful search across all stored content. Find anything instantly.",
@@ -23,69 +31,45 @@
     "Private Cloud: Self-hosted solution for complete data privacy. Your data, your server.",
     "Organized Storage: Keep all personal data in one searchable place. Never lose information."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

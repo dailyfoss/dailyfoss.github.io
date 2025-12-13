@@ -1,20 +1,28 @@
 {
   "name": "pi-hole",
   "slug": "pi-hole",
+  "tagline": null,
+  "description": "Pi-hole is a self-hosted network-wide ad blocker and DNS sinkhole. It blocks ads and trackers across devices with a lightweight DNS solution and a web-based dashboard for configuration.",
   "categories": [
     7
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/pi-hole/pi-hole",
-  "website": "pi-hole.net",
-  "source_code": "github.com/pi-hole/pi-hole",
-  "github_stars": "54717",
-  "logo": "/icons/pi-hole.webp",
-  "description": "Pi-hole is a self-hosted network-wide ad blocker and DNS sinkhole. It blocks ads and trackers across devices with a lightweight DNS solution and a web-based dashboard for configuration.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "v6.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-27",
+    "date_last_commit": "2025-12-07",
+    "github_stars": 54725
+  },
+  "resources": {
+    "website": "https://pi-hole.net",
+    "documentation": "https://github.com/pi-hole/pi-hole",
+    "source_code": "https://github.com/pi-hole/pi-hole",
+    "logo": "/icons/pi-hole.webp",
+    "issues": "https://github.com/pi-hole/pi-hole/issues",
+    "releases": "https://github.com/pi-hole/pi-hole/releases"
+  },
   "features": [
     "Network-wide blocking: Block ads and trackers for all devices on your network without individual configuration.",
     "DNS sinkhole: Intercept DNS requests to known ad and tracking domains before they reach devices.",
@@ -29,69 +37,45 @@
     "Privacy protection: Block tracking domains to enhance privacy across all network devices.",
     "Performance metrics: Track DNS query response times and blocking effectiveness with statistics."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

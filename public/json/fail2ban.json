@@ -1,20 +1,28 @@
 {
   "name": "fail2ban",
   "slug": "fail2ban",
+  "tagline": null,
+  "description": "Fail2Ban scans log files to detect malicious login attempts and automatically updates firewall rules to block offending IPs. It is widely used to protect SSH and other services on Linux servers with minimal configuration.",
   "categories": [
     145
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/fail2ban/fail2ban",
-  "website": "http://www.fail2ban.org",
-  "source_code": "github.com/fail2ban/fail2ban",
-  "github_stars": "16243",
-  "logo": "/icons/fail2ban.webp",
-  "description": "Fail2Ban scans log files to detect malicious login attempts and automatically updates firewall rules to block offending IPs. It is widely used to protect SSH and other services on Linux servers with minimal configuration.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "1.1.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-04-25",
+    "date_last_commit": "2025-12-07",
+    "github_stars": 16248
+  },
+  "resources": {
+    "website": "http://www.fail2ban.org",
+    "documentation": "https://github.com/fail2ban/fail2ban",
+    "source_code": "https://github.com/fail2ban/fail2ban",
+    "logo": "/icons/fail2ban.webp",
+    "issues": "https://github.com/fail2ban/fail2ban/issues",
+    "releases": "https://github.com/fail2ban/fail2ban/releases"
+  },
   "features": [
     "Security: Automatic IP blocking, Brute-force protection, Real-time threat response. Protect your services from attacks.",
     "Log Monitoring: Scans system logs continuously. Detects malicious patterns instantly.",
@@ -23,69 +31,45 @@
     "Customizable Rules: Define your own filters and actions. Flexible security policies.",
     "Email Alerts: Get notified of bans and attacks. Stay informed."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -11,11 +11,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "download-icons": "node tools/download-icons.js",
-    "update-stargazers": "node tools/update-stargazers.js",
-    "update-versions": "node tools/update-versions.js",
-    "update-platforms": "node tools/update-platforms.js",
-    "update-platforms:fast": "PARALLEL_LIMIT=50 node tools/update-platforms.js",
-    "check-platform-stats": "node tools/check-platform-stats.js",
+    "update-repo-metadata": "node tools/update-repo-metadata.js",
     "build": "next build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d out",

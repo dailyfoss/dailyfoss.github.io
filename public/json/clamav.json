@@ -1,20 +1,28 @@
 {
   "name": "clamav",
   "slug": "clamav",
+  "tagline": null,
+  "description": "ClamAV is an open-source antivirus engine designed for detecting malware, viruses, and threats. It can be used on mail servers, endpoints, and containerized environments, and offers a CLI scanner.",
   "categories": [
     11
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Cisco-Talos/clamav",
-  "website": "www.clamav.net/",
-  "source_code": "github.com/Cisco-Talos/clamav",
-  "github_stars": "6005",
-  "logo": "/icons/clamav.webp",
-  "description": "ClamAV is an open-source antivirus engine designed for detecting malware, viruses, and threats. It can be used on mail servers, endpoints, and containerized environments, and offers a CLI scanner.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-2.0",
+    "version": "clamav-1.5.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-16",
+    "date_last_commit": "2025-11-06",
+    "github_stars": 6005
+  },
+  "resources": {
+    "website": "https://www.clamav.net/",
+    "documentation": "https://github.com/Cisco-Talos/clamav",
+    "source_code": "https://github.com/Cisco-Talos/clamav",
+    "logo": "/icons/clamav.webp",
+    "issues": "https://github.com/Cisco-Talos/clamav/issues",
+    "releases": "https://github.com/Cisco-Talos/clamav/releases"
+  },
   "features": [
     "Antivirus Engine: Open-source malware and virus detection. Comprehensive protection.",
     "Mail Server Protection: Scan email attachments for threats. Secure communication.",
@@ -24,69 +32,45 @@
     "Container Support: Scan containerized environments. Modern infrastructure.",
     "Open Source: Transparent, auditable security code. Trust through verification."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

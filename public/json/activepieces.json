@@ -1,20 +1,28 @@
 {
   "name": "activepieces",
   "slug": "activepieces",
+  "tagline": null,
+  "description": "Activepieces is an open-source, no-code workflow automation platform that lets teams build automations and AI workflows with drag-and-drop logic. Users can self-host or use the cloud version, and integrate with 400+ apps to automate business workflows.",
   "categories": [
     110
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/activepieces/activepieces",
-  "website": "www.activepieces.com",
-  "source_code": "github.com/activepieces/activepieces",
-  "github_stars": "19714",
-  "logo": "/icons/activepieces.webp",
-  "description": "Activepieces is an open-source, no-code workflow automation platform that lets teams build automations and AI workflows with drag-and-drop logic. Users can self-host or use the cloud version, and integrate with 400+ apps to automate business workflows.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "0.73.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-09",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 19754
+  },
+  "resources": {
+    "website": "https://www.activepieces.com",
+    "documentation": "https://github.com/activepieces/activepieces",
+    "source_code": "https://github.com/activepieces/activepieces",
+    "logo": "/icons/activepieces.webp",
+    "issues": "https://github.com/activepieces/activepieces/issues",
+    "releases": "https://github.com/activepieces/activepieces/releases"
+  },
   "features": [
     "No-Code Automation: Build powerful workflows with visual drag-and-drop tools. No programming required.",
     "400+ Integrations: Connect popular apps to streamline business processes. Everything works together.",
@@ -25,69 +33,45 @@
     "Team Collaboration: Multiple members can build and manage workflows together. Shared productivity.",
     "Open Source: Extend functionality with community contributions and custom code. Truly flexible platform."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

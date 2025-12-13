@@ -15,14 +15,38 @@ type SponsoredSidebarProps = {
   onScriptSelect?: (slug: string) => void;
 };
 
-// Simple icon loader with fallback
-function AppIcon({ src, name, size = 48 }: { src?: string | null; name: string; size?: number }) {
+// Simple icon loader with fallback and theme support
+function AppIcon({ src, src_light, name, size = 48 }: { src?: string | null; src_light?: string | null; name: string; size?: number }) {
   const [showFallback, setShowFallback] = useState(!src || src.trim() === "");
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+
+  // Detect theme changes
+  useEffect(() => {
+    const checkTheme = () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      setTheme(isDark ? 'dark' : 'light');
+    };
+
+    checkTheme();
+    
+    // Watch for theme changes
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Get the appropriate logo based on theme
+  // In dark mode, use light variant if available (for visibility)
+  const currentSrc = (theme === 'dark' && src_light) ? src_light : src;
 
   // Reset fallback state when src changes
   useEffect(() => {
-    setShowFallback(!src || src.trim() === "");
-  }, [src]);
+    setShowFallback(!currentSrc || currentSrc.trim() === "");
+  }, [currentSrc]);
 
   const imgClass = size <= 48 ? "h-8 w-8 object-contain rounded-md p-0.5" : "h-11 w-11 object-contain rounded-md p-1";
   const fallbackClass = size <= 48 ? "h-8 w-8" : "h-11 w-11";
@@ -38,7 +62,7 @@ function AppIcon({ src, name, size = 48 }: { src?: string | null; name: string; 
 
   return (
     <img
-      src={src!}
+      src={currentSrc || ''}
       width={size}
       height={size}
       alt={`${name} icon`}
@@ -60,14 +84,15 @@ export function SponsoredSidebar({ items, onScriptSelect }: SponsoredSidebarProp
     // Filter out duplicates and get only active sponsored scripts
     const uniqueScriptsMap = new Map<string, Script>();
     scripts.forEach((script) => {
-      if (!uniqueScriptsMap.has(script.slug) && script.sponsored) {
+      if (!uniqueScriptsMap.has(script.slug) && script.metadata?.sponsored) {
         // Check if sponsored period has expired
-        if (script.sponsored_expired) {
-          const expirationDate = new Date(script.sponsored_expired);
-          if (expirationDate < now) {
-            return; // Skip expired sponsored scripts
-          }
-        }
+        // TODO: Add sponsored_expired field to Script type if needed
+        // if (script.sponsored_expired) {
+        //   const expirationDate = new Date(script.sponsored_expired);
+        //   if (expirationDate < now) {
+        //     return; // Skip expired sponsored scripts
+        //   }
+        // }
         uniqueScriptsMap.set(script.slug, script);
       }
     });
@@ -126,7 +151,12 @@ export function SponsoredSidebar({ items, onScriptSelect }: SponsoredSidebarProp
                 <CardHeader className="pb-2">
                   <CardTitle className="flex items-start gap-2">
                     <div className="flex h-12 w-12 min-w-12 items-center justify-center rounded-lg bg-gradient-to-br from-accent/40 to-accent/60 p-1 shadow-sm">
-                      <AppIcon src={script.logo} name={script.name || script.slug} size={48} />
+                      <AppIcon 
+                        src={script.resources?.logo} 
+                        src_light={script.resources?.logo_light}
+                        name={script.name || script.slug} 
+                        size={48} 
+                      />
                     </div>
                     <div className="flex flex-col flex-1 min-w-0">
                       <h3 className="font-semibold text-sm line-clamp-2 leading-tight">{script.name}</h3>

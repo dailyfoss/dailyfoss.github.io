@@ -33,15 +33,13 @@ function PlatformRow({ label, items, icon }: PlatformRowProps) {
 }
 
 export default function DefaultSettings({ item }: { item: Script }) {
-  const defaultMethod = item.install_methods[0];
+  const platform = item.platform_support;
+  const hosting = item.hosting_options;
+  const deployment = item.deployment_methods;
+  const ui = item.interfaces;
 
-  if (!defaultMethod)
+  if (!platform && !hosting && !deployment && !ui)
     return null;
-
-  const platform = defaultMethod.platform;
-  const hosting = defaultMethod.hosting;
-  const deployment = defaultMethod.deployment;
-  const ui = defaultMethod.ui;
 
   const desktop = [
     platform?.desktop?.macos && "macOS",

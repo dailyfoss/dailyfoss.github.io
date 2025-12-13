@@ -1,20 +1,28 @@
 {
   "name": "prestashop",
   "slug": "prestashop",
+  "tagline": null,
+  "description": "PrestaShop is a self-hosted e-commerce platform offering a feature-rich online store with support for custom themes, inventory, payments, and extensions. It is widely used for scalable, customizable e-commerce sites.",
   "categories": [
     51
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/PrestaShop/PrestaShop",
-  "website": "www.prestashop-project.org/",
-  "source_code": "github.com/PrestaShop/PrestaShop",
-  "github_stars": "8883",
-  "logo": "/icons/prestashop.webp",
-  "description": "PrestaShop is a self-hosted e-commerce platform offering a feature-rich online store with support for custom themes, inventory, payments, and extensions. It is widely used for scalable, customizable e-commerce sites.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "9.0.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-10",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 8886
+  },
+  "resources": {
+    "website": "https://www.prestashop-project.org/",
+    "documentation": "https://github.com/PrestaShop/PrestaShop",
+    "source_code": "https://github.com/PrestaShop/PrestaShop",
+    "logo": "/icons/prestashop.webp",
+    "issues": "https://github.com/PrestaShop/PrestaShop/issues",
+    "releases": "https://github.com/PrestaShop/PrestaShop/releases"
+  },
   "features": [
     "Product management: Create and manage unlimited products with variants, attributes, and custom options.",
     "Order processing: Handle orders with customizable workflows, status tracking, and automated notifications.",
@@ -29,69 +37,45 @@
     "Analytics dashboard: Monitor sales, traffic, and customer behavior with built-in reporting tools.",
     "Module marketplace: Extend functionality with thousands of free and paid modules from the community."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "m3u-editor",
   "slug": "m3u-editor",
+  "tagline": null,
+  "description": "M3U Editor is a web-based tool for editing and managing M3U playlists. Useful for IPTV and media streaming setups, it allows sorting, filtering, and customizing entries for media players.",
   "categories": [
     59
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/sparkison/m3u-editor",
-  "website": "github.com/sparkison/m3u-editor",
-  "source_code": "github.com/sparkison/m3u-editor",
-  "github_stars": "448",
-  "logo": "/icons/m3u-editor.webp",
-  "description": "M3U Editor is a web-based tool for editing and managing M3U playlists. Useful for IPTV and media streaming setups, it allows sorting, filtering, and customizing entries for media players.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "0.8.19",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-12",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 448
+  },
+  "resources": {
+    "website": "https://github.com/sparkison/m3u-editor",
+    "documentation": "https://github.com/sparkison/m3u-editor",
+    "source_code": "https://github.com/sparkison/m3u-editor",
+    "logo": "/icons/m3u-editor.webp",
+    "issues": "https://github.com/sparkison/m3u-editor/issues",
+    "releases": "https://github.com/sparkison/m3u-editor/releases"
+  },
   "features": [
     "Playlist editing: Import and modify M3U/M3U8 playlists with drag-and-drop reordering for IPTV and media streaming.",
     "Channel filtering: Search and filter entries by name, group, or URL to quickly locate specific streams.",
@@ -27,69 +35,45 @@
     "Backup and restore: Create playlist backups to prevent data loss during editing sessions.",
     "Multi-format support: Handle various playlist formats including M3U, M3U8, and XSPF files."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

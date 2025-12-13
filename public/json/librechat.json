@@ -1,89 +1,73 @@
 {
   "name": "librechat",
   "slug": "librechat",
+  "tagline": null,
+  "description": "LibreChat is an open-source alternative to ChatGPT which supports custom models, connectors, and real-time messaging. It offers flexibility to integrate AI chat functionality in a self-hosted or cloud environment.",
   "categories": [
     102
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/danny-avila/LibreChat",
-  "website": "librechat.ai/",
-  "source_code": "github.com/danny-avila/LibreChat",
-  "github_stars": "32354",
-  "logo": "/icons/librechat.webp",
-  "description": "LibreChat is an open-source alternative to ChatGPT which supports custom models, connectors, and real-time messaging. It offers flexibility to integrate AI chat functionality in a self-hosted or cloud environment.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-13",
+    "github_stars": 32362
+  },
+  "resources": {
+    "website": "https://librechat.ai/",
+    "documentation": "https://github.com/danny-avila/LibreChat",
+    "source_code": "https://github.com/danny-avila/LibreChat",
+    "logo": "/icons/librechat.webp",
+    "issues": "https://github.com/danny-avila/LibreChat/issues",
+    "releases": null
+  },
   "features": [
     "AI Chat Interface: ChatGPT-like experience, Multiple AI models, Custom connectors. Flexible AI chat platform.",
     "Model Support: OpenAI, Anthropic, Local models, Custom endpoints. Connect to any AI provider.",
     "Conversation Management: Chat history, Multi-conversation, Search and organize. Manage AI interactions efficiently.",
     "Self-Hosted: Privacy-focused, API key control, Custom deployment. Run your own AI chat service."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "dbgate",
   "slug": "dbgate",
+  "tagline": null,
+  "description": "DbGate is a modern database management tool with a web-based IDE for SQL, JSON, and CSV. It supports many database types like PostgreSQL, MySQL, MongoDB, and SQLite. Easy to deploy in Docker for self-hosting.",
   "categories": [
     39
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/dbgate/dbgate",
-  "website": "www.dbgate.io",
-  "source_code": "github.com/dbgate/dbgate",
-  "github_stars": "6590",
-  "logo": "/icons/dbgate.webp",
-  "description": "DbGate is a modern database management tool with a web-based IDE for SQL, JSON, and CSV. It supports many database types like PostgreSQL, MySQL, MongoDB, and SQLite. Easy to deploy in Docker for self-hosting.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v6.7.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-03",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 6590
+  },
+  "resources": {
+    "website": "https://www.dbgate.io",
+    "documentation": "https://github.com/dbgate/dbgate",
+    "source_code": "https://github.com/dbgate/dbgate",
+    "logo": "/icons/dbgate.webp",
+    "issues": "https://github.com/dbgate/dbgate/issues",
+    "releases": "https://github.com/dbgate/dbgate/releases"
+  },
   "features": [
     "Multi-Database Support: Connect to PostgreSQL, MySQL, MongoDB, SQLite, and more. Universal compatibility.",
     "Web-Based IDE: Full-featured SQL editor in your browser. Code anywhere, anytime.",
@@ -23,69 +31,45 @@
     "Schema Management: View and modify database structures visually. Intuitive database design.",
     "Self-Hosted: Run your database management tool privately. Complete control and security."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

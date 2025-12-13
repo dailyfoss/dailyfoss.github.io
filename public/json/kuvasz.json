@@ -1,20 +1,28 @@
 {
   "name": "kuvasz",
   "slug": "kuvasz",
+  "tagline": null,
+  "description": "Kuvasz is an uptime monitoring and incident notification service. It regularly checks endpoints, records availability metrics and sends alerts when services go down, providing a central dashboard for small to medium infrastructures.",
   "categories": [
     173
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/kuvasz-uptime/kuvasz",
-  "website": "kuvasz-uptime.dev/",
-  "source_code": "github.com/kuvasz-uptime/kuvasz",
-  "github_stars": "463",
-  "logo": "/icons/kuvasz.webp",
-  "description": "Kuvasz is an uptime monitoring and incident notification service. It regularly checks endpoints, records availability metrics and sends alerts when services go down, providing a central dashboard for small to medium infrastructures.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "3.3.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-11",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 463
+  },
+  "resources": {
+    "website": "https://kuvasz-uptime.dev/",
+    "documentation": "https://github.com/kuvasz-uptime/kuvasz",
+    "source_code": "https://github.com/kuvasz-uptime/kuvasz",
+    "logo": "/icons/kuvasz.webp",
+    "issues": "https://github.com/kuvasz-uptime/kuvasz/issues",
+    "releases": "https://github.com/kuvasz-uptime/kuvasz/releases"
+  },
   "features": [
     "Uptime Monitoring: Regular health checks for endpoints with availability tracking. Monitor service uptime continuously.",
     "Response Time Tracking: Measure and graph response times for performance monitoring. Identify slow services.",
@@ -29,69 +37,45 @@
     "Maintenance Windows: Schedule maintenance periods to suppress alerts. Avoid false alarms.",
     "API Access: Programmatic monitoring management and status queries. Integrate with existing tools."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

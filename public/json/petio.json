@@ -1,20 +1,28 @@
 {
   "name": "petio",
   "slug": "petio",
+  "tagline": "",
+  "description": "Petio is a request management tool integrating with Plex and Overseerr to allow users to request media content. It automates approval workflows and supports multiple media backends.",
   "categories": [
     156
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/petio-team/petio",
-  "website": "petio.tv",
-  "source_code": "github.com/petio-team/petio",
-  "github_stars": "282",
-  "logo": "/icons/petio.webp",
-  "description": "Petio is a request management tool integrating with Plex and Overseerr to allow users to request media content. It automates approval workflows and supports multiple media backends.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.5.5",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2024-03-30",
+    "date_last_commit": "2025-01-17",
+    "github_stars": 282
+  },
+  "resources": {
+    "website": "https://petio.tv",
+    "documentation": "https://petio.tv",
+    "source_code": "https://github.com/petio-team/petio",
+    "logo": "/icons/petio.webp",
+    "issues": "https://github.com/petio-team/petio/issues",
+    "releases": "https://github.com/petio-team/petio/releases"
+  },
   "features": [
     "Media Requests: Users can search and request movies or TV shows to be added to your Plex library through an intuitive interface.",
     "Approval Workflows: Configure automatic or manual approval processes for media requests based on user roles and quotas.",
@@ -29,69 +37,45 @@
     "Quality Profiles: Configure preferred video quality and format settings for automated media downloads.",
     "Issue Reporting: Users can report problems with existing media for re-download or quality improvement."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

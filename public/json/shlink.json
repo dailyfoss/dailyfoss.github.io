@@ -1,20 +1,28 @@
 {
   "name": "shlink",
   "slug": "shlink",
+  "tagline": null,
+  "description": "Shlink is a self-hosted URL shortener providing detailed visit analytics, QR codes, and REST APIs. It can back multiple domains and integrates easily with automation and external frontends.",
   "categories": [
     171
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/shlinkio/shlink",
-  "website": "shlink.io",
-  "source_code": "github.com/shlinkio/shlink",
-  "github_stars": "4501",
-  "logo": "/icons/shlink.webp",
-  "description": "Shlink is a self-hosted URL shortener providing detailed visit analytics, QR codes, and REST APIs. It can back multiple domains and integrates easily with automation and external frontends.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v4.6.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-01",
+    "date_last_commit": "2025-12-03",
+    "github_stars": 4501
+  },
+  "resources": {
+    "website": "https://shlink.io",
+    "documentation": "https://github.com/shlinkio/shlink",
+    "source_code": "https://github.com/shlinkio/shlink",
+    "logo": "/icons/shlink.webp",
+    "issues": "https://github.com/shlinkio/shlink/issues",
+    "releases": "https://github.com/shlinkio/shlink/releases"
+  },
   "features": [
     "URL shortening: Creates short links with custom or auto-generated slugs.",
     "Visit analytics: Tracks clicks, referrers, locations, and devices for each short link.",
@@ -29,69 +37,45 @@
     "Access control: Protects links with passwords or restricts access by IP address.",
     "Web interface: Manages links through optional web UI or third-party frontends."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "novu",
   "slug": "novu",
+  "tagline": null,
+  "description": "Novu is an open-source notification platform that enables managing and sending notifications across channels like email, SMS, chat, and push. It includes templates, workflows, logs, and supports self-hosting or cloud.",
   "categories": [
     112
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/novuhq/novu",
-  "website": "novu.co",
-  "source_code": "github.com/novuhq/novu",
-  "github_stars": "38285",
-  "logo": "/icons/novu.webp",
-  "description": "Novu is an open-source notification platform that enables managing and sending notifications across channels like email, SMS, chat, and push. It includes templates, workflows, logs, and supports self-hosting or cloud.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "@novu/framework@2.9.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-02",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 38289
+  },
+  "resources": {
+    "website": "https://novu.co",
+    "documentation": "https://github.com/novuhq/novu",
+    "source_code": "https://github.com/novuhq/novu",
+    "logo": "/icons/novu.webp",
+    "issues": "https://github.com/novuhq/novu/issues",
+    "releases": "https://github.com/novuhq/novu/releases"
+  },
   "features": [
     "Multi-channel notifications: Send messages via email, SMS, push, in-app, and chat from one platform.",
     "Workflow builder: Design notification flows with triggers, delays, and conditional logic.",
@@ -29,69 +37,45 @@
     "API-first design: Integrate notifications into applications with comprehensive REST API.",
     "Self-hosted or cloud: Deploy on your infrastructure or use managed cloud service."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

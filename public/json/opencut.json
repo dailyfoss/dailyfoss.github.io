@@ -1,20 +1,29 @@
 {
   "name": "opencut",
   "slug": "opencut",
+  "tagline": null,
+  "description": "OpenCut is a self-hosted project planner and scheduling tool focused on makers or fabricators. It provides cut lists, material usage, and order management for workshop environments.",
   "categories": [
     46
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/OpenCut-app/OpenCut",
-  "website": "opencut.app",
-  "source_code": "github.com/OpenCut-app/OpenCut",
-  "github_stars": "44305",
-  "logo": "/icons/opencut.webp",
-  "description": "OpenCut is a self-hosted project planner and scheduling tool focused on makers or fabricators. It provides cut lists, material usage, and order management for workshop environments.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-07",
+    "github_stars": 44309
+  },
+  "resources": {
+    "website": "https://opencut.app",
+    "documentation": "https://github.com/OpenCut-app/OpenCut",
+    "source_code": "https://github.com/OpenCut-app/OpenCut",
+    "logo": "/icons/opencut.webp",
+    "issues": "https://github.com/OpenCut-app/OpenCut/issues",
+    "releases": "https://github.com/OpenCut-app/OpenCut/releases",
+    "logo_light": "/icons/opencut-light.webp"
+  },
   "features": [
     "Cut list generation: Create optimized cutting plans from project dimensions to minimize material waste and costs.",
     "Material tracking: Monitor inventory levels for wood, metal, and other materials with usage history and reorder alerts.",
@@ -25,69 +34,45 @@
     "Cost estimation: Generate accurate quotes by calculating material costs, labor hours, and overhead for each project.",
     "Export options: Output cut lists and plans to PDF or CSV for shop floor use and integration with CNC systems."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": true,
-    "mobile": true,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

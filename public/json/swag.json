@@ -1,20 +1,28 @@
 {
   "name": "swag",
   "slug": "swag",
+  "tagline": null,
+  "description": "SWAG (Secure Web Application Gateway) is a Docker image that bundles Nginx, Let’s Encrypt, and security defaults to provide a secure reverse proxy and SSL gateway for self-hosted services.",
   "categories": [
     137
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/linuxserver/docker-swag",
-  "website": "docs.linuxserver.io/general/swag",
-  "source_code": "github.com/linuxserver/docker-swag",
-  "github_stars": "3517",
-  "logo": "/icons/swag.webp",
-  "description": "SWAG (Secure Web Application Gateway) is a Docker image that bundles Nginx, Let’s Encrypt, and security defaults to provide a secure reverse proxy and SSL gateway for self-hosted services.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "5.2.2-ls425",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-13",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 3517
+  },
+  "resources": {
+    "website": "https://docs.linuxserver.io/general/swag",
+    "documentation": "https://github.com/linuxserver/docker-swag",
+    "source_code": "https://github.com/linuxserver/docker-swag",
+    "logo": "/icons/swag.webp",
+    "issues": "https://github.com/linuxserver/docker-swag/issues",
+    "releases": "https://github.com/linuxserver/docker-swag/releases"
+  },
   "features": [
     "Reverse proxy: Routes traffic to multiple backend services from single entry point.",
     "Let's Encrypt: Automatically obtains and renews SSL certificates.",
@@ -29,69 +37,45 @@
     "ModSecurity: Includes web application firewall for additional protection.",
     "Docker integration: Designed specifically for Docker-based service deployments."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": true,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

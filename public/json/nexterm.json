@@ -1,20 +1,28 @@
 {
   "name": "nexterm",
   "slug": "nexterm",
+  "tagline": null,
+  "description": "Nexterm is a self-hosted web-based terminal emulator for accessing shells remotely via browser. It supports SSH and offers secure command execution without needing a native terminal client.",
   "categories": [
     135
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/gnmyt/Nexterm",
-  "website": "http://docs.nexterm.dev/",
-  "source_code": "github.com/gnmyt/Nexterm",
-  "github_stars": "3538",
-  "logo": "/icons/nexterm.webp",
-  "description": "Nexterm is a self-hosted web-based terminal emulator for accessing shells remotely via browser. It supports SSH and offers secure command execution without needing a native terminal client.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v1.0.6-OPEN-PREVIEW",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-30",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 3538
+  },
+  "resources": {
+    "website": "http://docs.nexterm.dev/",
+    "documentation": "https://github.com/gnmyt/Nexterm",
+    "source_code": "https://github.com/gnmyt/Nexterm",
+    "logo": "/icons/nexterm.webp",
+    "issues": "https://github.com/gnmyt/Nexterm/issues",
+    "releases": "https://github.com/gnmyt/Nexterm/releases"
+  },
   "features": [
     "Web-based terminal: Access command-line interfaces through a browser without native terminal software.",
     "SSH connections: Connect to remote servers via SSH with credential management.",
@@ -29,69 +37,45 @@
     "Mobile responsive: Access terminals from tablets and smartphones with touch-friendly interface.",
     "Access control: Manage user permissions and restrict access to specific servers or commands."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

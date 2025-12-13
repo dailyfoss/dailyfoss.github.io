@@ -1,20 +1,28 @@
 {
   "name": "dovecot",
   "slug": "dovecot",
+  "tagline": null,
+  "description": "Dovecot is a widely used open-source IMAP and POP3 email server focused on security and performance. It runs as a daemon on Unix-like systems, providing mailbox storage, authentication, and extensible plugins for mail infrastructures.",
   "categories": [
     53
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/dovecot/core",
-  "website": "http://www.dovecot.org/",
-  "source_code": "github.com/dovecot/core",
-  "github_stars": "1144",
-  "logo": "/icons/dovecot.webp",
-  "description": "Dovecot is a widely used open-source IMAP and POP3 email server focused on security and performance. It runs as a daemon on Unix-like systems, providing mailbox storage, authentication, and extensible plugins for mail infrastructures.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "NOASSERTION",
+    "version": "2.4.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-29",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 1144
+  },
+  "resources": {
+    "website": "http://www.dovecot.org/",
+    "documentation": "https://github.com/dovecot/core",
+    "source_code": "https://github.com/dovecot/core",
+    "logo": "/icons/dovecot.webp",
+    "issues": "https://github.com/dovecot/core/issues",
+    "releases": "https://github.com/dovecot/core/releases"
+  },
   "features": [
     "IMAP and POP3: Retrieve email from mailboxes using standard protocols compatible with all major mail clients.",
     "High performance: Handle thousands of concurrent connections with efficient indexing and caching for fast mailbox access.",
@@ -25,69 +33,45 @@
     "Security hardening: Run with minimal privileges and support TLS encryption to protect credentials and message content.",
     "Quota enforcement: Limit mailbox sizes per user or domain with configurable warnings and rejection policies."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

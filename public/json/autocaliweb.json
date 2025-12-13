@@ -1,20 +1,28 @@
 {
   "name": "autocaliweb",
   "slug": "autocaliweb",
+  "tagline": null,
+  "description": "Autocaliweb is a self-hosted meal planning and grocery list web application that helps users plan recipes, schedule meals, and automate shopping lists.",
   "categories": [
     24
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/gelbphoenix/autocaliweb",
-  "website": "github.com/gelbphoenix/autocaliweb",
-  "source_code": "github.com/gelbphoenix/autocaliweb",
-  "github_stars": "195",
-  "logo": "/icons/autocaliweb.webp",
-  "description": "Autocaliweb is a self-hosted meal planning and grocery list web application that helps users plan recipes, schedule meals, and automate shopping lists.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v0.11.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-09",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 196
+  },
+  "resources": {
+    "website": "https://github.com/gelbphoenix/autocaliweb",
+    "documentation": "https://github.com/gelbphoenix/autocaliweb",
+    "source_code": "https://github.com/gelbphoenix/autocaliweb",
+    "logo": "/icons/autocaliweb.webp",
+    "issues": "https://github.com/gelbphoenix/autocaliweb/issues",
+    "releases": "https://github.com/gelbphoenix/autocaliweb/releases"
+  },
   "features": [
     "Meal Planning: Plan weekly meals with recipe organization. Organized cooking.",
     "Recipe Management: Store and organize your favorite recipes. Digital cookbook.",
@@ -25,69 +33,45 @@
     "Self-Hosted: Keep your meal data private. Complete control.",
     "Web Interface: Access from any device with a browser. Plan anywhere."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

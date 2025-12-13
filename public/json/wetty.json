@@ -1,20 +1,28 @@
 {
   "name": "wetty",
   "slug": "wetty",
+  "tagline": null,
+  "description": "Wetty is a self-hosted web-based terminal that exposes SSH access through the browser. It replaces traditional terminal apps with a responsive web UI, letting users reach shell sessions securely from anywhere without extra client software.",
   "categories": [
     135
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/butlerx/wetty",
-  "website": "butlerx.github.io/wetty",
-  "source_code": "github.com/butlerx/wetty",
-  "github_stars": "5042",
-  "logo": "/icons/wetty.webp",
-  "description": "Wetty is a self-hosted web-based terminal that exposes SSH access through the browser. It replaces traditional terminal apps with a responsive web UI, letting users reach shell sessions securely from anywhere without extra client software.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v2.7.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2023-09-16",
+    "date_last_commit": "2025-10-30",
+    "github_stars": 5042
+  },
+  "resources": {
+    "website": "https://butlerx.github.io/wetty",
+    "documentation": "https://github.com/butlerx/wetty",
+    "source_code": "https://github.com/butlerx/wetty",
+    "logo": "/icons/wetty.webp",
+    "issues": "https://github.com/butlerx/wetty/issues",
+    "releases": "https://github.com/butlerx/wetty/releases"
+  },
   "features": [
     "Browser-based terminal: Access SSH sessions directly from any web browser without installing terminal software.",
     "SSH connectivity: Connect to remote servers using standard SSH protocol with key or password authentication.",
@@ -29,69 +37,45 @@
     "Lightweight deployment: Run on minimal resources making it suitable for jump boxes or bastion hosts.",
     "Audit logging: Record terminal sessions for compliance and security review purposes."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

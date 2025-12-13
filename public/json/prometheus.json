@@ -1,20 +1,28 @@
 {
   "name": "prometheus",
   "slug": "prometheus",
+  "tagline": null,
+  "description": "Prometheus is a leading open-source system monitoring and alerting toolkit. It collects metrics via pull-based scraping, stores them efficiently, and uses PromQL for powerful queries and visualizations.",
   "categories": [
     103
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/prometheus/prometheus",
-  "website": "prometheus.io/",
-  "source_code": "github.com/prometheus/prometheus",
-  "github_stars": "61705",
-  "logo": "/icons/prometheus.webp",
-  "description": "Prometheus is a leading open-source system monitoring and alerting toolkit. It collects metrics via pull-based scraping, stores them efficiently, and uses PromQL for powerful queries and visualizations.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v3.8.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-02",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 61712
+  },
+  "resources": {
+    "website": "https://prometheus.io/",
+    "documentation": "https://github.com/prometheus/prometheus",
+    "source_code": "https://github.com/prometheus/prometheus",
+    "logo": "/icons/prometheus.webp",
+    "issues": "https://github.com/prometheus/prometheus/issues",
+    "releases": "https://github.com/prometheus/prometheus/releases"
+  },
   "features": [
     "Metric collection: Scrape metrics from instrumented applications and infrastructure using pull-based model.",
     "Time-series database: Store metrics efficiently with compression and retention policies for long-term data.",
@@ -29,69 +37,45 @@
     "Recording rules: Pre-compute expensive queries and store results for faster dashboard loading.",
     "API access: Query metrics programmatically using HTTP API for custom integrations and automation."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "syncthing",
   "slug": "syncthing",
+  "tagline": null,
+  "description": "Syncthing is a peer-to-peer file synchronization tool that securely syncs folders across devices without a central server, using a web UI and background service.",
   "categories": [
     62
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/syncthing/syncthing",
-  "website": "syncthing.net/",
-  "source_code": "github.com/syncthing/syncthing",
-  "github_stars": "78221",
-  "logo": "/icons/syncthing.webp",
-  "description": "Syncthing is a peer-to-peer file synchronization tool that securely syncs folders across devices without a central server, using a web UI and background service.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MPL-2.0",
+    "version": "v2.0.12",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-02",
+    "date_last_commit": "2025-12-09",
+    "github_stars": 78235
+  },
+  "resources": {
+    "website": "https://syncthing.net/",
+    "documentation": "https://github.com/syncthing/syncthing",
+    "source_code": "https://github.com/syncthing/syncthing",
+    "logo": "/icons/syncthing.webp",
+    "issues": "https://github.com/syncthing/syncthing/issues",
+    "releases": "https://github.com/syncthing/syncthing/releases"
+  },
   "features": [
     "Peer-to-peer sync: Synchronizes files directly between devices without central server.",
     "Selective sync: Chooses which folders to sync on each device for storage management.",
@@ -29,69 +37,45 @@
     "Cross-platform: Runs on Windows, macOS, Linux, Android, and BSD systems.",
     "Folder sharing: Shares folders with specific devices using unique folder IDs."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": true
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

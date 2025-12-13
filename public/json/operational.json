@@ -1,20 +1,28 @@
 {
   "name": "operational",
   "slug": "operational",
+  "tagline": "",
+  "description": "Operational.co is a self-hosted platform for building shareable checklists, workflows, and playbooks. It features templates, permissions, and a modern UI for organizing processes across teams.",
   "categories": [
     125
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/operational-co/operational.co",
-  "website": "operational.co",
-  "source_code": "github.com/operational-co/operational.co",
-  "github_stars": "416",
-  "logo": "/icons/operational.webp",
-  "description": "Operational.co is a self-hosted platform for building shareable checklists, workflows, and playbooks. It features templates, permissions, and a modern UI for organizing processes across teams.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v0.3.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-07-10",
+    "date_last_commit": "2025-09-17",
+    "github_stars": 417
+  },
+  "resources": {
+    "website": "https://operational.co",
+    "documentation": "https://operational.co",
+    "source_code": "https://github.com/operational-co/operational.co",
+    "logo": "/icons/operational.webp",
+    "issues": "https://github.com/operational-co/operational.co/issues",
+    "releases": "https://github.com/operational-co/operational.co/releases"
+  },
   "features": [
     "Analytics Dashboard: Visual metrics and usage statistics with customizable charts to track performance and user engagement.",
     "Mobile Optimization: Responsive design with touch-friendly interfaces and offline sync capabilities for seamless mobile access.",
@@ -22,69 +30,45 @@
     "Theme Customization: Multiple UI themes and layout options with custom branding support to match organizational identity.",
     "Backup Automation: Scheduled backups with encryption and cloud storage integration to ensure data protection and disaster recovery."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

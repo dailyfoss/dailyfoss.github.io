@@ -1,20 +1,28 @@
 {
   "name": "payload",
   "slug": "payload",
+  "tagline": null,
+  "description": "Payload is a headless CMS and application framework for building custom APIs, admin UIs, and content workflows. It supports TypeScript, plugins, and self-hosting or cloud deployment.",
   "categories": [
     33
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/payloadcms/payload",
-  "website": "payloadcms.com",
-  "source_code": "github.com/payloadcms/payload",
-  "github_stars": "39349",
-  "logo": "/icons/payload.webp",
-  "description": "Payload is a headless CMS and application framework for building custom APIs, admin UIs, and content workflows. It supports TypeScript, plugins, and self-hosting or cloud deployment.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v3.68.3",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-11",
+    "date_last_commit": "2025-12-13",
+    "github_stars": 39357
+  },
+  "resources": {
+    "website": "https://payloadcms.com",
+    "documentation": "https://github.com/payloadcms/payload",
+    "source_code": "https://github.com/payloadcms/payload",
+    "logo": "/icons/payload.webp",
+    "issues": "https://github.com/payloadcms/payload/issues",
+    "releases": "https://github.com/payloadcms/payload/releases"
+  },
   "features": [
     "Headless CMS: API-first content management with flexible content modeling and automatic REST and GraphQL API generation",
     "TypeScript native: Built with TypeScript for type-safe development, better IDE support, and reduced runtime errors",
@@ -27,69 +35,45 @@
     "Webhooks and hooks: Trigger custom logic before or after operations, or send webhooks to external services for automation",
     "Flexible deployment: Deploy anywhere Node.js runs including self-hosted servers, serverless platforms, or managed cloud services"
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "tiny-tiny-rss",
   "slug": "tiny-tiny-rss",
+  "tagline": null,
+  "description": "Tiny Tiny RSS (tt-rss) is a self-hosted web-based RSS/Atom feed reader. It supports filters, plugins, multiple users, and mobile-friendly themes, giving full control over news aggregation.",
   "categories": [
     57
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/tt-rss/tt-rss",
-  "website": "github.com/tt-rss/tt-rss",
-  "source_code": "github.com/tt-rss/tt-rss",
-  "github_stars": "483",
-  "logo": "/icons/tiny-tiny-rss.webp",
-  "description": "Tiny Tiny RSS (tt-rss) is a self-hosted web-based RSS/Atom feed reader. It supports filters, plugins, multiple users, and mobile-friendly themes, giving full control over news aggregation.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-12-12",
+    "github_stars": 484
+  },
+  "resources": {
+    "website": "https://github.com/tt-rss/tt-rss",
+    "documentation": "https://github.com/tt-rss/tt-rss",
+    "source_code": "https://github.com/tt-rss/tt-rss",
+    "logo": "/icons/tiny-tiny-rss.webp",
+    "issues": "https://github.com/tt-rss/tt-rss/issues",
+    "releases": null
+  },
   "features": [
     "Feed aggregation: Subscribe to unlimited RSS and Atom feeds from news sites, blogs, and podcasts.",
     "Multi-user: Support multiple users with individual subscriptions, preferences, and reading history.",
@@ -29,69 +37,45 @@
     "API access: Integrate with mobile apps and third-party clients using the compatible API.",
     "Content filtering: Block unwanted content with regex-based filters and scoring systems."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

@@ -1,20 +1,28 @@
 {
   "name": "pinkary",
   "slug": "pinkary",
+  "tagline": null,
+  "description": "Pinkary is a self-hosted bookmark management system with tagging, notes, and reading mode support. It includes a polished web UI for efficiently organizing links across categories.",
   "categories": [
     131
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/pinkary-project/pinkary.com",
-  "website": "pinkary.com",
-  "source_code": "github.com/pinkary-project/pinkary.com",
-  "github_stars": "1513",
-  "logo": "/icons/pinkary.webp",
-  "description": "Pinkary is a self-hosted bookmark management system with tagging, notes, and reading mode support. It includes a polished web UI for efficiently organizing links across categories.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v1.45.1",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-08-05",
+    "date_last_commit": "2025-11-12",
+    "github_stars": 1513
+  },
+  "resources": {
+    "website": "https://pinkary.com",
+    "documentation": "https://github.com/pinkary-project/pinkary.com",
+    "source_code": "https://github.com/pinkary-project/pinkary.com",
+    "logo": "/icons/pinkary.webp",
+    "issues": "https://github.com/pinkary-project/pinkary.com/issues",
+    "releases": "https://github.com/pinkary-project/pinkary.com/releases"
+  },
   "features": [
     "Bookmark management: Save and organize web links with titles, descriptions, and custom metadata.",
     "Tag system: Apply multiple tags to bookmarks for flexible categorization and filtering.",
@@ -29,69 +37,45 @@
     "Notes and annotations: Add personal notes and highlights to saved bookmarks for future reference.",
     "Mobile responsive: Access and manage bookmarks from any device with an optimized mobile interface."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

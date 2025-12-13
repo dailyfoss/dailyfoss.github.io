@@ -1,20 +1,28 @@
 {
   "name": "pairdrop",
   "slug": "pairdrop",
+  "tagline": null,
+  "description": "PairDrop is a self-hosted AirDrop-like file transfer tool using WebRTC. It allows fast device-to-device sharing over your own network without third-party services.",
   "categories": [
     91
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/schlagmichdoch/PairDrop",
-  "website": "pairdrop.net",
-  "source_code": "github.com/schlagmichdoch/PairDrop",
-  "github_stars": "9400",
-  "logo": "/icons/pairdrop.webp",
-  "description": "PairDrop is a self-hosted AirDrop-like file transfer tool using WebRTC. It allows fast device-to-device sharing over your own network without third-party services.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v1.11.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-02-24",
+    "date_last_commit": "2025-02-25",
+    "github_stars": 9405
+  },
+  "resources": {
+    "website": "https://pairdrop.net",
+    "documentation": "https://github.com/schlagmichdoch/PairDrop",
+    "source_code": "https://github.com/schlagmichdoch/PairDrop",
+    "logo": "/icons/pairdrop.webp",
+    "issues": "https://github.com/schlagmichdoch/PairDrop/issues",
+    "releases": "https://github.com/schlagmichdoch/PairDrop/releases"
+  },
   "features": [
     "WebRTC file transfer: Peer-to-peer sharing using WebRTC for fast, direct transfers without server intermediaries",
     "Cross-platform compatibility: Works across desktop and mobile browsers on any operating system",
@@ -26,69 +34,45 @@
     "No account required: Start sharing immediately without registration for quick transfers and guest access",
     "Room codes: Create private rooms with custom codes to connect devices across different networks securely"
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": true
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

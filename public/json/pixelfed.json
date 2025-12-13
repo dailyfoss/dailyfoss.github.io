@@ -1,20 +1,28 @@
 {
   "name": "pixelfed",
   "slug": "pixelfed",
+  "tagline": null,
+  "description": "Pixelfed is a federated photo-sharing platform similar to Instagram. It supports albums, Stories, ActivityPub federation, and focuses on privacy and decentralization.",
   "categories": [
     148
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/pixelfed/pixelfed",
-  "website": "pixelfed.org",
-  "source_code": "github.com/pixelfed/pixelfed",
-  "github_stars": "6820",
-  "logo": "/icons/pixelfed.webp",
-  "description": "Pixelfed is a federated photo-sharing platform similar to Instagram. It supports albums, Stories, ActivityPub federation, and focuses on privacy and decentralization.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v0.12.6",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-09-03",
+    "date_last_commit": "2025-12-11",
+    "github_stars": 6821
+  },
+  "resources": {
+    "website": "https://pixelfed.org",
+    "documentation": "https://github.com/pixelfed/pixelfed",
+    "source_code": "https://github.com/pixelfed/pixelfed",
+    "logo": "/icons/pixelfed.webp",
+    "issues": "https://github.com/pixelfed/pixelfed/issues",
+    "releases": "https://github.com/pixelfed/pixelfed/releases"
+  },
   "features": [
     "Photo sharing: Upload and share photos with followers in a timeline feed similar to Instagram.",
     "ActivityPub federation: Connect with users on other federated platforms like Mastodon and Pleroma.",
@@ -29,69 +37,45 @@
     "Moderation tools: Manage content with reporting, blocking, and instance-level moderation features.",
     "Custom domains: Host your instance on your own domain for complete branding control."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

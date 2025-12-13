@@ -1,20 +1,28 @@
 {
   "name": "tasmoadmin",
   "slug": "tasmoadmin",
+  "tagline": null,
+  "description": "TasmoAdmin is a self-hosted administration panel for managing Tasmota-flashed IoT devices. It allows firmware updates, configuration, and monitoring from a centralized UI.",
   "categories": [
     76
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/TasmoAdmin/TasmoAdmin",
-  "website": "github.com/TasmoAdmin/TasmoAdmin",
-  "source_code": "github.com/TasmoAdmin/TasmoAdmin",
-  "github_stars": "951",
-  "logo": "/icons/tasmoadmin.webp",
-  "description": "TasmoAdmin is a self-hosted administration panel for managing Tasmota-flashed IoT devices. It allows firmware updates, configuration, and monitoring from a centralized UI.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0",
+    "version": "v4.3.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-18",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 951
+  },
+  "resources": {
+    "website": "https://github.com/TasmoAdmin/TasmoAdmin",
+    "documentation": "https://github.com/TasmoAdmin/TasmoAdmin",
+    "source_code": "https://github.com/TasmoAdmin/TasmoAdmin",
+    "logo": "/icons/tasmoadmin.webp",
+    "issues": "https://github.com/TasmoAdmin/TasmoAdmin/issues",
+    "releases": "https://github.com/TasmoAdmin/TasmoAdmin/releases"
+  },
   "features": [
     "Device discovery: Automatically discover Tasmota devices on your network for centralized management.",
     "Firmware updates: Update firmware across multiple devices simultaneously from a single interface.",
@@ -29,69 +37,45 @@
     "Update scheduling: Schedule firmware updates during maintenance windows to minimize disruption.",
     "Configuration templates: Apply standard configurations to new devices for consistent setup."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

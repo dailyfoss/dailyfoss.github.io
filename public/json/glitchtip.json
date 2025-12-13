@@ -1,20 +1,28 @@
 {
   "name": "glitchtip",
   "slug": "glitchtip",
+  "tagline": null,
+  "description": "Glitchtip is a self-hosted alternative to Sentry for error monitoring and performance tracing. It supports multiple language SDKs, dashboards, and alerts, providing complete visibility into app errors and crashes.",
   "categories": [
     93
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "gitlab.com/glitchtip/glitchtip-backend",
-  "website": "glitchtip.com/",
-  "source_code": "gitlab.com/glitchtip/glitchtip-backend",
-  "github_stars": "308",
-  "logo": "/icons/glitchtip.webp",
-  "description": "Glitchtip is a self-hosted alternative to Sentry for error monitoring and performance tracing. It supports multiple language SDKs, dashboards, and alerts, providing complete visibility into app errors and crashes.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": null,
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": null,
+    "github_stars": 308
+  },
+  "resources": {
+    "website": "https://glitchtip.com/",
+    "documentation": "https://gitlab.com/glitchtip/glitchtip-backend",
+    "source_code": "https://gitlab.com/glitchtip/glitchtip-backend",
+    "logo": "/icons/glitchtip.webp",
+    "issues": "https://gitlab.com/glitchtip/glitchtip-backend/issues",
+    "releases": "https://gitlab.com/glitchtip/glitchtip-backend/releases"
+  },
   "features": [
     "Error Tracking: Capture and aggregate application errors with detailed stack traces and context.",
     "Performance Monitoring: Track transaction performance and identify slow operations in your applications.",
@@ -25,69 +33,45 @@
     "Alert Configuration: Set up notifications for new errors or performance degradation.",
     "Self-Hosted Privacy: Keep all error data and user information on your own infrastructure."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

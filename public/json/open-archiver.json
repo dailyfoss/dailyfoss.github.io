@@ -1,20 +1,28 @@
 {
   "name": "open-archiver",
   "slug": "open-archiver",
+  "tagline": null,
+  "description": "OpenArchiver is a self-hosted archiving tool that ingests, stores, and indexes files and structured data. It includes a searchable metadata index and supports workflows for archiving across teams.",
   "categories": [
     48
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/LogicLabs-OU/OpenArchiver",
-  "website": "openarchiver.com",
-  "source_code": "github.com/LogicLabs-OU/OpenArchiver",
-  "github_stars": "1381",
-  "logo": "/icons/open-archiver.webp",
-  "description": "OpenArchiver is a self-hosted archiving tool that ingests, stores, and indexes files and structured data. It includes a searchable metadata index and supports workflows for archiving across teams.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v0.4.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-30",
+    "date_last_commit": "2025-10-29",
+    "github_stars": 1385
+  },
+  "resources": {
+    "website": "https://openarchiver.com",
+    "documentation": "https://github.com/LogicLabs-OU/OpenArchiver",
+    "source_code": "https://github.com/LogicLabs-OU/OpenArchiver",
+    "logo": "/icons/open-archiver.webp",
+    "issues": "https://github.com/LogicLabs-OU/OpenArchiver/issues",
+    "releases": "https://github.com/LogicLabs-OU/OpenArchiver/releases"
+  },
   "features": [
     "Analytics Dashboard: Visual metrics and usage statistics with customizable charts to track performance and user engagement.",
     "Mobile Optimization: Responsive design with touch-friendly interfaces and offline sync capabilities for seamless mobile access.",
@@ -22,69 +30,45 @@
     "Theme Customization: Multiple UI themes and layout options with custom branding support to match organizational identity.",
     "Backup Automation: Scheduled backups with encryption and cloud storage integration to ensure data protection and disaster recovery."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

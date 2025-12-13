@@ -1,20 +1,28 @@
 {
   "name": "specifically-clementines",
   "slug": "specifically-clementines",
+  "tagline": "",
+  "description": "Groceries is a self-hosted shared grocery list app built for households. It supports multiple lists, real-time updates, and a mobile-friendly interface for shopping.",
   "categories": [
     73
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/davideshay/groceries",
-  "website": "github.com/davideshay/groceries",
-  "source_code": "github.com/davideshay/groceries",
-  "github_stars": "275",
-  "logo": "/icons/specifically-clementines.webp",
-  "description": "Groceries is a self-hosted shared grocery list app built for households. It supports multiple lists, real-time updates, and a mobile-friendly interface for shopping.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v1.1.9",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-07-20",
+    "date_last_commit": "2025-11-08",
+    "github_stars": 275
+  },
+  "resources": {
+    "website": null,
+    "documentation": null,
+    "source_code": "https://github.com/davideshay/groceries",
+    "logo": "/icons/specifically-clementines.webp",
+    "issues": "https://github.com/davideshay/groceries/issues",
+    "releases": "https://github.com/davideshay/groceries/releases"
+  },
   "features": [
     "Shared grocery lists: Creates shopping lists accessible to all household members.",
     "Real-time sync: Updates lists instantly across all devices.",
@@ -29,69 +37,45 @@
     "Mobile apps: Native Android app for shopping on the go.",
     "Offline mode: Continues working without internet connection."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": true,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": true,
-    "ui_interface": true
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

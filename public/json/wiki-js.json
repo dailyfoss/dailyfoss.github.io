@@ -1,20 +1,28 @@
 {
   "name": "wiki-js",
   "slug": "wiki-js",
+  "tagline": null,
+  "description": "Wiki.js is a modern, self-hosted wiki platform with a rich editor, authentication, search, and versioning. It supports multiple backends, integrations, and themes, and can be self-hosted or used via commercial cloud hosting.",
   "categories": [
     193
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/requarks/wiki",
-  "website": "js.wiki",
-  "source_code": "github.com/requarks/wiki",
-  "github_stars": "27465",
-  "logo": "/icons/wiki-js.webp",
-  "description": "Wiki.js is a modern, self-hosted wiki platform with a rich editor, authentication, search, and versioning. It supports multiple backends, integrations, and themes, and can be self-hosted or used via commercial cloud hosting.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v2.5.308",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-08-13",
+    "date_last_commit": "2025-11-16",
+    "github_stars": 27467
+  },
+  "resources": {
+    "website": "https://js.wiki",
+    "documentation": "https://github.com/requarks/wiki",
+    "source_code": "https://github.com/requarks/wiki",
+    "logo": "/icons/wiki-js.webp",
+    "issues": "https://github.com/requarks/wiki/issues",
+    "releases": "https://github.com/requarks/wiki/releases"
+  },
   "features": [
     "Rich editor: Create content with a powerful WYSIWYG editor, markdown, or code editor based on preference.",
     "Authentication options: Support multiple authentication methods including LDAP, OAuth, SAML, and local accounts.",
@@ -29,69 +37,45 @@
     "Module system: Extend functionality with authentication modules, storage engines, and rendering engines.",
     "Analytics integration: Track page views and user engagement with built-in analytics or external services."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": true,
-          "windows": true,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

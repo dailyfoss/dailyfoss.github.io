@@ -1,20 +1,28 @@
 {
   "name": "postmarks",
   "slug": "postmarks",
+  "tagline": "",
+  "description": "Postmarks is a self-hosted bookmark manager with tagging, search, and sharing support. It offers a clean UI to organize web links for personal or team use with privacy-focused architecture.",
   "categories": [
     165
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/ckolderup/postmarks",
-  "website": "postmarks.glitch.me",
-  "source_code": "github.com/ckolderup/postmarks",
-  "github_stars": "528",
-  "logo": "/icons/postmarks.webp",
-  "description": "Postmarks is a self-hosted bookmark manager with tagging, search, and sharing support. It offers a clean UI to organize web links for personal or team use with privacy-focused architecture.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": null,
+    "date_app_added": "2025-11-23",
+    "date_last_released": null,
+    "date_last_commit": "2025-09-09",
+    "github_stars": 528
+  },
+  "resources": {
+    "website": "https://postmarks.glitch.me",
+    "documentation": "https://postmarks.glitch.me",
+    "source_code": "https://github.com/ckolderup/postmarks",
+    "logo": "/icons/postmarks.webp",
+    "issues": "https://github.com/ckolderup/postmarks/issues",
+    "releases": null
+  },
   "features": [
     "Bookmark management: Save and organize web links with titles, descriptions, and custom metadata.",
     "Tag system: Apply multiple tags to bookmarks for flexible categorization and filtering.",
@@ -29,69 +37,45 @@
     "Archive mode: Save full webpage content for offline access and preservation.",
     "Mobile responsive: Access and manage bookmarks from any device with an optimized interface."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
-  },
-  "deployment": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+  "repository_status": null
 }

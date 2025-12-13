@@ -1,20 +1,28 @@
 {
   "name": "beatbump",
   "slug": "beatbump",
+  "tagline": null,
+  "description": "Beatbump is an alternative front-end for YouTube Music built with privacy in mind, allowing you to stream music without ads or tracking. Features include playlists, search, history, and a modern responsive interface.",
   "categories": [
     105
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/snuffyDev/Beatbump",
-  "website": "beatbump.io/",
-  "source_code": "github.com/snuffyDev/Beatbump",
-  "github_stars": "1127",
-  "logo": "/icons/beatbump.webp",
-  "description": "Beatbump is an alternative front-end for YouTube Music built with privacy in mind, allowing you to stream music without ads or tracking. Features include playlists, search, history, and a modern responsive interface.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v0.32.0",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2023-12-10",
+    "date_last_commit": "2025-10-03",
+    "github_stars": 1127
+  },
+  "resources": {
+    "website": "https://beatbump.io/",
+    "documentation": "https://github.com/snuffyDev/Beatbump",
+    "source_code": "https://github.com/snuffyDev/Beatbump",
+    "logo": "/icons/beatbump.webp",
+    "issues": "https://github.com/snuffyDev/Beatbump/issues",
+    "releases": "https://github.com/snuffyDev/Beatbump/releases"
+  },
   "features": [
     "YouTube Music Frontend: Privacy-focused alternative interface. No tracking.",
     "Ad-Free Streaming: Listen without advertisements or interruptions. Clean experience.",
@@ -25,69 +33,45 @@
     "Modern Interface: Responsive, beautiful design. Great user experience.",
     "Self-Hosted: Run your own music streaming frontend. Complete control."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }

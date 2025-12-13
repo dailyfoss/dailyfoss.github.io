@@ -1,20 +1,28 @@
 {
   "name": "meshcentral",
   "slug": "meshcentral",
+  "tagline": null,
+  "description": "MeshCentral is a full-featured self-hosted remote support platform that provides remote desktop, terminal, file transfers, and agent-based monitoring across devices with user and group management.",
   "categories": [
     135
   ],
-  "sponsored": false,
-  "sponsored_expired": null,
-  "date_created": "2025-11-23",
-  "interface_port": null,
-  "documentation": "github.com/Ylianst/MeshCentral",
-  "website": "meshcentral.com",
-  "source_code": "github.com/Ylianst/MeshCentral",
-  "github_stars": "5781",
-  "logo": "/icons/meshcentral.webp",
-  "description": "MeshCentral is a full-featured self-hosted remote support platform that provides remote desktop, terminal, file transfers, and agent-based monitoring across devices with user and group management.",
-  "tagline": null,
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "1.1.54",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-11-26",
+    "date_last_commit": "2025-12-12",
+    "github_stars": 5782
+  },
+  "resources": {
+    "website": "https://meshcentral.com",
+    "documentation": "https://github.com/Ylianst/MeshCentral",
+    "source_code": "https://github.com/Ylianst/MeshCentral",
+    "logo": "/icons/meshcentral.webp",
+    "issues": "https://github.com/Ylianst/MeshCentral/issues",
+    "releases": "https://github.com/Ylianst/MeshCentral/releases"
+  },
   "features": [
     "Remote desktop: Access and control remote computers through web-based VNC or RDP connections.",
     "Terminal access: Open command-line sessions on remote machines for administration tasks.",
@@ -29,69 +37,45 @@
     "Chat messaging: Communicate with users on remote devices through built-in chat.",
     "Intel AMT support: Manage devices with Intel Active Management Technology for out-of-band access."
   ],
-  "install_methods": [
-    {
-      "platform": {
-        "desktop": {
-          "linux": false,
-          "windows": false,
-          "macos": false
-        },
-        "mobile": {
-          "android": false,
-          "ios": false
-        },
-        "web_app": false,
-        "browser_extension": false
-      },
-      "hosting": {
-        "self_hosted": false,
-        "saas": false,
-        "managed_cloud": false
-      },
-      "ui": {
-        "cli": false,
-        "gui": false,
-        "web_ui": false,
-        "api": false,
-        "tui": false
-      },
-      "deployment": {
-        "script": true,
-        "docker": true,
-        "docker_compose": true,
-        "helm": true,
-        "kubernetes": true,
-        "terraform": true
-      }
-    }
-  ],
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
   },
-  "notes": [],
-  "platform": {
-    "desktop": false,
-    "mobile": false,
-    "web_extensions": false,
-    "hosting": false,
-    "ui_interface": false
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
   },
-  "deployment": {
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
     "script": true,
     "docker": true,
     "docker_compose": true,
     "helm": true,
     "kubernetes": true,
-    "terraform": true,
-    "paths": {
-      "script": "/public/manifest/dummy/script.sh",
-      "docker": "/public/manifest/dummy/Dockerfile",
-      "docker_compose": "/public/manifest/dummy/docker-compose.yaml",
-      "helm": "/public/manifest/dummy/helm.yaml",
-      "kubernetes": "/public/manifest/dummy/k8s-deployment.yaml",
-      "terraform": "/public/manifest/dummy/main.tf"
-    }
-  }
+    "terraform": true
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "notes": [],
+  "repository_status": null
 }
