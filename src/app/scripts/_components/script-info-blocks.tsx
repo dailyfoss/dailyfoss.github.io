@@ -465,7 +465,7 @@ export function LatestScripts({ items }: { items: Category[] }) {
                                     </span>
                                   </TooltipTrigger>
                                   <TooltipContent side="top" className="font-medium">
-                                    <p>This project is maintained by the Proxmox VE community</p>
+                                    <p>Community build provided by Proxmox VE Community</p>
                                   </TooltipContent>
                                 </Tooltip>
                               </TooltipProvider>
@@ -479,7 +479,7 @@ export function LatestScripts({ items }: { items: Category[] }) {
                                     </span>
                                   </TooltipTrigger>
                                   <TooltipContent side="top" className="font-medium">
-                                    <p>This project is maintained by the YunoHost community</p>
+                                    <p>Community build provided by the YunoHost community</p>
                                   </TooltipContent>
                                 </Tooltip>
                               </TooltipProvider>
@@ -962,7 +962,7 @@ export function PopularScripts({ items }: { items: Category[] }) {
                                   </span>
                                 </TooltipTrigger>
                                 <TooltipContent side="bottom" className="font-medium">
-                                  <p>This project is maintained by the Proxmox VE community</p>
+                                  <p>Community build provided by the Proxmox VE community</p>
                                 </TooltipContent>
                               </Tooltip>
                             </TooltipProvider>
@@ -976,7 +976,7 @@ export function PopularScripts({ items }: { items: Category[] }) {
                                   </span>
                                 </TooltipTrigger>
                                 <TooltipContent side="bottom" className="font-medium">
-                                  <p>This project is maintained by the YunoHost community</p>
+                                  <p>Community build provided by the YunoHost community</p>
                                 </TooltipContent>
                               </Tooltip>
                             </TooltipProvider>
