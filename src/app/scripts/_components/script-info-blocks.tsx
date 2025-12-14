@@ -465,7 +465,7 @@ export function LatestScripts({ items }: { items: Category[] }) {
                                     </span>
                                   </TooltipTrigger>
                                   <TooltipContent side="top" className="font-medium">
-                                    <p>This project is maintained by the Proxmox VE community</p>
+                                    <p>Community build provided by Proxmox VE Community</p>
                                   </TooltipContent>
                                 </Tooltip>
                               </TooltipProvider>
@@ -479,7 +479,7 @@ export function LatestScripts({ items }: { items: Category[] }) {
                                     </span>
                                   </TooltipTrigger>
                                   <TooltipContent side="top" className="font-medium">
-                                    <p>This project is maintained by the YunoHost community</p>
+                                    <p>Community build provided by the YunoHost community</p>
                                   </TooltipContent>
                                 </Tooltip>
                               </TooltipProvider>
@@ -858,44 +858,18 @@ export function PopularScripts({ items }: { items: Category[] }) {
       }
     });
 
-    // Helper to parse GitHub stars (e.g., "3.5k" -> 3500)
-    const parseStars = (stars?: string): number => {
-      if (!stars)
-        return 0;
-      const num = Number.parseFloat(stars.replace(/[^0-9.]/g, ""));
-      if (stars.toLowerCase().includes("k"))
-        return num * 1000;
-      if (stars.toLowerCase().includes("m"))
-        return num * 1000000;
-      return num;
-    };
-
-    // Helper to count deployment methods
-    const countDeploymentMethods = (script: Script): number => {
-      if (!script.deployment_methods)
-        return 0;
-      return Object.values(script.deployment_methods).filter(Boolean).length;
-    };
-
-    // Calculate popularity score: GitHub stars (80%) + deployment versatility (20%)
-    const allScripts = Array.from(uniqueScriptsMap.values()).map(script => ({
-      script,
-      stars: parseStars((script as any).github_stars),
-      deploymentCount: countDeploymentMethods(script),
-    }));
-
-    // Boost hardcoded popular scripts slightly
-    return allScripts
+    // Sort by GitHub stars (primary) with hardcoded popular scripts boost
+    return Array.from(uniqueScriptsMap.values())
       .sort((a, b) => {
-        const boostA = mostPopularScripts.includes(a.script.slug) ? 5000 : 0;
-        const boostB = mostPopularScripts.includes(b.script.slug) ? 5000 : 0;
+        const starsA = a.metadata?.github_stars || 0;
+        const starsB = b.metadata?.github_stars || 0;
+        
+        // Boost hardcoded popular scripts
+        const boostA = mostPopularScripts.includes(a.slug) ? 10000 : 0;
+        const boostB = mostPopularScripts.includes(b.slug) ? 10000 : 0;
 
-        const scoreA = (a.stars * 0.8) + (a.deploymentCount * 200) + boostA;
-        const scoreB = (b.stars * 0.8) + (b.deploymentCount * 200) + boostB;
-
-        return scoreB - scoreA;
-      })
-      .map(item => item.script);
+        return (starsB + boostB) - (starsA + boostA);
+      });
   }, [items]);
 
   const goToNextPage = () => setPage(prev => prev + 1);
@@ -988,7 +962,7 @@ export function PopularScripts({ items }: { items: Category[] }) {
                                   </span>
                                 </TooltipTrigger>
                                 <TooltipContent side="bottom" className="font-medium">
-                                  <p>This project is maintained by the Proxmox VE community</p>
+                                  <p>Community build provided by the Proxmox VE community</p>
                                 </TooltipContent>
                               </Tooltip>
                             </TooltipProvider>
@@ -1002,7 +976,7 @@ export function PopularScripts({ items }: { items: Category[] }) {
                                   </span>
                                 </TooltipTrigger>
                                 <TooltipContent side="bottom" className="font-medium">
-                                  <p>This project is maintained by the YunoHost community</p>
+                                  <p>Community build provided by the YunoHost community</p>
                                 </TooltipContent>
                               </Tooltip>
                             </TooltipProvider>
