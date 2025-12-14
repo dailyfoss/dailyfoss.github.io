@@ -73,12 +73,105 @@ async function fetchRepoData(owner, repo) {
       // No releases available
     }
 
+    // Fetch contributors count
+    let contributorsCount = 0;
+    try {
+      const contributorsResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/contributors?per_page=1`, { headers });
+      if (contributorsResponse.ok) {
+        const linkHeader = contributorsResponse.headers.get('Link');
+        if (linkHeader) {
+          const match = linkHeader.match(/page=(\d+)>; rel="last"/);
+          contributorsCount = match ? parseInt(match[1]) : 1;
+        } else {
+          // If no Link header, there's only one page
+          const contributors = await contributorsResponse.json();
+          contributorsCount = contributors.length;
+        }
+      }
+    } catch (e) {
+      console.warn(`WARNING: Failed to fetch contributors for ${owner}/${repo}`);
+    }
+
+    // Fetch commits this year
+    let commitsThisYear = 0;
+    try {
+      const currentYear = new Date().getFullYear();
+      const commitsResponse = await fetch(
+        `https://api.github.com/repos/${owner}/${repo}/commits?since=${currentYear}-01-01T00:00:00Z&per_page=1`,
+        { headers }
+      );
+      if (commitsResponse.ok) {
+        const linkHeader = commitsResponse.headers.get('Link');
+        if (linkHeader) {
+          const match = linkHeader.match(/page=(\d+)>; rel="last"/);
+          commitsThisYear = match ? parseInt(match[1]) : 1;
+        } else {
+          const commits = await commitsResponse.json();
+          commitsThisYear = commits.length;
+        }
+      }
+    } catch (e) {
+      console.warn(`WARNING: Failed to fetch commits for ${owner}/${repo}`);
+    }
+
+    // Fetch issues stats (open and closed this year)
+    // Note: GitHub's open_issues_count includes pull requests, so we use the search API for accuracy
+    let openIssues = 0;
+    let closedIssuesThisYear = 0;
+    try {
+      const currentYear = new Date().getFullYear();
+      
+      // Get open issues count (excluding pull requests)
+      const openIssuesResponse = await fetch(
+        `https://api.github.com/search/issues?q=repo:${owner}/${repo}+type:issue+state:open&per_page=1`,
+        { headers }
+      );
+      if (openIssuesResponse.ok) {
+        const openData = await openIssuesResponse.json();
+        openIssues = openData.total_count || 0;
+      }
+
+      // Get closed issues this year (excluding pull requests)
+      // Use proper date range format: closed:YYYY-01-01..YYYY-12-31
+      const closedIssuesResponse = await fetch(
+        `https://api.github.com/search/issues?q=repo:${owner}/${repo}+type:issue+state:closed+closed:${currentYear}-01-01..${currentYear}-12-31&per_page=1`,
+        { headers }
+      );
+      if (closedIssuesResponse.ok) {
+        const closedData = await closedIssuesResponse.json();
+        closedIssuesThisYear = closedData.total_count || 0;
+      }
+    } catch (e) {
+      console.warn(`WARNING: Failed to fetch issues for ${owner}/${repo}:`, e.message);
+    }
+
+    // Fetch releases this year
+    let releasesThisYear = 0;
+    try {
+      const releasesResponse = await fetch(`https://api.github.com/repos/${owner}/${repo}/releases?per_page=100`, { headers });
+      if (releasesResponse.ok) {
+        const releases = await releasesResponse.json();
+        const currentYear = new Date().getFullYear();
+        releasesThisYear = releases.filter(release => {
+          const releaseYear = new Date(release.published_at).getFullYear();
+          return releaseYear === currentYear;
+        }).length;
+      }
+    } catch (e) {
+      console.warn(`WARNING: Failed to fetch releases for ${owner}/${repo}`);
+    }
+
     return {
       license: repoData.license?.spdx_id || null,
       version: latestRelease?.tag_name || null,
       date_last_released: latestRelease?.published_at?.split('T')[0] || null,
       date_last_commit: repoData.pushed_at?.split('T')[0] || null,
       github_stars: repoData.stargazers_count || 0,
+      github_contributors: contributorsCount,
+      github_commits_this_year: commitsThisYear,
+      github_issues_open: openIssues,
+      github_issues_closed_this_year: closedIssuesThisYear,
+      github_releases_this_year: releasesThisYear,
       website: repoData.homepage || null,
       documentation: repoData.homepage || null,
       issues: `https://github.com/${owner}/${repo}/issues`,
@@ -109,6 +202,11 @@ async function updateJsonFile(filePath, repoData, repoUrl) {
     json.metadata.date_last_released = repoData.date_last_released;
     json.metadata.date_last_commit = repoData.date_last_commit;
     json.metadata.github_stars = repoData.github_stars;
+    json.metadata.github_contributors = repoData.github_contributors;
+    json.metadata.github_commits_this_year = repoData.github_commits_this_year;
+    json.metadata.github_issues_open = repoData.github_issues_open;
+    json.metadata.github_issues_closed_this_year = repoData.github_issues_closed_this_year;
+    json.metadata.github_releases_this_year = repoData.github_releases_this_year;
 
     // Update resources
     if (repoData.website && !json.resources.website) {

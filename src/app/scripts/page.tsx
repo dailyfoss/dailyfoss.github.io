@@ -64,6 +64,8 @@ function ScriptContent() {
     deployments: new Set(),
     hosting: new Set(),
     ui: new Set(),
+    community: new Set(),
+    activity: new Set(),
   });
 
   // Track pageviews with custom URL for Plausible
@@ -143,7 +145,9 @@ function ScriptContent() {
       return filters.platforms.size === 0
         && filters.deployments.size === 0
         && filters.hosting.size === 0
-        && filters.ui.size === 0;
+        && filters.ui.size === 0
+        && filters.community.size === 0
+        && filters.activity.size === 0;
     }
 
     // Check platform filters
@@ -194,6 +198,37 @@ function ScriptContent() {
       });
       if (!uiMatches)
         return false;
+    }
+
+    // Check community integration filters
+    if (filters.community.size > 0) {
+      const communityMatches = Array.from(filters.community).every((filter) => {
+        return script.community_integrations?.[filter as keyof typeof script.community_integrations]?.supported;
+      });
+      if (!communityMatches)
+        return false;
+    }
+
+    // Check activity status filters
+    if (filters.activity.size > 0) {
+      // Get repository status from metadata
+      const getRepositoryStatus = (script: Script): string => {
+        if (!script.metadata?.date_last_commit) return 'unknown';
+        
+        const lastCommitDate = new Date(script.metadata.date_last_commit);
+        const now = new Date();
+        const daysSinceLastCommit = Math.floor((now.getTime() - lastCommitDate.getTime()) / (1000 * 60 * 60 * 24));
+        
+        if (daysSinceLastCommit <= 30) return 'active';
+        if (daysSinceLastCommit <= 180) return 'regular';
+        if (daysSinceLastCommit <= 365) return 'occasional';
+        return 'dormant';
+      };
+      
+      const status = getRepositoryStatus(script);
+      if (!filters.activity.has(status)) {
+        return false;
+      }
     }
 
     return true;
@@ -400,7 +435,7 @@ function ScriptContent() {
         <div className="w-full px-2 sm:px-0 sm:w-auto pb-8 flex-1 min-w-0">
           {selectedScript && item
             ? (
-              <ScriptItem item={item} setSelectedScript={setSelectedScript} />
+              <ScriptItem item={item} setSelectedScript={setSelectedScript} allCategories={links} />
             )
             : (
               <div className="flex w-full flex-col gap-12">

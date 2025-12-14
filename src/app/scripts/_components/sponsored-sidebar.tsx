@@ -79,25 +79,31 @@ export function SponsoredSidebar({ items, onScriptSelect }: SponsoredSidebarProp
       return [];
 
     const scripts = items.flatMap(category => category.scripts || []);
-    const now = new Date();
 
     // Filter out duplicates and get only active sponsored scripts
     const uniqueScriptsMap = new Map<string, Script>();
     scripts.forEach((script) => {
       if (!uniqueScriptsMap.has(script.slug) && script.metadata?.sponsored) {
-        // Check if sponsored period has expired
-        // TODO: Add sponsored_expired field to Script type if needed
-        // if (script.sponsored_expired) {
-        //   const expirationDate = new Date(script.sponsored_expired);
-        //   if (expirationDate < now) {
-        //     return; // Skip expired sponsored scripts
-        //   }
-        // }
         uniqueScriptsMap.set(script.slug, script);
       }
     });
 
-    return Array.from(uniqueScriptsMap.values()).slice(0, 5); // Max 5 sponsored scripts
+    const allSponsored = Array.from(uniqueScriptsMap.values());
+    
+    // Generate hourly rotation seed (changes every hour for faster, fairer rotation)
+    const now = new Date();
+    const hoursSinceEpoch = Math.floor(now.getTime() / (1000 * 60 * 60));
+    const rotationSeed = hoursSinceEpoch;
+    
+    // Shuffle array based on hourly seed for fair rotation
+    const shuffled = [...allSponsored].sort((a, b) => {
+      // Create deterministic hash for each script based on slug + hourly seed
+      const hashA = a.slug.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) + rotationSeed;
+      const hashB = b.slug.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) + rotationSeed;
+      return hashA - hashB;
+    });
+
+    return shuffled.slice(0, 5); // Max 5 sponsored scripts
   }, [items]);
 
   const MAX_SPOTS = 5;
@@ -112,7 +118,7 @@ export function SponsoredSidebar({ items, onScriptSelect }: SponsoredSidebarProp
       <div className="sticky top-4 space-y-4">
         {/* Header - Enhanced */}
         <div className="px-1">
-          <div className="flex items-center gap-2 mb-2 pb-2 border-b border-border/40">
+          <div className="flex items-center gap-2 mt-8 mb-2 pb-2 border-b border-border/40">
             <Crown className="h-5 w-5 text-blue-500/80" />
             <h2 className="text-base font-bold text-foreground/90">Sponsored Tools</h2>
           </div>
@@ -140,10 +146,9 @@ export function SponsoredSidebar({ items, onScriptSelect }: SponsoredSidebarProp
                 {/* Accent bar */}
                 <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500/50 via-blue-600/50 to-blue-500/50" />
 
-                {/* Sponsored Badge - Enhanced with glow */}
+                {/* Sponsored Badge - Natural and subtle */}
                 <div className="absolute top-2 right-2 z-10">
-                  <Badge className="bg-gradient-to-r from-blue-500 to-blue-600 text-white border-0 text-[9px] px-2 py-0.5 shadow-sm group-hover:shadow-blue-500/50 group-hover:shadow-lg transition-all duration-300 animate-in fade-in-0 zoom-in-95">
-                    <Crown className="h-2.5 w-2.5 mr-0.5 group-hover:scale-110 transition-transform duration-300" />
+                  <Badge variant="secondary" className="text-[9px] px-2 py-0.5 bg-blue-50 dark:bg-blue-950/30 text-blue-700 dark:text-blue-300 border border-blue-200/50 dark:border-blue-800/50">
                     Sponsored
                   </Badge>
                 </div>

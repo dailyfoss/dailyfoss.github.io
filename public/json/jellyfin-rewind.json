@@ -13,7 +13,12 @@
     "date_app_added": "2025-11-23",
     "date_last_released": "2025-01-04",
     "date_last_commit": "2025-12-04",
-    "github_stars": 300
+    "github_stars": 300,
+    "github_contributors": 2,
+    "github_commits_this_year": 28,
+    "github_issues_open": 17,
+    "github_issues_closed_this_year": 11,
+    "github_releases_this_year": 4
   },
   "resources": {
     "website": "https://jellyfin-rewind.netlify.app",
@@ -68,5 +73,17 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "proxmox_ve": {
+      "supported": true,
+      "script_id": "jellyfin",
+      "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=jellyfin"
+    },
+    "yunohost": {
+      "supported": true,
+      "repo_name": "jellyfin_ynh",
+      "url": "https://github.com/YunoHost-Apps/jellyfin_ynh"
+    }
+  }
 }
