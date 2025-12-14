@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import * as Icons from "lucide-react";
 import Link from "next/link";
 
@@ -35,6 +36,7 @@ export default function ScriptAccordion({
   setSelectedCategory: (category: string | null) => void;
   onItemSelect?: () => void;
 }) {
+  const router = useRouter();
   const [expandedItem, setExpandedItem] = useState<string | undefined>(undefined);
   const linkRefs = useRef<{ [key: string]: HTMLAnchorElement | null }>({});
   const isUserInteractionRef = useRef(false);
@@ -152,9 +154,12 @@ export default function ScriptAccordion({
                           // Prevent default Link behavior
                           e.preventDefault();
 
-                          // Update state directly (no URL params)
+                          // Update state
                           setSelectedScript(script.slug);
                           setSelectedCategory(category.name);
+
+                          // Update URL
+                          router.push(`/scripts?id=${script.slug}&category=${category.name}`);
 
                           // Call onItemSelect for mobile sidebar closing
                           onItemSelect?.();

@@ -13,7 +13,12 @@
     "date_app_added": "2025-11-23",
     "date_last_released": "2025-12-03",
     "date_last_commit": "2025-12-12",
-    "github_stars": 22442
+    "github_stars": 22442,
+    "github_contributors": 225,
+    "github_commits_this_year": 476,
+    "github_issues_open": 469,
+    "github_issues_closed_this_year": 1,
+    "github_releases_this_year": 6
   },
   "resources": {
     "website": "http://nodered.org",
@@ -77,5 +82,17 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "proxmox_ve": {
+      "supported": true,
+      "script_id": "node-red",
+      "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=node-red"
+    },
+    "yunohost": {
+      "supported": true,
+      "repo_name": "nodered_ynh",
+      "url": "https://github.com/YunoHost-Apps/nodered_ynh"
+    }
+  }
 }

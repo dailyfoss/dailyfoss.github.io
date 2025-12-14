@@ -12,6 +12,7 @@
     "dev": "next dev --turbopack",
     "download-icons": "node tools/download-icons.js",
     "update-repo-metadata": "node tools/update-repo-metadata.js",
+    "check-community-integrations": "node tools/check-community-integrations.js",
     "build": "next build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d out",

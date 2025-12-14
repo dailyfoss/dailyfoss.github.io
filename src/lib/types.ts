@@ -14,6 +14,11 @@ export type Script = {
     date_last_released: string | null;
     date_last_commit: string | null;
     github_stars: number | null;
+    github_contributors: number | null;
+    github_commits_this_year: number | null;
+    github_issues_open: number | null;
+    github_issues_closed_this_year: number | null;
+    github_releases_this_year: number | null;
   };
   resources: {
     website: string | null;
@@ -74,6 +79,18 @@ export type Script = {
     text: string;
     type: keyof typeof AlertColors;
   }>;
+  community_integrations?: {
+    proxmox_ve?: {
+      supported: boolean;
+      script_id?: string;
+      url?: string;
+    };
+    yunohost?: {
+      supported: boolean;
+      repo_name?: string;
+      url?: string;
+    };
+  };
   
   // Legacy fields for backward compatibility (optional)
   install_methods?: any[];

@@ -400,7 +400,7 @@ function ScriptContent() {
         <div className="w-full px-2 sm:px-0 sm:w-auto pb-8 flex-1 min-w-0">
           {selectedScript && item
             ? (
-              <ScriptItem item={item} setSelectedScript={setSelectedScript} />
+              <ScriptItem item={item} setSelectedScript={setSelectedScript} allCategories={links} />
             )
             : (
               <div className="flex w-full flex-col gap-12">

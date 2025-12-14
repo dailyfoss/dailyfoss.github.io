@@ -1,6 +1,6 @@
 "use client";
 
-import { BookOpenText, Tag, Code, Globe, Layers, LayoutGrid, Monitor, Stars, X, Activity, CheckCircle, RefreshCcw, Clock3, Moon, Archive, Hexagon } from "lucide-react";
+import { BookOpenText, Tag, Code, Globe, Layers, LayoutGrid, Monitor, Stars, X, Activity, CheckCircle, RefreshCcw, Clock3, Moon, Archive, Hexagon, Scale } from "lucide-react";
 import { Suspense, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
@@ -12,16 +12,21 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { useRepositoryStatus } from "@/hooks/use-repository-status";
 import { formatRelativeTime } from "@/lib/repository-status";
 
-import DefaultPassword from "./script-items/default-password";
 import InstallCommand from "./script-items/install-command";
 import Description from "./script-items/description";
 import ConfigFile from "./script-items/config-file";
 import InterFaces from "./script-items/interfaces";
 import Alerts from "./script-items/alerts";
+import RelatedTools from "./script-items/related-tools";
+import CommunityStatsHeader from "./script-items/community-stats-header";
+import CommunityIntegrations from "./script-items/community-integrations";
+
+import type { Category } from "@/lib/types";
 
 type ScriptItemProps = {
   item: Script;
   setSelectedScript: (script: string | null) => void;
+  allCategories?: Category[];
 };
 
 type InstallMethodWithPlatform = any;
@@ -41,6 +46,16 @@ function SecondaryMeta({ item }: { item: Script }) {
 
   const parts: { id: string; label: string; href?: string; icon: React.ReactNode; tooltip?: string }[] = [];
 
+  // ⚖️ License
+  if (item.metadata?.license && item.metadata.license !== 'NOASSERTION') {
+    parts.push({
+      id: 'license',
+      label: item.metadata.license,
+      icon: <Scale className="h-4 w-4 text-foreground/60" />,
+      tooltip: `License: ${item.metadata.license}`,
+    });
+  }
+
   // 🏷️ Last Release
   if (!loading && repositoryInfo?.lastRelease) {
     const releaseTime = formatRelativeTime(repositoryInfo.lastRelease);
@@ -53,7 +68,7 @@ function SecondaryMeta({ item }: { item: Script }) {
     parts.push({
       id: 'last-release',
       label: releaseLabel,
-      icon: <Tag className="h-5 w-5 text-foreground/60" />,
+      icon: <Tag className="h-4 w-4 text-foreground/60" />,
       tooltip: `Last release: ${releaseDate}`,
     });
   }
@@ -70,7 +85,7 @@ function SecondaryMeta({ item }: { item: Script }) {
     parts.push({
       id: 'last-commit',
       label: commitLabel,
-      icon: <Hexagon className="h-5 w-5 text-foreground/60" />,
+      icon: <Hexagon className="h-4 w-4 text-foreground/60" />,
       tooltip: `Last commit: ${commitDate}`,
     });
   }
@@ -81,7 +96,8 @@ function SecondaryMeta({ item }: { item: Script }) {
       id: 'website',
       label: "Website",
       href: item.resources.website,
-      icon: <Globe className="h-5 w-5 text-foreground/60" />,
+      icon: <Globe className="h-4 w-4 text-foreground/60" />,
+      tooltip: `Website: ${item.resources.website}`,
     });
   }
 
@@ -91,7 +107,8 @@ function SecondaryMeta({ item }: { item: Script }) {
       id: 'docs',
       label: "Docs",
       href: item.resources.documentation,
-      icon: <BookOpenText className="h-5 w-5 text-foreground/60" />,
+      icon: <BookOpenText className="h-4 w-4 text-foreground/60" />,
+      tooltip: `Documentation: ${item.resources.documentation}`,
     });
   }
 
@@ -101,7 +118,8 @@ function SecondaryMeta({ item }: { item: Script }) {
       id: 'source-code',
       label: "Source code",
       href: item.resources.source_code,
-      icon: <Code className="h-5 w-5 text-foreground/60" />,
+      icon: <Code className="h-4 w-4 text-foreground/60" />,
+      tooltip: item.resources.source_code,
     });
   }
 
@@ -119,8 +137,8 @@ function SecondaryMeta({ item }: { item: Script }) {
     parts.push({
       id: 'github-stars',
       label: formatStars(item.metadata.github_stars),
-      href: "",
-      icon: <Stars className="h-5 w-5 text-foreground/60" />,
+      icon: <Stars className="h-4 w-4 text-foreground/60" />,
+      tooltip: `${item.metadata.github_stars.toLocaleString()} GitHub stars`,
     });
   }
 
@@ -132,19 +150,19 @@ function SecondaryMeta({ item }: { item: Script }) {
       initial={{ opacity: 0, y: -3 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.25, ease: "easeOut" }}
-      className="mt-2 mb-2 flex flex-wrap items-center gap-4 text-base font-medium text-foreground/80"
+      className="mt-1 mb-1 flex flex-wrap items-center gap-3 text-sm font-medium text-foreground/80"
     >
       {parts.map((p, i) => (
         <div
           key={p.id}
-          className="flex items-center gap-1.5 group transition-colors"
+          className="flex items-center gap-1 group transition-colors"
         >
-          {i > 0 && <span className="mx-1 text-muted-foreground/60">•</span>}
+          {i > 0 && <span className="mx-0.5 text-muted-foreground/60">•</span>}
           {p.tooltip ? (
             <TooltipProvider>
               <Tooltip delayDuration={200}>
                 <TooltipTrigger asChild>
-                  <span className="flex items-center gap-1.5 cursor-help">
+                  <span className="flex items-center gap-1 cursor-help">
                     {p.icon}
                     {p.href
                       ? (
@@ -152,7 +170,7 @@ function SecondaryMeta({ item }: { item: Script }) {
                           href={p.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="rounded-md bg-accent/10 px-2 py-0.5 text-primary transition-all hover:bg-accent/20 hover:text-primary"
+                          className="rounded-md bg-accent/10 px-1.5 py-0.5 text-primary transition-all hover:bg-accent/20 hover:text-primary"
                         >
                           {p.label}
                         </a>
@@ -168,7 +186,7 @@ function SecondaryMeta({ item }: { item: Script }) {
               </Tooltip>
             </TooltipProvider>
           ) : (
-            <span className="flex items-center gap-1.5">
+            <span className="flex items-center gap-1">
               {p.icon}
               {p.href
                 ? (
@@ -176,7 +194,7 @@ function SecondaryMeta({ item }: { item: Script }) {
                     href={p.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-md bg-accent/10 px-2 py-0.5 text-primary transition-all hover:bg-accent/20 hover:text-primary"
+                    className="rounded-md bg-accent/10 px-1.5 py-0.5 text-primary transition-all hover:bg-accent/20 hover:text-primary"
                   >
                     {p.label}
                   </a>
@@ -215,7 +233,7 @@ function PlatformRow({
 
   return (
     <div className="flex items-start gap-3">
-      <div className="flex items-center gap-2 min-w-[110px] pt-0.5">
+      <div className="flex items-center gap-3 min-w-[110px] pt-0.5">
         <div className="flex items-center justify-center w-5 h-5 text-muted-foreground/70">
           {icon}
         </div>
@@ -341,7 +359,7 @@ function RepositoryActivityIndicator({ item }: { item: Script }) {
 
   if (loading) {
     return (
-      <div className="flex items-center gap-2 text-sm text-muted-foreground">
+      <div className="flex items-center gap-3 text-sm text-muted-foreground">
         <div className="animate-pulse h-4 w-4 bg-muted rounded-full" />
         <span>Checking repository status...</span>
       </div>
@@ -451,8 +469,8 @@ function ScriptHeader({ item }: { item: Script }) {
             <div className="space-y-3">
               <div className="flex items-start justify-between">
                 <div className="space-y-3">
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <h1 className="text-4xl font-extrabold tracking-tight flex items-center gap-2">
+                  <div className="flex items-center gap-3 flex-wrap">
+                    <h1 className="text-4xl font-extrabold tracking-tight flex items-center gap-3">
                       {item.name}
                       {/* Status Badge - conditional based on repository status */}
                       {!loading && repositoryInfo && repositoryInfo.status !== 'unknown' && (
@@ -501,19 +519,30 @@ function ScriptHeader({ item }: { item: Script }) {
                     </h1>
                     {/* Optional version badge */}
                     {!loading && repositoryInfo?.version && (
-                      <span className="text-[1.05rem] font-mono font-semibold text-foreground/90 tracking-tight">
-                        {repositoryInfo.version}
-                      </span>
+                      <TooltipProvider>
+                        <Tooltip delayDuration={200}>
+                          <TooltipTrigger asChild>
+                            <span className="text-[1.05rem] font-mono font-semibold text-foreground/90 tracking-tight cursor-help">
+                              {repositoryInfo.version}
+                            </span>
+                          </TooltipTrigger>
+                          <TooltipContent side="bottom" className="font-medium">
+                            <p>Latest version</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
                     )}
                   </div>
 
                   <SecondaryMeta item={item} />
+                  <CommunityStatsHeader item={item} />
                   <div className="mt-3">
                     <RepositoryActivityIndicator item={item} />
                   </div>
                 </div>
               </div>
               
+              <CommunityIntegrations item={item} />
               <PlatformSummary item={item} />
             </div>
           </div>
@@ -526,7 +555,7 @@ function ScriptHeader({ item }: { item: Script }) {
   );
 }
 
-export function ScriptItem({ item, setSelectedScript }: ScriptItemProps) {
+export function ScriptItem({ item, setSelectedScript, allCategories = [] }: ScriptItemProps) {
   const router = useRouter();
 
   const closeScript = () => {
@@ -538,9 +567,9 @@ export function ScriptItem({ item, setSelectedScript }: ScriptItemProps) {
   return (
     <div className="w-full mx-auto">
       <div className="flex w-full flex-col">
-        <div className="mb-4 flex items-center justify-between">
+        <div className="mt-6 mb-2 flex items-center justify-between">
           <h2 className="text-sm font-medium tracking-tight text-muted-foreground uppercase">
-            Selected Script
+            Exploring Script
           </h2>
           <button
             onClick={closeScript}
@@ -592,7 +621,10 @@ export function ScriptItem({ item, setSelectedScript }: ScriptItemProps) {
               )}
             </div>
 
-            <DefaultPassword item={item} />
+            {/* Related Tools Section */}
+            {allCategories.length > 0 && (
+              <RelatedTools currentScript={item} allCategories={allCategories} />
+            )}
           </div>
         </motion.div>
       </div>

@@ -12,8 +12,13 @@
     "version": "v0.11.0",
     "date_app_added": "2025-11-23",
     "date_last_released": "2025-09-01",
-    "date_last_commit": "2025-12-10",
-    "github_stars": 2421
+    "date_last_commit": "2025-12-13",
+    "github_stars": 2421,
+    "github_contributors": 30,
+    "github_commits_this_year": 579,
+    "github_issues_open": 183,
+    "github_issues_closed_this_year": 1,
+    "github_releases_this_year": 4
   },
   "resources": {
     "website": "https://adventurelog.app",
@@ -73,5 +78,17 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "proxmox_ve": {
+      "supported": true,
+      "script_id": "adventurelog",
+      "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=adventurelog"
+    },
+    "yunohost": {
+      "supported": true,
+      "repo_name": "adventurelog_ynh",
+      "url": "https://github.com/YunoHost-Apps/adventurelog_ynh"
+    }
+  }
 }

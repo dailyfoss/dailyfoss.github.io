@@ -13,7 +13,12 @@
     "date_app_added": "2025-11-23",
     "date_last_released": "2025-11-05",
     "date_last_commit": "2025-12-09",
-    "github_stars": 30884
+    "github_stars": 30885,
+    "github_contributors": 180,
+    "github_commits_this_year": 544,
+    "github_issues_open": 154,
+    "github_issues_closed_this_year": 1,
+    "github_releases_this_year": 7
   },
   "resources": {
     "website": "http://nicolargo.github.io/glances/",
@@ -73,5 +78,17 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "proxmox_ve": {
+      "supported": true,
+      "script_id": "glance",
+      "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=glance"
+    },
+    "yunohost": {
+      "supported": true,
+      "repo_name": "glances_ynh",
+      "url": "https://github.com/YunoHost-Apps/glances_ynh"
+    }
+  }
 }
