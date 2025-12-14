@@ -21,7 +21,7 @@ export default function CommunityIntegrations({ item }: CommunityIntegrationsPro
       id: 'proxmox_ve',
       name: 'Proxmox VE',
       description: 'Community Scripts',
-      tooltip: item.community_integrations.proxmox_ve.url,
+      tooltip: 'This project is maintained by the Proxmox VE community',
       url: item.community_integrations.proxmox_ve.url,
       icon: <Server className="h-4 w-4" />
     });
@@ -33,7 +33,7 @@ export default function CommunityIntegrations({ item }: CommunityIntegrationsPro
       id: 'yunohost',
       name: 'YunoHost',
       description: 'App Package',
-      tooltip: item.community_integrations.yunohost.url,
+      tooltip: 'This project is maintained by the YunoHost community',
       url: item.community_integrations.yunohost.url,
       icon: <Package className="h-4 w-4" />
     });

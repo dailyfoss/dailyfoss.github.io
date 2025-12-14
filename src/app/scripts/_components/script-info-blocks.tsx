@@ -1,6 +1,6 @@
 "use client";
 
-import { CalendarPlus, Crown, Eye, LayoutGrid, Star, TrendingUp, Tag } from "lucide-react";
+import { CalendarPlus, Crown, Eye, LayoutGrid, Star, TrendingUp, Tag, CircleCheck, RefreshCcw, Clock3, Moon, Archive } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 
@@ -14,12 +14,13 @@ import { Badge } from "@/components/ui/badge";
 import { extractDate } from "@/lib/time";
 import { useRepositoryStatus } from "@/hooks/use-repository-status";
 import { getRelativeTime } from "@/lib/version-utils";
+import { JSX } from "react/jsx-runtime";
 
 const ITEMS_PER_PAGE = 6;
 const ITEMS_PER_PAGE_LARGE = 6;
 
 // ⬇️ Helper to format star count (e.g., 3663 -> "3.7k")
-function formatStarCount(stars?: string | number): string | null {
+function formatStarCount(stars?: string | number | null): string | null {
   if (!stars)
     return null;
 
@@ -52,6 +53,31 @@ function getRelativeTimeFromDays(days: number | null): string {
   
   const years = Math.floor(days / 365);
   return years === 1 ? '1 year ago' : `${years} years ago`;
+}
+
+// Helper function to get repository status icon
+function getStatusIcon(daysSinceLastCommit: number): JSX.Element | null {
+  let status: string;
+  
+  if (daysSinceLastCommit <= 30) status = 'active';
+  else if (daysSinceLastCommit <= 180) status = 'regular';
+  else if (daysSinceLastCommit <= 365) status = 'occasional';
+  else status = 'dormant';
+
+  switch (status) {
+    case 'active':
+      return <CircleCheck className="h-3.5 w-3.5 text-green-600 dark:text-green-400" />;
+    case 'regular':
+      return <RefreshCcw className="h-3.5 w-3.5 text-amber-600 dark:text-amber-400" />;
+    case 'occasional':
+      return <Clock3 className="h-3.5 w-3.5 text-orange-600 dark:text-orange-400" />;
+    case 'dormant':
+      return <Moon className="h-3.5 w-3.5 text-red-600 dark:text-red-400" />;
+    case 'archived':
+      return <Archive className="h-3.5 w-3.5 text-gray-600 dark:text-gray-400" />;
+    default:
+      return null;
+  }
 }
 
 // ⬇️ Compact version for metadata rows with repository status
@@ -366,25 +392,100 @@ export function LatestScripts({ items }: { items: Category[] }) {
             }}
             className="block group"
           >
-            <Card className="bg-accent/30 border-2 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-[3px] flex flex-col h-full cursor-pointer overflow-hidden">
+            <Card className="bg-accent/30 border-2 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-[3px] flex flex-col h-full cursor-pointer">
               <CardHeader className="pb-2">
                 <CardTitle className="flex items-start gap-3">
                   <div className="flex h-16 w-16 min-w-16 items-center justify-center rounded-xl bg-gradient-to-br from-accent/40 to-accent/60 p-1 shadow-md">
                     <AppIcon src={script.resources?.logo} src_light={script.resources?.logo_light} name={script.name || script.slug} size={64} />
                   </div>
                   <div className="flex flex-col flex-1 min-w-0 gap-1">
-                    <h3 className="font-semibold text-base line-clamp-1">{script.name}</h3>
-                    {/* Metadata row (compact) */}
-                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                      <span className="flex items-center gap-1" title={script.metadata?.date_app_added || ""}>
-                        <CalendarPlus className="h-3 w-3" />
-                        {extractDate(script.metadata?.date_app_added || "")}
-                      </span>
-                      {formatStarCount((script as any).github_stars) && (
+                    {/* First row: app_name + repo_status + stars + NEW badge */}
+                    <div className="flex items-center flex-wrap gap-1">
+                      <h3 className="font-semibold text-base line-clamp-1 leading-tight">{script.name}</h3>
+                      {script.metadata?.date_last_commit && (() => {
+                        const lastCommitDate = new Date(script.metadata.date_last_commit);
+                        const now = new Date();
+                        const daysSince = Math.floor((now.getTime() - lastCommitDate.getTime()) / (1000 * 60 * 60 * 24));
+                        return getStatusIcon(daysSince);
+                      })()}
+                      {formatStarCount(script.metadata?.github_stars) && (
+                        <>
+                          <span className="text-muted-foreground/60 select-none text-xs hidden sm:inline">•</span>
+                          <TooltipProvider>
+                            <Tooltip delayDuration={200}>
+                              <TooltipTrigger asChild>
+                                <span className="flex items-center gap-1 cursor-help text-xs text-muted-foreground">
+                                  <Star className="h-3 w-3 fill-current" />
+                                  {formatStarCount(script.metadata?.github_stars)}
+                                </span>
+                              </TooltipTrigger>
+                              <TooltipContent side="bottom" className="font-medium">
+                                <p>{script.metadata?.github_stars?.toLocaleString()} GitHub stars</p>
+                              </TooltipContent>
+                            </Tooltip>
+                          </TooltipProvider>
+                        </>
+                      )}
+                      {(() => {
+                        const daysOld = script.metadata?.date_app_added 
+                          ? Math.floor((new Date().getTime() - new Date(script.metadata.date_app_added).getTime()) / (1000 * 60 * 60 * 24))
+                          : null;
+                        // Show NEW badge if added within last 7 days
+                        if (daysOld !== null && daysOld <= 7) {
+                          return (
+                            <>
+                              <span className="text-muted-foreground/60 select-none text-xs hidden sm:inline">•</span>
+                              <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-green-500/20 text-green-700 dark:text-green-400 border border-green-500/30">
+                                NEW
+                              </span>
+                            </>
+                          );
+                        }
+                        return null;
+                      })()}
+                    </div>
+                    {/* Second row: Added X ago + community_integrations */}
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      {script.metadata?.date_app_added && (
                         <span className="flex items-center gap-1">
-                          <Star className="h-3 w-3 fill-current" />
-                          {formatStarCount((script as any).github_stars)}
+                          <CalendarPlus className="h-3 w-3" />
+                          Added {getRelativeTimeFromDays(Math.floor((new Date().getTime() - new Date(script.metadata.date_app_added).getTime()) / (1000 * 60 * 60 * 24)))}
                         </span>
+                      )}
+                      {script.community_integrations && (script.community_integrations.proxmox_ve?.supported || script.community_integrations.yunohost?.supported) && (
+                        <>
+                          {script.metadata?.date_app_added && <span className="text-muted-foreground/60 select-none hidden sm:inline">•</span>}
+                          <div className="flex items-center gap-1.5">
+                            {script.community_integrations.proxmox_ve?.supported && (
+                              <TooltipProvider>
+                                <Tooltip delayDuration={200}>
+                                  <TooltipTrigger asChild>
+                                    <span className="px-1.5 py-0.5 rounded text-[10px] font-medium bg-accent/50 cursor-help">
+                                      PVE
+                                    </span>
+                                  </TooltipTrigger>
+                                  <TooltipContent side="top" className="font-medium">
+                                    <p>This project is maintained by the Proxmox VE community</p>
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+                            )}
+                            {script.community_integrations.yunohost?.supported && (
+                              <TooltipProvider>
+                                <Tooltip delayDuration={200}>
+                                  <TooltipTrigger asChild>
+                                    <span className="px-1.5 py-0.5 rounded text-[10px] font-medium bg-accent/50 cursor-help">
+                                      Yuno
+                                    </span>
+                                  </TooltipTrigger>
+                                  <TooltipContent side="top" className="font-medium">
+                                    <p>This project is maintained by the YunoHost community</p>
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+                            )}
+                          </div>
+                        </>
                       )}
                     </div>
                   </div>
@@ -439,7 +540,7 @@ export function MostViewedScripts({ items }: { items: Category[] }) {
             className="block group"
             prefetch={false}
           >
-            <Card className="bg-accent/30 border-2 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-[3px] flex flex-col h-full cursor-pointer overflow-hidden">
+            <Card className="bg-accent/30 border-2 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-[3px] flex flex-col h-full cursor-pointer">
               <CardHeader className="pb-2">
                 <CardTitle className="flex items-start gap-3">
                   <div className="flex h-16 w-16 min-w-16 items-center justify-center rounded-xl bg-gradient-to-br from-accent/40 to-accent/60 p-1 shadow-md">
@@ -592,31 +693,124 @@ export function TrendingScripts({ items }: { items: Category[] }) {
             }}
             className="block group"
           >
-            <Card className="bg-accent/30 border-2 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-[3px] flex flex-col h-full cursor-pointer overflow-hidden">
+            <Card className="bg-accent/30 border-2 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-[3px] flex flex-col h-full cursor-pointer">
               <CardHeader className="pb-2">
                 <CardTitle className="flex items-start gap-3">
                   <div className="flex h-16 w-16 min-w-16 items-center justify-center rounded-xl bg-gradient-to-br from-accent/40 to-accent/60 p-1 shadow-md">
                     <AppIcon src={script.resources?.logo} src_light={script.resources?.logo_light} name={script.name || script.slug} size={64} />
                   </div>
                   <div className="flex flex-col flex-1 min-w-0 gap-1">
-                    <h3 className="font-semibold text-base line-clamp-1">{script.name}</h3>
-                    {/* Metadata row (compact) */}
-                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                      <span className="flex items-center gap-1" title={script.metadata?.date_app_added || ""}>
-                        <CalendarPlus className="h-3 w-3" />
-                        {extractDate(script.metadata?.date_app_added || "")}
-                      </span>
-                      {formatStarCount((script as any).github_stars) && (
-                        <span className="flex items-center gap-1">
-                          <Star className="h-3 w-3 fill-current" />
-                          {formatStarCount((script as any).github_stars)}
-                        </span>
+                    {/* First row: app_name + repo_status + stars + eye_icon */}
+                    <div className="flex items-center gap-1">
+                      <h3 className="font-semibold text-base line-clamp-1">{script.name}</h3>
+                      {script.metadata?.date_last_commit && (() => {
+                        const lastCommitDate = new Date(script.metadata.date_last_commit);
+                        const now = new Date();
+                        const daysSince = Math.floor((now.getTime() - lastCommitDate.getTime()) / (1000 * 60 * 60 * 24));
+                        return getStatusIcon(daysSince);
+                      })()}
+                      {formatStarCount(script.metadata?.github_stars) && (
+                        <>
+                          <span className="text-muted-foreground/60 select-none text-xs hidden sm:inline">•</span>
+                          <TooltipProvider>
+                            <Tooltip delayDuration={200}>
+                              <TooltipTrigger asChild>
+                                <span className="flex items-center gap-1 cursor-help text-xs text-muted-foreground">
+                                  <Star className="h-3 w-3 fill-current" />
+                                  {formatStarCount(script.metadata?.github_stars)}
+                                </span>
+                              </TooltipTrigger>
+                              <TooltipContent side="bottom" className="font-medium">
+                                <p>{script.metadata?.github_stars?.toLocaleString()} GitHub stars</p>
+                              </TooltipContent>
+                            </Tooltip>
+                          </TooltipProvider>
+                        </>
                       )}
                       {viewCounts[script.slug] && (
-                        <span className="flex items-center gap-1">
-                          <Eye className="h-3 w-3" />
-                          {viewCounts[script.slug]}
-                        </span>
+                        <>
+                          <span className="text-muted-foreground/60 select-none text-xs hidden sm:inline">•</span>
+                          <TooltipProvider>
+                            <Tooltip delayDuration={200}>
+                              <TooltipTrigger asChild>
+                                <span className="flex items-center gap-1 cursor-help text-xs text-muted-foreground">
+                                  <Eye className="h-3 w-3" />
+                                  {viewCounts[script.slug]}
+                                </span>
+                              </TooltipTrigger>
+                              <TooltipContent side="bottom" className="font-medium">
+                                <p>Visited {viewCounts[script.slug]} times this month</p>
+                              </TooltipContent>
+                            </Tooltip>
+                          </TooltipProvider>
+                        </>
+                      )}
+                    </div>
+                    {/* Second row: community_integration + Released/Last commit */}
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      {script.community_integrations && (script.community_integrations.proxmox_ve?.supported || script.community_integrations.yunohost?.supported) && (
+                        <div className="flex items-center gap-1.5">
+                          {script.community_integrations.proxmox_ve?.supported && (
+                            <TooltipProvider>
+                              <Tooltip delayDuration={200}>
+                                <TooltipTrigger asChild>
+                                  <span className="px-1.5 py-0.5 rounded text-[10px] font-medium bg-accent/50 cursor-help">
+                                    PVE
+                                  </span>
+                                </TooltipTrigger>
+                                <TooltipContent side="bottom" className="font-medium">
+                                  <p>Supported by Proxmox VE community</p>
+                                </TooltipContent>
+                              </Tooltip>
+                            </TooltipProvider>
+                          )}
+                          {script.community_integrations.yunohost?.supported && (
+                            <TooltipProvider>
+                              <Tooltip delayDuration={200}>
+                                <TooltipTrigger asChild>
+                                  <span className="px-1.5 py-0.5 rounded text-[10px] font-medium bg-accent/50 cursor-help">
+                                    Yuno
+                                  </span>
+                                </TooltipTrigger>
+                                <TooltipContent side="bottom" className="font-medium">
+                                  <p>Supported by YunoHost community</p>
+                                </TooltipContent>
+                              </Tooltip>
+                            </TooltipProvider>
+                          )}
+                        </div>
+                      )}
+                      {(script.metadata?.date_last_released || script.metadata?.date_last_commit) && (
+                        <>
+                          {script.community_integrations && (script.community_integrations.proxmox_ve?.supported || script.community_integrations.yunohost?.supported) && (
+                            <span className="text-muted-foreground/60 select-none hidden sm:inline">•</span>
+                          )}
+                          <span className="flex items-center gap-1">
+                            {(() => {
+                              const daysSinceRelease = script.metadata?.date_last_released 
+                                ? Math.floor((new Date().getTime() - new Date(script.metadata.date_last_released).getTime()) / (1000 * 60 * 60 * 24))
+                                : null;
+                              
+                              // If released within 2 weeks (14 days), show "Released X ago"
+                              if (daysSinceRelease !== null && daysSinceRelease <= 14) {
+                                return (
+                                  <>
+                                    <Tag className="h-3 w-3" />
+                                    Released {getRelativeTimeFromDays(daysSinceRelease)}
+                                  </>
+                                );
+                              }
+                              
+                              // Otherwise show "Last commit X ago"
+                              if (script.metadata?.date_last_commit) {
+                                const daysSinceCommit = Math.floor((new Date().getTime() - new Date(script.metadata.date_last_commit).getTime()) / (1000 * 60 * 60 * 24));
+                                return <>Last commit {getRelativeTimeFromDays(daysSinceCommit)}</>;
+                              }
+                              
+                              return null;
+                            })()}
+                          </span>
+                        </>
                       )}
                     </div>
                   </div>
@@ -746,25 +940,106 @@ export function PopularScripts({ items }: { items: Category[] }) {
             className="block group"
             prefetch={false}
           >
-            <Card className="bg-accent/30 border-2 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-[3px] flex flex-col h-full cursor-pointer overflow-hidden">
+            <Card className="bg-accent/30 border-2 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-[3px] flex flex-col h-full cursor-pointer">
               <CardHeader className="pb-2">
                 <CardTitle className="flex items-start gap-3">
                   <div className="flex h-16 w-16 min-w-16 items-center justify-center rounded-xl bg-gradient-to-br from-accent/40 to-accent/60 p-1 shadow-md">
                     <AppIcon src={script.resources?.logo} src_light={script.resources?.logo_light} name={script.name || script.slug} size={64} />
                   </div>
                   <div className="flex flex-col flex-1 min-w-0 gap-1">
-                    <h3 className="font-semibold text-base line-clamp-1">{script.name}</h3>
-                    {/* Metadata row (compact) */}
-                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                      <span className="flex items-center gap-1" title={script.metadata?.date_app_added || ""}>
-                        <CalendarPlus className="h-3 w-3" />
-                        {extractDate(script.metadata?.date_app_added || "")}
-                      </span>
-                      {formatStarCount((script as any).github_stars) && (
-                        <span className="flex items-center gap-1">
-                          <Star className="h-3 w-3 fill-current" />
-                          {formatStarCount((script as any).github_stars)}
-                        </span>
+                    {/* First row: app_name + repo_status + github stars */}
+                    <div className="flex items-center gap-1">
+                      <h3 className="font-semibold text-base line-clamp-1">{script.name}</h3>
+                      {script.metadata?.date_last_commit && (() => {
+                        const lastCommitDate = new Date(script.metadata.date_last_commit);
+                        const now = new Date();
+                        const daysSince = Math.floor((now.getTime() - lastCommitDate.getTime()) / (1000 * 60 * 60 * 24));
+                        return getStatusIcon(daysSince);
+                      })()}
+                      {formatStarCount(script.metadata?.github_stars) && (
+                        <>
+                          <span className="text-muted-foreground/60 select-none text-xs hidden sm:inline">•</span>
+                          <TooltipProvider>
+                            <Tooltip delayDuration={200}>
+                              <TooltipTrigger asChild>
+                                <span className="flex items-center gap-1 cursor-help text-xs text-muted-foreground">
+                                  <Star className="h-3 w-3 fill-current" />
+                                  {formatStarCount(script.metadata?.github_stars)}
+                                </span>
+                              </TooltipTrigger>
+                              <TooltipContent side="bottom" className="font-medium">
+                                <p>{script.metadata?.github_stars?.toLocaleString()} GitHub stars</p>
+                              </TooltipContent>
+                            </Tooltip>
+                          </TooltipProvider>
+                        </>
+                      )}
+                    </div>
+                    {/* Second row: community_integration + Released/Last commit */}
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      {script.community_integrations && (script.community_integrations.proxmox_ve?.supported || script.community_integrations.yunohost?.supported) && (
+                        <div className="flex items-center gap-1.5">
+                          {script.community_integrations.proxmox_ve?.supported && (
+                            <TooltipProvider>
+                              <Tooltip delayDuration={200}>
+                                <TooltipTrigger asChild>
+                                  <span className="px-1.5 py-0.5 rounded text-[10px] font-medium bg-accent/50 cursor-help">
+                                    PVE
+                                  </span>
+                                </TooltipTrigger>
+                                <TooltipContent side="bottom" className="font-medium">
+                                  <p>This project is maintained by the Proxmox VE community</p>
+                                </TooltipContent>
+                              </Tooltip>
+                            </TooltipProvider>
+                          )}
+                          {script.community_integrations.yunohost?.supported && (
+                            <TooltipProvider>
+                              <Tooltip delayDuration={200}>
+                                <TooltipTrigger asChild>
+                                  <span className="px-1.5 py-0.5 rounded text-[10px] font-medium bg-accent/50 cursor-help">
+                                    Yuno
+                                  </span>
+                                </TooltipTrigger>
+                                <TooltipContent side="bottom" className="font-medium">
+                                  <p>This project is maintained by the YunoHost community</p>
+                                </TooltipContent>
+                              </Tooltip>
+                            </TooltipProvider>
+                          )}
+                        </div>
+                      )}
+                      {(script.metadata?.date_last_released || script.metadata?.date_last_commit) && (
+                        <>
+                          {script.community_integrations && (script.community_integrations.proxmox_ve?.supported || script.community_integrations.yunohost?.supported) && (
+                            <span className="text-muted-foreground/60 select-none hidden sm:inline">•</span>
+                          )}
+                          <span className="flex items-center gap-1">
+                            {(() => {
+                              const daysSinceRelease = script.metadata?.date_last_released 
+                                ? Math.floor((new Date().getTime() - new Date(script.metadata.date_last_released).getTime()) / (1000 * 60 * 60 * 24))
+                                : null;
+                              
+                              // If released within 2 weeks (14 days), show "Released X ago"
+                              if (daysSinceRelease !== null && daysSinceRelease <= 14) {
+                                return (
+                                  <>
+                                    <Tag className="h-3 w-3" />
+                                    Released {getRelativeTimeFromDays(daysSinceRelease)}
+                                  </>
+                                );
+                              }
+                              
+                              // Otherwise show "Last commit X ago"
+                              if (script.metadata?.date_last_commit) {
+                                const daysSinceCommit = Math.floor((new Date().getTime() - new Date(script.metadata.date_last_commit).getTime()) / (1000 * 60 * 60 * 24));
+                                return <>Last commit {getRelativeTimeFromDays(daysSinceCommit)}</>;
+                              }
+                              
+                              return null;
+                            })()}
+                          </span>
+                        </>
                       )}
                     </div>
                   </div>

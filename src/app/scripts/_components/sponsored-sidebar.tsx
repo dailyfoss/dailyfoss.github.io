@@ -118,7 +118,7 @@ export function SponsoredSidebar({ items, onScriptSelect }: SponsoredSidebarProp
       <div className="sticky top-4 space-y-4">
         {/* Header - Enhanced */}
         <div className="px-1">
-          <div className="flex items-center gap-2 mb-2 pb-2 border-b border-border/40">
+          <div className="flex items-center gap-2 mt-8 mb-2 pb-2 border-b border-border/40">
             <Crown className="h-5 w-5 text-blue-500/80" />
             <h2 className="text-base font-bold text-foreground/90">Sponsored Tools</h2>
           </div>

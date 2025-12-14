@@ -132,8 +132,9 @@ async function fetchRepoData(owner, repo) {
       }
 
       // Get closed issues this year (excluding pull requests)
+      // Use proper date range format: closed:YYYY-01-01..YYYY-12-31
       const closedIssuesResponse = await fetch(
-        `https://api.github.com/search/issues?q=repo:${owner}/${repo}+type:issue+state:closed+closed:>=${currentYear}-01-01&per_page=1`,
+        `https://api.github.com/search/issues?q=repo:${owner}/${repo}+type:issue+state:closed+closed:${currentYear}-01-01..${currentYear}-12-31&per_page=1`,
         { headers }
       );
       if (closedIssuesResponse.ok) {
@@ -141,7 +142,7 @@ async function fetchRepoData(owner, repo) {
         closedIssuesThisYear = closedData.total_count || 0;
       }
     } catch (e) {
-      console.warn(`WARNING: Failed to fetch issues for ${owner}/${repo}`);
+      console.warn(`WARNING: Failed to fetch issues for ${owner}/${repo}:`, e.message);
     }
 
     // Fetch releases this year

@@ -119,7 +119,7 @@ function SecondaryMeta({ item }: { item: Script }) {
       label: "Source code",
       href: item.resources.source_code,
       icon: <Code className="h-4 w-4 text-foreground/60" />,
-      tooltip: item.resources.source_code,
+      tooltip: `Repository: ${item.resources.source_code}`,
     });
   }
 
@@ -150,62 +150,72 @@ function SecondaryMeta({ item }: { item: Script }) {
       initial={{ opacity: 0, y: -3 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.25, ease: "easeOut" }}
-      className="mt-1 mb-1 flex flex-wrap items-center gap-3 text-sm font-medium text-foreground/80"
+      className="mt-1 mb-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-medium text-foreground/80"
     >
-      {parts.map((p, i) => (
-        <div
-          key={p.id}
-          className="flex items-center gap-1 group transition-colors"
-        >
-          {i > 0 && <span className="mx-0.5 text-muted-foreground/60">•</span>}
-          {p.tooltip ? (
-            <TooltipProvider>
-              <Tooltip delayDuration={200}>
-                <TooltipTrigger asChild>
-                  <span className="flex items-center gap-1 cursor-help">
-                    {p.icon}
-                    {p.href
-                      ? (
-                        <a
-                          href={p.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="rounded-md bg-accent/10 px-1.5 py-0.5 text-primary transition-all hover:bg-accent/20 hover:text-primary"
-                        >
-                          {p.label}
-                        </a>
-                      )
-                      : (
-                        <span>{p.label}</span>
-                      )}
-                  </span>
-                </TooltipTrigger>
-                <TooltipContent side="bottom" className="font-medium">
-                  <p>{p.tooltip}</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          ) : (
-            <span className="flex items-center gap-1">
-              {p.icon}
-              {p.href
-                ? (
-                  <a
-                    href={p.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="rounded-md bg-accent/10 px-1.5 py-0.5 text-primary transition-all hover:bg-accent/20 hover:text-primary"
-                  >
-                    {p.label}
-                  </a>
-                )
-                : (
-                  <span>{p.label}</span>
-                )}
-            </span>
-          )}
-        </div>
-      ))}
+      {parts.flatMap((p, i) => {
+        const element = (
+          <div
+            key={p.id}
+            className="flex items-center gap-1 group transition-colors"
+          >
+            {p.tooltip ? (
+              <TooltipProvider>
+                <Tooltip delayDuration={200}>
+                  <TooltipTrigger asChild>
+                    <span className="flex items-center gap-1 cursor-help">
+                      {p.icon}
+                      {p.href
+                        ? (
+                          <a
+                            href={p.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="rounded-md bg-accent/10 px-1.5 py-0.5 text-primary transition-all hover:bg-accent/20 hover:text-primary"
+                          >
+                            {p.label}
+                          </a>
+                        )
+                        : (
+                          <span>{p.label}</span>
+                        )}
+                    </span>
+                  </TooltipTrigger>
+                  <TooltipContent side="bottom" className="font-medium">
+                    <p>{p.tooltip}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            ) : (
+              <span className="flex items-center gap-1">
+                {p.icon}
+                {p.href
+                  ? (
+                    <a
+                      href={p.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-md bg-accent/10 px-1.5 py-0.5 text-primary transition-all hover:bg-accent/20 hover:text-primary"
+                    >
+                      {p.label}
+                    </a>
+                  )
+                  : (
+                    <span>{p.label}</span>
+                  )}
+              </span>
+            )}
+          </div>
+        );
+        
+        if (i === 0) {
+          return [element];
+        }
+        
+        return [
+          <span key={`sep-${p.id}`} className="text-muted-foreground/60 select-none hidden sm:inline">•</span>,
+          element
+        ];
+      })}
     </motion.div>
   );
 }
@@ -567,9 +577,9 @@ export function ScriptItem({ item, setSelectedScript, allCategories = [] }: Scri
   return (
     <div className="w-full mx-auto">
       <div className="flex w-full flex-col">
-        <div className="mt-6 mb-2 flex items-center justify-between">
+        <div className="mt-8 flex items-center justify-between">
           <h2 className="text-sm font-medium tracking-tight text-muted-foreground uppercase">
-            Exploring Script
+            Selected Script
           </h2>
           <button
             onClick={closeScript}

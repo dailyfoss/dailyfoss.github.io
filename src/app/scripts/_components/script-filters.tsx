@@ -19,6 +19,8 @@ export type FilterState = {
   deployments: Set<string>;
   hosting: Set<string>;
   ui: Set<string>;
+  community: Set<string>;
+  activity: Set<string>;
 };
 
 type ScriptFiltersProps = {
@@ -58,6 +60,19 @@ const uiOptions = [
   { id: "tui", label: "TUI" },
 ];
 
+const communityOptions = [
+  { id: "proxmox_ve", label: "Proxmox VE" },
+  { id: "yunohost", label: "YunoHost" },
+];
+
+const activityOptions = [
+  { id: "active", label: "Active" },
+  { id: "regular", label: "Regular" },
+  { id: "occasional", label: "Occasional" },
+  { id: "dormant", label: "Dormant" },
+  { id: "archived", label: "Archived" },
+];
+
 export function ScriptFilters({ filters, onFilterChange }: ScriptFiltersProps) {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
@@ -90,6 +105,8 @@ export function ScriptFilters({ filters, onFilterChange }: ScriptFiltersProps) {
       deployments: new Set(),
       hosting: new Set(),
       ui: new Set(),
+      community: new Set(),
+      activity: new Set(),
     });
   };
 
@@ -97,7 +114,9 @@ export function ScriptFilters({ filters, onFilterChange }: ScriptFiltersProps) {
     = filters.platforms.size
       + filters.deployments.size
       + filters.hosting.size
-      + filters.ui.size;
+      + filters.ui.size
+      + filters.community.size
+      + filters.activity.size;
 
   const getActiveFilters = (): { category: keyof FilterState; value: string; label: string }[] => {
     const active: { category: keyof FilterState; value: string; label: string }[] = [];
@@ -124,6 +143,18 @@ export function ScriptFilters({ filters, onFilterChange }: ScriptFiltersProps) {
       const option = uiOptions.find(opt => opt.id === value);
       if (option)
         active.push({ category: "ui", value, label: option.label });
+    });
+
+    filters.community.forEach((value) => {
+      const option = communityOptions.find(opt => opt.id === value);
+      if (option)
+        active.push({ category: "community", value, label: option.label });
+    });
+
+    filters.activity.forEach((value) => {
+      const option = activityOptions.find(opt => opt.id === value);
+      if (option)
+        active.push({ category: "activity", value, label: option.label });
     });
 
     return active;
@@ -257,6 +288,72 @@ export function ScriptFilters({ filters, onFilterChange }: ScriptFiltersProps) {
                 key={option.id}
                 checked={filters.ui.has(option.id)}
                 onCheckedChange={() => toggleFilter("ui", option.id)}
+              >
+                {option.label}
+              </DropdownMenuCheckboxItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+
+        {/* Community Filter */}
+        <DropdownMenu open={openDropdown === "community"} onOpenChange={open => setOpenDropdown(open ? "community" : null)}>
+          <DropdownMenuTrigger asChild>
+            <Button
+              variant={filters.community.size > 0 ? "default" : "outline"}
+              size="sm"
+              className={`h-9 ${filters.community.size > 0 ? "ring-2 ring-primary/20 shadow-md font-semibold" : ""}`}
+            >
+              <Filter className="h-3.5 w-3.5 mr-2" />
+              Community
+              {filters.community.size > 0 && (
+                <Badge variant="secondary" className="ml-2 h-5 w-5 rounded-full p-0 flex items-center justify-center bg-white dark:bg-slate-900 text-slate-900 dark:text-white font-bold border border-slate-200 dark:border-slate-700">
+                  {filters.community.size}
+                </Badge>
+              )}
+              <ChevronDown className="h-3.5 w-3.5 ml-2" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="start" className="w-56 bg-popover/95 backdrop-blur-sm border-2">
+            <DropdownMenuLabel>Community Integrations</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            {communityOptions.map(option => (
+              <DropdownMenuCheckboxItem
+                key={option.id}
+                checked={filters.community.has(option.id)}
+                onCheckedChange={() => toggleFilter("community", option.id)}
+              >
+                {option.label}
+              </DropdownMenuCheckboxItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+
+        {/* Activity Status Filter */}
+        <DropdownMenu open={openDropdown === "activity"} onOpenChange={open => setOpenDropdown(open ? "activity" : null)}>
+          <DropdownMenuTrigger asChild>
+            <Button
+              variant={filters.activity.size > 0 ? "default" : "outline"}
+              size="sm"
+              className={`h-9 ${filters.activity.size > 0 ? "ring-2 ring-primary/20 shadow-md font-semibold" : ""}`}
+            >
+              <Filter className="h-3.5 w-3.5 mr-2" />
+              Activity
+              {filters.activity.size > 0 && (
+                <Badge variant="secondary" className="ml-2 h-5 w-5 rounded-full p-0 flex items-center justify-center bg-white dark:bg-slate-900 text-slate-900 dark:text-white font-bold border border-slate-200 dark:border-slate-700">
+                  {filters.activity.size}
+                </Badge>
+              )}
+              <ChevronDown className="h-3.5 w-3.5 ml-2" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="start" className="w-56 bg-popover/95 backdrop-blur-sm border-2">
+            <DropdownMenuLabel>Activity Status</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            {activityOptions.map(option => (
+              <DropdownMenuCheckboxItem
+                key={option.id}
+                checked={filters.activity.has(option.id)}
+                onCheckedChange={() => toggleFilter("activity", option.id)}
               >
                 {option.label}
               </DropdownMenuCheckboxItem>
