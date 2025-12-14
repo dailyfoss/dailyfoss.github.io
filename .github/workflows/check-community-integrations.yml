@@ -2,8 +2,8 @@ name: Check Community Integrations
 
 on:
   schedule:
-    # Run daily at 2 AM UTC
-    - cron: '0 2 * * *'
+    # Run daily at 4 pm UTC
+    - cron: '0 16 * * *'
   workflow_dispatch: # Allow manual trigger
 
 jobs:
