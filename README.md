@@ -12,16 +12,57 @@ A modern, comprehensive platform for browsing and deploying 1000+ self-hosted ap
 
 ## ✨ Features
 
-- **🔍 Smart Search** - Fuzzy search with advanced filtering across 1000+ applications
-- **📊 Community Insights** - Real-time GitHub stats: contributors, commits, issues, releases
-- **🤝 Community Integrations** - Automatic detection of community platform support (Proxmox VE, more coming)
-- **📱 Responsive Design** - Mobile-first UI with smooth animations and transitions
-- **🌙 Theme Support** - Dark/light mode with system preference detection
-- **📈 Repository Status** - Active, regular, occasional, dormant, and archived indicators
-- **🏷️ Rich Metadata** - License info, version tracking, release dates, and star counts
-- **🎯 Category System** - Organized by use case with related tools suggestions
-- **⚡ Lightning Fast** - Static site generation with optimized performance
-- **♿ Accessible** - WCAG compliant with keyboard navigation support
+### 🔍 Discovery & Search
+- **Smart Search** - Fuzzy search with keyboard shortcuts (press `/` to focus)
+- **Advanced Filtering** - Filter by platform, deployment method, hosting type, interface, community integrations, and activity status
+- **Quick Filters** - One-click filters for Desktop, Mobile, Web App, and Browser Extensions
+- **Category Browsing** - Organized by use case with 50+ categories
+
+### � Coimmunity Insights
+- **Real-time GitHub Stats** - Contributors, commits this year, open/closed issues, releases
+- **Repository Status Indicators** - Visual badges showing project activity:
+  - 🟢 Active (updated within 30 days)
+  - 🟡 Regular (updated within 6 months)
+  - 🟠 Occasional (updated within 1 year)
+  - ant (no updates in over 1 year)
+  - 📦 Archread-only, no longer maintained)
+- **Trending This Month** - Real-time visitor tracking with Plausible Analytics
+- **Popular Scripts** - Ranked by GitHub stars and deployment versatility
+
+### 🤝 Community Integrations
+- **Proxmox VE Support** - Automatic detection of 303+ apps with Proxmox community scripts
+- **YunoHost Support** - Automatic detection of 412+ apps with YunoHost packages
+- **Dual Platform Support** - 177 apps available on both platforms
+- **Integration Filtering** - Filter apps by community platform support
+
+### 🎨 User Experience
+- **Responsive Design** - Mobile-first UI with smooth animations and transitions
+- **Dark/Light Mode** - Theme support with system preference detection
+- **Keyboard Navigation** - Full accessibility with keyboard shortcuts
+- **Tooltips & Hints** - Contextual information on hover
+- **NEW Badges** - Highlight recently added apps (within 7 days)
+
+### 📈 Rich Metadata
+- **Version Tracking** - Latest release versions with relative timestamps
+- **License Information** - SPDX license identifiers
+- **Star Counts** - Formatted GitHub star counts (e.g., 3.5k, 1.2m)
+- **Release Dates** - Last release and commit timestamps
+- **Platform Support** - Desktop (Linux, Windows, macOS), Mobile (Android, iOS), Web, Browser Extensions
+- **Deployment Methods** - Docker, Docker Compose, Kubernetes, Helm, Terraform, Scripts
+- **Hosting Options** - Self-hosted, SaaS, Managed Cloud
+- **Interface Types** - CLI, TUI, GUI, Web UI, API
+
+### ⚡ Performance
+- **Static Site Generation** - Pre-rendered pages for instant loading
+- **Optimized Images** - Automatic image optimization with Next.js
+- **Code Splitting** - Lazy loading for optimal bundle sizes
+- **Edge Caching** - CDN distribution via GitHub Pages
+
+### ♿ Accessibility
+- **WCAG Compliant** - Meets accessibility standards
+- **Screen Reader Support** - Semantic HTML and ARIA labels
+- **Keyboard Navigation** - Full keyboard support
+- **Focus Management** - Clear focus indicators
 
 ## 🛠️ Tech Stack
 
@@ -54,8 +95,8 @@ A modern, comprehensive platform for browsing and deploying 1000+ self-hosted ap
 
 ```bash
 # Clone the repository
-git clone https://github.com/dailyfoss/dailyfoss-website.git
-cd dailyfoss-website
+git clone https://github.com/dailyfoss/dailyfoss.git
+cd dailyfoss
 
 # Install dependencies
 npm install
@@ -87,10 +128,11 @@ npm run start                  # Start production server
 npm run lint                   # Run ESLint with auto-fix
 npm run typecheck              # TypeScript type checking
 
-# Tools
-npm run download-icons              # Download app icons
-npm run update-repo-metadata        # Update GitHub metadata (requires GITHUB_TOKEN)
-npm run check-community-integrations # Check community platform support (Proxmox VE, YunoHost)
+# Tools & Automation
+npm run download-icons                    # Download and optimize app icons
+npm run update-repo-metadata              # Update GitHub metadata (requires GITHUB_TOKEN)
+npm run check-community-integrations      # Check Proxmox VE & YunoHost support
+npm run validate-apps                     # Validate JSON schema for all apps
 
 # Deployment
 npm run deploy                 # Build and deploy to GitHub Pages
@@ -101,22 +143,22 @@ npm run deploy                 # Build and deploy to GitHub Pages
 ```
 dailyfoss-website/
 ├── src/
-│   ├── app/                   # Next.js app router pages
-│   │   ├── scripts/           # Main application pages
-│   │   └── category-view/     # Category browsing
-│   ├── components/            # Reusable components
-│   │   └── ui/                # shadcn/ui components
-│   ├── lib/                   # Utilities and types
-│   │   ├── types.ts           # TypeScript definitions
-│   │   └── utils.ts           # Helper functions
-│   └── hooks/                 # Custom React hooks
+│   ├── app/                      # Next.js app router pages
+│   │   ├── scripts/              # Main application pages
+│   │   └── category-view/        # Category browsing
+│   ├── components/               # Reusable components
+│   │   └── ui/                   # shadcn/ui components
+│   ├── lib/                      # Utilities and types
+│   │   ├── types.ts              # TypeScript definitions
+│   │   └── utils.ts              # Helper functions
+│   └── hooks/                    # Custom React hooks
 ├── public/
-│   ├── json/                  # Application data (1000+ files)
-│   └── icons/                 # Application logos
-├── tools/                     # Build and maintenance scripts
-│   ├── download-icons.js      # Icon downloader
-│   └── update-repo-metadata.js # GitHub data fetcher
-└── .github/workflows/         # CI/CD automation
+│   ├── json/                     # Application data (1000+ files)
+│   └── icons/                    # Application logos
+├── tools/                        # Build and maintenance scripts
+│   ├── download-icons.js         # Icon downloader
+│   └── update-repo-metadata.js   # GitHub data fetcher
+└── .github/workflows/            # CI/CD automation
 ```
 
 ## 🔧 Development Guidelines
@@ -124,8 +166,9 @@ dailyfoss-website/
 **Code Style**
 - TypeScript strict mode enabled
 - Functional components with hooks
-- Tailwind CSS for styling
+- Tailwind CSS for styling (no custom CSS)
 - Mobile-first responsive design
+- Accessibility-first approach
 
 **Component Pattern**
 ```typescript
@@ -142,6 +185,39 @@ export function Component({ title, className }: Props) {
       {title}
     </div>
   );
+}
+```
+
+**Adding New Apps**
+1. Create a JSON file in `public/json/` following the schema in `src/lib/types.ts`
+2. Add app icon to `public/icons/` (PNG or SVG, 512x512 recommended)
+3. Run `npm run validate-apps` to check schema compliance
+4. Submit a pull request with your changes
+
+**JSON Schema Example**
+```json
+{
+  "slug": "app-name",
+  "name": "App Name",
+  "description": "Brief description",
+  "categories": ["category-id"],
+  "resources": {
+    "source_code": "https://github.com/user/repo",
+    "website": "https://example.com",
+    "logo": "/icons/app-name.png"
+  },
+  "metadata": {
+    "license": "MIT",
+    "github_stars": 1000
+  },
+  "platform_support": {
+    "desktop": { "linux": true },
+    "web_app": true
+  },
+  "deployment_methods": {
+    "docker": true,
+    "docker_compose": true
+  }
 }
 ```
 
@@ -179,6 +255,15 @@ The project includes automated workflows that run daily:
 
 These workflows ensure the platform always displays current information.
 
+## � Staetistics
+
+- **1,160+ Applications** - Curated collection of self-hosted apps
+- **50+ Categories** - Organized by use case
+- **303 Proxmox VE** - Community scripts available
+- **412 YunoHost** - App packages available
+- **177 Dual Support** - Apps on both platforms
+- **Daily Updates** - Automated metadata refresh
+
 ## 📄 License
 
 MIT License - see [LICENSE](LICENSE) for details.
@@ -187,15 +272,14 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 - **Open Source Community** - For creating amazing self-hosted applications
 - **Contributors** - Thank you for your valuable contributions
-- **[shadcn](https://twitter.com/shadcn)** - For the beautiful component library
-- **[Vercel](https://vercel.com)** - For Next.js and hosting platform
+- **[ProxmoxVE Frontend](https://github.com/community-scripts/ProxmoxVE/tree/main/frontend)** - For the beautiful frontend
+- **[selfh.st Icons](https://github.com/selfhst/icons)** - For awesome icons
 
 ## �  Links
 
-- 🌐 **Website**: [dailyfoss.com](https://dailyfoss.com)
-- 💬 **Discord**: [Join our community](https://discord.gg/dailyfoss)
+- 🌐 **Website**: [dailyfoss.github.io](https://dailyfoss.github.io)
 - 🐦 **Twitter**: [@dailyfoss](https://twitter.com/dailyfoss)
-- 📧 **Email**: hello@dailyfoss.com
+- 📧 **Email**: dailyfoss@gmail.com
 
 ---
 
