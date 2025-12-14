@@ -306,6 +306,17 @@ async function main() {
 
   console.log('\n' + '='.repeat(80) + '\n');
   console.log('Community integrations check complete!\n');
+
+  // Write summary to file for GitHub Actions
+  const summaryPath = path.join(__dirname, '../COMMUNITY_INTEGRATIONS_SUMMARY.txt');
+  const summaryContent = `Total apps: ${totalApps}
+Proxmox VE support: ${proxmoxCount} (${((proxmoxCount/totalApps)*100).toFixed(1)}%)
+YunoHost support: ${yunohostCount} (${((yunohostCount/totalApps)*100).toFixed(1)}%)
+Both platforms: ${bothCount} (${((bothCount/totalApps)*100).toFixed(1)}%)
+No integration: ${noneCount} (${((noneCount/totalApps)*100).toFixed(1)}%)`;
+  
+  await fs.writeFile(summaryPath, summaryContent, 'utf-8');
+  console.log(`Summary written to: ${path.basename(summaryPath)}\n`);
 }
 
 main().catch(error => {
