@@ -13,7 +13,12 @@
     "date_app_added": "2025-11-23",
     "date_last_released": "2025-11-12",
     "date_last_commit": "2025-12-13",
-    "github_stars": 7828
+    "github_stars": 7830,
+    "github_contributors": 133,
+    "github_commits_this_year": 858,
+    "github_issues_open": 121,
+    "github_issues_closed_this_year": 1,
+    "github_releases_this_year": 8
   },
   "resources": {
     "website": "https://privatebin.info/",
@@ -77,5 +82,17 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "proxmox_ve": {
+      "supported": true,
+      "script_id": "privatebin",
+      "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=privatebin"
+    },
+    "yunohost": {
+      "supported": true,
+      "repo_name": "privatebin_ynh",
+      "url": "https://github.com/YunoHost-Apps/privatebin_ynh"
+    }
+  }
 }

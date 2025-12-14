@@ -13,7 +13,12 @@
     "date_app_added": "2025-11-23",
     "date_last_released": "2025-08-27",
     "date_last_commit": "2025-12-12",
-    "github_stars": 30959
+    "github_stars": 30959,
+    "github_contributors": 319,
+    "github_commits_this_year": 432,
+    "github_issues_open": 2124,
+    "github_issues_closed_this_year": 1,
+    "github_releases_this_year": 8
   },
   "resources": {
     "website": "https://influxdata.com",
@@ -73,5 +78,17 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "proxmox_ve": {
+      "supported": true,
+      "script_id": "influxdb",
+      "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=influxdb"
+    },
+    "yunohost": {
+      "supported": true,
+      "repo_name": "influxdb_v2_ynh",
+      "url": "https://github.com/YunoHost-Apps/influxdb_v2_ynh"
+    }
+  }
 }
