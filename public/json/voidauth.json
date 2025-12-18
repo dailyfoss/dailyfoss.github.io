@@ -24,18 +24,26 @@
     "releases": "https://github.com/voidauth/voidauth/releases"
   },
   "features": [
-    "User authentication: Handle user registration, login, and password management for applications.",
-    "Token-based auth: Issue JWT tokens for stateless authentication across services.",
-    "Multi-application: Manage authentication for multiple applications from one service.",
-    "User management: Create and manage user accounts through web UI and API.",
-    "Role-based access: Define roles and permissions to control access to resources.",
-    "OAuth2 support: Provide OAuth2 authentication for third-party application integration.",
-    "Session management: Track active sessions and provide logout functionality.",
-    "Password policies: Enforce password complexity and expiration requirements.",
-    "Two-factor authentication: Add extra security with optional 2FA support.",
-    "API integration: Integrate authentication into applications using REST API.",
-    "Admin dashboard: Manage users, roles, and settings through web administration panel.",
-    "Audit logging: Track authentication events and user actions for security monitoring."
+    {
+      "title": "User Authentication",
+      "description": "Handle user registration, login, and password management for applications"
+    },
+    {
+      "title": "REST API",
+      "description": "Create and manage user accounts through web UI and API"
+    },
+    {
+      "title": "Oauth2 Support",
+      "description": "Provide OAuth2 authentication for third-party application integration"
+    },
+    {
+      "title": "Session Management",
+      "description": "Track active sessions and provide logout functionality"
+    },
+    {
+      "title": "Password Policies",
+      "description": "Enforce password complexity and expiration requirements"
+    }
   ],
   "platform_support": {
     "desktop": {

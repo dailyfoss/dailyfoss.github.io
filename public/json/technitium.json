@@ -29,18 +29,22 @@
     "releases": null
   },
   "features": [
-    "Authoritative DNS: Host your own domains with full zone management and record type support.",
-    "Recursive resolver: Provide DNS resolution for your network with caching for improved performance.",
-    "DNS-over-HTTPS: Secure DNS queries using DoH protocol to prevent eavesdropping and manipulation.",
-    "DNS-over-TLS: Encrypt DNS traffic with DoT for privacy-focused resolution on compatible clients.",
-    "Ad blocking: Block ads and trackers at the DNS level using customizable blocklists and allow lists.",
-    "Query logging: Log all DNS queries for troubleshooting, security analysis, and network monitoring.",
-    "DNSSEC validation: Validate DNSSEC signatures to ensure DNS responses haven't been tampered with.",
-    "Conditional forwarding: Forward specific domains to designated DNS servers for split-horizon setups.",
-    "Web console: Manage all DNS settings through an intuitive web-based administration interface.",
-    "Zone transfer: Support AXFR and IXFR zone transfers for secondary DNS server configurations.",
-    "Dynamic updates: Allow authorized clients to update DNS records dynamically for DHCP integration.",
-    "Statistics dashboard: Monitor query statistics, top domains, and server performance metrics in real-time."
+    {
+      "title": "Authoritative Dns",
+      "description": "Host your own domains with full zone management and record type support"
+    },
+    {
+      "title": "High Performance",
+      "description": "Provide DNS resolution for your network with caching for improved performance"
+    },
+    {
+      "title": "Data Privacy",
+      "description": "Encrypt DNS traffic with DoT for privacy-focused resolution on compatible clients"
+    },
+    {
+      "title": "Query Logging",
+      "description": "Log all DNS queries for troubleshooting, security analysis, and network monitoring"
+    }
   ],
   "platform_support": {
     "desktop": {

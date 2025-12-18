@@ -29,18 +29,22 @@
     "releases": "https://github.com/SonarSource/sonarqube/releases"
   },
   "features": [
-    "Code quality analysis: Scans code for bugs, vulnerabilities, and code smells.",
-    "Security scanning: Detects security vulnerabilities and injection flaws.",
-    "Multi-language support: Analyzes 30+ programming languages including Java, C#, Python, and JavaScript.",
-    "Quality gates: Enforces quality standards by blocking builds that don't meet criteria.",
-    "Technical debt tracking: Calculates and visualizes technical debt across projects.",
-    "Code coverage: Integrates with test coverage tools to track test completeness.",
-    "Duplicate detection: Identifies duplicated code blocks for refactoring opportunities.",
-    "CI/CD integration: Connects with Jenkins, GitLab CI, GitHub Actions, and other pipelines.",
-    "Historical trends: Displays code quality evolution over time with charts.",
-    "Pull request decoration: Comments on PRs with quality issues and metrics.",
-    "Custom rules: Creates organization-specific quality rules and profiles.",
-    "Portfolio management: Organizes and compares quality across multiple projects."
+    {
+      "title": "Code Quality Analysis",
+      "description": "Scans code for bugs, vulnerabilities, and code smells"
+    },
+    {
+      "title": "Security Scanning",
+      "description": "Detects security vulnerabilities and injection flaws"
+    },
+    {
+      "title": "Technical Debt Tracking",
+      "description": "Calculates and visualizes technical debt across projects"
+    },
+    {
+      "title": "Code Coverage",
+      "description": "Integrates with test coverage tools to track test completeness"
+    }
   ],
   "platform_support": {
     "desktop": {

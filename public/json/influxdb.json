@@ -29,14 +29,22 @@
     "releases": "https://github.com/influxdata/influxdb/releases"
   },
   "features": [
-    "Time Series Storage: Optimized database for storing timestamped metrics and events.",
-    "High Performance: Handle millions of writes per second with efficient compression.",
-    "Flux Query Language: Powerful SQL-like language for querying and analyzing time series data.",
-    "Retention Policies: Automatically downsample or delete old data to manage storage.",
-    "Continuous Queries: Pre-aggregate data for faster query performance.",
-    "Dashboard Integration: Works seamlessly with Grafana, Chronograf, and other visualization tools.",
-    "Data Collection: Integrate with Telegraf and other agents for metric collection.",
-    "Clustering Support: Scale horizontally for high-availability deployments."
+    {
+      "title": "Time Series Storage",
+      "description": "Optimized database for storing timestamped metrics and events"
+    },
+    {
+      "title": "High Performance",
+      "description": "Handle millions of writes per second with efficient compression"
+    },
+    {
+      "title": "Flux Query Language",
+      "description": "Powerful SQL-like language for querying and analyzing time series data"
+    },
+    {
+      "title": "Analytics Dashboard",
+      "description": "Works seamlessly with Grafana, Chronograf, and other visualization tools"
+    }
   ],
   "platform_support": {
     "desktop": {

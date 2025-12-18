@@ -29,18 +29,38 @@
     "releases": "https://github.com/nzbgetcom/nzbget/releases"
   },
   "features": [
-    "Usenet downloading: Efficient binary file downloading from Usenet newsgroups using NZB files.",
-    "Multi-threading: Parallel connections maximize download speed and bandwidth utilization.",
-    "Web interface: Manage downloads, view queue, and configure settings through browser UI.",
-    "Post-processing: Automatically unpack, verify, and organize downloads with custom scripts.",
-    "RSS feeds: Subscribe to feeds for automatic downloading of new releases.",
-    "Scheduling: Set download speed limits and schedules to manage bandwidth usage.",
-    "Priority queue: Organize downloads by priority with pause, resume, and reorder capabilities.",
-    "Duplicate detection: Avoid downloading the same content multiple times with smart checking.",
-    "Repair and verification: Automatic PAR2 verification and repair of damaged downloads.",
-    "Extension scripts: Customize behavior with Python or shell scripts for specialized workflows.",
-    "Low resource usage: Optimized C++ code runs efficiently on low-power devices like NAS.",
-    "API access: Integrate with Sonarr, Radarr, and other automation tools via JSON-RPC API."
+    {
+      "title": "Usenet Downloading",
+      "description": "Efficient binary file downloading from Usenet newsgroups using NZB files"
+    },
+    {
+      "title": "Multi",
+      "description": "Parallel connections maximize download speed and bandwidth utilization"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Manage downloads, view queue, and configure settings through browser UI"
+    },
+    {
+      "title": "Post",
+      "description": "Automatically unpack, verify, and organize downloads with custom scripts"
+    },
+    {
+      "title": "Rss Feeds",
+      "description": "Subscribe to feeds for automatic downloading of new releases"
+    },
+    {
+      "title": "Scheduling",
+      "description": "Set download speed limits and schedules to manage bandwidth usage"
+    },
+    {
+      "title": "Priority Queue",
+      "description": "Organize downloads by priority with pause, resume, and reorder capabilities"
+    },
+    {
+      "title": "Duplicate Detection",
+      "description": "Avoid downloading the same content multiple times with smart checking"
+    }
   ],
   "platform_support": {
     "desktop": {

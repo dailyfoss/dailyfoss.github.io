@@ -29,18 +29,34 @@
     "releases": "https://github.com/mailcow/mailcow-dockerized/releases"
   },
   "features": [
-    "Complete mail server: Includes Postfix, Dovecot, SOGo webmail, and spam filtering in one Docker stack.",
-    "Domain management: Host multiple email domains with independent settings and user management.",
-    "Webmail interface: Access email through SOGo's modern webmail client with calendar and contacts.",
-    "Spam protection: Integrated SpamAssassin and Rspamd for effective spam and malware filtering.",
-    "DKIM and SPF: Automatic configuration of email authentication to improve deliverability.",
-    "Quarantine management: Review and release quarantined messages through the admin interface.",
-    "Two-factor authentication: Secure user accounts with TOTP-based 2FA for enhanced security.",
-    "API access: Automate mailbox and domain management through a comprehensive REST API.",
-    "Backup integration: Built-in backup tools for mailboxes, settings, and configuration data.",
-    "Monitoring dashboard: Track mail server health, queue status, and resource usage in real-time.",
-    "Alias management: Create email aliases and catch-all addresses for flexible mail routing.",
-    "Mobile sync: Support for ActiveSync protocol enables native mobile email client integration."
+    {
+      "title": "Docker Support",
+      "description": "Includes Postfix, Dovecot, SOGo webmail, and spam filtering in one Docker stack"
+    },
+    {
+      "title": "User Management",
+      "description": "Host multiple email domains with independent settings and user management"
+    },
+    {
+      "title": "Webmail Interface",
+      "description": "Access email through SOGo's modern webmail client with calendar and contacts"
+    },
+    {
+      "title": "Dkim And Spf",
+      "description": "Automatic configuration of email authentication to improve deliverability"
+    },
+    {
+      "title": "Quarantine Management",
+      "description": "Review and release quarantined messages through the admin interface"
+    },
+    {
+      "title": "Two-Factor Authentication",
+      "description": "Secure user accounts with TOTP-based 2FA for enhanced security"
+    },
+    {
+      "title": "REST API",
+      "description": "Automate mailbox and domain management through a comprehensive REST API"
+    }
   ],
   "platform_support": {
     "desktop": {

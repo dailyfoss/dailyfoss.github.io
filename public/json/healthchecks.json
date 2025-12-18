@@ -29,14 +29,22 @@
     "releases": "https://github.com/healthchecks/healthchecks/releases"
   },
   "features": [
-    "Cron Monitoring: Track scheduled jobs and receive alerts when they fail to run or complete.",
-    "Heartbeat Checks: Monitor long-running processes with periodic ping requirements.",
-    "Multi-Channel Alerts: Send notifications via email, Slack, Discord, PagerDuty, and 20+ integrations.",
-    "Grace Periods: Configure acceptable delays before triggering alerts for flexible scheduling.",
-    "Status Dashboard: View all monitored jobs and their current status at a glance.",
-    "API Access: Integrate monitoring into scripts and applications with simple HTTP pings.",
-    "Failure Detection: Automatically detect when jobs run late, fail, or stop reporting.",
-    "Historical Logs: Review ping history and downtime incidents for troubleshooting."
+    {
+      "title": "Email Notifications",
+      "description": "Send notifications via email, Slack, Discord, PagerDuty, and 20+ integrations"
+    },
+    {
+      "title": "Analytics Dashboard",
+      "description": "View all monitored jobs and their current status at a glance"
+    },
+    {
+      "title": "REST API",
+      "description": "Integrate monitoring into scripts and applications with simple HTTP pings"
+    },
+    {
+      "title": "Historical Logs",
+      "description": "Review ping history and downtime incidents for troubleshooting"
+    }
   ],
   "platform_support": {
     "desktop": {

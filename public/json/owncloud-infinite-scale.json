@@ -29,14 +29,30 @@
     "releases": "https://github.com/owncloud/ocis/releases"
   },
   "features": [
-    "File synchronization: Keep files in sync across desktop and mobile devices with automatic conflict resolution.",
-    "Advanced sharing: Share files and folders with granular permissions including expiration dates and password protection.",
-    "Collaborative editing: Edit documents in real-time with other users using integrated office suite compatibility.",
-    "Scalable architecture: Deploy on cloud-native infrastructure with microservices that scale independently based on load.",
-    "Version control: Track file changes over time and restore previous versions when needed for data recovery.",
-    "External storage: Connect to S3, WebDAV, and other storage backends to unify access across multiple systems.",
-    "Mobile apps: Access and sync files from iOS and Android devices with native applications for offline use.",
-    "API access: Integrate with custom applications using WebDAV and REST APIs for programmatic file management."
+    {
+      "title": "Mobile Responsive",
+      "description": "Keep files in sync across desktop and mobile devices with automatic conflict resolution"
+    },
+    {
+      "title": "Folder Organization",
+      "description": "Share files and folders with granular permissions including expiration dates and password protection"
+    },
+    {
+      "title": "Collaborative Editing",
+      "description": "Edit documents in real-time with other users using integrated office suite compatibility"
+    },
+    {
+      "title": "External Storage",
+      "description": "Connect to S3, WebDAV, and other storage backends to unify access across multiple systems"
+    },
+    {
+      "title": "Mobile Apps",
+      "description": "Access and sync files from iOS and Android devices with native applications for offline use"
+    },
+    {
+      "title": "REST API",
+      "description": "Integrate with custom applications using WebDAV and REST APIs for programmatic file management"
+    }
   ],
   "platform_support": {
     "desktop": {

@@ -29,18 +29,26 @@
     "releases": "https://github.com/Notifiarr/notifiarr/releases"
   },
   "features": [
-    "Media server integration: Connect Plex, Radarr, Sonarr, Lidarr, and other *arr applications.",
-    "Discord notifications: Send alerts and updates to Discord channels with rich embeds.",
-    "Custom triggers: Configure notifications for downloads, upgrades, health checks, and more.",
-    "Statistics dashboard: View media library stats, activity, and system health in one place.",
-    "Remote control: Manage media applications remotely through Discord bot commands.",
-    "Health monitoring: Track application status and receive alerts when services go down.",
-    "Request management: Handle media requests from users with approval workflows.",
-    "Calendar integration: View upcoming releases and scheduled downloads in calendar format.",
-    "Multi-server support: Monitor and manage multiple media servers from a single instance.",
-    "Custom reactions: Set up automated actions in response to media server events.",
-    "User notifications: Alert users when their requested content becomes available.",
-    "Activity logs: Track all notifications and actions for troubleshooting and auditing."
+    {
+      "title": "Media Library",
+      "description": "Connect Plex, Radarr, Sonarr, Lidarr, and other *arr applications"
+    },
+    {
+      "title": "Email Notifications",
+      "description": "Send alerts and updates to Discord channels with rich embeds"
+    },
+    {
+      "title": "Analytics Dashboard",
+      "description": "View media library stats, activity, and system health in one place"
+    },
+    {
+      "title": "Request Management",
+      "description": "Handle media requests from users with approval workflows"
+    },
+    {
+      "title": "Calendar Integration",
+      "description": "View upcoming releases and scheduled downloads in calendar format"
+    }
   ],
   "platform_support": {
     "desktop": {

@@ -29,18 +29,22 @@
     "releases": "https://github.com/kopia/kopia/releases"
   },
   "features": [
-    "Encrypted Backups: End-to-end AES-256 encryption with password or key-based protection. Secure your backup data completely.",
-    "Deduplication: Content-based deduplication for space-efficient storage. Save storage with smart compression.",
-    "Incremental Backups: Fast incremental backups that only store changed data. Minimize backup time and storage.",
-    "Multiple Backends: Support for S3, Azure, Google Cloud, local drives, and more. Backup to any destination.",
-    "Snapshot Management: Create point-in-time snapshots with retention policies. Maintain backup history efficiently.",
-    "Fast Restores: Quick file and directory restoration from any snapshot. Recover data when needed.",
-    "Web UI: Browser-based interface for backup management and monitoring. Manage backups visually.",
-    "CLI Tools: Powerful command-line interface for automation and scripting. Integrate with existing workflows.",
-    "Scheduled Backups: Automatic backups on schedules with policy-based retention. Set and forget protection.",
-    "Compression: Built-in compression to reduce backup size and transfer time. Optimize storage usage.",
-    "Cross-Platform: Support for Windows, macOS, and Linux systems. Backup any platform.",
-    "Verification: Automatic backup verification to ensure data integrity. Trust your backups are valid."
+    {
+      "title": "Database Backup",
+      "description": "End-to-end AES-256 encryption with password or key-based protection. Secure your backup data completely"
+    },
+    {
+      "title": "High Performance",
+      "description": "Fast incremental backups that only store changed data. Minimize backup time and storage"
+    },
+    {
+      "title": "Snapshot Management",
+      "description": "Create point-in-time snapshots with retention policies. Maintain backup history efficiently"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Browser-based interface for backup management and monitoring. Manage backups visually"
+    }
   ],
   "platform_support": {
     "desktop": {

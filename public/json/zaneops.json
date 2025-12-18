@@ -24,18 +24,22 @@
     "releases": "https://github.com/zane-ops/zane-ops/releases"
   },
   "features": [
-    "Service monitoring: Track the health and status of deployed services with real-time availability checks.",
-    "Deployment tracking: View deployment history, rollback options, and current versions across all services.",
-    "Log aggregation: Collect and search logs from multiple services in a centralized interface with filtering.",
-    "Metrics dashboard: Visualize resource usage, request rates, and performance metrics for all monitored services.",
-    "Alert configuration: Set up notifications for service failures, performance degradation, or deployment issues.",
-    "Container management: Monitor Docker containers and orchestration platforms with detailed resource metrics.",
-    "Environment overview: Get a unified view of development, staging, and production environments in one dashboard.",
-    "Incident tracking: Document and track incidents with timelines, affected services, and resolution steps.",
-    "Team collaboration: Share access with team members and assign responsibilities for service ownership.",
-    "API integration: Connect with CI/CD pipelines and deployment tools to automatically update service status.",
-    "Custom checks: Define health checks and monitoring rules specific to your application requirements.",
-    "Historical data: Review past performance and incidents to identify patterns and improve reliability."
+    {
+      "title": "Search and Filter",
+      "description": "Collect and search logs from multiple services in a centralized interface with filtering"
+    },
+    {
+      "title": "Analytics Dashboard",
+      "description": "Visualize resource usage, request rates, and performance metrics for all monitored services"
+    },
+    {
+      "title": "Email Notifications",
+      "description": "Set up notifications for service failures, performance degradation, or deployment issues"
+    },
+    {
+      "title": "Docker Support",
+      "description": "Monitor Docker containers and orchestration platforms with detailed resource metrics"
+    }
   ],
   "platform_support": {
     "desktop": {

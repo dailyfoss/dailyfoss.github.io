@@ -24,18 +24,26 @@
     "releases": "https://github.com/zitadel/zitadel/releases"
   },
   "features": [
-    "Multi-tenancy: Manage multiple organizations and projects with isolated user bases and configurations in one instance.",
-    "OpenID Connect: Implement modern authentication flows with full OIDC support for web and mobile applications.",
-    "OAuth 2.0: Secure API access with standard OAuth flows including authorization code, client credentials, and device flow.",
-    "User management: Create and manage users with customizable profile fields, metadata, and authentication methods.",
-    "Role-based access: Define granular roles and permissions that control access to applications and resources.",
-    "Custom login flows: Configure authentication requirements including MFA, passwordless, and social login per application.",
-    "Branding customization: Personalize login pages, emails, and user interfaces with custom logos, colors, and text.",
-    "Audit logging: Track all authentication events, user actions, and administrative changes for compliance and security.",
-    "API-first design: Manage all aspects of identity and access through comprehensive REST and gRPC APIs.",
-    "Self-service portal: Allow users to manage their profiles, sessions, and security settings through a dedicated interface.",
-    "External identity providers: Integrate with Google, GitHub, Azure AD, and other providers for federated authentication.",
-    "Token management: Issue, validate, and revoke access tokens with configurable expiration and refresh policies."
+    {
+      "title": "Mobile Responsive",
+      "description": "Implement modern authentication flows with full OIDC support for web and mobile applications"
+    },
+    {
+      "title": "REST API",
+      "description": "Secure API access with standard OAuth flows including authorization code, client credentials, and device flow"
+    },
+    {
+      "title": "User Management",
+      "description": "Create and manage users with customizable profile fields, metadata, and authentication methods"
+    },
+    {
+      "title": "Custom Login Flows",
+      "description": "Configure authentication requirements including MFA, passwordless, and social login per application"
+    },
+    {
+      "title": "Audit Logging",
+      "description": "Track all authentication events, user actions, and administrative changes for compliance and security"
+    }
   ],
   "platform_support": {
     "desktop": {

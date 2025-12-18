@@ -29,14 +29,26 @@
     "releases": "https://github.com/nicolargo/glances/releases"
   },
   "features": [
-    "Real-Time Monitoring: Track CPU, memory, disk, network, and process metrics with live updates.",
-    "Multiple Interfaces: Access via terminal UI, web interface, or REST API for flexible monitoring.",
-    "Cross-Platform Support: Monitor Linux, macOS, Windows, and BSD systems with a single tool.",
-    "Process Management: View detailed process information including CPU and memory usage per process.",
-    "Alert System: Configure thresholds and receive alerts when system resources exceed limits.",
-    "Export Capabilities: Send metrics to InfluxDB, Prometheus, or other monitoring systems.",
-    "Plugin Architecture: Extend functionality with plugins for additional metrics and integrations.",
-    "Remote Monitoring: Monitor multiple servers from a central dashboard via client-server mode."
+    {
+      "title": "REST API",
+      "description": "Access via terminal UI, web interface, or REST API for flexible monitoring"
+    },
+    {
+      "title": "Process Management",
+      "description": "View detailed process information including CPU and memory usage per process"
+    },
+    {
+      "title": "Data Export",
+      "description": "Send metrics to InfluxDB, Prometheus, or other monitoring systems"
+    },
+    {
+      "title": "Plugin System",
+      "description": "Extend functionality with plugins for additional metrics and integrations"
+    },
+    {
+      "title": "Analytics Dashboard",
+      "description": "Monitor multiple servers from a central dashboard via client-server mode"
+    }
   ],
   "platform_support": {
     "desktop": {

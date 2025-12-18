@@ -29,18 +29,34 @@
     "releases": "https://github.com/go-shiori/shiori/releases"
   },
   "features": [
-    "Bookmark management: Save web pages with titles, descriptions, and tags for organization.",
-    "Page archiving: Creates offline snapshots of bookmarked pages for permanent access.",
-    "Full-text search: Finds bookmarks by searching titles, content, tags, or URLs.",
-    "Tag organization: Categorizes bookmarks with multiple tags for flexible filtering.",
-    "CLI and web UI: Manage bookmarks via command line or modern web interface.",
-    "Import and export: Migrates bookmarks from browsers using standard HTML format.",
-    "Portable storage: Stores all data in a single SQLite database file for easy backup.",
-    "Reader mode: Displays saved pages in clean, distraction-free reading view.",
-    "Multi-user support: Creates separate accounts with individual bookmark collections.",
-    "Browser extensions: Quick-save bookmarks from Chrome and Firefox with official extensions.",
-    "REST API: Automates bookmark management and integrates with other tools.",
-    "Thumbnail generation: Automatically captures page screenshots for visual identification."
+    {
+      "title": "Tagging System",
+      "description": "Save web pages with titles, descriptions, and tags for organization"
+    },
+    {
+      "title": "Offline Mode",
+      "description": "Creates offline snapshots of bookmarked pages for permanent access"
+    },
+    {
+      "title": "Search and Filter",
+      "description": "Finds bookmarks by searching titles, content, tags, or URLs"
+    },
+    {
+      "title": "Tag Organization",
+      "description": "Categorizes bookmarks with multiple tags for flexible filtering"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Manage bookmarks via command line or modern web interface"
+    },
+    {
+      "title": "Data Export",
+      "description": "Migrates bookmarks from browsers using standard HTML format"
+    },
+    {
+      "title": "Database Backup",
+      "description": "Stores all data in a single SQLite database file for easy backup"
+    }
   ],
   "platform_support": {
     "desktop": {

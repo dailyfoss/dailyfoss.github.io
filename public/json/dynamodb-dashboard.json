@@ -29,14 +29,38 @@
     "releases": "https://github.com/kritish-dhaubanjar/dynamodb-dashboard/releases"
   },
   "features": [
-    "Table browsing: View all DynamoDB tables in your AWS account with item counts and key schema information.",
-    "Item inspection: Browse table contents with pagination and view individual items with all attributes displayed.",
-    "Query builder: Construct queries using partition and sort keys with filter expressions for targeted data retrieval.",
-    "Scan operations: Perform full table scans with optional filters to explore data without predefined access patterns.",
-    "JSON formatting: Display item data in readable JSON format for easier analysis of complex nested structures.",
-    "AWS credential support: Connect using IAM roles, access keys, or environment variables for flexible authentication.",
-    "Local development: Test against DynamoDB Local or production tables from a unified interface during development.",
-    "Lightweight deployment: Run as a simple web application without heavy dependencies or complex setup requirements."
+    {
+      "title": "Table Browsing",
+      "description": "View all DynamoDB tables in your AWS account with item counts and key schema information"
+    },
+    {
+      "title": "Item Inspection",
+      "description": "Browse table contents with pagination and view individual items with all attributes displayed"
+    },
+    {
+      "title": "Query Builder",
+      "description": "Construct queries using partition and sort keys with filter expressions for targeted data retrieval"
+    },
+    {
+      "title": "Scan Operations",
+      "description": "Perform full table scans with optional filters to explore data without predefined access patterns"
+    },
+    {
+      "title": "Json Formatting",
+      "description": "Display item data in readable JSON format for easier analysis of complex nested structures"
+    },
+    {
+      "title": "Aws Credential Support",
+      "description": "Connect using IAM roles, access keys, or environment variables for flexible authentication"
+    },
+    {
+      "title": "Local Development",
+      "description": "Test against DynamoDB Local or production tables from a unified interface during development"
+    },
+    {
+      "title": "Lightweight",
+      "description": "Run as a simple web application without heavy dependencies or complex setup requirements"
+    }
   ],
   "platform_support": {
     "desktop": {

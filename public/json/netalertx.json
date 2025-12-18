@@ -29,18 +29,22 @@
     "releases": "https://github.com/jokob-sk/NetAlertX/releases"
   },
   "features": [
-    "Network scanning: Automatically discover all devices connected to your local network.",
-    "Device alerts: Receive notifications when new or unknown devices join the network.",
-    "Device identification: Recognize device types, manufacturers, and hostnames from network data.",
-    "Historical tracking: View connection history and track when devices were last seen.",
-    "Home Assistant integration: Send device presence data to Home Assistant for automation triggers.",
-    "Custom notifications: Configure alerts via email, webhooks, or push services for network events.",
-    "Device grouping: Organize devices by type, location, or custom categories for easier management.",
-    "MAC address tracking: Monitor devices by hardware address even when IP addresses change.",
-    "Port scanning: Detect open ports and services running on network devices.",
-    "Network visualization: View topology and device relationships in an interactive dashboard.",
-    "Scheduled scans: Run network discovery on intervals or specific times for continuous monitoring.",
-    "Blocklist management: Flag suspicious devices and track potential security threats on your network."
+    {
+      "title": "Email Notifications",
+      "description": "Receive notifications when new or unknown devices join the network"
+    },
+    {
+      "title": "Home Assistant Integration",
+      "description": "Send device presence data to Home Assistant for automation triggers"
+    },
+    {
+      "title": "Custom Notifications",
+      "description": "Configure alerts via email, webhooks, or push services for network events"
+    },
+    {
+      "title": "Mac Address Tracking",
+      "description": "Monitor devices by hardware address even when IP addresses change"
+    }
   ],
   "platform_support": {
     "desktop": {

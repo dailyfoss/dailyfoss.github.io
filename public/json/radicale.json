@@ -29,18 +29,30 @@
     "releases": "https://github.com/Kozea/Radicale/releases"
   },
   "features": [
-    "CalDAV support: Sync calendars across devices using the standard CalDAV protocol.",
-    "CardDAV support: Share and synchronize contacts between phones, computers, and tablets.",
-    "Lightweight deployment: Run on minimal hardware with low memory and CPU requirements.",
-    "File-based storage: Store calendars and contacts as simple files without requiring a database.",
-    "Multi-user support: Create separate accounts for family members or team members with isolated data.",
-    "Authentication options: Secure access with HTTP basic auth, LDAP, or custom authentication backends.",
-    "Rights management: Control read and write permissions for shared calendars and contact lists.",
-    "Git integration: Version control your calendar and contact data by storing files in a Git repository.",
-    "Web interface: View and edit calendars and contacts through a basic browser interface.",
-    "Cross-platform clients: Compatible with iOS Calendar, Android DAVx5, Thunderbird, and other standard clients.",
-    "HTTPS support: Encrypt connections with TLS to protect sensitive calendar and contact information.",
-    "Minimal configuration: Get started quickly with sensible defaults and a simple configuration file."
+    {
+      "title": "Real-Time Sync",
+      "description": "Sync calendars across devices using the standard CalDAV protocol"
+    },
+    {
+      "title": "Lightweight",
+      "description": "Run on minimal hardware with low memory and CPU requirements"
+    },
+    {
+      "title": "File",
+      "description": "Store calendars and contacts as simple files without requiring a database"
+    },
+    {
+      "title": "Team Collaboration",
+      "description": "Create separate accounts for family members or team members with isolated data"
+    },
+    {
+      "title": "Authentication Options",
+      "description": "Secure access with HTTP basic auth, LDAP, or custom authentication backends"
+    },
+    {
+      "title": "Rights Management",
+      "description": "Control read and write permissions for shared calendars and contact lists"
+    }
   ],
   "platform_support": {
     "desktop": {

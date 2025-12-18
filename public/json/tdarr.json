@@ -29,18 +29,30 @@
     "releases": null
   },
   "features": [
-    "Distributed transcoding: Distribute transcoding workload across multiple worker nodes for faster processing.",
-    "Plugin system: Use community plugins or create custom ones to define transcoding rules and workflows.",
-    "Library scanning: Automatically scan media libraries to identify files that need transcoding or optimization.",
-    "Codec conversion: Convert videos between codecs like H.264, H.265, AV1 for compatibility or space savings.",
-    "Health checks: Scan media files for corruption, missing audio tracks, or other issues requiring attention.",
-    "Conditional rules: Apply transcoding rules based on file properties like codec, resolution, bitrate, or container.",
-    "Hardware acceleration: Leverage GPU acceleration for faster transcoding using NVENC, QuickSync, or VAAPI.",
-    "Queue management: Monitor and control transcoding queues with priority settings and manual intervention options.",
-    "Statistics dashboard: View transcoding progress, space saved, and processing statistics in a comprehensive dashboard.",
-    "File organization: Automatically organize and rename files after transcoding based on customizable patterns.",
-    "Staging system: Test transcoding rules on sample files before applying them to entire libraries.",
-    "Notification system: Receive alerts when transcoding jobs complete, fail, or require attention."
+    {
+      "title": "High Performance",
+      "description": "Distribute transcoding workload across multiple worker nodes for faster processing"
+    },
+    {
+      "title": "Plugin System",
+      "description": "Use community plugins or create custom ones to define transcoding rules and workflows"
+    },
+    {
+      "title": "Media Library",
+      "description": "Automatically scan media libraries to identify files that need transcoding or optimization"
+    },
+    {
+      "title": "Codec Conversion",
+      "description": "Convert videos between codecs like H.264, H.265, AV1 for compatibility or space savings"
+    },
+    {
+      "title": "REST API",
+      "description": "Leverage GPU acceleration for faster transcoding using NVENC, QuickSync, or VAAPI"
+    },
+    {
+      "title": "Queue Management",
+      "description": "Monitor and control transcoding queues with priority settings and manual intervention options"
+    }
   ],
   "platform_support": {
     "desktop": {

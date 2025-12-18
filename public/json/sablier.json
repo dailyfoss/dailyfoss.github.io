@@ -29,18 +29,38 @@
     "releases": "https://github.com/sablierapp/sablier/releases"
   },
   "features": [
-    "Dynamic scaling: Automatically start and stop containers based on traffic to reduce resource usage and costs.",
-    "Reverse proxy integration: Works seamlessly with Traefik and other proxies to manage container lifecycle.",
-    "Session persistence: Maintains user sessions during container startup with customizable loading pages.",
-    "Multi-strategy support: Choose between blocking, dynamic, or throttle strategies for different workload patterns.",
-    "Resource optimization: Reduces idle container overhead by shutting down unused services after configurable timeouts.",
-    "Health monitoring: Tracks container health and readiness before routing traffic to ensure reliability.",
-    "Custom themes: Personalize loading screens with custom HTML, CSS, and branding during container startup.",
-    "API control: Programmatically manage container states and scaling policies via REST API.",
-    "Metrics export: Exposes Prometheus metrics for monitoring scaling events and container lifecycle.",
-    "Label-based config: Configure scaling behavior through simple Docker labels without complex configuration files.",
-    "Multi-container support: Manage multiple services simultaneously with independent scaling policies.",
-    "Graceful shutdown: Ensures proper cleanup and state preservation when stopping containers."
+    {
+      "title": "Dynamic Scaling",
+      "description": "Automatically start and stop containers based on traffic to reduce resource usage and costs"
+    },
+    {
+      "title": "Reverse Proxy Integration",
+      "description": "Works seamlessly with Traefik and other proxies to manage container lifecycle"
+    },
+    {
+      "title": "Session Persistence",
+      "description": "Maintains user sessions during container startup with customizable loading pages"
+    },
+    {
+      "title": "Multi",
+      "description": "Choose between blocking, dynamic, or throttle strategies for different workload patterns"
+    },
+    {
+      "title": "Resource Optimization",
+      "description": "Reduces idle container overhead by shutting down unused services after configurable timeouts"
+    },
+    {
+      "title": "Health Monitoring",
+      "description": "Tracks container health and readiness before routing traffic to ensure reliability"
+    },
+    {
+      "title": "Theme Customization",
+      "description": "Personalize loading screens with custom HTML, CSS, and branding during container startup"
+    },
+    {
+      "title": "REST API",
+      "description": "Programmatically manage container states and scaling policies via REST API"
+    }
   ],
   "platform_support": {
     "desktop": {

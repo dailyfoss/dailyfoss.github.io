@@ -30,18 +30,22 @@
     "logo_light": "/icons/semaphore-light.webp"
   },
   "features": [
-    "CI/CD pipelines: Build, test, and deploy code with automated workflow pipelines.",
-    "Repository integration: Connects to GitHub, GitLab, and Bitbucket for source control.",
-    "Parallel execution: Runs multiple jobs simultaneously to reduce build times.",
-    "Docker support: Build and test applications in Docker containers for consistency.",
-    "Deployment automation: Deploy to cloud platforms, servers, or Kubernetes clusters.",
-    "Environment management: Define separate environments for development, staging, and production.",
-    "Secret management: Securely store and inject credentials, API keys, and tokens.",
-    "Build caching: Speeds up builds by caching dependencies and artifacts.",
-    "Status notifications: Sends build results via email, Slack, or webhooks.",
-    "Branch workflows: Configure different pipelines for feature branches, PRs, and main branch.",
-    "Test reporting: Displays test results, coverage, and failure details in the UI.",
-    "Audit logs: Tracks all pipeline executions and configuration changes for compliance."
+    {
+      "title": "Docker Support",
+      "description": "Build and test applications in Docker containers for consistency"
+    },
+    {
+      "title": "Kubernetes Ready",
+      "description": "Deploy to cloud platforms, servers, or Kubernetes clusters"
+    },
+    {
+      "title": "Tagging System",
+      "description": "Define separate environments for development, staging, and production"
+    },
+    {
+      "title": "REST API",
+      "description": "Securely store and inject credentials, API keys, and tokens"
+    }
   ],
   "platform_support": {
     "desktop": {

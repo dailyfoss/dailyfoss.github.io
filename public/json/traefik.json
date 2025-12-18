@@ -29,18 +29,22 @@
     "releases": "https://github.com/traefik/traefik/releases"
   },
   "features": [
-    "Dynamic configuration: Automatically discover services and configure routing without manual configuration files.",
-    "Load balancing: Distribute traffic across multiple backend servers with various load balancing algorithms.",
-    "Let's Encrypt: Automatically obtain and renew SSL certificates from Let's Encrypt for HTTPS.",
-    "Middleware: Apply transformations to requests and responses with built-in middleware for auth, rate limiting, and more.",
-    "Multiple providers: Support Docker, Kubernetes, Consul, and other service discovery mechanisms.",
-    "Web dashboard: Monitor routes, services, and middleware through a real-time web dashboard.",
-    "Metrics: Export metrics to Prometheus, Datadog, or other monitoring systems for observability.",
-    "Circuit breakers: Protect backends from overload with automatic circuit breaker functionality.",
-    "Canary deployments: Route percentage of traffic to new versions for gradual rollouts and testing.",
-    "HTTP/2 and gRPC: Support modern protocols including HTTP/2, gRPC, and WebSocket.",
-    "Access logs: Log all requests with customizable formats for debugging and analysis.",
-    "API: Configure and monitor Traefik programmatically using the comprehensive REST API."
+    {
+      "title": "Load Balancing",
+      "description": "Distribute traffic across multiple backend servers with various load balancing algorithms"
+    },
+    {
+      "title": "Docker Support",
+      "description": "Support Docker, Kubernetes, Consul, and other service discovery mechanisms"
+    },
+    {
+      "title": "Analytics Dashboard",
+      "description": "Monitor routes, services, and middleware through a real-time web dashboard"
+    },
+    {
+      "title": "Data Export",
+      "description": "Export metrics to Prometheus, Datadog, or other monitoring systems for observability"
+    }
   ],
   "platform_support": {
     "desktop": {

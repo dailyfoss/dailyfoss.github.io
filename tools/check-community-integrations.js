@@ -154,12 +154,12 @@ async function updateJsonFile(filePath, proxmoxMatch, yunohostMatch) {
       json.community_integrations = {};
     }
 
-    // Update Proxmox
+    // Update Proxmox - use slug for URL
     if (proxmoxMatch) {
       json.community_integrations.proxmox_ve = {
         supported: true,
         script_id: proxmoxMatch,
-        url: `https://community-scripts.github.io/ProxmoxVE/scripts?id=${proxmoxMatch}`
+        url: `https://community-scripts.github.io/ProxmoxVE/scripts?id=${json.slug}`
       };
     } else if (json.community_integrations.proxmox_ve) {
       delete json.community_integrations.proxmox_ve;
@@ -287,16 +287,16 @@ async function main() {
   console.log('Community Integrations Support');
   console.log('='.repeat(80) + '\n');
 
-  console.log('| App Name                          | Proxmox VE | YunoHost |');
-  console.log('|-----------------------------------|------------|----------|');
+  console.log('| App Name                          |  Proxmox VE  |   YunoHost   |');
+  console.log('|-----------------------------------|--------------|--------------|');
 
   // Show apps with at least one integration
   const appsWithIntegration = results.filter(r => r.proxmox || r.yunohost);
   
   for (const app of appsWithIntegration.slice(0, 50)) {
     const name = app.name.padEnd(33).substring(0, 33);
-    const proxmox = app.proxmox ? '     ✅    ' : '           ';
-    const yunohost = app.yunohost ? '    ✅    ' : '          ';
+    const proxmox = app.proxmox ? '     ✅     ' : '            ';
+    const yunohost = app.yunohost ? '     ✅     ' : '            ';
     console.log(`| ${name} | ${proxmox} | ${yunohost} |`);
   }
 

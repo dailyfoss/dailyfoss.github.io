@@ -29,18 +29,26 @@
     "releases": "https://github.com/statping-ng/statping-ng/releases"
   },
   "features": [
-    "Service monitoring: Checks HTTP, TCP, ICMP, and other service types for availability.",
-    "Status page: Displays public-facing status page for service uptime.",
-    "Uptime tracking: Records historical uptime percentages and downtime incidents.",
-    "Response time graphs: Visualizes service response times over various periods.",
-    "Alert notifications: Sends alerts via email, Slack, Discord, or webhooks on failures.",
-    "Incident management: Logs and displays service incidents with timestamps.",
-    "Custom checks: Creates custom monitoring checks with flexible intervals.",
-    "API monitoring: Tests API endpoints and validates response codes and content.",
-    "SSL certificate monitoring: Alerts on expiring SSL certificates.",
-    "Mobile responsive: Manages monitoring and views status from mobile devices.",
-    "Multi-user support: Allows team members to manage services with different permissions.",
-    "Export metrics: Provides Prometheus metrics endpoint for external monitoring."
+    {
+      "title": "Tagging System",
+      "description": "Records historical uptime percentages and downtime incidents"
+    },
+    {
+      "title": "Response Time Graphs",
+      "description": "Visualizes service response times over various periods"
+    },
+    {
+      "title": "Email Notifications",
+      "description": "Sends alerts via email, Slack, Discord, or webhooks on failures"
+    },
+    {
+      "title": "Incident Management",
+      "description": "Logs and displays service incidents with timestamps"
+    },
+    {
+      "title": "REST API",
+      "description": "Tests API endpoints and validates response codes and content"
+    }
   ],
   "platform_support": {
     "desktop": {

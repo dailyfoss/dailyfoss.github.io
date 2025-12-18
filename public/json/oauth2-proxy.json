@@ -29,14 +29,22 @@
     "releases": "https://github.com/oauth2-proxy/oauth2-proxy/releases"
   },
   "features": [
-    "OAuth2 authentication: Protect applications by requiring login through Google, GitHub, GitLab, or other OAuth providers.",
-    "Reverse proxy: Sit in front of existing applications to add authentication without modifying their source code.",
-    "Email whitelisting: Restrict access to specific email addresses or domains for controlled user authorization.",
-    "Session management: Maintain user sessions with configurable timeouts and automatic token refresh for seamless access.",
-    "Header injection: Pass user information to backend applications via HTTP headers for identity-aware features.",
-    "Multiple providers: Support various OAuth2 and OIDC providers simultaneously for flexible authentication options.",
-    "TLS termination: Handle HTTPS connections and certificate management at the proxy layer for simplified deployment.",
-    "Kubernetes integration: Deploy as an ingress controller or sidecar container for cloud-native authentication patterns."
+    {
+      "title": "Oauth2 Authentication",
+      "description": "Protect applications by requiring login through Google, GitHub, GitLab, or other OAuth providers"
+    },
+    {
+      "title": "Email Whitelisting",
+      "description": "Restrict access to specific email addresses or domains for controlled user authorization"
+    },
+    {
+      "title": "Session Management",
+      "description": "Maintain user sessions with configurable timeouts and automatic token refresh for seamless access"
+    },
+    {
+      "title": "Kubernetes Ready",
+      "description": "Deploy as an ingress controller or sidecar container for cloud-native authentication patterns"
+    }
   ],
   "platform_support": {
     "desktop": {

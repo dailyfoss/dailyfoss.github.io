@@ -29,14 +29,30 @@
     "releases": "https://github.com/TimWitzdam/GitSave/releases"
   },
   "features": [
-    "Automated Backups: Schedule automatic backups of Git repositories to protect against data loss.",
-    "Repository Syncing: Sync multiple repositories on defined schedules with configurable intervals.",
-    "CLI-Based Tool: Lightweight Python script for easy integration into cron jobs or CI systems.",
-    "Multiple Remotes: Back up to multiple remote locations for redundancy and disaster recovery.",
-    "Incremental Backups: Efficient backup process using Git's native incremental capabilities.",
-    "Configuration Files: Define backup targets and schedules through simple configuration files.",
-    "Logging and Monitoring: Track backup success and failures with detailed logging output.",
-    "Cross-Platform: Works on Linux, macOS, and Windows with minimal dependencies."
+    {
+      "title": "Database Backup",
+      "description": "Schedule automatic backups of Git repositories to protect against data loss"
+    },
+    {
+      "title": "Real-Time Sync",
+      "description": "Sync multiple repositories on defined schedules with configurable intervals"
+    },
+    {
+      "title": "Lightweight",
+      "description": "Lightweight Python script for easy integration into cron jobs or CI systems"
+    },
+    {
+      "title": "Incremental Backups",
+      "description": "Efficient backup process using Git's native incremental capabilities"
+    },
+    {
+      "title": "Configuration Files",
+      "description": "Define backup targets and schedules through simple configuration files"
+    },
+    {
+      "title": "Logging And Monitoring",
+      "description": "Track backup success and failures with detailed logging output"
+    }
   ],
   "platform_support": {
     "desktop": {

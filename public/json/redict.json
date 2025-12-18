@@ -24,18 +24,38 @@
     "releases": null
   },
   "features": [
-    "Redis compatibility: Drop-in replacement for Redis with support for existing commands and protocols.",
-    "Memory efficiency: Optimized data structures reduce memory usage compared to traditional Redis.",
-    "Persistence options: Choose between RDB snapshots and AOF logs for data durability.",
-    "Replication support: Set up primary-replica configurations for high availability and read scaling.",
-    "Pub/sub messaging: Implement real-time messaging patterns with channel subscriptions.",
-    "Data structures: Work with strings, lists, sets, sorted sets, and hashes using familiar Redis commands.",
-    "Transactions: Execute multiple commands atomically using MULTI/EXEC blocks.",
-    "Lua scripting: Run server-side scripts for complex operations and atomic workflows.",
-    "Cluster mode: Scale horizontally across multiple nodes with automatic sharding.",
-    "TLS encryption: Secure client connections with SSL/TLS for data in transit.",
-    "Access control: Restrict commands and keys using ACL rules for multi-tenant environments.",
-    "Performance monitoring: Track command statistics and slow queries for optimization."
+    {
+      "title": "Redis Compatibility",
+      "description": "Drop-in replacement for Redis with support for existing commands and protocols"
+    },
+    {
+      "title": "Memory Efficiency",
+      "description": "Optimized data structures reduce memory usage compared to traditional Redis"
+    },
+    {
+      "title": "Persistence Options",
+      "description": "Choose between RDB snapshots and AOF logs for data durability"
+    },
+    {
+      "title": "Replication Support",
+      "description": "Set up primary-replica configurations for high availability and read scaling"
+    },
+    {
+      "title": "Pub/sub Messaging",
+      "description": "Implement real-time messaging patterns with channel subscriptions"
+    },
+    {
+      "title": "Data Structures",
+      "description": "Work with strings, lists, sets, sorted sets, and hashes using familiar Redis commands"
+    },
+    {
+      "title": "Transactions",
+      "description": "Execute multiple commands atomically using MULTI/EXEC blocks"
+    },
+    {
+      "title": "Lua Scripting",
+      "description": "Run server-side scripts for complex operations and atomic workflows"
+    }
   ],
   "platform_support": {
     "desktop": {

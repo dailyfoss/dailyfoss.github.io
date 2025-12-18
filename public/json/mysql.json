@@ -29,14 +29,22 @@
     "releases": null
   },
   "features": [
-    "ACID compliance: Ensure data integrity with atomic transactions, consistency, isolation, and durability guarantees.",
-    "Replication: Set up master-slave or master-master replication for high availability and read scaling.",
-    "Stored procedures: Create reusable database logic with procedures, functions, and triggers for complex operations.",
-    "Full-text search: Index and search text content efficiently using built-in full-text indexing capabilities.",
-    "Partitioning: Divide large tables into smaller pieces for improved query performance and maintenance.",
-    "JSON support: Store and query JSON documents natively with specialized functions and indexing options.",
-    "Performance tuning: Optimize queries with explain plans, indexes, and query cache for faster data access.",
-    "Backup tools: Use mysqldump, binary logs, and point-in-time recovery for comprehensive data protection."
+    {
+      "title": "Search and Filter",
+      "description": "Index and search text content efficiently using built-in full-text indexing capabilities"
+    },
+    {
+      "title": "High Performance",
+      "description": "Divide large tables into smaller pieces for improved query performance and maintenance"
+    },
+    {
+      "title": "Performance Tuning",
+      "description": "Optimize queries with explain plans, indexes, and query cache for faster data access"
+    },
+    {
+      "title": "Database Backup",
+      "description": "Use mysqldump, binary logs, and point-in-time recovery for comprehensive data protection"
+    }
   ],
   "platform_support": {
     "desktop": {

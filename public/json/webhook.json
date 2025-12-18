@@ -24,18 +24,38 @@
     "releases": "https://github.com/adnanh/webhook/releases"
   },
   "features": [
-    "HTTP endpoint creation: Define custom webhook URLs that trigger shell commands or scripts when called.",
-    "Payload filtering: Set up rules to validate incoming webhook payloads before executing commands.",
-    "JSON configuration: Define webhooks using simple JSON files with parameters, headers, and execution rules.",
-    "Request validation: Verify webhook authenticity using HMAC signatures, tokens, or IP whitelisting.",
-    "Command execution: Run shell scripts, system commands, or custom executables in response to webhook triggers.",
-    "Environment variables: Pass webhook payload data to scripts as environment variables for dynamic processing.",
-    "Response customization: Return custom HTTP responses with specific status codes and body content.",
-    "Logging system: Track all webhook invocations with detailed logs including payloads and execution results.",
-    "Concurrent handling: Process multiple webhook requests simultaneously with configurable worker limits.",
-    "Regex matching: Use regular expressions to match and extract data from webhook payloads.",
-    "Lightweight deployment: Minimal resource usage makes it suitable for running on edge devices or containers.",
-    "Security focused: Run commands with specific user permissions and implement rate limiting to prevent abuse."
+    {
+      "title": "Webhook Support",
+      "description": "Define custom webhook URLs that trigger shell commands or scripts when called"
+    },
+    {
+      "title": "Payload Filtering",
+      "description": "Set up rules to validate incoming webhook payloads before executing commands"
+    },
+    {
+      "title": "Json Configuration",
+      "description": "Define webhooks using simple JSON files with parameters, headers, and execution rules"
+    },
+    {
+      "title": "Request Validation",
+      "description": "Verify webhook authenticity using HMAC signatures, tokens, or IP whitelisting"
+    },
+    {
+      "title": "Command Execution",
+      "description": "Run shell scripts, system commands, or custom executables in response to webhook triggers"
+    },
+    {
+      "title": "Environment Variables",
+      "description": "Pass webhook payload data to scripts as environment variables for dynamic processing"
+    },
+    {
+      "title": "Response Customization",
+      "description": "Return custom HTTP responses with specific status codes and body content"
+    },
+    {
+      "title": "Logging System",
+      "description": "Track all webhook invocations with detailed logs including payloads and execution results"
+    }
   ],
   "platform_support": {
     "desktop": {

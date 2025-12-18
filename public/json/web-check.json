@@ -24,18 +24,22 @@
     "releases": "https://github.com/Lissy93/web-check/releases"
   },
   "features": [
-    "Security analysis: Scan websites for security headers, SSL/TLS configuration, and common vulnerabilities.",
-    "Performance metrics: Measure page load times, resource sizes, and identify performance bottlenecks.",
-    "DNS inspection: View complete DNS records including A, AAAA, MX, TXT, and CNAME entries for domains.",
-    "SSL certificate details: Examine certificate validity, issuer information, and expiration dates.",
-    "Server information: Identify web server software, hosting provider, and technology stack used.",
-    "Redirect chains: Trace HTTP redirects to understand URL routing and identify redirect loops.",
-    "Port scanning: Check which ports are open on the target server for security assessment.",
-    "WHOIS lookup: Retrieve domain registration information including registrar and expiration dates.",
-    "Lighthouse integration: Run Google Lighthouse audits for accessibility, SEO, and best practices scoring.",
-    "Social media tags: Verify Open Graph and Twitter Card metadata for proper social sharing.",
-    "Mobile compatibility: Test responsive design and mobile-friendliness of websites.",
-    "Export reports: Generate comprehensive PDF or JSON reports for documentation or client presentations."
+    {
+      "title": "Security Analysis",
+      "description": "Scan websites for security headers, SSL/TLS configuration, and common vulnerabilities"
+    },
+    {
+      "title": "High Performance",
+      "description": "Measure page load times, resource sizes, and identify performance bottlenecks"
+    },
+    {
+      "title": "Ssl Certificate Details",
+      "description": "Examine certificate validity, issuer information, and expiration dates"
+    },
+    {
+      "title": "Server Information",
+      "description": "Identify web server software, hosting provider, and technology stack used"
+    }
   ],
   "platform_support": {
     "desktop": {

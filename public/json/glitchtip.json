@@ -24,14 +24,26 @@
     "releases": "https://gitlab.com/glitchtip/glitchtip-backend/releases"
   },
   "features": [
-    "Error Tracking: Capture and aggregate application errors with detailed stack traces and context.",
-    "Performance Monitoring: Track transaction performance and identify slow operations in your applications.",
-    "Multi-Language SDKs: Support for Python, JavaScript, PHP, Ruby, and other popular languages.",
-    "Sentry Compatible: Drop-in replacement for Sentry with compatible SDK and API.",
-    "Issue Management: Group similar errors, assign to team members, and track resolution status.",
-    "Release Tracking: Monitor error rates across different application versions and deployments.",
-    "Alert Configuration: Set up notifications for new errors or performance degradation.",
-    "Self-Hosted Privacy: Keep all error data and user information on your own infrastructure."
+    {
+      "title": "High Performance",
+      "description": "Track transaction performance and identify slow operations in your applications"
+    },
+    {
+      "title": "REST API",
+      "description": "Drop-in replacement for Sentry with compatible SDK and API"
+    },
+    {
+      "title": "Team Collaboration",
+      "description": "Group similar errors, assign to team members, and track resolution status"
+    },
+    {
+      "title": "Email Notifications",
+      "description": "Set up notifications for new errors or performance degradation"
+    },
+    {
+      "title": "Self-Hosted",
+      "description": "Keep all error data and user information on your own infrastructure"
+    }
   ],
   "platform_support": {
     "desktop": {

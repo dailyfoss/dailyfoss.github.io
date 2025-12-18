@@ -29,18 +29,38 @@
     "releases": "https://github.com/linuxserver/docker-swag/releases"
   },
   "features": [
-    "Reverse proxy: Routes traffic to multiple backend services from single entry point.",
-    "Let's Encrypt: Automatically obtains and renews SSL certificates.",
-    "Nginx-based: Built on proven Nginx web server for reliability and performance.",
-    "Pre-configured security: Includes security headers, rate limiting, and fail2ban integration.",
-    "Subdomain routing: Routes requests to different services based on subdomains.",
-    "Authentication: Adds authentication layer to services with Authelia or basic auth.",
-    "DuckDNS support: Integrates with DuckDNS for dynamic DNS updates.",
-    "Config templates: Provides pre-made configs for popular self-hosted applications.",
-    "Wildcard certificates: Supports wildcard SSL certificates for multiple subdomains.",
-    "GeoIP blocking: Blocks traffic from specific countries or regions.",
-    "ModSecurity: Includes web application firewall for additional protection.",
-    "Docker integration: Designed specifically for Docker-based service deployments."
+    {
+      "title": "Reverse Proxy",
+      "description": "Routes traffic to multiple backend services from single entry point"
+    },
+    {
+      "title": "Let's Encrypt",
+      "description": "Automatically obtains and renews SSL certificates"
+    },
+    {
+      "title": "High Performance",
+      "description": "Built on proven Nginx web server for reliability and performance"
+    },
+    {
+      "title": "Pre",
+      "description": "Includes security headers, rate limiting, and fail2ban integration"
+    },
+    {
+      "title": "Subdomain Routing",
+      "description": "Routes requests to different services based on subdomains"
+    },
+    {
+      "title": "Authentication",
+      "description": "Adds authentication layer to services with Authelia or basic auth"
+    },
+    {
+      "title": "Duckdns Support",
+      "description": "Integrates with DuckDNS for dynamic DNS updates"
+    },
+    {
+      "title": "Self-Hosted",
+      "description": "Provides pre-made configs for popular self-hosted applications"
+    }
   ],
   "platform_support": {
     "desktop": {

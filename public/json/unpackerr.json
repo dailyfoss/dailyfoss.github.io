@@ -29,18 +29,38 @@
     "releases": "https://github.com/Unpackerr/unpackerr/releases"
   },
   "features": [
-    "Automatic extraction: Extract compressed downloads automatically when Sonarr or Radarr mark them complete.",
-    "Multi-app support: Monitor Sonarr, Radarr, Lidarr, Readarr, and Whisparr simultaneously.",
-    "Archive formats: Support RAR, ZIP, 7z, and other common archive formats for extraction.",
-    "Background operation: Run as a daemon in the background without user intervention.",
-    "Cleanup: Optionally delete archive files after successful extraction to save disk space.",
-    "Event monitoring: Watch for download completion events via API integration with Arr apps.",
-    "Parallel extraction: Extract multiple archives simultaneously for faster processing.",
-    "Error handling: Retry failed extractions and log errors for troubleshooting.",
-    "Password support: Extract password-protected archives when passwords are provided.",
-    "Path mapping: Handle different path structures between download client and media server.",
-    "Notification support: Send notifications when extractions complete or fail.",
-    "Lightweight: Run efficiently with minimal CPU and memory usage for continuous operation."
+    {
+      "title": "Automatic Extraction",
+      "description": "Extract compressed downloads automatically when Sonarr or Radarr mark them complete"
+    },
+    {
+      "title": "Multi",
+      "description": "Monitor Sonarr, Radarr, Lidarr, Readarr, and Whisparr simultaneously"
+    },
+    {
+      "title": "Archive Formats",
+      "description": "Support RAR, ZIP, 7z, and other common archive formats for extraction"
+    },
+    {
+      "title": "Background Operation",
+      "description": "Run as a daemon in the background without user intervention"
+    },
+    {
+      "title": "Cleanup",
+      "description": "Optionally delete archive files after successful extraction to save disk space"
+    },
+    {
+      "title": "REST API",
+      "description": "Watch for download completion events via API integration with Arr apps"
+    },
+    {
+      "title": "High Performance",
+      "description": "Extract multiple archives simultaneously for faster processing"
+    },
+    {
+      "title": "Error Handling",
+      "description": "Retry failed extractions and log errors for troubleshooting"
+    }
   ],
   "platform_support": {
     "desktop": {

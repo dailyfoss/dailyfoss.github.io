@@ -29,18 +29,38 @@
     "releases": "https://github.com/gravitational/teleport/releases"
   },
   "features": [
-    "Unified access: Provide single sign-on access to SSH servers, Kubernetes clusters, databases, and web applications.",
-    "Identity-based access: Authenticate users with SSO providers like Okta, GitHub, or SAML for centralized identity management.",
-    "Session recording: Record all SSH and Kubernetes sessions for compliance, auditing, and security review.",
-    "Certificate-based auth: Use short-lived certificates instead of static credentials for improved security posture.",
-    "Access requests: Implement approval workflows for privileged access with just-in-time permission elevation.",
-    "Web UI: Access infrastructure resources through a browser-based interface without installing client tools.",
-    "CLI tools: Use command-line tools for SSH, database, and Kubernetes access with seamless authentication.",
-    "Audit logging: Maintain comprehensive audit logs of all access events and administrative actions.",
-    "Role-based access: Define granular roles and permissions to control who can access which resources.",
-    "Database access: Connect to databases securely with automatic credential rotation and session monitoring.",
-    "Kubernetes access: Access Kubernetes clusters with identity-aware authentication and RBAC integration.",
-    "Cloud or self-hosted: Deploy on your infrastructure or use the managed cloud service for simplified operations."
+    {
+      "title": "Kubernetes Ready",
+      "description": "Provide single sign-on access to SSH servers, Kubernetes clusters, databases, and web applications"
+    },
+    {
+      "title": "Single Sign-On",
+      "description": "Authenticate users with SSO providers like Okta, GitHub, or SAML for centralized identity management"
+    },
+    {
+      "title": "Session Recording",
+      "description": "Record all SSH and Kubernetes sessions for compliance, auditing, and security review"
+    },
+    {
+      "title": "Certificate",
+      "description": "Use short-lived certificates instead of static credentials for improved security posture"
+    },
+    {
+      "title": "Access Requests",
+      "description": "Implement approval workflows for privileged access with just-in-time permission elevation"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Access infrastructure resources through a browser-based interface without installing client tools"
+    },
+    {
+      "title": "Cli Tools",
+      "description": "Use command-line tools for SSH, database, and Kubernetes access with seamless authentication"
+    },
+    {
+      "title": "Audit Logging",
+      "description": "Maintain comprehensive audit logs of all access events and administrative actions"
+    }
   ],
   "platform_support": {
     "desktop": {

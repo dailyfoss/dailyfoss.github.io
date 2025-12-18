@@ -29,18 +29,22 @@
     "releases": "https://github.com/Receipt-Wrangler/receipt-wrangler-api/releases"
   },
   "features": [
-    "OCR processing: Extract text from receipt images using optical character recognition technology.",
-    "Email forwarding: Send receipts to a dedicated email address for automatic import and processing.",
-    "Data extraction: Parse merchant names, dates, totals, and line items into structured database records.",
-    "Category assignment: Automatically categorize expenses based on merchant or manual rules.",
-    "Multi-currency support: Handle receipts in different currencies with automatic conversion tracking.",
-    "Expense reports: Generate summaries by category, date range, or merchant for tax preparation.",
-    "Receipt storage: Keep digital copies of all receipts organized and searchable in one place.",
-    "Manual editing: Correct OCR errors or add missing information through the web interface.",
-    "Export functionality: Download expense data in CSV or JSON format for accounting software.",
-    "Tag system: Add custom tags to receipts for flexible organization beyond categories.",
-    "Search capabilities: Find receipts by merchant, amount, date, or extracted text content.",
-    "Mobile upload: Photograph receipts with your phone and upload them immediately for processing."
+    {
+      "title": "Data Import",
+      "description": "Send receipts to a dedicated email address for automatic import and processing"
+    },
+    {
+      "title": "Expense Reports",
+      "description": "Generate summaries by category, date range, or merchant for tax preparation"
+    },
+    {
+      "title": "Search and Filter",
+      "description": "Keep digital copies of all receipts organized and searchable in one place"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Correct OCR errors or add missing information through the web interface"
+    }
   ],
   "platform_support": {
     "desktop": {

@@ -24,18 +24,26 @@
     "releases": "https://github.com/getwud/wud/releases"
   },
   "features": [
-    "Container monitoring: Automatically detect running Docker containers and track their image versions.",
-    "Registry watching: Check Docker Hub, GHCR, and private registries for new image releases.",
-    "Update notifications: Send alerts via email, Slack, Discord, or webhooks when updates are available.",
-    "Version comparison: Compare running container versions against latest available tags in registries.",
-    "Semver support: Understand semantic versioning to identify major, minor, and patch updates.",
-    "Tag filtering: Configure which image tags to watch using regex patterns or specific version ranges.",
-    "Dashboard view: See all containers and their update status in a centralized web interface.",
-    "Multiple registries: Monitor images from different registries simultaneously in one instance.",
-    "Scheduled checks: Configure how frequently to poll registries for new versions.",
-    "Update triggers: Optionally trigger automated container updates via integration with Watchtower or similar tools.",
-    "Authentication support: Access private registries with credentials for proprietary or internal images.",
-    "Digest tracking: Monitor image digests to detect updates even when tags don't change."
+    {
+      "title": "Docker Support",
+      "description": "Automatically detect running Docker containers and track their image versions"
+    },
+    {
+      "title": "Email Notifications",
+      "description": "Send alerts via email, Slack, Discord, or webhooks when updates are available"
+    },
+    {
+      "title": "Tagging System",
+      "description": "Compare running container versions against latest available tags in registries"
+    },
+    {
+      "title": "Tag Filtering",
+      "description": "Configure which image tags to watch using regex patterns or specific version ranges"
+    },
+    {
+      "title": "Web Interface",
+      "description": "See all containers and their update status in a centralized web interface"
+    }
   ],
   "platform_support": {
     "desktop": {

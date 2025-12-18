@@ -29,13 +29,22 @@
     "releases": "https://github.com/caprover/caprover/releases"
   },
   "features": [
-    "One-Click Deployment: Deploy apps like Heroku with simple commands. Effortless hosting.",
-    "Docker-Based: Built on Docker for reliable containerization. Modern infrastructure.",
-    "Web UI & CLI: Manage deployments through browser or command line. Flexible control.",
-    "App Templates: Pre-configured templates for popular apps and databases. Quick setup.",
-    "Automatic SSL: Free HTTPS certificates with Let's Encrypt integration. Secure by default.",
-    "Load Balancing: Built-in load balancing for high availability. Scale easily.",
-    "Self-Hosted: Run your own PaaS on any server. Complete control."
+    {
+      "title": "Docker Support",
+      "description": "Built on Docker for reliable containerization. Modern infrastructure"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Manage deployments through browser or command line. Flexible control"
+    },
+    {
+      "title": "Load Balancing",
+      "description": "Built-in load balancing for high availability. Scale easily"
+    },
+    {
+      "title": "Self-Hosted",
+      "description": "Run your own PaaS on any server. Complete control"
+    }
   ],
   "platform_support": {
     "desktop": {

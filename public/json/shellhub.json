@@ -29,18 +29,26 @@
     "releases": "https://github.com/shellhub-io/shellhub/releases"
   },
   "features": [
-    "Remote SSH access: Connect to Linux devices via SSH through a centralized web interface.",
-    "Browser terminal: Access device shells directly in the browser without SSH clients.",
-    "Device management: Organize and manage fleets of Linux devices from a single dashboard.",
-    "Session recording: Records SSH sessions for security auditing and compliance.",
-    "Tag-based filtering: Organize devices with tags for easy filtering and bulk operations.",
-    "Public key authentication: Secures device access with SSH key pairs.",
-    "Firewall rules: Control which users can access specific devices or device groups.",
-    "Session sharing: Share terminal sessions with team members for collaboration or support.",
-    "Activity logs: Tracks all connections, commands, and access attempts.",
-    "Multi-user support: Manages team access with individual accounts and permissions.",
-    "Agent deployment: Lightweight agent installs on devices to enable remote access.",
-    "API access: Automates device management and access control via REST API."
+    {
+      "title": "Web Interface",
+      "description": "Connect to Linux devices via SSH through a centralized web interface"
+    },
+    {
+      "title": "Analytics Dashboard",
+      "description": "Organize and manage fleets of Linux devices from a single dashboard"
+    },
+    {
+      "title": "Tagging System",
+      "description": "Organize devices with tags for easy filtering and bulk operations"
+    },
+    {
+      "title": "Public Key Authentication",
+      "description": "Secures device access with SSH key pairs"
+    },
+    {
+      "title": "Team Collaboration",
+      "description": "Share terminal sessions with team members for collaboration or support"
+    }
   ],
   "platform_support": {
     "desktop": {

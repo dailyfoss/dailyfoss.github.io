@@ -29,18 +29,22 @@
     "releases": "https://github.com/mastodon/mastodon/releases"
   },
   "features": [
-    "Federated network: Connect with users across different Mastodon instances and ActivityPub-compatible platforms.",
-    "Microblogging: Post text, images, videos, and polls with character limits and content warnings.",
-    "Privacy controls: Choose post visibility from public, unlisted, followers-only, or direct messages.",
-    "Content moderation: Block, mute, or report users and filter content with customizable word filters.",
-    "Timeline views: Browse home, local, and federated timelines to discover content and conversations.",
-    "Media handling: Upload and share images, videos, and audio with automatic processing and thumbnails.",
-    "Custom emojis: Add instance-specific custom emojis for expressive communication.",
-    "Hashtag following: Follow hashtags to see relevant posts without following individual accounts.",
-    "List management: Organize followed accounts into lists for focused timeline viewing.",
-    "Mobile apps: Access through official and third-party mobile apps for iOS and Android.",
-    "Admin tools: Comprehensive moderation and administration interface for instance management.",
-    "API access: Build custom clients and integrations using the well-documented Mastodon API."
+    {
+      "title": "Microblogging",
+      "description": "Post text, images, videos, and polls with character limits and content warnings"
+    },
+    {
+      "title": "Data Privacy",
+      "description": "Choose post visibility from public, unlisted, followers-only, or direct messages"
+    },
+    {
+      "title": "File Upload",
+      "description": "Upload and share images, videos, and audio with automatic processing and thumbnails"
+    },
+    {
+      "title": "Tagging System",
+      "description": "Follow hashtags to see relevant posts without following individual accounts"
+    }
   ],
   "platform_support": {
     "desktop": {

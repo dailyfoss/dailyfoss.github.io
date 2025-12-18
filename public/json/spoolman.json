@@ -29,18 +29,26 @@
     "releases": "https://github.com/Donkie/Spoolman/releases"
   },
   "features": [
-    "Filament tracking: Manages 3D printer filament spools with remaining weight.",
-    "Cost calculation: Tracks filament costs and calculates print expenses.",
-    "Material database: Stores information about filament types, colors, and brands.",
-    "Usage logging: Records filament consumption per print job.",
-    "Low stock alerts: Notifies when spool weight drops below threshold.",
-    "OctoPrint integration: Syncs with OctoPrint for automatic usage tracking.",
-    "Barcode labels: Generates barcode labels for spool identification.",
-    "Purchase history: Tracks when and where filament was purchased.",
-    "Multi-printer support: Manages filament across multiple 3D printers.",
-    "Statistics: Displays usage trends and most-used materials.",
-    "API access: Integrates with print servers via REST API.",
-    "Web interface: Manages spools through browser-based dashboard."
+    {
+      "title": "Material Database",
+      "description": "Stores information about filament types, colors, and brands"
+    },
+    {
+      "title": "Usage Logging",
+      "description": "Records filament consumption per print job"
+    },
+    {
+      "title": "Low Stock Alerts",
+      "description": "Notifies when spool weight drops below threshold"
+    },
+    {
+      "title": "Real-Time Sync",
+      "description": "Syncs with OctoPrint for automatic usage tracking"
+    },
+    {
+      "title": "Barcode Labels",
+      "description": "Generates barcode labels for spool identification"
+    }
   ],
   "platform_support": {
     "desktop": {

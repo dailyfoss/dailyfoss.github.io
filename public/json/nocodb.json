@@ -29,18 +29,22 @@
     "releases": "https://github.com/nocodb/nocodb/releases"
   },
   "features": [
-    "Database to spreadsheet: Transform MySQL, PostgreSQL, SQL Server, or SQLite databases into spreadsheet interfaces.",
-    "Grid view: Edit database records in a familiar spreadsheet-like grid with sorting and filtering.",
-    "Form views: Generate web forms automatically from database tables for data collection.",
-    "Gallery view: Display records as cards with images for visual data browsing.",
-    "Kanban boards: Organize records in kanban columns based on status or category fields.",
-    "API generation: Automatically create REST and GraphQL APIs for all database tables.",
-    "Collaboration: Share bases with team members and control access with role-based permissions.",
-    "Webhooks: Trigger external actions when data changes with configurable webhook endpoints.",
-    "Automation: Create workflows that respond to data events with actions and notifications.",
-    "App store: Extend functionality with plugins for Slack, Teams, Discord, and more.",
-    "Import/export: Load data from CSV, Excel, or JSON and export in multiple formats.",
-    "Self-hosted control: Run on your infrastructure with support for Docker, Kubernetes, or bare metal."
+    {
+      "title": "Database To Spreadsheet",
+      "description": "Transform MySQL, PostgreSQL, SQL Server, or SQLite databases into spreadsheet interfaces"
+    },
+    {
+      "title": "REST API",
+      "description": "Automatically create REST and GraphQL APIs for all database tables"
+    },
+    {
+      "title": "Team Collaboration",
+      "description": "Share bases with team members and control access with role-based permissions"
+    },
+    {
+      "title": "Webhook Support",
+      "description": "Trigger external actions when data changes with configurable webhook endpoints"
+    }
   ],
   "platform_support": {
     "desktop": {

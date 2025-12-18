@@ -29,18 +29,22 @@
     "releases": "https://github.com/semaphoreui/semaphore/releases"
   },
   "features": [
-    "Ansible web UI: Run Ansible playbooks through an intuitive web interface.",
-    "Inventory management: Organize and manage hosts, groups, and variables visually.",
-    "Playbook execution: Trigger playbook runs with custom variables and tags.",
-    "Task templates: Create reusable task templates for common automation workflows.",
-    "SSH key management: Store and manage SSH keys securely for host authentication.",
-    "Environment variables: Define environment-specific variables for different deployments.",
-    "Execution history: View logs and results of past playbook runs with filtering.",
-    "Role-based access: Control who can view, edit, or execute specific playbooks.",
-    "Scheduling: Run playbooks on schedules or trigger them via webhooks.",
-    "Real-time output: Stream playbook execution output live in the browser.",
-    "Multi-project support: Organize playbooks and inventories into separate projects.",
-    "Notification system: Send alerts on playbook completion or failure via email or webhooks."
+    {
+      "title": "Web Interface",
+      "description": "Run Ansible playbooks through an intuitive web interface"
+    },
+    {
+      "title": "Inventory Management",
+      "description": "Organize and manage hosts, groups, and variables visually"
+    },
+    {
+      "title": "Tagging System",
+      "description": "Trigger playbook runs with custom variables and tags"
+    },
+    {
+      "title": "Ssh Key Management",
+      "description": "Store and manage SSH keys securely for host authentication"
+    }
   ],
   "platform_support": {
     "desktop": {

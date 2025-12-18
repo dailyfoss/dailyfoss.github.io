@@ -29,18 +29,38 @@
     "releases": "https://github.com/hhftechnology/traefik-log-dashboard/releases"
   },
   "features": [
-    "Log parsing: Parse Traefik access logs automatically to extract meaningful metrics and insights.",
-    "Traffic visualization: View traffic patterns with charts showing requests over time, status codes, and response times.",
-    "Error analysis: Identify and analyze errors with breakdowns by status code, endpoint, and frequency.",
-    "Performance metrics: Monitor backend response times and identify slow endpoints or performance issues.",
-    "Top endpoints: See which routes receive the most traffic and which generate the most errors.",
-    "Client analysis: Analyze traffic by client IP, user agent, or geographic location for usage insights.",
-    "Time-based filtering: Filter logs by date range to focus on specific time periods or incidents.",
-    "Status code breakdown: View distribution of HTTP status codes to understand request success rates.",
-    "Backend performance: Compare performance across different backend services to identify bottlenecks.",
-    "Real-time updates: See new log entries and updated statistics as Traefik processes requests.",
-    "Export reports: Export charts and data for sharing or inclusion in reports and documentation.",
-    "Custom queries: Filter logs using custom criteria to answer specific questions about traffic patterns."
+    {
+      "title": "Log Parsing",
+      "description": "Parse Traefik access logs automatically to extract meaningful metrics and insights"
+    },
+    {
+      "title": "Traffic Visualization",
+      "description": "View traffic patterns with charts showing requests over time, status codes, and response times"
+    },
+    {
+      "title": "Error Analysis",
+      "description": "Identify and analyze errors with breakdowns by status code, endpoint, and frequency"
+    },
+    {
+      "title": "High Performance",
+      "description": "Monitor backend response times and identify slow endpoints or performance issues"
+    },
+    {
+      "title": "Top Endpoints",
+      "description": "See which routes receive the most traffic and which generate the most errors"
+    },
+    {
+      "title": "Client Analysis",
+      "description": "Analyze traffic by client IP, user agent, or geographic location for usage insights"
+    },
+    {
+      "title": "Time",
+      "description": "Filter logs by date range to focus on specific time periods or incidents"
+    },
+    {
+      "title": "Status Code Breakdown",
+      "description": "View distribution of HTTP status codes to understand request success rates"
+    }
   ],
   "platform_support": {
     "desktop": {

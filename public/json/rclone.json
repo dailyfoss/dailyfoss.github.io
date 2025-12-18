@@ -29,18 +29,30 @@
     "releases": "https://github.com/rclone/rclone/releases"
   },
   "features": [
-    "Multi-cloud support: Sync files across 40+ cloud storage providers including S3, Google Drive, and Dropbox.",
-    "Encryption: Protect data with client-side encryption before uploading to cloud storage.",
-    "Mount functionality: Access cloud storage as a local filesystem using FUSE on Linux and macOS.",
-    "Bandwidth control: Limit upload and download speeds to avoid saturating your network connection.",
-    "Sync operations: Keep local and remote directories synchronized with bidirectional or one-way sync.",
-    "Deduplication: Identify and skip duplicate files to save bandwidth and storage space.",
-    "Checksum verification: Ensure file integrity by comparing checksums after transfers.",
-    "Filtering rules: Include or exclude files based on patterns, size, or modification time.",
-    "Progress tracking: Monitor transfer speed, remaining time, and file counts during operations.",
-    "Retry logic: Automatically resume failed transfers and handle temporary network issues.",
-    "Crypt backend: Create encrypted remotes that work with any supported cloud provider.",
-    "Web GUI: Manage transfers and browse remote storage through an optional browser interface."
+    {
+      "title": "Real-Time Sync",
+      "description": "Sync files across 40+ cloud storage providers including S3, Google Drive, and Dropbox"
+    },
+    {
+      "title": "End-to-End Encryption",
+      "description": "Protect data with client-side encryption before uploading to cloud storage"
+    },
+    {
+      "title": "Cloud Storage",
+      "description": "Access cloud storage as a local filesystem using FUSE on Linux and macOS"
+    },
+    {
+      "title": "File Upload",
+      "description": "Limit upload and download speeds to avoid saturating your network connection"
+    },
+    {
+      "title": "Sync Operations",
+      "description": "Keep local and remote directories synchronized with bidirectional or one-way sync"
+    },
+    {
+      "title": "Filtering Rules",
+      "description": "Include or exclude files based on patterns, size, or modification time"
+    }
   ],
   "platform_support": {
     "desktop": {

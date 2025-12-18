@@ -29,18 +29,22 @@
     "releases": "https://github.com/rcourtman/Pulse/releases"
   },
   "features": [
-    "Service monitoring: Track uptime and availability of websites, APIs, and network services.",
-    "Status dashboard: Display current status of all monitored services in a clean, public-facing interface.",
-    "Configurable checks: Set up HTTP, TCP, ping, and custom checks with flexible intervals and timeouts.",
-    "Notification alerts: Receive notifications via email, Slack, or webhooks when services go down.",
-    "Incident history: View historical uptime data and incident timelines for all monitored services.",
-    "Response time tracking: Monitor and graph response times to identify performance degradation.",
-    "Multi-location checks: Verify service availability from multiple geographic locations.",
-    "Maintenance windows: Schedule maintenance periods to suppress alerts during planned downtime.",
-    "Public status page: Share service status with users through a customizable public page.",
-    "SSL certificate monitoring: Track SSL certificate expiration and receive alerts before renewal.",
-    "Lightweight design: Minimal resource usage suitable for monitoring dozens of services.",
-    "API access: Programmatically manage monitors and retrieve status data via REST API."
+    {
+      "title": "REST API",
+      "description": "Track uptime and availability of websites, APIs, and network services"
+    },
+    {
+      "title": "Analytics Dashboard",
+      "description": "Display current status of all monitored services in a clean, public-facing interface"
+    },
+    {
+      "title": "Email Notifications",
+      "description": "Receive notifications via email, Slack, or webhooks when services go down"
+    },
+    {
+      "title": "High Performance",
+      "description": "Monitor and graph response times to identify performance degradation"
+    }
   ],
   "platform_support": {
     "desktop": {

@@ -24,18 +24,26 @@
     "releases": "https://github.com/linuxserver/docker-webtop/releases"
   },
   "features": [
-    "Full desktop environment: Access a complete Linux desktop with KDE, XFCE, or other desktop environments in your browser.",
-    "Application support: Run GUI applications including browsers, IDEs, office suites, and development tools.",
-    "Persistent storage: Save files and settings that persist across container restarts for continuous workflows.",
-    "Multi-user access: Create isolated desktop environments for multiple users with separate configurations.",
-    "Copy-paste support: Transfer text and data between your local machine and the remote desktop seamlessly.",
-    "Audio support: Stream audio from desktop applications to your browser for multimedia applications.",
-    "File transfer: Upload and download files between your local system and the remote desktop environment.",
-    "Custom resolution: Adjust desktop resolution dynamically to match your browser window or display preferences.",
-    "Keyboard mapping: Use your local keyboard layout with proper key mapping for international users.",
-    "Clipboard sync: Synchronize clipboard content between local and remote environments for productivity.",
-    "Resource isolation: Run resource-intensive applications in containers without affecting your host system.",
-    "Quick deployment: Launch a full desktop environment in seconds using Docker with minimal configuration."
+    {
+      "title": "Full Desktop Environment",
+      "description": "Access a complete Linux desktop with KDE, XFCE, or other desktop environments in your browser"
+    },
+    {
+      "title": "Persistent Storage",
+      "description": "Save files and settings that persist across container restarts for continuous workflows"
+    },
+    {
+      "title": "Team Collaboration",
+      "description": "Create isolated desktop environments for multiple users with separate configurations"
+    },
+    {
+      "title": "Media Library",
+      "description": "Stream audio from desktop applications to your browser for multimedia applications"
+    },
+    {
+      "title": "File Upload",
+      "description": "Upload and download files between your local system and the remote desktop environment"
+    }
   ],
   "platform_support": {
     "desktop": {

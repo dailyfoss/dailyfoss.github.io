@@ -29,18 +29,30 @@
     "releases": "https://github.com/pi-hole/pi-hole/releases"
   },
   "features": [
-    "Network-wide blocking: Block ads and trackers for all devices on your network without individual configuration.",
-    "DNS sinkhole: Intercept DNS requests to known ad and tracking domains before they reach devices.",
-    "Web dashboard: Monitor blocking statistics, query logs, and network activity through an intuitive interface.",
-    "Blocklist management: Subscribe to curated blocklists or create custom lists for granular control.",
-    "Query logging: View detailed logs of all DNS queries with timestamps, clients, and block status.",
-    "Whitelist and blacklist: Override blocklists with custom allow and deny rules for specific domains.",
-    "DHCP server: Optionally serve DHCP to automatically configure network devices to use Pi-hole.",
-    "API access: Integrate with other tools and scripts using the built-in REST API.",
-    "Group management: Apply different blocking policies to device groups for customized filtering.",
-    "Conditional forwarding: Route specific DNS queries to designated servers for local network resolution.",
-    "Privacy protection: Block tracking domains to enhance privacy across all network devices.",
-    "Performance metrics: Track DNS query response times and blocking effectiveness with statistics."
+    {
+      "title": "Analytics Dashboard",
+      "description": "Monitor blocking statistics, query logs, and network activity through an intuitive interface"
+    },
+    {
+      "title": "Blocklist Management",
+      "description": "Subscribe to curated blocklists or create custom lists for granular control"
+    },
+    {
+      "title": "Query Logging",
+      "description": "View detailed logs of all DNS queries with timestamps, clients, and block status"
+    },
+    {
+      "title": "Whitelist And Blacklist",
+      "description": "Override blocklists with custom allow and deny rules for specific domains"
+    },
+    {
+      "title": "Dhcp Server",
+      "description": "Optionally serve DHCP to automatically configure network devices to use Pi-hole"
+    },
+    {
+      "title": "REST API",
+      "description": "Integrate with other tools and scripts using the built-in REST API"
+    }
   ],
   "platform_support": {
     "desktop": {

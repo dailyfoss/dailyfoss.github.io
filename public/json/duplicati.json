@@ -29,14 +29,22 @@
     "releases": "https://github.com/duplicati/duplicati/releases"
   },
   "features": [
-    "Encrypted backups: Protect data with AES-256 encryption before uploading to storage destinations for security.",
-    "Incremental backups: Store only changed blocks to minimize storage space and bandwidth usage over time.",
-    "Cloud storage support: Back up to S3, Google Drive, Dropbox, OneDrive, and 20+ other cloud providers or local destinations.",
-    "Scheduling: Automate backup jobs to run daily, weekly, or on custom schedules without manual intervention.",
-    "Deduplication: Eliminate redundant data across backups to reduce storage costs and improve efficiency.",
-    "Retention policies: Configure automatic deletion of old backups based on age or count to manage storage limits.",
-    "Web interface: Configure, monitor, and restore backups through a browser-based dashboard from any device.",
-    "Disaster recovery: Restore individual files, folders, or complete systems from any backup point in time."
+    {
+      "title": "Database Backup",
+      "description": "Protect data with AES-256 encryption before uploading to storage destinations for security"
+    },
+    {
+      "title": "Incremental Backups",
+      "description": "Store only changed blocks to minimize storage space and bandwidth usage over time"
+    },
+    {
+      "title": "Cloud Storage",
+      "description": "Back up to S3, Google Drive, Dropbox, OneDrive, and 20+ other cloud providers or local"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Configure, monitor, and restore backups through a browser-based dashboard from any device"
+    }
   ],
   "platform_support": {
     "desktop": {

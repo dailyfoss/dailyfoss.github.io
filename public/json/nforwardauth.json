@@ -29,18 +29,26 @@
     "releases": "https://github.com/nosduco/nforwardauth/releases"
   },
   "features": [
-    "OAuth2 authentication: Centralize login using OAuth2 providers like Google, GitHub, or custom IdPs.",
-    "Forward auth proxy: Protect internal applications by intercepting requests and validating sessions.",
-    "Routing rules: Define which applications require authentication and which are publicly accessible.",
-    "Session management: Handle user sessions with secure cookies and token validation.",
-    "SSO experience: Single sign-on across multiple applications with one authentication.",
-    "Access control: Restrict application access based on user groups, roles, or email domains.",
-    "Logout handling: Centralized logout that clears sessions across all protected applications.",
-    "Custom redirects: Configure post-login and post-logout redirect URLs for user flow.",
-    "Header injection: Pass user information to backend applications via HTTP headers.",
-    "Reverse proxy integration: Works with Traefik, Nginx, and other reverse proxies.",
-    "Lightweight design: Minimal resource footprint suitable for edge deployment.",
-    "Self-hosted control: Keep authentication data and user sessions on your own infrastructure."
+    {
+      "title": "Oauth2 Authentication",
+      "description": "Centralize login using OAuth2 providers like Google, GitHub, or custom IdPs"
+    },
+    {
+      "title": "Forward Auth Proxy",
+      "description": "Protect internal applications by intercepting requests and validating sessions"
+    },
+    {
+      "title": "Session Management",
+      "description": "Handle user sessions with secure cookies and token validation"
+    },
+    {
+      "title": "Access Control",
+      "description": "Restrict application access based on user groups, roles, or email domains"
+    },
+    {
+      "title": "Logout Handling",
+      "description": "Centralized logout that clears sessions across all protected applications"
+    }
   ],
   "platform_support": {
     "desktop": {

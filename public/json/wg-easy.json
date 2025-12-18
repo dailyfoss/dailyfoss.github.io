@@ -24,18 +24,26 @@
     "releases": "https://github.com/wg-easy/wg-easy/releases"
   },
   "features": [
-    "WireGuard management: Configure and manage WireGuard VPN servers through an intuitive web interface.",
-    "Peer creation: Add new VPN clients with automatic key generation and configuration file creation.",
-    "QR code generation: Display QR codes for mobile devices to scan and connect instantly without manual configuration.",
-    "Configuration download: Download client configuration files for desktop or router setups.",
-    "Peer monitoring: View connection status, last handshake time, and data transfer for each peer in real-time.",
-    "Bandwidth tracking: Monitor upload and download statistics per peer to identify usage patterns.",
-    "Easy setup: Deploy a complete WireGuard VPN with web UI in minutes using Docker.",
-    "Peer management: Enable, disable, or delete peers without restarting the VPN server.",
-    "IP allocation: Automatically assign IP addresses to new peers from the configured subnet.",
-    "DNS configuration: Set custom DNS servers for VPN clients to use when connected.",
-    "Mobile optimized: Manage your VPN from smartphones with a responsive admin interface.",
-    "Security focused: Implement modern cryptography with WireGuard's proven security model."
+    {
+      "title": "Web Interface",
+      "description": "Configure and manage WireGuard VPN servers through an intuitive web interface"
+    },
+    {
+      "title": "Mobile Responsive",
+      "description": "Display QR codes for mobile devices to scan and connect instantly without manual configuration"
+    },
+    {
+      "title": "Configuration Download",
+      "description": "Download client configuration files for desktop or router setups"
+    },
+    {
+      "title": "File Upload",
+      "description": "Monitor upload and download statistics per peer to identify usage patterns"
+    },
+    {
+      "title": "Peer Management",
+      "description": "Enable, disable, or delete peers without restarting the VPN server"
+    }
   ],
   "platform_support": {
     "desktop": {

@@ -29,18 +29,22 @@
     "releases": null
   },
   "features": [
-    "Key browsing: Navigate Redis databases with a tree view showing all keys organized by pattern.",
-    "Value editing: View and modify string, list, set, hash, and sorted set values through the web interface.",
-    "TTL management: Check and update time-to-live values for keys to control expiration.",
-    "Multi-database support: Switch between Redis databases and manage multiple instances from one interface.",
-    "Search functionality: Find keys quickly using pattern matching or full-text search.",
-    "CRUD operations: Create, read, update, and delete keys and values without using the command line.",
-    "Command console: Execute raw Redis commands directly from the browser for advanced operations.",
-    "Data export: Download database contents in JSON or Redis protocol format for backup or migration.",
-    "Import functionality: Load data from files to populate or restore Redis databases.",
-    "Connection management: Save and switch between multiple Redis server configurations.",
-    "Read-only mode: Prevent accidental modifications by enabling view-only access to production databases.",
-    "Authentication support: Connect to password-protected Redis instances with credential management."
+    {
+      "title": "Web Interface",
+      "description": "View and modify string, list, set, hash, and sorted set values through the web interface"
+    },
+    {
+      "title": "Ttl Management",
+      "description": "Check and update time-to-live values for keys to control expiration"
+    },
+    {
+      "title": "Search and Filter",
+      "description": "Find keys quickly using pattern matching or full-text search"
+    },
+    {
+      "title": "Database Backup",
+      "description": "Download database contents in JSON or Redis protocol format for backup or migration"
+    }
   ],
   "platform_support": {
     "desktop": {

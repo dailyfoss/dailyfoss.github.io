@@ -29,14 +29,26 @@
     "releases": "https://github.com/mrjackwills/oxker/releases"
   },
   "features": [
-    "Container overview: View all running and stopped containers with status, uptime, and resource usage at a glance.",
-    "Resource monitoring: Track CPU, memory, and network usage per container with real-time updates and historical data.",
-    "Log viewing: Access container logs directly from the dashboard with search and filtering capabilities.",
-    "Container control: Start, stop, restart, and remove containers through the web interface without command-line access.",
-    "Image management: List Docker images with size information and remove unused images to free disk space.",
-    "Event tracking: Monitor Docker events like container starts, stops, and errors for system awareness.",
-    "Terminal interface: Run in a text-based UI for lightweight monitoring on servers without graphical environments.",
-    "Multi-host support: Connect to multiple Docker hosts and switch between them from a single dashboard."
+    {
+      "title": "Search and Filter",
+      "description": "Access container logs directly from the dashboard with search and filtering capabilities"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Start, stop, restart, and remove containers through the web interface without command-line access"
+    },
+    {
+      "title": "Docker Support",
+      "description": "List Docker images with size information and remove unused images to free disk space"
+    },
+    {
+      "title": "Lightweight",
+      "description": "Run in a text-based UI for lightweight monitoring on servers without graphical environments"
+    },
+    {
+      "title": "Analytics Dashboard",
+      "description": "Connect to multiple Docker hosts and switch between them from a single dashboard"
+    }
   ],
   "platform_support": {
     "desktop": {

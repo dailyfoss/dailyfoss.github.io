@@ -29,14 +29,22 @@
     "releases": "https://github.com/TwiN/gatus/releases"
   },
   "features": [
-    "Service Monitoring: Track uptime and health of internal and external services with configurable check intervals.",
-    "Condition-Based Alerts: Define custom conditions and thresholds to trigger alerts via multiple channels.",
-    "Health Checks: Perform HTTP, TCP, ICMP, and DNS checks with response time and status code validation.",
-    "Dashboard View: Monitor all services at a glance through a clean, real-time status dashboard.",
-    "Heartbeat Monitoring: Detect service failures with passive heartbeat checks and timeout alerts.",
-    "Multi-Channel Alerts: Send notifications via Slack, Discord, email, PagerDuty, and other integrations.",
-    "Response Time Tracking: Monitor and visualize service response times with historical data.",
-    "Lightweight Deployment: Single binary with minimal dependencies for easy self-hosted monitoring."
+    {
+      "title": "Analytics Dashboard",
+      "description": "Monitor all services at a glance through a clean, real-time status dashboard"
+    },
+    {
+      "title": "Email Notifications",
+      "description": "Send notifications via Slack, Discord, email, PagerDuty, and other integrations"
+    },
+    {
+      "title": "Response Time Tracking",
+      "description": "Monitor and visualize service response times with historical data"
+    },
+    {
+      "title": "Self-Hosted",
+      "description": "Single binary with minimal dependencies for easy self-hosted monitoring"
+    }
   ],
   "platform_support": {
     "desktop": {

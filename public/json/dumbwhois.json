@@ -29,14 +29,26 @@
     "releases": null
   },
   "features": [
-    "Domain lookups: Query WHOIS databases for registration details including registrar, creation date, and expiration.",
-    "Simple interface: Enter domain names in a clean web form without ads or tracking from third-party lookup services.",
-    "Self-hosted privacy: Run queries from your own server to avoid sharing search history with external providers.",
-    "Multiple TLDs: Support lookups across various top-level domains including country codes and generic extensions.",
-    "Raw data display: View complete WHOIS responses with all available fields for technical analysis.",
-    "No rate limits: Perform unlimited queries without restrictions imposed by public WHOIS websites.",
-    "Lightweight deployment: Run as a single container with minimal resource requirements for personal or team use.",
-    "API access: Integrate WHOIS lookups into scripts or applications using simple HTTP endpoints."
+    {
+      "title": "Self-Hosted",
+      "description": "Run queries from your own server to avoid sharing search history with external providers"
+    },
+    {
+      "title": "Raw Data Display",
+      "description": "View complete WHOIS responses with all available fields for technical analysis"
+    },
+    {
+      "title": "No Rate Limits",
+      "description": "Perform unlimited queries without restrictions imposed by public WHOIS websites"
+    },
+    {
+      "title": "Lightweight",
+      "description": "Run as a single container with minimal resource requirements for personal or team use"
+    },
+    {
+      "title": "REST API",
+      "description": "Integrate WHOIS lookups into scripts or applications using simple HTTP endpoints"
+    }
   ],
   "platform_support": {
     "desktop": {

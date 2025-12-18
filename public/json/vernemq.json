@@ -24,18 +24,38 @@
     "releases": "https://github.com/vernemq/vernemq/releases"
   },
   "features": [
-    "MQTT broker: Provide MQTT messaging for IoT devices and applications with full protocol support.",
-    "High availability: Run in clustered mode for fault tolerance and automatic failover.",
-    "Scalability: Scale horizontally by adding nodes to handle millions of concurrent connections.",
-    "Plugin system: Extend functionality with plugins for authentication, authorization, and custom logic.",
-    "WebSocket support: Allow web browsers to connect via MQTT over WebSockets.",
-    "Bridge mode: Bridge to other MQTT brokers for hybrid cloud or multi-site deployments.",
-    "QoS levels: Support all MQTT quality of service levels for reliable message delivery.",
-    "Retained messages: Store and deliver retained messages to new subscribers automatically.",
-    "Session persistence: Maintain client sessions across disconnections for reliable messaging.",
-    "Access control: Define fine-grained access controls for topics and client permissions.",
-    "Monitoring: Monitor broker performance and client connections through built-in metrics.",
-    "CLI management: Manage broker configuration and operations through command-line tools."
+    {
+      "title": "Mqtt Broker",
+      "description": "Provide MQTT messaging for IoT devices and applications with full protocol support"
+    },
+    {
+      "title": "High Availability",
+      "description": "Run in clustered mode for fault tolerance and automatic failover"
+    },
+    {
+      "title": "Scalability",
+      "description": "Scale horizontally by adding nodes to handle millions of concurrent connections"
+    },
+    {
+      "title": "Plugin System",
+      "description": "Extend functionality with plugins for authentication, authorization, and custom logic"
+    },
+    {
+      "title": "Websocket Support",
+      "description": "Allow web browsers to connect via MQTT over WebSockets"
+    },
+    {
+      "title": "Bridge Mode",
+      "description": "Bridge to other MQTT brokers for hybrid cloud or multi-site deployments"
+    },
+    {
+      "title": "Qos Levels",
+      "description": "Support all MQTT quality of service levels for reliable message delivery"
+    },
+    {
+      "title": "Retained Messages",
+      "description": "Store and deliver retained messages to new subscribers automatically"
+    }
   ],
   "platform_support": {
     "desktop": {

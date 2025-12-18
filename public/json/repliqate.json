@@ -29,18 +29,22 @@
     "releases": "https://github.com/lminlone/repliqate/releases"
   },
   "features": [
-    "Multi-storage replication: Copy data across local disks, network shares, and cloud storage providers.",
-    "Rule-based automation: Define custom rules for what content to replicate and where.",
-    "Scheduled tasks: Run replication jobs on a schedule to keep backups current.",
-    "Incremental sync: Transfer only changed files to minimize bandwidth and time.",
-    "Conflict handling: Automatically resolve or flag conflicts when files differ between sources.",
-    "Verification checks: Validate data integrity after replication using checksums.",
-    "Parallel transfers: Speed up replication by copying multiple files simultaneously.",
-    "Filtering options: Include or exclude files based on patterns, size, or modification date.",
-    "Logging and reporting: Track all replication activities with detailed logs for auditing.",
-    "Retry logic: Automatically retry failed transfers to handle temporary network issues.",
-    "Bandwidth throttling: Limit transfer speeds to avoid saturating network connections.",
-    "Web dashboard: Monitor replication status and configure jobs through a browser interface."
+    {
+      "title": "Cloud Storage",
+      "description": "Copy data across local disks, network shares, and cloud storage providers"
+    },
+    {
+      "title": "Database Backup",
+      "description": "Run replication jobs on a schedule to keep backups current"
+    },
+    {
+      "title": "Real-Time Sync",
+      "description": "Transfer only changed files to minimize bandwidth and time"
+    },
+    {
+      "title": "Filtering Options",
+      "description": "Include or exclude files based on patterns, size, or modification date"
+    }
   ],
   "platform_support": {
     "desktop": {

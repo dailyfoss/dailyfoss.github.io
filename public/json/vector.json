@@ -24,18 +24,22 @@
     "releases": "https://github.com/vectordotdev/vector/releases"
   },
   "features": [
-    "Log collection: Collect logs from files, syslog, journald, and other sources with flexible inputs.",
-    "Metrics collection: Gather metrics from Prometheus, StatsD, and other monitoring systems.",
-    "Data transformation: Transform, parse, and enrich observability data with built-in functions.",
-    "Multiple destinations: Ship data to Elasticsearch, Splunk, S3, Kafka, and dozens of other sinks.",
-    "High performance: Process millions of events per second with low resource usage.",
-    "Buffering: Buffer data in memory or on disk to handle downstream outages gracefully.",
-    "Routing: Route data to different destinations based on content, tags, or custom logic.",
-    "Aggregation: Aggregate metrics and logs before shipping to reduce data volume and costs.",
-    "Reliability: Ensure data delivery with acknowledgments, retries, and dead letter queues.",
-    "Configuration: Define pipelines declaratively using TOML, YAML, or JSON configuration files.",
-    "Observability: Monitor Vector itself with built-in metrics and health checks.",
-    "Vendor-neutral: Avoid vendor lock-in with support for open standards and multiple backends."
+    {
+      "title": "Log Collection",
+      "description": "Collect logs from files, syslog, journald, and other sources with flexible inputs"
+    },
+    {
+      "title": "Search and Filter",
+      "description": "Ship data to Elasticsearch, Splunk, S3, Kafka, and dozens of other sinks"
+    },
+    {
+      "title": "High Performance",
+      "description": "Process millions of events per second with low resource usage"
+    },
+    {
+      "title": "Tagging System",
+      "description": "Buffer data in memory or on disk to handle downstream outages gracefully"
+    }
   ],
   "platform_support": {
     "desktop": {

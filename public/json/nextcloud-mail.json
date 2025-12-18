@@ -29,18 +29,22 @@
     "releases": "https://github.com/nextcloud/mail/releases"
   },
   "features": [
-    "IMAP integration: Connect to any IMAP email server with automatic configuration detection.",
-    "Unified inbox: View messages from multiple email accounts in a single interface.",
-    "Threaded conversations: Group related emails together for easier following of discussions.",
-    "Rich text editor: Compose emails with formatting, attachments, and inline images.",
-    "Contact integration: Access Nextcloud contacts for auto-completion and address book management.",
-    "File sharing: Attach files from Nextcloud storage or share large files via public links.",
-    "Search functionality: Find emails quickly by sender, subject, content, or date range.",
-    "Folder management: Organize emails into folders with drag-and-drop and custom sorting.",
-    "Spam filtering: Mark messages as spam and train filters to improve detection.",
-    "Mobile responsive: Access email from any device with adaptive layout and touch controls.",
-    "Encryption support: Send and receive encrypted emails with PGP/GPG integration.",
-    "Nextcloud integration: Seamlessly works within Nextcloud with unified authentication and storage."
+    {
+      "title": "Rich Text Editor",
+      "description": "Compose emails with formatting, attachments, and inline images"
+    },
+    {
+      "title": "Cloud Storage",
+      "description": "Attach files from Nextcloud storage or share large files via public links"
+    },
+    {
+      "title": "Search and Filter",
+      "description": "Find emails quickly by sender, subject, content, or date range"
+    },
+    {
+      "title": "Folder Organization",
+      "description": "Organize emails into folders with drag-and-drop and custom sorting"
+    }
   ],
   "platform_support": {
     "desktop": {

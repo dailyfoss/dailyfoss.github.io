@@ -29,12 +29,22 @@
     "releases": "https://github.com/klausmeyer/docker-registry-browser/releases"
   },
   "features": [
-    "Registry Browsing: View all images in your private registry. Clear visual overview.",
-    "Image Analysis: Inspect layers, tags, and metadata. Detailed image information.",
-    "Delete Operations: Remove unwanted images to free space. Clean registry management.",
-    "Search Functionality: Find images quickly with powerful search. Locate what you need fast.",
-    "Tag Management: Browse and compare different versions. Track your releases.",
-    "Self-Hosted: Manage your private Docker registry easily. Complete control over images."
+    {
+      "title": "Tagging System",
+      "description": "Inspect layers, tags, and metadata. Detailed image information"
+    },
+    {
+      "title": "Search and Filter",
+      "description": "Find images quickly with powerful search. Locate what you need fast"
+    },
+    {
+      "title": "Tag Management",
+      "description": "Browse and compare different versions. Track your releases"
+    },
+    {
+      "title": "Self-Hosted",
+      "description": "Manage your private Docker registry easily. Complete control over images"
+    }
   ],
   "platform_support": {
     "desktop": {

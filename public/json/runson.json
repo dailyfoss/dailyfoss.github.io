@@ -30,18 +30,38 @@
     "logo_light": "/icons/runson-light.webp"
   },
   "features": [
-    "Self-hosted runners: Run GitHub Actions workflows on your own infrastructure.",
-    "Cost control: Avoid GitHub-hosted runner costs by using your own hardware.",
-    "Custom environments: Configure runners with specific tools, dependencies, or configurations.",
-    "Secrets management: Keep sensitive credentials on your infrastructure instead of GitHub.",
-    "Scalable architecture: Add or remove runner capacity based on workflow demands.",
-    "Multiple repositories: Share runners across multiple GitHub repositories or organizations.",
-    "Workflow isolation: Run jobs in isolated environments for security and consistency.",
-    "Resource monitoring: Track CPU, memory, and disk usage across runner instances.",
-    "Auto-scaling: Automatically provision runners when workflows are queued.",
-    "Network control: Run workflows behind firewalls or with access to internal resources.",
-    "Compliance support: Meet regulatory requirements by keeping CI/CD on-premises.",
-    "Dashboard interface: Monitor runner status and job execution through a web UI."
+    {
+      "title": "Self-Hosted",
+      "description": "Run GitHub Actions workflows on your own infrastructure"
+    },
+    {
+      "title": "Cost Control",
+      "description": "Avoid GitHub-hosted runner costs by using your own hardware"
+    },
+    {
+      "title": "Custom Environments",
+      "description": "Configure runners with specific tools, dependencies, or configurations"
+    },
+    {
+      "title": "Secrets Management",
+      "description": "Keep sensitive credentials on your infrastructure instead of GitHub"
+    },
+    {
+      "title": "Scalable Architecture",
+      "description": "Add or remove runner capacity based on workflow demands"
+    },
+    {
+      "title": "Multiple Repositories",
+      "description": "Share runners across multiple GitHub repositories or organizations"
+    },
+    {
+      "title": "Workflow Isolation",
+      "description": "Run jobs in isolated environments for security and consistency"
+    },
+    {
+      "title": "Resource Monitoring",
+      "description": "Track CPU, memory, and disk usage across runner instances"
+    }
   ],
   "platform_support": {
     "desktop": {

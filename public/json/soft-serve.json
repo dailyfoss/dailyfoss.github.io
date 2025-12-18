@@ -29,18 +29,30 @@
     "releases": "https://github.com/charmbracelet/soft-serve/releases"
   },
   "features": [
-    "Git server: Hosts Git repositories with SSH access.",
-    "TUI interface: Browses repositories and code through terminal user interface.",
-    "SSH authentication: Authenticates users via SSH keys for secure access.",
-    "Repository browsing: Views files, commits, and branches in terminal.",
-    "Markdown rendering: Displays README files with formatted markdown in terminal.",
-    "Syntax highlighting: Shows code with language-specific highlighting in TUI.",
-    "Web interface: Optionally serves minimal web view for repository browsing.",
-    "User management: Controls repository access with user permissions.",
-    "Git hooks: Supports server-side Git hooks for automation.",
-    "Clone and push: Provides standard Git operations via SSH.",
-    "Lightweight: Runs efficiently with minimal resource requirements.",
-    "Self-contained: Single binary deployment without external dependencies."
+    {
+      "title": "Git Server",
+      "description": "Hosts Git repositories with SSH access"
+    },
+    {
+      "title": "Tui Interface",
+      "description": "Browses repositories and code through terminal user interface"
+    },
+    {
+      "title": "Ssh Authentication",
+      "description": "Authenticates users via SSH keys for secure access"
+    },
+    {
+      "title": "Markdown Support",
+      "description": "Displays README files with formatted markdown in terminal"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Optionally serves minimal web view for repository browsing"
+    },
+    {
+      "title": "User Management",
+      "description": "Controls repository access with user permissions"
+    }
   ],
   "platform_support": {
     "desktop": {

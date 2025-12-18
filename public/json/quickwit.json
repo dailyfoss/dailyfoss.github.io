@@ -29,18 +29,26 @@
     "releases": "https://github.com/quickwit-oss/quickwit/releases"
   },
   "features": [
-    "Cloud-native architecture: Designed for object storage like S3 to minimize infrastructure costs and maximize scalability.",
-    "Fast indexing: Ingest millions of logs per second with distributed indexing across multiple nodes.",
-    "Full-text search: Query logs using Elasticsearch-compatible syntax for familiar search operations.",
-    "Web query UI: Execute searches and visualize results through an intuitive browser-based interface.",
-    "REST API: Integrate log search into applications and dashboards using standard HTTP endpoints.",
-    "Cost-optimized storage: Store petabytes of logs at a fraction of traditional search engine costs.",
-    "Time-based partitioning: Automatically organize data by time ranges for efficient querying and retention management.",
-    "Distributed architecture: Scale horizontally by adding nodes to handle increased log volume and query load.",
-    "Schema flexibility: Define custom fields and data types to match your log structure and search requirements.",
-    "Retention policies: Configure automatic deletion of old data to comply with regulations and manage storage costs.",
-    "Aggregation queries: Analyze log patterns with grouping, counting, and statistical operations.",
-    "OpenTelemetry support: Ingest traces and logs from modern observability tools using standard protocols."
+    {
+      "title": "Cloud",
+      "description": "Designed for object storage like S3 to minimize infrastructure costs and maximize scalability"
+    },
+    {
+      "title": "High Performance",
+      "description": "Ingest millions of logs per second with distributed indexing across multiple nodes"
+    },
+    {
+      "title": "Search and Filter",
+      "description": "Query logs using Elasticsearch-compatible syntax for familiar search operations"
+    },
+    {
+      "title": "Web Query Ui",
+      "description": "Execute searches and visualize results through an intuitive browser-based interface"
+    },
+    {
+      "title": "REST API",
+      "description": "Integrate log search into applications and dashboards using standard HTTP endpoints"
+    }
   ],
   "platform_support": {
     "desktop": {

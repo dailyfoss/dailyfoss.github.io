@@ -29,18 +29,26 @@
     "releases": "https://github.com/stephondoestech/unraid-config-guardian/releases"
   },
   "features": [
-    "Configuration backup: Automatically backup Unraid configuration files on a schedule.",
-    "Change detection: Monitor configuration files for changes and alert when modifications occur.",
-    "Version history: Maintain historical versions of configuration files for rollback capability.",
-    "Automated monitoring: Run continuously to detect and backup configuration changes automatically.",
-    "Restore capability: Restore previous configuration versions when needed for recovery.",
-    "Alert notifications: Send alerts when configuration changes are detected for security awareness.",
-    "Scheduled backups: Configure backup frequency to balance protection with storage usage.",
-    "File comparison: Compare current configuration with previous versions to identify changes.",
-    "Unraid integration: Designed specifically for Unraid servers with knowledge of critical config files.",
-    "Disaster recovery: Protect against accidental configuration loss or corruption.",
-    "Lightweight operation: Run with minimal impact on server resources.",
-    "Simple setup: Install and configure quickly to start protecting your Unraid configuration."
+    {
+      "title": "Database Backup",
+      "description": "Automatically backup Unraid configuration files on a schedule"
+    },
+    {
+      "title": "Version History",
+      "description": "Maintain historical versions of configuration files for rollback capability"
+    },
+    {
+      "title": "Email Notifications",
+      "description": "Send alerts when configuration changes are detected for security awareness"
+    },
+    {
+      "title": "Scheduled Backups",
+      "description": "Configure backup frequency to balance protection with storage usage"
+    },
+    {
+      "title": "File Comparison",
+      "description": "Compare current configuration with previous versions to identify changes"
+    }
   ],
   "platform_support": {
     "desktop": {

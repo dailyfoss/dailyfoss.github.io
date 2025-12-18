@@ -25,18 +25,38 @@
     "logo_light": "/icons/victoriametrics-light.webp"
   },
   "features": [
-    "Prometheus compatible: Drop-in replacement for Prometheus with full PromQL query support.",
-    "High performance: Ingest millions of data points per second with low resource usage.",
-    "Cost-effective storage: Store metrics efficiently with up to 10x compression compared to Prometheus.",
-    "Clustering: Scale horizontally with built-in clustering for high availability and capacity.",
-    "Long-term storage: Retain metrics for years with efficient storage and fast queries.",
-    "PromQL queries: Query metrics using familiar PromQL syntax with extensions for advanced use cases.",
-    "Grafana integration: Visualize metrics in Grafana using VictoriaMetrics as a data source.",
-    "Remote write: Accept metrics from Prometheus and other systems via remote write protocol.",
-    "Web UI: Explore metrics and run queries through the built-in web interface.",
-    "Downsampling: Automatically downsample old data to reduce storage while preserving trends.",
-    "Multi-tenancy: Isolate metrics for different teams or applications with built-in multi-tenancy.",
-    "Backup and restore: Back up time series data and restore for disaster recovery."
+    {
+      "title": "Prometheus Compatible",
+      "description": "Drop-in replacement for Prometheus with full PromQL query support"
+    },
+    {
+      "title": "High Performance",
+      "description": "Ingest millions of data points per second with low resource usage"
+    },
+    {
+      "title": "Cost",
+      "description": "Store metrics efficiently with up to 10x compression compared to Prometheus"
+    },
+    {
+      "title": "Clustering",
+      "description": "Scale horizontally with built-in clustering for high availability and capacity"
+    },
+    {
+      "title": "Long",
+      "description": "Retain metrics for years with efficient storage and fast queries"
+    },
+    {
+      "title": "Promql Queries",
+      "description": "Query metrics using familiar PromQL syntax with extensions for advanced use cases"
+    },
+    {
+      "title": "Grafana Integration",
+      "description": "Visualize metrics in Grafana using VictoriaMetrics as a data source"
+    },
+    {
+      "title": "Remote Write",
+      "description": "Accept metrics from Prometheus and other systems via remote write protocol"
+    }
   ],
   "platform_support": {
     "desktop": {

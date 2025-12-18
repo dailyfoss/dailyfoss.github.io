@@ -29,18 +29,38 @@
     "releases": "https://github.com/NginxProxyManager/nginx-proxy-manager/releases"
   },
   "features": [
-    "Reverse proxy management: Configure Nginx proxies through an intuitive web interface without editing config files.",
-    "SSL certificates: Automatic SSL certificate generation and renewal via Let's Encrypt.",
-    "Domain routing: Route multiple domains to different backend services from a single IP address.",
-    "Access lists: Restrict access to proxied services by IP address or authentication.",
-    "Custom locations: Define URL path-based routing to different backend services.",
-    "WebSocket support: Proxy WebSocket connections for real-time applications.",
-    "HTTP/2 and HTTP/3: Enable modern protocols for improved performance and security.",
-    "Force SSL: Automatically redirect HTTP traffic to HTTPS for secure connections.",
-    "Custom Nginx config: Add advanced Nginx directives for specialized configurations.",
-    "Access logs: View and analyze proxy access logs for troubleshooting and monitoring.",
-    "User management: Create multiple admin users with different permission levels.",
-    "Backup and restore: Export and import proxy configurations for disaster recovery."
+    {
+      "title": "Web Interface",
+      "description": "Configure Nginx proxies through an intuitive web interface without editing config files"
+    },
+    {
+      "title": "Ssl Certificates",
+      "description": "Automatic SSL certificate generation and renewal via Let's Encrypt"
+    },
+    {
+      "title": "Domain Routing",
+      "description": "Route multiple domains to different backend services from a single IP address"
+    },
+    {
+      "title": "Access Lists",
+      "description": "Restrict access to proxied services by IP address or authentication"
+    },
+    {
+      "title": "Custom Locations",
+      "description": "Define URL path-based routing to different backend services"
+    },
+    {
+      "title": "Websocket Support",
+      "description": "Proxy WebSocket connections for real-time applications"
+    },
+    {
+      "title": "High Performance",
+      "description": "Enable modern protocols for improved performance and security"
+    },
+    {
+      "title": "Force Ssl",
+      "description": "Automatically redirect HTTP traffic to HTTPS for secure connections"
+    }
   ],
   "platform_support": {
     "desktop": {

@@ -29,12 +29,30 @@
     "releases": "https://github.com/Tecnativa/docker-socket-proxy/releases"
   },
   "features": [
-    "Secure Socket Access: Safely expose Docker socket over HTTP. Controlled container management.",
-    "Granular Authorization: Restrict specific Docker API actions. Fine-grained security control.",
-    "Isolation Layer: Protect Docker daemon from direct exposure. Enhanced security posture.",
-    "HTTP Proxy: Access Docker operations through standard HTTP. Easy integration.",
-    "Permission Control: Define exactly which operations are allowed. Minimize attack surface.",
-    "Self-Hosted: Run your own secure Docker proxy. Complete control over access."
+    {
+      "title": "Docker Support",
+      "description": "Safely expose Docker socket over HTTP. Controlled container management"
+    },
+    {
+      "title": "REST API",
+      "description": "Restrict specific Docker API actions. Fine-grained security control"
+    },
+    {
+      "title": "Isolation Layer",
+      "description": "Protect Docker daemon from direct exposure. Enhanced security posture"
+    },
+    {
+      "title": "Http Proxy",
+      "description": "Access Docker operations through standard HTTP. Easy integration"
+    },
+    {
+      "title": "Permission Control",
+      "description": "Define exactly which operations are allowed. Minimize attack surface"
+    },
+    {
+      "title": "Self-Hosted",
+      "description": "Run your own secure Docker proxy. Complete control over access"
+    }
   ],
   "platform_support": {
     "desktop": {

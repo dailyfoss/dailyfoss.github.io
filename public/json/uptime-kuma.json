@@ -29,18 +29,38 @@
     "releases": "https://github.com/louislam/uptime-kuma/releases"
   },
   "features": [
-    "Multi-protocol monitoring: Monitor HTTP, HTTPS, TCP, ping, DNS, and more with flexible check types.",
-    "Status pages: Create beautiful public or private status pages to communicate service health to users.",
-    "Notifications: Send alerts via 90+ notification channels including email, Slack, Discord, and webhooks.",
-    "Response time tracking: Track and visualize response times with charts showing performance trends.",
-    "Certificate monitoring: Monitor SSL certificate expiration and receive alerts before certificates expire.",
-    "Uptime statistics: View uptime percentages and availability statistics for all monitored services.",
-    "Maintenance windows: Schedule maintenance windows to pause alerts during planned downtime.",
-    "Multi-user: Support multiple users with individual accounts and notification preferences.",
-    "Docker monitoring: Monitor Docker containers and receive alerts when containers stop or fail.",
-    "Keyword monitoring: Check for specific keywords in HTTP responses to verify content correctness.",
-    "Mobile app: Access monitoring dashboard from iOS and Android mobile apps.",
-    "API access: Integrate with other tools using the REST API for custom automation and reporting."
+    {
+      "title": "Multi",
+      "description": "Monitor HTTP, HTTPS, TCP, ping, DNS, and more with flexible check types"
+    },
+    {
+      "title": "Status Pages",
+      "description": "Create beautiful public or private status pages to communicate service health to users"
+    },
+    {
+      "title": "Email Notifications",
+      "description": "Send alerts via 90+ notification channels including email, Slack, Discord, and webhooks"
+    },
+    {
+      "title": "High Performance",
+      "description": "Track and visualize response times with charts showing performance trends"
+    },
+    {
+      "title": "Certificate Monitoring",
+      "description": "Monitor SSL certificate expiration and receive alerts before certificates expire"
+    },
+    {
+      "title": "Tagging System",
+      "description": "View uptime percentages and availability statistics for all monitored services"
+    },
+    {
+      "title": "Maintenance Windows",
+      "description": "Schedule maintenance windows to pause alerts during planned downtime"
+    },
+    {
+      "title": "Multi",
+      "description": "Support multiple users with individual accounts and notification preferences"
+    }
   ],
   "platform_support": {
     "desktop": {

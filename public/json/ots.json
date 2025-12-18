@@ -30,14 +30,30 @@
     "logo_light": "/icons/ots-light.webp"
   },
   "features": [
-    "One-time links: Generate URLs that expire immediately after being viewed once to prevent reuse.",
-    "Encryption: Encrypt secrets client-side before transmission so the server never sees plaintext content.",
-    "Time expiration: Set automatic deletion times for secrets that haven't been viewed within a specified period.",
-    "Password protection: Add an additional password requirement to access secrets for extra security layer.",
-    "No registration: Share secrets without creating accounts or providing personal information for quick use.",
-    "Burn notification: Optionally receive confirmation when a secret has been viewed and destroyed.",
-    "API access: Integrate secret sharing into applications and scripts using simple REST endpoints.",
-    "Self-hosted privacy: Keep sensitive data on your own infrastructure without trusting third-party services."
+    {
+      "title": "Media Library",
+      "description": "Generate URLs that expire immediately after being viewed once to prevent reuse"
+    },
+    {
+      "title": "End-to-End Encryption",
+      "description": "Encrypt secrets client-side before transmission so the server never sees plaintext content"
+    },
+    {
+      "title": "Password Protection",
+      "description": "Add an additional password requirement to access secrets for extra security layer"
+    },
+    {
+      "title": "Email Notifications",
+      "description": "Optionally receive confirmation when a secret has been viewed and destroyed"
+    },
+    {
+      "title": "REST API",
+      "description": "Integrate secret sharing into applications and scripts using simple REST endpoints"
+    },
+    {
+      "title": "Self-Hosted",
+      "description": "Keep sensitive data on your own infrastructure without trusting third-party services"
+    }
   ],
   "platform_support": {
     "desktop": {

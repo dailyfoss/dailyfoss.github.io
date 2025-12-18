@@ -29,18 +29,38 @@
     "releases": "https://github.com/prometheus/prometheus/releases"
   },
   "features": [
-    "Metric collection: Scrape metrics from instrumented applications and infrastructure using pull-based model.",
-    "Time-series database: Store metrics efficiently with compression and retention policies for long-term data.",
-    "PromQL queries: Write powerful queries using PromQL to analyze and aggregate metric data.",
-    "Service discovery: Automatically discover and monitor targets using Kubernetes, Consul, and other integrations.",
-    "Alerting rules: Define alert conditions that trigger notifications when thresholds are exceeded.",
-    "Multi-dimensional data: Label metrics with key-value pairs for flexible filtering and aggregation.",
-    "Visualization: Built-in expression browser and integration with Grafana for creating dashboards.",
-    "Federation: Aggregate metrics from multiple Prometheus servers for centralized monitoring.",
-    "Exporters: Collect metrics from third-party systems using hundreds of community-maintained exporters.",
-    "High availability: Deploy multiple Prometheus instances for redundancy and reliability.",
-    "Recording rules: Pre-compute expensive queries and store results for faster dashboard loading.",
-    "API access: Query metrics programmatically using HTTP API for custom integrations and automation."
+    {
+      "title": "Metric Collection",
+      "description": "Scrape metrics from instrumented applications and infrastructure using pull-based model"
+    },
+    {
+      "title": "Time",
+      "description": "Store metrics efficiently with compression and retention policies for long-term data"
+    },
+    {
+      "title": "Promql Queries",
+      "description": "Write powerful queries using PromQL to analyze and aggregate metric data"
+    },
+    {
+      "title": "Kubernetes Ready",
+      "description": "Automatically discover and monitor targets using Kubernetes, Consul, and other integrations"
+    },
+    {
+      "title": "Email Notifications",
+      "description": "Define alert conditions that trigger notifications when thresholds are exceeded"
+    },
+    {
+      "title": "Multi",
+      "description": "Label metrics with key-value pairs for flexible filtering and aggregation"
+    },
+    {
+      "title": "Analytics Dashboard",
+      "description": "Built-in expression browser and integration with Grafana for creating dashboards"
+    },
+    {
+      "title": "Federation",
+      "description": "Aggregate metrics from multiple Prometheus servers for centralized monitoring"
+    }
   ],
   "platform_support": {
     "desktop": {
