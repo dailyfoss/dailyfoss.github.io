@@ -29,14 +29,26 @@
     "releases": null
   },
   "features": [
-    "Clientless Access: Connect to remote desktops and servers through any web browser without plugins.",
-    "Protocol Support: Access systems via RDP, VNC, SSH, and Kubernetes with a unified interface.",
-    "Session Recording: Record remote sessions for compliance, training, and security auditing.",
-    "Multi-Factor Authentication: Secure access with TOTP, Duo, or other MFA providers.",
-    "Connection Sharing: Share remote desktop sessions with multiple users simultaneously.",
-    "File Transfer: Upload and download files between local and remote systems during sessions.",
-    "User Management: Centralized user authentication with LDAP, Active Directory, or database backends.",
-    "Connection Profiles: Save connection settings and credentials for quick access to frequently used systems."
+    {
+      "title": "Plugin System",
+      "description": "Connect to remote desktops and servers through any web browser without plugins"
+    },
+    {
+      "title": "Kubernetes Ready",
+      "description": "Access systems via RDP, VNC, SSH, and Kubernetes with a unified interface"
+    },
+    {
+      "title": "File Upload",
+      "description": "Upload and download files between local and remote systems during sessions"
+    },
+    {
+      "title": "User Management",
+      "description": "Centralized user authentication with LDAP, Active Directory, or database backends"
+    },
+    {
+      "title": "Connection Profiles",
+      "description": "Save connection settings and credentials for quick access to frequently used systems"
+    }
   ],
   "platform_support": {
     "desktop": {

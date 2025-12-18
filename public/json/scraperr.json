@@ -29,18 +29,22 @@
     "releases": "https://github.com/jaypyles/Scraperr/releases"
   },
   "features": [
-    "Multi-platform support: Enriches metadata for Plex, Kodi, Jellyfin, and Emby libraries.",
-    "Poster collections: Downloads and organizes posters, backdrops, and artwork from multiple sources.",
-    "Automated scanning: Monitors library changes and updates metadata automatically.",
-    "Custom templates: Apply custom naming and organization templates for consistent metadata.",
-    "Quality filtering: Selects highest quality images based on resolution and aspect ratio.",
-    "API aggregation: Combines data from TMDB, TVDB, OMDb, and Fanart.tv for comprehensive metadata.",
-    "Missing content detection: Identifies media files with incomplete or missing metadata.",
-    "Web interface: Manage scraping jobs and review metadata through a modern web UI.",
-    "Selective scraping: Choose specific libraries, folders, or items to update.",
-    "Metadata backup: Preserves existing metadata before updates for easy rollback.",
-    "Performance tuning: Configurable rate limiting and concurrent requests to respect API quotas.",
-    "Statistics dashboard: View scraping progress, success rates, and library coverage metrics."
+    {
+      "title": "Quality Filtering",
+      "description": "Selects highest quality images based on resolution and aspect ratio"
+    },
+    {
+      "title": "REST API",
+      "description": "Combines data from TMDB, TVDB, OMDb, and Fanart.tv for comprehensive metadata"
+    },
+    {
+      "title": "Media Library",
+      "description": "Identifies media files with incomplete or missing metadata"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Manage scraping jobs and review metadata through a modern web UI"
+    }
   ],
   "platform_support": {
     "desktop": {

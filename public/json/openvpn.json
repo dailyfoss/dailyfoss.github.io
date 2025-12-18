@@ -29,14 +29,22 @@
     "releases": "https://github.com/OpenVPN/openvpn/releases"
   },
   "features": [
-    "Secure tunneling: Encrypt all network traffic between clients and servers using AES-256 and other strong ciphers.",
-    "Cross-platform clients: Connect from Windows, macOS, Linux, iOS, and Android devices with official client applications.",
-    "Certificate authentication: Use PKI with client certificates for strong authentication without password vulnerabilities.",
-    "Site-to-site VPN: Connect entire networks securely for branch office connectivity or cloud integration.",
-    "Split tunneling: Route only specific traffic through the VPN while allowing direct internet access for other connections.",
-    "Dynamic IP support: Maintain VPN connections even when client IP addresses change on mobile or residential networks.",
-    "Compression: Reduce bandwidth usage with LZO compression for faster performance on limited connections.",
-    "Logging and monitoring: Track connection events, bandwidth usage, and authentication attempts for security auditing."
+    {
+      "title": "Certificate Authentication",
+      "description": "Use PKI with client certificates for strong authentication without password vulnerabilities"
+    },
+    {
+      "title": "Mobile Responsive",
+      "description": "Maintain VPN connections even when client IP addresses change on mobile or residential networks"
+    },
+    {
+      "title": "High Performance",
+      "description": "Reduce bandwidth usage with LZO compression for faster performance on limited connections"
+    },
+    {
+      "title": "Logging And Monitoring",
+      "description": "Track connection events, bandwidth usage, and authentication attempts for security auditing"
+    }
   ],
   "platform_support": {
     "desktop": {

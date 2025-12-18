@@ -24,18 +24,26 @@
     "releases": "https://github.com/YOURLS/YOURLS/releases"
   },
   "features": [
-    "Custom keywords: Create memorable short URLs with custom keywords instead of random character strings.",
-    "Click statistics: Track clicks, referrers, and geographic data for each shortened link to measure engagement.",
-    "Private or public: Run as a private shortener for personal use or open it to the public with optional registration.",
-    "Plugin system: Extend functionality with community plugins for features like QR codes, previews, and integrations.",
-    "API access: Shorten URLs programmatically using the REST API for automation and third-party integrations.",
-    "Bookmarklet: Install a browser bookmarklet to shorten the current page URL with one click.",
-    "Multi-user support: Create accounts for team members with individual statistics and link management.",
-    "Link management: Edit, delete, or update destination URLs for existing short links without changing the short URL.",
-    "Search functionality: Find shortened links quickly by searching keywords, destinations, or creation dates.",
-    "Password protection: Restrict access to specific short links with password requirements for sensitive content.",
-    "Duplicate detection: Automatically reuse existing short URLs when the same long URL is submitted multiple times.",
-    "Database flexibility: Choose between MySQL and other database backends for storage based on your infrastructure."
+    {
+      "title": "Private Or Public",
+      "description": "Run as a private shortener for personal use or open it to the public with"
+    },
+    {
+      "title": "Plugin System",
+      "description": "Extend functionality with community plugins for features like QR codes, previews, and integrations"
+    },
+    {
+      "title": "REST API",
+      "description": "Shorten URLs programmatically using the REST API for automation and third-party integrations"
+    },
+    {
+      "title": "Team Collaboration",
+      "description": "Create accounts for team members with individual statistics and link management"
+    },
+    {
+      "title": "Link Management",
+      "description": "Edit, delete, or update destination URLs for existing short links without changing the short URL"
+    }
   ],
   "platform_support": {
     "desktop": {

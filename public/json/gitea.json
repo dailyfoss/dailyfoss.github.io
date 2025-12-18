@@ -29,14 +29,26 @@
     "releases": "https://github.com/go-gitea/gitea/releases"
   },
   "features": [
-    "Git Repository Hosting: Host unlimited Git repositories with a polished web interface and Git protocol support.",
-    "Pull Requests: Review code changes with inline comments, approvals, and merge conflict resolution.",
-    "Issue Tracking: Manage bugs and features with labels, milestones, and project boards.",
-    "Built-In CI/CD: Run automated workflows with Gitea Actions compatible with GitHub Actions syntax.",
-    "Container Registry: Host Docker images and OCI containers with integrated package management.",
-    "Lightweight Binary: Single executable with minimal resource requirements runs on modest hardware.",
-    "Organization Management: Create teams, manage permissions, and organize repositories by organization.",
-    "API Access: Comprehensive REST API for automation and integration with external tools."
+    {
+      "title": "Web Interface",
+      "description": "Host unlimited Git repositories with a polished web interface and Git protocol support"
+    },
+    {
+      "title": "Docker Support",
+      "description": "Host Docker images and OCI containers with integrated package management"
+    },
+    {
+      "title": "Lightweight",
+      "description": "Single executable with minimal resource requirements runs on modest hardware"
+    },
+    {
+      "title": "Team Collaboration",
+      "description": "Create teams, manage permissions, and organize repositories by organization"
+    },
+    {
+      "title": "REST API",
+      "description": "Comprehensive REST API for automation and integration with external tools"
+    }
   ],
   "platform_support": {
     "desktop": {

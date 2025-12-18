@@ -29,18 +29,30 @@
     "releases": "https://github.com/ValueMelody/melody-auth/releases"
   },
   "features": [
-    "OAuth2 provider: Implement single sign-on for multiple applications with OAuth2 protocol support.",
-    "User management: Create and manage user accounts with profiles, passwords, and permissions.",
-    "Application registry: Register and configure OAuth2 client applications with redirect URIs and scopes.",
-    "Token management: Issue and validate access tokens and refresh tokens for authenticated sessions.",
-    "Permission system: Define and assign granular permissions to users and applications.",
-    "Admin interface: Manage users, applications, and permissions through a web-based admin panel.",
-    "Multi-factor authentication: Enhance security with TOTP-based two-factor authentication.",
-    "Session management: Track active user sessions and provide logout functionality.",
-    "Audit logging: Record authentication events and permission changes for security monitoring.",
-    "API access: Programmatically manage users and applications through REST API.",
-    "Custom branding: Customize login pages with your organization's logo and colors.",
-    "LDAP integration: Connect to existing LDAP directories for centralized user authentication."
+    {
+      "title": "Oauth2 Provider",
+      "description": "Implement single sign-on for multiple applications with OAuth2 protocol support"
+    },
+    {
+      "title": "User Management",
+      "description": "Create and manage user accounts with profiles, passwords, and permissions"
+    },
+    {
+      "title": "Token Management",
+      "description": "Issue and validate access tokens and refresh tokens for authenticated sessions"
+    },
+    {
+      "title": "Admin Interface",
+      "description": "Manage users, applications, and permissions through a web-based admin panel"
+    },
+    {
+      "title": "Two-Factor Authentication",
+      "description": "Enhance security with TOTP-based two-factor authentication"
+    },
+    {
+      "title": "Session Management",
+      "description": "Track active user sessions and provide logout functionality"
+    }
   ],
   "platform_support": {
     "desktop": {

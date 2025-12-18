@@ -29,18 +29,22 @@
     "releases": "https://github.com/dimkr/tootik/releases"
   },
   "features": [
-    "ActivityPub federation: Connect with Mastodon, Pleroma, and other federated social networks using ActivityPub protocol.",
-    "Microblogging: Post short updates, thoughts, and content to share with followers across the fediverse.",
-    "Timeline views: Browse home, local, and federated timelines to discover content and conversations.",
-    "Interactions: Like, boost, and reply to posts from users on your instance and across federated servers.",
-    "Following: Follow users from any compatible instance to see their posts in your timeline.",
-    "Lightweight: Run efficiently with minimal resource requirements suitable for personal or small community instances.",
-    "Web interface: Access your social network through a simple, straightforward web interface.",
-    "Privacy controls: Control post visibility with public, unlisted, followers-only, or direct message options.",
-    "Media support: Share images and other media files with posts for richer content sharing.",
-    "Notifications: Receive notifications for mentions, follows, and interactions with your content.",
-    "Search: Find users and posts across your instance and the federated network.",
-    "Profile customization: Set up your profile with bio, avatar, and header image to express your identity."
+    {
+      "title": "Microblogging",
+      "description": "Post short updates, thoughts, and content to share with followers across the fediverse"
+    },
+    {
+      "title": "Lightweight",
+      "description": "Run efficiently with minimal resource requirements suitable for personal or small community instances"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Access your social network through a simple, straightforward web interface"
+    },
+    {
+      "title": "Data Privacy",
+      "description": "Control post visibility with public, unlisted, followers-only, or direct message options"
+    }
   ],
   "platform_support": {
     "desktop": {

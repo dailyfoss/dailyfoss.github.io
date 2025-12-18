@@ -26,7 +26,16 @@ export default function Footer() {
             .
           </p>
         </div>
-        <div className="flex">
+        <div className="flex gap-2">
+          <Link
+            href="/add-app"
+            className={cn(buttonVariants({ variant: "link" }), "text-muted-foreground flex items-center gap-2")}
+            data-umami-event="Add Your App"
+          >
+            <span className="text-lg">+</span>
+            {" "}
+            Add App
+          </Link>
           <Link
             href="/json-editor"
             className={cn(buttonVariants({ variant: "link" }), "text-muted-foreground flex items-center gap-2")}

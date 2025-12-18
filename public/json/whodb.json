@@ -29,18 +29,22 @@
     "releases": null
   },
   "features": [
-    "Multi-database support: Connect to PostgreSQL, MySQL, SQLite, MongoDB, Redis, and other popular databases.",
-    "Chat-style querying: Write queries using natural language or SQL with an intuitive chat interface.",
-    "Schema browser: Explore database structures, tables, columns, and relationships through an interactive tree view.",
-    "Query execution: Run SQL queries with syntax highlighting, auto-completion, and result visualization.",
-    "Data visualization: View query results as tables, charts, or graphs for better data understanding.",
-    "Connection management: Save and manage multiple database connections with secure credential storage.",
-    "Query history: Access previously executed queries for quick re-running or reference.",
-    "Export functionality: Export query results to CSV, JSON, or Excel formats for reporting or analysis.",
-    "Table editing: Modify data directly in the interface with inline editing and validation.",
-    "Performance monitoring: View query execution times and optimize slow queries with explain plans.",
-    "Dark mode: Switch between light and dark themes for comfortable viewing in different lighting conditions.",
-    "Responsive design: Access your databases from any device with a mobile-friendly interface."
+    {
+      "title": "Chat",
+      "description": "Write queries using natural language or SQL with an intuitive chat interface"
+    },
+    {
+      "title": "Data Visualization",
+      "description": "View query results as tables, charts, or graphs for better data understanding"
+    },
+    {
+      "title": "Connection Management",
+      "description": "Save and manage multiple database connections with secure credential storage"
+    },
+    {
+      "title": "Data Export",
+      "description": "Export query results to CSV, JSON, or Excel formats for reporting or analysis"
+    }
   ],
   "platform_support": {
     "desktop": {

@@ -30,18 +30,30 @@
     "logo_light": "/icons/dokploy-light.webp"
   },
   "features": [
-    "Application Deployment: Deploy applications from Git repositories with automatic builds and Docker containerization.",
-    "Database Management: Provision and manage PostgreSQL, MySQL, MongoDB, and Redis databases with backup automation.",
-    "Domain Configuration: Set up custom domains with automatic SSL certificate generation and renewal via Let's Encrypt.",
-    "Environment Variables: Secure management of application secrets and environment variables with encryption.",
-    "Monitoring Dashboard: Real-time application monitoring with logs, metrics, and health status visualization.",
-    "Git Integration: Connect with GitHub, GitLab, and other Git providers for automated deployments on code changes.",
-    "Load Balancing: Built-in load balancer with health checks and automatic failover for high availability.",
-    "Backup System: Automated database and application backups with configurable retention policies.",
-    "Team Collaboration: Multi-user support with role-based access control and project sharing capabilities.",
-    "Resource Management: Monitor and control CPU, memory, and storage usage with scaling recommendations.",
-    "CI/CD Pipeline: Integrated continuous integration and deployment with custom build scripts and testing.",
-    "One-click Apps: Pre-configured application templates for popular frameworks and services with instant deployment."
+    {
+      "title": "Docker Support",
+      "description": "Deploy applications from Git repositories with automatic builds and Docker containerization"
+    },
+    {
+      "title": "Database Backup",
+      "description": "Provision and manage PostgreSQL, MySQL, MongoDB, and Redis databases with backup automation"
+    },
+    {
+      "title": "End-to-End Encryption",
+      "description": "Secure management of application secrets and environment variables with encryption"
+    },
+    {
+      "title": "Analytics Dashboard",
+      "description": "Real-time application monitoring with logs, metrics, and health status visualization"
+    },
+    {
+      "title": "Load Balancing",
+      "description": "Built-in load balancer with health checks and automatic failover for high availability"
+    },
+    {
+      "title": "Backup System",
+      "description": "Automated database and application backups with configurable retention policies"
+    }
   ],
   "platform_support": {
     "desktop": {

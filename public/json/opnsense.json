@@ -29,14 +29,26 @@
     "releases": null
   },
   "features": [
-    "Firewall rules: Create and manage packet filtering rules with detailed logging and traffic shaping capabilities.",
-    "VPN support: Configure OpenVPN, IPsec, and WireGuard tunnels for secure remote access and site-to-site connections.",
-    "Intrusion detection: Monitor network traffic for malicious activity using Suricata with automatic rule updates.",
-    "Traffic shaping: Control bandwidth allocation per application, user, or network segment for QoS management.",
-    "Web filtering: Block access to categories of websites or specific domains using integrated proxy and DNS filtering.",
-    "High availability: Deploy in failover configurations with CARP for redundant firewall protection.",
-    "Reporting tools: Generate traffic reports, security logs, and performance metrics with customizable dashboards.",
-    "Plugin system: Extend functionality with community plugins for additional services and integrations."
+    {
+      "title": "REST API",
+      "description": "Create and manage packet filtering rules with detailed logging and traffic shaping capabilities"
+    },
+    {
+      "title": "Traffic Shaping",
+      "description": "Control bandwidth allocation per application, user, or network segment for QoS management"
+    },
+    {
+      "title": "Web Filtering",
+      "description": "Block access to categories of websites or specific domains using integrated proxy and DNS filtering"
+    },
+    {
+      "title": "Analytics Dashboard",
+      "description": "Generate traffic reports, security logs, and performance metrics with customizable dashboards"
+    },
+    {
+      "title": "Plugin System",
+      "description": "Extend functionality with community plugins for additional services and integrations"
+    }
   ],
   "platform_support": {
     "desktop": {

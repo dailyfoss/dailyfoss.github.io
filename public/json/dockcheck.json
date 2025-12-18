@@ -29,12 +29,22 @@
     "releases": "https://github.com/mag37/dockcheck/releases"
   },
   "features": [
-    "Automated Checking: Scan for container updates automatically. Stay current effortlessly.",
-    "Update Notifications: Get alerts when new images are available. Never miss updates.",
-    "Automated Restarts: Optionally restart containers after updates. Hands-free maintenance.",
-    "CLI Interface: Simple command-line tool for quick checks. Script-friendly operation.",
-    "Homelab Perfect: Ideal for self-hosted environments. Maintain your stack easily.",
-    "Lightweight: Minimal resource usage for efficient monitoring. Run on any system."
+    {
+      "title": "Email Notifications",
+      "description": "Get alerts when new images are available. Never miss updates"
+    },
+    {
+      "title": "Cli Interface",
+      "description": "Simple command-line tool for quick checks. Script-friendly operation"
+    },
+    {
+      "title": "Self-Hosted",
+      "description": "Ideal for self-hosted environments. Maintain your stack easily"
+    },
+    {
+      "title": "Lightweight",
+      "description": "Minimal resource usage for efficient monitoring. Run on any system"
+    }
   ],
   "platform_support": {
     "desktop": {

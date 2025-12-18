@@ -24,18 +24,30 @@
     "releases": "https://github.com/wiredoor/wiredoor/releases"
   },
   "features": [
-    "Peer management: Add, edit, and remove WireGuard peers through an intuitive web interface.",
-    "QR code generation: Generate QR codes for mobile clients to quickly import VPN configurations.",
-    "Network visualization: View connected peers and their status in a centralized dashboard.",
-    "Access control: Define rules and permissions to control which peers can access specific resources.",
-    "Multi-server support: Manage multiple WireGuard servers from a single control panel.",
-    "Configuration export: Export peer configurations for manual deployment or backup purposes.",
-    "Connection monitoring: Track active connections and bandwidth usage per peer in real-time.",
-    "User authentication: Secure the management interface with user accounts and role-based access.",
-    "Automatic key generation: Generate public and private keys automatically when creating new peers.",
-    "IP address management: Assign and track IP addresses across your WireGuard network topology.",
-    "Audit logging: Record configuration changes and access events for security and compliance.",
-    "API access: Integrate with automation tools via REST API for programmatic peer management."
+    {
+      "title": "Web Interface",
+      "description": "Add, edit, and remove WireGuard peers through an intuitive web interface"
+    },
+    {
+      "title": "Mobile Responsive",
+      "description": "Generate QR codes for mobile clients to quickly import VPN configurations"
+    },
+    {
+      "title": "Analytics Dashboard",
+      "description": "View connected peers and their status in a centralized dashboard"
+    },
+    {
+      "title": "Access Control",
+      "description": "Define rules and permissions to control which peers can access specific resources"
+    },
+    {
+      "title": "Database Backup",
+      "description": "Export peer configurations for manual deployment or backup purposes"
+    },
+    {
+      "title": "User Authentication",
+      "description": "Secure the management interface with user accounts and role-based access"
+    }
   ],
   "platform_support": {
     "desktop": {

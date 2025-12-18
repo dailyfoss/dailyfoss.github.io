@@ -449,7 +449,7 @@ function ScriptContent() {
         </div>
 
         {/* Right Sidebar - Sponsored */}
-        <SponsoredSidebar items={links} onScriptSelect={setSelectedScript} />
+        <SponsoredSidebar items={links} />
       </div>
     </div>
   );

@@ -29,14 +29,22 @@
     "releases": "https://github.com/HemmeligOrg/Hemmelig.app/releases"
   },
   "features": [
-    "Encrypted Sharing: Share secrets with end-to-end encryption for maximum security.",
-    "Auto-Expiration: Set secrets to expire after being viewed once or after a time limit.",
-    "Password Protection: Add an additional password layer for extra security on sensitive secrets.",
-    "Burn After Reading: Secrets are automatically deleted after the first view.",
-    "No Registration: Share secrets without requiring recipients to create accounts.",
-    "Audit Trail: Track when secrets were created and accessed for accountability.",
-    "Custom Expiry: Set flexible expiration times from minutes to days.",
-    "Self-Hosted Security: Keep sensitive data on your own infrastructure without third-party access."
+    {
+      "title": "End-to-End Encryption",
+      "description": "Share secrets with end-to-end encryption for maximum security"
+    },
+    {
+      "title": "Password Protection",
+      "description": "Add an additional password layer for extra security on sensitive secrets"
+    },
+    {
+      "title": "Burn After Reading",
+      "description": "Secrets are automatically deleted after the first view"
+    },
+    {
+      "title": "Self-Hosted",
+      "description": "Keep sensitive data on your own infrastructure without third-party access"
+    }
   ],
   "platform_support": {
     "desktop": {

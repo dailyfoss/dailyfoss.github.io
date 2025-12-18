@@ -29,18 +29,26 @@
     "releases": null
   },
   "features": [
-    "Configuration management: Create and edit WireGuard configurations through a user-friendly web dashboard.",
-    "Peer administration: Add, remove, or modify peers with automatic key pair generation and validation.",
-    "Real-time monitoring: View active connections, bandwidth usage, and peer status with live updates.",
-    "Multi-configuration: Manage multiple WireGuard interfaces and configurations from a single dashboard.",
-    "QR code display: Generate QR codes for mobile client setup with automatic configuration encoding.",
-    "Peer search: Find specific peers quickly using search and filtering across large peer lists.",
-    "Configuration backup: Export and import configurations for backup or migration to other servers.",
-    "Access control: Secure the dashboard with password authentication and optional two-factor authentication.",
-    "Peer grouping: Organize peers into groups or categories for better management of large deployments.",
-    "Traffic statistics: View historical bandwidth usage with charts showing trends over time.",
-    "Ping monitoring: Check peer connectivity and latency directly from the dashboard.",
-    "Dark mode: Switch between light and dark themes for comfortable viewing in different environments."
+    {
+      "title": "Analytics Dashboard",
+      "description": "Create and edit WireGuard configurations through a user-friendly web dashboard"
+    },
+    {
+      "title": "Mobile Responsive",
+      "description": "Generate QR codes for mobile client setup with automatic configuration encoding"
+    },
+    {
+      "title": "Search and Filter",
+      "description": "Find specific peers quickly using search and filtering across large peer lists"
+    },
+    {
+      "title": "Database Backup",
+      "description": "Export and import configurations for backup or migration to other servers"
+    },
+    {
+      "title": "Access Control",
+      "description": "Secure the dashboard with password authentication and optional two-factor authentication"
+    }
   ],
   "platform_support": {
     "desktop": {

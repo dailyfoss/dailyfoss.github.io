@@ -29,18 +29,38 @@
     "releases": "https://github.com/requestly/requestly/releases"
   },
   "features": [
-    "Request interception: Capture and modify HTTP/HTTPS requests before they reach servers.",
-    "Response mocking: Return custom responses for testing without backend changes.",
-    "Header modification: Add, remove, or change request and response headers dynamically.",
-    "URL redirection: Redirect requests to different endpoints for testing or debugging.",
-    "Query parameter manipulation: Modify URL parameters on the fly to test different scenarios.",
-    "Request blocking: Block specific requests to simulate failures or test error handling.",
-    "Script injection: Insert custom JavaScript into pages for testing or debugging.",
-    "Session recording: Capture network activity for later analysis and debugging.",
-    "Rule management: Create and organize modification rules with conditions and priorities.",
-    "Browser extension: Install extensions for Chrome and Firefox to intercept browser traffic.",
-    "Team collaboration: Share rules and configurations with team members for consistent testing.",
-    "API testing: Test REST APIs by modifying requests and responses without code changes."
+    {
+      "title": "Request Interception",
+      "description": "Capture and modify HTTP/HTTPS requests before they reach servers"
+    },
+    {
+      "title": "Response Mocking",
+      "description": "Return custom responses for testing without backend changes"
+    },
+    {
+      "title": "Header Modification",
+      "description": "Add, remove, or change request and response headers dynamically"
+    },
+    {
+      "title": "Url Redirection",
+      "description": "Redirect requests to different endpoints for testing or debugging"
+    },
+    {
+      "title": "Query Parameter Manipulation",
+      "description": "Modify URL parameters on the fly to test different scenarios"
+    },
+    {
+      "title": "Request Blocking",
+      "description": "Block specific requests to simulate failures or test error handling"
+    },
+    {
+      "title": "Script Injection",
+      "description": "Insert custom JavaScript into pages for testing or debugging"
+    },
+    {
+      "title": "Session Recording",
+      "description": "Capture network activity for later analysis and debugging"
+    }
   ],
   "platform_support": {
     "desktop": {

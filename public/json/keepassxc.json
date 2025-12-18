@@ -29,18 +29,26 @@
     "releases": "https://github.com/keepassxreboot/keepassxc/releases"
   },
   "features": [
-    "Encrypted Database: AES-256 encryption for password database with master password protection. Military-grade security for credentials.",
-    "Password Generator: Create strong, random passwords with customizable rules and patterns. Never use weak passwords again.",
-    "Browser Integration: Auto-fill credentials in browsers with official extensions for Chrome, Firefox, and Edge. Seamless login experience.",
-    "Auto-Type: Simulate keyboard input to fill credentials in any application. Works beyond web browsers.",
-    "Hardware Key Support: YubiKey and other FIDO2 devices for additional authentication layer. Maximum security for sensitive data.",
-    "Database Sync: Store database in cloud storage for access across devices. Your choice of sync provider.",
-    "Entry Organization: Groups, tags, and custom icons for organizing password entries. Keep credentials organized.",
-    "Secure Notes: Store sensitive text information beyond just passwords. Protect all confidential data.",
-    "Password Health: Identify weak, reused, or compromised passwords with security reports. Maintain strong credential hygiene.",
-    "TOTP Generator: Built-in two-factor authentication code generator. Eliminate need for separate authenticator app.",
-    "Cross-Platform: Native applications for Windows, macOS, and Linux with consistent interface. Use on any desktop system.",
-    "Import & Export: Migrate from other password managers with import tools. Switch without losing data."
+    {
+      "title": "End-to-End Encryption",
+      "description": "AES-256 encryption for password database with master password protection. Military-grade security for credentials"
+    },
+    {
+      "title": "Password Generator",
+      "description": "Create strong, random passwords with customizable rules and patterns. Never use weak passwords again"
+    },
+    {
+      "title": "Hardware Key Support",
+      "description": "YubiKey and other FIDO2 devices for additional authentication layer. Maximum security for sensitive data"
+    },
+    {
+      "title": "Real-Time Sync",
+      "description": "Store database in cloud storage for access across devices. Your choice of sync provider"
+    },
+    {
+      "title": "Tagging System",
+      "description": "Groups, tags, and custom icons for organizing password entries. Keep credentials organized"
+    }
   ],
   "platform_support": {
     "desktop": {

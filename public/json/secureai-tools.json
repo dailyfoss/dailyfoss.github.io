@@ -30,18 +30,22 @@
     "logo_light": "/icons/secureai-tools-light.webp"
   },
   "features": [
-    "Model deployment: Host and serve AI models with dedicated inference endpoints.",
-    "Access controls: Implement role-based permissions for model access and usage.",
-    "Audit logging: Track all model queries, responses, and user interactions for compliance.",
-    "API management: Provide secure REST APIs for model inference with authentication.",
-    "Resource isolation: Run models in isolated environments to prevent data leakage.",
-    "Usage monitoring: Track token consumption, request rates, and model performance metrics.",
-    "Multi-model support: Deploy and manage multiple AI models simultaneously.",
-    "Version control: Manage model versions with rollback capabilities for safe updates.",
-    "Rate limiting: Control API usage with configurable rate limits per user or application.",
-    "Data encryption: Encrypts model inputs, outputs, and stored data at rest and in transit.",
-    "Custom endpoints: Create specialized endpoints with preprocessing and postprocessing logic.",
-    "Cost tracking: Monitor compute costs and resource utilization per model and user."
+    {
+      "title": "Access Control",
+      "description": "Implement role-based permissions for model access and usage"
+    },
+    {
+      "title": "Audit Logging",
+      "description": "Track all model queries, responses, and user interactions for compliance"
+    },
+    {
+      "title": "REST API",
+      "description": "Provide secure REST APIs for model inference with authentication"
+    },
+    {
+      "title": "High Performance",
+      "description": "Track token consumption, request rates, and model performance metrics"
+    }
   ],
   "platform_support": {
     "desktop": {

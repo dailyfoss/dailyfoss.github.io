@@ -29,18 +29,22 @@
     "releases": null
   },
   "features": [
-    "HTTP-based alerts: Trigger notifications by sending HTTP requests to the server.",
-    "Web interface: View, manage, and respond to alerts through a browser-based UI.",
-    "Alert confirmation: Mark alerts as acknowledged or resolved to track response status.",
-    "Snooze functionality: Temporarily dismiss alerts with automatic re-notification after delay.",
-    "Activity tracking: Log all alerts and actions for audit trails and analysis.",
-    "Local network focus: Designed for internal networks without external dependencies.",
-    "Lightweight design: Minimal resource usage suitable for edge devices or small servers.",
-    "Custom triggers: Integrate with scripts, monitoring tools, or automation systems.",
-    "Alert history: Review past notifications and response times for troubleshooting.",
-    "Simple API: Easy integration with existing systems using straightforward HTTP endpoints.",
-    "No authentication required: Optional security for trusted local network environments.",
-    "Quick deployment: Simple setup with minimal configuration for rapid implementation."
+    {
+      "title": "Email Notifications",
+      "description": "Trigger notifications by sending HTTP requests to the server"
+    },
+    {
+      "title": "Web Interface",
+      "description": "View, manage, and respond to alerts through a browser-based UI"
+    },
+    {
+      "title": "Local Network Focus",
+      "description": "Designed for internal networks without external dependencies"
+    },
+    {
+      "title": "Lightweight",
+      "description": "Minimal resource usage suitable for edge devices or small servers"
+    }
   ],
   "platform_support": {
     "desktop": {

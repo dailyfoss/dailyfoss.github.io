@@ -29,14 +29,22 @@
     "releases": "https://github.com/kimdre/doco-cd/releases"
   },
   "features": [
-    "Git-based deployments: Trigger container updates automatically when pushing to configured repository branches.",
-    "Docker Compose support: Deploy multi-container applications using familiar compose file syntax and orchestration.",
-    "Webhook integration: Receive notifications from GitHub, GitLab, or Bitbucket to initiate deployment workflows.",
-    "Rollback capability: Revert to previous container versions quickly when issues are detected after deployment.",
-    "Environment management: Configure separate deployment pipelines for staging, production, and development environments.",
-    "Minimal dependencies: Run with just Docker installed, avoiding complex CI/CD platforms for straightforward projects.",
-    "Deployment logs: Track build output and container startup messages to diagnose issues during rollout.",
-    "Secret handling: Inject environment variables and credentials securely without storing them in repository files."
+    {
+      "title": "Docker Support",
+      "description": "Deploy multi-container applications using familiar compose file syntax and orchestration"
+    },
+    {
+      "title": "Email Notifications",
+      "description": "Receive notifications from GitHub, GitLab, or Bitbucket to initiate deployment workflows"
+    },
+    {
+      "title": "Tagging System",
+      "description": "Configure separate deployment pipelines for staging, production, and development environments"
+    },
+    {
+      "title": "Deployment Logs",
+      "description": "Track build output and container startup messages to diagnose issues during rollout"
+    }
   ],
   "platform_support": {
     "desktop": {

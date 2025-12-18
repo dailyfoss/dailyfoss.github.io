@@ -29,18 +29,30 @@
     "releases": "https://github.com/pterodactyl/panel/releases"
   },
   "features": [
-    "Game server management: Host and manage multiple game servers including Minecraft, CS:GO, and Rust.",
-    "Docker isolation: Run each game server in isolated Docker containers for security and resource control.",
-    "User access control: Create user accounts with granular permissions for server management and file access.",
-    "File manager: Edit server configuration files directly through the web interface with syntax highlighting.",
-    "Console access: View real-time server console output and send commands through the web interface.",
-    "Backup automation: Schedule automatic backups of game servers with retention policies and restoration.",
-    "Resource limits: Set CPU, memory, and disk limits per server to prevent resource exhaustion.",
-    "Startup management: Configure server startup parameters, environment variables, and boot sequences.",
-    "Multi-node support: Distribute game servers across multiple physical nodes for scalability.",
-    "API access: Automate server management and provisioning using a comprehensive RESTful API.",
-    "Subuser system: Grant limited access to specific servers for players or moderators.",
-    "Activity logging: Track all server actions, file changes, and user activity for auditing."
+    {
+      "title": "Game Server Management",
+      "description": "Host and manage multiple game servers including Minecraft, CS:GO, and Rust"
+    },
+    {
+      "title": "Docker Support",
+      "description": "Run each game server in isolated Docker containers for security and resource control"
+    },
+    {
+      "title": "Access Control",
+      "description": "Create user accounts with granular permissions for server management and file access"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Edit server configuration files directly through the web interface with syntax highlighting"
+    },
+    {
+      "title": "Database Backup",
+      "description": "Schedule automatic backups of game servers with retention policies and restoration"
+    },
+    {
+      "title": "Startup Management",
+      "description": "Configure server startup parameters, environment variables, and boot sequences"
+    }
   ],
   "platform_support": {
     "desktop": {

@@ -29,7 +29,11 @@ export type Script = {
     issues: string | null;
     releases: string | null;
   };
-  features: string[];
+  features: Array<string | {
+    icon?: string; // Optional - will auto-detect from title if not provided
+    title: string;
+    description: string;
+  }>;
   platform_support: {
     desktop: {
       linux: boolean;

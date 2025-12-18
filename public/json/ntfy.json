@@ -29,18 +29,38 @@
     "releases": "https://github.com/binwiederhier/ntfy/releases"
   },
   "features": [
-    "Simple notifications: Send push notifications via HTTP PUT/POST without registration or API keys.",
-    "Topic-based: Subscribe to topics to receive notifications without user accounts.",
-    "Multi-platform: Web UI, Android, iOS apps, and CLI for receiving notifications anywhere.",
-    "Instant delivery: Real-time push notifications using HTTP streaming or WebSockets.",
-    "Attachments: Send images, files, or links with notifications for rich content.",
-    "Priority levels: Set notification urgency from silent to critical with custom sounds.",
-    "Scheduled delivery: Delay notifications to send at specific times or after intervals.",
-    "Action buttons: Add clickable buttons to notifications for quick actions or links.",
-    "Email notifications: Receive notifications via email as fallback or preference.",
-    "Access control: Protect topics with passwords or tokens for private notifications.",
-    "Self-hosted or public: Run your own server or use the public ntfy.sh service.",
-    "No dependencies: Single binary deployment with built-in web server and storage."
+    {
+      "title": "REST API",
+      "description": "Send push notifications via HTTP PUT/POST without registration or API keys"
+    },
+    {
+      "title": "Email Notifications",
+      "description": "Subscribe to topics to receive notifications without user accounts"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Web UI, Android, iOS apps, and CLI for receiving notifications anywhere"
+    },
+    {
+      "title": "Instant Delivery",
+      "description": "Real-time push notifications using HTTP streaming or WebSockets"
+    },
+    {
+      "title": "Attachments",
+      "description": "Send images, files, or links with notifications for rich content"
+    },
+    {
+      "title": "Priority Levels",
+      "description": "Set notification urgency from silent to critical with custom sounds"
+    },
+    {
+      "title": "Scheduled Delivery",
+      "description": "Delay notifications to send at specific times or after intervals"
+    },
+    {
+      "title": "Action Buttons",
+      "description": "Add clickable buttons to notifications for quick actions or links"
+    }
   ],
   "platform_support": {
     "desktop": {

@@ -29,16 +29,30 @@
     "releases": "https://github.com/Chocobozzz/PeerTube/releases"
   },
   "features": [
-    "Federated video hosting: ActivityPub protocol enables federation with other PeerTube instances and Fediverse platforms for decentralized distribution",
-    "Video streaming: Adaptive bitrate streaming with multiple quality options ensures smooth playback across different connection speeds",
-    "Peer-to-peer delivery: WebTorrent technology distributes bandwidth load among viewers, reducing server costs for popular videos",
-    "Playlists and channels: Organize videos into playlists and channels for structured content presentation and easier discovery",
-    "Live streaming: Broadcast live video with chat integration and automatic VOD archiving after streams end",
-    "Video transcoding: Automatic conversion to multiple resolutions and formats ensures compatibility across devices and bandwidth conditions",
-    "Comments and moderation: Built-in commenting system with moderation tools to manage community interactions and filter spam",
-    "Privacy controls: Set videos as public, unlisted, or private with password protection and access restrictions",
-    "Plugin system: Extend functionality with plugins for themes, analytics, monetization, and custom features",
-    "Mobile apps: Companion apps for iOS and Android enable video watching and channel management on mobile devices"
+    {
+      "title": "Federated Video Hosting",
+      "description": "ActivityPub protocol enables federation with other PeerTube instances and Fediverse platforms for decentralized distribution"
+    },
+    {
+      "title": "Video Streaming",
+      "description": "Adaptive bitrate streaming with multiple quality options ensures smooth playback across different connection speeds"
+    },
+    {
+      "title": "Playlists And Channels",
+      "description": "Organize videos into playlists and channels for structured content presentation and easier discovery"
+    },
+    {
+      "title": "Video Transcoding",
+      "description": "Automatic conversion to multiple resolutions and formats ensures compatibility across devices and bandwidth conditions"
+    },
+    {
+      "title": "Comments And Moderation",
+      "description": "Built-in commenting system with moderation tools to manage community interactions and filter spam"
+    },
+    {
+      "title": "Data Privacy",
+      "description": "Set videos as public, unlisted, or private with password protection and access restrictions"
+    }
   ],
   "platform_support": {
     "desktop": {

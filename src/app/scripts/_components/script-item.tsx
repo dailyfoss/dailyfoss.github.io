@@ -607,29 +607,45 @@ export function ScriptItem({ item, setSelectedScript, allCategories = [] }: Scri
 
             <Separator className="my-8" />
 
-            <div className="mt-6 rounded-lg border shadow-md">
-              <div className="flex gap-3 px-5 py-3 bg-accent/25">
-                <h2 className="text-lg font-semibold">
-                  How to Install
-                </h2>
-              </div>
-              <Separator />
-              <div className="">
-                <InstallCommand item={item} />
-              </div>
-              {item.config_path && (
-                <>
-                  <Separator />
+            {/* Only show install section if manifests exist */}
+            {(() => {
+              const manifest = item.manifests ?? {};
+              const hasAnyManifest = !!(
+                manifest.script ||
+                manifest.docker_compose ||
+                manifest.helm ||
+                manifest.kubernetes ||
+                manifest.terraform
+              );
+              
+              if (!hasAnyManifest) return null;
+              
+              return (
+                <div className="mt-6 rounded-lg border shadow-md">
                   <div className="flex gap-3 px-5 py-3 bg-accent/25">
-                    <h2 className="text-lg font-semibold">Location of config file</h2>
+                    <h2 className="text-lg font-semibold">
+                      How to Install
+                    </h2>
                   </div>
                   <Separator />
                   <div className="">
-                    <ConfigFile configPath={item.config_path} />
+                    <InstallCommand item={item} />
                   </div>
-                </>
-              )}
-            </div>
+                  {item.config_path && (
+                    <>
+                      <Separator />
+                      <div className="flex gap-3 px-5 py-3 bg-accent/25">
+                        <h2 className="text-lg font-semibold">Location of config file</h2>
+                      </div>
+                      <Separator />
+                      <div className="">
+                        <ConfigFile configPath={item.config_path} />
+                      </div>
+                    </>
+                  )}
+                </div>
+              );
+            })()}
 
             {/* Related Tools Section */}
             {allCategories.length > 0 && (

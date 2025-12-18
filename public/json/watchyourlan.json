@@ -29,18 +29,22 @@
     "releases": "https://github.com/aceberg/WatchYourLAN/releases"
   },
   "features": [
-    "Network scanning: Automatically discover all devices connected to your local network with periodic scans.",
-    "Device identification: Display hostnames, MAC addresses, IP addresses, and vendor information for each device.",
-    "New device alerts: Get notified immediately when unknown devices join your network for security monitoring.",
-    "Presence tracking: Monitor which devices are currently online or offline with real-time status updates.",
-    "Device history: View connection history showing when devices joined or left the network over time.",
-    "Custom naming: Assign friendly names and icons to devices for easier identification in the dashboard.",
-    "Grouping: Organize devices into categories like family, guests, IoT, or servers for better management.",
-    "MAC filtering: Whitelist or blacklist devices based on MAC addresses to control network access.",
-    "Notification channels: Send alerts via email, Telegram, Pushover, or webhooks when events occur.",
-    "Bandwidth monitoring: Track data usage per device to identify bandwidth hogs on your network.",
-    "Mobile responsive: Monitor your network from smartphones or tablets with an optimized mobile interface.",
-    "Export functionality: Generate reports or export device lists for documentation or network auditing purposes."
+    {
+      "title": "Media Library",
+      "description": "Get notified immediately when unknown devices join your network for security monitoring"
+    },
+    {
+      "title": "Offline Mode",
+      "description": "Monitor which devices are currently online or offline with real-time status updates"
+    },
+    {
+      "title": "Analytics Dashboard",
+      "description": "Assign friendly names and icons to devices for easier identification in the dashboard"
+    },
+    {
+      "title": "Mac Filtering",
+      "description": "Whitelist or blacklist devices based on MAC addresses to control network access"
+    }
   ],
   "platform_support": {
     "desktop": {

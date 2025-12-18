@@ -29,14 +29,30 @@
     "releases": "https://github.com/sct/overseerr/releases"
   },
   "features": [
-    "Content requests: Allow users to search and request movies or TV shows for addition to your media library.",
-    "Radarr and Sonarr integration: Automatically send approved requests to download managers for processing and monitoring.",
-    "Approval workflows: Configure automatic approval or require admin review based on user permissions and quotas.",
-    "Plex integration: Sync with Plex libraries to show what content is already available and prevent duplicate requests.",
-    "User management: Create accounts with different permission levels to control who can request and approve content.",
-    "Notification system: Send alerts via email, Discord, Slack, or other services when requests are submitted or fulfilled.",
-    "Metadata display: Show movie posters, descriptions, ratings, and trailers from TMDB for informed request decisions.",
-    "Request tracking: Monitor the status of pending, approved, and completed requests with detailed progress information."
+    {
+      "title": "Search and Filter",
+      "description": "Allow users to search and request movies or TV shows for addition to your media"
+    },
+    {
+      "title": "Radarr And Sonarr Integration",
+      "description": "Automatically send approved requests to download managers for processing and monitoring"
+    },
+    {
+      "title": "Approval Workflows",
+      "description": "Configure automatic approval or require admin review based on user permissions and quotas"
+    },
+    {
+      "title": "Real-Time Sync",
+      "description": "Sync with Plex libraries to show what content is already available and prevent duplicate requests"
+    },
+    {
+      "title": "User Management",
+      "description": "Create accounts with different permission levels to control who can request and approve content"
+    },
+    {
+      "title": "Email Notifications",
+      "description": "Send alerts via email, Discord, Slack, or other services when requests are submitted or fulfilled"
+    }
   ],
   "platform_support": {
     "desktop": {

@@ -29,18 +29,26 @@
     "releases": "https://github.com/runtipi/runtipi/releases"
   },
   "features": [
-    "One-click deployment: Install popular self-hosted apps with a single command.",
-    "App marketplace: Browse and deploy from a curated catalog of homelab applications.",
-    "Update management: Keep installed apps up to date with automatic or manual updates.",
-    "Web dashboard: Manage all your apps through a centralized browser interface.",
-    "Docker-based: Run apps in isolated containers for security and easy management.",
-    "Configuration UI: Adjust app settings without editing configuration files.",
-    "Backup support: Create and restore backups of app data and configurations.",
-    "Resource monitoring: View CPU, memory, and storage usage for each app.",
-    "Port management: Automatically handle port assignments to avoid conflicts.",
-    "SSL certificates: Generate and manage HTTPS certificates for secure access.",
-    "User authentication: Protect your dashboard with password or SSO login.",
-    "Lightweight design: Run efficiently on Raspberry Pi and other low-power hardware."
+    {
+      "title": "Self-Hosted",
+      "description": "Install popular self-hosted apps with a single command"
+    },
+    {
+      "title": "Update Management",
+      "description": "Keep installed apps up to date with automatic or manual updates"
+    },
+    {
+      "title": "Analytics Dashboard",
+      "description": "Manage all your apps through a centralized browser interface"
+    },
+    {
+      "title": "Docker Support",
+      "description": "Run apps in isolated containers for security and easy management"
+    },
+    {
+      "title": "Database Backup",
+      "description": "Create and restore backups of app data and configurations"
+    }
   ],
   "platform_support": {
     "desktop": {

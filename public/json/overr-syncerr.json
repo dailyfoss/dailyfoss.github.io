@@ -29,14 +29,22 @@
     "releases": "https://github.com/gssariev/overr-syncerr/releases"
   },
   "features": [
-    "Library synchronization: Keep multiple Plex servers in sync by copying library structure and content organization.",
-    "Watched status sync: Transfer viewing progress and watched markers between Plex instances for consistent experience.",
-    "Metadata matching: Align movie and TV show metadata across libraries to ensure accurate content identification.",
-    "Automated updates: Run sync operations on a schedule to maintain consistency without manual intervention.",
-    "Selective sync: Choose specific libraries or content types to synchronize while excluding others.",
-    "Conflict resolution: Handle duplicate content and metadata conflicts with configurable merge strategies.",
-    "Multi-server support: Manage synchronization between more than two Plex servers from a central configuration.",
-    "Dry run mode: Preview sync operations before executing to verify changes and prevent unintended modifications."
+    {
+      "title": "Real-Time Sync",
+      "description": "Keep multiple Plex servers in sync by copying library structure and content organization"
+    },
+    {
+      "title": "Watched Status Sync",
+      "description": "Transfer viewing progress and watched markers between Plex instances for consistent experience"
+    },
+    {
+      "title": "Selective Sync",
+      "description": "Choose specific libraries or content types to synchronize while excluding others"
+    },
+    {
+      "title": "Dry Run Mode",
+      "description": "Preview sync operations before executing to verify changes and prevent unintended modifications"
+    }
   ],
   "platform_support": {
     "desktop": {

@@ -29,18 +29,26 @@
     "releases": "https://github.com/eduardolat/pgbackweb/releases"
   },
   "features": [
-    "Backup scheduling: Automate PostgreSQL backups with configurable schedules for full, incremental, and differential backups.",
-    "Web interface: Manage all backup operations through a modern, responsive web UI without command-line access.",
-    "Restore operations: Quickly restore databases to specific points in time with guided recovery workflows.",
-    "Backup monitoring: Track backup status, success rates, and storage usage with dashboard visualizations.",
-    "Multiple databases: Configure and manage backups for multiple PostgreSQL instances from a single interface.",
-    "Retention policies: Automatically delete old backups based on age or count to manage storage efficiently.",
-    "Email notifications: Receive alerts when backups fail, complete, or require attention.",
-    "Compression support: Reduce backup size with built-in compression options to save storage space.",
-    "Encryption: Secure backup data with encryption at rest and in transit for compliance and security.",
-    "Storage backends: Store backups locally or on remote storage like S3, Azure Blob, or network shares.",
-    "Backup verification: Automatically test backup integrity to ensure successful recovery when needed.",
-    "Audit logging: Track all backup and restore operations with detailed logs for compliance and troubleshooting."
+    {
+      "title": "Database Backup",
+      "description": "Automate PostgreSQL backups with configurable schedules for full, incremental, and differential backups"
+    },
+    {
+      "title": "Mobile Responsive",
+      "description": "Manage all backup operations through a modern, responsive web UI without command-line access"
+    },
+    {
+      "title": "Analytics Dashboard",
+      "description": "Track backup status, success rates, and storage usage with dashboard visualizations"
+    },
+    {
+      "title": "Multiple Databases",
+      "description": "Configure and manage backups for multiple PostgreSQL instances from a single interface"
+    },
+    {
+      "title": "Email Notifications",
+      "description": "Receive alerts when backups fail, complete, or require attention"
+    }
   ],
   "platform_support": {
     "desktop": {

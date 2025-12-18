@@ -29,18 +29,38 @@
     "releases": "https://github.com/valkey-io/valkey/releases"
   },
   "features": [
-    "Redis compatibility: Drop-in replacement for Redis with full protocol compatibility.",
-    "In-memory storage: Store data in memory for microsecond latency and high throughput.",
-    "Data structures: Support strings, lists, sets, sorted sets, hashes, and more.",
-    "Persistence: Persist data to disk with RDB snapshots and AOF logging for durability.",
-    "Replication: Set up primary-replica replication for high availability and read scaling.",
-    "Pub/sub messaging: Implement real-time messaging with publish/subscribe channels.",
-    "Transactions: Execute multiple commands atomically with MULTI/EXEC transactions.",
-    "Lua scripting: Run server-side Lua scripts for complex operations and atomic workflows.",
-    "Clustering: Scale horizontally with automatic sharding across multiple nodes.",
-    "High performance: Handle millions of operations per second with optimized C implementation.",
-    "Community-driven: Open-source project maintained by the community without vendor lock-in.",
-    "CLI tools: Manage and interact with the server using command-line tools and clients."
+    {
+      "title": "Redis Compatibility",
+      "description": "Drop-in replacement for Redis with full protocol compatibility"
+    },
+    {
+      "title": "In",
+      "description": "Store data in memory for microsecond latency and high throughput"
+    },
+    {
+      "title": "Data Structures",
+      "description": "Support strings, lists, sets, sorted sets, hashes, and more"
+    },
+    {
+      "title": "Persistence",
+      "description": "Persist data to disk with RDB snapshots and AOF logging for durability"
+    },
+    {
+      "title": "Replication",
+      "description": "Set up primary-replica replication for high availability and read scaling"
+    },
+    {
+      "title": "Pub/sub Messaging",
+      "description": "Implement real-time messaging with publish/subscribe channels"
+    },
+    {
+      "title": "Transactions",
+      "description": "Execute multiple commands atomically with MULTI/EXEC transactions"
+    },
+    {
+      "title": "Lua Scripting",
+      "description": "Run server-side Lua scripts for complex operations and atomic workflows"
+    }
   ],
   "platform_support": {
     "desktop": {

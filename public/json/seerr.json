@@ -29,18 +29,26 @@
     "releases": "https://github.com/seerr-team/seerr/releases"
   },
   "features": [
-    "Media requests: Users can search and request movies or TV shows for download.",
-    "Plex integration: Syncs with Plex libraries to show available content and prevent duplicates.",
-    "Radarr connection: Automatically sends movie requests to Radarr for downloading.",
-    "Sonarr connection: Routes TV show requests to Sonarr with season and episode selection.",
-    "User management: Create accounts with different permission levels and request quotas.",
-    "Approval workflows: Require admin approval for requests before sending to download clients.",
-    "Notification system: Sends alerts via email, Discord, Slack, or Telegram for request updates.",
-    "Discovery features: Browse trending, popular, and upcoming content for easy requesting.",
-    "Request tracking: Monitor request status from submission through download to availability.",
-    "Quality profiles: Users can select preferred quality settings for their requests.",
-    "Multi-language support: Interface available in multiple languages for international users.",
-    "Mobile responsive: Fully functional on mobile devices for requesting content on the go."
+    {
+      "title": "Search and Filter",
+      "description": "Users can search and request movies or TV shows for download"
+    },
+    {
+      "title": "Real-Time Sync",
+      "description": "Syncs with Plex libraries to show available content and prevent duplicates"
+    },
+    {
+      "title": "User Management",
+      "description": "Create accounts with different permission levels and request quotas"
+    },
+    {
+      "title": "Approval Workflows",
+      "description": "Require admin approval for requests before sending to download clients"
+    },
+    {
+      "title": "Email Notifications",
+      "description": "Sends alerts via email, Discord, Slack, or Telegram for request updates"
+    }
   ],
   "platform_support": {
     "desktop": {

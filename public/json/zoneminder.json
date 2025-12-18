@@ -24,18 +24,38 @@
     "releases": "https://github.com/ZoneMinder/zoneminder/releases"
   },
   "features": [
-    "Camera support: Connect IP cameras, USB webcams, and analog cameras through capture cards with broad protocol support.",
-    "Motion detection: Automatically detect movement in camera feeds and trigger recording or alerts based on sensitivity settings.",
-    "Continuous recording: Record video continuously or only during motion events to balance storage usage and coverage.",
-    "Event management: Review, filter, and export recorded events with timestamps, thumbnails, and motion scores.",
-    "Live monitoring: View multiple camera feeds simultaneously in a grid layout with real-time streaming.",
-    "Zone configuration: Define specific areas within camera views to monitor while ignoring irrelevant motion.",
-    "Alert notifications: Send email or webhook alerts when motion is detected or cameras go offline.",
-    "PTZ control: Control pan, tilt, and zoom functions on supported cameras directly from the web interface.",
-    "Storage management: Configure retention policies to automatically delete old recordings and manage disk space.",
-    "Multi-server support: Distribute camera load across multiple servers and manage them from a central interface.",
-    "Mobile access: View live feeds and recorded events from mobile devices using responsive web interface or apps.",
-    "API integration: Automate camera control and event retrieval using REST API for home automation systems."
+    {
+      "title": "Camera Support",
+      "description": "Connect IP cameras, USB webcams, and analog cameras through capture cards with broad protocol support"
+    },
+    {
+      "title": "Motion Detection",
+      "description": "Automatically detect movement in camera feeds and trigger recording or alerts based on sensitivity settings"
+    },
+    {
+      "title": "Continuous Recording",
+      "description": "Record video continuously or only during motion events to balance storage usage and coverage"
+    },
+    {
+      "title": "Data Export",
+      "description": "Review, filter, and export recorded events with timestamps, thumbnails, and motion scores"
+    },
+    {
+      "title": "Live Monitoring",
+      "description": "View multiple camera feeds simultaneously in a grid layout with real-time streaming"
+    },
+    {
+      "title": "Zone Configuration",
+      "description": "Define specific areas within camera views to monitor while ignoring irrelevant motion"
+    },
+    {
+      "title": "Email Notifications",
+      "description": "Send email or webhook alerts when motion is detected or cameras go offline"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Control pan, tilt, and zoom functions on supported cameras directly from the web interface"
+    }
   ],
   "platform_support": {
     "desktop": {

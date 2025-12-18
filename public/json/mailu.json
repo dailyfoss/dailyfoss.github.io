@@ -29,18 +29,22 @@
     "releases": "https://github.com/Mailu/Mailu/releases"
   },
   "features": [
-    "Modular architecture: Choose which components to deploy including webmail, antivirus, and webdav.",
-    "Admin interface: Manage domains, users, and aliases through a clean web-based control panel.",
-    "Antivirus scanning: Optional ClamAV integration for scanning incoming and outgoing email attachments.",
-    "Webmail options: Choose between Roundcube or Rainloop for webmail interface.",
-    "LDAP support: Integrate with existing LDAP directories for centralized user authentication.",
-    "Rate limiting: Protect against abuse with configurable sending limits per user or domain.",
-    "TLS encryption: Enforce encrypted connections for both incoming and outgoing mail traffic.",
-    "Fetchmail integration: Retrieve mail from external accounts and deliver to local mailboxes.",
-    "Docker-based: All components run in Docker containers for easy deployment and updates.",
-    "Multi-domain hosting: Host email for multiple domains from a single Mailu instance.",
-    "Sieve filtering: Users can create custom mail filtering rules using Sieve scripts.",
-    "Quota management: Set storage limits per mailbox to control disk usage."
+    {
+      "title": "Admin Interface",
+      "description": "Manage domains, users, and aliases through a clean web-based control panel"
+    },
+    {
+      "title": "Webmail Options",
+      "description": "Choose between Roundcube or Rainloop for webmail interface"
+    },
+    {
+      "title": "End-to-End Encryption",
+      "description": "Enforce encrypted connections for both incoming and outgoing mail traffic"
+    },
+    {
+      "title": "Fetchmail Integration",
+      "description": "Retrieve mail from external accounts and deliver to local mailboxes"
+    }
   ],
   "platform_support": {
     "desktop": {

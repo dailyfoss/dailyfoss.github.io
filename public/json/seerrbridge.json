@@ -29,18 +29,26 @@
     "releases": "https://github.com/Woahai321/SeerrBridge/releases"
   },
   "features": [
-    "Seerr integration: Connects Seerr with additional media management backends.",
-    "Request forwarding: Routes media requests to appropriate download clients automatically.",
-    "Multi-backend support: Manages connections to multiple Radarr, Sonarr, or similar instances.",
-    "Automation rules: Creates custom workflows for request handling and processing.",
-    "Status synchronization: Keeps request status in sync across connected services.",
-    "Notification relay: Forwards notifications between Seerr and backend services.",
-    "API bridging: Translates API calls between different service versions and formats.",
-    "Load balancing: Distributes requests across multiple backend instances for scalability.",
-    "Error handling: Retries failed requests and provides detailed error reporting.",
-    "Configuration management: Centralized configuration for all connected services.",
-    "Health monitoring: Tracks connectivity and health of all integrated backends.",
-    "Logging system: Records all bridge operations for troubleshooting and auditing."
+    {
+      "title": "Media Library",
+      "description": "Connects Seerr with additional media management backends"
+    },
+    {
+      "title": "Real-Time Sync",
+      "description": "Keeps request status in sync across connected services"
+    },
+    {
+      "title": "Email Notifications",
+      "description": "Forwards notifications between Seerr and backend services"
+    },
+    {
+      "title": "REST API",
+      "description": "Translates API calls between different service versions and formats"
+    },
+    {
+      "title": "Load Balancing",
+      "description": "Distributes requests across multiple backend instances for scalability"
+    }
   ],
   "platform_support": {
     "desktop": {

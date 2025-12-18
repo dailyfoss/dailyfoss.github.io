@@ -29,12 +29,22 @@
     "releases": "https://github.com/crazy-max/diun/releases"
   },
   "features": [
-    "Update Notifications: Get alerted when Docker images are updated. Stay informed automatically.",
-    "Multi-Platform: Monitor images from Docker Hub, GHCR, and private registries. Universal coverage.",
-    "Webhook Integration: Trigger actions when updates are detected. Automated workflows.",
-    "CI/CD Ready: Perfect for automated maintenance pipelines. DevOps-friendly tool.",
-    "Flexible Notifications: Send alerts via email, Slack, Discord, and more. Choose your channel.",
-    "Lightweight: Minimal resource usage for efficient monitoring. Run anywhere Docker runs."
+    {
+      "title": "Email Notifications",
+      "description": "Get alerted when Docker images are updated. Stay informed automatically"
+    },
+    {
+      "title": "Docker Support",
+      "description": "Monitor images from Docker Hub, GHCR, and private registries. Universal coverage"
+    },
+    {
+      "title": "Webhook Support",
+      "description": "Trigger actions when updates are detected. Automated workflows"
+    },
+    {
+      "title": "Lightweight",
+      "description": "Minimal resource usage for efficient monitoring. Run anywhere Docker runs"
+    }
   ],
   "platform_support": {
     "desktop": {

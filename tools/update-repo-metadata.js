@@ -4,8 +4,13 @@
  * Update repository metadata for all apps in public/json/*.json
  * Fetches data from GitHub API in parallel using source_code URL
  * 
- * Usage: GITHUB_TOKEN=your_token node tools/update-repo-metadata.js [limit]
- * Example: GITHUB_TOKEN=xxx node tools/update-repo-metadata.js 50
+ * Usage: 
+ *   GITHUB_TOKEN=your_token node tools/update-repo-metadata.js [limit|filename]
+ * 
+ * Examples:
+ *   GITHUB_TOKEN=xxx node tools/update-repo-metadata.js 50          # Update first 50 files
+ *   GITHUB_TOKEN=xxx node tools/update-repo-metadata.js minio.json  # Update specific file
+ *   GITHUB_TOKEN=xxx node tools/update-repo-metadata.js             # Update all files
  */
 
 import fs from 'fs/promises';
@@ -18,7 +23,25 @@ const __dirname = path.dirname(__filename);
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const JSON_DIR = path.join(__dirname, '../public/json');
 const BATCH_SIZE = 10; // Process 10 at a time for better progress visibility
-const LIMIT = parseInt(process.argv[2]) || null; // Optional limit for testing
+
+// Parse command line argument - can be a limit number, filename, or slug
+const arg = process.argv[2];
+let LIMIT = null;
+let SPECIFIC_FILE = null;
+
+if (arg) {
+  const parsedNum = parseInt(arg);
+  if (!isNaN(parsedNum)) {
+    // It's a number (limit)
+    LIMIT = parsedNum;
+  } else if (arg.endsWith('.json')) {
+    // It's a filename
+    SPECIFIC_FILE = arg;
+  } else {
+    // It's a slug - convert to filename
+    SPECIFIC_FILE = `${arg}.json`;
+  }
+}
 
 if (!GITHUB_TOKEN) {
   console.error('ERROR: GITHUB_TOKEN environment variable is required');
@@ -400,6 +423,62 @@ function generateSummaryTable(results) {
  */
 async function main() {
   console.log('Starting repository metadata update...\n');
+
+  // If specific file is provided, only process that file
+  if (SPECIFIC_FILE) {
+    console.log(`Processing specific file: ${SPECIFIC_FILE}\n`);
+    
+    const filePath = path.join(JSON_DIR, SPECIFIC_FILE);
+    
+    try {
+      // Check if file exists
+      await fs.access(filePath);
+      
+      const content = await fs.readFile(filePath, 'utf-8');
+      const json = JSON.parse(content);
+      
+      if (!json.resources?.source_code || !json.resources.source_code.includes('github.com')) {
+        console.error(`ERROR: ${SPECIFIC_FILE} does not have a valid GitHub source_code URL`);
+        process.exit(1);
+      }
+      
+      const parsed = parseGitHubUrl(json.resources.source_code);
+      if (!parsed) {
+        console.error(`ERROR: Could not parse GitHub URL from ${SPECIFIC_FILE}`);
+        process.exit(1);
+      }
+      
+      console.log(`Fetching data for ${parsed.owner}/${parsed.repo}...`);
+      const repoData = await fetchRepoData(parsed.owner, parsed.repo);
+      
+      if (!repoData) {
+        console.error(`ERROR: Failed to fetch repository data`);
+        process.exit(1);
+      }
+      
+      const updated = await updateJsonFile(filePath, repoData, json.resources.source_code);
+      
+      if (updated) {
+        console.log(`\n✓ Successfully updated ${SPECIFIC_FILE}`);
+        
+        if (changeLog.length > 0) {
+          const change = changeLog[0];
+          console.log(`\nChanges:`);
+          console.log(`  Stars: ${change.oldStars} → ${change.newStars} (${change.starDiff > 0 ? '+' : ''}${change.starDiff})`);
+          console.log(`  Version: ${change.oldVersion} → ${change.newVersion}`);
+          console.log(`  Link: ${change.link}`);
+        }
+      } else {
+        console.error(`ERROR: Failed to update ${SPECIFIC_FILE}`);
+        process.exit(1);
+      }
+      
+      return;
+    } catch (error) {
+      console.error(`ERROR: ${error.message}`);
+      process.exit(1);
+    }
+  }
 
   // Read all JSON files
   const files = await fs.readdir(JSON_DIR);

@@ -30,14 +30,30 @@
     "logo_light": "/icons/infisical-light.webp"
   },
   "features": [
-    "Centralized Secrets: Store API keys, passwords, and environment variables in one secure location.",
-    "Environment Management: Organize secrets by environment (dev, staging, production).",
-    "CI/CD Integration: Inject secrets into GitHub Actions, GitLab CI, and other pipelines.",
-    "Access Controls: Define granular permissions for who can read or modify secrets.",
-    "Audit Logging: Track all secret access and modifications for compliance.",
-    "Version History: View and rollback to previous versions of secrets.",
-    "SDK Support: Integrate with applications using official SDKs for multiple languages.",
-    "Self-Hosted or Cloud: Choose between self-hosting or managed cloud deployment."
+    {
+      "title": "REST API",
+      "description": "Store API keys, passwords, and environment variables in one secure location"
+    },
+    {
+      "title": "Tagging System",
+      "description": "Organize secrets by environment (dev, staging, production)"
+    },
+    {
+      "title": "Access Control",
+      "description": "Define granular permissions for who can read or modify secrets"
+    },
+    {
+      "title": "Audit Logging",
+      "description": "Track all secret access and modifications for compliance"
+    },
+    {
+      "title": "Version History",
+      "description": "View and rollback to previous versions of secrets"
+    },
+    {
+      "title": "Self-Hosted",
+      "description": "Choose between self-hosting or managed cloud deployment"
+    }
   ],
   "platform_support": {
     "desktop": {

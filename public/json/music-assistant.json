@@ -29,14 +29,26 @@
     "releases": "https://github.com/music-assistant/server/releases"
   },
   "features": [
-    "Multi-source integration: Aggregate music from Spotify, local files, and streaming services into a unified library.",
-    "Home Assistant integration: Control playback on smart speakers and devices through Home Assistant automations.",
-    "Playlist management: Create and sync playlists across different music sources with automatic metadata matching.",
-    "Multi-room audio: Stream synchronized music to multiple speakers and zones throughout your home.",
-    "Library organization: Browse music by artist, album, genre, or playlist with automatic metadata enrichment.",
-    "Queue management: Build dynamic playback queues mixing tracks from different sources and services seamlessly.",
-    "Player support: Stream to Chromecast, Sonos, AirPlay, and other network audio devices from one interface.",
-    "Offline playback: Cache music locally for playback without internet connection or streaming service availability."
+    {
+      "title": "Home Assistant Integration",
+      "description": "Control playback on smart speakers and devices through Home Assistant automations"
+    },
+    {
+      "title": "Real-Time Sync",
+      "description": "Create and sync playlists across different music sources with automatic metadata matching"
+    },
+    {
+      "title": "Library Organization",
+      "description": "Browse music by artist, album, genre, or playlist with automatic metadata enrichment"
+    },
+    {
+      "title": "Queue Management",
+      "description": "Build dynamic playback queues mixing tracks from different sources and services seamlessly"
+    },
+    {
+      "title": "Offline Mode",
+      "description": "Cache music locally for playback without internet connection or streaming service availability"
+    }
   ],
   "platform_support": {
     "desktop": {

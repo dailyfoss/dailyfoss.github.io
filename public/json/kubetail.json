@@ -29,18 +29,38 @@
     "releases": "https://github.com/kubetail-org/kubetail/releases"
   },
   "features": [
-    "Multi-Pod Logs: Tail logs from multiple Kubernetes pods simultaneously. Debug distributed applications efficiently.",
-    "Single Stream: Aggregate logs into unified stream with pod identification. See all logs in one view.",
-    "Real-Time Tailing: Live log streaming as new entries are written. Monitor applications in real-time.",
-    "Pod Selection: Select pods by name, label selector, or deployment. Target specific workloads.",
-    "Namespace Filtering: Filter logs by Kubernetes namespace. Focus on relevant applications.",
-    "Color Coding: Distinguish pods with color-coded output. Identify log sources quickly.",
-    "Search & Filter: Search log content and filter by patterns. Find specific log entries.",
-    "Container Selection: Choose specific containers within pods to tail. Narrow focus to relevant logs.",
-    "Context Lines: Show surrounding context for matched log lines. Understand log context better.",
-    "Timestamp Display: Show timestamps for log entries. Track when events occurred.",
-    "CLI Tool: Lightweight command-line tool for terminal workflows. Integrate with existing tools.",
-    "Kubernetes Native: Works with any Kubernetes cluster via kubectl. No additional setup required."
+    {
+      "title": "Kubernetes Ready",
+      "description": "Tail logs from multiple Kubernetes pods simultaneously. Debug distributed applications efficiently"
+    },
+    {
+      "title": "Single Stream",
+      "description": "Aggregate logs into unified stream with pod identification. See all logs in one view"
+    },
+    {
+      "title": "Real-Time",
+      "description": "Live log streaming as new entries are written. Monitor applications in real-time"
+    },
+    {
+      "title": "Pod Selection",
+      "description": "Select pods by name, label selector, or deployment. Target specific workloads"
+    },
+    {
+      "title": "Namespace Filtering",
+      "description": "Filter logs by Kubernetes namespace. Focus on relevant applications"
+    },
+    {
+      "title": "Color Coding",
+      "description": "Distinguish pods with color-coded output. Identify log sources quickly"
+    },
+    {
+      "title": "Search and Filter",
+      "description": "Search log content and filter by patterns. Find specific log entries"
+    },
+    {
+      "title": "Container Selection",
+      "description": "Choose specific containers within pods to tail. Narrow focus to relevant logs"
+    }
   ],
   "platform_support": {
     "desktop": {

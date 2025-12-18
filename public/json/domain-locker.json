@@ -29,14 +29,22 @@
     "releases": "https://github.com/Lissy93/domain-locker/releases"
   },
   "features": [
-    "Expiry tracking: Monitor domain expiration dates with alerts to prevent accidental lapses and loss of ownership.",
-    "DNS monitoring: Check DNS configuration and nameserver settings to ensure proper domain resolution.",
-    "SSL certificate status: Track certificate expiration and validity for domains to maintain secure connections.",
-    "Registrar information: Store and view registrar details, account credentials, and transfer codes in one place.",
-    "WHOIS lookup: Perform automated WHOIS queries to verify registration details and detect unauthorized changes.",
-    "Multi-domain dashboard: Manage portfolios of domains with sortable lists and filtering by status or expiration date.",
-    "Notification system: Receive email or webhook alerts when domains approach expiration or configuration changes occur.",
-    "Privacy protection: Keep sensitive domain information on your own server without sharing with third-party services."
+    {
+      "title": "Ssl Certificate Status",
+      "description": "Track certificate expiration and validity for domains to maintain secure connections"
+    },
+    {
+      "title": "Analytics Dashboard",
+      "description": "Manage portfolios of domains with sortable lists and filtering by status or expiration date"
+    },
+    {
+      "title": "Email Notifications",
+      "description": "Receive email or webhook alerts when domains approach expiration or configuration changes occur"
+    },
+    {
+      "title": "Data Privacy",
+      "description": "Keep sensitive domain information on your own server without sharing with third-party services"
+    }
   ],
   "platform_support": {
     "desktop": {

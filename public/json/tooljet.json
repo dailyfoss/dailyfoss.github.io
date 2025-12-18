@@ -29,18 +29,22 @@
     "releases": "https://github.com/ToolJet/ToolJet/releases"
   },
   "features": [
-    "Drag-and-drop builder: Create internal tools using a visual interface without writing extensive code.",
-    "Database connections: Connect to PostgreSQL, MySQL, MongoDB, and other databases for data access.",
-    "API integration: Integrate with REST APIs, GraphQL endpoints, and third-party services seamlessly.",
-    "Pre-built components: Use ready-made UI components like tables, forms, charts, and buttons for rapid development.",
-    "Custom queries: Write SQL, JavaScript, or Python queries to fetch and manipulate data from connected sources.",
-    "Role-based access: Define user roles and permissions to control access to apps and data.",
-    "Workflows: Automate business processes with visual workflow builder and event triggers.",
-    "Mobile responsive: Build apps that work on desktop, tablet, and mobile devices automatically.",
-    "Version control: Track changes to applications with built-in version history and rollback capabilities.",
-    "Collaboration: Work with team members on app development with real-time collaboration features.",
-    "Self-hosted or cloud: Deploy on your infrastructure for full control or use managed cloud for convenience.",
-    "Marketplace: Access pre-built templates and plugins from the community marketplace for faster development."
+    {
+      "title": "Database Connections",
+      "description": "Connect to PostgreSQL, MySQL, MongoDB, and other databases for data access"
+    },
+    {
+      "title": "REST API",
+      "description": "Integrate with REST APIs, GraphQL endpoints, and third-party services seamlessly"
+    },
+    {
+      "title": "Workflows",
+      "description": "Automate business processes with visual workflow builder and event triggers"
+    },
+    {
+      "title": "Mobile Responsive",
+      "description": "Build apps that work on desktop, tablet, and mobile devices automatically"
+    }
   ],
   "platform_support": {
     "desktop": {

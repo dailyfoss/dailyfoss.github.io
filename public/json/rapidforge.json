@@ -29,18 +29,26 @@
     "releases": "https://github.com/rapidforge-io/release/releases"
   },
   "features": [
-    "Environment automation: Create isolated development, staging, and production environments with a single command.",
-    "Preview deployments: Generate temporary environments for pull requests to test changes before merging.",
-    "Container orchestration: Deploy applications to Kubernetes clusters with automated configuration and scaling.",
-    "CI/CD integration: Connect to GitHub, GitLab, or Bitbucket for automatic deployments on code changes.",
-    "Infrastructure as code: Define environments using declarative configuration files for reproducible deployments.",
-    "Resource management: Monitor CPU, memory, and storage usage across all environments from a central dashboard.",
-    "Rollback support: Quickly revert to previous versions when deployments fail or issues are discovered.",
-    "Secret management: Store and inject environment variables and credentials securely into applications.",
-    "Multi-cloud support: Deploy to AWS, GCP, Azure, or on-premises infrastructure from the same platform.",
-    "Team collaboration: Share environments and deployment controls with team members using role-based access.",
-    "API-first design: Automate workflows and integrate with existing tools using comprehensive REST APIs.",
-    "Cost tracking: Monitor cloud spending per environment to optimize resource allocation and budgets."
+    {
+      "title": "Tagging System",
+      "description": "Create isolated development, staging, and production environments with a single command"
+    },
+    {
+      "title": "Kubernetes Ready",
+      "description": "Deploy applications to Kubernetes clusters with automated configuration and scaling"
+    },
+    {
+      "title": "Infrastructure As Code",
+      "description": "Define environments using declarative configuration files for reproducible deployments"
+    },
+    {
+      "title": "Analytics Dashboard",
+      "description": "Monitor CPU, memory, and storage usage across all environments from a central dashboard"
+    },
+    {
+      "title": "Secret Management",
+      "description": "Store and inject environment variables and credentials securely into applications"
+    }
   ],
   "platform_support": {
     "desktop": {

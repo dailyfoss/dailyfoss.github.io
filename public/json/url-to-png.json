@@ -29,18 +29,38 @@
     "releases": "https://github.com/jasonraimondi/url-to-png/releases"
   },
   "features": [
-    "Screenshot API: Capture website screenshots via simple HTTP API calls with URL parameters.",
-    "Full-page capture: Render complete web pages including content below the fold.",
-    "Custom dimensions: Specify viewport width and height for screenshots of any size.",
-    "Format options: Return screenshots as PNG images with configurable quality settings.",
-    "JavaScript rendering: Execute JavaScript on pages before capturing for dynamic content.",
-    "Custom delays: Wait for specified time before capturing to allow content to load.",
-    "Headless browser: Use headless Chrome for accurate rendering of modern web pages.",
-    "Caching: Cache screenshots to improve performance for repeated requests.",
-    "Web interface: Test screenshot capture through an optional simple web form.",
-    "Microservice architecture: Deploy as a lightweight microservice for integration into larger systems.",
-    "Docker deployment: Run easily in containers for scalable screenshot generation.",
-    "API authentication: Protect the service with optional API key authentication."
+    {
+      "title": "REST API",
+      "description": "Capture website screenshots via simple HTTP API calls with URL parameters"
+    },
+    {
+      "title": "Full",
+      "description": "Render complete web pages including content below the fold"
+    },
+    {
+      "title": "Custom Dimensions",
+      "description": "Specify viewport width and height for screenshots of any size"
+    },
+    {
+      "title": "Format Options",
+      "description": "Return screenshots as PNG images with configurable quality settings"
+    },
+    {
+      "title": "Javascript Rendering",
+      "description": "Execute JavaScript on pages before capturing for dynamic content"
+    },
+    {
+      "title": "Custom Delays",
+      "description": "Wait for specified time before capturing to allow content to load"
+    },
+    {
+      "title": "Headless Browser",
+      "description": "Use headless Chrome for accurate rendering of modern web pages"
+    },
+    {
+      "title": "High Performance",
+      "description": "Cache screenshots to improve performance for repeated requests"
+    }
   ],
   "platform_support": {
     "desktop": {

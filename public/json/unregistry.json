@@ -29,18 +29,26 @@
     "releases": "https://github.com/psviderski/unregistry/releases"
   },
   "features": [
-    "Registry browsing: Browse Docker registry contents through a user-friendly web interface.",
-    "Image listing: View all images stored in your Docker registry with metadata and details.",
-    "Tag management: See all tags for each image with creation dates and sizes.",
-    "Metadata display: View image manifests, layers, and configuration details.",
-    "Search functionality: Search for images and tags across your registry quickly.",
-    "Multi-registry: Connect to multiple Docker registries from a single interface.",
-    "Image details: Inspect image layers, sizes, and digest information for troubleshooting.",
-    "Tag deletion: Delete unused tags to reclaim storage space in your registry.",
-    "Visual interface: Navigate registry contents visually instead of using command-line tools.",
-    "Authentication support: Connect to registries with authentication requirements securely.",
-    "Responsive design: Access registry browser from desktop or mobile devices.",
-    "Read-only mode: Browse registry contents safely without accidental modifications."
+    {
+      "title": "Web Interface",
+      "description": "Browse Docker registry contents through a user-friendly web interface"
+    },
+    {
+      "title": "Docker Support",
+      "description": "View all images stored in your Docker registry with metadata and details"
+    },
+    {
+      "title": "Tagging System",
+      "description": "See all tags for each image with creation dates and sizes"
+    },
+    {
+      "title": "Search and Filter",
+      "description": "Search for images and tags across your registry quickly"
+    },
+    {
+      "title": "Tag Deletion",
+      "description": "Delete unused tags to reclaim storage space in your registry"
+    }
   ],
   "platform_support": {
     "desktop": {

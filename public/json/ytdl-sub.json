@@ -24,18 +24,26 @@
     "releases": "https://github.com/jmbannon/ytdl-sub/releases"
   },
   "features": [
-    "Subscription automation: Define channels and playlists to monitor and download new content automatically on a schedule.",
-    "Rule-based filtering: Set criteria for which videos to download based on title, duration, upload date, or metadata.",
-    "Preset configurations: Use pre-built presets for common scenarios like music videos, podcasts, or educational content.",
-    "Media server formatting: Organize downloads with naming conventions and folder structures compatible with Plex and Jellyfin.",
-    "Incremental downloads: Only fetch new videos since the last run to minimize bandwidth and processing time.",
-    "NFO file generation: Create metadata files for media servers with episode numbers, descriptions, and artwork.",
-    "Thumbnail management: Download and organize video thumbnails as poster images for media library displays.",
-    "Subtitle handling: Automatically download and embed subtitles in preferred languages with fallback options.",
-    "Quality presets: Configure default quality settings per subscription to balance file size and video quality.",
-    "Dry run mode: Preview what would be downloaded without actually fetching files to test configurations.",
-    "YAML configuration: Define all subscriptions and rules in human-readable YAML files for version control.",
-    "Notification hooks: Trigger webhooks or scripts when new content is downloaded for integration with other systems."
+    {
+      "title": "File Upload",
+      "description": "Set criteria for which videos to download based on title, duration, upload date, or metadata"
+    },
+    {
+      "title": "Folder Organization",
+      "description": "Organize downloads with naming conventions and folder structures compatible with Plex and Jellyfin"
+    },
+    {
+      "title": "Incremental Downloads",
+      "description": "Only fetch new videos since the last run to minimize bandwidth and processing time"
+    },
+    {
+      "title": "Media Library",
+      "description": "Create metadata files for media servers with episode numbers, descriptions, and artwork"
+    },
+    {
+      "title": "Thumbnail Management",
+      "description": "Download and organize video thumbnails as poster images for media library displays"
+    }
   ],
   "platform_support": {
     "desktop": {

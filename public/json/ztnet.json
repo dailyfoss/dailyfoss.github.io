@@ -24,18 +24,22 @@
     "releases": "https://github.com/sinamics/ztnet/releases"
   },
   "features": [
-    "Network management: Create and configure ZeroTier networks with custom IP ranges and routing rules from a web dashboard.",
-    "Member authorization: Approve or deny device join requests and manage which devices can access each network.",
-    "Access rules: Define flow rules to control traffic between network members with firewall-like policies.",
-    "Network monitoring: View connected members, their IP addresses, and connection status in real-time.",
-    "Multi-network support: Manage multiple ZeroTier networks from a single controller instance for different use cases.",
-    "User accounts: Create accounts for team members with permissions to manage specific networks or view-only access.",
-    "Device metadata: Add descriptions and tags to network members for easier identification and organization.",
-    "Route configuration: Set up custom routes to bridge ZeroTier networks with physical networks or other subnets.",
-    "DNS management: Configure DNS settings for networks to enable name resolution between members.",
-    "Audit logging: Track all network changes, member additions, and administrative actions for security compliance.",
-    "API access: Automate network management and member provisioning using REST API endpoints.",
-    "Backup and restore: Export network configurations for disaster recovery or migration to other controllers."
+    {
+      "title": "Analytics Dashboard",
+      "description": "Create and configure ZeroTier networks with custom IP ranges and routing rules from a web"
+    },
+    {
+      "title": "Member Authorization",
+      "description": "Approve or deny device join requests and manage which devices can access each network"
+    },
+    {
+      "title": "Team Collaboration",
+      "description": "Create accounts for team members with permissions to manage specific networks or view-only access"
+    },
+    {
+      "title": "Tagging System",
+      "description": "Add descriptions and tags to network members for easier identification and organization"
+    }
   ],
   "platform_support": {
     "desktop": {

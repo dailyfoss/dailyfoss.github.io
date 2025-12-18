@@ -30,13 +30,38 @@
     "logo_light": "/icons/2fauth-light.webp"
   },
   "features": [
-    "Send notifications via HTTP/CLI (PUT/POST) & REST API",
-    "Priorities, action buttons, icons, tags & emoji",
-    "Attachments: send images/videos/files across devices",
-    "Multi-platform: Android, iOS, and web/desktop notifications",
-    "Many ready-made integrations (cron, GitHub Actions, Node-RED, Uptime Kuma, etc.)",
-    "#OpenSource & self-hosted (run on your own server)",
-    "Advanced API: scheduled & cached messages, filters, multi-topic, auth"
+    {
+      "title": "Two-Factor Authentication",
+      "description": "Generate TOTP/HOTP and Steam Guard security codes for your accounts"
+    },
+    {
+      "title": "QR Code Generation",
+      "description": "Add accounts via QR code scanning or manual entry"
+    },
+    {
+      "title": "Folder Organization",
+      "description": "Organize your 2FA accounts into custom groups for better management"
+    },
+    {
+      "title": "End-to-End Encryption",
+      "description": "Sensitive data is encrypted to keep your accounts secure"
+    },
+    {
+      "title": "Self-Hosted",
+      "description": "Run on your own server with full control over your data"
+    },
+    {
+      "title": "Multi-Device Sync",
+      "description": "Access your 2FA codes from mobile and desktop devices"
+    },
+    {
+      "title": "Database Backup",
+      "description": "Backup your database to prevent losing your 2FA accounts"
+    },
+    {
+      "title": "Session Management",
+      "description": "Automatic logout on inactivity for enhanced security"
+    }
   ],
   "platform_support": {
     "desktop": {

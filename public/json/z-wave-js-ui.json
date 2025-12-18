@@ -24,18 +24,38 @@
     "releases": "https://github.com/zwave-js/zwave-js-ui/releases"
   },
   "features": [
-    "Node management: Add, remove, and configure Z-Wave devices through an intuitive web interface without command-line tools.",
-    "Network visualization: View your Z-Wave mesh network topology with signal strength and routing information.",
-    "Device configuration: Modify device parameters and settings with detailed descriptions and validation.",
-    "Firmware updates: Update device firmware over-the-air when manufacturers release new versions with bug fixes or features.",
-    "Scene control: Create and trigger scenes that control multiple devices simultaneously for automation scenarios.",
-    "Association management: Configure device associations for direct communication without controller involvement.",
-    "Diagnostic tools: Troubleshoot network issues with ping tests, route analysis, and communication statistics.",
-    "MQTT gateway: Expose Z-Wave devices to MQTT for integration with Home Assistant, Node-RED, and other platforms.",
-    "Value monitoring: Track device values and states in real-time with historical graphs and logging.",
-    "Backup and restore: Export complete network configuration including device settings for disaster recovery.",
-    "Security support: Manage S0 and S2 security for encrypted communication with compatible devices.",
-    "Healing tools: Optimize network performance by rebuilding routes and updating neighbor information automatically."
+    {
+      "title": "Web Interface",
+      "description": "Add, remove, and configure Z-Wave devices through an intuitive web interface without command-line tools"
+    },
+    {
+      "title": "Network Visualization",
+      "description": "View your Z-Wave mesh network topology with signal strength and routing information"
+    },
+    {
+      "title": "Device Configuration",
+      "description": "Modify device parameters and settings with detailed descriptions and validation"
+    },
+    {
+      "title": "Firmware Updates",
+      "description": "Update device firmware over-the-air when manufacturers release new versions with bug fixes or features"
+    },
+    {
+      "title": "Scene Control",
+      "description": "Create and trigger scenes that control multiple devices simultaneously for automation scenarios"
+    },
+    {
+      "title": "Single Sign-On",
+      "description": "Configure device associations for direct communication without controller involvement"
+    },
+    {
+      "title": "Diagnostic Tools",
+      "description": "Troubleshoot network issues with ping tests, route analysis, and communication statistics"
+    },
+    {
+      "title": "Mqtt Gateway",
+      "description": "Expose Z-Wave devices to MQTT for integration with Home Assistant, Node-RED, and other platforms"
+    }
   ],
   "platform_support": {
     "desktop": {

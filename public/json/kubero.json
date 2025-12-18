@@ -29,18 +29,22 @@
     "releases": "https://github.com/kubero-dev/kubero/releases"
   },
   "features": [
-    "Kubernetes PaaS: Heroku-like platform for deploying apps to Kubernetes clusters. Simplify K8s complexity.",
-    "Git-Based Deployment: Push code to Git and automatically deploy to Kubernetes. Streamlined deployment workflow.",
-    "Environment Management: Separate dev, staging, and production environments. Manage app lifecycle stages.",
-    "Buildpack Support: Automatic detection and building with Cloud Native Buildpacks. Deploy without Dockerfiles.",
-    "Web UI: Developer-friendly interface for managing apps and deployments. Visual Kubernetes management.",
-    "Pipeline Automation: Automated build, test, and deployment pipelines. CI/CD built-in.",
-    "Environment Variables: Manage configuration and secrets per environment. Secure app configuration.",
-    "Scaling: Manual and automatic scaling of application instances. Handle varying load.",
-    "Logs & Monitoring: View application logs and metrics from dashboard. Debug and monitor apps.",
-    "Database Add-ons: Provision databases and services for applications. Simplify infrastructure setup.",
-    "Custom Domains: Configure custom domains with SSL certificates. Professional app URLs.",
-    "Rollback: Easy rollback to previous deployments when issues occur. Recover from bad deploys quickly."
+    {
+      "title": "Kubernetes Ready",
+      "description": "Heroku-like platform for deploying apps to Kubernetes clusters. Simplify K8s complexity"
+    },
+    {
+      "title": "Tagging System",
+      "description": "Separate dev, staging, and production environments. Manage app lifecycle stages"
+    },
+    {
+      "title": "Docker Support",
+      "description": "Automatic detection and building with Cloud Native Buildpacks. Deploy without Dockerfiles"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Developer-friendly interface for managing apps and deployments. Visual Kubernetes management"
+    }
   ],
   "platform_support": {
     "desktop": {

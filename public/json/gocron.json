@@ -29,14 +29,30 @@
     "releases": "https://github.com/flohoss/gocron/releases"
   },
   "features": [
-    "Web-Based Scheduler: Manage cron jobs through an intuitive web interface instead of crontab files.",
-    "Job History: View execution history, logs, and status for all scheduled tasks.",
-    "Execution Logs: Capture stdout and stderr from job runs for debugging and monitoring.",
-    "Flexible Scheduling: Define schedules using cron syntax or simple interval-based timing.",
-    "Job Management: Create, edit, enable, disable, and delete scheduled jobs from the UI.",
-    "API Access: Programmatically manage jobs via REST API for automation and integration.",
-    "Lightweight Server: Minimal resource requirements suitable for always-on operation.",
-    "Email Notifications: Receive alerts when jobs fail or complete successfully."
+    {
+      "title": "Web Interface",
+      "description": "Manage cron jobs through an intuitive web interface instead of crontab files"
+    },
+    {
+      "title": "Execution Logs",
+      "description": "Capture stdout and stderr from job runs for debugging and monitoring"
+    },
+    {
+      "title": "Job Management",
+      "description": "Create, edit, enable, disable, and delete scheduled jobs from the UI"
+    },
+    {
+      "title": "REST API",
+      "description": "Programmatically manage jobs via REST API for automation and integration"
+    },
+    {
+      "title": "Lightweight",
+      "description": "Minimal resource requirements suitable for always-on operation"
+    },
+    {
+      "title": "Email Notifications",
+      "description": "Receive alerts when jobs fail or complete successfully"
+    }
   ],
   "platform_support": {
     "desktop": {

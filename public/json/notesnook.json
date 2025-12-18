@@ -29,18 +29,26 @@
     "releases": null
   },
   "features": [
-    "Encrypted sync: Synchronize notes across devices with end-to-end encryption for privacy.",
-    "Device registration: Manage which devices can access your notes with device authorization.",
-    "User accounts: Handle authentication and user management for Notesnook clients.",
-    "Cross-platform support: Sync notes between Windows, macOS, Linux, iOS, and Android apps.",
-    "Self-hosted backend: Run your own sync server for complete control over note data.",
-    "Zero-knowledge architecture: Server cannot decrypt notes, ensuring only you can read your content.",
-    "Conflict resolution: Automatically handle sync conflicts when editing on multiple devices.",
-    "Backup support: Export encrypted backups for disaster recovery and data portability.",
-    "API compatibility: Works with official Notesnook clients without modification.",
-    "Secure storage: Notes stored with encryption at rest on your server infrastructure.",
-    "Subscription management: Handle user subscriptions and feature access for clients.",
-    "Privacy-focused: No telemetry or tracking, all data stays on your infrastructure."
+    {
+      "title": "Data Privacy",
+      "description": "Synchronize notes across devices with end-to-end encryption for privacy"
+    },
+    {
+      "title": "User Management",
+      "description": "Handle authentication and user management for Notesnook clients"
+    },
+    {
+      "title": "Real-Time Sync",
+      "description": "Sync notes between Windows, macOS, Linux, iOS, and Android apps"
+    },
+    {
+      "title": "Self-Hosted",
+      "description": "Run your own sync server for complete control over note data"
+    },
+    {
+      "title": "Database Backup",
+      "description": "Export encrypted backups for disaster recovery and data portability"
+    }
   ],
   "platform_support": {
     "desktop": {

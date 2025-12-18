@@ -29,18 +29,22 @@
     "releases": "https://github.com/krakend/krakend-ce/releases"
   },
   "features": [
-    "API Gateway: Unified entry point for microservices with request routing. Simplify API architecture.",
-    "Response Aggregation: Combine multiple backend responses into single API call. Reduce client requests.",
-    "Response Transformation: Modify, filter, and reshape API responses. Customize data for clients.",
-    "High Performance: Ultra-fast request processing with low latency and high throughput. Handle massive traffic.",
-    "Rate Limiting: Protect backends with configurable rate limits per endpoint. Prevent abuse and overload.",
-    "Authentication: JWT validation, OAuth2, and API key authentication. Secure API access.",
-    "Caching: Built-in response caching to reduce backend load. Improve performance dramatically.",
-    "Load Balancing: Distribute requests across multiple backend instances. Ensure high availability.",
-    "Circuit Breaker: Automatic failure detection and recovery for resilient APIs. Handle backend failures gracefully.",
-    "Configuration as Code: JSON-based declarative configuration with version control. Define APIs programmatically.",
-    "Monitoring: Built-in metrics and logging for observability. Track API performance and usage.",
-    "Plugin System: Extend functionality with custom plugins and middleware. Adapt to specific needs."
+    {
+      "title": "REST API",
+      "description": "Unified entry point for microservices with request routing. Simplify API architecture"
+    },
+    {
+      "title": "High Performance",
+      "description": "Ultra-fast request processing with low latency and high throughput. Handle massive traffic"
+    },
+    {
+      "title": "Authentication",
+      "description": "JWT validation, OAuth2, and API key authentication. Secure API access"
+    },
+    {
+      "title": "Load Balancing",
+      "description": "Distribute requests across multiple backend instances. Ensure high availability"
+    }
   ],
   "platform_support": {
     "desktop": {

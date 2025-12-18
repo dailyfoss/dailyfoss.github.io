@@ -29,18 +29,26 @@
     "releases": "https://github.com/PrivateBin/PrivateBin/releases"
   },
   "features": [
-    "Client-side encryption: Encrypt data in the browser before sending to the server for zero-knowledge security.",
-    "Expiration options: Set automatic deletion after time periods or after first read for temporary sharing.",
-    "Password protection: Add optional passwords to pastes for additional access control.",
-    "Syntax highlighting: Display code with syntax highlighting for multiple programming languages.",
-    "Burn after reading: Automatically delete pastes after they're viewed once for maximum privacy.",
-    "File attachments: Upload and share files alongside text with client-side encryption.",
-    "Discussion threads: Enable comments on pastes for collaborative discussions while maintaining encryption.",
-    "QR code generation: Generate QR codes for easy sharing of paste links on mobile devices.",
-    "Markdown support: Format text with Markdown for rich content presentation.",
-    "No database required: Optionally store pastes as encrypted files on disk without database dependencies.",
-    "Open discussion: Create public pastes that anyone can comment on while preserving anonymity.",
-    "API access: Programmatically create and retrieve pastes using a simple API interface."
+    {
+      "title": "End-to-End Encryption",
+      "description": "Encrypt data in the browser before sending to the server for zero-knowledge security"
+    },
+    {
+      "title": "Access Control",
+      "description": "Add optional passwords to pastes for additional access control"
+    },
+    {
+      "title": "Data Privacy",
+      "description": "Automatically delete pastes after they're viewed once for maximum privacy"
+    },
+    {
+      "title": "File Attachments",
+      "description": "Upload and share files alongside text with client-side encryption"
+    },
+    {
+      "title": "Mobile Responsive",
+      "description": "Generate QR codes for easy sharing of paste links on mobile devices"
+    }
   ],
   "platform_support": {
     "desktop": {

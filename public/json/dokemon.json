@@ -29,14 +29,26 @@
     "releases": "https://github.com/productiveops/dokemon/releases"
   },
   "features": [
-    "Cluster visualization: View all Kubernetes resources including pods, services, and deployments in a unified dashboard.",
-    "Namespace management: Switch between namespaces and filter resources by scope for organized multi-tenant environments.",
-    "Resource monitoring: Track CPU, memory, and storage usage across nodes and workloads with real-time metrics.",
-    "Event tracking: Monitor cluster events and state changes to identify issues and understand system behavior.",
-    "Log aggregation: Access container logs directly from the interface without kubectl commands for faster troubleshooting.",
-    "Workload control: Start, stop, and scale deployments through the web UI with immediate feedback on status changes.",
-    "RBAC integration: Respect Kubernetes permissions to show only resources accessible to the authenticated user.",
-    "Multi-cluster support: Connect to multiple Kubernetes environments and switch between them from a single interface."
+    {
+      "title": "Analytics Dashboard",
+      "description": "View all Kubernetes resources including pods, services, and deployments in a unified dashboard"
+    },
+    {
+      "title": "Namespace Management",
+      "description": "Switch between namespaces and filter resources by scope for organized multi-tenant environments"
+    },
+    {
+      "title": "High Performance",
+      "description": "Access container logs directly from the interface without kubectl commands for faster troubleshooting"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Start, stop, and scale deployments through the web UI with immediate feedback on status changes"
+    },
+    {
+      "title": "Kubernetes Ready",
+      "description": "Respect Kubernetes permissions to show only resources accessible to the authenticated user"
+    }
   ],
   "platform_support": {
     "desktop": {

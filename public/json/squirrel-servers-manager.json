@@ -29,18 +29,22 @@
     "releases": null
   },
   "features": [
-    "Server management: Manages multiple servers from centralized dashboard.",
-    "Ansible integration: Executes Ansible playbooks for configuration management.",
-    "Docker control: Manages Docker containers and images across servers.",
-    "Service monitoring: Tracks service status and resource usage in real-time.",
-    "Inventory management: Organizes servers into groups and environments.",
-    "Playbook execution: Runs automation tasks with visual playbook builder.",
-    "SSH access: Connects to servers via web-based SSH terminal.",
-    "File management: Browses and edits files on remote servers.",
-    "User permissions: Controls access with role-based permissions for team members.",
-    "Scheduled tasks: Automates recurring maintenance with cron-like scheduling.",
-    "Audit logs: Records all actions and changes for compliance.",
-    "API access: Automates server management via REST API."
+    {
+      "title": "Analytics Dashboard",
+      "description": "Manages multiple servers from centralized dashboard"
+    },
+    {
+      "title": "Docker Support",
+      "description": "Manages Docker containers and images across servers"
+    },
+    {
+      "title": "Inventory Management",
+      "description": "Organizes servers into groups and environments"
+    },
+    {
+      "title": "File Management",
+      "description": "Browses and edits files on remote servers"
+    }
   ],
   "platform_support": {
     "desktop": {

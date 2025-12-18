@@ -1,7 +1,7 @@
 "use client";
 
 import { Crown, LayoutGrid, Mail } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import type { Category, Script } from "@/lib/types";
@@ -12,7 +12,6 @@ import { Badge } from "@/components/ui/badge";
 
 type SponsoredSidebarProps = {
   items: Category[];
-  onScriptSelect?: (slug: string) => void;
 };
 
 // Simple icon loader with fallback and theme support
@@ -73,37 +72,84 @@ function AppIcon({ src, src_light, name, size = 48 }: { src?: string | null; src
   );
 }
 
-export function SponsoredSidebar({ items, onScriptSelect }: SponsoredSidebarProps) {
-  const sponsoredScripts = useMemo(() => {
-    if (!items)
-      return [];
+export function SponsoredSidebar({ items }: SponsoredSidebarProps) {
+  const [sponsoredScripts, setSponsoredScripts] = useState<Script[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [useFallback, setUseFallback] = useState(false);
 
-    const scripts = items.flatMap(category => category.scripts || []);
+  // Cloudflare Worker API endpoint (update this with your worker URL)
+  const WORKER_URL = process.env.NEXT_PUBLIC_SPONSORED_API || 'https://sponsored-api.yourdomain.workers.dev/api/sponsored';
 
-    // Filter out duplicates and get only active sponsored scripts
-    const uniqueScriptsMap = new Map<string, Script>();
-    scripts.forEach((script) => {
-      if (!uniqueScriptsMap.has(script.slug) && script.metadata?.sponsored) {
-        uniqueScriptsMap.set(script.slug, script);
+  // Fetch sponsored slugs from Cloudflare Worker and resolve to full scripts
+  const fetchSponsored = async () => {
+    try {
+      const response = await fetch(WORKER_URL, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`API error: ${response.status}`);
       }
-    });
 
-    const allSponsored = Array.from(uniqueScriptsMap.values());
-    
-    // Generate hourly rotation seed (changes every hour for faster, fairer rotation)
-    const now = new Date();
-    const hoursSinceEpoch = Math.floor(now.getTime() / (1000 * 60 * 60));
-    const rotationSeed = hoursSinceEpoch;
-    
-    // Shuffle array based on hourly seed for fair rotation
-    const shuffled = [...allSponsored].sort((a, b) => {
-      // Create deterministic hash for each script based on slug + hourly seed
-      const hashA = a.slug.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) + rotationSeed;
-      const hashB = b.slug.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) + rotationSeed;
-      return hashA - hashB;
-    });
+      const data: { success: boolean; slugs?: string[] } = await response.json();
+      
+      if (data.success && data.slugs && Array.isArray(data.slugs)) {
+        // Convert slugs to full script objects by looking them up in categories
+        const allScripts = items.flatMap((category: Category) => category.scripts || []);
+        const resolvedScripts = data.slugs
+          .map((slug: string) => allScripts.find((script: Script) => script.slug === slug))
+          .filter((script): script is Script => script !== undefined);
+        
+        setSponsoredScripts(resolvedScripts);
+        setUseFallback(false);
+      } else {
+        throw new Error('Invalid response format');
+      }
+    } catch (error) {
+      console.error('Failed to fetch sponsored slugs from worker, using fallback:', error);
+      setUseFallback(true);
+      
+      // Fallback: use local calculation
+      if (items) {
+        const scripts = items.flatMap(category => category.scripts || []);
+        const uniqueScriptsMap = new Map<string, Script>();
+        scripts.forEach((script) => {
+          if (!uniqueScriptsMap.has(script.slug) && script.metadata?.sponsored) {
+            uniqueScriptsMap.set(script.slug, script);
+          }
+        });
+        const allSponsored = Array.from(uniqueScriptsMap.values());
+        
+        // Simple client-side rotation as fallback
+        const now = new Date();
+        const minutesSinceEpoch = Math.floor(now.getTime() / (1000 * 60));
+        const shuffled = [...allSponsored].sort((a, b) => {
+          const hashA = a.slug.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) + minutesSinceEpoch;
+          const hashB = b.slug.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) + minutesSinceEpoch;
+          return hashA - hashB;
+        });
+        setSponsoredScripts(shuffled.slice(0, 5));
+      }
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
-    return shuffled.slice(0, 5); // Max 5 sponsored scripts
+  // Initial fetch on mount
+  useEffect(() => {
+    fetchSponsored();
+  }, []);
+
+  // Auto-refresh every minute
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetchSponsored();
+    }, 60000); // 60 seconds
+
+    return () => clearInterval(interval);
   }, [items]);
 
   const MAX_SPOTS = 5;
@@ -240,7 +286,7 @@ export function SponsoredSidebar({ items, onScriptSelect }: SponsoredSidebarProp
               </a>
             </Button>
             <p className="text-[9px] text-muted-foreground/80 pt-1 font-medium">
-              From $99/month
+              From $25/month
             </p>
           </CardContent>
         </Card>

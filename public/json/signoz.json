@@ -29,18 +29,38 @@
     "releases": "https://github.com/SigNoz/signoz/releases"
   },
   "features": [
-    "Distributed tracing: Visualizes request flows across microservices with trace timelines.",
-    "Metrics monitoring: Collects and displays application and infrastructure metrics in dashboards.",
-    "Log management: Aggregates logs from multiple sources with search and filtering.",
-    "OpenTelemetry native: Built on OpenTelemetry for vendor-neutral instrumentation.",
-    "Custom dashboards: Creates visualizations with charts, graphs, and tables for metrics.",
-    "Alert rules: Configures alerts based on metrics, traces, or log patterns.",
-    "Service maps: Automatically generates topology maps showing service dependencies.",
-    "Query builder: Builds complex queries with visual interface or PromQL-like syntax.",
-    "Anomaly detection: Identifies unusual patterns in metrics and traces automatically.",
-    "Data retention: Configures retention policies for traces, metrics, and logs separately.",
-    "Team collaboration: Shares dashboards and alerts across team members.",
-    "ClickHouse backend: Uses ClickHouse for fast querying of large observability datasets."
+    {
+      "title": "Distributed Tracing",
+      "description": "Visualizes request flows across microservices with trace timelines"
+    },
+    {
+      "title": "Analytics Dashboard",
+      "description": "Collects and displays application and infrastructure metrics in dashboards"
+    },
+    {
+      "title": "Search and Filter",
+      "description": "Aggregates logs from multiple sources with search and filtering"
+    },
+    {
+      "title": "Opentelemetry Native",
+      "description": "Built on OpenTelemetry for vendor-neutral instrumentation"
+    },
+    {
+      "title": "Custom Dashboards",
+      "description": "Creates visualizations with charts, graphs, and tables for metrics"
+    },
+    {
+      "title": "Alert Rules",
+      "description": "Configures alerts based on metrics, traces, or log patterns"
+    },
+    {
+      "title": "Service Maps",
+      "description": "Automatically generates topology maps showing service dependencies"
+    },
+    {
+      "title": "Query Builder",
+      "description": "Builds complex queries with visual interface or PromQL-like syntax"
+    }
   ],
   "platform_support": {
     "desktop": {

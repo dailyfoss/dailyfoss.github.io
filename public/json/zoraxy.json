@@ -24,18 +24,22 @@
     "releases": "https://github.com/tobychui/zoraxy/releases"
   },
   "features": [
-    "Reverse proxy: Route incoming requests to backend services based on domain names and path patterns.",
-    "SSL management: Automatically obtain and renew SSL certificates from Let's Encrypt with ACME protocol support.",
-    "Load balancing: Distribute traffic across multiple backend servers with health checks and failover capabilities.",
-    "Web firewall: Protect services with built-in firewall rules, rate limiting, and IP blocking features.",
-    "Access control: Restrict access to services by IP address, geographic location, or authentication requirements.",
-    "Web interface: Configure all proxy rules, SSL certificates, and security settings through an intuitive dashboard.",
-    "Custom headers: Add, modify, or remove HTTP headers for requests and responses to meet application requirements.",
-    "WebSocket support: Proxy WebSocket connections for real-time applications alongside standard HTTP traffic.",
-    "Logging and analytics: Monitor traffic patterns, response times, and errors with detailed access logs.",
-    "Redirect rules: Set up HTTP to HTTPS redirects and custom URL rewriting rules without backend changes.",
-    "Authentication proxy: Add authentication layers to services that don't have built-in user management.",
-    "Docker integration: Automatically discover and configure proxies for Docker containers with label-based configuration."
+    {
+      "title": "Ssl Management",
+      "description": "Automatically obtain and renew SSL certificates from Let's Encrypt with ACME protocol support"
+    },
+    {
+      "title": "Load Balancing",
+      "description": "Distribute traffic across multiple backend servers with health checks and failover capabilities"
+    },
+    {
+      "title": "Access Control",
+      "description": "Restrict access to services by IP address, geographic location, or authentication requirements"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Configure all proxy rules, SSL certificates, and security settings through an intuitive dashboard"
+    }
   ],
   "platform_support": {
     "desktop": {

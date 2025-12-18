@@ -29,18 +29,22 @@
     "releases": null
   },
   "features": [
-    "Beta monitoring: Monitor TestFlight public beta programs for availability and new build releases.",
-    "Instant alerts: Receive notifications immediately when beta slots open up or new builds are published.",
-    "Multiple apps: Track multiple TestFlight apps simultaneously from a single dashboard.",
-    "Automatic checking: Poll TestFlight at configurable intervals to catch openings as soon as they happen.",
-    "Notification channels: Send alerts via email, Telegram, Discord, or webhooks to your preferred platform.",
-    "Build tracking: Track version numbers and build updates to stay informed of app development progress.",
-    "Availability history: View historical data on when beta slots were available and how quickly they filled.",
-    "Custom intervals: Configure check frequency per app to balance responsiveness with API rate limits.",
-    "Status dashboard: View current status of all monitored apps in a centralized web interface.",
-    "Quiet hours: Disable notifications during specific times to avoid alerts during sleep or work hours.",
-    "Link generation: Get direct TestFlight links in notifications for immediate beta access.",
-    "Lightweight operation: Run efficiently with minimal resource usage for continuous monitoring."
+    {
+      "title": "Email Notifications",
+      "description": "Receive notifications immediately when beta slots open up or new builds are published"
+    },
+    {
+      "title": "Analytics Dashboard",
+      "description": "Track multiple TestFlight apps simultaneously from a single dashboard"
+    },
+    {
+      "title": "Notification Channels",
+      "description": "Send alerts via email, Telegram, Discord, or webhooks to your preferred platform"
+    },
+    {
+      "title": "REST API",
+      "description": "Configure check frequency per app to balance responsiveness with API rate limits"
+    }
   ],
   "platform_support": {
     "desktop": {

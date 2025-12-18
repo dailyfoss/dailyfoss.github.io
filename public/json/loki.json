@@ -29,10 +29,22 @@
     "releases": "https://github.com/grafana/loki/releases"
   },
   "features": [
-    "Log Aggregation: Horizontally scalable, Multi-tenant, Efficient storage. Collect logs from all services.",
-    "Grafana Integration: Native visualization, Query builder, Dashboards. Explore logs visually.",
-    "LogQL: Powerful query language, Label-based filtering, Metrics extraction. Find what you need quickly.",
-    "Cost-Effective: Index-free, Object storage, Low overhead. Affordable log management at scale."
+    {
+      "title": "Log Aggregation",
+      "description": "Horizontally scalable, Multi-tenant, Efficient storage. Collect logs from all services"
+    },
+    {
+      "title": "Analytics Dashboard",
+      "description": "Native visualization, Query builder, Dashboards. Explore logs visually"
+    },
+    {
+      "title": "Logql",
+      "description": "Powerful query language, Label-based filtering, Metrics extraction. Find what you need quickly"
+    },
+    {
+      "title": "Cost",
+      "description": "Index-free, Object storage, Low overhead. Affordable log management at scale"
+    }
   ],
   "platform_support": {
     "desktop": {

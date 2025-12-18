@@ -29,14 +29,22 @@
     "releases": "https://github.com/dokku/dokku/releases"
   },
   "features": [
-    "Git push deployment: Deploy applications by pushing code to a Git remote without manual build steps or configuration.",
-    "Buildpack support: Automatically detect and build Node.js, Python, Ruby, PHP, and other languages using Heroku buildpacks.",
-    "Zero-downtime deploys: Roll out new versions with automatic health checks and traffic switching for uninterrupted service.",
-    "Plugin system: Extend functionality with community plugins for databases, caching, monitoring, and additional services.",
-    "SSL automation: Obtain and renew Let's Encrypt certificates automatically for secure HTTPS connections.",
-    "Environment management: Configure application settings using environment variables without modifying code.",
-    "Database linking: Provision and connect PostgreSQL, MySQL, Redis, and other databases with single commands.",
-    "Domain routing: Map custom domains to applications with automatic proxy configuration and virtual host management."
+    {
+      "title": "Git Push Deployment",
+      "description": "Deploy applications by pushing code to a Git remote without manual build steps or configuration"
+    },
+    {
+      "title": "Plugin System",
+      "description": "Extend functionality with community plugins for databases, caching, monitoring, and additional services"
+    },
+    {
+      "title": "Environment Management",
+      "description": "Configure application settings using environment variables without modifying code"
+    },
+    {
+      "title": "Database Linking",
+      "description": "Provision and connect PostgreSQL, MySQL, Redis, and other databases with single commands"
+    }
   ],
   "platform_support": {
     "desktop": {

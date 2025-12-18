@@ -29,18 +29,26 @@
     "releases": "https://github.com/wow-signal-dev/metadata-remote/releases"
   },
   "features": [
-    "Metadata fetching: Retrieve TV show and movie information from online databases automatically.",
-    "Local caching: Store metadata locally to reduce external API calls and improve performance.",
-    "Media server integration: Connect with Plex, Emby, or Jellyfin to provide metadata services.",
-    "Poster and artwork: Download and serve cover art, posters, and background images for media.",
-    "Episode information: Fetch detailed episode data including titles, descriptions, and air dates.",
-    "Cast and crew data: Provide actor, director, and production information for media items.",
-    "Multiple sources: Aggregate metadata from various online databases for comprehensive coverage.",
-    "API compatibility: Implement standard metadata API protocols for seamless media server integration.",
-    "Update scheduling: Automatically refresh metadata on a schedule to keep information current.",
-    "Custom mappings: Override or supplement automatic metadata with manual corrections.",
-    "Bandwidth optimization: Reduce external API usage by serving cached metadata locally.",
-    "Privacy focused: Keep metadata requests within your network without exposing viewing habits."
+    {
+      "title": "REST API",
+      "description": "Store metadata locally to reduce external API calls and improve performance"
+    },
+    {
+      "title": "Media Library",
+      "description": "Connect with Plex, Emby, or Jellyfin to provide metadata services"
+    },
+    {
+      "title": "Poster And Artwork",
+      "description": "Download and serve cover art, posters, and background images for media"
+    },
+    {
+      "title": "Cast And Crew Data",
+      "description": "Provide actor, director, and production information for media items"
+    },
+    {
+      "title": "Api Compatibility",
+      "description": "Implement standard metadata API protocols for seamless media server integration"
+    }
   ],
   "platform_support": {
     "desktop": {

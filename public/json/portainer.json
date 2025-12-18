@@ -29,18 +29,34 @@
     "releases": "https://github.com/portainer/portainer/releases"
   },
   "features": [
-    "Container management: Deploy, start, stop, and remove Docker containers through a web interface.",
-    "Kubernetes support: Manage Kubernetes clusters with visual tools for deployments and services.",
-    "Stack deployment: Deploy multi-container applications using Docker Compose or Kubernetes manifests.",
-    "Image management: Pull, push, and manage container images from registries.",
-    "Volume management: Create and manage persistent storage volumes for container data.",
-    "Network configuration: Set up and manage container networks with custom configurations.",
-    "User access control: Define teams and roles with granular permissions for multi-user environments.",
-    "Registry management: Connect to multiple container registries including Docker Hub and private registries.",
-    "Template library: Deploy applications quickly using pre-configured templates for common services.",
-    "Resource monitoring: View CPU, memory, and network usage for containers and hosts.",
-    "Log viewing: Access container logs directly in the interface for troubleshooting.",
-    "Multi-endpoint: Manage multiple Docker hosts and Kubernetes clusters from a single dashboard."
+    {
+      "title": "Web Interface",
+      "description": "Deploy, start, stop, and remove Docker containers through a web interface"
+    },
+    {
+      "title": "Kubernetes Ready",
+      "description": "Manage Kubernetes clusters with visual tools for deployments and services"
+    },
+    {
+      "title": "Docker Support",
+      "description": "Deploy multi-container applications using Docker Compose or Kubernetes manifests"
+    },
+    {
+      "title": "Image Management",
+      "description": "Pull, push, and manage container images from registries"
+    },
+    {
+      "title": "Volume Management",
+      "description": "Create and manage persistent storage volumes for container data"
+    },
+    {
+      "title": "Team Collaboration",
+      "description": "Define teams and roles with granular permissions for multi-user environments"
+    },
+    {
+      "title": "Registry Management",
+      "description": "Connect to multiple container registries including Docker Hub and private registries"
+    }
   ],
   "platform_support": {
     "desktop": {

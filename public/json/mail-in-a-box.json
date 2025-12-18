@@ -29,16 +29,26 @@
     "releases": "https://github.com/mail-in-a-box/mailinabox/releases"
   },
   "features": [
-    "One-command setup: Deploy a complete mail server with DNS, SMTP, IMAP, and webmail using a single script.",
-    "Automatic DNS: Configure DNS records automatically including MX, SPF, DKIM, and DMARC for proper email delivery.",
-    "Webmail included: Access email through Roundcube webmail interface without additional configuration.",
-    "SSL certificates: Automatic Let's Encrypt SSL certificate provisioning and renewal for secure connections.",
-    "Spam filtering: Built-in spam and virus scanning to protect mailboxes from unwanted content.",
-    "Backup system: Automated daily backups of mail data with easy restoration options.",
-    "Status monitoring: Dashboard shows system health, certificate status, and configuration warnings.",
-    "Multi-user support: Create and manage multiple email accounts and aliases through the admin panel.",
-    "Greylisting: Reduce spam with greylisting that temporarily rejects mail from unknown senders.",
-    "Mobile compatibility: Full support for IMAP/SMTP on mobile devices and desktop email clients."
+    {
+      "title": "Webmail Included",
+      "description": "Access email through Roundcube webmail interface without additional configuration"
+    },
+    {
+      "title": "Spam Filtering",
+      "description": "Built-in spam and virus scanning to protect mailboxes from unwanted content"
+    },
+    {
+      "title": "Database Backup",
+      "description": "Automated daily backups of mail data with easy restoration options"
+    },
+    {
+      "title": "Analytics Dashboard",
+      "description": "Dashboard shows system health, certificate status, and configuration warnings"
+    },
+    {
+      "title": "Team Collaboration",
+      "description": "Create and manage multiple email accounts and aliases through the admin panel"
+    }
   ],
   "platform_support": {
     "desktop": {

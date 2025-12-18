@@ -24,18 +24,22 @@
     "releases": null
   },
   "features": [
-    "Kubernetes platform: Deploys curated open-source apps on Kubernetes clusters.",
-    "App catalog: Provides pre-configured applications ready for deployment.",
-    "Helm charts: Uses Helm for standardized app packaging and deployment.",
-    "Multi-tenancy: Isolates apps and data for different users or organizations.",
-    "Automated backups: Backs up application data automatically to configured storage.",
-    "SSL management: Handles SSL certificates automatically with cert-manager.",
-    "Resource limits: Enforces CPU and memory limits per application.",
-    "Monitoring: Integrates Prometheus and Grafana for observability.",
-    "Single sign-on: Provides unified authentication across deployed applications.",
-    "Storage management: Manages persistent volumes for application data.",
-    "Update management: Handles application updates with rollback capability.",
-    "CLI tools: Manages platform and apps via command-line interface."
+    {
+      "title": "Kubernetes Ready",
+      "description": "Deploys curated open-source apps on Kubernetes clusters"
+    },
+    {
+      "title": "App Catalog",
+      "description": "Provides pre-configured applications ready for deployment"
+    },
+    {
+      "title": "Database Backup",
+      "description": "Backs up application data automatically to configured storage"
+    },
+    {
+      "title": "Ssl Management",
+      "description": "Handles SSL certificates automatically with cert-manager"
+    }
   ],
   "platform_support": {
     "desktop": {

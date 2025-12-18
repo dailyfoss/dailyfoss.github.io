@@ -29,18 +29,22 @@
     "releases": "https://github.com/containrrr/watchtower/releases"
   },
   "features": [
-    "Automatic updates: Monitor Docker containers and automatically pull and deploy new image versions when available.",
-    "Scheduled scans: Configure update check intervals from minutes to days based on your update preferences.",
-    "Notification system: Receive alerts via email, Slack, Discord, or webhooks when containers are updated.",
-    "Rolling updates: Update containers one at a time to minimize downtime and maintain service availability.",
-    "Label-based control: Use Docker labels to include or exclude specific containers from automatic updates.",
-    "Pre/post-update hooks: Execute custom scripts before or after updates for backup or validation tasks.",
-    "Registry authentication: Support private Docker registries with credential management for enterprise deployments.",
-    "Update monitoring: Track update history and view logs of all container updates performed.",
-    "Cleanup automation: Automatically remove old Docker images after successful updates to save disk space.",
-    "Test mode: Run in monitor-only mode to see what would be updated without making actual changes.",
-    "Resource efficient: Minimal CPU and memory footprint suitable for running on resource-constrained hosts.",
-    "Multi-host support: Manage updates across multiple Docker hosts using Docker Swarm or remote API connections."
+    {
+      "title": "Docker Support",
+      "description": "Monitor Docker containers and automatically pull and deploy new image versions when available"
+    },
+    {
+      "title": "Email Notifications",
+      "description": "Receive alerts via email, Slack, Discord, or webhooks when containers are updated"
+    },
+    {
+      "title": "Database Backup",
+      "description": "Execute custom scripts before or after updates for backup or validation tasks"
+    },
+    {
+      "title": "Registry Authentication",
+      "description": "Support private Docker registries with credential management for enterprise deployments"
+    }
   ],
   "platform_support": {
     "desktop": {

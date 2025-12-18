@@ -29,14 +29,22 @@
     "releases": "https://github.com/inventree/InvenTree/releases"
   },
   "features": [
-    "Parts Management: Track components, assemblies, and finished products with detailed specifications.",
-    "Stock Control: Monitor inventory levels across multiple locations with low-stock alerts.",
-    "BOM Management: Create and manage bill of materials for assemblies and products.",
-    "Supplier Integration: Track suppliers, purchase orders, and pricing information.",
-    "Build Orders: Manage production builds with material allocation and tracking.",
-    "Location Tracking: Organize inventory across warehouses, shelves, and bins.",
-    "Barcode Support: Generate and scan barcodes for efficient inventory operations.",
-    "API Access: Integrate with other systems using comprehensive REST API."
+    {
+      "title": "Parts Management",
+      "description": "Track components, assemblies, and finished products with detailed specifications"
+    },
+    {
+      "title": "Bom Management",
+      "description": "Create and manage bill of materials for assemblies and products"
+    },
+    {
+      "title": "Barcode Support",
+      "description": "Generate and scan barcodes for efficient inventory operations"
+    },
+    {
+      "title": "REST API",
+      "description": "Integrate with other systems using comprehensive REST API"
+    }
   ],
   "platform_support": {
     "desktop": {
