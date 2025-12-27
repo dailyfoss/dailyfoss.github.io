@@ -1,7 +1,8 @@
 {
   "name": "mail-archiver",
   "slug": "mail-archiver",
-  "tagline": null,
+  "tagline": "A self-hosted service for archiving and searching email messages",
+  "subtitle": "",
   "description": "Mail Archiver is a small self-hosted solution that captures and archives emails for permanent searchable storage. It supports IMAP fetching and full-text search for compliance or personal records.",
   "categories": [
     53
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/s1t5/mail-archiver",
     "source_code": "https://github.com/s1t5/mail-archiver",
     "logo": "/icons/mail-archiver.webp",
+    "screenshot": "",
     "issues": "https://github.com/s1t5/mail-archiver/issues",
     "releases": "https://github.com/s1t5/mail-archiver/releases",
     "logo_light": "/icons/mail-archiver-light.webp"
@@ -87,5 +89,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "mail-archiver",
+      "url": "https://apps.truenas.com/catalog/mail-archiver"
+    }
+  }
 }

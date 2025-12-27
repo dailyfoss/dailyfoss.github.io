@@ -1,7 +1,8 @@
 {
   "name": "quickdrop",
   "slug": "quickdrop",
-  "tagline": null,
+  "tagline": "A simple self-hosted app for fast file transfers",
+  "subtitle": "",
   "description": "QuickDrop is a self-hosted file sharing app optimized for dropping large files across devices over local network or public access. It has a straightforward UI and supports drag-and-drop transfers.",
   "categories": [
     91
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/RoastSlav/quickdrop",
     "source_code": "https://github.com/RoastSlav/quickdrop",
     "logo": "/icons/quickdrop.webp",
+    "screenshot": "",
     "issues": "https://github.com/RoastSlav/quickdrop/issues",
     "releases": "https://github.com/RoastSlav/quickdrop/releases"
   },
@@ -102,5 +104,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "qui",
+      "url": "https://apps.truenas.com/catalog/qui"
+    }
+  }
 }

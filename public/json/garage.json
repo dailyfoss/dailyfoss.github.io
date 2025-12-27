@@ -1,7 +1,8 @@
 {
   "name": "garage",
   "slug": "garage",
-  "tagline": null,
+  "tagline": "A self-hosted distributed object storage backend with an S3-compatible API",
+  "subtitle": "",
   "description": "Garage is a distributed storage backend designed for self-hosted deployments. It replicates data across nodes, supports S3-compatible APIs, and is built for durability and low-overhead cloud-style storage.",
   "categories": [
     113
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/deuxfleurs-org/garage",
     "source_code": "https://github.com/deuxfleurs-org/garage",
     "logo": "/icons/garage.webp",
+    "screenshot": "",
     "issues": "https://github.com/deuxfleurs-org/garage/issues",
     "releases": null
   },
@@ -113,6 +115,11 @@
       "supported": true,
       "repo_name": "garage_ynh",
       "url": "https://github.com/YunoHost-Apps/garage_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "garage",
+      "url": "https://apps.truenas.com/catalog/garage"
     }
   }
 }

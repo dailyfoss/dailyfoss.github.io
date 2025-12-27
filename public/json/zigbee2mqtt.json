@@ -1,7 +1,8 @@
 {
   "name": "zigbee2mqtt",
   "slug": "zigbee2mqtt",
-  "tagline": null,
+  "tagline": "A bridge between Zigbee devices and MQTT",
+  "subtitle": "",
   "description": "Zigbee2MQTT is a self-hosted bridge that connects Zigbee devices to MQTT, enabling integration with many home automation platforms. It runs as a service with a web dashboard for managing devices and networks.",
   "categories": [
     76
@@ -20,6 +21,7 @@
     "documentation": "https://github.com/Koenkk/zigbee2mqtt",
     "source_code": "https://github.com/Koenkk/zigbee2mqtt",
     "logo": "/icons/zigbee2mqtt.webp",
+    "screenshot": "",
     "issues": "https://github.com/Koenkk/zigbee2mqtt/issues",
     "releases": "https://github.com/Koenkk/zigbee2mqtt/releases"
   },
@@ -108,6 +110,11 @@
       "supported": true,
       "repo_name": "zigbee2mqtt_ynh",
       "url": "https://github.com/YunoHost-Apps/zigbee2mqtt_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "zigbee2mqtt",
+      "url": "https://apps.truenas.com/catalog/zigbee2mqtt"
     }
   }
 }

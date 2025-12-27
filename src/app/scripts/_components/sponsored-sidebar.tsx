@@ -75,13 +75,21 @@ function AppIcon({ src, src_light, name, size = 48 }: { src?: string | null; src
 export function SponsoredSidebar({ items }: SponsoredSidebarProps) {
   const [sponsoredScripts, setSponsoredScripts] = useState<Script[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [useFallback, setUseFallback] = useState(false);
 
-  // Cloudflare Worker API endpoint (update this with your worker URL)
-  const WORKER_URL = process.env.NEXT_PUBLIC_SPONSORED_API || 'https://sponsored-api.yourdomain.workers.dev/api/sponsored';
+  // Cloudflare Worker API endpoint
+  const WORKER_URL = process.env.NEXT_PUBLIC_SPONSORED_API;
 
   // Fetch sponsored slugs from Cloudflare Worker and resolve to full scripts
   const fetchSponsored = async () => {
+    // If no worker URL is configured, don't show sponsored tools
+    if (!WORKER_URL) {
+      console.log('Cloudflare Worker not configured, sponsored tools disabled');
+      setIsLoading(false);
+      return;
+    }
+
+    console.log('Fetching sponsored tools from:', WORKER_URL);
+
     try {
       const response = await fetch(WORKER_URL, {
         method: 'GET',
@@ -91,7 +99,8 @@ export function SponsoredSidebar({ items }: SponsoredSidebarProps) {
       });
 
       if (!response.ok) {
-        throw new Error(`API error: ${response.status}`);
+        console.error(`Worker API error: ${response.status} ${response.statusText}`);
+        return;
       }
 
       const data: { success: boolean; slugs?: string[] } = await response.json();
@@ -104,53 +113,28 @@ export function SponsoredSidebar({ items }: SponsoredSidebarProps) {
           .filter((script): script is Script => script !== undefined);
         
         setSponsoredScripts(resolvedScripts);
-        setUseFallback(false);
       } else {
-        throw new Error('Invalid response format');
+        console.error('Invalid response format from worker:', data);
       }
     } catch (error) {
-      console.error('Failed to fetch sponsored slugs from worker, using fallback:', error);
-      setUseFallback(true);
-      
-      // Fallback: use local calculation
-      if (items) {
-        const scripts = items.flatMap(category => category.scripts || []);
-        const uniqueScriptsMap = new Map<string, Script>();
-        scripts.forEach((script) => {
-          if (!uniqueScriptsMap.has(script.slug) && script.metadata?.sponsored) {
-            uniqueScriptsMap.set(script.slug, script);
-          }
-        });
-        const allSponsored = Array.from(uniqueScriptsMap.values());
-        
-        // Simple client-side rotation as fallback
-        const now = new Date();
-        const minutesSinceEpoch = Math.floor(now.getTime() / (1000 * 60));
-        const shuffled = [...allSponsored].sort((a, b) => {
-          const hashA = a.slug.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) + minutesSinceEpoch;
-          const hashB = b.slug.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) + minutesSinceEpoch;
-          return hashA - hashB;
-        });
-        setSponsoredScripts(shuffled.slice(0, 5));
-      }
+      // Silently fail - sponsored tools are optional
+      console.log('Sponsored tools unavailable:', error instanceof Error ? error.message : 'Unknown error');
     } finally {
       setIsLoading(false);
     }
   };
 
-  // Initial fetch on mount
+  // Initial fetch on mount and auto-refresh every minute
   useEffect(() => {
     fetchSponsored();
-  }, []);
 
-  // Auto-refresh every minute
-  useEffect(() => {
     const interval = setInterval(() => {
       fetchSponsored();
     }, 60000); // 60 seconds
 
     return () => clearInterval(interval);
-  }, [items]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [WORKER_URL, items]);
 
   const MAX_SPOTS = 5;
   const availableSpots = MAX_SPOTS - sponsoredScripts.length;
@@ -161,15 +145,15 @@ export function SponsoredSidebar({ items }: SponsoredSidebarProps) {
 
   return (
     <aside className="hidden lg:block lg:min-w-[260px] lg:max-w-[260px]">
-      <div className="sticky top-4 space-y-4">
-        {/* Header - Enhanced */}
+      <div className="sticky top-24 space-y-4">
+        {/* Header - Aligned with Trending This Month */}
         <div className="px-1">
-          <div className="flex items-center gap-2 mt-8 mb-2 pb-2 border-b border-border/40">
+          <div className="flex items-center gap-2 mb-6 pb-3 border-b-2 border-primary/20">
             <Crown className="h-5 w-5 text-blue-500/80" />
             <h2 className="text-base font-bold text-foreground/90">Sponsored Tools</h2>
           </div>
           {sponsoredScripts.length > 0 && (
-            <p className="text-[10px] text-muted-foreground/80">
+            <p className="text-[10px] text-muted-foreground/80 -mt-4 mb-4">
               {isFull
                 ? (
                   "All spots taken"

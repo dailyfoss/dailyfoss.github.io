@@ -26,6 +26,7 @@ export type Script = {
     source_code: string | null;
     logo: string | null;
     logo_light?: string | null;
+    screenshot?: string | null;
     issues: string | null;
     releases: string | null;
   };
@@ -33,6 +34,7 @@ export type Script = {
     icon?: string; // Optional - will auto-detect from title if not provided
     title: string;
     description: string;
+    core_feature?: boolean; // True for core features, false/undefined for additional
   }>;
   platform_support: {
     desktop: {
@@ -92,6 +94,11 @@ export type Script = {
     yunohost?: {
       supported: boolean;
       repo_name?: string;
+      url?: string;
+    };
+    truenas?: {
+      supported: boolean;
+      app_name?: string;
       url?: string;
     };
   };

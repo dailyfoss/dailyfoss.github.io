@@ -1,7 +1,8 @@
 {
   "name": "homebox",
   "slug": "homebox",
-  "tagline": null,
+  "tagline": "A self-hosted inventory manager for tracking items locations and warranties",
+  "subtitle": "",
   "description": "Homebox is a self hosted inventory management app for home and office. It helps track items, locations, warranties and purchase details, with search and tagging features so you can quickly find what you own and where it is stored.",
   "categories": [
     21
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/sysadminsmedia/homebox",
     "source_code": "https://github.com/sysadminsmedia/homebox",
     "logo": "/icons/homebox.webp",
+    "screenshot": "",
     "issues": "https://github.com/sysadminsmedia/homebox/issues",
     "releases": "https://github.com/sysadminsmedia/homebox/releases"
   },
@@ -101,6 +103,11 @@
       "supported": true,
       "repo_name": "homebox_ynh",
       "url": "https://github.com/YunoHost-Apps/homebox_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "homebox",
+      "url": "https://apps.truenas.com/catalog/homebox"
     }
   }
 }

@@ -1,7 +1,8 @@
 {
   "name": "immich-public-proxy",
   "slug": "immich-public-proxy",
-  "tagline": null,
+  "tagline": "A proxy service for safely exposing public Immich shares",
+  "subtitle": "",
   "description": "Immich Public Proxy exposes public sharing features of Immich through a small proxy service. It helps safely publish shared albums or links while keeping the main Immich instance protected behind authentication.",
   "categories": [
     120
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/alangrainger/immich-public-proxy",
     "source_code": "https://github.com/alangrainger/immich-public-proxy",
     "logo": "/icons/immich-public-proxy.webp",
+    "screenshot": "",
     "issues": "https://github.com/alangrainger/immich-public-proxy/issues",
     "releases": "https://github.com/alangrainger/immich-public-proxy/releases"
   },
@@ -113,6 +115,11 @@
       "supported": true,
       "repo_name": "immich_ynh",
       "url": "https://github.com/YunoHost-Apps/immich_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "immich",
+      "url": "https://apps.truenas.com/catalog/immich"
     }
   }
 }

@@ -1,7 +1,8 @@
 {
   "name": "frigate",
   "slug": "frigate",
-  "tagline": null,
+  "tagline": "A local network video recorder with real-time object detection",
+  "subtitle": "",
   "description": "Frigate is an NVR (network video recorder) system focused on real-time object detection using AI acceleration. It integrates with Home Assistant, supports MQTT, and processes camera feeds locally for privacy.",
   "categories": [
     107
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/blakeblackshear/frigate",
     "source_code": "https://github.com/blakeblackshear/frigate",
     "logo": "/icons/frigate.webp",
+    "screenshot": "",
     "issues": "https://github.com/blakeblackshear/frigate/issues",
     "releases": "https://github.com/blakeblackshear/frigate/releases",
     "logo_light": "/icons/frigate-light.webp"
@@ -109,6 +111,11 @@
       "supported": true,
       "script_id": "frigate",
       "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=frigate"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "frigate",
+      "url": "https://apps.truenas.com/catalog/frigate"
     }
   }
 }

@@ -1,7 +1,8 @@
 {
   "name": "lyrion-music-server",
   "slug": "lyrion-music-server",
-  "tagline": null,
+  "tagline": "A self-hosted music streaming server with multi room support",
+  "subtitle": "",
   "description": "Slimserver (Logitech Media Server) is a self-hosted streaming platform for music playback. It supports multi-room audio, plugins, and a variety of streaming clients for local or networked media collections.",
   "categories": [
     100
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/LMS-Community/slimserver",
     "source_code": "https://github.com/LMS-Community/slimserver",
     "logo": "/icons/lyrion-music-server.webp",
+    "screenshot": "",
     "issues": "https://github.com/LMS-Community/slimserver/issues",
     "releases": null
   },
@@ -96,6 +98,11 @@
       "supported": true,
       "script_id": "lyrionmusicserver",
       "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=lyrionmusicserver"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "lyrion-music-server",
+      "url": "https://apps.truenas.com/catalog/lyrion-music-server"
     }
   }
 }

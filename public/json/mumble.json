@@ -1,7 +1,8 @@
 {
   "name": "mumble",
   "slug": "mumble",
-  "tagline": null,
+  "tagline": "A low latency voice chat server for private communication",
+  "subtitle": "",
   "description": "Mumble is a low-latency voice chat system designed for gaming or corporate environments. It features positional audio, encryption, and runs as both client and server for private voice channels.",
   "categories": [
     176
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/mumble-voip/mumble",
     "source_code": "https://github.com/mumble-voip/mumble",
     "logo": "/icons/mumble.webp",
+    "screenshot": "",
     "issues": "https://github.com/mumble-voip/mumble/issues",
     "releases": "https://github.com/mumble-voip/mumble/releases",
     "logo_light": "/icons/mumble-light.webp"
@@ -97,6 +99,11 @@
       "supported": true,
       "repo_name": "mumbleserver_ynh",
       "url": "https://github.com/YunoHost-Apps/mumbleserver_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "mumble",
+      "url": "https://apps.truenas.com/catalog/mumble"
     }
   }
 }

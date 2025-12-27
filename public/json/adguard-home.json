@@ -1,7 +1,8 @@
 {
   "name": "adguard-home",
   "slug": "adguard-home",
-  "tagline": null,
+  "tagline": "A self-hosted DNS-based service for blocking ads and tracking across all devices",
+  "subtitle": "",
   "description": "AdGuard Home is a network-wide software for blocking ads and tracking, operating as a DNS server and providing a web-based interface to filter content for all devices on the network. It can be self-hosted and customized for family or enterprise networks.",
   "categories": [
     7
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/AdguardTeam/AdGuardHome",
     "source_code": "https://github.com/AdguardTeam/AdGuardHome",
     "logo": "/icons/adguard-home.webp",
+    "screenshot": "/uploads/adguard-home.png",
     "issues": "https://github.com/AdguardTeam/AdGuardHome/issues",
     "releases": "https://github.com/AdguardTeam/AdGuardHome/releases"
   },
@@ -97,6 +99,11 @@
       "supported": true,
       "repo_name": "adguardhome_ynh",
       "url": "https://github.com/YunoHost-Apps/adguardhome_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "adguard-home",
+      "url": "https://apps.truenas.com/catalog/adguard-home"
     }
   }
 }

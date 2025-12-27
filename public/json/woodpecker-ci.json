@@ -1,7 +1,8 @@
 {
   "name": "woodpecker-ci",
   "slug": "woodpecker-ci",
-  "tagline": null,
+  "tagline": "A self-hosted continuous integration system",
+  "subtitle": "",
   "description": "Woodpecker CI is a self-hosted continuous integration system based on pipelines defined in YAML. It integrates with Git repositories, runs builds in containers, and reports results through a lightweight web UI and webhooks.",
   "categories": [
     110
@@ -20,6 +21,7 @@
     "documentation": "https://github.com/woodpecker-ci/woodpecker",
     "source_code": "https://github.com/woodpecker-ci/woodpecker",
     "logo": "/icons/woodpecker-ci.webp",
+    "screenshot": "",
     "issues": "https://github.com/woodpecker-ci/woodpecker/issues",
     "releases": "https://github.com/woodpecker-ci/woodpecker/releases"
   },
@@ -91,6 +93,11 @@
       "supported": true,
       "repo_name": "ci_ynh",
       "url": "https://github.com/YunoHost-Apps/ci_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "woodpecker-ci",
+      "url": "https://apps.truenas.com/catalog/woodpecker-ci"
     }
   }
 }

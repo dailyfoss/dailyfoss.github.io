@@ -1,7 +1,8 @@
 {
   "name": "cloudbeaver",
   "slug": "cloudbeaver",
-  "tagline": null,
+  "tagline": "A self-hosted web database manager for exploring and editing data",
+  "subtitle": "",
   "description": "CloudBeaver is a lightweight self-hosted cloud database manager built by the DBeaver team. It offers an intuitive web UI for viewing, editing, and managing databases, including PostgreSQL, MySQL, and Oracle.",
   "categories": [
     39
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/dbeaver/cloudbeaver",
     "source_code": "https://github.com/dbeaver/cloudbeaver",
     "logo": "/icons/cloudbeaver.webp",
+    "screenshot": "",
     "issues": "https://github.com/dbeaver/cloudbeaver/issues",
     "releases": null
   },
@@ -90,5 +92,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "cloudbeaver",
+      "url": "https://apps.truenas.com/catalog/cloudbeaver"
+    }
+  }
 }

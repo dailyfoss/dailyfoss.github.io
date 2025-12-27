@@ -1,7 +1,8 @@
 {
   "name": "node-red",
   "slug": "node-red",
-  "tagline": null,
+  "tagline": "A flow based tool for wiring APIs devices and services",
+  "subtitle": "",
   "description": "Node-RED is a flow-based programming tool used for wiring IoT devices and APIs together visually. It offers a browser editor and can be deployed self-hosted to automate workflows, events, and integrations.",
   "categories": [
     16
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/node-red/node-red",
     "source_code": "https://github.com/node-red/node-red",
     "logo": "/icons/node-red.webp",
+    "screenshot": "",
     "issues": "https://github.com/node-red/node-red/issues",
     "releases": "https://github.com/node-red/node-red/releases"
   },
@@ -101,6 +103,11 @@
       "supported": true,
       "repo_name": "nodered_ynh",
       "url": "https://github.com/YunoHost-Apps/nodered_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "node-red",
+      "url": "https://apps.truenas.com/catalog/node-red"
     }
   }
 }

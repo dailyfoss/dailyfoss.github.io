@@ -1,7 +1,8 @@
 {
   "name": "traccar",
   "slug": "traccar",
-  "tagline": null,
+  "tagline": "A GPS tracking platform with maps alerts and reports",
+  "subtitle": "",
   "description": "Traccar is a self-hosted GPS tracking platform that collects location data from various devices and mobile apps. It features real-time map views, alerts, and reports via a rich web UI and mobile-friendly tools, plus a hosted cloud option.",
   "categories": [
     92
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/traccar/traccar",
     "source_code": "https://github.com/traccar/traccar",
     "logo": "/icons/traccar.webp",
+    "screenshot": "",
     "issues": "https://github.com/traccar/traccar/issues",
     "releases": "https://github.com/traccar/traccar/releases"
   },
@@ -101,6 +103,11 @@
       "supported": true,
       "repo_name": "traccar_ynh",
       "url": "https://github.com/YunoHost-Apps/traccar_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "traccar",
+      "url": "https://apps.truenas.com/catalog/traccar"
     }
   }
 }

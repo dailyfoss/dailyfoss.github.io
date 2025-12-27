@@ -1,7 +1,8 @@
 {
   "name": "pocket-id",
   "slug": "pocket-id",
-  "tagline": null,
+  "tagline": "A passwordless authentication provider using QR codes",
+  "subtitle": "",
   "description": "Pocket ID is a self-hosted authentication provider using QR codes and secure tokens. It enables passwordless login and account management with privacy focused on local control.",
   "categories": [
     15
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/pocket-id/pocket-id",
     "source_code": "https://github.com/pocket-id/pocket-id",
     "logo": "/icons/pocket-id.webp",
+    "screenshot": "",
     "issues": "https://github.com/pocket-id/pocket-id/issues",
     "releases": "https://github.com/pocket-id/pocket-id/releases"
   },
@@ -104,6 +106,11 @@
       "supported": true,
       "script_id": "pocketid",
       "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=pocketid"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "pocket-id",
+      "url": "https://apps.truenas.com/catalog/pocket-id"
     }
   }
 }

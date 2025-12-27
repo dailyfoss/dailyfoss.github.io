@@ -129,7 +129,7 @@ function ScriptMetadata({ script }: { script: Script }) {
     // If release exists and is within 2 weeks, show release
     if (repositoryInfo.lastRelease && repositoryInfo.lastRelease.getTime() > twoWeeksAgo) {
       displayDate = repositoryInfo.lastRelease;
-      displayLabel = 'Released';
+      displayLabel = 'Last released';
     }
     // Otherwise, show commit if available
     else if (repositoryInfo.lastCommit) {
@@ -139,7 +139,7 @@ function ScriptMetadata({ script }: { script: Script }) {
     // Fallback to old release if no commit
     else if (repositoryInfo.lastRelease) {
       displayDate = repositoryInfo.lastRelease;
-      displayLabel = 'Released';
+      displayLabel = 'Last released';
     }
   }
   
@@ -293,7 +293,7 @@ export default function RelatedTools({ currentScript, allCategories }: RelatedTo
 
               <CardContent className="pt-0 pb-3">
                 <CardDescription className="line-clamp-2 text-xs leading-relaxed">
-                  {script.description}
+                  {script.tagline || script.description}
                 </CardDescription>
               </CardContent>
             </Card>

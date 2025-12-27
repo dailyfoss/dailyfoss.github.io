@@ -1,13 +1,69 @@
-import { CheckCircle } from "lucide-react";
+"use client";
+
+import { CheckCircle, Star } from "lucide-react";
 import type { Script } from "@/lib/types";
 import { iconMap } from "@/config/feature-icon-map";
 import { suggestIconFromKeywords } from "@/config/feature-keyword-map";
 
 type Feature = {
-  icon?: string; // Optional - will auto-detect from title if not provided
+  icon?: string;
   title: string;
   description: string;
+  core_feature?: boolean;
 } | string;
+
+function CoreFeatureCard({ feature }: { feature: Feature }) {
+  if (typeof feature === 'string') return null;
+  
+  const smartIcon = suggestIconFromKeywords(feature.title, feature.icon);
+  const IconComponent = iconMap[smartIcon] || CheckCircle;
+  
+  return (
+    <div className="group relative rounded-lg border border-primary/30 bg-primary/5 p-4 transition-all hover:border-primary/50 hover:shadow-md">
+      <div className="flex items-start gap-3">
+        <div className="flex-shrink-0 rounded-md bg-primary/15 p-2 text-primary transition-colors group-hover:bg-primary/25">
+          <IconComponent className="h-5 w-5" />
+        </div>
+        <div className="flex-1 space-y-1">
+          <div className="flex items-center gap-2">
+            <h4 className="font-semibold text-sm leading-tight">
+              {feature.title}
+            </h4>
+            <Star className="h-3 w-3 text-primary fill-primary" />
+          </div>
+          <p className="text-xs text-muted-foreground leading-relaxed">
+            {feature.description}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function AdditionalFeatureCard({ feature }: { feature: Feature }) {
+  if (typeof feature === 'string') return null;
+  
+  const smartIcon = suggestIconFromKeywords(feature.title, feature.icon);
+  const IconComponent = iconMap[smartIcon] || CheckCircle;
+  
+  return (
+    <div className="group relative rounded-lg border border-border/50 bg-card/50 p-4 transition-all hover:border-border/80 hover:shadow-sm">
+      <div className="flex items-start gap-3">
+        <div className="flex-shrink-0 rounded-md bg-muted/50 p-2 text-muted-foreground transition-colors group-hover:bg-muted/80">
+          <IconComponent className="h-5 w-5" />
+        </div>
+        <div className="flex-1 space-y-1">
+          <h4 className="font-semibold text-sm leading-tight">
+            {feature.title}
+          </h4>
+          <p className="text-xs text-muted-foreground leading-relaxed">
+            {feature.description}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Features({ item }: { item: Script }) {
   if (!item.features || item.features.length === 0) {
@@ -34,42 +90,38 @@ export default function Features({ item }: { item: Script }) {
     );
   }
 
-  // New card-based format
   const features = item.features as Feature[];
+  const coreFeatures = features.filter(f => typeof f === 'object' && f.core_feature === true);
+  const additionalFeatures = features.filter(f => typeof f === 'object' && f.core_feature !== true);
 
   return (
-    <div className="space-y-4">
-      <h3 className="text-lg font-semibold">Key Features</h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {features.map((feature, index) => {
-          if (typeof feature === 'string') return null;
-          
-          // Auto-detect icon from title (or use provided icon)
-          const smartIcon = suggestIconFromKeywords(feature.title, feature.icon);
-          const IconComponent = iconMap[smartIcon] || CheckCircle;
-          
-          return (
-            <div
-              key={index}
-              className="group relative rounded-lg border border-border/50 bg-card/50 p-4 transition-all hover:border-border/80 hover:shadow-sm"
-            >
-              <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 rounded-md bg-primary/10 p-2 text-primary transition-colors group-hover:bg-primary/15">
-                  <IconComponent className="h-5 w-5" />
-                </div>
-                <div className="flex-1 space-y-1">
-                  <h4 className="font-semibold text-sm leading-tight">
-                    {feature.title}
-                  </h4>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+    <div className="space-y-6">
+      {/* Core Features */}
+      {coreFeatures.length > 0 && (
+        <div className="space-y-3">
+          <div className="flex items-center gap-2">
+            <Star className="h-4 w-4 text-primary fill-primary" />
+            <h3 className="text-lg font-semibold">Core Features</h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {coreFeatures.map((feature, index) => (
+              <CoreFeatureCard key={`core-${index}`} feature={feature} />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Additional Features */}
+      {additionalFeatures.length > 0 && (
+        <div className="space-y-3">
+          <h3 className="text-lg font-semibold text-muted-foreground">Additional Features</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {additionalFeatures.map((feature, index) => (
+              <AdditionalFeatureCard key={`additional-${index}`} feature={feature} />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

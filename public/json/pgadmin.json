@@ -1,7 +1,8 @@
 {
   "name": "pgadmin",
   "slug": "pgadmin",
-  "tagline": null,
+  "tagline": "A web based administration tool for PostgreSQL",
+  "subtitle": "",
   "description": "pgAdmin is a popular web-based GUI for managing PostgreSQL databases. It includes advanced tools to create, query, monitor, and maintain databases in a self-hosted or cloud environment.",
   "categories": [
     39
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/pgadmin-org/pgadmin4",
     "source_code": "https://github.com/pgadmin-org/pgadmin4",
     "logo": "/icons/pgadmin.webp",
+    "screenshot": "",
     "issues": "https://github.com/pgadmin-org/pgadmin4/issues",
     "releases": null
   },
@@ -100,6 +102,11 @@
       "supported": true,
       "repo_name": "pgadmin_ynh",
       "url": "https://github.com/YunoHost-Apps/pgadmin_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "pgadmin",
+      "url": "https://apps.truenas.com/catalog/pgadmin"
     }
   }
 }

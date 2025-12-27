@@ -1,7 +1,8 @@
 {
   "name": "audiobookshelf",
   "slug": "audiobookshelf",
-  "tagline": null,
+  "tagline": "A media server for organizing and streaming audiobooks and podcasts",
+  "subtitle": "",
   "description": "Audiobookshelf is a self-hosted audiobook and podcast server. It supports multi-user access, metadata syncing, offline listening, and mobile-friendly playback. It integrates with clients like Jellyfin and supports OPDS.",
   "categories": [
     14
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/advplyr/audiobookshelf",
     "source_code": "https://github.com/advplyr/audiobookshelf",
     "logo": "/icons/audiobookshelf.webp",
+    "screenshot": "https://raw.githubusercontent.com/advplyr/audiobookshelf/master/images/DemoLibrary.png",
     "issues": "https://github.com/advplyr/audiobookshelf/issues",
     "releases": "https://github.com/advplyr/audiobookshelf/releases"
   },
@@ -105,6 +107,11 @@
       "supported": true,
       "repo_name": "audiobookshelf_ynh",
       "url": "https://github.com/YunoHost-Apps/audiobookshelf_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "audiobookshelf",
+      "url": "https://apps.truenas.com/catalog/audiobookshelf"
     }
   }
 }

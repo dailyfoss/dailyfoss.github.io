@@ -1,7 +1,8 @@
 {
   "name": "gramps",
   "slug": "gramps",
-  "tagline": null,
+  "tagline": "A genealogy application for managing family trees and history",
+  "subtitle": "",
   "description": "Gramps is a self-hosted genealogy software that manages family relationships, events, and documents. It supports reporting, charts, media attachments, and offers both desktop apps and web deployments.",
   "categories": [
     71
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/gramps-project/gramps",
     "source_code": "https://github.com/gramps-project/gramps",
     "logo": "/icons/gramps.webp",
+    "screenshot": "",
     "issues": "https://github.com/gramps-project/gramps/issues",
     "releases": "https://github.com/gramps-project/gramps/releases"
   },
@@ -90,5 +92,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "gramps-web",
+      "url": "https://apps.truenas.com/catalog/gramps-web"
+    }
+  }
 }

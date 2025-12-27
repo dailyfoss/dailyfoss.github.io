@@ -1,7 +1,8 @@
 {
   "name": "filestash",
   "slug": "filestash",
-  "tagline": null,
+  "tagline": "A web interface that unifies access to files across cloud and server backends",
+  "subtitle": "",
   "description": "Filestash connects to cloud or FTP servers and exposes them through a user-friendly web UI. It supports WebDAV, S3, Git, Dropbox, and others with a single centralized UX. Aimed at developers and teams that need unified access.",
   "categories": [
     60
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/mickael-kerjean/filestash",
     "source_code": "https://github.com/mickael-kerjean/filestash",
     "logo": "/icons/filestash.webp",
+    "screenshot": "",
     "issues": "https://github.com/mickael-kerjean/filestash/issues",
     "releases": null
   },
@@ -94,5 +96,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "filestash",
+      "url": "https://apps.truenas.com/catalog/filestash"
+    }
+  }
 }

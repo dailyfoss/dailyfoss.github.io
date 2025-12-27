@@ -1,7 +1,8 @@
 {
   "name": "mosquitto",
   "slug": "mosquitto",
-  "tagline": null,
+  "tagline": "A lightweight MQTT broker for IoT messaging",
+  "subtitle": "",
   "description": "Mosquitto is a lightweight MQTT broker for enabling publish/subscribe messaging in IoT environments. It supports MQTT v3.1 and v5, making it ideal for small devices, home automation, and distributed systems.",
   "categories": [
     108
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/eclipse-mosquitto/mosquitto",
     "source_code": "https://github.com/eclipse-mosquitto/mosquitto",
     "logo": "/icons/mosquitto.webp",
+    "screenshot": "",
     "issues": "https://github.com/eclipse-mosquitto/mosquitto/issues",
     "releases": null
   },
@@ -96,6 +98,11 @@
       "supported": true,
       "repo_name": "mosquitto_ynh",
       "url": "https://github.com/YunoHost-Apps/mosquitto_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "eclipse-mosquitto",
+      "url": "https://apps.truenas.com/catalog/eclipse-mosquitto"
     }
   }
 }

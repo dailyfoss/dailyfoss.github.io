@@ -1,7 +1,8 @@
 {
   "name": "flame",
   "slug": "flame",
-  "tagline": null,
+  "tagline": "A personal dashboard for managing links and monitoring hosted services",
+  "subtitle": "",
   "description": "Flame is a personal dashboard for managing links and monitoring self-hosted services. It supports dynamic links, icons, widgets, and a sleek UI that works well as a browser homepage for homelab and server environments.",
   "categories": [
     34
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/pawelmalak/flame",
     "source_code": "https://github.com/pawelmalak/flame",
     "logo": "/icons/flame.webp",
+    "screenshot": "",
     "issues": "https://github.com/pawelmalak/flame/issues",
     "releases": "https://github.com/pawelmalak/flame/releases"
   },
@@ -86,5 +88,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "flame",
+      "url": "https://apps.truenas.com/catalog/flame"
+    }
+  }
 }

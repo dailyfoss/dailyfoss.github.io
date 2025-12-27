@@ -1,7 +1,8 @@
 {
   "name": "organizr",
   "slug": "organizr",
-  "tagline": null,
+  "tagline": "A unified dashboard for accessing multiple self-hosted apps",
+  "subtitle": "",
   "description": "Organizr is a self-hosted dashboard that unifies multiple web apps into a single portal. It supports authentication, custom tabs, organization, user roles, and interface customization for homelabs.",
   "categories": [
     34
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/causefx/Organizr",
     "source_code": "https://github.com/causefx/Organizr",
     "logo": "/icons/organizr.webp",
+    "screenshot": "",
     "issues": "https://github.com/causefx/Organizr/issues",
     "releases": "https://github.com/causefx/Organizr/releases"
   },
@@ -90,5 +92,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "organizr",
+      "url": "https://apps.truenas.com/catalog/organizr"
+    }
+  }
 }

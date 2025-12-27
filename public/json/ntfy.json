@@ -1,7 +1,8 @@
 {
   "name": "ntfy",
   "slug": "ntfy",
-  "tagline": null,
+  "tagline": "A simple self-hosted push notification service",
+  "subtitle": "",
   "description": "ntfy is a self-hosted notification system that lets you send push notifications via HTTP or CLI without registration. It supports web UI, mobile clients, and topics for real-time messaging.",
   "categories": [
     112
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/binwiederhier/ntfy",
     "source_code": "https://github.com/binwiederhier/ntfy",
     "logo": "/icons/ntfy.webp",
+    "screenshot": "",
     "issues": "https://github.com/binwiederhier/ntfy/issues",
     "releases": "https://github.com/binwiederhier/ntfy/releases"
   },
@@ -113,6 +115,11 @@
       "supported": true,
       "repo_name": "ntfy_ynh",
       "url": "https://github.com/YunoHost-Apps/ntfy_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "ntfy",
+      "url": "https://apps.truenas.com/catalog/ntfy"
     }
   }
 }

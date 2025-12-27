@@ -6,7 +6,7 @@ const PLAUSIBLE_SITE_ID = "dailyfoss.github.io";
 
 // Use Cloudflare Worker proxy if configured (most secure)
 const PROXY_URL = typeof window !== "undefined" 
-  ? (process.env.NEXT_PUBLIC_PLAUSIBLE_PROXY_URL || null)
+  ? process.env.NEXT_PUBLIC_PLAUSIBLE_PROXY_URL 
   : null;
 
 export interface PlausibleSharedPageStats {

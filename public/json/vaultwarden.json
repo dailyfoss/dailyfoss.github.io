@@ -1,7 +1,8 @@
 {
   "name": "vaultwarden",
   "slug": "vaultwarden",
-  "tagline": null,
+  "tagline": "A lightweight Bitwarden compatible password server",
+  "subtitle": "",
   "description": "Vaultwarden is a self-hosted Bitwarden-compatible server written in Rust. It provides the backend for web, mobile, and browser clients to store and sync encrypted passwords and secrets.",
   "categories": [
     117
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/dani-garcia/vaultwarden",
     "source_code": "https://github.com/dani-garcia/vaultwarden",
     "logo": "/icons/vaultwarden.webp",
+    "screenshot": "",
     "issues": "https://github.com/dani-garcia/vaultwarden/issues",
     "releases": "https://github.com/dani-garcia/vaultwarden/releases",
     "logo_light": "/icons/vaultwarden-light.webp"
@@ -106,6 +108,11 @@
       "supported": true,
       "repo_name": "vaultwarden_ynh",
       "url": "https://github.com/YunoHost-Apps/vaultwarden_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "vaultwarden",
+      "url": "https://apps.truenas.com/catalog/vaultwarden"
     }
   }
 }

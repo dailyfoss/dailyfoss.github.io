@@ -1,7 +1,8 @@
 {
   "name": "lazylibrarian",
   "slug": "lazylibrarian",
-  "tagline": null,
+  "tagline": "An automated manager for ebooks and audiobooks",
+  "subtitle": "",
   "description": "LazyLibrarian is an automated ebook and audiobook manager similar to Sonarr but for books. It tracks authors, manages wanted lists, and integrates with downloaders and metadata providers to build a self hosted library automatically.",
   "categories": [
     21
@@ -20,6 +21,7 @@
     "documentation": "https://gitlab.com/LazyLibrarian/LazyLibrarian",
     "source_code": "https://gitlab.com/LazyLibrarian/LazyLibrarian",
     "logo": "/icons/lazylibrarian.webp",
+    "screenshot": "",
     "issues": "https://gitlab.com/LazyLibrarian/LazyLibrarian/issues",
     "releases": "https://gitlab.com/LazyLibrarian/LazyLibrarian/releases"
   },
@@ -92,6 +94,11 @@
       "supported": true,
       "repo_name": "librarian_ynh",
       "url": "https://github.com/YunoHost-Apps/librarian_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "lazylibrarian",
+      "url": "https://apps.truenas.com/catalog/lazylibrarian"
     }
   }
 }

@@ -1,7 +1,8 @@
 {
   "name": "mediamanager",
   "slug": "mediamanager",
-  "tagline": null,
+  "tagline": "A self-hosted tool for organizing and browsing media collections",
+  "subtitle": "",
   "description": "MediaManager is a media collection organizer and categorizer. It provides a web interface to upload, tag, group, and browse files such as images, videos, and documents in a self-hosted environment.",
   "categories": [
     60
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/maxdorninger/MediaManager",
     "source_code": "https://github.com/maxdorninger/MediaManager",
     "logo": "/icons/mediamanager.webp",
+    "screenshot": "",
     "issues": "https://github.com/maxdorninger/MediaManager/issues",
     "releases": "https://github.com/maxdorninger/MediaManager/releases"
   },
@@ -100,6 +102,11 @@
       "supported": true,
       "script_id": "mediamanager",
       "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=mediamanager"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "media-manager",
+      "url": "https://apps.truenas.com/catalog/media-manager"
     }
   }
 }

@@ -1,7 +1,8 @@
 {
   "name": "octoprint",
   "slug": "octoprint",
-  "tagline": null,
+  "tagline": "A web interface for remotely controlling and monitoring 3D printers",
+  "subtitle": "",
   "description": "OctoPrint is a powerful web interface for controlling 3D printers remotely. It offers live streaming, gcode upload, plugins, and terminal access, making it ideal for self-hosted workshop setups.",
   "categories": [
     3
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/OctoPrint/OctoPrint",
     "source_code": "https://github.com/OctoPrint/OctoPrint",
     "logo": "/icons/octoprint.webp",
+    "screenshot": "",
     "issues": "https://github.com/OctoPrint/OctoPrint/issues",
     "releases": "https://github.com/OctoPrint/OctoPrint/releases"
   },
@@ -101,6 +103,11 @@
       "supported": true,
       "repo_name": "octoprint_ynh",
       "url": "https://github.com/YunoHost-Apps/octoprint_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "octoprint",
+      "url": "https://apps.truenas.com/catalog/octoprint"
     }
   }
 }

@@ -1,7 +1,8 @@
 {
   "name": "redis-commander",
   "slug": "redis-commander",
-  "tagline": null,
+  "tagline": "A web interface for browsing and managing Redis databases",
+  "subtitle": "",
   "description": "Redis Commander is a self-hosted web UI for browsing and managing Redis databases. It displays keys, values, TTLs, and supports CRUD operations for easier debugging.",
   "categories": [
     39
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/joeferner/redis-commander",
     "source_code": "https://github.com/joeferner/redis-commander",
     "logo": "/icons/redis-commander.webp",
+    "screenshot": "",
     "issues": "https://github.com/joeferner/redis-commander/issues",
     "releases": null
   },
@@ -92,6 +94,11 @@
       "supported": true,
       "script_id": "redis",
       "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=redis"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "redis",
+      "url": "https://apps.truenas.com/catalog/redis"
     }
   }
 }

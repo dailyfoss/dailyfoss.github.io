@@ -1,7 +1,8 @@
 {
   "name": "sonarr",
   "slug": "sonarr",
-  "tagline": null,
+  "tagline": "A self-hosted TV series automation manager",
+  "subtitle": "",
   "description": "Sonarr is a self-hosted TV series manager that automatically downloads, renames, and organizes episodes for Usenet and torrent users, integrating with indexers and media servers.",
   "categories": [
     104
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/Sonarr/Sonarr",
     "source_code": "https://github.com/Sonarr/Sonarr",
     "logo": "/icons/sonarr.webp",
+    "screenshot": "",
     "issues": "https://github.com/Sonarr/Sonarr/issues",
     "releases": "https://github.com/Sonarr/Sonarr/releases"
   },
@@ -105,6 +107,11 @@
       "supported": true,
       "repo_name": "sonarr_ynh",
       "url": "https://github.com/YunoHost-Apps/sonarr_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "sonarr",
+      "url": "https://apps.truenas.com/catalog/sonarr"
     }
   }
 }

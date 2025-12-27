@@ -1,7 +1,8 @@
 {
   "name": "searxng",
   "slug": "searxng",
-  "tagline": null,
+  "tagline": "A privacy respecting self-hosted metasearch engine",
+  "subtitle": "",
   "description": "SearxNG is a self-hosted privacy-respecting metasearch engine that aggregates queries across multiple search providers. It offers customization and protects users from tracking.",
   "categories": [
     144
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/searxng/searxng",
     "source_code": "https://github.com/searxng/searxng",
     "logo": "/icons/searxng.webp",
+    "screenshot": "",
     "issues": "https://github.com/searxng/searxng/issues",
     "releases": null
   },
@@ -101,6 +103,11 @@
       "supported": true,
       "repo_name": "searxng_ynh",
       "url": "https://github.com/YunoHost-Apps/searxng_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "searxng",
+      "url": "https://apps.truenas.com/catalog/searxng"
     }
   }
 }

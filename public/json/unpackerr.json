@@ -1,7 +1,8 @@
 {
   "name": "unpackerr",
   "slug": "unpackerr",
-  "tagline": null,
+  "tagline": "An automated extractor for completed media downloads",
+  "subtitle": "",
   "description": "Unpackerr is a self-hosted daemon that monitors Sonarr, Radarr, and similar apps and automatically extracts completed downloads. It runs unattended and integrates into existing media automation setups.",
   "categories": [
     166
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/Unpackerr/unpackerr",
     "source_code": "https://github.com/Unpackerr/unpackerr",
     "logo": "/icons/unpackerr.webp",
+    "screenshot": "",
     "issues": "https://github.com/Unpackerr/unpackerr/issues",
     "releases": "https://github.com/Unpackerr/unpackerr/releases"
   },
@@ -102,5 +104,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "unpackerr",
+      "url": "https://apps.truenas.com/catalog/unpackerr"
+    }
+  }
 }

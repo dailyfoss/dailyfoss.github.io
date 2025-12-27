@@ -1,7 +1,8 @@
 {
   "name": "glances",
   "slug": "glances",
-  "tagline": null,
+  "tagline": "A cross-platform system monitor with real-time metrics and web access",
+  "subtitle": "",
   "description": "Glances is a cross-platform system monitoring tool that displays real-time metrics in a TUI or web UI. It monitors CPU, memory, disk, and network metrics and includes a built-in REST API for remote data access.",
   "categories": [
     103
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/nicolargo/glances",
     "source_code": "https://github.com/nicolargo/glances",
     "logo": "/icons/glances.webp",
+    "screenshot": "",
     "issues": "https://github.com/nicolargo/glances/issues",
     "releases": "https://github.com/nicolargo/glances/releases"
   },
@@ -101,6 +103,11 @@
       "supported": true,
       "repo_name": "glances_ynh",
       "url": "https://github.com/YunoHost-Apps/glances_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "glances",
+      "url": "https://apps.truenas.com/catalog/glances"
     }
   }
 }

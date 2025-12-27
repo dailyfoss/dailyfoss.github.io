@@ -1,7 +1,8 @@
 {
   "name": "affine",
   "slug": "affine",
-  "tagline": null,
+  "tagline": "A self-hosted collaborative workspace for notes, whiteboards, and structured content",
+  "subtitle": "",
   "description": "AFFiNE is a collaborative, privacy-focused workspace that combines note-taking, whiteboarding, and database organization. It offers real-time sync, offline editing, and AI-assisted features, designed to be a self-hosted modern productivity tool.",
   "categories": [
     196
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/toeverything/AFFiNE",
     "source_code": "https://github.com/toeverything/AFFiNE",
     "logo": "/icons/affine.webp",
+    "screenshot": "/uploads/affine.png",
     "issues": "https://github.com/toeverything/AFFiNE/issues",
     "releases": "https://github.com/toeverything/AFFiNE/releases",
     "logo_light": "/icons/affine-light.webp"
@@ -87,5 +89,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "affine",
+      "url": "https://apps.truenas.com/catalog/affine"
+    }
+  }
 }

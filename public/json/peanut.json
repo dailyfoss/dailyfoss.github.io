@@ -1,7 +1,8 @@
 {
   "name": "peanut",
   "slug": "peanut",
-  "tagline": null,
+  "tagline": "A network visualization tool for homelab environments",
+  "subtitle": "",
   "description": "PeaNUT is a self-hosted network visualization tool that provides insights into connected devices and services within homelab environments. It offers graph views for network topology and metadata.",
   "categories": [
     17
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/Brandawg93/PeaNUT",
     "source_code": "https://github.com/Brandawg93/PeaNUT",
     "logo": "/icons/peanut.webp",
+    "screenshot": "",
     "issues": "https://github.com/Brandawg93/PeaNUT/issues",
     "releases": "https://github.com/Brandawg93/PeaNUT/releases"
   },
@@ -108,6 +110,11 @@
       "supported": true,
       "script_id": "peanut",
       "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=peanut"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "peanut",
+      "url": "https://apps.truenas.com/catalog/peanut"
     }
   }
 }

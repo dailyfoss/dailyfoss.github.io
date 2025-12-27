@@ -1,7 +1,8 @@
 {
   "name": "openspeedtest",
   "slug": "openspeedtest",
-  "tagline": null,
+  "tagline": "A self-hosted browser based internet speed test",
+  "subtitle": "",
   "description": "OpenSpeedTest is a self-hosted internet speed test tool with a responsive web interface. It measures download, upload, and latency through your browser without plugins or dependencies.",
   "categories": [
     150
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/openspeedtest/Speed-Test",
     "source_code": "https://github.com/openspeedtest/Speed-Test",
     "logo": "/icons/openspeedtest.webp",
+    "screenshot": "",
     "issues": "https://github.com/openspeedtest/Speed-Test/issues",
     "releases": null
   },
@@ -90,5 +92,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "open-speed-test",
+      "url": "https://apps.truenas.com/catalog/open-speed-test"
+    }
+  }
 }

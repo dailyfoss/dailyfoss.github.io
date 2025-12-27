@@ -1,7 +1,8 @@
 {
   "name": "esphome",
   "slug": "esphome",
-  "tagline": null,
+  "tagline": "A YAML-based system for building and managing custom ESP smart devices",
+  "subtitle": "",
   "description": "ESPHome is a system for controlling ESP-based devices using simple YAML configuration. It compiles firmware, manages OTA updates, and integrates with Home Assistant, making custom smart-home devices approachable without deep embedded coding.",
   "categories": [
     83
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/esphome/esphome",
     "source_code": "https://github.com/esphome/esphome",
     "logo": "/icons/esphome.webp",
+    "screenshot": "",
     "issues": "https://github.com/esphome/esphome/issues",
     "releases": "https://github.com/esphome/esphome/releases"
   },
@@ -105,6 +107,11 @@
       "supported": true,
       "repo_name": "esphome_ynh",
       "url": "https://github.com/YunoHost-Apps/esphome_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "esphome",
+      "url": "https://apps.truenas.com/catalog/esphome"
     }
   }
 }

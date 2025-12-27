@@ -1,7 +1,8 @@
 {
   "name": "koel",
   "slug": "koel",
-  "tagline": null,
+  "tagline": "A personal music streaming server with a clean web player",
+  "subtitle": "",
   "description": "Koel is a web based personal music streaming server. It scans local audio files and serves them through a clean web player and mobile friendly UI, allowing users to enjoy their collection from anywhere while keeping full control of the files.",
   "categories": [
     106
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/koel/koel",
     "source_code": "https://github.com/koel/koel",
     "logo": "/icons/koel.webp",
+    "screenshot": "",
     "issues": "https://github.com/koel/koel/issues",
     "releases": "https://github.com/koel/koel/releases"
   },
@@ -100,6 +102,11 @@
       "supported": true,
       "repo_name": "koel_ynh",
       "url": "https://github.com/YunoHost-Apps/koel_ynh"
+    },
+    "proxmox_ve": {
+      "supported": true,
+      "script_id": "koel",
+      "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=koel"
     }
   }
 }

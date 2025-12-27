@@ -1,7 +1,8 @@
 {
   "name": "code-server",
   "slug": "code-server",
-  "tagline": null,
+  "tagline": "A self-hosted way to run VS Code in the browser for remote development",
+  "subtitle": "",
   "description": "Code-Server allows you to run VS Code in the browser via a self-hosted server. It enables remote development on lightweight machines or servers and supports extensions, terminals, and SSH for cloud-based coding workflows.",
   "categories": [
     43
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/coder/code-server",
     "source_code": "https://github.com/coder/code-server",
     "logo": "/icons/code-server.webp",
+    "screenshot": "",
     "issues": "https://github.com/coder/code-server/issues",
     "releases": "https://github.com/coder/code-server/releases"
   },
@@ -100,6 +102,11 @@
       "supported": true,
       "repo_name": "code-server_ynh",
       "url": "https://github.com/YunoHost-Apps/code-server_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "code-server",
+      "url": "https://apps.truenas.com/catalog/code-server"
     }
   }
 }

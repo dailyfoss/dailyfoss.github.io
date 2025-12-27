@@ -1,7 +1,8 @@
 {
   "name": "radarr",
   "slug": "radarr",
-  "tagline": null,
+  "tagline": "A self-hosted movie manager that automates downloads and organization",
+  "subtitle": "",
   "description": "Radarr is a self-hosted movie collection manager for Usenet and BitTorrent users. It monitors RSS feeds, searches for movies, and automatically downloads and renames content.",
   "categories": [
     104
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/Radarr/Radarr",
     "source_code": "https://github.com/Radarr/Radarr",
     "logo": "/icons/radarr.webp",
+    "screenshot": "",
     "issues": "https://github.com/Radarr/Radarr/issues",
     "releases": "https://github.com/Radarr/Radarr/releases"
   },
@@ -105,6 +107,11 @@
       "supported": true,
       "repo_name": "radarr_ynh",
       "url": "https://github.com/YunoHost-Apps/radarr_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "radarr",
+      "url": "https://apps.truenas.com/catalog/radarr"
     }
   }
 }

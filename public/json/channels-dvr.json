@@ -1,7 +1,8 @@
 {
   "name": "channels-dvr",
   "slug": "channels-dvr",
-  "tagline": "",
+  "tagline": "A home DVR server for recording and streaming live television across devices",
+  "subtitle": "",
   "description": "Channels DVR Server allows users to record live TV streams and watch them on any device. It integrates with HDHomeRun tuners and offers mobile apps, web playback, and automatic commercial skipping for home DVR setups.",
   "categories": [
     107
@@ -20,6 +21,7 @@
     "documentation": null,
     "source_code": "https://getchannels.com/dvr-server/",
     "logo": "/icons/channels-dvr.webp",
+    "screenshot": "",
     "issues": null,
     "releases": null
   },
@@ -91,6 +93,11 @@
       "supported": true,
       "script_id": "channels",
       "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=channels"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "channels-dvr",
+      "url": "https://apps.truenas.com/catalog/channels-dvr"
     }
   }
 }

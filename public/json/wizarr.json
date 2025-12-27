@@ -1,7 +1,8 @@
 {
   "name": "wizarr",
   "slug": "wizarr",
-  "tagline": null,
+  "tagline": "A media server invite and onboarding portal",
+  "subtitle": "",
   "description": "Wizarr is a self-hosted invite management portal for media servers like Jellyfin and Plex. It streamlines onboarding by generating invite links, collecting user details, and provisioning accounts via a friendly web front-end.",
   "categories": [
     165
@@ -20,6 +21,7 @@
     "documentation": "https://github.com/wizarrrr/wizarr",
     "source_code": "https://github.com/wizarrrr/wizarr",
     "logo": "/icons/wizarr.webp",
+    "screenshot": "",
     "issues": "https://github.com/wizarrrr/wizarr/issues",
     "releases": "https://github.com/wizarrrr/wizarr/releases"
   },
@@ -103,6 +105,11 @@
       "supported": true,
       "script_id": "wizarr",
       "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=wizarr"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "wizarr",
+      "url": "https://apps.truenas.com/catalog/wizarr"
     }
   }
 }

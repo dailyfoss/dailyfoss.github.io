@@ -1,7 +1,8 @@
 {
   "name": "music-assistant",
   "slug": "music-assistant",
-  "tagline": null,
+  "tagline": "A self-hosted platform for managing and streaming music libraries",
+  "subtitle": "",
   "description": "Music Assistant is a self-hosted music management and streaming platform that integrates with Home Assistant. It pulls media from services like Spotify or local libraries into structured playlists and collections.",
   "categories": [
     100
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/music-assistant/server",
     "source_code": "https://github.com/music-assistant/server",
     "logo": "/icons/music-assistant.webp",
+    "screenshot": "",
     "issues": "https://github.com/music-assistant/server/issues",
     "releases": "https://github.com/music-assistant/server/releases"
   },
@@ -90,5 +92,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "music-assistant",
+      "url": "https://apps.truenas.com/catalog/music-assistant"
+    }
+  }
 }

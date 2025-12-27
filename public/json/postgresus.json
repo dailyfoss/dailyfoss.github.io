@@ -1,7 +1,8 @@
 {
   "name": "postgresus",
   "slug": "postgresus",
-  "tagline": null,
+  "tagline": "A lightweight web platform for managing PostgreSQL instances",
+  "subtitle": "",
   "description": "Postgresus is a lightweight multi-tenant PostgreSQL management platform with a web UI for creating and managing databases, users, and access. It streamlines multi-db setups for developers and hosting providers.",
   "categories": [
     39
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/RostislavDugin/postgresus",
     "source_code": "https://github.com/RostislavDugin/postgresus",
     "logo": "/icons/postgresus.webp",
+    "screenshot": "",
     "issues": "https://github.com/RostislavDugin/postgresus/issues",
     "releases": "https://github.com/RostislavDugin/postgresus/releases"
   },
@@ -90,5 +92,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "postgres",
+      "url": "https://apps.truenas.com/catalog/postgres"
+    }
+  }
 }

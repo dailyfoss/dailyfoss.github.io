@@ -1,7 +1,8 @@
 {
   "name": "dockpeek",
   "slug": "dockpeek",
-  "tagline": null,
+  "tagline": "A command-line utility for inspecting Docker container metadata safely",
+  "subtitle": "",
   "description": "Dockpeek is a simple command-line utility to inspect Docker container states and metadata without full Docker access. It helps users view container status, layers, and configurations quickly and securely.",
   "categories": [
     47
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/dockpeek/dockpeek",
     "source_code": "https://github.com/dockpeek/dockpeek",
     "logo": "/icons/dockpeek.webp",
+    "screenshot": "",
     "issues": "https://github.com/dockpeek/dockpeek/issues",
     "releases": "https://github.com/dockpeek/dockpeek/releases"
   },
@@ -94,5 +96,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "dockpeek",
+      "url": "https://apps.truenas.com/catalog/dockpeek"
+    }
+  }
 }

@@ -1,7 +1,8 @@
 {
   "name": "komga",
   "slug": "komga",
-  "tagline": null,
+  "tagline": "A self-hosted server for reading comics and manga",
+  "subtitle": "",
   "description": "Komga is a self hosted comics and manga server. It organizes libraries, tracks reading progress, supports multiple users and provides a responsive reader interface, similar to what Jellyfin or Plex offer for video.",
   "categories": [
     95
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/gotson/komga",
     "source_code": "https://github.com/gotson/komga",
     "logo": "/icons/komga.webp",
+    "screenshot": "",
     "issues": "https://github.com/gotson/komga/issues",
     "releases": "https://github.com/gotson/komga/releases"
   },
@@ -101,6 +103,11 @@
       "supported": true,
       "repo_name": "komga_ynh",
       "url": "https://github.com/YunoHost-Apps/komga_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "komga",
+      "url": "https://apps.truenas.com/catalog/komga"
     }
   }
 }

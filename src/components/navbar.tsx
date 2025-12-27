@@ -13,6 +13,7 @@ import { Button } from "./animate-ui/components/buttons/button";
 import MobileSidebar from "./navigation/mobile-sidebar";
 import { ThemeToggle } from "./ui/theme-toggle";
 import CommandMenu from "./command-menu";
+import { AuthButton } from "./auth-button";
 
 export const dynamic = "force-dynamic";
 
@@ -58,10 +59,10 @@ function Navbar() {
 
   // Avoid hydration mismatch
   const logoSrc = !mounted
-    ? "/logo_white.png"
+    ? "/logo_light.png"
     : resolvedTheme === "dark"
       ? "/logo_dark.png"
-      : "/logo_white.png";
+      : "/logo_light.png";
 
   return (
     <>
@@ -114,6 +115,7 @@ function Navbar() {
                 </TooltipProvider>
               ))}
               <ThemeToggle />
+              <AuthButton />
             </div>
           </div>
         </div>

@@ -1,7 +1,8 @@
 {
   "name": "authentik",
   "slug": "authentik",
-  "tagline": null,
+  "tagline": "An identity and access management platform for authentication and authorization",
+  "subtitle": "",
   "description": "Authentik is a self-hosted identity provider and access management platform that supports OAuth 2.0, SAML, and LDAP. It targets enterprises and self-hosters looking for a keycloak alternative with modern UI.",
   "categories": [
     79
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/goauthentik/authentik",
     "source_code": "https://github.com/goauthentik/authentik",
     "logo": "/icons/authentik.webp",
+    "screenshot": "/uploads/authentik.png",
     "issues": "https://github.com/goauthentik/authentik/issues",
     "releases": "https://github.com/goauthentik/authentik/releases"
   },
@@ -102,5 +104,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "authentik",
+      "url": "https://apps.truenas.com/catalog/authentik"
+    }
+  }
 }

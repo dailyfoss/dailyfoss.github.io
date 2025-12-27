@@ -1,7 +1,8 @@
 {
   "name": "maintainerr",
   "slug": "maintainerr",
-  "tagline": null,
+  "tagline": "A dashboard for monitoring activity across media server stacks",
+  "subtitle": "",
   "description": "Maintainerr is a dashboard and event log viewer for monitoring a suite of self-hosted media servers. It connects to services like Jellyfin, Radarr, and Sonarr to track updates, downloads, and system status.",
   "categories": [
     120
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/Maintainerr/Maintainerr",
     "source_code": "https://github.com/Maintainerr/Maintainerr",
     "logo": "/icons/maintainerr.webp",
+    "screenshot": "",
     "issues": "https://github.com/Maintainerr/Maintainerr/issues",
     "releases": "https://github.com/Maintainerr/Maintainerr/releases"
   },
@@ -102,5 +104,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "maintainerr",
+      "url": "https://apps.truenas.com/catalog/maintainerr"
+    }
+  }
 }

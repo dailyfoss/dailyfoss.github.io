@@ -1,7 +1,8 @@
 {
   "name": "ddns-updater",
   "slug": "ddns-updater",
-  "tagline": null,
+  "tagline": "A container-based dynamic DNS updater with a simple web interface",
+  "subtitle": "",
   "description": "DDNS-Updater is a dockerized dynamic DNS updater that works with many providers. It has a simple web UI for configuration, handles IPv4/IPv6, and is easy to deploy alongside other self-hosted services.",
   "categories": [
     140
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/qdm12/ddns-updater",
     "source_code": "https://github.com/qdm12/ddns-updater",
     "logo": "/icons/ddns-updater.webp",
+    "screenshot": "",
     "issues": "https://github.com/qdm12/ddns-updater/issues",
     "releases": "https://github.com/qdm12/ddns-updater/releases"
   },
@@ -86,5 +88,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "ddns-updater",
+      "url": "https://apps.truenas.com/catalog/ddns-updater"
+    }
+  }
 }

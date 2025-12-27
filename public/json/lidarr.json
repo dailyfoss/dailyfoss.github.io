@@ -1,7 +1,8 @@
 {
   "name": "lidarr",
   "slug": "lidarr",
-  "tagline": null,
+  "tagline": "An automated system for managing and downloading music",
+  "subtitle": "",
   "description": "Lidarr is an automated music management and download system. It integrates with download clients and metadata providers to automatically fetch albums or tracks while organizing your local music library.",
   "categories": [
     105
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/Lidarr/Lidarr",
     "source_code": "https://github.com/Lidarr/Lidarr",
     "logo": "/icons/lidarr.webp",
+    "screenshot": "",
     "issues": "https://github.com/Lidarr/Lidarr/issues",
     "releases": "https://github.com/Lidarr/Lidarr/releases"
   },
@@ -97,6 +99,11 @@
       "supported": true,
       "repo_name": "lidarr_ynh",
       "url": "https://github.com/YunoHost-Apps/lidarr_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "lidarr",
+      "url": "https://apps.truenas.com/catalog/lidarr"
     }
   }
 }

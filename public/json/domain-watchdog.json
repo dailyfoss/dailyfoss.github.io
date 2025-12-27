@@ -1,7 +1,8 @@
 {
   "name": "domain-watchdog",
   "slug": "domain-watchdog",
-  "tagline": null,
+  "tagline": "A monitoring tool for tracking domain availability and certificate health",
+  "subtitle": "",
   "description": "Domain Watchdog periodically checks domain names and websites for availability, SSL validity, and DNS issues. It offers a simple panel and notifications so that admins are alerted before outages or certificate expirations affect users.",
   "categories": [
     145
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/maelgangloff/domain-watchdog",
     "source_code": "https://github.com/maelgangloff/domain-watchdog",
     "logo": "/icons/domain-watchdog.webp",
+    "screenshot": "",
     "issues": "https://github.com/maelgangloff/domain-watchdog/issues",
     "releases": "https://github.com/maelgangloff/domain-watchdog/releases"
   },
@@ -96,6 +98,11 @@
       "supported": true,
       "repo_name": "watchdog_ynh",
       "url": "https://github.com/YunoHost-Apps/watchdog_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "domain-watchdog",
+      "url": "https://apps.truenas.com/catalog/domain-watchdog"
     }
   }
 }

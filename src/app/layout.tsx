@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Inter } from "next/font/google";
-import React from "react";
+import React, { Suspense } from "react";
 import PlausibleProvider from "next-plausible";
+import { AuthHandler } from "@/components/auth-handler";
 
 import { ThemeProvider } from "@/components/theme-provider";
 import QueryProvider from "@/components/query-provider";
@@ -53,7 +54,7 @@ export const metadata: Metadata = {
     siteName: "Daily FOSS",
     images: [
       {
-        url: `https://dailyfoss.github.io/defaultimg.png`,
+        url: `https://dailyfoss.github.io/media/images/og/homepage.png`,
         width: 1200,
         height: 630,
         alt: "Daily FOSS",
@@ -65,10 +66,10 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Daily FOSS",
-    creator: "@BramSuurdje",
+    creator: "@dailyfoss",
     description:
       "Your curated platform for exploring and deploying free and open source software.",
-    images: [`https://dailyfoss.github.io/defaultimg.png`],
+    images: [`https://dailyfoss.github.io/media/images/og/homepage.png`],
   },
   manifest: "/manifest.webmanifest",
   appleWebApp: {
@@ -103,6 +104,9 @@ export default function RootLayout({
           <div className="flex w-full flex-col justify-center">
             <NuqsAdapter>
               <QueryProvider>
+                <Suspense fallback={null}>
+                  <AuthHandler />
+                </Suspense>
                 <Navbar />
                 <div className="flex min-h-screen flex-col justify-center">
                   <div className="flex w-full">

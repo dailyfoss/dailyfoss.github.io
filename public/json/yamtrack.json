@@ -1,7 +1,8 @@
 {
   "name": "yamtrack",
   "slug": "yamtrack",
-  "tagline": null,
+  "tagline": "A tracker for media consumption and activities",
+  "subtitle": "",
   "description": "Yamtrack is a self-hosted media and activity tracker that logs what you watch, read, or play. It aggregates entries into timelines and statistics, giving a personal overview of consumption habits.",
   "categories": [
     75
@@ -20,6 +21,7 @@
     "documentation": "https://github.com/FuzzyGrim/Yamtrack",
     "source_code": "https://github.com/FuzzyGrim/Yamtrack",
     "logo": "/icons/yamtrack.webp",
+    "screenshot": "",
     "issues": "https://github.com/FuzzyGrim/Yamtrack/issues",
     "releases": "https://github.com/FuzzyGrim/Yamtrack/releases"
   },
@@ -85,5 +87,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "yamtrack",
+      "url": "https://apps.truenas.com/catalog/yamtrack"
+    }
+  }
 }

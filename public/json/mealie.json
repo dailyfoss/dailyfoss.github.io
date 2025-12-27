@@ -1,7 +1,8 @@
 {
   "name": "mealie",
   "slug": "mealie",
-  "tagline": null,
+  "tagline": "A self-hosted recipe manager with meal planning and shopping lists",
+  "subtitle": "",
   "description": "Mealie is a self-hosted recipe management app that supports meal planning, shopping lists, and nutritional tracking. It offers multiple import methods, multi-user support, and a polished web UI.",
   "categories": [
     131
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/mealie-recipes/mealie",
     "source_code": "https://github.com/mealie-recipes/mealie",
     "logo": "/icons/mealie.webp",
+    "screenshot": "",
     "issues": "https://github.com/mealie-recipes/mealie/issues",
     "releases": "https://github.com/mealie-recipes/mealie/releases"
   },
@@ -96,6 +98,11 @@
       "supported": true,
       "script_id": "mealie",
       "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=mealie"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "mealie",
+      "url": "https://apps.truenas.com/catalog/mealie"
     }
   }
 }

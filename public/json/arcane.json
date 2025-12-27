@@ -1,7 +1,8 @@
 {
   "name": "arcane",
   "slug": "arcane",
-  "tagline": null,
+  "tagline": "A privacy-focused team chat and automation platform with channels and workflows",
+  "subtitle": "",
   "description": "Arcane is an open-source, privacy-first chat and automation platform designed for teams. It offers a Slack-like interface with channels, tasks, and workflows, and can be self-hosted for better data ownership.",
   "categories": [
     117
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/getarcaneapp/arcane",
     "source_code": "https://github.com/getarcaneapp/arcane",
     "logo": "/icons/arcane.webp",
+    "screenshot": "https://raw.githubusercontent.com/getarcaneapp/arcane/main/.github/assets/arcane-dashboard.png",
     "issues": "https://github.com/getarcaneapp/arcane/issues",
     "releases": "https://github.com/getarcaneapp/arcane/releases"
   },
@@ -86,5 +88,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "arcane",
+      "url": "https://apps.truenas.com/catalog/arcane"
+    }
+  }
 }

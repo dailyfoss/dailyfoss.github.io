@@ -1,7 +1,8 @@
 {
   "name": "flood",
   "slug": "flood",
-  "tagline": null,
+  "tagline": "A web interface for managing and monitoring BitTorrent download clients",
+  "subtitle": "",
   "description": "Flood is a modern web UI for managing Transmission or qBittorrent servers. It displays active torrents, stats, and controls downloads from a responsive and themeable interface, ideal for remote managing home torrents.",
   "categories": [
     166
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/jesec/flood",
     "source_code": "https://github.com/jesec/flood",
     "logo": "/icons/flood.webp",
+    "screenshot": "",
     "issues": "https://github.com/jesec/flood/issues",
     "releases": "https://github.com/jesec/flood/releases"
   },
@@ -100,6 +102,11 @@
       "supported": true,
       "repo_name": "flood_ynh",
       "url": "https://github.com/YunoHost-Apps/flood_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "flood",
+      "url": "https://apps.truenas.com/catalog/flood"
     }
   }
 }
