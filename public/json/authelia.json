@@ -1,7 +1,8 @@
 {
   "name": "authelia",
   "slug": "authelia",
-  "tagline": null,
+  "tagline": "An authentication server providing single sign-on and multi-factor access control",
+  "subtitle": "",
   "description": "Authelia is an authentication and authorization server providing 2FA, SSO, and role-based access for web apps. It integrates with reverse proxies and supports LDAP, OAuth, and self-hosted identity management.",
   "categories": [
     15
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/authelia/authelia",
     "source_code": "https://github.com/authelia/authelia",
     "logo": "/icons/authelia.webp",
+    "screenshot": "/uploads/authelia.png",
     "issues": "https://github.com/authelia/authelia/issues",
     "releases": "https://github.com/authelia/authelia/releases"
   },
@@ -96,6 +98,11 @@
       "supported": true,
       "script_id": "authelia",
       "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=authelia"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "authelia",
+      "url": "https://apps.truenas.com/catalog/authelia"
     }
   }
 }

@@ -1,7 +1,8 @@
 {
   "name": "postgresql",
   "slug": "postgresql",
-  "tagline": null,
+  "tagline": "A powerful open source relational database system",
+  "subtitle": "",
   "description": "PostgreSQL is a powerful open-source relational database management system featuring advanced SQL capabilities, extensions, robust concurrency, and replication. It runs on all major platforms and supports extensive integrations.",
   "categories": [
     133
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/postgres/postgres",
     "source_code": "https://github.com/postgres/postgres",
     "logo": "/icons/postgresql.webp",
+    "screenshot": "",
     "issues": "https://github.com/postgres/postgres/issues",
     "releases": null
   },
@@ -108,6 +110,11 @@
       "supported": true,
       "script_id": "postgresql",
       "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=postgresql"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "postgres",
+      "url": "https://apps.truenas.com/catalog/postgres"
     }
   }
 }

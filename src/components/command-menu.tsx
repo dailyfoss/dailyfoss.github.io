@@ -74,7 +74,7 @@ function CommandMenu() {
         const randomScript = getRandomScript(categories, selectedScripts);
         if (randomScript) {
           setSelectedScripts(prev => new Set([...prev, randomScript.slug]));
-          router.push(`/scripts?id=${randomScript.slug}`);
+          router.push(`/${randomScript.slug}`);
         }
       }
       finally {
@@ -85,7 +85,7 @@ function CommandMenu() {
       const randomScript = getRandomScript(links, selectedScripts);
       if (randomScript) {
         setSelectedScripts(prev => new Set([...prev, randomScript.slug]));
-        router.push(`/scripts?id=${randomScript.slug}`);
+        router.push(`/${randomScript.slug}`);
       }
     }
   };
@@ -191,14 +191,14 @@ function CommandMenu() {
                   value={`${script.name}`}
                   onSelect={() => {
                     setOpen(false);
-                    router.push(`/scripts?id=${script.slug}`);
+                    router.push(`/${script.slug}`);
                   }}
                   tabIndex={0}
                   aria-label={`Open script ${script.name}`}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
                       setOpen(false);
-                      router.push(`/scripts?id=${script.slug}`);
+                      router.push(`/${script.slug}`);
                     }
                   }}
                 >

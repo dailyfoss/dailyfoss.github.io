@@ -1,7 +1,8 @@
 {
   "name": "tinyauth",
   "slug": "tinyauth",
-  "tagline": null,
+  "tagline": "A simple authentication and authorization service",
+  "subtitle": "",
   "description": "TinyAuth is a self-hosted authentication and authorization service that manages users, roles, and tokens. It exposes a simple admin web UI and APIs to integrate authentication into other services.",
   "categories": [
     15
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/steveiliop56/tinyauth",
     "source_code": "https://github.com/steveiliop56/tinyauth",
     "logo": "/icons/tinyauth.webp",
+    "screenshot": "",
     "issues": "https://github.com/steveiliop56/tinyauth/issues",
     "releases": "https://github.com/steveiliop56/tinyauth/releases"
   },
@@ -104,6 +106,11 @@
       "supported": true,
       "script_id": "alpine-tinyauth",
       "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=alpine-tinyauth"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "tinyauth",
+      "url": "https://apps.truenas.com/catalog/tinyauth"
     }
   }
 }

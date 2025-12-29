@@ -1,7 +1,8 @@
 {
   "name": "piwigo",
   "slug": "piwigo",
-  "tagline": null,
+  "tagline": "A self-hosted platform for managing photo galleries",
+  "subtitle": "",
   "description": "Piwigo is a self-hosted photo gallery and management platform. It includes tagging, albums, metadata, and plugins for organizing and sharing large image collections.",
   "categories": [
     120
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/Piwigo/Piwigo",
     "source_code": "https://github.com/Piwigo/Piwigo",
     "logo": "/icons/piwigo.webp",
+    "screenshot": "",
     "issues": "https://github.com/Piwigo/Piwigo/issues",
     "releases": "https://github.com/Piwigo/Piwigo/releases"
   },
@@ -104,6 +106,11 @@
       "supported": true,
       "repo_name": "piwigo_ynh",
       "url": "https://github.com/YunoHost-Apps/piwigo_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "piwigo",
+      "url": "https://apps.truenas.com/catalog/piwigo"
     }
   }
 }

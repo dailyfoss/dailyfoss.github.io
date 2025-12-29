@@ -1,7 +1,8 @@
 {
   "name": "umami",
   "slug": "umami",
-  "tagline": null,
+  "tagline": "A privacy friendly self-hosted web analytics platform",
+  "subtitle": "The modern analytics platform for effortless insights",
   "description": "Umami is a self-hosted, privacy-friendly web analytics platform. It uses a small tracking script and offers clean dashboards, goal tracking, and multi-site support, with an optional hosted cloud service.",
   "categories": [
     186
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/umami-software/umami",
     "source_code": "https://github.com/umami-software/umami",
     "logo": "/icons/umami.webp",
+    "screenshot": "https://umami.is/images/app.jpg",
     "issues": "https://github.com/umami-software/umami/issues",
     "releases": "https://github.com/umami-software/umami/releases",
     "logo_light": "/icons/umami-light.webp"
@@ -57,26 +59,26 @@
   ],
   "platform_support": {
     "desktop": {
-      "linux": false,
-      "windows": false,
-      "macos": false
+      "linux": true,
+      "windows": true,
+      "macos": true
     },
     "mobile": {
       "android": false,
       "ios": false
     },
-    "web_app": false,
+    "web_app": true,
     "browser_extension": false,
     "cli_only": false
   },
   "hosting_options": {
-    "self_hosted": false,
+    "self_hosted": true,
     "managed_cloud": false,
     "saas": false
   },
   "interfaces": {
     "cli": false,
-    "gui": false,
+    "gui": true,
     "web_ui": false,
     "api": false,
     "tui": false
@@ -106,6 +108,11 @@
       "supported": true,
       "repo_name": "umami_ynh",
       "url": "https://github.com/YunoHost-Apps/umami_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "umami",
+      "url": "https://apps.truenas.com/catalog/umami"
     }
   }
 }

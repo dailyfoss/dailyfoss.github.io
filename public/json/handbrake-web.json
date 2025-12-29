@@ -1,7 +1,8 @@
 {
   "name": "handbrake-web",
   "slug": "handbrake-web",
-  "tagline": null,
+  "tagline": "A web interface for managing and queuing HandBrake video transcodes",
+  "subtitle": "",
   "description": "Handbrake-Web is a web-based UI for the HandBrake video transcoder, allowing users to queue conversions, set presets, and manage encoding jobs without the desktop GUI.",
   "categories": [
     59
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/TheNickOfTime/handbrake-web",
     "source_code": "https://github.com/TheNickOfTime/handbrake-web",
     "logo": "/icons/handbrake-web.webp",
+    "screenshot": "",
     "issues": "https://github.com/TheNickOfTime/handbrake-web/issues",
     "releases": "https://github.com/TheNickOfTime/handbrake-web/releases"
   },
@@ -86,5 +88,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "handbrake-web",
+      "url": "https://apps.truenas.com/catalog/handbrake-web"
+    }
+  }
 }

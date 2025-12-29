@@ -1,7 +1,8 @@
 {
   "name": "prowlarr",
   "slug": "prowlarr",
-  "tagline": null,
+  "tagline": "A unified indexer manager for Usenet and torrent sources",
+  "subtitle": "",
   "description": "Prowlarr is a self-hosted indexer manager for Usenet and torrent indexers. It integrates with Radarr, Sonarr, and Lidarr for managing indexer sources and fetching metadata via a unified UI.",
   "categories": [
     166
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/Prowlarr/Prowlarr",
     "source_code": "https://github.com/Prowlarr/Prowlarr",
     "logo": "/icons/prowlarr.webp",
+    "screenshot": "",
     "issues": "https://github.com/Prowlarr/Prowlarr/issues",
     "releases": "https://github.com/Prowlarr/Prowlarr/releases"
   },
@@ -105,6 +107,11 @@
       "supported": true,
       "repo_name": "prowlarr_ynh",
       "url": "https://github.com/YunoHost-Apps/prowlarr_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "prowlarr",
+      "url": "https://apps.truenas.com/catalog/prowlarr"
     }
   }
 }

@@ -1,7 +1,8 @@
 {
   "name": "squirrel-servers-manager",
   "slug": "squirrel-servers-manager",
-  "tagline": null,
+  "tagline": "A unified GUI for managing servers and containers",
+  "subtitle": "",
   "description": "Squirrel Servers Manager is a self-hosted management platform for servers and containers built on Ansible and Docker. It provides a unified GUI to configure, deploy, and monitor infrastructure.",
   "categories": [
     146
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/SquirrelCorporation/SquirrelServersManager",
     "source_code": "https://github.com/SquirrelCorporation/SquirrelServersManager",
     "logo": "/icons/squirrel-servers-manager.webp",
+    "screenshot": "",
     "issues": "https://github.com/SquirrelCorporation/SquirrelServersManager/issues",
     "releases": null
   },
@@ -86,5 +88,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "qui",
+      "url": "https://apps.truenas.com/catalog/qui"
+    }
+  }
 }

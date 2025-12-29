@@ -1,7 +1,8 @@
 {
   "name": "file-browser",
   "slug": "file-browser",
-  "tagline": null,
+  "tagline": "A web-based file manager for browsing, uploading, and sharing server files",
+  "subtitle": "",
   "description": "Filebrowser is a web-based file manager you can run on your own server. It supports uploads, directory browsing, previews, permissions, and can connect to local or cloud storage. Designed to simplify remote file management.",
   "categories": [
     60
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/filebrowser/filebrowser",
     "source_code": "https://github.com/filebrowser/filebrowser",
     "logo": "/icons/file-browser.webp",
+    "screenshot": "",
     "issues": "https://github.com/filebrowser/filebrowser/issues",
     "releases": "https://github.com/filebrowser/filebrowser/releases"
   },
@@ -92,6 +94,11 @@
       "supported": true,
       "repo_name": "filebrowser_ynh",
       "url": "https://github.com/YunoHost-Apps/filebrowser_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "filebrowser",
+      "url": "https://apps.truenas.com/catalog/filebrowser"
     }
   }
 }

@@ -1,7 +1,8 @@
 {
   "name": "restic",
   "slug": "restic",
-  "tagline": null,
+  "tagline": "A secure backup client with encryption and deduplication",
+  "subtitle": "",
   "description": "Restic is a secure, fast, self-hosted backup client. It supports encryption, deduplication, multiple backends, and CLI operations for efficient backup and restore workflows.",
   "categories": [
     18
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/restic/restic",
     "source_code": "https://github.com/restic/restic",
     "logo": "/icons/restic.webp",
+    "screenshot": "",
     "issues": "https://github.com/restic/restic/issues",
     "releases": "https://github.com/restic/restic/releases"
   },
@@ -108,6 +110,11 @@
       "supported": true,
       "repo_name": "restic_ynh",
       "url": "https://github.com/YunoHost-Apps/restic_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "restic-rest-server",
+      "url": "https://apps.truenas.com/catalog/restic-rest-server"
     }
   }
 }

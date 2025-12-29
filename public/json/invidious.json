@@ -1,7 +1,8 @@
 {
   "name": "invidious",
   "slug": "invidious",
-  "tagline": null,
+  "tagline": "A privacy focused alternative front end for browsing YouTube content",
+  "subtitle": "",
   "description": "Invidious is a privacy focused alternative front end for YouTube. It proxies video, search and subscriptions without ads or tracking, supports RSS feeds and multiple clients, and can be self hosted as a lightweight video portal.",
   "categories": [
     100
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/iv-org/invidious",
     "source_code": "https://github.com/iv-org/invidious",
     "logo": "/icons/invidious.webp",
+    "screenshot": "",
     "issues": "https://github.com/iv-org/invidious/issues",
     "releases": "https://github.com/iv-org/invidious/releases"
   },
@@ -108,6 +110,11 @@
       "supported": true,
       "repo_name": "invidious_ynh",
       "url": "https://github.com/YunoHost-Apps/invidious_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "invidious",
+      "url": "https://apps.truenas.com/catalog/invidious"
     }
   }
 }

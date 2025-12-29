@@ -1,7 +1,8 @@
 {
   "name": "pterodactyl",
   "slug": "pterodactyl",
-  "tagline": null,
+  "tagline": "A self-hosted game server management panel",
+  "subtitle": "",
   "description": "Pterodactyl Panel is a self-hosted game server management platform. It supports multiple game servers with Docker isolation, user access controls, and admin dashboards.",
   "categories": [
     146
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/pterodactyl/panel",
     "source_code": "https://github.com/pterodactyl/panel",
     "logo": "/icons/pterodactyl.webp",
+    "screenshot": "",
     "issues": "https://github.com/pterodactyl/panel/issues",
     "releases": "https://github.com/pterodactyl/panel/releases"
   },
@@ -105,6 +107,11 @@
       "supported": true,
       "repo_name": "pterodactyl_ynh",
       "url": "https://github.com/YunoHost-Apps/pterodactyl_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "pterodactyl-panel",
+      "url": "https://apps.truenas.com/catalog/pterodactyl-panel"
     }
   }
 }

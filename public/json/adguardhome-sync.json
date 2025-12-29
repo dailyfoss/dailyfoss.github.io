@@ -1,7 +1,8 @@
 {
   "name": "adguardhome-sync",
   "slug": "adguardhome-sync",
-  "tagline": null,
+  "tagline": "A self-hosted service to keep AdGuard Home settings in sync across instances",
+  "subtitle": "",
   "description": "AdGuardHome Sync automatically synchronizes exact config and filter settings across multiple AdGuard Home instances. It helps users running multi-router or distributed setups manage consistent filtering rules without manual effort.",
   "categories": [
     7
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/bakito/adguardhome-sync",
     "source_code": "https://github.com/bakito/adguardhome-sync",
     "logo": "/icons/adguardhome-sync.webp",
+    "screenshot": "",
     "issues": "https://github.com/bakito/adguardhome-sync/issues",
     "releases": "https://github.com/bakito/adguardhome-sync/releases"
   },
@@ -113,6 +115,11 @@
       "supported": true,
       "repo_name": "adguardhome_ynh",
       "url": "https://github.com/YunoHost-Apps/adguardhome_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "adguard-home",
+      "url": "https://apps.truenas.com/catalog/adguard-home"
     }
   }
 }

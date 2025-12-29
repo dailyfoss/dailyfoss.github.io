@@ -1,7 +1,8 @@
 {
   "name": "homepage",
   "slug": "homepage",
-  "tagline": null,
+  "tagline": "A YAML driven dashboard for visualizing services and infrastructure status",
+  "subtitle": "",
   "description": "Homepage is a customizable, YAML driven dashboard for homelab services. It supports widgets for system stats, media libraries, monitoring tools and dynamic service discovery, serving as a central control panel for your infrastructure.",
   "categories": [
     34
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/gethomepage/homepage",
     "source_code": "https://github.com/gethomepage/homepage",
     "logo": "/icons/homepage.webp",
+    "screenshot": "",
     "issues": "https://github.com/gethomepage/homepage/issues",
     "releases": "https://github.com/gethomepage/homepage/releases"
   },
@@ -96,6 +98,11 @@
       "supported": true,
       "script_id": "homepage",
       "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=homepage"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "homepage",
+      "url": "https://apps.truenas.com/catalog/homepage"
     }
   }
 }

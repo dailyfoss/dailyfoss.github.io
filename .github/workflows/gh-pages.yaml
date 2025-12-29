@@ -43,6 +43,9 @@ jobs:
         env:
           NODE_ENV: production
           NEXT_PUBLIC_PLAUSIBLE_PROXY_URL: ${{ secrets.NEXT_PUBLIC_PLAUSIBLE_PROXY_URL }}
+          NEXT_PUBLIC_SPONSORED_API: ${{ secrets.NEXT_PUBLIC_SPONSORED_API }}
+          NEXT_PUBLIC_BACKEND_API: ${{ secrets.NEXT_PUBLIC_BACKEND_API }}
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
 
       - name: Add .nojekyll file
         run: touch out/.nojekyll

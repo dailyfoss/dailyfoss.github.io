@@ -1,7 +1,8 @@
 {
   "name": "influxdb",
   "slug": "influxdb",
-  "tagline": null,
+  "tagline": "A time series database optimized for metrics events and analytics",
+  "subtitle": "",
   "description": "InfluxDB is a high performance time series database optimized for metrics and events. It supports SQL like queries, retention policies and integrations with dashboards and agents, and can be run self hosted or in managed cloud offerings.",
   "categories": [
     133
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/influxdata/influxdb",
     "source_code": "https://github.com/influxdata/influxdb",
     "logo": "/icons/influxdb.webp",
+    "screenshot": "",
     "issues": "https://github.com/influxdata/influxdb/issues",
     "releases": "https://github.com/influxdata/influxdb/releases"
   },
@@ -97,6 +99,11 @@
       "supported": true,
       "repo_name": "influxdb_v2_ynh",
       "url": "https://github.com/YunoHost-Apps/influxdb_v2_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "influxdb",
+      "url": "https://apps.truenas.com/catalog/influxdb"
     }
   }
 }

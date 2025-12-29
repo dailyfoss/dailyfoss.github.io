@@ -1,7 +1,8 @@
 {
   "name": "actual-budget",
   "slug": "actual-budget",
-  "tagline": null,
+  "tagline": "A self-hosted personal budgeting app with offline-first design and full data control",
+  "subtitle": "",
   "description": "Actual is a privacy-focused personal budgeting and finance manager with offline-first architecture. It allows local data control, multi-device sync, budgeting categories, transaction tracking, and report generation. Designed to be self-hosted.",
   "categories": [
     22
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/actualbudget/actual",
     "source_code": "https://github.com/actualbudget/actual",
     "logo": "/icons/actual-budget.webp",
+    "screenshot": "/uploads/actual-budget.png",
     "issues": "https://github.com/actualbudget/actual/issues",
     "releases": "https://github.com/actualbudget/actual/releases"
   },
@@ -105,6 +107,11 @@
       "supported": true,
       "repo_name": "actual_ynh",
       "url": "https://github.com/YunoHost-Apps/actual_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "actual-budget",
+      "url": "https://apps.truenas.com/catalog/actual-budget"
     }
   }
 }

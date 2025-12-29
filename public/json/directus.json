@@ -1,7 +1,8 @@
 {
   "name": "directus",
   "slug": "directus",
-  "tagline": null,
+  "tagline": "A headless CMS that adds APIs and a UI on top of existing databases",
+  "subtitle": "",
   "description": "Directus is an open-source headless CMS and data management platform that wraps existing databases with a sleek UI and APIs. It supports SQL databases, custom workflows, GraphQL, and can be self-hosted or used in the cloud.",
   "categories": [
     33
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/directus/directus",
     "source_code": "https://github.com/directus/directus",
     "logo": "/icons/directus.webp",
+    "screenshot": "",
     "issues": "https://github.com/directus/directus/issues",
     "releases": "https://github.com/directus/directus/releases",
     "logo_light": "/icons/directus-light.webp"
@@ -95,5 +97,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "directus",
+      "url": "https://apps.truenas.com/catalog/directus"
+    }
+  }
 }

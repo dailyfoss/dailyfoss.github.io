@@ -1,7 +1,8 @@
 {
   "name": "portainer",
   "slug": "portainer",
-  "tagline": null,
+  "tagline": "A management interface for Docker and Kubernetes environments",
+  "subtitle": "",
   "description": "Portainer is a self-hosted management UI for Docker, Kubernetes, and container environments. It simplifies container deployments, monitoring, and orchestrating services across endpoints.",
   "categories": [
     146
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/portainer/portainer",
     "source_code": "https://github.com/portainer/portainer",
     "logo": "/icons/portainer.webp",
+    "screenshot": "",
     "issues": "https://github.com/portainer/portainer/issues",
     "releases": "https://github.com/portainer/portainer/releases"
   },
@@ -104,6 +106,11 @@
       "supported": true,
       "repo_name": "portainer_ynh",
       "url": "https://github.com/YunoHost-Apps/portainer_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "portainer",
+      "url": "https://apps.truenas.com/catalog/portainer"
     }
   }
 }

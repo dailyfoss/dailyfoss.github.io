@@ -1,7 +1,8 @@
 {
   "name": "glance",
   "slug": "glance",
-  "tagline": null,
+  "tagline": "A self-hosted homepage for displaying widgets, links, and service status",
+  "subtitle": "",
   "description": "Glance is a dynamic homepage and dashboard builder for self-hosted setups. It allows users to display widgets for services, schedules, weather, or links, all configured via simple YAML files.",
   "categories": [
     37
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/glanceapp/glance",
     "source_code": "https://github.com/glanceapp/glance",
     "logo": "/icons/glance.webp",
+    "screenshot": "",
     "issues": "https://github.com/glanceapp/glance/issues",
     "releases": "https://github.com/glanceapp/glance/releases"
   },
@@ -101,6 +103,11 @@
       "supported": true,
       "repo_name": "glance_ynh",
       "url": "https://github.com/YunoHost-Apps/glance_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "glances",
+      "url": "https://apps.truenas.com/catalog/glances"
     }
   }
 }

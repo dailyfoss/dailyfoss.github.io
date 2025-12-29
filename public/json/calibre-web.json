@@ -1,7 +1,8 @@
 {
   "name": "calibre-web",
   "slug": "calibre-web",
-  "tagline": null,
+  "tagline": "A self-hosted web interface for browsing, reading, and managing eBook libraries",
+  "subtitle": "",
   "description": "Calibre-Web is a self-hosted web app to browse, read, and manage eBooks stored in a Calibre database. It features OPDS, Kindle syncing, user roles, and metadata editing from a browser.",
   "categories": [
     21
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/janeczku/calibre-web",
     "source_code": "https://github.com/janeczku/calibre-web",
     "logo": "/icons/calibre-web.webp",
+    "screenshot": "",
     "issues": "https://github.com/janeczku/calibre-web/issues",
     "releases": "https://github.com/janeczku/calibre-web/releases"
   },
@@ -96,15 +98,15 @@
   "notes": [],
   "repository_status": null,
   "community_integrations": {
-    "proxmox_ve": {
-      "supported": true,
-      "script_id": "calibre-web",
-      "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=calibre-web"
-    },
     "yunohost": {
       "supported": true,
       "repo_name": "calibreweb_ynh",
       "url": "https://github.com/YunoHost-Apps/calibreweb_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "calibre-web",
+      "url": "https://apps.truenas.com/catalog/calibre-web"
     }
   }
 }

@@ -1,7 +1,8 @@
 {
   "name": "jellyseerr",
   "slug": "seerr",
-  "tagline": null,
+  "tagline": "A self-hosted media request manager for Plex, Sonarr, and Radarr with approval workflows",
+  "subtitle": "",
   "description": "Seerr is a fork of Overseerr, a self-hosted service for managing media requests in Plex, Sonarr, and Radarr setups. It offers user roles, search, and approval workflows.",
   "categories": [
     156
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/seerr-team/seerr",
     "source_code": "https://github.com/seerr-team/seerr",
     "logo": "/icons/seerr.webp",
+    "screenshot": "",
     "issues": "https://github.com/seerr-team/seerr/issues",
     "releases": "https://github.com/seerr-team/seerr/releases"
   },
@@ -101,6 +103,11 @@
       "supported": true,
       "repo_name": "jellyseerr_ynh",
       "url": "https://github.com/YunoHost-Apps/jellyseerr_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "jellyseerr",
+      "url": "https://apps.truenas.com/catalog/jellyseerr"
     }
   }
 }

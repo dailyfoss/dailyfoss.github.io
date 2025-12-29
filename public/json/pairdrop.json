@@ -1,7 +1,8 @@
 {
   "name": "pairdrop",
   "slug": "pairdrop",
-  "tagline": null,
+  "tagline": "A self-hosted AirDrop like file sharing tool",
+  "subtitle": "",
   "description": "PairDrop is a self-hosted AirDrop-like file transfer tool using WebRTC. It allows fast device-to-device sharing over your own network without third-party services.",
   "categories": [
     91
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/schlagmichdoch/PairDrop",
     "source_code": "https://github.com/schlagmichdoch/PairDrop",
     "logo": "/icons/pairdrop.webp",
+    "screenshot": "",
     "issues": "https://github.com/schlagmichdoch/PairDrop/issues",
     "releases": "https://github.com/schlagmichdoch/PairDrop/releases"
   },
@@ -113,6 +115,11 @@
       "supported": true,
       "repo_name": "pairdrop_ynh",
       "url": "https://github.com/YunoHost-Apps/pairdrop_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "pairdrop",
+      "url": "https://apps.truenas.com/catalog/pairdrop"
     }
   }
 }

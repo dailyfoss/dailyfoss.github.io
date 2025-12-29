@@ -1,7 +1,8 @@
 {
   "name": "freshrss",
   "slug": "freshrss",
-  "tagline": null,
+  "tagline": "A self-hosted feed reader for aggregating and filtering RSS content",
+  "subtitle": "",
   "description": "FreshRSS is a self-hosted RSS feed aggregator for individuals or small teams. It supports multiple accounts, tags, filtering, and mobile-friendly UI with plugins and API integration for external apps.",
   "categories": [
     57
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/FreshRSS/FreshRSS",
     "source_code": "https://github.com/FreshRSS/FreshRSS",
     "logo": "/icons/freshrss.webp",
+    "screenshot": "",
     "issues": "https://github.com/FreshRSS/FreshRSS/issues",
     "releases": "https://github.com/FreshRSS/FreshRSS/releases"
   },
@@ -105,6 +107,11 @@
       "supported": true,
       "repo_name": "freshrss_ynh",
       "url": "https://github.com/YunoHost-Apps/freshrss_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "freshrss",
+      "url": "https://apps.truenas.com/catalog/freshrss"
     }
   }
 }

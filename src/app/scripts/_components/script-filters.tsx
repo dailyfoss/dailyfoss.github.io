@@ -63,6 +63,7 @@ const uiOptions = [
 const communityOptions = [
   { id: "proxmox_ve", label: "Proxmox VE" },
   { id: "yunohost", label: "YunoHost" },
+  { id: "truenas", label: "TrueNAS" },
 ];
 
 const activityOptions = [

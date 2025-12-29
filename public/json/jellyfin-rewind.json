@@ -1,7 +1,8 @@
 {
   "name": "jellyfin-rewind",
   "slug": "jellyfin-rewind",
-  "tagline": null,
+  "tagline": "A companion tool that creates recap videos from Jellyfin watch history",
+  "subtitle": "",
   "description": "Jellyfin Rewind is a companion tool for Jellyfin that generates recap or rewind highlight clips from your media library. It creates short retrospective videos from watched items, adding a fun way to revisit your collection.",
   "categories": [
     100
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/Chaphasilor/jellyfin-rewind",
     "source_code": "https://github.com/Chaphasilor/jellyfin-rewind",
     "logo": "/icons/jellyfin-rewind.webp",
+    "screenshot": "",
     "issues": "https://github.com/Chaphasilor/jellyfin-rewind/issues",
     "releases": "https://github.com/Chaphasilor/jellyfin-rewind/releases"
   },
@@ -89,6 +91,11 @@
       "supported": true,
       "repo_name": "jellyfin_ynh",
       "url": "https://github.com/YunoHost-Apps/jellyfin_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "jellyfin",
+      "url": "https://apps.truenas.com/catalog/jellyfin"
     }
   }
 }

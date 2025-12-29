@@ -1,7 +1,8 @@
 {
   "name": "gaseous",
   "slug": "gaseous",
-  "tagline": null,
+  "tagline": "A self-hosted platform for running private browser-based desktops and apps",
+  "subtitle": "",
   "description": "Gaseous Server is a self-hosted platform for running private, ephemeral virtual desktops or apps in the browser. It uses containerized sessions and supports custom apps or databases via WebAssembly or VNC.",
   "categories": [
     17
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/gaseous-project/gaseous-server",
     "source_code": "https://github.com/gaseous-project/gaseous-server",
     "logo": "/icons/gaseous.webp",
+    "screenshot": "",
     "issues": "https://github.com/gaseous-project/gaseous-server/issues",
     "releases": "https://github.com/gaseous-project/gaseous-server/releases"
   },
@@ -102,5 +104,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "gaseous-server",
+      "url": "https://apps.truenas.com/catalog/gaseous-server"
+    }
+  }
 }

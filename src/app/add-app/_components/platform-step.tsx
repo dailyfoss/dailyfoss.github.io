@@ -262,17 +262,6 @@ export function PlatformStep({ data, onChange }: StepProps) {
         <CardContent className="space-y-2">
           <div className="flex items-center space-x-2">
             <Checkbox
-              id="docker"
-              checked={data.deployment_methods.docker}
-              onCheckedChange={checked =>
-                onChange({
-                  deployment_methods: { ...data.deployment_methods, docker: checked as boolean },
-                })}
-            />
-            <Label htmlFor="docker" className="font-normal cursor-pointer">Docker</Label>
-          </div>
-          <div className="flex items-center space-x-2">
-            <Checkbox
               id="docker_compose"
               checked={data.deployment_methods.docker_compose}
               onCheckedChange={checked =>

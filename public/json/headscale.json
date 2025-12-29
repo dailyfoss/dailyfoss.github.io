@@ -1,7 +1,8 @@
 {
   "name": "headscale",
   "slug": "headscale",
-  "tagline": null,
+  "tagline": "A self-hosted control server for managing private WireGuard mesh networks",
+  "subtitle": "",
   "description": "Headscale is an open-source control server for Tailscale networks. It manages lightweight peer-to-peer VPN meshes using WireGuard, enabling private secure networking without relying on external cloud services.",
   "categories": [
     174
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/juanfont/headscale",
     "source_code": "https://github.com/juanfont/headscale",
     "logo": "/icons/headscale.webp",
+    "screenshot": "",
     "issues": "https://github.com/juanfont/headscale/issues",
     "releases": "https://github.com/juanfont/headscale/releases"
   },
@@ -113,6 +115,11 @@
       "supported": true,
       "repo_name": "headscale_ynh",
       "url": "https://github.com/YunoHost-Apps/headscale_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "headscale",
+      "url": "https://apps.truenas.com/catalog/headscale"
     }
   }
 }

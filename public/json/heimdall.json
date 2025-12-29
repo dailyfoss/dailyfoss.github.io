@@ -1,7 +1,8 @@
 {
   "name": "heimdall",
   "slug": "heimdall",
-  "tagline": null,
+  "tagline": "A self-hosted application dashboard for organizing service links",
+  "subtitle": "",
   "description": "Heimdall is a self hosted application dashboard for organizing links to your services. It automatically detects many apps to show status and logos, making a clean, centralized homepage for homelab or server environments.",
   "categories": [
     34
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/linuxserver/Heimdall",
     "source_code": "https://github.com/linuxserver/Heimdall",
     "logo": "/icons/heimdall.webp",
+    "screenshot": "",
     "issues": "https://github.com/linuxserver/Heimdall/issues",
     "releases": "https://github.com/linuxserver/Heimdall/releases",
     "logo_light": "/icons/heimdall-light.webp"
@@ -101,6 +103,11 @@
       "supported": true,
       "script_id": "heimdall-dashboard",
       "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=heimdall-dashboard"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "heimdall",
+      "url": "https://apps.truenas.com/catalog/heimdall"
     }
   }
 }

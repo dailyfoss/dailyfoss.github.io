@@ -1,7 +1,8 @@
 {
   "name": "bookstack",
   "slug": "bookstack",
-  "tagline": null,
+  "tagline": "A self-hosted documentation platform with structured content and permissions",
+  "subtitle": "",
   "description": "BookStack is an easy-to-use self-hosted documentation platform. It allows users to organize content in a structured hierarchy using books, chapters, and pages, and comes with markdown support, permissions, and a WYSIWYG editor.",
   "categories": [
     193
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/BookStackApp/BookStack",
     "source_code": "https://github.com/BookStackApp/BookStack",
     "logo": "/icons/bookstack.webp",
+    "screenshot": "",
     "issues": "https://github.com/BookStackApp/BookStack/issues",
     "releases": "https://github.com/BookStackApp/BookStack/releases"
   },
@@ -105,6 +107,11 @@
       "supported": true,
       "repo_name": "bookstack_ynh",
       "url": "https://github.com/YunoHost-Apps/bookstack_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "bookstack",
+      "url": "https://apps.truenas.com/catalog/bookstack"
     }
   }
 }

@@ -1,7 +1,8 @@
 {
   "name": "nzbget",
   "slug": "nzbget",
-  "tagline": null,
+  "tagline": "A high performance Usenet downloader with web interface",
+  "subtitle": "",
   "description": "NZBGet is a Usenet downloader optimized for performance and low resource usage. It supports automation scripts, web UI, scheduling, and multi-threading with a lightweight daemon for self-hosting.",
   "categories": [
     166
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/nzbgetcom/nzbget",
     "source_code": "https://github.com/nzbgetcom/nzbget",
     "logo": "/icons/nzbget.webp",
+    "screenshot": "",
     "issues": "https://github.com/nzbgetcom/nzbget/issues",
     "releases": "https://github.com/nzbgetcom/nzbget/releases"
   },
@@ -108,6 +110,11 @@
       "supported": true,
       "script_id": "nzbget",
       "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=nzbget"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "nzbget",
+      "url": "https://apps.truenas.com/catalog/nzbget"
     }
   }
 }

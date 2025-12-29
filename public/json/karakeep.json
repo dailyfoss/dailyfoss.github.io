@@ -1,7 +1,8 @@
 {
   "name": "karakeep",
   "slug": "karakeep",
-  "tagline": null,
+  "tagline": "A home automation dashboard for aggregating device controls",
+  "subtitle": "",
   "description": "Karakeep is a home automation dashboard and control interface. It aggregates device statuses, scenes and automations into a single web UI, aiming to simplify management of self hosted smart home stacks.",
   "categories": [
     111
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/karakeep-app/karakeep",
     "source_code": "https://github.com/karakeep-app/karakeep",
     "logo": "/icons/karakeep.webp",
+    "screenshot": "",
     "issues": "https://github.com/karakeep-app/karakeep/issues",
     "releases": "https://github.com/karakeep-app/karakeep/releases",
     "logo_light": "/icons/karakeep-light.webp"
@@ -98,6 +100,11 @@
       "supported": true,
       "repo_name": "karakeep_ynh",
       "url": "https://github.com/YunoHost-Apps/karakeep_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "karakeep",
+      "url": "https://apps.truenas.com/catalog/karakeep"
     }
   }
 }

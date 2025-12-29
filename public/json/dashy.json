@@ -1,7 +1,8 @@
 {
   "name": "dashy",
   "slug": "dashy",
-  "tagline": null,
+  "tagline": "A self-hosted dashboard for organizing services, links, and status widgets",
+  "subtitle": "",
   "description": "Dashy is a highly configurable self-hosted dashboard for organizing links, services, and status widgets. It supports themes, authentication, custom YAML config, and integrates seamlessly with homelab setups.",
   "categories": [
     34
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/Lissy93/dashy",
     "source_code": "https://github.com/Lissy93/dashy",
     "logo": "/icons/dashy.webp",
+    "screenshot": "",
     "issues": "https://github.com/Lissy93/dashy/issues",
     "releases": "https://github.com/Lissy93/dashy/releases"
   },
@@ -86,5 +88,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "dashy",
+      "url": "https://apps.truenas.com/catalog/dashy"
+    }
+  }
 }

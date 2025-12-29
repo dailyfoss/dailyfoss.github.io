@@ -11,10 +11,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
     },
     {
-      url: `${protocol}://${domain}/scripts`,
-      lastModified: new Date(),
-    },
-    {
       url: `${protocol}://${domain}/json-editor`,
       lastModified: new Date(),
     },

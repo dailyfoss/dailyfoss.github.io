@@ -1,7 +1,6 @@
 "use client";
 import { Suspense, useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -13,16 +12,14 @@ import { Button } from "./animate-ui/components/buttons/button";
 import MobileSidebar from "./navigation/mobile-sidebar";
 import { ThemeToggle } from "./ui/theme-toggle";
 import CommandMenu from "./command-menu";
+import { AuthButton } from "./auth-button";
 
 export const dynamic = "force-dynamic";
 
 function NavbarLogo({ logoSrc }: { logoSrc: string }) {
-  const searchParams = useSearchParams();
-  const isScriptDetailPage = searchParams.get("id") !== null;
-  
   return (
     <Link
-      href={isScriptDetailPage ? "/scripts" : "/"}
+      href="/"
       className="cursor-pointer w-full justify-center sm:justify-start flex-row-reverse hidden sm:flex items-center gap-2 font-semibold sm:flex-row"
     >
       <Image
@@ -38,36 +35,24 @@ function NavbarLogo({ logoSrc }: { logoSrc: string }) {
 }
 
 function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
-
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
   }, []);
 
   // Avoid hydration mismatch
   const logoSrc = !mounted
-    ? "/logo_white.png"
+    ? "/logo_light.png"
     : resolvedTheme === "dark"
       ? "/logo_dark.png"
-      : "/logo_white.png";
+      : "/logo_light.png";
 
   return (
     <>
       <div
-        className={`fixed left-0 top-0 z-50 flex w-screen justify-center px-4 xl:px-0 ${isScrolled ? "glass border-b bg-background/50" : ""
-          }`}
+        className="fixed left-0 top-0 z-50 flex w-screen justify-center px-4 xl:px-0 bg-background border-b"
       >
         <div className="flex h-20 w-full max-w-[1440px] items-center justify-between sm:flex-row">
           <Suspense fallback={
@@ -114,6 +99,7 @@ function Navbar() {
                 </TooltipProvider>
               ))}
               <ThemeToggle />
+              <AuthButton />
             </div>
           </div>
         </div>

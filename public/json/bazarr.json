@@ -1,7 +1,8 @@
 {
   "name": "bazarr",
   "slug": "bazarr",
-  "tagline": null,
+  "tagline": "An automation tool for downloading and managing subtitles for media libraries",
+  "subtitle": "",
   "description": "Bazarr is a companion tool to Radarr and Sonarr that automatically downloads and manages subtitles for media libraries. It supports many subtitle providers, languages, and integrates with Plex, Jellyfin, and Emby.",
   "categories": [
     155
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/morpheus65535/bazarr",
     "source_code": "https://github.com/morpheus65535/bazarr",
     "logo": "/icons/bazarr.webp",
+    "screenshot": "",
     "issues": "https://github.com/morpheus65535/bazarr/issues",
     "releases": "https://github.com/morpheus65535/bazarr/releases"
   },
@@ -101,6 +103,11 @@
       "supported": true,
       "repo_name": "bazarr_ynh",
       "url": "https://github.com/YunoHost-Apps/bazarr_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "bazarr",
+      "url": "https://apps.truenas.com/catalog/bazarr"
     }
   }
 }

@@ -1,7 +1,8 @@
 {
   "name": "notifiarr",
   "slug": "notifiarr",
-  "tagline": null,
+  "tagline": "A notification and automation hub for media servers",
+  "subtitle": "",
   "description": "Notifiarr integrates self-hosted media systems like Plex, Radarr, and Sonarr with alerts, stats, and automation. It sends user notifications and status updates across devices via a configurable UI.",
   "categories": [
     112
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/Notifiarr/notifiarr",
     "source_code": "https://github.com/Notifiarr/notifiarr",
     "logo": "/icons/notifiarr.webp",
+    "screenshot": "",
     "issues": "https://github.com/Notifiarr/notifiarr/issues",
     "releases": "https://github.com/Notifiarr/notifiarr/releases"
   },
@@ -96,6 +98,11 @@
       "supported": true,
       "script_id": "notifiarr",
       "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=notifiarr"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "notifiarr",
+      "url": "https://apps.truenas.com/catalog/notifiarr"
     }
   }
 }

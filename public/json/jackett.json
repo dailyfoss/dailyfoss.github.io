@@ -1,7 +1,8 @@
 {
   "name": "jackett",
   "slug": "jackett",
-  "tagline": null,
+  "tagline": "A proxy service that unifies torrent indexers behind a single API",
+  "subtitle": "",
   "description": "Jackett acts as a proxy between torrent indexers and apps like Sonarr or Radarr. It translates queries into many tracker specific formats, providing a single unified API so self hosted media automation stacks can search dozens of sources.",
   "categories": [
     166
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/Jackett/Jackett",
     "source_code": "https://github.com/Jackett/Jackett",
     "logo": "/icons/jackett.webp",
+    "screenshot": "",
     "issues": "https://github.com/Jackett/Jackett/issues",
     "releases": "https://github.com/Jackett/Jackett/releases",
     "logo_light": "/icons/jackett-light.webp"
@@ -90,6 +92,11 @@
       "supported": true,
       "repo_name": "jackett_ynh",
       "url": "https://github.com/YunoHost-Apps/jackett_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "jackett",
+      "url": "https://apps.truenas.com/catalog/jackett"
     }
   }
 }

@@ -10,6 +10,7 @@ export interface AppFormData {
     source_code: string;
     logo: string;
     logo_light: string;
+    screenshot: string;
   };
   features: Array<{
     title: string;
@@ -44,11 +45,33 @@ export interface AppFormData {
   };
   deployment_methods: {
     script: boolean;
-    docker: boolean;
     docker_compose: boolean;
     helm: boolean;
     kubernetes: boolean;
     terraform: boolean;
+  };
+  manifests?: {
+    script?: string;
+    docker_compose?: string;
+    helm?: string;
+    kubernetes?: string;
+    terraform?: string;
+  };
+  community_integrations: {
+    proxmox_ve: {
+      supported: boolean;
+      script_id: string;
+      url: string;
+    };
+    yunohost: {
+      supported: boolean;
+      repo_name: string;
+      url: string;
+    };
+    truenas: {
+      supported: boolean;
+      url: string;
+    };
   };
 }
 

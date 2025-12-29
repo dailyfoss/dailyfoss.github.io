@@ -1,7 +1,8 @@
 {
   "name": "whoogle",
   "slug": "whoogle",
-  "tagline": null,
+  "tagline": "A privacy respecting metasearch proxy for Google",
+  "subtitle": "",
   "description": "Whoogle Search is a self-hosted, ad-free, privacy-respecting metasearch engine that proxies Google results. It strips tracking, blocks ads, supports search filters, and can be used as a default search provider across browsers and devices.",
   "categories": [
     144
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/benbusby/whoogle-search",
     "source_code": "https://github.com/benbusby/whoogle-search",
     "logo": "/icons/whoogle.webp",
+    "screenshot": "",
     "issues": "https://github.com/benbusby/whoogle-search/issues",
     "releases": null
   },
@@ -100,6 +102,11 @@
       "supported": true,
       "repo_name": "whoogle_ynh",
       "url": "https://github.com/YunoHost-Apps/whoogle_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "whoogle",
+      "url": "https://apps.truenas.com/catalog/whoogle"
     }
   }
 }

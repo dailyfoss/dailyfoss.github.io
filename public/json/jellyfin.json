@@ -1,7 +1,8 @@
 {
   "name": "jellyfin",
   "slug": "jellyfin",
-  "tagline": null,
+  "tagline": "A self-hosted media server for streaming movies shows and music",
+  "subtitle": "",
   "description": "Jellyfin is a free, open source media server that organizes and streams movies, shows and music to many devices. It offers multi user libraries, live TV, hardware transcoding and a wide ecosystem of clients, all fully self hosted.",
   "categories": [
     100
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/jellyfin/jellyfin",
     "source_code": "https://github.com/jellyfin/jellyfin",
     "logo": "/icons/jellyfin.webp",
+    "screenshot": "",
     "issues": "https://github.com/jellyfin/jellyfin/issues",
     "releases": "https://github.com/jellyfin/jellyfin/releases"
   },
@@ -105,6 +107,11 @@
       "supported": true,
       "repo_name": "jellyfin_ynh",
       "url": "https://github.com/YunoHost-Apps/jellyfin_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "jellyfin",
+      "url": "https://apps.truenas.com/catalog/jellyfin"
     }
   }
 }

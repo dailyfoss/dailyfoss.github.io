@@ -1,7 +1,8 @@
 {
   "name": "tube-archivist",
   "slug": "tube-archivist",
-  "tagline": null,
+  "tagline": "A personal YouTube archiving and browsing platform",
+  "subtitle": "",
   "description": "TubeArchivist is a self-hosted YouTube archiving and management solution. It downloads videos, indexes metadata, and offers search, playlists, and a web player to build a personal YouTube library.",
   "categories": [
     100
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/tubearchivist/tubearchivist",
     "source_code": "https://github.com/tubearchivist/tubearchivist",
     "logo": "/icons/tube-archivist.webp",
+    "screenshot": "",
     "issues": "https://github.com/tubearchivist/tubearchivist/issues",
     "releases": "https://github.com/tubearchivist/tubearchivist/releases"
   },
@@ -92,6 +94,11 @@
       "supported": true,
       "repo_name": "archivist_ynh",
       "url": "https://github.com/YunoHost-Apps/archivist_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "tubearchivist",
+      "url": "https://apps.truenas.com/catalog/tubearchivist"
     }
   }
 }

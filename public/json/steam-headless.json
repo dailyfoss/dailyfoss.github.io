@@ -1,7 +1,8 @@
 {
   "name": "steam-headless",
   "slug": "steam-headless",
-  "tagline": null,
+  "tagline": "A headless Steam client for servers and containers",
+  "subtitle": "",
   "description": "docker-steam-headless provides a self-hosted, headless Steam client in Docker for remote game downloads or streaming setups. It exposes web-based management for sessions.",
   "categories": [
     69
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/Steam-Headless/docker-steam-headless",
     "source_code": "https://github.com/Steam-Headless/docker-steam-headless",
     "logo": "/icons/steam-headless.webp",
+    "screenshot": "",
     "issues": "https://github.com/Steam-Headless/docker-steam-headless/issues",
     "releases": "https://github.com/Steam-Headless/docker-steam-headless/releases"
   },
@@ -102,5 +104,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "steam-headless",
+      "url": "https://apps.truenas.com/catalog/steam-headless"
+    }
+  }
 }

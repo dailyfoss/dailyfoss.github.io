@@ -1,7 +1,8 @@
 {
   "name": "calibre-web-automated",
   "slug": "calibre-web-automated",
-  "tagline": null,
+  "tagline": "A self-hosted eBook library that syncs and manages collections automatically",
+  "subtitle": "",
   "description": "Calibre-Web-Automated is an extended version of Calibre-Web that automatically syncs eBooks from external sources and repositories. It’s great for readers and libraries that want hands-free library management.",
   "categories": [
     21
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/crocodilestick/Calibre-Web-Automated",
     "source_code": "https://github.com/crocodilestick/Calibre-Web-Automated",
     "logo": "/icons/calibre-web-automated.webp",
+    "screenshot": "",
     "issues": "https://github.com/crocodilestick/Calibre-Web-Automated/issues",
     "releases": "https://github.com/crocodilestick/Calibre-Web-Automated/releases"
   },
@@ -96,15 +98,15 @@
   "notes": [],
   "repository_status": null,
   "community_integrations": {
-    "proxmox_ve": {
-      "supported": true,
-      "script_id": "calibre-web",
-      "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=calibre-web"
-    },
     "yunohost": {
       "supported": true,
       "repo_name": "calibreweb-automated_ynh",
       "url": "https://github.com/YunoHost-Apps/calibreweb-automated_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "calibre-web",
+      "url": "https://apps.truenas.com/catalog/calibre-web"
     }
   }
 }

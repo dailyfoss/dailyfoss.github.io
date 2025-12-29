@@ -1,7 +1,8 @@
 {
   "name": "adventurelog",
   "slug": "adventurelog",
-  "tagline": null,
+  "tagline": "A self-hosted journaling app for recording travels, stories, locations, and timelines",
+  "subtitle": "",
   "description": "AdventureLog is a web-based adventure journaling app where users can track their travels, add stories, locations and timelines. It supports rich posts with media and is ideal for self-hosted digital travel diaries and adventure logs.",
   "categories": [
     125
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/seanmorley15/AdventureLog",
     "source_code": "https://github.com/seanmorley15/AdventureLog",
     "logo": "/icons/adventurelog.webp",
+    "screenshot": "https://raw.githubusercontent.com/seanmorley15/AdventureLog/main/brand/screenshots/adventures.png",
     "issues": "https://github.com/seanmorley15/AdventureLog/issues",
     "releases": "https://github.com/seanmorley15/AdventureLog/releases"
   },
@@ -101,6 +103,11 @@
       "supported": true,
       "repo_name": "adventurelog_ynh",
       "url": "https://github.com/YunoHost-Apps/adventurelog_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "adventurelog",
+      "url": "https://apps.truenas.com/catalog/adventurelog"
     }
   }
 }

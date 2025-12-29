@@ -1,7 +1,8 @@
 {
   "name": "garmin-grafana",
   "slug": "garmin-grafana",
-  "tagline": null,
+  "tagline": "A self-hosted pipeline for visualizing Garmin health metrics in Grafana",
+  "subtitle": "",
   "description": "Garmin-Grafana is a self-hosted pipeline that extracts Garmin health metrics and visualizes them in Grafana dashboards. It lets users monitor activity, sleep, and performance without uploading personal data to third-party clouds.",
   "categories": [
     103
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/arpanghosh8453/garmin-grafana",
     "source_code": "https://github.com/arpanghosh8453/garmin-grafana",
     "logo": "/icons/garmin-grafana.webp",
+    "screenshot": "",
     "issues": "https://github.com/arpanghosh8453/garmin-grafana/issues",
     "releases": "https://github.com/arpanghosh8453/garmin-grafana/releases"
   },
@@ -101,6 +103,11 @@
       "supported": true,
       "repo_name": "grafana_ynh",
       "url": "https://github.com/YunoHost-Apps/grafana_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "grafana",
+      "url": "https://apps.truenas.com/catalog/grafana"
     }
   }
 }

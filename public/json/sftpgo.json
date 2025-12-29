@@ -1,7 +1,8 @@
 {
   "name": "sftpgo",
   "slug": "sftpgo",
-  "tagline": null,
+  "tagline": "A full featured file transfer server with web admin",
+  "subtitle": "",
   "description": "SFTPGo is a fully featured SFTP, FTP, WebDAV, and HTTP file server. It supports virtual users, storage backends, quotas, and a modern admin web UI, making it ideal for secure self-hosted file transfer.",
   "categories": [
     61
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/drakkan/sftpgo",
     "source_code": "https://github.com/drakkan/sftpgo",
     "logo": "/icons/sftpgo.webp",
+    "screenshot": "",
     "issues": "https://github.com/drakkan/sftpgo/issues",
     "releases": "https://github.com/drakkan/sftpgo/releases"
   },
@@ -109,6 +111,11 @@
       "supported": true,
       "repo_name": "sftpgo_ynh",
       "url": "https://github.com/YunoHost-Apps/sftpgo_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "sftpgo",
+      "url": "https://apps.truenas.com/catalog/sftpgo"
     }
   }
 }

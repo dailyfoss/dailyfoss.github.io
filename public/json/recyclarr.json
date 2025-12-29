@@ -1,7 +1,8 @@
 {
   "name": "recyclarr",
   "slug": "recyclarr",
-  "tagline": null,
+  "tagline": "A CLI tool for syncing Radarr and Sonarr quality profiles",
+  "subtitle": "",
   "description": "Recyclarr is a CLI tool for syncing custom formats and quality profiles between Radarr/Sonarr and community templates using YAML configuration.",
   "categories": [
     166
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/recyclarr/recyclarr",
     "source_code": "https://github.com/recyclarr/recyclarr",
     "logo": "/icons/recyclarr.webp",
+    "screenshot": "",
     "issues": "https://github.com/recyclarr/recyclarr/issues",
     "releases": "https://github.com/recyclarr/recyclarr/releases"
   },
@@ -113,6 +115,11 @@
       "supported": true,
       "repo_name": "recyclarr_ynh",
       "url": "https://github.com/YunoHost-Apps/recyclarr_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "recyclarr",
+      "url": "https://apps.truenas.com/catalog/recyclarr"
     }
   }
 }

@@ -1,7 +1,8 @@
 {
   "name": "cloudflared",
   "slug": "cloudflared",
-  "tagline": null,
+  "tagline": "A CLI tool for securely exposing private services through tunnels",
+  "subtitle": "",
   "description": "Cloudflared is a command-line client used to connect your private services securely to Cloudflare's network using tunnels. It enables exposing local apps, SSH, and RDP without exposing ports publicly.",
   "categories": [
     137
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/cloudflare/cloudflared",
     "source_code": "https://github.com/cloudflare/cloudflared",
     "logo": "/icons/cloudflared.webp",
+    "screenshot": "",
     "issues": "https://github.com/cloudflare/cloudflared/issues",
     "releases": "https://github.com/cloudflare/cloudflared/releases"
   },
@@ -92,6 +94,11 @@
       "supported": true,
       "script_id": "cloudflared",
       "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=cloudflared"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "cloudflared",
+      "url": "https://apps.truenas.com/catalog/cloudflared"
     }
   }
 }

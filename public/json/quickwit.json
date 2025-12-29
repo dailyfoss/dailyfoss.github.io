@@ -1,7 +1,8 @@
 {
   "name": "quickwit",
   "slug": "quickwit",
-  "tagline": null,
+  "tagline": "A cloud native search engine for logs and events",
+  "subtitle": "",
   "description": "Quickwit is a cloud-native search engine for large-scale log storage and querying. It offers web-based query UI, REST APIs, and is optimized for low storage costs and fast indexing.",
   "categories": [
     144
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/quickwit-oss/quickwit",
     "source_code": "https://github.com/quickwit-oss/quickwit",
     "logo": "/icons/quickwit.webp",
+    "screenshot": "",
     "issues": "https://github.com/quickwit-oss/quickwit/issues",
     "releases": "https://github.com/quickwit-oss/quickwit/releases"
   },
@@ -90,5 +92,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "qui",
+      "url": "https://apps.truenas.com/catalog/qui"
+    }
+  }
 }

@@ -1,12 +1,51 @@
 "use client";
 
-import { ExternalLink, Server, Package } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import type { Script } from "@/lib/types";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-
 type CommunityIntegrationsProps = {
   item: Script;
 };
+
+// Real logos for community integrations using external CDN
+const ProxmoxIcon = () => (
+  <img
+    src="https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/proxmox-helper-scripts.svg"
+    alt="Proxmox VE"
+    width={24}
+    height={24}
+    className="h-6 w-6"
+  />
+);
+
+const YunoHostIcon = () => (
+  <>
+    <img
+      src="https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/yunohost.svg"
+      alt="YunoHost"
+      width={24}
+      height={24}
+      className="h-6 w-6 dark:hidden"
+    />
+    <img
+      src="https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/yunohost-light.svg"
+      alt="YunoHost"
+      width={24}
+      height={24}
+      className="h-6 w-6 hidden dark:block"
+    />
+  </>
+);
+
+const TrueNASIcon = () => (
+  <img
+    src="https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/truenas-core.svg"
+    alt="TrueNAS"
+    width={24}
+    height={24}
+    className="h-6 w-6"
+  />
+);
 
 export default function CommunityIntegrations({ item }: CommunityIntegrationsProps) {
   if (!item.community_integrations) {
@@ -19,11 +58,25 @@ export default function CommunityIntegrations({ item }: CommunityIntegrationsPro
   if (item.community_integrations.proxmox_ve?.supported && item.community_integrations.proxmox_ve?.url) {
     integrations.push({
       id: 'proxmox_ve',
-      name: 'Proxmox VE',
-      description: 'Community Scripts',
+      name: 'Proxmox VE Helper Scripts',
+      badge: 'App Script · Community',
+      description: 'Community scripts compatible with Proxmox VE environments',
       tooltip: 'Community build provided by the Proxmox VE community',
       url: item.community_integrations.proxmox_ve.url,
-      icon: <Server className="h-4 w-4" />
+      icon: <ProxmoxIcon />
+    });
+  }
+
+  // TrueNAS Integration
+  if (item.community_integrations.truenas?.supported && item.community_integrations.truenas?.url) {
+    integrations.push({
+      id: 'truenas',
+      name: 'TrueNAS',
+      badge: 'App Catalog · Community',
+      description: 'Compatible with TrueNAS environments',
+      tooltip: 'Community build provided by the TrueNAS community',
+      url: item.community_integrations.truenas.url,
+      icon: <TrueNASIcon />
     });
   }
 
@@ -32,10 +85,11 @@ export default function CommunityIntegrations({ item }: CommunityIntegrationsPro
     integrations.push({
       id: 'yunohost',
       name: 'YunoHost',
-      description: 'App Package',
+      badge: 'App Catalog · Community',
+      description: 'Runs on the YunoHost platform',
       tooltip: 'Community build provided by the YunoHost community',
       url: item.community_integrations.yunohost.url,
-      icon: <Package className="h-4 w-4" />
+      icon: <YunoHostIcon />
     });
   }
 
@@ -45,43 +99,55 @@ export default function CommunityIntegrations({ item }: CommunityIntegrationsPro
   }
 
   return (
-    <div className="flex flex-col space-y-3 rounded-lg bg-accent/5 p-4 border border-border/50 w-full">
-      <div className="text-[13px] font-bold text-foreground/90 mb-1">
-        Community Integrations
+    <div className="space-y-3">
+      <div>
+        <h3 className="text-lg font-semibold">
+          Community Integrations
+        </h3>
+        <p className="text-sm text-muted-foreground">
+          Community-maintained platform and deployment options
+        </p>
       </div>
       
-      {integrations.map((integration) => (
-        <div key={integration.id} className="flex items-start gap-3">
-          <TooltipProvider>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {integrations.map((integration) => (
+          <TooltipProvider key={integration.id}>
             <Tooltip delayDuration={200}>
               <TooltipTrigger asChild>
-                <div className="flex items-center gap-3 min-w-[110px] pt-0.5 cursor-help">
-                  <div className="flex items-center justify-center w-5 h-5 text-muted-foreground/70">
-                    {integration.icon}
+                <a
+                  href={integration.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative rounded-lg border border-border/50 bg-card/50 p-3 transition-all hover:border-border/80 hover:shadow-sm block"
+                >
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 rounded-md bg-muted/50 p-2 transition-colors group-hover:bg-muted/80">
+                      {integration.icon}
+                    </div>
+                    <div className="flex-1 min-w-0 space-y-1">
+                      <div className="flex items-start justify-between gap-1">
+                        <h4 className="font-semibold text-sm leading-tight">
+                          {integration.name}
+                        </h4>
+                        <ExternalLink className="h-3 w-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0 mt-0.5" />
+                      </div>
+                      <p className="text-[10px] text-muted-foreground/70 font-medium">
+                        {integration.badge}
+                      </p>
+                      <p className="text-xs text-muted-foreground line-clamp-2">
+                        {integration.description}
+                      </p>
+                    </div>
                   </div>
-                  <span className="text-[12px] font-semibold text-foreground/80 capitalize">
-                    {integration.name}
-                  </span>
-                </div>
+                </a>
               </TooltipTrigger>
               <TooltipContent side="top" className="font-medium">
                 <p>{integration.tooltip}</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
-          <div className="flex flex-wrap gap-1.5 flex-1 items-center">
-            <a
-              href={integration.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full border border-border/60 px-2.5 py-1 text-[11px] leading-none text-foreground/80 transition-colors hover:bg-accent/50"
-            >
-              <span>{integration.description}</span>
-              <ExternalLink className="h-3 w-3" />
-            </a>
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }

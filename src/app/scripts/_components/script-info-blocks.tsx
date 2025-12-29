@@ -1,178 +1,71 @@
 "use client";
 
-import { CalendarPlus, Crown, Eye, LayoutGrid, Star, TrendingUp, Tag, CircleCheck, RefreshCcw, Clock3, Moon, Archive } from "lucide-react";
+import { CalendarPlus, Crown, Eye, LayoutGrid, Star, TrendingUp, Tag, CircleCheck, RefreshCcw, Clock3, Moon, Archive, ExternalLink } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 
 import type { Category, Script } from "@/lib/types";
 
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { mostPopularScripts } from "@/config/site-config";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { extractDate } from "@/lib/time";
-import { useRepositoryStatus } from "@/hooks/use-repository-status";
-import { getRelativeTime } from "@/lib/version-utils";
 import { JSX } from "react/jsx-runtime";
 
 const ITEMS_PER_PAGE = 6;
 const ITEMS_PER_PAGE_LARGE = 6;
 
-// ⬇️ Helper to format star count (e.g., 3663 -> "3.7k")
 function formatStarCount(stars?: string | number | null): string | null {
-  if (!stars)
-    return null;
-
+  if (!stars) return null;
   const num = typeof stars === "string" ? Number.parseInt(stars, 10) : stars;
-  if (isNaN(num) || num === 0)
-    return null;
-
-  if (num >= 1000000)
-    return `${(num / 1000000).toFixed(1)}m`;
-  if (num >= 1000)
-    return `${(num / 1000).toFixed(1)}k`;
+  if (isNaN(num) || num === 0) return null;
+  if (num >= 1000000) return `${(num / 1000000).toFixed(1)}m`;
+  if (num >= 1000) return `${(num / 1000).toFixed(1)}k`;
   return num.toString();
 }
 
-// Helper function to format relative time from days
 function getRelativeTimeFromDays(days: number | null): string {
-  if (days === null) return 'unknown time';
-  
+  if (days === null) return 'unknown';
   if (days === 0) return 'today';
-  if (days === 1) return 'yesterday';
-  if (days < 7) return `${days} days ago`;
-  if (days < 30) {
-    const weeks = Math.floor(days / 7);
-    return weeks === 1 ? '1 week ago' : `${weeks} weeks ago`;
-  }
-  if (days < 365) {
-    const months = Math.floor(days / 30);
-    return months === 1 ? '1 month ago' : `${months} months ago`;
-  }
-  
-  const years = Math.floor(days / 365);
-  return years === 1 ? '1 year ago' : `${years} years ago`;
+  if (days === 1) return '1d ago';
+  if (days < 7) return `${days}d ago`;
+  if (days < 30) return `${Math.floor(days / 7)}w ago`;
+  if (days < 365) return `${Math.floor(days / 30)}mo ago`;
+  return `${Math.floor(days / 365)}y ago`;
 }
 
-// Helper function to get repository status icon
 function getStatusIcon(daysSinceLastCommit: number): JSX.Element | null {
-  let status: string;
-  
-  if (daysSinceLastCommit <= 30) status = 'active';
-  else if (daysSinceLastCommit <= 180) status = 'regular';
-  else if (daysSinceLastCommit <= 365) status = 'occasional';
-  else status = 'dormant';
-
-  switch (status) {
-    case 'active':
-      return <CircleCheck className="h-3.5 w-3.5 text-green-600 dark:text-green-400" />;
-    case 'regular':
-      return <RefreshCcw className="h-3.5 w-3.5 text-amber-600 dark:text-amber-400" />;
-    case 'occasional':
-      return <Clock3 className="h-3.5 w-3.5 text-orange-600 dark:text-orange-400" />;
-    case 'dormant':
-      return <Moon className="h-3.5 w-3.5 text-red-600 dark:text-red-400" />;
-    case 'archived':
-      return <Archive className="h-3.5 w-3.5 text-gray-600 dark:text-gray-400" />;
-    default:
-      return null;
-  }
+  if (daysSinceLastCommit <= 30) 
+    return <CircleCheck className="h-3 w-3 text-green-500" />;
+  if (daysSinceLastCommit <= 180) 
+    return <RefreshCcw className="h-3 w-3 text-amber-500" />;
+  if (daysSinceLastCommit <= 365) 
+    return <Clock3 className="h-3 w-3 text-orange-500" />;
+  return <Moon className="h-3 w-3 text-red-500" />;
 }
 
-// ⬇️ Compact version for metadata rows with repository status
-function RepositoryStatusCompact({ script }: { script: Script }) {
-  const { repositoryInfo, loading } = useRepositoryStatus(script);
-
-  if (loading || !repositoryInfo) {
-    return null;
-  }
-
-  const releaseDate = repositoryInfo.lastRelease?.toLocaleDateString('en-US', { 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric' 
-  });
-  
-  const commitDate = repositoryInfo.lastCommit?.toLocaleDateString('en-US', { 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric' 
-  });
-
-  return (
-    <div className="flex items-center gap-3 text-xs">
-      {repositoryInfo.lastRelease && (
-        <TooltipProvider>
-          <Tooltip delayDuration={200}>
-            <TooltipTrigger asChild>
-              <span className="flex items-center gap-1 cursor-help">
-                <Tag className="h-3 w-3" />
-                Released {getRelativeTimeFromDays(repositoryInfo.daysSinceLastRelease)}
-              </span>
-            </TooltipTrigger>
-            <TooltipContent side="bottom" className="font-medium">
-              <p>Last release: {releaseDate}</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-      )}
-      {repositoryInfo.lastCommit && (
-        <TooltipProvider>
-          <Tooltip delayDuration={200}>
-            <TooltipTrigger asChild>
-              <span className="flex items-center gap-1 cursor-help">
-                <span className="text-xs">{repositoryInfo.statusIcon}</span>
-                Last commit {getRelativeTimeFromDays(repositoryInfo.daysSinceLastCommit)}
-              </span>
-            </TooltipTrigger>
-            <TooltipContent side="bottom" className="font-medium">
-              <p>Last commit: {commitDate}</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-      )}
-    </div>
-  );
-}
-
-// ⬇️ Simple icon loader with fallback
-function AppIcon({ src, src_light, name, size = 64 }: { src?: string | null; src_light?: string | null; name: string; size?: number }) {
+// Compact App Icon
+function AppIcon({ src, src_light, name }: { src?: string | null; src_light?: string | null; name: string }) {
   const [showFallback, setShowFallback] = useState(!src || src.trim() === "");
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
-  // Detect theme changes
   useEffect(() => {
-    const checkTheme = () => {
-      const isDark = document.documentElement.classList.contains('dark');
-      setTheme(isDark ? 'dark' : 'light');
-    };
-
+    const checkTheme = () => setTheme(document.documentElement.classList.contains('dark') ? 'dark' : 'light');
     checkTheme();
-    
-    // Watch for theme changes
     const observer = new MutationObserver(checkTheme);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['class'],
-    });
-
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
     return () => observer.disconnect();
   }, []);
 
-  // Get the appropriate logo based on theme
-  // In dark mode, use light variant if available (for visibility)
   const currentSrc = (theme === 'dark' && src_light) ? src_light : src;
 
-  // Reset fallback state when src changes
   useEffect(() => {
     setShowFallback(!currentSrc || currentSrc.trim() === "");
   }, [currentSrc]);
 
   if (showFallback) {
     return (
-      <div className="flex items-center justify-center bg-accent/20 rounded-md w-full h-full">
-        <LayoutGrid className="h-10 w-10 text-muted-foreground" />
+      <div className="flex items-center justify-center bg-accent/30 rounded-lg w-full h-full">
+        <LayoutGrid className="h-5 w-5 text-muted-foreground" />
       </div>
     );
   }
@@ -180,147 +73,234 @@ function AppIcon({ src, src_light, name, size = 64 }: { src?: string | null; src
   return (
     <img
       src={currentSrc || ''}
-      width={size}
-      height={size}
-      alt={`${name} icon`}
-      loading="eager"
-      className="h-14 w-14 object-contain rounded-md p-1"
+      alt={name}
+      className="w-full h-full object-contain p-1"
       onError={() => setShowFallback(true)}
     />
   );
 }
 
-// ⬇️ Get combined info: hosting, categories, and platform (max 3 badges)
-function getScriptBadges(script: Script, allCategories: Category[]): string[] {
-  const badges: string[] = [];
+// Compact Script Card Component
+function CompactScriptCard({ script, allCategories, showViews, viewCount }: { 
+  script: Script; 
+  allCategories: Category[];
+  showViews?: boolean;
+  viewCount?: number;
+}) {
+  const daysSinceCommit = script.metadata?.date_last_commit 
+    ? Math.floor((Date.now() - new Date(script.metadata.date_last_commit).getTime()) / (1000 * 60 * 60 * 24))
+    : null;
+  
+  const daysOld = script.metadata?.date_app_added 
+    ? Math.floor((Date.now() - new Date(script.metadata.date_app_added).getTime()) / (1000 * 60 * 60 * 24))
+    : null;
 
-  // Add hosting info
-  if (script.hosting_options) {
-    if (script.hosting_options.self_hosted)
-      badges.push("Self-hosted");
-    if (script.hosting_options.managed_cloud)
-      badges.push("Managed-cloud");
-    if (script.hosting_options.saas)
-      badges.push("SaaS");
-  }
+  const isNew = daysOld !== null && daysOld <= 7;
 
-  // Add categories
-  if (script.categories && script.categories.length > 0) {
-    const categoryNames = script.categories
-      .map(categoryId => {
-        const category = allCategories.find(cat => cat.id === categoryId);
-        return category?.name;
-      })
-      .filter((name): name is string => name !== undefined);
-    badges.push(...categoryNames);
-  }
+  // Get first category name
+  const categoryId = script.categories && script.categories.length > 0 ? script.categories[0] : null;
+  const categoryName = categoryId
+    ? allCategories.find(cat => cat.id === categoryId)?.name
+    : null;
 
-  // Add platform info
-  if (script.platform_support) {
-    if (script.platform_support.desktop?.linux || script.platform_support.desktop?.windows || script.platform_support.desktop?.macos)
-      badges.push("Desktop");
-    if (script.platform_support.mobile?.android || script.platform_support.mobile?.ios)
-      badges.push("Mobile");
-    if (script.platform_support.web_app)
-      badges.push("Web");
-    if (script.platform_support.browser_extension)
-      badges.push("Browser Extension");
-  }
+  // Build URL with id and category params (using category name, not id)
+  const href = categoryName 
+    ? `/?id=${script.slug}&category=${encodeURIComponent(categoryName)}`
+    : `/?id=${script.slug}`;
 
-  return badges.slice(0, 3); // Limit to 3 badges
+  return (
+    <Link
+      href={href}
+      className="group block h-full"
+    >
+      <div className="flex flex-col h-full p-4 rounded-xl border bg-card hover:bg-accent/30 hover:border-primary/40 hover:shadow-md transition-all duration-200">
+        {/* Header: Icon on left, content on right */}
+        <div className="flex gap-3 mb-3">
+          <div className="h-12 w-12 flex-shrink-0 rounded-xl bg-accent/50 overflow-hidden">
+            <AppIcon src={script.resources?.logo} src_light={script.resources?.logo_light} name={script.name} />
+          </div>
+          <div className="flex-1 min-w-0">
+            {/* Row 1: Name + badges ←→ Category */}
+            <div className="flex items-start justify-between gap-2">
+              <div className="flex items-center gap-1.5 min-w-0 flex-wrap">
+                <h3 className="font-semibold text-sm group-hover:text-primary transition-colors">
+                  {script.name}
+                </h3>
+                {daysSinceCommit !== null && getStatusIcon(daysSinceCommit)}
+                {isNew && (
+                  <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-green-500/20 text-green-600 dark:text-green-400">
+                    NEW
+                  </span>
+                )}
+              </div>
+              {categoryName && (
+                <span className="px-2 py-0.5 rounded-full bg-primary/10 text-primary text-[10px] font-medium flex-shrink-0">
+                  {categoryName}
+                </span>
+              )}
+            </div>
+            {/* Row 2: Description */}
+            <p className="text-xs text-muted-foreground line-clamp-2 mt-1">
+              {script.tagline || script.description}
+            </p>
+          </div>
+        </div>
+
+        {/* Footer with stats and badges */}
+        <div className="flex items-center justify-between pt-2 border-t border-border/50 mt-auto">
+          <div className="flex items-center gap-2 text-[10px] text-muted-foreground">
+            {formatStarCount(script.metadata?.github_stars) && (
+              <span className="flex items-center gap-0.5">
+                <Star className="h-3 w-3" />
+                {formatStarCount(script.metadata?.github_stars)}
+              </span>
+            )}
+            {showViews && viewCount && (
+              <span className="flex items-center gap-0.5">
+                <Eye className="h-3 w-3" />
+                {viewCount}
+              </span>
+            )}
+            {script.metadata?.date_app_added && (
+              <span>Added {getRelativeTimeFromDays(daysOld)}</span>
+            )}
+          </div>
+          <div className="flex items-center gap-1">
+            {script.community_integrations?.proxmox_ve?.supported && (
+              <span className="px-1.5 py-0.5 rounded bg-accent/60 text-[10px] font-medium">PVE</span>
+            )}
+            {script.community_integrations?.yunohost?.supported && (
+              <span className="px-1.5 py-0.5 rounded bg-accent/60 text-[10px] font-medium">Yuno</span>
+            )}
+            {script.community_integrations?.truenas?.supported && (
+              <span className="px-1.5 py-0.5 rounded bg-accent/60 text-[10px] font-medium">TrueNAS</span>
+            )}
+          </div>
+        </div>
+      </div>
+    </Link>
+  );
 }
 
-export function FeaturedScripts({ items }: { items: Category[] }) {
-  const featuredScripts = useMemo(() => {
-    if (!items)
-      return [];
 
+// Section Header Component
+function SectionHeader({ 
+  icon, 
+  title, 
+  badge, 
+  page, 
+  totalItems, 
+  onPrev, 
+  onNext 
+}: { 
+  icon?: React.ReactNode;
+  title: string; 
+  badge?: string;
+  page: number;
+  totalItems: number;
+  onPrev: () => void;
+  onNext: () => void;
+}) {
+  const hasMore = page * ITEMS_PER_PAGE < totalItems;
+  const hasPrev = page > 1;
+
+  return (
+    <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center gap-2">
+        {icon}
+        <h2 className="text-lg font-bold">{title}</h2>
+        {badge && (
+          <Badge variant="outline" className="text-[10px] h-5">
+            {badge}
+          </Badge>
+        )}
+      </div>
+      <div className="flex items-center gap-1">
+        {hasPrev && (
+          <button 
+            onClick={onPrev}
+            className="px-3 py-1 text-xs font-medium rounded hover:bg-accent transition-colors"
+          >
+            Prev
+          </button>
+        )}
+        {hasMore && (
+          <button 
+            onClick={onNext}
+            className="px-3 py-1 text-xs font-medium rounded hover:bg-accent transition-colors"
+          >
+            More
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export function TrendingScripts({ items }: { items: Category[] }) {
+  const [viewCounts, setViewCounts] = useState<Record<string, number>>({});
+  const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    async function fetchTrendingData() {
+      try {
+        const proxyUrl = process.env.NEXT_PUBLIC_PLAUSIBLE_PROXY_URL;
+        if (!proxyUrl) return;
+        const { getTrendingScriptsShared } = await import("@/lib/plausible-shared");
+        const counts = await getTrendingScriptsShared("", "month");
+        setViewCounts(counts);
+      } catch (error) {
+        console.error("Failed to load trending data:", error);
+      }
+    }
+    fetchTrendingData();
+  }, []);
+
+  const trendingScripts = useMemo(() => {
+    if (!items) return [];
     const scripts = items.flatMap(category => category.scripts || []);
-
-    // Filter out duplicates by slug and get only sponsored scripts
     const uniqueScriptsMap = new Map<string, Script>();
     scripts.forEach((script) => {
-      if (!uniqueScriptsMap.has(script.slug) && script.sponsored) {
+      if (!uniqueScriptsMap.has(script.slug)) {
         uniqueScriptsMap.set(script.slug, script);
       }
     });
 
-    return Array.from(uniqueScriptsMap.values()).slice(0, 6); // Max 6 featured scripts
-  }, [items]);
+    return Array.from(uniqueScriptsMap.values())
+      .sort((a, b) => {
+        const visitorsA = viewCounts[a.slug] || 0;
+        const visitorsB = viewCounts[b.slug] || 0;
+        if (visitorsB !== visitorsA) return visitorsB - visitorsA;
+        return new Date(b.metadata?.date_app_added || 0).getTime() - new Date(a.metadata?.date_app_added || 0).getTime();
+      })
+      .slice(0, 30);
+  }, [items, viewCounts]);
 
-  if (!items || featuredScripts.length === 0)
-    return null;
+  if (!items || trendingScripts.length === 0) return null;
+
+  const startIndex = (page - 1) * ITEMS_PER_PAGE;
+  const endIndex = page * ITEMS_PER_PAGE;
 
   return (
-    <div className="">
-      <div className="flex w-full items-center gap-2 mb-4">
-        <Crown className="h-5 w-5 text-amber-600 dark:text-amber-500" />
-        <h2 className="text-2xl font-bold tracking-tight">Sponsored Scripts</h2>
-        <Badge variant="outline" className="ml-2 border-amber-500/40 text-amber-700 dark:text-amber-400 text-xs">
-          Sponsored
-        </Badge>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {featuredScripts.map(script => (
-          <Card
-            key={script.slug}
-            className="bg-accent/30 border-2 border-amber-500/60 hover:border-amber-500 transition-all duration-300 hover:shadow-lg flex flex-col relative overflow-hidden"
-          >
-            {/* Sponsored Badge */}
-            <div className="absolute top-2 right-2 z-0">
-              <Badge className="bg-amber-500 text-white border-0">
-                <Crown className="h-3 w-3 mr-1" />
-                Sponsored
-              </Badge>
-            </div>
-
-            {/* Subtle highlight bar */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-400" />
-
-            <CardHeader>
-              <CardTitle className="flex items-start gap-3">
-                <div className="flex h-16 w-16 min-w-16 items-center justify-center rounded-xl bg-gradient-to-br from-accent/40 to-accent/60 p-1 shadow-md ring-1 ring-amber-500/30">
-                  <AppIcon src={script.resources?.logo} src_light={script.resources?.logo_light} name={script.name || script.slug} />
-                </div>
-                <div className="flex flex-col flex-1 min-w-0">
-                  <h3 className="font-semibold text-base line-clamp-1 mb-1">{script.name}</h3>
-                  <div className="flex flex-col gap-1">
-                    <p className="text-xs text-muted-foreground flex items-center gap-1">
-                      <CalendarPlus className="h-3 w-3" />
-                      Added {extractDate(script.metadata?.date_app_added || "")}
-                    </p>
-                    <div className="text-xs text-muted-foreground">
-                      <RepositoryStatusCompact script={script} />
-                    </div>
-                  </div>
-                </div>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="flex-grow space-y-3 pb-6">
-              <CardDescription className="line-clamp-3 text-sm leading-[1.6rem] mb-3">{script.description}</CardDescription>
-              {getScriptBadges(script, items).length > 0 && (
-                <div className="flex flex-wrap gap-1.5 pt-2">
-                  {getScriptBadges(script, items).map(badge => (
-                    <Badge key={badge} variant="secondary" className="text-xs">
-                      {badge}
-                    </Badge>
-                  ))}
-                </div>
-              )}
-            </CardContent>
-            <CardFooter className="pt-2">
-              <Button asChild className="w-full bg-amber-500 hover:bg-amber-600 text-white">
-                <Link
-                  href={{
-                    pathname: "/scripts",
-                    query: { id: script.slug },
-                  }}
-                >
-                  View Details
-                </Link>
-              </Button>
-            </CardFooter>
-          </Card>
+    <div>
+      <SectionHeader
+        icon={<TrendingUp className="h-5 w-5 text-primary" />}
+        title="Trending"
+        badge="Last 30 Days"
+        page={page}
+        totalItems={trendingScripts.length}
+        onPrev={() => setPage(p => p - 1)}
+        onNext={() => setPage(p => p + 1)}
+      />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+        {trendingScripts.slice(startIndex, endIndex).map(script => (
+          <CompactScriptCard 
+            key={script.slug} 
+            script={script} 
+            allCategories={items}
+            showViews
+            viewCount={viewCounts[script.slug]}
+          />
         ))}
       </div>
     </div>
@@ -331,12 +311,8 @@ export function LatestScripts({ items }: { items: Category[] }) {
   const [page, setPage] = useState(1);
 
   const latestScripts = useMemo(() => {
-    if (!items)
-      return [];
-
+    if (!items) return [];
     const scripts = items.flatMap(category => category.scripts || []);
-
-    // Filter out duplicates by slug
     const uniqueScriptsMap = new Map<string, Script>();
     scripts.forEach((script) => {
       if (!uniqueScriptsMap.has(script.slug)) {
@@ -349,167 +325,103 @@ export function LatestScripts({ items }: { items: Category[] }) {
     );
   }, [items]);
 
-  const goToNextPage = () => setPage(prev => prev + 1);
-  const goToPreviousPage = () => setPage(prev => prev - 1);
+  if (!items || latestScripts.length === 0) return null;
 
   const startIndex = (page - 1) * ITEMS_PER_PAGE;
   const endIndex = page * ITEMS_PER_PAGE;
 
-  if (!items)
-    return null;
+  return (
+    <div>
+      <SectionHeader
+        icon={<CalendarPlus className="h-5 w-5 text-primary" />}
+        title="Newest"
+        badge="Latest Additions"
+        page={page}
+        totalItems={latestScripts.length}
+        onPrev={() => setPage(p => p - 1)}
+        onNext={() => setPage(p => p + 1)}
+      />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+        {latestScripts.slice(startIndex, endIndex).map(script => (
+          <CompactScriptCard key={script.slug} script={script} allCategories={items} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function PopularScripts({ items }: { items: Category[] }) {
+  const [page, setPage] = useState(1);
+
+  const popularScripts = useMemo(() => {
+    if (!items) return [];
+    const scripts = items.flatMap(category => category.scripts || []);
+    const uniqueScriptsMap = new Map<string, Script>();
+    scripts.forEach((script) => {
+      if (!uniqueScriptsMap.has(script.slug)) {
+        uniqueScriptsMap.set(script.slug, script);
+      }
+    });
+
+    return Array.from(uniqueScriptsMap.values())
+      .sort((a, b) => {
+        const starsA = a.metadata?.github_stars || 0;
+        const starsB = b.metadata?.github_stars || 0;
+        const boostA = mostPopularScripts.includes(a.slug) ? 10000 : 0;
+        const boostB = mostPopularScripts.includes(b.slug) ? 10000 : 0;
+        return (starsB + boostB) - (starsA + boostA);
+      });
+  }, [items]);
+
+  if (!items || popularScripts.length === 0) return null;
+
+  const startIndex = (page - 1) * ITEMS_PER_PAGE;
+  const endIndex = page * ITEMS_PER_PAGE;
 
   return (
-    <div className="">
-      {latestScripts.length > 0 && (
-        <div className="flex w-full items-center justify-between mb-6 pb-3 border-b-2 border-primary/20">
-          <div className="flex items-center gap-2">
-            <h2 className="text-2xl font-bold tracking-tight">Newest Scripts</h2>
-            <Badge variant="outline" className="text-xs">
-              Latest Additions
-            </Badge>
-          </div>
-          <div className="flex items-center justify-end gap-2">
-            {page > 1 && (
-              <div className="cursor-pointer select-none px-4 py-2 text-sm font-semibold rounded-lg hover:bg-accent transition-colors" onClick={goToPreviousPage}>
-                Previous
-              </div>
-            )}
-            {endIndex < latestScripts.length && (
-              <div onClick={goToNextPage} className="cursor-pointer select-none px-4 py-2 text-sm font-semibold rounded-lg hover:bg-accent transition-colors">
-                {page === 1 ? "More.." : "Next"}
-              </div>
-            )}
-          </div>
-        </div>
-      )}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {latestScripts.slice(startIndex, endIndex).map(script => (
-          <Link
-            key={script.slug}
-            href={{
-              pathname: "/scripts",
-              query: { id: script.slug },
-            }}
-            className="block group"
-          >
-            <Card className="bg-accent/30 border-2 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-[3px] flex flex-col h-full cursor-pointer">
-              <CardHeader className="pb-2">
-                <CardTitle className="flex items-start gap-3">
-                  <div className="flex h-16 w-16 min-w-16 items-center justify-center rounded-xl bg-gradient-to-br from-accent/40 to-accent/60 p-1 shadow-md">
-                    <AppIcon src={script.resources?.logo} src_light={script.resources?.logo_light} name={script.name || script.slug} size={64} />
-                  </div>
-                  <div className="flex flex-col flex-1 min-w-0 gap-1">
-                    {/* First row: app_name + repo_status + stars + NEW badge */}
-                    <div className="flex items-center flex-wrap gap-1">
-                      <h3 className="font-semibold text-base line-clamp-1 leading-tight">{script.name}</h3>
-                      {script.metadata?.date_last_commit && (() => {
-                        const lastCommitDate = new Date(script.metadata.date_last_commit);
-                        const now = new Date();
-                        const daysSince = Math.floor((now.getTime() - lastCommitDate.getTime()) / (1000 * 60 * 60 * 24));
-                        return getStatusIcon(daysSince);
-                      })()}
-                      {formatStarCount(script.metadata?.github_stars) && (
-                        <>
-                          <span className="text-muted-foreground/60 select-none text-xs hidden sm:inline">•</span>
-                          <TooltipProvider>
-                            <Tooltip delayDuration={200}>
-                              <TooltipTrigger asChild>
-                                <span className="flex items-center gap-1 cursor-help text-xs text-muted-foreground">
-                                  <Star className="h-3 w-3 fill-current" />
-                                  {formatStarCount(script.metadata?.github_stars)}
-                                </span>
-                              </TooltipTrigger>
-                              <TooltipContent side="bottom" className="font-medium">
-                                <p>{script.metadata?.github_stars?.toLocaleString()} GitHub stars</p>
-                              </TooltipContent>
-                            </Tooltip>
-                          </TooltipProvider>
-                        </>
-                      )}
-                      {(() => {
-                        const daysOld = script.metadata?.date_app_added 
-                          ? Math.floor((new Date().getTime() - new Date(script.metadata.date_app_added).getTime()) / (1000 * 60 * 60 * 24))
-                          : null;
-                        // Show NEW badge if added within last 7 days
-                        if (daysOld !== null && daysOld <= 7) {
-                          return (
-                            <>
-                              <span className="text-muted-foreground/60 select-none text-xs hidden sm:inline">•</span>
-                              <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-green-500/20 text-green-700 dark:text-green-400 border border-green-500/30">
-                                NEW
-                              </span>
-                            </>
-                          );
-                        }
-                        return null;
-                      })()}
-                    </div>
-                    {/* Second row: Added X ago + community_integrations */}
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                      {script.metadata?.date_app_added && (
-                        <span className="flex items-center gap-1">
-                          <CalendarPlus className="h-3 w-3" />
-                          Added {getRelativeTimeFromDays(Math.floor((new Date().getTime() - new Date(script.metadata.date_app_added).getTime()) / (1000 * 60 * 60 * 24)))}
-                        </span>
-                      )}
-                      {script.community_integrations && (script.community_integrations.proxmox_ve?.supported || script.community_integrations.yunohost?.supported) && (
-                        <>
-                          {script.metadata?.date_app_added && <span className="text-muted-foreground/60 select-none hidden sm:inline">•</span>}
-                          <div className="flex items-center gap-1.5">
-                            {script.community_integrations.proxmox_ve?.supported && (
-                              <TooltipProvider>
-                                <Tooltip delayDuration={200}>
-                                  <TooltipTrigger asChild>
-                                    <span className="px-1.5 py-0.5 rounded text-[10px] font-medium bg-accent/50 cursor-help">
-                                      PVE
-                                    </span>
-                                  </TooltipTrigger>
-                                  <TooltipContent side="top" className="font-medium">
-                                    <p>Community build provided by Proxmox VE Community</p>
-                                  </TooltipContent>
-                                </Tooltip>
-                              </TooltipProvider>
-                            )}
-                            {script.community_integrations.yunohost?.supported && (
-                              <TooltipProvider>
-                                <Tooltip delayDuration={200}>
-                                  <TooltipTrigger asChild>
-                                    <span className="px-1.5 py-0.5 rounded text-[10px] font-medium bg-accent/50 cursor-help">
-                                      Yuno
-                                    </span>
-                                  </TooltipTrigger>
-                                  <TooltipContent side="top" className="font-medium">
-                                    <p>Community build provided by the YunoHost community</p>
-                                  </TooltipContent>
-                                </Tooltip>
-                              </TooltipProvider>
-                            )}
-                          </div>
-                        </>
-                      )}
-                    </div>
-                  </div>
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="flex-grow space-y-3 pb-6">
-                <CardDescription className="line-clamp-3 text-sm leading-relaxed">{script.description}</CardDescription>
-                {getScriptBadges(script, items).length > 0 && (
-                  <div className="flex flex-wrap gap-1.5 mt-1">
-                    {getScriptBadges(script, items).map(badge => (
-                      <Badge key={badge} variant="secondary" className="text-xs">
-                        {badge}
-                      </Badge>
-                    ))}
-                  </div>
-                )}
-              </CardContent>
-              <CardFooter className="pt-1">
-                <div className="w-full text-center text-sm font-medium text-primary hover:underline">
-                  View Details →
-                </div>
-              </CardFooter>
-            </Card>
-          </Link>
+    <div>
+      <SectionHeader
+        icon={<Star className="h-5 w-5 text-primary fill-primary" />}
+        title="Popular"
+        badge="Most Stars"
+        page={page}
+        totalItems={popularScripts.length}
+        onPrev={() => setPage(p => p - 1)}
+        onNext={() => setPage(p => p + 1)}
+      />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+        {popularScripts.slice(startIndex, endIndex).map(script => (
+          <CompactScriptCard key={script.slug} script={script} allCategories={items} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function FeaturedScripts({ items }: { items: Category[] }) {
+  const featuredScripts = useMemo(() => {
+    if (!items) return [];
+    const scripts = items.flatMap(category => category.scripts || []);
+    const uniqueScriptsMap = new Map<string, Script>();
+    scripts.forEach((script) => {
+      if (!uniqueScriptsMap.has(script.slug) && script.sponsored) {
+        uniqueScriptsMap.set(script.slug, script);
+      }
+    });
+    return Array.from(uniqueScriptsMap.values()).slice(0, 6);
+  }, [items]);
+
+  if (!items || featuredScripts.length === 0) return null;
+
+  return (
+    <div>
+      <div className="flex items-center gap-2 mb-4">
+        <Crown className="h-5 w-5 text-amber-500" />
+        <h2 className="text-lg font-bold">Sponsored</h2>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+        {featuredScripts.map(script => (
+          <CompactScriptCard key={script.slug} script={script} allCategories={items} />
         ))}
       </div>
     </div>
@@ -522,522 +434,17 @@ export function MostViewedScripts({ items }: { items: Category[] }) {
     return acc.concat(foundScripts);
   }, []);
 
+  if (mostViewedScripts.length === 0) return null;
+
   return (
-    <div className="">
-      {mostViewedScripts.length > 0 && (
-        <div className="flex w-full items-center justify-between mb-4">
-          <h2 className="text-2xl font-bold tracking-tight">Most Viewed Scripts</h2>
-        </div>
-      )}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div>
+      <div className="flex items-center gap-2 mb-4">
+        <Eye className="h-5 w-5 text-primary" />
+        <h2 className="text-lg font-bold">Most Viewed</h2>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         {mostViewedScripts.map(script => (
-          <Link
-            key={script.slug}
-            href={{
-              pathname: "/scripts",
-              query: { id: script.slug },
-            }}
-            className="block group"
-            prefetch={false}
-          >
-            <Card className="bg-accent/30 border-2 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-[3px] flex flex-col h-full cursor-pointer">
-              <CardHeader className="pb-2">
-                <CardTitle className="flex items-start gap-3">
-                  <div className="flex h-16 w-16 min-w-16 items-center justify-center rounded-xl bg-gradient-to-br from-accent/40 to-accent/60 p-1 shadow-md">
-                    <AppIcon src={script.resources?.logo} src_light={script.resources?.logo_light} name={script.name || script.slug} size={64} />
-                  </div>
-                  <div className="flex flex-col flex-1 min-w-0 gap-1">
-                    <h3 className="font-semibold text-base line-clamp-1">{script.name}</h3>
-                    {/* Metadata row (compact) */}
-                    <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                      <span className="flex items-center gap-1" title={script.metadata?.date_app_added || ""}>
-                        <CalendarPlus className="h-3 w-3" />
-                        {extractDate(script.metadata?.date_app_added || "")}
-                      </span>
-                      {formatStarCount((script as any).github_stars) && (
-                        <span className="flex items-center gap-1">
-                          <Star className="h-3 w-3 fill-current" />
-                          {formatStarCount((script as any).github_stars)}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="flex-grow space-y-3 pb-6">
-                <CardDescription className="line-clamp-3 text-sm leading-relaxed">{script.description}</CardDescription>
-                {getScriptBadges(script, items).length > 0 && (
-                  <div className="flex flex-wrap gap-1.5 mt-1">
-                    {getScriptBadges(script, items).map(badge => (
-                      <Badge key={badge} variant="secondary" className="text-xs">
-                        {badge}
-                      </Badge>
-                    ))}
-                  </div>
-                )}
-              </CardContent>
-              <CardFooter className="pt-1">
-                <div className="w-full text-center text-sm font-medium text-primary hover:underline">
-                  View Details →
-                </div>
-              </CardFooter>
-            </Card>
-          </Link>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-export function TrendingScripts({ items }: { items: Category[] }) {
-  const [viewCounts, setViewCounts] = useState<Record<string, number>>({});
-  const [page, setPage] = useState(1);
-
-  // Load view counts from Plausible Analytics via Cloudflare Worker
-  useEffect(() => {
-    async function fetchTrendingData() {
-      try {
-        const proxyUrl = process.env.NEXT_PUBLIC_PLAUSIBLE_PROXY_URL;
-        
-        if (!proxyUrl) {
-          console.warn("Plausible proxy URL not configured");
-          return;
-        }
-
-        // Fetch from Cloudflare Worker proxy
-        const { getTrendingScriptsShared } = await import("@/lib/plausible-shared");
-        const counts = await getTrendingScriptsShared("", "month");
-        
-        console.log("Trending data loaded:", counts);
-        setViewCounts(counts);
-      }
-      catch (error) {
-        console.error("Failed to load trending data:", error);
-      }
-    }
-
-    fetchTrendingData();
-  }, []);
-
-  const trendingScripts = useMemo(() => {
-    if (!items)
-      return [];
-
-    const scripts = items.flatMap(category => category.scripts || []);
-
-    // Filter out duplicates by slug
-    const uniqueScriptsMap = new Map<string, Script>();
-    scripts.forEach((script) => {
-      if (!uniqueScriptsMap.has(script.slug)) {
-        uniqueScriptsMap.set(script.slug, script);
-      }
-    });
-
-    // Get scripts from last 30 days
-    const thirtyDaysAgo = new Date();
-    thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
-
-    return Array.from(uniqueScriptsMap.values())
-      .filter(script => new Date(script.metadata?.date_app_added || 0) >= thirtyDaysAgo)
-      .sort((a, b) => {
-        // Sort 100% by Plausible visitor count
-        const visitorsA = viewCounts[a.slug] || 0;
-        const visitorsB = viewCounts[b.slug] || 0;
-
-        // Sort by visitors first, then by date for ties
-        if (visitorsB !== visitorsA)
-          return visitorsB - visitorsA;
-        return new Date(b.metadata?.date_app_added || 0).getTime() - new Date(a.metadata?.date_app_added || 0).getTime();
-      });
-  }, [items, viewCounts]);
-
-  const goToNextPage = () => setPage(prev => prev + 1);
-  const goToPreviousPage = () => setPage(prev => prev - 1);
-
-  const startIndex = (page - 1) * ITEMS_PER_PAGE_LARGE;
-  const endIndex = page * ITEMS_PER_PAGE_LARGE;
-
-  if (!items || trendingScripts.length === 0)
-    return null;
-
-  return (
-    <div className="">
-      <div className="flex w-full items-center justify-between mb-6 pb-3 border-b-2 border-primary/20">
-        <div className="flex items-center gap-2">
-          <TrendingUp className="h-6 w-6 text-primary" />
-          <h2 className="text-2xl font-bold tracking-tight">Trending This Month</h2>
-          <Badge variant="outline" className="text-xs">
-            Last 30 Days
-          </Badge>
-        </div>
-        <div className="flex items-center justify-end gap-2">
-          {page > 1 && (
-            <div className="cursor-pointer select-none px-4 py-2 text-sm font-semibold rounded-lg hover:bg-accent transition-colors" onClick={goToPreviousPage}>
-              Previous
-            </div>
-          )}
-          {endIndex < trendingScripts.length && (
-            <div onClick={goToNextPage} className="cursor-pointer select-none px-4 py-2 text-sm font-semibold rounded-lg hover:bg-accent transition-colors">
-              {page === 1 ? "More.." : "Next"}
-            </div>
-          )}
-        </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {trendingScripts.slice(startIndex, endIndex).map(script => (
-          <Link
-            key={script.slug}
-            href={{
-              pathname: "/scripts",
-              query: { id: script.slug },
-            }}
-            className="block group"
-          >
-            <Card className="bg-accent/30 border-2 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-[3px] flex flex-col h-full cursor-pointer">
-              <CardHeader className="pb-2">
-                <CardTitle className="flex items-start gap-3">
-                  <div className="flex h-16 w-16 min-w-16 items-center justify-center rounded-xl bg-gradient-to-br from-accent/40 to-accent/60 p-1 shadow-md">
-                    <AppIcon src={script.resources?.logo} src_light={script.resources?.logo_light} name={script.name || script.slug} size={64} />
-                  </div>
-                  <div className="flex flex-col flex-1 min-w-0 gap-1">
-                    {/* First row: app_name + repo_status + stars + eye_icon */}
-                    <div className="flex items-center gap-1">
-                      <h3 className="font-semibold text-base line-clamp-1">{script.name}</h3>
-                      {script.metadata?.date_last_commit && (() => {
-                        const lastCommitDate = new Date(script.metadata.date_last_commit);
-                        const now = new Date();
-                        const daysSince = Math.floor((now.getTime() - lastCommitDate.getTime()) / (1000 * 60 * 60 * 24));
-                        return getStatusIcon(daysSince);
-                      })()}
-                      {formatStarCount(script.metadata?.github_stars) && (
-                        <>
-                          <span className="text-muted-foreground/60 select-none text-xs hidden sm:inline">•</span>
-                          <TooltipProvider>
-                            <Tooltip delayDuration={200}>
-                              <TooltipTrigger asChild>
-                                <span className="flex items-center gap-1 cursor-help text-xs text-muted-foreground">
-                                  <Star className="h-3 w-3 fill-current" />
-                                  {formatStarCount(script.metadata?.github_stars)}
-                                </span>
-                              </TooltipTrigger>
-                              <TooltipContent side="bottom" className="font-medium">
-                                <p>{script.metadata?.github_stars?.toLocaleString()} GitHub stars</p>
-                              </TooltipContent>
-                            </Tooltip>
-                          </TooltipProvider>
-                        </>
-                      )}
-                      {viewCounts[script.slug] && (
-                        <>
-                          <span className="text-muted-foreground/60 select-none text-xs hidden sm:inline">•</span>
-                          <TooltipProvider>
-                            <Tooltip delayDuration={200}>
-                              <TooltipTrigger asChild>
-                                <span className="flex items-center gap-1 cursor-help text-xs text-muted-foreground">
-                                  <Eye className="h-3 w-3" />
-                                  {viewCounts[script.slug]}
-                                </span>
-                              </TooltipTrigger>
-                              <TooltipContent side="bottom" className="font-medium">
-                                <p>Visited {viewCounts[script.slug]} times this month</p>
-                              </TooltipContent>
-                            </Tooltip>
-                          </TooltipProvider>
-                        </>
-                      )}
-                    </div>
-                    {/* Second row: community_integration + Released/Last commit */}
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                      {script.community_integrations && (script.community_integrations.proxmox_ve?.supported || script.community_integrations.yunohost?.supported) && (
-                        <div className="flex items-center gap-1.5">
-                          {script.community_integrations.proxmox_ve?.supported && (
-                            <TooltipProvider>
-                              <Tooltip delayDuration={200}>
-                                <TooltipTrigger asChild>
-                                  <span className="px-1.5 py-0.5 rounded text-[10px] font-medium bg-accent/50 cursor-help">
-                                    PVE
-                                  </span>
-                                </TooltipTrigger>
-                                <TooltipContent side="bottom" className="font-medium">
-                                  <p>Supported by Proxmox VE community</p>
-                                </TooltipContent>
-                              </Tooltip>
-                            </TooltipProvider>
-                          )}
-                          {script.community_integrations.yunohost?.supported && (
-                            <TooltipProvider>
-                              <Tooltip delayDuration={200}>
-                                <TooltipTrigger asChild>
-                                  <span className="px-1.5 py-0.5 rounded text-[10px] font-medium bg-accent/50 cursor-help">
-                                    Yuno
-                                  </span>
-                                </TooltipTrigger>
-                                <TooltipContent side="bottom" className="font-medium">
-                                  <p>Supported by YunoHost community</p>
-                                </TooltipContent>
-                              </Tooltip>
-                            </TooltipProvider>
-                          )}
-                        </div>
-                      )}
-                      {(script.metadata?.date_last_released || script.metadata?.date_last_commit) && (
-                        <>
-                          {script.community_integrations && (script.community_integrations.proxmox_ve?.supported || script.community_integrations.yunohost?.supported) && (
-                            <span className="text-muted-foreground/60 select-none hidden sm:inline">•</span>
-                          )}
-                          <span className="flex items-center gap-1">
-                            {(() => {
-                              const daysSinceRelease = script.metadata?.date_last_released 
-                                ? Math.floor((new Date().getTime() - new Date(script.metadata.date_last_released).getTime()) / (1000 * 60 * 60 * 24))
-                                : null;
-                              
-                              // If released within 2 weeks (14 days), show "Released X ago"
-                              if (daysSinceRelease !== null && daysSinceRelease <= 14) {
-                                return (
-                                  <>
-                                    <Tag className="h-3 w-3" />
-                                    Released {getRelativeTimeFromDays(daysSinceRelease)}
-                                  </>
-                                );
-                              }
-                              
-                              // Otherwise show "Last commit X ago"
-                              if (script.metadata?.date_last_commit) {
-                                const daysSinceCommit = Math.floor((new Date().getTime() - new Date(script.metadata.date_last_commit).getTime()) / (1000 * 60 * 60 * 24));
-                                return <>Last commit {getRelativeTimeFromDays(daysSinceCommit)}</>;
-                              }
-                              
-                              return null;
-                            })()}
-                          </span>
-                        </>
-                      )}
-                    </div>
-                  </div>
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="flex-grow space-y-3 pb-6">
-                <CardDescription className="line-clamp-3 text-sm leading-relaxed">{script.description}</CardDescription>
-                {getScriptBadges(script, items).length > 0 && (
-                  <div className="flex flex-wrap gap-1.5 mt-1">
-                    {getScriptBadges(script, items).map(badge => (
-                      <Badge key={badge} variant="secondary" className="text-xs">
-                        {badge}
-                      </Badge>
-                    ))}
-                  </div>
-                )}
-              </CardContent>
-              <CardFooter className="pt-1">
-                <div className="w-full text-center text-sm font-medium text-primary hover:underline">
-                  View Details →
-                </div>
-              </CardFooter>
-            </Card>
-          </Link>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-export function PopularScripts({ items }: { items: Category[] }) {
-  const [page, setPage] = useState(1);
-
-  const popularScripts = useMemo(() => {
-    if (!items)
-      return [];
-
-    const scripts = items.flatMap(category => category.scripts || []);
-
-    // Filter out duplicates by slug
-    const uniqueScriptsMap = new Map<string, Script>();
-    scripts.forEach((script) => {
-      if (!uniqueScriptsMap.has(script.slug)) {
-        uniqueScriptsMap.set(script.slug, script);
-      }
-    });
-
-    // Sort by GitHub stars (primary) with hardcoded popular scripts boost
-    return Array.from(uniqueScriptsMap.values())
-      .sort((a, b) => {
-        const starsA = a.metadata?.github_stars || 0;
-        const starsB = b.metadata?.github_stars || 0;
-        
-        // Boost hardcoded popular scripts
-        const boostA = mostPopularScripts.includes(a.slug) ? 10000 : 0;
-        const boostB = mostPopularScripts.includes(b.slug) ? 10000 : 0;
-
-        return (starsB + boostB) - (starsA + boostA);
-      });
-  }, [items]);
-
-  const goToNextPage = () => setPage(prev => prev + 1);
-  const goToPreviousPage = () => setPage(prev => prev - 1);
-
-  const startIndex = (page - 1) * ITEMS_PER_PAGE_LARGE;
-  const endIndex = page * ITEMS_PER_PAGE_LARGE;
-
-  if (!items || popularScripts.length === 0)
-    return null;
-
-  return (
-    <div className="">
-      <div className="flex w-full items-center justify-between mb-6 pb-3 border-b-2 border-primary/20">
-        <div className="flex items-center gap-2">
-          <h2 className="text-2xl font-bold tracking-tight">Popular Scripts</h2>
-          <Badge variant="outline" className="text-xs">
-            Community Favorites
-          </Badge>
-        </div>
-        <div className="flex items-center justify-end gap-2">
-          {page > 1 && (
-            <div className="cursor-pointer select-none px-4 py-2 text-sm font-semibold rounded-lg hover:bg-accent transition-colors" onClick={goToPreviousPage}>
-              Previous
-            </div>
-          )}
-          {endIndex < popularScripts.length && (
-            <div onClick={goToNextPage} className="cursor-pointer select-none px-4 py-2 text-sm font-semibold rounded-lg hover:bg-accent transition-colors">
-              {page === 1 ? "More.." : "Next"}
-            </div>
-          )}
-        </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {popularScripts.slice(startIndex, endIndex).map(script => (
-          <Link
-            key={script.slug}
-            href={{
-              pathname: "/scripts",
-              query: { id: script.slug },
-            }}
-            className="block group"
-            prefetch={false}
-          >
-            <Card className="bg-accent/30 border-2 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-[3px] flex flex-col h-full cursor-pointer">
-              <CardHeader className="pb-2">
-                <CardTitle className="flex items-start gap-3">
-                  <div className="flex h-16 w-16 min-w-16 items-center justify-center rounded-xl bg-gradient-to-br from-accent/40 to-accent/60 p-1 shadow-md">
-                    <AppIcon src={script.resources?.logo} src_light={script.resources?.logo_light} name={script.name || script.slug} size={64} />
-                  </div>
-                  <div className="flex flex-col flex-1 min-w-0 gap-1">
-                    {/* First row: app_name + repo_status + github stars */}
-                    <div className="flex items-center gap-1">
-                      <h3 className="font-semibold text-base line-clamp-1">{script.name}</h3>
-                      {script.metadata?.date_last_commit && (() => {
-                        const lastCommitDate = new Date(script.metadata.date_last_commit);
-                        const now = new Date();
-                        const daysSince = Math.floor((now.getTime() - lastCommitDate.getTime()) / (1000 * 60 * 60 * 24));
-                        return getStatusIcon(daysSince);
-                      })()}
-                      {formatStarCount(script.metadata?.github_stars) && (
-                        <>
-                          <span className="text-muted-foreground/60 select-none text-xs hidden sm:inline">•</span>
-                          <TooltipProvider>
-                            <Tooltip delayDuration={200}>
-                              <TooltipTrigger asChild>
-                                <span className="flex items-center gap-1 cursor-help text-xs text-muted-foreground">
-                                  <Star className="h-3 w-3 fill-current" />
-                                  {formatStarCount(script.metadata?.github_stars)}
-                                </span>
-                              </TooltipTrigger>
-                              <TooltipContent side="bottom" className="font-medium">
-                                <p>{script.metadata?.github_stars?.toLocaleString()} GitHub stars</p>
-                              </TooltipContent>
-                            </Tooltip>
-                          </TooltipProvider>
-                        </>
-                      )}
-                    </div>
-                    {/* Second row: community_integration + Released/Last commit */}
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                      {script.community_integrations && (script.community_integrations.proxmox_ve?.supported || script.community_integrations.yunohost?.supported) && (
-                        <div className="flex items-center gap-1.5">
-                          {script.community_integrations.proxmox_ve?.supported && (
-                            <TooltipProvider>
-                              <Tooltip delayDuration={200}>
-                                <TooltipTrigger asChild>
-                                  <span className="px-1.5 py-0.5 rounded text-[10px] font-medium bg-accent/50 cursor-help">
-                                    PVE
-                                  </span>
-                                </TooltipTrigger>
-                                <TooltipContent side="bottom" className="font-medium">
-                                  <p>Community build provided by the Proxmox VE community</p>
-                                </TooltipContent>
-                              </Tooltip>
-                            </TooltipProvider>
-                          )}
-                          {script.community_integrations.yunohost?.supported && (
-                            <TooltipProvider>
-                              <Tooltip delayDuration={200}>
-                                <TooltipTrigger asChild>
-                                  <span className="px-1.5 py-0.5 rounded text-[10px] font-medium bg-accent/50 cursor-help">
-                                    Yuno
-                                  </span>
-                                </TooltipTrigger>
-                                <TooltipContent side="bottom" className="font-medium">
-                                  <p>Community build provided by the YunoHost community</p>
-                                </TooltipContent>
-                              </Tooltip>
-                            </TooltipProvider>
-                          )}
-                        </div>
-                      )}
-                      {(script.metadata?.date_last_released || script.metadata?.date_last_commit) && (
-                        <>
-                          {script.community_integrations && (script.community_integrations.proxmox_ve?.supported || script.community_integrations.yunohost?.supported) && (
-                            <span className="text-muted-foreground/60 select-none hidden sm:inline">•</span>
-                          )}
-                          <span className="flex items-center gap-1">
-                            {(() => {
-                              const daysSinceRelease = script.metadata?.date_last_released 
-                                ? Math.floor((new Date().getTime() - new Date(script.metadata.date_last_released).getTime()) / (1000 * 60 * 60 * 24))
-                                : null;
-                              
-                              // If released within 2 weeks (14 days), show "Released X ago"
-                              if (daysSinceRelease !== null && daysSinceRelease <= 14) {
-                                return (
-                                  <>
-                                    <Tag className="h-3 w-3" />
-                                    Released {getRelativeTimeFromDays(daysSinceRelease)}
-                                  </>
-                                );
-                              }
-                              
-                              // Otherwise show "Last commit X ago"
-                              if (script.metadata?.date_last_commit) {
-                                const daysSinceCommit = Math.floor((new Date().getTime() - new Date(script.metadata.date_last_commit).getTime()) / (1000 * 60 * 60 * 24));
-                                return <>Last commit {getRelativeTimeFromDays(daysSinceCommit)}</>;
-                              }
-                              
-                              return null;
-                            })()}
-                          </span>
-                        </>
-                      )}
-                    </div>
-                  </div>
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="flex-grow space-y-3 pb-6">
-                <CardDescription className="line-clamp-3 text-sm leading-relaxed">{script.description}</CardDescription>
-                {getScriptBadges(script, items).length > 0 && (
-                  <div className="flex flex-wrap gap-1.5 mt-1">
-                    {getScriptBadges(script, items).map(badge => (
-                      <Badge key={badge} variant="secondary" className="text-xs">
-                        {badge}
-                      </Badge>
-                    ))}
-                  </div>
-                )}
-              </CardContent>
-              <CardFooter className="pt-1">
-                <div className="w-full text-center text-sm font-medium text-primary hover:underline">
-                  View Details →
-                </div>
-              </CardFooter>
-            </Card>
-          </Link>
+          <CompactScriptCard key={script.slug} script={script} allCategories={items} />
         ))}
       </div>
     </div>

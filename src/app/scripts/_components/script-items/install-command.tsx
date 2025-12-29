@@ -1,4 +1,5 @@
-import { Box, Boxes, FileText, Grid3x3, Hexagon, Info } from "lucide-react";
+import { Info, Terminal } from "lucide-react";
+import { SiDocker, SiHelm, SiKubernetes, SiTerraform } from "react-icons/si";
 import { useEffect, useState } from "react";
 
 import type { Script } from "@/lib/types";
@@ -9,27 +10,22 @@ import CodeCopyButton from "@/components/ui/code-copy-button";
 // Tab metadata with icons and descriptions
 const TAB_CONFIG = {
   script: {
-    icon: FileText,
     label: "Script",
     description: "Quick installation script for automated setup",
   },
   docker_compose: {
-    icon: Box,
     label: "Docker Compose",
     description: "Container-based deployment with docker-compose.yml",
   },
   helm: {
-    icon: Hexagon,
     label: "Helm",
     description: "Deploy to Kubernetes using Helm charts",
   },
   kubernetes: {
-    icon: Grid3x3,
     label: "Kubernetes",
     description: "Native Kubernetes manifest files",
   },
   terraform: {
-    icon: Boxes,
     label: "Terraform",
     description: "Infrastructure as code with Terraform",
   },
@@ -173,31 +169,31 @@ export default function InstallCommand({ item }: { item: Script }) {
         <TabsList className="mb-3">
           {hasScript && (
             <TabsTrigger value="script" className="gap-1.5">
-              <FileText className="h-3.5 w-3.5" />
+              <Terminal className="h-3.5 w-3.5" />
               <span>{TAB_CONFIG.script.label}</span>
             </TabsTrigger>
           )}
           {hasDockerCompose && (
             <TabsTrigger value="docker_compose" className="gap-1.5">
-              <Box className="h-3.5 w-3.5" />
+              <SiDocker className="h-3.5 w-3.5" />
               <span>{TAB_CONFIG.docker_compose.label}</span>
             </TabsTrigger>
           )}
           {hasHelm && (
             <TabsTrigger value="helm" className="gap-1.5">
-              <Hexagon className="h-3.5 w-3.5" />
+              <SiHelm className="h-3.5 w-3.5" />
               <span>{TAB_CONFIG.helm.label}</span>
             </TabsTrigger>
           )}
           {hasKubernetes && (
             <TabsTrigger value="kubernetes" className="gap-1.5">
-              <Grid3x3 className="h-3.5 w-3.5" />
+              <SiKubernetes className="h-3.5 w-3.5" />
               <span>{TAB_CONFIG.kubernetes.label}</span>
             </TabsTrigger>
           )}
           {hasTerraform && (
             <TabsTrigger value="terraform" className="gap-1.5">
-              <Boxes className="h-3.5 w-3.5" />
+              <SiTerraform className="h-3.5 w-3.5" />
               <span>{TAB_CONFIG.terraform.label}</span>
             </TabsTrigger>
           )}

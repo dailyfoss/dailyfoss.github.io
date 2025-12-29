@@ -1,7 +1,8 @@
 {
   "name": "tautulli",
   "slug": "tautulli",
-  "tagline": null,
+  "tagline": "A monitoring and analytics dashboard for Plex Media Server",
+  "subtitle": "",
   "description": "Tautulli is a self-hosted monitoring and analytics tool for Plex Media Server. It tracks user activity, watch history, performance, and library stats, providing rich reports and notifications via an intuitive web dashboard and API.",
   "categories": [
     100
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/Tautulli/Tautulli",
     "source_code": "https://github.com/Tautulli/Tautulli",
     "logo": "/icons/tautulli.webp",
+    "screenshot": "",
     "issues": "https://github.com/Tautulli/Tautulli/issues",
     "releases": "https://github.com/Tautulli/Tautulli/releases"
   },
@@ -96,6 +98,11 @@
       "supported": true,
       "script_id": "tautulli",
       "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=tautulli"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "tautulli",
+      "url": "https://apps.truenas.com/catalog/tautulli"
     }
   }
 }

@@ -1,7 +1,8 @@
 {
   "name": "immich",
   "slug": "immich",
-  "tagline": null,
+  "tagline": "A self-hosted photo and video backup platform with smart organization",
+  "subtitle": "",
   "description": "Immich is a self hosted photo and video backup solution for mobile and desktop. It offers automatic uploads, face recognition, maps, albums and multi user support, providing a private alternative to big cloud photo services.",
   "categories": [
     120
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/immich-app/immich",
     "source_code": "https://github.com/immich-app/immich",
     "logo": "/icons/immich.webp",
+    "screenshot": "",
     "issues": "https://github.com/immich-app/immich/issues",
     "releases": "https://github.com/immich-app/immich/releases"
   },
@@ -109,6 +111,11 @@
       "supported": true,
       "repo_name": "immich_ynh",
       "url": "https://github.com/YunoHost-Apps/immich_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "immich",
+      "url": "https://apps.truenas.com/catalog/immich"
     }
   }
 }

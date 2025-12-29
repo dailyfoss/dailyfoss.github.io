@@ -1,7 +1,8 @@
 {
   "name": "jellystat",
   "slug": "jellystat",
-  "tagline": null,
+  "tagline": "A self-hosted analytics dashboard for Jellyfin usage and activity",
+  "subtitle": "",
   "description": "Jellystat is a self hosted analytics dashboard for Jellyfin. It collects playback history, user activity and library statistics, then displays graphs and tables so administrators can understand how their media server is used.",
   "categories": [
     37
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/CyferShepard/Jellystat",
     "source_code": "https://github.com/CyferShepard/Jellystat",
     "logo": "/icons/jellystat.webp",
+    "screenshot": "",
     "issues": "https://github.com/CyferShepard/Jellystat/issues",
     "releases": "https://github.com/CyferShepard/Jellystat/releases"
   },
@@ -82,5 +84,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "jellystat",
+      "url": "https://apps.truenas.com/catalog/jellystat"
+    }
+  }
 }

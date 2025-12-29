@@ -1,7 +1,8 @@
 {
   "name": "localai",
   "slug": "localai",
-  "tagline": null,
+  "tagline": "A self-hosted engine for running large language models locally",
+  "subtitle": "",
   "description": "LocalAI is a self-hosted artificial intelligence inference engine that runs LLMs locally with no external API calls. It supports model selection, GPU acceleration, and provides an API compatible with OpenAI.",
   "categories": [
     13
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/mudler/LocalAI",
     "source_code": "https://github.com/mudler/LocalAI",
     "logo": "/icons/localai.webp",
+    "screenshot": "",
     "issues": "https://github.com/mudler/LocalAI/issues",
     "releases": "https://github.com/mudler/LocalAI/releases"
   },
@@ -92,6 +94,11 @@
       "supported": true,
       "repo_name": "localai_ynh",
       "url": "https://github.com/YunoHost-Apps/localai_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "localai",
+      "url": "https://apps.truenas.com/catalog/localai"
     }
   }
 }

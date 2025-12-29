@@ -1,7 +1,8 @@
 {
   "name": "changedetection",
   "slug": "changedetection",
-  "tagline": null,
+  "tagline": "A self-hosted service that monitors websites and alerts on content changes",
+  "subtitle": "",
   "description": "changedetection.io is a self-hosted web service that monitors website content for changes and sends notifications when updates occur. It supports diff highlighting, scheduled checks, RSS feeds, and multi-user dashboards.",
   "categories": [
     119
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/dgtlmoon/changedetection.io",
     "source_code": "https://github.com/dgtlmoon/changedetection.io",
     "logo": "/icons/changedetection.webp",
+    "screenshot": "",
     "issues": "https://github.com/dgtlmoon/changedetection.io/issues",
     "releases": "https://github.com/dgtlmoon/changedetection.io/releases"
   },
@@ -109,6 +111,11 @@
       "supported": true,
       "repo_name": "changedetection_ynh",
       "url": "https://github.com/YunoHost-Apps/changedetection_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "change-detection",
+      "url": "https://apps.truenas.com/catalog/change-detection"
     }
   }
 }

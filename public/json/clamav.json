@@ -1,7 +1,8 @@
 {
   "name": "clamav",
   "slug": "clamav",
-  "tagline": null,
+  "tagline": "An antivirus engine for detecting malware across servers and endpoints",
+  "subtitle": "",
   "description": "ClamAV is an open-source antivirus engine designed for detecting malware, viruses, and threats. It can be used on mail servers, endpoints, and containerized environments, and offers a CLI scanner.",
   "categories": [
     11
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/Cisco-Talos/clamav",
     "source_code": "https://github.com/Cisco-Talos/clamav",
     "logo": "/icons/clamav.webp",
+    "screenshot": "",
     "issues": "https://github.com/Cisco-Talos/clamav/issues",
     "releases": "https://github.com/Cisco-Talos/clamav/releases"
   },
@@ -98,5 +100,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "clamav",
+      "url": "https://apps.truenas.com/catalog/clamav"
+    }
+  }
 }

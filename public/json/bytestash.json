@@ -1,7 +1,8 @@
 {
   "name": "bytestash",
   "slug": "bytestash",
-  "tagline": null,
+  "tagline": "A self-hosted personal data store for organizing and searching private content",
+  "subtitle": "",
   "description": "ByteStash is a self-hosted personal data warehouse designed to store notes, documents, or files in an organized searchable format. It offers a clean web interface and API access, ideal for centralizing personal data in a private cloud.",
   "categories": [
     27
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/jordan-dalby/ByteStash",
     "source_code": "https://github.com/jordan-dalby/ByteStash",
     "logo": "/icons/bytestash.webp",
+    "screenshot": "",
     "issues": "https://github.com/jordan-dalby/ByteStash/issues",
     "releases": "https://github.com/jordan-dalby/ByteStash/releases"
   },
@@ -96,6 +98,11 @@
       "supported": true,
       "script_id": "bytestash",
       "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=bytestash"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "stash",
+      "url": "https://apps.truenas.com/catalog/stash"
     }
   }
 }

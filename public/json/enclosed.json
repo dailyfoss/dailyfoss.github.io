@@ -1,7 +1,8 @@
 {
   "name": "enclosed",
   "slug": "enclosed",
-  "tagline": null,
+  "tagline": "A self-hosted paste and snippet service with encryption and privacy controls",
+  "subtitle": "",
   "description": "Enclosed is a self-hosted paste and snippet service with an emphasis on encryption and privacy. Users can store text or code snippets and share links while keeping control of retention and access.",
   "categories": [
     111
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/CorentinTh/enclosed",
     "source_code": "https://github.com/CorentinTh/enclosed",
     "logo": "/icons/enclosed.webp",
+    "screenshot": "",
     "issues": "https://github.com/CorentinTh/enclosed/issues",
     "releases": "https://github.com/CorentinTh/enclosed/releases",
     "logo_light": "/icons/enclosed-light.webp"
@@ -87,5 +89,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "enclosed",
+      "url": "https://apps.truenas.com/catalog/enclosed"
+    }
+  }
 }

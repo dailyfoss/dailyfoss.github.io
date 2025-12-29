@@ -1,7 +1,8 @@
 {
   "name": "duplicati",
   "slug": "duplicati",
-  "tagline": null,
+  "tagline": "A backup client for encrypted, incremental backups with a web UI",
+  "subtitle": "",
   "description": "Duplicati is a backup client that stores encrypted, incremental backups on cloud storage services or local disks. It has a web interface for scheduling, restoring, and configuring backup jobs, and runs well on headless servers.",
   "categories": [
     18
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/duplicati/duplicati",
     "source_code": "https://github.com/duplicati/duplicati",
     "logo": "/icons/duplicati.webp",
+    "screenshot": "",
     "issues": "https://github.com/duplicati/duplicati/issues",
     "releases": "https://github.com/duplicati/duplicati/releases"
   },
@@ -92,6 +94,11 @@
       "supported": true,
       "script_id": "duplicati",
       "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=duplicati"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "duplicati",
+      "url": "https://apps.truenas.com/catalog/duplicati"
     }
   }
 }

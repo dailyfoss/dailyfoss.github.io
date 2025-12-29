@@ -1,7 +1,8 @@
 {
   "name": "scrypted",
   "slug": "scrypted",
-  "tagline": null,
+  "tagline": "A smart home automation platform with plugin support",
+  "subtitle": "",
   "description": "Scrypted is a self-hosted smart home automation platform for integrating devices like HomeKit, Google Home, and Alexa. It supports plugins, video streams, and custom automation flows.",
   "categories": [
     76
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/koush/scrypted",
     "source_code": "https://github.com/koush/scrypted",
     "logo": "/icons/scrypted.webp",
+    "screenshot": "",
     "issues": "https://github.com/koush/scrypted/issues",
     "releases": "https://github.com/koush/scrypted/releases"
   },
@@ -86,5 +88,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "scrypted",
+      "url": "https://apps.truenas.com/catalog/scrypted"
+    }
+  }
 }

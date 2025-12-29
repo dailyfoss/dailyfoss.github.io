@@ -1,7 +1,8 @@
 {
   "name": "readarr",
   "slug": "readarr",
-  "tagline": null,
+  "tagline": "A self-hosted ebook and audiobook collection manager",
+  "subtitle": "",
   "description": "Readarr is a self-hosted ebook and audiobook collection manager for Usenet and torrents. It integrates with Calibre, tracks authors, and automates downloads via indexers.",
   "categories": [
     21
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/Readarr/Readarr",
     "source_code": "https://github.com/Readarr/Readarr",
     "logo": "/icons/readarr.webp",
+    "screenshot": "",
     "issues": "https://github.com/Readarr/Readarr/issues",
     "releases": null
   },
@@ -109,6 +111,11 @@
       "supported": true,
       "repo_name": "readarr_ynh",
       "url": "https://github.com/YunoHost-Apps/readarr_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "readarr",
+      "url": "https://apps.truenas.com/catalog/readarr"
     }
   }
 }

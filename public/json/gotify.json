@@ -1,7 +1,8 @@
 {
   "name": "gotify",
   "slug": "gotify",
-  "tagline": null,
+  "tagline": "A self-hosted notification server for sending messages to devices",
+  "subtitle": "",
   "description": "Gotify is a self-hosted notification server with WebSocket and REST APIs. Users can send alerts to mobile and desktop via apps or browser interface without relying on third-party notification providers.",
   "categories": [
     112
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/gotify/server",
     "source_code": "https://github.com/gotify/server",
     "logo": "/icons/gotify.webp",
+    "screenshot": "",
     "issues": "https://github.com/gotify/server/issues",
     "releases": "https://github.com/gotify/server/releases"
   },
@@ -109,6 +111,11 @@
       "supported": true,
       "repo_name": "gotify_ynh",
       "url": "https://github.com/YunoHost-Apps/gotify_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "gotify",
+      "url": "https://apps.truenas.com/catalog/gotify"
     }
   }
 }

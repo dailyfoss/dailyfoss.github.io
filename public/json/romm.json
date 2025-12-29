@@ -1,7 +1,8 @@
 {
   "name": "romm",
   "slug": "romm",
-  "tagline": null,
+  "tagline": "A self-hosted ROM manager for emulator libraries",
+  "subtitle": "",
   "description": "ROMM is a self-hosted ROM manager for emulators, allowing users to manage and browse ROM libraries via a responsive web UI. It supports tagging, metadata, and organizing by platform.",
   "categories": [
     69
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/rommapp/romm",
     "source_code": "https://github.com/rommapp/romm",
     "logo": "/icons/romm.webp",
+    "screenshot": "",
     "issues": "https://github.com/rommapp/romm/issues",
     "releases": "https://github.com/rommapp/romm/releases"
   },
@@ -94,5 +96,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "romm",
+      "url": "https://apps.truenas.com/catalog/romm"
+    }
+  }
 }

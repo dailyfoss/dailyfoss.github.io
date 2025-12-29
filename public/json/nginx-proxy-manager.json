@@ -1,7 +1,8 @@
 {
   "name": "nginx-proxy-manager",
   "slug": "nginx-proxy-manager",
-  "tagline": null,
+  "tagline": "A web UI for managing Nginx reverse proxies and SSL",
+  "subtitle": "",
   "description": "Nginx Proxy Manager is a self-hosted web UI for managing Nginx proxies with SSL support. It offers simple setup for reverse proxies, domain routing, and certificate generation via Let's Encrypt.",
   "categories": [
     137
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/NginxProxyManager/nginx-proxy-manager",
     "source_code": "https://github.com/NginxProxyManager/nginx-proxy-manager",
     "logo": "/icons/nginx-proxy-manager.webp",
+    "screenshot": "",
     "issues": "https://github.com/NginxProxyManager/nginx-proxy-manager/issues",
     "releases": "https://github.com/NginxProxyManager/nginx-proxy-manager/releases"
   },
@@ -108,6 +110,11 @@
       "supported": true,
       "script_id": "nginxproxymanager",
       "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=nginxproxymanager"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "nginx-proxy-manager",
+      "url": "https://apps.truenas.com/catalog/nginx-proxy-manager"
     }
   }
 }

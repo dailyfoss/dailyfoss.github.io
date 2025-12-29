@@ -1,6 +1,7 @@
 "use client";
 
-import { BookOpenText, Tag, Code, Globe, Layers, LayoutGrid, Monitor, Stars, X, Activity, CheckCircle, RefreshCcw, Clock3, Moon, Archive, Hexagon, Scale } from "lucide-react";
+import { BookOpenText, Tag, Code, Globe, Layers, LayoutGrid, Monitor, Stars, X, Activity, CheckCircle, RefreshCcw, Clock3, Moon, Archive, Hexagon, Scale, Flag } from "lucide-react";
+import { FaGithub } from "react-icons/fa6";
 import { Suspense, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
@@ -11,6 +12,9 @@ import { Separator } from "@/components/ui/separator";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { useRepositoryStatus } from "@/hooks/use-repository-status";
 import { formatRelativeTime } from "@/lib/repository-status";
+import { ReportModal } from "@/components/report-modal";
+import { Button } from "@/components/ui/button";
+import { repoName } from "@/config/site-config";
 
 import InstallCommand from "./script-items/install-command";
 import Description from "./script-items/description";
@@ -20,8 +24,49 @@ import Alerts from "./script-items/alerts";
 import RelatedTools from "./script-items/related-tools";
 import CommunityStatsHeader from "./script-items/community-stats-header";
 import CommunityIntegrations from "./script-items/community-integrations";
+import { useFavoriteCount } from "@/components/favorite-button";
+import { CommunityLikes } from "@/components/community-likes";
 
 import type { Category } from "@/lib/types";
+
+// Screenshot Preview with Lightbox
+function ScreenshotPreview({ src, alt }: { src: string; alt: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <>
+      {/* Thumbnail */}
+      <div className="flex justify-center">
+        <button
+          onClick={() => setIsOpen(true)}
+          className="w-full max-w-[860px] rounded-xl overflow-hidden border bg-muted/30 cursor-zoom-in hover:border-primary/50 transition-colors"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={src}
+            alt={alt}
+            className="w-full h-auto object-contain"
+          />
+        </button>
+      </div>
+
+      {/* Lightbox - Click anywhere to close */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 cursor-pointer"
+          onClick={() => setIsOpen(false)}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={src}
+            alt={alt}
+            className="max-w-[90vw] max-h-[90vh] object-contain"
+          />
+        </div>
+      )}
+    </>
+  );
+}
 
 type ScriptItemProps = {
   item: Script;
@@ -146,10 +191,7 @@ function SecondaryMeta({ item }: { item: Script }) {
     return null;
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: -3 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.25, ease: "easeOut" }}
+    <div
       className="mt-1 mb-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-medium text-foreground/80"
     >
       {parts.flatMap((p, i) => {
@@ -216,7 +258,7 @@ function SecondaryMeta({ item }: { item: Script }) {
           element
         ];
       })}
-    </motion.div>
+    </div>
   );
 }
 
@@ -263,6 +305,12 @@ function PlatformRow({
       </div>
     </div>
   );
+}
+
+function CommunityLikesSection({ slug, appName, appDescription }: { slug: string; appName?: string; appDescription?: string }) {
+  const count = useFavoriteCount(slug);
+  
+  return <CommunityLikes slug={slug} count={count} appName={appName} appDescription={appDescription} />;
 }
 
 function PlatformSummary({ item }: { item: Script }) {
@@ -477,8 +525,8 @@ function ScriptHeader({ item }: { item: Script }) {
           </div>
           <div className="flex flex-col justify-between flex-grow space-y-4">
             <div className="space-y-3">
-              <div className="flex items-start justify-between">
-                <div className="space-y-3">
+              <div className="flex items-start justify-between gap-4">
+                <div className="space-y-3 flex-1">
                   <div className="flex items-center gap-3 flex-wrap">
                     <h1 className="text-4xl font-extrabold tracking-tight flex items-center gap-3">
                       {item.name}
@@ -544,16 +592,17 @@ function ScriptHeader({ item }: { item: Script }) {
                     )}
                   </div>
 
+                  {/* 1. Metadata repo */}
                   <SecondaryMeta item={item} />
                   <CommunityStatsHeader item={item} />
                   <div className="mt-3">
                     <RepositoryActivityIndicator item={item} />
                   </div>
+                  
+                  {/* Platform & Deployment */}
+                  <PlatformSummary item={item} />
                 </div>
               </div>
-              
-              <CommunityIntegrations item={item} />
-              <PlatformSummary item={item} />
             </div>
           </div>
         </div>
@@ -567,17 +616,18 @@ function ScriptHeader({ item }: { item: Script }) {
 
 export function ScriptItem({ item, setSelectedScript, allCategories = [] }: ScriptItemProps) {
   const router = useRouter();
+  const [showReportModal, setShowReportModal] = useState(false);
 
   const closeScript = () => {
     // Clear the selection and remove URL parameters
     setSelectedScript(null);
-    router.push("/scripts");
+    router.push("/");
   };
 
   return (
     <div className="w-full mx-auto">
       <div className="flex w-full flex-col">
-        <div className="mt-8 flex items-center justify-between">
+        <div className="flex items-center justify-between mb-2">
           <h2 className="text-sm font-medium tracking-tight text-muted-foreground uppercase">
             Selected Script
           </h2>
@@ -589,20 +639,40 @@ export function ScriptItem({ item, setSelectedScript, allCategories = [] }: Scri
           </button>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-          className="rounded-xl border border-border bg-accent/30 backdrop-blur-sm shadow-lg transition-all duration-300 hover:shadow-xl"
+        <div
+          className="rounded-xl border border-border bg-accent/30 backdrop-blur-sm shadow-lg transition-all duration-300 hover:shadow-xl relative"
         >
-          <div className="p-8 space-y-8">
+          {/* Report Button - Top Right */}
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setShowReportModal(true)}
+            className="absolute top-4 right-4 text-muted-foreground hover:text-foreground z-10"
+          >
+            <Flag className="h-4 w-4 mr-1" />
+            Report
+          </Button>
+
+          <div className="p-4 space-y-6">
             <Suspense fallback={<div className="animate-pulse h-32 bg-accent/20 rounded-xl" />}>
               <ScriptHeader item={item} />
             </Suspense>
 
-            <Separator className="my-8" />
+            <Separator className="my-2" />
 
+            {/* 2. Tagline + 3. Description + 4. Key Features (handled in Description component) */}
             <Description item={item} />
+            
+            {/* 5. Community Integrations */}
+            <div className="p-2">
+              <CommunityIntegrations item={item} />
+            </div>
+            
+            {/* 6. Community Feedback */}
+            <div className="p-2">
+              <CommunityLikesSection slug={item.slug} appName={item.name} appDescription={item.description} />
+            </div>
+
             <Alerts item={item} />
 
             <Separator className="my-8" />
@@ -622,10 +692,13 @@ export function ScriptItem({ item, setSelectedScript, allCategories = [] }: Scri
               
               return (
                 <div className="mt-6 rounded-lg border shadow-md">
-                  <div className="flex gap-3 px-5 py-3 bg-accent/25">
+                  <div className="flex flex-col gap-1 px-5 py-3 bg-accent/25">
                     <h2 className="text-lg font-semibold">
-                      How to Install
+                      Installation & Deployment
                     </h2>
+                    <p className="text-sm text-muted-foreground">
+                      Choose a deployment method based on your environment and preferences
+                    </p>
                   </div>
                   <Separator />
                   <div className="">
@@ -652,7 +725,14 @@ export function ScriptItem({ item, setSelectedScript, allCategories = [] }: Scri
               <RelatedTools currentScript={item} allCategories={allCategories} />
             )}
           </div>
-        </motion.div>
+        </div>
+
+        <ReportModal
+          isOpen={showReportModal}
+          onClose={() => setShowReportModal(false)}
+          appSlug={item.slug}
+          appName={item.name}
+        />
       </div>
     </div>
   );

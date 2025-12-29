@@ -1,7 +1,8 @@
 {
   "name": "tdarr",
   "slug": "tdarr",
-  "tagline": null,
+  "tagline": "A distributed platform for transcoding and optimizing media libraries",
+  "subtitle": "",
   "description": "Tdarr is a distributed, self-hosted video transcoding and library optimization platform. It uses plugins, workers, and rules to automatically transcode, scan, and clean up media libraries via a powerful web UI.",
   "categories": [
     100
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/HaveAGitGat/Tdarr",
     "source_code": "https://github.com/HaveAGitGat/Tdarr",
     "logo": "/icons/tdarr.webp",
+    "screenshot": "",
     "issues": "https://github.com/HaveAGitGat/Tdarr/issues",
     "releases": null
   },
@@ -100,6 +102,11 @@
       "supported": true,
       "script_id": "tdarr",
       "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=tdarr"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "tdarr",
+      "url": "https://apps.truenas.com/catalog/tdarr"
     }
   }
 }

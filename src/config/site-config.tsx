@@ -48,8 +48,6 @@ export const analytics = {
   plausible: {
     domain: "dailyfoss.github.io",
     apiUrl: "https://plausible.mvl.biz.id",
-    // Optional: Use shared link for real-time trending (no API key needed)
-    // Get this from Plausible: Settings → Visibility → Share Stats
     sharedLinkAuth: process.env.NEXT_PUBLIC_PLAUSIBLE_SHARED_LINK_AUTH || "",
   },
 };

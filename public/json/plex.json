@@ -1,7 +1,8 @@
 {
   "name": "plex",
   "slug": "plex",
-  "tagline": "",
+  "tagline": "A media server for organizing and streaming personal libraries",
+  "subtitle": "",
   "description": "Plex is a media server and streaming platform that lets you organize and stream personal media libraries across devices. It supports metadata fetching, transcoding, apps, and optional premium features.",
   "categories": [
     "Tidak ditemukan"
@@ -20,6 +21,7 @@
     "documentation": null,
     "source_code": "https://www.plex.tv/",
     "logo": "/icons/plex.webp",
+    "screenshot": "",
     "issues": null,
     "releases": null
   },
@@ -92,6 +94,11 @@
       "supported": true,
       "repo_name": "plexmediaserver_ynh",
       "url": "https://github.com/YunoHost-Apps/plexmediaserver_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "plex-auto-languages",
+      "url": "https://apps.truenas.com/catalog/plex-auto-languages"
     }
   }
 }

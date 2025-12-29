@@ -20,8 +20,8 @@ export function usePlausiblePageview() {
   useEffect(() => {
     if (typeof window === "undefined" || !window.plausible) return;
 
-    // Skip tracking on /scripts page - it's handled manually in the page component
-    if (pathname === "/scripts") {
+    // Skip tracking on homepage - it's handled manually in the page component
+    if (pathname === "/") {
       return;
     }
     

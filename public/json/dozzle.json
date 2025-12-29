@@ -1,7 +1,8 @@
 {
   "name": "dozzle",
   "slug": "dozzle",
-  "tagline": null,
+  "tagline": "A real-time web viewer for streaming Docker container logs",
+  "subtitle": "",
   "description": "Dozzle is a lightweight, real-time log viewer for Docker containers. It runs as a container and provides a web UI to browse and filter logs across containers, making it easy to debug and monitor running services.",
   "categories": [
     93
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/amir20/dozzle",
     "source_code": "https://github.com/amir20/dozzle",
     "logo": "/icons/dozzle.webp",
+    "screenshot": "",
     "issues": "https://github.com/amir20/dozzle/issues",
     "releases": "https://github.com/amir20/dozzle/releases"
   },
@@ -86,5 +88,12 @@
     "password": null
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "community_integrations": {
+    "truenas": {
+      "supported": true,
+      "app_name": "dozzle",
+      "url": "https://apps.truenas.com/catalog/dozzle"
+    }
+  }
 }

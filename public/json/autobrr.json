@@ -1,7 +1,8 @@
 {
   "name": "autobrr",
   "slug": "autobrr",
-  "tagline": null,
+  "tagline": "An automation tool that monitors torrent releases and triggers client downloads",
+  "subtitle": "",
   "description": "Autobrr is an automated tool that monitors torrent trackers and pushes downloads to clients like qBittorrent and Deluge. It filters releases in real-time and supports Radarr, Sonarr, and Lidarr automation.",
   "categories": [
     166
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/autobrr/autobrr",
     "source_code": "https://github.com/autobrr/autobrr",
     "logo": "/icons/autobrr.webp",
+    "screenshot": "https://raw.githubusercontent.com/autobrr/autobrr/develop/.github/images/front-dark.png",
     "issues": "https://github.com/autobrr/autobrr/issues",
     "releases": "https://github.com/autobrr/autobrr/releases"
   },
@@ -113,6 +115,11 @@
       "supported": true,
       "repo_name": "autobrr_ynh",
       "url": "https://github.com/YunoHost-Apps/autobrr_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "autobrr",
+      "url": "https://apps.truenas.com/catalog/autobrr"
     }
   }
 }

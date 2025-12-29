@@ -1,7 +1,8 @@
 {
   "name": "uptime-kuma",
   "slug": "uptime-kuma",
-  "tagline": null,
+  "tagline": "A self-hosted uptime monitoring and status page tool",
+  "subtitle": "",
   "description": "Uptime Kuma is a self-hosted monitoring and status page solution. It supports HTTP, ping, DNS, and more checks, sending notifications and rendering a beautiful status page for your services.",
   "categories": [
     173
@@ -25,24 +26,28 @@
     "documentation": "https://github.com/louislam/uptime-kuma",
     "source_code": "https://github.com/louislam/uptime-kuma",
     "logo": "/icons/uptime-kuma.webp",
+    "screenshot": "",
     "issues": "https://github.com/louislam/uptime-kuma/issues",
     "releases": "https://github.com/louislam/uptime-kuma/releases"
   },
   "features": [
     {
-      "title": "Multi",
-      "description": "Monitor HTTP, HTTPS, TCP, ping, DNS, and more with flexible check types"
+      "title": "Multi-Protocol Monitoring",
+      "description": "Monitor HTTP, HTTPS, TCP, ping, DNS, and more with flexible check types",
+      "core_feature": true
     },
     {
       "title": "Status Pages",
-      "description": "Create beautiful public or private status pages to communicate service health to users"
+      "description": "Create beautiful public or private status pages to communicate service health to users",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Send alerts via 90+ notification channels including email, Slack, Discord, and webhooks"
+      "title": "90+ Notification Channels",
+      "description": "Send alerts via email, Slack, Discord, webhooks, and many more notification services",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
+      "title": "Performance Tracking",
       "description": "Track and visualize response times with charts showing performance trends"
     },
     {
@@ -50,7 +55,7 @@
       "description": "Monitor SSL certificate expiration and receive alerts before certificates expire"
     },
     {
-      "title": "Tagging System",
+      "title": "Uptime Statistics",
       "description": "View uptime percentages and availability statistics for all monitored services"
     },
     {
@@ -58,7 +63,7 @@
       "description": "Schedule maintenance windows to pause alerts during planned downtime"
     },
     {
-      "title": "Multi",
+      "title": "Multi-User Support",
       "description": "Support multiple users with individual accounts and notification preferences"
     }
   ],
@@ -113,6 +118,11 @@
       "supported": true,
       "repo_name": "uptime-kuma_ynh",
       "url": "https://github.com/YunoHost-Apps/uptime-kuma_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "uptime-kuma",
+      "url": "https://apps.truenas.com/catalog/uptime-kuma"
     }
   }
 }

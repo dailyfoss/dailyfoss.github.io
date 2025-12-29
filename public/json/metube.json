@@ -1,7 +1,8 @@
 {
   "name": "metube",
   "slug": "metube",
-  "tagline": null,
+  "tagline": "A self-hosted web interface for downloading online videos",
+  "subtitle": "",
   "description": "MeTube is a self-hosted YouTube downloader with a simple web UI to download and convert videos or audio from YouTube and similar sites. It supports batch downloads, playlists, and custom formats.",
   "categories": [
     100
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/alexta69/metube",
     "source_code": "https://github.com/alexta69/metube",
     "logo": "/icons/metube.webp",
+    "screenshot": "",
     "issues": "https://github.com/alexta69/metube/issues",
     "releases": "https://github.com/alexta69/metube/releases"
   },
@@ -97,6 +99,11 @@
       "supported": true,
       "repo_name": "tube_ynh",
       "url": "https://github.com/YunoHost-Apps/tube_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "metube",
+      "url": "https://apps.truenas.com/catalog/metube"
     }
   }
 }

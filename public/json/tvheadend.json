@@ -1,7 +1,8 @@
 {
   "name": "tvheadend",
   "slug": "tvheadend",
-  "tagline": null,
+  "tagline": "A TV streaming and recording server with web interface",
+  "subtitle": "",
   "description": "Tvheadend is a self-hosted TV streaming server and recorder for DVB, ATSC, IPTV and more. It offers channel management, EPG, recording rules, and streaming to clients via an integrated web interface.",
   "categories": [
     107
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/tvheadend/tvheadend",
     "source_code": "https://github.com/tvheadend/tvheadend",
     "logo": "/icons/tvheadend.webp",
+    "screenshot": "",
     "issues": "https://github.com/tvheadend/tvheadend/issues",
     "releases": null
   },
@@ -92,6 +94,11 @@
       "supported": true,
       "repo_name": "tvheadend_ynh",
       "url": "https://github.com/YunoHost-Apps/tvheadend_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "tvheadend",
+      "url": "https://apps.truenas.com/catalog/tvheadend"
     }
   }
 }

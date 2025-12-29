@@ -1,7 +1,8 @@
 {
   "name": "gitea",
   "slug": "gitea",
-  "tagline": null,
+  "tagline": "A self-hosted Git service with repositories, issues, and collaboration tools",
+  "subtitle": "",
   "description": "Gitea is a self-hosted Git service providing code hosting, pull requests, issues, CI, and container registry in a lightweight binary. It offers a polished web UI and runs on modest hardware, ideal for developer teams.",
   "categories": [
     72
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/go-gitea/gitea",
     "source_code": "https://github.com/go-gitea/gitea",
     "logo": "/icons/gitea.webp",
+    "screenshot": "",
     "issues": "https://github.com/go-gitea/gitea/issues",
     "releases": "https://github.com/go-gitea/gitea/releases"
   },
@@ -101,6 +103,11 @@
       "supported": true,
       "repo_name": "gitea_ynh",
       "url": "https://github.com/YunoHost-Apps/gitea_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "gitea",
+      "url": "https://apps.truenas.com/catalog/gitea"
     }
   }
 }

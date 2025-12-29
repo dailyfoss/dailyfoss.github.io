@@ -1,7 +1,8 @@
 {
   "name": "scrutiny",
   "slug": "scrutiny",
-  "tagline": null,
+  "tagline": "A monitoring system for hard drive health and SMART data",
+  "subtitle": "",
   "description": "Scrutiny is a self-hosted S.M.A.R.T. monitoring system for hard drives that includes dashboards, alerts, and analytics for drive health tracking.",
   "categories": [
     103
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/AnalogJ/scrutiny",
     "source_code": "https://github.com/AnalogJ/scrutiny",
     "logo": "/icons/scrutiny.webp",
+    "screenshot": "",
     "issues": "https://github.com/AnalogJ/scrutiny/issues",
     "releases": "https://github.com/AnalogJ/scrutiny/releases"
   },
@@ -108,6 +110,11 @@
       "supported": true,
       "repo_name": "scrutiny_ynh",
       "url": "https://github.com/YunoHost-Apps/scrutiny_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "scrutiny",
+      "url": "https://apps.truenas.com/catalog/scrutiny"
     }
   }
 }

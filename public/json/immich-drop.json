@@ -1,7 +1,8 @@
 {
   "name": "immich-drop",
   "slug": "immich-drop",
-  "tagline": null,
+  "tagline": "A simple upload portal for adding photos to Immich albums",
+  "subtitle": "",
   "description": "Immich Drop is a simple upload portal for Immich that allows guests to bulk upload photos into a specified album without needing full accounts. It is handy for events or shared collections where many people contribute media.",
   "categories": [
     61
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/Nasogaa/immich-drop",
     "source_code": "https://github.com/Nasogaa/immich-drop",
     "logo": "/icons/immich-drop.webp",
+    "screenshot": "",
     "issues": "https://github.com/Nasogaa/immich-drop/issues",
     "releases": "https://github.com/Nasogaa/immich-drop/releases"
   },
@@ -97,6 +99,11 @@
       "supported": true,
       "repo_name": "immich_ynh",
       "url": "https://github.com/YunoHost-Apps/immich_ynh"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "immich",
+      "url": "https://apps.truenas.com/catalog/immich"
     }
   }
 }

@@ -1,7 +1,8 @@
 {
   "name": "gatus",
   "slug": "gatus",
-  "tagline": null,
+  "tagline": "A self-hosted uptime monitoring service with alerts and health checks",
+  "subtitle": "",
   "description": "Gatus is a self-hosted uptime monitoring and health check service. It supports alerting, condition-based checks, and heartbeat monitoring, displaying results in a simple dashboard. Ideal for monitoring internal and external services.",
   "categories": [
     173
@@ -25,6 +26,7 @@
     "documentation": "https://github.com/TwiN/gatus",
     "source_code": "https://github.com/TwiN/gatus",
     "logo": "/icons/gatus.webp",
+    "screenshot": "",
     "issues": "https://github.com/TwiN/gatus/issues",
     "releases": "https://github.com/TwiN/gatus/releases"
   },
@@ -92,6 +94,11 @@
       "supported": true,
       "script_id": "gatus",
       "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=gatus"
+    },
+    "truenas": {
+      "supported": true,
+      "app_name": "gatus",
+      "url": "https://apps.truenas.com/catalog/gatus"
     }
   }
 }
