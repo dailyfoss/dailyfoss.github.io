@@ -10,6 +10,7 @@ export interface AppFormData {
     source_code: string;
     logo: string;
     logo_light: string;
+    screenshot: string;
   };
   features: Array<{
     title: string;
@@ -49,6 +50,22 @@ export interface AppFormData {
     helm: boolean;
     kubernetes: boolean;
     terraform: boolean;
+  };
+  community_integrations: {
+    proxmox_ve: {
+      supported: boolean;
+      script_id: string;
+      url: string;
+    };
+    yunohost: {
+      supported: boolean;
+      repo_name: string;
+      url: string;
+    };
+    truenas: {
+      supported: boolean;
+      url: string;
+    };
   };
 }
 

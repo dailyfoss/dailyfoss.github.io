@@ -95,7 +95,7 @@ export function CommunityLikes({ slug, count, className, appName, appDescription
           <div className="flex items-center gap-3">
             <FavoriteButton slug={slug} variant="icon" />
             <p className="text-sm text-muted-foreground">
-              Be the first to support this tool — early feedback helps others discover it
+              Be the first to support this tool — early community support helps surface high-quality tools to others
             </p>
           </div>
           <div className="mt-4 pt-3 border-t border-border/30">

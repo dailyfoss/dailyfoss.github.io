@@ -29,9 +29,9 @@ function MobileSidebar() {
   const [tempSelectedScript, setTempSelectedScript] = useState<string | null>(null);
   const [tempSelectedCategory, setTempSelectedCategory] = useState<string | null>(null);
 
-  const isOnScriptsPage = pathname === "/scripts";
-  const currentSelectedScript = isOnScriptsPage ? selectedScript : tempSelectedScript;
-  const currentSelectedCategory = isOnScriptsPage ? selectedCategory : tempSelectedCategory;
+  const isOnHomePage = pathname === "/";
+  const currentSelectedScript = isOnHomePage ? selectedScript : tempSelectedScript;
+  const currentSelectedCategory = isOnHomePage ? selectedCategory : tempSelectedCategory;
 
   const loadCategories = useCallback(async () => {
     setIsLoading(true);
@@ -106,9 +106,9 @@ function MobileSidebar() {
                   <Sidebar
                     items={categories}
                     selectedScript={currentSelectedScript}
-                    setSelectedScript={isOnScriptsPage ? setSelectedScript : setTempSelectedScript}
+                    setSelectedScript={isOnHomePage ? setSelectedScript : setTempSelectedScript}
                     selectedCategory={currentSelectedCategory}
-                    setSelectedCategory={isOnScriptsPage ? setSelectedCategory : setTempSelectedCategory}
+                    setSelectedCategory={isOnHomePage ? setSelectedCategory : setTempSelectedCategory}
                     onItemSelect={handleItemSelect}
                   />
                 </div>
@@ -119,7 +119,7 @@ function MobileSidebar() {
                   <p className="text-sm font-medium">Last Viewed</p>
                   <ScriptItem
                     item={lastViewedScript}
-                    setSelectedScript={isOnScriptsPage ? setSelectedScript : setTempSelectedScript}
+                    setSelectedScript={isOnHomePage ? setSelectedScript : setTempSelectedScript}
                   />
                 </div>
               )

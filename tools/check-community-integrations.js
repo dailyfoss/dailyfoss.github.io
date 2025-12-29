@@ -4,6 +4,7 @@
  * Check Community Integrations support for all apps
  * - Proxmox VE Community Scripts
  * - YunoHost Apps
+ * - TrueNAS Apps
  * 
  * Usage: GITHUB_TOKEN=your_token node tools/check-community-integrations.js
  */
@@ -19,6 +20,7 @@ const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const JSON_DIR = path.join(__dirname, '../public/json');
 const PROXMOX_API_URL = 'https://api.github.com/repos/community-scripts/ProxmoxVE/contents/ct';
 const YUNOHOST_ORG_API = 'https://api.github.com/orgs/YunoHost-Apps/repos';
+const TRUENAS_CATALOG_API = 'https://api.github.com/repos/truenas/apps/contents/trains/community';
 
 if (!GITHUB_TOKEN) {
   console.error('ERROR: GITHUB_TOKEN environment variable is required');
@@ -49,6 +51,35 @@ async function fetchProxmoxScripts() {
     return scriptNames;
   } catch (error) {
     console.error('ERROR: Failed to fetch Proxmox scripts:', error.message);
+    return [];
+  }
+}
+
+/**
+ * Fetch TrueNAS community apps
+ */
+async function fetchTrueNASApps() {
+  try {
+    const response = await fetch(TRUENAS_CATALOG_API, {
+      headers: {
+        'Authorization': `Bearer ${GITHUB_TOKEN}`,
+        'Accept': 'application/vnd.github+json',
+        'X-GitHub-Api-Version': '2022-11-28'
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error(`GitHub API error: ${response.status}`);
+    }
+
+    const items = await response.json();
+    const appNames = items
+      .filter(item => item.type === 'dir')
+      .map(item => item.name.toLowerCase());
+
+    return appNames;
+  } catch (error) {
+    console.error('ERROR: Failed to fetch TrueNAS apps:', error.message);
     return [];
   }
 }
@@ -107,7 +138,7 @@ function normalizeAppName(name) {
 /**
  * Find matches for an app
  */
-function findMatches(appSlug, appName, proxmoxScripts, yunohostRepos) {
+function findMatches(appSlug, appName, proxmoxScripts, yunohostRepos, truenasApps) {
   const normalizedSlug = normalizeAppName(appSlug);
   const normalizedName = normalizeAppName(appName);
 
@@ -139,13 +170,27 @@ function findMatches(appSlug, appName, proxmoxScripts, yunohostRepos) {
     });
   }
 
-  return { proxmoxMatch, yunohostMatch };
+  // Find TrueNAS match
+  let truenasMatch = truenasApps.find(app => 
+    normalizeAppName(app) === normalizedSlug ||
+    normalizeAppName(app) === normalizedName
+  );
+
+  if (!truenasMatch) {
+    truenasMatch = truenasApps.find(app => {
+      const normalized = normalizeAppName(app);
+      return normalized.includes(normalizedSlug) || normalizedSlug.includes(normalized) ||
+             normalized.includes(normalizedName) || normalizedName.includes(normalized);
+    });
+  }
+
+  return { proxmoxMatch, yunohostMatch, truenasMatch };
 }
 
 /**
  * Update JSON file with community integrations
  */
-async function updateJsonFile(filePath, proxmoxMatch, yunohostMatch) {
+async function updateJsonFile(filePath, proxmoxMatch, yunohostMatch, truenasMatch) {
   try {
     const content = await fs.readFile(filePath, 'utf-8');
     const json = JSON.parse(content);
@@ -154,12 +199,12 @@ async function updateJsonFile(filePath, proxmoxMatch, yunohostMatch) {
       json.community_integrations = {};
     }
 
-    // Update Proxmox - use slug for URL
+    // Update Proxmox - use script_id for URL
     if (proxmoxMatch) {
       json.community_integrations.proxmox_ve = {
         supported: true,
         script_id: proxmoxMatch,
-        url: `https://community-scripts.github.io/ProxmoxVE/scripts?id=${json.slug}`
+        url: `https://community-scripts.github.io/ProxmoxVE/scripts?id=${proxmoxMatch}`
       };
     } else if (json.community_integrations.proxmox_ve) {
       delete json.community_integrations.proxmox_ve;
@@ -174,6 +219,17 @@ async function updateJsonFile(filePath, proxmoxMatch, yunohostMatch) {
       };
     } else if (json.community_integrations.yunohost) {
       delete json.community_integrations.yunohost;
+    }
+
+    // Update TrueNAS
+    if (truenasMatch) {
+      json.community_integrations.truenas = {
+        supported: true,
+        app_name: truenasMatch,
+        url: `https://apps.truenas.com/catalog/${truenasMatch}`
+      };
+    } else if (json.community_integrations.truenas) {
+      delete json.community_integrations.truenas;
     }
 
     // Remove community_integrations if empty
@@ -216,7 +272,11 @@ async function main() {
   const yunohostRepos = await fetchYunoHostRepos();
   console.log(`Found ${yunohostRepos.length} apps\n`);
 
-  if (proxmoxScripts.length === 0 && yunohostRepos.length === 0) {
+  console.log('Fetching TrueNAS Apps...');
+  const truenasApps = await fetchTrueNASApps();
+  console.log(`Found ${truenasApps.length} apps\n`);
+
+  if (proxmoxScripts.length === 0 && yunohostRepos.length === 0 && truenasApps.length === 0) {
     console.error('ERROR: No data fetched. Exiting.');
     process.exit(1);
   }
@@ -243,20 +303,22 @@ async function main() {
         continue;
       }
 
-      const { proxmoxMatch, yunohostMatch } = findMatches(
+      const { proxmoxMatch, yunohostMatch, truenasMatch } = findMatches(
         json.slug,
         json.name,
         proxmoxScripts,
-        yunohostRepos
+        yunohostRepos,
+        truenasApps
       );
 
-      await updateJsonFile(filePath, proxmoxMatch, yunohostMatch);
+      await updateJsonFile(filePath, proxmoxMatch, yunohostMatch, truenasMatch);
 
       results.push({
         name: json.name,
         slug: json.slug,
         proxmox: !!proxmoxMatch,
-        yunohost: !!yunohostMatch
+        yunohost: !!yunohostMatch,
+        truenas: !!truenasMatch
       });
 
       printProgress(i + 1, jsonFiles.length);
@@ -273,13 +335,15 @@ async function main() {
   const totalApps = results.length;
   const proxmoxCount = results.filter(r => r.proxmox).length;
   const yunohostCount = results.filter(r => r.yunohost).length;
-  const bothCount = results.filter(r => r.proxmox && r.yunohost).length;
-  const noneCount = results.filter(r => !r.proxmox && !r.yunohost).length;
+  const truenasCount = results.filter(r => r.truenas).length;
+  const anyCount = results.filter(r => r.proxmox || r.yunohost || r.truenas).length;
+  const noneCount = results.filter(r => !r.proxmox && !r.yunohost && !r.truenas).length;
 
   console.log(`Total apps:              ${totalApps}`);
   console.log(`Proxmox VE support:      ${proxmoxCount} (${((proxmoxCount/totalApps)*100).toFixed(1)}%)`);
   console.log(`YunoHost support:        ${yunohostCount} (${((yunohostCount/totalApps)*100).toFixed(1)}%)`);
-  console.log(`Both platforms:          ${bothCount} (${((bothCount/totalApps)*100).toFixed(1)}%)`);
+  console.log(`TrueNAS support:         ${truenasCount} (${((truenasCount/totalApps)*100).toFixed(1)}%)`);
+  console.log(`Any integration:         ${anyCount} (${((anyCount/totalApps)*100).toFixed(1)}%)`);
   console.log(`No integration:          ${noneCount} (${((noneCount/totalApps)*100).toFixed(1)}%)`);
 
   // Summary table
@@ -287,17 +351,18 @@ async function main() {
   console.log('Community Integrations Support');
   console.log('='.repeat(80) + '\n');
 
-  console.log('| App Name                          |  Proxmox VE  |   YunoHost   |');
-  console.log('|-----------------------------------|--------------|--------------|');
+  console.log('| App Name                          |  Proxmox VE  |   YunoHost   |   TrueNAS    |');
+  console.log('|-----------------------------------|--------------|--------------|--------------|');
 
   // Show apps with at least one integration
-  const appsWithIntegration = results.filter(r => r.proxmox || r.yunohost);
+  const appsWithIntegration = results.filter(r => r.proxmox || r.yunohost || r.truenas);
   
   for (const app of appsWithIntegration.slice(0, 50)) {
     const name = app.name.padEnd(33).substring(0, 33);
     const proxmox = app.proxmox ? '     ✅     ' : '            ';
     const yunohost = app.yunohost ? '     ✅     ' : '            ';
-    console.log(`| ${name} | ${proxmox} | ${yunohost} |`);
+    const truenas = app.truenas ? '     ✅     ' : '            ';
+    console.log(`| ${name} | ${proxmox} | ${yunohost} | ${truenas} |`);
   }
 
   if (appsWithIntegration.length > 50) {
@@ -312,7 +377,8 @@ async function main() {
   const summaryContent = `Total apps: ${totalApps}
 Proxmox VE support: ${proxmoxCount} (${((proxmoxCount/totalApps)*100).toFixed(1)}%)
 YunoHost support: ${yunohostCount} (${((yunohostCount/totalApps)*100).toFixed(1)}%)
-Both platforms: ${bothCount} (${((bothCount/totalApps)*100).toFixed(1)}%)
+TrueNAS support: ${truenasCount} (${((truenasCount/totalApps)*100).toFixed(1)}%)
+Any integration: ${anyCount} (${((anyCount/totalApps)*100).toFixed(1)}%)
 No integration: ${noneCount} (${((noneCount/totalApps)*100).toFixed(1)}%)`;
   
   await fs.writeFile(summaryPath, summaryContent, 'utf-8');

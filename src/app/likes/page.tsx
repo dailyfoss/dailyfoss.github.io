@@ -154,7 +154,7 @@ export default function LikesPage() {
     const script = scripts[activity.targetSlug]
     
     return (
-      <Link key={activity.id} href={`/scripts?id=${activity.targetSlug}`}>
+      <Link key={activity.id} href={`/${activity.targetSlug}`}>
         <Card className="hover:border-primary/40 transition-all duration-200 hover:shadow-md group">
           <CardContent className="p-4">
             <div className="flex items-center gap-3">

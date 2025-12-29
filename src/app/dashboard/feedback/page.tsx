@@ -40,6 +40,7 @@ const STATUS_CONFIG: Record<FeedbackStatus, { label: string; icon: React.ReactNo
 };
 
 const TYPE_LABELS: Record<string, string> = {
+  bug: "Bug",
   incorrect_information: "Incorect Information",
   broken_link: "Broken Link",
   license_issue: "License Issue",

@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect } from 'react'
-import { useSearchParams } from 'next/navigation'
 import type { Script } from '@/lib/types'
 
 interface DynamicMetaTagsProps {
@@ -9,15 +8,12 @@ interface DynamicMetaTagsProps {
 }
 
 export function DynamicMetaTags({ script }: DynamicMetaTagsProps) {
-  const searchParams = useSearchParams()
-  const scriptId = searchParams.get('id')
-
   useEffect(() => {
-    if (!script || !scriptId) return
+    if (!script) return
 
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL!
-    const appUrl = `${siteUrl}/scripts/${scriptId}`
-    const ogImageUrl = `${siteUrl}/media/images/og/${scriptId}.png`
+    const appUrl = `${siteUrl}/${script.slug}`
+    const ogImageUrl = `${siteUrl}/media/images/og/${script.slug}.png`
 
     // Update document title
     document.title = `${script.name} - Daily FOSS`
@@ -70,7 +66,7 @@ export function DynamicMetaTags({ script }: DynamicMetaTagsProps) {
     return () => {
       document.title = 'Daily FOSS'
     }
-  }, [script, scriptId])
+  }, [script])
 
   return null
 }

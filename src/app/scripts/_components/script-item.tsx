@@ -1,6 +1,7 @@
 "use client";
 
 import { BookOpenText, Tag, Code, Globe, Layers, LayoutGrid, Monitor, Stars, X, Activity, CheckCircle, RefreshCcw, Clock3, Moon, Archive, Hexagon, Scale, Flag } from "lucide-react";
+import { FaGithub } from "react-icons/fa6";
 import { Suspense, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
@@ -13,6 +14,7 @@ import { useRepositoryStatus } from "@/hooks/use-repository-status";
 import { formatRelativeTime } from "@/lib/repository-status";
 import { ReportModal } from "@/components/report-modal";
 import { Button } from "@/components/ui/button";
+import { repoName } from "@/config/site-config";
 
 import InstallCommand from "./script-items/install-command";
 import Description from "./script-items/description";
@@ -150,10 +152,7 @@ function SecondaryMeta({ item }: { item: Script }) {
     return null;
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: -3 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.25, ease: "easeOut" }}
+    <div
       className="mt-1 mb-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-medium text-foreground/80"
     >
       {parts.flatMap((p, i) => {
@@ -220,7 +219,7 @@ function SecondaryMeta({ item }: { item: Script }) {
           element
         ];
       })}
-    </motion.div>
+    </div>
   );
 }
 
@@ -583,13 +582,13 @@ export function ScriptItem({ item, setSelectedScript, allCategories = [] }: Scri
   const closeScript = () => {
     // Clear the selection and remove URL parameters
     setSelectedScript(null);
-    router.push("/scripts");
+    router.push("/");
   };
 
   return (
     <div className="w-full mx-auto">
       <div className="flex w-full flex-col">
-        <div className="mt-8 flex items-center justify-between">
+        <div className="flex items-center justify-between mb-2">
           <h2 className="text-sm font-medium tracking-tight text-muted-foreground uppercase">
             Selected Script
           </h2>
@@ -601,10 +600,7 @@ export function ScriptItem({ item, setSelectedScript, allCategories = [] }: Scri
           </button>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
+        <div
           className="rounded-xl border border-border bg-accent/30 backdrop-blur-sm shadow-lg transition-all duration-300 hover:shadow-xl relative"
         >
           {/* Report Button - Top Right */}
@@ -690,7 +686,7 @@ export function ScriptItem({ item, setSelectedScript, allCategories = [] }: Scri
               <RelatedTools currentScript={item} allCategories={allCategories} />
             )}
           </div>
-        </motion.div>
+        </div>
 
         <ReportModal
           isOpen={showReportModal}

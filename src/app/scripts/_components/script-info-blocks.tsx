@@ -104,7 +104,7 @@ function CompactScriptCard({ script, allCategories, showViews, viewCount }: {
 
   return (
     <Link
-      href={{ pathname: "/scripts", query: { id: script.slug } }}
+      href={`/${script.slug}`}
       className="group block h-full"
     >
       <div className="flex flex-col h-full p-4 rounded-xl border bg-card hover:bg-accent/30 hover:border-primary/40 hover:shadow-md transition-all duration-200">

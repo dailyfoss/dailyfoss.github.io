@@ -4,7 +4,7 @@
 
 const API_URL = process.env.NEXT_PUBLIC_BACKEND_API!;
 
-export type FeedbackType = 'incorrect_information' | 'broken_link' | 'license_issue' | 'wrong_category' | 'outdated' | 'other' ;
+export type FeedbackType = 'bug' | 'incorrect_information' | 'broken_link' | 'license_issue' | 'wrong_category' | 'outdated' | 'other' ;
 
 export type FeedbackStatus = 'pending' | 'reviewed' | 'resolved' | 'dismissed';
 

@@ -3,11 +3,14 @@
  * Connects to Cloudflare Worker backend
  */
 
-const API_URL = process.env.NEXT_PUBLIC_BACKEND_API!;
+// Get API URL at runtime (not module load time) to work with SSR
+function getApiUrl(): string {
+  return process.env.NEXT_PUBLIC_BACKEND_API || '';
+}
 
 // Debug: Log the API URL
 if (typeof window !== 'undefined') {
-  console.log('Backend API URL:', API_URL);
+  console.log('Backend API URL:', getApiUrl());
 }
 
 export type User = {
@@ -53,7 +56,7 @@ export async function signIn() {
   try {
     // Pass current origin so worker knows where to redirect back
     const redirectTo = window.location.origin;
-    const response = await fetch(`${API_URL}/auth/start?redirect_to=${encodeURIComponent(redirectTo)}`);
+    const response = await fetch(`${getApiUrl()}/auth/start?redirect_to=${encodeURIComponent(redirectTo)}`);
     const data = await response.json();
     
     // Redirect to GitHub
@@ -69,7 +72,7 @@ export async function signInWithGoogle() {
   try {
     // Pass current origin so worker knows where to redirect back
     const redirectTo = window.location.origin;
-    const response = await fetch(`${API_URL}/auth/google/start?redirect_to=${encodeURIComponent(redirectTo)}`);
+    const response = await fetch(`${getApiUrl()}/auth/google/start?redirect_to=${encodeURIComponent(redirectTo)}`);
     const data = await response.json();
     
     // Redirect to Google
@@ -82,7 +85,7 @@ export async function signInWithGoogle() {
 
 // Handle OAuth callback (legacy - not used with new flow)
 export async function handleCallback(code: string, state: string): Promise<Session> {
-  const callbackUrl = `${API_URL}/auth/callback?code=${code}&state=${state}`;
+  const callbackUrl = `${getApiUrl()}/auth/callback?code=${code}&state=${state}`;
   console.log('Calling backend API:', callbackUrl);
   
   try {
@@ -126,7 +129,7 @@ export async function getFavorites(): Promise<string[]> {
   if (!session) return [];
   
   try {
-    const response = await fetch(`${API_URL}/favorites`, {
+    const response = await fetch(`${getApiUrl()}/favorites`, {
       headers: {
         'Authorization': `Bearer ${session.token}`,
       },
@@ -149,7 +152,7 @@ export async function toggleFavorite(slug: string, action: 'add' | 'remove', app
   }
   
   try {
-    const response = await fetch(`${API_URL}/favorites`, {
+    const response = await fetch(`${getApiUrl()}/favorites`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -168,12 +171,34 @@ export async function toggleFavorite(slug: string, action: 'add' | 'remove', app
 
 // Get favorite counts
 export async function getFavoriteCounts(slugs: string[]): Promise<Record<string, number>> {
+  const apiUrl = getApiUrl();
+  if (!apiUrl) {
+    console.warn('Backend API URL not configured');
+    return {};
+  }
+  
+  if (!slugs.length) return {};
+  
   try {
-    const response = await fetch(`${API_URL}/favorites/counts?slugs=${slugs.join(',')}`);
+    const url = `${apiUrl}/favorites/counts?slugs=${slugs.join(',')}`;
+    console.log('Fetching favorite counts from:', url);
+    
+    const response = await fetch(url);
+    
+    if (!response.ok) {
+      console.error('Failed to fetch counts:', response.status, response.statusText);
+      return {};
+    }
+    
     const data = await response.json();
     return data.counts || {};
   } catch (error) {
-    console.error('Failed to get counts:', error);
+    // Network errors are common during development - don't spam console
+    if (error instanceof TypeError && error.message === 'Failed to fetch') {
+      console.warn('Backend API unreachable - favorites counts unavailable');
+    } else {
+      console.error('Failed to get counts:', error);
+    }
     return {};
   }
 }

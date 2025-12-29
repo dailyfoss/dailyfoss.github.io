@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Check, Link2, MoreHorizontal } from "lucide-react"
 import { FaXTwitter, FaBluesky, FaMastodon, FaFacebookF, FaLinkedinIn, FaRedditAlien, FaHackerNews, FaWhatsapp } from "react-icons/fa6"
 import { SiThreads } from "react-icons/si"
@@ -24,8 +24,25 @@ interface ShareButtonProps {
 
 export function ShareButton({ url, title, description, slug, className }: ShareButtonProps) {
   const [copied, setCopied] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
-  const shareUrl = url || (typeof window !== "undefined" ? window.location.href : "")
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // Build URL from slug if not provided
+  const getShareUrl = () => {
+    if (url) return url
+    if (typeof window !== "undefined") {
+      if (slug) {
+        return `${window.location.origin}/${slug}`
+      }
+      return window.location.href
+    }
+    return ""
+  }
+
+  const shareUrl = getShareUrl()
   
   // Clean display URL for share text (e.g., dev.dailyfoss.biz.id/2fauth)
   const getDisplayUrl = () => {
@@ -119,6 +136,19 @@ export function ShareButton({ url, title, description, slug, className }: ShareB
       href: `https://wa.me/?text=${encodeURIComponent(shareText)}`,
     },
   ]
+
+  // Don't render share links until mounted (client-side) to avoid hydration issues
+  if (!mounted) {
+    return (
+      <div className={cn("flex items-center gap-1", className)}>
+        <div className="p-2">
+          <Link2 className="h-4 w-4 text-muted-foreground" />
+        </div>
+        <span className="text-muted-foreground/50 mx-1">|</span>
+        <span className="text-xs text-muted-foreground">Share:</span>
+      </div>
+    )
+  }
 
   return (
     <TooltipProvider>

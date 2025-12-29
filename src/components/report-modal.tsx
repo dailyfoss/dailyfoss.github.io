@@ -23,6 +23,7 @@ type ReportModalProps = {
 };
 
 const FEEDBACK_TYPES: { value: FeedbackType; label: string }[] = [
+  { value: "bug", label: "Bug" },
   { value: "incorrect_information", label: "Incorect Information" },
   { value: "broken_link", label: "Broken Link" },
   { value: "license_issue", label: "License Issue" },

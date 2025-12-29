@@ -4,10 +4,11 @@
 const PLAUSIBLE_API_URL = "https://plausible.mvl.biz.id/api/v1";
 const PLAUSIBLE_SITE_ID = "dailyfoss.github.io";
 
-// Use Cloudflare Worker proxy if configured (most secure)
-const PROXY_URL = typeof window !== "undefined" 
-  ? process.env.NEXT_PUBLIC_PLAUSIBLE_PROXY_URL 
-  : null;
+// Get proxy URL at runtime (not module load time) to work with SSR
+function getProxyUrl(): string | null {
+  if (typeof window === "undefined") return null;
+  return process.env.NEXT_PUBLIC_PLAUSIBLE_PROXY_URL || null;
+}
 
 export interface PlausibleSharedPageStats {
   page: string;
@@ -28,8 +29,9 @@ export async function getTopPagesShared(
 ): Promise<PlausibleSharedPageStats[]> {
   try {
     // Use Cloudflare Worker proxy if configured (most secure)
-    if (PROXY_URL) {
-      const url = new URL(PROXY_URL);
+    const proxyUrl = getProxyUrl();
+    if (proxyUrl) {
+      const url = new URL(proxyUrl);
       url.searchParams.append("period", period);
       url.searchParams.append("limit", limit.toString());
 
@@ -86,6 +88,12 @@ export async function getTopPagesShared(
   }
 }
 
+// Reserved routes that are not script pages
+const RESERVED_ROUTES = new Set([
+  'add-app', 'admin', 'api', 'auth', 'category-view', 'dashboard',
+  'data', 'favorites', 'json-editor', 'likes', 'og-test', 'scripts',
+]);
+
 /**
  * Get trending scripts using shared link (real-time, client-side)
  * @param sharedLinkAuth - Shared link auth token
@@ -99,13 +107,28 @@ export async function getTrendingScriptsShared(
     const topPages = await getTopPagesShared(sharedLinkAuth, period, 60);
 
     // Extract view counts for script pages
+    // Supports both old format (/scripts/slug) and new format (/slug)
     const counts: Record<string, number> = {};
     topPages.forEach((page) => {
-      if (page.page && page.page.startsWith("/scripts/")) {
-        const slug = page.page.replace("/scripts/", "");
-        if (slug) {
-          counts[slug] = page.visitors || 0;
+      if (!page.page) return;
+      
+      let slug: string | null = null;
+      
+      // Old format: /scripts/slug
+      if (page.page.startsWith("/scripts/")) {
+        slug = page.page.replace("/scripts/", "");
+      }
+      // New format: /slug (single segment, not a reserved route)
+      else if (page.page.startsWith("/") && !page.page.includes("/", 1)) {
+        const potentialSlug = page.page.slice(1);
+        if (potentialSlug && !RESERVED_ROUTES.has(potentialSlug)) {
+          slug = potentialSlug;
         }
+      }
+      
+      if (slug) {
+        // Merge counts if same slug appears in both formats
+        counts[slug] = (counts[slug] || 0) + (page.visitors || 0);
       }
     });
 

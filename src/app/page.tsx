@@ -1,347 +1,697 @@
 "use client";
-import { ArrowRight, ChevronRight, ExternalLink, Heart, Sparkles, Star, TrendingUp, Zap } from "lucide-react";
-import { FaFacebook, FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
-import { SiHelm, SiDocker, SiKubernetes, SiTerraform, SiThreads } from "react-icons/si";
-import { useEffect, useState } from "react";
-import { useTheme } from "next-themes";
-import Link from "next/link";
 
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import AnimatedGradientText from "@/components/ui/animated-gradient-text";
-import NumberTicker from "@/components/ui/number-ticker";
-import Particles from "@/components/ui/particles";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { repoName } from "@/config/site-config";
-import { fetchCategories } from "@/lib/data";
+import { Filter, Search, X } from "lucide-react";
+import { Suspense, useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
+
 import type { Category, Script } from "@/lib/types";
 
-// Featured tools to highlight on homepage
-const FEATURED_SLUGS = ["uptime-kuma", "nextcloud", "vaultwarden", "homepage", "immich", "jellyfin"];
+import { ScriptItem } from "@/app/scripts/_components/script-item";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import { fetchCategories } from "@/lib/data";
+import { usePlausiblePageview } from "@/hooks/use-plausible-pageview";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
-export default function Page() {
-  const { theme } = useTheme();
-  const [color, setColor] = useState("#000000");
-  const [featuredTools, setFeaturedTools] = useState<Script[]>([]);
-  const [totalTools, setTotalTools] = useState(0);
-  const [totalCategories, setTotalCategories] = useState(0);
+import { LatestScripts, PopularScripts, TrendingScripts } from "./scripts/_components/script-info-blocks";
+import { SponsoredSidebar } from "./scripts/_components/sponsored-sidebar";
+import Sidebar from "./scripts/_components/sidebar";
+import { DynamicMetaTags } from "@/components/dynamic-meta-tags";
 
-  useEffect(() => {
-    setColor(theme === "dark" ? "#ffffff" : "#000000");
-  }, [theme]);
+export const dynamic = "force-static";
 
-  useEffect(() => {
-    fetchCategories().then((categories: Category[]) => {
-      const allScripts = categories.flatMap(cat => cat.scripts);
-      const uniqueScripts = [...new Map(allScripts.map(s => [s.slug, s])).values()];
-      
-      setTotalTools(uniqueScripts.length);
-      setTotalCategories(categories.filter(c => c.scripts.length > 0).length);
-      
-      // Get featured tools
-      const featured = FEATURED_SLUGS
-        .map(slug => uniqueScripts.find(s => s.slug === slug))
-        .filter((s): s is Script => s !== undefined);
-      setFeaturedTools(featured);
-    });
-  }, []);
+function ScriptCardSkeleton() {
+  return (
+    <div className="flex flex-col p-4 rounded-xl border bg-card h-full">
+      <div className="flex gap-3 mb-3">
+        <Skeleton className="h-12 w-12 rounded-xl flex-shrink-0" />
+        <div className="flex-1 space-y-2">
+          <Skeleton className="h-4 w-3/4" />
+          <Skeleton className="h-3 w-1/2" />
+        </div>
+      </div>
+      <Skeleton className="h-3 w-full mb-1" />
+      <Skeleton className="h-3 w-2/3 mb-3" />
+      <div className="pt-2 border-t border-border/50">
+        <Skeleton className="h-4 w-20" />
+      </div>
+    </div>
+  );
+}
+
+// Filter Column Component
+function FilterColumn({ 
+  title, 
+  searchPlaceholder,
+  items, 
+  selectedItems, 
+  onToggle,
+  searchValue,
+  onSearchChange 
+}: { 
+  title: string;
+  searchPlaceholder: string;
+  items: { id: string; label: string; count: number }[];
+  selectedItems: Set<string>;
+  onToggle: (id: string) => void;
+  searchValue: string;
+  onSearchChange: (value: string) => void;
+}) {
+  const filteredItems = items.filter(item => 
+    item.label.toLowerCase().includes(searchValue.toLowerCase())
+  );
 
   return (
-    <div className="w-full">
-      <Particles className="absolute inset-0 -z-40" quantity={80} ease={80} color={color} refresh />
+    <div className="flex flex-col border rounded-lg bg-card min-w-[180px] flex-1">
+      <div className="p-2 border-b bg-muted/30">
+        <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">{title}</span>
+      </div>
+      <div className="p-2 border-b">
+        <Input
+          placeholder={searchPlaceholder}
+          value={searchValue}
+          onChange={(e) => onSearchChange(e.target.value)}
+          className="h-8 text-sm"
+        />
+      </div>
+      <ScrollArea className="h-[240px]">
+        <div className="p-2 space-y-1">
+          {filteredItems.map((item) => (
+            <label
+              key={item.id}
+              className="flex items-center justify-between px-2 py-1.5 rounded hover:bg-accent cursor-pointer text-sm"
+            >
+              <div className="flex items-center gap-2">
+                <Checkbox
+                  checked={selectedItems.has(item.id)}
+                  onCheckedChange={() => onToggle(item.id)}
+                  className="h-4 w-4"
+                />
+                <span className="truncate max-w-[120px]">{item.label}</span>
+              </div>
+              <span className="text-xs text-muted-foreground ml-2">{item.count}</span>
+            </label>
+          ))}
+          {filteredItems.length === 0 && (
+            <p className="text-sm text-muted-foreground text-center py-4">No results</p>
+          )}
+        </div>
+      </ScrollArea>
+    </div>
+  );
+}
+
+
+function ScriptContent() {
+  const searchParams = useSearchParams();
+  const [selectedScript, setSelectedScript] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [links, setLinks] = useState<Category[]>([]);
+  const [item, setItem] = useState<Script>();
+  const [searchQuery, setSearchQuery] = useState("");
+  const [showFilters, setShowFilters] = useState(false);
+  
+  // Filter states - new filters
+  const [selectedPlatforms, setSelectedPlatforms] = useState<Set<string>>(new Set());
+  const [selectedDeployments, setSelectedDeployments] = useState<Set<string>>(new Set());
+  const [selectedHosting, setSelectedHosting] = useState<Set<string>>(new Set());
+  const [selectedUI, setSelectedUI] = useState<Set<string>>(new Set());
+  const [selectedCommunity, setSelectedCommunity] = useState<Set<string>>(new Set());
+  const [selectedActivity, setSelectedActivity] = useState<Set<string>>(new Set());
+  
+  // Sort state
+  const [sortBy, setSortBy] = useState<string>("latest");
+  
+  // Search states for each column
+  const [platformSearch, setPlatformSearch] = useState("");
+  const [deploymentSearch, setDeploymentSearch] = useState("");
+  const [hostingSearch, setHostingSearch] = useState("");
+  const [uiSearch, setUiSearch] = useState("");
+  const [communitySearch, setCommunitySearch] = useState("");
+  const [activitySearch, setActivitySearch] = useState("");
+
+  usePlausiblePageview();
+
+  useEffect(() => {
+    const scriptId = searchParams.get("id");
+    const category = searchParams.get("category");
+    if (scriptId) setSelectedScript(scriptId);
+    if (category) setSelectedCategory(category);
+  }, [searchParams]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "/" && !e.ctrlKey && !e.metaKey) {
+        e.preventDefault();
+        document.getElementById("search-input")?.focus();
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  useEffect(() => {
+    if (selectedScript && links.length > 0) {
+      const script = links
+        .flatMap(category => category.scripts)
+        .find(script => script.slug === selectedScript);
+      if (script) {
+        setItem(script);
+      }
+
+      if (script && typeof window !== "undefined" && (window as any).plausible) {
+        const customUrl = `${window.location.origin}/${selectedScript}`;
+        (window as any).plausible("pageview", {
+          u: customUrl,
+          props: { script_name: script.name, script_slug: selectedScript },
+        });
+      }
+    }
+  }, [selectedScript, links]);
+
+  useEffect(() => {
+    fetchCategories()
+      .then((categories) => {
+        const filtered = categories.filter(category => category.scripts?.length > 0);
+        setLinks(filtered);
+      })
+      .catch(error => console.error(error));
+  }, []);
+
+  // Get all unique scripts
+  const allScripts = useMemo(() => {
+    const scriptsMap = new Map<string, Script>();
+    links.forEach(cat => cat.scripts.forEach(s => scriptsMap.set(s.slug, s)));
+    return Array.from(scriptsMap.values());
+  }, [links]);
+
+  // Helper to get activity status
+  const getActivityStatus = (script: Script): string => {
+    if (!script.metadata?.date_last_commit) return 'unknown';
+    const lastCommitDate = new Date(script.metadata.date_last_commit);
+    const now = new Date();
+    const daysSinceLastCommit = Math.floor((now.getTime() - lastCommitDate.getTime()) / (1000 * 60 * 60 * 24));
+    if (daysSinceLastCommit <= 30) return 'Active';
+    if (daysSinceLastCommit <= 180) return 'Regular';
+    if (daysSinceLastCommit <= 365) return 'Occasional';
+    return 'Dormant';
+  };
+
+  // Build filter options with counts
+  const filterOptions = useMemo(() => {
+    const platforms: Map<string, number> = new Map();
+    const deployments: Map<string, number> = new Map();
+    const hosting: Map<string, number> = new Map();
+    const ui: Map<string, number> = new Map();
+    const community: Map<string, number> = new Map();
+    const activity: Map<string, number> = new Map();
+
+    allScripts.forEach(script => {
+      // Platforms
+      const platform = script.platform_support;
+      if (platform?.desktop?.linux) platforms.set("Linux", (platforms.get("Linux") || 0) + 1);
+      if (platform?.desktop?.windows) platforms.set("Windows", (platforms.get("Windows") || 0) + 1);
+      if (platform?.desktop?.macos) platforms.set("macOS", (platforms.get("macOS") || 0) + 1);
+      if (platform?.mobile?.android) platforms.set("Android", (platforms.get("Android") || 0) + 1);
+      if (platform?.mobile?.ios) platforms.set("iOS", (platforms.get("iOS") || 0) + 1);
+      if (platform?.web_app) platforms.set("Web App", (platforms.get("Web App") || 0) + 1);
+      if (platform?.browser_extension) platforms.set("Browser Extension", (platforms.get("Browser Extension") || 0) + 1);
       
-      {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="container mx-auto px-4 py-20 lg:py-28">
-          <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-            {/* Announcement Badge */}
-            <Link href="/scripts">
-              <AnimatedGradientText className="mb-8 cursor-pointer hover:scale-105 transition-transform">
-                <Sparkles className="h-4 w-4 mr-2 text-[#ffaa40]" />
-                <span className="text-sm">Discover new tools daily</span>
-                <ChevronRight className="h-4 w-4 ml-1" />
-              </AnimatedGradientText>
-            </Link>
+      // Deployments
+      if (script.deployment_methods?.docker) deployments.set("Docker", (deployments.get("Docker") || 0) + 1);
+      if (script.deployment_methods?.docker_compose) deployments.set("Docker Compose", (deployments.get("Docker Compose") || 0) + 1);
+      if (script.deployment_methods?.kubernetes) deployments.set("Kubernetes", (deployments.get("Kubernetes") || 0) + 1);
+      if (script.deployment_methods?.helm) deployments.set("Helm", (deployments.get("Helm") || 0) + 1);
+      if (script.deployment_methods?.terraform) deployments.set("Terraform", (deployments.get("Terraform") || 0) + 1);
+      if (script.deployment_methods?.script) deployments.set("Script", (deployments.get("Script") || 0) + 1);
+      
+      // Hosting
+      if (script.hosting_options?.self_hosted) hosting.set("Self-hosted", (hosting.get("Self-hosted") || 0) + 1);
+      if (script.hosting_options?.managed_cloud) hosting.set("Managed Cloud", (hosting.get("Managed Cloud") || 0) + 1);
+      if (script.hosting_options?.saas) hosting.set("SaaS", (hosting.get("SaaS") || 0) + 1);
+      
+      // UI/Interface
+      if (script.interfaces?.cli) ui.set("CLI", (ui.get("CLI") || 0) + 1);
+      if (script.interfaces?.gui) ui.set("GUI", (ui.get("GUI") || 0) + 1);
+      if (script.interfaces?.web_ui) ui.set("Web UI", (ui.get("Web UI") || 0) + 1);
+      if (script.interfaces?.api) ui.set("API", (ui.get("API") || 0) + 1);
+      if (script.interfaces?.tui) ui.set("TUI", (ui.get("TUI") || 0) + 1);
+      
+      // Community
+      if (script.community_integrations?.proxmox_ve?.supported) community.set("Proxmox VE", (community.get("Proxmox VE") || 0) + 1);
+      if (script.community_integrations?.yunohost?.supported) community.set("YunoHost", (community.get("YunoHost") || 0) + 1);
+      if (script.community_integrations?.truenas?.supported) community.set("TrueNAS", (community.get("TrueNAS") || 0) + 1);
+      
+      // Activity
+      const status = getActivityStatus(script);
+      if (status !== 'unknown') {
+        activity.set(status, (activity.get(status) || 0) + 1);
+      }
+    });
 
-            {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
-              Your Gateway to
-              <span className="block mt-2 bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
-                Open Source
-              </span>
-            </h1>
+    return {
+      platforms: Array.from(platforms.entries())
+        .map(([name, count]) => ({ id: name, label: name, count }))
+        .sort((a, b) => b.count - a.count),
+      deployments: Array.from(deployments.entries())
+        .map(([name, count]) => ({ id: name, label: name, count }))
+        .sort((a, b) => b.count - a.count),
+      hosting: Array.from(hosting.entries())
+        .map(([name, count]) => ({ id: name, label: name, count }))
+        .sort((a, b) => b.count - a.count),
+      ui: Array.from(ui.entries())
+        .map(([name, count]) => ({ id: name, label: name, count }))
+        .sort((a, b) => b.count - a.count),
+      community: Array.from(community.entries())
+        .map(([name, count]) => ({ id: name, label: name, count }))
+        .sort((a, b) => b.count - a.count),
+      activity: Array.from(activity.entries())
+        .map(([name, count]) => ({ id: name, label: name, count }))
+        .sort((a, b) => {
+          const order = ['Active', 'Regular', 'Occasional', 'Dormant'];
+          return order.indexOf(a.id) - order.indexOf(b.id);
+        }),
+    };
+  }, [allScripts]);
 
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-8 leading-relaxed">
-              Curated collection of self-hosted apps and tools. Find, compare, and deploy 
-              the best FOSS software with one-click deployment options.
-            </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Link href="/scripts">
-                <Button size="lg" className="text-base px-8 h-12 group">
-                  Explore Tools
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+  // Filter and sort scripts
+  const filteredAndSortedScripts = useMemo(() => {
+    let scripts = allScripts.filter(script => {
+      // Search filter
+      if (searchQuery) {
+        const query = searchQuery.toLowerCase();
+        const matchesSearch = 
+          script.name.toLowerCase().includes(query) ||
+          script.description?.toLowerCase().includes(query) ||
+          script.tagline?.toLowerCase().includes(query);
+        if (!matchesSearch) return false;
+      }
+
+      // Platform filter
+      if (selectedPlatforms.size > 0) {
+        const platform = script.platform_support;
+        const hasPlatform = 
+          (selectedPlatforms.has("Linux") && platform?.desktop?.linux) ||
+          (selectedPlatforms.has("Windows") && platform?.desktop?.windows) ||
+          (selectedPlatforms.has("macOS") && platform?.desktop?.macos) ||
+          (selectedPlatforms.has("Android") && platform?.mobile?.android) ||
+          (selectedPlatforms.has("iOS") && platform?.mobile?.ios) ||
+          (selectedPlatforms.has("Web App") && platform?.web_app) ||
+          (selectedPlatforms.has("Browser Extension") && platform?.browser_extension);
+        if (!hasPlatform) return false;
+      }
+
+      // Deployment filter
+      if (selectedDeployments.size > 0) {
+        const hasDeployment = 
+          (selectedDeployments.has("Docker") && script.deployment_methods?.docker) ||
+          (selectedDeployments.has("Docker Compose") && script.deployment_methods?.docker_compose) ||
+          (selectedDeployments.has("Kubernetes") && script.deployment_methods?.kubernetes) ||
+          (selectedDeployments.has("Helm") && script.deployment_methods?.helm) ||
+          (selectedDeployments.has("Terraform") && script.deployment_methods?.terraform) ||
+          (selectedDeployments.has("Script") && script.deployment_methods?.script);
+        if (!hasDeployment) return false;
+      }
+
+      // Hosting filter
+      if (selectedHosting.size > 0) {
+        const hasHosting = 
+          (selectedHosting.has("Self-hosted") && script.hosting_options?.self_hosted) ||
+          (selectedHosting.has("Managed Cloud") && script.hosting_options?.managed_cloud) ||
+          (selectedHosting.has("SaaS") && script.hosting_options?.saas);
+        if (!hasHosting) return false;
+      }
+
+      // UI filter
+      if (selectedUI.size > 0) {
+        const hasUI = 
+          (selectedUI.has("CLI") && script.interfaces?.cli) ||
+          (selectedUI.has("GUI") && script.interfaces?.gui) ||
+          (selectedUI.has("Web UI") && script.interfaces?.web_ui) ||
+          (selectedUI.has("API") && script.interfaces?.api) ||
+          (selectedUI.has("TUI") && script.interfaces?.tui);
+        if (!hasUI) return false;
+      }
+
+      // Community filter
+      if (selectedCommunity.size > 0) {
+        const hasCommunity = 
+          (selectedCommunity.has("Proxmox VE") && script.community_integrations?.proxmox_ve?.supported) ||
+          (selectedCommunity.has("YunoHost") && script.community_integrations?.yunohost?.supported) ||
+          (selectedCommunity.has("TrueNAS") && script.community_integrations?.truenas?.supported);
+        if (!hasCommunity) return false;
+      }
+
+      // Activity filter
+      if (selectedActivity.size > 0) {
+        const status = getActivityStatus(script);
+        if (!selectedActivity.has(status)) return false;
+      }
+
+      return true;
+    });
+
+    // Sort
+    scripts.sort((a, b) => {
+      switch (sortBy) {
+        case "latest":
+          const dateA = a.metadata?.date_app_added ? new Date(a.metadata.date_app_added).getTime() : 0;
+          const dateB = b.metadata?.date_app_added ? new Date(b.metadata.date_app_added).getTime() : 0;
+          return dateB - dateA;
+        case "popular":
+          return (b.metadata?.github_stars || 0) - (a.metadata?.github_stars || 0);
+        case "name-asc":
+          return a.name.localeCompare(b.name);
+        case "name-desc":
+          return b.name.localeCompare(a.name);
+        case "stars":
+          return (b.metadata?.github_stars || 0) - (a.metadata?.github_stars || 0);
+        case "last-commit":
+          const commitA = a.metadata?.date_last_commit ? new Date(a.metadata.date_last_commit).getTime() : 0;
+          const commitB = b.metadata?.date_last_commit ? new Date(b.metadata.date_last_commit).getTime() : 0;
+          return commitB - commitA;
+        case "age":
+          const ageA = a.metadata?.date_app_added ? new Date(a.metadata.date_app_added).getTime() : 0;
+          const ageB = b.metadata?.date_app_added ? new Date(b.metadata.date_app_added).getTime() : 0;
+          return ageA - ageB;
+        default:
+          return 0;
+      }
+    });
+
+    return scripts;
+  }, [allScripts, searchQuery, selectedPlatforms, selectedDeployments, selectedHosting, selectedUI, selectedCommunity, selectedActivity, sortBy]);
+
+  // Create filtered links for sidebar and content
+  const filteredLinks = useMemo(() => {
+    const filteredScriptSlugs = new Set(filteredAndSortedScripts.map(s => s.slug));
+    return links.map(category => ({
+      ...category,
+      scripts: category.scripts.filter(script => filteredScriptSlugs.has(script.slug)),
+    })).filter(category => category.scripts.length > 0);
+  }, [links, filteredAndSortedScripts]);
+
+  const uniqueScripts = allScripts.length;
+  const filteredScriptsCount = filteredAndSortedScripts.length;
+  
+  const totalActiveFilters = selectedPlatforms.size + selectedDeployments.size + selectedHosting.size + selectedUI.size + selectedCommunity.size + selectedActivity.size;
+  const hasActiveFilters = totalActiveFilters > 0 || searchQuery !== "";
+
+  const clearAllFilters = () => {
+    setSelectedPlatforms(new Set());
+    setSelectedDeployments(new Set());
+    setSelectedHosting(new Set());
+    setSelectedUI(new Set());
+    setSelectedCommunity(new Set());
+    setSelectedActivity(new Set());
+    setSearchQuery("");
+    setPlatformSearch("");
+    setDeploymentSearch("");
+    setHostingSearch("");
+    setUiSearch("");
+    setCommunitySearch("");
+    setActivitySearch("");
+  };
+
+  const togglePlatform = (id: string) => {
+    const newSet = new Set(selectedPlatforms);
+    if (newSet.has(id)) newSet.delete(id);
+    else newSet.add(id);
+    setSelectedPlatforms(newSet);
+  };
+
+  const toggleDeployment = (id: string) => {
+    const newSet = new Set(selectedDeployments);
+    if (newSet.has(id)) newSet.delete(id);
+    else newSet.add(id);
+    setSelectedDeployments(newSet);
+  };
+
+  const toggleHosting = (id: string) => {
+    const newSet = new Set(selectedHosting);
+    if (newSet.has(id)) newSet.delete(id);
+    else newSet.add(id);
+    setSelectedHosting(newSet);
+  };
+
+  const toggleUI = (id: string) => {
+    const newSet = new Set(selectedUI);
+    if (newSet.has(id)) newSet.delete(id);
+    else newSet.add(id);
+    setSelectedUI(newSet);
+  };
+
+  const toggleCommunity = (id: string) => {
+    const newSet = new Set(selectedCommunity);
+    if (newSet.has(id)) newSet.delete(id);
+    else newSet.add(id);
+    setSelectedCommunity(newSet);
+  };
+
+  const toggleActivity = (id: string) => {
+    const newSet = new Set(selectedActivity);
+    if (newSet.has(id)) newSet.delete(id);
+    else newSet.add(id);
+    setSelectedActivity(newSet);
+  };
+
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-accent/10 to-background pt-20">
+      <DynamicMetaTags script={item} />
+      
+      {/* Search and Filter Bar */}
+      {!selectedScript && (
+        <div className="sticky top-20 z-20 border-b bg-background">
+          <div className="px-4 sm:px-6 lg:px-8 py-3">
+            {/* Main Search Row */}
+            <div className="flex items-center gap-3">
+              <div className="relative flex-1 max-w-xl">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Input
+                  id="search-input"
+                  type="text"
+                  placeholder="Search tools..."
+                  value={searchQuery}
+                  onChange={e => setSearchQuery(e.target.value)}
+                  className="pl-10 pr-12 h-10 bg-background"
+                />
+                <kbd className="absolute right-3 top-1/2 -translate-y-1/2 hidden sm:inline-flex h-5 items-center rounded border bg-muted px-1.5 text-[10px] text-muted-foreground">
+                  /
+                </kbd>
+              </div>
+              
+              <div className="flex items-center gap-2">
+                <Button
+                  variant={showFilters ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setShowFilters(!showFilters)}
+                  className="h-10"
+                >
+                  <Filter className="h-4 w-4 mr-2" />
+                  Filters
+                  {totalActiveFilters > 0 && (
+                    <span className="ml-2 bg-primary-foreground text-primary rounded-full px-1.5 py-0.5 text-xs font-medium">
+                      {totalActiveFilters}
+                    </span>
+                  )}
                 </Button>
-              </Link>
-              <Button size="lg" variant="outline" className="text-base px-8 h-12" asChild>
-                <a href={`https://github.com/dailyfoss/${repoName}`} target="_blank" rel="noopener noreferrer">
-                  <FaGithub className="mr-2 h-5 w-5" />
-                  Star on GitHub
-                </a>
-              </Button>
+                
+                {hasActiveFilters && (
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={clearAllFilters}
+                    className="h-10 text-destructive hover:text-destructive hover:bg-destructive/10"
+                  >
+                    <X className="h-4 w-4 mr-1" />
+                    Clear
+                  </Button>
+                )}
+              </div>
             </div>
 
-            {/* Stats Row */}
-            <div className="grid grid-cols-3 gap-8 md:gap-16">
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary">
-                  {totalTools > 0 ? <NumberTicker value={totalTools} /> : "—"}
+            {/* Filter Columns */}
+            <div 
+              className={`grid transition-all duration-300 ease-in-out ${
+                showFilters ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+              }`}
+            >
+              <div className="overflow-hidden">
+                <div className="mt-4 pb-2">
+                  <div className="flex gap-3 overflow-x-auto pb-2">
+                    <FilterColumn
+                      title="Platform"
+                      searchPlaceholder="Search platform"
+                      items={filterOptions.platforms}
+                      selectedItems={selectedPlatforms}
+                      onToggle={togglePlatform}
+                      searchValue={platformSearch}
+                      onSearchChange={setPlatformSearch}
+                    />
+                    <FilterColumn
+                      title="Deployment"
+                      searchPlaceholder="Search deployment"
+                      items={filterOptions.deployments}
+                      selectedItems={selectedDeployments}
+                      onToggle={toggleDeployment}
+                      searchValue={deploymentSearch}
+                      onSearchChange={setDeploymentSearch}
+                    />
+                    <FilterColumn
+                      title="Hosting"
+                      searchPlaceholder="Search hosting"
+                      items={filterOptions.hosting}
+                      selectedItems={selectedHosting}
+                      onToggle={toggleHosting}
+                      searchValue={hostingSearch}
+                      onSearchChange={setHostingSearch}
+                    />
+                    <FilterColumn
+                      title="Interface (UI)"
+                      searchPlaceholder="Search interface"
+                      items={filterOptions.ui}
+                      selectedItems={selectedUI}
+                      onToggle={toggleUI}
+                      searchValue={uiSearch}
+                      onSearchChange={setUiSearch}
+                    />
+                    <FilterColumn
+                      title="Community"
+                      searchPlaceholder="Search community"
+                      items={filterOptions.community}
+                      selectedItems={selectedCommunity}
+                      onToggle={toggleCommunity}
+                      searchValue={communitySearch}
+                      onSearchChange={setCommunitySearch}
+                    />
+                    <FilterColumn
+                      title="Activity"
+                      searchPlaceholder="Search activity"
+                      items={filterOptions.activity}
+                      selectedItems={selectedActivity}
+                      onToggle={toggleActivity}
+                      searchValue={activitySearch}
+                      onSearchChange={setActivitySearch}
+                    />
+                  </div>
+                  
+                  {/* Results count and clear */}
+                  <div className="flex items-center justify-between mt-3 pt-3 border-t">
+                    <span className="text-sm text-muted-foreground">
+                      {filteredScriptsCount === uniqueScripts 
+                        ? `${uniqueScripts} tools` 
+                        : `${filteredScriptsCount} of ${uniqueScripts} tools`}
+                    </span>
+                    {hasActiveFilters && (
+                      <Button 
+                        variant="ghost" 
+                        size="sm" 
+                        onClick={clearAllFilters}
+                        className="h-7 text-xs text-muted-foreground hover:text-foreground"
+                      >
+                        <X className="h-3 w-3 mr-1" />
+                        Clear all filters
+                      </Button>
+                    )}
+                  </div>
                 </div>
-                <div className="text-sm text-muted-foreground mt-1">Tools</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary">
-                  {totalCategories > 0 ? <NumberTicker value={totalCategories} /> : "—"}
-                </div>
-                <div className="text-sm text-muted-foreground mt-1">Categories</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary">
-                  Daily
-                </div>
-                <div className="text-sm text-muted-foreground mt-1">Updates</div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Featured Tools Section */}
-      {featuredTools.length > 0 && (
-        <section className="py-16 border-t bg-gradient-to-b from-background to-accent/5">
-          <div className="container mx-auto px-4">
-            <div className="flex items-center justify-between mb-8">
-              <div>
-                <h2 className="text-2xl md:text-3xl font-bold">Featured Tools</h2>
-                <p className="text-muted-foreground mt-1">Popular open source software you can self-host</p>
-              </div>
-              <Link href="/scripts">
-                <Button variant="ghost" className="hidden sm:flex">
-                  View all <ChevronRight className="ml-1 h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {featuredTools.map((tool) => (
-                <Link key={tool.slug} href={`/scripts?id=${tool.slug}`}>
-                  <Card className="h-full hover:border-primary/50 hover:shadow-lg transition-all duration-300 group cursor-pointer">
-                    <CardHeader className="pb-4">
-                      <div className="flex items-start gap-4">
-                        <div className="h-14 w-14 rounded-xl overflow-hidden bg-accent/50 flex-shrink-0 flex items-center justify-center">
-                          {tool.resources?.logo ? (
-                            <img
-                              src={tool.resources.logo}
-                              alt={tool.name}
-                              className="h-10 w-10 object-contain"
-                            />
-                          ) : (
-                            <span className="text-2xl font-bold text-muted-foreground">
-                              {tool.name.charAt(0)}
-                            </span>
-                          )}
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <CardTitle className="text-lg group-hover:text-primary transition-colors flex items-center gap-2">
-                            {tool.name}
-                            <ExternalLink className="h-3.5 w-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                          </CardTitle>
-                          <CardDescription className="line-clamp-2 mt-1">
-                            {tool.tagline || tool.description}
-                          </CardDescription>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-center gap-3 mt-4 pt-3 border-t">
-                        {tool.metadata?.github_stars && (
-                          <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                            <Star className="h-3.5 w-3.5 fill-yellow-500 text-yellow-500" />
-                            {(tool.metadata.github_stars / 1000).toFixed(1)}k
-                          </div>
-                        )}
-                        {tool.metadata?.license && (
-                          <Badge variant="secondary" className="text-xs">
-                            {tool.metadata.license}
-                          </Badge>
-                        )}
-                        {tool.deployment_methods?.docker && (
-                          <Badge variant="outline" className="text-xs">
-                            <SiDocker className="h-3 w-3 mr-1" />
-                            Docker
-                          </Badge>
-                        )}
-                      </div>
-                    </CardHeader>
-                  </Card>
-                </Link>
-              ))}
-            </div>
-
-            <div className="mt-6 text-center sm:hidden">
-              <Link href="/scripts">
-                <Button variant="outline">
-                  View all tools <ChevronRight className="ml-1 h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </section>
       )}
 
-      {/* Deployment Methods Section */}
-      <section className="py-16 border-t">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold mb-3">Deploy Your Way</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">
-              Every tool comes with multiple deployment options to fit your infrastructure
-            </p>
+      {/* Main Content */}
+      <div className="px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex gap-6">
+          {/* Left Sidebar - Categories */}
+          <div className="hidden lg:block flex-shrink-0">
+            <Sidebar
+              items={filteredLinks}
+              selectedScript={selectedScript}
+              setSelectedScript={setSelectedScript}
+              selectedCategory={selectedCategory}
+              setSelectedCategory={setSelectedCategory}
+            />
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-4xl mx-auto">
-            {[
-              { icon: SiDocker, name: "Docker", color: "#2496ED", desc: "Containers" },
-              { icon: SiKubernetes, name: "Kubernetes", color: "#326CE5", desc: "Orchestration" },
-              { icon: SiHelm, name: "Helm", color: "#0F1689", desc: "K8s Charts" },
-              { icon: SiTerraform, name: "Terraform", color: "#7B42BC", desc: "IaC" },
-              { icon: Zap, name: "Scripts", color: "#ffaa40", desc: "One-liners" },
-            ].map((method) => (
-              <div
-                key={method.name}
-                className="group flex flex-col items-center p-6 rounded-xl border-2 hover:border-primary/30 bg-card hover:bg-accent/30 transition-all duration-300"
-              >
-                <div 
-                  className="w-12 h-12 rounded-lg flex items-center justify-center mb-3 transition-transform group-hover:scale-110"
-                  style={{ backgroundColor: `${method.color}15` }}
-                >
-                  <method.icon className="h-6 w-6" style={{ color: method.color }} />
-                </div>
-                <span className="font-medium text-sm">{method.name}</span>
-                <span className="text-xs text-muted-foreground">{method.desc}</span>
+          {/* Main Content Area */}
+          <div className="flex-1 min-w-0">
+            {selectedScript && item ? (
+              <ScriptItem key={item.slug} item={item} setSelectedScript={setSelectedScript} allCategories={links} />
+            ) : (
+              <div className="space-y-10">
+                <TrendingScripts items={filteredLinks} />
+                <LatestScripts items={filteredLinks} />
+                <PopularScripts items={filteredLinks} />
               </div>
-            ))}
+            )}
+          </div>
+
+          {/* Right Sidebar - Sponsored */}
+          <div className="hidden xl:block flex-shrink-0">
+            <SponsoredSidebar items={links} />
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  );
+}
 
-      {/* Why Daily FOSS Section */}
-      <section className="py-16 border-t bg-accent/5">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold mb-3">Why Daily FOSS?</h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">
-              We make discovering and deploying open source software simple
-            </p>
+export default function Page() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-gradient-to-b from-accent/10 to-background pt-20">
+          {/* Search Bar Skeleton */}
+          <div className="sticky top-16 z-20 border-b bg-background/95 backdrop-blur-sm">
+            <div className="px-4 sm:px-6 lg:px-8 py-3">
+              <div className="flex items-center gap-3">
+                <Skeleton className="h-10 flex-1 max-w-xl" />
+                <Skeleton className="h-10 w-24" />
+                <Skeleton className="h-10 w-32" />
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {[
-              {
-                icon: TrendingUp,
-                title: "Curated Collection",
-                description: "Hand-picked tools verified for quality, security, and active maintenance",
-              },
-              {
-                icon: Zap,
-                title: "One-Click Deploy",
-                description: "Ready-to-use deployment configs for Docker, Kubernetes, and more",
-              },
-              {
-                icon: Heart,
-                title: "Community Driven",
-                description: "Open source project built by and for the FOSS community",
-              },
-            ].map((feature) => (
-              <Card key={feature.title} className="border hover:border-primary/30 transition-colors">
-                <CardHeader>
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 bg-primary/10">
-                    <feature.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-lg">{feature.title}</CardTitle>
-                  <CardDescription className="text-sm leading-relaxed">
-                    {feature.description}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Social Section */}
-      <section className="py-16 border-t">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold mb-3">Join the Community</h2>
-            <p className="text-muted-foreground">Stay updated with the latest FOSS discoveries</p>
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-4 max-w-2xl mx-auto">
-            {[
-              { icon: FaLinkedin, name: "LinkedIn", href: "https://linkedin.com/company/dailyfoss", color: "#0A66C2" },
-              { icon: FaFacebook, name: "Facebook", href: "https://facebook.com/dailyfoss", color: "#1877F2" },
-              { icon: SiThreads, name: "Threads", href: "https://threads.net/@dailyfoss", color: "currentColor" },
-              { icon: FaXTwitter, name: "X", href: "https://x.com/dailyfoss", color: "currentColor" },
-              { icon: FaGithub, name: "GitHub", href: `https://github.com/dailyfoss/${repoName}`, color: "currentColor" },
-            ].map((social) => (
-              <a
-                key={social.name}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group"
-              >
-                <div className="flex items-center gap-2 px-5 py-3 rounded-full border-2 hover:border-primary/50 bg-card hover:bg-accent/50 transition-all duration-300">
-                  <social.icon className="h-5 w-5 group-hover:scale-110 transition-transform" style={{ color: social.color }} />
-                  <span className="font-medium text-sm">{social.name}</span>
+          {/* Content Skeleton */}
+          <div className="px-4 sm:px-6 lg:px-8 py-8">
+            <div className="flex gap-6">
+              {/* Left Sidebar Skeleton */}
+              <div className="hidden lg:block w-[280px] flex-shrink-0">
+                <Skeleton className="h-6 w-24 mb-4" />
+                <div className="space-y-2">
+                  {[...Array(6)].map((_, i) => (
+                    <Skeleton key={i} className="h-8 w-full" />
+                  ))}
                 </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
+              </div>
 
-      {/* Final CTA */}
-      <section className="py-20 border-t">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center p-8 md:p-12 rounded-2xl border bg-accent/5">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Ready to discover your next tool?
-            </h2>
-            <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
-              Browse our curated collection and find the perfect open source software for your needs.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/scripts">
-                <Button size="lg" className="px-8">
-                  Browse Tools
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-              <Button size="lg" variant="outline" asChild>
-                <a
-                  href={`https://github.com/dailyfoss/${repoName}/blob/main/CONTRIBUTING.md`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Contribute a Tool
-                </a>
-              </Button>
+              {/* Main Content Skeleton */}
+              <div className="flex-1 min-w-0">
+                <Skeleton className="h-6 w-32 mb-4" />
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                  {[...Array(6)].map((_, i) => (
+                    <ScriptCardSkeleton key={i} />
+                  ))}
+                </div>
+              </div>
+
+              {/* Right Sidebar Skeleton */}
+              <div className="hidden xl:block w-[260px] flex-shrink-0">
+                <Skeleton className="h-6 w-24 mb-4" />
+                <Skeleton className="h-32 w-full rounded-lg" />
+              </div>
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      }
+    >
+      <ScriptContent />
+    </Suspense>
   );
 }

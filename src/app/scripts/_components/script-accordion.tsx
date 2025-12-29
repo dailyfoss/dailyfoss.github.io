@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import * as Icons from "lucide-react";
-import Link from "next/link";
 
 import type { Category } from "@/lib/types";
 
@@ -37,18 +36,41 @@ export default function ScriptAccordion({
   onItemSelect?: () => void;
 }) {
   const router = useRouter();
+  // Persist expanded category in sessionStorage
+  const getStoredCategory = () => {
+    if (typeof window === 'undefined') return undefined;
+    return sessionStorage.getItem('expandedCategory') || undefined;
+  };
+  
   const [expandedItem, setExpandedItem] = useState<string | undefined>(undefined);
-  const linkRefs = useRef<{ [key: string]: HTMLAnchorElement | null }>({});
   const isUserInteractionRef = useRef(false);
+  const initializedRef = useRef(false);
+
+  // Initialize from sessionStorage on mount
+  useEffect(() => {
+    if (!initializedRef.current) {
+      const stored = getStoredCategory();
+      if (stored) {
+        setExpandedItem(stored);
+        initializedRef.current = true;
+      }
+    }
+  }, []);
 
   const handleAccordionChange = (value: string | undefined) => {
     isUserInteractionRef.current = true;
     setExpandedItem(value);
+    // Save to sessionStorage
+    if (value) {
+      sessionStorage.setItem('expandedCategory', value);
+    } else {
+      sessionStorage.removeItem('expandedCategory');
+    }
   };
 
   useEffect(() => {
-    // Skip if user is manually interacting with accordion
-    if (isUserInteractionRef.current) {
+    // Skip if already initialized from storage or user interaction
+    if (initializedRef.current || isUserInteractionRef.current) {
       isUserInteractionRef.current = false;
       return;
     }
@@ -72,6 +94,8 @@ export default function ScriptAccordion({
       // Update to the category containing the selected script
       if (category) {
         setExpandedItem(category.name);
+        sessionStorage.setItem('expandedCategory', category.name);
+        initializedRef.current = true;
       }
     }
   }, [selectedScript, selectedCategory, items]);
@@ -140,35 +164,25 @@ export default function ScriptAccordion({
                   .sort((a, b) => a.name.localeCompare(b.name))
                   .map((script, index) => (
                     <div key={index}>
-                      <Link
-                        href={{
-                          pathname: "/scripts",
-                          query: { id: script.slug, category: category.name },
-                        }}
-                        prefetch={false}
-                        className={`flex cursor-pointer items-center justify-between gap-1 px-1 py-1 text-muted-foreground hover:rounded-lg hover:bg-accent/60 hover:dark:bg-accent/20 ${selectedScript === script.slug
+                      <button
+                        type="button"
+                        className={`flex w-full cursor-pointer items-center justify-between gap-1 px-1 py-1 text-muted-foreground hover:rounded-lg hover:bg-accent/60 hover:dark:bg-accent/20 ${selectedScript === script.slug
                           ? "rounded-lg bg-accent font-semibold dark:bg-accent/30 dark:text-white"
                           : ""
                           }`}
-                        onClick={(e) => {
-                          // Prevent default Link behavior
-                          e.preventDefault();
-
+                        onClick={() => {
                           // Update state
                           setSelectedScript(script.slug);
                           setSelectedCategory(category.name);
 
-                          // Update URL
-                          router.push(`/scripts?id=${script.slug}&category=${category.name}`);
+                          // Navigate with query params - this triggers proper page update
+                          router.push(`/?id=${script.slug}&category=${encodeURIComponent(category.name)}`, { scroll: false });
 
                           // Call onItemSelect for mobile sidebar closing
                           onItemSelect?.();
                         }}
-                        ref={(el) => {
-                          linkRefs.current[script.slug] = el;
-                        }}
                       >
-                        <div className="flex items-center">
+                        <div className="flex items-center text-left">
                           <ScriptLogo 
                             logo={script.resources?.logo} 
                             logo_light={script.resources?.logo_light}
@@ -176,7 +190,7 @@ export default function ScriptAccordion({
                           />
                           <span className="flex items-center gap-2">{script.name}</span>
                         </div>
-                      </Link>
+                      </button>
                     </div>
                   ))}
               </AccordionContent>

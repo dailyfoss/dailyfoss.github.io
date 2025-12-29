@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, type ReactElement } from "react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -57,7 +57,7 @@ export function ActivityFeed({ limit = 10, showTitle = true, className }: Activi
     }
   }
 
-  function formatActivity(activity: Activity): JSX.Element {
+  function formatActivity(activity: Activity): ReactElement {
     const timeAgo = getTimeAgo(activity.timestamp)
     
     switch (activity.type) {
@@ -68,7 +68,7 @@ export function ActivityFeed({ limit = 10, showTitle = true, className }: Activi
               {activity.username}
             </Link>
             {' liked '}
-            <Link href={`/scripts/${activity.targetSlug}`} className="font-medium hover:underline">
+            <Link href={`/${activity.targetSlug}`} className="font-medium hover:underline">
               {activity.targetName}
             </Link>
             <span className="text-muted-foreground"> • {timeAgo}</span>
@@ -81,7 +81,7 @@ export function ActivityFeed({ limit = 10, showTitle = true, className }: Activi
               {activity.username}
             </Link>
             {' unliked '}
-            <Link href={`/scripts/${activity.targetSlug}`} className="font-medium hover:underline">
+            <Link href={`/${activity.targetSlug}`} className="font-medium hover:underline">
               {activity.targetName}
             </Link>
             <span className="text-muted-foreground"> • {timeAgo}</span>
@@ -96,7 +96,7 @@ export function ActivityFeed({ limit = 10, showTitle = true, className }: Activi
             {' added '}
             <span className="font-medium">{activity.metadata.feature}</span>
             {' as a feature to '}
-            <Link href={`/scripts/${activity.targetSlug}`} className="font-medium hover:underline">
+            <Link href={`/${activity.targetSlug}`} className="font-medium hover:underline">
               {activity.targetName}
             </Link>
             <span className="text-muted-foreground"> • {timeAgo}</span>
@@ -109,7 +109,7 @@ export function ActivityFeed({ limit = 10, showTitle = true, className }: Activi
               {activity.username}
             </Link>
             {' added '}
-            <Link href={`/scripts/${activity.targetSlug}`} className="font-medium hover:underline">
+            <Link href={`/${activity.targetSlug}`} className="font-medium hover:underline">
               {activity.targetName}
             </Link>
             {' as alternative'}
@@ -123,7 +123,7 @@ export function ActivityFeed({ limit = 10, showTitle = true, className }: Activi
               {activity.username}
             </Link>
             {' added '}
-            <Link href={`/scripts/${activity.targetSlug}`} className="font-medium hover:underline">
+            <Link href={`/${activity.targetSlug}`} className="font-medium hover:underline">
               {activity.targetName}
             </Link>
             <span className="text-muted-foreground"> • {timeAgo}</span>
@@ -136,7 +136,7 @@ export function ActivityFeed({ limit = 10, showTitle = true, className }: Activi
               {activity.username}
             </Link>
             {' performed an action on '}
-            <Link href={`/scripts/${activity.targetSlug}`} className="font-medium hover:underline">
+            <Link href={`/${activity.targetSlug}`} className="font-medium hover:underline">
               {activity.targetName}
             </Link>
             <span className="text-muted-foreground"> • {timeAgo}</span>

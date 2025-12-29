@@ -1,60 +1,71 @@
 "use client";
 
-import { Crown, LayoutGrid, Mail } from "lucide-react";
+import { Crown, LayoutGrid, Mail, Star, CircleCheck, RefreshCcw, Clock3, Moon } from "lucide-react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
 import type { Category, Script } from "@/lib/types";
 
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 type SponsoredSidebarProps = {
   items: Category[];
+  className?: string;
 };
 
-// Simple icon loader with fallback and theme support
-function AppIcon({ src, src_light, name, size = 48 }: { src?: string | null; src_light?: string | null; name: string; size?: number }) {
+function formatStarCount(stars?: string | number | null): string | null {
+  if (!stars) return null;
+  const num = typeof stars === "string" ? Number.parseInt(stars, 10) : stars;
+  if (isNaN(num) || num === 0) return null;
+  if (num >= 1000000) return `${(num / 1000000).toFixed(1)}m`;
+  if (num >= 1000) return `${(num / 1000).toFixed(1)}k`;
+  return num.toString();
+}
+
+function getRelativeTimeFromDays(days: number | null): string {
+  if (days === null) return 'unknown';
+  if (days === 0) return 'today';
+  if (days === 1) return '1d ago';
+  if (days < 7) return `${days}d ago`;
+  if (days < 30) return `${Math.floor(days / 7)}w ago`;
+  if (days < 365) return `${Math.floor(days / 30)}mo ago`;
+  return `${Math.floor(days / 365)}y ago`;
+}
+
+function getStatusIcon(daysSinceLastCommit: number): React.ReactNode {
+  if (daysSinceLastCommit <= 30) 
+    return <CircleCheck className="h-3 w-3 text-green-500" />;
+  if (daysSinceLastCommit <= 180) 
+    return <RefreshCcw className="h-3 w-3 text-amber-500" />;
+  if (daysSinceLastCommit <= 365) 
+    return <Clock3 className="h-3 w-3 text-orange-500" />;
+  return <Moon className="h-3 w-3 text-red-500" />;
+}
+
+// Compact App Icon
+function AppIcon({ src, src_light, name }: { src?: string | null; src_light?: string | null; name: string }) {
   const [showFallback, setShowFallback] = useState(!src || src.trim() === "");
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
-  // Detect theme changes
   useEffect(() => {
-    const checkTheme = () => {
-      const isDark = document.documentElement.classList.contains('dark');
-      setTheme(isDark ? 'dark' : 'light');
-    };
-
+    const checkTheme = () => setTheme(document.documentElement.classList.contains('dark') ? 'dark' : 'light');
     checkTheme();
-    
-    // Watch for theme changes
     const observer = new MutationObserver(checkTheme);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['class'],
-    });
-
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
     return () => observer.disconnect();
   }, []);
 
-  // Get the appropriate logo based on theme
-  // In dark mode, use light variant if available (for visibility)
   const currentSrc = (theme === 'dark' && src_light) ? src_light : src;
 
-  // Reset fallback state when src changes
   useEffect(() => {
     setShowFallback(!currentSrc || currentSrc.trim() === "");
   }, [currentSrc]);
 
-  const imgClass = size <= 48 ? "h-8 w-8 object-contain rounded-md p-0.5" : "h-11 w-11 object-contain rounded-md p-1";
-  const fallbackClass = size <= 48 ? "h-8 w-8" : "h-11 w-11";
-  const iconSize = size <= 48 ? "h-6 w-6" : "h-8 w-8";
-
   if (showFallback) {
     return (
-      <div className={`${fallbackClass} flex items-center justify-center bg-accent/20 rounded-md`}>
-        <LayoutGrid className={`${iconSize} text-muted-foreground`} />
+      <div className="flex items-center justify-center bg-accent/30 rounded-lg w-full h-full">
+        <LayoutGrid className="h-5 w-5 text-muted-foreground" />
       </div>
     );
   }
@@ -62,17 +73,74 @@ function AppIcon({ src, src_light, name, size = 48 }: { src?: string | null; src
   return (
     <img
       src={currentSrc || ''}
-      width={size}
-      height={size}
-      alt={`${name} icon`}
-      loading="eager"
-      className={imgClass}
+      alt={name}
+      className="w-full h-full object-contain p-1"
       onError={() => setShowFallback(true)}
     />
   );
 }
 
-export function SponsoredSidebar({ items }: SponsoredSidebarProps) {
+// Compact Sponsored Card (same style as main page)
+function SponsoredCard({ script }: { script: Script }) {
+  const daysSinceCommit = script.metadata?.date_last_commit 
+    ? Math.floor((Date.now() - new Date(script.metadata.date_last_commit).getTime()) / (1000 * 60 * 60 * 24))
+    : null;
+
+  return (
+    <Link
+      href={`/${script.slug}`}
+      className="group block"
+    >
+      <div className="flex flex-col p-4 rounded-xl border bg-card hover:bg-accent/30 hover:border-primary/40 hover:shadow-md transition-all duration-200 relative min-h-[120px]">
+        {/* Sponsored Badge */}
+        <Badge 
+          variant="secondary" 
+          className="absolute top-2 right-2 text-[9px] px-1.5 py-0.5 bg-blue-50 dark:bg-blue-950/30 text-blue-700 dark:text-blue-300 border border-blue-200/50 dark:border-blue-800/50"
+        >
+          Sponsored
+        </Badge>
+
+        {/* Header: Icon + Name */}
+        <div className="flex items-center gap-3">
+          <div className="h-12 w-12 flex-shrink-0 rounded-lg bg-accent/50 overflow-hidden">
+            <AppIcon src={script.resources?.logo} src_light={script.resources?.logo_light} name={script.name} />
+          </div>
+          <div className="flex items-center gap-1.5 pr-16">
+            <h3 className="font-semibold text-sm group-hover:text-primary transition-colors line-clamp-1">
+              {script.name}
+            </h3>
+            {daysSinceCommit !== null && getStatusIcon(daysSinceCommit)}
+          </div>
+        </div>
+
+        {/* Tagline - Full width below header */}
+        <p className="text-[11px] text-muted-foreground line-clamp-3 mt-2">
+          {script.tagline}
+        </p>
+
+        {/* Footer with stats */}
+        <div className="flex items-center justify-between text-[10px] text-muted-foreground mt-auto pt-2 border-t border-border/50">
+          {formatStarCount(script.metadata?.github_stars) && (
+            <span className="flex items-center gap-0.5">
+              <Star className="h-3 w-3" />
+              {formatStarCount(script.metadata?.github_stars)}
+            </span>
+          )}
+          <div className="flex items-center gap-1">
+            {script.community_integrations?.proxmox_ve?.supported && (
+              <span className="px-1.5 py-0.5 rounded bg-accent/60 text-[9px] font-medium">PVE</span>
+            )}
+            {script.community_integrations?.yunohost?.supported && (
+              <span className="px-1.5 py-0.5 rounded bg-accent/60 text-[9px] font-medium">Yuno</span>
+            )}
+          </div>
+        </div>
+      </div>
+    </Link>
+  );
+}
+
+export function SponsoredSidebar({ items, className }: SponsoredSidebarProps) {
   const [sponsoredScripts, setSponsoredScripts] = useState<Script[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -87,8 +155,6 @@ export function SponsoredSidebar({ items }: SponsoredSidebarProps) {
       setIsLoading(false);
       return;
     }
-
-    console.log('Fetching sponsored tools from:', WORKER_URL);
 
     try {
       const response = await fetch(WORKER_URL, {
@@ -144,136 +210,63 @@ export function SponsoredSidebar({ items }: SponsoredSidebarProps) {
     return null;
 
   return (
-    <aside className="hidden lg:block lg:min-w-[260px] lg:max-w-[260px]">
-      <div className="sticky top-24 space-y-4">
-        {/* Header - Aligned with Trending This Month */}
-        <div className="px-1">
-          <div className="flex items-center gap-2 mb-6 pb-3 border-b-2 border-primary/20">
-            <Crown className="h-5 w-5 text-blue-500/80" />
-            <h2 className="text-base font-bold text-foreground/90">Sponsored Tools</h2>
-          </div>
+    <aside className={className || "hidden lg:block lg:min-w-[260px] lg:max-w-[260px]"}>
+      <div className="sticky top-28 space-y-3">
+        {/* Header */}
+        <div className="flex items-center gap-2 pb-2 border-b border-border/50">
+          <Crown className="h-5 w-5 text-blue-500" />
+          <h2 className="text-sm font-bold">Sponsored Tools</h2>
           {sponsoredScripts.length > 0 && (
-            <p className="text-[10px] text-muted-foreground/80 -mt-4 mb-4">
-              {isFull
-                ? (
-                  "All spots taken"
-                )
-                : (
-                  `${availableSpots} spot${availableSpots !== 1 ? "s" : ""} available`
-                )}
-            </p>
+            <span className="text-[10px] text-muted-foreground ml-auto">
+              {isFull ? "Full" : `${availableSpots} spot${availableSpots !== 1 ? "s" : ""} available`}
+            </span>
           )}
         </div>
 
         {/* Sponsored Scripts */}
         {sponsoredScripts.length > 0 ? (
-          <div className="space-y-3">
+          <div className="space-y-2">
             {sponsoredScripts.map(script => (
-              <Card
-                key={script.slug}
-                className="bg-gradient-to-br from-background via-background to-accent/5 border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:scale-[1.02] flex flex-col relative overflow-hidden group"
-              >
-                {/* Accent bar */}
-                <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500/50 via-blue-600/50 to-blue-500/50" />
-
-                {/* Sponsored Badge - Natural and subtle */}
-                <div className="absolute top-2 right-2 z-10">
-                  <Badge variant="secondary" className="text-[9px] px-2 py-0.5 bg-blue-50 dark:bg-blue-950/30 text-blue-700 dark:text-blue-300 border border-blue-200/50 dark:border-blue-800/50">
-                    Sponsored
-                  </Badge>
-                </div>
-
-                <CardHeader className="pb-2">
-                  <CardTitle className="flex items-start gap-2">
-                    <div className="flex h-12 w-12 min-w-12 items-center justify-center rounded-lg bg-gradient-to-br from-accent/40 to-accent/60 p-1 shadow-sm">
-                      <AppIcon 
-                        src={script.resources?.logo} 
-                        src_light={script.resources?.logo_light}
-                        name={script.name || script.slug} 
-                        size={48} 
-                      />
-                    </div>
-                    <div className="flex flex-col flex-1 min-w-0">
-                      <h3 className="font-semibold text-sm line-clamp-2 leading-tight">{script.name}</h3>
-                    </div>
-                  </CardTitle>
-                </CardHeader>
-
-                <CardContent className="flex-grow py-2">
-                  <CardDescription className="line-clamp-2 text-xs leading-snug">
-                    {script.description}
-                  </CardDescription>
-                </CardContent>
-
-                <CardFooter className="pt-0">
-                  <Button asChild variant="outline" className="w-full h-8 text-xs group-hover:bg-blue-500/10 group-hover:border-blue-500/30 transition-colors">
-                    <Link
-                      href={{
-                        pathname: "/scripts",
-                        query: { id: script.slug },
-                      }}
-                    >
-                      View Details
-                    </Link>
-                  </Button>
-                </CardFooter>
-              </Card>
+              <SponsoredCard key={script.slug} script={script} />
             ))}
           </div>
         ) : (
-          <Card className="border border-dashed border-blue-500/30 bg-gradient-to-br from-background to-blue-500/5">
-            <CardContent className="text-center py-6 space-y-2">
-              <div className="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-blue-500/10">
-                <Crown className="h-6 w-6 text-blue-500" />
-              </div>
-              <CardTitle className="text-sm font-bold">5 Spots Available</CardTitle>
-              <CardDescription className="text-xs">
-                Be the first to sponsor!
-              </CardDescription>
-            </CardContent>
-          </Card>
+          <div className="p-4 rounded-xl border border-dashed border-blue-500/30 bg-blue-500/5 text-center">
+            <Crown className="h-8 w-8 text-blue-500 mx-auto mb-2" />
+            <p className="text-sm font-semibold">5 Spots Available</p>
+            <p className="text-xs text-muted-foreground">Be the first to sponsor!</p>
+          </div>
         )}
 
-        {/* Advertise Here Card - Enhanced */}
-        <Card className="border-2 border-dashed border-primary/30 bg-gradient-to-br from-primary/5 to-accent/10 hover:border-primary/50 transition-all duration-200 hover:shadow-md">
-          <CardHeader className="text-center pb-3">
-            <div className="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-accent/20 shadow-sm">
-              <Crown className="h-6 w-6 text-primary" />
+        {/* Advertise Here Card */}
+        <div className="p-4 rounded-xl border-2 border-dashed border-primary/30 bg-gradient-to-br from-primary/5 to-accent/10 hover:border-primary/50 transition-all">
+          <div className="text-center space-y-2">
+            <div className="mx-auto w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+              <Crown className="h-5 w-5 text-primary" />
             </div>
-            <CardTitle className="text-base font-bold">Advertise Here</CardTitle>
-            <p className="text-[10px] text-muted-foreground font-medium mt-1">
+            <h3 className="text-sm font-bold">Advertise Here</h3>
+            <p className="text-[10px] text-muted-foreground">
               🎯 Reach 10,000+ monthly visitors
             </p>
-          </CardHeader>
-          <CardContent className="text-center space-y-3">
-            <CardDescription className="text-xs font-medium">
-              Reach Developers
-            </CardDescription>
-            <ul className="text-[10px] space-y-1.5 text-muted-foreground">
-              <li className="flex items-center justify-center gap-1.5">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+            <ul className="text-[10px] space-y-1 text-muted-foreground">
+              <li className="flex items-center justify-center gap-1">
+                <span className="h-1 w-1 rounded-full bg-emerald-500" />
                 Highly engaged audience
               </li>
-              <li className="flex items-center justify-center gap-1.5">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              <li className="flex items-center justify-center gap-1">
+                <span className="h-1 w-1 rounded-full bg-emerald-500" />
                 Premium visibility
               </li>
-              <li className="flex items-center justify-center gap-1.5">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                Flexible terms
-              </li>
             </ul>
-            <Button asChild variant="default" className="w-full h-9 bg-primary hover:bg-primary/90 shadow-sm" size="sm">
-              <a href="mailto:dailyfoss@gmail.com" className="flex items-center gap-1.5 text-xs font-semibold">
-                <Mail className="h-3.5 w-3.5" />
+            <Button asChild variant="default" size="sm" className="w-full h-8 text-xs">
+              <a href="mailto:dailyfoss@gmail.com" className="flex items-center justify-center gap-1">
+                <Mail className="h-3 w-3" />
                 Get Started
               </a>
             </Button>
-            <p className="text-[9px] text-muted-foreground/80 pt-1 font-medium">
-              From $25/month
-            </p>
-          </CardContent>
-        </Card>
+            <p className="text-[9px] text-muted-foreground">From $25/month</p>
+          </div>
+        </div>
       </div>
     </aside>
   );

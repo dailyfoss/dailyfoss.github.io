@@ -42,7 +42,7 @@ export default function FavoritesPage() {
     setSession(currentSession)
     
     if (!currentSession) {
-      router.push("/scripts")
+      router.push("/")
       return
     }
 
@@ -184,7 +184,7 @@ export default function FavoritesPage() {
     const hasScreenshot = script.resources?.screenshot
     
     return (
-      <Link key={activity.slug} href={`/scripts?id=${activity.slug}`}>
+      <Link key={activity.slug} href={`/${activity.slug}`}>
         <Card className="hover:border-primary/40 transition-all duration-200 hover:shadow-md group overflow-hidden">
           <CardContent className="p-0">
             {/* Screenshot preview if available */}
@@ -315,7 +315,7 @@ export default function FavoritesPage() {
                 Start exploring and like your favorite tools!
               </p>
               <Button size="lg" asChild>
-                <Link href="/scripts">
+                <Link href="/">
                   Browse Apps
                 </Link>
               </Button>
