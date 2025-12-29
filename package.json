@@ -16,7 +16,7 @@
     "generate-og-images": "node tools/generate-og-images.cjs --all",
     "generate-og-images-json": "node tools/generate-og-images.cjs --all",
     "generate-og-images-list": "node tools/generate-og-images.cjs --list tools/og-apps-list.txt",
-    "build": "npm run generate-og-images && next build",
+    "build": "next build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d out",
     "start": "next start",
