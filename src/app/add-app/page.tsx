@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ArrowLeft, Download, Copy, CheckCircle2, Github, Info, Globe, BookOpen, Image, Eye, RefreshCw, Plus, Trash2, Monitor, Server, Terminal, Package, Users } from "lucide-react";
+import { ArrowLeft, Download, Copy, CheckCircle2, Github, Info, Globe, BookOpen, Image, Eye, RefreshCw, Plus, Trash2, Monitor, Server, Terminal, Package, Users, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import Link from "next/link";
 
 import type { AppFormData } from "./_components/types";
@@ -49,7 +50,6 @@ const initialFormData: AppFormData = {
   },
   deployment_methods: {
     script: false,
-    docker: false,
     docker_compose: false,
     helm: false,
     kubernetes: false,
@@ -64,7 +64,8 @@ const initialFormData: AppFormData = {
 
 export default function AddAppPage() {
   const [formData, setFormData] = useState<AppFormData>(initialFormData);
-  const [categories, setCategories] = useState<Array<{ id: number; name: string; group: string }>>([]);
+  const [categories, setCategories] = useState<Array<{ id: number; name: string; group: string; description?: string }>>([]);
+  const [categorySearch, setCategorySearch] = useState("");
   const [copied, setCopied] = useState(false);
   const [logoPreview, setLogoPreview] = useState("");
   const [logoError, setLogoError] = useState(false);
@@ -151,7 +152,13 @@ export default function AddAppPage() {
       hosting_options: formData.hosting_options,
       interfaces: formData.interfaces,
       deployment_methods: formData.deployment_methods,
-      manifests: {},
+      manifests: {
+        ...(formData.deployment_methods.script ? { script: `/manifests/${formData.slug}/script.sh` } : {}),
+        ...(formData.deployment_methods.docker_compose ? { docker_compose: `/manifests/${formData.slug}/docker-compose.yaml` } : {}),
+        ...(formData.deployment_methods.helm ? { helm: `/manifests/${formData.slug}/helm.yaml` } : {}),
+        ...(formData.deployment_methods.kubernetes ? { kubernetes: `/manifests/${formData.slug}/k8s-deployment.yaml` } : {}),
+        ...(formData.deployment_methods.terraform ? { terraform: `/manifests/${formData.slug}/main.tf` } : {}),
+      },
       default_credentials: { username: null, password: null },
       notes: [],
       repository_status: null,
@@ -199,13 +206,15 @@ export default function AddAppPage() {
     <div className="min-h-screen bg-gradient-to-br from-background via-accent/5 to-background">
       <div className="container max-w-6xl mx-auto px-4 py-8">
         {/* Header */}
-        <div className="mb-8">
+        <div className="mb-8 mt-8">
           <Link href="/" className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground mb-4">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Apps
           </Link>
-          <h1 className="text-3xl font-bold mb-2">Add Your App to DailyFOSS</h1>
-          <p className="text-muted-foreground">Fill in the details below to generate a JSON file for your app</p>
+          <h1 className="text-3xl md:text-4xl font-bold mb-2">
+            Add Your App to <span className="text-primary">DailyFOSS</span>
+          </h1>
+          <p className="text-muted-foreground text-lg">Share your open-source project with the community</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -263,26 +272,76 @@ export default function AddAppPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label>Categories * (Select at least one)</Label>
-                  <div className="max-h-48 overflow-y-auto border rounded-lg p-3 space-y-3">
-                    {Object.entries(groupedCategories).map(([group, cats]) => (
-                      <div key={group}>
-                        <h4 className="text-xs font-semibold text-muted-foreground mb-1.5">{group}</h4>
-                        <div className="flex flex-wrap gap-1.5">
-                          {cats.map(cat => (
-                            <Badge
-                              key={cat.id}
-                              variant={formData.categories.includes(cat.id) ? "default" : "outline"}
-                              className="cursor-pointer text-xs"
-                              onClick={() => toggleCategory(cat.id)}
-                            >
-                              {cat.name}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
+                  <div className="flex items-center justify-between">
+                    <Label>Categories * (Select at least one)</Label>
+                    {formData.categories.length > 0 && (
+                      <span className="text-xs text-primary font-medium">
+                        {formData.categories.length} selected
+                      </span>
+                    )}
                   </div>
+                  {/* Category Search */}
+                  <div className="relative">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                    <Input
+                      placeholder="Search categories..."
+                      value={categorySearch}
+                      onChange={e => setCategorySearch(e.target.value)}
+                      className="pl-9"
+                    />
+                  </div>
+                  <TooltipProvider delayDuration={200}>
+                    <div className="max-h-64 overflow-y-auto border rounded-lg p-4 space-y-4 bg-muted/20">
+                      {Object.entries(groupedCategories)
+                        .filter(([_, cats]) => 
+                          cats.some(cat => 
+                            cat.name.toLowerCase().includes(categorySearch.toLowerCase())
+                          )
+                        )
+                        .map(([group, cats]) => {
+                          const filteredCats = cats.filter(cat => 
+                            cat.name.toLowerCase().includes(categorySearch.toLowerCase())
+                          );
+                          if (filteredCats.length === 0) return null;
+                          return (
+                            <div key={group} className="space-y-2">
+                              <h4 className="text-sm font-semibold text-foreground border-b pb-1">{group}</h4>
+                              <div className="flex flex-wrap gap-2">
+                                {filteredCats.map(cat => (
+                                  <Tooltip key={cat.id}>
+                                    <TooltipTrigger asChild>
+                                      <Badge
+                                        variant={formData.categories.includes(cat.id) ? "default" : "outline"}
+                                        className={`cursor-pointer text-xs py-1 px-2.5 transition-all ${
+                                          formData.categories.includes(cat.id) 
+                                            ? "bg-primary text-primary-foreground shadow-sm" 
+                                            : "hover:bg-accent hover:border-primary/50"
+                                        }`}
+                                        onClick={() => toggleCategory(cat.id)}
+                                      >
+                                        {cat.name}
+                                      </Badge>
+                                    </TooltipTrigger>
+                                    {cat.description && (
+                                      <TooltipContent side="top" className="max-w-xs">
+                                        <p className="text-xs">{cat.description}</p>
+                                      </TooltipContent>
+                                    )}
+                                  </Tooltip>
+                                ))}
+                              </div>
+                            </div>
+                          );
+                        })}
+                      {categorySearch && Object.entries(groupedCategories).every(([_, cats]) => 
+                        !cats.some(cat => cat.name.toLowerCase().includes(categorySearch.toLowerCase()))
+                      ) && (
+                        <p className="text-sm text-muted-foreground text-center py-4">
+                          No categories found for "{categorySearch}"
+                        </p>
+                      )}
+                    </div>
+                  </TooltipProvider>
                 </div>
               </CardContent>
             </Card>
@@ -436,7 +495,7 @@ export default function AddAppPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Platform Support */}
                   <div className="space-y-3">
                     <Label className="font-semibold">Platform Support</Label>
@@ -537,32 +596,51 @@ export default function AddAppPage() {
                       ))}
                     </div>
                   </div>
+                </div>
+              </CardContent>
+            </Card>
 
-                  {/* Deployment Methods */}
-                  <div className="space-y-3">
-                    <Label className="font-semibold">Deployment Methods</Label>
-                    <div className="space-y-2 text-sm">
-                      {[
-                        { id: "docker", label: "Docker" },
-                        { id: "docker_compose", label: "Docker Compose" },
-                        { id: "kubernetes", label: "Kubernetes" },
-                        { id: "helm", label: "Helm" },
-                        { id: "terraform", label: "Terraform" },
-                        { id: "script", label: "Script" },
-                      ].map(item => (
-                        <div key={item.id} className="flex items-center space-x-2">
-                          <Checkbox
-                            id={`deploy_${item.id}`}
-                            checked={formData.deployment_methods[item.id as keyof typeof formData.deployment_methods]}
-                            onCheckedChange={checked => updateFormData({
-                              deployment_methods: { ...formData.deployment_methods, [item.id]: checked as boolean },
-                            })}
+            {/* Deployment Methods */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg flex items-center gap-2">
+                  <Package className="h-5 w-5" />
+                  Deployment Methods
+                </CardTitle>
+                <CardDescription>Select available deployment methods</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {[
+                    { id: "docker_compose", label: "Docker Compose", manifest: "docker-compose.yaml" },
+                    { id: "kubernetes", label: "Kubernetes", manifest: "k8s-deployment.yaml" },
+                    { id: "helm", label: "Helm", manifest: "helm.yaml" },
+                    { id: "terraform", label: "Terraform", manifest: "main.tf" },
+                    { id: "script", label: "Script", manifest: "script.sh" },
+                  ].map(item => (
+                    <div key={item.id} className="p-3 border rounded-lg space-y-3">
+                      <div className="flex items-center space-x-2">
+                        <Checkbox
+                          id={`deploy_${item.id}`}
+                          checked={formData.deployment_methods[item.id as keyof typeof formData.deployment_methods]}
+                          onCheckedChange={checked => updateFormData({
+                            deployment_methods: { ...formData.deployment_methods, [item.id]: checked as boolean },
+                          })}
+                        />
+                        <Label htmlFor={`deploy_${item.id}`} className="font-medium cursor-pointer">{item.label}</Label>
+                      </div>
+                      {formData.deployment_methods[item.id as keyof typeof formData.deployment_methods] && (
+                        <div className="ml-6 space-y-2">
+                          <Label className="text-xs text-muted-foreground">Manifest Path (auto-generated)</Label>
+                          <Input
+                            value={`/manifests/${formData.slug || "app-name"}/${item.manifest}`}
+                            readOnly
+                            className="text-xs bg-muted/50"
                           />
-                          <Label htmlFor={`deploy_${item.id}`} className="font-normal cursor-pointer">{item.label}</Label>
                         </div>
-                      ))}
+                      )}
                     </div>
-                  </div>
+                  ))}
                 </div>
               </CardContent>
             </Card>

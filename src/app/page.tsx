@@ -466,7 +466,7 @@ function ScriptContent() {
       {/* Search and Filter Bar */}
       {!selectedScript && (
         <div className="sticky top-20 z-20 border-b bg-background">
-          <div className="px-4 sm:px-6 lg:px-8 py-3">
+          <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-3">
             {/* Main Search Row */}
             <div className="flex items-center gap-3">
               <div className="relative flex-1 max-w-xl">

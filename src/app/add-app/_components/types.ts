@@ -45,11 +45,17 @@ export interface AppFormData {
   };
   deployment_methods: {
     script: boolean;
-    docker: boolean;
     docker_compose: boolean;
     helm: boolean;
     kubernetes: boolean;
     terraform: boolean;
+  };
+  manifests?: {
+    script?: string;
+    docker_compose?: string;
+    helm?: string;
+    kubernetes?: string;
+    terraform?: string;
   };
   community_integrations: {
     proxmox_ve: {

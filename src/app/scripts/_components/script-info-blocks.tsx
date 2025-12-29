@@ -98,13 +98,19 @@ function CompactScriptCard({ script, allCategories, showViews, viewCount }: {
   const isNew = daysOld !== null && daysOld <= 7;
 
   // Get first category name
-  const categoryName = script.categories && script.categories.length > 0
-    ? allCategories.find(cat => cat.id === script.categories[0])?.name
+  const categoryId = script.categories && script.categories.length > 0 ? script.categories[0] : null;
+  const categoryName = categoryId
+    ? allCategories.find(cat => cat.id === categoryId)?.name
     : null;
+
+  // Build URL with id and category params (using category name, not id)
+  const href = categoryName 
+    ? `/?id=${script.slug}&category=${encodeURIComponent(categoryName)}`
+    : `/?id=${script.slug}`;
 
   return (
     <Link
-      href={`/${script.slug}`}
+      href={href}
       className="group block h-full"
     >
       <div className="flex flex-col h-full p-4 rounded-xl border bg-card hover:bg-accent/30 hover:border-primary/40 hover:shadow-md transition-all duration-200">
