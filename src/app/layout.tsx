@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Inter } from "next/font/google";
@@ -36,11 +36,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `https://dailyfoss.github.io/`,
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-  },
   formatDetection: {
     email: false,
     address: false,
@@ -77,6 +72,12 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
     title: "Daily FOSS",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({
