@@ -1,7 +1,49 @@
+"use client";
+
+import { useState } from "react";
 import type { Script } from "@/lib/types";
 
 import TextCopyBlock from "@/components/text-copy-block";
 import Features from "./features";
+
+// Screenshot Preview with Lightbox
+function ScreenshotPreview({ src, alt }: { src: string; alt: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <>
+      {/* Thumbnail */}
+      <div className="flex justify-center">
+        <button
+          onClick={() => setIsOpen(true)}
+          className="w-full max-w-[860px] rounded-xl overflow-hidden border bg-muted/30 cursor-zoom-in hover:border-primary/50 transition-colors"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={src}
+            alt={alt}
+            className="w-full h-auto object-contain"
+          />
+        </button>
+      </div>
+
+      {/* Lightbox - Click anywhere to close */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 cursor-pointer"
+          onClick={() => setIsOpen(false)}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={src}
+            alt={alt}
+            className="max-w-[90vw] max-h-[90vh] object-contain"
+          />
+        </div>
+      )}
+    </>
+  );
+}
 
 export default function Description({ item }: { item: Script }) {
   // Extract first sentence as summary if features exist
@@ -30,6 +72,14 @@ export default function Description({ item }: { item: Script }) {
           {TextCopyBlock(summary)}
         </p>
       </div>
+
+      {/* Screenshot - above features */}
+      {item.resources?.screenshot && (
+        <ScreenshotPreview 
+          src={item.resources.screenshot} 
+          alt={`${item.name} screenshot`} 
+        />
+      )}
 
       {/* Key Features - New card-based component */}
       <Features item={item} />

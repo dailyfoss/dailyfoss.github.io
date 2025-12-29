@@ -60,7 +60,7 @@ export function ScriptPageClient({ script, slug }: ScriptPageClientProps) {
   return (
     <div className="min-h-screen bg-gradient-to-b from-accent/10 to-background pt-8">
       <DynamicMetaTags script={script} />
-      <div className="px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex gap-6 items-stretch mt-4 min-h-[calc(100vh-12rem)]">
           {/* Left Sidebar - Categories */}
           <div className="hidden lg:block flex-shrink-0 w-[280px]">

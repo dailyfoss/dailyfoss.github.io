@@ -29,6 +29,45 @@ import { CommunityLikes } from "@/components/community-likes";
 
 import type { Category } from "@/lib/types";
 
+// Screenshot Preview with Lightbox
+function ScreenshotPreview({ src, alt }: { src: string; alt: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <>
+      {/* Thumbnail */}
+      <div className="flex justify-center">
+        <button
+          onClick={() => setIsOpen(true)}
+          className="w-full max-w-[860px] rounded-xl overflow-hidden border bg-muted/30 cursor-zoom-in hover:border-primary/50 transition-colors"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={src}
+            alt={alt}
+            className="w-full h-auto object-contain"
+          />
+        </button>
+      </div>
+
+      {/* Lightbox - Click anywhere to close */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 cursor-pointer"
+          onClick={() => setIsOpen(false)}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={src}
+            alt={alt}
+            className="max-w-[90vw] max-h-[90vh] object-contain"
+          />
+        </div>
+      )}
+    </>
+  );
+}
+
 type ScriptItemProps = {
   item: Script;
   setSelectedScript: (script: string | null) => void;
