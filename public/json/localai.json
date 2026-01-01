@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "REST API",
-      "description": "Run AI models locally, No external API calls, GPU acceleration. Private AI on your hardware"
+      "title": "Local AI Inference",
+      "description": "Run large language models locally",
+      "core_feature": true
     },
     {
-      "title": "Openai Compatible",
-      "description": "Drop-in replacement API, Compatible clients, Easy migration. Use existing tools with local models"
+      "title": "OpenAI-Compatible API",
+      "description": "Provide APIs compatible with OpenAI clients",
+      "core_feature": true
     },
     {
-      "title": "Model Support",
-      "description": "Multiple LLM formats, Custom models, Model management. Flexible AI model deployment"
+      "title": "Model Management",
+      "description": "Load and switch between supported models",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Complete privacy, No data sharing, Offline capable. Own your AI infrastructure"
+      "title": "Offline Operation",
+      "description": "Use AI features without external services"
+    },
+    {
+      "title": "Hardware Acceleration",
+      "description": "Use available CPU or GPU resources"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run AI workloads on your own infrastructure"
     }
   ],
   "platform_support": {

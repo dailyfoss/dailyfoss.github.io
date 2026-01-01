@@ -32,32 +32,31 @@
   },
   "features": [
     {
-      "title": "User Management",
-      "description": "Create and manage user accounts with passwords, profiles, and metadata"
+      "title": "Authentication Gateway",
+      "description": "Protect services using authentication",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Issue JWT or API tokens for authenticating users in other applications"
+      "title": "Single Sign-On",
+      "description": "Provide unified login for services",
+      "core_feature": true
     },
     {
-      "title": "Admin Interface",
-      "description": "Manage users, roles, and settings through a straightforward web administration panel"
+      "title": "Access Policies",
+      "description": "Define access rules for applications",
+      "core_feature": true
     },
     {
-      "title": "Api Integration",
-      "description": "Integrate authentication into other services using REST API endpoints"
+      "title": "OAuth Integration",
+      "description": "Integrate with OAuth providers"
     },
     {
-      "title": "Oauth Support",
-      "description": "Provide OAuth2 authentication for third-party applications and services"
+      "title": "Lightweight Deployment",
+      "description": "Run with minimal configuration"
     },
     {
-      "title": "Session Management",
-      "description": "Track active sessions and provide logout functionality across applications"
-    },
-    {
-      "title": "Password Policies",
-      "description": "Enforce password complexity requirements and expiration policies for security"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the gateway on your own infrastructure"
     }
   ],
   "platform_support": {

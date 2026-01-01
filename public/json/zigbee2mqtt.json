@@ -27,36 +27,31 @@
   },
   "features": [
     {
-      "title": "Web Interface",
-      "description": "Add Zigbee devices to your network through a simple web interface without proprietary hubs"
+      "title": "Zigbee Gateway",
+      "description": "Connect Zigbee devices to MQTT",
+      "core_feature": true
     },
     {
-      "title": "Mqtt Bridge",
-      "description": "Expose Zigbee devices to MQTT topics for integration with Home Assistant, Node-RED, and other platforms"
+      "title": "Device Support",
+      "description": "Support a wide range of Zigbee devices",
+      "core_feature": true
+    },
+    {
+      "title": "Home Automation Integration",
+      "description": "Integrate with home automation platforms",
+      "core_feature": true
     },
     {
       "title": "Device Management",
-      "description": "Configure, rename, and remove devices with detailed information about capabilities and status"
+      "description": "Manage connected devices"
     },
     {
-      "title": "Network Visualization",
-      "description": "View your Zigbee network topology with signal strength and routing information"
+      "title": "Web Interface",
+      "description": "Configure devices through a browser"
     },
     {
-      "title": "Ota Updates",
-      "description": "Update device firmware over-the-air directly through the interface when manufacturers release updates"
-    },
-    {
-      "title": "Group Control",
-      "description": "Create device groups to control multiple lights or switches simultaneously with one command"
-    },
-    {
-      "title": "High Performance",
-      "description": "Set up direct device-to-device communication for faster response times and offline operation"
-    },
-    {
-      "title": "Extensive Compatibility",
-      "description": "Support thousands of Zigbee devices from hundreds of manufacturers with regular updates"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the gateway on your own infrastructure"
     }
   ],
   "platform_support": {

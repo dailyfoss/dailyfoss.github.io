@@ -27,24 +27,38 @@
   },
   "features": [
     {
-      "title": "High Performance",
-      "description": "Track transaction performance and identify slow operations in your applications"
+      "title": "Error Tracking Backend",
+      "description": "Receives and stores application error events",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Drop-in replacement for Sentry with compatible SDK and API"
+      "title": "Issue Grouping",
+      "description": "Groups similar errors into issues",
+      "core_feature": true
     },
     {
-      "title": "Team Collaboration",
-      "description": "Group similar errors, assign to team members, and track resolution status"
+      "title": "Stack Trace Capture",
+      "description": "Records stack traces for debugging"
     },
     {
-      "title": "Email Notifications",
-      "description": "Set up notifications for new errors or performance degradation"
+      "title": "Project Management",
+      "description": "Separates errors by project"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Keep all error data and user information on your own infrastructure"
+      "title": "Alerts",
+      "description": "Notifies about new or repeated errors"
+    },
+    {
+      "title": "Search and Filtering",
+      "description": "Finds errors by criteria"
+    },
+    {
+      "title": "API Access",
+      "description": "Integrates with external tools"
+    },
+    {
+      "title": "Self-Hosted Error Tracker",
+      "description": "Run the backend on your own infrastructure"
     }
   ],
   "platform_support": {

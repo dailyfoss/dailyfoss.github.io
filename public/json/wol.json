@@ -27,20 +27,31 @@
   },
   "features": [
     {
-      "title": "Host Storage",
-      "description": "Save device MAC addresses and friendly names for repeated wake operations"
+      "title": "Wake-on-LAN",
+      "description": "Wake devices over the network",
+      "core_feature": true
     },
     {
-      "title": "Magic Packet Sending",
-      "description": "Transmit Wake-on-LAN packets to power on compatible network devices remotely"
+      "title": "Device Configuration",
+      "description": "Configure target devices",
+      "core_feature": true
     },
     {
-      "title": "Web Interface",
-      "description": "Use CLI commands for scripting and automation alongside the web interface"
+      "title": "Command-Line Interface",
+      "description": "Trigger wake events via CLI",
+      "core_feature": true
     },
     {
-      "title": "Lightweight",
-      "description": "Minimal resource footprint suitable for running on low-power devices"
+      "title": "Script Integration",
+      "description": "Use in automation scripts"
+    },
+    {
+      "title": "Local Execution",
+      "description": "Run the tool locally"
+    },
+    {
+      "title": "Cross-Platform Support",
+      "description": "Use on supported operating systems"
     }
   ],
   "platform_support": {

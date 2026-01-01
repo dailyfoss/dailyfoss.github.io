@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "Reverse Proxy",
-      "description": "Route HTTP traffic to backend services with minimal configuration"
+      "title": "URL Redirection",
+      "description": "Redirect requests from one URL to another",
+      "core_feature": true
     },
     {
-      "title": "Access Control",
-      "description": "Restrict access based on IP addresses, headers, or custom rules"
+      "title": "Rule-Based Routing",
+      "description": "Define redirect rules using configuration files",
+      "core_feature": true
     },
     {
-      "title": "Custom Responses",
-      "description": "Define custom HTTP responses for specific routes or conditions"
+      "title": "HTTP Status Control",
+      "description": "Configure redirect status codes for responses",
+      "core_feature": true
     },
     {
-      "title": "Lightweight",
-      "description": "Minimal resource usage written in Go for high performance"
+      "title": "Lightweight Service",
+      "description": "Run a minimal redirect service with low overhead"
     },
     {
-      "title": "Simple Configuration",
-      "description": "Easy setup with straightforward configuration files"
+      "title": "Configuration Reload",
+      "description": "Update redirect rules without restarting the service"
     },
     {
-      "title": "Ssl/tls Support",
-      "description": "Terminate SSL connections and proxy to backend services"
-    },
-    {
-      "title": "Request Logging",
-      "description": "Track incoming requests for debugging and monitoring purposes"
-    },
-    {
-      "title": "Small Deployments",
-      "description": "Ideal for personal projects and small-scale infrastructure"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the redirect service on your own infrastructure"
     }
   ],
   "platform_support": {

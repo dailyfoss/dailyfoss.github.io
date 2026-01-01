@@ -32,36 +32,37 @@
   },
   "features": [
     {
-      "title": "Lightweight",
-      "description": "Minimal LDAP server implementation for authentication and directory services"
+      "title": "LDAP Directory Server",
+      "description": "Provides LDAP directory services",
+      "core_feature": true
     },
     {
-      "title": "Simple Configuration",
-      "description": "Easy setup with configuration files instead of complex directory schemas"
+      "title": "User and Group Management",
+      "description": "Stores user accounts and group memberships"
     },
     {
-      "title": "User Management",
-      "description": "Manage users and groups for authentication across multiple services"
+      "title": "Authentication Backend",
+      "description": "Authenticates applications using LDAP"
     },
     {
-      "title": "Backend Flexibility",
-      "description": "Store user data in config files, databases, or integrate with existing systems"
+      "title": "Schema Flexibility",
+      "description": "Adjusts directory schema definitions"
     },
     {
-      "title": "Homelab Optimized",
-      "description": "Designed for small-scale deployments with minimal resource requirements"
+      "title": "TLS Support",
+      "description": "Encrypts directory connections"
     },
     {
-      "title": "Standard Compliance",
-      "description": "Compatible with LDAP clients and applications expecting standard LDAP protocol"
+      "title": "Multi-Domain Support",
+      "description": "Manages several directory domains"
     },
     {
-      "title": "Development Friendly",
-      "description": "Ideal for development environments and testing LDAP integrations"
+      "title": "Logging",
+      "description": "Records authentication events"
     },
     {
-      "title": "Quick Deployment",
-      "description": "Get directory services running in minutes without enterprise complexity"
+      "title": "Self-Hosted Directory",
+      "description": "Host the service on your own infrastructure"
     }
   ],
   "platform_support": {

@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "Postgresql Database",
-      "description": "Provides full-featured Postgres with extensions and custom functions"
+      "title": "Backend Platform",
+      "description": "Provide backend services for web and mobile apps",
+      "core_feature": true
     },
     {
-      "title": "User Management",
-      "description": "Built-in user management with email, OAuth, and magic link support"
+      "title": "Authentication",
+      "description": "Manage user authentication and sessions",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Manages file uploads with access control and CDN integration"
+      "title": "Database",
+      "description": "Store application data in a managed database",
+      "core_feature": true
     },
     {
-      "title": "Access Control",
-      "description": "Implements fine-grained access control using Postgres policies"
+      "title": "Storage",
+      "description": "Store and serve user-uploaded files"
     },
     {
-      "title": "Database Migrations",
-      "description": "Manages schema changes with version-controlled migrations"
+      "title": "Realtime APIs",
+      "description": "Receive real-time updates via APIs"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the platform on your own infrastructure"
     }
   ],
   "platform_support": {

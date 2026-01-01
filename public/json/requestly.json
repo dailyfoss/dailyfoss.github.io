@@ -32,36 +32,22 @@
   },
   "features": [
     {
-      "title": "Request Interception",
-      "description": "Capture and modify HTTP/HTTPS requests before they reach servers"
+      "title": "Request Modification",
+      "description": "Modify HTTP requests and responses",
+      "core_feature": true
     },
     {
-      "title": "Response Mocking",
-      "description": "Return custom responses for testing without backend changes"
+      "title": "Rule-Based Matching",
+      "description": "Apply changes based on URL rules",
+      "core_feature": true
     },
     {
-      "title": "Header Modification",
-      "description": "Add, remove, or change request and response headers dynamically"
+      "title": "API Mocking",
+      "description": "Mock API responses for testing"
     },
     {
-      "title": "Url Redirection",
-      "description": "Redirect requests to different endpoints for testing or debugging"
-    },
-    {
-      "title": "Query Parameter Manipulation",
-      "description": "Modify URL parameters on the fly to test different scenarios"
-    },
-    {
-      "title": "Request Blocking",
-      "description": "Block specific requests to simulate failures or test error handling"
-    },
-    {
-      "title": "Script Injection",
-      "description": "Insert custom JavaScript into pages for testing or debugging"
-    },
-    {
-      "title": "Session Recording",
-      "description": "Capture network activity for later analysis and debugging"
+      "title": "Web Interface",
+      "description": "Manage rules through a browser"
     }
   ],
   "platform_support": {

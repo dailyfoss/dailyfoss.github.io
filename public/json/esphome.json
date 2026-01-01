@@ -32,28 +32,39 @@
   },
   "features": [
     {
-      "title": "Yaml Configuration",
-      "description": "Define device behavior with simple config files. No coding required"
+      "title": "IoT Firmware Generation",
+      "description": "Generates firmware for ESP-based devices",
+      "core_feature": true
     },
     {
-      "title": "Ota Updates",
-      "description": "Update firmware wirelessly over the air. Convenient maintenance"
+      "title": "YAML Configuration",
+      "description": "Defines device behavior declaratively",
+      "core_feature": true
     },
     {
-      "title": "Home Assistant Integration",
-      "description": "Seamless connection with Home Assistant. Perfect smart home pairing"
+      "title": "Home Automation Integration",
+      "description": "Integrates with Home Assistant",
+      "core_feature": true
     },
     {
-      "title": "Esp Device Support",
-      "description": "Works with ESP8266 and ESP32 chips. Wide hardware compatibility"
+      "title": "OTA Updates",
+      "description": "Updates firmware over the air"
     },
     {
-      "title": "Custom Sensors",
-      "description": "Create DIY smart devices easily. Endless possibilities"
+      "title": "Sensor Support",
+      "description": "Supports many sensor types"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Complete control over your IoT devices. Privacy-focused automation"
+      "title": "Device Discovery",
+      "description": "Detects devices on the network"
+    },
+    {
+      "title": "Encryption Support",
+      "description": "Secures device communication"
+    },
+    {
+      "title": "Self-Hosted Tooling",
+      "description": "Runs locally or on private servers"
     }
   ],
   "platform_support": {

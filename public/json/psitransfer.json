@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "File Upload",
-      "description": "Upload files for temporary sharing with automatic expiration after set time periods"
+      "title": "File Transfer",
+      "description": "Share files using temporary download links",
+      "core_feature": true
     },
     {
-      "title": "Direct Download Links",
-      "description": "Generate unique URLs for each upload that recipients can access directly"
+      "title": "Upload Interface",
+      "description": "Upload files through a web interface",
+      "core_feature": true
+    },
+    {
+      "title": "Expiration Control",
+      "description": "Automatically remove files after a defined time",
+      "core_feature": true
+    },
+    {
+      "title": "Download Limits",
+      "description": "Restrict the number of downloads"
     },
     {
       "title": "Password Protection",
-      "description": "Optionally protect uploads with passwords for secure file sharing"
+      "description": "Protect transfers with passwords"
     },
     {
-      "title": "Upload Tracking",
-      "description": "Monitor active uploads with progress indicators and transfer statistics"
-    },
-    {
-      "title": "No Registration Required",
-      "description": "Share files without requiring sender or recipient accounts"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the transfer service on your own servers"
     }
   ],
   "platform_support": {

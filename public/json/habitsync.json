@@ -32,20 +32,38 @@
   },
   "features": [
     {
-      "title": "Database Backup",
-      "description": "Cross-device synchronization, Real-time updates, Cloud backup. Access everywhere"
+      "title": "Habit Data Synchronization",
+      "description": "Synchronizes habit and task data between different habit tracking systems",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Custom notifications, Time-based alerts, Never forget. Stay on track"
+      "title": "Habitica Integration",
+      "description": "Connects directly to Habitica accounts to read and update habit data",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Self-hosted option, Encrypted data, No tracking. Your data, your control"
+      "title": "Bidirectional Sync",
+      "description": "Propagates changes in both directions between connected services"
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Android app, Offline support, Background sync. Always available"
+      "title": "Conflict Handling",
+      "description": "Detects conflicting updates and applies defined resolution rules"
+    },
+    {
+      "title": "Command-Line Operation",
+      "description": "Runs synchronization tasks from a command-line interface"
+    },
+    {
+      "title": "Configuration Files",
+      "description": "Defines sync behavior and credentials using configuration files"
+    },
+    {
+      "title": "Logging",
+      "description": "Records synchronization activity and errors"
+    },
+    {
+      "title": "Local Execution",
+      "description": "Run synchronization on your own machine or servers"
     }
   ],
   "platform_support": {

@@ -32,20 +32,39 @@
   },
   "features": [
     {
-      "title": "Git Push Deployment",
-      "description": "Deploy applications by pushing code to a Git remote without manual build steps or configuration"
+      "title": "Self-Hosted PaaS",
+      "description": "Deploys applications using Git push workflows",
+      "core_feature": true
     },
     {
-      "title": "Plugin System",
-      "description": "Extend functionality with community plugins for databases, caching, monitoring, and additional services"
+      "title": "Docker-Based Deployment",
+      "description": "Runs applications in Docker containers",
+      "core_feature": true
     },
     {
-      "title": "Environment Management",
-      "description": "Configure application settings using environment variables without modifying code"
+      "title": "Buildpack Support",
+      "description": "Builds apps using language buildpacks",
+      "core_feature": true
     },
     {
-      "title": "Database Linking",
-      "description": "Provision and connect PostgreSQL, MySQL, Redis, and other databases with single commands"
+      "title": "Database Plugins",
+      "description": "Provisions databases as add-ons"
+    },
+    {
+      "title": "Domain Management",
+      "description": "Manages application domains"
+    },
+    {
+      "title": "SSL Automation",
+      "description": "Issues TLS certificates"
+    },
+    {
+      "title": "CLI Management",
+      "description": "Controls apps via command line"
+    },
+    {
+      "title": "Self-Hosted Platform",
+      "description": "Runs on private servers"
     }
   ],
   "platform_support": {

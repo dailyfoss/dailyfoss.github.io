@@ -33,28 +33,31 @@
   },
   "features": [
     {
-      "title": "Matrix Homeserver",
-      "description": "Hosts Matrix chat server for federated messaging"
+      "title": "Matrix Server",
+      "description": "Host a Matrix-compatible messaging server",
+      "core_feature": true
+    },
+    {
+      "title": "Federation",
+      "description": "Communicate with other Matrix servers",
+      "core_feature": true
+    },
+    {
+      "title": "User Accounts",
+      "description": "Manage users and rooms",
+      "core_feature": true
     },
     {
       "title": "End-to-End Encryption",
-      "description": "Encrypts messages and calls with Olm and Megolm protocols"
+      "description": "Support encrypted messaging"
     },
     {
-      "title": "Room Management",
-      "description": "Creates public and private chat rooms with customizable permissions"
+      "title": "Client Compatibility",
+      "description": "Connect using Matrix clients"
     },
     {
-      "title": "Voice And Video",
-      "description": "Supports encrypted voice and video calls via WebRTC"
-    },
-    {
-      "title": "File Sharing",
-      "description": "Sends encrypted files and media through chat rooms"
-    },
-    {
-      "title": "Search and Filter",
-      "description": "Searches for users across federated Matrix network"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the server on your own infrastructure"
     }
   ],
   "platform_support": {

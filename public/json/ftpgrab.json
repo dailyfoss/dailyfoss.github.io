@@ -32,32 +32,31 @@
   },
   "features": [
     {
-      "title": "Real-Time Sync",
-      "description": "Monitor FTP/SFTP directories, Automatic downloads, Cron-friendly. Automated file synchronization"
+      "title": "FTP Download Automation",
+      "description": "Download files from FTP servers automatically",
+      "core_feature": true
     },
     {
-      "title": "Docker Support",
-      "description": "Run in Docker. Easy deployment"
+      "title": "Scheduled Downloads",
+      "description": "Run FTP download jobs on a schedule",
+      "core_feature": true
     },
     {
-      "title": "Workflow Integration",
-      "description": "Sync remote files locally. Reliable transfers"
+      "title": "Resume Support",
+      "description": "Resume interrupted file downloads",
+      "core_feature": true
     },
     {
-      "title": "Incremental Sync",
-      "description": "Download only new files. Efficient transfers"
-    },
-    {
-      "title": "Filtering",
-      "description": "Include/exclude patterns. Selective sync"
-    },
-    {
-      "title": "Email Notifications",
-      "description": "Alert on completion. Stay informed"
+      "title": "Authentication Support",
+      "description": "Connect to FTP servers using credentials"
     },
     {
       "title": "Logging",
-      "description": "Track sync operations. Audit trail"
+      "description": "Record download activity and errors"
+    },
+    {
+      "title": "Command-Line Interface",
+      "description": "Control download behavior using CLI options"
     }
   ],
   "platform_support": {

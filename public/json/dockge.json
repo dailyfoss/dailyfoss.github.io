@@ -32,28 +32,39 @@
   },
   "features": [
     {
-      "title": "Docker Support",
-      "description": "Visual interface for Docker Compose stacks. Simplified orchestration"
+      "title": "Docker Compose Manager",
+      "description": "Manages Docker Compose applications",
+      "core_feature": true
     },
     {
-      "title": "Real-Time",
-      "description": "Stream logs from all services live. Instant debugging"
+      "title": "Stack Lifecycle Control",
+      "description": "Starts stops and restarts stacks",
+      "core_feature": true
     },
     {
-      "title": "Web Interface",
-      "description": "Modify compose files through web UI. No SSH required"
+      "title": "Web-Based Interface",
+      "description": "Controls compose stacks through a browser",
+      "core_feature": true
     },
     {
-      "title": "Service Control",
-      "description": "Start, stop, and restart services individually. Granular management"
+      "title": "File-Based Configuration",
+      "description": "Edits compose files directly"
     },
     {
-      "title": "Deployment Tools",
-      "description": "Deploy new stacks with ease. Streamlined operations"
+      "title": "Multi-Stack Support",
+      "description": "Manages multiple compose projects"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Beautiful compose manager on your infrastructure. Complete stack control"
+      "title": "Log Viewing",
+      "description": "Displays container logs"
+    },
+    {
+      "title": "Update Detection",
+      "description": "Checks for image updates"
+    },
+    {
+      "title": "Self-Hosted Management",
+      "description": "Runs on user-managed servers"
     }
   ],
   "platform_support": {

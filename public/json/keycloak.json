@@ -32,20 +32,23 @@
   },
   "features": [
     {
+      "title": "Identity and Access Management",
+      "description": "Manage authentication and authorization for applications",
+      "core_feature": true
+    },
+    {
+      "title": "Single Sign-On",
+      "description": "Enable users to sign in once across multiple services",
+      "core_feature": true
+    },
+    {
       "title": "User Federation",
-      "description": "Connect to existing user databases and LDAP directories. Leverage existing identity stores"
+      "description": "Connect to external user directories"
     },
     {
-      "title": "Social Login",
-      "description": "Enable login with social providers like Facebook, Twitter, and LinkedIn. Simplify user onboarding"
-    },
-    {
-      "title": "Access Control",
-      "description": "Role-based access control with custom policies and permissions. Control resource access precisely"
-    },
-    {
-      "title": "User Account Management",
-      "description": "Self-service account management with password reset and profile updates. Empower users to manage accounts"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the identity service on your own infrastructure",
+      "core_feature": true
     }
   ],
   "platform_support": {

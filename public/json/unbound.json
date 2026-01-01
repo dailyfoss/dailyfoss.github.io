@@ -32,20 +32,26 @@
   },
   "features": [
     {
-      "title": "High Performance",
-      "description": "Cache DNS responses to improve performance and reduce query latency for repeated lookups"
+      "title": "DNS Resolver",
+      "description": "Resolve DNS queries securely",
+      "core_feature": true
     },
     {
-      "title": "Data Privacy",
-      "description": "Query root servers directly to avoid exposing DNS queries to third-party resolvers"
+      "title": "Recursive Resolution",
+      "description": "Perform full DNS resolution without forwarding",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Handle thousands of queries per second with efficient caching and threading"
+      "title": "DNSSEC Validation",
+      "description": "Validate DNS responses"
     },
     {
       "title": "Access Control",
-      "description": "Define which clients can query the resolver using IP-based access lists"
+      "description": "Control which clients may query"
+    },
+    {
+      "title": "Local Deployment",
+      "description": "Run on your own network"
     }
   ],
   "platform_support": {

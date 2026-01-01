@@ -32,32 +32,34 @@
   },
   "features": [
     {
-      "title": "Antivirus Engine",
-      "description": "Open-source malware and virus detection. Comprehensive protection"
+      "title": "Malware Detection",
+      "description": "Scans files for malicious software",
+      "core_feature": true
     },
     {
-      "title": "Mail Server Protection",
-      "description": "Scan email attachments for threats. Secure communication"
+      "title": "Signature-Based Scanning",
+      "description": "Uses virus signature databases",
+      "core_feature": true
     },
     {
-      "title": "Cli Scanner",
-      "description": "Command-line scanning for files and directories. Flexible usage"
+      "title": "On-Demand Scans",
+      "description": "Scans files and directories manually"
     },
     {
-      "title": "Regular Updates",
-      "description": "Frequent virus definition updates. Current protection"
+      "title": "Daemon Mode",
+      "description": "Runs as a background scanning service"
     },
     {
-      "title": "Cross",
-      "description": "Works on Linux, Windows, and macOS. Universal security"
+      "title": "Update Mechanism",
+      "description": "Updates malware signatures regularly"
     },
     {
-      "title": "Container Support",
-      "description": "Scan containerized environments. Modern infrastructure"
+      "title": "Command-Line Tools",
+      "description": "Controls scanning via CLI"
     },
     {
-      "title": "Open Source",
-      "description": "Transparent, auditable security code. Trust through verification"
+      "title": "Cross-Platform Support",
+      "description": "Runs on multiple operating systems"
     }
   ],
   "platform_support": {

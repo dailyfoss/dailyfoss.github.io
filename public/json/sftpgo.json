@@ -32,32 +32,26 @@
   },
   "features": [
     {
-      "title": "Virtual Users",
-      "description": "Creates isolated user accounts with individual permissions and quotas"
+      "title": "SFTP Server",
+      "description": "Provide secure file transfer services",
+      "core_feature": true
     },
     {
-      "title": "Cloud Storage",
-      "description": "Supports local filesystem, S3, Azure Blob, Google Cloud Storage, and more"
+      "title": "User Management",
+      "description": "Manage users and access",
+      "core_feature": true
     },
     {
-      "title": "Quota Management",
-      "description": "Enforces storage limits and bandwidth restrictions per user"
+      "title": "Virtual Folders",
+      "description": "Map storage backends to users"
+    },
+    {
+      "title": "Audit Logs",
+      "description": "Track file access and changes"
     },
     {
       "title": "Web Interface",
-      "description": "Manages users, folders, and settings through a modern web interface"
-    },
-    {
-      "title": "Public Key Authentication",
-      "description": "Secures SFTP access with SSH key pairs instead of passwords"
-    },
-    {
-      "title": "Folder Organization",
-      "description": "Maps multiple storage locations to a single user's directory tree"
-    },
-    {
-      "title": "Webhook Support",
-      "description": "Triggers custom scripts or webhooks on file uploads, downloads, or deletions"
+      "description": "Manage server through a browser"
     }
   ],
   "platform_support": {

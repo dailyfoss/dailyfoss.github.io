@@ -32,20 +32,26 @@
   },
   "features": [
     {
+      "title": "Redis Management UI",
+      "description": "Browse and manage Redis data",
+      "core_feature": true
+    },
+    {
+      "title": "Key Inspection",
+      "description": "View and edit Redis keys",
+      "core_feature": true
+    },
+    {
+      "title": "Database Switching",
+      "description": "Switch between Redis databases"
+    },
+    {
+      "title": "Search",
+      "description": "Find keys by pattern"
+    },
+    {
       "title": "Web Interface",
-      "description": "View and modify string, list, set, hash, and sorted set values through the web interface"
-    },
-    {
-      "title": "Ttl Management",
-      "description": "Check and update time-to-live values for keys to control expiration"
-    },
-    {
-      "title": "Search and Filter",
-      "description": "Find keys quickly using pattern matching or full-text search"
-    },
-    {
-      "title": "Database Backup",
-      "description": "Download database contents in JSON or Redis protocol format for backup or migration"
+      "description": "Manage Redis through a browser"
     }
   ],
   "platform_support": {

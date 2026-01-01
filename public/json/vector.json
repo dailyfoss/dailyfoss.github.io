@@ -32,20 +32,26 @@
   },
   "features": [
     {
-      "title": "Log Collection",
-      "description": "Collect logs from files, syslog, journald, and other sources with flexible inputs"
+      "title": "Log and Metric Pipeline",
+      "description": "Collect, transform, and route observability data",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Ship data to Elasticsearch, Splunk, S3, Kafka, and dozens of other sinks"
+      "title": "Data Transformation",
+      "description": "Modify logs and metrics in transit",
+      "core_feature": true
+    },
+    {
+      "title": "Multiple Sources and Sinks",
+      "description": "Support many input and output systems"
     },
     {
       "title": "High Performance",
-      "description": "Process millions of events per second with low resource usage"
+      "description": "Handle large data volumes efficiently"
     },
     {
-      "title": "Tagging System",
-      "description": "Buffer data in memory or on disk to handle downstream outages gracefully"
+      "title": "Self-Hosted Deployment",
+      "description": "Run on your own infrastructure"
     }
   ],
   "platform_support": {

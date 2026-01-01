@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "Vault Integration",
-      "description": "Manage TLS certificates using HashiCorp Vault as the backend"
+      "title": "TLS Certificate Management",
+      "description": "Manage TLS certificates and keys",
+      "core_feature": true
     },
     {
-      "title": "Automated Issuance",
-      "description": "Request and issue certificates automatically through Vault PKI"
+      "title": "Secure Storage",
+      "description": "Store certificates securely",
+      "core_feature": true
     },
     {
-      "title": "Tagging System",
-      "description": "Automatically renew certificates before expiration to prevent outages"
+      "title": "Access Policies",
+      "description": "Control access to certificates",
+      "core_feature": true
     },
     {
-      "title": "Cli Interface",
-      "description": "Manage certificates through command-line tools for scripting and automation"
+      "title": "API Access",
+      "description": "Manage certificates programmatically"
     },
     {
-      "title": "Certificate Deployment",
-      "description": "Deploy certificates to services automatically after issuance"
+      "title": "Rotation Support",
+      "description": "Rotate certificates when needed"
     },
     {
-      "title": "Multiple Cas",
-      "description": "Support multiple certificate authorities and PKI backends"
-    },
-    {
-      "title": "Private Pki",
-      "description": "Run your own private PKI infrastructure for internal services"
-    },
-    {
-      "title": "Certificate Monitoring",
-      "description": "Track certificate expiration dates and renewal status"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the service on your own infrastructure"
     }
   ],
   "platform_support": {

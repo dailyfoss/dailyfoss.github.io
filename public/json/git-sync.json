@@ -32,24 +32,37 @@
   },
   "features": [
     {
-      "title": "Real-Time Sync",
-      "description": "Automatically sync local directories to Git repositories for version control"
+      "title": "Git Synchronization",
+      "description": "Mirrors and syncs Git repositories",
+      "core_feature": true
     },
     {
-      "title": "Version Control Integration",
-      "description": "Leverage Git's versioning for file history and rollback capabilities"
+      "title": "Bidirectional Sync",
+      "description": "Syncs in both directions between sources"
     },
     {
-      "title": "Selective Syncing",
-      "description": "Choose specific files or directories to include or exclude from synchronization"
+      "title": "Scheduling",
+      "description": "Runs sync at defined intervals"
     },
     {
-      "title": "Lightweight",
-      "description": "Minimal resource usage suitable for continuous background operation"
+      "title": "Conflict Handling",
+      "description": "Detects sync conflicts and reports them"
     },
     {
-      "title": "Database Backup",
-      "description": "Use Git remotes as backup destinations for important local files"
+      "title": "Multiple Repo Support",
+      "description": "Syncs several repositories"
+    },
+    {
+      "title": "CLI Usage",
+      "description": "Runs sync operations from the command line"
+    },
+    {
+      "title": "Logging",
+      "description": "Records sync activity"
+    },
+    {
+      "title": "Self-Hosted Sync",
+      "description": "Run synchronization on your own infrastructure"
     }
   ],
   "platform_support": {

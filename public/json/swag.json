@@ -33,35 +33,30 @@
   "features": [
     {
       "title": "Reverse Proxy",
-      "description": "Routes traffic to multiple backend services from single entry point"
+      "description": "Route external traffic to internal services",
+      "core_feature": true
     },
     {
-      "title": "Let's Encrypt",
-      "description": "Automatically obtains and renews SSL certificates"
+      "title": "HTTPS Certificates",
+      "description": "Obtain and renew TLS certificates automatically",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Built on proven Nginx web server for reliability and performance"
+      "title": "Proxy Configuration",
+      "description": "Configure routing using predefined templates",
+      "core_feature": true
     },
     {
-      "title": "Pre",
-      "description": "Includes security headers, rate limiting, and fail2ban integration"
+      "title": "Security Headers",
+      "description": "Add common security headers to responses"
     },
     {
-      "title": "Subdomain Routing",
-      "description": "Routes requests to different services based on subdomains"
+      "title": "Logging",
+      "description": "View proxy access and error logs"
     },
     {
-      "title": "Authentication",
-      "description": "Adds authentication layer to services with Authelia or basic auth"
-    },
-    {
-      "title": "Duckdns Support",
-      "description": "Integrates with DuckDNS for dynamic DNS updates"
-    },
-    {
-      "title": "Self-Hosted",
-      "description": "Provides pre-made configs for popular self-hosted applications"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the proxy on your own infrastructure"
     }
   ],
   "platform_support": {

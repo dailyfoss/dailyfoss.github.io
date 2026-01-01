@@ -33,20 +33,31 @@
   },
   "features": [
     {
-      "title": "Docker Support",
-      "description": "Build and test applications in Docker containers for consistency"
+      "title": "CI/CD Pipelines",
+      "description": "Run automated build and deployment pipelines",
+      "core_feature": true
     },
     {
-      "title": "Kubernetes Ready",
-      "description": "Deploy to cloud platforms, servers, or Kubernetes clusters"
+      "title": "Pipeline Configuration",
+      "description": "Define pipelines using configuration files",
+      "core_feature": true
     },
     {
-      "title": "Tagging System",
-      "description": "Define separate environments for development, staging, and production"
+      "title": "Job Execution",
+      "description": "Execute jobs on managed workers",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Securely store and inject credentials, API keys, and tokens"
+      "title": "Secrets Management",
+      "description": "Store and manage pipeline secrets"
+    },
+    {
+      "title": "Build History",
+      "description": "View past pipeline runs and results"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the CI/CD system on your own infrastructure"
     }
   ],
   "platform_support": {

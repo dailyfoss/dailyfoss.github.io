@@ -33,36 +33,26 @@
   },
   "features": [
     {
-      "title": "Prometheus Compatible",
-      "description": "Drop-in replacement for Prometheus with full PromQL query support"
+      "title": "Time-Series Database",
+      "description": "Store and query time-series metrics",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Ingest millions of data points per second with low resource usage"
+      "title": "Metrics Ingestion",
+      "description": "Ingest metrics at high throughput",
+      "core_feature": true
     },
     {
-      "title": "Cost",
-      "description": "Store metrics efficiently with up to 10x compression compared to Prometheus"
+      "title": "Query API",
+      "description": "Query metrics using supported APIs"
     },
     {
-      "title": "Clustering",
-      "description": "Scale horizontally with built-in clustering for high availability and capacity"
+      "title": "Data Retention",
+      "description": "Configure metric retention policies"
     },
     {
-      "title": "Long",
-      "description": "Retain metrics for years with efficient storage and fast queries"
-    },
-    {
-      "title": "Promql Queries",
-      "description": "Query metrics using familiar PromQL syntax with extensions for advanced use cases"
-    },
-    {
-      "title": "Grafana Integration",
-      "description": "Visualize metrics in Grafana using VictoriaMetrics as a data source"
-    },
-    {
-      "title": "Remote Write",
-      "description": "Accept metrics from Prometheus and other systems via remote write protocol"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the database on your own servers"
     }
   ],
   "platform_support": {

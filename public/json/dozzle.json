@@ -32,20 +32,38 @@
   },
   "features": [
     {
-      "title": "Search and Filter",
-      "description": "Find specific log entries using text search and filter by container, time range, or log"
+      "title": "Container Log Viewer",
+      "description": "Streams Docker container logs",
+      "core_feature": true
     },
     {
-      "title": "Docker Support",
-      "description": "Follow logs in real-time similar to docker logs -f without command-line access"
+      "title": "Real-Time Streaming",
+      "description": "Displays logs as they are generated",
+      "core_feature": true
     },
     {
-      "title": "Lightweight",
-      "description": "Run as a single lightweight container without databases or complex configuration requirements"
+      "title": "Container Selection",
+      "description": "Filters logs by container"
     },
     {
-      "title": "Team Collaboration",
-      "description": "Protect log access with basic auth or proxy authentication for secure multi-user environments"
+      "title": "Web Interface",
+      "description": "Views logs in the browser"
+    },
+    {
+      "title": "Lightweight Deployment",
+      "description": "Runs with minimal configuration"
+    },
+    {
+      "title": "Read-Only Access",
+      "description": "Does not modify containers"
+    },
+    {
+      "title": "Search Capability",
+      "description": "Searches log output"
+    },
+    {
+      "title": "Self-Hosted Logging",
+      "description": "Runs on private infrastructure"
     }
   ],
   "platform_support": {

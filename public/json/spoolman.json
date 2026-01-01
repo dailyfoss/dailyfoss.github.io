@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "Material Database",
-      "description": "Stores information about filament types, colors, and brands"
+      "title": "Filament Inventory",
+      "description": "Track 3D printer filament spools",
+      "core_feature": true
     },
     {
-      "title": "Usage Logging",
-      "description": "Records filament consumption per print job"
+      "title": "Material Tracking",
+      "description": "Track material type and remaining length",
+      "core_feature": true
     },
     {
-      "title": "Low Stock Alerts",
-      "description": "Notifies when spool weight drops below threshold"
+      "title": "Printer Integration",
+      "description": "Integrate with supported printers",
+      "core_feature": true
     },
     {
-      "title": "Real-Time Sync",
-      "description": "Syncs with OctoPrint for automatic usage tracking"
+      "title": "Usage History",
+      "description": "Record filament usage"
     },
     {
-      "title": "Barcode Labels",
-      "description": "Generates barcode labels for spool identification"
+      "title": "Web Interface",
+      "description": "Manage spools through a browser"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the inventory system on your own servers"
     }
   ],
   "platform_support": {

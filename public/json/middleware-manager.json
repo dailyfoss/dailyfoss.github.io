@@ -32,32 +32,26 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Monitor health, status, and performance of middleware components across distributed infrastructure"
+      "title": "Middleware Management",
+      "description": "Manage middleware services from a central interface",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Collect and search logs from multiple services in a centralized interface for faster debugging"
+      "title": "Service Configuration",
+      "description": "Configure middleware settings"
     },
     {
-      "title": "Configuration Management",
-      "description": "Update service settings and environment variables without direct server access or restarts"
+      "title": "Status Monitoring",
+      "description": "View middleware service status",
+      "core_feature": true
     },
     {
-      "title": "Kubernetes Ready",
-      "description": "Deploy and manage middleware on K8s clusters with automated health checks and scaling"
+      "title": "Web Interface",
+      "description": "Manage services through a browser"
     },
     {
-      "title": "Cloud Provider Support",
-      "description": "Connect to AWS, Azure, and GCP to manage services across hybrid and multi-cloud environments"
-    },
-    {
-      "title": "Email Notifications",
-      "description": "Receive warnings about service failures, resource limits, or performance degradation via email or webhooks"
-    },
-    {
-      "title": "REST API",
-      "description": "Automate management tasks and integrate with CI/CD pipelines using REST API for programmatic control"
+      "title": "Self-Hosted Service",
+      "description": "Run the manager on your own servers"
     }
   ],
   "platform_support": {

@@ -32,28 +32,34 @@
   },
   "features": [
     {
-      "title": "Search and Filter",
-      "description": "Allow users to search and request movies or TV shows for addition to your media"
+      "title": "Media Request System",
+      "description": "Request movies and TV shows from users",
+      "core_feature": true
     },
     {
-      "title": "Radarr And Sonarr Integration",
-      "description": "Automatically send approved requests to download managers for processing and monitoring"
+      "title": "Service Integration",
+      "description": "Connect with supported media servers",
+      "core_feature": true
     },
     {
-      "title": "Approval Workflows",
-      "description": "Configure automatic approval or require admin review based on user permissions and quotas"
+      "title": "Request Approval",
+      "description": "Review and approve incoming requests"
     },
     {
-      "title": "Real-Time Sync",
-      "description": "Sync with Plex libraries to show what content is already available and prevent duplicate requests"
+      "title": "Notifications",
+      "description": "Notify users of request updates"
     },
     {
-      "title": "User Management",
-      "description": "Create accounts with different permission levels to control who can request and approve content"
+      "title": "User Accounts",
+      "description": "Manage users and permissions"
     },
     {
-      "title": "Email Notifications",
-      "description": "Send alerts via email, Discord, Slack, or other services when requests are submitted or fulfilled"
+      "title": "Web Interface",
+      "description": "Handle requests through a browser"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the request system on your own infrastructure"
     }
   ],
   "platform_support": {

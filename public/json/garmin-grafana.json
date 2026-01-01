@@ -32,24 +32,39 @@
   },
   "features": [
     {
-      "title": "Self-Hosted",
-      "description": "Extract health and fitness metrics from Garmin devices for self-hosted analysis"
+      "title": "Fitness Data Visualization",
+      "description": "Visualizes Garmin activity data in Grafana",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Visualize activity, sleep, heart rate, and performance data in customizable Grafana dashboards"
+      "title": "Garmin Data Import",
+      "description": "Imports activity and health data",
+      "core_feature": true
     },
     {
-      "title": "Data Privacy",
-      "description": "Keep personal health data on your own infrastructure without third-party cloud services"
+      "title": "Grafana Dashboards",
+      "description": "Displays metrics using Grafana dashboards",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Analyze training load, VO2 max, recovery time, and other advanced fitness indicators"
+      "title": "Historical Tracking",
+      "description": "Shows trends over time"
     },
     {
-      "title": "Real-Time Sync",
-      "description": "Schedule automatic data extraction from Garmin Connect for continuous monitoring"
+      "title": "Metric Aggregation",
+      "description": "Aggregates distance pace and heart rate"
+    },
+    {
+      "title": "Data Storage",
+      "description": "Stores imported metrics locally"
+    },
+    {
+      "title": "Self-Hosted Analytics",
+      "description": "Run dashboards on your own servers"
+    },
+    {
+      "title": "Read-Only Visualization",
+      "description": "Focuses on viewing rather than editing data"
     }
   ],
   "platform_support": {

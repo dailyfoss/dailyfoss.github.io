@@ -32,32 +32,38 @@
   },
   "features": [
     {
-      "title": "Mobile Responsive",
-      "description": "Send real-time alerts to mobile and desktop devices without third-party services"
+      "title": "Push Notification Server",
+      "description": "Sends push notifications to clients",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Receive instant notifications via WebSocket connections for real-time delivery"
+      "title": "Client Registration",
+      "description": "Manages client devices and tokens",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Simple HTTP API for sending messages from scripts, applications, and services"
+      "title": "Message Queues",
+      "description": "Handles queued notification delivery"
     },
     {
-      "title": "Mobile Apps",
-      "description": "Native Android app and web interface for receiving notifications on any device"
+      "title": "Web API",
+      "description": "Exposes endpoints for sending notifications"
     },
     {
-      "title": "Message Priority",
-      "description": "Set priority levels to control notification behavior and display"
+      "title": "Authentication",
+      "description": "Secures notification access"
     },
     {
-      "title": "Search and Filter",
-      "description": "View and search through notification history in the web interface"
+      "title": "Delivery Metrics",
+      "description": "Tracks delivery success and failures"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Complete ownership of notification infrastructure without external dependencies"
+      "title": "Web Interface",
+      "description": "Configures notifications through a browser"
+    },
+    {
+      "title": "Self-Hosted Notifier",
+      "description": "Host the server on your own infrastructure"
     }
   ],
   "platform_support": {

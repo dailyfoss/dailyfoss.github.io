@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "Self-Hosted",
-      "description": "Self-hosted, No external tracking, Local processing. Keep user data private"
+      "title": "Spotify Playlist Import",
+      "description": "Import playlists from Spotify into local music libraries",
+      "core_feature": true
     },
     {
-      "title": "Media Library",
-      "description": "Content recommendations, User preferences, Historical data. Enhance your media platform"
+      "title": "Lidarr Integration",
+      "description": "Send imported playlists to a Lidarr instance",
+      "core_feature": true
     },
     {
-      "title": "User Behavior",
-      "description": "Interaction tracking, Preference learning, Pattern recognition. Understand user interests"
+      "title": "Playlist Sync",
+      "description": "Keep playlists synchronized with Spotify changes",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "RESTful endpoints, Easy integration, Custom implementations. Connect to any platform"
+      "title": "Configuration Options",
+      "description": "Configure import and sync behavior"
     },
     {
-      "title": "High Performance",
-      "description": "Fast inference, Scalable architecture, Efficient processing. Handle large catalogs"
+      "title": "Command-Line Interface",
+      "description": "Run playlist imports using CLI commands"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the playlist tool on your own infrastructure"
     }
   ],
   "platform_support": {

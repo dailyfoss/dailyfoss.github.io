@@ -32,24 +32,27 @@
   },
   "features": [
     {
-      "title": "High Performance",
-      "description": "High-performance log collection from multiple sources with support for various formats and protocols"
+      "title": "Log Ingestion",
+      "description": "Collect and store application logs",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Query and analyze logs in real-time with SQL-like syntax for immediate insights into system behavior"
+      "title": "Structured Logging",
+      "description": "Store logs in structured formats",
+      "core_feature": true
     },
     {
-      "title": "S3 Storage",
-      "description": "Store logs in S3-compatible object storage for cost-effective, scalable long-term retention"
+      "title": "Query Interface",
+      "description": "Search and filter log data",
+      "core_feature": true
     },
     {
-      "title": "Custom Dashboards",
-      "description": "Build visual dashboards with charts and graphs to monitor key metrics and log patterns over"
+      "title": "API Access",
+      "description": "Send and retrieve logs programmatically"
     },
     {
-      "title": "REST API",
-      "description": "RESTful API enables programmatic log ingestion, querying, and integration with external tools and workflows"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the log system on your own infrastructure"
     }
   ],
   "platform_support": {

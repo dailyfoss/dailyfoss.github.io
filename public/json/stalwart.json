@@ -32,28 +32,31 @@
   },
   "features": [
     {
-      "title": "Imap Server",
-      "description": "Provides full-featured IMAP4rev2 support for email clients"
+      "title": "Mail Server",
+      "description": "Send and receive email for hosted domains",
+      "core_feature": true
     },
     {
-      "title": "Real-Time Sync",
-      "description": "Implements modern JMAP protocol for efficient email sync"
-    },
-    {
-      "title": "Smtp Server",
-      "description": "Handles incoming and outgoing email with advanced routing"
+      "title": "IMAP and SMTP Support",
+      "description": "Serve email using standard protocols",
+      "core_feature": true
     },
     {
       "title": "Spam Filtering",
-      "description": "Blocks spam with built-in filters and external integration"
+      "description": "Filter unwanted email messages",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Searches emails quickly with indexed full-text search"
+      "title": "User and Domain Management",
+      "description": "Manage mail users and domains"
     },
     {
-      "title": "End-to-End Encryption",
-      "description": "Handles TLS/SSL for secure email transmission"
+      "title": "Message Storage",
+      "description": "Store and retrieve email messages"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the mail server on your own infrastructure"
     }
   ],
   "platform_support": {

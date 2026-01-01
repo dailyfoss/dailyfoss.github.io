@@ -32,36 +32,27 @@
   },
   "features": [
     {
-      "title": "Dynamic Scaling",
-      "description": "Automatically start and stop containers based on traffic to reduce resource usage and costs"
+      "title": "On-Demand App Access",
+      "description": "Start applications automatically when accessed",
+      "core_feature": true
+    },
+    {
+      "title": "Idle Shutdown",
+      "description": "Stop applications after inactivity",
+      "core_feature": true
     },
     {
       "title": "Reverse Proxy Integration",
-      "description": "Works seamlessly with Traefik and other proxies to manage container lifecycle"
+      "description": "Work with supported reverse proxies",
+      "core_feature": true
     },
     {
-      "title": "Session Persistence",
-      "description": "Maintains user sessions during container startup with customizable loading pages"
+      "title": "Access Triggers",
+      "description": "Wake services based on HTTP requests"
     },
     {
-      "title": "Multi",
-      "description": "Choose between blocking, dynamic, or throttle strategies for different workload patterns"
-    },
-    {
-      "title": "Resource Optimization",
-      "description": "Reduces idle container overhead by shutting down unused services after configurable timeouts"
-    },
-    {
-      "title": "Health Monitoring",
-      "description": "Tracks container health and readiness before routing traffic to ensure reliability"
-    },
-    {
-      "title": "Theme Customization",
-      "description": "Personalize loading screens with custom HTML, CSS, and branding during container startup"
-    },
-    {
-      "title": "REST API",
-      "description": "Programmatically manage container states and scaling policies via REST API"
+      "title": "Self-Hosted Service",
+      "description": "Run on your own infrastructure"
     }
   ],
   "platform_support": {

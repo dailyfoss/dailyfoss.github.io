@@ -32,24 +32,30 @@
   },
   "features": [
     {
-      "title": "Docker Support",
-      "description": "View all Docker images in your registry at a glance. Clear visual overview"
+      "title": "Docker Registry Interface",
+      "description": "Manages container images in a registry",
+      "core_feature": true
     },
     {
-      "title": "Tagging System",
-      "description": "Browse and compare different image versions easily. Track your releases"
+      "title": "Image Browsing",
+      "description": "Lists repositories and tags",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Find images quickly with powerful search. Locate what you need fast"
+      "title": "Image Deletion",
+      "description": "Removes images from registry"
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Simple, intuitive interface for registry management. No complexity, just results"
+      "title": "Authentication Support",
+      "description": "Restricts access to registry UI"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Manage your private Docker registry with ease. Complete control over images"
+      "title": "Web Dashboard",
+      "description": "Manages registry through browser"
+    },
+    {
+      "title": "Self-Hosted UI",
+      "description": "Runs alongside Docker Registry"
     }
   ],
   "platform_support": {

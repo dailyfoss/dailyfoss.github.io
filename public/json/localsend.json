@@ -33,19 +33,30 @@
   "features": [
     {
       "title": "Local File Sharing",
-      "description": "Wi-Fi direct transfer, No internet required, Cross-platform. Share files without cloud"
+      "description": "Transfer files directly between local devices",
+      "core_feature": true
     },
     {
-      "title": "Data Privacy",
-      "description": "Secure sharing, Privacy-focused, No external servers. Keep files private"
+      "title": "Cross-Platform Support",
+      "description": "Run on mobile, desktop, and web clients",
+      "core_feature": true
     },
     {
-      "title": "Folder Organization",
-      "description": "Multiple files, Folder sharing, Queue management. Share many files at once"
+      "title": "Nearby Discovery",
+      "description": "Detect nearby devices for file sharing",
+      "core_feature": true
     },
     {
-      "title": "Media Library",
-      "description": "Zero configuration, Instant use, No accounts. Start sharing immediately"
+      "title": "Secure Transfers",
+      "description": "Encrypt transfers between devices"
+    },
+    {
+      "title": "Automatic Retry",
+      "description": "Resume interrupted transfers"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Deploy your own relay service if needed"
     }
   ],
   "platform_support": {

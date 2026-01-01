@@ -33,19 +33,30 @@
   "features": [
     {
       "title": "Code Quality Analysis",
-      "description": "Scans code for bugs, vulnerabilities, and code smells"
+      "description": "Analyze source code for quality issues",
+      "core_feature": true
+    },
+    {
+      "title": "Static Analysis",
+      "description": "Detect bugs and code smells",
+      "core_feature": true
     },
     {
       "title": "Security Scanning",
-      "description": "Detects security vulnerabilities and injection flaws"
+      "description": "Identify security vulnerabilities",
+      "core_feature": true
     },
     {
-      "title": "Technical Debt Tracking",
-      "description": "Calculates and visualizes technical debt across projects"
+      "title": "Project Dashboards",
+      "description": "View analysis results in dashboards"
     },
     {
-      "title": "Code Coverage",
-      "description": "Integrates with test coverage tools to track test completeness"
+      "title": "CI Integration",
+      "description": "Integrate analysis into CI pipelines"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the analysis platform on your own servers"
     }
   ],
   "platform_support": {

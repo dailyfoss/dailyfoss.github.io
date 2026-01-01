@@ -32,20 +32,25 @@
   },
   "features": [
     {
-      "title": "Cloud Storage",
-      "description": "Copy data across local disks, network shares, and cloud storage providers"
+      "title": "Data Replication",
+      "description": "Replicate data between systems",
+      "core_feature": true
     },
     {
-      "title": "Database Backup",
-      "description": "Run replication jobs on a schedule to keep backups current"
+      "title": "Scheduled Jobs",
+      "description": "Run replication on a schedule"
     },
     {
-      "title": "Real-Time Sync",
-      "description": "Transfer only changed files to minimize bandwidth and time"
+      "title": "Source and Target Config",
+      "description": "Define replication endpoints"
     },
     {
-      "title": "Filtering Options",
-      "description": "Include or exclude files based on patterns, size, or modification date"
+      "title": "Logging",
+      "description": "Track replication activity"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the service on your own infrastructure"
     }
   ],
   "platform_support": {

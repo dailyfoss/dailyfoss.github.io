@@ -32,20 +32,39 @@
   },
   "features": [
     {
-      "title": "Email Notifications",
-      "description": "Get alerted when Docker images are updated. Stay informed automatically"
+      "title": "Container Image Update Monitoring",
+      "description": "Monitors Docker images for updates",
+      "core_feature": true
     },
     {
-      "title": "Docker Support",
-      "description": "Monitor images from Docker Hub, GHCR, and private registries. Universal coverage"
+      "title": "Registry Integration",
+      "description": "Checks images across container registries",
+      "core_feature": true
     },
     {
-      "title": "Webhook Support",
-      "description": "Trigger actions when updates are detected. Automated workflows"
+      "title": "Notification System",
+      "description": "Sends alerts when updates are detected",
+      "core_feature": true
     },
     {
-      "title": "Lightweight",
-      "description": "Minimal resource usage for efficient monitoring. Run anywhere Docker runs"
+      "title": "Scheduled Scans",
+      "description": "Runs image checks on a schedule"
+    },
+    {
+      "title": "Multiple Notification Backends",
+      "description": "Supports various notification services"
+    },
+    {
+      "title": "Configuration via Files",
+      "description": "Manages settings using configuration files"
+    },
+    {
+      "title": "Container Deployment",
+      "description": "Runs as a Docker container"
+    },
+    {
+      "title": "Self-Hosted Monitoring",
+      "description": "Operates on private infrastructure"
     }
   ],
   "platform_support": {

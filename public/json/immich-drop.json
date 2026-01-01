@@ -32,20 +32,38 @@
   },
   "features": [
     {
-      "title": "File Upload",
-      "description": "Allow guests to upload photos without creating Immich accounts"
+      "title": "Public Upload Portal",
+      "description": "Provides a simple upload interface for adding photos to an Immich instance",
+      "core_feature": true
     },
     {
-      "title": "Bulk Upload",
-      "description": "Support multiple file uploads simultaneously for efficient collection"
+      "title": "Shareable Upload Links",
+      "description": "Allows photo uploads through links without requiring Immich user accounts",
+      "core_feature": true
     },
     {
-      "title": "No Authentication",
-      "description": "Guests can contribute without login credentials or registration"
+      "title": "Bulk Upload Support",
+      "description": "Enables uploading multiple photos in a single session"
     },
     {
-      "title": "Data Privacy",
-      "description": "Maintain control over who can upload and which albums receive photos"
+      "title": "Album Targeting",
+      "description": "Directs uploaded photos into predefined Immich albums"
+    },
+    {
+      "title": "Access Limiting",
+      "description": "Restricts upload access using link-based permissions"
+    },
+    {
+      "title": "Browser-Based Interface",
+      "description": "Accepts uploads through a standard web browser"
+    },
+    {
+      "title": "Immich Integration",
+      "description": "Stores uploaded media directly into the Immich media library"
+    },
+    {
+      "title": "Self-Hosted Upload Tool",
+      "description": "Runs alongside your own Immich deployment"
     }
   ],
   "platform_support": {

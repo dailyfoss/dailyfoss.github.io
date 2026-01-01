@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "Kubernetes Ready",
-      "description": "Tail logs from multiple Kubernetes pods simultaneously. Debug distributed applications efficiently"
+      "title": "Kubernetes Log Viewing",
+      "description": "Stream and view logs from Kubernetes pods",
+      "core_feature": true
     },
     {
-      "title": "Single Stream",
-      "description": "Aggregate logs into unified stream with pod identification. See all logs in one view"
+      "title": "Multi-Pod Log Aggregation",
+      "description": "Combine logs from multiple pods into one view",
+      "core_feature": true
     },
     {
-      "title": "Real-Time",
-      "description": "Live log streaming as new entries are written. Monitor applications in real-time"
+      "title": "Namespace Selection",
+      "description": "Filter logs by Kubernetes namespace",
+      "core_feature": true
     },
     {
-      "title": "Pod Selection",
-      "description": "Select pods by name, label selector, or deployment. Target specific workloads"
+      "title": "Label-Based Filtering",
+      "description": "Select pods using label selectors"
     },
     {
-      "title": "Namespace Filtering",
-      "description": "Filter logs by Kubernetes namespace. Focus on relevant applications"
+      "title": "Command-Line Interface",
+      "description": "Access log streaming using CLI commands"
     },
     {
-      "title": "Color Coding",
-      "description": "Distinguish pods with color-coded output. Identify log sources quickly"
-    },
-    {
-      "title": "Search and Filter",
-      "description": "Search log content and filter by patterns. Find specific log entries"
-    },
-    {
-      "title": "Container Selection",
-      "description": "Choose specific containers within pods to tail. Narrow focus to relevant logs"
+      "title": "Real-Time Streaming",
+      "description": "View logs as they are generated"
     }
   ],
   "platform_support": {

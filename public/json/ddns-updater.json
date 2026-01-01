@@ -32,20 +32,39 @@
   },
   "features": [
     {
-      "title": "Web Interface",
-      "description": "Simple interface for managing DDNS settings. No config file editing"
+      "title": "Dynamic DNS Client",
+      "description": "Automatically updates DNS records",
+      "core_feature": true
     },
     {
-      "title": "Ipv4 & Ipv6 Support",
-      "description": "Handle both IP versions seamlessly. Future-proof solution"
+      "title": "Multi-Provider Support",
+      "description": "Supports many DNS services",
+      "core_feature": true
     },
     {
-      "title": "Docker Support",
-      "description": "Designed for containerized environments. Easy deployment alongside services"
+      "title": "Container-Based Deployment",
+      "description": "Runs as a Docker container",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Run your own DDNS updater. Complete control over domain updates"
+      "title": "IPv4 and IPv6 Detection",
+      "description": "Detects public IP addresses"
+    },
+    {
+      "title": "Web UI",
+      "description": "Configures providers through a browser"
+    },
+    {
+      "title": "Health Monitoring",
+      "description": "Exposes container health status"
+    },
+    {
+      "title": "Scheduled Updates",
+      "description": "Runs periodic DNS updates"
+    },
+    {
+      "title": "Self-Hosted Networking",
+      "description": "Runs on user-managed infrastructure"
     }
   ],
   "platform_support": {

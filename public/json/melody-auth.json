@@ -32,28 +32,31 @@
   },
   "features": [
     {
-      "title": "Oauth2 Provider",
-      "description": "Implement single sign-on for multiple applications with OAuth2 protocol support"
+      "title": "Authentication Service",
+      "description": "Provide authentication for applications",
+      "core_feature": true
     },
     {
-      "title": "User Management",
-      "description": "Create and manage user accounts with profiles, passwords, and permissions"
+      "title": "User Accounts",
+      "description": "Manage registered users and credentials",
+      "core_feature": true
     },
     {
-      "title": "Token Management",
-      "description": "Issue and validate access tokens and refresh tokens for authenticated sessions"
+      "title": "Token-Based Auth",
+      "description": "Issue tokens for authenticated sessions",
+      "core_feature": true
     },
     {
-      "title": "Admin Interface",
-      "description": "Manage users, applications, and permissions through a web-based admin panel"
+      "title": "API Integration",
+      "description": "Integrate authentication into external services"
     },
     {
-      "title": "Two-Factor Authentication",
-      "description": "Enhance security with TOTP-based two-factor authentication"
+      "title": "Role Management",
+      "description": "Assign roles to control access"
     },
     {
-      "title": "Session Management",
-      "description": "Track active user sessions and provide logout functionality"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the auth service on your own servers"
     }
   ],
   "platform_support": {

@@ -32,28 +32,27 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Monitor blocking statistics, query logs, and network activity through an intuitive interface"
+      "title": "Network Ad Blocking",
+      "description": "Block ads and trackers at the network level",
+      "core_feature": true
     },
     {
-      "title": "Blocklist Management",
-      "description": "Subscribe to curated blocklists or create custom lists for granular control"
+      "title": "DNS Server",
+      "description": "Act as a local DNS resolver",
+      "core_feature": true
     },
     {
-      "title": "Query Logging",
-      "description": "View detailed logs of all DNS queries with timestamps, clients, and block status"
+      "title": "Dashboard",
+      "description": "View network queries and statistics",
+      "core_feature": true
     },
     {
-      "title": "Whitelist And Blacklist",
-      "description": "Override blocklists with custom allow and deny rules for specific domains"
+      "title": "Device Management",
+      "description": "Apply rules per device"
     },
     {
-      "title": "Dhcp Server",
-      "description": "Optionally serve DHCP to automatically configure network devices to use Pi-hole"
-    },
-    {
-      "title": "REST API",
-      "description": "Integrate with other tools and scripts using the built-in REST API"
+      "title": "Self-Hosted Deployment",
+      "description": "Run on local or private hardware"
     }
   ],
   "platform_support": {

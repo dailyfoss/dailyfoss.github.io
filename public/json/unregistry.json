@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "Web Interface",
-      "description": "Browse Docker registry contents through a user-friendly web interface"
+      "title": "Container Registry",
+      "description": "Host a private container image registry",
+      "core_feature": true
     },
     {
-      "title": "Docker Support",
-      "description": "View all images stored in your Docker registry with metadata and details"
+      "title": "Image Storage",
+      "description": "Store container images locally",
+      "core_feature": true
     },
     {
-      "title": "Tagging System",
-      "description": "See all tags for each image with creation dates and sizes"
+      "title": "API Compatibility",
+      "description": "Support standard registry APIs",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Search for images and tags across your registry quickly"
+      "title": "Access Control",
+      "description": "Control access to stored images"
     },
     {
-      "title": "Tag Deletion",
-      "description": "Delete unused tags to reclaim storage space in your registry"
+      "title": "Lightweight Setup",
+      "description": "Run with minimal configuration"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the registry on your own servers"
     }
   ],
   "platform_support": {

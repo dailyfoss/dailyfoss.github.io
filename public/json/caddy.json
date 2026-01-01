@@ -32,32 +32,40 @@
   },
   "features": [
     {
-      "title": "Automatic Https",
-      "description": "SSL certificates obtained and renewed automatically. Zero-config security"
+      "title": "Web Server",
+      "description": "Serves HTTP and HTTPS traffic for web applications",
+      "core_feature": true
     },
     {
-      "title": "Easy Configuration",
-      "description": "Simple, intuitive config file format. No complexity"
-    },
-    {
-      "title": "High Performance",
-      "description": "Excellent performance out of the box. Fast and efficient"
+      "title": "Automatic HTTPS",
+      "description": "Obtains and renews TLS certificates automatically",
+      "core_feature": true
     },
     {
       "title": "Reverse Proxy",
-      "description": "Built-in reverse proxy capabilities. Flexible routing"
+      "description": "Routes incoming requests to backend services",
+      "core_feature": true
     },
     {
-      "title": "Plugin System",
-      "description": "Plugin system for custom functionality. Unlimited possibilities"
+      "title": "Configuration File",
+      "description": "Defines server behavior using a declarative config format",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Battle-tested for hosting websites and APIs. Reliable service"
+      "title": "Static File Serving",
+      "description": "Serves static assets directly from disk"
     },
     {
-      "title": "Cross",
-      "description": "Works on Linux, Windows, and more. Universal compatibility"
+      "title": "HTTP Middleware",
+      "description": "Modifies requests and responses through modular handlers"
+    },
+    {
+      "title": "Load Balancing",
+      "description": "Distributes traffic across multiple backends"
+    },
+    {
+      "title": "Cross-Platform Support",
+      "description": "Runs on Linux, macOS, and Windows"
     }
   ],
   "platform_support": {

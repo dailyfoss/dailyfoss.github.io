@@ -32,24 +32,38 @@
   },
   "features": [
     {
-      "title": "Plugin System",
-      "description": "Connect to remote desktops and servers through any web browser without plugins"
+      "title": "Remote Desktop Gateway",
+      "description": "Provides VNC RDP and SSH access through a browser",
+      "core_feature": true
     },
     {
-      "title": "Kubernetes Ready",
-      "description": "Access systems via RDP, VNC, SSH, and Kubernetes with a unified interface"
+      "title": "Protocol Translation",
+      "description": "Converts protocols for web clients",
+      "core_feature": true
     },
     {
-      "title": "File Upload",
-      "description": "Upload and download files between local and remote systems during sessions"
+      "title": "User Access Control",
+      "description": "Manages credentials and permissions"
     },
     {
-      "title": "User Management",
-      "description": "Centralized user authentication with LDAP, Active Directory, or database backends"
+      "title": "Session Recording",
+      "description": "Records remote sessions"
     },
     {
-      "title": "Connection Profiles",
-      "description": "Save connection settings and credentials for quick access to frequently used systems"
+      "title": "Connection Management",
+      "description": "Stores and organizes remote connections"
+    },
+    {
+      "title": "Authentication Extensions",
+      "description": "Integrates with external identity systems"
+    },
+    {
+      "title": "Proxy Support",
+      "description": "Routes connections through a gateway"
+    },
+    {
+      "title": "Self-Hosted Remote Access",
+      "description": "Host the gateway on your own infrastructure"
     }
   ],
   "platform_support": {

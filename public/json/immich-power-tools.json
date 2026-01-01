@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Data Import",
-      "description": "Import photos from other services or reorganize existing libraries"
+      "title": "Immich Administration Tools",
+      "description": "Perform maintenance and bulk operations on Immich libraries",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Remove orphaned files and optimize database performance"
+      "title": "Bulk Metadata Updates",
+      "description": "Update metadata for multiple assets at once",
+      "core_feature": true
     },
     {
-      "title": "Library Analysis",
-      "description": "Generate reports on storage usage, duplicates, and library health"
+      "title": "Cleanup Operations",
+      "description": "Identify and remove unused or duplicate assets",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Works directly with Immich API for safe, reliable operations"
+      "title": "Command-Line Interface",
+      "description": "Run administrative tasks using CLI commands"
+    },
+    {
+      "title": "Reporting",
+      "description": "Output summaries of performed operations"
+    },
+    {
+      "title": "Immich Integration",
+      "description": "Operate against an existing Immich server"
     }
   ],
   "platform_support": {

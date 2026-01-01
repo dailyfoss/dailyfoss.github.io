@@ -33,28 +33,43 @@
   },
   "features": [
     {
-      "title": "File",
-      "description": "Define workflows in simple CSV files. No database required"
+      "title": "Workflow Orchestration",
+      "description": "Executes and manages workflows defined as directed acyclic graphs",
+      "core_feature": true
     },
     {
-      "title": "Web Interface",
-      "description": "Monitor and control jobs through browser. Visual workflow management"
+      "title": "DAG-Based Scheduling",
+      "description": "Runs tasks based on dependency relationships",
+      "core_feature": true
     },
     {
-      "title": "Retry Logic",
-      "description": "Automatic retries for failed tasks. Resilient job execution"
+      "title": "Web Dashboard",
+      "description": "Visualizes workflows task status and execution history",
+      "core_feature": true
     },
     {
-      "title": "Workflow Support",
-      "description": "Chain tasks with dependencies. Complex orchestration made simple"
+      "title": "Cron Scheduling",
+      "description": "Triggers workflows using time-based schedules"
     },
     {
-      "title": "Execution Logs",
-      "description": "Detailed history of all job runs. Full visibility and debugging"
+      "title": "Parameterized Runs",
+      "description": "Executes workflows with runtime parameters"
     },
     {
-      "title": "Lightweight",
-      "description": "Minimal resource usage for efficient operation. Perfect for any server"
+      "title": "Retry and Failure Handling",
+      "description": "Manages retries and failure states for tasks"
+    },
+    {
+      "title": "Log Management",
+      "description": "Stores and displays task execution logs"
+    },
+    {
+      "title": "CLI Support",
+      "description": "Controls workflows from the command line"
+    },
+    {
+      "title": "Self-Hosted Execution",
+      "description": "Runs on user-managed infrastructure"
     }
   ],
   "platform_support": {

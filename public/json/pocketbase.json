@@ -33,24 +33,31 @@
   },
   "features": [
     {
+      "title": "Backend Service",
+      "description": "Provide backend APIs and data storage",
+      "core_feature": true
+    },
+    {
       "title": "Authentication",
-      "description": "User authentication with email/password, OAuth2, and custom auth providers"
+      "description": "Handle user authentication and authorization",
+      "core_feature": true
     },
     {
-      "title": "Access Control",
-      "description": "Upload and serve files with automatic thumbnail generation and access control"
+      "title": "Database Management",
+      "description": "Manage data using a built-in database",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Subscribe to database changes with WebSocket connections for live updates"
+      "title": "File Storage",
+      "description": "Store and serve uploaded files"
     },
     {
-      "title": "Rest Api",
-      "description": "Automatically generated REST API for all database collections with filtering and sorting"
+      "title": "Admin Interface",
+      "description": "Manage data through an admin UI"
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Manage database schema, users, and settings through a web-based admin panel"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the backend on your own infrastructure"
     }
   ],
   "platform_support": {

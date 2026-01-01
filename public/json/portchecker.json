@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "Port Scanning",
-      "description": "Test if specific ports are open on IP addresses or domain names"
-    },
-    {
-      "title": "Multiple Protocols",
-      "description": "Check TCP and UDP ports for various service types"
-    },
-    {
-      "title": "Batch Checking",
-      "description": "Test multiple ports simultaneously for efficient network diagnostics"
+      "title": "Port Checking",
+      "description": "Check whether network ports are open",
+      "core_feature": true
     },
     {
       "title": "Web Interface",
-      "description": "Simple web UI for entering targets and viewing results"
+      "description": "Test ports using a browser",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Programmatically check ports using HTTP API for automation and monitoring"
+      "title": "Host Scanning",
+      "description": "Scan ports on specified hosts",
+      "core_feature": true
     },
     {
-      "title": "Response Time",
-      "description": "Measure connection response times to identify network latency"
+      "title": "Result Display",
+      "description": "View open and closed port results"
     },
     {
-      "title": "Service Detection",
-      "description": "Identify common services running on open ports"
+      "title": "Simple Configuration",
+      "description": "Run with minimal setup"
     },
     {
-      "title": "History Tracking",
-      "description": "View previous port check results for comparison and monitoring"
+      "title": "Self-Hosted Deployment",
+      "description": "Host the checker on your own infrastructure"
     }
   ],
   "platform_support": {

@@ -32,28 +32,38 @@
   },
   "features": [
     {
-      "title": "Web Interface",
-      "description": "Manage cron jobs through an intuitive web interface instead of crontab files"
+      "title": "Task Scheduling",
+      "description": "Runs jobs on scheduled intervals",
+      "core_feature": true
     },
     {
-      "title": "Execution Logs",
-      "description": "Capture stdout and stderr from job runs for debugging and monitoring"
+      "title": "Recurring Jobs",
+      "description": "Executes repeated tasks automatically",
+      "core_feature": true
     },
     {
-      "title": "Job Management",
-      "description": "Create, edit, enable, disable, and delete scheduled jobs from the UI"
+      "title": "Time-Based Triggers",
+      "description": "Supports cronlike time specifications"
     },
     {
-      "title": "REST API",
-      "description": "Programmatically manage jobs via REST API for automation and integration"
+      "title": "CLI Usage",
+      "description": "Defines and runs tasks from the command line"
     },
     {
-      "title": "Lightweight",
-      "description": "Minimal resource requirements suitable for always-on operation"
+      "title": "Logging",
+      "description": "Records job runs and results"
     },
     {
-      "title": "Email Notifications",
-      "description": "Receive alerts when jobs fail or complete successfully"
+      "title": "Lightweight Engine",
+      "description": "Runs with minimal resource use"
+    },
+    {
+      "title": "Local Execution",
+      "description": "Runs tasks on your own infrastructure"
+    },
+    {
+      "title": "Automation Scheduler",
+      "description": "Host scheduling on your own infrastructure"
     }
   ],
   "platform_support": {

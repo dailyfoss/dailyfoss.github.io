@@ -33,24 +33,30 @@
   },
   "features": [
     {
-      "title": "Markdown Support",
-      "description": "Write changelog entries using markdown formatting for rich text and code examples"
+      "title": "Changelog Generator",
+      "description": "Generate changelogs from Git repositories",
+      "core_feature": true
     },
     {
-      "title": "Team Collaboration",
-      "description": "Allow multiple team members to draft, review, and publish changelog entries together"
+      "title": "Commit Parsing",
+      "description": "Parse commit history for changelog entries",
+      "core_feature": true
     },
     {
-      "title": "Tagging System",
-      "description": "Tag changes as features, fixes, improvements, or breaking changes for clear communication"
+      "title": "Template Support",
+      "description": "Use templates to format changelogs"
     },
     {
-      "title": "Draft Management",
-      "description": "Save unpublished entries and schedule releases before making them visible to users"
+      "title": "Version Tag Integration",
+      "description": "Group changes by release tags"
     },
     {
-      "title": "REST API",
-      "description": "Automate changelog updates from CI/CD pipelines or version control systems using REST endpoints"
+      "title": "Output Formats",
+      "description": "Export changelogs to common formats"
+    },
+    {
+      "title": "Local Usage",
+      "description": "Run the tool locally or in CI workflows"
     }
   ],
   "platform_support": {

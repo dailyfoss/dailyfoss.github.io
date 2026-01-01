@@ -32,36 +32,26 @@
   },
   "features": [
     {
-      "title": "Multi",
-      "description": "Accept streams from RTMP, SRT, WebRTC, and HTTP sources"
+      "title": "Video Restreaming",
+      "description": "Restream live video to multiple platforms",
+      "core_feature": true
     },
     {
-      "title": "Live Transcoding",
-      "description": "Convert video formats and resolutions in real-time for different platforms"
+      "title": "Stream Ingest",
+      "description": "Accept incoming live streams",
+      "core_feature": true
     },
     {
-      "title": "Multi",
-      "description": "Broadcast simultaneously to YouTube, Twitch, Facebook, and custom RTMP servers"
-    },
-    {
-      "title": "Recording",
-      "description": "Save live streams to disk for later playback or archival"
+      "title": "Output Destinations",
+      "description": "Send streams to multiple endpoints"
     },
     {
       "title": "Web Interface",
-      "description": "Configure and monitor streams through an intuitive browser-based interface"
+      "description": "Control streams through a browser"
     },
     {
-      "title": "Overlay Support",
-      "description": "Add logos, text, or images to streams before broadcasting"
-    },
-    {
-      "title": "Audio Mixing",
-      "description": "Combine multiple audio sources or add background music to streams"
-    },
-    {
-      "title": "Adaptive Bitrate",
-      "description": "Generate multiple quality levels for viewers with different bandwidth"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the restreamer on your own infrastructure"
     }
   ],
   "platform_support": {

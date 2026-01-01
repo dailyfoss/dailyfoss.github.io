@@ -32,28 +32,31 @@
   },
   "features": [
     {
-      "title": "Game Server Management",
-      "description": "Host and manage multiple game servers including Minecraft, CS:GO, and Rust"
+      "title": "Server Management Panel",
+      "description": "Manage game and application servers through a web UI",
+      "core_feature": true
     },
     {
-      "title": "Docker Support",
-      "description": "Run each game server in isolated Docker containers for security and resource control"
+      "title": "User and Permission Management",
+      "description": "Control access with roles and permissions",
+      "core_feature": true
     },
     {
-      "title": "Access Control",
-      "description": "Create user accounts with granular permissions for server management and file access"
+      "title": "Server Lifecycle Controls",
+      "description": "Start, stop, and restart managed servers",
+      "core_feature": true
     },
     {
-      "title": "Web Interface",
-      "description": "Edit server configuration files directly through the web interface with syntax highlighting"
+      "title": "Resource Monitoring",
+      "description": "View CPU, memory, and disk usage"
     },
     {
-      "title": "Database Backup",
-      "description": "Schedule automatic backups of game servers with retention policies and restoration"
+      "title": "Node Management",
+      "description": "Manage multiple server nodes"
     },
     {
-      "title": "Startup Management",
-      "description": "Configure server startup parameters, environment variables, and boot sequences"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the panel on your own infrastructure"
     }
   ],
   "platform_support": {

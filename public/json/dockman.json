@@ -32,20 +32,38 @@
   },
   "features": [
     {
-      "title": "Docker Support",
-      "description": "Curses-based interface for Docker management. No web browser needed"
+      "title": "Docker Container Manager",
+      "description": "Manages Docker containers through a web UI",
+      "core_feature": true
     },
     {
-      "title": "Lightweight",
-      "description": "Minimal resource usage for efficient operation. Perfect for SSH sessions"
+      "title": "Container Lifecycle Control",
+      "description": "Starts stops and restarts containers",
+      "core_feature": true
     },
     {
-      "title": "Log Access",
-      "description": "View container logs in terminal. Quick troubleshooting"
+      "title": "Image Management",
+      "description": "Pulls and removes Docker images"
     },
     {
-      "title": "High Performance",
-      "description": "Monitor resource usage in real-time. Performance visibility"
+      "title": "Log Viewing",
+      "description": "Displays container logs"
+    },
+    {
+      "title": "Resource Monitoring",
+      "description": "Shows container resource usage"
+    },
+    {
+      "title": "User Authentication",
+      "description": "Restricts access to management UI"
+    },
+    {
+      "title": "Web-Based Interface",
+      "description": "Operates entirely in the browser"
+    },
+    {
+      "title": "Self-Hosted Tool",
+      "description": "Runs on private infrastructure"
     }
   ],
   "platform_support": {

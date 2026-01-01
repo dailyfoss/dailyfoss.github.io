@@ -32,28 +32,37 @@
   },
   "features": [
     {
-      "title": "Database Backup",
-      "description": "Schedule automatic backups of Git repositories to protect against data loss"
+      "title": "Repository Backup",
+      "description": "Creates backups of Git repositories",
+      "core_feature": true
     },
     {
-      "title": "Real-Time Sync",
-      "description": "Sync multiple repositories on defined schedules with configurable intervals"
+      "title": "Version Snapshots",
+      "description": "Takes point-in-time saves of repositories"
     },
     {
-      "title": "Lightweight",
-      "description": "Lightweight Python script for easy integration into cron jobs or CI systems"
+      "title": "Scheduled Backups",
+      "description": "Automates backups on defined intervals"
     },
     {
-      "title": "Incremental Backups",
-      "description": "Efficient backup process using Git's native incremental capabilities"
+      "title": "Multiple Repo Support",
+      "description": "Backs up many repositories at once"
     },
     {
-      "title": "Configuration Files",
-      "description": "Define backup targets and schedules through simple configuration files"
+      "title": "Local Storage",
+      "description": "Stores backups on local drives"
     },
     {
-      "title": "Logging And Monitoring",
-      "description": "Track backup success and failures with detailed logging output"
+      "title": "CLI Tool",
+      "description": "Runs operations from the command line"
+    },
+    {
+      "title": "Status Logging",
+      "description": "Records backup activity"
+    },
+    {
+      "title": "Self-Hosted Backup",
+      "description": "Run backups on your own infrastructure"
     }
   ],
   "platform_support": {

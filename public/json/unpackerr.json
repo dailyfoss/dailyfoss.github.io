@@ -32,36 +32,26 @@
   },
   "features": [
     {
-      "title": "Automatic Extraction",
-      "description": "Extract compressed downloads automatically when Sonarr or Radarr mark them complete"
+      "title": "Archive Extraction Automation",
+      "description": "Automatically unpack downloaded archives",
+      "core_feature": true
     },
     {
-      "title": "Multi",
-      "description": "Monitor Sonarr, Radarr, Lidarr, Readarr, and Whisparr simultaneously"
+      "title": "Media Tool Integration",
+      "description": "Integrate with supported download managers",
+      "core_feature": true
     },
     {
-      "title": "Archive Formats",
-      "description": "Support RAR, ZIP, 7z, and other common archive formats for extraction"
-    },
-    {
-      "title": "Background Operation",
-      "description": "Run as a daemon in the background without user intervention"
-    },
-    {
-      "title": "Cleanup",
-      "description": "Optionally delete archive files after successful extraction to save disk space"
-    },
-    {
-      "title": "REST API",
-      "description": "Watch for download completion events via API integration with Arr apps"
-    },
-    {
-      "title": "High Performance",
-      "description": "Extract multiple archives simultaneously for faster processing"
+      "title": "Folder Monitoring",
+      "description": "Watch directories for new files"
     },
     {
       "title": "Error Handling",
-      "description": "Retry failed extractions and log errors for troubleshooting"
+      "description": "Handle failed or partial extractions"
+    },
+    {
+      "title": "Self-Hosted Service",
+      "description": "Run on your own infrastructure"
     }
   ],
   "platform_support": {

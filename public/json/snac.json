@@ -27,24 +27,31 @@
   },
   "features": [
     {
-      "title": "Lightweight",
-      "description": "Provides lightweight microblogging with minimal resource usage"
+      "title": "Federated Microblogging",
+      "description": "Run a microblogging server using ActivityPub",
+      "core_feature": true
     },
     {
-      "title": "Tagging System",
-      "description": "Publishes text posts with mentions, hashtags, and media attachments"
+      "title": "User Accounts",
+      "description": "Create and manage local user profiles",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Alerts on mentions, follows, and interactions from other users"
+      "title": "Timelines",
+      "description": "View local and federated timelines",
+      "core_feature": true
     },
     {
-      "title": "File Upload",
-      "description": "Attaches images and files to posts with automatic processing"
+      "title": "Media Attachments",
+      "description": "Attach images to posts"
     },
     {
-      "title": "No Database",
-      "description": "Stores all data in flat files for simplicity and portability"
+      "title": "Moderation Tools",
+      "description": "Manage users and content"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the server on your own infrastructure"
     }
   ],
   "platform_support": {

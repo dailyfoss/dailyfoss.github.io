@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Oauth2 Authentication",
-      "description": "Protect applications by requiring login through Google, GitHub, GitLab, or other OAuth providers"
+      "title": "Reverse Proxy Authentication",
+      "description": "Protect web applications with OAuth2-based authentication",
+      "core_feature": true
     },
     {
-      "title": "Email Whitelisting",
-      "description": "Restrict access to specific email addresses or domains for controlled user authorization"
+      "title": "Identity Provider Support",
+      "description": "Authenticate users via supported identity providers",
+      "core_feature": true
+    },
+    {
+      "title": "Access Control",
+      "description": "Restrict access based on user identity and groups",
+      "core_feature": true
+    },
+    {
+      "title": "Header Injection",
+      "description": "Forward authenticated user information to upstream apps"
     },
     {
       "title": "Session Management",
-      "description": "Maintain user sessions with configurable timeouts and automatic token refresh for seamless access"
+      "description": "Manage user login sessions"
     },
     {
-      "title": "Kubernetes Ready",
-      "description": "Deploy as an ingress controller or sidecar container for cloud-native authentication patterns"
+      "title": "Self-Hosted Service",
+      "description": "Run the authentication proxy on your own infrastructure"
     }
   ],
   "platform_support": {

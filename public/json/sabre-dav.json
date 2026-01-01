@@ -32,24 +32,26 @@
   },
   "features": [
     {
-      "title": "Webdav Server",
-      "description": "Provides standards-compliant WebDAV protocol implementation for file access over HTTP"
+      "title": "WebDAV Server Framework",
+      "description": "Implement WebDAV, CalDAV, and CardDAV servers",
+      "core_feature": true
     },
     {
-      "title": "Real-Time Sync",
-      "description": "Enables calendar synchronization across devices using the CalDAV protocol"
+      "title": "Standards Compliance",
+      "description": "Follow open DAV specifications",
+      "core_feature": true
     },
     {
-      "title": "Plugin System",
-      "description": "Extend functionality with custom plugins for authentication, storage, and features"
+      "title": "Calendar Support",
+      "description": "Enable CalDAV calendars"
     },
     {
-      "title": "Access Control",
-      "description": "Implements fine-grained permissions and authentication mechanisms for secure access"
+      "title": "Address Book Support",
+      "description": "Enable CardDAV contacts"
     },
     {
-      "title": "Property Storage",
-      "description": "Supports custom WebDAV properties for metadata and extended attributes"
+      "title": "PHP Library",
+      "description": "Integrate DAV features into PHP apps"
     }
   ],
   "platform_support": {

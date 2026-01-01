@@ -33,28 +33,38 @@
   },
   "features": [
     {
-      "title": "REST API",
-      "description": "Store API keys, passwords, and environment variables in one secure location"
+      "title": "Secrets Management",
+      "description": "Stores application secrets such as API keys tokens and credentials",
+      "core_feature": true
     },
     {
-      "title": "Tagging System",
-      "description": "Organize secrets by environment (dev, staging, production)"
+      "title": "Environment Separation",
+      "description": "Organizes secrets by environment such as development staging and production",
+      "core_feature": true
     },
     {
       "title": "Access Control",
-      "description": "Define granular permissions for who can read or modify secrets"
+      "description": "Restricts who can read or modify secrets using role-based permissions"
     },
     {
       "title": "Audit Logging",
-      "description": "Track all secret access and modifications for compliance"
+      "description": "Records access and changes to secrets for traceability"
     },
     {
-      "title": "Version History",
-      "description": "View and rollback to previous versions of secrets"
+      "title": "Secret Rotation",
+      "description": "Supports updating secrets without manual redistribution"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Choose between self-hosting or managed cloud deployment"
+      "title": "API and CLI Access",
+      "description": "Integrates secrets into applications and deployment workflows"
+    },
+    {
+      "title": "Team Collaboration",
+      "description": "Shares secrets safely among team members"
+    },
+    {
+      "title": "Self-Hosted Secrets Platform",
+      "description": "Can be hosted on your own servers"
     }
   ],
   "platform_support": {

@@ -32,36 +32,26 @@
   },
   "features": [
     {
-      "title": "S.m.a.r.t. Monitoring",
-      "description": "Tracks hard drive health metrics using S.M.A.R.T. data from smartctl"
+      "title": "Disk Health Monitoring",
+      "description": "Monitor SMART disk health metrics",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Displays drive health, temperature, and failure predictions in intuitive charts"
-    },
-    {
-      "title": "Email Notifications",
-      "description": "Sends email, Slack, or webhook alerts when drives show signs of failure"
+      "title": "Dashboard",
+      "description": "View disk status and alerts",
+      "core_feature": true
     },
     {
       "title": "Historical Tracking",
-      "description": "Stores S.M.A.R.T. metrics over time to identify degradation trends"
+      "description": "Track disk metrics over time"
     },
     {
-      "title": "Multi",
-      "description": "Monitors all connected drives including HDDs, SSDs, and NVMe devices"
+      "title": "Notifications",
+      "description": "Receive alerts for disk issues"
     },
     {
-      "title": "Failure Prediction",
-      "description": "Uses S.M.A.R.T. thresholds and algorithms to predict drive failures"
-    },
-    {
-      "title": "Temperature Monitoring",
-      "description": "Tracks drive temperatures and alerts on overheating conditions"
-    },
-    {
-      "title": "Mobile Responsive",
-      "description": "Access drive health information from any device via responsive web UI"
+      "title": "Self-Hosted Service",
+      "description": "Run monitoring on your own hardware"
     }
   ],
   "platform_support": {

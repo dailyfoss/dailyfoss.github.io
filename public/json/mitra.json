@@ -27,24 +27,32 @@
   },
   "features": [
     {
-      "title": "Microblogging",
-      "description": "Publish short posts with text, images, and links in a Twitter-like interface for quick updates"
+      "title": "Federated Microblogging",
+      "description": "Host a microblogging service using federation",
+      "core_feature": true
     },
     {
-      "title": "Data Privacy",
-      "description": "Set post visibility to public, followers-only, or direct messages for granular audience control"
+      "title": "Posts and Replies",
+      "description": "Publish short posts and replies",
+      "core_feature": true
     },
     {
-      "title": "Lightweight",
-      "description": "Run efficiently with minimal resource requirements compared to heavier fediverse platforms"
+      "title": "User Accounts",
+      "description": "Manage user profiles",
+      "core_feature": true
     },
     {
-      "title": "File Upload",
-      "description": "Upload images and files to posts with automatic thumbnail generation and optimization"
+      "title": "Federation",
+      "description": "Exchange posts with other servers",
+      "core_feature": true
     },
     {
-      "title": "Tagging System",
-      "description": "Tag posts for discoverability and browse trending topics across the fediverse"
+      "title": "Media Attachments",
+      "description": "Attach media files to posts"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the service on your own infrastructure"
     }
   ],
   "platform_support": {

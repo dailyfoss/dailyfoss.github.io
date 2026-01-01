@@ -33,19 +33,37 @@
   "features": [
     {
       "title": "Load Balancing",
-      "description": "Distribute traffic, Multiple algorithms, Health checks. Scale effortlessly"
+      "description": "Distributes incoming network traffic across multiple backend services",
+      "core_feature": true
     },
     {
-      "title": "End-to-End Encryption",
-      "description": "Certificate management, SNI support, Encryption. Secure connections"
+      "title": "Reverse Proxy",
+      "description": "Routes client requests to internal services based on rules",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Extremely fast, Low latency, High throughput. Handle millions of requests"
+      "title": "High Availability Support",
+      "description": "Improves service reliability through redundancy"
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Real-time stats, Detailed metrics, Web dashboard. Full visibility"
+      "title": "Health Checking",
+      "description": "Detects unavailable backend services automatically"
+    },
+    {
+      "title": "TLS Termination",
+      "description": "Handles encrypted client connections"
+    },
+    {
+      "title": "Traffic Statistics",
+      "description": "Exposes metrics about connections and requests"
+    },
+    {
+      "title": "Configuration Files",
+      "description": "Defines routing and behavior using configuration files"
+    },
+    {
+      "title": "Self-Hosted Networking",
+      "description": "Run HAProxy on your own servers"
     }
   ],
   "platform_support": {

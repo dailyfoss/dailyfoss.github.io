@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "End-to-End Encryption",
-      "description": "Securely exposes local services through encrypted WireGuard VPN tunnels"
-    },
-    {
-      "title": "Docker Support",
-      "description": "Automatically detects and configures containers with simple labels"
-    },
-    {
-      "title": "Reverse Proxy Automation",
-      "description": "Sets up NGINX or Caddy reverse proxies without manual configuration"
+      "title": "Application Gateway",
+      "description": "Expose and route access to self-hosted services",
+      "core_feature": true
     },
     {
       "title": "Access Control",
-      "description": "Isolates services with network segmentation and access controls"
+      "description": "Restrict access to services using authentication rules",
+      "core_feature": true
+    },
+    {
+      "title": "Service Routing",
+      "description": "Route incoming requests to internal services",
+      "core_feature": true
+    },
+    {
+      "title": "Configuration Files",
+      "description": "Define gateway behavior using configuration files"
+    },
+    {
+      "title": "HTTPS Support",
+      "description": "Serve applications over encrypted connections"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the gateway on your own infrastructure"
     }
   ],
   "platform_support": {

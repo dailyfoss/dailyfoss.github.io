@@ -32,36 +32,113 @@
   },
   "features": [
     {
-      "title": "Deduplication",
-      "description": "Save space with intelligent block-level deduplication. Efficient storage"
+      "title": "Deduplicating Backups",
+      "description": "Stores backups efficiently by reusing identical data blocks",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Reduce backup size with built-in compression. Faster transfers"
+      "title": "Encrypted Archives",
+      "description": "Protects backup data using authenticated encryption",
+      "core_feature": true
     },
     {
-      "title": "Database Backup",
-      "description": "Secure backups with strong authentication and encryption. Complete security"
+      "title": "Incremental Snapshots",
+      "description": "Creates point-in-time snapshots without full duplication",
+      "core_feature": true
     },
     {
-      "title": "Fast Backups",
-      "description": "Incremental backups are quick and efficient. Minimal downtime"
+      "title": "Compression Support",
+      "description": "Reduces storage usage using configurable compression algorithms"
     },
     {
-      "title": "Space Efficient",
-      "description": "Only store changed data blocks. Maximize storage"
+      "title": "Repository Integrity Checking",
+      "description": "Verifies backup data consistency and detects corruption"
     },
     {
-      "title": "Cross",
-      "description": "Works on Linux and macOS systems. Universal compatibility"
+      "title": "Remote Backup Support",
+      "description": "Stores backups on remote servers over SSH"
     },
     {
-      "title": "Remote Backups",
-      "description": "Backup to remote servers over SSH. Offsite protection"
+      "title": "Pruning Policies",
+      "description": "Automatically removes old backups based on retention rules"
     },
     {
-      "title": "Reliable",
-      "description": "Battle-tested backup solution trusted by sysadmins. Production-ready"
+      "title": "File-Level Restore",
+      "description": "Restores individual files or directories from archives"
+    },
+    {
+      "title": "Cross-Platform Clients",
+      "description": "Runs on Linux, macOS, and other Unix-like systems"
+    },
+    {
+      "title": "Deduplicated Backups",
+      "description": "Stores backups using block-level deduplication",
+      "core_feature": true
+    },
+    {
+      "title": "Encrypted Archives",
+      "description": "Protects backup data with encryption",
+      "core_feature": true
+    },
+    {
+      "title": "Incremental Snapshots",
+      "description": "Creates efficient point-in-time backups",
+      "core_feature": true
+    },
+    {
+      "title": "Remote Backup Support",
+      "description": "Backs up data to remote servers over SSH"
+    },
+    {
+      "title": "Compression Options",
+      "description": "Reduces storage usage with compression"
+    },
+    {
+      "title": "Repository Verification",
+      "description": "Checks backup data integrity"
+    },
+    {
+      "title": "Retention Policies",
+      "description": "Manages backup pruning rules"
+    },
+    {
+      "title": "File-Level Restore",
+      "description": "Restores individual files or directories"
+    },
+    {
+      "title": "Deduplicated Backups",
+      "description": "Stores backups using block-level deduplication",
+      "core_feature": true
+    },
+    {
+      "title": "Encrypted Archives",
+      "description": "Protects backup data with encryption",
+      "core_feature": true
+    },
+    {
+      "title": "Incremental Snapshots",
+      "description": "Creates efficient point-in-time backups",
+      "core_feature": true
+    },
+    {
+      "title": "Remote Backup Support",
+      "description": "Backs up data to remote servers over SSH"
+    },
+    {
+      "title": "Compression Options",
+      "description": "Reduces storage usage with compression"
+    },
+    {
+      "title": "Repository Verification",
+      "description": "Checks backup data integrity"
+    },
+    {
+      "title": "Retention Policies",
+      "description": "Manages backup pruning rules"
+    },
+    {
+      "title": "File-Level Restore",
+      "description": "Restores individual files or directories"
     }
   ],
   "platform_support": {

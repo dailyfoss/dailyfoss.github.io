@@ -27,32 +27,31 @@
   },
   "features": [
     {
-      "title": "Web Interface",
-      "description": "Start, stop, and restart Docker containers with a clean web interface instead of CLI commands"
+      "title": "Container Management",
+      "description": "Manage Docker containers through a web UI",
+      "core_feature": true
     },
     {
       "title": "Template Library",
-      "description": "Deploy popular applications quickly using pre-configured templates with sensible defaults"
+      "description": "Deploy applications using templates",
+      "core_feature": true
     },
     {
-      "title": "Docker Support",
-      "description": "Manage multi-container applications defined in docker-compose files through the GUI"
+      "title": "Compose Support",
+      "description": "Manage multi-container applications",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "View CPU, memory, and network usage for each container in real-time dashboards"
+      "title": "Container Control",
+      "description": "Start and stop containers"
     },
     {
-      "title": "Search and Filter",
-      "description": "Access container logs directly in the browser with filtering and search capabilities"
+      "title": "Resource Overview",
+      "description": "View container resource usage"
     },
     {
-      "title": "Volume Management",
-      "description": "Create, attach, and manage Docker volumes for persistent data storage across containers"
-    },
-    {
-      "title": "Email Notifications",
-      "description": "Receive alerts when newer container images are available for running applications"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the manager on your own infrastructure"
     }
   ],
   "platform_support": {

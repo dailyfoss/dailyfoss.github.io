@@ -32,32 +32,32 @@
   },
   "features": [
     {
-      "title": "Docker Support",
-      "description": "Includes Postfix, Dovecot, SOGo webmail, and spam filtering in one Docker stack"
+      "title": "Mail Server Suite",
+      "description": "Provide email services for custom domains",
+      "core_feature": true
     },
     {
-      "title": "User Management",
-      "description": "Host multiple email domains with independent settings and user management"
+      "title": "Webmail",
+      "description": "Access email through a browser interface",
+      "core_feature": true
     },
     {
-      "title": "Webmail Interface",
-      "description": "Access email through SOGo's modern webmail client with calendar and contacts"
+      "title": "User and Domain Management",
+      "description": "Manage mailboxes and domains",
+      "core_feature": true
     },
     {
-      "title": "Dkim And Spf",
-      "description": "Automatic configuration of email authentication to improve deliverability"
+      "title": "Spam Filtering",
+      "description": "Filter incoming mail automatically"
     },
     {
-      "title": "Quarantine Management",
-      "description": "Review and release quarantined messages through the admin interface"
+      "title": "Mail Protocol Support",
+      "description": "Support SMTP, IMAP, and POP3",
+      "core_feature": true
     },
     {
-      "title": "Two-Factor Authentication",
-      "description": "Secure user accounts with TOTP-based 2FA for enhanced security"
-    },
-    {
-      "title": "REST API",
-      "description": "Automate mailbox and domain management through a comprehensive REST API"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the mail server on your own infrastructure"
     }
   ],
   "platform_support": {

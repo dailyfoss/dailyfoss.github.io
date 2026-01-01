@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "End-to-End Encryption",
-      "description": "Creates one-time links to encrypted messages that self-destruct"
+      "title": "Secret Messaging",
+      "description": "Share short secret messages using one-time links",
+      "core_feature": true
     },
     {
-      "title": "Client",
-      "description": "Encrypts messages in browser before sending to server"
+      "title": "One-Time Access",
+      "description": "Automatically delete messages after being viewed",
+      "core_feature": true
     },
     {
-      "title": "One",
-      "description": "Destroys messages after first viewing for security"
-    },
-    {
-      "title": "Time Expiration",
-      "description": "Sets automatic expiration for messages after specified duration"
+      "title": "Expiration Controls",
+      "description": "Set time-based expiration for messages",
+      "core_feature": true
     },
     {
       "title": "Password Protection",
-      "description": "Optionally requires password to decrypt and view messages"
+      "description": "Protect messages with optional passwords"
     },
     {
-      "title": "No Registration",
-      "description": "Creates secret messages without accounts or authentication"
+      "title": "Minimal Interface",
+      "description": "Create and view messages through a simple web UI"
     },
     {
-      "title": "Email Notifications",
-      "description": "Optionally notifies sender when message is read"
-    },
-    {
-      "title": "Custom Expiration",
-      "description": "Chooses from preset durations or sets custom expiration time"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the message service on your own infrastructure"
     }
   ],
   "platform_support": {

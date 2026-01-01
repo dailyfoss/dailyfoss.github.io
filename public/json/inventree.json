@@ -32,20 +32,38 @@
   },
   "features": [
     {
-      "title": "Parts Management",
-      "description": "Track components, assemblies, and finished products with detailed specifications"
+      "title": "Inventory Management",
+      "description": "Provides a structured system for tracking parts components and finished items within an inventory",
+      "core_feature": true
     },
     {
-      "title": "Bom Management",
-      "description": "Create and manage bill of materials for assemblies and products"
+      "title": "Bill of Materials",
+      "description": "Defines relationships between components and assemblies to represent how products are built",
+      "core_feature": true
+    },
+    {
+      "title": "Stock Tracking",
+      "description": "Records stock quantities locations and movements over time"
+    },
+    {
+      "title": "Supplier Management",
+      "description": "Stores supplier information pricing and purchasing details"
+    },
+    {
+      "title": "Build and Manufacturing Orders",
+      "description": "Tracks production and assembly processes using build orders"
     },
     {
       "title": "Barcode Support",
-      "description": "Generate and scan barcodes for efficient inventory operations"
+      "description": "Supports barcode scanning for identifying parts and stock items"
     },
     {
-      "title": "REST API",
-      "description": "Integrate with other systems using comprehensive REST API"
+      "title": "API Access",
+      "description": "Allows external systems to interact with inventory data programmatically"
+    },
+    {
+      "title": "Self-Hosted Inventory System",
+      "description": "Runs the inventory platform on your own infrastructure"
     }
   ],
   "platform_support": {

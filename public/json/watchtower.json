@@ -32,20 +32,26 @@
   },
   "features": [
     {
-      "title": "Docker Support",
-      "description": "Monitor Docker containers and automatically pull and deploy new image versions when available"
+      "title": "Container Update Automation",
+      "description": "Automatically update running containers",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Receive alerts via email, Slack, Discord, or webhooks when containers are updated"
+      "title": "Image Monitoring",
+      "description": "Monitor containers for new image versions",
+      "core_feature": true
     },
     {
-      "title": "Database Backup",
-      "description": "Execute custom scripts before or after updates for backup or validation tasks"
+      "title": "Scheduled Updates",
+      "description": "Run updates on a defined schedule"
     },
     {
-      "title": "Registry Authentication",
-      "description": "Support private Docker registries with credential management for enterprise deployments"
+      "title": "Notification Support",
+      "description": "Send update notifications"
+    },
+    {
+      "title": "Docker Integration",
+      "description": "Work directly with Docker environments"
     }
   ],
   "platform_support": {

@@ -32,36 +32,27 @@
   },
   "features": [
     {
-      "title": "Kubernetes Ready",
-      "description": "Provide single sign-on access to SSH servers, Kubernetes clusters, databases, and web applications"
+      "title": "Secure Access Gateway",
+      "description": "Provide secure access to servers and apps",
+      "core_feature": true
     },
     {
-      "title": "Single Sign-On",
-      "description": "Authenticate users with SSO providers like Okta, GitHub, or SAML for centralized identity management"
+      "title": "SSH Access",
+      "description": "Manage SSH access centrally",
+      "core_feature": true
     },
     {
-      "title": "Session Recording",
-      "description": "Record all SSH and Kubernetes sessions for compliance, auditing, and security review"
-    },
-    {
-      "title": "Certificate",
-      "description": "Use short-lived certificates instead of static credentials for improved security posture"
-    },
-    {
-      "title": "Access Requests",
-      "description": "Implement approval workflows for privileged access with just-in-time permission elevation"
-    },
-    {
-      "title": "Web Interface",
-      "description": "Access infrastructure resources through a browser-based interface without installing client tools"
-    },
-    {
-      "title": "Cli Tools",
-      "description": "Use command-line tools for SSH, database, and Kubernetes access with seamless authentication"
+      "title": "Role-Based Access Control",
+      "description": "Control access using roles",
+      "core_feature": true
     },
     {
       "title": "Audit Logging",
-      "description": "Maintain comprehensive audit logs of all access events and administrative actions"
+      "description": "Record access and session activity"
+    },
+    {
+      "title": "Web UI",
+      "description": "Manage access through a browser"
     }
   ],
   "platform_support": {

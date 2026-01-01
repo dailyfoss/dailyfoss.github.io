@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "User Authentication",
-      "description": "Handle user registration, login, and password management for applications"
+      "title": "Authentication Service",
+      "description": "Provide authentication for applications",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Create and manage user accounts through web UI and API"
+      "title": "User Management",
+      "description": "Manage users and credentials",
+      "core_feature": true
     },
     {
-      "title": "Oauth2 Support",
-      "description": "Provide OAuth2 authentication for third-party application integration"
+      "title": "Token Issuance",
+      "description": "Issue authentication tokens",
+      "core_feature": true
     },
     {
-      "title": "Session Management",
-      "description": "Track active sessions and provide logout functionality"
+      "title": "API Integration",
+      "description": "Integrate authentication via API"
     },
     {
-      "title": "Password Policies",
-      "description": "Enforce password complexity and expiration requirements"
+      "title": "Access Policies",
+      "description": "Define authentication rules"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the service on your own infrastructure"
     }
   ],
   "platform_support": {

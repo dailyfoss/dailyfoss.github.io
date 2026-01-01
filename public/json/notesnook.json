@@ -32,24 +32,26 @@
   },
   "features": [
     {
-      "title": "Data Privacy",
-      "description": "Synchronize notes across devices with end-to-end encryption for privacy"
+      "title": "Sync Backend",
+      "description": "Synchronize notes across devices",
+      "core_feature": true
     },
     {
-      "title": "User Management",
-      "description": "Handle authentication and user management for Notesnook clients"
+      "title": "User Accounts",
+      "description": "Manage users and sync scopes",
+      "core_feature": true
     },
     {
-      "title": "Real-Time Sync",
-      "description": "Sync notes between Windows, macOS, Linux, iOS, and Android apps"
+      "title": "Data Encryption",
+      "description": "Store encrypted note data"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Run your own sync server for complete control over note data"
+      "title": "API Access",
+      "description": "Provide endpoints for client sync"
     },
     {
-      "title": "Database Backup",
-      "description": "Export encrypted backups for disaster recovery and data portability"
+      "title": "Self-Hosted Service",
+      "description": "Run the sync server on your own infrastructure"
     }
   ],
   "platform_support": {

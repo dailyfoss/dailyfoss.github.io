@@ -32,28 +32,30 @@
   },
   "features": [
     {
-      "title": "Webhook Support",
-      "description": "Automatic retries ensure webhooks reach their destination. Never lose events"
+      "title": "Webhook Gateway",
+      "description": "Receives and delivers webhooks",
+      "core_feature": true
     },
     {
-      "title": "Event Filtering",
-      "description": "Route and filter webhooks based on custom rules. Precise event handling"
+      "title": "Event Routing",
+      "description": "Routes events to destinations",
+      "core_feature": true
     },
     {
-      "title": "Message Transformation",
-      "description": "Modify payloads before delivery with transformations. Flexible integration"
+      "title": "Retry Handling",
+      "description": "Retries failed webhook deliveries"
     },
     {
-      "title": "High Performance",
-      "description": "Built to handle millions of webhook deliveries. Enterprise-grade performance"
+      "title": "Web Dashboard",
+      "description": "Monitors webhook activity"
     },
     {
-      "title": "REST API",
-      "description": "Connect with any service or custom application. Universal compatibility"
+      "title": "API Access",
+      "description": "Manages endpoints programmatically"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Complete control over your webhook infrastructure. Enhanced security and reliability"
+      "title": "Self-Hosted Infrastructure",
+      "description": "Runs without external webhook services"
     }
   ],
   "platform_support": {

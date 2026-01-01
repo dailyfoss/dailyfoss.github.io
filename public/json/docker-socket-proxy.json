@@ -32,28 +32,34 @@
   },
   "features": [
     {
-      "title": "Docker Support",
-      "description": "Safely expose Docker socket over HTTP. Controlled container management"
+      "title": "Docker Socket Proxy",
+      "description": "Restricts access to Docker socket endpoints",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Restrict specific Docker API actions. Fine-grained security control"
+      "title": "Permission-Based Filtering",
+      "description": "Allows fine-grained API access control",
+      "core_feature": true
     },
     {
-      "title": "Isolation Layer",
-      "description": "Protect Docker daemon from direct exposure. Enhanced security posture"
+      "title": "Reverse Proxy Architecture",
+      "description": "Proxies Docker API requests"
     },
     {
-      "title": "Http Proxy",
-      "description": "Access Docker operations through standard HTTP. Easy integration"
+      "title": "Container Deployment",
+      "description": "Runs as a Docker container"
     },
     {
-      "title": "Permission Control",
-      "description": "Define exactly which operations are allowed. Minimize attack surface"
+      "title": "Security Hardening",
+      "description": "Reduces attack surface of Docker socket"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Run your own secure Docker proxy. Complete control over access"
+      "title": "Configuration via Environment Variables",
+      "description": "Controls allowed endpoints through env vars"
+    },
+    {
+      "title": "Self-Hosted Security Tool",
+      "description": "Runs on user-managed infrastructure"
     }
   ],
   "platform_support": {

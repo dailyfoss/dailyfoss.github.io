@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Email Notifications",
-      "description": "Receive notifications when new or unknown devices join the network"
+      "title": "Network Device Monitoring",
+      "description": "Detect and track devices on a network",
+      "core_feature": true
     },
     {
-      "title": "Home Assistant Integration",
-      "description": "Send device presence data to Home Assistant for automation triggers"
+      "title": "Device Inventory",
+      "description": "Maintain a list of known network devices",
+      "core_feature": true
     },
     {
-      "title": "Custom Notifications",
-      "description": "Configure alerts via email, webhooks, or push services for network events"
+      "title": "Change Detection",
+      "description": "Detect new or unknown devices",
+      "core_feature": true
     },
     {
-      "title": "Mac Address Tracking",
-      "description": "Monitor devices by hardware address even when IP addresses change"
+      "title": "Notifications",
+      "description": "Send alerts for network changes"
+    },
+    {
+      "title": "Web Dashboard",
+      "description": "View network status through a browser"
+    },
+    {
+      "title": "Self-Hosted Service",
+      "description": "Run the monitor on your own servers"
     }
   ],
   "platform_support": {

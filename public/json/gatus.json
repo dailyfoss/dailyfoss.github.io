@@ -32,20 +32,39 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Monitor all services at a glance through a clean, real-time status dashboard"
+      "title": "Service Health Monitoring",
+      "description": "Monitors availability of services and endpoints",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Send notifications via Slack, Discord, email, PagerDuty, and other integrations"
+      "title": "Status Dashboard",
+      "description": "Displays current service health",
+      "core_feature": true
     },
     {
-      "title": "Response Time Tracking",
-      "description": "Monitor and visualize service response times with historical data"
+      "title": "Endpoint Checks",
+      "description": "Performs HTTP TCP ICMP and DNS checks",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Single binary with minimal dependencies for easy self-hosted monitoring"
+      "title": "Alerting",
+      "description": "Sends notifications when checks fail"
+    },
+    {
+      "title": "Historical Uptime",
+      "description": "Tracks uptime over time"
+    },
+    {
+      "title": "YAML Configuration",
+      "description": "Defines checks using configuration files"
+    },
+    {
+      "title": "Lightweight Deployment",
+      "description": "Runs with minimal resource usage"
+    },
+    {
+      "title": "Self-Hosted Monitoring",
+      "description": "Run monitoring on your own infrastructure"
     }
   ],
   "platform_support": {

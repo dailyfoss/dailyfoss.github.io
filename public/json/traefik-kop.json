@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "View all Traefik routers, services, and middleware in an organized dashboard"
+      "title": "Kubernetes Operator",
+      "description": "Manage Traefik resources in Kubernetes",
+      "core_feature": true
     },
     {
-      "title": "Visual Representation",
-      "description": "Understand complex routing configurations through visual diagrams and layouts"
+      "title": "Custom Resources",
+      "description": "Define Traefik configuration using CRDs",
+      "core_feature": true
     },
     {
-      "title": "Quick Navigation",
-      "description": "Jump between related routers, services, and middleware for efficient troubleshooting"
+      "title": "Automated Reconciliation",
+      "description": "Keep Traefik state in sync",
+      "core_feature": true
     },
     {
-      "title": "Status Monitoring",
-      "description": "See which routes are active, healthy, or experiencing issues at a glance"
+      "title": "Cluster Integration",
+      "description": "Integrate with Kubernetes clusters"
     },
     {
-      "title": "Search and Filter",
-      "description": "Find specific routers or services quickly using search and filtering"
+      "title": "Declarative Configuration",
+      "description": "Manage routing declaratively"
     },
     {
-      "title": "Configuration Details",
-      "description": "View detailed configuration for each component including rules and settings"
-    },
-    {
-      "title": "Middleware Chains",
-      "description": "Visualize middleware chains and their order of execution for debugging"
-    },
-    {
-      "title": "Service Health",
-      "description": "Monitor backend service health and availability from the dashboard"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the operator in your own cluster"
     }
   ],
   "platform_support": {

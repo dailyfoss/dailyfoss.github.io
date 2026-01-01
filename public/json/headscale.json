@@ -32,36 +32,38 @@
   },
   "features": [
     {
-      "title": "Tailscale Compatible",
-      "description": "Open-source control server compatible with Tailscale clients across all platforms"
+      "title": "Tailscale Control Server",
+      "description": "Acts as a coordination server for Tailscale clients",
+      "core_feature": true
     },
     {
-      "title": "Wireguard Mesh",
-      "description": "Build secure peer-to-peer VPN networks using modern WireGuard protocol"
+      "title": "Device Registration",
+      "description": "Registers and manages connected devices",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Run your own coordination server without relying on Tailscale's cloud service"
+      "title": "Network Coordination",
+      "description": "Enables peer-to-peer connectivity between nodes"
     },
     {
-      "title": "Zero Configuration",
-      "description": "Automatic NAT traversal and firewall penetration for seamless connectivity"
+      "title": "Access Control Lists",
+      "description": "Controls which devices can communicate"
     },
     {
-      "title": "Cross",
-      "description": "Connect devices running Linux, macOS, Windows, iOS, and Android"
+      "title": "User Namespaces",
+      "description": "Separates devices by user or organization"
     },
     {
-      "title": "Access Control",
-      "description": "Define which devices can communicate using flexible ACL policies"
+      "title": "API Access",
+      "description": "Integrates network management with automation tools"
     },
     {
-      "title": "Lightweight",
-      "description": "Minimal resource usage with efficient connection management"
+      "title": "Management Interface",
+      "description": "Views and manages nodes using supported interfaces"
     },
     {
-      "title": "Private Networking",
-      "description": "Create secure networks for accessing home services or connecting remote sites"
+      "title": "Self-Hosted VPN Control",
+      "description": "Run the control server on your own infrastructure"
     }
   ],
   "platform_support": {

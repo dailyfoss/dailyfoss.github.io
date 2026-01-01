@@ -33,35 +33,30 @@
   "features": [
     {
       "title": "Certificate Authority",
-      "description": "Issues and manages X.509 certificates for internal infrastructure"
+      "description": "Issue and manage TLS certificates",
+      "core_feature": true
     },
     {
-      "title": "Acme Protocol",
-      "description": "Automates certificate issuance with Let's Encrypt-compatible ACME"
+      "title": "Automated Certificate Issuance",
+      "description": "Automate certificate creation and renewal",
+      "core_feature": true
     },
     {
-      "title": "Short",
-      "description": "Issues certificates with short lifespans for enhanced security"
+      "title": "ACME Support",
+      "description": "Support ACME-based certificate workflows",
+      "core_feature": true
     },
     {
-      "title": "Automatic Renewal",
-      "description": "Renews certificates automatically before expiration"
+      "title": "Identity Integration",
+      "description": "Issue certificates based on identity"
     },
     {
-      "title": "Multiple Provisioners",
-      "description": "Supports ACME, OAuth, OIDC, and other authentication methods"
+      "title": "Audit Logging",
+      "description": "Log certificate operations"
     },
     {
-      "title": "Ssh Certificates",
-      "description": "Issues SSH certificates for secure server and user authentication"
-    },
-    {
-      "title": "REST API",
-      "description": "Manages certificates programmatically via REST API"
-    },
-    {
-      "title": "Hardware Security",
-      "description": "Integrates with HSMs and cloud KMS for key protection"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the certificate authority on your own infrastructure"
     }
   ],
   "platform_support": {

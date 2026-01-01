@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "Public Sharing",
-      "description": "Safely expose shared Immich albums to the internet"
-    },
-    {
-      "title": "Proxy Layer",
-      "description": "Add security layer between public access and your Immich server"
-    },
-    {
-      "title": "Protected Instance",
-      "description": "Keep main Immich installation behind authentication"
-    },
-    {
-      "title": "Selective Exposure",
-      "description": "Choose which albums or links to make publicly accessible"
-    },
-    {
-      "title": "Security Enhancement",
-      "description": "Prevent direct access to your private Immich instance"
-    },
-    {
-      "title": "Share Links",
-      "description": "Enable public sharing links without compromising server security"
+      "title": "Public Sharing Proxy",
+      "description": "Expose selected Immich content through public URLs",
+      "core_feature": true
     },
     {
       "title": "Access Control",
-      "description": "Manage what content is publicly visible versus private"
+      "description": "Restrict which assets are accessible publicly",
+      "core_feature": true
     },
     {
-      "title": "Immich Integration",
-      "description": "Seamlessly works with Immich's sharing features"
+      "title": "Reverse Proxy",
+      "description": "Forward requests to an internal Immich instance",
+      "core_feature": true
+    },
+    {
+      "title": "URL Mapping",
+      "description": "Map public paths to internal Immich resources"
+    },
+    {
+      "title": "Lightweight Service",
+      "description": "Run a minimal proxy with simple configuration"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the proxy on your own infrastructure"
     }
   ],
   "platform_support": {

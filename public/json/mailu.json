@@ -32,20 +32,32 @@
   },
   "features": [
     {
-      "title": "Admin Interface",
-      "description": "Manage domains, users, and aliases through a clean web-based control panel"
+      "title": "Modular Mail Server",
+      "description": "Provide email services using containerized components",
+      "core_feature": true
     },
     {
-      "title": "Webmail Options",
-      "description": "Choose between Roundcube or Rainloop for webmail interface"
+      "title": "Domain and User Management",
+      "description": "Manage mail domains and accounts",
+      "core_feature": true
     },
     {
-      "title": "End-to-End Encryption",
-      "description": "Enforce encrypted connections for both incoming and outgoing mail traffic"
+      "title": "Webmail Interface",
+      "description": "Access mail through a browser",
+      "core_feature": true
     },
     {
-      "title": "Fetchmail Integration",
-      "description": "Retrieve mail from external accounts and deliver to local mailboxes"
+      "title": "Spam and Virus Filtering",
+      "description": "Filter unwanted and malicious emails"
+    },
+    {
+      "title": "Mail Protocol Support",
+      "description": "Support standard email protocols",
+      "core_feature": true
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the mail platform on your own infrastructure"
     }
   ],
   "platform_support": {

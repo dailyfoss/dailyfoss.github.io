@@ -32,36 +32,26 @@
   },
   "features": [
     {
-      "title": "Ai",
-      "description": "Uses machine learning to identify web application attacks and zero-day threats"
-    },
-    {
       "title": "Web Application Firewall",
-      "description": "Protects against OWASP Top 10 vulnerabilities including SQL injection and XSS"
+      "description": "Protect web apps from common attacks",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Displays live traffic analysis and threat detection in comprehensive dashboards"
+      "title": "Traffic Inspection",
+      "description": "Analyze incoming HTTP traffic",
+      "core_feature": true
     },
     {
-      "title": "Threat Intelligence",
-      "description": "Integrates global threat feeds to block known malicious IPs and attack patterns"
+      "title": "Rule-Based Blocking",
+      "description": "Block malicious requests"
     },
     {
-      "title": "Custom Rules",
-      "description": "Create and deploy custom security rules tailored to your application's needs"
+      "title": "Dashboard",
+      "description": "View security events and logs"
     },
     {
-      "title": "Attack Visualization",
-      "description": "Provides detailed attack timelines and geographic distribution maps"
-    },
-    {
-      "title": "REST API",
-      "description": "Secures REST and GraphQL APIs with rate limiting and input validation"
-    },
-    {
-      "title": "Ssl/tls Termination",
-      "description": "Handles HTTPS traffic with automatic certificate management"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the firewall on your own servers"
     }
   ],
   "platform_support": {

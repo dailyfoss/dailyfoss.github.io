@@ -32,24 +32,31 @@
   },
   "features": [
     {
+      "title": "VPN Management",
+      "description": "Manage WireGuard VPN connections",
+      "core_feature": true
+    },
+    {
+      "title": "Client Configuration",
+      "description": "Generate VPN client configs",
+      "core_feature": true
+    },
+    {
+      "title": "Connection Monitoring",
+      "description": "Monitor VPN connections",
+      "core_feature": true
+    },
+    {
+      "title": "QR Code Generation",
+      "description": "Generate QR codes for clients"
+    },
+    {
       "title": "Web Interface",
-      "description": "Configure and manage WireGuard VPN servers through an intuitive web interface"
+      "description": "Manage VPN through a browser"
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Display QR codes for mobile devices to scan and connect instantly without manual configuration"
-    },
-    {
-      "title": "Configuration Download",
-      "description": "Download client configuration files for desktop or router setups"
-    },
-    {
-      "title": "File Upload",
-      "description": "Monitor upload and download statistics per peer to identify usage patterns"
-    },
-    {
-      "title": "Peer Management",
-      "description": "Enable, disable, or delete peers without restarting the VPN server"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the VPN manager on your own infrastructure"
     }
   ],
   "platform_support": {

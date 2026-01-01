@@ -33,35 +33,30 @@
   "features": [
     {
       "title": "Usenet Downloading",
-      "description": "Efficient binary file downloading from Usenet newsgroups using NZB files"
+      "description": "Download files from Usenet using NZB files",
+      "core_feature": true
     },
     {
-      "title": "Multi",
-      "description": "Parallel connections maximize download speed and bandwidth utilization"
+      "title": "Queue Management",
+      "description": "Manage active and queued downloads",
+      "core_feature": true
+    },
+    {
+      "title": "Download Automation",
+      "description": "Automate downloads based on rules"
+    },
+    {
+      "title": "Post-Processing",
+      "description": "Verify and unpack downloaded files",
+      "core_feature": true
     },
     {
       "title": "Web Interface",
-      "description": "Manage downloads, view queue, and configure settings through browser UI"
+      "description": "Control downloads through a browser"
     },
     {
-      "title": "Post",
-      "description": "Automatically unpack, verify, and organize downloads with custom scripts"
-    },
-    {
-      "title": "Rss Feeds",
-      "description": "Subscribe to feeds for automatic downloading of new releases"
-    },
-    {
-      "title": "Scheduling",
-      "description": "Set download speed limits and schedules to manage bandwidth usage"
-    },
-    {
-      "title": "Priority Queue",
-      "description": "Organize downloads by priority with pause, resume, and reorder capabilities"
-    },
-    {
-      "title": "Duplicate Detection",
-      "description": "Avoid downloading the same content multiple times with smart checking"
+      "title": "Self-Hosted Service",
+      "description": "Run the downloader on your own infrastructure"
     }
   ],
   "platform_support": {

@@ -33,24 +33,26 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "User-friendly dashboard for pgBackRest management. Simplified database backups"
-    },
-    {
-      "title": "Database Backup",
-      "description": "Web-based UI for backup configuration. No command line needed"
+      "title": "Backup Management Interface",
+      "description": "Manage restic backups using a web interface",
+      "core_feature": true
     },
     {
       "title": "Backup Scheduling",
-      "description": "Automate backup timing and frequency. Set and forget"
+      "description": "Schedule automated backup jobs",
+      "core_feature": true
     },
     {
-      "title": "Backup Monitoring",
-      "description": "Track backup status and health. Stay informed"
+      "title": "Snapshot Browsing",
+      "description": "Browse and inspect available backup snapshots"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Run your own backup management. Complete control"
+      "title": "Restore Support",
+      "description": "Restore files and directories from backups"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the backup manager on your own servers"
     }
   ],
   "platform_support": {

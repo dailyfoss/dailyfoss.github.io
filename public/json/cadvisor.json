@@ -32,28 +32,40 @@
   },
   "features": [
     {
-      "title": "Container Monitoring",
-      "description": "Real-time insights into container resource usage. Complete visibility"
+      "title": "Container Resource Monitoring",
+      "description": "Collects CPU, memory, and disk usage for containers",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Track CPU, memory, network, and disk usage. Comprehensive monitoring"
+      "title": "Real-Time Metrics",
+      "description": "Exposes live resource usage statistics",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Export metrics to Prometheus for long-term storage. Powerful analytics"
+      "title": "Historical Metrics",
+      "description": "Stores short-term container performance history",
+      "core_feature": true
     },
     {
-      "title": "Grafana Compatible",
-      "description": "Visualize metrics with Grafana dashboards. Beautiful graphs"
+      "title": "Container Discovery",
+      "description": "Automatically detects running containers",
+      "core_feature": true
     },
     {
-      "title": "Real-Time",
-      "description": "Live performance monitoring of running containers. Instant insights"
+      "title": "Web Interface",
+      "description": "Displays metrics in a browser"
     },
     {
-      "title": "Google",
-      "description": "Trusted tool from Google for container monitoring. Industry standard"
+      "title": "Prometheus Export",
+      "description": "Exposes metrics for Prometheus scraping"
+    },
+    {
+      "title": "Docker Integration",
+      "description": "Monitors Docker container environments"
+    },
+    {
+      "title": "Kubernetes Compatibility",
+      "description": "Integrates with Kubernetes monitoring setups"
     }
   ],
   "platform_support": {

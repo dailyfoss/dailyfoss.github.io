@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "Cloud",
-      "description": "Designed for object storage like S3 to minimize infrastructure costs and maximize scalability"
+      "title": "Log and Search Engine",
+      "description": "Index and search large volumes of data",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Ingest millions of logs per second with distributed indexing across multiple nodes"
+      "title": "Full-Text Search",
+      "description": "Perform fast text-based searches",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Query logs using Elasticsearch-compatible syntax for familiar search operations"
+      "title": "Ingestion Pipelines",
+      "description": "Ingest logs and events from multiple sources"
     },
     {
-      "title": "Web Query Ui",
-      "description": "Execute searches and visualize results through an intuitive browser-based interface"
+      "title": "Query API",
+      "description": "Search indexed data via API",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Integrate log search into applications and dashboards using standard HTTP endpoints"
+      "title": "Distributed Architecture",
+      "description": "Scale indexing and search across nodes"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the engine on your own infrastructure"
     }
   ],
   "platform_support": {

@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Create and edit WireGuard configurations through a user-friendly web dashboard"
+      "title": "WireGuard Dashboard",
+      "description": "Monitor WireGuard VPN status",
+      "core_feature": true
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Generate QR codes for mobile client setup with automatic configuration encoding"
+      "title": "Peer Management",
+      "description": "Manage WireGuard peers",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Find specific peers quickly using search and filtering across large peer lists"
+      "title": "Traffic Monitoring",
+      "description": "View VPN traffic usage",
+      "core_feature": true
     },
     {
-      "title": "Database Backup",
-      "description": "Export and import configurations for backup or migration to other servers"
+      "title": "Configuration Editing",
+      "description": "Edit WireGuard configuration files"
     },
     {
-      "title": "Access Control",
-      "description": "Secure the dashboard with password authentication and optional two-factor authentication"
+      "title": "Web Interface",
+      "description": "Access VPN data in a browser"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the dashboard on your own servers"
     }
   ],
   "platform_support": {

@@ -32,36 +32,30 @@
   },
   "features": [
     {
-      "title": "Web Interface",
-      "description": "Configure Nginx proxies through an intuitive web interface without editing config files"
+      "title": "Reverse Proxy UI",
+      "description": "Manage NGINX proxies using a web interface",
+      "core_feature": true
     },
     {
-      "title": "Ssl Certificates",
-      "description": "Automatic SSL certificate generation and renewal via Let's Encrypt"
+      "title": "Host Entries",
+      "description": "Create host entries with SSL support",
+      "core_feature": true
     },
     {
-      "title": "Domain Routing",
-      "description": "Route multiple domains to different backend services from a single IP address"
+      "title": "Access Control",
+      "description": "Restrict access to proxied services"
     },
     {
-      "title": "Access Lists",
-      "description": "Restrict access to proxied services by IP address or authentication"
+      "title": "SSL Certificates",
+      "description": "Manage Let’s Encrypt and custom certificates"
     },
     {
-      "title": "Custom Locations",
-      "description": "Define URL path-based routing to different backend services"
+      "title": "Traffic Routing",
+      "description": "Route traffic to backend services"
     },
     {
-      "title": "Websocket Support",
-      "description": "Proxy WebSocket connections for real-time applications"
-    },
-    {
-      "title": "High Performance",
-      "description": "Enable modern protocols for improved performance and security"
-    },
-    {
-      "title": "Force Ssl",
-      "description": "Automatically redirect HTTP traffic to HTTPS for secure connections"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the proxy manager on your own servers"
     }
   ],
   "platform_support": {

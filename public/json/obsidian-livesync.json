@@ -32,28 +32,27 @@
   },
   "features": [
     {
-      "title": "Mobile Responsive",
-      "description": "Keep Obsidian vaults synchronized across desktop and mobile devices with automatic change detection"
+      "title": "Note Synchronization",
+      "description": "Sync Obsidian notes across devices",
+      "core_feature": true
+    },
+    {
+      "title": "Real-Time Updates",
+      "description": "Reflect note changes across devices quickly",
+      "core_feature": true
+    },
+    {
+      "title": "Conflict Handling",
+      "description": "Handle simultaneous edits safely"
     },
     {
       "title": "End-to-End Encryption",
-      "description": "Protect note content with client-side encryption before transmission to the sync server"
+      "description": "Encrypt note data during sync",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Run your own sync server to maintain complete ownership of note data without cloud dependencies"
-    },
-    {
-      "title": "Version History",
-      "description": "Access previous versions of notes to recover deleted content or review document evolution"
-    },
-    {
-      "title": "Real-Time Sync",
-      "description": "Choose which folders or files to synchronize per device for managing large vaults efficiently"
-    },
-    {
-      "title": "Theme Customization",
-      "description": "Work alongside other Obsidian plugins without interfering with community extensions or themes"
+      "title": "Self-Hosted Backend",
+      "description": "Run the sync server on your own infrastructure"
     }
   ],
   "platform_support": {

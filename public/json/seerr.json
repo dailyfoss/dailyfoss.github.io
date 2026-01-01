@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "Search and Filter",
-      "description": "Users can search and request movies or TV shows for download"
+      "title": "Media Request Management",
+      "description": "Request movies and TV shows",
+      "core_feature": true
     },
     {
-      "title": "Real-Time Sync",
-      "description": "Syncs with Plex libraries to show available content and prevent duplicates"
+      "title": "Media Server Integration",
+      "description": "Integrate with supported media servers",
+      "core_feature": true
     },
     {
-      "title": "User Management",
-      "description": "Create accounts with different permission levels and request quotas"
+      "title": "User Requests",
+      "description": "Allow users to submit requests",
+      "core_feature": true
     },
     {
-      "title": "Approval Workflows",
-      "description": "Require admin approval for requests before sending to download clients"
+      "title": "Approval Workflow",
+      "description": "Review and approve requests"
     },
     {
-      "title": "Email Notifications",
-      "description": "Sends alerts via email, Discord, Slack, or Telegram for request updates"
+      "title": "Notifications",
+      "description": "Notify users of request status"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the request system on your own infrastructure"
     }
   ],
   "platform_support": {

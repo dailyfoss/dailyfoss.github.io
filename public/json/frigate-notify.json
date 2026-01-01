@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Email Notifications",
-      "description": "Send Frigate events to Apprise or SMS, Event triggers, Media previews. Stay informed of camera"
+      "title": "Frigate Event Notifications",
+      "description": "Send notifications based on Frigate detection events",
+      "core_feature": true
+    },
+    {
+      "title": "Multiple Notification Channels",
+      "description": "Deliver alerts via supported messaging services",
+      "core_feature": true
     },
     {
       "title": "Event Filtering",
-      "description": "Customize what triggers notifications. Relevant alerts only"
+      "description": "Filter notifications by camera, object, or event type",
+      "core_feature": true
     },
     {
-      "title": "Security Stack",
-      "description": "Perfect for local surveillance. Enhanced monitoring"
+      "title": "Message Customization",
+      "description": "Customize notification content and formatting"
     },
     {
-      "title": "Media Library",
-      "description": "Include snapshots in alerts. Visual context"
+      "title": "Integration Configuration",
+      "description": "Configure notification behavior through settings files"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the notification service alongside Frigate"
     }
   ],
   "platform_support": {

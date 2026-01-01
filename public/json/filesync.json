@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "High Performance",
-      "description": "Replicate local or remote directories, Fast operations, Minimal configuration. Automated file sync"
+      "title": "File Synchronization",
+      "description": "Sync files between directories on a schedule",
+      "core_feature": true
     },
     {
-      "title": "Database Backup",
-      "description": "Schedule sync tasks. Hands-free backups"
+      "title": "One-Way and Two-Way Sync",
+      "description": "Support unidirectional and bidirectional synchronization modes",
+      "core_feature": true
     },
     {
-      "title": "Real-Time Sync",
-      "description": "Two-way sync support. Keep directories in sync"
+      "title": "Change Detection",
+      "description": "Detect file changes to keep directories in sync",
+      "core_feature": true
     },
     {
-      "title": "Filtering",
-      "description": "Exclude files and patterns. Selective sync"
+      "title": "Conflict Handling",
+      "description": "Manage file conflicts during synchronization"
     },
     {
       "title": "Logging",
-      "description": "Track sync operations. Audit trail"
+      "description": "Record synchronization activity and results"
+    },
+    {
+      "title": "Configuration File Support",
+      "description": "Define synchronization rules using configuration files"
     }
   ],
   "platform_support": {

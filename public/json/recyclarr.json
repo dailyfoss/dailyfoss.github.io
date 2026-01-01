@@ -32,36 +32,26 @@
   },
   "features": [
     {
-      "title": "Real-Time Sync",
-      "description": "Apply community-maintained quality profiles to Radarr and Sonarr automatically"
+      "title": "Configuration Synchronization",
+      "description": "Sync configuration for media management tools",
+      "core_feature": true
     },
     {
-      "title": "Yaml Configuration",
-      "description": "Define all settings in version-controlled YAML files for reproducible setups"
+      "title": "Quality Profiles",
+      "description": "Manage quality definitions centrally",
+      "core_feature": true
     },
     {
-      "title": "Trash Guides Integration",
-      "description": "Use curated quality profiles from the TRaSH Guides community"
+      "title": "Service Integration",
+      "description": "Work with supported *arr applications"
     },
     {
-      "title": "Quality Profile Management",
-      "description": "Synchronize preferred words, release profiles, and scoring across instances"
+      "title": "Automation",
+      "description": "Apply configuration updates automatically"
     },
     {
-      "title": "Dry",
-      "description": "Preview changes before applying them to avoid unintended modifications"
-    },
-    {
-      "title": "Multi",
-      "description": "Manage multiple Radarr and Sonarr installations from a single configuration"
-    },
-    {
-      "title": "Automated Updates",
-      "description": "Run on a schedule to keep quality profiles in sync with community recommendations"
-    },
-    {
-      "title": "Custom Scoring",
-      "description": "Override default scores for specific release groups or quality attributes"
+      "title": "CLI Tool",
+      "description": "Manage sync operations via command line"
     }
   ],
   "platform_support": {

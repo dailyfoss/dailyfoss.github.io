@@ -27,20 +27,31 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Create and configure ZeroTier networks with custom IP ranges and routing rules from a web"
+      "title": "Network Management",
+      "description": "Manage ZeroTier networks",
+      "core_feature": true
     },
     {
-      "title": "Member Authorization",
-      "description": "Approve or deny device join requests and manage which devices can access each network"
+      "title": "Member Management",
+      "description": "Manage network members and permissions",
+      "core_feature": true
     },
     {
-      "title": "Team Collaboration",
-      "description": "Create accounts for team members with permissions to manage specific networks or view-only access"
+      "title": "Status Monitoring",
+      "description": "Monitor network status",
+      "core_feature": true
     },
     {
-      "title": "Tagging System",
-      "description": "Add descriptions and tags to network members for easier identification and organization"
+      "title": "Web Interface",
+      "description": "Manage networks in a browser"
+    },
+    {
+      "title": "Access Policies",
+      "description": "Configure network rules"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the manager on your own infrastructure"
     }
   ],
   "platform_support": {
