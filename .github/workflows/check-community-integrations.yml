@@ -45,7 +45,7 @@ jobs:
         run: |
           if [ -f COMMUNITY_INTEGRATIONS_SUMMARY.md ]; then
             # Extract just the stats section (first 10 lines) to avoid table parsing issues
-            stats=$(head -n 15 COMMUNITY_INTEGRATIONS_SUMMARY.txt | grep -E "^(Total|Proxmox|YunoHost|TrueNAS|Any|No)" || echo "See workflow run for details")
+            stats=$(head -n 15 COMMUNITY_INTEGRATIONS_SUMMARY.md | grep -E "^(Total|Proxmox|YunoHost|TrueNAS|Any|No)" || echo "See workflow run for details")
             echo "stats<<GHADELIMITER" >> $GITHUB_OUTPUT
             echo "$stats" >> $GITHUB_OUTPUT
             echo "GHADELIMITER" >> $GITHUB_OUTPUT
