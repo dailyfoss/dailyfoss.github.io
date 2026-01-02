@@ -351,17 +351,17 @@ async function main() {
   console.log('Community Integrations Support');
   console.log('='.repeat(80) + '\n');
 
-  console.log('| App Name                          |  Proxmox VE  |   YunoHost   |   TrueNAS    |');
-  console.log('|-----------------------------------|--------------|--------------|--------------|');
+  console.log('| App Name                          | Proxmox VE | YunoHost | TrueNAS |');
+  console.log('|-----------------------------------|------------|----------|---------|');
 
   // Show apps with at least one integration
   const appsWithIntegration = results.filter(r => r.proxmox || r.yunohost || r.truenas);
   
   for (const app of appsWithIntegration.slice(0, 50)) {
     const name = app.name.padEnd(33).substring(0, 33);
-    const proxmox = app.proxmox ? '     ✅     ' : '            ';
-    const yunohost = app.yunohost ? '     ✅     ' : '            ';
-    const truenas = app.truenas ? '     ✅     ' : '            ';
+    const proxmox = (app.proxmox ? '✅' : '').padStart(6).padEnd(10);
+    const yunohost = (app.yunohost ? '✅' : '').padStart(5).padEnd(8);
+    const truenas = (app.truenas ? '✅' : '').padStart(4).padEnd(7);
     console.log(`| ${name} | ${proxmox} | ${yunohost} | ${truenas} |`);
   }
 
