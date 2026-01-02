@@ -1,11 +1,11 @@
 {
   "name": "cupdate",
   "slug": "cupdate",
-  "tagline": "A tool for automatically checking and updating containers",
+  "tagline": "A utility for automatically checking and updating container images",
   "subtitle": "",
   "description": "cupdate is a tool for automatically checking and updating containers, with support for Docker and container environments. It is designed for efficient maintenance using a simple CLI interface for updates and notifications.",
   "categories": [
-    172
+    27
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,30 @@
   },
   "features": [
     {
-      "title": "Docker Support",
-      "description": "Works seamlessly with Docker environments. Native integration"
+      "title": "Container Update Monitor",
+      "description": "Monitors container image updates",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Get alerts when new versions are available. Never miss updates"
+      "title": "Registry Scanning",
+      "description": "Checks for new image versions",
+      "core_feature": true
     },
     {
-      "title": "Cli Interface",
-      "description": "Simple command-line tools for automation. Script-friendly operation"
+      "title": "Notification Support",
+      "description": "Alerts when updates are available"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Manage container updates on your infrastructure. Complete control"
+      "title": "Scheduled Checks",
+      "description": "Runs update checks automatically"
+    },
+    {
+      "title": "CLI Tool",
+      "description": "Operates from command line"
+    },
+    {
+      "title": "Self-Hosted Monitoring",
+      "description": "Runs locally or on servers"
     }
   ],
   "platform_support": {

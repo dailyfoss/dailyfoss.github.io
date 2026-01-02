@@ -1,11 +1,11 @@
 {
   "name": "open-archiver",
   "slug": "open-archiver",
-  "tagline": "A self-hosted platform for archiving and indexing files and data",
+  "tagline": "A self-hosted archiving platform with searchable metadata and workflows",
   "subtitle": "",
   "description": "OpenArchiver is a self-hosted archiving tool that ingests, stores, and indexes files and structured data. It includes a searchable metadata index and supports workflows for archiving across teams.",
   "categories": [
-    48
+    12
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,29 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Visual metrics and usage statistics with customizable charts to track performance and user engagement"
+      "title": "Email Archiving",
+      "description": "Archive email messages for long-term storage",
+      "core_feature": true
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Responsive design with touch-friendly interfaces and offline sync capabilities for seamless mobile access"
+      "title": "Searchable Archive",
+      "description": "Search archived emails by content or metadata"
     },
     {
-      "title": "Email Notifications",
-      "description": "Configurable alerts via email, push, or in-app notifications to keep users informed of important updates"
+      "title": "Mailbox Integration",
+      "description": "Connect to mailboxes for automated archiving"
     },
     {
-      "title": "Theme Customization",
-      "description": "Multiple UI themes and layout options with custom branding support to match organizational identity"
+      "title": "Storage Management",
+      "description": "Organize archived data and retention policies"
     },
     {
-      "title": "Database Backup",
-      "description": "Scheduled backups with encryption and cloud storage integration to ensure data protection and disaster recovery"
+      "title": "Web Access",
+      "description": "View and retrieve archived emails through a browser"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the archiving service on your own infrastructure"
     }
   ],
   "platform_support": {

@@ -1,11 +1,11 @@
 {
   "name": "newsblur",
   "slug": "newsblur",
-  "tagline": "A feature rich RSS reader with social and training features",
+  "tagline": "A feature-rich self-hosted RSS reader with social and filtering features",
   "subtitle": "",
   "description": "NewsBlur is a feature-rich, self-hosted RSS reader with social features, saved stories, and training filters. It supports folders, tags, web and mobile clients, and optional hosted services.",
   "categories": [
-    57
+    20
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,30 @@
   },
   "features": [
     {
-      "title": "Rss Feed Reader",
-      "description": "Subscribe to and organize feeds from blogs, news sites, and podcasts"
+      "title": "RSS Feed Reader",
+      "description": "Subscribe to and read RSS feeds",
+      "core_feature": true
     },
     {
-      "title": "Tagging System",
-      "description": "Train filters to highlight or hide stories based on keywords, authors, or tags"
+      "title": "Feed Intelligence",
+      "description": "Highlight important stories based on preferences",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Archive articles for later reading with tags and search functionality"
+      "title": "Offline Reading",
+      "description": "Read saved stories without connectivity"
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Native iOS and Android clients sync reading progress across devices"
+      "title": "Search",
+      "description": "Search across subscribed feeds"
     },
     {
-      "title": "Folder Organization",
-      "description": "Group feeds into folders and subfolders for structured content management"
+      "title": "Web and Mobile Access",
+      "description": "Read feeds across supported platforms"
     },
     {
-      "title": "Unread Management",
-      "description": "Mark stories as read automatically or manually with flexible reading modes"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the reader on your own infrastructure"
     }
   ],
   "platform_support": {

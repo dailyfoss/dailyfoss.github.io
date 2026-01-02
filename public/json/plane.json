@@ -1,11 +1,11 @@
 {
   "name": "plane",
   "slug": "plane",
-  "tagline": "A modern self-hosted project and issue tracking tool",
+  "tagline": "A self-hosted project and issue tracking tool for modern teams",
   "subtitle": "",
   "description": "Plane is a self-hosted project and issue tracking tool designed for small teams. It features Kanban, timelines, Git syncing, and powerful filters with a sleek UI.",
   "categories": [
-    125
+    39
   ],
   "metadata": {
     "sponsored": false,
@@ -33,35 +33,30 @@
   "features": [
     {
       "title": "Issue Tracking",
-      "description": "Create and manage issues with custom fields, priorities, and status workflows"
+      "description": "Track tasks and issues for projects",
+      "core_feature": true
+    },
+    {
+      "title": "Project Organization",
+      "description": "Organize work into projects and cycles",
+      "core_feature": true
     },
     {
       "title": "Kanban Boards",
-      "description": "Visualize work with drag-and-drop kanban boards for agile project management"
-    },
-    {
-      "title": "Timeline Views",
-      "description": "Plan projects with Gantt-style timeline views showing dependencies and milestones"
-    },
-    {
-      "title": "Real-Time Sync",
-      "description": "Sync issues with GitHub, GitLab, or Bitbucket for automated status updates from commits"
-    },
-    {
-      "title": "Advanced Filters",
-      "description": "Find issues quickly with powerful filtering by assignee, labels, dates, and custom fields"
+      "description": "Visualize work using boards",
+      "core_feature": true
     },
     {
       "title": "Team Collaboration",
-      "description": "Mention teammates, add comments, and track activity on issues in real-time"
+      "description": "Collaborate with team members"
     },
     {
-      "title": "Cycle Planning",
-      "description": "Organize work into sprints or cycles with velocity tracking and burndown charts"
+      "title": "Roadmaps",
+      "description": "Plan work over time"
     },
     {
-      "title": "Custom Workflows",
-      "description": "Define project-specific workflows and automation rules for issue state transitions"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the project manager on your own servers"
     }
   ],
   "platform_support": {

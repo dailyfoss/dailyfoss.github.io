@@ -1,11 +1,11 @@
 {
   "name": "jellysweep",
   "slug": "jellysweep",
-  "tagline": "A cleanup tool for maintaining tidy Jellyfin media libraries",
+  "tagline": "A cleanup utility for maintaining and tidying Jellyfin media libraries",
   "subtitle": "",
   "description": "jellysweep is a cleanup tool for Jellyfin libraries. It scans media collections for missing, duplicate or orphaned entries and helps administrators keep their metadata and files tidy in large self hosted libraries.",
   "categories": [
-    100
+    42
   ],
   "metadata": {
     "sponsored": false,
@@ -32,8 +32,29 @@
   },
   "features": [
     {
-      "title": "Media Library",
-      "description": "Find orphaned files, Detect duplicates, Remove missing entries. Maintain a clean media library"
+      "title": "Library Cleanup Tool",
+      "description": "Removes unused Jellyfin media",
+      "core_feature": true
+    },
+    {
+      "title": "Watch Status Filtering",
+      "description": "Targets watched or unwatched items"
+    },
+    {
+      "title": "Age-Based Cleanup",
+      "description": "Filters media by age"
+    },
+    {
+      "title": "Jellyfin API Usage",
+      "description": "Reads library metadata"
+    },
+    {
+      "title": "CLI Operation",
+      "description": "Runs cleanup from terminal"
+    },
+    {
+      "title": "Safe Deletion Options",
+      "description": "Supports dry-run execution"
     }
   ],
   "platform_support": {

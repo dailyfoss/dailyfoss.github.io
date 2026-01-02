@@ -1,11 +1,11 @@
 {
   "name": "convertx",
   "slug": "convertx",
-  "tagline": "A self-hosted web interface for converting media with FFmpeg",
+  "tagline": "A self-hosted web interface for converting media files using FFmpeg",
   "subtitle": "",
   "description": "ConvertX is a self-hosted web video converter utility that allows users to upload media files and convert them to different formats using FFmpeg, through a graphical UI for ease of use.",
   "categories": [
-    59
+    42
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,30 @@
   },
   "features": [
     {
-      "title": "Media Library",
-      "description": "Transform media files between formats using FFmpeg. Professional quality output"
+      "title": "Media Conversion",
+      "description": "Converts video files between formats",
+      "core_feature": true
     },
     {
       "title": "Web Interface",
-      "description": "Upload and convert files through simple browser UI. No command-line needed"
-    },
-    {
-      "title": "Multiple Formats",
-      "description": "Support for all major video and audio formats. Universal compatibility"
+      "description": "Manages conversions through a browser",
+      "core_feature": true
     },
     {
       "title": "Batch Processing",
-      "description": "Convert multiple files simultaneously. Save time on large collections"
+      "description": "Converts multiple files at once"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Process sensitive media files on your own server. Complete privacy control"
+      "title": "Preset Profiles",
+      "description": "Uses predefined conversion settings"
     },
     {
-      "title": "Easy Setup",
-      "description": "Simple deployment with minimal configuration. Start converting in minutes"
+      "title": "Progress Tracking",
+      "description": "Shows conversion status"
+    },
+    {
+      "title": "Self-Hosted Transcoding",
+      "description": "Runs on user-managed hardware"
     }
   ],
   "platform_support": {

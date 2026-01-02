@@ -1,11 +1,11 @@
 {
   "name": "dashlit",
   "slug": "dashlit",
-  "tagline": "A minimalist dashboard for collecting and displaying custom metrics and widgets",
+  "tagline": "A minimalist dashboard for displaying custom metrics and widgets",
   "subtitle": "",
   "description": "Dashlit is a minimalist dashboard for collecting and displaying custom metrics, built for developers and homelab users. It supports widgets, Markdown, and embeds, designed for low-overhead setup and rapid data visualization.",
   "categories": [
-    37
+    28
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,38 @@
   },
   "features": [
     {
-      "title": "Custom Metrics",
-      "description": "Display any data you want to track. Flexible visualization"
+      "title": "Personal Dashboard",
+      "description": "Aggregates links and services into one interface",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Build dashboards with modular components. Compose your view"
+      "title": "Widget-Based Layout",
+      "description": "Displays services using configurable widgets",
+      "core_feature": true
     },
     {
-      "title": "Markdown Support",
-      "description": "Add formatted text and documentation. Rich content display"
+      "title": "Custom Theming",
+      "description": "Adjusts appearance using themes"
     },
     {
-      "title": "Embed Support",
-      "description": "Include external content and services. Unified dashboard"
+      "title": "YAML Configuration",
+      "description": "Defines dashboard structure via config files"
     },
     {
-      "title": "Low Overhead",
-      "description": "Minimal setup and resource usage. Quick deployment"
+      "title": "Service Grouping",
+      "description": "Organizes links into logical sections"
     },
     {
-      "title": "Developer Friendly",
-      "description": "Built for technical users and homelab enthusiasts. Speaks your language"
+      "title": "Responsive Web UI",
+      "description": "Works across desktop and mobile screens"
+    },
+    {
+      "title": "Lightweight Frontend",
+      "description": "Runs as a static web application"
+    },
+    {
+      "title": "Self-Hosted Dashboard",
+      "description": "Operates without external dependencies"
     }
   ],
   "platform_support": {

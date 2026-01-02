@@ -1,11 +1,11 @@
 {
   "name": "patchmon",
   "slug": "patchmon",
-  "tagline": "A self-hosted tool for tracking and managing system patches",
+  "tagline": "A self-hosted patch management and update tracking system",
   "subtitle": "",
   "description": "PatchMon is a self-hosted solution for patch management for small IT teams. It helps track available updates, automate installations, and manage system patching schedules through a clean web UI.",
   "categories": [
-    172
+    41
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,58 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Monitor available system updates across multiple servers and workstations from centralized dashboard"
-    },
-    {
-      "title": "Automated Patching",
-      "description": "Schedule and automate patch installations during maintenance windows to reduce manual intervention"
-    },
-    {
-      "title": "Patch Scheduling",
-      "description": "Configure maintenance windows and deployment schedules to control when updates are applied to systems"
-    },
-    {
-      "title": "System Inventory",
-      "description": "Track installed software, versions, and patch status across infrastructure for compliance reporting"
+      "title": "Patch Monitoring",
+      "description": "Track patch status of systems",
+      "core_feature": true
     },
     {
       "title": "Compliance Reporting",
-      "description": "Generate reports on patch status and compliance levels to meet security and regulatory requirements"
+      "description": "Generate patch compliance reports",
+      "core_feature": true
     },
     {
-      "title": "Rollback Support",
-      "description": "Revert problematic patches to previous versions if updates cause issues or compatibility problems"
+      "title": "System Inventory",
+      "description": "Maintain an inventory of monitored systems",
+      "core_feature": true
     },
     {
-      "title": "Multi",
-      "description": "Manage patches across different operating systems including Linux distributions from single interface"
+      "title": "Alerting",
+      "description": "Notify on missing or outdated patches"
     },
     {
-      "title": "Email Notifications",
-      "description": "Receive alerts for critical updates, failed installations, or systems requiring attention"
+      "title": "Dashboard",
+      "description": "View patch status summaries"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the monitoring tool on your own infrastructure"
+    },
+    {
+      "title": "Patch Monitoring",
+      "description": "Track patch status of systems",
+      "core_feature": true
+    },
+    {
+      "title": "Compliance Reporting",
+      "description": "Generate patch compliance reports",
+      "core_feature": true
+    },
+    {
+      "title": "System Inventory",
+      "description": "Maintain an inventory of monitored systems",
+      "core_feature": true
+    },
+    {
+      "title": "Alerting",
+      "description": "Notify on missing or outdated patches"
+    },
+    {
+      "title": "Dashboard",
+      "description": "View patch status summaries"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the monitoring tool on your own infrastructure"
     }
   ],
   "platform_support": {

@@ -1,11 +1,11 @@
 {
   "name": "gitlab",
   "slug": "gitlab",
-  "tagline": "A complete DevOps platform for source control, CI, and project management",
+  "tagline": "A DevOps platform for Git hosting, CI/CD pipelines, and project collaboration",
   "subtitle": "",
   "description": "GitLab is a comprehensive DevOps platform that includes Git hosting, CI/CD, security scanning, and project management. The FOSS edition allows self-hosting with an extensive web UI and API for enterprise workflows.",
   "categories": [
-    72
+    26
   ],
   "metadata": {
     "sponsored": false,
@@ -27,28 +27,38 @@
   },
   "features": [
     {
-      "title": "Complete Devops Platform",
-      "description": "Unified platform for source control, CI/CD, security, and deployment management"
+      "title": "DevOps Platform",
+      "description": "Provides source control CI/CD and project management",
+      "core_feature": true
+    },
+    {
+      "title": "Built-In CI/CD",
+      "description": "Runs automated pipelines on commits",
+      "core_feature": true
+    },
+    {
+      "title": "Issue and Project Tracking",
+      "description": "Manages issues epics and boards"
+    },
+    {
+      "title": "Merge Requests",
+      "description": "Handles code reviews and integration"
+    },
+    {
+      "title": "Container Registry",
+      "description": "Stores Docker images"
+    },
+    {
+      "title": "Wiki and Snippets",
+      "description": "Hosts documentation and code snippets"
     },
     {
       "title": "Security Scanning",
-      "description": "Integrated SAST, DAST, dependency scanning, and container scanning for vulnerability detection"
+      "description": "Integrates vulnerability scanning"
     },
     {
-      "title": "Project Management",
-      "description": "Plan work with issues, epics, milestones, and agile boards in one interface"
-    },
-    {
-      "title": "Code Review",
-      "description": "Merge requests with inline comments, approval rules, and code quality reports"
-    },
-    {
-      "title": "Docker Support",
-      "description": "Built-in Docker registry with vulnerability scanning and cleanup policies"
-    },
-    {
-      "title": "Wiki And Documentation",
-      "description": "Maintain project documentation with integrated wiki and pages"
+      "title": "Self-Hosted DevOps",
+      "description": "Host the platform on your own infrastructure"
     }
   ],
   "platform_support": {

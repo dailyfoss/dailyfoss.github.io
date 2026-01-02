@@ -1,11 +1,11 @@
 {
   "name": "sshwifty",
   "slug": "sshwifty",
-  "tagline": "A browser based SSH and Telnet client",
+  "tagline": "A browser-based SSH and Telnet client for secure remote terminal access",
   "subtitle": "",
   "description": "Sshwifty is a self-hosted SSH and Telnet client running in the browser, allowing secure terminal sessions through a web interface without a traditional client installed.",
   "categories": [
-    135
+    36
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "Browser Ssh",
-      "description": "Connects to SSH servers directly from web browser"
+      "title": "Web-Based SSH",
+      "description": "Access SSH sessions through a browser",
+      "core_feature": true
     },
     {
-      "title": "Telnet Support",
-      "description": "Accesses Telnet servers alongside SSH connections"
-    },
-    {
-      "title": "Multiple Sessions",
-      "description": "Opens multiple SSH connections in tabs simultaneously"
-    },
-    {
-      "title": "Terminal Emulation",
-      "description": "Provides full terminal emulation with color and formatting support"
-    },
-    {
-      "title": "File Upload",
-      "description": "Uploads and downloads files via SFTP in browser"
+      "title": "Multi-Host Support",
+      "description": "Connect to multiple remote hosts",
+      "core_feature": true
     },
     {
       "title": "Authentication",
-      "description": "Supports password, public key, and keyboard-interactive auth"
+      "description": "Authenticate using SSH credentials",
+      "core_feature": true
     },
     {
-      "title": "Session Persistence",
-      "description": "Maintains connections across browser refreshes"
+      "title": "Session Management",
+      "description": "Manage active SSH sessions"
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Works on desktop and mobile browsers"
+      "title": "Web Interface",
+      "description": "Use SSH from a web UI"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the SSH gateway on your own infrastructure"
     }
   ],
   "platform_support": {

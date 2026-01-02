@@ -1,7 +1,7 @@
 {
   "name": "calibre-web",
   "slug": "calibre-web",
-  "tagline": "A self-hosted web interface for browsing, reading, and managing eBook libraries",
+  "tagline": "A web interface for browsing and managing personal eBook libraries",
   "subtitle": "",
   "description": "Calibre-Web is a self-hosted web app to browse, read, and manage eBooks stored in a Calibre database. It features OPDS, Kindle syncing, user roles, and metadata editing from a browser.",
   "categories": [
@@ -32,28 +32,39 @@
   },
   "features": [
     {
-      "title": "Ebook Management",
-      "description": "Browse and manage Calibre library through web browser. Access anywhere"
+      "title": "Ebook Library Management",
+      "description": "Manages and serves ebooks from a Calibre database",
+      "core_feature": true
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Compatible with OPDS readers for mobile access. Universal compatibility"
+      "title": "Web-Based Reader",
+      "description": "Reads ebooks directly in the browser",
+      "core_feature": true
     },
     {
-      "title": "Real-Time Sync",
-      "description": "Send books directly to Kindle devices. Seamless reading"
-    },
-    {
-      "title": "Team Collaboration",
-      "description": "Multi-user support with permission controls. Shared library"
+      "title": "User Authentication",
+      "description": "Manages access through user accounts",
+      "core_feature": true
     },
     {
       "title": "Metadata Editing",
-      "description": "Edit book information from browser. Complete control"
+      "description": "Edits book metadata through the web interface"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Keep your eBook collection private. Data sovereignty"
+      "title": "Format Conversion",
+      "description": "Converts ebooks between supported formats"
+    },
+    {
+      "title": "OPDS Support",
+      "description": "Provides OPDS feeds for ebook clients"
+    },
+    {
+      "title": "Download Management",
+      "description": "Controls ebook downloads per user"
+    },
+    {
+      "title": "Self-Hosted Library",
+      "description": "Runs on private servers"
     }
   ],
   "platform_support": {

@@ -1,11 +1,11 @@
 {
   "name": "yarr",
   "slug": "yarr",
-  "tagline": "A fast and keyboard friendly RSS reader",
+  "tagline": "A web-based RSS/Atom feed reader with tags, search, and scheduled fetches",
   "subtitle": "",
   "description": "yarr (yet another RSS reader) is a self-hosted web-based feed reader. It fetches RSS/Atom feeds on a schedule, supports tags and search, and presents content in a clean, keyboard-friendly UI.",
   "categories": [
-    57
+    20
   ],
   "metadata": {
     "sponsored": false,
@@ -27,20 +27,31 @@
   },
   "features": [
     {
-      "title": "Tagging System",
-      "description": "Group feeds with custom tags for better organization and filtered reading views"
+      "title": "RSS Reader",
+      "description": "Read and manage RSS feeds",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Find articles across all subscribed feeds using keyword search with instant results"
+      "title": "Feed Organization",
+      "description": "Organize feeds into folders",
+      "core_feature": true
     },
     {
-      "title": "Database Backup",
-      "description": "Migrate feed subscriptions from other readers or backup your collection in standard format"
+      "title": "Offline Reading",
+      "description": "Read feeds offline",
+      "core_feature": true
     },
     {
-      "title": "Minimal Interface",
-      "description": "Focus on content with a clean, distraction-free design that prioritizes readability"
+      "title": "Search",
+      "description": "Search feed content"
+    },
+    {
+      "title": "Keyboard Shortcuts",
+      "description": "Navigate feeds using shortcuts"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the reader on your own infrastructure"
     }
   ],
   "platform_support": {

@@ -1,11 +1,11 @@
 {
   "name": "cerbos",
   "slug": "cerbos",
-  "tagline": "A self-hosted authorization service that manages permissions as policy code",
+  "tagline": "A policy-based authorization service for managing application permissions",
   "subtitle": "",
   "description": "Cerbos is a self-hosted authorization layer that decouples permissions from application code. It supports policy-as-code via YAML, and can be embedded in microservices, securing APIs and internal apps.",
   "categories": [
-    79
+    15
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,39 @@
   },
   "features": [
     {
-      "title": "Authorization Layer",
-      "description": "Decouple permissions from application code. Clean architecture"
+      "title": "Authorization Engine",
+      "description": "Evaluates access control policies",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Embed in any service or API. Flexible deployment"
+      "title": "Policy as Code",
+      "description": "Defines access rules using a declarative language",
+      "core_feature": true
     },
     {
-      "title": "Api Security",
-      "description": "Protect APIs with centralized authorization. Consistent security"
+      "title": "Fine-Grained Permission Checks",
+      "description": "Applies permissions at object and action levels",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Run authorization on your infrastructure. Complete control"
+      "title": "Centralized Policy Store",
+      "description": "Stores authorization policies in a unified service"
+    },
+    {
+      "title": "API Integration",
+      "description": "Validates permissions via HTTP APIs"
+    },
+    {
+      "title": "Role and Attribute Support",
+      "description": "Includes role- and attribute-based access decisions"
+    },
+    {
+      "title": "Audit Logging",
+      "description": "Records access decision data"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Runs on private infrastructure"
     }
   ],
   "platform_support": {

@@ -5,7 +5,7 @@
   "subtitle": "",
   "description": "Frigate is an NVR (network video recorder) system focused on real-time object detection using AI acceleration. It integrates with Home Assistant, supports MQTT, and processes camera feeds locally for privacy.",
   "categories": [
-    107
+    34
   ],
   "metadata": {
     "sponsored": false,
@@ -33,36 +33,39 @@
   },
   "features": [
     {
-      "title": "Nvr",
-      "description": "Network video recorder, Real-time object detection, AI acceleration. Smart security camera system"
+      "title": "NVR with Object Detection",
+      "description": "Monitors cameras with real-time object detection",
+      "core_feature": true
     },
     {
-      "title": "Home Assistant",
-      "description": "Seamless integration. Smart home ready"
+      "title": "Camera Management",
+      "description": "Connects and manages multiple cameras",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Event notifications. Automation-friendly"
+      "title": "Motion and Event Detection",
+      "description": "Detects motion and classified objects",
+      "core_feature": true
     },
     {
-      "title": "Data Privacy",
-      "description": "Privacy-focused. No cloud required"
+      "title": "Video Recording",
+      "description": "Records video clips and events"
     },
     {
-      "title": "Object Detection",
-      "description": "Person, vehicle, animal recognition. Intelligent alerts"
+      "title": "Web Interface",
+      "description": "Views live and recorded footage"
     },
     {
-      "title": "High Performance",
-      "description": "GPU and Coral support. Fast processing"
+      "title": "Hardware Acceleration",
+      "description": "Uses supported accelerators for detection"
     },
     {
-      "title": "Recording",
-      "description": "Continuous and event-based. Flexible storage"
+      "title": "Home Automation Integration",
+      "description": "Integrates with supported automation systems"
     },
     {
-      "title": "Zones",
-      "description": "Define detection areas. Targeted monitoring"
+      "title": "Self-Hosted NVR",
+      "description": "Run the system on your own servers"
     }
   ],
   "platform_support": {

@@ -1,11 +1,11 @@
 {
   "name": "web-check",
   "slug": "web-check",
-  "tagline": "A tool for inspecting website health and security",
+  "tagline": "A website inspection tool for health, security, and DNS performance",
   "subtitle": "",
   "description": "web-check is a self-hosted tool that inspects and reports on website health, security, performance, and DNS configuration via a detailed, interactive web dashboard.",
   "categories": [
-    145
+    41
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,25 @@
   },
   "features": [
     {
-      "title": "Security Analysis",
-      "description": "Scan websites for security headers, SSL/TLS configuration, and common vulnerabilities"
+      "title": "Website Diagnostics",
+      "description": "Analyze website configuration and metadata",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Measure page load times, resource sizes, and identify performance bottlenecks"
+      "title": "Security Checks",
+      "description": "Inspect headers and TLS configuration"
     },
     {
-      "title": "Ssl Certificate Details",
-      "description": "Examine certificate validity, issuer information, and expiration dates"
+      "title": "Performance Insights",
+      "description": "View basic performance metrics"
     },
     {
-      "title": "Server Information",
-      "description": "Identify web server software, hosting provider, and technology stack used"
+      "title": "Web Interface",
+      "description": "Run checks through a browser"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the tool on your own servers"
     }
   ],
   "platform_support": {

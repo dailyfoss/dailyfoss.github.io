@@ -1,11 +1,11 @@
 {
   "name": "podsync",
   "slug": "podsync",
-  "tagline": "A tool that converts YouTube channels into podcast feeds",
+  "tagline": "A YouTube-to-podcast converter that generates podcast RSS feeds",
   "subtitle": "",
   "description": "Podsync is a self-hosted YouTube-to-podcast converter that turns YouTube channels into RSS feeds. It downloads and serves audio files, making content available in podcast apps.",
   "categories": [
-    123
+    34
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "Youtube To Podcast",
-      "description": "Convert YouTube channels and playlists into podcast RSS feeds"
+      "title": "Podcast Synchronization",
+      "description": "Convert media sources into podcast feeds",
+      "core_feature": true
     },
     {
-      "title": "Audio Extraction",
-      "description": "Extract audio from YouTube videos and serve as podcast episodes"
+      "title": "Feed Generation",
+      "description": "Generate RSS feeds automatically",
+      "core_feature": true
     },
     {
-      "title": "Rss Feed Generation",
-      "description": "Create standard RSS feeds compatible with all podcast apps"
+      "title": "Media Download",
+      "description": "Download and cache media files",
+      "core_feature": true
     },
     {
-      "title": "Automatic Updates",
-      "description": "Monitor YouTube channels for new videos and add them to feeds automatically"
+      "title": "Scheduler",
+      "description": "Update feeds on a schedule"
     },
     {
-      "title": "Multiple Channels",
-      "description": "Convert multiple YouTube channels into separate podcast feeds"
+      "title": "Configuration Files",
+      "description": "Define feeds using configuration files"
     },
     {
-      "title": "Quality Selection",
-      "description": "Configure audio quality and format for downloaded content"
-    },
-    {
-      "title": "Episode Metadata",
-      "description": "Include video titles, descriptions, and thumbnails in podcast feeds"
-    },
-    {
-      "title": "Storage Management",
-      "description": "Automatically delete old episodes to manage disk space usage"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the sync service on your own servers"
     }
   ],
   "platform_support": {

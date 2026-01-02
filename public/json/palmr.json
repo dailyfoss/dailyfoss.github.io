@@ -1,11 +1,11 @@
 {
   "name": "palmr",
   "slug": "palmr",
-  "tagline": "A modern self-hosted personal finance tracker",
+  "tagline": "A self-hosted personal finance app for tracking expenses and budgets",
   "subtitle": "",
   "description": "Palmr is a self-hosted personal finance tool built on Next.js. It offers expense tracking, budget categories, and insights with a modern, customizable web UI and a responsive design.",
   "categories": [
-    75
+    22
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,26 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Visual dashboards and charts display spending patterns, trends, and budget performance"
+      "title": "File Sharing Service",
+      "description": "Upload and share files using links",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Powerful filtering and search to quickly find transactions by date, category, amount, or description"
+      "title": "Expiration Rules",
+      "description": "Set time limits for shared files"
     },
     {
-      "title": "Data Export",
-      "description": "Generate financial reports in CSV or PDF format for tax preparation and record keeping"
+      "title": "Access Control",
+      "description": "Protect shared files with passwords"
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Mobile-optimized interface allows expense tracking on any device for logging on the go"
+      "title": "Web Interface",
+      "description": "Upload and manage files through a browser",
+      "core_feature": true
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the service on your own servers"
     }
   ],
   "platform_support": {

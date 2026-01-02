@@ -1,11 +1,11 @@
 {
   "name": "moocup",
   "slug": "moocup",
-  "tagline": "A self-hosted mockup generator for product and design previews",
+  "tagline": "A self-hosted mockup generator for creating product previews in the browser",
   "subtitle": "",
   "description": "Moocup is a self-hosted mockup generator allowing users to insert images into templated scenes for product previews. It supports custom assets and a lightweight UI that runs entirely in the browser.",
   "categories": [
-    165
+    42
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,26 @@
   },
   "features": [
     {
-      "title": "Template Library",
-      "description": "Choose from pre-built mockup scenes for devices, packaging, and marketing materials"
+      "title": "Mock API Server",
+      "description": "Serve mock API responses for development",
+      "core_feature": true
     },
     {
-      "title": "File Upload",
-      "description": "Upload designs and automatically fit them into template perspectives with proper scaling"
+      "title": "Endpoint Definition",
+      "description": "Define custom API endpoints",
+      "core_feature": true
     },
     {
-      "title": "Data Export",
-      "description": "Download finished mockups as high-resolution PNG or JPG files for presentations and portfolios"
+      "title": "JSON Responses",
+      "description": "Return structured JSON data"
     },
     {
-      "title": "Lightweight",
-      "description": "Deploy as static files with no backend requirements for simple maintenance and scaling"
+      "title": "Web Interface",
+      "description": "Manage endpoints through a browser"
+    },
+    {
+      "title": "Local Deployment",
+      "description": "Run the mock server locally"
     }
   ],
   "platform_support": {

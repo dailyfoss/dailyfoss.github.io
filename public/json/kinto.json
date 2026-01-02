@@ -1,11 +1,11 @@
 {
   "name": "kinto",
   "slug": "kinto",
-  "tagline": "A lightweight JSON storage service for syncing app data",
+  "tagline": "A lightweight JSON storage service for syncing data across devices",
   "subtitle": "",
   "description": "Kinto is a lightweight JSON storage service for syncing data across devices. It supports collections, permissions and versioning, and exposes a REST API and simple admin UI, often used for small self hosted sync or configuration backends.",
   "categories": [
-    39
+    29
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,22 @@
   },
   "features": [
     {
+      "title": "Data Storage Service",
+      "description": "Store and sync structured data collections",
+      "core_feature": true
+    },
+    {
       "title": "REST API",
-      "description": "Store and retrieve JSON documents via RESTful API. Lightweight data backend for applications"
+      "description": "Access and modify data through HTTP APIs",
+      "core_feature": true
     },
     {
-      "title": "Collection Management",
-      "description": "Organize data into collections with schemas and validation. Structure your data logically"
+      "title": "Synchronization",
+      "description": "Sync data across devices and clients"
     },
     {
-      "title": "Real-Time Sync",
-      "description": "Synchronize data across devices with conflict resolution. Keep data consistent everywhere"
-    },
-    {
-      "title": "Offline Mode",
-      "description": "Client libraries with offline-first capabilities. Work without internet connection"
-    },
-    {
-      "title": "User Authentication",
-      "description": "Built-in authentication with accounts and sessions. Secure access to data"
-    },
-    {
-      "title": "Access Control",
-      "description": "Fine-grained access control at collection and record level. Control who sees what"
+      "title": "Self-Hosted Backend",
+      "description": "Run the service on your own infrastructure"
     }
   ],
   "platform_support": {

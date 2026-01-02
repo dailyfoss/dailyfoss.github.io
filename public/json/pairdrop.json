@@ -1,11 +1,11 @@
 {
   "name": "pairdrop",
   "slug": "pairdrop",
-  "tagline": "A self-hosted AirDrop like file sharing tool",
+  "tagline": "An AirDrop-like self-hosted file transfer tool using WebRTC",
   "subtitle": "",
   "description": "PairDrop is a self-hosted AirDrop-like file transfer tool using WebRTC. It allows fast device-to-device sharing over your own network without third-party services.",
   "categories": [
-    91
+    33
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,26 @@
   },
   "features": [
     {
-      "title": "High Performance",
-      "description": "Peer-to-peer sharing using WebRTC for fast, direct transfers without server intermediaries"
+      "title": "Local File Sharing",
+      "description": "Share files between devices on the same network",
+      "core_feature": true
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Works across desktop and mobile browsers on any operating system"
+      "title": "Browser-Based Transfer",
+      "description": "Send and receive files using a web browser",
+      "core_feature": true
     },
     {
-      "title": "Local Network Discovery",
-      "description": "Automatically detects nearby devices on the same network for instant pairing"
+      "title": "Peer Discovery",
+      "description": "Automatically discover nearby devices"
     },
     {
-      "title": "File Upload",
-      "description": "Transfer files of any size without cloud storage restrictions or upload limits"
+      "title": "No Registration",
+      "description": "Transfer files without user accounts"
     },
     {
-      "title": "Data Privacy",
-      "description": "All transfers are encrypted during transmission for privacy between sender and receiver"
-    },
-    {
-      "title": "Text And Link Sharing",
-      "description": "Share clipboard text, URLs, and messages alongside files for quick information exchange"
-    },
-    {
-      "title": "Progressive Web App",
-      "description": "Install as PWA on mobile devices for app-like experience with offline capabilities"
-    },
-    {
-      "title": "Media Library",
-      "description": "Start sharing immediately without registration for quick transfers and guest access"
+      "title": "Cross-Platform",
+      "description": "Share files across different operating systems"
     }
   ],
   "platform_support": {

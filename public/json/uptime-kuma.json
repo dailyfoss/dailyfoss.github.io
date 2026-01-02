@@ -1,11 +1,11 @@
 {
   "name": "uptime-kuma",
   "slug": "uptime-kuma",
-  "tagline": "A self-hosted uptime monitoring and status page tool",
+  "tagline": "A self-hosted uptime monitoring and status page platform",
   "subtitle": "",
   "description": "Uptime Kuma is a self-hosted monitoring and status page solution. It supports HTTP, ping, DNS, and more checks, sending notifications and rendering a beautiful status page for your services.",
   "categories": [
-    173
+    35
   ],
   "metadata": {
     "sponsored": false,
@@ -32,39 +32,27 @@
   },
   "features": [
     {
-      "title": "Multi-Protocol Monitoring",
-      "description": "Monitor HTTP, HTTPS, TCP, ping, DNS, and more with flexible check types",
+      "title": "Uptime Monitoring",
+      "description": "Monitor availability of services and endpoints",
+      "core_feature": true
+    },
+    {
+      "title": "Status Dashboard",
+      "description": "View service health at a glance",
+      "core_feature": true
+    },
+    {
+      "title": "Alerting",
+      "description": "Receive notifications on outages",
       "core_feature": true
     },
     {
       "title": "Status Pages",
-      "description": "Create beautiful public or private status pages to communicate service health to users",
-      "core_feature": true
+      "description": "Publish public status pages"
     },
     {
-      "title": "90+ Notification Channels",
-      "description": "Send alerts via email, Slack, Discord, webhooks, and many more notification services",
-      "core_feature": true
-    },
-    {
-      "title": "Performance Tracking",
-      "description": "Track and visualize response times with charts showing performance trends"
-    },
-    {
-      "title": "Certificate Monitoring",
-      "description": "Monitor SSL certificate expiration and receive alerts before certificates expire"
-    },
-    {
-      "title": "Uptime Statistics",
-      "description": "View uptime percentages and availability statistics for all monitored services"
-    },
-    {
-      "title": "Maintenance Windows",
-      "description": "Schedule maintenance windows to pause alerts during planned downtime"
-    },
-    {
-      "title": "Multi-User Support",
-      "description": "Support multiple users with individual accounts and notification preferences"
+      "title": "Self-Hosted Deployment",
+      "description": "Run monitoring on your own servers"
     }
   ],
   "platform_support": {

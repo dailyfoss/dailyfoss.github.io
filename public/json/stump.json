@@ -1,7 +1,7 @@
 {
   "name": "stump",
   "slug": "stump",
-  "tagline": "A self-hosted reading server for comics and ebooks",
+  "tagline": "A self-hosted reading server for comics and ebooks with a web reader",
   "subtitle": "",
   "description": "Stump is a self-hosted reading server for comics and ebooks. It supports libraries, reading progress, multiple users, and a polished web reader UI.",
   "categories": [
@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "Comic Library",
-      "description": "Organizes digital comics and manga collections"
+      "title": "Digital Library",
+      "description": "Manage and read digital books and comics",
+      "core_feature": true
     },
     {
-      "title": "Real-Time Sync",
-      "description": "Tracks progress across devices with sync"
+      "title": "Library Organization",
+      "description": "Organize content into collections",
+      "core_feature": true
     },
     {
-      "title": "Library Scanning",
-      "description": "Automatically detects and indexes comic files"
+      "title": "Reading Interface",
+      "description": "Read content in a web reader",
+      "core_feature": true
     },
     {
-      "title": "Metadata Management",
-      "description": "Edits series, issue numbers, and descriptions"
+      "title": "Metadata Handling",
+      "description": "Manage metadata for library items"
     },
     {
-      "title": "User Accounts",
-      "description": "Creates separate accounts with individual reading lists"
+      "title": "Search",
+      "description": "Search library content"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the library server on your own infrastructure"
     }
   ],
   "platform_support": {

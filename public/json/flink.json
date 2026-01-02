@@ -1,11 +1,11 @@
 {
   "name": "flink",
   "slug": "flink",
-  "tagline": "A privacy-focused analytics tool for tracking link usage and trends",
+  "tagline": "A privacy-focused analytics tool for tracking link usage and referrers",
   "subtitle": "",
   "description": "Flink is a self-hosted analytics tool for tracking link usage, referrers, and trends with privacy-first focus. It provides a clean dashboard and event tracking, suitable as alternative to Google Analytics.",
   "categories": [
-    148
+    9
   ],
   "metadata": {
     "sponsored": false,
@@ -27,36 +27,31 @@
   },
   "features": [
     {
-      "title": "Self-Hosted",
-      "description": "Privacy-first link tracking, Referrer monitoring, Trend analysis. Self-hosted analytics alternative"
+      "title": "Web Link Management",
+      "description": "Organize and manage bookmarked links in a web interface",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Clean visualization. Easy insights"
+      "title": "Tagging",
+      "description": "Assign tags to links for easier organization",
+      "core_feature": true
     },
     {
-      "title": "Event Tracking",
-      "description": "Monitor link usage. Detailed statistics"
+      "title": "Search",
+      "description": "Find saved links using text search",
+      "core_feature": true
     },
     {
-      "title": "Data Privacy",
-      "description": "No third-party tracking. Your data only"
+      "title": "Link Metadata",
+      "description": "Display titles and descriptions for saved URLs"
     },
     {
-      "title": "Real-Time",
-      "description": "Live visitor tracking. Instant insights"
+      "title": "User Authentication",
+      "description": "Restrict access to stored links using user accounts"
     },
     {
-      "title": "Custom Events",
-      "description": "Track specific actions. Flexible monitoring"
-    },
-    {
-      "title": "Referrer Analysis",
-      "description": "See traffic sources. Marketing insights"
-    },
-    {
-      "title": "Geographic Data",
-      "description": "Track visitor locations. Regional insights"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the link manager on your own infrastructure"
     }
   ],
   "platform_support": {

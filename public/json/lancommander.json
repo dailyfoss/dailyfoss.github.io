@@ -1,11 +1,11 @@
 {
   "name": "lancommander",
   "slug": "lancommander",
-  "tagline": "A self-hosted platform for managing games on local networks",
+  "tagline": "A self-hosted platform for managing and launching games over LAN",
   "subtitle": "",
   "description": "LANCommander is a self hosted platform for managing and launching games over a local network. It centralizes game files, metadata and launch configurations so LAN parties or shared setups can quickly start multiplayer sessions.",
   "categories": [
-    69
+    42
   ],
   "metadata": {
     "sponsored": false,
@@ -33,24 +33,35 @@
   },
   "features": [
     {
-      "title": "Game Library",
-      "description": "Centralized game storage, Metadata management, Cover art. Organize LAN party games"
+      "title": "LAN Game Distribution",
+      "description": "Distribute games to clients over a local network",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "One-click game start, Configuration management, Multiplayer setup. Start gaming faster"
+      "title": "Game Library Management",
+      "description": "Organize games and versions in a central library",
+      "core_feature": true
     },
     {
-      "title": "Metadata Management",
-      "description": "Game information, Cover art, Platform details. Rich game library organization"
+      "title": "Client Management",
+      "description": "Register and manage connected LAN clients",
+      "core_feature": true
     },
     {
-      "title": "Database Backup",
-      "description": "Save file sync, Backup support, Cloud saves. Protect player progress"
+      "title": "Patch and Update Delivery",
+      "description": "Provide updates to installed games"
     },
     {
-      "title": "User Profiles",
-      "description": "Player accounts, Game preferences, Personal libraries. Individual gaming experiences"
+      "title": "Offline Operation",
+      "description": "Operate entirely without internet connectivity"
+    },
+    {
+      "title": "Authentication",
+      "description": "Control access to the server and clients"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Manage games and clients through a browser"
     }
   ],
   "platform_support": {

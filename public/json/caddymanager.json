@@ -1,11 +1,11 @@
 {
   "name": "caddymanager",
   "slug": "caddymanager",
-  "tagline": "A graphical dashboard for managing Caddy servers, sites, and reverse proxies",
+  "tagline": "A web dashboard for managing Caddy web server configurations",
   "subtitle": "",
   "description": "CaddyManager is a GUI-based dashboard for managing Caddy web servers. It visualizes configurations, enables site deployment, SSL settings, and reverse proxy control through a friendly interface without editing plain configs.",
   "categories": [
-    34
+    28
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,35 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Visual dashboard for Caddy server configuration. No config files needed"
+      "title": "Caddy Configuration UI",
+      "description": "Manages Caddy server configuration through a web interface",
+      "core_feature": true
     },
     {
-      "title": "Site Deployment",
-      "description": "Deploy websites through friendly interface. Point and click"
+      "title": "Site Management",
+      "description": "Creates and edits hosted sites",
+      "core_feature": true
     },
     {
-      "title": "Ssl Settings",
-      "description": "Manage SSL certificates visually. Easy security"
+      "title": "Reverse Proxy Setup",
+      "description": "Configures backend services behind Caddy",
+      "core_feature": true
     },
     {
-      "title": "Reverse Proxy",
-      "description": "Configure reverse proxies without editing configs. Visual setup"
+      "title": "SSL Management",
+      "description": "Controls HTTPS settings for managed sites"
     },
     {
-      "title": "Configuration Visualization",
-      "description": "See your Caddy setup at a glance. Clear overview"
+      "title": "Configuration Validation",
+      "description": "Validates Caddy configuration changes"
     },
     {
-      "title": "User",
-      "description": "Manage Caddy without command line expertise. Accessible to all"
+      "title": "User Authentication",
+      "description": "Restricts access to the management interface"
+    },
+    {
+      "title": "Self-Hosted Dashboard",
+      "description": "Runs alongside a Caddy instance"
     }
   ],
   "platform_support": {

@@ -1,11 +1,11 @@
 {
   "name": "meshping",
   "slug": "meshping",
-  "tagline": "A peer to peer network monitoring and connectivity tool",
+  "tagline": "A peer-to-peer network monitoring tool for mesh connectivity",
   "subtitle": "",
   "description": "MeshPing is a peer-to-peer networking monitoring tool that detects connectivity issues across mesh nodes. It’s suitable for monitoring decentralized or distributed networks in self-hosted environments.",
   "categories": [
-    173
+    35
   ],
   "metadata": {
     "sponsored": false,
@@ -33,36 +33,26 @@
   },
   "features": [
     {
-      "title": "Mesh Monitoring",
-      "description": "Track connectivity between all nodes in a mesh network topology"
+      "title": "Network Monitoring",
+      "description": "Monitor network connectivity using ping checks",
+      "core_feature": true
     },
     {
-      "title": "Latency Measurement",
-      "description": "Monitor ping times and latency between mesh nodes in real-time"
+      "title": "Target Groups",
+      "description": "Organize monitored hosts into groups"
     },
     {
-      "title": "Connectivity Visualization",
-      "description": "View network topology and connection status in graphical format"
+      "title": "Status Visualization",
+      "description": "Display connectivity status over time",
+      "core_feature": true
     },
     {
-      "title": "Tagging System",
-      "description": "Automatically identify when nodes become unreachable or connections fail"
+      "title": "Alerting",
+      "description": "Notify on connectivity issues"
     },
     {
-      "title": "High Performance",
-      "description": "Track network performance over time with historical latency and uptime data"
-    },
-    {
-      "title": "Email Notifications",
-      "description": "Configure notifications for connectivity issues or performance degradation"
-    },
-    {
-      "title": "Multi",
-      "description": "Monitor networks with dozens or hundreds of interconnected nodes"
-    },
-    {
-      "title": "Peer",
-      "description": "Each node pings others to create a complete connectivity matrix"
+      "title": "Self-Hosted Service",
+      "description": "Run the monitor on your own servers"
     }
   ],
   "platform_support": {

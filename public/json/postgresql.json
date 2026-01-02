@@ -1,11 +1,11 @@
 {
   "name": "postgresql",
   "slug": "postgresql",
-  "tagline": "A powerful open source relational database system",
+  "tagline": "A powerful open-source relational database system with advanced features",
   "subtitle": "",
   "description": "PostgreSQL is a powerful open-source relational database management system featuring advanced SQL capabilities, extensions, robust concurrency, and replication. It runs on all major platforms and supports extensive integrations.",
   "categories": [
-    133
+    29
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "ACID Compliance",
-      "description": "Ensure data integrity with full support for atomic transactions, consistency, isolation, and durability"
+      "title": "Relational Database",
+      "description": "Store and query structured data using SQL",
+      "core_feature": true
     },
     {
-      "title": "Advanced SQL Queries",
-      "description": "Execute complex queries with support for CTEs, window functions, JSON operations, and full-text search"
+      "title": "Transaction Support",
+      "description": "Ensure data consistency with ACID transactions",
+      "core_feature": true
     },
     {
-      "title": "Extensibility",
-      "description": "Add custom functions, data types, and operators using procedural languages like PL/pgSQL and PL/Python"
+      "title": "Indexing and Query Planning",
+      "description": "Optimize query performance with indexes",
+      "core_feature": true
+    },
+    {
+      "title": "Extensions",
+      "description": "Extend database capabilities with add-ons"
     },
     {
       "title": "Replication",
-      "description": "Implement high availability with streaming replication, logical replication, and failover capabilities"
+      "description": "Replicate data across database instances"
     },
     {
-      "title": "Performance Optimization",
-      "description": "Improve query performance on large tables with declarative partitioning and automatic partition management"
-    },
-    {
-      "title": "Foreign Data Wrappers",
-      "description": "Query external data sources including other databases, files, and APIs as if they were local"
-    },
-    {
-      "title": "JSONB Support",
-      "description": "Store and query JSON documents with indexing and efficient binary storage format"
-    },
-    {
-      "title": "Concurrent Access",
-      "description": "Handle thousands of concurrent connections with MVCC for non-blocking reads and writes"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the database on your own servers"
     }
   ],
   "platform_support": {

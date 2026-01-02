@@ -1,11 +1,11 @@
 {
   "name": "tautulli",
   "slug": "tautulli",
-  "tagline": "A monitoring and analytics dashboard for Plex Media Server",
+  "tagline": "A monitoring and analytics dashboard for Plex Media Server activity",
   "subtitle": "",
   "description": "Tautulli is a self-hosted monitoring and analytics tool for Plex Media Server. It tracks user activity, watch history, performance, and library stats, providing rich reports and notifications via an intuitive web dashboard and API.",
   "categories": [
-    100
+    9
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,26 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Analyze individual user behavior including watch time, favorite content, and viewing patterns"
+      "title": "Plex Monitoring",
+      "description": "Monitor Plex Media Server activity",
+      "core_feature": true
     },
     {
-      "title": "Media Library",
-      "description": "Monitor library growth, popular content, and media statistics across movies, TV shows, and music"
+      "title": "User Activity Tracking",
+      "description": "View active streams and users",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Send customizable alerts via email, Discord, Slack, or other services for playback events and server"
+      "title": "Playback History",
+      "description": "Track watched media history"
     },
     {
-      "title": "High Performance",
-      "description": "Monitor server performance metrics including transcoding, bandwidth usage, and resource consumption"
+      "title": "Notifications",
+      "description": "Send alerts for playback events"
     },
     {
-      "title": "Search and Filter",
-      "description": "Access complete playback history with filtering, search, and export capabilities for analysis"
+      "title": "Statistics",
+      "description": "View usage and performance metrics"
     }
   ],
   "platform_support": {

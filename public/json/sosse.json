@@ -1,11 +1,11 @@
 {
   "name": "sosse",
   "slug": "sosse",
-  "tagline": "A personal social link and profile page",
+  "tagline": "A self-hosted link-in-bio style page for aggregating personal links",
   "subtitle": "",
   "description": "Sosse is a self-hosted social link page that aggregates your profiles and links into a single personal page with themes, analytics, and simple management.",
   "categories": [
-    165
+    36
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Theme Customization",
-      "description": "Personalizes appearance with colors, fonts, and layouts"
+      "title": "Web Archiving",
+      "description": "Archive web pages for offline access",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Monitors link clicks and visitor statistics"
+      "title": "Full-Text Search",
+      "description": "Search archived page content",
+      "core_feature": true
     },
     {
-      "title": "File Upload",
-      "description": "Uploads profile picture or avatar for personal branding"
+      "title": "Crawl Scheduling",
+      "description": "Schedule periodic page crawling",
+      "core_feature": true
     },
     {
-      "title": "Tagging System",
-      "description": "Adds description or tagline to your link page"
+      "title": "Snapshot Viewing",
+      "description": "View archived versions of pages"
+    },
+    {
+      "title": "Link Extraction",
+      "description": "Extract and follow links during crawling"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the archiver on your own servers"
     }
   ],
   "platform_support": {

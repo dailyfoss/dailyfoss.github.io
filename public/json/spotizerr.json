@@ -1,11 +1,11 @@
 {
   "name": "spotizerr",
   "slug": "spotizerr",
-  "tagline": "A bridge between Spotify data and media requests",
+  "tagline": "A Spotify-based request and automation tool for media collections",
   "subtitle": "",
   "description": "Spotizerr is a self-hosted tool connecting Spotify data with Overseerr-style request workflows, allowing users to request tracks or albums in curated collections.",
   "categories": [
-    166
+    1
   ],
   "metadata": {
     "sponsored": false,
@@ -27,28 +27,31 @@
   },
   "features": [
     {
-      "title": "Request Management",
-      "description": "Organizes and prioritizes music requests"
+      "title": "Music Download Automation",
+      "description": "Download music from streaming sources",
+      "core_feature": true
     },
     {
-      "title": "Media Library",
-      "description": "Provides familiar interface for media requests"
+      "title": "Metadata Tagging",
+      "description": "Tag downloaded music files",
+      "core_feature": true
     },
     {
-      "title": "User Permissions",
-      "description": "Controls who can request and approve music"
+      "title": "Library Organization",
+      "description": "Organize downloaded music",
+      "core_feature": true
     },
     {
-      "title": "Download Automation",
-      "description": "Triggers downloads when requests are approved"
+      "title": "Playlist Support",
+      "description": "Download playlists"
     },
     {
-      "title": "Library Integration",
-      "description": "Checks existing library to avoid duplicates"
+      "title": "Configuration Files",
+      "description": "Configure behavior using files"
     },
     {
-      "title": "Approval Workflow",
-      "description": "Requires admin approval before processing requests"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the downloader on your own infrastructure"
     }
   ],
   "platform_support": {

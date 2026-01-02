@@ -1,11 +1,11 @@
 {
   "name": "scraperr",
   "slug": "scraperr",
-  "tagline": "A self-hosted metadata fetcher for media libraries",
+  "tagline": "A self-hosted metadata fetcher for Plex, Jellyfin, and Kodi media libraries",
   "subtitle": "",
   "description": "Scraperr is a self-hosted metadata fetcher for Plex, Kodi, and Jellyfin that uses various APIs to enrich posters, summaries, and metadata in media libraries.",
   "categories": [
-    166
+    1
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Quality Filtering",
-      "description": "Selects highest quality images based on resolution and aspect ratio"
+      "title": "Web Scraping",
+      "description": "Extract data from web pages",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Combines data from TMDB, TVDB, OMDb, and Fanart.tv for comprehensive metadata"
+      "title": "Source Configuration",
+      "description": "Configure scraping targets",
+      "core_feature": true
     },
     {
-      "title": "Media Library",
-      "description": "Identifies media files with incomplete or missing metadata"
+      "title": "Data Export",
+      "description": "Export scraped data",
+      "core_feature": true
     },
     {
-      "title": "Web Interface",
-      "description": "Manage scraping jobs and review metadata through a modern web UI"
+      "title": "Scheduling",
+      "description": "Run scrapers on a schedule"
+    },
+    {
+      "title": "Logging",
+      "description": "Record scraping activity"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the scraper on your own servers"
     }
   ],
   "platform_support": {

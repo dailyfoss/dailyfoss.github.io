@@ -1,11 +1,11 @@
 {
   "name": "birdnet-analyzer",
   "slug": "birdnet-analyzer",
-  "tagline": "An AI-powered tool for identifying bird species from audio recordings",
+  "tagline": "A machine learning tool for identifying bird species from audio recordings",
   "subtitle": "",
   "description": "BirdNET Analyzer is an advanced tool that uses AI to identify bird species from audio recordings. It’s designed for researchers, birdwatchers, and conservationists who want to analyze field recordings or real-time streams.",
   "categories": [
-    101
+    13
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,35 @@
   },
   "features": [
     {
-      "title": "Ai Bird Identification",
-      "description": "Automatically identify bird species from audio recordings. Advanced machine learning"
+      "title": "Bird Sound Analysis",
+      "description": "Identifies bird species from audio recordings",
+      "core_feature": true
     },
     {
-      "title": "Species Database",
-      "description": "Extensive library of bird calls and songs. Global coverage"
+      "title": "Audio File Processing",
+      "description": "Analyzes recorded sound files for bird calls",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Designed for ornithologists, researchers, and conservationists. Scientific accuracy"
+      "title": "Species Classification",
+      "description": "Classifies detected sounds into bird species",
+      "core_feature": true
     },
     {
-      "title": "Export Data",
-      "description": "Generate reports and export findings for research. Professional documentation"
+      "title": "Result Visualization",
+      "description": "Displays detection results and confidence levels"
+    },
+    {
+      "title": "Batch Processing",
+      "description": "Processes multiple audio files in one run"
+    },
+    {
+      "title": "Local Execution",
+      "description": "Runs analysis on local machines"
+    },
+    {
+      "title": "Research-Oriented Output",
+      "description": "Produces data suitable for ecological analysis"
     }
   ],
   "platform_support": {

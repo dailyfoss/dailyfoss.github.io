@@ -1,11 +1,11 @@
 {
   "name": "syncloud",
   "slug": "syncloud",
-  "tagline": "A platform for managing self-hosted app devices",
+  "tagline": "A platform for running and managing self-hosted apps with an integrated app store",
   "subtitle": "",
   "description": "Syncloud platform provides images and management tools for running self-hosted applications on supported hardware devices with an app store and web admin interface.",
   "categories": [
-    121
+    43
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Self-Hosted",
-      "description": "Installs self-hosted apps with one-click from curated catalog"
+      "title": "Application Platform",
+      "description": "Host and manage self-hosted applications",
+      "core_feature": true
     },
     {
-      "title": "Domain Management",
-      "description": "Configures custom domains or uses provided subdomains"
+      "title": "App Marketplace",
+      "description": "Install applications from a catalog",
+      "core_feature": true
     },
     {
-      "title": "Database Backup",
-      "description": "Backs up app data and restores to new devices"
+      "title": "System Updates",
+      "description": "Update system and applications",
+      "core_feature": true
     },
     {
       "title": "User Management",
-      "description": "Creates and manages user accounts across installed apps"
+      "description": "Manage system users"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Administer the platform in a browser"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the platform on your own hardware"
     }
   ],
   "platform_support": {

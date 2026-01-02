@@ -1,11 +1,11 @@
 {
   "name": "wapy-dev",
   "slug": "wapy-dev",
-  "tagline": "A web interface for exploring Python packages",
+  "tagline": "A web interface for exploring Python packages and documentation",
   "subtitle": "",
   "description": "wapy.dev is a self-hosted interface for exploring Python packages and documentation, providing search, metadata views, and examples through a lightweight web UI.",
   "categories": [
-    165
+    26
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Search and Filter",
-      "description": "Quickly find Python packages with fast search across PyPI's extensive package repository"
+      "title": "Static Site Generator",
+      "description": "Generate static websites",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Browse package documentation, README files, and API references in a clean interface"
+      "title": "Markdown Support",
+      "description": "Write content using Markdown",
+      "core_feature": true
     },
     {
-      "title": "Code Examples",
-      "description": "Access usage examples and code snippets directly from package documentation for quick reference"
+      "title": "Theme System",
+      "description": "Customize site appearance",
+      "core_feature": true
     },
     {
-      "title": "Offline Mode",
-      "description": "Cache frequently accessed packages and documentation for offline development environments"
+      "title": "Build Automation",
+      "description": "Build sites automatically"
+    },
+    {
+      "title": "Deployment Flexibility",
+      "description": "Deploy generated sites anywhere"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the generator on your own infrastructure"
     }
   ],
   "platform_support": {

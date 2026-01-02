@@ -1,11 +1,11 @@
 {
   "name": "corecontrol",
   "slug": "corecontrol",
-  "tagline": "A self-hosted control center for managing servers and services",
+  "tagline": "A self-hosted control center for monitoring and managing servers",
   "subtitle": "",
   "description": "CoreControl is a modern, self-hosted control center for managing multiple servers and services. It supports monitoring, commands, and management from a sleek web dashboard, ideal for home labs and sysadmins.",
   "categories": [
-    34
+    28
   ],
   "metadata": {
     "sponsored": false,
@@ -33,20 +33,31 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Control multiple servers from one dashboard. Centralized administration"
+      "title": "Hardware Monitoring Dashboard",
+      "description": "View real-time CPU, GPU, and system sensor data in a web interface",
+      "core_feature": true
     },
     {
-      "title": "Web Interface",
-      "description": "Modern web interface for intuitive control. Beautiful and functional"
+      "title": "Fan and Power Control",
+      "description": "Adjust fan speeds and power limits for supported hardware",
+      "core_feature": true
     },
     {
-      "title": "Home Lab Ready",
-      "description": "Perfect for managing personal server infrastructure. Ideal for enthusiasts"
+      "title": "GPU Performance Tuning",
+      "description": "Configure GPU clocks and performance profiles",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Complete control over your server management platform. Your infrastructure, your rules"
+      "title": "Web-Based Interface",
+      "description": "Access system controls through a browser-based UI"
+    },
+    {
+      "title": "Preset Profiles",
+      "description": "Save and switch between predefined hardware configurations"
+    },
+    {
+      "title": "Linux System Support",
+      "description": "Operate hardware monitoring and control features on Linux systems"
     }
   ],
   "platform_support": {

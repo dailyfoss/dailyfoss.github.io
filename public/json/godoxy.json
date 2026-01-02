@@ -1,11 +1,11 @@
 {
   "name": "godoxy",
   "slug": "godoxy",
-  "tagline": "A self-hosted HTTP inspection proxy for debugging web traffic",
+  "tagline": "A self-hosted HTTP inspection proxy for debugging and traffic analysis",
   "subtitle": "",
   "description": "Godoxy is a self-hosted proxy server designed for inspecting HTTP traffic and debugging. It provides a web interface and API for logging requests, useful for development and debugging processes.",
   "categories": [
-    34
+    36
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "Request Logging",
-      "description": "Capture detailed logs of all HTTP traffic passing through the proxy"
+      "title": "Reverse Proxy",
+      "description": "Route incoming HTTP requests to backend services",
+      "core_feature": true
     },
     {
-      "title": "Web Interface",
-      "description": "View and analyze traffic through a browser-based dashboard"
+      "title": "Automatic Configuration",
+      "description": "Generate proxy routes based on service definitions",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Identify issues in API calls, webhooks, and HTTP integrations"
+      "title": "Container Integration",
+      "description": "Detect and route traffic to containerized services",
+      "core_feature": true
     },
     {
-      "title": "Api Testing",
-      "description": "Test API endpoints by modifying requests before forwarding to backends"
+      "title": "HTTPS Support",
+      "description": "Serve applications over HTTPS connections"
     },
     {
-      "title": "Development Workflow",
-      "description": "Essential tool for debugging web applications and services"
+      "title": "Service Discovery",
+      "description": "Discover backend services automatically"
+    },
+    {
+      "title": "Web-Based Administration",
+      "description": "Manage proxy behavior through configuration files"
     }
   ],
   "platform_support": {

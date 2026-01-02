@@ -1,11 +1,11 @@
 {
   "name": "graylog",
   "slug": "graylog",
-  "tagline": "A self-hosted platform for collecting, searching, and analyzing logs",
+  "tagline": "A self-hosted platform for collecting searching and analyzing log data",
   "subtitle": "",
   "description": "Graylog is a self-hosted log management and SIEM platform for collecting, indexing, and analyzing log data. It includes dashboards, alerts, log search, and integrates with Elasticsearch and MongoDB for monitoring large systems.",
   "categories": [
-    93
+    35
   ],
   "metadata": {
     "sponsored": false,
@@ -33,35 +33,37 @@
   "features": [
     {
       "title": "Log Management",
-      "description": "Collect, index, and analyze log data from servers, applications, and network devices"
+      "description": "Ingests logs from multiple sources",
+      "core_feature": true
     },
     {
-      "title": "Siem Capabilities",
-      "description": "Security information and event management with threat detection and correlation"
+      "title": "Search and Correlation",
+      "description": "Searches log data and finds patterns",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Leverage Elasticsearch for powerful full-text search and log indexing"
+      "title": "Alerting",
+      "description": "Triggers alerts on defined log conditions"
     },
     {
-      "title": "Real-Time",
-      "description": "Search and analyze logs in real-time with sub-second query response"
-    },
-    {
-      "title": "Analytics Dashboard",
-      "description": "Build custom dashboards with widgets for visualizing log data and metrics"
-    },
-    {
-      "title": "Alert Configuration",
-      "description": "Set up alerts based on log patterns, thresholds, and anomaly detection"
+      "title": "Dashboard Views",
+      "description": "Visualizes log trends and metrics"
     },
     {
       "title": "Stream Processing",
-      "description": "Route and process logs with pipelines, extractors, and enrichment rules"
+      "description": "Filters and routes incoming logs"
     },
     {
-      "title": "Scalable Architecture",
-      "description": "Horizontal scaling to handle millions of log messages per second"
+      "title": "Role-Based Access",
+      "description": "Controls user permissions"
+    },
+    {
+      "title": "Index Storage",
+      "description": "Stores logs in searchable indexes"
+    },
+    {
+      "title": "Self-Hosted Logging",
+      "description": "Host the system on your own infrastructure"
     }
   ],
   "platform_support": {

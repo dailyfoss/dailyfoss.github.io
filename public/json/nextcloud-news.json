@@ -1,11 +1,11 @@
 {
   "name": "nextcloud-news",
   "slug": "nextcloud-news",
-  "tagline": "An RSS feed reader app built into Nextcloud",
+  "tagline": "An RSS and Atom feed reader integrated into the Nextcloud ecosystem",
   "subtitle": "",
   "description": "Nextcloud News is an RSS/Atom feed reader app integrated into a Nextcloud instance. It can sync across devices, categorize feeds, and offers simple offline reading capabilities.",
   "categories": [
-    57
+    20
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "Rss/atom Reader",
-      "description": "Subscribe to news feeds and blogs with automatic update checking"
+      "title": "RSS Feed Reader",
+      "description": "Subscribe to and read RSS and Atom feeds",
+      "core_feature": true
     },
     {
       "title": "Folder Organization",
-      "description": "Group feeds into folders for structured content management"
+      "description": "Group feeds into folders",
+      "core_feature": true
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Read articles on web, desktop, or mobile with synchronized read status"
+      "title": "Article Status",
+      "description": "Mark articles as read or unread",
+      "core_feature": true
     },
     {
-      "title": "Offline Reading",
-      "description": "Download articles for reading without internet connection on mobile apps"
+      "title": "Search",
+      "description": "Search articles by keyword"
     },
     {
-      "title": "Unread Management",
-      "description": "Mark articles as read automatically or manually with flexible options"
+      "title": "Nextcloud Integration",
+      "description": "Use feeds within the Nextcloud ecosystem"
     },
     {
-      "title": "Star Articles",
-      "description": "Save favorite articles for later reference or archival"
-    },
-    {
-      "title": "Keyboard Navigation",
-      "description": "Browse feeds efficiently with customizable keyboard shortcuts"
-    },
-    {
-      "title": "Feed Discovery",
-      "description": "Find and subscribe to feeds from website URLs automatically"
+      "title": "Web Interface",
+      "description": "Read feeds through the Nextcloud UI"
     }
   ],
   "platform_support": {

@@ -1,11 +1,11 @@
 {
   "name": "netbird",
   "slug": "netbird",
-  "tagline": "A WireGuard based mesh VPN with centralized management",
+  "tagline": "A WireGuard-based mesh VPN for secure device networking",
   "subtitle": "",
   "description": "NetBird is a self-hosted WireGuard-based mesh VPN solution that simplifies secure networking across devices. It features identity-based access controls and a web UI for managing peers and networks.",
   "categories": [
-    174
+    36
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "High Performance",
-      "description": "Fast, secure mesh networking using modern WireGuard protocol for peer-to-peer connections"
+      "title": "Secure Network Overlay",
+      "description": "Connect devices using a private virtual network",
+      "core_feature": true
     },
     {
-      "title": "Zero",
-      "description": "Automatic peer discovery and connection without manual WireGuard configuration"
+      "title": "Peer Connectivity",
+      "description": "Enable direct device-to-device connections",
+      "core_feature": true
     },
     {
-      "title": "Single Sign-On",
-      "description": "Integrate with SSO providers like Okta, Auth0, or Google for user authentication"
+      "title": "Identity-Based Access",
+      "description": "Control network access using identities",
+      "core_feature": true
     },
     {
-      "title": "Network Policies",
-      "description": "Define access rules and segmentation to control which peers can communicate"
+      "title": "Client Management",
+      "description": "Register and manage connected devices"
     },
     {
-      "title": "Cross",
-      "description": "Native apps for Linux, Windows, macOS, iOS, and Android devices"
+      "title": "Admin Dashboard",
+      "description": "Manage network settings through a web UI"
     },
     {
-      "title": "Nat Traversal",
-      "description": "Connect devices behind firewalls and NAT without port forwarding or public IPs"
-    },
-    {
-      "title": "Web Management Ui",
-      "description": "Configure networks, manage peers, and view connection status from a browser"
-    },
-    {
-      "title": "Activity Monitoring",
-      "description": "Track peer connections, data transfer, and network events in real-time"
+      "title": "Self-Hosted Control Plane",
+      "description": "Run the management components on your own infrastructure"
     }
   ],
   "platform_support": {

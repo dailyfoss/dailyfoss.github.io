@@ -1,11 +1,11 @@
 {
   "name": "chirpy",
   "slug": "chirpy",
-  "tagline": "A federated microblogging platform focused on privacy and simplicity",
+  "tagline": "A federated microblogging platform focused on simplicity and privacy",
   "subtitle": "",
   "description": "Chirpy is a federated microblogging platform built on ActivityPub, focused on privacy and simplicity. It lets users create posts, follow others, and federate with Mastodon and other compatible social networks.",
   "categories": [
-    148
+    6
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,34 @@
   },
   "features": [
     {
-      "title": "Federated Microblogging",
-      "description": "Connect with Mastodon and fediverse. Decentralized social"
+      "title": "Personal Blogging",
+      "description": "Publishes blog posts in a minimal format",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Self-hosted for complete data control. Your posts, your server"
+      "title": "Markdown Content",
+      "description": "Writes posts using Markdown",
+      "core_feature": true
     },
     {
-      "title": "Follow & Share",
-      "description": "Connect with users across the fediverse. Social networking"
+      "title": "Static Site Output",
+      "description": "Generates static blog pages"
     },
     {
-      "title": "Lightweight",
-      "description": "Minimal resource requirements. Efficient operation"
+      "title": "Tagging System",
+      "description": "Organizes posts with tags"
+    },
+    {
+      "title": "RSS Feed",
+      "description": "Generates feeds for subscribers"
+    },
+    {
+      "title": "Theme Support",
+      "description": "Customizes blog appearance"
+    },
+    {
+      "title": "Self-Hosted Publishing",
+      "description": "Hosts blogs on user-managed servers"
     }
   ],
   "platform_support": {

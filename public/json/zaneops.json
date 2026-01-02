@@ -1,11 +1,11 @@
 {
   "name": "zaneops",
   "slug": "zaneops",
-  "tagline": "An operations dashboard for services and deployments",
+  "tagline": "An operations dashboard aggregating status, logs, and metrics for teams",
   "subtitle": "",
   "description": "zane-ops is a self-hosted operations dashboard for monitoring services and deployments. It aggregates status, logs, and metrics into a unified web interface for small teams or homelabs.",
   "categories": [
-    146
+    30
   ],
   "metadata": {
     "sponsored": false,
@@ -27,20 +27,31 @@
   },
   "features": [
     {
-      "title": "Search and Filter",
-      "description": "Collect and search logs from multiple services in a centralized interface with filtering"
+      "title": "Application Deployment",
+      "description": "Deploy and manage applications",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Visualize resource usage, request rates, and performance metrics for all monitored services"
+      "title": "Server Management",
+      "description": "Manage infrastructure servers",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Set up notifications for service failures, performance degradation, or deployment issues"
+      "title": "Environment Configuration",
+      "description": "Configure application environments",
+      "core_feature": true
     },
     {
-      "title": "Docker Support",
-      "description": "Monitor Docker containers and orchestration platforms with detailed resource metrics"
+      "title": "Monitoring",
+      "description": "Monitor application health"
+    },
+    {
+      "title": "Deployment Automation",
+      "description": "Automate deployment workflows"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the platform on your own servers"
     }
   ],
   "platform_support": {

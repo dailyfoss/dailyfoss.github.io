@@ -1,11 +1,11 @@
 {
   "name": "pleroma",
   "slug": "pleroma",
-  "tagline": "A lightweight federated social networking server",
+  "tagline": "A lightweight federated social network built on ActivityPub",
   "subtitle": "",
   "description": "Pleroma is a lightweight federated social network built using Elixir and Phoenix. It supports ActivityPub federation, custom themes, chat, and scalable self-hosted deployments.",
   "categories": [
-    148
+    6
   ],
   "metadata": {
     "sponsored": false,
@@ -27,24 +27,31 @@
   },
   "features": [
     {
-      "title": "Federated Social Network",
-      "description": "Connect with users across Mastodon, Pleroma, and other ActivityPub platforms"
+      "title": "Federated Social Networking",
+      "description": "Run a social media server using ActivityPub",
+      "core_feature": true
     },
     {
-      "title": "Lightweight",
-      "description": "Built with Elixir for efficient resource usage and scalability on modest hardware"
+      "title": "User Accounts",
+      "description": "Create and manage local user profiles",
+      "core_feature": true
     },
     {
-      "title": "Theme Customization",
-      "description": "Personalize the interface with custom CSS themes and color schemes"
+      "title": "Timelines",
+      "description": "View local and federated timelines",
+      "core_feature": true
     },
     {
-      "title": "Media Library",
-      "description": "Share text, images, videos, and polls with followers in your timeline"
+      "title": "Moderation Tools",
+      "description": "Manage users and content"
     },
     {
-      "title": "Chat Functionality",
-      "description": "Send direct messages and participate in group chats with other users"
+      "title": "Media Attachments",
+      "description": "Attach images and files to posts"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the social server on your own infrastructure"
     }
   ],
   "platform_support": {

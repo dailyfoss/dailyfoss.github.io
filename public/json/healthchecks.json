@@ -5,7 +5,7 @@
   "subtitle": "",
   "description": "Healthchecks is a self hosted cron job and heartbeat monitoring service. You ping unique URLs from your scripts, containers or IoT devices and Healthchecks alerts you when jobs fail or run late, via email, chat, or webhooks.",
   "categories": [
-    173
+    35
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,38 @@
   },
   "features": [
     {
-      "title": "Email Notifications",
-      "description": "Send notifications via email, Slack, Discord, PagerDuty, and 20+ integrations"
+      "title": "Cron Job Monitoring",
+      "description": "Monitors scheduled jobs by expecting regular check-in signals",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "View all monitored jobs and their current status at a glance"
+      "title": "Heartbeat Checks",
+      "description": "Tracks whether jobs run within expected time windows",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Integrate monitoring into scripts and applications with simple HTTP pings"
+      "title": "Failure Alerts",
+      "description": "Sends notifications when jobs fail or stop reporting"
     },
     {
-      "title": "Historical Logs",
-      "description": "Review ping history and downtime incidents for troubleshooting"
+      "title": "Status Dashboard",
+      "description": "Displays the health of monitored jobs"
+    },
+    {
+      "title": "Notification Integrations",
+      "description": "Sends alerts to supported messaging and email services"
+    },
+    {
+      "title": "API Management",
+      "description": "Creates and updates checks programmatically"
+    },
+    {
+      "title": "User Accounts",
+      "description": "Stores checks separately per user"
+    },
+    {
+      "title": "Self-Hosted Monitoring",
+      "description": "Run the monitoring service on your own servers"
     }
   ],
   "platform_support": {

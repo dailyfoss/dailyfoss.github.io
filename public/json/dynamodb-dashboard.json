@@ -1,11 +1,11 @@
 {
   "name": "dynamodb-dashboard",
   "slug": "dynamodb-dashboard",
-  "tagline": "A web interface for browsing and querying DynamoDB tables",
+  "tagline": "A web interface for browsing and inspecting DynamoDB tables",
   "subtitle": "",
   "description": "DynamoDB Dashboard is a web UI for visualizing and inspecting AWS DynamoDB tables. It helps developers browse items, run queries, and understand data structures without relying solely on the AWS console.",
   "categories": [
-    39
+    29
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,39 @@
   },
   "features": [
     {
+      "title": "DynamoDB Management Dashboard",
+      "description": "Manages Amazon DynamoDB tables",
+      "core_feature": true
+    },
+    {
       "title": "Table Browsing",
-      "description": "View all DynamoDB tables in your AWS account with item counts and key schema information"
+      "description": "Views items and attributes",
+      "core_feature": true
     },
     {
-      "title": "Item Inspection",
-      "description": "Browse table contents with pagination and view individual items with all attributes displayed"
+      "title": "Query and Scan",
+      "description": "Runs queries and scans on tables",
+      "core_feature": true
     },
     {
-      "title": "Query Builder",
-      "description": "Construct queries using partition and sort keys with filter expressions for targeted data retrieval"
+      "title": "Data Editing",
+      "description": "Creates updates and deletes items"
     },
     {
-      "title": "Scan Operations",
-      "description": "Perform full table scans with optional filters to explore data without predefined access patterns"
+      "title": "Index Management",
+      "description": "Views secondary indexes"
     },
     {
-      "title": "Json Formatting",
-      "description": "Display item data in readable JSON format for easier analysis of complex nested structures"
+      "title": "AWS Credential Support",
+      "description": "Authenticates using AWS credentials"
     },
     {
-      "title": "Aws Credential Support",
-      "description": "Connect using IAM roles, access keys, or environment variables for flexible authentication"
+      "title": "Web Interface",
+      "description": "Operates through a browser"
     },
     {
-      "title": "Local Development",
-      "description": "Test against DynamoDB Local or production tables from a unified interface during development"
-    },
-    {
-      "title": "Lightweight",
-      "description": "Run as a simple web application without heavy dependencies or complex setup requirements"
+      "title": "Self-Hosted Dashboard",
+      "description": "Runs on user-controlled infrastructure"
     }
   ],
   "platform_support": {

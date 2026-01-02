@@ -1,11 +1,11 @@
 {
   "name": "rapidforge",
   "slug": "rapidforge",
-  "tagline": "A self-hosted platform for managing preview environments and deployments",
+  "tagline": "A DevOps platform for automating environment creation and deployments",
   "subtitle": "",
   "description": "Release is a self-hosted DevOps platform that automates environment creation, previews, and deployments with a focus on simplifying cloud-native workflows via UI or API.",
   "categories": [
-    165
+    30
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,26 @@
   },
   "features": [
     {
-      "title": "Tagging System",
-      "description": "Create isolated development, staging, and production environments with a single command"
+      "title": "Release Management",
+      "description": "Create and manage software releases",
+      "core_feature": true
     },
     {
-      "title": "Kubernetes Ready",
-      "description": "Deploy applications to Kubernetes clusters with automated configuration and scaling"
+      "title": "Changelog Generation",
+      "description": "Generate release notes from commits",
+      "core_feature": true
     },
     {
-      "title": "Infrastructure As Code",
-      "description": "Define environments using declarative configuration files for reproducible deployments"
+      "title": "Version Tracking",
+      "description": "Track versions across releases"
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Monitor CPU, memory, and storage usage across all environments from a central dashboard"
+      "title": "CI Integration",
+      "description": "Integrate release steps into CI pipelines"
     },
     {
-      "title": "Secret Management",
-      "description": "Store and inject environment variables and credentials securely into applications"
+      "title": "Web Interface",
+      "description": "Manage releases through a browser"
     }
   ],
   "platform_support": {

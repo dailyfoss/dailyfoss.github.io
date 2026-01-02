@@ -1,11 +1,11 @@
 {
   "name": "z-wave-js-ui",
   "slug": "z-wave-js-ui",
-  "tagline": "A management interface for Z-Wave networks",
+  "tagline": "A control dashboard for managing Z-Wave networks with nodes and diagnostics",
   "subtitle": "",
   "description": "Z-Wave JS UI is a self-hosted control and management UI for Z-Wave networks using Z-Wave JS. It provides node inclusion, configuration, and diagnostics with dashboards and charts.",
   "categories": [
-    76
+    36
   ],
   "metadata": {
     "sponsored": false,
@@ -27,36 +27,26 @@
   },
   "features": [
     {
-      "title": "Web Interface",
-      "description": "Add, remove, and configure Z-Wave devices through an intuitive web interface without command-line tools"
-    },
-    {
-      "title": "Network Visualization",
-      "description": "View your Z-Wave mesh network topology with signal strength and routing information"
+      "title": "Z-Wave Network Management",
+      "description": "Manage Z-Wave devices and networks",
+      "core_feature": true
     },
     {
       "title": "Device Configuration",
-      "description": "Modify device parameters and settings with detailed descriptions and validation"
+      "description": "Configure Z-Wave device settings",
+      "core_feature": true
     },
     {
-      "title": "Firmware Updates",
-      "description": "Update device firmware over-the-air when manufacturers release new versions with bug fixes or features"
+      "title": "Network Visualization",
+      "description": "View Z-Wave network topology"
     },
     {
-      "title": "Scene Control",
-      "description": "Create and trigger scenes that control multiple devices simultaneously for automation scenarios"
+      "title": "Home Automation Integration",
+      "description": "Integrate with supported automation systems"
     },
     {
-      "title": "Single Sign-On",
-      "description": "Configure device associations for direct communication without controller involvement"
-    },
-    {
-      "title": "Diagnostic Tools",
-      "description": "Troubleshoot network issues with ping tests, route analysis, and communication statistics"
-    },
-    {
-      "title": "Mqtt Gateway",
-      "description": "Expose Z-Wave devices to MQTT for integration with Home Assistant, Node-RED, and other platforms"
+      "title": "Web Interface",
+      "description": "Manage devices through a browser"
     }
   ],
   "platform_support": {

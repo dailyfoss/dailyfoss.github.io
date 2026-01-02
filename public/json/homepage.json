@@ -1,11 +1,11 @@
 {
   "name": "homepage",
   "slug": "homepage",
-  "tagline": "A YAML driven dashboard for visualizing services and infrastructure status",
+  "tagline": "A YAML-driven dashboard for visualizing services and infrastructure status",
   "subtitle": "",
   "description": "Homepage is a customizable, YAML driven dashboard for homelab services. It supports widgets for system stats, media libraries, monitoring tools and dynamic service discovery, serving as a central control panel for your infrastructure.",
   "categories": [
-    34
+    28
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,37 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Define your entire dashboard layout and services in simple YAML files"
+      "title": "Service Dashboard",
+      "description": "Displays links and status for self-hosted services",
+      "core_feature": true
     },
     {
-      "title": "Docker Support",
-      "description": "Automatically discover and monitor Docker containers on your system"
+      "title": "Widget-Based Layout",
+      "description": "Shows dynamic widgets for services"
     },
     {
-      "title": "Kubernetes Ready",
-      "description": "Monitor pods, deployments, and cluster resources"
+      "title": "Service Status Checks",
+      "description": "Displays health and availability information"
     },
     {
-      "title": "REST API",
-      "description": "Create widgets for any service with a REST API"
+      "title": "Configuration Files",
+      "description": "Defines layout and services declaratively"
     },
     {
-      "title": "Search and Filter",
-      "description": "Add search bars for Google, DuckDuckGo, or custom search engines"
+      "title": "Responsive Design",
+      "description": "Adapts to different screen sizes"
+    },
+    {
+      "title": "Custom Styling",
+      "description": "Allows theme and style customization"
+    },
+    {
+      "title": "Authentication Options",
+      "description": "Restricts access when needed"
+    },
+    {
+      "title": "Self-Hosted Homepage",
+      "description": "Run the dashboard on your own infrastructure"
     }
   ],
   "platform_support": {

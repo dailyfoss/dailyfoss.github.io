@@ -1,11 +1,11 @@
 {
   "name": "scraparr",
   "slug": "scraparr",
-  "tagline": "A metadata scraping tool for media automation stacks",
+  "tagline": "A self-hosted media metadata scraper for Radarr and Sonarr libraries",
   "subtitle": "",
   "description": "Scraparr is a self-hosted tool to scrape and sync metadata for media libraries. It integrates with Radarr/Sonarr and enriches content automatically.",
   "categories": [
-    166
+    1
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "REST API",
-      "description": "Automatically fetches and updates metadata for movies and TV shows"
+      "title": "Media Metadata Scraping",
+      "description": "Scrape metadata for media libraries",
+      "core_feature": true
     },
     {
-      "title": "Real-Time Sync",
-      "description": "Syncs with Radarr to enrich movie libraries with enhanced metadata"
+      "title": "Media Server Integration",
+      "description": "Integrate with supported media servers",
+      "core_feature": true
     },
     {
-      "title": "Sonarr Integration",
-      "description": "Connects to Sonarr for TV series metadata enrichment and updates"
+      "title": "Automated Updates",
+      "description": "Update metadata automatically",
+      "core_feature": true
     },
     {
-      "title": "Multiple Sources",
-      "description": "Aggregates data from TMDB, TVDB, and other metadata providers"
+      "title": "Rule Configuration",
+      "description": "Define scraping behavior"
     },
     {
-      "title": "Poster Management",
-      "description": "Downloads and organizes high-quality posters and artwork"
+      "title": "Logging",
+      "description": "View scraping activity logs"
     },
     {
-      "title": "Batch Processing",
-      "description": "Processes entire libraries efficiently with configurable batch sizes"
-    },
-    {
-      "title": "Custom Mappings",
-      "description": "Override automatic matches with manual metadata assignments"
-    },
-    {
-      "title": "Scheduling",
-      "description": "Runs metadata updates on configurable schedules to keep libraries current"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the scraper on your own infrastructure"
     }
   ],
   "platform_support": {

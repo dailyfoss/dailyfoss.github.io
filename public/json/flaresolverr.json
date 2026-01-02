@@ -1,11 +1,11 @@
 {
   "name": "flaresolverr",
   "slug": "flaresolverr",
-  "tagline": "A proxy service that automates browser challenges for protected websites",
+  "tagline": "A proxy service that automates Cloudflare browser challenges",
   "subtitle": "",
   "description": "FlareSolverr is a proxy server that bypasses Cloudflare protections by automating browser challenges. It is commonly used with tools like Jackett and Sonarr to access protected scraping targets in self-hosted stacks.",
   "categories": [
-    189
+    36
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,38 @@
   },
   "features": [
     {
-      "title": "REST API",
-      "description": "Bypass Cloudflare protections, Automate browser challenges, API access. Unblock protected sites"
+      "title": "Anti-Bot Bypass Service",
+      "description": "Solves JavaScript challenges for HTTP requests",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Run your own proxy. Privacy-focused"
+      "title": "HTTP API",
+      "description": "Exposes a request solving API",
+      "core_feature": true
     },
     {
-      "title": "Scraping Support",
-      "description": "Access protected targets. Essential for media stacks"
+      "title": "Headless Browser Automation",
+      "description": "Executes challenges in a browser context"
     },
     {
-      "title": "Api Interface",
-      "description": "Easy integration. RESTful endpoints"
+      "title": "Session Handling",
+      "description": "Reuses cookies and sessions"
     },
     {
-      "title": "Session Management",
-      "description": "Handle cookies and state. Persistent access"
+      "title": "Timeout Control",
+      "description": "Configures request time limits"
+    },
+    {
+      "title": "Logging",
+      "description": "Records request activity"
+    },
+    {
+      "title": "Container Support",
+      "description": "Runs in container environments"
+    },
+    {
+      "title": "Self-Hosted Solver",
+      "description": "Run the service on your own servers"
     }
   ],
   "platform_support": {

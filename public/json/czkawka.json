@@ -1,11 +1,11 @@
 {
   "name": "czkawka",
   "slug": "czkawka",
-  "tagline": "A fast tool for finding duplicate files and cleaning disk space",
+  "tagline": "A fast tool for finding duplicate files, similar photos, and cleaning disk space",
   "subtitle": "",
   "description": "Czkawka is a fast, cross-platform tool for finding duplicate files, similar photos, empty folders, and more. It features a CLI and GUI and is designed for efficiency using Rust and multithreading support.",
   "categories": [
-    59
+    42
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,34 @@
   },
   "features": [
     {
-      "title": "Duplicate Detection",
-      "description": "Find identical files quickly and accurately. Reclaim wasted storage"
+      "title": "Duplicate File Finder",
+      "description": "Finds duplicate files on disk",
+      "core_feature": true
     },
     {
-      "title": "Similar Photos",
-      "description": "Identify near-duplicate images intelligently. Clean photo collections"
+      "title": "Similar Media Detection",
+      "description": "Detects similar images and videos",
+      "core_feature": true
     },
     {
-      "title": "Folder Organization",
-      "description": "Locate and remove unused directories. Organize file systems"
+      "title": "Disk Cleanup",
+      "description": "Identifies unnecessary files"
     },
     {
-      "title": "High Performance",
-      "description": "Rust-powered speed with multithreading. Process large drives quickly"
+      "title": "Graphical Interface",
+      "description": "Provides desktop UI"
     },
     {
-      "title": "Cli & Gui",
-      "description": "Choose command-line or graphical interface. Flexible usage options"
+      "title": "CLI Support",
+      "description": "Runs scans from command line"
     },
     {
-      "title": "Cross",
-      "description": "Works on Linux, Windows, and macOS. Universal compatibility"
+      "title": "Cross-Platform",
+      "description": "Runs on Linux Windows and macOS"
+    },
+    {
+      "title": "Local Analysis",
+      "description": "Processes files locally"
     }
   ],
   "platform_support": {

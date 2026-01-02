@@ -1,11 +1,11 @@
 {
   "name": "sink",
   "slug": "sink",
-  "tagline": "A simple self-hosted URL shortener service",
+  "tagline": "A self-hosted URL shortener with redirects and basic analytics",
   "subtitle": "",
   "description": "Sink is a self-hosted URL shortener and redirection service. It offers basic analytics, custom slugs, and a modern simple UI for managing links.",
   "categories": [
-    112
+    20
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Tracks total clicks, unique visitors, and referrer sources"
+      "title": "Webhook Receiver",
+      "description": "Receive and inspect webhook requests",
+      "core_feature": true
     },
     {
-      "title": "Qr Codes",
-      "description": "Generates QR codes for each shortened URL"
+      "title": "Request Inspection",
+      "description": "View headers and payloads of requests",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Provides REST API for programmatic link creation and management"
+      "title": "Endpoint Management",
+      "description": "Create multiple webhook endpoints",
+      "core_feature": true
+    },
+    {
+      "title": "Replay Requests",
+      "description": "Replay received webhook calls"
     },
     {
       "title": "Web Interface",
-      "description": "Manages links through clean, minimal web UI"
+      "description": "Manage endpoints through a browser"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the webhook service on your own infrastructure"
     }
   ],
   "platform_support": {

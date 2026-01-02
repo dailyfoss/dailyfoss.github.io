@@ -1,11 +1,11 @@
 {
   "name": "nextcloud-social",
   "slug": "nextcloud-social",
-  "tagline": "A federated social app built into Nextcloud",
+  "tagline": "A federated social media app using ActivityPub within Nextcloud",
   "subtitle": "",
   "description": "Nextcloud Social is a federated social media app using ActivityPub. It enables posts, follows, and interaction with other platforms like Mastodon—all within the Nextcloud infrastructure.",
   "categories": [
-    148
+    6
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,26 @@
   },
   "features": [
     {
-      "title": "Activitypub Federation",
-      "description": "Connect with Mastodon, Pleroma, and other federated social networks"
+      "title": "Social Activity Stream",
+      "description": "View posts and updates from followed users",
+      "core_feature": true
     },
     {
-      "title": "Post Creation",
-      "description": "Share text, images, and links with followers on your timeline"
+      "title": "Posting",
+      "description": "Share status updates and media",
+      "core_feature": true
     },
     {
-      "title": "Follow System",
-      "description": "Follow users on your instance or across the fediverse for content discovery"
+      "title": "Likes and Replies",
+      "description": "Interact with posts using likes and comments"
     },
     {
-      "title": "Timeline Feeds",
-      "description": "View posts from followed users in chronological or filtered timelines"
+      "title": "Follow Users",
+      "description": "Follow and unfollow other users"
     },
     {
-      "title": "Interactions",
-      "description": "Like, boost, and reply to posts from your instance or federated networks"
-    },
-    {
-      "title": "Data Privacy",
-      "description": "Set post visibility as public, followers-only, or direct messages"
-    },
-    {
-      "title": "Tagging System",
-      "description": "Tag posts with hashtags for discoverability and topic organization"
-    },
-    {
-      "title": "Email Notifications",
-      "description": "Receive alerts for mentions, follows, and interactions with your posts"
+      "title": "Nextcloud Integration",
+      "description": "Use social features within Nextcloud"
     }
   ],
   "platform_support": {

@@ -1,11 +1,11 @@
 {
   "name": "payload",
   "slug": "payload",
-  "tagline": "A headless CMS and application framework",
+  "tagline": "A headless CMS and application framework for custom APIs and admin UIs",
   "subtitle": "",
   "description": "Payload is a headless CMS and application framework for building custom APIs, admin UIs, and content workflows. It supports TypeScript, plugins, and self-hosting or cloud deployment.",
   "categories": [
-    33
+    43
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,27 @@
   },
   "features": [
     {
-      "title": "REST API",
-      "description": "API-first content management with flexible content modeling and automatic REST and GraphQL API generation"
+      "title": "Headless CMS",
+      "description": "Manage content via API-first CMS",
+      "core_feature": true
     },
     {
-      "title": "Custom Admin Ui",
-      "description": "Auto-generated admin interface based on your schema with customizable components and layouts"
+      "title": "Content Modeling",
+      "description": "Define custom content structures",
+      "core_feature": true
+    },
+    {
+      "title": "Admin UI",
+      "description": "Manage content through a web interface",
+      "core_feature": true
     },
     {
       "title": "Access Control",
-      "description": "Granular permissions system controls who can read, create, update, or delete content at field and"
+      "description": "Define permissions for users and roles"
     },
     {
-      "title": "Search and Filter",
-      "description": "Extend functionality with plugins for SEO, search, storage, authentication, and custom business logic"
-    },
-    {
-      "title": "File Upload",
-      "description": "Upload and manage media files with automatic image optimization, resizing, and cloud storage integration"
+      "title": "API Delivery",
+      "description": "Access content via REST or GraphQL"
     }
   ],
   "platform_support": {

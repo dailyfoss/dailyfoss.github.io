@@ -1,11 +1,11 @@
 {
   "name": "nutify",
   "slug": "nutify",
-  "tagline": "A lightweight alert and notification tool for local networks",
+  "tagline": "A lightweight local notification and alerting service",
   "subtitle": "",
   "description": "Nutify is a lightweight alert and activity push notification tool for local networks. It supports HTTP-based triggers and offers a minimal web-based UI for confirming, snoozing, or tracking alerts.",
   "categories": [
-    112
+    35
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Email Notifications",
-      "description": "Trigger notifications by sending HTTP requests to the server"
+      "title": "Nutrition Tracking",
+      "description": "Track daily food intake and nutritional values",
+      "core_feature": true
+    },
+    {
+      "title": "Food Database",
+      "description": "Search and select foods from a built-in database",
+      "core_feature": true
+    },
+    {
+      "title": "Meal Logging",
+      "description": "Log meals by date and time",
+      "core_feature": true
+    },
+    {
+      "title": "Nutrition Summaries",
+      "description": "View daily and weekly nutrient summaries"
     },
     {
       "title": "Web Interface",
-      "description": "View, manage, and respond to alerts through a browser-based UI"
+      "description": "Manage nutrition data through a browser"
     },
     {
-      "title": "Local Network Focus",
-      "description": "Designed for internal networks without external dependencies"
-    },
-    {
-      "title": "Lightweight",
-      "description": "Minimal resource usage suitable for edge devices or small servers"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the tracker on your own infrastructure"
     }
   ],
   "platform_support": {

@@ -1,11 +1,11 @@
 {
   "name": "statping-ng",
   "slug": "statping-ng",
-  "tagline": "A self-hosted status page and monitoring system",
+  "tagline": "A self-hosted status page and uptime monitoring platform",
   "subtitle": "",
   "description": "Statping-ng is a self-hosted status page and monitoring platform. It pings services, records uptime, and presents results with historical graphs and alerts.",
   "categories": [
-    173
+    35
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "Tagging System",
-      "description": "Records historical uptime percentages and downtime incidents"
+      "title": "Uptime Monitoring",
+      "description": "Monitor availability of services and endpoints",
+      "core_feature": true
     },
     {
-      "title": "Response Time Graphs",
-      "description": "Visualizes service response times over various periods"
+      "title": "Status Page",
+      "description": "Display service status publicly or privately",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Sends alerts via email, Slack, Discord, or webhooks on failures"
+      "title": "Incident Tracking",
+      "description": "Record outages and incidents",
+      "core_feature": true
     },
     {
-      "title": "Incident Management",
-      "description": "Logs and displays service incidents with timestamps"
+      "title": "Notifications",
+      "description": "Send alerts on service downtime"
     },
     {
-      "title": "REST API",
-      "description": "Tests API endpoints and validates response codes and content"
+      "title": "Metrics History",
+      "description": "View historical uptime data"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the monitoring system on your own infrastructure"
     }
   ],
   "platform_support": {

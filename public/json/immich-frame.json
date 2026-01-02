@@ -1,11 +1,11 @@
 {
   "name": "immich-frame",
   "slug": "immich-frame",
-  "tagline": "A digital photo frame interface powered by Immich libraries",
+  "tagline": "A digital photo frame powered by Immich for displaying albums",
   "subtitle": "",
   "description": "ImmichFrame turns a device into a digital photo frame powered by Immich. It displays selected albums or recent uploads in a slideshow style UI, ideal for wall mounted tablets or always on screens showing your self hosted photo library.",
   "categories": [
-    120
+    34
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,38 @@
   },
   "features": [
     {
-      "title": "Digital Frame Mode",
-      "description": "Transform tablets or displays into beautiful digital photo frames"
+      "title": "Digital Photo Frame",
+      "description": "Displays photos from an Immich library in a continuous slideshow format",
+      "core_feature": true
     },
     {
-      "title": "Slideshow Display",
-      "description": "Automatically cycle through photos with customizable transition effects"
+      "title": "Slideshow Playback",
+      "description": "Automatically cycles through selected photos without user interaction",
+      "core_feature": true
     },
     {
       "title": "Album Selection",
-      "description": "Choose specific Immich albums to display on each frame"
+      "description": "Limits displayed photos to chosen Immich albums"
     },
     {
-      "title": "File Upload",
-      "description": "Show latest uploads for a constantly refreshed display"
+      "title": "Fullscreen Display",
+      "description": "Optimized for kiosk screens wall displays and tablets"
     },
     {
-      "title": "Fullscreen Mode",
-      "description": "Distraction-free photo viewing optimized for wall-mounted displays"
+      "title": "Immich API Usage",
+      "description": "Retrieves photo data using Immich APIs"
     },
     {
-      "title": "Customizable Timing",
-      "description": "Control how long each photo displays before transitioning"
+      "title": "Browser-Based Viewer",
+      "description": "Runs as a web application in a browser environment"
     },
     {
-      "title": "Immich Integration",
-      "description": "Pull photos directly from your Immich library in real-time"
+      "title": "Minimal Controls",
+      "description": "Focuses on passive viewing rather than active navigation"
     },
     {
-      "title": "Always",
-      "description": "Designed for continuous operation on dedicated screens"
+      "title": "Self-Hosted Photo Frame",
+      "description": "Uses photos hosted on your own Immich infrastructure"
     }
   ],
   "platform_support": {

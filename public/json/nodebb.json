@@ -1,11 +1,11 @@
 {
   "name": "nodebb",
   "slug": "nodebb",
-  "tagline": "A modern real time forum platform",
+  "tagline": "A modern forum platform with real-time discussions and plugins",
   "subtitle": "",
   "description": "NodeBB is a modern, lightweight forum platform built on Node.js. It supports real-time updates, plugins, SSO, and themes and can be self-hosted or deployed as a managed cloud service.",
   "categories": [
-    66
+    6
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,31 @@
   },
   "features": [
     {
+      "title": "Discussion Forum",
+      "description": "Host community discussion boards",
+      "core_feature": true
+    },
+    {
+      "title": "Topics and Replies",
+      "description": "Create topics and threaded replies",
+      "core_feature": true
+    },
+    {
+      "title": "User Accounts",
+      "description": "Register and manage forum users",
+      "core_feature": true
+    },
+    {
+      "title": "Real-Time Updates",
+      "description": "See new posts without page reloads"
+    },
+    {
+      "title": "Moderation Tools",
+      "description": "Manage content and users"
+    },
+    {
       "title": "Plugin System",
-      "description": "Extend functionality with hundreds of community plugins for features and integrations"
-    },
-    {
-      "title": "Theme Customization",
-      "description": "Customize appearance with themes or create custom designs with templates"
-    },
-    {
-      "title": "User Management",
-      "description": "Handle registration, profiles, reputation, and moderation tools"
-    },
-    {
-      "title": "Mobile Responsive",
-      "description": "Optimized interface works seamlessly on phones, tablets, and desktops"
-    },
-    {
-      "title": "Search and Filter",
-      "description": "Find topics and posts quickly with full-text search and filters"
+      "description": "Extend forum functionality"
     }
   ],
   "platform_support": {

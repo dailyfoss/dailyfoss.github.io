@@ -1,11 +1,11 @@
 {
   "name": "adnanh-webhook",
   "slug": "webhook",
-  "tagline": "A lightweight HTTP server that executes shell commands in response to webhooks",
+  "tagline": "A lightweight HTTP server that triggers shell commands on webhooks",
   "subtitle": "",
   "description": "webhook is a self-hosted lightweight HTTP server that executes shell commands in response to webhooks. It allows defining rules and payload filters via JSON configuration and is controlled through CLI.",
   "categories": [
-    191
+    30
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,26 @@
   },
   "features": [
     {
-      "title": "Webhook Support",
-      "description": "Define custom webhook URLs that trigger shell commands or scripts when called"
+      "title": "Webhook Listener",
+      "description": "Receive and process HTTP webhook requests",
+      "core_feature": true
+    },
+    {
+      "title": "Event Rules",
+      "description": "Trigger commands based on incoming requests",
+      "core_feature": true
     },
     {
       "title": "Payload Filtering",
-      "description": "Set up rules to validate incoming webhook payloads before executing commands"
+      "description": "Match requests using conditions"
     },
     {
-      "title": "Json Configuration",
-      "description": "Define webhooks using simple JSON files with parameters, headers, and execution rules"
+      "title": "CLI Configuration",
+      "description": "Configure hooks using files"
     },
     {
-      "title": "Request Validation",
-      "description": "Verify webhook authenticity using HMAC signatures, tokens, or IP whitelisting"
-    },
-    {
-      "title": "Command Execution",
-      "description": "Run shell scripts, system commands, or custom executables in response to webhook triggers"
-    },
-    {
-      "title": "Environment Variables",
-      "description": "Pass webhook payload data to scripts as environment variables for dynamic processing"
-    },
-    {
-      "title": "Response Customization",
-      "description": "Return custom HTTP responses with specific status codes and body content"
-    },
-    {
-      "title": "Logging System",
-      "description": "Track all webhook invocations with detailed logs including payloads and execution results"
+      "title": "Self-Hosted Deployment",
+      "description": "Run as a standalone service"
     }
   ],
   "platform_support": {

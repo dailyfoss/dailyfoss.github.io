@@ -1,11 +1,11 @@
 {
   "name": "huntarr",
   "slug": "huntarr",
-  "tagline": "A self-hosted request manager for movies and shows in media libraries",
+  "tagline": "A self-hosted request manager for movies and television libraries",
   "subtitle": "",
   "description": "Huntarr.io is a self hosted request management tool for media libraries. It allows users to request movies or shows and integrates with automation tools like Radarr and Sonarr to streamline adding content to your servers.",
   "categories": [
-    166
+    1
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,38 @@
   },
   "features": [
     {
-      "title": "Media Library",
-      "description": "Allow users to request movies and TV shows for your media library"
+      "title": "Media Request Management",
+      "description": "Manages media requests for automated download systems",
+      "core_feature": true
     },
     {
-      "title": "User Interface",
-      "description": "Clean, intuitive interface for browsing and requesting content"
+      "title": "Arr Integration",
+      "description": "Connects with Radarr Sonarr and similar tools",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Search for content using TMDb or TVDb databases"
+      "title": "Request Tracking",
+      "description": "Displays request status and progress"
     },
     {
-      "title": "Email Notifications",
-      "description": "Track all requests with status updates and completion notifications"
+      "title": "User Requests",
+      "description": "Allows users to submit media requests"
     },
     {
-      "title": "Team Collaboration",
-      "description": "Manage requests from multiple users with individual accounts"
+      "title": "Web Interface",
+      "description": "Manages requests through a browser"
+    },
+    {
+      "title": "Authentication",
+      "description": "Controls who can submit requests"
+    },
+    {
+      "title": "Notification Support",
+      "description": "Sends updates about requests"
+    },
+    {
+      "title": "Self-Hosted Request Tool",
+      "description": "Run on your own infrastructure"
     }
   ],
   "platform_support": {

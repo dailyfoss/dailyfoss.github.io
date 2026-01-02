@@ -1,11 +1,11 @@
 {
   "name": "double-take",
   "slug": "double-take",
-  "tagline": "A face recognition hub that integrates with home automation systems",
+  "tagline": "A face recognition hub for integrating image matching with automation systems",
   "subtitle": "",
   "description": "Double Take is a face detection and recognition hub that integrates multiple detection engines with home automation systems. It lets you review captures, confirm faces, and route events to platforms like Home Assistant.",
   "categories": [
-    136
+    13
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,38 @@
   },
   "features": [
     {
-      "title": "Face Detection",
-      "description": "Advanced facial recognition using multiple detection engines for accurate identification"
+      "title": "Face Recognition Integration",
+      "description": "Matches faces using multiple recognition engines",
+      "core_feature": true
     },
     {
-      "title": "Home Automation",
-      "description": "Seamless integration with Home Assistant and other smart home platforms for automated responses"
+      "title": "Camera Event Processing",
+      "description": "Processes camera snapshots",
+      "core_feature": true
     },
     {
-      "title": "Multiple Engines",
-      "description": "Support for various detection backends including Frigate, DeepStack, and CompreFace"
+      "title": "Engine Comparison",
+      "description": "Compares results from different engines"
     },
     {
-      "title": "Review Interface",
-      "description": "Web-based interface to review, confirm, or reject face detection results with training capabilities"
+      "title": "Web Interface",
+      "description": "Views matches through a browser"
     },
     {
-      "title": "Real-Time",
-      "description": "Process camera feeds in real-time with configurable detection sensitivity and thresholds"
+      "title": "Snapshot Management",
+      "description": "Organizes captured images"
     },
     {
-      "title": "REST API",
-      "description": "Route detection events to external systems with customizable webhooks and API calls"
+      "title": "Automation Hooks",
+      "description": "Integrates with external systems"
     },
     {
-      "title": "Training System",
-      "description": "Improve accuracy by training the system with confirmed positive and negative detections"
+      "title": "Container Deployment",
+      "description": "Runs in Docker environments"
     },
     {
-      "title": "Camera Integration",
-      "description": "Connect with multiple IP cameras and video sources for comprehensive monitoring coverage"
+      "title": "Self-Hosted Analysis",
+      "description": "Runs on private infrastructure"
     }
   ],
   "platform_support": {

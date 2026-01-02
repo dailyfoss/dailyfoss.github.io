@@ -1,11 +1,11 @@
 {
   "name": "librechat",
   "slug": "librechat",
-  "tagline": "An open source platform for running AI chat interfaces",
+  "tagline": "An open source, self-hosted AI chat platform with custom model support",
   "subtitle": "",
   "description": "LibreChat is an open-source alternative to ChatGPT which supports custom models, connectors, and real-time messaging. It offers flexibility to integrate AI chat functionality in a self-hosted or cloud environment.",
   "categories": [
-    102
+    13
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,35 @@
   },
   "features": [
     {
-      "title": "Ai Chat Interface",
-      "description": "ChatGPT-like experience, Multiple AI models, Custom connectors. Flexible AI chat platform"
+      "title": "AI Chat Interface",
+      "description": "Provide a web-based chat interface for AI models",
+      "core_feature": true
     },
     {
-      "title": "Model Support",
-      "description": "OpenAI, Anthropic, Local models, Custom endpoints. Connect to any AI provider"
+      "title": "Multiple AI Providers",
+      "description": "Connect to supported AI backends",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Chat history, Multi-conversation, Search and organize. Manage AI interactions efficiently"
+      "title": "Conversation History",
+      "description": "Store and review previous conversations",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Privacy-focused, API key control, Custom deployment. Run your own AI chat service"
+      "title": "User Accounts",
+      "description": "Separate conversations by user"
+    },
+    {
+      "title": "Prompt Management",
+      "description": "Save and reuse prompts"
+    },
+    {
+      "title": "File Uploads",
+      "description": "Share files within conversations"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the chat application on your own infrastructure"
     }
   ],
   "platform_support": {

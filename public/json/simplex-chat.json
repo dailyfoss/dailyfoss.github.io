@@ -1,11 +1,11 @@
 {
   "name": "simplex-chat",
   "slug": "simplex-chat",
-  "tagline": "A privacy first messaging platform with end to end encryption",
+  "tagline": "A privacy-first messaging platform with end-to-end encryption",
   "subtitle": "",
   "description": "SimpleX Chat is a privacy-focused messaging platform with E2E encryption and no identifiers. It provides mobile and desktop clients, and can use self-hosted servers as transport nodes.",
   "categories": [
-    102
+    6
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,26 @@
   },
   "features": [
     {
-      "title": "Data Privacy",
-      "description": "Operates without phone numbers, emails, or usernames for maximum privacy"
+      "title": "Private Messaging",
+      "description": "Exchange messages without user identifiers",
+      "core_feature": true
     },
     {
       "title": "End-to-End Encryption",
-      "description": "Encrypts all messages, calls, and files with double-ratchet protocol"
+      "description": "Encrypt messages by default",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Run your own relay servers for complete control over message routing"
-    },
-    {
-      "title": "Disappearing Messages",
-      "description": "Sets automatic message deletion after specified time periods"
-    },
-    {
-      "title": "Group Chats",
-      "description": "Creates encrypted group conversations with admin controls"
-    },
-    {
-      "title": "Voice And Video Calls",
-      "description": "Supports encrypted audio and video calls between users"
+      "title": "No Central Accounts",
+      "description": "Communicate without global user IDs"
     },
     {
       "title": "File Sharing",
-      "description": "Sends encrypted files and media through the chat interface"
+      "description": "Send files securely"
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Available on Linux, Windows, macOS, iOS, and Android"
+      "title": "Self-Hosted Servers",
+      "description": "Host relay servers yourself"
     }
   ],
   "platform_support": {

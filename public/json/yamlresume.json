@@ -1,11 +1,11 @@
 {
   "name": "yamlresume",
   "slug": "yamlresume",
-  "tagline": "A text first resume generator powered by YAML",
+  "tagline": "A YAML-based resume generator for versionable, text-first CVs",
   "subtitle": "",
   "description": "yamlresume lets you define resumes in YAML and generate presentable documents or websites from them. It’s a self-hosted, text-first workflow that keeps CVs versionable and easy to maintain.",
   "categories": [
-    19
+    31
   ],
   "metadata": {
     "sponsored": false,
@@ -27,36 +27,31 @@
   },
   "features": [
     {
-      "title": "Yaml",
-      "description": "Define resume content in structured YAML files that are easy to read, edit, and version"
+      "title": "Resume Generation",
+      "description": "Generate resumes from YAML files",
+      "core_feature": true
     },
     {
-      "title": "Markdown Support",
-      "description": "Generate PDF, HTML, and Markdown versions of your resume from a single source file"
+      "title": "Template Support",
+      "description": "Use templates for resume layouts",
+      "core_feature": true
     },
     {
-      "title": "Template System",
-      "description": "Choose from various professional templates or create custom designs for different industries"
+      "title": "Export Formats",
+      "description": "Export resumes to PDF and HTML",
+      "core_feature": true
     },
     {
-      "title": "Version Control Friendly",
-      "description": "Track resume changes in Git with clear diffs and maintain multiple versions for different roles"
+      "title": "CLI Tool",
+      "description": "Generate resumes from the command line"
     },
     {
-      "title": "Automated Generation",
-      "description": "Build resumes automatically in CI/CD pipelines or with local scripts for consistent formatting"
+      "title": "Custom Styling",
+      "description": "Customize resume appearance"
     },
     {
-      "title": "Section Customization",
-      "description": "Include or exclude sections like education, experience, and skills based on job requirements"
-    },
-    {
-      "title": "Multi",
-      "description": "Maintain translations of your resume in different languages within the same project"
-    },
-    {
-      "title": "Metadata Management",
-      "description": "Store structured data about skills, dates, and achievements for easy updates and reuse"
+      "title": "Local Execution",
+      "description": "Run the generator locally"
     }
   ],
   "platform_support": {

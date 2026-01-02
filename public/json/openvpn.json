@@ -1,11 +1,11 @@
 {
   "name": "openvpn",
   "slug": "openvpn",
-  "tagline": "An open source VPN solution for secure network connections",
+  "tagline": "An open source VPN solution for secure remote and site-to-site networking",
   "subtitle": "",
   "description": "OpenVPN is an open-source VPN protocol and software suite that enables secure point-to-point and site-to-site connections. It features strong encryption, cross-platform support, and can be deployed on self-hosted servers.",
   "categories": [
-    174
+    36
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Certificate Authentication",
-      "description": "Use PKI with client certificates for strong authentication without password vulnerabilities"
+      "title": "VPN Server",
+      "description": "Provide secure remote networking",
+      "core_feature": true
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Maintain VPN connections even when client IP addresses change on mobile or residential networks"
+      "title": "Client Connectivity",
+      "description": "Connect remote devices securely",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Reduce bandwidth usage with LZO compression for faster performance on limited connections"
+      "title": "Traffic Encryption",
+      "description": "Encrypt network communications",
+      "core_feature": true
     },
     {
-      "title": "Logging And Monitoring",
-      "description": "Track connection events, bandwidth usage, and authentication attempts for security auditing"
+      "title": "Access Control",
+      "description": "Restrict VPN access to authorized users"
+    },
+    {
+      "title": "Routing Support",
+      "description": "Route traffic across network subnets"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the VPN on your own infrastructure"
     }
   ],
   "platform_support": {

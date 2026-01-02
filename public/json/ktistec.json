@@ -1,11 +1,11 @@
 {
   "name": "ktistec",
   "slug": "ktistec",
-  "tagline": "A minimal federated microblogging server using ActivityPub",
+  "tagline": "A minimal ActivityPub microblogging server for the Fediverse",
   "subtitle": "",
   "description": "Ktistec is a small ActivityPub capable microblogging server written in Rust. It allows users to host their own federated social account with timelines, follows and posts, talking to the wider Fediverse from a minimal codebase.",
   "categories": [
-    148
+    6
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "Media Library",
-      "description": "Run your own single-user or small community instance. Own your social media presence"
+      "title": "Federated Social Networking",
+      "description": "Host a social server using the ActivityPub protocol",
+      "core_feature": true
     },
     {
-      "title": "Posts & Replies",
-      "description": "Create posts, reply to others, and engage in conversations. Full microblogging functionality"
+      "title": "User Accounts",
+      "description": "Create and manage local user profiles",
+      "core_feature": true
+    },
+    {
+      "title": "Timeline Views",
+      "description": "View local and federated posts",
+      "core_feature": true
     },
     {
       "title": "Media Attachments",
-      "description": "Share images and files with your posts. Rich content sharing"
+      "description": "Attach images and media to posts"
     },
     {
-      "title": "Email Notifications",
-      "description": "Get notified of mentions, replies, and new followers. Stay engaged with community"
+      "title": "Moderation Tools",
+      "description": "Manage content and user interactions"
     },
     {
-      "title": "Lightweight",
-      "description": "Lightweight server with small resource footprint. Run on modest hardware"
+      "title": "Web-Based Interface",
+      "description": "Access the social server through a browser"
     }
   ],
   "platform_support": {

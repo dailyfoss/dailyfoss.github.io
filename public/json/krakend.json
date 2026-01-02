@@ -1,11 +1,11 @@
 {
   "name": "krakend",
   "slug": "krakend",
-  "tagline": "An API gateway for aggregating securing and scaling services",
+  "tagline": "An API gateway and aggregator for managing and scaling microservices",
   "subtitle": "",
   "description": "KrakenD CE is an API gateway and aggregator that sits in front of microservices. It combines and transforms responses, handles rate limiting and authentication, and lets teams define configurations as code for scalable API front ends.",
   "categories": [
-    137
+    36
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "REST API",
-      "description": "Unified entry point for microservices with request routing. Simplify API architecture"
+      "title": "API Gateway",
+      "description": "Route and aggregate requests to backend services",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Ultra-fast request processing with low latency and high throughput. Handle massive traffic"
+      "title": "Request Aggregation",
+      "description": "Combine responses from multiple services into one endpoint",
+      "core_feature": true
     },
     {
-      "title": "Authentication",
-      "description": "JWT validation, OAuth2, and API key authentication. Secure API access"
+      "title": "Protocol Support",
+      "description": "Handle HTTP-based APIs and services",
+      "core_feature": true
     },
     {
-      "title": "Load Balancing",
-      "description": "Distribute requests across multiple backend instances. Ensure high availability"
+      "title": "Traffic Management",
+      "description": "Control request flow and routing behavior"
+    },
+    {
+      "title": "Configuration-Based Setup",
+      "description": "Define gateway behavior using configuration files"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the API gateway on your own infrastructure"
     }
   ],
   "platform_support": {

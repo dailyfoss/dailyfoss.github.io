@@ -1,11 +1,11 @@
 {
   "name": "leed",
   "slug": "leed",
-  "tagline": "A lightweight RSS feed reader with a minimal web interface",
+  "tagline": "A lightweight self-hosted RSS feed aggregator for reading news",
   "subtitle": "",
   "description": "Leed is a lightweight RSS feed aggregator that can be self-hosted, offering a minimal web interface to subscribe, read, and categorize feeds. It stores articles locally and supports plug-ins for additional functionality.",
   "categories": [
-    57
+    20
   ],
   "metadata": {
     "sponsored": false,
@@ -32,32 +32,35 @@
   },
   "features": [
     {
-      "title": "Lightweight",
-      "description": "Minimal interface, Fast performance, Low resource usage. Simple and efficient RSS reader"
+      "title": "RSS Feed Reader",
+      "description": "Subscribe to and read RSS and Atom feeds",
+      "core_feature": true
     },
     {
-      "title": "Plugin System",
-      "description": "Extend functionality, Custom features, Community add-ons. Customize your reading experience"
+      "title": "Feed Organization",
+      "description": "Organize feeds into categories",
+      "core_feature": true
     },
     {
       "title": "Article Management",
-      "description": "Mark as read, Favorites, Archive. Organize your reading list"
+      "description": "Mark articles as read or unread",
+      "core_feature": true
     },
     {
-      "title": "Folder Organization",
-      "description": "Feed folders, Tag system, Custom groups. Structure your content sources"
+      "title": "Search",
+      "description": "Search across subscribed feeds"
     },
     {
-      "title": "Offline Mode",
-      "description": "Local storage, Cached articles, No internet needed. Read anywhere"
+      "title": "Web Interface",
+      "description": "Read feeds through a browser"
     },
     {
-      "title": "Search and Filter",
-      "description": "Full-text search, Filter articles, Quick find. Locate content easily"
+      "title": "Import and Export",
+      "description": "Import and export subscriptions using OPML"
     },
     {
-      "title": "Database Backup",
-      "description": "OPML support, Backup feeds, Migration tools. Portable feed management"
+      "title": "Self-Hosted Service",
+      "description": "Run the reader on your own servers"
     }
   ],
   "platform_support": {

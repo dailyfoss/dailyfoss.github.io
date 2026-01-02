@@ -1,11 +1,11 @@
 {
   "name": "fasten-health",
   "slug": "fasten-health",
-  "tagline": "A self-hosted personal health record system aggregating medical data privately",
+  "tagline": "A self-hosted personal health record system for aggregating medical data",
   "subtitle": "",
   "description": "Fasten On-Prem is a self-hosted personal health record system that aggregates medical data from providers and patient portals into one interface, giving individuals full control and long-term storage of their health history.",
   "categories": [
-    121
+    42
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,39 @@
   },
   "features": [
     {
-      "title": "Data Privacy",
-      "description": "Full control of medical records. Privacy-focused storage"
+      "title": "Personal Health Record",
+      "description": "Aggregates personal medical records from providers",
+      "core_feature": true
     },
     {
-      "title": "Data Import",
-      "description": "Keep your health history forever. Never lose important data"
+      "title": "Provider Connectivity",
+      "description": "Connects to supported healthcare APIs",
+      "core_feature": true
     },
     {
-      "title": "Real-Time Sync",
-      "description": "Sync from multiple healthcare sources. Comprehensive view"
+      "title": "Data Visualization",
+      "description": "Displays health data in charts and timelines"
     },
     {
-      "title": "Document Storage",
-      "description": "Store test results and images. Complete records"
+      "title": "Local Data Storage",
+      "description": "Stores health data on local infrastructure",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Find medical information quickly. Efficient access"
+      "title": "Import and Sync",
+      "description": "Periodically syncs updated medical records"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Access health records through a browser"
+    },
+    {
+      "title": "Data Export",
+      "description": "Exports records in standard formats"
+    },
+    {
+      "title": "On-Prem Deployment",
+      "description": "Run the system on your own servers"
     }
   ],
   "platform_support": {

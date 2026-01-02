@@ -1,11 +1,11 @@
 {
   "name": "receipt-wrangler",
   "slug": "receipt-wrangler",
-  "tagline": "A self-hosted system for scanning and organizing receipts",
+  "tagline": "A self-hosted receipt scanning and expense extraction tool with OCR",
   "subtitle": "",
   "description": "Receipt Wrangler is a self-hosted tool that scans and parses receipts into structured data. It supports email forwarding, OCR, and expense categorization.",
   "categories": [
-    130
+    22
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,26 @@
   },
   "features": [
     {
-      "title": "Data Import",
-      "description": "Send receipts to a dedicated email address for automatic import and processing"
+      "title": "Receipt Management",
+      "description": "Store and organize receipts",
+      "core_feature": true
     },
     {
-      "title": "Expense Reports",
-      "description": "Generate summaries by category, date range, or merchant for tax preparation"
+      "title": "OCR Processing",
+      "description": "Extract data from receipt images",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Keep digital copies of all receipts organized and searchable in one place"
+      "title": "Expense Categorization",
+      "description": "Categorize receipts automatically"
     },
     {
-      "title": "Web Interface",
-      "description": "Correct OCR errors or add missing information through the web interface"
+      "title": "API Backend",
+      "description": "Provide receipt data to clients"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the backend on your own infrastructure"
     }
   ],
   "platform_support": {

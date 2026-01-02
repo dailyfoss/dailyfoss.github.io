@@ -1,11 +1,11 @@
 {
   "name": "notesnook",
   "slug": "notesnook",
-  "tagline": "A self-hosted sync server for encrypted notes",
+  "tagline": "A secure self-hosted sync server for encrypted note synchronization",
   "subtitle": "",
   "description": "Notesnook sync server provides secure, self-hosted synchronization support for Notesnook clients. It handles encrypted note syncing, device registration, and user accounts without third-party servers.",
   "categories": [
-    111
+    37
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,26 @@
   },
   "features": [
     {
-      "title": "Data Privacy",
-      "description": "Synchronize notes across devices with end-to-end encryption for privacy"
+      "title": "Sync Backend",
+      "description": "Synchronize notes across devices",
+      "core_feature": true
     },
     {
-      "title": "User Management",
-      "description": "Handle authentication and user management for Notesnook clients"
+      "title": "User Accounts",
+      "description": "Manage users and sync scopes",
+      "core_feature": true
     },
     {
-      "title": "Real-Time Sync",
-      "description": "Sync notes between Windows, macOS, Linux, iOS, and Android apps"
+      "title": "Data Encryption",
+      "description": "Store encrypted note data"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Run your own sync server for complete control over note data"
+      "title": "API Access",
+      "description": "Provide endpoints for client sync"
     },
     {
-      "title": "Database Backup",
-      "description": "Export encrypted backups for disaster recovery and data portability"
+      "title": "Self-Hosted Service",
+      "description": "Run the sync server on your own infrastructure"
     }
   ],
   "platform_support": {

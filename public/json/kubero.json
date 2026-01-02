@@ -1,11 +1,11 @@
 {
   "name": "kubero",
   "slug": "kubero",
-  "tagline": "A self-hosted platform for deploying apps on Kubernetes",
+  "tagline": "A self-hosted Heroku-like platform for deploying apps on Kubernetes",
   "subtitle": "",
   "description": "Kubero is a self hosted Heroku like platform for deploying applications to Kubernetes clusters. It provides a developer focused UI, git based deployments and environment management to simplify app hosting on K8s.",
   "categories": [
-    146
+    30
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Kubernetes Ready",
-      "description": "Heroku-like platform for deploying apps to Kubernetes clusters. Simplify K8s complexity"
+      "title": "Application Deployment Platform",
+      "description": "Deploy and manage applications on Kubernetes",
+      "core_feature": true
     },
     {
-      "title": "Tagging System",
-      "description": "Separate dev, staging, and production environments. Manage app lifecycle stages"
+      "title": "Git-Based Workflows",
+      "description": "Deploy applications directly from Git repositories",
+      "core_feature": true
     },
     {
-      "title": "Docker Support",
-      "description": "Automatic detection and building with Cloud Native Buildpacks. Deploy without Dockerfiles"
+      "title": "Environment Management",
+      "description": "Manage multiple environments for applications",
+      "core_feature": true
     },
     {
-      "title": "Web Interface",
-      "description": "Developer-friendly interface for managing apps and deployments. Visual Kubernetes management"
+      "title": "Service Configuration",
+      "description": "Configure application settings and resources"
+    },
+    {
+      "title": "Deployment History",
+      "description": "View past deployments and their status"
+    },
+    {
+      "title": "Web-Based Interface",
+      "description": "Manage deployments through a browser UI"
     }
   ],
   "platform_support": {

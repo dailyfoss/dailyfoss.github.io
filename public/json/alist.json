@@ -1,11 +1,11 @@
 {
   "name": "alist",
   "slug": "alist",
-  "tagline": "A self-hosted file listing service for browsing and managing multi-cloud storage",
+  "tagline": "A web-based file listing service for browsing and sharing cloud storage",
   "subtitle": "",
   "description": "AList is a file listing and multi-cloud storage management tool that supports object storage services like S3, WebDAV, and Google Drive. It lets users browse, preview, and share files with ease via a beautiful web UI.",
   "categories": [
-    61
+    33
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,26 @@
   },
   "features": [
     {
+      "title": "File Listing Service",
+      "description": "Browse and access files from multiple storage sources",
+      "core_feature": true
+    },
+    {
+      "title": "Multi-Storage Support",
+      "description": "Connect local, cloud, and remote storage",
+      "core_feature": true
+    },
+    {
+      "title": "File Download and Streaming",
+      "description": "Download or stream files through the web UI"
+    },
+    {
+      "title": "Authentication",
+      "description": "Restrict access using user accounts"
+    },
+    {
       "title": "Web Interface",
-      "description": "Navigate all your cloud storage with a beautiful web UI. Elegant file exploration"
-    },
-    {
-      "title": "Media Library",
-      "description": "View images, videos, and documents directly in browser. No downloads needed"
-    },
-    {
-      "title": "Folder Organization",
-      "description": "Generate shareable links for files and folders quickly. Collaborate effortlessly"
-    },
-    {
-      "title": "Webdav Server",
-      "description": "Mount your storage as a network drive on any device. Native file system integration"
-    },
-    {
-      "title": "Password Protection",
-      "description": "Secure folders and files with password access. Control who sees what"
-    },
-    {
-      "title": "Offline Mode",
-      "description": "Queue downloads to your server for later retrieval. Save bandwidth and time"
+      "description": "Manage files through a browser"
     }
   ],
   "platform_support": {

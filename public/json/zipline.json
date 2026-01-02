@@ -1,11 +1,11 @@
 {
   "name": "zipline",
   "slug": "zipline",
-  "tagline": "A combined file sharing and paste service",
+  "tagline": "A self-hosted file sharing and paste service with short URLs and drag-and-drop uploads",
   "subtitle": "",
   "description": "Zipline is a self-hosted file sharing and paste service with short URLs, drag-and-drop uploads, and image support. It features authentication, statistics, and extensibility through a polished web UI.",
   "categories": [
-    61
+    33
   ],
   "metadata": {
     "sponsored": false,
@@ -27,20 +27,31 @@
   },
   "features": [
     {
-      "title": "File Upload",
-      "description": "Share files quickly with drag-and-drop uploads or paste images directly from clipboard"
+      "title": "File Upload Service",
+      "description": "Upload and share files",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Secure your instance with user accounts and API keys for controlled access"
+      "title": "Image Hosting",
+      "description": "Host and share images",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Track views, downloads, and bandwidth usage for each uploaded file with detailed analytics"
+      "title": "Access Control",
+      "description": "Control access to uploaded files",
+      "core_feature": true
     },
     {
-      "title": "File Management",
-      "description": "Organize, rename, and delete uploaded files through a clean web dashboard"
+      "title": "API Access",
+      "description": "Manage uploads via API"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Upload and manage files in a browser"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the service on your own infrastructure"
     }
   ],
   "platform_support": {

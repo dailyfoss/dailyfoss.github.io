@@ -1,11 +1,11 @@
 {
   "name": "puter",
   "slug": "puter",
-  "tagline": "A self-hosted desktop environment that runs in the browser",
+  "tagline": "A self-hosted browser-based desktop operating environment",
   "subtitle": "",
   "description": "Puter is a self-hosted browser-based desktop environment that simulates a full operating system in the browser. It includes a virtual file system, apps, terminal, desktop, and multi-user support.",
   "categories": [
-    34
+    43
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Folder Organization",
-      "description": "Store and organize files in a cloud-like file system with folders and permissions"
+      "title": "Web Desktop Environment",
+      "description": "Access a browser-based desktop interface",
+      "core_feature": true
     },
     {
-      "title": "Rich Text Editor",
-      "description": "Use pre-installed apps including text editor, terminal, file manager, and media player"
+      "title": "File Management",
+      "description": "Manage files and folders within the environment",
+      "core_feature": true
     },
     {
-      "title": "Team Collaboration",
-      "description": "Create separate user accounts with isolated environments and file storage"
+      "title": "Application Runtime",
+      "description": "Run web applications inside the desktop",
+      "core_feature": true
     },
     {
-      "title": "File Sharing",
-      "description": "Share files and folders with other users or generate public download links"
+      "title": "User Accounts",
+      "description": "Manage sessions and user data"
+    },
+    {
+      "title": "Cloud Storage Integration",
+      "description": "Store files within the environment"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the desktop platform on your own infrastructure"
     }
   ],
   "platform_support": {

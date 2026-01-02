@@ -1,7 +1,7 @@
 {
   "name": "linkwarden",
   "slug": "linkwarden",
-  "tagline": "A self-hosted bookmarking and web archiving platform",
+  "tagline": "A modern self-hosted bookmarking and web archiving platform",
   "subtitle": "",
   "description": "Linkwarden is a modern, self-hosted bookmarking and archiving tool. It takes snapshots of pages (PDF/web archive), stores metadata, and offers search and tagging—ideal for researchers, writers, and web archivers.",
   "categories": [
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Page Archiving",
-      "description": "PDF snapshots, Web archives, Permanent storage. Preserve web content forever"
+      "title": "Bookmark Management",
+      "description": "Save and organize bookmarks with metadata",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Automatic tagging, Full-text search, Rich previews. Find archived content easily"
+      "title": "Content Archiving",
+      "description": "Archive web pages for offline viewing",
+      "core_feature": true
     },
     {
-      "title": "Research Tools",
-      "description": "Collections, Annotations, Sharing. Perfect for researchers and writers"
+      "title": "Tagging and Collections",
+      "description": "Organize bookmarks using tags and collections",
+      "core_feature": true
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Clean design, Fast search, Mobile-friendly. Beautiful bookmark management"
+      "title": "Search",
+      "description": "Search bookmarks by title, content, and tags"
+    },
+    {
+      "title": "Browser Extension Support",
+      "description": "Save bookmarks directly from the browser"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the service on your own servers"
     }
   ],
   "platform_support": {

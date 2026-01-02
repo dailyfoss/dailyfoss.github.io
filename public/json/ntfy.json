@@ -1,11 +1,11 @@
 {
   "name": "ntfy",
   "slug": "ntfy",
-  "tagline": "A simple self-hosted push notification service",
+  "tagline": "A self-hosted push notification service using HTTP and topics",
   "subtitle": "",
   "description": "ntfy is a self-hosted notification system that lets you send push notifications via HTTP or CLI without registration. It supports web UI, mobile clients, and topics for real-time messaging.",
   "categories": [
-    112
+    32
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "REST API",
-      "description": "Send push notifications via HTTP PUT/POST without registration or API keys"
+      "title": "Push Notifications",
+      "description": "Send notifications via HTTP requests",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Subscribe to topics to receive notifications without user accounts"
+      "title": "Topic-Based Messaging",
+      "description": "Publish and subscribe to notification topics",
+      "core_feature": true
+    },
+    {
+      "title": "Multiple Clients",
+      "description": "Receive notifications on web and mobile clients",
+      "core_feature": true
+    },
+    {
+      "title": "Access Control",
+      "description": "Restrict publishing and subscribing"
     },
     {
       "title": "Web Interface",
-      "description": "Web UI, Android, iOS apps, and CLI for receiving notifications anywhere"
+      "description": "Manage topics through a browser"
     },
     {
-      "title": "Instant Delivery",
-      "description": "Real-time push notifications using HTTP streaming or WebSockets"
-    },
-    {
-      "title": "Attachments",
-      "description": "Send images, files, or links with notifications for rich content"
-    },
-    {
-      "title": "Priority Levels",
-      "description": "Set notification urgency from silent to critical with custom sounds"
-    },
-    {
-      "title": "Scheduled Delivery",
-      "description": "Delay notifications to send at specific times or after intervals"
-    },
-    {
-      "title": "Action Buttons",
-      "description": "Add clickable buttons to notifications for quick actions or links"
+      "title": "Self-Hosted Service",
+      "description": "Run the notification server on your own infrastructure"
     }
   ],
   "platform_support": {

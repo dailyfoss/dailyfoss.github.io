@@ -1,11 +1,11 @@
 {
   "name": "zoneminder",
   "slug": "zoneminder",
-  "tagline": "A self-hosted video surveillance system",
+  "tagline": "A video surveillance system for monitoring, motion detection, and alerts",
   "subtitle": "",
   "description": "ZoneMinder is a self-hosted video surveillance system. It captures, monitors, and analyzes video from cameras, supports motion detection and alerting, and exposes a web UI for configuration and viewing.",
   "categories": [
-    107
+    35
   ],
   "metadata": {
     "sponsored": false,
@@ -27,36 +27,26 @@
   },
   "features": [
     {
-      "title": "Camera Support",
-      "description": "Connect IP cameras, USB webcams, and analog cameras through capture cards with broad protocol support"
+      "title": "Video Surveillance",
+      "description": "Monitor and record camera feeds",
+      "core_feature": true
     },
     {
       "title": "Motion Detection",
-      "description": "Automatically detect movement in camera feeds and trigger recording or alerts based on sensitivity settings"
+      "description": "Detect motion in video streams",
+      "core_feature": true
     },
     {
-      "title": "Continuous Recording",
-      "description": "Record video continuously or only during motion events to balance storage usage and coverage"
+      "title": "Camera Management",
+      "description": "Manage multiple cameras"
     },
     {
-      "title": "Data Export",
-      "description": "Review, filter, and export recorded events with timestamps, thumbnails, and motion scores"
-    },
-    {
-      "title": "Live Monitoring",
-      "description": "View multiple camera feeds simultaneously in a grid layout with real-time streaming"
-    },
-    {
-      "title": "Zone Configuration",
-      "description": "Define specific areas within camera views to monitor while ignoring irrelevant motion"
-    },
-    {
-      "title": "Email Notifications",
-      "description": "Send email or webhook alerts when motion is detected or cameras go offline"
+      "title": "Event Recording",
+      "description": "Record events based on triggers"
     },
     {
       "title": "Web Interface",
-      "description": "Control pan, tilt, and zoom functions on supported cameras directly from the web interface"
+      "description": "View cameras through a browser"
     }
   ],
   "platform_support": {

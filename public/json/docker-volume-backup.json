@@ -32,24 +32,38 @@
   },
   "features": [
     {
-      "title": "Database Backup",
-      "description": "Automatic volume backups on custom schedules. Set and forget protection"
+      "title": "Volume Backup Automation",
+      "description": "Backs up Docker volumes automatically",
+      "core_feature": true
     },
     {
-      "title": "Cloud Storage Support",
-      "description": "Backup to S3, Azure, GCS, and more. Flexible storage options"
+      "title": "Scheduled Backups",
+      "description": "Runs backups on defined schedules",
+      "core_feature": true
     },
     {
-      "title": "Encryption",
-      "description": "Secure backups with built-in encryption. Protected data at rest"
+      "title": "Multiple Storage Targets",
+      "description": "Sends backups to local or remote storage"
     },
     {
-      "title": "Docker Support",
-      "description": "Runs as a Docker container itself. Easy deployment"
+      "title": "Encryption Support",
+      "description": "Encrypts backup archives"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Complete control over backup process and data. Your volumes, your backups"
+      "title": "Compression Options",
+      "description": "Compresses backup data"
+    },
+    {
+      "title": "Restore Support",
+      "description": "Restores data from backups"
+    },
+    {
+      "title": "Container-Based Execution",
+      "description": "Runs as a Docker container"
+    },
+    {
+      "title": "Self-Hosted Backup",
+      "description": "Runs on user-controlled servers"
     }
   ],
   "platform_support": {

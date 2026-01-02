@@ -1,11 +1,11 @@
 {
   "name": "stormkit",
   "slug": "stormkit",
-  "tagline": "A deployment and CI platform for frontend apps",
+  "tagline": "A CI/CD and hosting platform for building and deploying frontend applications",
   "subtitle": "",
   "description": "Stormkit is a serverless hosting and CI/CD platform for front-end apps with a management dashboard and API. The core service is SaaS; the repo provides app configuration and tooling.",
   "categories": [
-    121
+    30
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "Serverless Hosting",
-      "description": "Deploys front-end applications to serverless infrastructure"
+      "title": "Frontend Hosting",
+      "description": "Host and deploy frontend applications",
+      "core_feature": true
     },
     {
-      "title": "Git Integration",
-      "description": "Connects to GitHub, GitLab, or Bitbucket repositories"
+      "title": "Project Management",
+      "description": "Manage multiple frontend projects",
+      "core_feature": true
     },
     {
-      "title": "Automatic Deployments",
-      "description": "Triggers builds on git push or pull requests"
+      "title": "Build Pipelines",
+      "description": "Build applications automatically",
+      "core_feature": true
     },
     {
-      "title": "Preview Environments",
-      "description": "Creates temporary environments for each pull request"
+      "title": "Deployment History",
+      "description": "View past deployments"
     },
     {
-      "title": "Custom Domains",
-      "description": "Configures custom domains with automatic SSL certificates"
+      "title": "Environment Configuration",
+      "description": "Manage build environments"
     },
     {
-      "title": "Environment Variables",
-      "description": "Manages secrets and config per environment"
-    },
-    {
-      "title": "High Performance",
-      "description": "Optimizes builds for performance and size"
-    },
-    {
-      "title": "Cdn Distribution",
-      "description": "Serves static assets via global CDN"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the hosting platform on your own infrastructure"
     }
   ],
   "platform_support": {

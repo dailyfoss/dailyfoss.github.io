@@ -1,11 +1,11 @@
 {
   "name": "kometa",
   "slug": "kometa",
-  "tagline": "A metadata automation tool for organizing media server libraries",
+  "tagline": "A media library metadata and automation tool for Plex and similar servers",
   "subtitle": "",
   "description": "Kometa is a metadata and library management tool for Plex or related media servers. It uses configuration files and scripts to create collections, apply artwork and keep libraries organized automatically, tailored for self hosted media setups.",
   "categories": [
-    100
+    1
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "Automatic Collections",
-      "description": "Create dynamic collections based on genres, actors, directors, and more. Organize libraries intelligently"
+      "title": "Media Library Automation",
+      "description": "Automate organization of media libraries",
+      "core_feature": true
     },
     {
-      "title": "Media Library",
-      "description": "Apply posters, backgrounds, and overlays to media automatically. Keep libraries visually appealing"
+      "title": "Metadata Management",
+      "description": "Apply metadata and artwork to media items",
+      "core_feature": true
     },
     {
-      "title": "Metadata Enhancement",
-      "description": "Enrich media metadata from multiple sources like TMDb and IMDb. Improve library information"
+      "title": "Collection Creation",
+      "description": "Create and maintain media collections automatically",
+      "core_feature": true
     },
     {
-      "title": "Yaml Configuration",
-      "description": "Define library management rules in version-controlled YAML files. Automate maintenance declaratively"
+      "title": "Scheduler",
+      "description": "Run library automation tasks on a schedule"
     },
     {
-      "title": "Scheduled Updates",
-      "description": "Run maintenance tasks on schedules to keep libraries current. Set and forget automation"
+      "title": "Media Server Integration",
+      "description": "Integrate with supported media servers"
     },
     {
-      "title": "Template System",
-      "description": "Use community templates or create custom ones for common patterns. Standardize library organization"
-    },
-    {
-      "title": "Overlay Support",
-      "description": "Add rating, resolution, and audio overlays to posters. Visual indicators for media quality"
-    },
-    {
-      "title": "Award Collections",
-      "description": "Automatically create collections for Oscar winners, Emmy winners, and more. Highlight acclaimed content"
+      "title": "Configuration Files",
+      "description": "Define automation rules using configuration files"
     }
   ],
   "platform_support": {

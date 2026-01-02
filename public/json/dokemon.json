@@ -5,7 +5,7 @@
   "subtitle": "",
   "description": "Dokemon is a Kubernetes cluster monitoring and management dashboard. It visualizes workloads, namespaces, resources, and events in an accessible web interface, making cluster status and troubleshooting more approachable for platform teams.",
   "categories": [
-    47
+    28
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,34 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "View all Kubernetes resources including pods, services, and deployments in a unified dashboard"
+      "title": "Docker Monitoring",
+      "description": "Monitors Docker containers and services",
+      "core_feature": true
     },
     {
-      "title": "Namespace Management",
-      "description": "Switch between namespaces and filter resources by scope for organized multi-tenant environments"
+      "title": "Resource Metrics",
+      "description": "Displays CPU memory and network usage",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Access container logs directly from the interface without kubectl commands for faster troubleshooting"
+      "title": "Container Discovery",
+      "description": "Detects running containers automatically"
     },
     {
-      "title": "Web Interface",
-      "description": "Start, stop, and scale deployments through the web UI with immediate feedback on status changes"
+      "title": "Web Dashboard",
+      "description": "Views metrics through a browser"
     },
     {
-      "title": "Kubernetes Ready",
-      "description": "Respect Kubernetes permissions to show only resources accessible to the authenticated user"
+      "title": "Alerting Support",
+      "description": "Sends alerts on defined conditions"
+    },
+    {
+      "title": "Lightweight Agent",
+      "description": "Uses minimal system resources"
+    },
+    {
+      "title": "Self-Hosted Monitoring",
+      "description": "Runs on user-managed servers"
     }
   ],
   "platform_support": {

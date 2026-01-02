@@ -1,11 +1,11 @@
 {
   "name": "eventcatalog",
   "slug": "eventcatalog",
-  "tagline": "A documentation platform for understanding and managing event-driven systems",
+  "tagline": "A documentation platform for cataloging and understanding event-driven architectures",
   "subtitle": "",
   "description": "EventCatalog is a documentation platform for event-driven architectures. It inventories events, schemas, producers, and consumers in a browsable catalog so teams can understand and evolve event-based systems collaboratively.",
   "categories": [
-    55
+    31
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,38 @@
   },
   "features": [
     {
-      "title": "Schema Management",
-      "description": "Document event structures and formats. Clear data contracts"
+      "title": "Event Catalog",
+      "description": "Documents events in event-driven architectures",
+      "core_feature": true
     },
     {
-      "title": "Producer & Consumer Tracking",
-      "description": "Map event flows through systems. Understand dependencies"
+      "title": "Service Mapping",
+      "description": "Maps events to services",
+      "core_feature": true
     },
     {
-      "title": "Browsable Catalog",
-      "description": "Easy navigation of event-driven systems. Discover events quickly"
+      "title": "Schema Documentation",
+      "description": "Documents event payload schemas"
     },
     {
-      "title": "Team Collaboration",
-      "description": "Shared understanding of event architecture. Aligned development"
+      "title": "Visualization",
+      "description": "Visualizes event flows"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Keep your architecture documentation private. Your events, your docs"
+      "title": "Markdown Authoring",
+      "description": "Writes documentation using Markdown"
+    },
+    {
+      "title": "Static Site Output",
+      "description": "Generates static documentation sites"
+    },
+    {
+      "title": "Search Functionality",
+      "description": "Searches across events"
+    },
+    {
+      "title": "Self-Hosted Docs",
+      "description": "Runs on private infrastructure"
     }
   ],
   "platform_support": {

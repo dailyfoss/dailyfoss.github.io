@@ -1,11 +1,11 @@
 {
   "name": "multi-scrobbler",
   "slug": "multi-scrobbler",
-  "tagline": "A service for syncing music listening history across platforms",
+  "tagline": "A self-hosted service for scrobbling music listens across platforms",
   "subtitle": "",
   "description": "Multi-Scrobbler pulls listening data from multiple music services like Spotify and Last.fm and sends scrobbles to multiple platforms. It runs as a self-hosted background service with a minimal web configuration UI.",
   "categories": [
-    142
+    34
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,26 @@
   },
   "features": [
     {
-      "title": "Multi",
-      "description": "Pull playback data from Spotify, Plex, Jellyfin, Subsonic, and other music services simultaneously"
+      "title": "Music Scrobbling",
+      "description": "Send listening history to multiple services",
+      "core_feature": true
     },
     {
-      "title": "Multi",
-      "description": "Send listening history to Last.fm, ListenBrainz, Maloja, and multiple tracking platforms at once"
+      "title": "Service Integration",
+      "description": "Connect to supported scrobbling services",
+      "core_feature": true
     },
     {
-      "title": "Real-Time Sync",
-      "description": "Scrobble tracks as you listen with minimal delay for accurate listening history across services"
+      "title": "Playback Monitoring",
+      "description": "Detect music playback events"
     },
     {
-      "title": "Duplicate Detection",
-      "description": "Prevent multiple scrobbles of the same track when listening across different sources"
+      "title": "Configuration Files",
+      "description": "Configure services and credentials"
     },
     {
-      "title": "Web Interface",
-      "description": "Set up sources and destinations through a web interface without editing configuration files"
-    },
-    {
-      "title": "Offline Queue",
-      "description": "Store scrobbles locally when services are unavailable and sync when connection is restored"
-    },
-    {
-      "title": "Custom Rules",
-      "description": "Filter or modify scrobbles based on artist, album, or track criteria before sending to platforms"
-    },
-    {
-      "title": "Background Service",
-      "description": "Run continuously as a daemon with automatic restart capabilities and minimal resource usage"
+      "title": "Self-Hosted Service",
+      "description": "Run the scrobbler on your own infrastructure"
     }
   ],
   "platform_support": {

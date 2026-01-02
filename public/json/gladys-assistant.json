@@ -1,11 +1,11 @@
 {
   "name": "gladys-assistant",
   "slug": "gladys-assistant",
-  "tagline": "A privacy-focused home automation platform for managing smart devices",
+  "tagline": "A privacy-focused home assistant for automating and controlling smart home devices",
   "subtitle": "",
   "description": "Gladys is an open-source, privacy-focused home assistant that integrates smart home devices using workflows, scenes, and automations. It supports MQTT, Zigbee, Z-Wave, and cloudless control designed for personal servers.",
   "categories": [
-    76
+    16
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,38 @@
   },
   "features": [
     {
-      "title": "Data Privacy",
-      "description": "Manage smart home devices without cloud dependencies or data sharing"
+      "title": "Home Automation Hub",
+      "description": "Controls smart home devices and automations",
+      "core_feature": true
     },
     {
-      "title": "Scenes And Automations",
-      "description": "Create complex workflows and automations triggered by time, sensors, or events"
+      "title": "Device Integrations",
+      "description": "Connects with many smart home protocols and brands",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Monitor and control your home through a customizable web dashboard"
+      "title": "Automation Rules",
+      "description": "Triggers actions based on conditions"
+    },
+    {
+      "title": "Voice Assistant Integration",
+      "description": "Works with voice control services"
+    },
+    {
+      "title": "Dashboard and Controls",
+      "description": "Provides a web UI for home status and controls"
+    },
+    {
+      "title": "Notifications",
+      "description": "Sends alerts for events and automations"
     },
     {
       "title": "Plugin System",
-      "description": "Extend functionality with community-developed integrations and features"
+      "description": "Extends device support through plugins"
+    },
+    {
+      "title": "Self-Hosted Home Hub",
+      "description": "Host the system on your own infrastructure"
     }
   ],
   "platform_support": {

@@ -1,11 +1,11 @@
 {
   "name": "signature-pdf",
   "slug": "signature-pdf",
-  "tagline": "A browser based tool for signing PDF documents",
+  "tagline": "A browser-based tool for digitally signing PDF documents",
   "subtitle": "",
   "description": "signaturepdf is a self-hosted tool to digitally sign PDFs from the browser. Users can upload, place signatures, and download signed documents without sending files to third-party services.",
   "categories": [
-    49
+    31
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "File Upload",
-      "description": "Signs PDFs entirely in the browser without server uploads"
+      "title": "PDF Signing",
+      "description": "Digitally sign PDF documents",
+      "core_feature": true
     },
     {
-      "title": "Signature Drawing",
-      "description": "Creates signatures by drawing with mouse or touchscreen"
+      "title": "Upload and Download",
+      "description": "Upload PDFs and download signed files",
+      "core_feature": true
     },
     {
-      "title": "Text Signatures",
-      "description": "Generates typed signatures with customizable fonts"
+      "title": "Signature Placement",
+      "description": "Place signatures on selected pages",
+      "core_feature": true
     },
     {
-      "title": "Image Signatures",
-      "description": "Uploads signature images from files for placement on PDFs"
+      "title": "Preview",
+      "description": "Preview documents before signing"
     },
     {
-      "title": "Multi",
-      "description": "Places signatures on any page of multi-page documents"
+      "title": "Web Interface",
+      "description": "Sign PDFs through a browser"
     },
     {
-      "title": "Rich Text Editor",
-      "description": "Drag and resize signature placement with visual editor"
-    },
-    {
-      "title": "Date Stamping",
-      "description": "Automatically adds signing date alongside signatures"
-    },
-    {
-      "title": "Data Privacy",
-      "description": "Processes PDFs client-side without storing documents on server"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the signing tool on your own infrastructure"
     }
   ],
   "platform_support": {

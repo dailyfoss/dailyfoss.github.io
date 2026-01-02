@@ -1,11 +1,11 @@
 {
   "name": "damselfly",
   "slug": "damselfly",
-  "tagline": "A self-hosted photo and video manager with AI tagging and fast search",
+  "tagline": "A self-hosted photo and video manager with fast search and tagging",
   "subtitle": "",
   "description": "Damselfly is a self-hosted photo and video management app with AI-powered tagging and search features. It includes facial recognition, bulk processing, and a responsive UI for browsing media collections efficiently.",
   "categories": [
-    120
+    34
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,39 @@
   },
   "features": [
     {
-      "title": "Tagging System",
-      "description": "Automatic image recognition and labeling. Organize photos effortlessly"
+      "title": "Photo Management",
+      "description": "Organizes and browses photo collections",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Find photos using AI-powered queries. Locate images instantly"
+      "title": "Metadata Indexing",
+      "description": "Indexes EXIF and file metadata",
+      "core_feature": true
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Beautiful interface that works on all devices. Browse anywhere, anytime"
+      "title": "Fast Search",
+      "description": "Searches photos by metadata and filename",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Keep your photos private on your server. Complete control over memories"
+      "title": "Folder-Based Organization",
+      "description": "Preserves existing directory structures"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Browses photos through a browser"
+    },
+    {
+      "title": "Read-Only Library",
+      "description": "Avoids modifying original photo files"
+    },
+    {
+      "title": "Large Library Support",
+      "description": "Handles large photo collections efficiently"
+    },
+    {
+      "title": "Self-Hosted Gallery",
+      "description": "Runs on private servers"
     }
   ],
   "platform_support": {

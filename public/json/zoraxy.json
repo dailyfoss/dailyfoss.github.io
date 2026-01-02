@@ -1,11 +1,11 @@
 {
   "name": "zoraxy",
   "slug": "zoraxy",
-  "tagline": "A reverse proxy and firewall with web interface",
+  "tagline": "A reverse proxy, load balancer, and firewall with a user-friendly web interface",
   "subtitle": "",
   "description": "Zoraxy is a self-hosted reverse proxy, load balancer, and firewall with a friendly web interface. It simplifies routing, SSL, and security rules for homelabs and small deployments.",
   "categories": [
-    137
+    36
   ],
   "metadata": {
     "sponsored": false,
@@ -27,20 +27,31 @@
   },
   "features": [
     {
-      "title": "Ssl Management",
-      "description": "Automatically obtain and renew SSL certificates from Let's Encrypt with ACME protocol support"
+      "title": "Reverse Proxy",
+      "description": "Route external traffic to internal services",
+      "core_feature": true
     },
     {
-      "title": "Load Balancing",
-      "description": "Distribute traffic across multiple backend servers with health checks and failover capabilities"
+      "title": "HTTPS Management",
+      "description": "Manage TLS certificates",
+      "core_feature": true
+    },
+    {
+      "title": "Traffic Routing",
+      "description": "Configure routing rules",
+      "core_feature": true
     },
     {
       "title": "Access Control",
-      "description": "Restrict access to services by IP address, geographic location, or authentication requirements"
+      "description": "Restrict access to services"
     },
     {
       "title": "Web Interface",
-      "description": "Configure all proxy rules, SSL certificates, and security settings through an intuitive dashboard"
+      "description": "Manage proxy settings in a browser"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the proxy on your own infrastructure"
     }
   ],
   "platform_support": {

@@ -1,11 +1,11 @@
 {
   "name": "stencilbox",
   "slug": "stencilbox",
-  "tagline": "A visual editor for creating SVG diagrams",
+  "tagline": "A visual editor for creating and exporting SVG diagrams and stencils",
   "subtitle": "",
   "description": "StencilBox is a self-hosted visual editor for creating SVG stencils and diagrams, offering drag-and-drop elements and export options.",
   "categories": [
-    37
+    31
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "Rich Text Editor",
-      "description": "Creates and edits SVG stencils and diagrams visually"
+      "title": "Configuration Backup",
+      "description": "Backup configuration files from systems",
+      "core_feature": true
     },
     {
-      "title": "Shape Library",
-      "description": "Provides pre-built shapes for flowcharts, diagrams, and designs"
+      "title": "Template Storage",
+      "description": "Store reusable configuration templates",
+      "core_feature": true
     },
     {
-      "title": "Layer Management",
-      "description": "Organizes elements in layers for complex compositions"
+      "title": "Version Tracking",
+      "description": "Track changes to configurations",
+      "core_feature": true
     },
     {
-      "title": "Data Export",
-      "description": "Saves designs as SVG, PNG, or PDF formats"
+      "title": "Restore Operations",
+      "description": "Restore configurations from backups"
     },
     {
-      "title": "Grid And Guides",
-      "description": "Aligns elements precisely with grid and guide lines"
+      "title": "Command-Line Interface",
+      "description": "Manage backups via CLI"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the backup tool on your own infrastructure"
     }
   ],
   "platform_support": {

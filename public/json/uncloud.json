@@ -1,11 +1,11 @@
 {
   "name": "uncloud",
   "slug": "uncloud",
-  "tagline": "A unified manager for multiple cloud storage accounts",
+  "tagline": "A unified manager for multiple cloud storage providers",
   "subtitle": "",
   "description": "Uncloud is a self-hosted centralized cloud account manager that aggregates multiple cloud storage providers, giving a unified view and operations from a single web interface.",
   "categories": [
-    27
+    25
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,26 @@
   },
   "features": [
     {
-      "title": "Cloud Storage",
-      "description": "Connect multiple cloud storage providers like Google Drive, Dropbox, and OneDrive"
+      "title": "Personal Cloud Platform",
+      "description": "Deploy and manage self-hosted services",
+      "core_feature": true
     },
     {
-      "title": "Web Interface",
-      "description": "Access all cloud accounts through a single web interface without switching between services"
+      "title": "Service Templates",
+      "description": "Install services using predefined templates",
+      "core_feature": true
     },
     {
-      "title": "File Browsing",
-      "description": "Browse files across all connected cloud storage providers in one consolidated view"
+      "title": "Environment Configuration",
+      "description": "Configure services with environment variables"
     },
     {
-      "title": "File Operations",
-      "description": "Perform file operations like copy, move, and delete across different cloud providers"
+      "title": "Local Deployment",
+      "description": "Run services on personal infrastructure"
     },
     {
-      "title": "Search and Filter",
-      "description": "Search for files across all connected cloud storage accounts from one search box"
-    },
-    {
-      "title": "Transfer Management",
-      "description": "Move files between different cloud providers without downloading locally"
+      "title": "CLI Tooling",
+      "description": "Manage deployments from the command line"
     }
   ],
   "platform_support": {

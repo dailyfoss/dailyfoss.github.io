@@ -1,7 +1,7 @@
 {
   "name": "betula",
   "slug": "betula",
-  "tagline": "A minimal bookmark manager that organizes links in a plain text tree format",
+  "tagline": "A minimal bookmark manager that organizes links in a plain text tree",
   "subtitle": "",
   "description": "Betula is a minimal, plain-text-based personal bookmark manager designed to organize URLs into a tree-like structure. Focused on privacy and simplicity, it’s ideal for self-hosters who prefer lightweight tooling.",
   "categories": [
@@ -32,20 +32,26 @@
   },
   "features": [
     {
-      "title": "Lightweight",
-      "description": "Simple, lightweight text-based storage for portability. No database complexity"
+      "title": "Linked Notes System",
+      "description": "Write and link notes in a knowledge base",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Self-hosted solution keeps bookmarks completely private. Your links, your control"
+      "title": "Markdown Editing",
+      "description": "Create notes using Markdown syntax",
+      "core_feature": true
     },
     {
-      "title": "Database Backup",
-      "description": "Plain text files make backing up trivial. Simple data management"
+      "title": "Graph Visualization",
+      "description": "Visualize relationships between notes"
     },
     {
-      "title": "Tagging System",
-      "description": "Organize with flexible tagging system. Find bookmarks quickly"
+      "title": "Search",
+      "description": "Search notes by title or content"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Access notes through a browser"
     }
   ],
   "platform_support": {

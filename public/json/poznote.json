@@ -1,11 +1,11 @@
 {
   "name": "poznote",
   "slug": "poznote",
-  "tagline": "A simple self-hosted markdown note taking platform",
+  "tagline": "A simple self-hosted note-taking app with Markdown and tags",
   "subtitle": "",
   "description": "Poznote is a self-hosted personal note-taking platform with Markdown support, folders, tags, and a focus on simplicity and privacy. It uses a lightweight interface for managing text-based knowledge.",
   "categories": [
-    111
+    37
   ],
   "metadata": {
     "sponsored": false,
@@ -32,32 +32,31 @@
   },
   "features": [
     {
+      "title": "Note Taking",
+      "description": "Create and manage personal notes",
+      "core_feature": true
+    },
+    {
       "title": "Markdown Support",
-      "description": "Write notes in Markdown with live preview and syntax highlighting"
+      "description": "Write notes using Markdown",
+      "core_feature": true
     },
     {
-      "title": "Folder Organization",
-      "description": "Organize notes into hierarchical folders for structured knowledge management"
+      "title": "Tagging",
+      "description": "Organize notes using tags",
+      "core_feature": true
     },
     {
-      "title": "Tag System",
-      "description": "Apply tags to notes for flexible categorization beyond folder structures"
+      "title": "Search",
+      "description": "Find notes using text search"
     },
     {
-      "title": "Search and Filter",
-      "description": "Find notes quickly using full-text search across titles and content"
+      "title": "Web Interface",
+      "description": "Manage notes through a browser"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Self-hosted deployment ensures complete control over your personal notes and data"
-    },
-    {
-      "title": "Lightweight",
-      "description": "Minimal, fast-loading UI designed for distraction-free note-taking"
-    },
-    {
-      "title": "Database Backup",
-      "description": "Export notes in Markdown, HTML, or plain text formats for backup or sharing"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the note app on your own infrastructure"
     }
   ],
   "platform_support": {

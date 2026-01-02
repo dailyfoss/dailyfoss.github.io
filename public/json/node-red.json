@@ -1,7 +1,7 @@
 {
   "name": "node-red",
   "slug": "node-red",
-  "tagline": "A flow based tool for wiring APIs devices and services",
+  "tagline": "A flow-based programming tool for wiring APIs, services, and IoT devices",
   "subtitle": "",
   "description": "Node-RED is a flow-based programming tool used for wiring IoT devices and APIs together visually. It offers a browser editor and can be deployed self-hosted to automate workflows, events, and integrations.",
   "categories": [
@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "REST API",
-      "description": "Wire together devices, APIs, and services using a visual drag-and-drop editor"
+      "title": "Flow-Based Programming",
+      "description": "Build event-driven flows using visual blocks",
+      "core_feature": true
     },
     {
-      "title": "Rich Text Editor",
-      "description": "Design and deploy flows from any device with a web browser"
+      "title": "Integration Nodes",
+      "description": "Connect hardware, APIs, and services",
+      "core_feature": true
     },
     {
-      "title": "Node Library",
-      "description": "Access thousands of pre-built nodes for protocols, platforms, and services"
+      "title": "Event Handling",
+      "description": "Process incoming events and messages",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Build web-based dashboards with charts, gauges, and controls for monitoring"
+      "title": "Web Editor",
+      "description": "Edit flows through a browser"
     },
     {
-      "title": "Message Routing",
-      "description": "Process and route data between nodes with filtering, splitting, and joining"
+      "title": "Runtime Engine",
+      "description": "Execute flows continuously"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the automation engine on your own infrastructure"
     }
   ],
   "platform_support": {

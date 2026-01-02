@@ -1,11 +1,11 @@
 {
   "name": "flood",
   "slug": "flood",
-  "tagline": "A web interface for managing and monitoring BitTorrent download clients",
+  "tagline": "A web interface for managing and monitoring BitTorrent clients",
   "subtitle": "",
   "description": "Flood is a modern web UI for managing Transmission or qBittorrent servers. It displays active torrents, stats, and controls downloads from a responsive and themeable interface, ideal for remote managing home torrents.",
   "categories": [
-    166
+    1
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,31 @@
   },
   "features": [
     {
-      "title": "Web Interface",
-      "description": "Modern web interface for torrents, Manage Transmission or qBittorrent, Stats and controls. Beautiful torrent management"
+      "title": "Torrent Client Interface",
+      "description": "Manage and monitor torrents through a web UI",
+      "core_feature": true
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Works on all devices. Mobile-friendly"
+      "title": "rTorrent Integration",
+      "description": "Control rTorrent instances from the browser",
+      "core_feature": true
     },
     {
-      "title": "Theme Customization",
-      "description": "Customize appearance. Personal style"
-    },
-    {
-      "title": "Team Collaboration",
-      "description": "Support multiple accounts. Shared server"
-    },
-    {
-      "title": "High Performance",
-      "description": "Visualize transfer rates. Performance monitoring"
+      "title": "Torrent Management",
+      "description": "Add, remove, and pause torrent downloads",
+      "core_feature": true
     },
     {
       "title": "File Browser",
-      "description": "Preview torrent contents. Selective downloads"
+      "description": "Browse downloaded files associated with torrents"
+    },
+    {
+      "title": "User Authentication",
+      "description": "Restrict access using user accounts"
+    },
+    {
+      "title": "Real-Time Status Updates",
+      "description": "View live progress and transfer speeds"
     }
   ],
   "platform_support": {

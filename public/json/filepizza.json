@@ -1,11 +1,11 @@
 {
   "name": "filepizza",
   "slug": "filepizza",
-  "tagline": "A peer-to-peer file transfer tool using browser-based WebRTC connections",
+  "tagline": "A peer-to-peer file transfer tool using browser-based WebRTC",
   "subtitle": "",
   "description": "FilePizza is a peer-to-peer file transfer service built on WebRTC. Sharing begins when a user selects a file and shares a link; no server stores the file. Ideal for fast, browser-based transfer without setup.",
   "categories": [
-    61
+    33
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,22 @@
   },
   "features": [
     {
-      "title": "Data Privacy",
-      "description": "Files never touch the server. Complete privacy"
+      "title": "Peer-to-Peer File Transfer",
+      "description": "Transfer files directly between browsers without intermediaries",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Direct connections for speed. No upload delays"
+      "title": "Temporary Sharing Links",
+      "description": "Share files using session-based URLs",
+      "core_feature": true
     },
     {
-      "title": "End-to-End Encryption",
-      "description": "Encrypted peer connections. Safe transfers"
+      "title": "No Server Storage",
+      "description": "Transfer files without storing them on the server"
     },
     {
-      "title": "No Size Limits",
-      "description": "Transfer large files. No restrictions"
+      "title": "Browser-Based Interface",
+      "description": "Send and receive files using a web browser"
     }
   ],
   "platform_support": {

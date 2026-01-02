@@ -1,11 +1,11 @@
 {
   "name": "unraid-guardian",
   "slug": "unraid-guardian",
-  "tagline": "A tool for monitoring and backing up Unraid configs",
+  "tagline": "A utility for monitoring and backing up Unraid configuration files",
   "subtitle": "",
   "description": "Unraid Config Guardian is a self-hosted utility that monitors and backs up Unraid configuration files, helping detect changes and protect server settings from accidental loss.",
   "categories": [
-    146
+    18
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "Database Backup",
-      "description": "Automatically backup Unraid configuration files on a schedule"
+      "title": "Configuration Monitoring",
+      "description": "Monitor Unraid configuration changes",
+      "core_feature": true
     },
     {
-      "title": "Version History",
-      "description": "Maintain historical versions of configuration files for rollback capability"
+      "title": "Backup Creation",
+      "description": "Create backups of configuration files",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Send alerts when configuration changes are detected for security awareness"
+      "title": "Change Detection",
+      "description": "Detect unexpected configuration changes",
+      "core_feature": true
     },
     {
-      "title": "Scheduled Backups",
-      "description": "Configure backup frequency to balance protection with storage usage"
+      "title": "Restore Support",
+      "description": "Restore configurations from backups"
     },
     {
-      "title": "File Comparison",
-      "description": "Compare current configuration with previous versions to identify changes"
+      "title": "Notifications",
+      "description": "Notify on configuration changes"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the tool on your own infrastructure"
     }
   ],
   "platform_support": {

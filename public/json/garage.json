@@ -1,11 +1,11 @@
 {
   "name": "garage",
   "slug": "garage",
-  "tagline": "A self-hosted distributed object storage backend with an S3-compatible API",
+  "tagline": "A self-hosted distributed object storage system with an S3-compatible API",
   "subtitle": "",
   "description": "Garage is a distributed storage backend designed for self-hosted deployments. It replicates data across nodes, supports S3-compatible APIs, and is built for durability and low-overhead cloud-style storage.",
   "categories": [
-    113
+    25
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,39 @@
   },
   "features": [
     {
+      "title": "Object Storage Service",
+      "description": "Stores and retrieves unstructured data as objects",
+      "core_feature": true
+    },
+    {
+      "title": "S3-Compatible API",
+      "description": "Supports S3-compatible storage clients",
+      "core_feature": true
+    },
+    {
       "title": "Distributed Storage",
-      "description": "Replicate data across multiple nodes for high availability and fault tolerance"
+      "description": "Replicates data across multiple nodes",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Use standard S3 APIs for seamless integration with existing tools and applications"
+      "title": "Data Redundancy",
+      "description": "Preserves data across hardware failures"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Lightweight design optimized for self-hosted deployments with minimal resource requirements"
+      "title": "Access Keys",
+      "description": "Controls access using credentials"
     },
     {
-      "title": "Data Replication",
-      "description": "Automatically replicate objects across nodes to ensure durability and redundancy"
+      "title": "Bucket Management",
+      "description": "Organizes objects into buckets"
     },
     {
-      "title": "Geo",
-      "description": "Deploy storage nodes across multiple locations for geographic redundancy"
+      "title": "Web Administration",
+      "description": "Manages storage configuration via tools"
     },
     {
-      "title": "Self",
-      "description": "Build your own S3-compatible object storage without relying on commercial cloud providers"
-    },
-    {
-      "title": "Resilient Architecture",
-      "description": "Handle node failures gracefully with automatic failover and data recovery"
-    },
-    {
-      "title": "Simple Deployment",
-      "description": "Easy setup and configuration for small to medium-scale distributed storage clusters"
+      "title": "Self-Hosted Object Storage",
+      "description": "Run object storage on your own infrastructure"
     }
   ],
   "platform_support": {

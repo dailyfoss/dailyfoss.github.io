@@ -1,11 +1,11 @@
 {
   "name": "fenrus",
   "slug": "fenrus",
-  "tagline": "A self-hosted start page for organizing links, widgets, and search tools",
+  "tagline": "A self-hosted start page for organizing links, search, and widgets",
   "subtitle": "",
   "description": "Fenrus is a personal start page and self-hosted dashboard that lets users pin links, widgets, and search to a customizable home screen. It’s designed for homelabs and personal servers as a central access hub.",
   "categories": [
-    102
+    28
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,38 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Personal start page, Customizable widgets, Link management. Central access hub for your homelab"
+      "title": "Service Dashboard",
+      "description": "Displays links to self-hosted services",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Built-in search functionality. Quick access to everything"
+      "title": "Card-Based Layout",
+      "description": "Organizes services as visual cards",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Designed for self-hosted environments. Perfect for server management"
+      "title": "Authentication",
+      "description": "Restricts dashboard access"
     },
     {
-      "title": "REST API",
-      "description": "Connect to Docker, APIs. Real-time status"
+      "title": "Search",
+      "description": "Quickly finds services"
     },
     {
-      "title": "Theme Customization",
-      "description": "Personalize appearance. Your style"
+      "title": "Custom Icons",
+      "description": "Assigns icons to services"
     },
     {
-      "title": "Team Collaboration",
-      "description": "Support multiple profiles. Family-friendly"
+      "title": "Responsive UI",
+      "description": "Works across screen sizes"
+    },
+    {
+      "title": "Configuration Storage",
+      "description": "Saves dashboard layout and settings"
+    },
+    {
+      "title": "Self-Hosted Frontend",
+      "description": "Host the dashboard on your own servers"
     }
   ],
   "platform_support": {

@@ -1,11 +1,11 @@
 {
   "name": "vector",
   "slug": "vector",
-  "tagline": "A high performance pipeline for logs and metrics",
+  "tagline": "A high-performance pipeline for collecting and shipping logs and metrics",
   "subtitle": "",
   "description": "Vector is a high-performance observability data pipeline that collects, transforms, and ships logs and metrics. It runs as a self-hosted agent or service and is configured via declarative files and CLI.",
   "categories": [
-    93
+    35
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,26 @@
   },
   "features": [
     {
-      "title": "Log Collection",
-      "description": "Collect logs from files, syslog, journald, and other sources with flexible inputs"
+      "title": "Log and Metric Pipeline",
+      "description": "Collect, transform, and route observability data",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Ship data to Elasticsearch, Splunk, S3, Kafka, and dozens of other sinks"
+      "title": "Data Transformation",
+      "description": "Modify logs and metrics in transit",
+      "core_feature": true
+    },
+    {
+      "title": "Multiple Sources and Sinks",
+      "description": "Support many input and output systems"
     },
     {
       "title": "High Performance",
-      "description": "Process millions of events per second with low resource usage"
+      "description": "Handle large data volumes efficiently"
     },
     {
-      "title": "Tagging System",
-      "description": "Buffer data in memory or on disk to handle downstream outages gracefully"
+      "title": "Self-Hosted Deployment",
+      "description": "Run on your own infrastructure"
     }
   ],
   "platform_support": {

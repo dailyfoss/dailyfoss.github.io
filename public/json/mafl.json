@@ -1,11 +1,11 @@
 {
   "name": "mafl",
   "slug": "mafl",
-  "tagline": "A self-hosted feed and blog aggregator with a clean reading interface",
+  "tagline": "A self-hosted RSS and blog aggregator for reading feeds",
   "subtitle": "",
   "description": "Mafl is a self-hosted feed and blog aggregator similar to Feedly. It allows subscribing to RSS/Atom feeds, filtering stories, and reading articles via a simple responsive web interface.",
   "categories": [
-    165
+    20
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "Article Filtering",
-      "description": "Create custom filters to show only relevant content based on keywords or sources"
+      "title": "Bookmark Management",
+      "description": "Save and organize web bookmarks",
+      "core_feature": true
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Access your feeds from any device with a mobile-friendly, adaptive interface"
+      "title": "Tagging",
+      "description": "Categorize bookmarks using tags",
+      "core_feature": true
     },
     {
-      "title": "Data Export",
-      "description": "Migrate feed subscriptions easily from other readers using standard OPML format"
+      "title": "Search",
+      "description": "Find saved links by title or tag",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Find specific articles across all subscriptions using full-text search"
+      "title": "Web Interface",
+      "description": "Manage bookmarks through a browser"
     },
     {
-      "title": "Folder Organization",
-      "description": "Group related feeds into folders for better content management"
+      "title": "Import and Export",
+      "description": "Import bookmarks from browser exports"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Host the service on your own infrastructure"
     }
   ],
   "platform_support": {

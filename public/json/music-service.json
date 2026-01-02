@@ -1,11 +1,11 @@
 {
   "name": "music-service",
   "slug": "music-service",
-  "tagline": "A lightweight self-hosted tool for streaming and organizing music",
+  "tagline": "A lightweight self-hosted music streaming and playlist service",
   "subtitle": "",
   "description": "MusicService is a lightweight tool for organizing and streaming songs in a self-hosted environment. It supports playlist creation, metadata editing, and has a clean, responsive web interface.",
   "categories": [
-    105
+    34
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,26 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Visual metrics and usage statistics with customizable charts to track performance and user engagement"
+      "title": "Music Streaming",
+      "description": "Stream music from a server to clients",
+      "core_feature": true
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Responsive design with touch-friendly interfaces and offline sync capabilities for seamless mobile access"
+      "title": "Library Browsing",
+      "description": "Browse available music collections",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Configurable alerts via email, push, or in-app notifications to keep users informed of important updates"
+      "title": "Playlist Support",
+      "description": "Create and manage playlists"
     },
     {
-      "title": "Theme Customization",
-      "description": "Multiple UI themes and layout options with custom branding support to match organizational identity"
+      "title": "Web Interface",
+      "description": "Access music through a browser"
     },
     {
-      "title": "Database Backup",
-      "description": "Scheduled backups with encryption and cloud storage integration to ensure data protection and disaster recovery"
+      "title": "Self-Hosted Service",
+      "description": "Run the service on your own servers"
     }
   ],
   "platform_support": {

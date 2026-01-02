@@ -1,11 +1,11 @@
 {
   "name": "papermerge",
   "slug": "papermerge",
-  "tagline": "A document management system with OCR and tagging",
+  "tagline": "A document management system with OCR, tagging, and full-text search",
   "subtitle": "",
   "description": "Papermerge is a document management system designed to scan, classify, and OCR documents, storing them in a searchable, organized structure with tagging and export support.",
   "categories": [
-    48
+    31
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,27 @@
   },
   "features": [
     {
-      "title": "Search and Filter",
-      "description": "Automatic optical character recognition converts scanned documents and images into searchable, selectable text"
+      "title": "Document Management",
+      "description": "Store and manage digital documents",
+      "core_feature": true
+    },
+    {
+      "title": "OCR Support",
+      "description": "Extract text from scanned documents",
+      "core_feature": true
     },
     {
       "title": "Folder Organization",
-      "description": "Organize documents into folders and categories with hierarchical structure for logical filing"
+      "description": "Organize documents into folders"
     },
     {
-      "title": "Tagging System",
-      "description": "Apply multiple tags to documents for flexible categorization and cross-referencing across different schemes"
+      "title": "User Accounts",
+      "description": "Separate documents by user",
+      "core_feature": true
     },
     {
-      "title": "Database Backup",
-      "description": "Download documents individually or in bulk with original formatting preserved for external use or backup"
-    },
-    {
-      "title": "Team Collaboration",
-      "description": "Control document access with user-level permissions to secure sensitive information in multi-user environments"
+      "title": "Web Interface",
+      "description": "Manage documents through a browser"
     }
   ],
   "platform_support": {

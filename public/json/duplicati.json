@@ -1,7 +1,7 @@
 {
   "name": "duplicati",
   "slug": "duplicati",
-  "tagline": "A backup client for encrypted, incremental backups with a web UI",
+  "tagline": "A backup client for encrypted and incremental backups with a web UI",
   "subtitle": "",
   "description": "Duplicati is a backup client that stores encrypted, incremental backups on cloud storage services or local disks. It has a web interface for scheduling, restoring, and configuring backup jobs, and runs well on headless servers.",
   "categories": [
@@ -32,20 +32,39 @@
   },
   "features": [
     {
-      "title": "Database Backup",
-      "description": "Protect data with AES-256 encryption before uploading to storage destinations for security"
+      "title": "Encrypted Backup Software",
+      "description": "Backs up data with encryption",
+      "core_feature": true
+    },
+    {
+      "title": "Scheduled Backups",
+      "description": "Runs backups on schedules",
+      "core_feature": true
+    },
+    {
+      "title": "Web-Based Management",
+      "description": "Configures backups through a browser",
+      "core_feature": true
+    },
+    {
+      "title": "Multiple Storage Targets",
+      "description": "Backs up to local and cloud storage"
     },
     {
       "title": "Incremental Backups",
-      "description": "Store only changed blocks to minimize storage space and bandwidth usage over time"
+      "description": "Stores only changed data"
     },
     {
-      "title": "Cloud Storage",
-      "description": "Back up to S3, Google Drive, Dropbox, OneDrive, and 20+ other cloud providers or local"
+      "title": "Compression",
+      "description": "Compresses backup data"
     },
     {
-      "title": "Web Interface",
-      "description": "Configure, monitor, and restore backups through a browser-based dashboard from any device"
+      "title": "Restore Interface",
+      "description": "Restores data via web UI"
+    },
+    {
+      "title": "Cross-Platform Usage",
+      "description": "Runs on multiple operating systems"
     }
   ],
   "platform_support": {

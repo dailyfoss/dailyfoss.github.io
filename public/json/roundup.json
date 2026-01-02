@@ -1,11 +1,11 @@
 {
   "name": "roundup",
   "slug": "roundup",
-  "tagline": "A flexible issue tracker with web and email interfaces",
+  "tagline": "A flexible self-hosted issue and task tracking system",
   "subtitle": "",
   "description": "Roundup is a self-hosted issue tracker with a flexible schema, email support, and web-based interface for managing tasks and issues in software or business workflows.",
   "categories": [
-    156
+    29
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,21 @@
   },
   "features": [
     {
-      "title": "Email Integration",
-      "description": "Create or update issues by sending emails to the tracker"
+      "title": "Issue Tracking",
+      "description": "Track bugs and tasks",
+      "core_feature": true
+    },
+    {
+      "title": "Custom Fields",
+      "description": "Define custom issue attributes"
+    },
+    {
+      "title": "Workflow States",
+      "description": "Move issues through defined states"
     },
     {
       "title": "Web Interface",
-      "description": "Access and manage issues through a browser-based UI"
-    },
-    {
-      "title": "Search and Filter",
-      "description": "Find issues using powerful queries across all fields"
-    },
-    {
-      "title": "File Upload",
-      "description": "Upload documents, screenshots, or logs to issues"
-    },
-    {
-      "title": "Team Collaboration",
-      "description": "Control access with roles and permissions for different team members"
+      "description": "Manage issues through a browser"
     }
   ],
   "platform_support": {

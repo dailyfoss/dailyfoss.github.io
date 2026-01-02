@@ -1,11 +1,11 @@
 {
   "name": "valkey",
   "slug": "valkey",
-  "tagline": "A community driven Redis compatible key value store",
+  "tagline": "A high-performance, Redis-compatible in-memory key-value data store",
   "subtitle": "",
   "description": "Valkey is an open-source, Redis-compatible in-memory key-value store designed as a community-driven successor. It offers high performance and is operated via command-line tools and Redis protocol clients.",
   "categories": [
-    133
+    29
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,26 @@
   },
   "features": [
     {
-      "title": "Redis Compatibility",
-      "description": "Drop-in replacement for Redis with full protocol compatibility"
+      "title": "Key-Value Database",
+      "description": "Store and retrieve data using key-value storage",
+      "core_feature": true
     },
     {
-      "title": "In",
-      "description": "Store data in memory for microsecond latency and high throughput"
+      "title": "In-Memory Performance",
+      "description": "Provide fast data access",
+      "core_feature": true
     },
     {
-      "title": "Data Structures",
-      "description": "Support strings, lists, sets, sorted sets, hashes, and more"
-    },
-    {
-      "title": "Persistence",
-      "description": "Persist data to disk with RDB snapshots and AOF logging for durability"
+      "title": "Persistence Options",
+      "description": "Save data to disk"
     },
     {
       "title": "Replication",
-      "description": "Set up primary-replica replication for high availability and read scaling"
+      "description": "Replicate data across nodes"
     },
     {
-      "title": "Pub/sub Messaging",
-      "description": "Implement real-time messaging with publish/subscribe channels"
-    },
-    {
-      "title": "Transactions",
-      "description": "Execute multiple commands atomically with MULTI/EXEC transactions"
-    },
-    {
-      "title": "Lua Scripting",
-      "description": "Run server-side Lua scripts for complex operations and atomic workflows"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the database on your own infrastructure"
     }
   ],
   "platform_support": {

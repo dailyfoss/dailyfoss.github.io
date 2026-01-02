@@ -1,11 +1,11 @@
 {
   "name": "lemmy",
   "slug": "lemmy",
-  "tagline": "A federated community platform built as a Reddit alternative",
+  "tagline": "A federated, open source alternative to Reddit built on ActivityPub",
   "subtitle": "",
   "description": "Lemmy is an open-source, federated alternative to Reddit, built with ActivityPub. It supports communities, posts, moderation, and federation across servers, allowing users full control of their data and interactions.",
   "categories": [
-    148
+    6
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,36 @@
   },
   "features": [
     {
-      "title": "Federated Communities",
-      "description": "ActivityPub protocol, Cross-server interaction, Decentralized network. Join the federated Reddit alternative"
+      "title": "Federated Discussion Platform",
+      "description": "Host community discussions using federated protocols",
+      "core_feature": true
     },
     {
-      "title": "Community Management",
-      "description": "Create communities, Moderation tools, Custom rules. Build and moderate your own spaces"
+      "title": "Communities",
+      "description": "Create topic-based discussion spaces",
+      "core_feature": true
     },
     {
-      "title": "Media Library",
-      "description": "Posts and comments, Voting system, Media support. Share and discuss content freely"
+      "title": "Posts and Comments",
+      "description": "Publish posts and threaded comments",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Full data ownership, Privacy control, Custom instance. Run your own Lemmy server"
+      "title": "Voting System",
+      "description": "Vote on posts and comments"
+    },
+    {
+      "title": "Moderation Tools",
+      "description": "Moderate content and manage communities"
+    },
+    {
+      "title": "Federation",
+      "description": "Interact with users and communities on other servers",
+      "core_feature": true
+    },
+    {
+      "title": "User Profiles",
+      "description": "Manage user accounts and profiles"
     }
   ],
   "platform_support": {

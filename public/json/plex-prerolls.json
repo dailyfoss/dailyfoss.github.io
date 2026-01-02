@@ -1,11 +1,11 @@
 {
   "name": "plex-prerolls",
   "slug": "plex-prerolls",
-  "tagline": "A tool for managing and randomizing Plex preroll videos",
+  "tagline": "A tool for managing and randomizing video prerolls in Plex",
   "subtitle": "",
   "description": "Plex Prerolls is a self-hosted tool to manage and randomize video clips as prerolls in Plex Media Server. It includes custom rules and scheduling through a simple UI.",
   "categories": [
-    100
+    34
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "Preroll Management",
-      "description": "Organize and manage video clips to play before movies in Plex"
-    },
-    {
-      "title": "Randomization",
-      "description": "Randomly select prerolls from your collection for variety in each viewing"
-    },
-    {
-      "title": "Scheduling Rules",
-      "description": "Configure prerolls to play based on date, season, or custom schedules"
-    },
-    {
-      "title": "Theme Customization",
-      "description": "Create separate preroll collections for different occasions or themes"
+      "title": "Pre-Roll Video Playback",
+      "description": "Play custom videos before media playback",
+      "core_feature": true
     },
     {
       "title": "Plex Integration",
-      "description": "Automatically update Plex server configuration with selected prerolls"
+      "description": "Integrate with a Plex media server",
+      "core_feature": true
     },
     {
-      "title": "Web Interface",
-      "description": "Manage prerolls through an intuitive web-based control panel"
+      "title": "Rule Configuration",
+      "description": "Define when prerolls are shown",
+      "core_feature": true
     },
     {
-      "title": "Preview Playback",
-      "description": "Preview preroll videos before adding them to rotation"
+      "title": "Media Selection",
+      "description": "Choose videos used as prerolls"
     },
     {
-      "title": "Weight Settings",
-      "description": "Assign probability weights to prerolls for more or less frequent playback"
+      "title": "Automation",
+      "description": "Automate preroll playback behavior"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run alongside your own media server"
     }
   ],
   "platform_support": {

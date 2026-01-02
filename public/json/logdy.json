@@ -1,11 +1,11 @@
 {
   "name": "logdy",
   "slug": "logdy",
-  "tagline": "A platform for real time log collection and analysis",
+  "tagline": "A real-time log collection and analysis platform for distributed systems",
   "subtitle": "",
   "description": "Logdy Core is a platform for collecting and analyzing logs in real-time from distributed systems. It features streaming dashboards, filterable views, and storage that works in both cloud and self-hosted environments.",
   "categories": [
-    93
+    35
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Streaming dashboards, Live updates, Instant visibility. Monitor logs as they happen"
+      "title": "Log Collection",
+      "description": "Collect logs from multiple sources",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Advanced filters, Full-text search, Query builder. Find relevant logs quickly"
+      "title": "Log Streaming",
+      "description": "Stream logs to connected dashboards",
+      "core_feature": true
     },
     {
-      "title": "Distributed Systems",
-      "description": "Multi-source collection, Centralized view, Scalable architecture. Handle logs from anywhere"
+      "title": "Filtering",
+      "description": "Filter log entries by content and metadata",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Cloud or self-hosted, Docker support, Easy setup. Deploy where you need it"
+      "title": "Storage Backend",
+      "description": "Persist logs to a storage backend"
+    },
+    {
+      "title": "Query Interface",
+      "description": "Query stored logs interactively"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the logging system on your own infrastructure"
     }
   ],
   "platform_support": {

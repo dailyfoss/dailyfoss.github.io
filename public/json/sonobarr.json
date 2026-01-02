@@ -1,11 +1,11 @@
 {
   "name": "sonobarr",
   "slug": "sonobarr",
-  "tagline": "A status dashboard for Sonarr and Radarr",
+  "tagline": "A status and health dashboard for Sonarr and Radarr setups",
   "subtitle": "",
   "description": "Sonobarr is a self-hosted status and health dashboard for Sonarr/Radarr setups. It aggregates information, errors, and stats into a quick-glance bar-style UI.",
   "categories": [
-    166
+    1
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Displays health status of Sonarr and Radarr instances"
+      "title": "Audiobook Management",
+      "description": "Manage and organize audiobook libraries",
+      "core_feature": true
     },
     {
-      "title": "Error Monitoring",
-      "description": "Shows recent errors and warnings from arr services"
+      "title": "Automated Downloads",
+      "description": "Automatically fetch audiobooks",
+      "core_feature": true
     },
     {
-      "title": "Queue Overview",
-      "description": "Displays download queue status and progress"
+      "title": "Metadata Management",
+      "description": "Store and update audiobook metadata",
+      "core_feature": true
     },
     {
-      "title": "Media Library",
-      "description": "Monitors available storage across media libraries"
+      "title": "Media Server Integration",
+      "description": "Integrate with supported media servers"
     },
     {
-      "title": "Calendar View",
-      "description": "Shows upcoming releases and downloads"
+      "title": "Quality Profiles",
+      "description": "Control preferred audiobook formats"
     },
     {
-      "title": "Service Stats",
-      "description": "Displays library counts and recent activity"
-    },
-    {
-      "title": "Multi",
-      "description": "Monitors multiple Sonarr and Radarr servers"
-    },
-    {
-      "title": "Compact Display",
-      "description": "Presents information in space-efficient bar layout"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the manager on your own infrastructure"
     }
   ],
   "platform_support": {

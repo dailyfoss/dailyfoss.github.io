@@ -1,11 +1,11 @@
 {
   "name": "lunalytics",
   "slug": "lunalytics",
-  "tagline": "A self-hosted analytics dashboard for tracking product metrics",
+  "tagline": "A self-hosted analytics dashboard with metrics and visual reporting",
   "subtitle": "",
   "description": "Lunalytics is a self-hosted analytics dashboard with built-in metrics tracking and visual reporting. It enables event capturing, KPIs, and interactive charts for better insights into user behavior and product usage.",
   "categories": [
-    186
+    9
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Visual Reporting",
-      "description": "Interactive charts and graphs provide clear insights into KPIs, trends, and user engagement metrics at"
-    },
-    {
       "title": "Analytics Dashboard",
-      "description": "Build tailored visualizations with drag-and-drop widgets and real-time data updates to monitor metrics relevant to"
+      "description": "Visualize user and event metrics in panels",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Full data control with custom deployment options to own your analytics infrastructure and ensure data"
+      "title": "Event Tracking",
+      "description": "Track user and system events over time",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Integrate analytics data with external tools via REST APIs for custom reporting and automated workflows"
+      "title": "Query Interface",
+      "description": "Explore analytics data interactively",
+      "core_feature": true
+    },
+    {
+      "title": "Time-Based Reports",
+      "description": "Summarize activity across time intervals"
+    },
+    {
+      "title": "Data Import/Export",
+      "description": "Load and save analytics datasets"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the analytics platform on your own servers"
     }
   ],
   "platform_support": {

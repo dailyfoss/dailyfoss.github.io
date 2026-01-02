@@ -1,11 +1,11 @@
 {
   "name": "mayan-edms",
   "slug": "mayan-edms",
-  "tagline": "An electronic document management system with OCR and workflows",
+  "tagline": "An enterprise-grade electronic document management system with OCR",
   "subtitle": "",
   "description": "Mayan EDMS is an enterprise-grade electronic document management system with OCR, metadata extraction, and workflow automation. It’s designed for archival, search, and compliance needs in self-hosted environments.",
   "categories": [
-    48
+    31
   ],
   "metadata": {
     "sponsored": false,
@@ -28,24 +28,31 @@
   },
   "features": [
     {
-      "title": "Search and Filter",
-      "description": "Automatically extract text from scanned documents for full-text search and indexing"
+      "title": "Document Management",
+      "description": "Store and organize documents",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Define document processing workflows with approval chains and notifications"
+      "title": "Document Indexing",
+      "description": "Index document content for searching",
+      "core_feature": true
+    },
+    {
+      "title": "Version Control",
+      "description": "Track document revisions"
+    },
+    {
+      "title": "Metadata Management",
+      "description": "Attach metadata to documents",
+      "core_feature": true
     },
     {
       "title": "Access Control",
-      "description": "Set granular permissions on documents and folders based on users and groups"
+      "description": "Restrict document access by role"
     },
     {
-      "title": "Tagging System",
-      "description": "Apply multiple tags to documents for flexible categorization and filtering"
-    },
-    {
-      "title": "Folder Organization",
-      "description": "Structure documents in hierarchical cabinets and folders like physical filing"
+      "title": "Web Interface",
+      "description": "Manage documents through a browser"
     }
   ],
   "platform_support": {

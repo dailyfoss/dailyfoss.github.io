@@ -1,11 +1,11 @@
 {
   "name": "mysql",
   "slug": "mysql",
-  "tagline": "An open source relational database management system",
+  "tagline": "A widely used open source relational database management system",
   "subtitle": "",
   "description": "MySQL Server is a widely used open-source relational database management system. It's the backbone for many applications, offering full data control for self-hosted and enterprise database workloads.",
   "categories": [
-    133
+    29
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Search and Filter",
-      "description": "Index and search text content efficiently using built-in full-text indexing capabilities"
+      "title": "Relational Database",
+      "description": "Store and manage structured data",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Divide large tables into smaller pieces for improved query performance and maintenance"
+      "title": "SQL Support",
+      "description": "Query and modify data using SQL",
+      "core_feature": true
     },
     {
-      "title": "Performance Tuning",
-      "description": "Optimize queries with explain plans, indexes, and query cache for faster data access"
+      "title": "Transaction Support",
+      "description": "Ensure data consistency with transactions",
+      "core_feature": true
     },
     {
-      "title": "Database Backup",
-      "description": "Use mysqldump, binary logs, and point-in-time recovery for comprehensive data protection"
+      "title": "User and Privilege Management",
+      "description": "Control database access and permissions"
+    },
+    {
+      "title": "Replication",
+      "description": "Replicate data across servers"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the database on your own infrastructure"
     }
   ],
   "platform_support": {

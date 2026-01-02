@@ -1,11 +1,11 @@
 {
   "name": "domain-locker",
   "slug": "domain-locker",
-  "tagline": "A self-hosted dashboard for tracking domain, DNS, and SSL details",
+  "tagline": "A self-hosted dashboard for tracking domains, DNS records, and SSL status",
   "subtitle": "",
   "description": "Domain Locker is a self-hosted dashboard and monitoring tool for domain names. It tracks expiry dates, DNS configuration, SSL status, and registrar details, helping operators avoid lapses and keep domain information organized.",
   "categories": [
-    145
+    35
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,38 @@
   },
   "features": [
     {
-      "title": "Ssl Certificate Status",
-      "description": "Track certificate expiration and validity for domains to maintain secure connections"
+      "title": "Domain Protection Checks",
+      "description": "Audits domain security configuration",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Manage portfolios of domains with sortable lists and filtering by status or expiration date"
+      "title": "Registrar Lock Detection",
+      "description": "Verifies domain transfer lock status",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Receive email or webhook alerts when domains approach expiration or configuration changes occur"
+      "title": "DNS Security Checks",
+      "description": "Reviews DNS and nameserver settings"
     },
     {
-      "title": "Data Privacy",
-      "description": "Keep sensitive domain information on your own server without sharing with third-party services"
+      "title": "Report Generation",
+      "description": "Produces security audit reports"
+    },
+    {
+      "title": "CLI Tool",
+      "description": "Runs checks from the command line"
+    },
+    {
+      "title": "Batch Domain Support",
+      "description": "Audits multiple domains"
+    },
+    {
+      "title": "Automation Friendly",
+      "description": "Integrates with scripts and CI"
+    },
+    {
+      "title": "Local Execution",
+      "description": "Runs on user machines"
     }
   ],
   "platform_support": {

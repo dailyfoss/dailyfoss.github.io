@@ -1,11 +1,11 @@
 {
   "name": "cloudbeaver",
   "slug": "cloudbeaver",
-  "tagline": "A self-hosted web database manager for exploring and editing data",
+  "tagline": "A web-based database manager for viewing and editing cloud databases",
   "subtitle": "",
   "description": "CloudBeaver is a lightweight self-hosted cloud database manager built by the DBeaver team. It offers an intuitive web UI for viewing, editing, and managing databases, including PostgreSQL, MySQL, and Oracle.",
   "categories": [
-    39
+    29
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,35 @@
   },
   "features": [
     {
-      "title": "Database Manager",
-      "description": "Web-based database management tool. Browser access"
+      "title": "Web Database Client",
+      "description": "Manages databases through a browser",
+      "core_feature": true
     },
     {
-      "title": "Team Collaboration",
-      "description": "Built by trusted DBeaver developers. Proven expertise"
+      "title": "Multi-Database Support",
+      "description": "Connects to various database engines",
+      "core_feature": true
     },
     {
-      "title": "Rich Text Editor",
-      "description": "Write and execute SQL queries. Powerful functionality"
+      "title": "SQL Editor",
+      "description": "Executes and edits SQL queries",
+      "core_feature": true
     },
     {
-      "title": "Lightweight",
-      "description": "Minimal resource usage for efficient operation. Fast performance"
+      "title": "User Authentication",
+      "description": "Controls access to database connections"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Keep database access on your infrastructure. Security control"
+      "title": "Role Permissions",
+      "description": "Manages user privileges"
+    },
+    {
+      "title": "Data Browsing",
+      "description": "Views tables and records"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Runs on private servers"
     }
   ],
   "platform_support": {

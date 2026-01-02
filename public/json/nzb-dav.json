@@ -1,11 +1,11 @@
 {
   "name": "nzb-dav",
   "slug": "nzb-dav",
-  "tagline": "A WebDAV bridge for accessing Usenet downloads",
+  "tagline": "A WebDAV bridge for accessing NZB download folders",
   "subtitle": "",
   "description": "NZBDav adds WebDAV access to your NZB download folder. It acts as a bridge making downloads accessible via WebDAV clients or cloud sync services like Nextcloud or rClone, ideal in self-hosted media stacks.",
   "categories": [
-    166
+    1
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "Folder Organization",
-      "description": "Expose NZB download folders via WebDAV protocol for universal access"
+      "title": "NZB File Server",
+      "description": "Serve NZB files over WebDAV",
+      "core_feature": true
     },
     {
-      "title": "Real-Time Sync",
-      "description": "Connect with Nextcloud, ownCloud, or rClone for automatic syncing"
+      "title": "WebDAV Access",
+      "description": "Access NZB files using WebDAV-compatible clients",
+      "core_feature": true
     },
     {
-      "title": "File Access",
-      "description": "Browse and download completed NZB files from any WebDAV-compatible client"
-    },
-    {
-      "title": "Media Library",
-      "description": "Seamlessly integrate with Sonarr, Radarr, and other automation tools"
+      "title": "Index Integration",
+      "description": "Integrate with NZB indexers"
     },
     {
       "title": "Authentication",
-      "description": "Secure access with username and password protection"
+      "description": "Restrict access to authorized users",
+      "core_feature": true
+    },
+    {
+      "title": "Automation Support",
+      "description": "Enable automated NZB consumption by downloaders"
+    },
+    {
+      "title": "Self-Hosted Service",
+      "description": "Run the NZB server on your own infrastructure"
     }
   ],
   "platform_support": {

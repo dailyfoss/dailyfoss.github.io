@@ -1,11 +1,11 @@
 {
   "name": "cloudreve",
   "slug": "cloudreve",
-  "tagline": "A cloud drive platform for file sharing and storage management",
+  "tagline": "A self-hosted cloud drive for file storage, sharing, and user management",
   "subtitle": "",
   "description": "Cloudreve is a file sharing and cloud drive system that supports multiple storage backends, user management, and web-based file uploads. It can be used as a lightweight alternative to commercial cloud drives.",
   "categories": [
-    27
+    33
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,34 @@
   },
   "features": [
     {
-      "title": "Self-Hosted",
-      "description": "Self-hosted file sharing and storage system. Personal cloud"
+      "title": "File Storage Platform",
+      "description": "Stores and manages files in a web interface",
+      "core_feature": true
     },
     {
-      "title": "Team Collaboration",
-      "description": "Multi-user support with permissions. Shared access"
+      "title": "User File Management",
+      "description": "Organizes files per user",
+      "core_feature": true
     },
     {
-      "title": "File Upload",
-      "description": "Browser-based file upload interface. Easy sharing"
+      "title": "Shareable Links",
+      "description": "Shares files via public links"
     },
     {
-      "title": "Folder Organization",
-      "description": "Generate shareable links for files and folders. Controlled sharing"
+      "title": "Storage Backend Support",
+      "description": "Uses multiple storage backends"
     },
     {
-      "title": "Lightweight",
-      "description": "Lightweight alternative to commercial cloud drives. Cost-effective"
+      "title": "Upload and Download",
+      "description": "Handles large file transfers"
+    },
+    {
+      "title": "WebDAV Support",
+      "description": "Accesses files via WebDAV"
+    },
+    {
+      "title": "Self-Hosted Cloud Storage",
+      "description": "Runs on user-controlled infrastructure"
     }
   ],
   "platform_support": {

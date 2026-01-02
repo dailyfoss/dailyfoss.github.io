@@ -1,11 +1,11 @@
 {
   "name": "airtrail",
   "slug": "airtrail",
-  "tagline": "A self-hosted flight logbook for tracking pilot hours, totals, and activity history",
+  "tagline": "A digital flight logbook for tracking pilot activity and flight hours",
   "subtitle": "",
   "description": "AirTrail is a personalized flight logbook app for pilots. It allows storing flight entries, tracking totals and hours, and visualizing flight activity. It also includes privacy-first self-hosting features and import/export options.",
   "categories": [
-    65
+    37
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,22 @@
   },
   "features": [
     {
-      "title": "Flight Logging",
-      "description": "Store detailed flight entries with comprehensive data tracking. Your complete aviation history"
+      "title": "Flight Tracking",
+      "description": "Logs personal flight history and travel details",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "View flight patterns and statistics through visual dashboards. Understand your flying habits"
+      "title": "Trip Visualization",
+      "description": "Displays routes and destinations on a map",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Self-hosted solution keeps your flight data completely private. Your logbook, your control"
+      "title": "Statistics Overview",
+      "description": "Provides summaries such as distance traveled and countries visited"
     },
     {
-      "title": "Database Backup",
-      "description": "Easily transfer data between systems and backup your records. Never lose your flight history"
+      "title": "Data Import",
+      "description": "Imports flight data from external services"
     }
   ],
   "platform_support": {

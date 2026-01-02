@@ -1,7 +1,7 @@
 {
   "name": "nforwardauth",
   "slug": "nforwardauth",
-  "tagline": "An authentication proxy for protecting internal applications",
+  "tagline": "An authentication proxy and identity provider using OAuth2",
   "subtitle": "",
   "description": "nForwardAuth is a self-hosted identity provider and authentication proxy that centralizes login through OAuth2 with routing rules and session forwarding. Designed for protecting internal apps.",
   "categories": [
@@ -32,24 +32,26 @@
   },
   "features": [
     {
-      "title": "Oauth2 Authentication",
-      "description": "Centralize login using OAuth2 providers like Google, GitHub, or custom IdPs"
+      "title": "Forward Authentication",
+      "description": "Provide auth checks for reverse proxies",
+      "core_feature": true
     },
     {
-      "title": "Forward Auth Proxy",
-      "description": "Protect internal applications by intercepting requests and validating sessions"
+      "title": "Token Validation",
+      "description": "Validate tokens before access",
+      "core_feature": true
     },
     {
-      "title": "Session Management",
-      "description": "Handle user sessions with secure cookies and token validation"
+      "title": "Role Rules",
+      "description": "Apply roles to control access"
     },
     {
-      "title": "Access Control",
-      "description": "Restrict application access based on user groups, roles, or email domains"
+      "title": "Proxy Integration",
+      "description": "Work with supported reverse proxies"
     },
     {
-      "title": "Logout Handling",
-      "description": "Centralized logout that clears sessions across all protected applications"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the auth service on your own infrastructure"
     }
   ],
   "platform_support": {

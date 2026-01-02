@@ -1,7 +1,7 @@
 {
   "name": "anchr",
   "slug": "anchr",
-  "tagline": "A lightweight bookmark manager and URL shortener with tagging and API access",
+  "tagline": "A lightweight service for managing bookmarks and short links",
   "subtitle": "",
   "description": "Anchr is a lightweight personal bookmark and URL shortener service. It allows storing, tagging, and sharing bookmarks, shortening links, and managing them via a simple self-hosted web interface with REST API support.",
   "categories": [
@@ -32,28 +32,21 @@
   },
   "features": [
     {
-      "title": "Data Import",
-      "description": "Store and organize all your important links. Never lose a URL again"
+      "title": "Bookmark Archiving",
+      "description": "Save and archive bookmarked web pages",
+      "core_feature": true
     },
     {
-      "title": "Tagging System",
-      "description": "Organize bookmarks with flexible tagging for quick discovery. Find anything instantly"
+      "title": "Content Snapshot",
+      "description": "Store a local copy of linked content"
     },
     {
-      "title": "REST API",
-      "description": "Programmatic access for automation and integrations. Extend functionality easily"
-    },
-    {
-      "title": "Self-Hosted",
-      "description": "Keep your bookmarks private on your own server. Your links, your control"
+      "title": "Tagging",
+      "description": "Organize bookmarks using tags"
     },
     {
       "title": "Web Interface",
-      "description": "Clean web UI makes managing links effortless. No learning curve"
-    },
-    {
-      "title": "Lightweight",
-      "description": "Minimal resource usage, runs on modest hardware. Fast and efficient"
+      "description": "Browse archived bookmarks through a browser"
     }
   ],
   "platform_support": {

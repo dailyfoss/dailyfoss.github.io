@@ -1,11 +1,11 @@
 {
   "name": "rustypaste",
   "slug": "rustypaste",
-  "tagline": "A fast and minimal pastebin written in Rust",
+  "tagline": "A self-hosted pastebin service with expiration and file attachments",
   "subtitle": "",
   "description": "RustyPaste is a self-hosted pastebin service written in Rust. It provides secure paste storage with expiration, attachments, and a minimal web interface.",
   "categories": [
-    118
+    33
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,21 @@
   },
   "features": [
     {
-      "title": "Text Pasting",
-      "description": "Share code snippets, logs, or text through simple URLs"
+      "title": "Paste Service",
+      "description": "Share text and files",
+      "core_feature": true
     },
     {
-      "title": "File Upload",
-      "description": "Upload and share files with automatic expiration"
+      "title": "Expiration Controls",
+      "description": "Automatically delete pastes after expiry"
     },
     {
-      "title": "Syntax Highlighting",
-      "description": "Display code with proper formatting for multiple languages"
+      "title": "File Uploads",
+      "description": "Upload and share files"
     },
     {
-      "title": "Expiration Control",
-      "description": "Set automatic deletion times for pastes to manage storage"
-    },
-    {
-      "title": "Cli Support",
-      "description": "Upload pastes from the command line for scripting and automation"
-    },
-    {
-      "title": "REST API",
-      "description": "Integrate paste functionality into applications using REST endpoints"
-    },
-    {
-      "title": "Password Protection",
-      "description": "Secure sensitive pastes with optional passwords"
-    },
-    {
-      "title": "One",
-      "description": "Create pastes that delete after being viewed once"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the paste service on your own infrastructure"
     }
   ],
   "platform_support": {

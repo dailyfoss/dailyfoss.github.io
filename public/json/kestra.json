@@ -1,7 +1,7 @@
 {
   "name": "kestra",
   "slug": "kestra",
-  "tagline": "An event driven orchestration platform for workflows and pipelines",
+  "tagline": "An event-driven orchestration and workflow platform for data pipelines",
   "subtitle": "",
   "description": "Kestra is an event driven orchestration and workflow platform. It lets teams define data pipelines and tasks as code, schedule and monitor them, and run at scale on self hosted or managed infrastructure with a comprehensive web UI.",
   "categories": [
@@ -33,23 +33,22 @@
   "features": [
     {
       "title": "Workflow Orchestration",
-      "description": "Event-driven pipelines with task scheduling and dependencies. Automate complex data workflows"
+      "description": "Define and run workflows composed of multiple tasks",
+      "core_feature": true
     },
     {
-      "title": "Rich Text Editor",
-      "description": "Design workflows with drag-and-drop interface or YAML code. Build pipelines visually or programmatically"
+      "title": "Scheduling",
+      "description": "Execute workflows on schedules or triggers",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "ETL operations with database, API, and file system connectors. Build scalable data processing"
+      "title": "Web Interface",
+      "description": "Monitor and manage workflow executions",
+      "core_feature": true
     },
     {
-      "title": "Task Library",
-      "description": "Pre-built tasks for common operations and integrations. Accelerate workflow development"
-    },
-    {
-      "title": "Email Notifications",
-      "description": "Automatic retries, failure notifications, and recovery strategies. Build resilient workflows"
+      "title": "Plugin Tasks",
+      "description": "Extend workflows using built-in and custom task types"
     }
   ],
   "platform_support": {

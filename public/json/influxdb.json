@@ -1,11 +1,11 @@
 {
   "name": "influxdb",
   "slug": "influxdb",
-  "tagline": "A time series database optimized for metrics events and analytics",
+  "tagline": "A time-series database optimized for metrics, events, and analytics",
   "subtitle": "",
   "description": "InfluxDB is a high performance time series database optimized for metrics and events. It supports SQL like queries, retention policies and integrations with dashboards and agents, and can be run self hosted or in managed cloud offerings.",
   "categories": [
-    133
+    29
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,38 @@
   },
   "features": [
     {
-      "title": "Time Series Storage",
-      "description": "Optimized database for storing timestamped metrics and events"
+      "title": "Time-Series Data Storage",
+      "description": "Stores timestamped data such as metrics events and sensor readings",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Handle millions of writes per second with efficient compression"
+      "title": "High Ingest Throughput",
+      "description": "Accepts frequent writes from monitoring and telemetry systems",
+      "core_feature": true
     },
     {
-      "title": "Flux Query Language",
-      "description": "Powerful SQL-like language for querying and analyzing time series data"
+      "title": "Query Capabilities",
+      "description": "Retrieves and aggregates time-series data using supported query languages"
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Works seamlessly with Grafana, Chronograf, and other visualization tools"
+      "title": "Retention Policies",
+      "description": "Automatically expires data based on configured retention rules"
+    },
+    {
+      "title": "Authentication",
+      "description": "Controls access to databases and queries"
+    },
+    {
+      "title": "API Access",
+      "description": "Reads and writes data programmatically"
+    },
+    {
+      "title": "Visualization Integration",
+      "description": "Works with dashboards and monitoring tools"
+    },
+    {
+      "title": "Self-Hosted Database",
+      "description": "Runs the database on your own infrastructure"
     }
   ],
   "platform_support": {

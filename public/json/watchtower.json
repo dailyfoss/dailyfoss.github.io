@@ -1,11 +1,11 @@
 {
   "name": "watchtower",
   "slug": "watchtower",
-  "tagline": "An automatic updater for running Docker containers",
+  "tagline": "An automation tool that keeps Docker containers up to date",
   "subtitle": "",
   "description": "Watchtower is a self-hosted automation tool that monitors running Docker containers and automatically updates them when new images are available. It operates as a background container with configuration via environment variables and CLI.",
   "categories": [
-    172
+    27
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,26 @@
   },
   "features": [
     {
-      "title": "Docker Support",
-      "description": "Monitor Docker containers and automatically pull and deploy new image versions when available"
+      "title": "Container Update Automation",
+      "description": "Automatically update running containers",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Receive alerts via email, Slack, Discord, or webhooks when containers are updated"
+      "title": "Image Monitoring",
+      "description": "Monitor containers for new image versions",
+      "core_feature": true
     },
     {
-      "title": "Database Backup",
-      "description": "Execute custom scripts before or after updates for backup or validation tasks"
+      "title": "Scheduled Updates",
+      "description": "Run updates on a defined schedule"
     },
     {
-      "title": "Registry Authentication",
-      "description": "Support private Docker registries with credential management for enterprise deployments"
+      "title": "Notification Support",
+      "description": "Send update notifications"
+    },
+    {
+      "title": "Docker Integration",
+      "description": "Work directly with Docker environments"
     }
   ],
   "platform_support": {

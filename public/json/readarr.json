@@ -1,11 +1,11 @@
 {
   "name": "readarr",
   "slug": "readarr",
-  "tagline": "A self-hosted ebook and audiobook collection manager",
+  "tagline": "An automated ebook and audiobook manager integrated with Usenet and torrents",
   "subtitle": "",
   "description": "Readarr is a self-hosted ebook and audiobook collection manager for Usenet and torrents. It integrates with Calibre, tracks authors, and automates downloads via indexers.",
   "categories": [
-    21
+    1
   ],
   "metadata": {
     "sponsored": false,
@@ -32,32 +32,31 @@
   },
   "features": [
     {
-      "title": "Author Tracking",
-      "description": "Monitor favorite authors and automatically download new releases when they're published"
+      "title": "Book Collection Management",
+      "description": "Manage ebook and audiobook libraries",
+      "core_feature": true
     },
     {
-      "title": "Real-Time Sync",
-      "description": "Sync with Calibre libraries to manage metadata and convert between ebook formats"
+      "title": "Release Monitoring",
+      "description": "Track missing and upcoming books",
+      "core_feature": true
     },
     {
-      "title": "Quality Profiles",
-      "description": "Define preferred formats like EPUB, MOBI, or AZW3 and prioritize audiobook quality"
+      "title": "Download Automation",
+      "description": "Integrate with download clients",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Search Usenet and torrent indexers to grab books as soon as they become available"
+      "title": "Metadata Retrieval",
+      "description": "Fetch book details and covers"
     },
     {
-      "title": "Metadata Management",
-      "description": "Fetch book covers, descriptions, and publication details from GoodReads and other sources"
+      "title": "File Organization",
+      "description": "Rename and organize book files"
     },
     {
-      "title": "Data Import",
-      "description": "Automatically add books from GoodReads lists, reading challenges, or custom sources"
-    },
-    {
-      "title": "Folder Organization",
-      "description": "Rename and sort downloaded books into a consistent folder structure"
+      "title": "Web Interface",
+      "description": "Manage books through a browser"
     }
   ],
   "platform_support": {

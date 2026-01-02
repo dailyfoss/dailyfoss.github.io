@@ -1,7 +1,7 @@
 {
   "name": "backuppc",
   "slug": "backuppc",
-  "tagline": "A network backup system with deduplication, scheduling, and web-based management",
+  "tagline": "A network backup system with deduplication and centralized management",
   "subtitle": "",
   "description": "BackupPC is a high-performance network backup system designed for servers and desktops. It features disk-based storage, deduplication, a web interface, and extensive scheduling for hands-off data protection.",
   "categories": [
@@ -32,24 +32,26 @@
   },
   "features": [
     {
-      "title": "High Performance",
-      "description": "High-performance backup for servers and desktops. Comprehensive protection"
+      "title": "Network Backup System",
+      "description": "Perform centralized backups for multiple machines",
+      "core_feature": true
+    },
+    {
+      "title": "Incremental Backups",
+      "description": "Reduce storage usage using incremental backups",
+      "core_feature": true
+    },
+    {
+      "title": "File Restoration",
+      "description": "Restore files from previous backup versions"
+    },
+    {
+      "title": "Client Support",
+      "description": "Back up Linux, macOS, and Windows systems"
     },
     {
       "title": "Web Interface",
-      "description": "Manage backups through browser. Easy administration"
-    },
-    {
-      "title": "Database Backup",
-      "description": "Set it and forget it backup schedules. Hands-off protection"
-    },
-    {
-      "title": "Real-Time Sync",
-      "description": "Support for SMB, rsync, and more. Flexible connectivity"
-    },
-    {
-      "title": "Self-Hosted",
-      "description": "Complete control over backup infrastructure. Data sovereignty"
+      "description": "Monitor and manage backups through a browser"
     }
   ],
   "platform_support": {

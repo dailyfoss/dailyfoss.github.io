@@ -1,11 +1,11 @@
 {
   "name": "cal-com",
   "slug": "cal-com",
-  "tagline": "A scheduling platform for bookings and availability with APIs and flexible hosting",
+  "tagline": "An open-source scheduling platform for appointment booking",
   "subtitle": "",
   "description": "Cal.com is an open-source scheduling platform designed to provide Calendly-like capabilities. It integrates with other apps, supports self-hosting, and includes role-based access, API triggers, and booking widgets.",
   "categories": [
-    24
+    23
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,40 @@
   },
   "features": [
     {
-      "title": "Real-Time Sync",
-      "description": "Sync with Google Calendar, Outlook, and more. Unified availability"
+      "title": "Scheduling Platform",
+      "description": "Manages appointment scheduling and availability",
+      "core_feature": true
     },
     {
-      "title": "Team Collaboration",
-      "description": "Team scheduling with permission controls. Collaborative booking"
+      "title": "Calendar Integration",
+      "description": "Syncs with external calendar providers",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Automate workflows with webhooks and API. Powerful automation"
+      "title": "Booking Pages",
+      "description": "Generates public booking links",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Complete control over your scheduling data. Data privacy"
+      "title": "Time Slot Management",
+      "description": "Controls availability rules and buffers",
+      "core_feature": true
+    },
+    {
+      "title": "Multi-User Support",
+      "description": "Supports individual and team scheduling"
+    },
+    {
+      "title": "Video Conferencing Integration",
+      "description": "Connects bookings to video meeting tools"
+    },
+    {
+      "title": "Webhooks",
+      "description": "Sends events on booking actions"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Runs on user-managed infrastructure"
     }
   ],
   "platform_support": {

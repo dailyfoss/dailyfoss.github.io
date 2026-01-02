@@ -1,11 +1,11 @@
 {
   "name": "rallly",
   "slug": "rallly",
-  "tagline": "A self-hosted meeting scheduler for voting on availability",
+  "tagline": "A self-hosted meeting scheduler with voting and mobile-friendly UI",
   "subtitle": "",
   "description": "Rallly is a self-hosted meeting scheduler similar to Doodle. It allows participants to vote on preferred times and includes a clean mobile-friendly UI.",
   "categories": [
-    55
+    23
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Time Slot Voting",
-      "description": "Participants select their available times from proposed options to find the best meeting time"
+      "title": "Event Scheduling",
+      "description": "Schedule events by collecting availability",
+      "core_feature": true
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Create and respond to polls from smartphones with a touch-friendly interface"
+      "title": "Poll Creation",
+      "description": "Propose multiple date and time options",
+      "core_feature": true
     },
     {
-      "title": "Media Library",
-      "description": "Distribute polls via simple URLs that work across email, chat, and social media"
+      "title": "Participant Voting",
+      "description": "Let participants vote on availability",
+      "core_feature": true
     },
     {
-      "title": "Data Export",
-      "description": "Export finalized meeting times to Google Calendar, Outlook, or iCal"
+      "title": "Public Links",
+      "description": "Share scheduling pages via links"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Manage events through a browser"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the scheduler on your own servers"
     }
   ],
   "platform_support": {

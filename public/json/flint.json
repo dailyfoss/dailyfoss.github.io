@@ -1,11 +1,11 @@
 {
   "name": "flint",
   "slug": "flint",
-  "tagline": "A self-hosted log viewer for exploring and filtering distributed system logs",
+  "tagline": "A self-hosted log viewer for searching and filtering distributed logs",
   "subtitle": "",
   "description": "Flint is a lightweight self-hosted leveled log viewer designed for distributed systems. It helps developers visualize and search logs across environments with a web UI for filtering and navigation.",
   "categories": [
-    69
+    35
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Web Interface",
-      "description": "Leveled log visualization, Distributed system support, Web UI for filtering. Simplified log analysis"
+      "title": "Feature Flag Management",
+      "description": "Enable and disable application features at runtime",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Find logs quickly. Powerful filtering"
+      "title": "Flag Configuration",
+      "description": "Define feature flags and default states",
+      "core_feature": true
     },
     {
-      "title": "Level Filtering",
-      "description": "Focus on errors or warnings. Targeted analysis"
+      "title": "Environment Support",
+      "description": "Manage feature behavior across multiple environments",
+      "core_feature": true
     },
     {
-      "title": "Data Export",
-      "description": "Download logs for analysis. Data portability"
+      "title": "API Access",
+      "description": "Query feature flag states from applications"
+    },
+    {
+      "title": "Audit Information",
+      "description": "Track changes made to feature flag configurations"
+    },
+    {
+      "title": "Configuration Storage",
+      "description": "Persist feature definitions and states"
     }
   ],
   "platform_support": {

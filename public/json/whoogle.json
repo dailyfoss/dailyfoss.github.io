@@ -1,11 +1,11 @@
 {
   "name": "whoogle",
   "slug": "whoogle",
-  "tagline": "A privacy respecting metasearch proxy for Google",
+  "tagline": "A privacy-respecting, ad-free metasearch engine proxying Google results",
   "subtitle": "",
   "description": "Whoogle Search is a self-hosted, ad-free, privacy-respecting metasearch engine that proxies Google results. It strips tracking, blocks ads, supports search filters, and can be used as a default search provider across browsers and devices.",
   "categories": [
-    144
+    40
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,26 @@
   },
   "features": [
     {
-      "title": "Search and Filter",
-      "description": "Search Google results without tracking, cookies, or personalized ads"
+      "title": "Privacy-Focused Search",
+      "description": "Use Google Search without tracking",
+      "core_feature": true
     },
     {
-      "title": "Data Privacy",
-      "description": "Strip tracking parameters and redirects from result URLs to protect privacy"
+      "title": "Search Proxy",
+      "description": "Proxy requests to search providers",
+      "core_feature": true
     },
     {
-      "title": "Custom Filters",
-      "description": "Configure content filters, safe search settings, and result preferences"
+      "title": "Custom Settings",
+      "description": "Adjust search behavior and layout"
     },
     {
-      "title": "Dark Mode",
-      "description": "Switch between light and dark themes for comfortable searching in any environment"
+      "title": "Web Interface",
+      "description": "Perform searches through a browser"
     },
     {
-      "title": "Search Shortcuts",
-      "description": "Use bangs and shortcuts for quick searches on specific sites or services"
-    },
-    {
-      "title": "No Javascript Required",
-      "description": "Core functionality works without JavaScript for maximum compatibility and privacy"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the search proxy yourself"
     }
   ],
   "platform_support": {

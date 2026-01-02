@@ -1,11 +1,11 @@
 {
   "name": "lab-dash",
   "slug": "lab-dash",
-  "tagline": "A dashboard for organizing tools links and status in lab teams",
+  "tagline": "A central dashboard for organizing lab links, tools, and status widgets",
   "subtitle": "",
   "description": "Lab Dash is a dashboard for lab environments and research teams. It aggregates important links, status widgets and notes into a central page, helping labs keep equipment, documents and tools organized and easily accessible.",
   "categories": [
-    37
+    28
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,34 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Centralized links, Status widgets, Team notes. Organize lab resources in one place"
+      "title": "Homelab Dashboard",
+      "description": "Display a centralized dashboard for self-hosted services",
+      "core_feature": true
     },
     {
-      "title": "Data Import",
-      "description": "Document links, Tool access, Quick references. Keep important resources accessible"
+      "title": "Service Links",
+      "description": "Organize links to internal tools and applications",
+      "core_feature": true
     },
     {
-      "title": "Team Collaboration",
-      "description": "Shared notes, Announcements, Task assignments. Keep the team coordinated"
+      "title": "Custom Sections",
+      "description": "Group services into configurable sections"
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Responsive design, Mobile-friendly, On-the-go access. Check lab status from anywhere"
+      "title": "Icon Support",
+      "description": "Display icons for faster visual identification"
+    },
+    {
+      "title": "Status Indicators",
+      "description": "Show basic availability status for linked services"
+    },
+    {
+      "title": "Configuration Files",
+      "description": "Manage dashboard content through configuration files"
+    },
+    {
+      "title": "Self-Hosted Frontend",
+      "description": "Host the dashboard on your own servers"
     }
   ],
   "platform_support": {

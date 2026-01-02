@@ -1,11 +1,11 @@
 {
   "name": "meshcentral",
   "slug": "meshcentral",
-  "tagline": "A self-hosted remote management and support platform",
+  "tagline": "A self-hosted remote support and device management platform",
   "subtitle": "",
   "description": "MeshCentral is a full-featured self-hosted remote support platform that provides remote desktop, terminal, file transfers, and agent-based monitoring across devices with user and group management.",
   "categories": [
-    135
+    41
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,31 @@
   },
   "features": [
     {
+      "title": "Remote Device Management",
+      "description": "Manage and access remote devices",
+      "core_feature": true
+    },
+    {
       "title": "Remote Desktop",
-      "description": "Access and control remote computers through web-based VNC or RDP connections"
+      "description": "View and control remote screens",
+      "core_feature": true
     },
     {
-      "title": "Terminal Access",
-      "description": "Open command-line sessions on remote machines for administration tasks"
+      "title": "Device Inventory",
+      "description": "Track registered devices"
     },
     {
-      "title": "Web Interface",
-      "description": "Upload and download files between local and remote systems through the web interface"
+      "title": "User Accounts",
+      "description": "Manage users and permissions",
+      "core_feature": true
     },
     {
-      "title": "Lightweight",
-      "description": "Install lightweight agents on devices for persistent remote access and monitoring"
+      "title": "File Transfer",
+      "description": "Transfer files to and from devices"
     },
     {
-      "title": "Multi",
-      "description": "Manage Windows, Linux, and macOS devices from a single interface"
-    },
-    {
-      "title": "User Management",
-      "description": "Create accounts with granular permissions for accessing specific devices or features"
-    },
-    {
-      "title": "Device Grouping",
-      "description": "Organize managed devices into groups for easier navigation and bulk operations"
-    },
-    {
-      "title": "Session Recording",
-      "description": "Record remote desktop sessions for compliance, training, or security review"
+      "title": "Self-Hosted Server",
+      "description": "Run the management server on your own infrastructure"
     }
   ],
   "platform_support": {

@@ -1,11 +1,11 @@
 {
   "name": "rundeck",
   "slug": "rundeck",
-  "tagline": "An automation platform for running jobs and workflows",
+  "tagline": "A self-hosted automation and orchestration platform for DevOps operations",
   "subtitle": "",
   "description": "Rundeck is a self-hosted automation platform for operations and DevOps teams. It provides scheduling, orchestration, and access control for running jobs and workflows via UI or API.",
   "categories": [
-    146
+    16
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,22 @@
   },
   "features": [
     {
-      "title": "Workflow Orchestration",
-      "description": "Chain multiple commands and scripts into complex workflows"
-    },
-    {
-      "title": "Node Management",
-      "description": "Execute jobs across multiple servers from a central interface"
+      "title": "Job Automation",
+      "description": "Run and schedule operational jobs",
+      "core_feature": true
     },
     {
       "title": "Access Control",
-      "description": "Define who can run, view, or modify jobs using role-based permissions"
+      "description": "Restrict job execution by role",
+      "core_feature": true
+    },
+    {
+      "title": "Execution Logs",
+      "description": "View job run history and output"
     },
     {
       "title": "Web Interface",
-      "description": "Create and manage jobs through an intuitive browser-based interface"
-    },
-    {
-      "title": "REST API",
-      "description": "Trigger jobs and retrieve results programmatically via REST API"
-    },
-    {
-      "title": "Email Notifications",
-      "description": "Send alerts to Slack, email, or webhooks when jobs complete or fail"
+      "description": "Manage automation through a browser"
     }
   ],
   "platform_support": {

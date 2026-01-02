@@ -1,11 +1,11 @@
 {
   "name": "feedbase",
   "slug": "feedbase",
-  "tagline": "A self-hosted RSS and Atom aggregator with a minimalist, privacy-focused design",
+  "tagline": "A minimalist self-hosted RSS and Atom feed aggregator",
   "subtitle": "",
   "description": "Feedbase is a simple self-hosted RSS and Atom feed aggregator that collects updates from multiple sources into one view. It focuses on minimalism and privacy, letting users follow news and blogs without third-party services.",
   "categories": [
-    57
+    20
   ],
   "metadata": {
     "sponsored": false,
@@ -33,28 +33,38 @@
   },
   "features": [
     {
-      "title": "Data Privacy",
-      "description": "Collect feeds from multiple sources, Unified reading view, Privacy-focused. Follow news without tracking"
+      "title": "Feed Aggregation Backend",
+      "description": "Collects and stores RSS and Atom feeds",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Clean interface, Fast performance. Distraction-free reading"
+      "title": "Feed Normalization",
+      "description": "Standardizes feed entries for consumption",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Complete data ownership. No third-party services"
+      "title": "API Access",
+      "description": "Exposes feed data through an HTTP API"
     },
     {
-      "title": "Feed Management",
-      "description": "Add and organize subscriptions. Easy control"
+      "title": "Scheduled Updates",
+      "description": "Refreshes feeds on defined intervals"
     },
     {
-      "title": "Search and Filter",
-      "description": "Find content quickly. Efficient discovery"
+      "title": "Database Storage",
+      "description": "Persists feed content and metadata"
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Responsive design. Read anywhere"
+      "title": "Error Handling",
+      "description": "Tracks failed feed fetches"
+    },
+    {
+      "title": "Multi-Feed Support",
+      "description": "Manages many feeds in one instance"
+    },
+    {
+      "title": "Self-Hosted Backend",
+      "description": "Run the service on your own infrastructure"
     }
   ],
   "platform_support": {

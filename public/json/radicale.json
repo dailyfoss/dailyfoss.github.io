@@ -1,7 +1,7 @@
 {
   "name": "radicale",
   "slug": "radicale",
-  "tagline": "A lightweight CalDAV and CardDAV server for calendars and contacts",
+  "tagline": "A lightweight CalDAV and CardDAV server for syncing calendars and contacts",
   "subtitle": "",
   "description": "Radicale is a self-hosted CalDAV and CardDAV server for contact and calendar syncing across devices. It’s lightweight and easy to deploy with a minimal configuration.",
   "categories": [
@@ -32,28 +32,27 @@
   },
   "features": [
     {
-      "title": "Real-Time Sync",
-      "description": "Sync calendars across devices using the standard CalDAV protocol"
+      "title": "CalDAV and CardDAV Server",
+      "description": "Host calendars and address books",
+      "core_feature": true
     },
     {
-      "title": "Lightweight",
-      "description": "Run on minimal hardware with low memory and CPU requirements"
+      "title": "Standards Compliance",
+      "description": "Support CalDAV and CardDAV clients",
+      "core_feature": true
     },
     {
-      "title": "File",
-      "description": "Store calendars and contacts as simple files without requiring a database"
+      "title": "User Accounts",
+      "description": "Separate calendars by user"
     },
     {
-      "title": "Team Collaboration",
-      "description": "Create separate accounts for family members or team members with isolated data"
+      "title": "Access Control",
+      "description": "Restrict access using authentication",
+      "core_feature": true
     },
     {
-      "title": "Authentication Options",
-      "description": "Secure access with HTTP basic auth, LDAP, or custom authentication backends"
-    },
-    {
-      "title": "Rights Management",
-      "description": "Control read and write permissions for shared calendars and contact lists"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the server on your own infrastructure"
     }
   ],
   "platform_support": {

@@ -1,7 +1,7 @@
 {
   "name": "calibre-web-automated",
   "slug": "calibre-web-automated",
-  "tagline": "A self-hosted eBook library that syncs and manages collections automatically",
+  "tagline": "A self-hosted eBook library with automated content synchronization",
   "subtitle": "",
   "description": "Calibre-Web-Automated is an extended version of Calibre-Web that automatically syncs eBooks from external sources and repositories. It’s great for readers and libraries that want hands-free library management.",
   "categories": [
@@ -32,28 +32,35 @@
   },
   "features": [
     {
-      "title": "Real-Time Sync",
-      "description": "Automatically sync eBooks from external sources. Hands-free library growth"
+      "title": "Automated Ebook Import",
+      "description": "Automatically imports ebooks into Calibre Web",
+      "core_feature": true
     },
     {
-      "title": "Calibre",
-      "description": "Enhanced version with automation features. More powerful"
+      "title": "Download Monitoring",
+      "description": "Watches folders for new ebook files",
+      "core_feature": true
     },
     {
-      "title": "Repository Integration",
-      "description": "Connect to eBook repositories automatically. Continuous updates"
+      "title": "Metadata Processing",
+      "description": "Extracts and applies ebook metadata"
     },
     {
-      "title": "Library Management",
-      "description": "Effortless management of growing eBook collection. Set and forget"
+      "title": "Calibre Web Integration",
+      "description": "Works alongside an existing Calibre Web instance",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Keep your eBook library completely private. Data ownership"
+      "title": "Scheduled Tasks",
+      "description": "Runs import jobs on defined intervals"
     },
     {
-      "title": "Reader",
-      "description": "Perfect for avid readers wanting automated library. Convenient reading"
+      "title": "Container Deployment",
+      "description": "Runs easily in container environments"
+    },
+    {
+      "title": "Self-Hosted Automation",
+      "description": "Operates without external services"
     }
   ],
   "platform_support": {

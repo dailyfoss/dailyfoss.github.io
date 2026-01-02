@@ -1,11 +1,11 @@
 {
   "name": "m3u-editor",
   "slug": "m3u-editor",
-  "tagline": "A web based tool for editing sorting and managing M3U playlists",
+  "tagline": "A web-based tool for editing and managing M3U playlists",
   "subtitle": "",
   "description": "M3U Editor is a web-based tool for editing and managing M3U playlists. Useful for IPTV and media streaming setups, it allows sorting, filtering, and customizing entries for media players.",
   "categories": [
-    59
+    34
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "Data Import",
-      "description": "Import and modify M3U/M3U8 playlists with drag-and-drop reordering for IPTV and media streaming"
+      "title": "Playlist Editing",
+      "description": "Create and edit M3U and M3U8 playlists",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Search and filter entries by name, group, or URL to quickly locate specific streams"
+      "title": "Channel Management",
+      "description": "Add, remove, and reorder playlist entries",
+      "core_feature": true
     },
     {
-      "title": "Data Export",
-      "description": "Save edited playlists in multiple formats compatible with various media players"
+      "title": "Metadata Editing",
+      "description": "Edit channel names and attributes"
     },
     {
-      "title": "Group Management",
-      "description": "Organize channels into custom categories for easier navigation and access"
+      "title": "File Import and Export",
+      "description": "Load and save playlist files",
+      "core_feature": true
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Check stream URLs for availability and responsiveness before saving"
+      "title": "Web Interface",
+      "description": "Manage playlists through a browser"
+    },
+    {
+      "title": "Self-Hosted Service",
+      "description": "Run the editor on your own servers"
     }
   ],
   "platform_support": {

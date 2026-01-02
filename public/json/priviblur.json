@@ -1,11 +1,11 @@
 {
   "name": "priviblur",
   "slug": "priviblur",
-  "tagline": "A self-hosted tool for blurring faces in media",
+  "tagline": "A self-hosted tool for blurring faces in images and videos",
   "subtitle": "",
   "description": "PriviBlur is a self-hosted tool for face blurring in videos and images. It supports configurable filters and batch processing through a browser interface, designed to enhance privacy for shared media.",
   "categories": [
-    124
+    41
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Data Privacy",
-      "description": "Apply blur effects to detected faces to protect privacy in shared media"
+      "title": "Content Redaction",
+      "description": "Blur sensitive areas in images",
+      "core_feature": true
     },
     {
-      "title": "Configurable Filters",
-      "description": "Adjust blur intensity, detection sensitivity, and processing parameters"
+      "title": "Image Uploads",
+      "description": "Upload images for processing",
+      "core_feature": true
     },
     {
-      "title": "Video Support",
-      "description": "Blur faces in video files frame-by-frame with optimized processing"
+      "title": "Manual Blur Controls",
+      "description": "Select regions to blur",
+      "core_feature": true
     },
     {
-      "title": "File Upload",
-      "description": "Upload and process media through an intuitive web-based interface"
+      "title": "Preview",
+      "description": "Preview redacted images"
+    },
+    {
+      "title": "Download Output",
+      "description": "Download processed images"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the tool on your own infrastructure"
     }
   ],
   "platform_support": {

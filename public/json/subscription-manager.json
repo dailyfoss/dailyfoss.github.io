@@ -1,11 +1,11 @@
 {
   "name": "subscription-manager",
   "slug": "subscription-manager",
-  "tagline": "A tracker for subscriptions and recurring payments",
+  "tagline": "A tool for tracking subscriptions, renewals, and recurring expenses",
   "subtitle": "",
   "description": "subscription-manager is a self-hosted tool for tracking subscriptions and recurring payments. It monitors renewal dates and costs with reminders and summaries.",
   "categories": [
-    121
+    22
   ],
   "metadata": {
     "sponsored": false,
@@ -33,35 +33,30 @@
   "features": [
     {
       "title": "Subscription Tracking",
-      "description": "Records all recurring subscriptions and memberships"
+      "description": "Track recurring subscriptions",
+      "core_feature": true
+    },
+    {
+      "title": "Cost Overview",
+      "description": "View subscription costs",
+      "core_feature": true
     },
     {
       "title": "Renewal Reminders",
-      "description": "Alerts before subscription renewals to avoid unwanted charges"
-    },
-    {
-      "title": "Cost Calculation",
-      "description": "Totals monthly and yearly subscription expenses"
-    },
-    {
-      "title": "Payment Tracking",
-      "description": "Records payment dates and amounts for each subscription"
+      "description": "Receive reminders before renewals",
+      "core_feature": true
     },
     {
       "title": "Category Organization",
-      "description": "Groups subscriptions by type or purpose"
+      "description": "Organize subscriptions by category"
     },
     {
-      "title": "Currency Support",
-      "description": "Tracks subscriptions in multiple currencies"
+      "title": "Web Interface",
+      "description": "Manage subscriptions in a browser"
     },
     {
-      "title": "Cancellation Tracking",
-      "description": "Records when subscriptions were cancelled"
-    },
-    {
-      "title": "Free Trial Monitoring",
-      "description": "Tracks trial periods to cancel before billing starts"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the tracker on your own servers"
     }
   ],
   "platform_support": {

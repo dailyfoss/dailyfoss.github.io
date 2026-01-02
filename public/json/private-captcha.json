@@ -1,11 +1,11 @@
 {
   "name": "private-captcha",
   "slug": "private-captcha",
-  "tagline": "A self-hosted CAPTCHA system focused on user privacy",
+  "tagline": "A privacy-friendly self-hosted CAPTCHA solution for web apps",
   "subtitle": "",
   "description": "PrivateCaptcha is a self-hosted CAPTCHA system designed to prevent unwanted submissions without relying on third-party services. It supports customizable widgets and easy integration for privacy-conscious apps.",
   "categories": [
-    145
+    41
   ],
   "metadata": {
     "sponsored": false,
@@ -33,24 +33,31 @@
   },
   "features": [
     {
-      "title": "Self-Hosted",
-      "description": "Prevent spam and bot submissions without relying on third-party CAPTCHA services"
+      "title": "CAPTCHA Service",
+      "description": "Protect forms from automated abuse",
+      "core_feature": true
     },
     {
-      "title": "Data Privacy",
-      "description": "No user data sent to external services, ensuring complete privacy compliance"
+      "title": "Privacy-Oriented Verification",
+      "description": "Verify users without tracking",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Simple API and JavaScript widgets for quick integration into web forms"
+      "title": "Form Integration",
+      "description": "Integrate CAPTCHA into web forms",
+      "core_feature": true
     },
     {
-      "title": "Multiple Challenge Types",
-      "description": "Support for image-based, text-based, and mathematical challenges"
+      "title": "Challenge Customization",
+      "description": "Configure challenge behavior"
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Monitor CAPTCHA solve rates, failure patterns, and potential attack attempts"
+      "title": "API Access",
+      "description": "Verify challenges via API"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the CAPTCHA service on your own infrastructure"
     }
   ],
   "platform_support": {

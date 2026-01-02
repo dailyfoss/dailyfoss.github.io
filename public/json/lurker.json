@@ -1,11 +1,11 @@
 {
   "name": "lurker",
   "slug": "lurker",
-  "tagline": "A tool that triggers commands when files or directories change",
+  "tagline": "A file system watcher that triggers scripts and automation workflows",
   "subtitle": "",
   "description": "Lurker monitors files and directories for changes and executes shell commands, scripts, or hooks. It’s ideal for build pipelines, development workflows, or automated tasks triggered by file system events.",
   "categories": [
-    91
+    16
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,58 @@
   },
   "features": [
     {
-      "title": "Email Notifications",
-      "description": "Watch files and directories, Detect changes, Real-time notifications. Monitor file system events"
+      "title": "Repository Activity Viewer",
+      "description": "Browse commits, branches, and repository activity",
+      "core_feature": true
     },
     {
-      "title": "Command Execution",
-      "description": "Run shell commands, Execute scripts, Custom hooks. Automate tasks on file changes"
+      "title": "Web-Based Interface",
+      "description": "View repository data through a browser",
+      "core_feature": true
     },
     {
-      "title": "Pattern Matching",
-      "description": "Glob patterns, File filters, Selective monitoring. Watch only what matters"
+      "title": "Commit History",
+      "description": "Inspect commit messages and diffs",
+      "core_feature": true
     },
     {
-      "title": "Build Automation",
-      "description": "Trigger builds, Run tests, Deploy changes. Automate development workflows"
+      "title": "Branch Navigation",
+      "description": "Switch and explore repository branches"
     },
     {
-      "title": "Lightweight",
-      "description": "Minimal resource usage, Fast response, Efficient monitoring. Simple file watcher tool"
+      "title": "Read-Only Access",
+      "description": "Provide repository browsing without write access"
     },
     {
-      "title": "Configuration",
-      "description": "YAML config, Multiple watchers, Custom rules. Flexible monitoring setup"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the repository viewer on your own servers"
     },
     {
-      "title": "Cross",
-      "description": "Linux, macOS, Windows support. Works on any operating system"
+      "title": "Repository Activity Viewer",
+      "description": "Browse commits, branches, and repository activity",
+      "core_feature": true
     },
     {
-      "title": "Development Tool",
-      "description": "Hot reload, Auto-compile, Test automation. Essential for development pipelines"
+      "title": "Web-Based Interface",
+      "description": "View repository data through a browser",
+      "core_feature": true
+    },
+    {
+      "title": "Commit History",
+      "description": "Inspect commit messages and diffs",
+      "core_feature": true
+    },
+    {
+      "title": "Branch Navigation",
+      "description": "Switch and explore repository branches"
+    },
+    {
+      "title": "Read-Only Access",
+      "description": "Provide repository browsing without write access"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the repository viewer on your own servers"
     }
   ],
   "platform_support": {

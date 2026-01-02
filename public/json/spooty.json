@@ -1,11 +1,11 @@
 {
   "name": "spooty",
   "slug": "spooty",
-  "tagline": "A dashboard for managing Spotify linked media",
+  "tagline": "A Spotify-linked music discovery and library assistance dashboard",
   "subtitle": "",
   "description": "Spooty is a self-hosted request and metadata dashboard for Spotify-linked media libraries, helping manage playlists and discover tracks for local collections.",
   "categories": [
-    165
+    23
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "Spotify Integration",
-      "description": "Connects to Spotify for playlist and track data"
+      "title": "Music Streaming Client",
+      "description": "Stream music from Spotify",
+      "core_feature": true
     },
     {
-      "title": "Request System",
-      "description": "Allows users to request songs for local music library"
+      "title": "Playback Controls",
+      "description": "Control music playback",
+      "core_feature": true
     },
     {
-      "title": "Real-Time Sync",
-      "description": "Syncs Spotify playlists to local collection"
+      "title": "Playlist Browsing",
+      "description": "Browse and play playlists",
+      "core_feature": true
     },
     {
-      "title": "Track Metadata",
-      "description": "Fetches detailed information about requested tracks"
+      "title": "Search",
+      "description": "Search for tracks and artists"
     },
     {
-      "title": "Download Coordination",
-      "description": "Coordinates with download tools for music acquisition"
+      "title": "Desktop Interface",
+      "description": "Use a desktop application interface"
     },
     {
-      "title": "Duplicate Detection",
-      "description": "Avoids requesting songs already in library"
-    },
-    {
-      "title": "User Management",
-      "description": "Handles multiple users with individual request histories"
-    },
-    {
-      "title": "Request Queue",
-      "description": "Manages pending requests with priority ordering"
+      "title": "Local Execution",
+      "description": "Run the client locally"
     }
   ],
   "platform_support": {
