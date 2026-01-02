@@ -45,9 +45,9 @@ jobs:
         run: |
           if [ -f COMMUNITY_INTEGRATIONS_SUMMARY.txt ]; then
             {
-              echo 'stats<<EOF'
+              echo 'stats<<ENDOFSTATS'
               cat COMMUNITY_INTEGRATIONS_SUMMARY.txt
-              echo EOF
+              echo 'ENDOFSTATS'
             } >> $GITHUB_OUTPUT
           fi
 
