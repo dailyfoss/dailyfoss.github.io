@@ -1,15 +1,15 @@
 {
   "name": "dockflare",
   "slug": "dockflare",
-  "tagline": "A web dashboard for viewing Docker container logs and resource stats",
+  "tagline": "A self-hosted ingress controller for managing Cloudflare Tunnel and Zero Trust",
   "subtitle": "",
-  "description": "DockFlare is a simple web-based UI for managing and monitoring Docker containers. It displays container logs, stats, and actions via an intuitive dashboard suited for homelab users and container enthusiasts.",
+  "description": "DockFlare is a powerful, self-hosted ingress controller that simplifies Cloudflare Tunnel and Zero Trust management",
   "categories": [
-    47
+    36
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "GPL3",
     "version": "v3.0.5",
     "date_app_added": "2025-11-23",
     "date_last_released": "2025-10-14",
@@ -32,20 +32,38 @@
   },
   "features": [
     {
+      "title": "Cloudflare Tunnel Management",
+      "description": "Manages Cloudflare tunnels for Docker services",
+      "core_feature": true
+    },
+    {
+      "title": "Automatic Tunnel Creation",
+      "description": "Creates tunnels for containers automatically",
+      "core_feature": true
+    },
+    {
+      "title": "Service Discovery",
+      "description": "Detects running Docker services"
+    },
+    {
+      "title": "DNS Configuration",
+      "description": "Manages DNS records for tunnels"
+    },
+    {
+      "title": "Container Integration",
+      "description": "Integrates directly with Docker environments"
+    },
+    {
       "title": "Web Interface",
-      "description": "Access container logs through web interface. Easy troubleshooting"
+      "description": "Manages tunnels through a browser"
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Clean UI designed for homelab users. User-friendly experience"
+      "title": "Access Control",
+      "description": "Restricts tunnel management access"
     },
     {
-      "title": "High Performance",
-      "description": "Monitor CPU, memory, and network usage. Performance insights"
-    },
-    {
-      "title": "Self-Hosted",
-      "description": "Manage your containers from your own dashboard. Complete control"
+      "title": "Self-Hosted Operation",
+      "description": "Runs on private infrastructure"
     }
   ],
   "platform_support": {

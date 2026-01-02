@@ -1,11 +1,11 @@
 {
   "name": "chhoto-url",
   "slug": "chhoto-url",
-  "tagline": "A self-hosted URL shortener with analytics and QR code support",
+  "tagline": "A lightweight self-hosted URL shortener with analytics and QR codes",
   "subtitle": "",
   "description": "Chhoto URL is a lightweight and minimal URL shortener designed to be self-hosted. It includes link analytics, QR code support, and a simple dashboard to manage and track short URLs.",
   "categories": [
-    171
+    20
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,34 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Track clicks and visitor statistics. Understand traffic"
+      "title": "URL Shortening",
+      "description": "Creates short links for long URLs",
+      "core_feature": true
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Generate QR codes for shortened links. Mobile-friendly"
+      "title": "Custom Aliases",
+      "description": "Defines custom short codes",
+      "core_feature": true
     },
     {
-      "title": "Lightweight",
-      "description": "Minimal resource usage for efficient operation. Fast performance"
+      "title": "Redirect Tracking",
+      "description": "Tracks link access counts"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Keep your link data completely private. Complete control"
+      "title": "Expiration Rules",
+      "description": "Sets expiry for shortened links"
+    },
+    {
+      "title": "API Access",
+      "description": "Creates and manages links programmatically"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Manages links through a browser"
+    },
+    {
+      "title": "Self-Hosted Service",
+      "description": "Runs under user control"
     }
   ],
   "platform_support": {

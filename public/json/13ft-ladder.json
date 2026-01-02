@@ -1,11 +1,11 @@
 {
   "name": "13ft-ladder",
   "slug": "13ft-ladder",
-  "tagline": "A self-hosted web service to retrieve full article content from URLs without ads or paywalls",
+  "tagline": "A web service that retrieves full article content by bypassing paywalls",
   "subtitle": "",
   "description": "13ft is an open-source, self-hosted web service designed as a replacement for 12ft.io. It allows you to input a URL and retrieve the article’s full content—bypassing ads and paywalls, by emulating a GoogleBot crawl to fetch what search engines see. Built in Python (Flask) and easily deployable via Docker, it’s geared toward users who want more control over accessing web content and hosting their own instance. The project is MIT-licensed, with support for custom host/port setups, and has a community of users and contributors.",
   "categories": [
-    9
+    43
   ],
   "metadata": {
     "sponsored": false,
@@ -32,32 +32,32 @@
   },
   "features": [
     {
-      "title": "Paywall Bypass",
-      "description": "Access full article content without subscriptions or ads. Read freely without restrictions"
+      "title": "Article Content Extraction",
+      "description": "Retrieves the main readable content of web articles while excluding paywalls and overlays",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Run on your own server for complete data privacy. Your reading, your infrastructure"
+      "title": "URL-Based Access",
+      "description": "Accepts a target article URL as input and returns the extracted page content",
+      "core_feature": true
     },
     {
-      "title": "Simple Usage",
-      "description": "Just paste any URL to retrieve the complete article text. One-click access to content"
+      "title": "Paywall Bypass via Text Rendering",
+      "description": "Loads article content in a simplified format that avoids client-side paywall scripts",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Mimics search engine crawlers to access public content. Leverages existing web standards"
+      "title": "Web Service Interface",
+      "description": "Exposes the functionality through a web-accessible endpoint for browser-based use",
+      "core_feature": true
     },
     {
-      "title": "Docker Support",
-      "description": "Docker support enables quick installation and setup. Running in minutes"
+      "title": "Minimal Page Rendering",
+      "description": "Outputs content in a clean, text-focused layout for readability"
     },
     {
-      "title": "Customizable",
-      "description": "Configure host and port settings to match your needs. Flexible server options"
-    },
-    {
-      "title": "Open Source",
-      "description": "MIT licensed with active community contributions. Free and transparent"
+      "title": "Self-Hosted Deployment",
+      "description": "Can be run on a user-controlled server without reliance on third-party services"
     }
   ],
   "platform_support": {

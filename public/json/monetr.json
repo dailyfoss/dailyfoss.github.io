@@ -1,7 +1,7 @@
 {
   "name": "monetr",
   "slug": "monetr",
-  "tagline": "A self-hosted personal finance platform with bank integrations",
+  "tagline": "A self-hosted personal finance platform with budgeting and insights",
   "subtitle": "",
   "description": "Monetr is a self-hosted personal finance management platform that connects to banks to display transaction details, budget categories, and insights. It offers API access and real-time sync with Plaid.",
   "categories": [
@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "Data Import",
-      "description": "Connect to financial institutions via Plaid for automatic transaction imports and real-time balance updates"
+      "title": "Personal Budgeting",
+      "description": "Track income, expenses, and budgets",
+      "core_feature": true
     },
     {
-      "title": "Budget Tracking",
-      "description": "Create spending categories with monthly limits and track progress against goals with visual indicators"
+      "title": "Account Linking",
+      "description": "Sync data from supported financial institutions",
+      "core_feature": true
     },
     {
-      "title": "Expense Categorization",
-      "description": "Automatically classify transactions by type and manually adjust categories for accurate reporting"
+      "title": "Category Management",
+      "description": "Organize transactions into categories"
     },
     {
-      "title": "Recurring Transactions",
-      "description": "Identify and manage subscription payments, bills, and regular income with automated detection"
+      "title": "Budget Planning",
+      "description": "Plan spending across categories",
+      "core_feature": true
     },
     {
-      "title": "Financial Insights",
-      "description": "View spending trends, category breakdowns, and monthly comparisons through interactive charts"
+      "title": "Reports",
+      "description": "View summaries of financial activity"
     },
     {
-      "title": "Goal Planning",
-      "description": "Set savings targets and track progress with projected completion dates based on current habits"
-    },
-    {
-      "title": "Analytics Dashboard",
-      "description": "Manage checking, savings, and credit accounts in a unified dashboard with consolidated views"
-    },
-    {
-      "title": "REST API",
-      "description": "Integrate with external tools or build custom workflows using REST endpoints for programmatic data access"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the budgeting app on your own servers"
     }
   ],
   "platform_support": {

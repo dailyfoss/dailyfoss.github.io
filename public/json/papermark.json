@@ -1,11 +1,11 @@
 {
   "name": "papermark",
   "slug": "papermark",
-  "tagline": "A self-hosted platform for tracking document views",
+  "tagline": "A document analytics platform for tracking PDF views and engagement",
   "subtitle": "",
   "description": "Papermark is a self-hosted document analytics platform that gives insights into how PDFs are viewed. It supports secure sharing, view tracking, and integrates with tools like email and Slack.",
   "categories": [
-    48
+    9
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,26 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Track how recipients interact with shared PDFs including page views, time spent, and engagement patterns"
+      "title": "Document Sharing",
+      "description": "Share documents using secure links",
+      "core_feature": true
     },
     {
-      "title": "Access Control",
-      "description": "Generate unique, time-limited links for document sharing with optional password protection and access controls"
+      "title": "Access Tracking",
+      "description": "Track views and interactions with documents"
     },
     {
-      "title": "Email Notifications",
-      "description": "Receive real-time alerts when recipients open, view, or complete reading your shared documents"
+      "title": "Permission Controls",
+      "description": "Restrict access to shared documents"
     },
     {
-      "title": "Email Integration",
-      "description": "Send documents directly via email with tracking enabled, or integrate with email tools for automated"
+      "title": "Web Interface",
+      "description": "Upload and manage documents in a browser",
+      "core_feature": true
     },
     {
-      "title": "Slack Notifications",
-      "description": "Connect with Slack to receive document view notifications in channels or direct messages for team"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the service on your own servers"
     }
   ],
   "platform_support": {

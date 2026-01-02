@@ -1,11 +1,11 @@
 {
   "name": "woli-webgui",
   "slug": "woli-webgui",
-  "tagline": "A self-hosted web interface for managing Wake-on-LAN actions and remote power control",
+  "tagline": "A web interface for managing Wake-on-LAN actions and devices",
   "subtitle": "",
   "description": "WoLi-webgui is a self-hosted web interface for managing Wake-on-LAN actions. It lets you add devices, trigger wake requests, and organize targets into a convenient dashboard for remote power control at home or in small offices.",
   "categories": [
-    75
+    42
   ],
   "metadata": {
     "sponsored": false,
@@ -27,20 +27,31 @@
   },
   "features": [
     {
+      "title": "Web Interface",
+      "description": "Manage Wake-on-LAN devices in a browser",
+      "core_feature": true
+    },
+    {
       "title": "Device Management",
-      "description": "Store MAC addresses and device names for quick access to your network machines"
+      "description": "Manage configured devices",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "See all registered devices in a clean interface with status indicators"
+      "title": "Wake Controls",
+      "description": "Trigger wake events",
+      "core_feature": true
     },
     {
-      "title": "Media Library",
-      "description": "Organize devices into groups like servers, workstations, or media centers for easier management"
+      "title": "Authentication",
+      "description": "Restrict access to controls"
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Manage and wake devices from smartphones or tablets via responsive web UI"
+      "title": "Status Display",
+      "description": "View device status"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the interface on your own servers"
     }
   ],
   "platform_support": {

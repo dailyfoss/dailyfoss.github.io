@@ -1,11 +1,11 @@
 {
   "name": "seerrbridge",
   "slug": "seerrbridge",
-  "tagline": "A bridge for extending Seerr media integrations",
+  "tagline": "A companion service that bridges Seerr with additional media backends",
   "subtitle": "",
   "description": "SeerrBridge is a companion tool that links Seerr with additional media backends, allowing enhanced cross-service interactions and automation for home media setups.",
   "categories": [
-    112
+    1
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "Media Library",
-      "description": "Connects Seerr with additional media management backends"
+      "title": "Request Bridging",
+      "description": "Sync requests between media request systems",
+      "core_feature": true
     },
     {
-      "title": "Real-Time Sync",
-      "description": "Keeps request status in sync across connected services"
+      "title": "System Integration",
+      "description": "Connect multiple request platforms",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Forwards notifications between Seerr and backend services"
+      "title": "Automated Sync",
+      "description": "Sync requests automatically",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Translates API calls between different service versions and formats"
+      "title": "Logging",
+      "description": "View synchronization logs"
     },
     {
-      "title": "Load Balancing",
-      "description": "Distributes requests across multiple backend instances for scalability"
+      "title": "Configuration Options",
+      "description": "Configure bridge behavior"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the bridge on your own infrastructure"
     }
   ],
   "platform_support": {

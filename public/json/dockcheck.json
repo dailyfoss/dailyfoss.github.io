@@ -1,11 +1,11 @@
 {
   "name": "dockcheck",
   "slug": "dockcheck",
-  "tagline": "A CLI tool for checking and updating Docker containers automatically",
+  "tagline": "A command-line tool for checking and updating Docker containers",
   "subtitle": "",
   "description": "Dockcheck is a CLI tool to automate checking and updating Docker containers. It helps users be notified when new images are available, and supports automated restarts, making it ideal for self-hosted environments.",
   "categories": [
-    172
+    27
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,39 @@
   },
   "features": [
     {
-      "title": "Email Notifications",
-      "description": "Get alerts when new images are available. Never miss updates"
+      "title": "Docker Container Update Checker",
+      "description": "Checks running containers for image updates",
+      "core_feature": true
     },
     {
-      "title": "Cli Interface",
-      "description": "Simple command-line tool for quick checks. Script-friendly operation"
+      "title": "Version Comparison",
+      "description": "Compares local images with registry versions",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Ideal for self-hosted environments. Maintain your stack easily"
+      "title": "CLI Tool",
+      "description": "Runs update checks from the command line",
+      "core_feature": true
     },
     {
-      "title": "Lightweight",
-      "description": "Minimal resource usage for efficient monitoring. Run on any system"
+      "title": "Notification Output",
+      "description": "Reports available updates"
+    },
+    {
+      "title": "Multi-Container Support",
+      "description": "Checks multiple containers at once"
+    },
+    {
+      "title": "Automation Friendly",
+      "description": "Integrates with scripts and cron jobs"
+    },
+    {
+      "title": "Lightweight Utility",
+      "description": "Runs with minimal overhead"
+    },
+    {
+      "title": "Self-Hosted Usage",
+      "description": "Runs locally or on servers"
     }
   ],
   "platform_support": {

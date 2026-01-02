@@ -1,11 +1,11 @@
 {
   "name": "smokeping",
   "slug": "smokeping",
-  "tagline": "A latency monitoring tool with historical graphs",
+  "tagline": "A network latency and packet loss monitoring tool",
   "subtitle": "",
   "description": "SmokePing is a latency monitoring tool for network links. It runs scheduled pings and visualizes performance and packet loss in RRD graphs via a web interface.",
   "categories": [
-    173
+    35
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "Latency Monitoring",
-      "description": "Measures network latency with continuous ping tests"
+      "title": "Network Latency Monitoring",
+      "description": "Measure network latency and packet loss",
+      "core_feature": true
     },
     {
-      "title": "Packet Loss Tracking",
-      "description": "Detects and visualizes packet loss over time"
+      "title": "Time-Series Graphs",
+      "description": "Visualize latency over time",
+      "core_feature": true
     },
     {
-      "title": "Rrd Graphs",
-      "description": "Displays historical latency data in detailed time-series graphs"
+      "title": "Probe Configuration",
+      "description": "Monitor multiple network targets",
+      "core_feature": true
     },
     {
-      "title": "Multiple Targets",
-      "description": "Monitors multiple hosts or network endpoints simultaneously"
+      "title": "Alerting",
+      "description": "Notify on latency or packet loss issues"
     },
     {
-      "title": "Smoke Visualization",
-      "description": "Shows latency distribution with unique smoke-like graph rendering"
+      "title": "Historical Analysis",
+      "description": "Analyze long-term network performance"
     },
     {
-      "title": "Alert Thresholds",
-      "description": "Configures alerts when latency exceeds defined thresholds"
-    },
-    {
-      "title": "Dns Monitoring",
-      "description": "Tests DNS resolution times alongside network latency"
-    },
-    {
-      "title": "Multi",
-      "description": "Monitors via ICMP, TCP, DNS, and other protocols"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the monitoring tool on your own infrastructure"
     }
   ],
   "platform_support": {

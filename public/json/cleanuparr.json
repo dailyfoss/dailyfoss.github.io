@@ -1,11 +1,11 @@
 {
   "name": "cleanuparr",
   "slug": "cleanuparr",
-  "tagline": "A self-hosted automation tool for cleaning unused files and artifacts",
+  "tagline": "An automation tool for cleaning unused files and application artifacts",
   "subtitle": "",
   "description": "Cleanuparr is a self-hosted web application designed to automate cleanup tasks for cloud services or local environments. It focuses on removing unused artifacts to save costs and improve performance.",
   "categories": [
-    59
+    16
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,34 @@
   },
   "features": [
     {
-      "title": "Cloud & Local",
-      "description": "Works with cloud services and local environments. Flexible operation"
+      "title": "Media Cleanup Automation",
+      "description": "Automatically removes unused media files",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Improve system performance by cleaning up. Faster operation"
+      "title": "Arr Integration",
+      "description": "Works with Radarr and Sonarr",
+      "core_feature": true
     },
     {
-      "title": "Scheduled Tasks",
-      "description": "Automate cleanup on custom schedules. Set and forget"
+      "title": "Rule-Based Deletion",
+      "description": "Defines cleanup conditions"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Run cleanup automation on your infrastructure. Complete control"
+      "title": "Scheduled Jobs",
+      "description": "Runs cleanup on schedules"
+    },
+    {
+      "title": "Preview Mode",
+      "description": "Shows what would be deleted"
+    },
+    {
+      "title": "Logging",
+      "description": "Records cleanup actions"
+    },
+    {
+      "title": "Self-Hosted Service",
+      "description": "Runs on private servers"
     }
   ],
   "platform_support": {

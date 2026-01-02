@@ -1,11 +1,11 @@
 {
   "name": "tube-archivist",
   "slug": "tube-archivist",
-  "tagline": "A personal YouTube archiving and browsing platform",
+  "tagline": "A self-hosted solution for archiving and managing YouTube video libraries",
   "subtitle": "",
   "description": "TubeArchivist is a self-hosted YouTube archiving and management solution. It downloads videos, indexes metadata, and offers search, playlists, and a web player to build a personal YouTube library.",
   "categories": [
-    100
+    34
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,26 @@
   },
   "features": [
     {
-      "title": "Youtube Downloading",
-      "description": "Download videos from YouTube channels and playlists automatically"
+      "title": "Video Archiving",
+      "description": "Archive videos from online platforms",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Index video metadata including titles, descriptions, tags, and thumbnails for searchability"
+      "title": "Channel Subscriptions",
+      "description": "Track and download subscribed channels",
+      "core_feature": true
     },
     {
-      "title": "Playlist Management",
-      "description": "Organize videos into playlists for categorization and easy browsing"
+      "title": "Metadata Storage",
+      "description": "Store video metadata locally"
     },
     {
-      "title": "Search Functionality",
-      "description": "Search across all archived videos by title, description, channel, or tags"
+      "title": "Web Interface",
+      "description": "Browse archived videos through a browser"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the archive on your own infrastructure"
     }
   ],
   "platform_support": {

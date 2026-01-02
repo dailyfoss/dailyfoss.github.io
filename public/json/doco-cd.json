@@ -5,7 +5,7 @@
   "subtitle": "",
   "description": "Doco-CD is a lightweight continuous deployment helper for containerized apps. It focuses on simple configuration and automating rollouts with minimal infrastructure, ideal for small projects wanting Git-ops style deployments without heavy tooling.",
   "categories": [
-    146
+    30
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,39 @@
   },
   "features": [
     {
-      "title": "Docker Support",
-      "description": "Deploy multi-container applications using familiar compose file syntax and orchestration"
+      "title": "Documentation Continuous Deployment",
+      "description": "Automates deployment of documentation sites",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Receive notifications from GitHub, GitLab, or Bitbucket to initiate deployment workflows"
+      "title": "Git Integration",
+      "description": "Deploys documentation from Git repositories",
+      "core_feature": true
     },
     {
-      "title": "Tagging System",
-      "description": "Configure separate deployment pipelines for staging, production, and development environments"
+      "title": "Static Site Support",
+      "description": "Works with static documentation generators",
+      "core_feature": true
     },
     {
-      "title": "Deployment Logs",
-      "description": "Track build output and container startup messages to diagnose issues during rollout"
+      "title": "Pipeline Automation",
+      "description": "Runs deployments automatically on changes"
+    },
+    {
+      "title": "Environment Configuration",
+      "description": "Manages deployment environments"
+    },
+    {
+      "title": "CLI Tooling",
+      "description": "Controls deployments from the command line"
+    },
+    {
+      "title": "Rollback Support",
+      "description": "Reverts documentation to previous versions"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Runs on user-managed infrastructure"
     }
   ],
   "platform_support": {

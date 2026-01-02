@@ -1,11 +1,11 @@
 {
   "name": "metadata-remote",
   "slug": "metadata-remote",
-  "tagline": "A self-hosted service for fetching and caching media metadata",
+  "tagline": "A self-hosted backend for caching and serving media metadata",
   "subtitle": "",
   "description": "Metadata Remote is a self-hosted backend for fetching and serving TV and movie metadata for media servers. It supports integrations with Plex, Emby, or Jellyfin and allows local caching of metadata.",
   "categories": [
-    112
+    34
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,30 @@
   },
   "features": [
     {
-      "title": "REST API",
-      "description": "Store metadata locally to reduce external API calls and improve performance"
+      "title": "Metadata Fetching",
+      "description": "Retrieve metadata from remote sources",
+      "core_feature": true
     },
     {
-      "title": "Media Library",
-      "description": "Connect with Plex, Emby, or Jellyfin to provide metadata services"
+      "title": "API Service",
+      "description": "Expose metadata through an HTTP API",
+      "core_feature": true
     },
     {
-      "title": "Poster And Artwork",
-      "description": "Download and serve cover art, posters, and background images for media"
+      "title": "Caching",
+      "description": "Cache metadata to reduce repeated requests"
     },
     {
-      "title": "Cast And Crew Data",
-      "description": "Provide actor, director, and production information for media items"
+      "title": "Source Configuration",
+      "description": "Configure supported metadata sources"
     },
     {
-      "title": "Api Compatibility",
-      "description": "Implement standard metadata API protocols for seamless media server integration"
+      "title": "Integration Support",
+      "description": "Integrate metadata into other services"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the metadata service on your own servers"
     }
   ],
   "platform_support": {

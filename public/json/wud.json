@@ -1,11 +1,11 @@
 {
   "name": "wud",
   "slug": "wud",
-  "tagline": "A Docker image update watcher and notifier",
+  "tagline": "A Docker image watcher that monitors registries and updates containers",
   "subtitle": "",
   "description": "wud is a self-hosted Docker image watcher that monitors registries and running containers, notifying you about new image versions. It helps keep services up to date with minimal manual checking.",
   "categories": [
-    172
+    35
   ],
   "metadata": {
     "sponsored": false,
@@ -27,24 +27,31 @@
   },
   "features": [
     {
-      "title": "Docker Support",
-      "description": "Automatically detect running Docker containers and track their image versions"
+      "title": "Container Update Monitoring",
+      "description": "Monitor container image updates",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Send alerts via email, Slack, Discord, or webhooks when updates are available"
+      "title": "Image Tracking",
+      "description": "Track versions of container images",
+      "core_feature": true
     },
     {
-      "title": "Tagging System",
-      "description": "Compare running container versions against latest available tags in registries"
+      "title": "Notifications",
+      "description": "Notify when updates are available",
+      "core_feature": true
     },
     {
-      "title": "Tag Filtering",
-      "description": "Configure which image tags to watch using regex patterns or specific version ranges"
+      "title": "Registry Support",
+      "description": "Monitor images from registries"
     },
     {
       "title": "Web Interface",
-      "description": "See all containers and their update status in a centralized web interface"
+      "description": "View updates in a browser"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the monitor on your own infrastructure"
     }
   ],
   "platform_support": {

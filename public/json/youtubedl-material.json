@@ -1,11 +1,11 @@
 {
   "name": "youtubedl-material",
   "slug": "youtubedl-material",
-  "tagline": "A web interface for managing video downloads",
+  "tagline": "A web front-end for yt-dlp/youtube-dl to manage video and audio downloads",
   "subtitle": "",
   "description": "YoutubeDL-Material is a self-hosted web front-end for yt-dlp/youtube-dl. It lets users queue, download, and manage videos and audio from many sites, storing them in organized folders with metadata.",
   "categories": [
-    100
+    34
   ],
   "metadata": {
     "sponsored": false,
@@ -27,24 +27,31 @@
   },
   "features": [
     {
+      "title": "Video Downloader",
+      "description": "Download videos from supported sites",
+      "core_feature": true
+    },
+    {
       "title": "Web Interface",
-      "description": "Download videos and audio from YouTube and hundreds of other sites through a modern browser"
+      "description": "Manage downloads through a browser",
+      "core_feature": true
     },
     {
-      "title": "Queue Management",
-      "description": "Add multiple URLs to a download queue and process them sequentially or in parallel"
+      "title": "Format Selection",
+      "description": "Choose video and audio formats",
+      "core_feature": true
     },
     {
-      "title": "Folder Organization",
-      "description": "Store videos with proper filenames, thumbnails, and metadata in organized folder structures"
+      "title": "Playlist Downloads",
+      "description": "Download entire playlists"
     },
     {
-      "title": "User Accounts",
-      "description": "Create multiple users with individual download histories, subscriptions, and storage quotas"
+      "title": "Download Queue",
+      "description": "Manage download queues"
     },
     {
-      "title": "Search and Filter",
-      "description": "Review all past downloads with search, filtering, and re-download capabilities"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the downloader on your own servers"
     }
   ],
   "platform_support": {

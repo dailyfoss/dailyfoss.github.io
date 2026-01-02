@@ -1,11 +1,11 @@
 {
   "name": "feedcord",
   "slug": "feedcord",
-  "tagline": "A bridge that delivers RSS feed updates directly into Discord channels",
+  "tagline": "A bridge service that delivers RSS feed updates to Discord channels",
   "subtitle": "",
   "description": "FeedCord is a tool that forwards RSS feed updates into Discord channels. It lets users subscribe to feeds and customize delivery, acting as a self-hosted bridge between websites and Discord servers.",
   "categories": [
-    102
+    16
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,38 @@
   },
   "features": [
     {
-      "title": "Feed Management",
-      "description": "Subscribe to multiple sources. Centralized control"
+      "title": "Discord Feed Delivery",
+      "description": "Sends RSS feed updates to Discord channels",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Format and filter messages. Tailored alerts"
+      "title": "Feed Subscription Management",
+      "description": "Configures which feeds are monitored",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Connect websites to Discord. Privacy-focused automation"
+      "title": "Message Formatting",
+      "description": "Formats feed entries for Discord messages"
     },
     {
-      "title": "Filter Rules",
-      "description": "Control what gets posted. Relevant content only"
+      "title": "Update Scheduling",
+      "description": "Checks feeds at regular intervals"
     },
     {
-      "title": "Webhook Support",
-      "description": "Easy Discord integration. Simple setup"
+      "title": "Multi-Server Support",
+      "description": "Posts updates to multiple Discord servers"
+    },
+    {
+      "title": "Configuration Files",
+      "description": "Manages settings via config files"
+    },
+    {
+      "title": "Logging",
+      "description": "Records delivery activity"
+    },
+    {
+      "title": "Self-Hosted Bot",
+      "description": "Run the bot on your own infrastructure"
     }
   ],
   "platform_support": {

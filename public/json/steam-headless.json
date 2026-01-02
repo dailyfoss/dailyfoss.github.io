@@ -1,11 +1,11 @@
 {
   "name": "steam-headless",
   "slug": "steam-headless",
-  "tagline": "A headless Steam client for servers and containers",
+  "tagline": "A headless Steam client in Docker for remote game management",
   "subtitle": "",
   "description": "docker-steam-headless provides a self-hosted, headless Steam client in Docker for remote game downloads or streaming setups. It exposes web-based management for sessions.",
   "categories": [
-    69
+    27
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "Team Collaboration",
-      "description": "Runs Steam client in Docker without physical display"
+      "title": "Headless Game Client",
+      "description": "Run Steam games without a graphical desktop",
+      "core_feature": true
+    },
+    {
+      "title": "Containerized Execution",
+      "description": "Run the game client in a container",
+      "core_feature": true
     },
     {
       "title": "Remote Access",
-      "description": "Connects to Steam via web browser or VNC"
-    },
-    {
-      "title": "Game Downloads",
-      "description": "Downloads and manages Steam games on server"
-    },
-    {
-      "title": "Streaming Support",
-      "description": "Streams games to other devices via Steam Link or Moonlight"
-    },
-    {
-      "title": "Proton Compatibility",
-      "description": "Runs Windows games on Linux with Proton integration"
-    },
-    {
-      "title": "Real-Time Sync",
-      "description": "Backs up and syncs game saves across devices"
-    },
-    {
-      "title": "Workshop Support",
-      "description": "Downloads and manages Steam Workshop content"
+      "description": "Access games via remote streaming",
+      "core_feature": true
     },
     {
       "title": "Controller Support",
-      "description": "Passes through USB controllers for game input"
+      "description": "Use supported game controllers"
+    },
+    {
+      "title": "Game Library Access",
+      "description": "Access owned Steam games"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the container on your own infrastructure"
     }
   ],
   "platform_support": {

@@ -1,11 +1,11 @@
 {
   "name": "rss-bridge",
   "slug": "rss-bridge",
-  "tagline": "A tool for generating RSS feeds from websites",
+  "tagline": "A self-hosted tool to generate RSS feeds from websites and platforms",
   "subtitle": "",
   "description": "RSS-Bridge is a self-hosted feed generator that fetches content from webpages and delivers custom RSS/Atom feeds. It supports dozens of sites and simplifies subscription management.",
   "categories": [
-    57
+    20
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,22 @@
   },
   "features": [
     {
-      "title": "Feed Generation",
-      "description": "Create RSS feeds from websites that don't offer them natively"
+      "title": "RSS Generation",
+      "description": "Generate RSS feeds from websites",
+      "core_feature": true
     },
     {
-      "title": "Tagging System",
-      "description": "Use ready-made scrapers for popular sites like Twitter, Instagram, and YouTube"
+      "title": "Site Adapters",
+      "description": "Support many websites via adapters",
+      "core_feature": true
     },
     {
-      "title": "Custom Bridges",
-      "description": "Write your own bridges to generate feeds from any website"
+      "title": "Custom Feeds",
+      "description": "Create feeds for specific content"
     },
     {
-      "title": "Multiple Formats",
-      "description": "Output feeds in RSS, Atom, JSON, or HTML formats"
-    },
-    {
-      "title": "Parameter Support",
-      "description": "Customize feed generation with URL parameters for filtering"
-    },
-    {
-      "title": "Caching",
-      "description": "Store generated feeds temporarily to reduce server load and improve speed"
-    },
-    {
-      "title": "Web Interface",
-      "description": "Browse available bridges and generate feeds through a simple UI"
-    },
-    {
-      "title": "REST API",
-      "description": "Generate feeds programmatically for automation or integration"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the service on your own infrastructure"
     }
   ],
   "platform_support": {

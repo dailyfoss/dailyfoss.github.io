@@ -1,11 +1,11 @@
 {
   "name": "snipe-it",
   "slug": "snipe-it",
-  "tagline": "A self-hosted IT asset management system",
+  "tagline": "An IT asset management system for tracking hardware and software",
   "subtitle": "",
   "description": "Snipe-IT is a self-hosted IT asset management platform for tracking hardware, software, and accessories. It supports barcodes, audit logs, and role-based access via a web UI.",
   "categories": [
-    84
+    39
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "Single Sign-On",
-      "description": "Manages hardware, software licenses, and accessories with detailed records"
+      "title": "Asset Management",
+      "description": "Track hardware and software assets",
+      "core_feature": true
     },
     {
-      "title": "Check",
-      "description": "Tracks asset assignments to users with history and due dates"
+      "title": "Inventory Tracking",
+      "description": "Record asset status and ownership",
+      "core_feature": true
     },
     {
-      "title": "Barcode Scanning",
-      "description": "Generates and scans barcodes for quick asset identification"
+      "title": "User Assignments",
+      "description": "Assign assets to users or locations",
+      "core_feature": true
     },
     {
-      "title": "Maintenance Tracking",
-      "description": "Schedules and logs maintenance activities for equipment"
+      "title": "Reporting",
+      "description": "Generate inventory and audit reports"
     },
     {
-      "title": "Depreciation",
-      "description": "Calculates asset depreciation using multiple accounting methods"
+      "title": "Maintenance Records",
+      "description": "Track asset maintenance history"
     },
     {
-      "title": "Audit Logs",
-      "description": "Records all changes and actions for compliance and accountability"
-    },
-    {
-      "title": "Custom Fields",
-      "description": "Adds organization-specific fields to asset records"
-    },
-    {
-      "title": "Email Notifications",
-      "description": "Sends alerts for check-outs, due dates, and low inventory"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the asset manager on your own servers"
     }
   ],
   "platform_support": {

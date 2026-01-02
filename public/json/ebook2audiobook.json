@@ -1,11 +1,11 @@
 {
   "name": "ebook2audiobook",
   "slug": "ebook2audiobook",
-  "tagline": "A utility for converting eBooks into spoken audio using text to speech",
+  "tagline": "A utility for converting ebooks into spoken audio using text-to-speech",
   "subtitle": "",
   "description": "ebook2audiobook is a utility that converts eBooks into spoken audio using text-to-speech engines. It is aimed at users who prefer listening to long texts and automates the process from input files to audio output.",
   "categories": [
-    14
+    42
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,38 @@
   },
   "features": [
     {
-      "title": "Text",
-      "description": "Transform ebooks into spoken audio automatically. Listen instead of reading"
+      "title": "Ebook to Audiobook Conversion",
+      "description": "Converts ebooks into audio format",
+      "core_feature": true
     },
     {
-      "title": "Multiple Formats",
-      "description": "Support for various ebook file types. Universal compatibility"
+      "title": "Text-to-Speech Integration",
+      "description": "Uses TTS engines to generate audio",
+      "core_feature": true
     },
     {
-      "title": "Automated Processing",
-      "description": "Batch convert entire libraries effortlessly. Save hours of manual work"
+      "title": "Multiple Ebook Formats",
+      "description": "Supports common ebook input formats"
     },
     {
-      "title": "Quality Audio",
-      "description": "Natural-sounding voice synthesis. Pleasant listening experience"
+      "title": "Audio Chapter Generation",
+      "description": "Splits output audio by chapters"
     },
     {
-      "title": "Accessibility",
-      "description": "Make written content accessible to everyone. Inclusive reading solution"
+      "title": "CLI Interface",
+      "description": "Runs conversions from the command line"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Process your books privately. Complete control over conversions"
+      "title": "Voice Configuration",
+      "description": "Adjusts voice and speech parameters"
+    },
+    {
+      "title": "Batch Processing",
+      "description": "Converts multiple books in one run"
+    },
+    {
+      "title": "Local Processing",
+      "description": "Performs conversion on local machines"
     }
   ],
   "platform_support": {

@@ -1,7 +1,7 @@
 {
   "name": "adguard-home",
   "slug": "adguard-home",
-  "tagline": "A self-hosted DNS-based service for blocking ads and tracking across all devices",
+  "tagline": "A network-wide DNS service for blocking ads and trackers",
   "subtitle": "",
   "description": "AdGuard Home is a network-wide software for blocking ads and tracking, operating as a DNS server and providing a web-based interface to filter content for all devices on the network. It can be self-hosted and customized for family or enterprise networks.",
   "categories": [
@@ -32,20 +32,26 @@
   },
   "features": [
     {
-      "title": "Web Management",
-      "description": "Intuitive interface for configuring DNS and filtering settings. Control everything from your browser"
+      "title": "Network-Wide Ad Blocking",
+      "description": "Blocks ads and trackers for all devices on a network",
+      "core_feature": true
     },
     {
-      "title": "Custom Filtering",
-      "description": "Create personalized rules and use extensive blocklist libraries. Tailor protection to your needs"
+      "title": "DNS-Based Filtering",
+      "description": "Filters requests at the DNS level before reaching clients",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "View comprehensive statistics and logs of all network queries. Full visibility into traffic"
+      "title": "Parental Controls",
+      "description": "Restricts access to specified domains and content categories"
     },
     {
-      "title": "Data Privacy",
-      "description": "Support for DNS-over-HTTPS, DNS-over-TLS, and DNSCrypt. Enhanced privacy and security"
+      "title": "Encrypted DNS Support",
+      "description": "Supports DNS-over-HTTPS and DNS-over-TLS"
+    },
+    {
+      "title": "Web Management Interface",
+      "description": "Configures and monitors filtering rules through a web UI"
     }
   ],
   "platform_support": {

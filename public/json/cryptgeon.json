@@ -1,11 +1,11 @@
 {
   "name": "cryptgeon",
   "slug": "cryptgeon",
-  "tagline": "A self-hosted service for sharing encrypted messages with expiration",
+  "tagline": "A self-hosted service for sharing encrypted messages with automatic expiration",
   "subtitle": "",
   "description": "Cryptgeon is a self-hosted note sharing service focused on encryption and automatic expiration. Users can create messages or files that auto-delete after being viewed, ideal for private link sharing via a temporary UI.",
   "categories": [
-    117
+    38
   ],
   "metadata": {
     "sponsored": false,
@@ -33,20 +33,30 @@
   },
   "features": [
     {
-      "title": "End-to-End Encryption",
-      "description": "Messages encrypted before leaving your browser. Zero-knowledge security"
+      "title": "Secure Secret Sharing",
+      "description": "Shares secrets with client-side encryption",
+      "core_feature": true
     },
     {
-      "title": "File Sharing",
-      "description": "Share encrypted files with automatic deletion. Secure temporary transfers"
+      "title": "One-Time Links",
+      "description": "Expires secrets after access",
+      "core_feature": true
     },
     {
-      "title": "Data Privacy",
-      "description": "Create and share notes without accounts. Instant privacy"
+      "title": "Password Protection",
+      "description": "Protects secrets with passphrases"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Run your own secure note service. Complete privacy control"
+      "title": "Expiration Control",
+      "description": "Sets time-based expiration"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Shares secrets through browser"
+    },
+    {
+      "title": "Self-Hosted Privacy",
+      "description": "Runs without external services"
     }
   ],
   "platform_support": {

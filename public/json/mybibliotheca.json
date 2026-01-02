@@ -1,7 +1,7 @@
 {
   "name": "mybibliotecha",
   "slug": "mybibliotheca",
-  "tagline": "A self-hosted book collection manager with tagging, metadata editing, and search",
+  "tagline": "A self-hosted manager for organizing and browsing book collections",
   "subtitle": "",
   "description": "MyBibliotheca is a self-hosted book collection manager. It provides tagging, metadata editing, and search features to organize large book libraries with a simple web UI.",
   "categories": [
@@ -32,32 +32,30 @@
   },
   "features": [
     {
-      "title": "Book Cataloging",
-      "description": "Organize personal book collections with detailed metadata, covers, and custom categorization systems"
+      "title": "Book Catalog",
+      "description": "Catalog personal book collections",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Find books quickly using title, author, genre, tags, or custom metadata with powerful filtering options"
+      "title": "Metadata Storage",
+      "description": "Store author and publication details"
+    },
+    {
+      "title": "Reading Status",
+      "description": "Track reading progress"
+    },
+    {
+      "title": "Search",
+      "description": "Find books by title or author",
+      "core_feature": true
     },
     {
       "title": "Web Interface",
-      "description": "Modify book information, add custom tags, and update details through an intuitive web interface"
+      "description": "Manage the library through a browser"
     },
     {
-      "title": "File Upload",
-      "description": "Upload and manage book cover images with automatic resizing and optimization features"
-    },
-    {
-      "title": "Tagging System",
-      "description": "Create custom tags and categories to organize books by genre, reading status, or personal preferences"
-    },
-    {
-      "title": "Data Import",
-      "description": "Bulk import book data from CSV files, ISBN lookups, or other library management systems"
-    },
-    {
-      "title": "Mobile Responsive",
-      "description": "Access your library from any device through a clean, responsive web-based interface"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the catalog on your own infrastructure"
     }
   ],
   "platform_support": {

@@ -1,11 +1,11 @@
 {
   "name": "docker-staticmaps",
   "slug": "docker-staticmaps",
-  "tagline": "A system for serving self-hosted static maps and map tiles",
+  "tagline": "A self-hosted service for serving static maps and map tiles",
   "subtitle": "",
   "description": "Docker Static Maps is a simple system for hosting static maps and tile images for web apps, without relying on external services. Useful for mapping features in web and embedded applications.",
   "categories": [
-    96
+    43
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,34 @@
   },
   "features": [
     {
-      "title": "Static Map Hosting",
-      "description": "Serve map tiles without external dependencies. Complete independence"
+      "title": "Static Map Rendering",
+      "description": "Generates static map images",
+      "core_feature": true
     },
     {
-      "title": "Offline Mode",
-      "description": "Maps work without internet connection. Reliable availability"
+      "title": "Tile Server Integration",
+      "description": "Uses map tile providers",
+      "core_feature": true
     },
     {
-      "title": "Web App Ready",
-      "description": "Perfect for embedding in applications. Easy integration"
+      "title": "HTTP API",
+      "description": "Generates maps via URL requests"
     },
     {
-      "title": "REST API",
-      "description": "Avoid third-party map API costs. Cost-effective solution"
+      "title": "Marker and Path Support",
+      "description": "Draws markers and routes on maps"
     },
     {
-      "title": "Tile Server",
-      "description": "Host your own map tile infrastructure. Full control over maps"
+      "title": "Caching",
+      "description": "Caches generated map images"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Keep map data and requests private. No tracking or limits"
+      "title": "Container Deployment",
+      "description": "Runs as a Docker service"
+    },
+    {
+      "title": "Self-Hosted Mapping",
+      "description": "Operates without external APIs"
     }
   ],
   "platform_support": {

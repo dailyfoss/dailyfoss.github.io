@@ -1,11 +1,11 @@
 {
   "name": "postal",
   "slug": "postal",
-  "tagline": "A self-hosted mail delivery and management platform",
+  "tagline": "A self-hosted mail delivery platform for sending and managing email at scale",
   "subtitle": "",
   "description": "Postal is a self-hosted mail delivery platform designed for sending and managing large volumes of email. It supports SMTP, webhooks, message logging, and domain management with full control over infrastructure.",
   "categories": [
-    53
+    32
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,31 @@
   },
   "features": [
     {
-      "title": "Email Notifications",
-      "description": "Receive real-time notifications for delivery events, bounces, and opens via webhooks"
+      "title": "Email Server",
+      "description": "Send and receive email for hosted domains",
+      "core_feature": true
     },
     {
-      "title": "Message Logging",
-      "description": "Track all sent emails with detailed logs including delivery status and recipient activity"
+      "title": "SMTP and HTTP APIs",
+      "description": "Deliver email using SMTP and HTTP interfaces",
+      "core_feature": true
     },
     {
       "title": "Domain Management",
-      "description": "Configure and manage multiple sending domains with DKIM and SPF authentication"
+      "description": "Configure and manage multiple sending domains",
+      "core_feature": true
     },
     {
-      "title": "Queue Management",
-      "description": "Monitor and control email queues with retry logic and delivery scheduling"
+      "title": "Message Tracking",
+      "description": "View delivery status and message logs"
     },
     {
-      "title": "REST API",
-      "description": "Send emails programmatically using a RESTful API with comprehensive documentation"
+      "title": "User and Credential Management",
+      "description": "Manage users and API credentials"
     },
     {
-      "title": "Ip Pool Management",
-      "description": "Distribute sending across multiple IP addresses to optimize deliverability and reputation"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the mail server on your own infrastructure"
     }
   ],
   "platform_support": {

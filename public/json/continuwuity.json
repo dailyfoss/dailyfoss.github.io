@@ -1,11 +1,11 @@
 {
   "name": "continuwuity",
   "slug": "continuwuity",
-  "tagline": "A self-hosted system for task tracking and engineering work logs",
+  "tagline": "A self-hosted system for tracking tasks and maintaining engineering work logs",
   "subtitle": "",
   "description": "Continuwuity is a self-hosted task tracking and journaling system designed for Software Engineering practices. It supports project organization, time tracking, and streamlines daily work logs.",
   "categories": [
-    165
+    39
   ],
   "metadata": {
     "sponsored": false,
@@ -27,28 +27,26 @@
   },
   "features": [
     {
-      "title": "Task Tracking",
-      "description": "Monitor project progress and individual tasks efficiently. Stay on top of work"
+      "title": "Matrix Homeserver",
+      "description": "Host a Matrix-compatible chat server",
+      "core_feature": true
     },
     {
-      "title": "Work Journaling",
-      "description": "Document daily activities and decisions automatically. Build a knowledge base"
+      "title": "Federated Messaging",
+      "description": "Communicate with other Matrix servers",
+      "core_feature": true
     },
     {
-      "title": "Time Tracking",
-      "description": "Log hours spent on projects and tasks. Accurate billing and reporting"
+      "title": "User Accounts",
+      "description": "Manage users and rooms"
     },
     {
-      "title": "Project Organization",
-      "description": "Structure work by projects and milestones. Clear visibility into progress"
+      "title": "API Compatibility",
+      "description": "Support Matrix client applications"
     },
     {
-      "title": "Engineering Focus",
-      "description": "Built specifically for software development workflows. Speaks your language"
-    },
-    {
-      "title": "Self-Hosted",
-      "description": "Keep your work logs and project data private. Your productivity, your server"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the homeserver on your own infrastructure"
     }
   ],
   "platform_support": {

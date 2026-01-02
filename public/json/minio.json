@@ -1,11 +1,11 @@
 {
   "name": "minio",
   "slug": "minio",
-  "tagline": "A high performance object storage server compatible with S3",
+  "tagline": "A high-performance object storage server compatible with the S3 API",
   "subtitle": "",
   "description": "MinIO is a high-performance, self-hosted object storage solution compatible with the S3 API. It's ideal for cloud-native apps, providing scalable, distributed storage with client libraries and a web UI.",
   "categories": [
-    113
+    25
   ],
   "metadata": {
     "sponsored": false,
@@ -33,36 +33,31 @@
   },
   "features": [
     {
-      "title": "S3 Compatible",
-      "description": "Fully compatible with Amazon S3 API for seamless integration with existing tools"
+      "title": "Object Storage Server",
+      "description": "Store and retrieve objects using an S3-compatible API",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Optimized for speed with multi-threaded operations and efficient data handling"
+      "title": "S3 Compatibility",
+      "description": "Use standard S3 clients and tools",
+      "core_feature": true
     },
     {
-      "title": "Load Balancing",
-      "description": "Scale horizontally across multiple servers for unlimited storage capacity"
+      "title": "Bucket Management",
+      "description": "Create and manage storage buckets"
     },
     {
-      "title": "End-to-End Encryption",
-      "description": "Built-in encryption, access policies, and compliance with security standards"
+      "title": "Access Policies",
+      "description": "Control access using policies",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Run on your own infrastructure with complete data sovereignty"
+      "title": "Web Console",
+      "description": "Manage storage through a browser"
     },
     {
-      "title": "Web Interface",
-      "description": "Modern web interface for managing buckets, objects, and configurations"
-    },
-    {
-      "title": "REST API",
-      "description": "Client libraries for Python, Java, Go, JavaScript, and more"
-    },
-    {
-      "title": "Database Backup",
-      "description": "Advanced data protection with configurable redundancy levels"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the storage service on your own infrastructure"
     }
   ],
   "platform_support": {

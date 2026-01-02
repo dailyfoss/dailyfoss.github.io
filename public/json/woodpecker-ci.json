@@ -1,11 +1,11 @@
 {
   "name": "woodpecker-ci",
   "slug": "woodpecker-ci",
-  "tagline": "A self-hosted continuous integration system",
+  "tagline": "A self-hosted continuous integration system with YAML-based pipelines",
   "subtitle": "",
   "description": "Woodpecker CI is a self-hosted continuous integration system based on pipelines defined in YAML. It integrates with Git repositories, runs builds in containers, and reports results through a lightweight web UI and webhooks.",
   "categories": [
-    110
+    16
   ],
   "metadata": {
     "sponsored": false,
@@ -27,24 +27,26 @@
   },
   "features": [
     {
-      "title": "Pipeline As Code",
-      "description": "Define build pipelines in YAML files stored alongside your source code"
+      "title": "CI/CD Platform",
+      "description": "Run continuous integration pipelines",
+      "core_feature": true
     },
     {
-      "title": "Docker Support",
-      "description": "Execute each pipeline step in isolated Docker containers for consistency"
+      "title": "Pipeline Configuration",
+      "description": "Define pipelines using YAML",
+      "core_feature": true
     },
     {
-      "title": "Secret Management",
-      "description": "Store sensitive credentials securely and inject them into builds as needed"
+      "title": "Git Integration",
+      "description": "Trigger builds from repositories"
     },
     {
-      "title": "Email Notifications",
-      "description": "Extend functionality with community plugins for deployments, notifications, and testing"
+      "title": "Distributed Runners",
+      "description": "Run jobs on multiple workers"
     },
     {
-      "title": "Webhook Support",
-      "description": "Start builds automatically on push, pull request, or tag events from your repository"
+      "title": "Self-Hosted Deployment",
+      "description": "Run CI on your own infrastructure"
     }
   ],
   "platform_support": {

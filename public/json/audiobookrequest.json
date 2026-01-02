@@ -1,7 +1,7 @@
 {
   "name": "audiobookrequest",
   "slug": "audiobookrequest",
-  "tagline": "A request management system for handling audiobook additions to media libraries",
+  "tagline": "A request management system for adding audiobooks to media libraries",
   "subtitle": "",
   "description": "AudioBookRequest is a self-hosted system to manage audiobook requests for media servers. It allows users to request titles and admins to track library additions for services like Jellyfin.",
   "categories": [
@@ -33,28 +33,22 @@
   },
   "features": [
     {
-      "title": "Request Management",
-      "description": "Users can request audiobooks for your library. Community-driven"
+      "title": "Audiobook Request System",
+      "description": "Submit audiobook requests to administrators",
+      "core_feature": true
     },
     {
-      "title": "Media Library",
-      "description": "Works with Jellyfin and similar platforms. Seamless integration"
+      "title": "Request Tracking",
+      "description": "View status of submitted requests",
+      "core_feature": true
     },
     {
-      "title": "User Interface",
-      "description": "Simple request submission for library users. Easy participation"
+      "title": "User Submissions",
+      "description": "Submit requests through a web form"
     },
     {
-      "title": "Library Management",
-      "description": "Track additions to your audiobook collection. Complete catalog"
-    },
-    {
-      "title": "Self-Hosted",
-      "description": "Run your own request system. Complete control"
-    },
-    {
-      "title": "Email Notifications",
-      "description": "Alert users when requests are fulfilled. Keep users informed"
+      "title": "Admin Review",
+      "description": "Approve or reject audiobook requests"
     }
   ],
   "platform_support": {

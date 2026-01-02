@@ -1,11 +1,11 @@
 {
   "name": "teslamate",
   "slug": "teslamate",
-  "tagline": "A data logger and analytics platform for Tesla vehicles",
+  "tagline": "A self-hosted data logger and analytics platform for Tesla vehicles",
   "subtitle": "",
   "description": "TeslaMate is a self-hosted data logger and visualization platform for Tesla vehicles. It records drives, charges, and states via the Tesla API and exposes dashboards and statistics through Grafana and its own web interface.",
   "categories": [
-    175
+    9
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,26 @@
   },
   "features": [
     {
-      "title": "Drive Logging",
-      "description": "Automatically record all drives with route, distance, duration, and energy consumption data"
+      "title": "Vehicle Data Logging",
+      "description": "Track Tesla vehicle data over time",
+      "core_feature": true
     },
     {
-      "title": "Charge Tracking",
-      "description": "Monitor charging sessions including location, duration, energy added, and cost calculations"
+      "title": "Trip History",
+      "description": "Record driving trips automatically",
+      "core_feature": true
     },
     {
-      "title": "State Monitoring",
-      "description": "Track vehicle state changes including sleep, idle, driving, and charging with timeline views"
+      "title": "Charging Statistics",
+      "description": "Track charging sessions and efficiency"
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Visualize data through rich Grafana dashboards with customizable charts and metrics"
+      "title": "Maps and Visualization",
+      "description": "View trips and locations on maps"
     },
     {
-      "title": "High Performance",
-      "description": "Analyze driving efficiency, energy consumption, and regenerative braking performance over time"
-    },
-    {
-      "title": "Cost Tracking",
-      "description": "Calculate charging costs and compare home vs. supercharger expenses for budget management"
-    },
-    {
-      "title": "Geofencing",
-      "description": "Define locations like home or work to automatically categorize trips and charging sessions"
-    },
-    {
-      "title": "Battery Degradation",
-      "description": "Track battery health and capacity over time to monitor long-term vehicle condition"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the tracker on your own infrastructure"
     }
   ],
   "platform_support": {

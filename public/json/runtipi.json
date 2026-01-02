@@ -1,11 +1,11 @@
 {
   "name": "runtipi",
   "slug": "runtipi",
-  "tagline": "A self-hosted app manager for homelab environments",
+  "tagline": "A self-hosted app manager for deploying and managing homelab services",
   "subtitle": "",
   "description": "Runtipi is a self-hosted app manager designed for homelabs. It allows users to deploy lightweight services with single commands and manage updates through a web UI.",
   "categories": [
-    146
+    28
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,22 @@
   },
   "features": [
     {
-      "title": "Self-Hosted",
-      "description": "Install popular self-hosted apps with a single command"
+      "title": "App Management",
+      "description": "Install and manage self-hosted apps",
+      "core_feature": true
     },
     {
-      "title": "Update Management",
-      "description": "Keep installed apps up to date with automatic or manual updates"
+      "title": "App Catalog",
+      "description": "Browse available applications",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Manage all your apps through a centralized browser interface"
+      "title": "Environment Management",
+      "description": "Configure app environments"
     },
     {
-      "title": "Docker Support",
-      "description": "Run apps in isolated containers for security and easy management"
-    },
-    {
-      "title": "Database Backup",
-      "description": "Create and restore backups of app data and configurations"
+      "title": "Web Interface",
+      "description": "Manage apps through a browser"
     }
   ],
   "platform_support": {

@@ -1,11 +1,11 @@
 {
   "name": "logforge",
   "slug": "logforge",
-  "tagline": "A lightweight self-hosted log management service",
+  "tagline": "A lightweight self-hosted log management service with real-time querying",
   "subtitle": "",
   "description": "LogForge is a lightweight and fast self-hosted log management service that provides real-time monitoring and querying of application logs through a modern web UI. It integrates easily with Docker and cloud-native environments.",
   "categories": [
-    93
+    35
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "Lightweight",
-      "description": "Real-time monitoring, Query logs, Modern web UI. Lightweight log aggregation"
+      "title": "Log Management",
+      "description": "Centralize logs from various services",
+      "core_feature": true
     },
     {
-      "title": "Docker Support",
-      "description": "Container logs, Easy setup, Cloud-native. Perfect for containerized apps"
+      "title": "Search and Filtering",
+      "description": "Find log entries using search and filters",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Efficient storage, Quick queries, Low overhead. Handle logs without slowdown"
+      "title": "Alerting",
+      "description": "Trigger alerts based on log patterns",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Privacy-focused, Custom deployment, Full control. Own your log data"
+      "title": "Dashboard Views",
+      "description": "Visualize logs in dashboards"
     },
     {
-      "title": "Email Notifications",
-      "description": "Custom alerts, Notification channels, Threshold monitoring. Stay informed of issues"
+      "title": "Multi-Tenant Support",
+      "description": "Separate log data for multiple users"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Deploy the log platform on your own servers"
     }
   ],
   "platform_support": {

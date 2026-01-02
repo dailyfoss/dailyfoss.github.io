@@ -1,11 +1,11 @@
 {
   "name": "watchstate",
   "slug": "watchstate",
-  "tagline": "A tracker for TV and movie watch progress",
+  "tagline": "A TV and movie watch history tracker with progress tracking",
   "subtitle": "",
   "description": "Watchstate is a self-hosted TV and movie tracking service that stores watch history and progress, giving an overview of what you’ve seen and what is next.",
   "categories": [
-    175
+    34
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "Real-Time Sync",
-      "description": "Synchronize watch progress across multiple media servers including Plex, Jellyfin, and Emby"
+      "title": "Viewing Progress Tracking",
+      "description": "Track watched progress for media",
+      "core_feature": true
     },
     {
-      "title": "Multi",
-      "description": "Connect and sync watch states between different media server instances seamlessly"
+      "title": "Media Integration",
+      "description": "Integrate with supported media platforms",
+      "core_feature": true
     },
     {
-      "title": "Episode Tracking",
-      "description": "Automatically track which episodes you've watched and resume from where you left off"
+      "title": "Status Management",
+      "description": "Mark content as watching or completed",
+      "core_feature": true
     },
     {
-      "title": "Conflict Resolution",
-      "description": "Handle watch state conflicts intelligently when the same content is watched on different servers"
+      "title": "History",
+      "description": "View viewing history"
     },
     {
-      "title": "Manual Adjustments",
-      "description": "Override automatic tracking with manual episode marking for complete control"
+      "title": "Web Interface",
+      "description": "Manage progress in a browser"
     },
     {
-      "title": "Metadata Matching",
-      "description": "Accurately match content across servers using TMDB, TVDB, or IMDB identifiers"
-    },
-    {
-      "title": "Scheduled Sync",
-      "description": "Configure automatic synchronization intervals to keep watch states current without manual intervention"
-    },
-    {
-      "title": "Webhook Support",
-      "description": "Trigger syncs automatically when content is played using webhooks from media servers"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the tracker on your own servers"
     }
   ],
   "platform_support": {

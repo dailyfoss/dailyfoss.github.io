@@ -1,11 +1,11 @@
 {
   "name": "zot-registry",
   "slug": "zot",
-  "tagline": "A self-hosted OCI image registry focused on simplicity, security, and cloud-native workflows",
+  "tagline": "A self-hosted OCI image registry with security, replication, and web UI",
   "subtitle": "",
   "description": "zot is a self-hosted OCI image registry focused on simplicity, security, and cloud-native workflows. It supports replication, access control, and a minimal web UI and APIs for managing container images.",
   "categories": [
-    32
+    27
   ],
   "metadata": {
     "sponsored": false,
@@ -27,20 +27,31 @@
   },
   "features": [
     {
-      "title": "Real-Time Sync",
-      "description": "Synchronize images between registries for disaster recovery and geographic distribution"
+      "title": "Container Registry",
+      "description": "Host and distribute container images",
+      "core_feature": true
+    },
+    {
+      "title": "OCI Compliance",
+      "description": "Support OCI image specifications",
+      "core_feature": true
+    },
+    {
+      "title": "Repository Management",
+      "description": "Manage image repositories",
+      "core_feature": true
     },
     {
       "title": "Access Control",
-      "description": "Define granular permissions for repositories with support for authentication and authorization"
+      "description": "Control access to repositories"
     },
     {
-      "title": "Web Interface",
-      "description": "Browse repositories, tags, and image details through a minimal web UI for quick inspection"
+      "title": "Artifact Signing",
+      "description": "Support signed artifacts"
     },
     {
-      "title": "REST API",
-      "description": "Work with Docker CLI, Podman, and other OCI-compliant tools without modifications"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the registry on your own servers"
     }
   ],
   "platform_support": {

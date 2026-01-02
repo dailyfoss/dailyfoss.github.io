@@ -1,11 +1,11 @@
 {
   "name": "xpipe",
   "slug": "xpipe",
-  "tagline": "A unified interface for managing remote connections",
+  "tagline": "A centralized tool for managing SSH, containers, and remote dev environments",
   "subtitle": "",
   "description": "xpipe is a self-hosted tool and GUI for managing remote connections and development environments. It centralizes SSH, containers, and tunneling, giving developers a consistent interface across projects and machines.",
   "categories": [
-    135
+    26
   ],
   "metadata": {
     "sponsored": false,
@@ -27,24 +27,31 @@
   },
   "features": [
     {
-      "title": "Docker Support",
-      "description": "Store and organize SSH, Docker, Kubernetes, and other remote connections in a unified interface"
+      "title": "Remote Connection Manager",
+      "description": "Manage remote server connections",
+      "core_feature": true
     },
     {
-      "title": "File Browser",
-      "description": "Navigate remote filesystems with a graphical file manager that supports drag-and-drop transfers"
+      "title": "Protocol Support",
+      "description": "Connect using SSH and other protocols",
+      "core_feature": true
     },
     {
-      "title": "Tunnel Management",
-      "description": "Create and manage SSH tunnels and port forwards through an intuitive visual interface"
+      "title": "Credential Management",
+      "description": "Manage connection credentials",
+      "core_feature": true
     },
     {
-      "title": "End-to-End Encryption",
-      "description": "Securely store passwords, SSH keys, and certificates with encrypted local storage"
+      "title": "Local Client",
+      "description": "Use a local desktop client"
     },
     {
-      "title": "Data Export",
-      "description": "Export and import connection profiles to share configurations across teams or devices"
+      "title": "Session Management",
+      "description": "Manage active connections"
+    },
+    {
+      "title": "Local Execution",
+      "description": "Run the client locally"
     }
   ],
   "platform_support": {

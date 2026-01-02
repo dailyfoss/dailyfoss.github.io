@@ -1,11 +1,11 @@
 {
   "name": "mathesar",
   "slug": "mathesar",
-  "tagline": "A web based interface for managing and visualizing PostgreSQL data",
+  "tagline": "A web-based interface for exploring and managing PostgreSQL databases",
   "subtitle": "",
   "description": "Mathesar is a web-based data management and visualization tool built on PostgreSQL. It lets users explore, edit, and collaborate on database tables without technical expertise, ideal for small organizations.",
   "categories": [
-    133
+    29
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,32 @@
   },
   "features": [
     {
-      "title": "Visual Database Interface",
-      "description": "Browse and edit PostgreSQL tables through an intuitive spreadsheet-like UI"
+      "title": "Database Interface",
+      "description": "Interact with databases through a web interface",
+      "core_feature": true
     },
     {
-      "title": "No",
-      "description": "Build complex database queries using visual filters and joins without writing SQL"
+      "title": "Table Management",
+      "description": "View and edit database tables",
+      "core_feature": true
     },
     {
-      "title": "Data Types",
-      "description": "Support for all PostgreSQL data types with appropriate input controls and validation"
+      "title": "Query Builder",
+      "description": "Build queries without writing SQL",
+      "core_feature": true
     },
     {
-      "title": "Relationship Mapping",
-      "description": "Visualize and navigate foreign key relationships between tables"
+      "title": "Data Editing",
+      "description": "Edit records directly in the interface",
+      "core_feature": true
     },
     {
-      "title": "Collaborative Editing",
-      "description": "Multiple users can view and edit data simultaneously with conflict resolution"
+      "title": "Role-Based Access",
+      "description": "Control access to databases and tables"
     },
     {
-      "title": "Data Export",
-      "description": "Load data from CSV, Excel, or JSON files and export in various formats"
-    },
-    {
-      "title": "Custom Views",
-      "description": "Create saved views with specific filters, sorts, and column selections"
-    },
-    {
-      "title": "Data Validation",
-      "description": "Set constraints and validation rules to maintain data quality and integrity"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the interface on your own infrastructure"
     }
   ],
   "platform_support": {

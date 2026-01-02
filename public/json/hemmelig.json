@@ -1,11 +1,11 @@
 {
   "name": "hemmelig",
   "slug": "hemmelig",
-  "tagline": "A self-hosted service for sharing encrypted secrets that expire automatically",
+  "tagline": "A self-hosted service for sharing encrypted secrets with expiration",
   "subtitle": "",
   "description": "Hemmelig is a self hosted secret sharing application for sending encrypted notes that expire after viewing or a set time. It is useful for delivering passwords or confidential messages without leaving data on third party services.",
   "categories": [
-    117
+    38
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "End-to-End Encryption",
-      "description": "Share secrets with end-to-end encryption for maximum security"
+      "title": "Secret Sharing",
+      "description": "Share sensitive text using one-time access links",
+      "core_feature": true
+    },
+    {
+      "title": "Automatic Expiration",
+      "description": "Remove secrets after being viewed or expired",
+      "core_feature": true
     },
     {
       "title": "Password Protection",
-      "description": "Add an additional password layer for extra security on sensitive secrets"
+      "description": "Protect shared secrets with an optional password",
+      "core_feature": true
     },
     {
-      "title": "Burn After Reading",
-      "description": "Secrets are automatically deleted after the first view"
+      "title": "Web-Based Interface",
+      "description": "Create and access secrets through a browser"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Keep sensitive data on your own infrastructure without third-party access"
+      "title": "Minimal Data Retention",
+      "description": "Avoid long-term storage of shared content"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the secret sharing service on your own servers"
     }
   ],
   "platform_support": {

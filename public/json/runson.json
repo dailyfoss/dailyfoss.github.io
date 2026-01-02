@@ -1,11 +1,11 @@
 {
   "name": "runson",
   "slug": "runson",
-  "tagline": "A self-hosted runner platform for GitHub Actions",
+  "tagline": "A self-hosted platform for running GitHub Actions runners on your own infrastructure",
   "subtitle": "",
   "description": "Runs On is a self-hosted platform for running GitHub Actions runners on your own infrastructure, allowing full control over CI environments and secrets.",
   "categories": [
-    165
+    26
   ],
   "metadata": {
     "sponsored": false,
@@ -33,36 +33,31 @@
   },
   "features": [
     {
-      "title": "Self-Hosted",
-      "description": "Run GitHub Actions workflows on your own infrastructure"
+      "title": "Task Automation",
+      "description": "Automate recurring command execution",
+      "core_feature": true
     },
     {
-      "title": "Cost Control",
-      "description": "Avoid GitHub-hosted runner costs by using your own hardware"
+      "title": "Scheduling",
+      "description": "Schedule tasks using defined intervals",
+      "core_feature": true
     },
     {
-      "title": "Custom Environments",
-      "description": "Configure runners with specific tools, dependencies, or configurations"
+      "title": "Configuration Files",
+      "description": "Define tasks using configuration files",
+      "core_feature": true
     },
     {
-      "title": "Secrets Management",
-      "description": "Keep sensitive credentials on your infrastructure instead of GitHub"
+      "title": "Logging",
+      "description": "Record task execution results"
     },
     {
-      "title": "Scalable Architecture",
-      "description": "Add or remove runner capacity based on workflow demands"
+      "title": "Manual Execution",
+      "description": "Run tasks on demand"
     },
     {
-      "title": "Multiple Repositories",
-      "description": "Share runners across multiple GitHub repositories or organizations"
-    },
-    {
-      "title": "Workflow Isolation",
-      "description": "Run jobs in isolated environments for security and consistency"
-    },
-    {
-      "title": "Resource Monitoring",
-      "description": "Track CPU, memory, and disk usage across runner instances"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the automation service on your own servers"
     }
   ],
   "platform_support": {

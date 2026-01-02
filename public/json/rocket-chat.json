@@ -1,11 +1,11 @@
 {
   "name": "rocket-chat",
   "slug": "rocket-chat",
-  "tagline": "A self-hosted team chat platform with integrations",
+  "tagline": "A self-hosted team messaging platform with channels, calls, and integrations",
   "subtitle": "",
   "description": "Rocket.Chat is a self-hosted team chat platform with channels, direct messages, video calls, and third-party integrations. It supports federation, plugins, and mobile apps.",
   "categories": [
-    102
+    6
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,26 @@
   },
   "features": [
     {
-      "title": "Team Collaboration",
-      "description": "Communicate with colleagues through channels and direct messages"
+      "title": "Team Messaging",
+      "description": "Communicate in channels and private messages",
+      "core_feature": true
     },
     {
-      "title": "Video Conferencing",
-      "description": "Start audio and video calls directly from chat conversations"
+      "title": "File Sharing",
+      "description": "Share files within conversations",
+      "core_feature": true
     },
     {
-      "title": "File Upload",
-      "description": "Upload and share documents, images, and files within conversations"
+      "title": "User Roles",
+      "description": "Manage permissions and roles"
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Access chat from iOS and Android devices with native applications"
+      "title": "Integrations",
+      "description": "Connect external tools and services"
     },
     {
-      "title": "REST API",
-      "description": "Build automated workflows and chatbots using the API"
+      "title": "Web and Mobile Clients",
+      "description": "Access chats across platforms"
     }
   ],
   "platform_support": {

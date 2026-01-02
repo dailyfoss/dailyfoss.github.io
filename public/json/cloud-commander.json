@@ -1,11 +1,11 @@
 {
   "name": "cloud-commander",
   "slug": "cloud-commander",
-  "tagline": "A browser-based file manager with editor and terminal access",
+  "tagline": "A browser-based file manager with built-in editor and terminal access",
   "subtitle": "",
   "description": "CloudCMD is a file manager for browsers with a built-in text editor and terminal, providing easy access to local or remote files via SSH. It’s self-hostable and great for managing servers and development environments.",
   "categories": [
-    60
+    42
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,34 @@
   },
   "features": [
     {
-      "title": "Browser File Manager",
-      "description": "Manage files through web browser. No desktop needed"
+      "title": "Web File Manager",
+      "description": "Manages server files through a browser",
+      "core_feature": true
     },
     {
-      "title": "Rich Text Editor",
-      "description": "Text editor for code and configuration files. Edit anywhere"
+      "title": "File Operations",
+      "description": "Uploads downloads and edits files",
+      "core_feature": true
     },
     {
-      "title": "Server Management",
-      "description": "Perfect for managing servers and development environments. Admin tool"
+      "title": "Command Execution",
+      "description": "Runs shell commands remotely"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Run your own file manager. Complete privacy"
+      "title": "Built-In Editor",
+      "description": "Edits files directly in browser"
+    },
+    {
+      "title": "User Authentication",
+      "description": "Restricts access to file system"
+    },
+    {
+      "title": "Cross-Platform Support",
+      "description": "Works on multiple operating systems"
+    },
+    {
+      "title": "Self-Hosted Usage",
+      "description": "Runs on user-managed servers"
     }
   ],
   "platform_support": {

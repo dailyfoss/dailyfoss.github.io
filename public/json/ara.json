@@ -1,11 +1,11 @@
 {
   "name": "ara-records-ansible",
   "slug": "ara",
-  "tagline": "A reporting system that records and visualizes Ansible playbook execution results",
+  "tagline": "A reporting and visualization system for Ansible playbook executions",
   "subtitle": "",
   "description": "ARA Records Ansible is a reporting and visualization tool that records Ansible playbooks’ results and displays them on a dashboard or API for easier analysis and tracking.",
   "categories": [
-    114
+    35
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,26 @@
   },
   "features": [
     {
-      "title": "Ansible Reporting",
-      "description": "Record and visualize Ansible playbook execution results. Track automation history"
+      "title": "Ansible Run Reports",
+      "description": "Store and visualize Ansible playbook executions",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Web-based interface for browsing playbook runs and tasks. Easy analysis"
+      "title": "Execution History",
+      "description": "Browse historical Ansible runs",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Query playbook data programmatically for custom integrations. Flexible reporting"
+      "title": "Task Inspection",
+      "description": "View task status, duration, and results"
     },
     {
-      "title": "Detailed Logs",
-      "description": "Capture complete execution details for troubleshooting. Never lose context"
+      "title": "Web Dashboard",
+      "description": "Explore reports in a browser"
     },
     {
-      "title": "Search and Filter",
-      "description": "Quickly find specific playbook runs or task results. Efficient navigation"
-    },
-    {
-      "title": "Self-Hosted",
-      "description": "Keep your automation data on your own infrastructure. Complete privacy"
+      "title": "API Access",
+      "description": "Query execution data programmatically"
     }
   ],
   "platform_support": {

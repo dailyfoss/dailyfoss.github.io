@@ -1,11 +1,11 @@
 {
   "name": "logto",
   "slug": "logto",
-  "tagline": "An identity platform for authentication and user management",
+  "tagline": "A modern identity and user management platform with SSO support",
   "subtitle": "",
   "description": "Logto is an identity and user management platform tailored for modern apps. It provides authentication, authorization, SSO, and built-in UI components while supporting self-hosting as well as cloud deployments.",
   "categories": [
-    79
+    15
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,31 @@
   },
   "features": [
     {
-      "title": "Authentication",
-      "description": "OAuth 2.0, OIDC support, Social login providers. Secure user authentication for modern apps"
+      "title": "Authentication Platform",
+      "description": "Provide authentication services for applications",
+      "core_feature": true
+    },
+    {
+      "title": "OAuth and OpenID",
+      "description": "Support standard authentication protocols",
+      "core_feature": true
     },
     {
       "title": "User Management",
-      "description": "User profiles, Role-based access, Permission control. Manage identities centrally"
+      "description": "Manage user accounts and profiles",
+      "core_feature": true
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Pre-built login pages, Customizable themes, Mobile-responsive. Ready-to-use authentication UI"
+      "title": "Session Control",
+      "description": "Handle login sessions and tokens"
     },
     {
-      "title": "REST API",
-      "description": "RESTful APIs, SDKs for popular frameworks, Webhook support. Integrate authentication programmatically"
+      "title": "API Integration",
+      "description": "Integrate authentication into external services"
     },
     {
-      "title": "Security",
-      "description": "MFA support, Password policies, Audit logs. Enterprise-grade security features"
-    },
-    {
-      "title": "Self-Hosted",
-      "description": "Full data control, Privacy-focused, Custom deployment. Own your identity infrastructure"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the authentication platform on your own infrastructure"
     }
   ],
   "platform_support": {

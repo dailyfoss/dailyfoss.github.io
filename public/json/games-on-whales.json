@@ -1,11 +1,11 @@
 {
   "name": "games-on-whales",
   "slug": "games-on-whales",
-  "tagline": "A framework that orchestrates containerized Windows gaming environments on Linux",
+  "tagline": "A framework for orchestrating containerized Windows gaming environments on Linux",
   "subtitle": "",
   "description": "WOLF (Whales On Linux Framework) orchestrates Docker containers that simulate Windows gaming environments for Linux. It helps automate game installations via Wine or Proton in self-contained sandboxed setups.",
   "categories": [
-    69
+    27
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,40 @@
   },
   "features": [
     {
-      "title": "Docker Support",
-      "description": "Automate Docker-based Windows gaming environments with Wine or Proton integration for seamless Linux gameplay"
+      "title": "Cloud Gaming Server",
+      "description": "Streams games from a host machine to remote clients",
+      "core_feature": true
     },
     {
-      "title": "Linux Gaming Framework",
-      "description": "Run Windows games natively on Linux through containerized environments with minimal configuration"
+      "title": "GPU Acceleration",
+      "description": "Uses available GPUs for game rendering and streaming",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Enable remote streaming of Windows games from Linux hosts with low-latency performance"
+      "title": "Container-Based Deployment",
+      "description": "Runs game sessions in isolated containers",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Deploy your own game streaming infrastructure without relying on cloud services"
+      "title": "Input Forwarding",
+      "description": "Forwards keyboard mouse and controller input to games",
+      "core_feature": true
+    },
+    {
+      "title": "Multi-User Sessions",
+      "description": "Supports multiple concurrent players"
+    },
+    {
+      "title": "Audio and Video Streaming",
+      "description": "Streams game audio and video to clients"
+    },
+    {
+      "title": "Linux Host Support",
+      "description": "Runs on Linux-based servers"
+    },
+    {
+      "title": "Self-Hosted Game Streaming",
+      "description": "Host game streaming on your own servers"
     }
   ],
   "platform_support": {

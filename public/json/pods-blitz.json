@@ -1,11 +1,11 @@
 {
   "name": "pods-blitz",
   "slug": "pods-blitz",
-  "tagline": "A self-hosted podcatcher with a simple web interface",
+  "tagline": "A self-hosted podcast client for downloading and managing episodes",
   "subtitle": "",
   "description": "Pods-Blitz is a self-hosted podcatcher that supports RSS feed parsing, episode downloads, and media playback management. It includes a simple web UI for listening and browsing.",
   "categories": [
-    123
+    34
   ],
   "metadata": {
     "sponsored": false,
@@ -27,24 +27,31 @@
   },
   "features": [
     {
-      "title": "Rss Feed Parsing",
-      "description": "Subscribe to podcast feeds and automatically fetch new episodes"
+      "title": "Podcast Aggregation",
+      "description": "Aggregate podcasts from multiple feeds",
+      "core_feature": true
     },
     {
-      "title": "Offline Mode",
-      "description": "Download podcast episodes for offline listening and archival"
+      "title": "Web Player",
+      "description": "Play podcast episodes in a browser",
+      "core_feature": true
     },
     {
-      "title": "Subscription Management",
-      "description": "Organize and manage podcast subscriptions in one place"
+      "title": "Feed Discovery",
+      "description": "Discover new podcasts",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Find podcasts and episodes by title, description, or keywords"
+      "title": "Episode Management",
+      "description": "Browse and organize episodes"
     },
     {
-      "title": "Episode Filtering",
-      "description": "Filter episodes by date, duration, or played status"
+      "title": "Search",
+      "description": "Search podcasts and episodes"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the podcast service on your own infrastructure"
     }
   ],
   "platform_support": {

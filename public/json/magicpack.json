@@ -1,11 +1,11 @@
 {
   "name": "magicpack",
   "slug": "magicpack",
-  "tagline": "A minimal web tool for organizing image and asset packs",
+  "tagline": "A lightweight web tool for organizing image and asset packs",
   "subtitle": "",
   "description": "Magicpack is a simple tool for managing image or asset packs through a minimal web interface. It helps developers and designers group and organize graphic resources with easy upload and search.",
   "categories": [
-    165
+    33
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,31 @@
   },
   "features": [
     {
-      "title": "File Upload",
-      "description": "Upload multiple files simultaneously to speed up asset library creation"
+      "title": "File Packaging",
+      "description": "Bundle files into downloadable packages",
+      "core_feature": true
     },
     {
-      "title": "Tagging System",
-      "description": "Apply custom tags to assets for quick filtering and categorization"
+      "title": "Web Upload",
+      "description": "Upload files through a web interface",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Find specific assets using filename, tag, or metadata search"
+      "title": "Download Links",
+      "description": "Generate links for packaged files",
+      "core_feature": true
     },
     {
-      "title": "Data Export",
-      "description": "Export individual files or entire collections as compressed archives"
+      "title": "Expiration Settings",
+      "description": "Set limits on package availability"
     },
     {
       "title": "Access Control",
-      "description": "Set permissions to control who can view, upload, or modify asset packs"
+      "description": "Restrict access to generated packages"
     },
     {
-      "title": "Metadata Editing",
-      "description": "Add descriptions, keywords, and custom fields to assets for better organization"
+      "title": "Self-Hosted Service",
+      "description": "Run the service on your own servers"
     }
   ],
   "platform_support": {

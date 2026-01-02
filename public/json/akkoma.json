@@ -1,7 +1,7 @@
 {
   "name": "akkoma",
   "slug": "akkoma",
-  "tagline": "A self-hosted federated social server for microblogging using ActivityPub",
+  "tagline": "A federated microblogging server built on the ActivityPub protocol",
   "subtitle": "",
   "description": "Akkoma is a lightweight fork of the Pleroma social networking server, built on ActivityPub for federated microblogging. It offers lower resource usage, customization, federation, and is ideal for self-hosting private or public social communities.",
   "categories": [
@@ -27,20 +27,27 @@
   },
   "features": [
     {
-      "title": "Lightweight",
-      "description": "Lower resource usage than alternatives, runs on modest hardware. Efficient and fast"
+      "title": "Federated Social Networking",
+      "description": "Enables social interactions across federated servers using ActivityPub",
+      "core_feature": true
     },
     {
-      "title": "Data Privacy",
-      "description": "Self-host for complete control over your social data. No corporate surveillance"
+      "title": "Microblogging",
+      "description": "Supports short-form posts with replies and media",
+      "core_feature": true
     },
     {
-      "title": "Media Library",
-      "description": "Support for images, videos, polls, and custom emoji. Express yourself fully"
+      "title": "Federation Compatibility",
+      "description": "Interoperates with other ActivityPub platforms",
+      "core_feature": true
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Works seamlessly with various mobile apps and clients. Post from anywhere"
+      "title": "Moderation Tools",
+      "description": "Provides controls for content and user management"
+    },
+    {
+      "title": "Custom Timelines",
+      "description": "Displays local, federated, and personal feeds"
     }
   ],
   "platform_support": {

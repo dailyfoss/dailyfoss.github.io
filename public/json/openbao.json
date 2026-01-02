@@ -1,11 +1,11 @@
 {
   "name": "openbao",
   "slug": "openbao",
-  "tagline": "A community driven secrets management platform",
+  "tagline": "A community-driven secrets management platform forked from Vault",
   "subtitle": "",
   "description": "OpenBao is a community-driven fork of HashiCorp Vault designed for secure secret management. It supports encryption, key management, access control, and API-driven workflows in self-hosted environments.",
   "categories": [
-    117
+    38
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,30 @@
   },
   "features": [
     {
-      "title": "REST API",
-      "description": "Store and manage sensitive data like passwords, API keys, and certificates with encryption at rest"
+      "title": "Business Process Automation",
+      "description": "Define and run automated business workflows",
+      "core_feature": true
     },
     {
-      "title": "Access Control",
-      "description": "Implement fine-grained policies and role-based access control for secure secret distribution"
+      "title": "Task Scheduling",
+      "description": "Schedule recurring tasks and jobs",
+      "core_feature": true
     },
     {
-      "title": "End-to-End Encryption",
-      "description": "Provide encryption-as-a-service for applications without exposing encryption keys to clients"
+      "title": "Rule Engine",
+      "description": "Apply business logic using configurable rules"
     },
     {
-      "title": "Authentication Methods",
-      "description": "Support multiple authentication backends including LDAP, OAuth, and certificate-based auth"
+      "title": "API Access",
+      "description": "Integrate with external systems"
     },
     {
-      "title": "Audit Logging",
-      "description": "Maintain detailed logs of all secret access and operations for compliance and security monitoring"
+      "title": "Monitoring",
+      "description": "Track job execution and statuses"
     },
     {
-      "title": "Api Integration",
-      "description": "Access all functionality through comprehensive REST APIs for automation and application integration"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the automation platform on your own servers"
     }
   ],
   "platform_support": {

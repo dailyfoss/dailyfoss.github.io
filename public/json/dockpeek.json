@@ -1,11 +1,11 @@
 {
   "name": "dockpeek",
   "slug": "dockpeek",
-  "tagline": "A command-line utility for inspecting Docker container metadata safely",
+  "tagline": "A command-line utility for inspecting Docker container metadata",
   "subtitle": "",
   "description": "Dockpeek is a simple command-line utility to inspect Docker container states and metadata without full Docker access. It helps users view container status, layers, and configurations quickly and securely.",
   "categories": [
-    47
+    27
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,34 @@
   },
   "features": [
     {
-      "title": "High Performance",
-      "description": "View container states and metadata quickly. Fast insights"
+      "title": "Docker Overview Dashboard",
+      "description": "Provides a summary view of Docker resources",
+      "core_feature": true
     },
     {
-      "title": "Docker Support",
-      "description": "Inspect without full Docker permissions. Secure viewing"
+      "title": "Container and Image Listing",
+      "description": "Lists containers images and volumes",
+      "core_feature": true
     },
     {
-      "title": "Layer Analysis",
-      "description": "Examine container layers and configurations. Deep visibility"
+      "title": "Status Indicators",
+      "description": "Shows running and stopped states"
     },
     {
-      "title": "REST API",
-      "description": "Check container health rapidly. Instant information"
+      "title": "Web Interface",
+      "description": "Displays data through a browser"
     },
     {
-      "title": "Secure Tool",
-      "description": "Minimal permissions required for inspection. Safe operations"
+      "title": "Lightweight Design",
+      "description": "Focuses on fast load times"
     },
     {
-      "title": "Cli Utility",
-      "description": "Simple command-line interface. Efficient workflow"
+      "title": "Read-Only Access",
+      "description": "Avoids modifying Docker state"
+    },
+    {
+      "title": "Container Deployment",
+      "description": "Runs as a Docker container"
     }
   ],
   "platform_support": {

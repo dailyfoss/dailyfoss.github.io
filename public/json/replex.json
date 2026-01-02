@@ -1,11 +1,11 @@
 {
   "name": "replex",
   "slug": "replex",
-  "tagline": "A tool for replicating Plex libraries between servers",
+  "tagline": "A tool for syncing and replicating Plex libraries across servers",
   "subtitle": "",
   "description": "Replex is a self-hosted tool for replicating Plex libraries between servers or users for sharing media collections and metadata while maintaining organization.",
   "categories": [
-    166
+    1
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,22 @@
   },
   "features": [
     {
-      "title": "Library Replication",
-      "description": "Copy entire Plex libraries between servers while preserving metadata and organization"
+      "title": "Reverse Proxy",
+      "description": "Route HTTP traffic to backend services",
+      "core_feature": true
     },
     {
-      "title": "Real-Time Sync",
-      "description": "Transfer posters, descriptions, ratings, and custom fields across Plex instances"
+      "title": "Service Configuration",
+      "description": "Configure routes and hosts",
+      "core_feature": true
     },
     {
-      "title": "Media Library",
-      "description": "Share your media collection with other Plex users without duplicating files"
+      "title": "TLS Support",
+      "description": "Serve traffic over HTTPS"
     },
     {
-      "title": "Selective Sync",
-      "description": "Choose specific libraries or content to replicate based on filters"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the proxy on your own servers"
     }
   ],
   "platform_support": {

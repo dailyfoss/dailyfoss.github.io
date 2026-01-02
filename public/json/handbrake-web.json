@@ -5,7 +5,7 @@
   "subtitle": "",
   "description": "Handbrake-Web is a web-based UI for the HandBrake video transcoder, allowing users to queue conversions, set presets, and manage encoding jobs without the desktop GUI.",
   "categories": [
-    59
+    23
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,38 @@
   },
   "features": [
     {
-      "title": "Web Interface",
-      "description": "Browser-based control, No desktop app needed, Remote access. Transcode from anywhere"
+      "title": "Video Transcoding Interface",
+      "description": "Provides a web interface for managing HandBrake video conversions",
+      "core_feature": true
     },
     {
-      "title": "Queue Management",
-      "description": "Batch processing, Priority ordering, Progress tracking. Handle multiple files"
+      "title": "Job Queue Management",
+      "description": "Queues and processes multiple video encoding jobs",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "GPU encoding, Faster processing, Efficient transcoding. Save time"
+      "title": "Preset Selection",
+      "description": "Applies predefined HandBrake encoding presets"
     },
     {
-      "title": "Folder Organization",
-      "description": "Automated jobs, Folder watching, Batch operations. Set and forget"
+      "title": "Progress Monitoring",
+      "description": "Displays real-time encoding progress and status"
+    },
+    {
+      "title": "Input File Handling",
+      "description": "Accepts and manages source video files"
+    },
+    {
+      "title": "Output Management",
+      "description": "Stores and organizes converted video files"
+    },
+    {
+      "title": "Browser-Based Control",
+      "description": "Controls encoding tasks from a web browser"
+    },
+    {
+      "title": "Self-Hosted Transcoding",
+      "description": "Run video processing on your own servers"
     }
   ],
   "platform_support": {

@@ -1,11 +1,11 @@
 {
   "name": "docker-registry-browser",
   "slug": "docker-registry-browser",
-  "tagline": "A web interface for browsing and managing private Docker registries",
+  "tagline": "A web interface for browsing and managing Docker registry images",
   "subtitle": "",
   "description": "Docker Registry Browser provides a web-based UI for browsing, analyzing, and deleting Docker images from a private registry. It offers tagging, search, and simple deployment via Docker.",
   "categories": [
-    32
+    27
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,38 @@
   },
   "features": [
     {
-      "title": "Tagging System",
-      "description": "Inspect layers, tags, and metadata. Detailed image information"
+      "title": "Docker Registry Browser",
+      "description": "Browses container images in a Docker registry",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Find images quickly with powerful search. Locate what you need fast"
+      "title": "Repository Listing",
+      "description": "Lists repositories and tags",
+      "core_feature": true
     },
     {
-      "title": "Tag Management",
-      "description": "Browse and compare different versions. Track your releases"
+      "title": "Image Metadata View",
+      "description": "Displays image size and layers"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Manage your private Docker registry easily. Complete control over images"
+      "title": "Search Capability",
+      "description": "Searches images by name"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Accesses registry data through a browser"
+    },
+    {
+      "title": "Authentication Support",
+      "description": "Works with secured registries"
+    },
+    {
+      "title": "Lightweight UI",
+      "description": "Focuses on simple browsing"
+    },
+    {
+      "title": "Self-Hosted Tool",
+      "description": "Runs alongside private registries"
     }
   ],
   "platform_support": {

@@ -1,11 +1,11 @@
 {
   "name": "mox",
   "slug": "mox",
-  "tagline": "A modern self-hosted email server focused on security",
+  "tagline": "A simple and secure self-hosted email server with modern standards",
   "subtitle": "",
   "description": "Mox is a self-hosted email server supporting SMTP and IMAP with modern features like DKIM, DANE, and automated TLS. It’s designed to be simple and secure, with text-based configuration and minimal dependencies.",
   "categories": [
-    53
+    32
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,27 @@
   },
   "features": [
     {
-      "title": "Mobile Responsive",
-      "description": "Send and receive email with full protocol support for modern mail clients and mobile devices"
-    },
-    {
-      "title": "End-to-End Encryption",
-      "description": "Secure mail transport with DNS-based certificate validation for enhanced encryption between servers"
+      "title": "Mail Server",
+      "description": "Provide SMTP and IMAP email services",
+      "core_feature": true
     },
     {
       "title": "Spam Filtering",
-      "description": "Block unwanted messages using reputation lists, content analysis, and customizable rules"
+      "description": "Filter incoming mail"
     },
     {
-      "title": "Web Interface",
-      "description": "Manage accounts, view logs, and configure domains through a built-in administrative dashboard"
+      "title": "TLS Encryption",
+      "description": "Encrypt mail connections",
+      "core_feature": true
+    },
+    {
+      "title": "Mail Storage",
+      "description": "Store mail locally on the server",
+      "core_feature": true
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the mail server on your own infrastructure"
     }
   ],
   "platform_support": {

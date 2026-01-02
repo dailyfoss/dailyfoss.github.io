@@ -1,11 +1,11 @@
 {
   "name": "dockwatch",
   "slug": "dockwatch",
-  "tagline": "A monitoring service that sends alerts on Docker container events",
+  "tagline": "A monitoring service that sends alerts for Docker container lifecycle events",
   "subtitle": "",
   "description": "Dockwatch monitors Docker container lifecycle events and sends notifications via services like Discord, Telegram, or Email. It helps administrators stay informed about container restarts, fails, or updates through webhooks.",
   "categories": [
-    172
+    35
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,38 @@
   },
   "features": [
     {
-      "title": "Email Notifications",
-      "description": "Send alerts via Discord, Telegram, Email, and more. Stay informed everywhere"
+      "title": "Container Update Monitoring",
+      "description": "Monitors Docker containers for updates",
+      "core_feature": true
     },
     {
-      "title": "Webhook Support",
-      "description": "Integrate with custom notification systems. Flexible alerting"
+      "title": "Image Version Tracking",
+      "description": "Tracks image tag changes",
+      "core_feature": true
     },
     {
-      "title": "Media Library",
-      "description": "Get notified when containers fail. Immediate problem awareness"
+      "title": "Notification Integration",
+      "description": "Sends alerts via supported channels"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Run your own container monitoring. Complete control over alerts"
+      "title": "Scheduled Checks",
+      "description": "Runs update checks on schedules"
+    },
+    {
+      "title": "Multi-Container Support",
+      "description": "Monitors many containers"
+    },
+    {
+      "title": "Logging",
+      "description": "Records update checks"
+    },
+    {
+      "title": "Container-Based Service",
+      "description": "Runs as a Docker container"
+    },
+    {
+      "title": "Self-Hosted Monitoring",
+      "description": "Runs on private infrastructure"
     }
   ],
   "platform_support": {

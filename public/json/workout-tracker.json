@@ -1,11 +1,11 @@
 {
   "name": "workout-tracker",
   "slug": "workout-tracker",
-  "tagline": "A detailed fitness logging and analysis tool",
+  "tagline": "A detailed fitness log for tracking exercises, sets, reps, and performance",
   "subtitle": "",
   "description": "workout-tracker is a self-hosted fitness log designed for detailed exercise tracking. It records exercises, sets, reps, and notes, and visualizes performance trends through straightforward dashboards.",
   "categories": [
-    75
+    42
   ],
   "metadata": {
     "sponsored": false,
@@ -27,20 +27,31 @@
   },
   "features": [
     {
-      "title": "Exercise Logging",
-      "description": "Record detailed workout data including exercises, sets, reps, weight, and duration"
+      "title": "Workout Logging",
+      "description": "Log workout sessions",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "View charts and statistics showing strength progression and training volume over time"
+      "title": "Exercise Tracking",
+      "description": "Track exercises and sets",
+      "core_feature": true
     },
     {
-      "title": "Tagging System",
-      "description": "Track weight, body fat percentage, and other metrics alongside workout data"
+      "title": "Progress Charts",
+      "description": "Visualize training progress",
+      "core_feature": true
     },
     {
-      "title": "Calendar View",
-      "description": "See workout history in a calendar format to identify patterns and rest days"
+      "title": "History",
+      "description": "View workout history"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Log workouts through a browser"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the tracker on your own infrastructure"
     }
   ],
   "platform_support": {

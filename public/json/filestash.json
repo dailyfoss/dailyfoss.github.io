@@ -1,11 +1,11 @@
 {
   "name": "filestash",
   "slug": "filestash",
-  "tagline": "A web interface that unifies access to files across cloud and server backends",
+  "tagline": "A unified web interface for accessing files across servers and cloud storage",
   "subtitle": "",
   "description": "Filestash connects to cloud or FTP servers and exposes them through a user-friendly web UI. It supports WebDAV, S3, Git, Dropbox, and others with a single centralized UX. Aimed at developers and teams that need unified access.",
   "categories": [
-    60
+    33
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,35 @@
   },
   "features": [
     {
-      "title": "Web Interface",
-      "description": "Connect to S3, FTP, WebDAV, Git, Dropbox, Unified web UI. One interface for all storage"
+      "title": "Web-Based File Manager",
+      "description": "Browse and manage files through a web interface",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "API access and integrations. Built for teams"
+      "title": "Multiple Storage Backends",
+      "description": "Access files stored on local disks, SFTP, WebDAV, and cloud services",
+      "core_feature": true
     },
     {
-      "title": "Media Library",
-      "description": "View documents, images, videos. Rich media support"
+      "title": "User Authentication",
+      "description": "Restrict access using user accounts and login credentials",
+      "core_feature": true
     },
     {
-      "title": "Rich Text Editor",
-      "description": "Edit files directly. Built-in functionality"
+      "title": "File Preview",
+      "description": "Preview documents, images, audio, and video files in the browser"
     },
     {
-      "title": "Plugin System",
-      "description": "Extend with custom backends. Highly extensible"
+      "title": "File Editing",
+      "description": "Edit text-based files directly from the web interface"
     },
     {
-      "title": "Authentication",
-      "description": "LDAP, OAuth, and more. Enterprise-ready"
+      "title": "Shareable Links",
+      "description": "Share files and folders using generated access links"
+    },
+    {
+      "title": "Web Client Customization",
+      "description": "Configure interface options and enabled features"
     }
   ],
   "platform_support": {

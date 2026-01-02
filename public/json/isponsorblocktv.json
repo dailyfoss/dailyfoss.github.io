@@ -1,11 +1,11 @@
 {
   "name": "isponsorblocktv",
   "slug": "isponsorblocktv",
-  "tagline": "A tool that skips sponsored segments in videos on TV front ends",
+  "tagline": "A companion service for skipping sponsored segments in Jellyfin and TV clients",
   "subtitle": "",
   "description": "iSponsorBlockTV integrates the SponsorBlock database with Jellyfin or other video front ends to automatically skip sponsored segments. It runs alongside your media stack and helps provide ad free viewing of YouTube content on TV interfaces.",
   "categories": [
-    160
+    34
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,38 @@
   },
   "features": [
     {
-      "title": "Sponsor Skipping",
-      "description": "Automatically skip sponsored segments in YouTube videos"
+      "title": "Sponsor Segment Skipping",
+      "description": "Automatically skips sponsored segments during video playback",
+      "core_feature": true
     },
     {
-      "title": "Sponsorblock Integration",
-      "description": "Uses crowdsourced SponsorBlock database for segment detection"
+      "title": "SponsorBlock Integration",
+      "description": "Uses community-maintained SponsorBlock data",
+      "core_feature": true
     },
     {
-      "title": "Tv Interface",
-      "description": "Works with YouTube on smart TVs and streaming devices"
+      "title": "TV Device Support",
+      "description": "Works with supported TV and media devices"
     },
     {
-      "title": "Jellyfin Support",
-      "description": "Integrates with Jellyfin for YouTube content playback"
+      "title": "Automatic Operation",
+      "description": "Runs without manual interaction during playback"
     },
     {
-      "title": "Automatic Detection",
-      "description": "Identifies and skips sponsors, intros, outros, and other segments"
+      "title": "Local Network Usage",
+      "description": "Operates within the local network environment"
     },
     {
-      "title": "Seamless Experience",
-      "description": "Skips happen automatically without user interaction"
+      "title": "Configuration Options",
+      "description": "Adjusts skipping behavior through settings"
     },
     {
-      "title": "Media Library",
-      "description": "Runs alongside your existing media server infrastructure"
+      "title": "Background Service",
+      "description": "Runs continuously while media is playing"
     },
     {
-      "title": "Ad",
-      "description": "Enjoy YouTube content without interruptions on large screens"
+      "title": "Self-Hosted Helper Service",
+      "description": "Runs on your own devices"
     }
   ],
   "platform_support": {

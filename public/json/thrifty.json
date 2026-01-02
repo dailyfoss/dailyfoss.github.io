@@ -1,7 +1,7 @@
 {
   "name": "thrifty",
   "slug": "thrifty",
-  "tagline": "A personal finance tracker for spending and budgets",
+  "tagline": "A personal finance app for tracking spending, income, and budgets",
   "subtitle": "",
   "description": "Thrifty is a self-hosted personal finance web app for tracking spending, income, and budgets. It offers charts, categories, and insights via a clean, mobile-friendly interface for managing everyday expenses.",
   "categories": [
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Income Management",
-      "description": "Track income sources and amounts to understand your complete financial picture"
+      "title": "Expense Tracking",
+      "description": "Track personal expenses",
+      "core_feature": true
     },
     {
-      "title": "Charts And Insights",
-      "description": "Visualize spending patterns with charts showing trends, category breakdowns, and comparisons"
+      "title": "Category Organization",
+      "description": "Organize expenses by category",
+      "core_feature": true
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Manage finances on the go with a responsive interface optimized for mobile devices"
+      "title": "Reports",
+      "description": "View spending summaries",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Browse complete transaction history with search and filtering capabilities"
+      "title": "Budget Limits",
+      "description": "Set spending limits"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Manage expenses in a browser"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the tracker on your own servers"
     }
   ],
   "platform_support": {

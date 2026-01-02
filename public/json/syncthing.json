@@ -1,11 +1,11 @@
 {
   "name": "syncthing",
   "slug": "syncthing",
-  "tagline": "A peer to peer file synchronization tool",
+  "tagline": "A secure peer-to-peer tool for syncing files directly between devices",
   "subtitle": "",
   "description": "Syncthing is a peer-to-peer file synchronization tool that securely syncs folders across devices without a central server, using a web UI and background service.",
   "categories": [
-    62
+    33
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,26 @@
   },
   "features": [
     {
-      "title": "Real-Time Sync",
-      "description": "Synchronizes files directly between devices without central server"
+      "title": "File Synchronization",
+      "description": "Sync files directly between devices",
+      "core_feature": true
     },
     {
-      "title": "Selective Sync",
-      "description": "Chooses which folders to sync on each device for storage management"
+      "title": "Peer-to-Peer Transfer",
+      "description": "Transfer files without central servers",
+      "core_feature": true
     },
     {
-      "title": "End-to-End Encryption",
-      "description": "Protects data in transit with TLS encryption between devices"
+      "title": "Folder Versioning",
+      "description": "Keep previous file versions"
     },
     {
-      "title": "File Versioning",
-      "description": "Keeps historical versions of files with configurable retention policies"
+      "title": "Device Discovery",
+      "description": "Discover peers automatically"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Manage sync settings via browser"
     }
   ],
   "platform_support": {

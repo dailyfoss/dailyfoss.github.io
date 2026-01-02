@@ -1,11 +1,11 @@
 {
   "name": "broadcastchannel",
   "slug": "broadcastchannel",
-  "tagline": "A tool for synchronizing real-time state across browser tabs and windows",
+  "tagline": "A lightweight utility for synchronizing real-time state across browser contexts",
   "subtitle": "",
   "description": "BroadcastChannel is a self-hosted tool leveraging the browser's BroadcastChannel API to sync real-time messages and state across tabs or windows in a simple way, suitable for lightweight data syncing.",
   "categories": [
-    102
+    26
   ],
   "metadata": {
     "sponsored": false,
@@ -33,24 +33,85 @@
   },
   "features": [
     {
-      "title": "Real-Time Sync",
-      "description": "Sync messages and state across browser tabs. Real-time updates"
+      "title": "Cross-Tab Communication",
+      "description": "Enables message passing between browser tabs",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Leverages native browser API for efficiency. No external dependencies"
+      "title": "Lightweight Messaging",
+      "description": "Sends simple structured messages between contexts",
+      "core_feature": true
     },
     {
-      "title": "Lightweight",
-      "description": "Minimal overhead for simple data syncing. Fast performance"
+      "title": "Browser API Wrapper",
+      "description": "Provides a consistent interface over native APIs",
+      "core_feature": true
     },
     {
-      "title": "Media Library",
-      "description": "Instant message propagation across tabs. Immediate updates"
+      "title": "Event Subscription",
+      "description": "Listens for and reacts to broadcast messages"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Deploy your own synchronization service. Complete control"
+      "title": "Minimal Dependencies",
+      "description": "Operates with minimal external requirements"
+    },
+    {
+      "title": "Web Application Integration",
+      "description": "Integrates into client-side web applications"
+    },
+    {
+      "title": "Browser Tab Messaging",
+      "description": "Enables communication between browser tabs",
+      "core_feature": true
+    },
+    {
+      "title": "Lightweight Event Messaging",
+      "description": "Broadcasts simple messages across contexts",
+      "core_feature": true
+    },
+    {
+      "title": "API Wrapper",
+      "description": "Wraps native BroadcastChannel APIs",
+      "core_feature": true
+    },
+    {
+      "title": "Event Subscription",
+      "description": "Listens for broadcast events"
+    },
+    {
+      "title": "Web App Integration",
+      "description": "Integrates into client-side applications"
+    },
+    {
+      "title": "Minimal Dependencies",
+      "description": "Requires minimal external libraries"
+    },
+    {
+      "title": "Browser Tab Messaging",
+      "description": "Enables communication between browser tabs",
+      "core_feature": true
+    },
+    {
+      "title": "Lightweight Event Messaging",
+      "description": "Broadcasts simple messages across contexts",
+      "core_feature": true
+    },
+    {
+      "title": "API Wrapper",
+      "description": "Wraps native BroadcastChannel APIs",
+      "core_feature": true
+    },
+    {
+      "title": "Event Subscription",
+      "description": "Listens for broadcast events"
+    },
+    {
+      "title": "Web App Integration",
+      "description": "Integrates into client-side applications"
+    },
+    {
+      "title": "Minimal Dependencies",
+      "description": "Requires minimal external libraries"
     }
   ],
   "platform_support": {

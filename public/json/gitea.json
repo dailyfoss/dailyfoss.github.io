@@ -1,11 +1,11 @@
 {
   "name": "gitea",
   "slug": "gitea",
-  "tagline": "A self-hosted Git service with repositories, issues, and collaboration tools",
+  "tagline": "A self-hosted Git service for code hosting and collaborative development",
   "subtitle": "",
   "description": "Gitea is a self-hosted Git service providing code hosting, pull requests, issues, CI, and container registry in a lightweight binary. It offers a polished web UI and runs on modest hardware, ideal for developer teams.",
   "categories": [
-    72
+    26
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,39 @@
   },
   "features": [
     {
-      "title": "Web Interface",
-      "description": "Host unlimited Git repositories with a polished web interface and Git protocol support"
+      "title": "Git Repository Hosting",
+      "description": "Hosts Git repositories with web UI",
+      "core_feature": true
     },
     {
-      "title": "Docker Support",
-      "description": "Host Docker images and OCI containers with integrated package management"
+      "title": "Code Review and Pull Requests",
+      "description": "Supports collaborative code reviews",
+      "core_feature": true
     },
     {
-      "title": "Lightweight",
-      "description": "Single executable with minimal resource requirements runs on modest hardware"
+      "title": "Issue Tracking",
+      "description": "Manages bugs tasks and feature requests",
+      "core_feature": true
     },
     {
-      "title": "Team Collaboration",
-      "description": "Create teams, manage permissions, and organize repositories by organization"
+      "title": "Wiki and Pages",
+      "description": "Provides documentation per repository"
     },
     {
-      "title": "REST API",
-      "description": "Comprehensive REST API for automation and integration with external tools"
+      "title": "User and Team Management",
+      "description": "Controls access and roles"
+    },
+    {
+      "title": "Webhooks",
+      "description": "Integrates with external CI/CD tools"
+    },
+    {
+      "title": "Milestones and Boards",
+      "description": "Organizes work by milestones and boards"
+    },
+    {
+      "title": "Self-Hosted Git Service",
+      "description": "Host the platform on your own infrastructure"
     }
   ],
   "platform_support": {

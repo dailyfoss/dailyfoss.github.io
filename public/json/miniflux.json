@@ -1,11 +1,11 @@
 {
   "name": "miniflux",
   "slug": "miniflux",
-  "tagline": "A minimalist self-hosted RSS feed reader",
+  "tagline": "A minimalist self-hosted RSS feed reader focused on speed and simplicity",
   "subtitle": "",
   "description": "Miniflux is a minimalist self-hosted RSS feed reader focused on performance and simplicity. It features a clean UI, keyboard shortcuts, API access, and supports external integrations like Fever and APIs.",
   "categories": [
-    57
+    20
   ],
   "metadata": {
     "sponsored": false,
@@ -33,32 +33,30 @@
   },
   "features": [
     {
-      "title": "Feed Management",
-      "description": "Subscribe to RSS and Atom feeds with automatic updates and error handling for broken sources"
+      "title": "RSS Reader",
+      "description": "Subscribe to and read RSS and Atom feeds",
+      "core_feature": true
     },
     {
-      "title": "Offline Mode",
-      "description": "Save articles for offline reading or integration with Pocket, Instapaper, and Wallabag services"
-    },
-    {
-      "title": "REST API",
-      "description": "Extract complete article content from feeds that only provide summaries or excerpts"
-    },
-    {
-      "title": "Fever Api",
-      "description": "Connect mobile RSS readers and third-party clients using the Fever-compatible API protocol"
+      "title": "Feed Fetching",
+      "description": "Periodically fetch updates from feeds",
+      "core_feature": true
     },
     {
       "title": "Article Filtering",
-      "description": "Create rules to automatically mark, star, or hide articles based on keywords and patterns"
+      "description": "Filter articles using rules"
     },
     {
-      "title": "Data Export",
-      "description": "Migrate feed subscriptions from other readers using standard OPML export files"
+      "title": "Keyboard Shortcuts",
+      "description": "Navigate and manage feeds efficiently"
     },
     {
-      "title": "Minimal Interface",
-      "description": "Read articles in a distraction-free layout optimized for speed and content focus"
+      "title": "API Access",
+      "description": "Access feeds and entries programmatically"
+    },
+    {
+      "title": "Self-Hosted Service",
+      "description": "Run the reader on your own infrastructure"
     }
   ],
   "platform_support": {

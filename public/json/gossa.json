@@ -1,11 +1,11 @@
 {
   "name": "gossa",
   "slug": "gossa",
-  "tagline": "A fast self-hosted file sharing app with a clean web interface",
+  "tagline": "A fast self-hosted file sharing application with a clean web interface",
   "subtitle": "",
   "description": "Gossa is a fast self-hosted file sharing application. It supports drag-and-drop uploads, directory browsing, public links, and real-time change detection through a clean web UI. Designed for easy file hosting and sharing.",
   "categories": [
-    60
+    33
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,31 @@
   },
   "features": [
     {
-      "title": "File Upload",
-      "description": "Upload files by dragging them directly into the browser interface"
+      "title": "Static File Server",
+      "description": "Serve files and directories over HTTP",
+      "core_feature": true
     },
     {
-      "title": "Folder Organization",
-      "description": "Navigate folder structures with a clean, file-explorer-style interface"
+      "title": "Directory Browsing",
+      "description": "Browse folders through a web interface",
+      "core_feature": true
     },
     {
-      "title": "Access Control",
-      "description": "Generate shareable links for files and folders with optional access controls"
+      "title": "File Downloads",
+      "description": "Download files directly from the browser",
+      "core_feature": true
     },
     {
-      "title": "Lightweight",
-      "description": "Lightweight Go-based server with minimal overhead and quick response times"
+      "title": "Minimal Configuration",
+      "description": "Run the server with minimal setup"
     },
     {
-      "title": "File Preview",
-      "description": "View images, videos, and documents directly in the browser"
+      "title": "Command-Line Interface",
+      "description": "Control server behavior using CLI options"
     },
     {
-      "title": "Search and Filter",
-      "description": "Quickly find files across your hosted directories"
+      "title": "Self-Hosted Deployment",
+      "description": "Host files on your own infrastructure"
     }
   ],
   "platform_support": {

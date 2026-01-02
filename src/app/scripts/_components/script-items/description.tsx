@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import type { Script } from "@/lib/types";
 
 import TextCopyBlock from "@/components/text-copy-block";
@@ -9,6 +10,17 @@ import Features from "./features";
 // Screenshot Preview with Lightbox
 function ScreenshotPreview({ src, alt }: { src: string; alt: string }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const [hasError, setHasError] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Hide component if image fails to load or src is empty
+  if (hasError || !src || src.trim() === "") {
+    return null;
+  }
 
   return (
     <>
@@ -23,14 +35,15 @@ function ScreenshotPreview({ src, alt }: { src: string; alt: string }) {
             src={src}
             alt={alt}
             className="w-full h-auto object-contain"
+            onError={() => setHasError(true)}
           />
         </button>
       </div>
 
-      {/* Lightbox - Click anywhere to close */}
-      {isOpen && (
+      {/* Lightbox - Rendered via Portal to cover entire screen */}
+      {isOpen && mounted && createPortal(
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 cursor-pointer"
+          className="fixed inset-0 z-[9999] flex items-center justify-center cursor-pointer backdrop-blur-xl bg-black/20 dark:bg-white/10"
           onClick={() => setIsOpen(false)}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -39,7 +52,8 @@ function ScreenshotPreview({ src, alt }: { src: string; alt: string }) {
             alt={alt}
             className="max-w-[90vw] max-h-[90vh] object-contain"
           />
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );

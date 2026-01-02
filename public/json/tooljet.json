@@ -1,11 +1,11 @@
 {
   "name": "tooljet",
   "slug": "tooljet",
-  "tagline": "A low code platform for building internal tools",
+  "tagline": "A low-code platform for building internal tools with databases and APIs",
   "subtitle": "",
   "description": "ToolJet is an open-source low-code platform to build internal apps using a drag-and-drop UI. It connects to databases and APIs, supports role-based access, and can be self-hosted or used as a managed cloud service.",
   "categories": [
-    110
+    16
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,26 @@
   },
   "features": [
     {
-      "title": "Database Connections",
-      "description": "Connect to PostgreSQL, MySQL, MongoDB, and other databases for data access"
+      "title": "Internal Tool Builder",
+      "description": "Build internal tools with low code",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Integrate with REST APIs, GraphQL endpoints, and third-party services seamlessly"
+      "title": "Data Source Integration",
+      "description": "Connect to databases and APIs",
+      "core_feature": true
     },
     {
-      "title": "Workflows",
-      "description": "Automate business processes with visual workflow builder and event triggers"
+      "title": "UI Components",
+      "description": "Build interfaces using reusable components"
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Build apps that work on desktop, tablet, and mobile devices automatically"
+      "title": "Access Control",
+      "description": "Manage user permissions"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run ToolJet on your own infrastructure"
     }
   ],
   "platform_support": {

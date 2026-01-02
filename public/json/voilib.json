@@ -1,11 +1,11 @@
 {
   "name": "voilib",
   "slug": "voilib",
-  "tagline": "A media library catalog and organization tool",
+  "tagline": "A media library and catalog app for organizing video and audio collections",
   "subtitle": "",
   "description": "Voilib is a self-hosted media library and catalog web app, aimed at organizing video or audio collections with metadata, search, and categorization.",
   "categories": [
-    165
+    21
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "Media Library",
-      "description": "Organize video and audio collections with metadata and descriptions"
+      "title": "Audio Library",
+      "description": "Manage and play audio collections",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Find media quickly using full-text search across titles and metadata"
+      "title": "Playlist Management",
+      "description": "Create and manage playlists",
+      "core_feature": true
     },
     {
-      "title": "Tagging System",
-      "description": "Add and edit metadata including titles, descriptions, and tags"
+      "title": "Playback Controls",
+      "description": "Control audio playback",
+      "core_feature": true
     },
     {
-      "title": "Filtering",
-      "description": "Filter media by category, tags, or other attributes to find specific items"
+      "title": "Metadata Display",
+      "description": "Show audio metadata"
     },
     {
       "title": "Web Interface",
-      "description": "Access your media catalog through a clean web interface from any device"
+      "description": "Access audio through a browser"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the audio library on your own servers"
     }
   ],
   "platform_support": {

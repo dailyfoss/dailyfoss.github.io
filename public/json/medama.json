@@ -5,7 +5,7 @@
   "subtitle": "",
   "description": "Medama is a UI-first, self-hosted error tracking and monitoring tool for developers. It offers stack traces, session replay, and alerts to help diagnose issues in applications without relying on external services.",
   "categories": [
-    21
+    35
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "Email Notifications",
-      "description": "Configure notifications for critical errors via email, Slack, or webhooks"
+      "title": "Web Analytics",
+      "description": "Collect website usage data",
+      "core_feature": true
     },
     {
-      "title": "Source Map Support",
-      "description": "Automatically map minified code to original source for easier debugging"
+      "title": "Lightweight Tracking",
+      "description": "Track visits with minimal overhead",
+      "core_feature": true
     },
     {
-      "title": "User Context",
-      "description": "Track which users experienced errors with custom user identification"
+      "title": "Dashboard",
+      "description": "View traffic and page statistics",
+      "core_feature": true
     },
     {
-      "title": "Tagging System",
-      "description": "Separate errors by environment like production, staging, or development"
+      "title": "Event Tracking",
+      "description": "Track custom interactions"
     },
     {
-      "title": "High Performance",
-      "description": "Track application performance metrics alongside error data"
+      "title": "Privacy-Oriented Design",
+      "description": "Avoid cross-site user tracking"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run analytics on your own infrastructure"
     }
   ],
   "platform_support": {

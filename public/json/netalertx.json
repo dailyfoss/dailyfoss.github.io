@@ -1,11 +1,11 @@
 {
   "name": "netalertx",
   "slug": "netalertx",
-  "tagline": "A self-hosted network monitoring and device discovery tool",
+  "tagline": "A self-hosted network scanning and device monitoring tool with alerts",
   "subtitle": "",
   "description": "NetAlertX is a network scanning and monitoring tool designed for self-hosting. It visualizes devices, alerts users when new devices connect, and integrates with Home Assistant for network awareness.",
   "categories": [
-    103
+    35
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Email Notifications",
-      "description": "Receive notifications when new or unknown devices join the network"
+      "title": "Network Device Monitoring",
+      "description": "Detect and track devices on a network",
+      "core_feature": true
     },
     {
-      "title": "Home Assistant Integration",
-      "description": "Send device presence data to Home Assistant for automation triggers"
+      "title": "Device Inventory",
+      "description": "Maintain a list of known network devices",
+      "core_feature": true
     },
     {
-      "title": "Custom Notifications",
-      "description": "Configure alerts via email, webhooks, or push services for network events"
+      "title": "Change Detection",
+      "description": "Detect new or unknown devices",
+      "core_feature": true
     },
     {
-      "title": "Mac Address Tracking",
-      "description": "Monitor devices by hardware address even when IP addresses change"
+      "title": "Notifications",
+      "description": "Send alerts for network changes"
+    },
+    {
+      "title": "Web Dashboard",
+      "description": "View network status through a browser"
+    },
+    {
+      "title": "Self-Hosted Service",
+      "description": "Run the monitor on your own servers"
     }
   ],
   "platform_support": {

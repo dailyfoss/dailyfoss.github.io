@@ -1,11 +1,11 @@
 {
   "name": "davis",
   "slug": "davis",
-  "tagline": "A self-hosted minimalist web client for CalDAV calendars",
+  "tagline": "A minimalist web client for accessing and managing CalDAV calendars",
   "subtitle": "",
   "description": "Davis is a self-hosted, minimalist CalDAV web client compatible with servers like Nextcloud and DAViCal. It offers a clean calendar UI with basic editing and sync functionality across devices.",
   "categories": [
-    24
+    23
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,38 @@
   },
   "features": [
     {
-      "title": "Server Compatible",
-      "description": "Works with Nextcloud, DAViCal, and others. Universal CalDAV support"
+      "title": "CalDAV and CardDAV Server",
+      "description": "Synchronizes calendars and contacts",
+      "core_feature": true
     },
     {
-      "title": "Event Editing",
-      "description": "Create and modify calendar entries easily. Full functionality"
+      "title": "Multi-User Support",
+      "description": "Handles multiple accounts and address books",
+      "core_feature": true
     },
     {
-      "title": "Real-Time Sync",
-      "description": "Access your calendar from any device. Seamless synchronization"
+      "title": "Modern Web Interface",
+      "description": "Provides a browser-based management UI"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Run your own calendar web client. Privacy-focused solution"
+      "title": "Access Control",
+      "description": "Restricts access to calendars and contacts"
+    },
+    {
+      "title": "Client Compatibility",
+      "description": "Works with common calendar and contact clients"
+    },
+    {
+      "title": "RESTful Architecture",
+      "description": "Uses modern web standards internally"
+    },
+    {
+      "title": "Lightweight Deployment",
+      "description": "Designed for small server environments"
+    },
+    {
+      "title": "Self-Hosted Usage",
+      "description": "Runs on private infrastructure"
     }
   ],
   "platform_support": {

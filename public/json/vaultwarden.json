@@ -1,11 +1,11 @@
 {
   "name": "vaultwarden",
   "slug": "vaultwarden",
-  "tagline": "A lightweight Bitwarden compatible password server",
+  "tagline": "A lightweight Bitwarden-compatible server for managing encrypted passwords",
   "subtitle": "",
   "description": "Vaultwarden is a self-hosted Bitwarden-compatible server written in Rust. It provides the backend for web, mobile, and browser clients to store and sync encrypted passwords and secrets.",
   "categories": [
-    117
+    38
   ],
   "metadata": {
     "sponsored": false,
@@ -33,28 +33,27 @@
   },
   "features": [
     {
-      "title": "Real-Time Sync",
-      "description": "Store and sync passwords, passkeys, and credentials across all devices securely"
+      "title": "Password Manager Server",
+      "description": "Host a password management backend",
+      "core_feature": true
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Use official Bitwarden clients on web, desktop, mobile, and browser extensions"
+      "title": "Client Compatibility",
+      "description": "Work with Bitwarden-compatible clients",
+      "core_feature": true
     },
     {
-      "title": "End-to-End Encryption",
-      "description": "Encrypt all data with your master password before it leaves your device"
+      "title": "Secure Vault Storage",
+      "description": "Store encrypted credentials",
+      "core_feature": true
     },
     {
-      "title": "Two-Factor Authentication",
-      "description": "Protect your vault with 2FA using TOTP, WebAuthn, or other methods"
+      "title": "User Management",
+      "description": "Manage users and organizations"
     },
     {
-      "title": "Password Generator",
-      "description": "Generate strong, random passwords with customizable length and character sets"
-    },
-    {
-      "title": "File Attachments",
-      "description": "Attach files to vault items for storing documents and certificates"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the service on your own servers"
     }
   ],
   "platform_support": {

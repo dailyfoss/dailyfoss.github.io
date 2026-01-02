@@ -1,11 +1,11 @@
 {
   "name": "feedbin",
   "slug": "feedbin",
-  "tagline": "An RSS reader with tagging, search, and APIs for a clean reading experience",
+  "tagline": "An RSS reader with tagging, search, and API access",
   "subtitle": "",
   "description": "Feedbin is an open-source RSS reader that can be self-hosted or used as a hosted service. It provides tagging, search, filters, and a pleasant reading experience, along with APIs for third-party clients.",
   "categories": [
-    57
+    20
   ],
   "metadata": {
     "sponsored": false,
@@ -33,28 +33,38 @@
   },
   "features": [
     {
-      "title": "Search and Filter",
-      "description": "Advanced feed management, Tagging and organization, Powerful search. Professional reading experience"
+      "title": "Feed Reader Service",
+      "description": "Aggregates RSS and Atom feeds for reading",
+      "core_feature": true
     },
     {
-      "title": "Filtering",
-      "description": "Custom rules and automation. Smart content curation"
+      "title": "Web Reader",
+      "description": "Reads feeds through a browser interface",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Third-party client support. Flexible integration"
+      "title": "Feed Organization",
+      "description": "Groups feeds into folders and tags"
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Clean reading interface. Mobile-friendly design"
+      "title": "Full-Text Search",
+      "description": "Searches across feed entries"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Choose your deployment. Flexible hosting options"
+      "title": "Read State Tracking",
+      "description": "Tracks read and unread items"
     },
     {
-      "title": "Saved Searches",
-      "description": "Create custom views. Personalized feeds"
+      "title": "API Access",
+      "description": "Integrates with third-party clients"
+    },
+    {
+      "title": "User Accounts",
+      "description": "Separates data per user"
+    },
+    {
+      "title": "Self-Hosted Feed Reader",
+      "description": "Host the service on your own servers"
     }
   ],
   "platform_support": {

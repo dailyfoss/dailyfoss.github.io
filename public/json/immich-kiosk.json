@@ -1,11 +1,11 @@
 {
   "name": "immich-kiosk",
   "slug": "immich-kiosk",
-  "tagline": "A read only Immich front end designed for kiosks and shared displays",
+  "tagline": "A read-only Immich front end for kiosks and shared displays",
   "subtitle": "",
   "description": "Immich Kiosk is a simplified read only front end for Immich designed for kiosks and shared displays. It focuses on browsing and viewing photos with minimal controls, using Immich as the backend media source.",
   "categories": [
-    120
+    34
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "Kiosk Mode",
-      "description": "Simplified, read-only interface designed for public or shared displays"
+      "title": "Photo Slideshow",
+      "description": "Display photos in a continuous slideshow view",
+      "core_feature": true
     },
     {
-      "title": "Minimal Controls",
-      "description": "Streamlined UI with only essential navigation for easy viewing"
+      "title": "Immich Integration",
+      "description": "Load photos from an existing Immich instance",
+      "core_feature": true
     },
     {
-      "title": "Immich Backend",
-      "description": "Uses your existing Immich server as the photo source"
+      "title": "Full-Screen Display",
+      "description": "Run slideshows in a kiosk-style full-screen mode",
+      "core_feature": true
     },
     {
-      "title": "Shared Display",
-      "description": "Perfect for waiting rooms, offices, or family common areas"
+      "title": "Automatic Refresh",
+      "description": "Periodically update displayed content"
     },
     {
-      "title": "Touch",
-      "description": "Optimized for touchscreen interaction on tablets and kiosks"
+      "title": "Minimal Configuration",
+      "description": "Configure slideshow behavior with simple settings"
     },
     {
-      "title": "Auto",
-      "description": "Automatically updates to show new photos from Immich"
-    },
-    {
-      "title": "No Editing",
-      "description": "Read-only access prevents accidental modifications to your library"
-    },
-    {
-      "title": "Customizable Views",
-      "description": "Configure which albums or photos to display in kiosk mode"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the kiosk display on your own infrastructure"
     }
   ],
   "platform_support": {

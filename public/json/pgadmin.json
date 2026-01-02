@@ -1,11 +1,11 @@
 {
   "name": "pgadmin",
   "slug": "pgadmin",
-  "tagline": "A web based administration tool for PostgreSQL",
+  "tagline": "A web-based administration and management tool for PostgreSQL databases",
   "subtitle": "",
   "description": "pgAdmin is a popular web-based GUI for managing PostgreSQL databases. It includes advanced tools to create, query, monitor, and maintain databases in a self-hosted or cloud environment.",
   "categories": [
-    39
+    29
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,26 @@
   },
   "features": [
     {
-      "title": "Database Management",
-      "description": "Create, modify, and delete PostgreSQL databases with a graphical interface"
+      "title": "PostgreSQL Administration",
+      "description": "Manage PostgreSQL databases through a UI",
+      "core_feature": true
     },
     {
-      "title": "Visual Query Builder",
-      "description": "Construct complex SQL queries using drag-and-drop interface without writing code"
+      "title": "Query Tool",
+      "description": "Run and edit SQL queries",
+      "core_feature": true
     },
     {
-      "title": "Data Editing",
-      "description": "View and modify table data directly in spreadsheet-like grids with inline editing"
-    },
-    {
-      "title": "Database Backup",
-      "description": "Schedule and manage database backups with support for pg_dump and pg_restore"
+      "title": "Database Monitoring",
+      "description": "View database status and activity"
     },
     {
       "title": "User Management",
-      "description": "Administer database users, roles, and permissions through intuitive dialogs"
+      "description": "Manage database roles and permissions"
     },
     {
-      "title": "High Performance",
-      "description": "Track query execution, connection statistics, and server metrics in real-time"
+      "title": "Web Interface",
+      "description": "Access database management via browser"
     }
   ],
   "platform_support": {

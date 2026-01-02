@@ -1,11 +1,11 @@
 {
   "name": "owncloud",
   "slug": "owncloud",
-  "tagline": "A self-hosted file sync and sharing platform",
+  "tagline": "An open source platform for self-hosted file sync and sharing",
   "subtitle": "",
   "description": "ownCloud is an open-source platform for file sync and sharing. It offers desktop and mobile clients, user management, versioning, and plugins for collaborative work in self-hosted deployments.",
   "categories": [
-    27
+    33
   ],
   "metadata": {
     "sponsored": false,
@@ -33,28 +33,30 @@
   },
   "features": [
     {
-      "title": "Mobile Responsive",
-      "description": "Sync files across devices with desktop and mobile clients for seamless access anywhere"
+      "title": "File Sync and Share",
+      "description": "Store, sync, and share files",
+      "core_feature": true
     },
     {
-      "title": "Folder Organization",
-      "description": "Share files and folders with users or groups with granular permission controls and expiration dates"
-    },
-    {
-      "title": "User Management",
-      "description": "Comprehensive user and group management with LDAP integration and role-based access controls"
+      "title": "User Accounts",
+      "description": "Manage users and access permissions",
+      "core_feature": true
     },
     {
       "title": "Web Interface",
-      "description": "Full-featured web interface for file management, sharing, and administration from any browser"
+      "description": "Access files through a browser"
     },
     {
-      "title": "Mobile Apps",
-      "description": "Native iOS and Android applications with offline access and automatic photo backup capabilities"
+      "title": "Desktop and Mobile Clients",
+      "description": "Sync files across devices"
     },
     {
-      "title": "Plugin System",
-      "description": "Extend functionality with hundreds of apps including calendar, contacts, and document editing"
+      "title": "Collaboration Features",
+      "description": "Share and comment on files"
+    },
+    {
+      "title": "App Extensions",
+      "description": "Add functionality using apps"
     }
   ],
   "platform_support": {

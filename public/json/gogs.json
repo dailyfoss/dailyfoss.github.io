@@ -1,11 +1,11 @@
 {
   "name": "gogs",
   "slug": "gogs",
-  "tagline": "A lightweight self-hosted Git service for small teams and individuals",
+  "tagline": "A lightweight self-hosted Git service for code hosting and collaboration",
   "subtitle": "",
   "description": "Gogs is a simple, self-hosted Git service with a fast UI and minimal resource usage. It supports code hosting, pull requests, issues, and runs easily on small servers, intended for personal or small team use.",
   "categories": [
-    72
+    26
   ],
   "metadata": {
     "sponsored": false,
@@ -32,32 +32,39 @@
   },
   "features": [
     {
-      "title": "Self-Hosted",
-      "description": "Self-hosted Git service with extremely low resource requirements and fast performance"
+      "title": "Git Service",
+      "description": "Hosts Git repositories with web interface",
+      "core_feature": true
     },
     {
-      "title": "Web Interface",
-      "description": "Clean, straightforward web UI focused on essential Git operations"
+      "title": "Issue and Wiki",
+      "description": "Manages issues and documentation per repo",
+      "core_feature": true
     },
     {
-      "title": "Lightweight",
-      "description": "Track bugs and features with a lightweight issue management system"
-    },
-    {
-      "title": "Repository Management",
-      "description": "Create, fork, and manage Git repositories through the web interface"
+      "title": "Pull Requests",
+      "description": "Supports code merge workflows",
+      "core_feature": true
     },
     {
       "title": "User Management",
-      "description": "Support for multiple users and organizations with basic permission controls"
+      "description": "Controls user accounts and permissions"
     },
     {
-      "title": "Webhook Support",
-      "description": "Trigger external services on push, pull request, and other repository events"
+      "title": "Webhooks",
+      "description": "Integrates with CI tools"
     },
     {
-      "title": "Small Server Friendly",
-      "description": "Runs efficiently on Raspberry Pi and other low-powered hardware"
+      "title": "Markdown Support",
+      "description": "Renders formatted text in issues and wikis"
+    },
+    {
+      "title": "Notifications",
+      "description": "Sends updates on activities"
+    },
+    {
+      "title": "Self-Hosted Git Service",
+      "description": "Host the service on your own infrastructure"
     }
   ],
   "platform_support": {

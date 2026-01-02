@@ -1,11 +1,11 @@
 {
   "name": "dockerizalo",
   "slug": "dockerizalo",
-  "tagline": "A platform for deploying Docker-based applications using prebuilt stacks",
+  "tagline": "A platform for deploying Docker-based applications using predefined stacks",
   "subtitle": "",
   "description": "Dockerizalo provides an easy way to deploy and orchestrate Docker-based apps using pre-configured stacks. It includes automated setup scripts and templates for self-hosting common tools and services.",
   "categories": [
-    165
+    27
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,38 @@
   },
   "features": [
     {
-      "title": "Pre",
-      "description": "Deploy popular apps with ready-made templates. Instant deployment"
+      "title": "Docker Deployment Generator",
+      "description": "Generates Docker deployment files from configuration",
+      "core_feature": true
     },
     {
-      "title": "Automated Setup",
-      "description": "Scripts handle complex configuration automatically. No manual setup needed"
+      "title": "Template-Based Setup",
+      "description": "Uses templates to standardize container setups",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Library of common self-hosted tools. Quick stack deployment"
+      "title": "Environment Variable Handling",
+      "description": "Injects environment variables into generated configs"
     },
     {
-      "title": "Docker Support",
-      "description": "Simplified Docker Compose management. Streamlined operations"
+      "title": "Multi-Service Support",
+      "description": "Generates configurations for multiple services"
     },
     {
-      "title": "Homelab Ready",
-      "description": "Perfect for personal server environments. Build your stack quickly"
+      "title": "CLI Interface",
+      "description": "Runs generation tasks from the command line"
     },
     {
-      "title": "Self",
-      "description": "Deploy everything on your infrastructure. Complete control and privacy"
+      "title": "Configuration Validation",
+      "description": "Validates generated Docker files"
+    },
+    {
+      "title": "Automation Friendly",
+      "description": "Integrates into CI and scripts"
+    },
+    {
+      "title": "Local Execution",
+      "description": "Runs on user machines"
     }
   ],
   "platform_support": {

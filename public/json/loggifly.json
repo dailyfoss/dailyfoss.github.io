@@ -1,11 +1,11 @@
 {
   "name": "loggifly",
   "slug": "loggifly",
-  "tagline": "A self-hosted aviation logbook for pilots and flight tracking",
+  "tagline": "A self-hosted aviation logbook system for tracking flights and hours",
   "subtitle": "",
   "description": "LoggiFly is a self-hosted aviation logbook system for pilots and aviators. It allows easy logging of flight time, aircraft, and route information with report generation and customization options.",
   "categories": [
-    92
+    37
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "Flight Logging",
-      "description": "Track flight time, Aircraft details, Route information. Digital pilot logbook"
+      "title": "Log Forwarding",
+      "description": "Forward logs to external destinations",
+      "core_feature": true
     },
     {
-      "title": "Data Export",
-      "description": "Flight reports, Hour summaries, Custom exports. Professional aviation records"
+      "title": "Buffering",
+      "description": "Queue logs to ensure delivery",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Privacy-focused, Own your data, Custom deployment. Control your flight records"
+      "title": "Protocol Support",
+      "description": "Forward using standard log transport protocols",
+      "core_feature": true
     },
     {
-      "title": "Aircraft Management",
-      "description": "Fleet tracking, Maintenance logs, Type ratings. Manage your aircraft"
+      "title": "Filtering",
+      "description": "Select specific logs for forwarding"
     },
     {
-      "title": "Database Backup",
-      "description": "PDF reports, CSV export, Regulatory formats. Share and backup your logbook"
+      "title": "Target Configuration",
+      "description": "Configure endpoints for forwarded logs"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the log forwarder on your own infrastructure"
     }
   ],
   "platform_support": {

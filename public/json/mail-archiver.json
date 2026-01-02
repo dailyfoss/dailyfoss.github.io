@@ -1,11 +1,11 @@
 {
   "name": "mail-archiver",
   "slug": "mail-archiver",
-  "tagline": "A self-hosted service for archiving and searching email messages",
+  "tagline": "A self-hosted solution for archiving and searching emails",
   "subtitle": "",
   "description": "Mail Archiver is a small self-hosted solution that captures and archives emails for permanent searchable storage. It supports IMAP fetching and full-text search for compliance or personal records.",
   "categories": [
-    53
+    32
   ],
   "metadata": {
     "sponsored": false,
@@ -33,20 +33,31 @@
   },
   "features": [
     {
-      "title": "Search and Filter",
-      "description": "Search archived messages by subject, sender, content, or attachment names"
+      "title": "Email Archiving",
+      "description": "Archive emails for long-term storage",
+      "core_feature": true
     },
     {
-      "title": "Folder Organization",
-      "description": "Configure automatic archival rules based on age, folder, or sender criteria"
+      "title": "IMAP Integration",
+      "description": "Collect emails from IMAP mailboxes",
+      "core_feature": true
     },
     {
-      "title": "Attachment Storage",
-      "description": "Extract and store email attachments separately for efficient file management"
+      "title": "Search",
+      "description": "Search archived emails",
+      "core_feature": true
     },
     {
-      "title": "Data Export",
-      "description": "Export archived emails in standard formats like MBOX or EML for portability"
+      "title": "Metadata Storage",
+      "description": "Preserve headers and message details"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Browse archived emails through a browser"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the archiver on your own infrastructure"
     }
   ],
   "platform_support": {

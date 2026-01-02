@@ -1,7 +1,7 @@
 {
   "name": "davical",
   "slug": "davical",
-  "tagline": "A CalDAV server for shared calendar management across devices",
+  "tagline": "A CalDAV server for shared calendar management and device synchronization",
   "subtitle": "",
   "description": "DAViCal is a CalDAV server that allows shared calendar management for desktop and mobile clients. Designed for personal and organizational use, it integrates with clients like Thunderbird, iOS, and Android calendar apps.",
   "categories": [
@@ -27,24 +27,39 @@
   },
   "features": [
     {
-      "title": "Real-Time Sync",
-      "description": "Standard protocol for calendar synchronization. Universal compatibility"
+      "title": "CalDAV Server",
+      "description": "Provides calendar synchronization using CalDAV",
+      "core_feature": true
     },
     {
-      "title": "Team Collaboration",
-      "description": "Collaborate on schedules with teams. Coordinated planning"
+      "title": "Multi-User Calendars",
+      "description": "Manages calendars for multiple users",
+      "core_feature": true
     },
     {
-      "title": "Personal & Organizational",
-      "description": "Suitable for individuals and businesses. Scales with needs"
+      "title": "Access Control Lists",
+      "description": "Controls calendar access permissions",
+      "core_feature": true
     },
     {
-      "title": "Event Management",
-      "description": "Full calendar functionality with reminders. Complete scheduling solution"
+      "title": "Scheduling Support",
+      "description": "Handles meeting invitations and responses"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Keep your calendar data private. No cloud dependency"
+      "title": "Web Administration",
+      "description": "Manages users and calendars through a web UI"
+    },
+    {
+      "title": "Standards Compliance",
+      "description": "Works with common CalDAV clients"
+    },
+    {
+      "title": "Database Backend",
+      "description": "Stores calendar data in a database"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Runs on user-managed servers"
     }
   ],
   "platform_support": {

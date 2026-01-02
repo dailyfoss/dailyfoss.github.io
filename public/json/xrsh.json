@@ -1,11 +1,11 @@
 {
   "name": "xrsh",
   "slug": "xrsh",
-  "tagline": "A self-hosted remote shell platform for browser-based terminal access to remote systems",
+  "tagline": "A web-based remote shell access platform for browser SSH connections",
   "subtitle": "",
   "description": "xrsh is a self-hosted remote shell access platform that exposes command-line environments through a browser-based terminal, letting users reach remote systems securely without native SSH clients.",
   "categories": [
-    135
+    26
   ],
   "metadata": {
     "sponsored": false,
@@ -27,36 +27,31 @@
   },
   "features": [
     {
-      "title": "Browser",
-      "description": "Access remote shells through any modern web browser without installing SSH clients"
+      "title": "Remote Shell",
+      "description": "Access remote shells over SSH",
+      "core_feature": true
     },
     {
-      "title": "End-to-End Encryption",
-      "description": "Establish encrypted SSH connections over HTTPS with certificate-based authentication"
+      "title": "Session Handling",
+      "description": "Manage multiple shell sessions",
+      "core_feature": true
     },
     {
-      "title": "Session Persistence",
-      "description": "Resume disconnected terminal sessions automatically when network connectivity returns"
+      "title": "Terminal Interface",
+      "description": "Use a terminal-based interface",
+      "core_feature": true
     },
     {
-      "title": "Multi",
-      "description": "Open multiple terminal sessions in browser tabs for parallel remote work"
+      "title": "Authentication",
+      "description": "Authenticate using SSH keys"
     },
     {
-      "title": "Copy",
-      "description": "Transfer text between local clipboard and remote terminal with keyboard shortcuts"
+      "title": "Local Execution",
+      "description": "Run the tool locally"
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Use terminals on mobile devices and tablets with touch-optimized controls"
-    },
-    {
-      "title": "Customizable Appearance",
-      "description": "Adjust font sizes, color schemes, and terminal dimensions for comfortable viewing"
-    },
-    {
-      "title": "Keyboard Mapping",
-      "description": "Configure custom key bindings and shortcuts to match local terminal preferences"
+      "title": "Cross-Platform Support",
+      "description": "Use on supported systems"
     }
   ],
   "platform_support": {

@@ -1,11 +1,11 @@
 {
   "name": "mylar3",
   "slug": "mylar3",
-  "tagline": "An automated comic book downloader and library manager",
+  "tagline": "An automated comic book downloader and library management system",
   "subtitle": "",
   "description": "Mylar3 is an automated comic book downloader and manager. It can monitor series, download issues, and organize comic archives with integration for download clients and metadata tools.",
   "categories": [
-    21
+    1
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,31 @@
   },
   "features": [
     {
+      "title": "Comic Library Management",
+      "description": "Manage and organize comic collections",
+      "core_feature": true
+    },
+    {
+      "title": "Issue Monitoring",
+      "description": "Track missing and upcoming issues",
+      "core_feature": true
+    },
+    {
       "title": "Download Automation",
-      "description": "Integrate with download clients like SABnzbd and NZBGet for automated comic book downloading"
+      "description": "Integrate with download clients",
+      "core_feature": true
     },
     {
-      "title": "Metadata Management",
-      "description": "Fetch and organize comic metadata including covers, descriptions, and publication information"
+      "title": "Metadata Matching",
+      "description": "Match comics with online databases"
     },
     {
-      "title": "Folder Organization",
-      "description": "Automatically rename and organize comic files using customizable naming conventions and folder structures"
+      "title": "File Organization",
+      "description": "Rename and organize files"
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Manage your comic collection through a responsive web-based interface accessible from any device"
-    },
-    {
-      "title": "Search and Filter",
-      "description": "Connect with multiple comic databases and indexers to find and download missing issues"
+      "title": "Web Interface",
+      "description": "Manage comics through a browser"
     }
   ],
   "platform_support": {

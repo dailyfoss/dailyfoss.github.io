@@ -1,11 +1,11 @@
 {
   "name": "localess",
   "slug": "localess",
-  "tagline": "A self-hosted localization management system for applications",
+  "tagline": "A self-hosted localization and translation management system",
   "subtitle": "",
   "description": "Localess is a self-hosted localization management system that streamlines translations for apps or websites. It offers project management, role-based access, context-based translation preview, and export options.",
   "categories": [
-    88
+    26
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Data Export",
-      "description": "Multi-language support, Context preview, Export formats. Streamline app localization"
+      "title": "Localization Management",
+      "description": "Manage language translations for applications",
+      "core_feature": true
     },
     {
-      "title": "Team Collaboration",
-      "description": "Multiple projects, Role-based access, Team collaboration. Manage translations at scale"
+      "title": "Resource Editing",
+      "description": "Edit language resource files in a web interface",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "API access, Import/export, Version control. Integrate with your workflow"
+      "title": "Key Search",
+      "description": "Search translation keys across languages",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Privacy-focused, Custom deployment, Full control. Own your translation data"
+      "title": "Import/Export",
+      "description": "Import and export language files"
+    },
+    {
+      "title": "Version Control Support",
+      "description": "Track changes to translation resources"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the translation manager on your own infrastructure"
     }
   ],
   "platform_support": {

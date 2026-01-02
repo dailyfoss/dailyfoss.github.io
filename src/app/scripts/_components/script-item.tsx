@@ -5,6 +5,7 @@ import { FaGithub } from "react-icons/fa6";
 import { Suspense, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
+import { createPortal } from "react-dom";
 
 import type { Script } from "@/lib/types";
 
@@ -32,6 +33,12 @@ import type { Category } from "@/lib/types";
 // Screenshot Preview with Lightbox
 function ScreenshotPreview({ src, alt }: { src: string; alt: string }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [hasError, setHasError] = useState(false);
+
+  // Hide component if image fails to load or src is empty
+  if (hasError || !src || src.trim() === "") {
+    return null;
+  }
 
   return (
     <>
@@ -46,6 +53,7 @@ function ScreenshotPreview({ src, alt }: { src: string; alt: string }) {
             src={src}
             alt={alt}
             className="w-full h-auto object-contain"
+            onError={() => setHasError(true)}
           />
         </button>
       </div>
@@ -53,7 +61,7 @@ function ScreenshotPreview({ src, alt }: { src: string; alt: string }) {
       {/* Lightbox - Click anywhere to close */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 cursor-pointer"
+          className="fixed inset-0 z-[9999] flex items-center justify-center cursor-pointer backdrop-blur-xl bg-black/20 dark:bg-white/10"
           onClick={() => setIsOpen(false)}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}

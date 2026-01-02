@@ -1,11 +1,11 @@
 {
   "name": "tvheadend",
   "slug": "tvheadend",
-  "tagline": "A TV streaming and recording server with web interface",
+  "tagline": "A TV streaming and recording server for DVB, IPTV, and broadcast sources",
   "subtitle": "",
   "description": "Tvheadend is a self-hosted TV streaming server and recorder for DVB, ATSC, IPTV and more. It offers channel management, EPG, recording rules, and streaming to clients via an integrated web interface.",
   "categories": [
-    107
+    34
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Live Tv Streaming",
-      "description": "Stream live TV from DVB, ATSC, IPTV, or other sources to network clients"
+      "title": "TV Streaming Server",
+      "description": "Stream live TV over a network",
+      "core_feature": true
     },
     {
-      "title": "Web Interface",
-      "description": "Manage channels, recordings, and settings through a comprehensive web interface"
+      "title": "Tuner Support",
+      "description": "Use supported TV tuners",
+      "core_feature": true
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Stream to various clients including Kodi, VLC, and mobile apps"
+      "title": "Recording",
+      "description": "Record live TV programs",
+      "core_feature": true
     },
     {
-      "title": "Channel Management",
-      "description": "Scan, organize, and configure TV channels with custom numbering and grouping"
+      "title": "Electronic Program Guide",
+      "description": "View TV schedules and program data"
+    },
+    {
+      "title": "Client Support",
+      "description": "Connect using compatible clients"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the TV server on your own infrastructure"
     }
   ],
   "platform_support": {

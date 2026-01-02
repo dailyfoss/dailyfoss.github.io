@@ -5,7 +5,7 @@
   "subtitle": "",
   "description": "Imagor Studio is a web interface for Imagor, an image processing server. It lets users compose and test transformations like resize, crop and filters visually, then generate the corresponding URLs for automated use.",
   "categories": [
-    120
+    26
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,38 @@
   },
   "features": [
     {
-      "title": "Rich Text Editor",
-      "description": "Compose image transformations visually without writing code"
+      "title": "Image Processing Interface",
+      "description": "Provides a browser-based interface for generating and testing image transformation requests",
+      "core_feature": true
     },
     {
-      "title": "Real-Time",
-      "description": "See transformation results instantly as you adjust parameters"
+      "title": "Imagor Service Integration",
+      "description": "Connects to an Imagor backend to apply image processing operations",
+      "core_feature": true
     },
     {
-      "title": "Url Generation",
-      "description": "Generate Imagor-compatible URLs for automated image processing"
+      "title": "Resize and Crop",
+      "description": "Allows users to adjust image dimensions and framing parameters"
     },
     {
-      "title": "Transformation Library",
-      "description": "Access resize, crop, blur, rotate, and filter operations"
+      "title": "Format Conversion",
+      "description": "Converts images into supported output formats"
     },
     {
-      "title": "Parameter Testing",
-      "description": "Test different transformation combinations before deployment"
+      "title": "Transformation Preview",
+      "description": "Displays preview results for image transformation settings"
     },
     {
-      "title": "Imagor Integration",
-      "description": "Seamlessly works with Imagor image processing server"
+      "title": "URL Generation",
+      "description": "Generates image URLs with transformation parameters applied"
     },
     {
-      "title": "Batch Operations",
-      "description": "Design transformations that can be applied to multiple images"
+      "title": "Web-Based Access",
+      "description": "Operates entirely through a browser without local tooling"
     },
     {
-      "title": "Developer Tool",
-      "description": "Bridge between visual design and programmatic image processing"
+      "title": "Self-Hosted Image Tool",
+      "description": "Can be hosted on your own infrastructure alongside Imagor"
     }
   ],
   "platform_support": {

@@ -1,11 +1,11 @@
 {
   "name": "sharry",
   "slug": "sharry",
-  "tagline": "A self-hosted file sharing platform with access controls",
+  "tagline": "A self-hosted file sharing app with expiring links and access controls",
   "subtitle": "",
   "description": "Sharry is a self-hosted file sharing application that lets users upload files and share links with expiration and optional passwords. It supports user accounts, quotas, and a polished web interface.",
   "categories": [
-    61
+    33
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,31 @@
   },
   "features": [
     {
-      "title": "File Upload",
-      "description": "Share files of any size with automatic chunking for large transfers"
+      "title": "File Sharing",
+      "description": "Share files and folders using links",
+      "core_feature": true
     },
     {
-      "title": "Password Protection",
-      "description": "Secure shared files with optional passwords for recipient access"
+      "title": "Upload and Download",
+      "description": "Upload files and allow browser downloads",
+      "core_feature": true
     },
     {
-      "title": "User Accounts",
-      "description": "Create accounts with individual quotas and sharing permissions"
+      "title": "Expiration Policies",
+      "description": "Automatically remove shared content",
+      "core_feature": true
     },
     {
-      "title": "Download Limits",
-      "description": "Restrict number of downloads per shared link"
+      "title": "Access Control",
+      "description": "Protect shares with authentication or passwords"
     },
     {
-      "title": "Email Notifications",
-      "description": "Send share links directly to recipients via email"
+      "title": "Activity Logs",
+      "description": "Track access to shared files"
     },
     {
-      "title": "Alias Management",
-      "description": "Create memorable aliases for share links instead of random strings"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the sharing service on your own infrastructure"
     }
   ],
   "platform_support": {

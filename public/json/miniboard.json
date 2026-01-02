@@ -1,11 +1,11 @@
 {
   "name": "miniboard",
   "slug": "miniboard",
-  "tagline": "A lightweight dashboard for displaying custom stats and content",
+  "tagline": "A lightweight self-hosted dashboard for displaying custom stats and text",
   "subtitle": "",
   "description": "Miniboard is a self-hosted browser-based dashboard that allows users to display custom text, stats, or system information. It’s highly lightweight, works via configuration files, and is ideal for homelabs.",
   "categories": [
-    34
+    28
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,26 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Create personalized dashboard widgets displaying system stats, weather, or custom text content"
+      "title": "Lightweight Dashboard",
+      "description": "Display a simple dashboard for services",
+      "core_feature": true
+    },
+    {
+      "title": "Link Management",
+      "description": "Add and organize service links",
+      "core_feature": true
+    },
+    {
+      "title": "Minimal UI",
+      "description": "Provide a compact and simple interface"
     },
     {
       "title": "Configuration Files",
-      "description": "Set up dashboards through simple YAML or JSON configuration without complex setup processes"
+      "description": "Configure dashboard content via files"
     },
     {
-      "title": "Lightweight",
-      "description": "Run efficiently with minimal resource usage, perfect for Raspberry Pi and low-power devices"
-    },
-    {
-      "title": "Mobile Responsive",
-      "description": "Adapt dashboard layout automatically for desktop, tablet, and mobile viewing experiences"
-    },
-    {
-      "title": "Theme Customization",
-      "description": "Apply custom colors, fonts, and styling to match personal preferences or branding"
-    },
-    {
-      "title": "Docker Support",
-      "description": "Deploy and configure within minutes using Docker or standalone binaries"
+      "title": "Self-Hosted Frontend",
+      "description": "Host the dashboard on your own servers"
     }
   ],
   "platform_support": {

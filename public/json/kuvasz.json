@@ -1,11 +1,11 @@
 {
   "name": "kuvasz",
   "slug": "kuvasz",
-  "tagline": "An uptime monitoring service with alerts and availability metrics",
+  "tagline": "An uptime monitoring and incident alerting service for infrastructure",
   "subtitle": "",
   "description": "Kuvasz is an uptime monitoring and incident notification service. It regularly checks endpoints, records availability metrics and sends alerts when services go down, providing a central dashboard for small to medium infrastructures.",
   "categories": [
-    173
+    35
   ],
   "metadata": {
     "sponsored": false,
@@ -33,35 +33,30 @@
   "features": [
     {
       "title": "Uptime Monitoring",
-      "description": "Regular health checks for endpoints with availability tracking. Monitor service uptime continuously"
+      "description": "Monitor availability of websites and services",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Measure and graph response times for performance monitoring. Identify slow services"
+      "title": "Health Checks",
+      "description": "Perform periodic checks on defined endpoints",
+      "core_feature": true
     },
     {
-      "title": "Incident Detection",
-      "description": "Automatic downtime detection with incident creation. Know when services fail"
+      "title": "Status History",
+      "description": "Record uptime and downtime events",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Email and webhook notifications for downtime events. Get notified immediately"
+      "title": "Notification Rules",
+      "description": "Send alerts when services become unavailable"
     },
     {
-      "title": "Escalation Policies",
-      "description": "Configure alert escalation for critical services. Ensure issues are addressed"
+      "title": "Dashboard View",
+      "description": "View monitoring results in a web interface"
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Central view of all monitored services and their status. Track infrastructure health"
-    },
-    {
-      "title": "Historical Data",
-      "description": "View uptime history and incident reports over time. Analyze reliability trends"
-    },
-    {
-      "title": "Ssl Monitoring",
-      "description": "Check SSL certificate validity and expiration dates. Prevent certificate issues"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the monitoring service on your own servers"
     }
   ],
   "platform_support": {

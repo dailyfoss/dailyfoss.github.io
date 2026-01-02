@@ -1,11 +1,11 @@
 {
   "name": "databag",
   "slug": "databag",
-  "tagline": "A self-hosted federated messaging platform for private groups and calls",
+  "tagline": "A federated messaging platform for private groups with encryption",
   "subtitle": "",
   "description": "Databag is a federated, self-hosted messaging platform for private groups. It supports encrypted messaging, groups, video calls, and ActivityPub federation, all via a user-friendly web and mobile interface.",
   "categories": [
-    102
+    6
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,39 @@
   },
   "features": [
     {
-      "title": "End-to-End Encryption",
-      "description": "Private conversations with strong encryption. Secure messaging"
+      "title": "Encrypted Messaging",
+      "description": "Sends end-to-end encrypted messages between users",
+      "core_feature": true
     },
     {
-      "title": "Team Collaboration",
-      "description": "Create private groups for team communication. Collaborate securely"
+      "title": "Public Key Cryptography",
+      "description": "Uses public key encryption for message security",
+      "core_feature": true
     },
     {
-      "title": "Video Calls",
-      "description": "Built-in video conferencing capabilities. All-in-one platform"
+      "title": "Serverless Communication",
+      "description": "Delivers messages without storing plaintext on servers",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Own your messaging platform completely. No corporate surveillance"
+      "title": "Identity Verification",
+      "description": "Verifies recipients using cryptographic identities"
+    },
+    {
+      "title": "Command Line Interface",
+      "description": "Sends and receives messages via CLI"
+    },
+    {
+      "title": "Minimal Metadata Storage",
+      "description": "Limits stored metadata to reduce exposure"
+    },
+    {
+      "title": "Cross-Platform Support",
+      "description": "Runs on major operating systems"
+    },
+    {
+      "title": "Open Protocol Design",
+      "description": "Uses transparent and documented protocols"
     }
   ],
   "platform_support": {

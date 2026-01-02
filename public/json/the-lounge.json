@@ -1,11 +1,11 @@
 {
   "name": "the-lounge",
   "slug": "the-lounge",
-  "tagline": "A self-hosted always online web IRC client",
+  "tagline": "A persistent, web-based IRC client accessible from any device",
   "subtitle": "",
   "description": "The Lounge is a self-hosted, always-online web IRC client. It keeps you connected to IRC networks and provides a modern multi-user interface, letting you access chat from any device using a browser.",
   "categories": [
-    102
+    43
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,26 @@
   },
   "features": [
     {
-      "title": "Team Collaboration",
-      "description": "Support multiple users with individual accounts, connections, and preferences on one server"
+      "title": "Web IRC Client",
+      "description": "Connect to IRC networks through a browser",
+      "core_feature": true
+    },
+    {
+      "title": "Persistent Connections",
+      "description": "Stay connected even when offline",
+      "core_feature": true
+    },
+    {
+      "title": "Multiple Networks",
+      "description": "Join multiple IRC networks"
     },
     {
       "title": "Message History",
-      "description": "Scroll back through message history that persists across sessions and devices"
+      "description": "View chat history"
     },
     {
-      "title": "Email Notifications",
-      "description": "Receive notifications for mentions and private messages even when not actively viewing"
-    },
-    {
-      "title": "File Upload",
-      "description": "Share files and images directly in channels with automatic hosting and preview generation"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the client on your own server"
     }
   ],
   "platform_support": {

@@ -1,11 +1,11 @@
 {
   "name": "gigapaste",
   "slug": "gigapaste",
-  "tagline": "A pastebin service for sharing code and text with expiration controls",
+  "tagline": "A self-hosted pastebin for sharing code and text with expiration controls",
   "subtitle": "",
   "description": "GigaPaste is a self-hosted pastebin application that supports syntax highlighting, expiration controls, and public or private snippets. Ideal for sharing logs, code, or notes within development or teaching environments.",
   "categories": [
-    118
+    42
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,37 @@
   },
   "features": [
     {
-      "title": "Data Privacy",
-      "description": "Create public or private snippets with optional password protection for sensitive content"
+      "title": "Pastebin Service",
+      "description": "Stores and shares text snippets",
+      "core_feature": true
     },
     {
-      "title": "Code Sharing",
-      "description": "Share logs, code, and text snippets quickly within development or teaching environments"
+      "title": "Syntax Highlighting",
+      "description": "Formats code snippets for readability"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Keep shared content on your own infrastructure without third-party dependencies"
+      "title": "Expiration Controls",
+      "description": "Sets auto-delete times for pastes"
     },
     {
-      "title": "Team Collaboration",
-      "description": "Facilitate code review and debugging by sharing snippets internally"
+      "title": "Privacy Options",
+      "description": "Creates private or public pastes"
+    },
+    {
+      "title": "Search",
+      "description": "Finds pastes by title or content"
+    },
+    {
+      "title": "API Access",
+      "description": "Integrates with external tools"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Manages pastes in the browser"
+    },
+    {
+      "title": "Self-Hosted Paste Service",
+      "description": "Host the service on your own infrastructure"
     }
   ],
   "platform_support": {

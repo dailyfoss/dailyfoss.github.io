@@ -1,11 +1,11 @@
 {
   "name": "url-to-png",
   "slug": "url-to-png",
-  "tagline": "A service for capturing website screenshots as images",
+  "tagline": "A microservice for capturing full-page website screenshots via API",
   "subtitle": "",
   "description": "url-to-png is a self-hosted microservice to capture full-page screenshots of URLs and return PNG images. It exposes a simple HTTP API and optional minimal web form for ad-hoc use.",
   "categories": [
-    59
+    42
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "REST API",
-      "description": "Capture website screenshots via simple HTTP API calls with URL parameters"
+      "title": "Webpage Rendering",
+      "description": "Capture screenshots of web pages",
+      "core_feature": true
     },
     {
-      "title": "Full",
-      "description": "Render complete web pages including content below the fold"
+      "title": "Image Output",
+      "description": "Generate PNG images from URLs",
+      "core_feature": true
     },
     {
-      "title": "Custom Dimensions",
-      "description": "Specify viewport width and height for screenshots of any size"
+      "title": "API Service",
+      "description": "Request screenshots via API",
+      "core_feature": true
     },
     {
-      "title": "Format Options",
-      "description": "Return screenshots as PNG images with configurable quality settings"
+      "title": "Viewport Control",
+      "description": "Configure screenshot dimensions"
     },
     {
-      "title": "Javascript Rendering",
-      "description": "Execute JavaScript on pages before capturing for dynamic content"
+      "title": "Automation Support",
+      "description": "Use in automated workflows"
     },
     {
-      "title": "Custom Delays",
-      "description": "Wait for specified time before capturing to allow content to load"
-    },
-    {
-      "title": "Headless Browser",
-      "description": "Use headless Chrome for accurate rendering of modern web pages"
-    },
-    {
-      "title": "High Performance",
-      "description": "Cache screenshots to improve performance for repeated requests"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the renderer on your own infrastructure"
     }
   ],
   "platform_support": {

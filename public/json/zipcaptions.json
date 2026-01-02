@@ -1,11 +1,11 @@
 {
   "name": "zipcaptions",
   "slug": "zipcaptions",
-  "tagline": "A utility for packaging subtitle and caption files",
+  "tagline": "A utility for collecting and packaging subtitle files into zip archives",
   "subtitle": "",
   "description": "zip-captions is a self-hosted utility that collects and packages subtitle or caption files into zip archives for distribution or backup, often used alongside media automation workflows.",
   "categories": [
-    59
+    42
   ],
   "metadata": {
     "sponsored": false,
@@ -27,20 +27,31 @@
   },
   "features": [
     {
-      "title": "Database Backup",
-      "description": "Package collected subtitles into zip files for easy distribution and backup"
+      "title": "Caption Archiving",
+      "description": "Archive video captions and subtitles",
+      "core_feature": true
     },
     {
-      "title": "Web Interface",
-      "description": "Upload and manage subtitle files through a browser-based interface without command-line tools"
+      "title": "ZIP Packaging",
+      "description": "Package captions into ZIP files",
+      "core_feature": true
     },
     {
-      "title": "Media Library",
-      "description": "Connect with media automation workflows to archive subtitles alongside video downloads"
+      "title": "Platform Integration",
+      "description": "Fetch captions from supported platforms",
+      "core_feature": true
     },
     {
-      "title": "Language Filtering",
-      "description": "Select specific subtitle languages to include or exclude from archive creation"
+      "title": "Automation",
+      "description": "Automate caption collection"
+    },
+    {
+      "title": "Local Storage",
+      "description": "Store caption archives locally"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the tool on your own infrastructure"
     }
   ],
   "platform_support": {

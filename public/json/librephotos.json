@@ -1,11 +1,11 @@
 {
   "name": "librephotos",
   "slug": "librephotos",
-  "tagline": "A self-hosted photo manager with AI based organization",
+  "tagline": "A self-hosted photo management platform with AI-powered organization",
   "subtitle": "",
   "description": "LibrePhotos is a self-hosted photo management platform, similar to Google Photos. It automatically organizes photos using AI, supports face recognition, timelines, tagging, and maps, while protecting user privacy.",
   "categories": [
-    120
+    34
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,35 @@
   },
   "features": [
     {
-      "title": "Tagging System",
-      "description": "Automatic photo tagging, Face recognition, Object detection. Organize photos intelligently"
+      "title": "Photo Library Management",
+      "description": "Store and browse personal photo collections",
+      "core_feature": true
     },
     {
-      "title": "Timeline & Maps",
-      "description": "Photo timelines, Location mapping, Travel visualization. Browse photos by time and place"
+      "title": "Automatic Indexing",
+      "description": "Scan and index photos from configured folders",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Self-hosted, No cloud tracking, Full data control. Google Photos alternative you own"
+      "title": "Timeline View",
+      "description": "Browse photos by date",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Full-text search, Advanced filters, Smart albums. Find any photo instantly"
+      "title": "Face Recognition",
+      "description": "Group photos by detected faces"
+    },
+    {
+      "title": "Location View",
+      "description": "View photos by geographic location"
+    },
+    {
+      "title": "Search",
+      "description": "Search photos using metadata and tags"
+    },
+    {
+      "title": "Self-Hosted Gallery",
+      "description": "Run the photo service on your own servers"
     }
   ],
   "platform_support": {

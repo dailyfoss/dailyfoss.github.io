@@ -1,11 +1,11 @@
 {
   "name": "openemr",
   "slug": "openemr",
-  "tagline": "An open source electronic medical records system",
+  "tagline": "An open source electronic medical records and practice management system",
   "subtitle": "",
   "description": "OpenEMR is a fully-featured electronic medical records and practice management system. It includes patient records, prescriptions, billing, and scheduling, suitable for small medical clinics.",
   "categories": [
-    101
+    42
   ],
   "metadata": {
     "sponsored": false,
@@ -33,24 +33,34 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Visual metrics and usage statistics with customizable charts to track performance and user engagement"
+      "title": "Electronic Medical Records",
+      "description": "Manage patient records and clinical data",
+      "core_feature": true
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Responsive design with touch-friendly interfaces and offline sync capabilities for seamless mobile access"
+      "title": "Scheduling",
+      "description": "Schedule patient appointments",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Configurable alerts via email, push, or in-app notifications to keep users informed of important updates"
+      "title": "Billing and Claims",
+      "description": "Handle billing and insurance claims"
     },
     {
-      "title": "Theme Customization",
-      "description": "Multiple UI themes and layout options with custom branding support to match organizational identity"
+      "title": "Clinical Notes",
+      "description": "Record and organize clinical observations"
     },
     {
-      "title": "Database Backup",
-      "description": "Scheduled backups with encryption and cloud storage integration to ensure data protection and disaster recovery"
+      "title": "Patient Portal",
+      "description": "Allow patients to view records and appointments"
+    },
+    {
+      "title": "Access Control",
+      "description": "Restrict access based on roles"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the medical system on your own infrastructure"
     }
   ],
   "platform_support": {

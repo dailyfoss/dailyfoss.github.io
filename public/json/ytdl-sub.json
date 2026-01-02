@@ -1,11 +1,11 @@
 {
   "name": "ytdl-sub",
   "slug": "ytdl-sub",
-  "tagline": "A subscription based automation tool for yt-dlp",
+  "tagline": "An automation wrapper for yt-dlp to subscribe and download channels/playlists",
   "subtitle": "",
   "description": "ytdl-sub is a self-hosted, automation-focused wrapper for yt-dlp that subscribes to channels and playlists, periodically downloading new content according to defined rules.",
   "categories": [
-    100
+    34
   ],
   "metadata": {
     "sponsored": false,
@@ -27,24 +27,31 @@
   },
   "features": [
     {
-      "title": "File Upload",
-      "description": "Set criteria for which videos to download based on title, duration, upload date, or metadata"
+      "title": "Subscription-Based Downloads",
+      "description": "Download media from subscribed sources",
+      "core_feature": true
     },
     {
-      "title": "Folder Organization",
-      "description": "Organize downloads with naming conventions and folder structures compatible with Plex and Jellyfin"
+      "title": "Automation",
+      "description": "Automate recurring downloads",
+      "core_feature": true
     },
     {
-      "title": "Incremental Downloads",
-      "description": "Only fetch new videos since the last run to minimize bandwidth and processing time"
+      "title": "Metadata Management",
+      "description": "Organize downloaded media with metadata",
+      "core_feature": true
     },
     {
-      "title": "Media Library",
-      "description": "Create metadata files for media servers with episode numbers, descriptions, and artwork"
+      "title": "Configuration Files",
+      "description": "Configure subscriptions"
     },
     {
-      "title": "Thumbnail Management",
-      "description": "Download and organize video thumbnails as poster images for media library displays"
+      "title": "Logging",
+      "description": "View download logs"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the service on your own infrastructure"
     }
   ],
   "platform_support": {

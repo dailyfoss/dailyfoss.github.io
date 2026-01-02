@@ -1,11 +1,11 @@
 {
   "name": "coder",
   "slug": "coder",
-  "tagline": "A developer workspace platform for managing cloud-based IDEs",
+  "tagline": "A developer workspace platform for provisioning cloud-based IDE environments",
   "subtitle": "",
   "description": "Coder is an enterprise-ready developer workspace management platform that lets teams run cloud-based VS Code and JetBrains environments. It supports infrastructure provisioning and integrates with AWS, Kubernetes, and Terraform.",
   "categories": [
-    43
+    30
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,35 @@
   },
   "features": [
     {
-      "title": "Cloud Workspaces",
-      "description": "Run VS Code and JetBrains IDEs in the cloud. Code from anywhere"
+      "title": "Remote Development Environments",
+      "description": "Provides cloud-based development workspaces",
+      "core_feature": true
     },
     {
-      "title": "Team Collaboration",
-      "description": "Built for teams with security and compliance features. Scale with confidence"
+      "title": "Infrastructure as Code",
+      "description": "Defines environments using configuration files",
+      "core_feature": true
     },
     {
-      "title": "Kubernetes Ready",
-      "description": "Deploy on AWS, GCP, Azure, or Kubernetes. Choose your infrastructure"
+      "title": "Workspace Management",
+      "description": "Creates and manages developer workspaces",
+      "core_feature": true
     },
     {
-      "title": "Resource Management",
-      "description": "Control compute resources and costs efficiently. Optimize spending automatically"
+      "title": "Access Control",
+      "description": "Manages user and team permissions"
     },
     {
-      "title": "Team Collaboration",
-      "description": "Share workspaces and standardize development environments. Everyone stays in sync"
+      "title": "IDE Integration",
+      "description": "Integrates with popular development tools"
+    },
+    {
+      "title": "Resource Isolation",
+      "description": "Separates environments per user"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Runs on private infrastructure"
     }
   ],
   "platform_support": {

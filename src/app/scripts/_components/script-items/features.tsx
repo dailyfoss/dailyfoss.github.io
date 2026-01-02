@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCircle, Star } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import type { Script } from "@/lib/types";
 import { iconMap } from "@/config/feature-icon-map";
 import { suggestIconFromKeywords } from "@/config/feature-keyword-map";
@@ -19,18 +19,15 @@ function CoreFeatureCard({ feature }: { feature: Feature }) {
   const IconComponent = iconMap[smartIcon] || CheckCircle;
   
   return (
-    <div className="group relative rounded-lg border border-primary/30 bg-primary/5 p-4 transition-all hover:border-primary/50 hover:shadow-md">
+    <div className="group relative rounded-lg border border-border/50 bg-card p-4 transition-all hover:border-border/80 hover:shadow-sm">
       <div className="flex items-start gap-3">
-        <div className="flex-shrink-0 rounded-md bg-primary/15 p-2 text-primary transition-colors group-hover:bg-primary/25">
+        <div className="flex-shrink-0 rounded-md bg-muted/50 p-2 text-foreground transition-colors group-hover:bg-muted/80">
           <IconComponent className="h-5 w-5" />
         </div>
         <div className="flex-1 space-y-1">
-          <div className="flex items-center gap-2">
-            <h4 className="font-semibold text-sm leading-tight">
-              {feature.title}
-            </h4>
-            <Star className="h-3 w-3 text-primary fill-primary" />
-          </div>
+          <h4 className="font-semibold text-sm leading-tight">
+            {feature.title}
+          </h4>
           <p className="text-xs text-muted-foreground leading-relaxed">
             {feature.description}
           </p>
@@ -99,10 +96,7 @@ export default function Features({ item }: { item: Script }) {
       {/* Core Features */}
       {coreFeatures.length > 0 && (
         <div className="space-y-3">
-          <div className="flex items-center gap-2">
-            <Star className="h-4 w-4 text-primary fill-primary" />
-            <h3 className="text-lg font-semibold">Core Features</h3>
-          </div>
+          <h3 className="text-lg font-semibold">Core Features</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {coreFeatures.map((feature, index) => (
               <CoreFeatureCard key={`core-${index}`} feature={feature} />

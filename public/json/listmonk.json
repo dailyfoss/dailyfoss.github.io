@@ -1,11 +1,11 @@
 {
   "name": "listmonk",
   "slug": "listmonk",
-  "tagline": "A high performance self-hosted mailing list manager",
+  "tagline": "A high-performance self-hosted mailing list and newsletter manager",
   "subtitle": "",
   "description": "Listmonk is a high-performance self-hosted mailing list and newsletter manager with a slick UI. It supports subscriber segmentation, templating, API integration, and sending bulk email through SMTP providers.",
   "categories": [
-    109
+    32
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Newsletter Management",
-      "description": "Mailing lists, Subscriber segmentation, Campaign scheduling. Professional email marketing platform"
+      "title": "Mailing List Management",
+      "description": "Manage subscribers and mailing lists",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Bulk email sending, SMTP integration, Fast delivery. Handle large subscriber lists efficiently"
+      "title": "Campaign Sending",
+      "description": "Send newsletters and announcements via email",
+      "core_feature": true
     },
     {
-      "title": "Rich Text Editor",
-      "description": "Rich editor, Custom templates, Personalization. Create beautiful newsletters"
+      "title": "Subscriber Segmentation",
+      "description": "Group subscribers using attributes and filters",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Open rates, Click tracking, Subscriber insights. Measure campaign effectiveness"
+      "title": "Template Management",
+      "description": "Create and reuse email templates"
+    },
+    {
+      "title": "Analytics",
+      "description": "Track opens and delivery statistics"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the mailing list manager on your own infrastructure"
     }
   ],
   "platform_support": {

@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Database Backup",
-      "description": "End-to-end AES-256 encryption with password or key-based protection. Secure your backup data completely"
-    },
-    {
-      "title": "High Performance",
-      "description": "Fast incremental backups that only store changed data. Minimize backup time and storage"
+      "title": "Backup Creation",
+      "description": "Create encrypted backups of files and directories",
+      "core_feature": true
     },
     {
       "title": "Snapshot Management",
-      "description": "Create point-in-time snapshots with retention policies. Maintain backup history efficiently"
+      "description": "Manage point-in-time backup snapshots",
+      "core_feature": true
     },
     {
-      "title": "Web Interface",
-      "description": "Browser-based interface for backup management and monitoring. Manage backups visually"
+      "title": "Restore Operations",
+      "description": "Restore files and directories from backups",
+      "core_feature": true
+    },
+    {
+      "title": "Multiple Storage Targets",
+      "description": "Store backups on local or remote storage locations"
+    },
+    {
+      "title": "Compression and Deduplication",
+      "description": "Reduce storage usage using compression and deduplication"
+    },
+    {
+      "title": "Command-Line and Web UI",
+      "description": "Manage backups using CLI or web-based interface"
     }
   ],
   "platform_support": {

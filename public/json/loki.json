@@ -1,11 +1,11 @@
 {
   "name": "loki",
   "slug": "loki",
-  "tagline": "A scalable log aggregation system designed for observability",
+  "tagline": "A scalable log aggregation system for observability and monitoring",
   "subtitle": "",
   "description": "Loki is a horizontally scalable, multi-tenant log aggregation system inspired by Prometheus. It stores and queries logs efficiently, offering Grafana integration and a simple query language for observability.",
   "categories": [
-    93
+    35
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Log Aggregation",
-      "description": "Horizontally scalable, Multi-tenant, Efficient storage. Collect logs from all services"
+      "title": "Log Aggregation System",
+      "description": "Collect and index logs from multiple sources",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Native visualization, Query builder, Dashboards. Explore logs visually"
+      "title": "Prometheus Integration",
+      "description": "Integrate with Prometheus for metrics correlation",
+      "core_feature": true
     },
     {
-      "title": "Logql",
-      "description": "Powerful query language, Label-based filtering, Metrics extraction. Find what you need quickly"
+      "title": "Query Logs",
+      "description": "Search log data using a powerful query language",
+      "core_feature": true
     },
     {
-      "title": "Cost",
-      "description": "Index-free, Object storage, Low overhead. Affordable log management at scale"
+      "title": "Multi-Tenant Support",
+      "description": "Separate log data for multiple users"
+    },
+    {
+      "title": "Dashboard Integration",
+      "description": "Visualize logs within dashboard tools"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the aggregation system on your own infrastructure"
     }
   ],
   "platform_support": {

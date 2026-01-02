@@ -1,11 +1,11 @@
 {
   "name": "pastefy",
   "slug": "pastefy",
-  "tagline": "A modern pastebin platform with authentication and versioning",
+  "tagline": "A modern pastebin platform with syntax highlighting and versioning",
   "subtitle": "",
   "description": "Pastefy is a lightweight and modern pastebin platform with authentication, versioning, and syntax highlighting. It is designed for private or public sharing with a responsive UI.",
   "categories": [
-    118
+    33
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,25 @@
   },
   "features": [
     {
-      "title": "User Authentication",
-      "description": "Optional account system allows users to manage pastes, track history, and control access to content"
+      "title": "Pastebin Service",
+      "description": "Share text and code snippets",
+      "core_feature": true
     },
     {
-      "title": "Public And Private",
-      "description": "Choose visibility settings for each paste to share publicly, keep unlisted, or restrict to authenticated"
+      "title": "Syntax Highlighting",
+      "description": "Display code with syntax coloring"
     },
     {
-      "title": "Folder Organization",
-      "description": "Organize pastes into folders for better management and categorization of related content"
+      "title": "Expiration Settings",
+      "description": "Automatically delete pastes after a period"
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Mobile-optimized interface works seamlessly across desktop, tablet, and smartphone devices"
+      "title": "API Access",
+      "description": "Create and retrieve pastes programmatically"
     },
     {
-      "title": "REST API",
-      "description": "RESTful API enables programmatic paste creation and retrieval for automation and tool integration"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the paste service on your own infrastructure"
     }
   ],
   "platform_support": {

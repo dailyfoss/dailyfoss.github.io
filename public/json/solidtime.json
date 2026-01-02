@@ -1,11 +1,11 @@
 {
   "name": "solidtime",
   "slug": "solidtime",
-  "tagline": "A team focused time tracking platform",
+  "tagline": "A self-hosted time tracking and reporting tool for teams",
   "subtitle": "",
   "description": "Solidtime is a self-hosted time tracking solution focused on team productivity. It provides timesheets, reports, and project-based tracking through a modern, responsive web UI.",
   "categories": [
-    16
+    39
   ],
   "metadata": {
     "sponsored": false,
@@ -33,24 +33,31 @@
   },
   "features": [
     {
-      "title": "Project Management",
-      "description": "Organizes time entries by projects and tasks"
+      "title": "Time Tracking",
+      "description": "Track time spent on tasks and projects",
+      "core_feature": true
+    },
+    {
+      "title": "Project Organization",
+      "description": "Organize tracked time by project",
+      "core_feature": true
+    },
+    {
+      "title": "Reports",
+      "description": "Generate time usage reports",
+      "core_feature": true
     },
     {
       "title": "Team Collaboration",
-      "description": "Monitors team member hours and productivity"
+      "description": "Track time for multiple users"
     },
     {
-      "title": "Reporting",
-      "description": "Generates detailed reports on time spent by project, user, or period"
+      "title": "Export Data",
+      "description": "Export tracked time records"
     },
     {
-      "title": "Calendar View",
-      "description": "Visualizes time entries in calendar format for easy review"
-    },
-    {
-      "title": "Data Export",
-      "description": "Downloads time data as CSV or Excel for external analysis"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the time tracker on your own infrastructure"
     }
   ],
   "platform_support": {

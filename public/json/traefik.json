@@ -1,11 +1,11 @@
 {
   "name": "traefik",
   "slug": "traefik",
-  "tagline": "A dynamic reverse proxy and load balancer",
+  "tagline": "A dynamic reverse proxy and load balancer for modern infrastructure",
   "subtitle": "",
   "description": "Traefik is a modern reverse proxy and load balancer that dynamically discovers services and routes traffic. It supports Kubernetes, Docker, and more, with a simple configuration, web dashboard, and extensive HTTP API.",
   "categories": [
-    137
+    36
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,26 @@
   },
   "features": [
     {
+      "title": "Reverse Proxy",
+      "description": "Route traffic to backend services",
+      "core_feature": true
+    },
+    {
+      "title": "Dynamic Configuration",
+      "description": "Update routing without restarts",
+      "core_feature": true
+    },
+    {
       "title": "Load Balancing",
-      "description": "Distribute traffic across multiple backend servers with various load balancing algorithms"
+      "description": "Distribute traffic across services"
     },
     {
-      "title": "Docker Support",
-      "description": "Support Docker, Kubernetes, Consul, and other service discovery mechanisms"
+      "title": "TLS Management",
+      "description": "Handle HTTPS certificates"
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Monitor routes, services, and middleware through a real-time web dashboard"
-    },
-    {
-      "title": "Data Export",
-      "description": "Export metrics to Prometheus, Datadog, or other monitoring systems for observability"
+      "title": "Metrics",
+      "description": "Expose traffic and performance metrics"
     }
   ],
   "platform_support": {

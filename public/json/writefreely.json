@@ -1,7 +1,7 @@
 {
   "name": "writefreely",
   "slug": "writefreely",
-  "tagline": "A minimalist blogging platform with federation",
+  "tagline": "A minimalist blogging and writing platform with ActivityPub support",
   "subtitle": "",
   "description": "WriteFreely is a minimalist, self-hosted blogging and writing platform. It supports multiple users, federated ActivityPub publishing, clean typography, and privacy-focused configuration for communities or individuals.",
   "categories": [
@@ -27,36 +27,26 @@
   },
   "features": [
     {
-      "title": "Markdown Support",
-      "description": "Write in a distraction-free Markdown editor focused on content over formatting"
+      "title": "Publishing Platform",
+      "description": "Publish blogs and simple websites",
+      "core_feature": true
     },
     {
-      "title": "Team Collaboration",
-      "description": "Host multiple writers on a single instance with individual blogs or shared publications"
+      "title": "Markdown Writing",
+      "description": "Write posts using Markdown",
+      "core_feature": true
     },
     {
-      "title": "Activitypub Federation",
-      "description": "Publish posts to the fediverse so followers on Mastodon and other platforms can read them"
+      "title": "Multi-Blog Support",
+      "description": "Host multiple blogs"
     },
     {
-      "title": "Custom Domains",
-      "description": "Map personal domains to individual blogs for professional branding"
+      "title": "Minimal Design",
+      "description": "Focus on distraction-free writing"
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "No tracking, ads, or analytics by default to respect reader and writer privacy"
-    },
-    {
-      "title": "Anonymous Posting",
-      "description": "Allow writers to publish without requiring accounts or personal information"
-    },
-    {
-      "title": "Clean Typography",
-      "description": "Present content with readable fonts and layouts optimized for long-form reading"
-    },
-    {
-      "title": "Rss Feeds",
-      "description": "Automatically generate RSS feeds for each blog so readers can subscribe via feed readers"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the platform on your own servers"
     }
   ],
   "platform_support": {

@@ -1,11 +1,11 @@
 {
   "name": "snappymail",
   "slug": "snappymail",
-  "tagline": "A lightweight self-hosted webmail client",
+  "tagline": "A fast and lightweight self-hosted webmail client",
   "subtitle": "",
   "description": "SnappyMail is a lightweight self-hosted webmail client forked from RainLoop. It offers fast IMAP/SMTP mail access with theming and plugin support.",
   "categories": [
-    53
+    32
   ],
   "metadata": {
     "sponsored": false,
@@ -33,28 +33,31 @@
   },
   "features": [
     {
-      "title": "Web Interface",
-      "description": "Accesses email via modern, fast web interface"
+      "title": "Webmail Client",
+      "description": "Read and send email through a web interface",
+      "core_feature": true
     },
     {
-      "title": "Imap And Smtp",
-      "description": "Connects to any email server supporting standard protocols"
+      "title": "IMAP and SMTP Support",
+      "description": "Connect to standard email servers",
+      "core_feature": true
     },
     {
-      "title": "Data Export",
-      "description": "Stores and organizes contacts with import/export support"
+      "title": "Folder Management",
+      "description": "Organize messages into folders",
+      "core_feature": true
     },
     {
-      "title": "Folder Organization",
-      "description": "Creates, renames, and organizes email folders"
+      "title": "Search",
+      "description": "Search emails by sender, subject, or content"
     },
     {
-      "title": "Search and Filter",
-      "description": "Finds emails quickly with full-text search across mailboxes"
+      "title": "Attachment Handling",
+      "description": "View and download email attachments"
     },
     {
-      "title": "Theme Customization",
-      "description": "Chooses from multiple themes or creates custom designs"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the webmail client on your own servers"
     }
   ],
   "platform_support": {

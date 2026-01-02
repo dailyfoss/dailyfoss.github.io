@@ -1,11 +1,11 @@
 {
   "name": "torrra",
   "slug": "torrra",
-  "tagline": "A unified torrent search and management interface",
+  "tagline": "A unified web interface for searching and managing torrents across clients",
   "subtitle": "",
   "description": "Torrra is a self-hosted torrent management application that centralizes torrent searching, adding, and monitoring across multiple clients using a unified web interface.",
   "categories": [
-    166
+    1
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "Search and Filter",
-      "description": "Search for torrents across multiple indexers and trackers without visiting each site"
+      "title": "Torrent Management",
+      "description": "Manage torrent downloads",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "View all active torrents from different clients in one consolidated view"
-    },
-    {
-      "title": "Web Interface",
-      "description": "Control torrent clients running on different machines from a central web interface"
+      "title": "Search Integration",
+      "description": "Search torrents from supported sources",
+      "core_feature": true
     },
     {
       "title": "Download Monitoring",
-      "description": "Track download progress, speeds, and completion status across all clients"
+      "description": "Monitor torrent download progress",
+      "core_feature": true
     },
     {
-      "title": "File Upload",
-      "description": "Add torrents to any connected client by URL, magnet link, or file upload"
+      "title": "Web Interface",
+      "description": "Manage torrents through a browser"
+    },
+    {
+      "title": "Category Organization",
+      "description": "Organize torrents by category"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the manager on your own infrastructure"
     }
   ],
   "platform_support": {

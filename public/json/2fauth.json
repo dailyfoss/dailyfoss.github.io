@@ -1,7 +1,7 @@
 {
   "name": "2fauth",
   "slug": "2fauth",
-  "tagline": "A self-hosted web application for managing and generating multi-device two-factor auth codes",
+  "tagline": "A web application for managing and generating two-factor authentication codes",
   "description": "2FAuth is an open-source, self-hosted web application built to manage your two-factor authentication (2FA) accounts and generate their security codes (TOTP/HOTP and Steam Guard). It supports features like adding accounts via QR code or manually, organising accounts into groups, encryption of sensitive data, auto-logout on inactivity, and single-user usage. It's designed for both mobile and desktop access, giving you an alternative to smartphone-only apps like Google Authenticator—so you can run 2FAuth on your own server, backup your database, and avoid relying solely on a mobile device.",
   "categories": [
     2
@@ -32,36 +32,32 @@
   },
   "features": [
     {
-      "title": "Two-Factor Authentication",
-      "description": "Generate TOTP/HOTP and Steam Guard security codes for your accounts"
+      "title": "Two-Factor Authentication Codes",
+      "description": "Generate TOTP, HOTP, and Steam Guard codes",
+      "core_feature": true
     },
     {
-      "title": "QR Code Generation",
-      "description": "Add accounts via QR code scanning or manual entry"
+      "title": "Account Management",
+      "description": "Add and manage multiple 2FA accounts",
+      "core_feature": true
     },
     {
-      "title": "Folder Organization",
-      "description": "Organize your 2FA accounts into custom groups for better management"
+      "title": "QR Code Import",
+      "description": "Add accounts using QR codes",
+      "core_feature": true
     },
     {
-      "title": "End-to-End Encryption",
-      "description": "Sensitive data is encrypted to keep your accounts secure"
+      "title": "Web Interface",
+      "description": "Access 2FA codes through a browser",
+      "core_feature": true
     },
     {
-      "title": "Self-Hosted",
-      "description": "Run on your own server with full control over your data"
+      "title": "Encryption",
+      "description": "Encrypt stored authentication secrets"
     },
     {
-      "title": "Multi-Device Sync",
-      "description": "Access your 2FA codes from mobile and desktop devices"
-    },
-    {
-      "title": "Database Backup",
-      "description": "Backup your database to prevent losing your 2FA accounts"
-    },
-    {
-      "title": "Session Management",
-      "description": "Automatic logout on inactivity for enhanced security"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the application on your own servers"
     }
   ],
   "platform_support": {

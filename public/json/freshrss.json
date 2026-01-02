@@ -1,11 +1,11 @@
 {
   "name": "freshrss",
   "slug": "freshrss",
-  "tagline": "A self-hosted feed reader for aggregating and filtering RSS content",
+  "tagline": "A self-hosted RSS reader for aggregating, filtering, and reading feeds",
   "subtitle": "",
   "description": "FreshRSS is a self-hosted RSS feed aggregator for individuals or small teams. It supports multiple accounts, tags, filtering, and mobile-friendly UI with plugins and API integration for external apps.",
   "categories": [
-    57
+    20
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,38 @@
   },
   "features": [
     {
-      "title": "Mobile Responsive",
-      "description": "Multi-user feed reader, Tags and filtering, Mobile-friendly UI. Comprehensive feed management"
+      "title": "Feed Aggregation",
+      "description": "Collects RSS and Atom feeds",
+      "core_feature": true
     },
     {
-      "title": "Team Collaboration",
-      "description": "Support teams or families. Shared hosting"
+      "title": "Web Feed Reader",
+      "description": "Reads feeds in a browser interface",
+      "core_feature": true
     },
     {
-      "title": "Plugin System",
-      "description": "Extend functionality. Customizable features"
+      "title": "Category Management",
+      "description": "Organizes feeds into categories"
     },
     {
-      "title": "REST API",
-      "description": "Works with mobile apps. Flexible access"
+      "title": "Read Status Tracking",
+      "description": "Tracks read and unread entries"
     },
     {
-      "title": "Theme Customization",
-      "description": "Customize appearance. Personal style"
+      "title": "Search",
+      "description": "Searches feed content"
     },
     {
-      "title": "Search and Filter",
-      "description": "Find articles quickly. Efficient discovery"
+      "title": "API Support",
+      "description": "Integrates with compatible clients"
+    },
+    {
+      "title": "Multi-User Support",
+      "description": "Separates data per user"
+    },
+    {
+      "title": "Self-Hosted RSS Reader",
+      "description": "Host the reader on your own servers"
     }
   ],
   "platform_support": {

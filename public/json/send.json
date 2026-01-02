@@ -1,11 +1,11 @@
 {
   "name": "send-visee",
   "slug": "send",
-  "tagline": "A self-hosted encrypted file sharing service with expiring links and end-to-end encryption",
+  "tagline": "A self-hosted encrypted file sharing service with expiring links",
   "subtitle": "",
   "description": "timvisee/send is a community-maintained fork of Mozilla Send, a self-hosted encrypted file sharing service with expiring links. Files are end-to-end encrypted in the browser and can be shared via short URLs.",
   "categories": [
-    61
+    33
   ],
   "metadata": {
     "sponsored": false,
@@ -27,24 +27,31 @@
   },
   "features": [
     {
+      "title": "Secure File Sharing",
+      "description": "Share files using encrypted download links",
+      "core_feature": true
+    },
+    {
       "title": "End-to-End Encryption",
-      "description": "End-to-end encrypts files in the browser before upload"
+      "description": "Encrypt files before upload",
+      "core_feature": true
+    },
+    {
+      "title": "Expiration Controls",
+      "description": "Automatically expire shared files",
+      "core_feature": true
+    },
+    {
+      "title": "Download Limits",
+      "description": "Limit number of file downloads"
     },
     {
       "title": "Password Protection",
-      "description": "Optionally secure shared files with passwords"
+      "description": "Protect shared files with passwords"
     },
     {
-      "title": "File Upload",
-      "description": "Handles files up to 2.5GB with chunked uploads"
-    },
-    {
-      "title": "Download Tracking",
-      "description": "Shows how many times a file has been downloaded"
-    },
-    {
-      "title": "Data Privacy",
-      "description": "All encryption happens client-side for maximum privacy"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the file sharing service on your own servers"
     }
   ],
   "platform_support": {

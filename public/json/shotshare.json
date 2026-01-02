@@ -1,11 +1,11 @@
 {
   "name": "shotshare",
   "slug": "shotshare",
-  "tagline": "A simple screenshot and image sharing service",
+  "tagline": "A self-hosted screenshot and image sharing service with shareable links",
   "subtitle": "",
   "description": "Shotshare is a self-hosted screenshot and image sharing service. It lets users quickly upload captures, get shareable links, and manage their image history in a clean web UI.",
   "categories": [
-    80
+    33
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,31 @@
   },
   "features": [
     {
-      "title": "REST API",
-      "description": "Quickly uploads screenshots and images via web interface or API"
+      "title": "Screenshot Sharing",
+      "description": "Share screenshots using generated links",
+      "core_feature": true
     },
     {
-      "title": "Shareable Links",
-      "description": "Generates short URLs for instant image sharing"
+      "title": "Upload Interface",
+      "description": "Upload screenshots through a web UI",
+      "core_feature": true
     },
     {
-      "title": "Direct Image Hosting",
-      "description": "Serves images directly without requiring viewers to visit a page"
+      "title": "Image Preview",
+      "description": "Preview shared screenshots in the browser",
+      "core_feature": true
     },
     {
-      "title": "File Upload",
-      "description": "Maintains a gallery of all uploaded images for easy access"
+      "title": "Expiration Options",
+      "description": "Automatically delete screenshots after expiration"
     },
     {
-      "title": "Drag And Drop",
-      "description": "Supports drag-and-drop file uploads in the browser"
+      "title": "Minimal Interface",
+      "description": "Use a simple interface for sharing"
     },
     {
-      "title": "Api Access",
-      "description": "Provides REST API for integration with screenshot tools like ShareX"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the screenshot service on your own servers"
     }
   ],
   "platform_support": {

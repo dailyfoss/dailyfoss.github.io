@@ -1,11 +1,11 @@
 {
   "name": "posteria",
   "slug": "posteria",
-  "tagline": "A web interface for managing PostgreSQL databases",
+  "tagline": "A web-based interface for managing and visualizing PostgreSQL databases",
   "subtitle": "",
   "description": "Posteria is a self-hosted web interface for managing and visualizing PostgreSQL databases. It provides insights, performance metrics, and SQL tools in a user-friendly UI.",
   "categories": [
-    21
+    29
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "Database Visualization",
-      "description": "View PostgreSQL database structure with interactive schema diagrams and relationships"
+      "title": "Blogging Platform",
+      "description": "Publish and manage blog posts through a web interface",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Monitor query performance, connection statistics, and resource usage in real-time"
+      "title": "Markdown Editing",
+      "description": "Write posts using Markdown formatting",
+      "core_feature": true
     },
     {
-      "title": "Rich Text Editor",
-      "description": "Execute queries with syntax highlighting, auto-completion, and result formatting"
+      "title": "Theme Support",
+      "description": "Customize blog appearance using themes",
+      "core_feature": true
     },
     {
-      "title": "Connection Management",
-      "description": "Manage multiple PostgreSQL connections with saved credentials and quick switching"
+      "title": "Tagging",
+      "description": "Organize posts using tags"
     },
     {
-      "title": "Data Export",
-      "description": "Export query results and table data in CSV, JSON, and other formats"
+      "title": "Static Publishing",
+      "description": "Generate pages for public viewing"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Host the blog on your own servers"
     }
   ],
   "platform_support": {

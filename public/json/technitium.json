@@ -1,7 +1,7 @@
 {
   "name": "technitium",
   "slug": "technitium",
-  "tagline": "A privacy focused DNS server with a full web console",
+  "tagline": "A privacy-focused DNS server with DoH, DoT, blocking, and web management",
   "subtitle": "",
   "description": "Technitium DNS Server is a self-hosted, privacy-focused authoritative and recursive DNS server. It offers DNS-over-HTTPS/TLS, blocking, logging, and a comprehensive web management console for home and enterprise networks.",
   "categories": [
@@ -32,20 +32,25 @@
   },
   "features": [
     {
-      "title": "Authoritative Dns",
-      "description": "Host your own domains with full zone management and record type support"
+      "title": "DNS Server",
+      "description": "Resolve DNS queries for networks",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Provide DNS resolution for your network with caching for improved performance"
+      "title": "DNS Filtering",
+      "description": "Block domains using rules"
     },
     {
-      "title": "Data Privacy",
-      "description": "Encrypt DNS traffic with DoT for privacy-focused resolution on compatible clients"
+      "title": "DHCP Support",
+      "description": "Assign IP addresses to devices"
     },
     {
-      "title": "Query Logging",
-      "description": "Log all DNS queries for troubleshooting, security analysis, and network monitoring"
+      "title": "Dashboard",
+      "description": "Monitor DNS activity"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the DNS server on your own hardware"
     }
   ],
   "platform_support": {

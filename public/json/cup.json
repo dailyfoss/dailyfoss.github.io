@@ -1,11 +1,11 @@
 {
   "name": "cup-updates",
   "slug": "cup",
-  "tagline": "A self-hosted pastebin service with syntax highlighting and expiring pastes",
+  "tagline": "A lightweight self-hosted pastebin with syntax highlighting and expiring pastes",
   "subtitle": "",
   "description": "Cup is a lightweight, self-hosted online pastebin service that supports syntax highlighting and temporary or permanent pastes. It focuses on simplicity, privacy, and a clean UI for sharing code or text snippets via a web interface.",
   "categories": [
-    165
+    42
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,26 @@
   },
   "features": [
     {
-      "title": "Data Privacy",
-      "description": "Create self-destructing snippets for privacy. Share securely"
+      "title": "Dependency Update Checker",
+      "description": "Checks for outdated dependencies",
+      "core_feature": true
     },
     {
-      "title": "Data Import",
-      "description": "Keep important pastes available long-term. Flexible retention"
+      "title": "CLI Interface",
+      "description": "Runs checks from command line",
+      "core_feature": true
     },
     {
-      "title": "Clean Interface",
-      "description": "Minimalist design focused on content. No distractions"
+      "title": "Language Support",
+      "description": "Supports multiple ecosystems"
     },
     {
-      "title": "Privacy",
-      "description": "No tracking or unnecessary data collection. Your pastes stay private"
+      "title": "Update Reporting",
+      "description": "Reports available updates"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Run your own pastebin service. Complete ownership and control"
+      "title": "Local Execution",
+      "description": "Runs on developer machines"
     }
   ],
   "platform_support": {

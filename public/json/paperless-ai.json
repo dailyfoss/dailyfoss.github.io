@@ -1,11 +1,11 @@
 {
   "name": "paperless-ai",
   "slug": "paperless-ai",
-  "tagline": "An intelligent document management system with OCR",
+  "tagline": "An AI-enhanced document scanning and OCR platform for self-hosted setups",
   "subtitle": "",
   "description": "Paperless AI is an enhanced fork of Paperless designed for intelligent document scanning, OCR, and metadata tagging, enabling smarter search over digitized documents in a self-hosted setup.",
   "categories": [
-    48
+    31
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,26 @@
   },
   "features": [
     {
-      "title": "Tagging System",
-      "description": "Automatic metadata extraction and tag suggestions based on document content to improve organization"
+      "title": "Document Analysis",
+      "description": "Analyze documents using AI-based processing",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Search across all document content including OCR-extracted text to quickly find specific information"
+      "title": "Metadata Extraction",
+      "description": "Extract structured information from documents",
+      "core_feature": true
     },
     {
-      "title": "Data Import",
-      "description": "Import documents from scanners, email, or file uploads with automatic processing and indexing"
+      "title": "Paperless Integration",
+      "description": "Work alongside Paperless document systems"
     },
     {
-      "title": "Custom Workflows",
-      "description": "Configure automated processing rules for document routing, tagging, and organization based on content"
+      "title": "Automation",
+      "description": "Process documents automatically on upload"
+    },
+    {
+      "title": "Self-Hosted Service",
+      "description": "Run document analysis on your own infrastructure"
     }
   ],
   "platform_support": {

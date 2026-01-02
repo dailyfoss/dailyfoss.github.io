@@ -1,11 +1,11 @@
 {
   "name": "soft-serve",
   "slug": "soft-serve",
-  "tagline": "A TUI first Git server over SSH",
+  "tagline": "A TUI-first self-hosted Git server and lightweight code forge",
   "subtitle": "",
   "description": "Soft Serve is a self-hosted, TUI-first Git server and code forge. It exposes repositories via SSH with a retro terminal UI, and optionally serves a minimal web view.",
   "categories": [
-    72
+    26
   ],
   "metadata": {
     "sponsored": false,
@@ -33,27 +33,30 @@
   "features": [
     {
       "title": "Git Server",
-      "description": "Hosts Git repositories with SSH access"
+      "description": "Host Git repositories over SSH",
+      "core_feature": true
     },
     {
-      "title": "Tui Interface",
-      "description": "Browses repositories and code through terminal user interface"
+      "title": "Repository Browsing",
+      "description": "Browse repositories in a terminal UI",
+      "core_feature": true
     },
     {
-      "title": "Ssh Authentication",
-      "description": "Authenticates users via SSH keys for secure access"
+      "title": "Access Control",
+      "description": "Manage repository access permissions",
+      "core_feature": true
     },
     {
-      "title": "Markdown Support",
-      "description": "Displays README files with formatted markdown in terminal"
+      "title": "SSH Authentication",
+      "description": "Authenticate users via SSH keys"
     },
     {
-      "title": "Web Interface",
-      "description": "Optionally serves minimal web view for repository browsing"
+      "title": "Repository Management",
+      "description": "Create and manage repositories"
     },
     {
-      "title": "User Management",
-      "description": "Controls repository access with user permissions"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the Git server on your own infrastructure"
     }
   ],
   "platform_support": {

@@ -1,11 +1,11 @@
 {
   "name": "cloudflared",
   "slug": "cloudflared",
-  "tagline": "A CLI tool for securely exposing private services through tunnels",
+  "tagline": "A command-line tool for securely exposing private services through tunnels",
   "subtitle": "",
   "description": "Cloudflared is a command-line client used to connect your private services securely to Cloudflare's network using tunnels. It enables exposing local apps, SSH, and RDP without exposing ports publicly.",
   "categories": [
-    137
+    36
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,34 @@
   },
   "features": [
     {
-      "title": "Cloudflare Tunnels",
-      "description": "Securely expose local services to internet. No port forwarding"
+      "title": "Secure Tunneling",
+      "description": "Exposes local services through secure tunnels",
+      "core_feature": true
     },
     {
-      "title": "Zero Trust Access",
-      "description": "Connect services without public IP exposure. Enhanced security"
+      "title": "Cloudflare Integration",
+      "description": "Connects services to Cloudflare network",
+      "core_feature": true
     },
     {
-      "title": "Ssh & Rdp",
-      "description": "Tunnel SSH and RDP connections securely. Protected access"
+      "title": "Access Control",
+      "description": "Applies authentication to exposed services"
     },
     {
-      "title": "High Performance",
-      "description": "Leverage Cloudflare's global network. Fast and reliable"
+      "title": "DNS Management",
+      "description": "Manages tunnel DNS records"
+    },
+    {
+      "title": "CLI Tooling",
+      "description": "Operates tunnels from command line"
+    },
+    {
+      "title": "Automatic Reconnection",
+      "description": "Maintains tunnel connectivity"
+    },
+    {
+      "title": "Self-Hosted Agent",
+      "description": "Runs as a local service"
     }
   ],
   "platform_support": {

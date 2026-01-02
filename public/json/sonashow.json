@@ -1,11 +1,11 @@
 {
   "name": "sonashow",
   "slug": "sonashow",
-  "tagline": "A now playing dashboard for media servers",
+  "tagline": "A now-playing display dashboard for media servers and big screens",
   "subtitle": "",
   "description": "SonaShow is a self-hosted dashboard for displaying Now Playing information from media servers like Jellyfin or Kodi on big screens, ideal for party or ambient displays.",
   "categories": [
-    100
+    34
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "Media Library",
-      "description": "Shows currently playing media from Jellyfin or Kodi"
+      "title": "Media Dashboard",
+      "description": "Display media library activity and status",
+      "core_feature": true
     },
     {
-      "title": "Full",
-      "description": "Displays media information in full-screen for big screens"
+      "title": "Media Server Integration",
+      "description": "Integrate with supported media servers",
+      "core_feature": true
     },
     {
-      "title": "Album Artwork",
-      "description": "Shows high-resolution cover art for music and movies"
+      "title": "Now Playing View",
+      "description": "Show currently playing media",
+      "core_feature": true
     },
     {
-      "title": "Metadata Display",
-      "description": "Presents title, artist, album, and other media details"
+      "title": "Library Statistics",
+      "description": "View media library summaries"
     },
     {
-      "title": "Auto",
-      "description": "Updates display automatically when media changes"
+      "title": "Web Interface",
+      "description": "Access the dashboard through a browser"
     },
     {
-      "title": "Customizable Layout",
-      "description": "Adjusts information layout and styling"
-    },
-    {
-      "title": "Multiple Sources",
-      "description": "Connects to various media server types"
-    },
-    {
-      "title": "Screensaver Mode",
-      "description": "Activates when no media is playing"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the dashboard on your own infrastructure"
     }
   ],
   "platform_support": {

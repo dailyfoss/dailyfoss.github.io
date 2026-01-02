@@ -1,11 +1,11 @@
 {
   "name": "mkcert-web-ui",
   "slug": "mkcert-web-ui",
-  "tagline": "A browser based interface for generating local SSL certificates",
+  "tagline": "A web interface for generating local SSL certificates with mkcert",
   "subtitle": "",
   "description": "mkcertWeb is a browser-based interface built over mkcert to create local SSL certificates easily. It wraps certificate generation into a clean UI to simplify development environment setup.",
   "categories": [
-    117
+    26
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,22 @@
   },
   "features": [
     {
+      "title": "Certificate Generation",
+      "description": "Generate local TLS certificates",
+      "core_feature": true
+    },
+    {
       "title": "Web Interface",
-      "description": "Create local SSL certificates for development environments through a simple web interface"
+      "description": "Create certificates through a browser",
+      "core_feature": true
     },
     {
-      "title": "Domain Management",
-      "description": "Generate certificates for multiple domains and subdomains with wildcard support"
+      "title": "Development Support",
+      "description": "Issue certificates for local development domains"
     },
     {
-      "title": "Development Workflow",
-      "description": "Streamline local development setup with one-click certificate creation and installation"
-    },
-    {
-      "title": "Certificate Authority",
-      "description": "Manage your own local certificate authority for consistent development environment security"
-    },
-    {
-      "title": "Data Export",
-      "description": "Download certificates in various formats including PEM, CRT, and KEY files for different applications"
-    },
-    {
-      "title": "Visual Interface",
-      "description": "User-friendly web UI that simplifies the mkcert command-line tool for non-technical users"
+      "title": "Self-Hosted Tool",
+      "description": "Run the certificate tool on your own infrastructure"
     }
   ],
   "platform_support": {

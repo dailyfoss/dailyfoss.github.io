@@ -1,11 +1,11 @@
 {
   "name": "wastebin",
   "slug": "wastebin",
-  "tagline": "A minimal pastebin for sharing text and logs",
+  "tagline": "A minimal pastebin service for sharing text snippets and logs",
   "subtitle": "",
   "description": "Wastebin is a simple self-hosted pastebin service for sharing text snippets and logs. It offers syntax highlighting, expiration options, and a minimalistic web UI.",
   "categories": [
-    118
+    33
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Raw Text Access",
-      "description": "Retrieve paste content as plain text via direct URLs for easy integration with scripts and"
+      "title": "Paste Service",
+      "description": "Share text snippets using links",
+      "core_feature": true
     },
     {
-      "title": "Burn After Reading",
-      "description": "Enable one-time view mode where pastes self-destruct after being read once"
+      "title": "Syntax Highlighting",
+      "description": "Highlight code syntax in pastes",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Programmatically create and retrieve pastes using a simple REST API for automation workflows"
+      "title": "Expiration Options",
+      "description": "Set expiration for pastes",
+      "core_feature": true
     },
     {
-      "title": "Media Library",
-      "description": "Share content immediately without creating accounts or providing personal information"
+      "title": "Private Pastes",
+      "description": "Create non-public pastes"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Create and view pastes in a browser"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the paste service on your own infrastructure"
     }
   ],
   "platform_support": {

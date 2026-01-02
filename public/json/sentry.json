@@ -1,11 +1,11 @@
 {
   "name": "sentry",
   "slug": "sentry",
-  "tagline": "An application monitoring and error tracking platform",
+  "tagline": "Application monitoring and error tracking for web, mobile, and backend services",
   "subtitle": "",
   "description": "Sentry is an application monitoring and error tracking platform for web, mobile, and backend services. It captures exceptions, performance data, and alerts, and can be deployed self-hosted or consumed as a SaaS.",
   "categories": [
-    93
+    35
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,26 @@
   },
   "features": [
     {
-      "title": "Mobile Responsive",
-      "description": "Captures and aggregates exceptions from web, mobile, and backend applications"
+      "title": "Error Tracking",
+      "description": "Capture and track application errors",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Tracks transaction traces, slow queries, and bottlenecks across services"
+      "title": "Stack Traces",
+      "description": "View detailed error context",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Configures notifications based on error frequency, severity, or custom conditions"
+      "title": "Performance Monitoring",
+      "description": "Measure application performance"
     },
     {
-      "title": "Team Collaboration",
-      "description": "Assign issues, add comments, and track resolution progress"
+      "title": "Alerts",
+      "description": "Notify teams of issues"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run Sentry on your own servers"
     }
   ],
   "platform_support": {

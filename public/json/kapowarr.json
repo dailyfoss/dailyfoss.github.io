@@ -1,11 +1,11 @@
 {
   "name": "kapowarr",
   "slug": "kapowarr",
-  "tagline": "A request and automation manager for comic book libraries",
+  "tagline": "A request manager and automation companion for comic book libraries",
   "subtitle": "",
   "description": "Kapowarr is a request manager and automation companion for comic book libraries. It integrates with downloaders and indexers to fetch issues, tracks series and requests, and provides a web UI for users to submit and monitor requests.",
   "categories": [
-    166
+    1
   ],
   "metadata": {
     "sponsored": false,
@@ -32,32 +32,22 @@
   },
   "features": [
     {
-      "title": "Automated Downloads",
-      "description": "Automatically fetch new comic issues from configured sources. Keep your library up to date"
+      "title": "Comic Download Automation",
+      "description": "Automatically download missing comic issues",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Connect to multiple comic indexers and search aggregators. Access vast comic catalogs"
+      "title": "Library Monitoring",
+      "description": "Monitor existing comic libraries for missing content",
+      "core_feature": true
     },
     {
-      "title": "Metadata Management",
-      "description": "Fetch and organize comic metadata, cover art, and series information. Maintain rich library details"
+      "title": "Metadata Integration",
+      "description": "Match comics using online metadata sources"
     },
     {
-      "title": "Quality Profiles",
-      "description": "Define preferred formats, resolutions, and file sizes for downloads. Control library quality"
-    },
-    {
-      "title": "Web Interface",
-      "description": "Web interface for users to request comics and track fulfillment. Manage library additions collaboratively"
-    },
-    {
-      "title": "Download Client Support",
-      "description": "Integrate with popular download clients for automated fetching. Seamless download workflow"
-    },
-    {
-      "title": "Folder Organization",
-      "description": "Automatic file renaming, folder structure, and organization. Keep comics neatly arranged"
+      "title": "Download Management",
+      "description": "Track and manage ongoing and completed downloads"
     }
   ],
   "platform_support": {

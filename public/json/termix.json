@@ -1,11 +1,11 @@
 {
   "name": "termix",
   "slug": "termix",
-  "tagline": "A browser based SSH management and terminal platform",
+  "tagline": "A browser-based SSH management platform for organizing hosts and sessions",
   "subtitle": "",
   "description": "Termix is a self-hosted SSH management platform that exposes terminals in the browser. It lets admins organize hosts, manage keys, and open shell sessions directly from a web interface.",
   "categories": [
-    135
+    36
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Tagging System",
-      "description": "Organize and manage SSH hosts with groups, tags, and custom connection settings"
+      "title": "SSH Client",
+      "description": "Connect to remote servers using SSH",
+      "core_feature": true
+    },
+    {
+      "title": "Session Management",
+      "description": "Manage multiple SSH sessions",
+      "core_feature": true
     },
     {
       "title": "Key Management",
-      "description": "Store and manage SSH keys securely with support for multiple keys per host"
+      "description": "Manage SSH keys securely",
+      "core_feature": true
     },
     {
-      "title": "Team Collaboration",
-      "description": "Share terminal sessions with team members for collaborative troubleshooting and pair administration"
+      "title": "Terminal Interface",
+      "description": "Access a terminal-based UI"
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Access your servers from any device with a modern, responsive web interface"
+      "title": "Local Execution",
+      "description": "Run the client on local systems"
+    },
+    {
+      "title": "Cross-Platform Support",
+      "description": "Use on supported operating systems"
     }
   ],
   "platform_support": {

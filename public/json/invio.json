@@ -1,11 +1,11 @@
 {
   "name": "invio",
   "slug": "invio",
-  "tagline": "A self-hosted URL shortener with branded links and click analytics",
+  "tagline": "A self-hosted URL shortener and branded link management service",
   "subtitle": "",
   "description": "Invio is a self hosted URL shortener and branded link management service. It generates short links, tracks clicks and referrers, and provides a minimal dashboard so teams can manage campaigns without relying on third party link platforms.",
   "categories": [
-    165
+    43
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,37 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Track clicks, referrers, and geographic data for each link"
+      "title": "Transactional Email Service",
+      "description": "Sends application-generated transactional emails",
+      "core_feature": true
     },
     {
-      "title": "Link Management",
-      "description": "Edit, disable, or delete links from a centralized dashboard"
+      "title": "SMTP Integration",
+      "description": "Connects to SMTP servers for email delivery"
     },
     {
-      "title": "Qr Code Generation",
-      "description": "Automatically generate QR codes for each shortened link"
+      "title": "Email Templates",
+      "description": "Manages reusable templates for consistent emails"
     },
     {
-      "title": "REST API",
-      "description": "Programmatically create and manage links via REST API"
+      "title": "Delivery Tracking",
+      "description": "Records sent messages and delivery status"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Keep all link data and analytics on your own infrastructure"
+      "title": "API Access",
+      "description": "Sends emails programmatically from applications"
+    },
+    {
+      "title": "Web Dashboard",
+      "description": "Manages configuration and email activity in a browser"
+    },
+    {
+      "title": "Asynchronous Delivery",
+      "description": "Processes email sending in background queues"
+    },
+    {
+      "title": "Self-Hosted Email Service",
+      "description": "Runs the service on your own servers"
     }
   ],
   "platform_support": {

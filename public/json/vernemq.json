@@ -1,11 +1,11 @@
 {
   "name": "vernemq",
   "slug": "vernemq",
-  "tagline": "A scalable MQTT broker for IoT messaging",
+  "tagline": "A scalable, high-availability MQTT broker for IoT and messaging workloads",
   "subtitle": "",
   "description": "VerneMQ is a scalable, high-availability MQTT broker designed for IoT and messaging workloads. It supports clustering, plugins, and standard MQTT clients, operated through configuration and CLI tools.",
   "categories": [
-    108
+    36
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "Mqtt Broker",
-      "description": "Provide MQTT messaging for IoT devices and applications with full protocol support"
+      "title": "MQTT Broker",
+      "description": "Route MQTT messages between connected clients",
+      "core_feature": true
     },
     {
       "title": "High Availability",
-      "description": "Run in clustered mode for fault tolerance and automatic failover"
+      "description": "Run clustered brokers for fault tolerance",
+      "core_feature": true
     },
     {
-      "title": "Scalability",
-      "description": "Scale horizontally by adding nodes to handle millions of concurrent connections"
+      "title": "Authentication and Authorization",
+      "description": "Control client access to topics",
+      "core_feature": true
     },
     {
-      "title": "Plugin System",
-      "description": "Extend functionality with plugins for authentication, authorization, and custom logic"
+      "title": "Protocol Support",
+      "description": "Support MQTT protocol versions"
     },
     {
-      "title": "Websocket Support",
-      "description": "Allow web browsers to connect via MQTT over WebSockets"
+      "title": "Metrics",
+      "description": "Expose broker metrics for monitoring"
     },
     {
-      "title": "Bridge Mode",
-      "description": "Bridge to other MQTT brokers for hybrid cloud or multi-site deployments"
-    },
-    {
-      "title": "Qos Levels",
-      "description": "Support all MQTT quality of service levels for reliable message delivery"
-    },
-    {
-      "title": "Retained Messages",
-      "description": "Store and deliver retained messages to new subscribers automatically"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the broker on your own infrastructure"
     }
   ],
   "platform_support": {

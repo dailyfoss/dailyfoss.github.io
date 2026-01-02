@@ -1,11 +1,11 @@
 {
   "name": "jellystat",
   "slug": "jellystat",
-  "tagline": "A self-hosted analytics dashboard for Jellyfin usage and activity",
+  "tagline": "A self-hosted analytics dashboard for tracking Jellyfin usage and activity",
   "subtitle": "",
   "description": "Jellystat is a self hosted analytics dashboard for Jellyfin. It collects playback history, user activity and library statistics, then displays graphs and tables so administrators can understand how their media server is used.",
   "categories": [
-    37
+    9
   ],
   "metadata": {
     "sponsored": false,
@@ -32,16 +32,29 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Playback statistics, User activity tracking, Library insights. Understand your media server usage"
+      "title": "Media Analytics Dashboard",
+      "description": "Displays Jellyfin usage statistics",
+      "core_feature": true
     },
     {
-      "title": "Visual Dashboards",
-      "description": "Interactive charts, Historical trends, Real-time metrics. Monitor server performance at a glance"
+      "title": "Playback Tracking",
+      "description": "Tracks plays users activity"
     },
     {
-      "title": "User Insights",
-      "description": "Watch patterns, Popular content, Device analytics. Know what your users love"
+      "title": "User Statistics",
+      "description": "Shows per-user media usage"
+    },
+    {
+      "title": "Library Insights",
+      "description": "Analyzes library engagement data"
+    },
+    {
+      "title": "Visual Charts",
+      "description": "Presents data with graphs"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Views analytics in browser"
     }
   ],
   "platform_support": {

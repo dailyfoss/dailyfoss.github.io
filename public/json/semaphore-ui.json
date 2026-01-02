@@ -1,11 +1,11 @@
 {
   "name": "semaphore-ui",
   "slug": "semaphore-ui",
-  "tagline": "A web interface for running Ansible automation tasks",
+  "tagline": "A self-hosted web UI for running Ansible playbooks and automation tasks",
   "subtitle": "",
   "description": "Semaphore is a self-hosted web UI for running Ansible playbooks and managing inventories, keys, and environments. It centralizes automation tasks in a modern dashboard with role-based access for teams.",
   "categories": [
-    146
+    16
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,26 @@
   },
   "features": [
     {
-      "title": "Web Interface",
-      "description": "Run Ansible playbooks through an intuitive web interface"
+      "title": "Ansible Automation UI",
+      "description": "Run Ansible playbooks through a web UI",
+      "core_feature": true
     },
     {
       "title": "Inventory Management",
-      "description": "Organize and manage hosts, groups, and variables visually"
+      "description": "Manage hosts and groups",
+      "core_feature": true
     },
     {
-      "title": "Tagging System",
-      "description": "Trigger playbook runs with custom variables and tags"
+      "title": "Task Scheduling",
+      "description": "Schedule automation jobs"
     },
     {
-      "title": "Ssh Key Management",
-      "description": "Store and manage SSH keys securely for host authentication"
+      "title": "Access Control",
+      "description": "Manage user permissions"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run on your own infrastructure"
     }
   ],
   "platform_support": {

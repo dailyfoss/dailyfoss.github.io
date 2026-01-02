@@ -1,11 +1,11 @@
 {
   "name": "prometheus",
   "slug": "prometheus",
-  "tagline": "An open source system monitoring and alerting toolkit",
+  "tagline": "A metrics monitoring and alerting system with powerful querying",
   "subtitle": "",
   "description": "Prometheus is a leading open-source system monitoring and alerting toolkit. It collects metrics via pull-based scraping, stores them efficiently, and uses PromQL for powerful queries and visualizations.",
   "categories": [
-    103
+    35
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "Metric Collection",
-      "description": "Scrape metrics from instrumented applications and infrastructure using pull-based model"
+      "title": "Metrics Collection",
+      "description": "Collect time-series metrics from services",
+      "core_feature": true
     },
     {
-      "title": "Time",
-      "description": "Store metrics efficiently with compression and retention policies for long-term data"
+      "title": "Query Language",
+      "description": "Query metrics using PromQL",
+      "core_feature": true
     },
     {
-      "title": "Promql Queries",
-      "description": "Write powerful queries using PromQL to analyze and aggregate metric data"
+      "title": "Alerting Rules",
+      "description": "Trigger alerts based on metric conditions",
+      "core_feature": true
     },
     {
-      "title": "Kubernetes Ready",
-      "description": "Automatically discover and monitor targets using Kubernetes, Consul, and other integrations"
+      "title": "Service Discovery",
+      "description": "Discover targets automatically"
     },
     {
-      "title": "Email Notifications",
-      "description": "Define alert conditions that trigger notifications when thresholds are exceeded"
+      "title": "Data Visualization Integration",
+      "description": "Integrate with dashboard tools"
     },
     {
-      "title": "Multi",
-      "description": "Label metrics with key-value pairs for flexible filtering and aggregation"
-    },
-    {
-      "title": "Analytics Dashboard",
-      "description": "Built-in expression browser and integration with Grafana for creating dashboards"
-    },
-    {
-      "title": "Federation",
-      "description": "Aggregate metrics from multiple Prometheus servers for centralized monitoring"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the monitoring system on your own infrastructure"
     }
   ],
   "platform_support": {

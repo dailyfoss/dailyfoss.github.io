@@ -1,11 +1,11 @@
 {
   "name": "lldap",
   "slug": "lldap",
-  "tagline": "A lightweight LDAP identity provider for small deployments",
+  "tagline": "A lightweight LDAP identity provider for small-scale deployments",
   "subtitle": "",
   "description": "LLDAP is a lightweight LDAP identity provider written in Rust for small-scale deployments. It supports web-based admin, users, groups, and integration with platforms expecting LDAP, perfect for homelabs or SMEs.",
   "categories": [
-    79
+    15
   ],
   "metadata": {
     "sponsored": false,
@@ -33,20 +33,31 @@
   },
   "features": [
     {
-      "title": "Lightweight",
-      "description": "Minimal resource usage, Fast performance, Easy setup. LDAP for small deployments"
+      "title": "LDAP Directory Service",
+      "description": "Provide a lightweight LDAP authentication server",
+      "core_feature": true
     },
     {
       "title": "User Management",
-      "description": "User management, Group management, Web-based UI. Manage identity from browser"
+      "description": "Create and manage directory users",
+      "core_feature": true
     },
     {
-      "title": "Ldap Compatible",
-      "description": "Standard protocol, Wide integration, Drop-in replacement. Works with existing tools"
+      "title": "Group Management",
+      "description": "Organize users into groups",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Memory safe, High performance, Reliable. Modern LDAP implementation"
+      "title": "Web Administration",
+      "description": "Manage directory entries through a web UI"
+    },
+    {
+      "title": "Application Integration",
+      "description": "Authenticate applications via LDAP"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the directory service on your own infrastructure"
     }
   ],
   "platform_support": {

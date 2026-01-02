@@ -1,11 +1,11 @@
 {
   "name": "snikket",
   "slug": "snikket",
-  "tagline": "A private messaging server for families and groups",
+  "tagline": "A private XMPP messaging server for families and small groups",
   "subtitle": "",
   "description": "Snikket Server is a self-hosted XMPP-based messaging server aimed at family and small groups. It pairs with mobile clients to provide private chat, group messaging, and voice calls.",
   "categories": [
-    102
+    6
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "Data Privacy",
-      "description": "Encrypts messages with OMEMO for privacy"
+      "title": "Messaging Server",
+      "description": "Provide real-time messaging using XMPP",
+      "core_feature": true
     },
     {
-      "title": "End-to-End Encryption",
-      "description": "Creates encrypted group conversations with multiple participants"
+      "title": "User Accounts",
+      "description": "Manage chat users and credentials",
+      "core_feature": true
     },
     {
-      "title": "Voice And Video Calls",
-      "description": "Supports encrypted audio and video calling"
+      "title": "Group Chats",
+      "description": "Create and manage group conversations",
+      "core_feature": true
     },
     {
-      "title": "File Sharing",
-      "description": "Sends photos, videos, and files through encrypted channels"
+      "title": "Mobile and Desktop Clients",
+      "description": "Connect using supported chat clients"
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Native iOS and Android apps with push notifications"
+      "title": "Federation",
+      "description": "Communicate with other XMPP servers"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the chat server on your own infrastructure"
     }
   ],
   "platform_support": {

@@ -1,11 +1,11 @@
 {
   "name": "myheats",
   "slug": "myheats",
-  "tagline": "A self-hosted dashboard for tracking heating costs and usage",
+  "tagline": "A self-hosted dashboard for tracking heating costs and energy usage",
   "subtitle": "",
   "description": "MyHeats is a self-hosted dashboard-style platform for tracking heating costs and energy usage. It collects meter readings and consumption data and displays charts and summaries through a responsive UI.",
   "categories": [
-    75
+    9
   ],
   "metadata": {
     "sponsored": false,
@@ -27,24 +27,26 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Visual metrics and usage statistics with customizable charts to track performance and user engagement"
+      "title": "Heat Management",
+      "description": "Track and manage heating schedules",
+      "core_feature": true
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Responsive design with touch-friendly interfaces and offline sync capabilities for seamless mobile access"
+      "title": "Temperature Control",
+      "description": "Set target temperatures",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Configurable alerts via email, push, or in-app notifications to keep users informed of important updates"
+      "title": "Schedule Configuration",
+      "description": "Define heating schedules"
     },
     {
-      "title": "Theme Customization",
-      "description": "Multiple UI themes and layout options with custom branding support to match organizational identity"
+      "title": "Status Monitoring",
+      "description": "View current heating state"
     },
     {
-      "title": "Database Backup",
-      "description": "Scheduled backups with encryption and cloud storage integration to ensure data protection and disaster recovery"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the system on your own servers"
     }
   ],
   "platform_support": {

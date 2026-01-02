@@ -1,11 +1,11 @@
 {
   "name": "sunshine",
   "slug": "sunshine",
-  "tagline": "A low latency game streaming host for Moonlight",
+  "tagline": "A low-latency self-hosted game streaming server compatible with Moonlight",
   "subtitle": "",
   "description": "Sunshine is a self-hosted game streaming host that works with Moonlight and similar clients. It captures and streams your desktop or games with low-latency encoding.",
   "categories": [
-    135
+    34
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "Game Streaming",
-      "description": "Streams PC games to Moonlight clients on various devices"
+      "title": "Game Streaming Server",
+      "description": "Stream games from a host machine to clients",
+      "core_feature": true
     },
     {
-      "title": "Low Latency",
-      "description": "Optimizes encoding and network protocols for minimal input lag"
+      "title": "Hardware Encoding",
+      "description": "Use GPU acceleration for streaming",
+      "core_feature": true
     },
     {
-      "title": "Real-Time Sync",
-      "description": "Leverages NVENC, AMF, or QuickSync for efficient video encoding"
+      "title": "Client Compatibility",
+      "description": "Stream to supported client applications",
+      "core_feature": true
     },
     {
-      "title": "Hdr Support",
-      "description": "Streams HDR content to compatible displays and clients"
+      "title": "Input Forwarding",
+      "description": "Forward controller and keyboard input"
     },
     {
-      "title": "Multi",
-      "description": "Streams to multiple devices simultaneously or sequentially"
+      "title": "Stream Configuration",
+      "description": "Configure streaming quality and settings"
     },
     {
-      "title": "Controller Support",
-      "description": "Passes through gamepad input from remote clients"
-    },
-    {
-      "title": "Audio Streaming",
-      "description": "Routes game audio to remote devices with low latency"
-    },
-    {
-      "title": "Resolution Scaling",
-      "description": "Adjusts stream resolution based on client capabilities and bandwidth"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the streaming server on your own infrastructure"
     }
   ],
   "platform_support": {

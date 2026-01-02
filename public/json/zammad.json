@@ -1,11 +1,11 @@
 {
   "name": "zammad",
   "slug": "zammad",
-  "tagline": "A modern helpdesk and ticketing system",
+  "tagline": "A helpdesk and ticketing system with multi-channel support and APIs",
   "subtitle": "",
   "description": "Zammad is a self-hosted helpdesk and ticketing system. It integrates with email, chat, and telephony, supports multi-channel tickets, and exposes a modern web UI and APIs, alongside commercial cloud hosting.",
   "categories": [
-    156
+    39
   ],
   "metadata": {
     "sponsored": false,
@@ -27,32 +27,31 @@
   },
   "features": [
     {
-      "title": "Media Library",
-      "description": "Manage support requests from email, chat, phone, and social media in one unified interface"
+      "title": "Helpdesk System",
+      "description": "Manage customer support tickets",
+      "core_feature": true
     },
     {
-      "title": "Email Integration",
-      "description": "Convert incoming emails to tickets automatically with threading and attachment handling"
+      "title": "Multi-Channel Support",
+      "description": "Handle tickets from email and web",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Build a searchable help center with articles that can be linked to tickets or accessed"
+      "title": "Ticket Workflow",
+      "description": "Manage ticket states and assignments",
+      "core_feature": true
     },
     {
-      "title": "Ticket Workflows",
-      "description": "Automate ticket routing, assignment, and status changes based on customizable rules and triggers"
+      "title": "Knowledge Base",
+      "description": "Publish support documentation"
     },
     {
-      "title": "Team Collaboration",
-      "description": "Add internal notes, mention colleagues, and collaborate on tickets without exposing details to customers"
+      "title": "Reporting",
+      "description": "Generate support reports"
     },
     {
-      "title": "Sla Management",
-      "description": "Define and track service level agreements with automatic escalations for overdue tickets"
-    },
-    {
-      "title": "Analytics Dashboard",
-      "description": "Analyze ticket volume, response times, and agent performance with built-in analytics"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the helpdesk on your own infrastructure"
     }
   ],
   "platform_support": {

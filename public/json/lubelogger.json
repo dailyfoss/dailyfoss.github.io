@@ -1,11 +1,11 @@
 {
   "name": "lubelogger",
   "slug": "lubelogger",
-  "tagline": "A self-hosted app for tracking vehicle maintenance and fuel",
+  "tagline": "A self-hosted vehicle maintenance and fuel tracking application",
   "subtitle": "",
   "description": "LubeLog helps car owners track maintenance, repairs, and fuel usage across multiple vehicles. Its self-hosted web UI includes reporting and reminders for keeping vehicle service history in one place.",
   "categories": [
-    175
+    22
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "Fuel Logging",
-      "description": "Fuel consumption, Cost tracking, Efficiency analysis. Monitor fuel usage and expenses"
+      "title": "Logging Utility",
+      "description": "Record application logs to local and remote targets",
+      "core_feature": true
     },
     {
-      "title": "Data Import",
-      "description": "Scheduled maintenance, Mileage-based alerts, Custom reminders. Never miss important service dates"
+      "title": "Log Levels",
+      "description": "Support multiple log severity levels",
+      "core_feature": true
     },
     {
-      "title": "File Upload",
-      "description": "Upload receipts, Service documents, Warranty info. Keep all vehicle documents organized"
+      "title": "Formatting",
+      "description": "Add structured formats to log entries",
+      "core_feature": true
     },
     {
-      "title": "Data Export",
-      "description": "Maintenance history, Cost summaries, Export data. Generate comprehensive vehicle reports"
+      "title": "Output Configuration",
+      "description": "Route logs to files, consoles, or remote endpoints"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Privacy-focused, Full data control, No subscriptions. Own your vehicle maintenance data"
+      "title": "Performance-Oriented",
+      "description": "Minimize overhead during logging"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Use the logger library within hosted applications"
     }
   ],
   "platform_support": {

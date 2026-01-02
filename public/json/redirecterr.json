@@ -1,11 +1,11 @@
 {
   "name": "redirecterr",
   "slug": "redirecterr",
-  "tagline": "A self-hosted redirect manager with basic analytics",
+  "tagline": "A self-hosted link redirection manager with analytics and flexible rules",
   "subtitle": "",
   "description": "Redirecterr is a self-hosted link redirection manager with analytics and link rules. It tracks visits and allows flexible redirects in a clean UI.",
   "categories": [
-    171
+    43
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,26 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Track click counts, referrer sources, and geographic data for each redirect link"
+      "title": "Redirect Management",
+      "description": "Manage URL redirects centrally",
+      "core_feature": true
+    },
+    {
+      "title": "Rule Configuration",
+      "description": "Define redirect rules via configuration",
+      "core_feature": true
     },
     {
       "title": "Web Interface",
-      "description": "Edit, disable, or delete redirects through an intuitive web interface"
+      "description": "Manage redirects through a browser"
     },
     {
-      "title": "Offline Mode",
-      "description": "Create scannable QR codes for each redirect link for offline marketing"
+      "title": "Logging",
+      "description": "Track redirect usage"
     },
     {
-      "title": "Password Protection",
-      "description": "Restrict access to sensitive redirects with optional password requirements"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the service on your own infrastructure"
     }
   ],
   "platform_support": {

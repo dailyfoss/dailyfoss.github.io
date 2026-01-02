@@ -1,11 +1,11 @@
 {
   "name": "mydrive",
   "slug": "mydrive",
-  "tagline": "A minimal self-hosted file storage and sharing service",
+  "tagline": "A minimalist self-hosted file storage and sync service",
   "subtitle": "",
   "description": "myDrive is a self-hosted file storage and sync service with a minimalist web interface. It supports multi-device access, sharing links, and managing files securely without cloud storage.",
   "categories": [
-    27
+    33
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,27 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Visual metrics and usage statistics with customizable charts to track performance and user engagement"
+      "title": "File Storage",
+      "description": "Store and manage files",
+      "core_feature": true
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Responsive design with touch-friendly interfaces and offline sync capabilities for seamless mobile access"
+      "title": "Folder Management",
+      "description": "Organize files into folders",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Configurable alerts via email, push, or in-app notifications to keep users informed of important updates"
+      "title": "File Sharing",
+      "description": "Share files using links"
     },
     {
-      "title": "Theme Customization",
-      "description": "Multiple UI themes and layout options with custom branding support to match organizational identity"
+      "title": "Web Interface",
+      "description": "Access files through a browser",
+      "core_feature": true
     },
     {
-      "title": "Database Backup",
-      "description": "Scheduled backups with encryption and cloud storage integration to ensure data protection and disaster recovery"
+      "title": "Self-Hosted Service",
+      "description": "Run the storage service on your own infrastructure"
     }
   ],
   "platform_support": {

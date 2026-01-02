@@ -1,11 +1,11 @@
 {
   "name": "umami",
   "slug": "umami",
-  "tagline": "A privacy friendly self-hosted web analytics platform",
+  "tagline": "A privacy-friendly web analytics platform with clean, simple dashboards",
   "subtitle": "The modern analytics platform for effortless insights",
   "description": "Umami is a self-hosted, privacy-friendly web analytics platform. It uses a small tracking script and offers clean dashboards, goal tracking, and multi-site support, with an optional hosted cloud service.",
   "categories": [
-    186
+    9
   ],
   "metadata": {
     "sponsored": false,
@@ -33,28 +33,26 @@
   },
   "features": [
     {
+      "title": "Web Analytics",
+      "description": "Track website traffic and usage metrics",
+      "core_feature": true
+    },
+    {
       "title": "Analytics Dashboard",
-      "description": "Monitor web traffic and user sessions with a GA-like dashboard to easily track conversion, web"
+      "description": "View page views, referrers, and events",
+      "core_feature": true
     },
     {
-      "title": "Data Privacy",
-      "description": "Ensure GDPR and CCPA compliance with built-in consent management, data anonymization, and configurable retention policies"
+      "title": "Event Tracking",
+      "description": "Track custom user interactions"
     },
     {
-      "title": "User Attribution",
-      "description": "Track user journeys across devices and sessions with cross-domain tracking, UTM parameters, and referral source"
+      "title": "Multi-Site Support",
+      "description": "Monitor multiple websites from one instance"
     },
     {
-      "title": "Lightweight",
-      "description": "Minimal script size ensures fast page loads without impacting site performance or user experience"
-    },
-    {
-      "title": "Team Collaboration",
-      "description": "Share insights with role-based access controls, collaborative annotations on charts, and scheduled report delivery to"
-    },
-    {
-      "title": "REST API",
-      "description": "Connect with third-party tools via REST APIs, webhooks, and native integrations to centralize data and"
+      "title": "Self-Hosted Deployment",
+      "description": "Run analytics on your own infrastructure"
     }
   ],
   "platform_support": {

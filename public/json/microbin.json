@@ -1,11 +1,11 @@
 {
   "name": "microbin",
   "slug": "microbin",
-  "tagline": "A fast self-hosted pastebin with optional expiration",
+  "tagline": "A self-hosted pastebin service for sharing text and code snippets",
   "subtitle": "",
   "description": "Microbin is a self-hosted pastebin service that allows sharing text or code snippets with optional expiration. It supports private pastes, syntax highlighting, and a minimal, fast web UI.",
   "categories": [
-    118
+    33
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,30 @@
   },
   "features": [
     {
-      "title": "Text Sharing",
-      "description": "Create pastes for code snippets, logs, or notes with unique URLs for easy sharing"
+      "title": "File Sharing",
+      "description": "Share files using temporary upload links",
+      "core_feature": true
     },
     {
-      "title": "Syntax Highlighting",
-      "description": "Display code with language-specific formatting for improved readability across 100+ languages"
+      "title": "Text and Code Sharing",
+      "description": "Share text snippets and code",
+      "core_feature": true
     },
     {
-      "title": "Expiration Control",
-      "description": "Set pastes to automatically delete after a specified time or number of views for temporary"
+      "title": "Expiration Controls",
+      "description": "Set time or view limits for shared content"
     },
     {
-      "title": "Private Pastes",
-      "description": "Create password-protected pastes that require authentication before viewing content"
+      "title": "Password Protection",
+      "description": "Protect shared content with passwords"
     },
     {
-      "title": "Raw Text Access",
-      "description": "Retrieve paste content as plain text via direct URLs for command-line tools and scripts"
+      "title": "Web Interface",
+      "description": "Upload and access content through a browser"
     },
     {
-      "title": "File Upload",
-      "description": "Share small files alongside text content for comprehensive information sharing in one paste"
-    },
-    {
-      "title": "Burn After Reading",
-      "description": "Configure pastes to self-destruct after first view for sensitive information sharing"
-    },
-    {
-      "title": "Minimal Footprint",
-      "description": "Run with low memory and CPU requirements, suitable for resource-constrained environments"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the service on your own infrastructure"
     }
   ],
   "platform_support": {

@@ -1,11 +1,11 @@
 {
   "name": "koito",
   "slug": "koito",
-  "tagline": "A self-hosted tracker for anime shows and watch progress",
+  "tagline": "A self-hosted watchlist and progress tracker for anime and TV shows",
   "subtitle": "",
   "description": "Koito is a self hosted media and watch list tracker for anime and shows. It integrates with external databases, keeps track of episodes watched and organizes series, offering a simple interface for managing your watch progress.",
   "categories": [
-    80
+    37
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,31 @@
   },
   "features": [
     {
-      "title": "Watch Tracking",
-      "description": "Track anime and TV show viewing progress episode by episode. Never lose your place"
+      "title": "Media Request Management",
+      "description": "Request movies and series through a web interface",
+      "core_feature": true
     },
     {
-      "title": "Episode Management",
-      "description": "Mark episodes as watched and track completion status. Monitor viewing progress"
+      "title": "Media Server Integration",
+      "description": "Send requests to supported media servers",
+      "core_feature": true
     },
     {
-      "title": "Series Organization",
-      "description": "Organize shows into watching, completed, and plan-to-watch lists. Structure your viewing queue"
+      "title": "User Requests",
+      "description": "Allow users to submit and track media requests",
+      "core_feature": true
     },
     {
-      "title": "Database Integration",
-      "description": "Fetch metadata, cover art, and information from external databases. Rich series details automatically"
+      "title": "Approval Workflow",
+      "description": "Review and approve or reject requests"
     },
     {
-      "title": "Automatic Updates",
-      "description": "Get notified when new episodes are released for tracked series. Stay current with shows"
+      "title": "Request History",
+      "description": "View previously submitted requests"
     },
     {
-      "title": "Search and Filter",
-      "description": "Find new anime and shows to watch with search functionality. Discover content easily"
-    },
-    {
-      "title": "Rating System",
-      "description": "Rate series and episodes to remember your favorites. Track what you enjoyed"
-    },
-    {
-      "title": "Statistics",
-      "description": "View watching statistics, time spent, and completion rates. Understand your viewing habits"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the request system on your own infrastructure"
     }
   ],
   "platform_support": {

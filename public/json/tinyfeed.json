@@ -1,11 +1,11 @@
 {
   "name": "tinyfeed",
   "slug": "tinyfeed",
-  "tagline": "A minimal and distraction free RSS reader",
+  "tagline": "A minimal, distraction-free RSS reader focused on simplicity",
   "subtitle": "",
   "description": "Tinyfeed is a self-hosted minimal RSS reader with focus on simplicity. It fetches feeds on a schedule and presents them in a clean, distraction-free web interface.",
   "categories": [
-    57
+    20
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "Clean Interface",
-      "description": "Read articles in a distraction-free interface focused on content consumption"
+      "title": "RSS Feed Reader",
+      "description": "Read and aggregate RSS feeds",
+      "core_feature": true
     },
     {
-      "title": "Folder Organization",
-      "description": "Add, remove, and organize feeds with folders or categories for better organization"
+      "title": "Feed Management",
+      "description": "Add, remove, and organize feeds",
+      "core_feature": true
     },
     {
-      "title": "Article Filtering",
-      "description": "Filter articles by feed, date, or read status to focus on relevant content"
+      "title": "Minimal Interface",
+      "description": "Read feeds in a simple web interface",
+      "core_feature": true
     },
     {
-      "title": "Lightweight",
-      "description": "Navigate a simple, lightweight interface that loads quickly and stays out of your way"
+      "title": "Auto Refresh",
+      "description": "Update feeds at regular intervals"
     },
     {
-      "title": "Data Import",
-      "description": "Import feed subscriptions from other readers using standard OPML format"
+      "title": "Export Feeds",
+      "description": "Export feed lists for reuse"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the reader on your own servers"
     }
   ],
   "platform_support": {

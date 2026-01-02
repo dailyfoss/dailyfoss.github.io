@@ -1,11 +1,11 @@
 {
   "name": "passbolt",
   "slug": "passbolt",
-  "tagline": "A team focused password manager for secure sharing",
+  "tagline": "A collaborative, self-hosted password manager for teams",
   "subtitle": "",
   "description": "Passbolt is a self-hosted, API-first password manager designed for team collaboration. It features encrypted password sharing, user controls, browser extensions, and auditing tools.",
   "categories": [
-    117
+    38
   ],
   "metadata": {
     "sponsored": false,
@@ -32,32 +32,27 @@
   },
   "features": [
     {
-      "title": "End-to-End Encryption",
-      "description": "End-to-end encryption ensures passwords are encrypted on client side before storage, protecting against server breaches"
+      "title": "Password Management",
+      "description": "Store and share passwords securely",
+      "core_feature": true
     },
     {
-      "title": "Team Collaboration",
-      "description": "Share passwords securely with team members or groups while maintaining encryption and access controls"
+      "title": "Team Sharing",
+      "description": "Share credentials with team members",
+      "core_feature": true
     },
     {
-      "title": "User Management",
-      "description": "Invite users, assign roles, and manage permissions to control who can access and share passwords"
+      "title": "Access Control",
+      "description": "Control who can access passwords",
+      "core_feature": true
     },
     {
       "title": "Audit Logs",
-      "description": "Track all password access, modifications, and sharing activities for security compliance and accountability"
+      "description": "Track access and changes"
     },
     {
-      "title": "Groups And Folders",
-      "description": "Organize passwords into folders and share with groups for streamlined team-based access management"
-    },
-    {
-      "title": "Password Generator",
-      "description": "Built-in generator creates strong, random passwords with customizable length and character requirements"
-    },
-    {
-      "title": "REST API",
-      "description": "RESTful API enables automation, integration with CI/CD pipelines, and custom workflow development"
+      "title": "API Backend",
+      "description": "Provide backend services for clients"
     }
   ],
   "platform_support": {

@@ -1,11 +1,11 @@
 {
   "name": "linuxgsm",
   "slug": "linuxgsm",
-  "tagline": "A CLI tool for deploying and managing game servers",
+  "tagline": "A CLI tool for deploying and managing dedicated game servers",
   "subtitle": "",
   "description": "LinuxGSM is a CLI tool to deploy and manage dedicated game servers. It supports over 100 games and simplifies installation, updates, backups, and monitoring using a terminal-first interface.",
   "categories": [
-    69
+    42
   ],
   "metadata": {
     "sponsored": false,
@@ -33,19 +33,30 @@
   "features": [
     {
       "title": "Game Server Management",
-      "description": "100+ game support, Easy installation, Automated updates. Deploy game servers quickly"
+      "description": "Install and manage dedicated game servers",
+      "core_feature": true
     },
     {
-      "title": "Cli Interface",
-      "description": "Terminal-based, Script automation, Batch operations. Manage servers efficiently"
+      "title": "Automated Updates",
+      "description": "Update game servers using scripted commands",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Server monitoring, Automatic backups, Alert notifications. Keep servers running smoothly"
+      "title": "Server Monitoring",
+      "description": "Monitor server status and resource usage",
+      "core_feature": true
     },
     {
-      "title": "Multi",
-      "description": "Manage multiple servers, Centralized control, Resource monitoring. Run entire game server fleets"
+      "title": "Backup Management",
+      "description": "Create and manage server backups"
+    },
+    {
+      "title": "Command-Line Interface",
+      "description": "Control servers using CLI commands"
+    },
+    {
+      "title": "Multi-Game Support",
+      "description": "Manage servers for multiple supported games"
     }
   ],
   "platform_support": {

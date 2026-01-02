@@ -1,11 +1,11 @@
 {
   "name": "mazanoke",
   "slug": "mazanoke",
-  "tagline": "A lightweight workflow and reminder platform for task tracking",
+  "tagline": "A lightweight workflow and reminder platform for tasks and schedules",
   "subtitle": "",
   "description": "Mazanoke is a lightweight self-hosted workflow and notification platform for task lists, deadlines, and schedules. It includes reminders, checklists, and user assignments with a clean interface.",
   "categories": [
-    148
+    39
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,30 @@
   },
   "features": [
     {
-      "title": "Deadline Management",
-      "description": "Set and track deadlines with visual indicators for upcoming and overdue items"
+      "title": "URL Monitoring",
+      "description": "Monitor URLs for availability",
+      "core_feature": true
     },
     {
-      "title": "Team Collaboration",
-      "description": "Assign tasks to team members and track responsibility across projects"
+      "title": "Status Dashboard",
+      "description": "Display uptime status for monitored targets",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Receive reminders for upcoming deadlines and task assignments"
+      "title": "Scheduled Checks",
+      "description": "Run checks at configured intervals"
     },
     {
-      "title": "Calendar Integration",
-      "description": "View tasks and deadlines in calendar format for timeline visualization"
+      "title": "Notifications",
+      "description": "Send alerts on failures"
     },
     {
-      "title": "Tagging System",
-      "description": "Categorize tasks with custom tags for flexible filtering and grouping"
+      "title": "Simple Configuration",
+      "description": "Define monitored targets using configuration files"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the service on your own infrastructure"
     }
   ],
   "platform_support": {

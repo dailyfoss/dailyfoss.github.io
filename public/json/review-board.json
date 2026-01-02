@@ -1,11 +1,11 @@
 {
   "name": "review-board",
   "slug": "review-board",
-  "tagline": "A self-hosted platform for collaborative code reviews",
+  "tagline": "A collaborative code review platform for Git and other VCS",
   "subtitle": "",
   "description": "Review Board is a self-hosted code review tool that integrates with Git, SVN, and Mercurial. It includes inline comments, diff views, and workflow tracking for engineering teams.",
   "categories": [
-    125
+    26
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,50 @@
   },
   "features": [
     {
-      "title": "Code Review Workflow",
-      "description": "Submit, review, and approve code changes before merging to main branches"
+      "title": "Code Review System",
+      "description": "Review code changes before merging",
+      "core_feature": true
     },
     {
-      "title": "Inline Comments",
-      "description": "Add feedback directly on specific lines of code in diff views"
-    },
-    {
-      "title": "Diff Visualization",
-      "description": "View side-by-side or unified diffs with syntax highlighting"
-    },
-    {
-      "title": "Vcs Integration",
-      "description": "Connect to Git, SVN, Mercurial, and Perforce repositories"
+      "title": "Diff Viewing",
+      "description": "View and comment on code diffs",
+      "core_feature": true
     },
     {
       "title": "Review Requests",
-      "description": "Create formal review requests with descriptions and reviewers"
+      "description": "Request reviews from team members"
     },
     {
-      "title": "Issue Tracking",
-      "description": "Link reviews to bug reports or feature requests for context"
+      "title": "Integration",
+      "description": "Integrate with version control systems",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Alert reviewers when new changes are submitted or comments added"
+      "title": "Web Interface",
+      "description": "Manage reviews through a browser"
     },
     {
-      "title": "Review History",
-      "description": "Track all feedback and revisions throughout the review process"
+      "title": "Code Review System",
+      "description": "Review code changes before merging",
+      "core_feature": true
+    },
+    {
+      "title": "Diff Viewing",
+      "description": "View and comment on code diffs",
+      "core_feature": true
+    },
+    {
+      "title": "Review Requests",
+      "description": "Request reviews from team members"
+    },
+    {
+      "title": "VCS Integration",
+      "description": "Integrate with version control systems",
+      "core_feature": true
+    },
+    {
+      "title": "Web Interface",
+      "description": "Manage reviews through a browser"
     }
   ],
   "platform_support": {

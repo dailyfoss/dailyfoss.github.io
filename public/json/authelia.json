@@ -32,24 +32,26 @@
   },
   "features": [
     {
-      "title": "Authentication Server",
-      "description": "Centralized auth for all your applications. Single sign-on"
+      "title": "Authentication Gateway",
+      "description": "Protect applications behind authentication",
+      "core_feature": true
+    },
+    {
+      "title": "Single Sign-On",
+      "description": "Authenticate once across multiple services",
+      "core_feature": true
+    },
+    {
+      "title": "Access Policies",
+      "description": "Define access rules per application"
     },
     {
       "title": "Two-Factor Authentication",
-      "description": "Add 2FA security to any application. Enhanced protection"
+      "description": "Require additional login verification"
     },
     {
-      "title": "Reverse Proxy Integration",
-      "description": "Works with Traefik, Nginx, and others. Easy integration"
-    },
-    {
-      "title": "Oauth Integration",
-      "description": "Modern authentication protocols supported. Standard compliance"
-    },
-    {
-      "title": "Self-Hosted",
-      "description": "Complete control over authentication infrastructure. Security in your hands"
+      "title": "Self-Hosted Deployment",
+      "description": "Run authentication on your infrastructure"
     }
   ],
   "platform_support": {

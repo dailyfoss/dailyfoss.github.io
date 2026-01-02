@@ -1,11 +1,11 @@
 {
   "name": "watchyourlan",
   "slug": "watchyourlan",
-  "tagline": "A network scanner and device presence monitor",
+  "tagline": "A network scanner and device presence monitor for local networks",
   "subtitle": "",
   "description": "WatchYourLAN is a self-hosted network scanner and device presence monitor. It detects new devices and shows hostnames, vendors, and activity in a sleek web UI.",
   "categories": [
-    103
+    36
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Media Library",
-      "description": "Get notified immediately when unknown devices join your network for security monitoring"
+      "title": "Network Device Monitoring",
+      "description": "Monitor devices on a local network",
+      "core_feature": true
     },
     {
-      "title": "Offline Mode",
-      "description": "Monitor which devices are currently online or offline with real-time status updates"
+      "title": "Device Discovery",
+      "description": "Discover connected devices automatically",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Assign friendly names and icons to devices for easier identification in the dashboard"
+      "title": "Status Tracking",
+      "description": "Track online and offline status",
+      "core_feature": true
     },
     {
-      "title": "Mac Filtering",
-      "description": "Whitelist or blacklist devices based on MAC addresses to control network access"
+      "title": "Notifications",
+      "description": "Notify on device status changes"
+    },
+    {
+      "title": "Web Interface",
+      "description": "View network status in a browser"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the monitor on your own infrastructure"
     }
   ],
   "platform_support": {

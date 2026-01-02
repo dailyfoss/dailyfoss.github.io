@@ -1,11 +1,11 @@
 {
   "name": "polaris",
   "slug": "polaris",
-  "tagline": "A self-hosted music streaming server with web UI",
+  "tagline": "A self-hosted music streaming server with playlists and metadata support",
   "subtitle": "",
   "description": "Polaris is a self-hosted music streaming server with a sleek web UI. It serves Music library content over the browser or app and supports playlists, search, and metadata.",
   "categories": [
-    100
+    34
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,31 @@
   },
   "features": [
     {
-      "title": "Mobile Responsive",
-      "description": "Stream your music library to web browsers and mobile devices"
+      "title": "Music Streaming Server",
+      "description": "Stream music from a personal library",
+      "core_feature": true
     },
     {
-      "title": "Library Organization",
-      "description": "Automatically organize music by artist, album, and genre with metadata"
+      "title": "Library Browsing",
+      "description": "Browse music by artist and album",
+      "core_feature": true
     },
     {
-      "title": "Playlist Management",
-      "description": "Create and manage playlists for different moods and occasions"
+      "title": "Playlist Support",
+      "description": "Create and manage playlists",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Find songs, albums, and artists quickly with full-text search"
+      "title": "Web Player",
+      "description": "Play music in a browser"
     },
     {
       "title": "User Accounts",
-      "description": "Create separate accounts for family members with individual libraries and playlists"
+      "description": "Manage access with users"
     },
     {
-      "title": "Mobile Apps",
-      "description": "Access your music from iOS and Android devices with native applications"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the music server on your own infrastructure"
     }
   ],
   "platform_support": {

@@ -1,7 +1,7 @@
 {
   "name": "restic",
   "slug": "restic",
-  "tagline": "A secure backup client with encryption and deduplication",
+  "tagline": "A fast and secure backup tool with encryption and deduplication",
   "subtitle": "",
   "description": "Restic is a secure, fast, self-hosted backup client. It supports encryption, deduplication, multiple backends, and CLI operations for efficient backup and restore workflows.",
   "categories": [
@@ -32,36 +32,27 @@
   },
   "features": [
     {
-      "title": "Database Backup",
-      "description": "Protect data with AES-256 encryption before uploading to storage"
-    },
-    {
-      "title": "Deduplication",
-      "description": "Save storage space by identifying and storing only unique data blocks"
-    },
-    {
-      "title": "Multiple Backends",
-      "description": "Back up to local disks, SFTP, S3, Azure, Google Cloud, and more"
+      "title": "Backup Tool",
+      "description": "Create encrypted backups of files and directories",
+      "core_feature": true
     },
     {
       "title": "Incremental Backups",
-      "description": "Transfer only changed data to minimize backup time and bandwidth"
+      "description": "Save space using deduplicated backups",
+      "core_feature": true
     },
     {
-      "title": "Snapshot Management",
-      "description": "Create point-in-time snapshots and restore to any previous state"
+      "title": "Multiple Backends",
+      "description": "Store backups on local or remote storage",
+      "core_feature": true
     },
     {
-      "title": "Compression",
-      "description": "Reduce backup size with built-in compression algorithms"
+      "title": "Restore",
+      "description": "Restore files from backups"
     },
     {
-      "title": "Verification",
-      "description": "Check backup integrity with cryptographic hashes to detect corruption"
-    },
-    {
-      "title": "Selective Restore",
-      "description": "Recover individual files or directories without restoring entire backups"
+      "title": "Command Line Interface",
+      "description": "Manage backups using CLI commands"
     }
   ],
   "platform_support": {

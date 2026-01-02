@@ -1,11 +1,11 @@
 {
   "name": "whodb",
   "slug": "whodb",
-  "tagline": "A modern database explorer with chat style queries",
+  "tagline": "A modern, chat-style database explorer for multiple SQL and NoSQL databases",
   "subtitle": "",
   "description": "WhoDB is a next-generation, self-hostable database explorer with chat-style querying. It connects to Postgres, MySQL, SQLite, MongoDB, Redis and more, providing a modern interface for browsing schemas, running queries, and visualizing results.",
   "categories": [
-    39
+    29
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Chat",
-      "description": "Write queries using natural language or SQL with an intuitive chat interface"
+      "title": "Database Browser",
+      "description": "Browse and inspect databases",
+      "core_feature": true
     },
     {
-      "title": "Data Visualization",
-      "description": "View query results as tables, charts, or graphs for better data understanding"
+      "title": "Multi-Database Support",
+      "description": "Connect to supported database engines",
+      "core_feature": true
     },
     {
-      "title": "Connection Management",
-      "description": "Save and manage multiple database connections with secure credential storage"
+      "title": "Query Interface",
+      "description": "Run database queries",
+      "core_feature": true
     },
     {
-      "title": "Data Export",
-      "description": "Export query results to CSV, JSON, or Excel formats for reporting or analysis"
+      "title": "Schema Exploration",
+      "description": "Explore database schemas"
+    },
+    {
+      "title": "Web Interface",
+      "description": "Access databases in a browser"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the tool on your own servers"
     }
   ],
   "platform_support": {

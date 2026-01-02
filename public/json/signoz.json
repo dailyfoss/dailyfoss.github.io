@@ -1,11 +1,11 @@
 {
   "name": "signoz",
   "slug": "signoz",
-  "tagline": "An open source observability platform for metrics and traces",
+  "tagline": "An open-source observability platform for metrics, logs, and traces",
   "subtitle": "",
   "description": "SigNoz is an open-source observability platform for metrics, logs, and traces, built as a self-hosted alternative to Datadog and New Relic. It supports OpenTelemetry, dashboards, and alerting.",
   "categories": [
-    114
+    35
   ],
   "metadata": {
     "sponsored": false,
@@ -32,36 +32,26 @@
   },
   "features": [
     {
+      "title": "Observability Platform",
+      "description": "Monitor metrics, traces, and logs",
+      "core_feature": true
+    },
+    {
       "title": "Distributed Tracing",
-      "description": "Visualizes request flows across microservices with trace timelines"
+      "description": "Trace requests across services",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Collects and displays application and infrastructure metrics in dashboards"
+      "title": "Metrics Dashboard",
+      "description": "Visualize system metrics"
     },
     {
-      "title": "Search and Filter",
-      "description": "Aggregates logs from multiple sources with search and filtering"
+      "title": "Alerting",
+      "description": "Receive alerts on anomalies"
     },
     {
-      "title": "Opentelemetry Native",
-      "description": "Built on OpenTelemetry for vendor-neutral instrumentation"
-    },
-    {
-      "title": "Custom Dashboards",
-      "description": "Creates visualizations with charts, graphs, and tables for metrics"
-    },
-    {
-      "title": "Alert Rules",
-      "description": "Configures alerts based on metrics, traces, or log patterns"
-    },
-    {
-      "title": "Service Maps",
-      "description": "Automatically generates topology maps showing service dependencies"
-    },
-    {
-      "title": "Query Builder",
-      "description": "Builds complex queries with visual interface or PromQL-like syntax"
+      "title": "Self-Hosted Deployment",
+      "description": "Run observability stack locally"
     }
   ],
   "platform_support": {

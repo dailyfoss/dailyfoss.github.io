@@ -1,11 +1,11 @@
 {
   "name": "grav",
   "slug": "grav",
-  "tagline": "A fast flat-file CMS for building websites without a database",
+  "tagline": "A fast flat file content management system without a database",
   "subtitle": "",
   "description": "Grav is a flat-file CMS that allows users to build websites without a database. It supports themes, plugins, markdown content, and runs extremely fast, suitable for blogs, documentation sites, or landing pages.",
   "categories": [
-    152
+    19
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,37 @@
   },
   "features": [
     {
-      "title": "Markdown Support",
-      "description": "Build websites without database dependencies using markdown and YAML files"
+      "title": "Flat-File CMS",
+      "description": "Manages websites without a database",
+      "core_feature": true
     },
     {
-      "title": "High Performance",
-      "description": "Exceptional speed with built-in caching and optimized file-based content delivery"
+      "title": "Twig Templating",
+      "description": "Uses Twig for theme layouts"
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Choose from hundreds of responsive themes or create custom designs"
+      "title": "Markdown Content",
+      "description": "Writes pages in Markdown"
     },
     {
       "title": "Plugin System",
-      "description": "Extend functionality with plugins for forms, SEO, e-commerce, and more"
+      "description": "Extends functionality through plugins"
     },
     {
-      "title": "Team Collaboration",
-      "description": "Store entire site in Git for easy deployment and collaboration"
+      "title": "Media Handling",
+      "description": "Serves images and files within pages"
+    },
+    {
+      "title": "Multilingual Support",
+      "description": "Provides translations for content"
+    },
+    {
+      "title": "CLI Tools",
+      "description": "Manages site from command line"
+    },
+    {
+      "title": "Self-Hosted Website",
+      "description": "Host the CMS on your own infrastructure"
     }
   ],
   "platform_support": {

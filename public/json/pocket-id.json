@@ -1,7 +1,7 @@
 {
   "name": "pocket-id",
   "slug": "pocket-id",
-  "tagline": "A passwordless authentication provider using QR codes",
+  "tagline": "A passwordless authentication provider using QR codes and secure tokens",
   "subtitle": "",
   "description": "Pocket ID is a self-hosted authentication provider using QR codes and secure tokens. It enables passwordless login and account management with privacy focused on local control.",
   "categories": [
@@ -32,32 +32,31 @@
   },
   "features": [
     {
-      "title": "Passwordless Authentication",
-      "description": "Log in using QR codes and secure tokens without passwords"
+      "title": "Authentication Service",
+      "description": "Provide passwordless authentication for applications",
+      "core_feature": true
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Scan QR codes with mobile device for quick and secure authentication"
+      "title": "User Identity Management",
+      "description": "Manage user identities and sessions",
+      "core_feature": true
     },
     {
-      "title": "Account Management",
-      "description": "Manage user accounts and permissions through admin interface"
+      "title": "OAuth Integration",
+      "description": "Integrate authentication with applications",
+      "core_feature": true
     },
     {
-      "title": "Oauth2 Provider",
-      "description": "Act as OAuth2 identity provider for third-party application integration"
+      "title": "Passkey Support",
+      "description": "Authenticate users using passkeys"
     },
     {
-      "title": "Session Management",
-      "description": "Control active sessions with ability to revoke access from any device"
+      "title": "API Access",
+      "description": "Use authentication APIs in external services"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Self-hosted solution keeps authentication data under your control"
-    },
-    {
-      "title": "Mobile App",
-      "description": "Dedicated mobile app for iOS and Android to manage authentication"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the identity service on your own infrastructure"
     }
   ],
   "platform_support": {

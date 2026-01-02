@@ -1,11 +1,11 @@
 {
   "name": "joplin",
   "slug": "joplin",
-  "tagline": "An open source note taking app with encryption and self hosted sync",
+  "tagline": "An open source note-taking and to-do app with end-to-end encryption",
   "subtitle": "",
   "description": "Joplin is an open source note taking and to do app with synchronization. It supports markdown, attachments, end to end encryption and tags, and can sync through self hosted backends like WebDAV or Nextcloud for full data ownership.",
   "categories": [
-    111
+    37
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,30 @@
   },
   "features": [
     {
+      "title": "Note Taking",
+      "description": "Creates and manages notes",
+      "core_feature": true
+    },
+    {
       "title": "Markdown Support",
-      "description": "Full markdown support, Rich text editor, Code syntax highlighting. Write beautifully"
+      "description": "Writes notes in Markdown",
+      "core_feature": true
     },
     {
-      "title": "Data Privacy",
-      "description": "End-to-end encryption, Secure sync, Password protection. Total privacy"
+      "title": "Notebook Organization",
+      "description": "Organizes notes into notebooks"
     },
     {
-      "title": "Real-Time Sync",
-      "description": "WebDAV, Nextcloud, Dropbox, OneDrive support. Sync everywhere"
+      "title": "Cross-Platform Clients",
+      "description": "Works on desktop mobile"
     },
     {
-      "title": "Search and Filter",
-      "description": "Notebooks, tags, search, Nested structure. Stay organized"
+      "title": "Sync Support",
+      "description": "Syncs notes across devices"
     },
     {
-      "title": "Mobile Responsive",
-      "description": "iOS and Android, Offline access, Full sync. Notes on the go"
+      "title": "Self-Hosted Sync",
+      "description": "Uses own sync server"
     }
   ],
   "platform_support": {

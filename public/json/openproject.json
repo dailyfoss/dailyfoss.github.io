@@ -1,11 +1,11 @@
 {
   "name": "openproject",
   "slug": "openproject",
-  "tagline": "An open source project management platform for teams",
+  "tagline": "An open source project management platform with agile and planning tools",
   "subtitle": "",
   "description": "OpenProject is an open-source project management platform supporting agile boards, Gantt charts, time tracking, and team collaboration. It can be self-hosted or run as SaaS, serving as an enterprise-grade alternative to Jira.",
   "categories": [
-    125
+    39
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,34 @@
   },
   "features": [
     {
-      "title": "Team Collaboration",
-      "description": "Share documents, comment on work packages, and mention team members for coordinated project execution"
+      "title": "Project Planning",
+      "description": "Plan tasks, milestones, and timelines",
+      "core_feature": true
     },
     {
-      "title": "Custom Workflows",
-      "description": "Define status transitions and approval processes tailored to your organization's project methodology"
+      "title": "Task Management",
+      "description": "Track tasks and assignments",
+      "core_feature": true
     },
     {
-      "title": "Resource Management",
-      "description": "Assign team members to tasks and track workload distribution across projects and departments"
+      "title": "Gantt Charts",
+      "description": "Visualize project timelines"
     },
     {
-      "title": "REST API",
-      "description": "Connect with external tools and automate workflows using REST API for custom business processes"
+      "title": "Time Tracking",
+      "description": "Log time spent on work items"
+    },
+    {
+      "title": "Roles and Permissions",
+      "description": "Control access based on user roles"
+    },
+    {
+      "title": "Reporting",
+      "description": "Generate project progress reports"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the project system on your own infrastructure"
     }
   ],
   "platform_support": {

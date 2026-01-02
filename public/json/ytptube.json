@@ -1,11 +1,11 @@
 {
   "name": "ytptube",
   "slug": "ytptube",
-  "tagline": "A simple interface for managing YouTube downloads",
+  "tagline": "A web interface for automating YouTube downloads and organizing media",
   "subtitle": "",
   "description": "ytptube is a self-hosted interface and automation tool for downloading and organizing YouTube content, exposing a simple web UI and configuration for recurring downloads.",
   "categories": [
-    100
+    34
   ],
   "metadata": {
     "sponsored": false,
@@ -27,24 +27,31 @@
   },
   "features": [
     {
-      "title": "Web Interface",
-      "description": "Manage subscriptions, view download history, and configure settings through a clean web interface"
+      "title": "Video Platform",
+      "description": "Host and stream video content",
+      "core_feature": true
     },
     {
-      "title": "Download Scheduling",
-      "description": "Set specific times for downloads to run to avoid peak network usage hours"
+      "title": "Channel Management",
+      "description": "Manage video channels",
+      "core_feature": true
     },
     {
-      "title": "Quality Profiles",
-      "description": "Define preferred video quality and format settings per channel or globally"
+      "title": "Uploads",
+      "description": "Upload videos to the platform",
+      "core_feature": true
     },
     {
-      "title": "Folder Organization",
-      "description": "Automatically organize downloaded videos into folders by channel, date, or custom patterns"
+      "title": "Playback",
+      "description": "Play videos in a web player"
     },
     {
-      "title": "File Upload",
-      "description": "Save video descriptions, upload dates, and channel information alongside downloaded files"
+      "title": "User Accounts",
+      "description": "Manage user profiles"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the platform on your own servers"
     }
   ],
   "platform_support": {

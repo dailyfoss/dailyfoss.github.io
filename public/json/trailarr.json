@@ -1,11 +1,11 @@
 {
   "name": "trailarr",
   "slug": "trailarr",
-  "tagline": "A sync tool for Trakt and Arr based media managers",
+  "tagline": "A sync utility connecting Trakt with *Arr-based media managers",
   "subtitle": "",
   "description": "Trailarr is a self-hosted utility that syncs and manages media requests between Trakt and Arr-based media managers, helping keep watchlists and automation rules aligned.",
   "categories": [
-    166
+    1
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,31 @@
   },
   "features": [
     {
-      "title": "Real-Time Sync",
-      "description": "Sync watchlists and collections from Trakt to your media automation setup"
+      "title": "Trailer Management",
+      "description": "Download and manage movie trailers",
+      "core_feature": true
     },
     {
-      "title": "Arr Synchronization",
-      "description": "Automatically add items from Trakt to Radarr, Sonarr, or other Arr applications"
+      "title": "Media Server Integration",
+      "description": "Integrate with supported media servers",
+      "core_feature": true
     },
     {
-      "title": "Bidirectional Sync",
-      "description": "Keep Trakt and Arr applications in sync with changes reflected in both directions"
+      "title": "Automated Downloads",
+      "description": "Fetch trailers automatically",
+      "core_feature": true
     },
     {
-      "title": "Collection Management",
-      "description": "Sync Trakt collections to ensure your media library matches your curated lists"
+      "title": "Quality Selection",
+      "description": "Choose trailer quality preferences"
     },
     {
-      "title": "Filtering Rules",
-      "description": "Define rules to control which items get synced based on criteria like rating or genre"
+      "title": "Metadata Handling",
+      "description": "Manage trailer metadata"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the service on your own infrastructure"
     }
   ],
   "platform_support": {

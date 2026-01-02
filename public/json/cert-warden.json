@@ -1,11 +1,11 @@
 {
   "name": "cert-warden",
   "slug": "cert-warden",
-  "tagline": "A self-hosted dashboard for issuing and renewing TLS certificates via ACME",
+  "tagline": "A certificate management tool for issuing and renewing TLS certificates",
   "subtitle": "",
   "description": "Certwarden is a self-hosted certificate management tool designed to simplify issuing and renewing Let's Encrypt certificates. It provides a web dashboard to manage certs and integrates with ACME challenges and DNS services.",
   "categories": [
-    15
+    41
   ],
   "metadata": {
     "sponsored": false,
@@ -33,31 +33,37 @@
   "features": [
     {
       "title": "Certificate Management",
-      "description": "Simplify SSL/TLS certificate lifecycle. Easy management"
+      "description": "Tracks TLS certificates across environments",
+      "core_feature": true
     },
     {
-      "title": "Let's Encrypt",
-      "description": "Automatic certificate issuance and renewal. Free SSL"
+      "title": "Expiry Monitoring",
+      "description": "Alerts on upcoming certificate expiration",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Manage all certificates from browser interface. Visual control"
+      "title": "Certificate Inventory",
+      "description": "Stores metadata of tracked certificates"
     },
     {
-      "title": "Acme Integration",
-      "description": "Support for ACME challenges and DNS validation. Flexible verification"
+      "title": "Notification Support",
+      "description": "Sends alerts via email or messaging services"
     },
     {
-      "title": "Renewal Automation",
-      "description": "Never worry about expired certificates. Set and forget"
+      "title": "Web UI",
+      "description": "Displays certificate status in a browser"
     },
     {
-      "title": "Multi",
-      "description": "Manage certificates for multiple domains. Centralized management"
+      "title": "API Access",
+      "description": "Exposes tracking data programmatically"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Keep certificate management in-house. Security control"
+      "title": "Self-Hosted Operation",
+      "description": "Keeps certificate data on-premises"
+    },
+    {
+      "title": "Integration Hooks",
+      "description": "Integrates with alerting and monitoring systems"
     }
   ],
   "platform_support": {

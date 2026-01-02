@@ -1,11 +1,11 @@
 {
   "name": "dockstarter",
   "slug": "dockstarter",
-  "tagline": "A setup tool for configuring Docker-based apps on home servers",
+  "tagline": "A setup utility for configuring Docker-based applications on home servers",
   "subtitle": "",
   "description": "DockSTARTer helps users get started with home server apps by automating the configuration of Docker containers using templates. It supports media servers, automation tools, and is ideal for beginner self-hosters.",
   "categories": [
-    47
+    27
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,38 @@
   },
   "features": [
     {
-      "title": "Automated Setup",
-      "description": "Configure home server apps automatically. Beginner-friendly deployment"
+      "title": "Docker Environment Bootstrap",
+      "description": "Sets up a complete Docker environment",
+      "core_feature": true
     },
     {
-      "title": "Template Library",
-      "description": "Pre-configured containers for popular apps. Quick stack building"
+      "title": "Application Selection",
+      "description": "Selects applications to deploy",
+      "core_feature": true
     },
     {
-      "title": "Media Library",
-      "description": "Perfect for Plex, Sonarr, Radarr, and more. Complete media stack"
+      "title": "Automated Configuration",
+      "description": "Generates Docker Compose files"
     },
     {
-      "title": "Guided Configuration",
-      "description": "Step-by-step setup process. Easy for newcomers"
+      "title": "Update Management",
+      "description": "Updates deployed applications"
     },
     {
-      "title": "Best Practices",
-      "description": "Implements recommended configurations. Optimized deployments"
+      "title": "Backup Integration",
+      "description": "Integrates backup tools"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Build your home server with confidence. Simplified self-hosting"
+      "title": "CLI Interface",
+      "description": "Manages setup from command line"
+    },
+    {
+      "title": "Documentation Guidance",
+      "description": "Provides guided setup instructions"
+    },
+    {
+      "title": "Self-Hosted Stack",
+      "description": "Runs on user-managed servers"
     }
   ],
   "platform_support": {

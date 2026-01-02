@@ -1,11 +1,11 @@
 {
   "name": "testflight-watcher",
   "slug": "testflight-watcher",
-  "tagline": "A tool that monitors TestFlight betas and sends availability alerts",
+  "tagline": "A monitoring tool that alerts when new TestFlight beta slots become available",
   "subtitle": "",
   "description": "testflight-watcher is a self-hosted tool that monitors TestFlight public betas and alerts when new spots are available or builds are updated, helping users catch limited beta openings automatically.",
   "categories": [
-    172
+    35
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,31 @@
   },
   "features": [
     {
-      "title": "Email Notifications",
-      "description": "Receive notifications immediately when beta slots open up or new builds are published"
+      "title": "TestFlight Monitoring",
+      "description": "Monitor TestFlight apps for new builds",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "Track multiple TestFlight apps simultaneously from a single dashboard"
+      "title": "Notification Alerts",
+      "description": "Notify when new builds are available",
+      "core_feature": true
     },
     {
-      "title": "Notification Channels",
-      "description": "Send alerts via email, Telegram, Discord, or webhooks to your preferred platform"
+      "title": "App Tracking",
+      "description": "Track selected TestFlight applications",
+      "core_feature": true
     },
     {
-      "title": "REST API",
-      "description": "Configure check frequency per app to balance responsiveness with API rate limits"
+      "title": "Scheduling",
+      "description": "Check for updates on a schedule"
+    },
+    {
+      "title": "Configuration Files",
+      "description": "Configure monitored apps"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the watcher on your own infrastructure"
     }
   ],
   "platform_support": {

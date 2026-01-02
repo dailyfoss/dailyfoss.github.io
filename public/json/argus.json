@@ -1,11 +1,11 @@
 {
   "name": "argus",
   "slug": "argus",
-  "tagline": "A monitoring tool that tracks upstream releases and sends version change alerts",
+  "tagline": "A monitoring tool for tracking upstream software releases and notifications",
   "subtitle": "",
   "description": "Argus is a self-hosted monitoring and notification system for watching new releases on GitHub and other platforms. It lets users define version checks and send alerts to integrations like Slack, Discord or email.",
   "categories": [
-    172
+    35
   ],
   "metadata": {
     "sponsored": false,
@@ -32,20 +32,22 @@
   },
   "features": [
     {
-      "title": "Docker Support",
-      "description": "Monitor releases from GitHub, Docker Hub, and more. Universal coverage"
+      "title": "Release Monitoring",
+      "description": "Track new releases for software projects",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Send notifications to Slack, Discord, email, and webhooks. Get notified your way"
+      "title": "Source Monitoring",
+      "description": "Monitor GitHub and other sources",
+      "core_feature": true
     },
     {
-      "title": "Analytics Dashboard",
-      "description": "View all monitored projects and their status at a glance. Centralized overview"
+      "title": "Notifications",
+      "description": "Receive alerts for new releases"
     },
     {
-      "title": "Self-Hosted",
-      "description": "Run on your own infrastructure for privacy and control. Your monitoring, your server"
+      "title": "Web Interface",
+      "description": "View monitored projects in a browser"
     }
   ],
   "platform_support": {

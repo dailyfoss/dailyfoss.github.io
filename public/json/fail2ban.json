@@ -1,11 +1,11 @@
 {
   "name": "fail2ban",
   "slug": "fail2ban",
-  "tagline": "A security service that blocks malicious login attempts by analyzing system logs",
+  "tagline": "A security service that blocks malicious login attempts using log analysis",
   "subtitle": "",
   "description": "Fail2Ban scans log files to detect malicious login attempts and automatically updates firewall rules to block offending IPs. It is widely used to protect SSH and other services on Linux servers with minimal configuration.",
   "categories": [
-    145
+    41
   ],
   "metadata": {
     "sponsored": false,
@@ -32,28 +32,39 @@
   },
   "features": [
     {
-      "title": "Security",
-      "description": "Automatic IP blocking, Brute-force protection, Real-time threat response. Protect your services from attacks"
+      "title": "Log-Based Intrusion Detection",
+      "description": "Monitors log files to detect repeated authentication failures",
+      "core_feature": true
     },
     {
-      "title": "Log Monitoring",
-      "description": "Scans system logs continuously. Detects malicious patterns instantly"
+      "title": "Automated Banning",
+      "description": "Temporarily blocks IP addresses that trigger defined rules",
+      "core_feature": true
     },
     {
-      "title": "Firewall Integration",
-      "description": "Updates iptables automatically. Seamless security enforcement"
+      "title": "Service Profiles",
+      "description": "Includes predefined rules for common services like SSH and web servers",
+      "core_feature": true
     },
     {
-      "title": "Multi",
-      "description": "Protects SSH, web servers, and more. Comprehensive coverage"
+      "title": "Custom Filters",
+      "description": "Allows defining custom patterns to match log events"
     },
     {
-      "title": "Customizable Rules",
-      "description": "Define your own filters and actions. Flexible security policies"
+      "title": "Multiple Ban Actions",
+      "description": "Supports firewall rules email notifications and custom actions"
     },
     {
-      "title": "Email Alerts",
-      "description": "Get notified of bans and attacks. Stay informed"
+      "title": "Whitelisting",
+      "description": "Excludes trusted IP addresses from bans"
+    },
+    {
+      "title": "Runtime Control",
+      "description": "Manages jails and bans without restarting services"
+    },
+    {
+      "title": "Self-Hosted Security Service",
+      "description": "Run the service on your own servers"
     }
   ],
   "platform_support": {

@@ -1,11 +1,11 @@
 {
   "name": "mqtt-web-interface",
   "slug": "mqtt-web-interface",
-  "tagline": "A terminal based interface for interacting with MQTT brokers",
+  "tagline": "A terminal-based interface for inspecting MQTT topics and messages",
   "subtitle": "",
   "description": "MQTTUI is a TUI-based MQTT interface for interacting with any MQTT broker. It provides an interactive view of topics, messages, and QoS delivery, ideal for debugging IoT systems.",
   "categories": [
-    108
+    36
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,27 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Visual metrics and usage statistics with customizable charts to track performance and user engagement"
+      "title": "MQTT Client UI",
+      "description": "Interact with MQTT brokers through a terminal UI",
+      "core_feature": true
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Responsive design with touch-friendly interfaces and offline sync capabilities for seamless mobile access"
+      "title": "Publish Messages",
+      "description": "Send messages to MQTT topics",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Configurable alerts via email, push, or in-app notifications to keep users informed of important updates"
+      "title": "Subscribe to Topics",
+      "description": "Receive messages from topics",
+      "core_feature": true
     },
     {
-      "title": "Theme Customization",
-      "description": "Multiple UI themes and layout options with custom branding support to match organizational identity"
+      "title": "Broker Connections",
+      "description": "Connect to multiple brokers"
     },
     {
-      "title": "Database Backup",
-      "description": "Scheduled backups with encryption and cloud storage integration to ensure data protection and disaster recovery"
+      "title": "Local Usage",
+      "description": "Run the client locally"
     }
   ],
   "platform_support": {

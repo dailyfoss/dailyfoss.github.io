@@ -1,11 +1,11 @@
 {
   "name": "mosquitto",
   "slug": "mosquitto",
-  "tagline": "A lightweight MQTT broker for IoT messaging",
+  "tagline": "A lightweight MQTT broker for IoT and publish-subscribe messaging",
   "subtitle": "",
   "description": "Mosquitto is a lightweight MQTT broker for enabling publish/subscribe messaging in IoT environments. It supports MQTT v3.1 and v5, making it ideal for small devices, home automation, and distributed systems.",
   "categories": [
-    108
+    36
   ],
   "metadata": {
     "sponsored": false,
@@ -32,24 +32,26 @@
   },
   "features": [
     {
-      "title": "Analytics Dashboard",
-      "description": "Visual metrics and usage statistics with customizable charts to track performance and user engagement"
+      "title": "MQTT Broker",
+      "description": "Route MQTT messages between clients",
+      "core_feature": true
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Responsive design with touch-friendly interfaces and offline sync capabilities for seamless mobile access"
+      "title": "Publish and Subscribe",
+      "description": "Support MQTT pub/sub messaging",
+      "core_feature": true
     },
     {
-      "title": "Email Notifications",
-      "description": "Configurable alerts via email, push, or in-app notifications to keep users informed of important updates"
+      "title": "Authentication",
+      "description": "Restrict access to the broker"
     },
     {
-      "title": "Theme Customization",
-      "description": "Multiple UI themes and layout options with custom branding support to match organizational identity"
+      "title": "TLS Support",
+      "description": "Encrypt MQTT connections"
     },
     {
-      "title": "Database Backup",
-      "description": "Scheduled backups with encryption and cloud storage integration to ensure data protection and disaster recovery"
+      "title": "Lightweight Operation",
+      "description": "Run efficiently on limited hardware"
     }
   ],
   "platform_support": {

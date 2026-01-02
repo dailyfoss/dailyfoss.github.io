@@ -1,11 +1,11 @@
 {
   "name": "py-medusa",
   "slug": "medusa",
-  "tagline": "A self-hosted TV show automation tool for downloading and organizing episodes",
+  "tagline": "An automated TV show management and download system",
   "subtitle": "",
   "description": "Medusa is a fork of SickRage that automates the downloading and organization of TV shows. It integrates with usenet and torrent clients to fetch episodes, rename files, and manage libraries.",
   "categories": [
-    104
+    1
   ],
   "metadata": {
     "sponsored": false,
@@ -32,32 +32,31 @@
   },
   "features": [
     {
-      "title": "Automatic Downloads",
-      "description": "Monitor for new TV episodes and automatically download when available"
+      "title": "TV Series Management",
+      "description": "Manage and organize TV show libraries",
+      "core_feature": true
     },
     {
-      "title": "Usenet And Torrent",
-      "description": "Support for both usenet and torrent download clients with multiple provider options"
+      "title": "Episode Monitoring",
+      "description": "Track missing and upcoming episodes",
+      "core_feature": true
     },
     {
-      "title": "Quality Profiles",
-      "description": "Define preferred video quality and automatically upgrade episodes when better versions appear"
+      "title": "Download Automation",
+      "description": "Integrate with download clients",
+      "core_feature": true
     },
     {
-      "title": "Search and Filter",
-      "description": "Automatically retry failed downloads or search for alternative sources"
+      "title": "Metadata Retrieval",
+      "description": "Fetch show and episode information"
     },
     {
-      "title": "Subtitle Downloads",
-      "description": "Automatically fetch subtitles in multiple languages for downloaded episodes"
+      "title": "File Organization",
+      "description": "Rename and organize downloaded files"
     },
     {
-      "title": "Folder Organization",
-      "description": "Organize downloaded files with customizable naming patterns and folder structures"
-    },
-    {
-      "title": "Calendar View",
-      "description": "See upcoming episodes and air dates in a visual calendar interface"
+      "title": "Web Interface",
+      "description": "Manage shows through a browser"
     }
   ],
   "platform_support": {

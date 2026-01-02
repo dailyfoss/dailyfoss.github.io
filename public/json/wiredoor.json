@@ -1,11 +1,11 @@
 {
   "name": "wiredoor",
   "slug": "wiredoor",
-  "tagline": "A web based manager for WireGuard networks",
+  "tagline": "A web-based management panel for configuring WireGuard VPN endpoints",
   "subtitle": "",
   "description": "Wiredoor is a self-hosted WireGuard management panel that provides a web UI for configuring peers, networks, and access rules. It aims to simplify VPN orchestration and monitoring across multiple WireGuard endpoints.",
   "categories": [
-    145
+    36
   ],
   "metadata": {
     "sponsored": false,
@@ -27,28 +27,31 @@
   },
   "features": [
     {
+      "title": "Secure Access Gateway",
+      "description": "Expose internal services securely",
+      "core_feature": true
+    },
+    {
+      "title": "Zero-Trust Access",
+      "description": "Enforce access policies per service",
+      "core_feature": true
+    },
+    {
+      "title": "Identity Integration",
+      "description": "Integrate with identity providers",
+      "core_feature": true
+    },
+    {
+      "title": "Audit Logs",
+      "description": "Log access activity"
+    },
+    {
       "title": "Web Interface",
-      "description": "Add, edit, and remove WireGuard peers through an intuitive web interface"
+      "description": "Manage access rules in a browser"
     },
     {
-      "title": "Mobile Responsive",
-      "description": "Generate QR codes for mobile clients to quickly import VPN configurations"
-    },
-    {
-      "title": "Analytics Dashboard",
-      "description": "View connected peers and their status in a centralized dashboard"
-    },
-    {
-      "title": "Access Control",
-      "description": "Define rules and permissions to control which peers can access specific resources"
-    },
-    {
-      "title": "Database Backup",
-      "description": "Export peer configurations for manual deployment or backup purposes"
-    },
-    {
-      "title": "User Authentication",
-      "description": "Secure the management interface with user accounts and role-based access"
+      "title": "Self-Hosted Deployment",
+      "description": "Run the gateway on your own infrastructure"
     }
   ],
   "platform_support": {

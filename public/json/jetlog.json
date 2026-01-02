@@ -1,11 +1,11 @@
 {
   "name": "jetlog",
   "slug": "jetlog",
-  "tagline": "A web based pilot logbook for tracking flights and hours",
+  "tagline": "A web-based pilot logbook for tracking flights, aircraft, and hours",
   "subtitle": "",
   "description": "Jetlog is a pilot logbook application for tracking flights, aircraft and hours. It provides a web based interface for entering and reviewing entries and can be self hosted by pilots or flying clubs wanting digital records under their control.",
   "categories": [
-    96
+    37
   ],
   "metadata": {
     "sponsored": false,
@@ -32,16 +32,29 @@
   },
   "features": [
     {
-      "title": "Flight Logging",
-      "description": "Record flights, Track hours, Aircraft details. Maintain comprehensive pilot records"
+      "title": "Structured Logging",
+      "description": "Logs structured application events",
+      "core_feature": true
     },
     {
-      "title": "Data Export",
-      "description": "Digital entries, Export reports, Regulatory compliance. Professional flight documentation"
+      "title": "JSON Log Output",
+      "description": "Produces machine-readable logs"
     },
     {
-      "title": "Statistics & Reports",
-      "description": "Flight time analysis, Currency tracking, Experience summaries. Monitor your aviation progress"
+      "title": "Lightweight Logger",
+      "description": "Minimal overhead logging library"
+    },
+    {
+      "title": "Filtering Support",
+      "description": "Filters logs by level"
+    },
+    {
+      "title": "Developer Integration",
+      "description": "Embeds into applications"
+    },
+    {
+      "title": "Local Execution",
+      "description": "Runs within application runtime"
     }
   ],
   "platform_support": {
