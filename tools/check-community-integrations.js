@@ -351,31 +351,18 @@ async function main() {
   console.log('Community Integrations Support');
   console.log('='.repeat(80) + '\n');
 
-  // Column widths
-  const COL_NAME = 33;
-  const COL_WIDTH = 12;
-
-  // Center text helper
-  const center = (text, width) => {
-    const pad = width - text.length;
-    const left = Math.floor(pad / 2);
-    const right = pad - left;
-    return ' '.repeat(left) + text + ' '.repeat(right);
-  };
-
-  console.log(`| ${'App Name'.padEnd(COL_NAME)} | ${center('Proxmox VE', COL_WIDTH)} | ${center('YunoHost', COL_WIDTH)} | ${center('TrueNAS', COL_WIDTH)} |`);
-  console.log(`|${'-'.repeat(COL_NAME + 2)}|${'-'.repeat(COL_WIDTH + 2)}|${'-'.repeat(COL_WIDTH + 2)}|${'-'.repeat(COL_WIDTH + 2)}|`);
+  console.log('| App Name                          | Proxmox VE | YunoHost | TrueNAS |');
+  console.log('|:----------------------------------|:----------:|:--------:|:-------:|');
 
   // Show apps with at least one integration
   const appsWithIntegration = results.filter(r => r.proxmox || r.yunohost || r.truenas);
   
   for (const app of appsWithIntegration.slice(0, 50)) {
-    const name = app.name.substring(0, COL_NAME).padEnd(COL_NAME);
-    // Emoji takes 2 visual columns, so width - 1 for padding
-    const proxmox = app.proxmox ? center('✅', COL_WIDTH - 1) : ''.padEnd(COL_WIDTH);
-    const yunohost = app.yunohost ? center('✅', COL_WIDTH - 1) : ''.padEnd(COL_WIDTH);
-    const truenas = app.truenas ? center('✅', COL_WIDTH - 1) : ''.padEnd(COL_WIDTH);
-    console.log(`| ${name} | ${proxmox} | ${yunohost} | ${truenas} |`);
+    const name = app.name.substring(0, 33).padEnd(33);
+    const proxmox = app.proxmox ? '✅' : '';
+    const yunohost = app.yunohost ? '✅' : '';
+    const truenas = app.truenas ? '✅' : '';
+    console.log(`| ${name} | ${proxmox.padStart(5).padEnd(10)} | ${yunohost.padStart(4).padEnd(8)} | ${truenas.padStart(4).padEnd(7)} |`);
   }
 
   if (appsWithIntegration.length > 50) {
