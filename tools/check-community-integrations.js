@@ -351,18 +351,18 @@ async function main() {
   console.log('Community Integrations Support');
   console.log('='.repeat(80) + '\n');
 
-  console.log('| App Name                          |  Proxmox VE  |   YunoHost   |   TrueNAS    |');
-  console.log('|-----------------------------------|--------------|--------------|--------------|');
+  console.log('| App Name                          | Proxmox VE | YunoHost | TrueNAS |');
+  console.log('|:----------------------------------|:----------:|:--------:|:-------:|');
 
   // Show apps with at least one integration
   const appsWithIntegration = results.filter(r => r.proxmox || r.yunohost || r.truenas);
   
   for (const app of appsWithIntegration.slice(0, 50)) {
-    const name = app.name.padEnd(33).substring(0, 33);
-    const proxmox = app.proxmox ? '     ✅     ' : '            ';
-    const yunohost = app.yunohost ? '     ✅     ' : '            ';
-    const truenas = app.truenas ? '     ✅     ' : '            ';
-    console.log(`| ${name} | ${proxmox} | ${yunohost} | ${truenas} |`);
+    const name = app.name.substring(0, 33).padEnd(33);
+    const proxmox = app.proxmox ? '✅' : '';
+    const yunohost = app.yunohost ? '✅' : '';
+    const truenas = app.truenas ? '✅' : '';
+    console.log(`| ${name} | ${proxmox.padStart(5).padEnd(10)} | ${yunohost.padStart(4).padEnd(8)} | ${truenas.padStart(4).padEnd(7)} |`);
   }
 
   if (appsWithIntegration.length > 50) {
@@ -373,7 +373,7 @@ async function main() {
   console.log('Community integrations check complete!\n');
 
   // Write summary to file for GitHub Actions
-  const summaryPath = path.join(__dirname, '../COMMUNITY_INTEGRATIONS_SUMMARY.txt');
+  const summaryPath = path.join(__dirname, '../COMMUNITY_INTEGRATIONS_SUMMARY.md');
   const summaryContent = `Total apps: ${totalApps}
 Proxmox VE support: ${proxmoxCount} (${((proxmoxCount/totalApps)*100).toFixed(1)}%)
 YunoHost support: ${yunohostCount} (${((yunohostCount/totalApps)*100).toFixed(1)}%)
