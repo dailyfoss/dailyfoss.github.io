@@ -112,7 +112,7 @@ function buildOgParams(app, layout, theme) {
   const params = new URLSearchParams();
   
   params.set('layoutName', layout);
-  params.set('fileType', 'png');
+  params.set('fileType', 'svg');
   params.set('Theme', theme);
   params.set('Title', app.name || app.slug);
   params.set('Description', app.tagline || app.description?.substring(0, 100) || '');
@@ -191,7 +191,7 @@ async function generateOgImage(app, variant, overwrite = true) {
   const { layout, theme } = variant;
   const layoutShort = layout.replace('dailyfoss-', '');
   const folderName = `${layoutShort}-${theme}`;
-  const outputPath = path.join(OUTPUT_DIR, folderName, `${app.slug}.png`);
+  const outputPath = path.join(OUTPUT_DIR, folderName, `${app.slug}.svg`);
   
   // Skip if already exists and not overwriting
   if (!overwrite && fs.existsSync(outputPath)) {

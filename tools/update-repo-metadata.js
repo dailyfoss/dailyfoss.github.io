@@ -5,12 +5,21 @@
  * Fetches data from GitHub API in parallel using source_code URL
  * 
  * Usage: 
- *   GITHUB_TOKEN=your_token node tools/update-repo-metadata.js [limit|filename]
+ *   GITHUB_TOKEN=your_token node tools/update-repo-metadata.js [limit|filename] [--exclude field1,field2,...] [--screenshots]
  * 
  * Examples:
- *   GITHUB_TOKEN=xxx node tools/update-repo-metadata.js 50          # Update first 50 files
- *   GITHUB_TOKEN=xxx node tools/update-repo-metadata.js minio.json  # Update specific file
- *   GITHUB_TOKEN=xxx node tools/update-repo-metadata.js             # Update all files
+ *   # Update GitHub metadata (requires GITHUB_TOKEN):
+ *   GITHUB_TOKEN=xxx node tools/update-repo-metadata.js 50                               # Update first 50 files
+ *   GITHUB_TOKEN=xxx node tools/update-repo-metadata.js minio.json                       # Update specific file
+ *   GITHUB_TOKEN=xxx node tools/update-repo-metadata.js                                  # Update all files
+ *   GITHUB_TOKEN=xxx node tools/update-repo-metadata.js --exclude license,website,docs   # Exclude specific fields
+ *   GITHUB_TOKEN=xxx node tools/update-repo-metadata.js 50 --exclude license             # Combine limit and exclude
+ *   GITHUB_TOKEN=xxx node tools/update-repo-metadata.js --screenshots                    # Update both metadata and screenshots
+ * 
+ *   # Update screenshots only:
+ *   node tools/update-repo-metadata.js --screenshots                                     # Update all screenshots
+ *   node tools/update-repo-metadata.js minio --screenshots                               # Update specific file screenshot
+ *   node tools/update-repo-metadata.js 50 --screenshots                                  # Update first 50 screenshots
  */
 
 import fs from 'fs/promises';
@@ -22,29 +31,51 @@ const __dirname = path.dirname(__filename);
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const JSON_DIR = path.join(__dirname, '../public/json');
+const UPLOADS_DIR = path.join(__dirname, '../public/uploads');
 const BATCH_SIZE = 10; // Process 10 at a time for better progress visibility
 
-// Parse command line argument - can be a limit number, filename, or slug
-const arg = process.argv[2];
+// Parse command line arguments
 let LIMIT = null;
 let SPECIFIC_FILE = null;
+let EXCLUDE_FIELDS = [];
+let UPDATE_SCREENSHOTS = false;
 
-if (arg) {
-  const parsedNum = parseInt(arg);
-  if (!isNaN(parsedNum)) {
-    // It's a number (limit)
-    LIMIT = parsedNum;
-  } else if (arg.endsWith('.json')) {
-    // It's a filename
-    SPECIFIC_FILE = arg;
-  } else {
-    // It's a slug - convert to filename
-    SPECIFIC_FILE = `${arg}.json`;
+// Parse all arguments
+for (let i = 2; i < process.argv.length; i++) {
+  const arg = process.argv[i];
+  
+  if (arg === '--exclude') {
+    // Next argument should be comma-separated fields
+    if (i + 1 < process.argv.length) {
+      EXCLUDE_FIELDS = process.argv[i + 1].split(',').map(f => f.trim());
+      i++; // Skip next argument
+    }
+  } else if (arg === '--screenshots') {
+    UPDATE_SCREENSHOTS = true;
+  } else if (!LIMIT && !SPECIFIC_FILE) {
+    // First non-flag argument
+    const parsedNum = parseInt(arg);
+    if (!isNaN(parsedNum)) {
+      // It's a number (limit)
+      LIMIT = parsedNum;
+    } else if (arg.endsWith('.json')) {
+      // It's a filename
+      SPECIFIC_FILE = arg;
+    } else if (!arg.startsWith('--')) {
+      // It's a slug - convert to filename
+      SPECIFIC_FILE = `${arg}.json`;
+    }
   }
 }
 
-if (!GITHUB_TOKEN) {
-  console.error('ERROR: GITHUB_TOKEN environment variable is required');
+// Determine if we're in screenshot-only mode (no GitHub metadata updates)
+const SCREENSHOT_ONLY_MODE = UPDATE_SCREENSHOTS && !GITHUB_TOKEN;
+
+// Only require GitHub token if we need to fetch GitHub metadata
+if (!GITHUB_TOKEN && !SCREENSHOT_ONLY_MODE) {
+  console.error('ERROR: GITHUB_TOKEN environment variable is required for GitHub metadata updates');
+  console.error('Usage: GITHUB_TOKEN=xxx node tools/update-repo-metadata.js [options]');
+  console.error('Note: For screenshot-only updates, use: node tools/update-repo-metadata.js --screenshots');
   process.exit(1);
 }
 
@@ -207,9 +238,85 @@ async function fetchRepoData(owner, repo) {
 }
 
 /**
+ * Find screenshot for a given slug in uploads directory
+ */
+async function findScreenshot(slug) {
+  try {
+    const files = await fs.readdir(UPLOADS_DIR);
+    
+    // Look for files that start with the slug
+    const matchingFiles = files.filter(file => {
+      const fileName = file.toLowerCase();
+      const slugLower = slug.toLowerCase();
+      
+      // Match files that start with slug (e.g., "minio.png", "minio-dashboard.png")
+      return fileName.startsWith(slugLower) && (fileName.endsWith('.png') || fileName.endsWith('.jpg') || fileName.endsWith('.jpeg'));
+    });
+    
+    if (matchingFiles.length > 0) {
+      // Prefer exact match (slug.png) over others
+      const exactMatch = matchingFiles.find(f => f.toLowerCase() === `${slug.toLowerCase()}.png`);
+      const selectedFile = exactMatch || matchingFiles[0];
+      
+      return selectedFile;
+    }
+    
+    return null;
+  } catch (error) {
+    console.error(`Error finding screenshot for ${slug}:`, error.message);
+    return null;
+  }
+}
+
+/**
+ * Check if a field should be excluded
+ */
+function shouldExclude(field) {
+  return EXCLUDE_FIELDS.includes(field);
+}
+
+/**
+ * Update a single JSON file with screenshot only (no GitHub data)
+ */
+async function updateScreenshotOnly(filePath, slug) {
+  try {
+    const content = await fs.readFile(filePath, 'utf-8');
+    const json = JSON.parse(content);
+
+    const oldScreenshot = json.resources?.screenshot;
+    
+    const screenshot = await findScreenshot(slug);
+    if (screenshot) {
+      const newScreenshotPath = `/uploads/${screenshot}`;
+      if (oldScreenshot !== newScreenshotPath) {
+        json.resources.screenshot = newScreenshotPath;
+        await fs.writeFile(filePath, JSON.stringify(json, null, 2) + '\n', 'utf-8');
+        
+        console.log(`✓ Updated ${slug}.json: ${oldScreenshot || 'none'} → ${newScreenshotPath}`);
+        
+        changeLog.push({
+          repository: json.name,
+          screenshotUpdated: true,
+          oldScreenshot: oldScreenshot || 'N/A',
+          newScreenshot: newScreenshotPath
+        });
+        
+        return { updated: true, noChange: false };
+      }
+    }
+    
+    // No change needed (screenshot already correct or not found)
+    return { updated: false, noChange: true };
+  } catch (error) {
+    console.error(`✗ Failed to update ${slug}.json:`, error.message);
+    return { updated: false, noChange: false, error: true };
+  }
+}
+
+/**
  * Update a single JSON file with fetched data
  */
-async function updateJsonFile(filePath, repoData, repoUrl) {
+async function updateJsonFile(filePath, repoData, repoUrl, slug) {
   try {
     const content = await fs.readFile(filePath, 'utf-8');
     const json = JSON.parse(content);
@@ -218,28 +325,66 @@ async function updateJsonFile(filePath, repoData, repoUrl) {
     const oldStars = json.metadata.github_stars;
     const oldVersion = json.metadata.version;
     const oldLicense = json.metadata.license;
+    const oldScreenshot = json.resources?.screenshot;
 
-    // Update metadata
-    json.metadata.license = repoData.license;
-    json.metadata.version = repoData.version;
-    json.metadata.date_last_released = repoData.date_last_released;
-    json.metadata.date_last_commit = repoData.date_last_commit;
-    json.metadata.github_stars = repoData.github_stars;
-    json.metadata.github_contributors = repoData.github_contributors;
-    json.metadata.github_commits_this_year = repoData.github_commits_this_year;
-    json.metadata.github_issues_open = repoData.github_issues_open;
-    json.metadata.github_issues_closed_this_year = repoData.github_issues_closed_this_year;
-    json.metadata.github_releases_this_year = repoData.github_releases_this_year;
+    // Update metadata (respecting exclusions)
+    if (!shouldExclude('license')) {
+      json.metadata.license = repoData.license;
+    }
+    if (!shouldExclude('version')) {
+      json.metadata.version = repoData.version;
+    }
+    if (!shouldExclude('date_last_released')) {
+      json.metadata.date_last_released = repoData.date_last_released;
+    }
+    if (!shouldExclude('date_last_commit')) {
+      json.metadata.date_last_commit = repoData.date_last_commit;
+    }
+    if (!shouldExclude('github_stars')) {
+      json.metadata.github_stars = repoData.github_stars;
+    }
+    if (!shouldExclude('github_contributors')) {
+      json.metadata.github_contributors = repoData.github_contributors;
+    }
+    if (!shouldExclude('github_commits_this_year')) {
+      json.metadata.github_commits_this_year = repoData.github_commits_this_year;
+    }
+    if (!shouldExclude('github_issues_open')) {
+      json.metadata.github_issues_open = repoData.github_issues_open;
+    }
+    if (!shouldExclude('github_issues_closed_this_year')) {
+      json.metadata.github_issues_closed_this_year = repoData.github_issues_closed_this_year;
+    }
+    if (!shouldExclude('github_releases_this_year')) {
+      json.metadata.github_releases_this_year = repoData.github_releases_this_year;
+    }
 
-    // Update resources
-    if (repoData.website && !json.resources.website) {
+    // Update resources (respecting exclusions)
+    if (!shouldExclude('website') && repoData.website && !json.resources.website) {
       json.resources.website = repoData.website;
     }
-    if (repoData.documentation && !json.resources.documentation) {
+    if (!shouldExclude('documentation') && !shouldExclude('docs') && repoData.documentation && !json.resources.documentation) {
       json.resources.documentation = repoData.documentation;
     }
-    json.resources.issues = repoData.issues;
-    json.resources.releases = repoData.releases;
+    if (!shouldExclude('issues')) {
+      json.resources.issues = repoData.issues;
+    }
+    if (!shouldExclude('releases')) {
+      json.resources.releases = repoData.releases;
+    }
+
+    // Update screenshot if --screenshots flag is set
+    let screenshotUpdated = false;
+    if (UPDATE_SCREENSHOTS && !shouldExclude('screenshot')) {
+      const screenshot = await findScreenshot(slug);
+      if (screenshot) {
+        const newScreenshotPath = `/uploads/${screenshot}`;
+        if (oldScreenshot !== newScreenshotPath) {
+          json.resources.screenshot = newScreenshotPath;
+          screenshotUpdated = true;
+        }
+      }
+    }
 
     await fs.writeFile(filePath, JSON.stringify(json, null, 2) + '\n', 'utf-8');
 
@@ -253,6 +398,7 @@ async function updateJsonFile(filePath, repoData, repoUrl) {
       newVersion: repoData.version || 'N/A',
       versionChanged: oldVersion !== repoData.version,
       licenseChanged: oldLicense !== repoData.license,
+      screenshotUpdated: screenshotUpdated,
       link: repoUrl
     };
 
@@ -265,10 +411,22 @@ async function updateJsonFile(filePath, repoData, repoUrl) {
 }
 
 /**
- * Process files in parallel batches
+ * Process files in parallel batches (screenshot-only mode)
  */
-async function processBatch(files, currentIndex, totalFiles) {
-  const promises = files.map(async ({ filePath, sourceUrl }, idx) => {
+async function processBatchScreenshotsOnly(files) {
+  const promises = files.map(async ({ filePath, slug }) => {
+    const updated = await updateScreenshotOnly(filePath, slug);
+    return { success: updated, file: filePath, skipped: false };
+  });
+
+  return Promise.all(promises);
+}
+
+/**
+ * Process files in parallel batches (with GitHub API)
+ */
+async function processBatch(files) {
+  const promises = files.map(async ({ filePath, sourceUrl, slug }) => {
     const parsed = parseGitHubUrl(sourceUrl);
     if (!parsed) {
       return { success: false, file: filePath, skipped: true, reason: 'invalid_url' };
@@ -280,7 +438,7 @@ async function processBatch(files, currentIndex, totalFiles) {
       return { success: false, file: filePath, skipped: false, reason: 'fetch_failed' };
     }
 
-    const updated = await updateJsonFile(filePath, repoData, sourceUrl);
+    const updated = await updateJsonFile(filePath, repoData, sourceUrl, slug);
     
     return { success: updated, file: filePath, skipped: false };
   });
@@ -306,7 +464,7 @@ function printProgress(current, total, updated) {
 function generateSummaryContent(results) {
   let output = '';
   
-  output += '# Repository Metadata Update Report\n\n';
+  output += SCREENSHOT_ONLY_MODE ? '# Screenshot Update Report\n\n' : '# Repository Metadata Update Report\n\n';
   output += `**Generated:** ${new Date().toISOString().split('T')[0]} ${new Date().toTimeString().split(' ')[0]}\n\n`;
 
   // Statistics
@@ -314,35 +472,64 @@ function generateSummaryContent(results) {
   const updated = results.filter(r => r.success).length;
   const skipped = results.filter(r => r.skipped).length;
   const failed = results.filter(r => !r.success && !r.skipped).length;
-  const starChanges = changeLog.filter(c => c.starDiff !== 0).length;
-  const versionChanges = changeLog.filter(c => c.versionChanged).length;
 
-  output += `Updated **${updated}** repositories. **${starChanges}** had star count changes.\n\n`;
-
-  // Key Metrics Table
-  output += '## Key Metrics\n\n';
-  output += '| Metric | Count | Percent |\n';
-  output += '|--------|-------|--------|\n';
-  output += `| Total files | ${totalFiles} | 100% |\n`;
-  output += `| Updated | ${updated} | ${((updated/totalFiles)*100).toFixed(1)}% |\n`;
-  output += `| Star count changed | ${starChanges} | ${((starChanges/updated)*100).toFixed(1)}% of updated |\n`;
-  output += `| Version changed | ${versionChanges} | ${((versionChanges/updated)*100).toFixed(1)}% of updated |\n`;
-  output += `| Skipped (no source / invalid URL) | ${skipped} | ${((skipped/totalFiles)*100).toFixed(1)}% |\n`;
-  output += `| Fetch failed | ${failed} | ${((failed/totalFiles)*100).toFixed(1)}% |\n\n`;
-
-  // Detailed Changes Table
-  if (changeLog.length > 0) {
-    output += '## Detailed Changes\n\n';
+  if (SCREENSHOT_ONLY_MODE) {
+    const screenshotChanges = changeLog.filter(c => c.screenshotUpdated).length;
     
-    // Sort by star difference (descending)
-    const sortedChanges = [...changeLog].sort((a, b) => Math.abs(b.starDiff) - Math.abs(a.starDiff));
+    output += `Updated **${screenshotChanges}** screenshots out of **${updated}** files processed.\n\n`;
 
-    output += '| Repository | Old Stars | New Stars | Difference | Old Version | New Version | Link |\n';
-    output += '|------------|-----------|-----------|------------|-------------|-------------|------|\n';
+    // Key Metrics Table
+    output += '## Key Metrics\n\n';
+    output += '| Metric | Count | Percent |\n';
+    output += '|--------|-------|--------|\n';
+    output += `| Total files | ${totalFiles} | 100% |\n`;
+    output += `| Updated | ${updated} | ${((updated/totalFiles)*100).toFixed(1)}% |\n`;
+    output += `| Screenshots changed | ${screenshotChanges} | ${((screenshotChanges/totalFiles)*100).toFixed(1)}% |\n`;
+    output += `| Skipped | ${skipped} | ${((skipped/totalFiles)*100).toFixed(1)}% |\n`;
+    output += `| Failed | ${failed} | ${((failed/totalFiles)*100).toFixed(1)}% |\n\n`;
+
+    // Detailed Changes Table
+    if (changeLogengtgth > 0) {
+      output += '## Detailed Changes\n\n';
     
-    for (const change of sortedChanges) {
-      const diffStr = change.starDiff > 0 ? `+${change.starDiff}` : change.starDiff.toString();
-      output += `| ${change.repository} | ${change.oldStars} | ${change.newStars} | ${diffStr} | ${change.oldVersion} | ${change.newVersion} | [Link](${change.link}) |\n`;
+      output += '| Repository | Old Screenshot | New Screenshot |\n';
+      output += '|------------|----------------|----------------|\n';
+      
+      for (const change of changeLog) {
+        output += `| ${change.repository} | ${change.oldScreenshot || 'N/A'} | ${change.newScreenshot || 'N/A'} |\n`;
+      }
+    }
+  } else {
+    const starChanges = changeLog.filter(c => c.starDiff !== 0).length;
+    const versionChanges = changeLog.filter(c => c.versionChanged).length;
+
+    output += `Updated **${updated}** repositories. **${starChanges}** had star count changes.\n\n`;
+
+    // Key Metrics Table
+    output += '## Key Metrics\n\n';
+    output += '| Metric | Count | Percent |\n';
+    output += '|--------|-------|--------|\n';
+    output += `| Total files | ${totalFiles} | 100% |\n`;
+    output += `| Updated | ${updated} | ${((updated/totalFiles)*100).toFixed(1)}% |\n`;
+    output += `| Star count changed | ${starChanges} | ${((starChanges/updated)*100).toFixed(1)}% of updated |\n`;
+    output += `| Version changed | ${versionChanges} | ${((versionChanges/updated)*100).toFixed(1)}% of updated |\n`;
+    output += `| Skipped (no source / invalid URL) | ${skipped} | ${((skipped/totalFiles)*100).toFixed(1)}% |\n`;
+    output += `| Fetch failed | ${failed} | ${((failed/totalFiles)*100).toFixed(1)}% |\n\n`;
+
+    // Detailed Changes Table
+    if (changeLog.length > 0) {
+      output += '## Detailed Changes\n\n';
+      
+      // Sort by star difference (descending)
+      const sortedChanges = [...changeLog].sort((a, b) => Math.abs(b.starDiff || 0) - Math.abs(a.starDiff || 0));
+
+      output += '| Repository | Old Stars | New Stars | Difference | Old Version | New Version | Link |\n';
+      output += '|------------|-----------|-----------|------------|-------------|-------------|------|\n';
+      
+      for (const change of sortedChanges) {
+        const diffStr = change.starDiff > 0 ? `+${change.starDiff}` : change.starDiff.toString();
+        output += `| ${change.repository} | ${change.oldStars} | ${change.newStars} | ${diffStr} | ${change.oldVersion} | ${change.newVersion} | [Link](${change.link}) |\n`;
+      }
     }
   }
 
@@ -354,7 +541,7 @@ function generateSummaryContent(results) {
  */
 function generateSummaryTable(results) {
   console.log('\n\n' + '='.repeat(120));
-  console.log('METADATA UPDATE REPORT');
+  console.log(SCREENSHOT_ONLY_MODE ? 'SCREENSHOT UPDATE REPORT' : 'METADATA UPDATE REPORT');
   console.log('='.repeat(120));
 
   // Statistics
@@ -362,57 +549,69 @@ function generateSummaryTable(results) {
   const updated = results.filter(r => r.success).length;
   const skipped = results.filter(r => r.skipped).length;
   const failed = results.filter(r => !r.success && !r.skipped).length;
-  const starChanges = changeLog.filter(c => c.starDiff !== 0).length;
-  const versionChanges = changeLog.filter(c => c.versionChanged).length;
+  
+  // Screenshot-only mode has different metrics
+  if (SCREENSHOT_ONLY_MODE) {
+    const screenshotChanges = changeLog.filter(c => c.screenshotUpdated).length;
+    
+    console.log(`\n${'='.repeat(80)}`);
+    console.log(`Screenshot Update Complete: ${screenshotChanges} of ${totalFiles} files updated`);
+    console.log('='.repeat(80) + '\n');
+    return;
+  } else {
+    // Normal mode with GitHub metadata
+    const starChanges = changeLog.filter(c => c.starDiff !== 0).length;
+    const versionChanges = changeLog.filter(c => c.versionChanged).length;
 
-  console.log(`\nUpdated ${updated} repositories. ${starChanges} had star count changes.\n`);
+    console.log(`\nUpdated ${updated} repositories. ${starChanges} had star count changes.\n`);
 
-  // Key Metrics Table
-  console.log('Key Metrics');
-  console.log('-'.repeat(120));
-  console.log(`${'Metric'.padEnd(40)} | ${'Count'.padStart(10)} | ${'Percent'.padStart(10)}`);
-  console.log('-'.repeat(120));
-  console.log(`${'Total files'.padEnd(40)} | ${totalFiles.toString().padStart(10)} | ${'100%'.padStart(10)}`);
-  console.log(`${'Updated'.padEnd(40)} | ${updated.toString().padStart(10)} | ${((updated/totalFiles)*100).toFixed(1).padStart(9)}%`);
-  console.log(`${'Star count changed'.padEnd(40)} | ${starChanges.toString().padStart(10)} | ${((starChanges/updated)*100).toFixed(1).padStart(9)}% of updated`);
-  console.log(`${'Version changed'.padEnd(40)} | ${versionChanges.toString().padStart(10)} | ${((versionChanges/updated)*100).toFixed(1).padStart(9)}% of updated`);
-  console.log(`${'Skipped (no source / invalid URL)'.padEnd(40)} | ${skipped.toString().padStart(10)} | ${((skipped/totalFiles)*100).toFixed(1).padStart(9)}%`);
-  console.log(`${'Fetch failed'.padEnd(40)} | ${failed.toString().padStart(10)} | ${((failed/totalFiles)*100).toFixed(1).padStart(9)}%`);
-  console.log('-'.repeat(120));
-
-  // Detailed Changes Table
-  if (changeLog.length > 0) {
-    console.log('\n\nDetailed Changes');
+    // Key Metrics Table
+    console.log('Key Metrics');
     console.log('-'.repeat(120));
-    console.log(`${'Repository'.padEnd(25)} | ${'Old Stars'.padStart(10)} | ${'New Stars'.padStart(10)} | ${'Diff'.padStart(10)} | ${'Old Version'.padEnd(15)} | ${'New Version'.padEnd(15)}`);
+    console.log(`${'Metric'.padEnd(40)} | ${'Count'.padStart(10)} | ${'Percent'.padStart(10)}`);
+    console.log('-'.repeat(120));
+    console.log(`${'Total files'.padEnd(40)} | ${totalFiles.toString().padStart(10)} | ${'100%'.padStart(10)}`);
+    console.log(`${'Updated'.padEnd(40)} | ${updated.toString().padStart(10)} | ${((updated/totalFiles)*100).toFixed(1).padStart(9)}%`);
+    console.log(`${'Star count changed'.padEnd(40)} | ${starChanges.toString().padStart(10)} | ${((starChanges/updated)*100).toFixed(1).padStart(9)}% of updated`);
+    console.log(`${'Version changed'.padEnd(40)} | ${versionChanges.toString().padStart(10)} | ${((versionChanges/updated)*100).toFixed(1).padStart(9)}% of updated`);
+    console.log(`${'Skipped (no source / invalid URL)'.padEnd(40)} | ${skipped.toString().padStart(10)} | ${((skipped/totalFiles)*100).toFixed(1).padStart(9)}%`);
+    console.log(`${'Fetch failed'.padEnd(40)} | ${failed.toString().padStart(10)} | ${((failed/totalFiles)*100).toFixed(1).padStart(9)}%`);
     console.log('-'.repeat(120));
 
-    // Sort by star difference (descending)
-    const sortedChanges = [...changeLog].sort((a, b) => Math.abs(b.starDiff) - Math.abs(a.starDiff));
+    // Detailed Changes Table
+    if (changeLog.length > 0) {
+      console.log('\n\nDetailed Changes');
+      console.log('-'.repeat(120));
+      console.log(`${'Repository'.padEnd(25)} | ${'Old Stars'.padStart(10)} | ${'New Stars'.padStart(10)} | ${'Diff'.padStart(10)} | ${'Old Version'.padEnd(15)} | ${'New Version'.padEnd(15)}`);
+      console.log('-'.repeat(120));
 
-    for (const change of sortedChanges) {
-      const diffStr = change.starDiff > 0 ? `+${change.starDiff}` : change.starDiff.toString();
+      // Sort by star difference (descending)
+      const sortedChanges = [...changeLog].sort((a, b) => Math.abs(b.starDiff || 0) - Math.abs(a.starDiff || 0));
+
+      for (const change of sortedChanges) {
+        const diffStr = change.starDiff > 0 ? `+${change.starDiff}` : change.starDiff.toString();
+        
+        console.log(
+          `${change.repository.padEnd(25)} | ${change.oldStars.toString().padStart(10)} | ${change.newStars.toString().padStart(10)} | ${diffStr.padStart(10)} | ${change.oldVersion.padEnd(15)} | ${change.newVersion.padEnd(15)}`
+        );
+      }
+      console.log('-'.repeat(120));
+
+      // Expandable section with links
+      console.log('\n\n<details>');
+      console.log('<summary>Repository Links (Click to expand)</summary>\n');
+      console.log('| Repository | Old Stars | New Stars | Difference | Old Version | New Version | Link |');
+      console.log('|------------|-----------|-----------|------------|-------------|-------------|------|');
       
-      console.log(
-        `${change.repository.padEnd(25)} | ${change.oldStars.toString().padStart(10)} | ${change.newStars.toString().padStart(10)} | ${diffStr.padStart(10)} | ${change.oldVersion.padEnd(15)} | ${change.newVersion.padEnd(15)}`
-      );
+      for (const change of sortedChanges) {
+        const diffStr = change.starDiff > 0 ? `+${change.starDiff}` : change.starDiff.toString();
+        console.log(
+          `| ${change.repository} | ${change.oldStars} | ${change.newStars} | ${diffStr} | ${change.oldVersion} | ${change.newVersion} | [Link](${change.link}) |`
+        );
+      }
+      
+      console.log('\n</details>');
     }
-    console.log('-'.repeat(120));
-
-    // Expandable section with links
-    console.log('\n\n<details>');
-    console.log('<summary>Repository Links (Click to expand)</summary>\n');
-    console.log('| Repository | Old Stars | New Stars | Difference | Old Version | New Version | Link |');
-    console.log('|------------|-----------|-----------|------------|-------------|-------------|------|');
-    
-    for (const change of sortedChanges) {
-      const diffStr = change.starDiff > 0 ? `+${change.starDiff}` : change.starDiff.toString();
-      console.log(
-        `| ${change.repository} | ${change.oldStars} | ${change.newStars} | ${diffStr} | ${change.oldVersion} | ${change.newVersion} | [Link](${change.link}) |`
-      );
-    }
-    
-    console.log('\n</details>');
   }
 
   console.log('\n' + '='.repeat(120) + '\n');
@@ -423,6 +622,18 @@ function generateSummaryTable(results) {
  */
 async function main() {
   console.log('Starting repository metadata update...\n');
+  
+  if (EXCLUDE_FIELDS.length > 0) {
+    console.log(`Excluding fields: ${EXCLUDE_FIELDS.join(', ')}\n`);
+  }
+  
+  if (UPDATE_SCREENSHOTS) {
+    console.log('Screenshot update mode enabled\n');
+  }
+  
+  if (UPDATE_SCREENSHOTS) {
+    console.log('Screenshot update mode enabled\n');
+  }
 
   // If specific file is provided, only process that file
   if (SPECIFIC_FILE) {
@@ -437,6 +648,30 @@ async function main() {
       const content = await fs.readFile(filePath, 'utf-8');
       const json = JSON.parse(content);
       
+      // Extract slug from filename
+      const slug = SPECIFIC_FILE.replace('.json', '');
+      
+      // Screenshot-only mode (no GitHub API needed)
+      if (SCREENSHOT_ONLY_MODE) {
+        console.log(`Updating screenshot for ${slug}...`);
+        const updated = await updateScreenshotOnly(filePath, slug);
+        
+        if (updated) {
+          console.log(`\n✓ Successfully updated ${SPECIFIC_FILE}`);
+          
+          if (changeLog.length > 0) {
+            const change = changeLog[0];
+            console.log(`\nChanges:`);
+            console.log(`  Screenshot: ${change.oldScreenshot} → ${change.newScreenshot}`);
+          }
+        } else {
+          console.log(`\nNo screenshot changes for ${SPECIFIC_FILE}`);
+        }
+        
+        return;
+      }
+      
+      // Normal mode with GitHub API (requires source_code URL)
       if (!json.resources?.source_code || !json.resources.source_code.includes('github.com')) {
         console.error(`ERROR: ${SPECIFIC_FILE} does not have a valid GitHub source_code URL`);
         process.exit(1);
@@ -456,7 +691,7 @@ async function main() {
         process.exit(1);
       }
       
-      const updated = await updateJsonFile(filePath, repoData, json.resources.source_code);
+      const updated = await updateJsonFile(filePath, repoData, json.resources.source_code, slug);
       
       if (updated) {
         console.log(`\n✓ Successfully updated ${SPECIFIC_FILE}`);
@@ -466,6 +701,9 @@ async function main() {
           console.log(`\nChanges:`);
           console.log(`  Stars: ${change.oldStars} → ${change.newStars} (${change.starDiff > 0 ? '+' : ''}${change.starDiff})`);
           console.log(`  Version: ${change.oldVersion} → ${change.newVersion}`);
+          if (change.screenshotUpdated) {
+            console.log(`  Screenshot: Updated`);
+          }
           console.log(`  Link: ${change.link}`);
         }
       } else {
@@ -495,10 +733,18 @@ async function main() {
       const content = await fs.readFile(filePath, 'utf-8');
       const json = JSON.parse(content);
       
-      if (json.resources?.source_code && json.resources.source_code.includes('github.com')) {
+      // In screenshot-only mode, process all files (no GitHub API needed)
+      if (SCREENSHOT_ONLY_MODE) {
         filesToProcess.push({
           filePath,
-          sourceUrl: json.resources.source_code
+          slug: file.replace('.json', '')
+        });
+      } else if (json.resources?.source_code && json.resources.source_code.includes('github.com')) {
+        // Normal mode: only process files with GitHub URLs
+        filesToProcess.push({
+          filePath,
+          sourceUrl: json.resources.source_code,
+          slug: file.replace('.json', '')
         });
       }
     } catch (error) {
@@ -510,7 +756,7 @@ async function main() {
   const totalToProcess = LIMIT ? Math.min(LIMIT, filesToProcess.length) : filesToProcess.length;
   const limitedFiles = filesToProcess.slice(0, totalToProcess);
 
-  console.log(`Processing ${totalToProcess} repositories${LIMIT ? ` (limited to ${LIMIT})` : ''}\n`);
+  console.log(`Processing ${totalToProcess} ${SCREENSHOT_ONLY_MODE ? 'files for screenshots' : 'repositories'}${LIMIT ? ` (limited to ${LIMIT})` : ''}\n`);
 
   // Process in batches
   const results = [];
@@ -519,31 +765,43 @@ async function main() {
   for (let i = 0; i < limitedFiles.length; i += BATCH_SIZE) {
     const batch = limitedFiles.slice(i, i + BATCH_SIZE);
     
-    const batchResults = await processBatch(batch, i, limitedFiles.length);
+    // Use screenshot-only batch processing if in that mode
+    const batchResults = SCREENSHOT_ONLY_MODE
+      ? await processBatchScreenshotsOnly(batch)
+      : await processBatch(batch, i, limitedFiles.length);
+    
     results.push(...batchResults);
     
     updatedCount += batchResults.filter(r => r.success).length;
-    printProgress(Math.min(i + BATCH_SIZE, limitedFiles.length), limitedFiles.length, updatedCount);
+    
+    // Only show progress bar for metadata mode
+    if (!SCREENSHOT_ONLY_MODE) {
+      printProgress(Math.min(i + BATCH_SIZE, limitedFiles.length), limitedFiles.length, updatedCount);
+    }
 
-    // Rate limit delay between batches
-    if (i + BATCH_SIZE < limitedFiles.length) {
+    // Rate limit delay between batches (not needed for screenshot-only mode)
+    if (i + BATCH_SIZE < limitedFiles.length && !SCREENSHOT_ONLY_MODE) {
       await new Promise(resolve => setTimeout(resolve, 1000));
     }
   }
 
-  // Final progress
-  printProgress(limitedFiles.length, limitedFiles.length, updatedCount);
-  console.log('\n');
+  // Final progress (only for metadata mode)
+  if (!SCREENSHOT_ONLY_MODE) {
+    printProgress(limitedFiles.length, limitedFiles.length, updatedCount);
+    console.log('\n');
+  }
 
   // Generate summary
   generateSummaryTable(results);
 
-  // Save summary to file
-  const summaryFile = path.join(__dirname, '../METADATA_UPDATE_SUMMARY.md');
-  const summaryContent = generateSummaryContent(results);
-  
-  await fs.writeFile(summaryFile, summaryContent, 'utf-8');
-  console.log(`\nSummary saved to: ${path.basename(summaryFile)}\n`);
+  // Save summary to file (only for metadata mode)
+  if (!SCREENSHOT_ONLY_MODE) {
+    const summaryFile = path.join(__dirname, '../METADATA_UPDATE_SUMMARY.md');
+    const summaryContent = generateSummaryContent(results);
+    
+    await fs.writeFile(summaryFile, summaryContent, 'utf-8');
+    console.log(`\nSummary saved to: ${path.basename(summaryFile)}\n`);
+  }
 }
 
 main().catch(error => {

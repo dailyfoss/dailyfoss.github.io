@@ -77,7 +77,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || ''
   const appUrl = `${siteUrl}/${slug}`
-  const ogImageUrl = `${siteUrl}/media/images/og/${slug}.png`
+  const ogImageUrl = `${siteUrl}/media/images/og/${slug}.svg`
 
   return {
     title: `${script.name} - Daily FOSS`,

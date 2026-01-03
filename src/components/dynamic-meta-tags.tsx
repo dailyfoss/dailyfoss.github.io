@@ -13,7 +13,7 @@ export function DynamicMetaTags({ script }: DynamicMetaTagsProps) {
 
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL!
     const appUrl = `${siteUrl}/${script.slug}`
-    const ogImageUrl = `${siteUrl}/media/images/og/${script.slug}.png`
+    const ogImageUrl = `${siteUrl}/media/images/og/${script.slug}.svg`
 
     // Update document title
     document.title = `${script.name} - Daily FOSS`

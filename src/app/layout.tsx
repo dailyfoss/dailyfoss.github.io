@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     siteName: "Daily FOSS",
     images: [
       {
-        url: `https://dailyfoss.github.io/media/images/og/homepage.png`,
+        url: `https://dailyfoss.github.io/media/images/og/homepage.svg`,
         width: 1200,
         height: 630,
         alt: "Daily FOSS",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     creator: "@dailyfoss",
     description:
       "Your curated platform for exploring and deploying free and open source software.",
-    images: [`https://dailyfoss.github.io/media/images/og/homepage.png`],
+    images: [`https://dailyfoss.github.io/media/images/og/homepage.svg`],
   },
   manifest: "/manifest.webmanifest",
   appleWebApp: {
