@@ -26,7 +26,7 @@ jobs:
         run: bun install --frozen-lockfile
 
       - name: Update repository metadata
-        run: node tools/update-repo-metadata.js
+        run: node tools/update-repo-metadata.js --exclude license,website,docs
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
 

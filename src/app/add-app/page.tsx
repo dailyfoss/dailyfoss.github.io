@@ -154,7 +154,7 @@ export default function AddAppPage() {
       deployment_methods: formData.deployment_methods,
       manifests: {
         ...(formData.deployment_methods.script ? { script: `/manifests/${formData.slug}/script.sh` } : {}),
-        ...(formData.deployment_methods.docker_compose ? { docker_compose: `/manifests/${formData.slug}/docker-compose.yaml` } : {}),
+        ...(formData.deployment_methods.docker_compose ? { docker_compose: `/manifests/${formData.slug}/compose.yml` } : {}),
         ...(formData.deployment_methods.helm ? { helm: `/manifests/${formData.slug}/helm.yaml` } : {}),
         ...(formData.deployment_methods.kubernetes ? { kubernetes: `/manifests/${formData.slug}/k8s-deployment.yaml` } : {}),
         ...(formData.deployment_methods.terraform ? { terraform: `/manifests/${formData.slug}/main.tf` } : {}),
@@ -612,7 +612,7 @@ export default function AddAppPage() {
               <CardContent className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
-                    { id: "docker_compose", label: "Docker Compose", manifest: "docker-compose.yaml" },
+                    { id: "docker_compose", label: "Docker Compose", manifest: "compose.yml" },
                     { id: "kubernetes", label: "Kubernetes", manifest: "k8s-deployment.yaml" },
                     { id: "helm", label: "Helm", manifest: "helm.yaml" },
                     { id: "terraform", label: "Terraform", manifest: "main.tf" },

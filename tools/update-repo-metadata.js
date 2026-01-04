@@ -554,10 +554,34 @@ function generateSummaryTable(results) {
   if (SCREENSHOT_ONLY_MODE) {
     const screenshotChanges = changeLog.filter(c => c.screenshotUpdated).length;
     
-    console.log(`\n${'='.repeat(80)}`);
-    console.log(`Screenshot Update Complete: ${screenshotChanges} of ${totalFiles} files updated`);
-    console.log('='.repeat(80) + '\n');
-    return;
+    console.log(`\nUpdated ${screenshotChanges} screenshots out of ${updated} files processed.\n`);
+
+    // Key Metrics Table
+    console.log('Key Metrics');
+    console.log('-'.repeat(120));
+    console.log(`${'Metric'.padEnd(40)} | ${'Count'.padStart(10)} | ${'Percent'.padStart(10)}`);
+    console.log('-'.repeat(120));
+    console.log(`${'Total files'.padEnd(40)} | ${totalFiles.toString().padStart(10)} | ${'100%'.padStart(10)}`);
+    console.log(`${'Updated'.padEnd(40)} | ${updated.toString().padStart(10)} | ${((updated/totalFiles)*100).toFixed(1).padStart(9)}%`);
+    console.log(`${'Screenshots changed'.padEnd(40)} | ${screenshotChanges.toString().padStart(10)} | ${((screenshotChanges/totalFiles)*100).toFixed(1).padStart(9)}%`);
+    console.log(`${'Skipped'.padEnd(40)} | ${skipped.toString().padStart(10)} | ${((skipped/totalFiles)*100).toFixed(1).padStart(9)}%`);
+    console.log(`${'Failed'.padEnd(40)} | ${failed.toString().padStart(10)} | ${((failed/totalFiles)*100).toFixed(1).padStart(9)}%`);
+    console.log('-'.repeat(120));
+
+    // Detailed Changes Table for screenshots
+    if (changeLog.length > 0) {
+      console.log('\n\nDetailed Changes');
+      console.log('-'.repeat(120));
+      console.log(`${'Repository'.padEnd(30)} | ${'Old Screenshot'.padEnd(40)} | ${'New Screenshot'.padEnd(40)}`);
+      console.log('-'.repeat(120));
+
+      for (const change of changeLog) {
+        console.log(
+          `${change.repository.padEnd(30)} | ${(change.oldScreenshot || 'N/A').padEnd(40)} | ${(change.newScreenshot || 'N/A').padEnd(40)}`
+        );
+      }
+      console.log('-'.repeat(120));
+    }
   } else {
     // Normal mode with GitHub metadata
     const starChanges = changeLog.filter(c => c.starDiff !== 0).length;
@@ -773,11 +797,7 @@ async function main() {
     results.push(...batchResults);
     
     updatedCount += batchResults.filter(r => r.success).length;
-    
-    // Only show progress bar for metadata mode
-    if (!SCREENSHOT_ONLY_MODE) {
-      printProgress(Math.min(i + BATCH_SIZE, limitedFiles.length), limitedFiles.length, updatedCount);
-    }
+    printProgress(Math.min(i + BATCH_SIZE, limitedFiles.length), limitedFiles.length, updatedCount);
 
     // Rate limit delay between batches (not needed for screenshot-only mode)
     if (i + BATCH_SIZE < limitedFiles.length && !SCREENSHOT_ONLY_MODE) {
@@ -785,23 +805,19 @@ async function main() {
     }
   }
 
-  // Final progress (only for metadata mode)
-  if (!SCREENSHOT_ONLY_MODE) {
-    printProgress(limitedFiles.length, limitedFiles.length, updatedCount);
-    console.log('\n');
-  }
+  // Final progress
+  printProgress(limitedFiles.length, limitedFiles.length, updatedCount);
+  console.log('\n');
 
   // Generate summary
   generateSummaryTable(results);
 
-  // Save summary to file (only for metadata mode)
-  if (!SCREENSHOT_ONLY_MODE) {
-    const summaryFile = path.join(__dirname, '../METADATA_UPDATE_SUMMARY.md');
-    const summaryContent = generateSummaryContent(results);
-    
-    await fs.writeFile(summaryFile, summaryContent, 'utf-8');
-    console.log(`\nSummary saved to: ${path.basename(summaryFile)}\n`);
-  }
+  // Save summary to file
+  const summaryFile = path.join(__dirname, '../METADATA_UPDATE_SUMMARY.md');
+  const summaryContent = generateSummaryContent(results);
+  
+  await fs.writeFile(summaryFile, summaryContent, 'utf-8');
+  console.log(`\nSummary saved to: ${path.basename(summaryFile)}\n`);
 }
 
 main().catch(error => {

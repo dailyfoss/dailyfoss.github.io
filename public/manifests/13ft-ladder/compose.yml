@@ -1,0 +1,8 @@
+services:
+  13ft:
+    container_name: 13ft
+    hostname: 13ft
+    image: ghcr.io/wasi-master/13ft:latest
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
