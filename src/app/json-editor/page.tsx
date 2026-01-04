@@ -225,7 +225,7 @@ export default function JSONGenerator() {
   const manifestFileExamples: Record<string, string> = {
     script: "script.sh",
     docker: "Dockerfile",
-    docker_compose: "docker-compose.yaml",
+    docker_compose: "compose.yml",
     helm: "helm.yaml",
     kubernetes: "k8s-deployment.yaml",
     terraform: "main.tf",

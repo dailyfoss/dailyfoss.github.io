@@ -18,7 +18,8 @@ const https = require('https');
 const http = require('http');
 
 // Configuration
-const OG_SERVICE_URL = process.env.OG_SERVICE_URL || 'http://192.168.1.102:3001';
+const OG_SERVICE_URL = process.env.OG_SERVICE_URL || 'http://192.168.1.102:3003';
+const SITE_URL = process.env.SITE_URL || 'https://dailyfoss.com'; // Main site URL for assets
 const OUTPUT_DIR = path.join(__dirname, '../public/og-images');
 const JSON_DIR = path.join(__dirname, '../public/json');
 const APPS_LIST_FILE = path.join(__dirname, 'og-apps-list.txt');
@@ -139,12 +140,12 @@ function buildOgParams(app, layout, theme) {
   if (mobile.android) params.set('Android', 'true');
   if (mobile.ios) params.set('iOS', 'true');
   
-  // Screenshot URL - use OG service's local uploads if available
+  // Screenshot URL - use OG service URL (uploads are symlinked there)
   if (app.resources?.screenshot) {
     let screenshotUrl = app.resources.screenshot;
     
-    // Convert local /uploads/ path to OG service URL
-    if (screenshotUrl.startsWith('/uploads/')) {
+    // Convert local paths to OG service URL (uploads folder is symlinked)
+    if (screenshotUrl.startsWith('/uploads/') || screenshotUrl.startsWith('/')) {
       screenshotUrl = OG_SERVICE_URL + screenshotUrl;
     }
     
@@ -233,7 +234,8 @@ async function processApp(appName) {
 async function main() {
   console.log('🖼️  OG Image Generator');
   console.log('='.repeat(50));
-  console.log(`Service URL: ${OG_SERVICE_URL}`);
+  console.log(`OG Service URL: ${OG_SERVICE_URL}`);
+  console.log(`Site URL (for assets): ${SITE_URL}`);
   console.log(`Apps to process: ${APPS_TO_PROCESS.length}`);
   console.log(`Variants per app: ${VARIANTS.length}`);
   console.log(`Total images: ${APPS_TO_PROCESS.length * VARIANTS.length}`);
