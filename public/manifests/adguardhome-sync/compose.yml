@@ -1,0 +1,100 @@
+# docker compose
+services:
+  adguardhome-sync:
+    image: ghcr.io/bakito/adguardhome-sync:v0.7.3
+    container_name: adguardhome-sync
+    restart: unless-stopped
+    command:
+      - run
+      - --config
+      - /config/adguardhome-sync.yaml
+    ports:
+      - "8080:8080"
+    volumes:
+      - adguardhome_sync_config:/config
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8080/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: 128M
+
+volumes:
+  adguardhome_sync_config:
+
+# config stored at /config/adguardhome-sync.yaml
+cron: # (string) Cron expression for the sync interval
+runOnStart: # (bool) Run the sync on startup
+printConfigOnly: # (bool) Print current config only and stop the application
+continueOnError: # (bool) Continue sync on errors
+origin: # (struct) Origin instance
+  url: # (string) URL of adguardhome instance
+  webURL: # (string) Web URL of adguardhome instance
+  apiPath: # (string) API Path
+  username: # (string) Adguardhome username
+  password: # (string) Adguardhome password
+  cookie: # (string) Adguardhome cookie
+  requestHeaders: # (map) Request Headers 'key1:value1,key2:value2'
+  insecureSkipVerify: # (bool) Skip TLS verification
+  autoSetup: # (bool) Automatically setup the instance if it is not initialized
+  interfaceName: # (string) Network interface name
+  dhcpServerEnabled: # (bool) Enable DHCP server
+replica: # (struct) Single or replica instance (don't use in combination with replicas')
+  url: # (string) URL of adguardhome instance
+  webURL: # (string) Web URL of adguardhome instance
+  apiPath: # (string) API Path
+  username: # (string) Adguardhome username
+  password: # (string) Adguardhome password
+  cookie: # (string) Adguardhome cookie
+  requestHeaders: # (map) Request Headers 'key1:value1,key2:value2'
+  insecureSkipVerify: # (bool) Skip TLS verification
+  autoSetup: # (bool) Automatically setup the instance if it is not initialized
+  interfaceName: # (string) Network interface name
+  dhcpServerEnabled: # (bool) Enable DHCP server
+replicas: # (struct) List or replica instances (don't use in combination with replicas')
+  - url: # (string) URL of adguardhome instance
+    webURL: # (string) Web URL of adguardhome instance
+    apiPath: # (string) API Path
+    username: # (string) Adguardhome username
+    password: # (string) Adguardhome password
+    cookie: # (string) Adguardhome cookie
+    requestHeaders: # (map) Request Headers 'key1:value1,key2:value2'
+    insecureSkipVerify: # (bool) Skip TLS verification
+    autoSetup: # (bool) Automatically setup the instance if it is not initialized
+    interfaceName: # (string) Network interface name
+    dhcpServerEnabled: # (bool) Enable DHCP server
+api: # (struct) 
+  port: # (int) API port (API is disabled if port is set to 0)
+  username: # (string) API username
+  password: # (string) API password
+  darkMode: # (bool) API dark mode
+  metrics: # (struct) 
+    enabled: # (bool) Enable metrics
+    scrapeInterval: # (int64) Interval for metrics scraping
+    queryLogLimit: # (int) Metrics log query limit
+  tls: # (struct) 
+    certDir: # (string) API TLS certificate directory
+    certName: # (string) API TLS certificate file name
+    keyName: # (string) API TLS key file name
+features: # (struct) 
+  dns: # (struct) 
+    accessLists: # (bool) Sync DNS access lists
+    serverConfig: # (bool) Sync DNS server config
+    rewrites: # (bool) Sync DNS rewrites
+  dhcp: # (struct) 
+    serverConfig: # (bool) Sync DHCP server config
+    staticLeases: # (bool) Sync DHCP static leases
+  generalSettings: # (bool) Sync general settings
+  queryLogConfig: # (bool) Sync query log config
+  statsConfig: # (bool) Sync stats config
+  clientSettings: # (bool) Sync client settings
+  services: # (bool) Sync services
+  filters: # (bool) Sync filters
+  theme: # (bool) Sync the web UI theme
+  tlsConfig: # (bool) Sync the TLS config

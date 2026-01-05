@@ -136,53 +136,29 @@ function normalizeAppName(name) {
 }
 
 /**
- * Find matches for an app
+ * Find matches for an app (exact matches only)
  */
 function findMatches(appSlug, appName, proxmoxScripts, yunohostRepos, truenasApps) {
   const normalizedSlug = normalizeAppName(appSlug);
   const normalizedName = normalizeAppName(appName);
 
-  // Find Proxmox match
-  let proxmoxMatch = proxmoxScripts.find(script => 
+  // Find Proxmox match - exact match only
+  const proxmoxMatch = proxmoxScripts.find(script => 
     normalizeAppName(script) === normalizedSlug ||
     normalizeAppName(script) === normalizedName
   );
 
-  if (!proxmoxMatch) {
-    proxmoxMatch = proxmoxScripts.find(script => {
-      const normalized = normalizeAppName(script);
-      return normalized.includes(normalizedSlug) || normalizedSlug.includes(normalized) ||
-             normalized.includes(normalizedName) || normalizedName.includes(normalized);
-    });
-  }
-
-  // Find YunoHost match
-  let yunohostMatch = yunohostRepos.find(repo => 
+  // Find YunoHost match - exact match only
+  const yunohostMatch = yunohostRepos.find(repo => 
     normalizeAppName(repo.name) === normalizedSlug ||
     normalizeAppName(repo.name) === normalizedName
   );
 
-  if (!yunohostMatch) {
-    yunohostMatch = yunohostRepos.find(repo => {
-      const normalized = normalizeAppName(repo.name);
-      return normalized.includes(normalizedSlug) || normalizedSlug.includes(normalized) ||
-             normalized.includes(normalizedName) || normalizedName.includes(normalized);
-    });
-  }
-
-  // Find TrueNAS match
-  let truenasMatch = truenasApps.find(app => 
+  // Find TrueNAS match - exact match only
+  const truenasMatch = truenasApps.find(app => 
     normalizeAppName(app) === normalizedSlug ||
     normalizeAppName(app) === normalizedName
   );
-
-  if (!truenasMatch) {
-    truenasMatch = truenasApps.find(app => {
-      const normalized = normalizeAppName(app);
-      return normalized.includes(normalizedSlug) || normalizedSlug.includes(normalized) ||
-             normalized.includes(normalizedName) || normalizedName.includes(normalized);
-    });
-  }
 
   return { proxmoxMatch, yunohostMatch, truenasMatch };
 }

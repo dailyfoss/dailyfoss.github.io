@@ -52,15 +52,15 @@
   ],
   "platform_support": {
     "desktop": {
-      "linux": true,
-      "windows": true,
-      "macos": true
+      "linux": false,
+      "windows": false,
+      "macos": false
     },
     "mobile": {
       "android": false,
       "ios": false
     },
-    "web_app": false,
+    "web_app": true,
     "browser_extension": false,
     "cli_only": false
   },
@@ -77,35 +77,21 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
+    "script": false,
+    "docker": false,
     "docker_compose": true,
     "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "kubernetes": false,
+    "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "script": "/manifests/adguardhome-sync/script.sh",
+    "docker_compose": "/manifests/adguardhome-sync/compose.yml"
+  },
   "default_credentials": {
     "username": null,
     "password": null
   },
   "notes": [],
-  "repository_status": null,
-  "community_integrations": {
-    "proxmox_ve": {
-      "supported": true,
-      "script_id": "adguard",
-      "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=adguard"
-    },
-    "yunohost": {
-      "supported": true,
-      "repo_name": "adguardhome_ynh",
-      "url": "https://github.com/YunoHost-Apps/adguardhome_ynh"
-    },
-    "truenas": {
-      "supported": true,
-      "app_name": "adguard-home",
-      "url": "https://apps.truenas.com/catalog/adguard-home"
-    }
-  }
+  "repository_status": null
 }
