@@ -1,0 +1,31 @@
+services:
+  actual_server:
+    image: docker.io/actualbudget/actual-server:23.12.0
+    container_name: actual-server
+    restart: unless-stopped
+    ports:
+      - "5006:5006"
+    volumes:
+      - actual_data:/data
+    environment:
+      ACTUAL_PORT: 5006
+      ACTUAL_UPLOAD_FILE_SYNC_SIZE_LIMIT_MB: 20
+      ACTUAL_UPLOAD_SYNC_ENCRYPTED_FILE_SYNC_SIZE_LIMIT_MB: 50
+      ACTUAL_UPLOAD_FILE_SIZE_LIMIT_MB: 20
+      # - ACTUAL_HTTPS_KEY=/data/selfhost.key
+      # - ACTUAL_HTTPS_CERT=/data/selfhost.crt
+    healthcheck:
+      test: ["CMD-SHELL", "node src/scripts/health-check.js"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          cpus: "0.50"
+          memory: 512M
+volumes:
+  actual_data:
