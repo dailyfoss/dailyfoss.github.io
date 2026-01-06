@@ -77,14 +77,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || ''
   const appUrl = `${siteUrl}/${slug}`
-  const ogImageUrl = `${siteUrl}/media/images/og/${slug}.svg`
+  const ogImageUrl = `${siteUrl}/media/images/og/${slug}.png`
 
   return {
     title: `${script.name} - Daily FOSS`,
-    description: script.description,
+    description: script.tagline,
     openGraph: {
       title: script.name,
-      description: script.description,
+      description: script.tagline,
       url: appUrl,
       siteName: 'Daily FOSS',
       images: [
