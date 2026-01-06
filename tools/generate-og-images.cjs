@@ -3,13 +3,13 @@
  * OG Image Generator Script
  * Generates OG images for apps using the og-railway service
  * 
- * Usage: node scripts/generate-og-images.cjs
+ * Usage: 
+ *   node tools/generate-og-images.cjs              - uses og-apps-list.txt
+ *   node tools/generate-og-images.cjs --all        - processes all apps in public/json
+ *   node tools/generate-og-images.cjs --list file  - uses custom list file
+ *   node tools/generate-og-images.cjs --convert    - convert SVGs to high-quality PNGs
  * 
- * Generates 4 variants per app:
- * - dailyfoss-alpha dark
- * - dailyfoss-alpha light  
- * - dailyfoss-beta dark
- * - dailyfoss-beta light
+ * Generates beta-dark template and outputs to /public/media/images/og/
  */
 
 const fs = require('fs');
@@ -19,28 +19,25 @@ const http = require('http');
 
 // Configuration
 const OG_SERVICE_URL = process.env.OG_SERVICE_URL || 'http://192.168.1.102:3003';
-const SITE_URL = process.env.SITE_URL || 'https://dailyfoss.com'; // Main site URL for assets
-const OUTPUT_DIR = path.join(__dirname, '../public/og-images');
+const SITE_URL = process.env.SITE_URL || 'https://dailyfoss.com';
+const OUTPUT_DIR = path.join(__dirname, '../public/media/images/og');
+const SVG_SOURCE_DIR = path.join(__dirname, '../public/og-images/beta-dark');
 const JSON_DIR = path.join(__dirname, '../public/json');
 const APPS_LIST_FILE = path.join(__dirname, 'og-apps-list.txt');
 
-// Usage:
-//   node scripts/generate-og-images.cjs              - uses og-apps-list.txt
-//   node scripts/generate-og-images.cjs --all        - processes all apps in public/json
-//   node scripts/generate-og-images.cjs --list file  - uses custom list file
-
 const args = process.argv.slice(2);
+
+// Check if convert mode
+const isConvertMode = args.includes('--convert');
 
 // Get apps to process
 let APPS_TO_PROCESS;
 
 if (args.includes('--all')) {
-  // Process all apps
   APPS_TO_PROCESS = fs.readdirSync(JSON_DIR)
     .filter(f => f.endsWith('.json'))
     .map(f => f.replace('.json', ''));
 } else {
-  // Use list file (default or custom)
   let listFile = APPS_LIST_FILE;
   const listIndex = args.indexOf('--list');
   if (listIndex !== -1 && args[listIndex + 1]) {
@@ -65,37 +62,21 @@ if (args.includes('--all')) {
   }
 }
 
-// Layout variants to generate
-const VARIANTS = [
-  { layout: 'dailyfoss-alpha', theme: 'dark' },
-  { layout: 'dailyfoss-alpha', theme: 'light' },
-  { layout: 'dailyfoss-beta', theme: 'dark' },
-  { layout: 'dailyfoss-beta', theme: 'light' },
-];
+// Only beta-dark template
+const VARIANT = { layout: 'dailyfoss-beta', theme: 'dark' };
 
-// Ensure output directories exist
+// Ensure output directory exists
 function ensureDirectories() {
-  const dirs = [
-    OUTPUT_DIR,
-    path.join(OUTPUT_DIR, 'alpha-dark'),
-    path.join(OUTPUT_DIR, 'alpha-light'),
-    path.join(OUTPUT_DIR, 'beta-dark'),
-    path.join(OUTPUT_DIR, 'beta-light'),
-  ];
-  
-  dirs.forEach(dir => {
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir, { recursive: true });
-      console.log(`Created directory: ${dir}`);
-    }
-  });
+  if (!fs.existsSync(OUTPUT_DIR)) {
+    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+    console.log(`Created directory: ${OUTPUT_DIR}`);
+  }
 }
 
 // Read app JSON file
 function readAppJson(appName) {
   const filePath = path.join(JSON_DIR, `${appName}.json`);
   if (!fs.existsSync(filePath)) {
-    console.warn(`Warning: ${filePath} not found`);
     return null;
   }
   
@@ -108,27 +89,24 @@ function readAppJson(appName) {
   }
 }
 
-// Build URL params for OG image API
-function buildOgParams(app, layout, theme) {
+// Build URL params for OG image API (SVG for conversion)
+function buildOgParams(app) {
   const params = new URLSearchParams();
   
-  params.set('layoutName', layout);
+  params.set('layoutName', VARIANT.layout);
   params.set('fileType', 'svg');
-  params.set('Theme', theme);
+  params.set('Theme', VARIANT.theme);
   params.set('Title', app.name || app.slug);
   params.set('Description', app.tagline || app.description?.substring(0, 100) || '');
   
-  // License
   if (app.metadata?.license) {
     params.set('License', app.metadata.license);
   }
   
-  // Self-hosted
   if (app.hosting_options?.self_hosted) {
     params.set('SelfHosted', 'true');
   }
   
-  // Platform support
   const platform = app.platform_support || {};
   const desktop = platform.desktop || {};
   const mobile = platform.mobile || {};
@@ -140,26 +118,21 @@ function buildOgParams(app, layout, theme) {
   if (mobile.android) params.set('Android', 'true');
   if (mobile.ios) params.set('iOS', 'true');
   
-  // Screenshot URL - use OG service URL (uploads are symlinked there)
   if (app.resources?.screenshot) {
     let screenshotUrl = app.resources.screenshot;
-    
-    // Convert local paths to OG service URL (uploads folder is symlinked)
     if (screenshotUrl.startsWith('/uploads/') || screenshotUrl.startsWith('/')) {
       screenshotUrl = OG_SERVICE_URL + screenshotUrl;
     }
-    
     params.set('ScreenshotUrl', screenshotUrl);
   }
   
   return params.toString();
 }
 
-// Download image from URL
-function downloadImage(url, outputPath) {
+// Download file from URL
+function downloadFile(url, outputPath) {
   return new Promise((resolve, reject) => {
     const protocol = url.startsWith('https') ? https : http;
-    
     const file = fs.createWriteStream(outputPath);
     
     protocol.get(url, (response) => {
@@ -170,10 +143,9 @@ function downloadImage(url, outputPath) {
           resolve(outputPath);
         });
       } else if (response.statusCode >= 300 && response.statusCode < 400 && response.headers.location) {
-        // Handle redirects
         file.close();
         fs.unlinkSync(outputPath);
-        downloadImage(response.headers.location, outputPath).then(resolve).catch(reject);
+        downloadFile(response.headers.location, outputPath).then(resolve).catch(reject);
       } else {
         file.close();
         fs.unlinkSync(outputPath);
@@ -187,115 +159,125 @@ function downloadImage(url, outputPath) {
   });
 }
 
-// Generate OG image for a single app variant
-async function generateOgImage(app, variant, overwrite = true) {
-  const { layout, theme } = variant;
-  const layoutShort = layout.replace('dailyfoss-', '');
-  const folderName = `${layoutShort}-${theme}`;
-  const outputPath = path.join(OUTPUT_DIR, folderName, `${app.slug}.svg`);
+// Convert SVG to high-quality PNG using sharp
+async function convertSvgToPng(svgPath, pngPath) {
+  const sharp = require('sharp');
+  const svgBuffer = fs.readFileSync(svgPath);
   
-  // Skip if already exists and not overwriting
-  if (!overwrite && fs.existsSync(outputPath)) {
-    return { status: 'skipped', path: outputPath };
+  await sharp(svgBuffer, { density: 300 })
+    .resize(1200, 630, { fit: 'fill' })
+    .png({ quality: 100 })
+    .toFile(pngPath);
+}
+
+// Generate SVG and convert to PNG for a single app
+async function generateOgImage(app, overwrite = true) {
+  const svgPath = path.join(SVG_SOURCE_DIR, `${app.slug}.svg`);
+  const pngPath = path.join(OUTPUT_DIR, `${app.slug}.png`);
+  
+  // Skip if PNG already exists and not overwriting
+  if (!overwrite && fs.existsSync(pngPath)) {
+    return { status: 'skipped', path: pngPath };
   }
   
-  const params = buildOgParams(app, layout, theme);
-  const url = `${OG_SERVICE_URL}/api/image?${params}`;
+  try {
+    // Step 1: Generate SVG from og-railway service
+    const params = buildOgParams(app);
+    const url = `${OG_SERVICE_URL}/api/image?${params}`;
+    
+    // Ensure SVG source directory exists
+    if (!fs.existsSync(SVG_SOURCE_DIR)) {
+      fs.mkdirSync(SVG_SOURCE_DIR, { recursive: true });
+    }
+    
+    await downloadFile(url, svgPath);
+    
+    // Step 2: Convert SVG to high-quality PNG
+    await convertSvgToPng(svgPath, pngPath);
+    
+    return { status: 'success', path: pngPath };
+  } catch (err) {
+    return { status: 'error', error: err.message };
+  }
+}
+
+// Convert existing SVG to PNG (for --convert mode)
+async function convertExistingSvg(appName) {
+  const svgPath = path.join(SVG_SOURCE_DIR, `${appName}.svg`);
+  const pngPath = path.join(OUTPUT_DIR, `${appName}.png`);
+  
+  if (!fs.existsSync(svgPath)) {
+    return { status: 'not_found', path: svgPath };
+  }
   
   try {
-    await downloadImage(url, outputPath);
-    return { status: 'success', path: outputPath };
+    await convertSvgToPng(svgPath, pngPath);
+    return { status: 'success', path: pngPath };
   } catch (err) {
-    return { status: 'error', error: err.message, url };
+    return { status: 'error', error: err.message };
   }
 }
 
 // Process a single app
 async function processApp(appName) {
+  if (isConvertMode) {
+    return await convertExistingSvg(appName);
+  }
+  
   const app = readAppJson(appName);
   if (!app) {
-    return { app: appName, status: 'not_found' };
+    return { status: 'not_found' };
   }
   
-  const results = [];
-  
-  for (const variant of VARIANTS) {
-    const result = await generateOgImage(app, variant);
-    results.push({
-      variant: `${variant.layout}-${variant.theme}`,
-      ...result
-    });
-  }
-  
-  return { app: appName, results };
+  return await generateOgImage(app);
 }
 
 // Main function
 async function main() {
   console.log('🖼️  OG Image Generator');
   console.log('='.repeat(50));
+  console.log(`Mode: ${isConvertMode ? 'Convert SVG to PNG' : 'Generate from API'}`);
   console.log(`OG Service URL: ${OG_SERVICE_URL}`);
-  console.log(`Site URL (for assets): ${SITE_URL}`);
+  console.log(`Output: ${OUTPUT_DIR}`);
   console.log(`Apps to process: ${APPS_TO_PROCESS.length}`);
-  console.log(`Variants per app: ${VARIANTS.length}`);
-  console.log(`Total images: ${APPS_TO_PROCESS.length * VARIANTS.length}`);
   console.log('='.repeat(50));
   
   ensureDirectories();
   
-  const summary = {
-    success: 0,
-    skipped: 0,
-    errors: [],
-    notFound: []
-  };
+  const summary = { success: 0, skipped: 0, errors: [], notFound: [] };
   
   for (let i = 0; i < APPS_TO_PROCESS.length; i++) {
     const appName = APPS_TO_PROCESS[i];
-    console.log(`\n[${i + 1}/${APPS_TO_PROCESS.length}] Processing: ${appName}`);
+    process.stdout.write(`[${i + 1}/${APPS_TO_PROCESS.length}] ${appName}... `);
     
     const result = await processApp(appName);
     
-    if (result.status === 'not_found') {
+    if (result.status === 'success') {
+      summary.success++;
+      console.log('✅');
+    } else if (result.status === 'skipped') {
+      summary.skipped++;
+      console.log('⏭️ (exists)');
+    } else if (result.status === 'not_found') {
       summary.notFound.push(appName);
-      console.log(`  ❌ JSON file not found`);
-      continue;
-    }
-    
-    for (const r of result.results) {
-      if (r.status === 'success') {
-        summary.success++;
-        console.log(`  ✅ ${r.variant}`);
-      } else if (r.status === 'skipped') {
-        summary.skipped++;
-        console.log(`  ⏭️  ${r.variant} (already exists)`);
-      } else {
-        summary.errors.push({ app: appName, variant: r.variant, error: r.error });
-        console.log(`  ❌ ${r.variant}: ${r.error}`);
-      }
+      console.log('❌ not found');
+    } else {
+      summary.errors.push({ app: appName, error: result.error });
+      console.log(`❌ ${result.error}`);
     }
   }
   
-  // Print summary
   console.log('\n' + '='.repeat(50));
   console.log('📊 Summary');
-  console.log('='.repeat(50));
   console.log(`✅ Generated: ${summary.success}`);
   console.log(`⏭️  Skipped: ${summary.skipped}`);
   console.log(`❌ Errors: ${summary.errors.length}`);
   console.log(`🔍 Not found: ${summary.notFound.length}`);
   
-  if (summary.notFound.length > 0) {
-    console.log(`\nMissing JSON files: ${summary.notFound.join(', ')}`);
-  }
-  
   if (summary.errors.length > 0) {
     console.log('\nErrors:');
-    summary.errors.forEach(e => {
-      console.log(`  - ${e.app} (${e.variant}): ${e.error}`);
-    });
+    summary.errors.forEach(e => console.log(`  - ${e.app}: ${e.error}`));
   }
 }
 
-// Run
 main().catch(console.error);

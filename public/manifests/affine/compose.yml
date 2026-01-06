@@ -1,0 +1,80 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: affine_postgres
+    restart: unless-stopped
+    volumes:
+      - ~/.affine/self-host/postgres/pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: affine
+      POSTGRES_PASSWORD: strongpassword
+      POSTGRES_DB: affine
+      POSTGRES_INITDB_ARGS: --data-checksums
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U affine -d affine"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - affine-net
+
+  redis:
+    image: redis:7-alpine
+    container_name: affine_redis
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - affine-net
+
+  affine_migration:
+    image: ghcr.io/toeverything/affine:stable
+    container_name: affine_migration
+    command: ["sh", "-c", "node ./scripts/self-host-predeploy.js"]
+    environment:
+      DATABASE_URL: postgresql://affine:strongpassword@postgres:5432/affine
+      REDIS_SERVER_HOST: redis
+      AFFINE_INDEXER_ENABLED: "false"
+    volumes:
+      - ~/.affine/self-host/storage:/root/.affine/storage
+      - ~/.affine/self-host/config:/root/.affine/config
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - affine-net
+
+  affine:
+    image: ghcr.io/toeverything/affine:stable
+    container_name: affine_server
+    restart: unless-stopped
+    ports:
+      - "3010:3010"
+    environment:
+      DATABASE_URL: postgresql://affine:strongpassword@postgres:5432/affine
+      REDIS_SERVER_HOST: redis
+      AFFINE_INDEXER_ENABLED: "false"
+      # AFFINE_SERVER_EXTERNAL_URL: https://affine.example.com
+      # AFFINE_SERVER_HTTPS: "true"
+
+    volumes:
+      - ~/.affine/self-host/storage:/root/.affine/storage
+      - ~/.affine/self-host/config:/root/.affine/config
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      affine_migration:
+        condition: service_completed_successfully
+    networks:
+      - affine-net
+
+networks:
+  affine-net:
+    driver: bridge
