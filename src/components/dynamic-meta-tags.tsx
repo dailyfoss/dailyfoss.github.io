@@ -14,15 +14,8 @@ export function DynamicMetaTags({ script }: DynamicMetaTagsProps) {
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL!
     const appUrl = `${siteUrl}/${script.slug}`
     
-    // Build dynamic OG image URL using the /api/og endpoint (generates PNG)
-    const ogParams = new URLSearchParams({
-      name: script.name,
-      description: script.description.slice(0, 150),
-      logo: `${siteUrl}${script.resources?.logo || '/placeholder.svg'}`,
-      ...(script.metadata?.github_stars && { stars: script.metadata.github_stars.toString() }),
-      ...(script.metadata?.license && { license: script.metadata.license }),
-    })
-    const ogImageUrl = `${siteUrl}/api/og?${ogParams.toString()}`
+    // Use static PNG from /media/images/og/
+    const ogImageUrl = `${siteUrl}/media/images/og/${script.slug}.png`
 
     // Update document title
     document.title = `${script.name} - Daily FOSS`
@@ -43,7 +36,7 @@ export function DynamicMetaTags({ script }: DynamicMetaTagsProps) {
 
     // Open Graph tags
     updateMetaTag('og:title', script.name)
-    updateMetaTag('og:description', script.description)
+    updateMetaTag('og:description', script.tagline)
     updateMetaTag('og:url', appUrl)
     updateMetaTag('og:image', ogImageUrl)
     updateMetaTag('og:image:width', '1200')
@@ -55,12 +48,12 @@ export function DynamicMetaTags({ script }: DynamicMetaTagsProps) {
     // Twitter Card tags
     updateMetaTag('twitter:card', 'summary_large_image', true)
     updateMetaTag('twitter:title', script.name, true)
-    updateMetaTag('twitter:description', script.description, true)
+    updateMetaTag('twitter:description', script.tagline, true)
     updateMetaTag('twitter:image', ogImageUrl, true)
     updateMetaTag('twitter:image:alt', `${script.name} Preview`, true)
 
     // Standard meta tags
-    updateMetaTag('description', script.description, true)
+    updateMetaTag('description', script.tagline, true)
 
     // Update canonical link
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement
