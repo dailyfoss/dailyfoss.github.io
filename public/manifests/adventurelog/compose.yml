@@ -1,0 +1,58 @@
+services:
+  db:
+    image: postgis/postgis:16-3.5
+    container_name: adventurelog-db
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $POSTGRES_USER -d $POSTGRES_DB"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - adventurelog-net
+
+  server:
+    image: ghcr.io/seanmorley15/adventurelog-backend:latest
+    container_name: adventurelog-backend
+    restart: unless-stopped
+    env_file: .env
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "${BACKEND_PORT:-8016}:80"
+    volumes:
+      - adventurelog_media:/code/media
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    networks:
+      - adventurelog-net
+
+  web:
+    image: ghcr.io/seanmorley15/adventurelog-frontend:latest
+    container_name: adventurelog-frontend
+    restart: unless-stopped
+    env_file: .env
+    depends_on:
+      server:
+        condition: service_healthy
+    ports:
+      - "${FRONTEND_PORT:-8015}:3000"
+    networks:
+      - adventurelog-net
+
+volumes:
+  postgres_data:
+    driver: local
+  adventurelog_media:
+    driver: local
+
+networks:
+  adventurelog-net:
+    driver: bridge

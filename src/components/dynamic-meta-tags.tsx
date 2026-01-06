@@ -13,7 +13,16 @@ export function DynamicMetaTags({ script }: DynamicMetaTagsProps) {
 
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL!
     const appUrl = `${siteUrl}/${script.slug}`
-    const ogImageUrl = `${siteUrl}/media/images/og/${script.slug}.svg`
+    
+    // Build dynamic OG image URL using the /api/og endpoint (generates PNG)
+    const ogParams = new URLSearchParams({
+      name: script.name,
+      description: script.description.slice(0, 150),
+      logo: `${siteUrl}${script.resources?.logo || '/placeholder.svg'}`,
+      ...(script.metadata?.github_stars && { stars: script.metadata.github_stars.toString() }),
+      ...(script.metadata?.license && { license: script.metadata.license }),
+    })
+    const ogImageUrl = `${siteUrl}/api/og?${ogParams.toString()}`
 
     // Update document title
     document.title = `${script.name} - Daily FOSS`

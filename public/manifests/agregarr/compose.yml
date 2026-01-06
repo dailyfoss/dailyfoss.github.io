@@ -1,0 +1,20 @@
+services:
+  agregarr:
+    image: agregarr/agregarr:latest
+    container_name: agregarr
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/Madrid # Change to your local timezone
+    ports:
+      - "7171:7171"
+    volumes:
+      # Persistent application configuration
+      - agregarr_config:/app/config
+
+      # - agregarr_movies:/data/movies
+      # - agregarr_tv:/data/tv
+
+volumes:
+  agregarr_config:
+  # agregarr_movies:
+  # agregarr_tv:
