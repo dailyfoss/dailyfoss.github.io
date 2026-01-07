@@ -1,0 +1,48 @@
+services:
+  akaunting:
+    container_name: akaunting
+    image: docker.io/akaunting/akaunting:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - akaunting-data:/var/www/html
+    restart: unless-stopped
+    environment:
+      # App
+      APP_URL: https://akaunting.example.com
+      LOCALE: en-US
+      AKAUNTING_SETUP: "true"
+
+      # Database
+      DB_HOST: akaunting-db
+      DB_PORT: 3306
+      DB_NAME: akaunting
+      DB_USERNAME: admin
+      DB_PASSWORD: akaunting_password
+      DB_PREFIX: asd_
+
+      # Initial company (used only on first setup)
+      COMPANY_NAME: "My Company"
+      COMPANY_EMAIL: my@company.com
+
+      # Initial admin user
+      ADMIN_EMAIL: me@company.com
+      ADMIN_PASSWORD: password
+    depends_on:
+      - akaunting-db
+
+  akaunting-db:
+    container_name: akaunting-db
+    image: mariadb:latest
+    restart: unless-stopped
+    volumes:
+      - akaunting-db:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: akaunting
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: akaunting_password
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+
+volumes:
+  akaunting-data:
+  akaunting-db:

@@ -1,0 +1,52 @@
+services:
+  db:
+    container_name: akkoma-db
+    image: akkoma-db:latest
+    build: ./docker-resources/database
+    restart: unless-stopped
+    shm_size: 4gb
+    user: "${DOCKER_USER:-1000:1000}"
+    environment:
+      POSTGRES_DB: akkoma
+      POSTGRES_USER: akkoma
+      POSTGRES_PASSWORD: akkoma
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+
+  akkoma:
+    container_name: akkoma
+    image: akkoma:latest
+    build: .
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_NAME: akkoma
+      DB_USER: akkoma
+      DB_PASS: akkoma
+      MIX_ENV: prod
+      PORT: 4000
+    ports:
+      - "127.0.0.1:4000:4000"
+
+    volumes:
+      - .:/opt/akkoma
+
+  # =====================================================
+  # Optional Reverse Proxy (Caddy)
+  # Enable via docker-compose.override.yml
+  # =====================================================
+  # proxy:
+  #   container_name: akkoma-proxy
+  #   image: caddy:2-alpine
+  #   restart: unless-stopped
+  #   depends_on:
+  #     - akkoma
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   volumes:
+  #     - ./docker-resources/Caddyfile:/etc/caddy/Caddyfile:ro
+  #     - ./caddy-data:/data
+  #     - ./caddy-config:/config

@@ -1,0 +1,118 @@
+{
+  "name": "ProxyPin",
+  "slug": "proxypin",
+  "tagline": "Open source free capture HTTP(S) traffic software",
+  "description": "ProxyPin is an open-source, cross-platform tool to intercept, inspect, and rewrite HTTP(S) network traffic on Windows, macOS, Linux, Android, and iOS, with features like filtering, scripting, and request/response manipulation. :contentReference[oaicite:0]{index=0}",
+  "categories": [
+    36
+  ],
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v1.2.3",
+    "date_app_added": "2026-01-08",
+    "date_last_released": "2025-12-17",
+    "date_last_commit": null,
+    "github_stars": 11400,
+    "github_contributors": 9,
+    "github_commits_this_year": 0,
+    "github_issues_open": null,
+    "github_issues_closed_this_year": 0,
+    "github_releases_this_year": 0
+  },
+  "resources": {
+    "website": "https://github.com/wanghongenpin/proxypin",
+    "documentation": "https://github.com/wanghongenpin/proxypin/wiki",
+    "source_code": "https://github.com/wanghongenpin/proxypin",
+    "logo": "/icons/proxypin.webp",
+    "screenshot": "/uploads/proxypin-desktop",
+    "issues": "https://github.com/wanghongenpin/proxypin/issues",
+    "releases": "https://github.com/wanghongenpin/proxypin/releases",
+    "logo_light": "/icons/proxypin-light.webp"
+  },
+  "features": [
+    {
+      "title": "HTTP(S) traffic capture",
+      "description": "Intercept and capture HTTP and HTTPS network traffic across devices and platforms.",
+      "core_feature": true
+    },
+    {
+      "title": "Traffic inspection",
+      "description": "Inspect captured requests and responses with search and filtering by domain or content types.",
+      "core_feature": true
+    },
+    {
+      "title": "Request/response rewriting",
+      "description": "Modify or redirect requests and responses with custom rules or scripts.",
+      "core_feature": true
+    },
+    {
+      "title": "Scripting support",
+      "description": "Write and use JavaScript scripts to dynamically handle and transform traffic.",
+      "core_feature": false
+    },
+    {
+      "title": "Domain filtering",
+      "description": "Filter traffic by domain names to focus only on relevant network requests.",
+      "core_feature": false
+    },
+    {
+      "title": "Request blocking",
+      "description": "Block specific requests based on URL patterns to prevent them from reaching servers.",
+      "core_feature": false
+    },
+    {
+      "title": "History and HAR export",
+      "description": "Save and review historical traffic data with support for HAR format export and import.",
+      "core_feature": false
+    },
+    {
+      "title": "Toolbox utilities",
+      "description": "Includes auxiliary tools like encoding helpers, favorites, and other utilities.",
+      "core_feature": false
+    }
+  ],
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": true,
+      "ios": true
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": true,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": true,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {
+    "script": "/manifests/proxypin/script.sh"
+  },
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "repository_status": null,
+  "community_integrations": {}
+}

@@ -1,0 +1,74 @@
+services:
+  mariadb:
+    image: mariadb:10.8
+    container_name: frappe_mariadb
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --skip-character-set-client-handshake
+      - --skip-innodb-read-only-compressed
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
+      MYSQL_DATABASE: frappe
+      MYSQL_USER: frappe
+      MYSQL_PASSWORD: frappe
+    volumes:
+      - mariadb-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: frappe_redis
+    command: redis-server --appendonly yes
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+
+  frappe:
+    image: frappe/bench:latest
+    container_name: frappe_app
+    command: bash /workspace/init.sh
+    environment:
+      SHELL: /bin/bash
+      DB_HOST: mariadb
+      DB_PORT: 3306
+      REDIS_CACHE: redis:6379
+      REDIS_QUEUE: redis:6379
+      REDIS_SOCKETIO: redis:6379
+    working_dir: /home/frappe
+    volumes:
+      - frappe-workspace:/workspace
+      - frappe-bench:/home/frappe/frappe-bench
+      - frappe-sites:/home/frappe/frappe-bench/sites
+      - frappe-logs:/home/frappe/frappe-bench/logs
+    ports:
+      - "8000:8000"
+      - "9000:9000"
+    depends_on:
+      mariadb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  mariadb-data:
+  redis-data:
+  frappe-workspace:
+  frappe-bench:
+  frappe-sites:
+  frappe-logs:
+
+# URL http://localhost:8000/lms
+# Username: Administrator
+# Password: admin

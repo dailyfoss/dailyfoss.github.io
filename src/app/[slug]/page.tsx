@@ -76,32 +76,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || ''
-  const appUrl = `${siteUrl}/${slug}`
-  const ogImageUrl = `${siteUrl}/media/images/og/${slug}.png`
+  const ogImageUrl = `${siteUrl}/og/${slug}.jpg`
 
   return {
-    title: `${script.name} - Daily FOSS`,
-    description: script.tagline,
+    title: `${script.name} – ${script.tagline}`,
+    description: script.description,
     openGraph: {
-      title: script.name,
-      description: script.tagline,
-      url: appUrl,
-      siteName: 'Daily FOSS',
-      images: [
-        {
-          url: ogImageUrl,
-          width: 1200,
-          height: 630,
-          alt: script.name,
-        },
-      ],
-      locale: 'en_US',
-      type: 'website',
+      title: `${script.name} – ${script.tagline}`,
+      description: script.description,
+      images: [ogImageUrl],
     },
     twitter: {
       card: 'summary_large_image',
-      title: script.name,
-      description: script.description,
       images: [ogImageUrl],
     },
   }

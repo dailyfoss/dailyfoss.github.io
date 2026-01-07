@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "BSL",
     "version": "3.1.21",
     "date_app_added": "2025-11-23",
     "date_last_released": "2025-12-13",
@@ -65,31 +65,34 @@
       "android": false,
       "ios": false
     },
-    "web_app": false,
+    "web_app": true,
     "browser_extension": false,
     "cli_only": false
   },
   "hosting_options": {
-    "self_hosted": false,
-    "managed_cloud": false,
-    "saas": false
+    "self_hosted": true,
+    "managed_cloud": true,
+    "saas": true
   },
   "interfaces": {
-    "cli": false,
+    "cli": true,
     "gui": false,
-    "web_ui": false,
-    "api": false,
+    "web_ui": true,
+    "api": true,
     "tui": false
   },
   "deployment_methods": {
     "script": true,
-    "docker": true,
+    "docker": false,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "script": "/manifests/akaunting/script.sh",
+    "docker_compose": "/manifests/akaunting/compose.yml"
+  },
   "default_credentials": {
     "username": null,
     "password": null

@@ -1,0 +1,118 @@
+{
+  "name": "Electerm",
+  "slug": "electerm",
+  "tagline": "A modern terminal and SSH/SFTP client",
+  "description": "Electerm is an open source, cross-platform terminal application that integrates SSH, SFTP, serial port, and local shell access into a single graphical interface for developers and system administrators.",
+  "categories": [
+    36
+  ],
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v2.3.181",
+    "date_app_added": "2026-01-08",
+    "date_last_released": null,
+    "date_last_commit": null,
+    "github_stars": null,
+    "github_contributors": null,
+    "github_commits_this_year": 0,
+    "github_issues_open": null,
+    "github_issues_closed_this_year": 0,
+    "github_releases_this_year": 0
+  },
+  "resources": {
+    "website": "https://electerm.html5beta.com",
+    "documentation": "https://github.com/electerm/electerm",
+    "source_code": "https://github.com/electerm/electerm",
+    "logo": "/icons/electerm.webp",
+    "screenshot": "/uploads/electerm-demo.png",
+    "issues": "https://github.com/electerm/electerm/issues",
+    "releases": "https://github.com/electerm/electerm/releases",
+    "logo_light": "/icons/electerm-light.webp"
+  },
+  "features": [
+    {
+      "title": "Terminal emulator",
+      "description": "Provides a full-featured local shell terminal with tabbed sessions.",
+      "core_feature": true
+    },
+    {
+      "title": "SSH client",
+      "description": "Connect to remote servers over SSH with saved profiles and key support.",
+      "core_feature": true
+    },
+    {
+      "title": "SFTP client",
+      "description": "Browse, upload, and download files from remote servers using SFTP.",
+      "core_feature": true
+    },
+    {
+      "title": "Serial port support",
+      "description": "Connect to and manage devices over serial ports directly from the app.",
+      "core_feature": true
+    },
+    {
+      "title": "Session management",
+      "description": "Save, organize, and quickly access connection profiles and histories.",
+      "core_feature": false
+    },
+    {
+      "title": "Multi-tab interface",
+      "description": "Work with multiple terminals and connections simultaneously in tabs.",
+      "core_feature": false
+    },
+    {
+      "title": "Theming and customization",
+      "description": "Customize appearance, fonts, and colors for the terminal interface.",
+      "core_feature": false
+    },
+    {
+      "title": "Cross-platform support",
+      "description": "Runs consistently on Windows, macOS, and Linux systems.",
+      "core_feature": false
+    }
+  ],
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": true,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": true,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {
+    "script": "/manifests/electerm/script.sh"
+  },
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "repository_status": null,
+  "community_integrations": {}
+}
