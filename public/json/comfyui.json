@@ -1,0 +1,114 @@
+{
+  "name": "ComfyUI",
+  "slug": "comfyui",
+  "tagline": "Node-based visual AI engine and application",
+  "description": "ComfyUI is a powerful open-source node-based interface and backend for designing and executing advanced generative AI workflows using diffusion models and a graph/nodes interface. It supports complex Stable Diffusion workflows on Windows, Linux, and macOS. :contentReference[oaicite:0]{index=0}",
+  "categories": [13],
+  "metadata": {
+    "sponsored": false,
+    "license": "GPL-3.0", 
+    "version": null,
+    "date_app_added": "2026-01-08",
+    "date_last_released": null,
+    "date_last_commit": null,
+    "github_stars": 99400,
+    "github_contributors": null,
+    "github_commits_this_year": 0,
+    "github_issues_open": 3200,
+    "github_issues_closed_this_year": 0,
+    "github_releases_this_year": 0
+  },
+  "resources": {
+    "website": "https://www.comfy.org",
+    "documentation": "https://docs.comfy.org",
+    "source_code": "https://github.com/Comfy-Org/ComfyUI",
+    "logo": "/icons/comfyui.webp",
+    "screenshot": "/uploads/comfyui-dashboard.png",
+    "issues": "https://github.com/Comfy-Org/ComfyUI/issues",
+    "releases": "https://github.com/Comfy-Org/ComfyUI/releases",
+    "logo_light": "/icons/comfyui-light.webp"
+  },
+  "features": [
+    {
+      "title": "Node-based workflow design",
+      "description": "Build complex AI generation workflows visually by connecting functional nodes on a canvas.",
+      "core_feature": true
+    },
+    {
+      "title": "Generative AI engine",
+      "description": "Execute diffusion model workflows for image, video, and other media generation with fine-grained control.",
+      "core_feature": true
+    },
+    {
+      "title": "Advanced control & customization",
+      "description": "Access and adjust low-level parameters of models and samplers to precisely tailor outputs.",
+      "core_feature": true
+    },
+    {
+      "title": "Reusable & shareable workflows",
+      "description": "Save, load, and share entire workflow configurations for reuse across projects.",
+      "core_feature": false
+    },
+    {
+      "title": "Multi-platform support",
+      "description": "Run on Windows, Linux, and macOS with support for various GPU types and CPU fallback. :contentReference[oaicite:1]{index=1}",
+      "core_feature": false
+    },
+    {
+      "title": "Extensions & custom nodes",
+      "description": "Support for community-created custom nodes and extensions to expand functionality.",
+      "core_feature": false
+    },
+    {
+      "title": "Model flexibility",
+      "description": "Integrate a wide range of diffusion and auxiliary models (e.g., ControlNet, LoRA).",
+      "core_feature": false
+    },
+    {
+      "title": "Smart execution optimizations",
+      "description": "Efficient execution that only re-runs parts of workflow graphs that change between runs. :contentReference[oaicite:2]{index=2}",
+      "core_feature": false
+    }
+  ],
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": true,
+      "macos": true
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": true,
+    "managed_cloud": true,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": true,
+    "web_ui": false,
+    "api": true,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "repository_status": null,
+  "community_integrations": {}
+}
