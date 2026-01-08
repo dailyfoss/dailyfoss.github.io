@@ -152,7 +152,7 @@ export function ShareButton({ url, title, description, slug, className }: ShareB
 
   return (
     <TooltipProvider>
-      <div className={cn("flex items-center gap-1", className)}>
+      <div className={cn("flex flex-wrap items-center gap-1", className)}>
         {/* Copy Link Button */}
         <Tooltip delayDuration={200}>
           <TooltipTrigger asChild>
@@ -172,11 +172,11 @@ export function ShareButton({ url, title, description, slug, className }: ShareB
           </TooltipContent>
         </Tooltip>
 
-        <span className="text-muted-foreground/50 mx-1">|</span>
-        <span className="text-xs text-muted-foreground mr-1">Share:</span>
+        <span className="text-muted-foreground/50 mx-1 hidden sm:inline">|</span>
+        <span className="text-xs text-muted-foreground mr-1 hidden sm:inline">Share:</span>
 
-        {/* Primary Share Icons */}
-        {primaryShareLinks.map((link) => (
+        {/* Primary Share Icons - show fewer on mobile */}
+        {primaryShareLinks.slice(0, 4).map((link) => (
           <Tooltip key={link.name} delayDuration={200}>
             <TooltipTrigger asChild>
               <a
@@ -184,6 +184,23 @@ export function ShareButton({ url, title, description, slug, className }: ShareB
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-md hover:bg-accent transition-colors"
+              >
+                <link.icon className={cn("h-4 w-4 text-muted-foreground transition-colors", link.hoverColor)} />
+              </a>
+            </TooltipTrigger>
+            <TooltipContent side="bottom">{link.name}</TooltipContent>
+          </Tooltip>
+        ))}
+        
+        {/* Additional icons only on larger screens */}
+        {primaryShareLinks.slice(4).map((link) => (
+          <Tooltip key={link.name} delayDuration={200}>
+            <TooltipTrigger asChild>
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-md hover:bg-accent transition-colors hidden sm:inline-flex"
               >
                 <link.icon className={cn("h-4 w-4 text-muted-foreground transition-colors", link.hoverColor)} />
               </a>
@@ -205,6 +222,20 @@ export function ShareButton({ url, title, description, slug, className }: ShareB
             <TooltipContent side="bottom">More sharing options</TooltipContent>
           </Tooltip>
           <DropdownMenuContent align="end">
+            {/* Show hidden primary links in dropdown on mobile */}
+            {primaryShareLinks.slice(4).map((link) => (
+              <DropdownMenuItem key={link.name} asChild className="sm:hidden">
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 cursor-pointer"
+                >
+                  <link.icon className="h-4 w-4" />
+                  <span>{link.name}</span>
+                </a>
+              </DropdownMenuItem>
+            ))}
             {secondaryShareLinks.map((link) => (
               <DropdownMenuItem key={link.name} asChild>
                 <a

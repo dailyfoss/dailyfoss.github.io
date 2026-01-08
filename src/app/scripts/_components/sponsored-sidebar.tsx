@@ -210,8 +210,8 @@ export function SponsoredSidebar({ items, className }: SponsoredSidebarProps) {
     return null;
 
   return (
-    <aside className={className || "hidden lg:block lg:min-w-[260px] lg:max-w-[260px]"}>
-      <div className="sticky top-28 space-y-3">
+    <aside className={className || "hidden lg:flex lg:flex-col lg:min-w-[260px] lg:max-w-[260px] sticky top-24 self-start max-h-[calc(100vh-7rem)] overflow-y-auto"}>
+      <div className="space-y-3">
         {/* Header */}
         <div className="flex items-center gap-2 pb-2 border-b border-border/50">
           <Crown className="h-5 w-5 text-blue-500" />

@@ -6,7 +6,25 @@
  * - YunoHost Apps
  * - TrueNAS Apps
  * 
- * Usage: GITHUB_TOKEN=your_token node tools/check-community-integrations.js
+ * Usage: 
+ *   GITHUB_TOKEN=your_token node tools/check-community-integrations.js [options]
+ * 
+ * Options:
+ *   --list <file>    Process only apps from a list file (one app per line, # for comments)
+ *   <number>         Limit to first N apps
+ *   <slug>           Process a specific app by slug
+ * 
+ * Examples:
+ *   GITHUB_TOKEN=xxx node tools/check-community-integrations.js                    # Process all apps
+ *   GITHUB_TOKEN=xxx node tools/check-community-integrations.js 50                 # Process first 50 apps
+ *   GITHUB_TOKEN=xxx node tools/check-community-integrations.js minio              # Process specific app
+ *   GITHUB_TOKEN=xxx node tools/check-community-integrations.js --list apps.txt    # Process apps from list
+ * 
+ * List file format (one app per line, # for comments):
+ *   # My apps to check
+ *   minio
+ *   nextcloud
+ *   gitea
  */
 
 import fs from 'fs/promises';
@@ -21,6 +39,57 @@ const JSON_DIR = path.join(__dirname, '../public/json');
 const PROXMOX_API_URL = 'https://api.github.com/repos/community-scripts/ProxmoxVE/contents/ct';
 const YUNOHOST_ORG_API = 'https://api.github.com/orgs/YunoHost-Apps/repos';
 const TRUENAS_CATALOG_API = 'https://api.github.com/repos/truenas/apps/contents/trains/community';
+
+// Parse command line arguments
+let LIMIT = null;
+let SPECIFIC_FILE = null;
+let LIST_FILE = null;
+let SPECIFIC_LIST = [];
+
+for (let i = 2; i < process.argv.length; i++) {
+  const arg = process.argv[i];
+  
+  if (arg === '--list') {
+    if (i + 1 < process.argv.length) {
+      LIST_FILE = process.argv[i + 1];
+      i++;
+    }
+  } else if (!LIMIT && !SPECIFIC_FILE) {
+    const parsedNum = parseInt(arg);
+    if (!isNaN(parsedNum)) {
+      LIMIT = parsedNum;
+    } else if (arg.endsWith('.json')) {
+      SPECIFIC_FILE = arg;
+    } else if (!arg.startsWith('--')) {
+      SPECIFIC_FILE = `${arg}.json`;
+    }
+  }
+}
+
+// Load list file if specified
+async function loadListFile() {
+  if (!LIST_FILE) return;
+  
+  try {
+    const listPath = path.isAbsolute(LIST_FILE) ? LIST_FILE : path.join(__dirname, '..', LIST_FILE);
+    const listContent = await fs.readFile(listPath, 'utf-8');
+    SPECIFIC_LIST = listContent
+      .split('\n')
+      .map(line => line.trim())
+      .filter(line => line && !line.startsWith('#'))
+      .map(slug => slug.replace(/\.json$/, ''));
+    
+    if (SPECIFIC_LIST.length === 0) {
+      console.error(`ERROR: List file ${LIST_FILE} is empty or contains only comments`);
+      process.exit(1);
+    }
+    
+    console.log(`Loaded ${SPECIFIC_LIST.length} apps from list file: ${LIST_FILE}\n`);
+  } catch (error) {
+    console.error(`ERROR: Failed to read list file ${LIST_FILE}: ${error.message}`);
+    process.exit(1);
+  }
+}
 
 if (!GITHUB_TOKEN) {
   console.error('ERROR: GITHUB_TOKEN environment variable is required');
@@ -86,8 +155,37 @@ async function fetchTrueNASApps() {
 
 /**
  * Fetch YunoHost app repositories
+ * If specificApps is provided, only check those specific apps instead of fetching all
  */
-async function fetchYunoHostRepos() {
+async function fetchYunoHostRepos(specificApps = null) {
+  // If we have a specific list, just check those apps directly
+  if (specificApps && specificApps.length > 0) {
+    const repos = [];
+    for (const appSlug of specificApps) {
+      const repoName = `${appSlug}_ynh`;
+      try {
+        const response = await fetch(`https://api.github.com/repos/YunoHost-Apps/${repoName}`, {
+          headers: {
+            'Authorization': `Bearer ${GITHUB_TOKEN}`,
+            'Accept': 'application/vnd.github+json',
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+        
+        if (response.ok) {
+          repos.push({
+            name: appSlug,
+            fullName: repoName
+          });
+        }
+      } catch (e) {
+        // App not found, skip
+      }
+    }
+    return repos;
+  }
+
+  // Full fetch for all apps
   const repos = [];
   let page = 1;
   const perPage = 100;
@@ -237,15 +335,23 @@ function printProgress(current, total) {
  * Main execution
  */
 async function main() {
+  // Load list file if specified
+  await loadListFile();
+  
   console.log('Starting Community Integrations check...\n');
 
-  // Fetch data
+  // Fetch data - use optimized fetch when we have a specific list
+  const useOptimizedFetch = SPECIFIC_LIST.length > 0 || SPECIFIC_FILE;
+  const appsToCheck = SPECIFIC_FILE 
+    ? [SPECIFIC_FILE.replace('.json', '')] 
+    : SPECIFIC_LIST;
+
   console.log('Fetching Proxmox VE Community Scripts...');
   const proxmoxScripts = await fetchProxmoxScripts();
   console.log(`Found ${proxmoxScripts.length} scripts\n`);
 
   console.log('Fetching YunoHost Apps...');
-  const yunohostRepos = await fetchYunoHostRepos();
+  const yunohostRepos = await fetchYunoHostRepos(useOptimizedFetch ? appsToCheck : null);
   console.log(`Found ${yunohostRepos.length} apps\n`);
 
   console.log('Fetching TrueNAS Apps...');
@@ -257,11 +363,60 @@ async function main() {
     process.exit(1);
   }
 
+  // Handle specific file
+  if (SPECIFIC_FILE) {
+    const filePath = path.join(JSON_DIR, SPECIFIC_FILE);
+    try {
+      const content = await fs.readFile(filePath, 'utf-8');
+      const json = JSON.parse(content);
+
+      const { proxmoxMatch, yunohostMatch, truenasMatch } = findMatches(
+        json.slug,
+        json.name,
+        proxmoxScripts,
+        yunohostRepos,
+        truenasApps
+      );
+
+      await updateJsonFile(filePath, proxmoxMatch, yunohostMatch, truenasMatch);
+
+      console.log(`\n✓ Updated ${SPECIFIC_FILE}`);
+      console.log(`  Proxmox VE: ${proxmoxMatch ? `✅ (${proxmoxMatch})` : '❌'}`);
+      console.log(`  YunoHost:   ${yunohostMatch ? `✅ (${yunohostMatch.fullName})` : '❌'}`);
+      console.log(`  TrueNAS:    ${truenasMatch ? `✅ (${truenasMatch})` : '❌'}`);
+      return;
+    } catch (error) {
+      console.error(`ERROR: ${error.message}`);
+      process.exit(1);
+    }
+  }
+
   // Read all JSON files
   const files = await fs.readdir(JSON_DIR);
-  const jsonFiles = files.filter(f => f.endsWith('.json') && !f.match(/^(index|metadata|versions)\.json$/));
+  let jsonFiles = files.filter(f => f.endsWith('.json') && !f.match(/^(index|metadata|versions)\.json$/));
 
-  console.log(`Processing ${jsonFiles.length} apps...\n`);
+  // Filter by list if specified
+  if (SPECIFIC_LIST.length > 0) {
+    jsonFiles = jsonFiles.filter(f => {
+      const slug = f.replace('.json', '');
+      return SPECIFIC_LIST.includes(slug);
+    });
+    
+    // Warn about missing apps
+    const foundSlugs = jsonFiles.map(f => f.replace('.json', ''));
+    const notFound = SPECIFIC_LIST.filter(slug => !foundSlugs.includes(slug));
+    if (notFound.length > 0) {
+      console.warn(`WARNING: The following apps from the list were not found: ${notFound.join(', ')}\n`);
+    }
+  }
+
+  // Apply limit if specified
+  if (LIMIT) {
+    jsonFiles = jsonFiles.slice(0, LIMIT);
+  }
+
+  const listInfo = SPECIFIC_LIST.length > 0 ? ` (from list: ${LIST_FILE})` : '';
+  console.log(`Processing ${jsonFiles.length} apps${LIMIT ? ` (limited to ${LIMIT})` : ''}${listInfo}...\n`);
 
   const results = [];
 

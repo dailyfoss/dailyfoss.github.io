@@ -5,7 +5,7 @@
  * Fetches data from GitHub API in parallel using source_code URL
  * 
  * Usage: 
- *   GITHUB_TOKEN=your_token node tools/update-repo-metadata.js [limit|filename] [--exclude field1,field2,...] [--screenshots]
+ *   GITHUB_TOKEN=your_token node tools/update-repo-metadata.js [limit|filename] [--exclude field1,field2,...] [--screenshots] [--list file.txt]
  * 
  * Examples:
  *   # Update GitHub metadata (requires GITHUB_TOKEN):
@@ -15,11 +15,20 @@
  *   GITHUB_TOKEN=xxx node tools/update-repo-metadata.js --exclude license,website,docs   # Exclude specific fields
  *   GITHUB_TOKEN=xxx node tools/update-repo-metadata.js 50 --exclude license             # Combine limit and exclude
  *   GITHUB_TOKEN=xxx node tools/update-repo-metadata.js --screenshots                    # Update both metadata and screenshots
+ *   GITHUB_TOKEN=xxx node tools/update-repo-metadata.js --list apps.txt                  # Update apps from a list file
+ *   GITHUB_TOKEN=xxx node tools/update-repo-metadata.js --list apps.txt --screenshots    # Update apps from list with screenshots
  * 
  *   # Update screenshots only:
  *   node tools/update-repo-metadata.js --screenshots                                     # Update all screenshots
  *   node tools/update-repo-metadata.js minio --screenshots                               # Update specific file screenshot
  *   node tools/update-repo-metadata.js 50 --screenshots                                  # Update first 50 screenshots
+ *   node tools/update-repo-metadata.js --list apps.txt --screenshots                     # Update screenshots for apps in list
+ * 
+ * List file format (one app per line, # for comments):
+ *   # My apps to update
+ *   minio
+ *   nextcloud
+ *   gitea
  */
 
 import fs from 'fs/promises';
@@ -39,6 +48,8 @@ let LIMIT = null;
 let SPECIFIC_FILE = null;
 let EXCLUDE_FIELDS = [];
 let UPDATE_SCREENSHOTS = false;
+let LIST_FILE = null;
+let SPECIFIC_LIST = [];
 
 // Parse all arguments
 for (let i = 2; i < process.argv.length; i++) {
@@ -48,6 +59,12 @@ for (let i = 2; i < process.argv.length; i++) {
     // Next argument should be comma-separated fields
     if (i + 1 < process.argv.length) {
       EXCLUDE_FIELDS = process.argv[i + 1].split(',').map(f => f.trim());
+      i++; // Skip next argument
+    }
+  } else if (arg === '--list') {
+    // Next argument should be the list file path
+    if (i + 1 < process.argv.length) {
+      LIST_FILE = process.argv[i + 1];
       i++; // Skip next argument
     }
   } else if (arg === '--screenshots') {
@@ -65,6 +82,31 @@ for (let i = 2; i < process.argv.length; i++) {
       // It's a slug - convert to filename
       SPECIFIC_FILE = `${arg}.json`;
     }
+  }
+}
+
+// Load list file if specified
+async function loadListFile() {
+  if (!LIST_FILE) return;
+  
+  try {
+    const listPath = path.isAbsolute(LIST_FILE) ? LIST_FILE : path.join(__dirname, '..', LIST_FILE);
+    const listContent = await fs.readFile(listPath, 'utf-8');
+    SPECIFIC_LIST = listContent
+      .split('\n')
+      .map(line => line.trim())
+      .filter(line => line && !line.startsWith('#')) // Filter empty lines and comments
+      .map(slug => slug.replace(/\.json$/, '')); // Remove .json extension if present
+    
+    if (SPECIFIC_LIST.length === 0) {
+      console.error(`ERROR: List file ${LIST_FILE} is empty or contains only comments`);
+      process.exit(1);
+    }
+    
+    console.log(`Loaded ${SPECIFIC_LIST.length} apps from list file: ${LIST_FILE}\n`);
+  } catch (error) {
+    console.error(`ERROR: Failed to read list file ${LIST_FILE}: ${error.message}`);
+    process.exit(1);
   }
 }
 
@@ -645,14 +687,13 @@ function generateSummaryTable(results) {
  * Main execution
  */
 async function main() {
+  // Load list file if specified
+  await loadListFile();
+  
   console.log('Starting repository metadata update...\n');
   
   if (EXCLUDE_FIELDS.length > 0) {
     console.log(`Excluding fields: ${EXCLUDE_FIELDS.join(', ')}\n`);
-  }
-  
-  if (UPDATE_SCREENSHOTS) {
-    console.log('Screenshot update mode enabled\n');
   }
   
   if (UPDATE_SCREENSHOTS) {
@@ -752,6 +793,13 @@ async function main() {
   const filesToProcess = [];
   
   for (const file of jsonFiles) {
+    const slug = file.replace('.json', '');
+    
+    // If a specific list is provided, only include files in that list
+    if (SPECIFIC_LIST.length > 0 && !SPECIFIC_LIST.includes(slug)) {
+      continue;
+    }
+    
     const filePath = path.join(JSON_DIR, file);
     try {
       const content = await fs.readFile(filePath, 'utf-8');
@@ -761,14 +809,14 @@ async function main() {
       if (SCREENSHOT_ONLY_MODE) {
         filesToProcess.push({
           filePath,
-          slug: file.replace('.json', '')
+          slug
         });
       } else if (json.resources?.source_code && json.resources.source_code.includes('github.com')) {
         // Normal mode: only process files with GitHub URLs
         filesToProcess.push({
           filePath,
           sourceUrl: json.resources.source_code,
-          slug: file.replace('.json', '')
+          slug
         });
       }
     } catch (error) {
@@ -776,11 +824,21 @@ async function main() {
     }
   }
 
+  // Check if any apps from the list were not found
+  if (SPECIFIC_LIST.length > 0) {
+    const foundSlugs = filesToProcess.map(f => f.slug);
+    const notFound = SPECIFIC_LIST.filter(slug => !foundSlugs.includes(slug));
+    if (notFound.length > 0) {
+      console.warn(`WARNING: The following apps from the list were not found or skipped: ${notFound.join(', ')}\n`);
+    }
+  }
+
   // Apply limit if specified
   const totalToProcess = LIMIT ? Math.min(LIMIT, filesToProcess.length) : filesToProcess.length;
   const limitedFiles = filesToProcess.slice(0, totalToProcess);
 
-  console.log(`Processing ${totalToProcess} ${SCREENSHOT_ONLY_MODE ? 'files for screenshots' : 'repositories'}${LIMIT ? ` (limited to ${LIMIT})` : ''}\n`);
+  const listInfo = SPECIFIC_LIST.length > 0 ? ` (from list: ${LIST_FILE})` : '';
+  console.log(`Processing ${totalToProcess} ${SCREENSHOT_ONLY_MODE ? 'files for screenshots' : 'repositories'}${LIMIT ? ` (limited to ${LIMIT})` : ''}${listInfo}\n`);
 
   // Process in batches
   const results = [];

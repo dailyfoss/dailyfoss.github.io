@@ -112,24 +112,32 @@ export default function CodeCopyButton({
 
         {/* Area kode/YAML with line numbers */}
         <div className={cn(
-          "overflow-x-auto text-sm transition-all",
+          "text-sm transition-all overflow-x-auto",
           isCollapsed && "max-h-32 overflow-hidden"
         )}>
-          {!isMobile && children ? (
-            <div className="flex">
-              {/* Line numbers column - not selectable */}
-              <div className="select-none py-4 pl-4 pr-3 text-muted-foreground/50 text-right border-r border-border/30 bg-muted/20 font-mono text-xs leading-relaxed">
-                {lines.map((_, index) => (
-                  <div key={index}>{index + 1}</div>
-                ))}
-              </div>
-              {/* Code content column - selectable */}
-              <div className="flex-1 py-4 pl-4 pr-24 whitespace-pre-wrap break-all font-mono text-xs leading-relaxed">
+          {children ? (
+            isMobile ? (
+              /* Mobile: show code without line numbers, horizontal scroll */
+              <div className="p-4 pr-24 whitespace-pre font-mono text-xs leading-relaxed">
                 {children}
               </div>
-            </div>
+            ) : (
+              /* Desktop: show code with line numbers, horizontal scroll */
+              <div className="flex min-w-max">
+                {/* Line numbers column - not selectable, sticky left */}
+                <div className="select-none py-4 pl-4 pr-3 text-muted-foreground/50 text-right border-r border-border/30 bg-primary-foreground font-mono text-xs leading-relaxed sticky left-0 z-10 shrink-0">
+                  {lines.map((_, index) => (
+                    <div key={index}>{index + 1}</div>
+                  ))}
+                </div>
+                {/* Code content column - selectable, scrollable */}
+                <div className="py-4 pl-4 pr-24 whitespace-pre font-mono text-xs leading-relaxed">
+                  {children}
+                </div>
+              </div>
+            )
           ) : (
-            <div className="p-4 pr-24">Copy Config File Path</div>
+            <div className="p-4 pr-24">No content available</div>
           )}
         </div>
 

@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://amnezia.org",
-    "documentation": "https://github.com/amnezia-vpn/amnezia-client",
+    "documentation": "https://docs.amnezia.org/documentation",
     "source_code": "https://github.com/amnezia-vpn/amnezia-client",
     "logo": "/icons/amnezia.webp",
     "screenshot": "/uploads/amnezia.png",
@@ -58,7 +58,7 @@
     },
     "mobile": {
       "android": true,
-      "ios": false
+      "ios": true
     },
     "web_app": false,
     "browser_extension": false,
@@ -77,12 +77,12 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

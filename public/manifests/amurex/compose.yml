@@ -1,0 +1,60 @@
+services:
+  amurex:
+    image: ghcr.io/amurex/amurex:latest
+    container_name: amurex
+    restart: unless-stopped
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      # -----------------------------------------------------------------------
+      # Required supabase project
+      # -----------------------------------------------------------------------
+      SUPABASE_URL: your_project_url
+      SUPABASE_ANON_KEY: your_anon_key
+
+      REDIS_USERNAME: your_redis_username
+      REDIS_URL: your_redis_host
+      REDIS_PASSWORD: your_redis_password
+      REDIS_PORT: your_redis_port
+
+      RESEND_API_KEY: your_resend_api_key
+      RESEND_NOREPLY: your_resend_noreply
+
+      # -----------------------------------------------------------------------
+      # Mode Selection
+      # ONLINE = OpenAI / Groq / Mistral
+      # LOCAL  = Ollama + local embeddings
+      # -----------------------------------------------------------------------
+      CLIENT_MODE: ONLINE
+
+      # -----------------------------------------------------------------------
+      # Optional (used when CLIENT_MODE=ONLINE)
+      # -----------------------------------------------------------------------
+      OPENAI_API_KEY: your_openai_key
+      GROQ_API_KEY: your_groq_key
+      MISTRAL_API_KEY: your_mistral_api_key
+
+      # -----------------------------------------------------------------------
+      # Optional (used when CLIENT_MODE=LOCAL)
+      # -----------------------------------------------------------------------
+      OLLAMA_ENDPOINT: your_ollama_endpoint
+
+      # -----------------------------------------------------------------------
+      # Runtime
+      # -----------------------------------------------------------------------
+      NODE_ENV: production
+      PORT: 3000
+
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fs http://localhost:3000/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

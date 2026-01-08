@@ -1,9 +1,9 @@
 {
-  "name": "anonaddy",
+  "name": "AnonAddy",
   "slug": "anonaddy",
-  "tagline": "An email aliasing service for protecting real inbox addresses",
-  "subtitle": "",
-  "description": "AnonAddy is an email aliasing service that helps you protect your real email. It supports encrypted forwarding, multiple domains, custom subdomains, and can be fully self-hosted as a privacy-focused alternative to commercial aliasing tools.",
+  "tagline": "Privacy-focused email aliasing and forwarding service",
+  "subtitle": "Protect your real inbox with unlimited email aliases",
+  "description": "AnonAddy is an open-source, privacy-focused email aliasing and forwarding platform. It allows users to create unlimited email aliases, forward messages to real inboxes, and disable aliases at any time. AnonAddy supports encrypted forwarding, custom domains, subdomains, and can be fully self-hosted as a privacy-preserving alternative to commercial email aliasing services.",
   "categories": [
     41
   ],
@@ -14,44 +14,51 @@
     "date_app_added": "2025-11-23",
     "date_last_released": "2026-01-05",
     "date_last_commit": "2026-01-06",
-    "github_stars": 4327,
+    "github_stars": 4328,
     "github_contributors": 9,
     "github_commits_this_year": 3,
-    "github_issues_open": 0,
-    "github_issues_closed_this_year": 0,
+    "github_issues_open": 50,
+    "github_issues_closed_this_year": 1,
     "github_releases_this_year": 1
   },
   "resources": {
     "website": "https://addy.io",
-    "documentation": "https://github.com/anonaddy/anonaddy",
+    "documentation": "https://app.addy.io/docs",
     "source_code": "https://github.com/anonaddy/anonaddy",
-    "logo": "/icons/anonaddy.webp",
-    "screenshot": "/uploads/anonaddy.png",
     "issues": "https://github.com/anonaddy/anonaddy/issues",
-    "releases": "https://github.com/anonaddy/anonaddy/releases"
+    "releases": "https://github.com/anonaddy/anonaddy/releases",
+    "logo": "/icons/anonaddy.webp",
+    "screenshot": "/uploads/anonaddy-demo.png"
   },
   "features": [
     {
-      "title": "Email Alias Service",
-      "description": "Create email aliases to protect real addresses",
+      "title": "Email Alias Management",
+      "description": "Create, enable, disable, and organize email aliases",
       "core_feature": true
     },
     {
       "title": "Email Forwarding",
-      "description": "Forward alias emails to inboxes",
+      "description": "Forward alias emails to one or more real inboxes",
       "core_feature": true
     },
     {
-      "title": "Alias Control",
-      "description": "Enable or disable aliases at any time"
+      "title": "Encrypted Forwarding",
+      "description": "Encrypt forwarded emails using PGP for added privacy",
+      "core_feature": true
     },
     {
-      "title": "Web Interface",
-      "description": "Manage aliases in a browser"
+      "title": "Custom Domains & Subdomains",
+      "description": "Use your own domains or subdomains for aliases"
+    },
+    {
+      "title": "Web Dashboard",
+      "description": "Manage aliases and settings through a web interface",
+      "core_feature": true
     },
     {
       "title": "Self-Hosted Deployment",
-      "description": "Run the service on your own servers"
+      "description": "Run AnonAddy on your own infrastructure for full data control",
+      "core_feature": true
     }
   ],
   "platform_support": {
@@ -61,38 +68,44 @@
       "macos": false
     },
     "mobile": {
-      "android": false,
-      "ios": false
+      "android": true,
+      "ios": true
     },
-    "web_app": false,
-    "browser_extension": false,
+    "web_app": true,
+    "browser_extension": true,
     "cli_only": false
   },
   "hosting_options": {
-    "self_hosted": false,
+    "self_hosted": true,
     "managed_cloud": false,
     "saas": false
   },
   "interfaces": {
     "cli": false,
     "gui": false,
-    "web_ui": false,
-    "api": false,
+    "web_ui": true,
+    "api": true,
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
+    "script": false,
+    "docker": false,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/anonaddy/compose.yml"
+  },
   "default_credentials": {
     "username": null,
     "password": null
   },
-  "notes": [],
+  "notes": [
+    "Requires a properly configured mail server for self-hosting",
+    "Supports PGP encryption for forwarded emails",
+    "Official hosted service available at addy.io"
+  ],
   "repository_status": null
 }

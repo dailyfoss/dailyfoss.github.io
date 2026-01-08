@@ -1,9 +1,9 @@
 {
-  "name": "aliasvault",
+  "name": "AliasVault",
   "slug": "aliasvault",
-  "tagline": "An email alias management tool for protecting personal identity",
-  "subtitle": "",
-  "description": "AliasVault is a privacy tool that generates and manages email aliases to protect your real address. It supports disposable inboxes, SMTP forwarding, passwordless access and can be self-hosted for complete privacy control.",
+  "tagline": "Self-hosted email alias management for privacy protection",
+  "subtitle": "Protect your real inbox with disposable and persistent aliases",
+  "description": "AliasVault is a privacy-focused, self-hostable email alias management platform. It lets you generate, manage, and forward email aliases to protect your real address. The system supports SMTP forwarding, passwordless authentication, disposable aliases, and full self-hosted deployments for maximum control over your data.",
   "categories": [
     41
   ],
@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://aliasvault.net",
-    "documentation": "https://github.com/aliasvault/aliasvault",
+    "documentation": "https://docs.aliasvault.net",
     "source_code": "https://github.com/aliasvault/aliasvault",
     "logo": "/icons/aliasvault.webp",
     "screenshot": "/uploads/aliasvault.png",
@@ -33,26 +33,32 @@
   "features": [
     {
       "title": "Email Alias Management",
-      "description": "Create and manage email aliases",
+      "description": "Create, organize, and manage unlimited email aliases",
       "core_feature": true
     },
     {
       "title": "Alias Forwarding",
-      "description": "Forward alias emails to real inboxes",
+      "description": "Forward alias emails to one or more real inboxes",
       "core_feature": true
     },
     {
-      "title": "Identity Separation",
-      "description": "Use different aliases per service"
+      "title": "Disposable Aliases",
+      "description": "Create throwaway aliases that can be disabled at any time",
+      "core_feature": true
     },
     {
-      "title": "Web Interface",
-      "description": "Manage aliases through a browser",
+      "title": "Passwordless Authentication",
+      "description": "Login securely using magic links instead of passwords"
+    },
+    {
+      "title": "Web Dashboard",
+      "description": "Manage aliases through a modern web interface",
       "core_feature": true
     },
     {
       "title": "Self-Hosted Deployment",
-      "description": "Run the service on your own infrastructure"
+      "description": "Run AliasVault on your own infrastructure for full privacy control",
+      "core_feature": true
     }
   ],
   "platform_support": {
@@ -63,37 +69,42 @@
     },
     "mobile": {
       "android": true,
-      "ios": false
+      "ios": true
     },
-    "web_app": false,
-    "browser_extension": false,
+    "web_app": true,
+    "browser_extension": true,
     "cli_only": false
   },
   "hosting_options": {
-    "self_hosted": false,
+    "self_hosted": true,
     "managed_cloud": false,
     "saas": false
   },
   "interfaces": {
     "cli": false,
     "gui": false,
-    "web_ui": false,
-    "api": false,
+    "web_ui": true,
+    "api": true,
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
+    "script": false,
+    "docker": false,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/aliasvault/compose.yml"
+  },
   "default_credentials": {
     "username": null,
     "password": null
   },
-  "notes": [],
+  "notes": [
+    "Requires a working SMTP server for email forwarding",
+    "Best suited for privacy-focused self-hosting users"
+  ],
   "repository_status": null
 }

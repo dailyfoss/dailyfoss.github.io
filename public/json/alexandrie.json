@@ -23,10 +23,10 @@
   },
   "resources": {
     "website": "https://alexandrie-hub.fr",
-    "documentation": "https://github.com/Smaug6739/Alexandrie",
+    "documentation": "https://github.com/Smaug6739/Alexandrie/wiki",
     "source_code": "https://github.com/Smaug6739/Alexandrie",
     "logo": "/icons/alexandrie.webp",
-    "screenshot": "/uploads/alexandrie.png",
+    "screenshot": "/uploads/alexandrie-interface-preview.png",
     "issues": "https://github.com/Smaug6739/Alexandrie/issues",
     "releases": "https://github.com/Smaug6739/Alexandrie/releases",
     "logo_light": "/icons/alexandrie-light.webp"
@@ -66,26 +66,28 @@
     "cli_only": false
   },
   "hosting_options": {
-    "self_hosted": false,
+    "self_hosted": true,
     "managed_cloud": false,
     "saas": false
   },
   "interfaces": {
     "cli": false,
     "gui": false,
-    "web_ui": false,
-    "api": false,
+    "web_ui": true,
+    "api": true,
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
+    "script": false,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/alexandrie/compose.yml"
+  },
   "default_credentials": {
     "username": null,
     "password": null
