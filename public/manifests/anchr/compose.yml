@@ -1,0 +1,115 @@
+services:
+  anchr:
+    image: anchr:latest
+    container_name: anchr
+    restart: unless-stopped
+
+    ports:
+      - "3000:3000"
+
+    volumes:
+      - anchr_data:/app/data
+
+    environment:
+      # ---------------------------------------------------------------------
+      # Server
+      # ---------------------------------------------------------------------
+      PORT: 3000
+      LISTEN_ADDR: 0.0.0.0
+      ANCHR_PUBLIC_URL: http://localhost:3000
+
+      # ---------------------------------------------------------------------
+      # Database (MongoDB)
+      # ---------------------------------------------------------------------
+      ANCHR_DB_USER: anchr
+      ANCHR_DB_PASSWORD: ""
+      ANCHR_DB_HOST: mongo
+      ANCHR_DB_PORT: 27017
+      ANCHR_DB_NAME: anchr
+
+      # ---------------------------------------------------------------------
+      # Storage
+      # ---------------------------------------------------------------------
+      ANCHR_UPLOAD_DIR: /app/data
+
+      # Image proxy (optional)
+      ANCHR_IMAGE_PROXY_URL_TPL: ""
+
+      # ---------------------------------------------------------------------
+      # Security & Auth
+      # ---------------------------------------------------------------------
+      ANCHR_SECRET: ""
+
+      ANCHR_FB_CLIENT_ID: ""
+      ANCHR_FB_SECRET: ""
+      ANCHR_GOOGLE_CLIENT_ID: ""
+      ANCHR_GOOGLE_SECRET: ""
+      ANCHR_GOOGLE_API_KEY: ""
+
+      ANCHR_BASIC_AUTH: "true"
+      ANCHR_ALLOW_SIGNUP: "true"
+      ANCHR_EXPOSE_METRICS: "false"
+      ANCHR_VERIFY_USERS: "true"
+
+      # ---------------------------------------------------------------------
+      # Email (optional)
+      # ---------------------------------------------------------------------
+      ANCHR_MAIL_SENDER: ""
+
+      ANCHR_SMTP_HOST: ""
+      ANCHR_SMTP_PORT: ""
+      ANCHR_SMTP_TLS: ""
+      ANCHR_SMTP_USER: ""
+      ANCHR_SMTP_PASS: ""
+
+      ANCHR_MAILWHALE_CLIENT_ID: ""
+      ANCHR_MAILWHALE_CLIENT_SECRET: ""
+
+    depends_on:
+      mongo:
+        condition: service_healthy
+
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fs http://localhost:3000/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  mongo:
+    image: mongo:6.0
+    container_name: anchr-mongo
+    restart: unless-stopped
+
+    volumes:
+      - anchr_db_data:/data/db
+      - ./scripts/mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh:ro
+
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: anchr
+      MONGO_INITDB_ROOT_PASSWORD: ""
+      MONGO_INITDB_DATABASE: anchr
+
+      DB_USER: anchr
+      DB_PASSWORD: ""
+
+    healthcheck:
+      test: ["CMD-SHELL", "mongosh --eval 'db.adminCommand(\"ping\")' || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  anchr_data:
+  anchr_db_data:

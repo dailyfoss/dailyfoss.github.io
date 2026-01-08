@@ -1,0 +1,93 @@
+services:
+  app:
+    image: anonaddy/anonaddy:latest
+    container_name: anonaddy-app
+    restart: unless-stopped
+
+    ports:
+      - "8000:8000"
+
+    environment:
+      APP_ENV: production
+      APP_KEY: base64:CHANGE_ME # Find key at https://laravel-encryption-key-generator.vercel.app
+      APP_DEBUG: "false"
+      APP_URL: http://localhost:8000
+
+      DB_CONNECTION: mysql
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: anonaddy
+      DB_USERNAME: anonaddy
+      DB_PASSWORD: anonaddy
+
+      CACHE_DRIVER: redis
+      QUEUE_CONNECTION: redis
+      SESSION_DRIVER: redis
+
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+
+      MAIL_MAILER: smtp
+      MAIL_HOST: mail
+      MAIL_PORT: 587
+      MAIL_USERNAME: anonaddy
+      MAIL_PASSWORD: anonaddy
+      MAIL_ENCRYPTION: tls
+      MAIL_FROM_ADDRESS: noreply@example.com
+      MAIL_FROM_NAME: AnonAddy
+
+    volumes:
+      - anonaddy_storage:/var/www/html/storage
+      - anonaddy_uploads:/var/www/html/public/uploads
+
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fs http://localhost:8000/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  db:
+    image: mysql:8.0
+    container_name: anonaddy-db
+    restart: unless-stopped
+
+    environment:
+      MYSQL_DATABASE: anonaddy
+      MYSQL_USER: anonaddy
+      MYSQL_PASSWORD: anonaddy
+      MYSQL_ROOT_PASSWORD: rootpassword
+
+    volumes:
+      - anonaddy_db:/var/lib/mysql
+
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uanonaddy -panonaddy"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: anonaddy-redis
+    restart: unless-stopped
+
+    volumes:
+      - anonaddy_redis:/data
+
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  anonaddy_storage:
+  anonaddy_uploads:
+  anonaddy_db:
+  anonaddy_redis:

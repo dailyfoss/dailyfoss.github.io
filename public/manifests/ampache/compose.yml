@@ -1,0 +1,45 @@
+services:
+  ampache:
+    container_name: ampache
+    build:
+      context: .
+      dockerfile: docker/Dockerfilephp82
+
+    restart: unless-stopped
+
+    ports:
+      - "8084:80"
+
+    volumes:
+      # Application data (config, cache, state)
+      - ampache_app:/var/www/html
+
+      # Logs
+      - ampache_logs:/var/log/ampache
+
+      # Media library (persistent)
+      - ampache_media:/media
+
+    environment:
+      DISABLE_INOTIFYWAIT_CLEAN: ${DISABLE_INOTIFYWAIT_CLEAN:-0}
+      TZ: UTC
+
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fs http://localhost/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  ampache_app:
+  ampache_logs:
+  ampache_media:
