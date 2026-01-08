@@ -61,9 +61,9 @@ function ScreenshotPreview({ src, alt }: { src: string; alt: string }) {
 
 export default function Description({ item }: { item: Script }) {
   // Extract first sentence as summary if features exist
-  const summary = item.features
+  const summary = item.features && item.description
     ? `${item.description.split(/[.!?]/)[0]}.`
-    : item.description;
+    : item.description || "";
 
   return (
     <div className="p-2 space-y-5">
