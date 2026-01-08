@@ -3,6 +3,8 @@ import { ClipboardIcon } from "lucide-react";
 import handleCopy from "./handle-copy";
 
 export default function TextCopyBlock(description: string) {
+  if (!description) return null;
+  
   const pattern = /`([^`]*)`/g;
   const parts = description.split(pattern);
 

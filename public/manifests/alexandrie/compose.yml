@@ -1,0 +1,160 @@
+x-common-logging: &default-logging
+  logging:
+    driver: json-file
+    options:
+      max-size: "10m"
+      max-file: "3"
+
+services:
+  # ---------------------------------------------------------------------------
+  # MySQL Database
+  # ---------------------------------------------------------------------------
+  mysql:
+    image: mysql:8.0
+    container_name: alexandrie-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: alexandrie
+      MYSQL_USER: alexandrie
+      MYSQL_PASSWORD: password
+    command: >
+      --default-authentication-plugin=mysql_native_password
+      --character-set-server=utf8mb4
+      --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3307:3306"
+    networks:
+      - alexandrie-network
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -ualexandrie -ppassword"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    <<: *default-logging
+
+  # ---------------------------------------------------------------------------
+  # Object Storage (RustFS – S3 compatible)
+  # ---------------------------------------------------------------------------
+  rustfs:
+    image: rustfs/rustfs:latest
+    container_name: alexandrie-rustfs
+    restart: unless-stopped
+    environment:
+      RUSTFS_ACCESS_KEY: alexandrie-key
+      RUSTFS_SECRET_KEY: alexandrie-secret
+      RUSTFS_CONSOLE_ENABLE: "false"
+      RUSTFS_LOG_LEVEL: error
+    volumes:
+      - rustfs_data:/data
+      - rustfs_logs:/logs
+    ports:
+      - "9005:9000"
+    networks:
+      - alexandrie-network
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z localhost 9000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+    <<: *default-logging
+
+  # ---------------------------------------------------------------------------
+  # Alexandrie Backend API
+  # ---------------------------------------------------------------------------
+  backend:
+    image: ghcr.io/smaug6739/alexandrie-backend:latest
+    container_name: alexandrie-backend
+    restart: unless-stopped
+    environment:
+      # Runtime
+      BACKEND_PORT: 8201
+      GIN_MODE: release
+
+      # Security
+      JWT_SECRET: your-secure-jwt-secret-key-change-this-in-production
+      COOKIE_DOMAIN: localhost:8200
+      FRONTEND_URL: http://localhost:8200
+      ALLOW_UNSECURE: "true"
+
+      # Feature flags
+      CONFIG_DISABLE_SIGNUP: "false"
+
+      # Database
+      DATABASE_HOST: mysql
+      DATABASE_PORT: 3306
+      DATABASE_NAME: alexandrie
+      DATABASE_USER: alexandrie
+      DATABASE_PASSWORD: password
+
+      # Object Storage (S3)
+      MINIO_ENDPOINT: rustfs:9000
+      MINIO_PUBLIC_URL: http://localhost:9005
+      MINIO_SECURE: "false"
+      MINIO_ACCESSKEY: alexandrie-key
+      MINIO_SECRETKEY: alexandrie-secret
+      MINIO_BUCKET: alexandrie
+
+      # SMTP (disabled)
+      SMTP_HOST: ""
+      SMTP_MAIL: ""
+      SMTP_PASSWORD: ""
+    ports:
+      - "8201:8201"
+    depends_on:
+      mysql:
+        condition: service_healthy
+      rustfs:
+        condition: service_healthy
+    networks:
+      - alexandrie-network
+    <<: *default-logging
+
+  # ---------------------------------------------------------------------------
+  # Alexandrie Frontend (Nuxt)
+  # ---------------------------------------------------------------------------
+  frontend:
+    image: ghcr.io/smaug6739/alexandrie-frontend:latest
+    container_name: alexandrie-frontend
+    restart: unless-stopped
+    environment:
+      PORT: 8200
+
+      # Feature flags
+      NUXT_PUBLIC_CONFIG_DISABLE_SIGNUP_PAGE: "false"
+      NUXT_PUBLIC_CONFIG_DISABLE_LANDING_PAGE: "false"
+
+      # Runtime config
+      NUXT_PUBLIC_BASE_API: http://localhost:8201
+      NUXT_PUBLIC_BASE_CDN: http://localhost:9005
+      NUXT_PUBLIC_CDN_ENDPOINT: /alexandrie/
+      NUXT_PUBLIC_BASE_URL: http://localhost:8200
+    ports:
+      - "8200:8200"
+    depends_on:
+      - backend
+    networks:
+      - alexandrie-network
+    <<: *default-logging
+
+# ---------------------------------------------------------------------------
+# Networks & Volumes
+# ---------------------------------------------------------------------------
+networks:
+  alexandrie-network:
+    driver: bridge
+
+volumes:
+  mysql_data:
+  rustfs_data:
+  rustfs_logs:
+
+# Default Access Points
+# Frontend: http://localhost:8200
+# Backend API: http://localhost:8201
+# Object Storage Console: http://localhost:9000
+# MySQL: localhost:3307 (user: alexandrie, password: password)

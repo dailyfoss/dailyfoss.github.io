@@ -1,0 +1,30 @@
+services:
+  alist:
+    image: xhofe/alist:latest
+    container_name: alist
+    restart: unless-stopped
+
+    ports:
+      - "5244:5244"   # Web UI
+      - "5245:5245"   # WebDAV / API
+
+    volumes:
+      - /etc/alist:/opt/alist/data
+
+    environment:
+      TZ: UTC
+      UMASK: "022"
+      PUID: 0
+      PGID: 0
+
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:5244/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
