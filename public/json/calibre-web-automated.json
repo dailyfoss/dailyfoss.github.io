@@ -26,9 +26,11 @@
     "documentation": "https://github.com/crocodilestick/Calibre-Web-Automated",
     "source_code": "https://github.com/crocodilestick/Calibre-Web-Automated",
     "logo": "/icons/calibre-web-automated.webp",
-    "screenshot": "/uploads/calibre-web-automated-dashboard.png",
     "issues": "https://github.com/crocodilestick/Calibre-Web-Automated/issues",
-    "releases": "https://github.com/crocodilestick/Calibre-Web-Automated/releases"
+    "releases": "https://github.com/crocodilestick/Calibre-Web-Automated/releases",
+    "screenshots": [
+      "/uploads/calibre-web-automated-dashboard.png"
+    ]
   },
   "features": [
     {
@@ -93,9 +95,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

@@ -26,9 +26,11 @@
     "documentation": "https://github.com/Budibase/budibase",
     "source_code": "https://github.com/Budibase/budibase",
     "logo": "/icons/budibase.webp",
-    "screenshot": "/uploads/budibase-demo.png",
     "issues": "https://github.com/Budibase/budibase/issues",
-    "releases": "https://github.com/Budibase/budibase/releases"
+    "releases": "https://github.com/Budibase/budibase/releases",
+    "screenshots": [
+      "/uploads/budibase-demo.png"
+    ]
   },
   "features": [
     {
@@ -116,9 +118,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

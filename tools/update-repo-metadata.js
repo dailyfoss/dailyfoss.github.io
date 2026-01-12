@@ -280,33 +280,76 @@ async function fetchRepoData(owner, repo) {
 }
 
 /**
- * Find screenshot for a given slug in uploads directory
+ * Find all screenshots for a given slug in uploads directory
+ * Returns an array of screenshot filenames, sorted by numeric suffix (0, 1, 2...) then alphabetically
  */
-async function findScreenshot(slug) {
+async function findScreenshots(slug) {
   try {
     const files = await fs.readdir(UPLOADS_DIR);
+    const slugLower = slug.toLowerCase();
     
     // Look for files that start with the slug
     const matchingFiles = files.filter(file => {
       const fileName = file.toLowerCase();
-      const slugLower = slug.toLowerCase();
       
-      // Match files that start with slug (e.g., "minio.png", "minio-dashboard.png")
-      return fileName.startsWith(slugLower) && (fileName.endsWith('.png') || fileName.endsWith('.jpg') || fileName.endsWith('.jpeg'));
+      // Match files that start with slug (e.g., "minio.png", "minio-1.png", "minio-dashboard.png")
+      const isMatch = fileName.startsWith(slugLower) && 
+        (fileName.endsWith('.png') || fileName.endsWith('.jpg') || fileName.endsWith('.jpeg') || fileName.endsWith('.webp'));
+      
+      if (!isMatch) return false;
+      
+      // Ensure it's actually this slug and not a longer slug that starts with the same prefix
+      const afterSlug = fileName.slice(slugLower.length);
+      return afterSlug.startsWith('.') || afterSlug.startsWith('-') || afterSlug.startsWith('_') || /^\d/.test(afterSlug);
     });
     
-    if (matchingFiles.length > 0) {
-      // Prefer exact match (slug.png) over others
-      const exactMatch = matchingFiles.find(f => f.toLowerCase() === `${slug.toLowerCase()}.png`);
-      const selectedFile = exactMatch || matchingFiles[0];
-      
-      return selectedFile;
+    if (matchingFiles.length === 0) {
+      return [];
     }
     
-    return null;
+    // Extract numeric suffix from filename (e.g., "minio-2.png" -> 2, "minio.png" -> -1, "minio-dashboard.png" -> null)
+    const getNumericSuffix = (filename) => {
+      const slugLower = slug.toLowerCase();
+      const nameLower = filename.toLowerCase();
+      const afterSlug = nameLower.slice(slugLower.length);
+      
+      // Exact match (slug.ext) gets highest priority (-1)
+      if (afterSlug.match(/^\.(png|jpg|jpeg|webp)$/)) {
+        return -1;
+      }
+      
+      // Check for numeric suffix like -0, -1, -2, _0, _1, etc.
+      const numMatch = afterSlug.match(/^[-_](\d+)\.(png|jpg|jpeg|webp)$/);
+      if (numMatch) {
+        return parseInt(numMatch[1]);
+      }
+      
+      // Non-numeric suffix (alphabetic) - return null to sort after numbers
+      return null;
+    };
+    
+    // Sort: exact match first (-1), then numeric (0, 1, 2...), then alphabetically for non-numeric
+    matchingFiles.sort((a, b) => {
+      const aNum = getNumericSuffix(a);
+      const bNum = getNumericSuffix(b);
+      
+      // Both have numeric suffixes (including -1 for exact match)
+      if (aNum !== null && bNum !== null) {
+        return aNum - bNum;
+      }
+      
+      // Numeric comes before non-numeric
+      if (aNum !== null && bNum === null) return -1;
+      if (aNum === null && bNum !== null) return 1;
+      
+      // Both non-numeric - sort alphabetically
+      return a.localeCompare(b);
+    });
+    
+    return matchingFiles;
   } catch (error) {
-    console.error(`Error finding screenshot for ${slug}:`, error.message);
-    return null;
+    console.error(`Error finding screenshots for ${slug}:`, error.message);
+    return [];
   }
 }
 
@@ -325,22 +368,30 @@ async function updateScreenshotOnly(filePath, slug) {
     const content = await fs.readFile(filePath, 'utf-8');
     const json = JSON.parse(content);
 
-    const oldScreenshot = json.resources?.screenshot;
+    const oldScreenshots = json.resources?.screenshots;
     
-    const screenshot = await findScreenshot(slug);
-    if (screenshot) {
-      const newScreenshotPath = `/uploads/${screenshot}`;
-      if (oldScreenshot !== newScreenshotPath) {
-        json.resources.screenshot = newScreenshotPath;
+    const screenshots = await findScreenshots(slug);
+    if (screenshots.length > 0) {
+      const newScreenshotPaths = screenshots.map(s => `/uploads/${s}`);
+      
+      // Compare arrays to check if changed
+      const oldArray = Array.isArray(oldScreenshots) ? oldScreenshots : (oldScreenshots ? [oldScreenshots] : []);
+      const hasChanged = JSON.stringify(oldArray) !== JSON.stringify(newScreenshotPaths);
+      
+      if (hasChanged) {
+        json.resources.screenshots = newScreenshotPaths;
         await fs.writeFile(filePath, JSON.stringify(json, null, 2) + '\n', 'utf-8');
         
-        console.log(`✓ Updated ${slug}.json: ${oldScreenshot || 'none'} → ${newScreenshotPath}`);
+        const oldDisplay = Array.isArray(oldScreenshot) ? oldScreenshot.join(', ') : (oldScreenshot || 'none');
+        const newDisplay = newScreenshotPaths.join(', ');
+        console.log(`✓ Updated ${slug}.json: [${oldDisplay}] → [${newDisplay}]`);
         
         changeLog.push({
           repository: json.name,
           screenshotUpdated: true,
-          oldScreenshot: oldScreenshot || 'N/A',
-          newScreenshot: newScreenshotPath
+          oldScreenshot: oldDisplay,
+          newScreenshot: newDisplay,
+          screenshotCount: newScreenshotPaths.length
         });
         
         return { updated: true, noChange: false };
@@ -367,7 +418,7 @@ async function updateJsonFile(filePath, repoData, repoUrl, slug) {
     const oldStars = json.metadata.github_stars;
     const oldVersion = json.metadata.version;
     const oldLicense = json.metadata.license;
-    const oldScreenshot = json.resources?.screenshot;
+    const oldScreenshots = json.resources?.screenshots;
 
     // Update metadata (respecting exclusions)
     if (!shouldExclude('license')) {
@@ -415,14 +466,15 @@ async function updateJsonFile(filePath, repoData, repoUrl, slug) {
       json.resources.releases = repoData.releases;
     }
 
-    // Update screenshot if --screenshots flag is set
+    // Update screenshots if --screenshots flag is set
     let screenshotUpdated = false;
-    if (UPDATE_SCREENSHOTS && !shouldExclude('screenshot')) {
-      const screenshot = await findScreenshot(slug);
-      if (screenshot) {
-        const newScreenshotPath = `/uploads/${screenshot}`;
-        if (oldScreenshot !== newScreenshotPath) {
-          json.resources.screenshot = newScreenshotPath;
+    if (UPDATE_SCREENSHOTS && !shouldExclude('screenshots')) {
+      const screenshots = await findScreenshots(slug);
+      if (screenshots.length > 0) {
+        const newScreenshotPaths = screenshots.map(s => `/uploads/${s}`);
+        const oldArray = Array.isArray(oldScreenshots) ? oldScreenshots : (oldScreenshots ? [oldScreenshots] : []);
+        if (JSON.stringify(oldArray) !== JSON.stringify(newScreenshotPaths)) {
+          json.resources.screenshots = newScreenshotPaths;
           screenshotUpdated = true;
         }
       }
@@ -531,7 +583,7 @@ function generateSummaryContent(results) {
     output += `| Failed | ${failed} | ${((failed/totalFiles)*100).toFixed(1)}% |\n\n`;
 
     // Detailed Changes Table
-    if (changeLogengtgth > 0) {
+    if (changeLog.length > 0) {
       output += '## Detailed Changes\n\n';
     
       output += '| Repository | Old Screenshot | New Screenshot |\n';

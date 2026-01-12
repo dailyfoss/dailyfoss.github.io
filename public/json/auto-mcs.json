@@ -26,9 +26,11 @@
     "documentation": "https://github.com/macarooni-man/auto-mcs",
     "source_code": "https://github.com/macarooni-man/auto-mcs",
     "logo": "/icons/auto-mcs.webp",
-    "screenshot": "/uploads/auto-mcs.png",
     "issues": "https://github.com/macarooni-man/auto-mcs/issues",
-    "releases": "https://github.com/macarooni-man/auto-mcs/releases"
+    "releases": "https://github.com/macarooni-man/auto-mcs/releases",
+    "screenshots": [
+      "/uploads/auto-mcs.png"
+    ]
   },
   "features": [
     {
@@ -80,9 +82,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

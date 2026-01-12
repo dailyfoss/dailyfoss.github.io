@@ -26,9 +26,11 @@
     "documentation": "https://0xerr0r.github.io/blocky",
     "source_code": "https://github.com/0xERR0R/blocky",
     "logo": "/icons/blocky.webp",
-    "screenshot": "/uploads/blocky-homepage.png",
     "issues": "https://github.com/0xERR0R/blocky/issues",
-    "releases": "https://github.com/0xERR0R/blocky/releases"
+    "releases": "https://github.com/0xERR0R/blocky/releases",
+    "screenshots": [
+      "/uploads/blocky-homepage.png"
+    ]
   },
   "features": [
     {
@@ -124,9 +126,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

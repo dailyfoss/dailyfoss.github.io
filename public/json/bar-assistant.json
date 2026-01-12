@@ -26,9 +26,11 @@
     "documentation": "https://github.com/karlomikus/bar-assistant",
     "source_code": "https://github.com/karlomikus/bar-assistant",
     "logo": "/icons/bar-assistant.webp",
-    "screenshot": "https://barassistant.app/img/cocktails.png",
     "issues": "https://github.com/karlomikus/bar-assistant/issues",
-    "releases": "https://github.com/karlomikus/bar-assistant/releases"
+    "releases": "https://github.com/karlomikus/bar-assistant/releases",
+    "screenshots": [
+      "https://barassistant.app/img/cocktails.png"
+    ]
   },
   "features": [
     {
@@ -84,9 +86,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

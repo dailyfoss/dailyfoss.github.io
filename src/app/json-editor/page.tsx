@@ -1,4 +1,4 @@
-"use client";
+ "use client";
 
 import type { z } from "zod";
 
@@ -39,7 +39,8 @@ const initialScript: Script = {
   logo: null,
   description: "",
   install_methods: [],
-  default_credentials: {
+  demo: {
+    url: null,
     username: null,
     password: null,
   },
@@ -427,22 +428,34 @@ export default function JSONGenerator() {
             })}
           </div>
 
-          <h3 className="text-xl font-semibold">Default Credentials</h3>
+          <h3 className="text-xl font-semibold">Demo Credentials</h3>
+          <Input
+            placeholder="Demo URL"
+            value={script.demo?.url || ""}
+            onChange={e =>
+              updateScript("demo", {
+                url: e.target.value || null,
+                username: script.demo?.username ?? null,
+                password: script.demo?.password ?? null,
+              })}
+          />
           <Input
             placeholder="Username"
-            value={script.default_credentials?.username || ""}
+            value={script.demo?.username || ""}
             onChange={e =>
-              updateScript("default_credentials", {
+              updateScript("demo", {
+                url: script.demo?.url ?? null,
                 username: e.target.value || null,
-                password: script.default_credentials?.password ?? null,
+                password: script.demo?.password ?? null,
               })}
           />
           <Input
             placeholder="Password"
-            value={script.default_credentials?.password || ""}
+            value={script.demo?.password || ""}
             onChange={e =>
-              updateScript("default_credentials", {
-                username: script.default_credentials?.username ?? null,
+              updateScript("demo", {
+                url: script.demo?.url ?? null,
+                username: script.demo?.username ?? null,
                 password: e.target.value || null,
               })}
           />

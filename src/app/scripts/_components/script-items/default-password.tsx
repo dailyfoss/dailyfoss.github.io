@@ -5,14 +5,14 @@ import handleCopy from "@/components/handle-copy";
 import { Button } from "@/components/ui/button";
 
 export default function DefaultPassword({ item }: { item: Script }) {
-  const { username, password } = item.default_credentials;
+  const { username, password } = item.default_credentials ?? {};
   const hasDefaultLogin = username || password;
 
   if (!hasDefaultLogin)
     return null;
 
   const copyCredential = (type: "username" | "password") => {
-    handleCopy(type, item.default_credentials[type] ?? "");
+    handleCopy(type, item.default_credentials?.[type] ?? "");
   };
 
   return (
@@ -31,7 +31,7 @@ export default function DefaultPassword({ item }: { item: Script }) {
           .
         </p>
         {["username", "password"].map((type) => {
-          const value = item.default_credentials[type as "username" | "password"];
+          const value = item.default_credentials?.[type as "username" | "password"];
           return value && value.trim() !== ""
             ? (
                 <div key={type} className="text-sm">

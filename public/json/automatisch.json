@@ -26,9 +26,11 @@
     "documentation": "https://github.com/automatisch/automatisch",
     "source_code": "https://github.com/automatisch/automatisch",
     "logo": "/icons/automatisch.webp",
-    "screenshot": "/uploads/automatisch.png",
     "issues": "https://github.com/automatisch/automatisch/issues",
-    "releases": "https://github.com/automatisch/automatisch/releases"
+    "releases": "https://github.com/automatisch/automatisch/releases",
+    "screenshots": [
+      "/uploads/automatisch.png"
+    ]
   },
   "features": [
     {
@@ -84,9 +86,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

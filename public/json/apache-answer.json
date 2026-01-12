@@ -26,9 +26,11 @@
     "documentation": "https://github.com/apache/answer",
     "source_code": "https://github.com/apache/answer",
     "logo": "/icons/apache-answer.webp",
-    "screenshot": "https://raw.githubusercontent.com/apache/answer/main/docs/img/screenshot.png",
     "issues": "https://github.com/apache/answer/issues",
-    "releases": "https://github.com/apache/answer/releases"
+    "releases": "https://github.com/apache/answer/releases",
+    "screenshots": [
+      "/uploads/apache-answer.png"
+    ]
   },
   "features": [
     {
@@ -56,39 +58,41 @@
   ],
   "platform_support": {
     "desktop": {
-      "linux": true,
-      "windows": true,
-      "macos": true
+      "linux": false,
+      "windows": false,
+      "macos": false
     },
     "mobile": {
       "android": false,
       "ios": false
     },
-    "web_app": false,
+    "web_app": true,
     "browser_extension": false,
     "cli_only": false
   },
   "hosting_options": {
-    "self_hosted": false,
+    "self_hosted": true,
     "managed_cloud": false,
     "saas": false
   },
   "interfaces": {
     "cli": false,
     "gui": false,
-    "web_ui": false,
+    "web_ui": true,
     "api": false,
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
+    "script": false,
+    "docker": false,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/apache-answer/compose.yml"
+  },
   "default_credentials": {
     "username": null,
     "password": null

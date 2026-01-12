@@ -26,9 +26,12 @@
     "documentation": "https://github.com/blinkospace/blinko",
     "source_code": "https://github.com/blinkospace/blinko",
     "logo": "/icons/blinko.webp",
-    "screenshot": "/uploads/blinko-homepage.png",
     "issues": "https://github.com/blinkospace/blinko/issues",
-    "releases": "https://github.com/blinkospace/blinko/releases"
+    "releases": "https://github.com/blinkospace/blinko/releases",
+    "screenshots": [
+      "/uploads/blinko-demo.png",
+      "/uploads/blinko-homepage.png"
+    ]
   },
   "features": [
     {
@@ -118,9 +121,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

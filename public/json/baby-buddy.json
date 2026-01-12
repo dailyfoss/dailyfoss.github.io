@@ -26,9 +26,11 @@
     "documentation": "https://docs.baby-buddy.net",
     "source_code": "https://github.com/babybuddy/babybuddy",
     "logo": "/icons/baby-buddy.webp",
-    "screenshot": "https://raw.githubusercontent.com/babybuddy/babybuddy/refs/heads/master/screenshot.png",
     "issues": "https://github.com/babybuddy/babybuddy/issues",
-    "releases": "https://github.com/babybuddy/babybuddy/releases"
+    "releases": "https://github.com/babybuddy/babybuddy/releases",
+    "screenshots": [
+      "https://raw.githubusercontent.com/babybuddy/babybuddy/refs/heads/master/screenshot.png"
+    ]
   },
   "features": [
     {
@@ -83,9 +85,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

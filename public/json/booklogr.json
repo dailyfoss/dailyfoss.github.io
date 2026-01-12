@@ -26,9 +26,11 @@
     "documentation": "https://github.com/Mozzo1000/booklogr",
     "source_code": "https://github.com/Mozzo1000/booklogr",
     "logo": "/icons/booklogr.webp",
-    "screenshot": "/uploads/booklogr-demo.png",
     "issues": "https://github.com/Mozzo1000/booklogr/issues",
-    "releases": "https://github.com/Mozzo1000/booklogr/releases"
+    "releases": "https://github.com/Mozzo1000/booklogr/releases",
+    "screenshots": [
+      "/uploads/booklogr-demo.png"
+    ]
   },
   "features": [
     {
@@ -104,9 +106,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

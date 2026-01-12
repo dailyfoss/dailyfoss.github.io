@@ -26,9 +26,11 @@
     "documentation": "https://github.com/ArchiveBox/ArchiveBox",
     "source_code": "https://github.com/ArchiveBox/ArchiveBox",
     "logo": "/icons/archivebox.webp",
-    "screenshot": "/uploads/archivebox.png",
     "issues": "https://github.com/ArchiveBox/ArchiveBox/issues",
-    "releases": "https://github.com/ArchiveBox/ArchiveBox/releases"
+    "releases": "https://github.com/ArchiveBox/ArchiveBox/releases",
+    "screenshots": [
+      "/uploads/archivebox.png"
+    ]
   },
   "features": [
     {
@@ -84,9 +86,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

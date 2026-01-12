@@ -26,10 +26,12 @@
     "documentation": "https://github.com/daya0576/beaverhabits",
     "source_code": "https://github.com/daya0576/beaverhabits",
     "logo": "/icons/beaver-habit-tracker.webp",
-    "screenshot": "/uploads/beaver-habit-tracker-demo.png",
     "issues": "https://github.com/daya0576/beaverhabits/issues",
     "releases": "https://github.com/daya0576/beaverhabits/releases",
-    "logo_light": "/icons/beaver-habit-tracker-light.webp"
+    "logo_light": "/icons/beaver-habit-tracker-light.webp",
+    "screenshots": [
+      "/uploads/beaver-habit-tracker-demo.png"
+    ]
   },
   "features": [
     {
@@ -85,9 +87,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

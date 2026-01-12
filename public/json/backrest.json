@@ -26,10 +26,12 @@
     "documentation": "https://github.com/garethgeorge/backrest",
     "source_code": "https://github.com/garethgeorge/backrest",
     "logo": "/icons/backrest.webp",
-    "screenshot": "https://camo.githubusercontent.com/a8e1da4592523abd5e552af788c4dc96edc6a5f151c19362b3c0a74e4ce94169/68747470733a2f2f663030302e6261636b626c617a6562322e636f6d2f66696c652f6773686172652f73637265656e73686f74732f323032342f53637265656e73686f742b66726f6d2b323032342d30312d30342b31382d33302d31342e706e67",
     "issues": "https://github.com/garethgeorge/backrest/issues",
     "releases": "https://github.com/garethgeorge/backrest/releases",
-    "logo_light": "/icons/backrest-light.webp"
+    "logo_light": "/icons/backrest-light.webp",
+    "screenshots": [
+      "https://camo.githubusercontent.com/a8e1da4592523abd5e552af788c4dc96edc6a5f151c19362b3c0a74e4ce94169/68747470733a2f2f663030302e6261636b626c617a6562322e636f6d2f66696c652f6773686172652f73637265656e73686f74732f323032342f53637265656e73686f742b66726f6d2b323032342d30312d30342b31382d33302d31342e706e67"
+    ]
   },
   "features": [
     {
@@ -85,9 +87,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

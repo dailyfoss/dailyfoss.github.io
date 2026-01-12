@@ -57,7 +57,8 @@ export function ReviewStep({ data }: ReviewStepProps) {
       interfaces: data.interfaces,
       deployment_methods: data.deployment_methods,
       manifests: {},
-      default_credentials: {
+      demo: {
+        url: null,
         username: null,
         password: null,
       },
