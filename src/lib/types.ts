@@ -78,6 +78,10 @@ export type Script = {
     kubernetes?: string;
     terraform?: string;
   };
+  default_credentials?: {
+    username: string | null;
+    password: string | null;
+  };
   demo: {
     url: null;
     username: null;
