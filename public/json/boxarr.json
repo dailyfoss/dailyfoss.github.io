@@ -26,9 +26,11 @@
     "documentation": "https://github.com/iongpt/boxarr/wiki",
     "source_code": "https://github.com/iongpt/boxarr",
     "logo": "/icons/boxarr.webp",
-    "screenshot": "/uploads/boxarr-dashboard.png",
     "issues": "https://github.com/iongpt/boxarr/issues",
-    "releases": "https://github.com/iongpt/boxarr/releases"
+    "releases": "https://github.com/iongpt/boxarr/releases",
+    "screenshots": [
+      "/uploads/boxarr-dashboard.png"
+    ]
   },
   "features": [
     {
@@ -124,9 +126,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

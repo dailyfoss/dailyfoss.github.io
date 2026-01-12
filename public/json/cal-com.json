@@ -26,9 +26,11 @@
     "documentation": "https://cal.com/docs",
     "source_code": "https://github.com/calcom/cal.com",
     "logo": "/icons/cal-com.webp",
-    "screenshot": "/uploads/cal-com-homepage.png",
     "issues": "https://github.com/calcom/cal.com/issues",
-    "releases": "https://github.com/calcom/cal.com/releases"
+    "releases": "https://github.com/calcom/cal.com/releases",
+    "screenshots": [
+      "/uploads/cal-com-homepage.png"
+    ]
   },
   "features": [
     {
@@ -98,9 +100,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

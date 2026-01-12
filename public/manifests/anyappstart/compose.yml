@@ -1,0 +1,35 @@
+services:
+  node-bootstrap:
+    image: aceberg/node-bootstrap:latest
+    container_name: node-bootstrap
+    restart: unless-stopped
+    ports:
+      - "8850:8850"
+    environment:
+      TZ: Asia/Jakarta
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:8850"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  anyappstart:
+    image: aceberg/anyappstart:latest
+    container_name: anyappstart
+    restart: unless-stopped
+    depends_on:
+      node-bootstrap:
+        condition: service_healthy
+    ports:
+      - "8855:8855"
+    volumes:
+      - ${ANYAPPSTART_DATA:-./data/anyappstart}:/data/AnyAppStart
+      # - /var/run/docker.sock:/var/run/docker.sock:ro
+    command: ["-n", "http://node-bootstrap:8850"]
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8855
+      THEME: minty
+      COLOR: dark
+    security_opt:
+      - no-new-privileges:true

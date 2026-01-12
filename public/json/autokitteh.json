@@ -26,9 +26,11 @@
     "documentation": "https://github.com/autokitteh/autokitteh",
     "source_code": "https://github.com/autokitteh/autokitteh",
     "logo": "/icons/autokitteh.webp",
-    "screenshot": "https://raw.githubusercontent.com/autokitteh/autokitteh/main/docs/images/web_ui.png",
     "issues": "https://github.com/autokitteh/autokitteh/issues",
-    "releases": "https://github.com/autokitteh/autokitteh/releases"
+    "releases": "https://github.com/autokitteh/autokitteh/releases",
+    "screenshots": [
+      "https://raw.githubusercontent.com/autokitteh/autokitteh/main/docs/images/web_ui.png"
+    ]
   },
   "features": [
     {
@@ -84,9 +86,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

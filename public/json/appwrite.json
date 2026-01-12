@@ -26,9 +26,11 @@
     "documentation": "https://github.com/appwrite/appwrite",
     "source_code": "https://github.com/appwrite/appwrite",
     "logo": "/icons/appwrite.webp",
-    "screenshot": "/uploads/appwrite.png",
     "issues": "https://github.com/appwrite/appwrite/issues",
-    "releases": "https://github.com/appwrite/appwrite/releases"
+    "releases": "https://github.com/appwrite/appwrite/releases",
+    "screenshots": [
+      "/uploads/appwrite.png"
+    ]
   },
   "features": [
     {
@@ -84,9 +86,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

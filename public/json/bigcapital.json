@@ -26,9 +26,11 @@
     "documentation": "https://docs.bigcapital.app",
     "source_code": "https://github.com/bigcapitalhq/bigcapital",
     "logo": "/icons/bigcapital.webp",
-    "screenshot": "/uploads/bigcapital-dashboard.png",
     "issues": "https://github.com/bigcapitalhq/bigcapital/issues",
-    "releases": "https://github.com/bigcapitalhq/bigcapital/releases"
+    "releases": "https://github.com/bigcapitalhq/bigcapital/releases",
+    "screenshots": [
+      "/uploads/bigcapital-dashboard.png"
+    ]
   },
   "features": [
     {
@@ -97,9 +99,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

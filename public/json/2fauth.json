@@ -7,7 +7,7 @@
     2
   ],
   "metadata": {
-    "sponsored": true,
+    "sponsored": false,
     "license": "AGPL-3.0",
     "version": "v5.6.1",
     "date_app_added": "2025-11-23",
@@ -25,10 +25,12 @@
     "documentation": "https://github.com/Bubka/2FAuth",
     "source_code": "https://github.com/Bubka/2FAuth",
     "logo": "/icons/2fauth.webp",
-    "screenshot": "/uploads/2fauth.png",
     "issues": "https://github.com/Bubka/2FAuth/issues",
     "releases": "https://github.com/Bubka/2FAuth/releases",
-    "logo_light": "/icons/2fauth-light.webp"
+    "logo_light": "/icons/2fauth-light.webp",
+    "screenshots": [
+      "/uploads/2fauth.png"
+    ]
   },
   "features": [
     {
@@ -97,9 +99,10 @@
   "manifests": {
     "docker_compose": "/manifests/2fauth/compose.yml"
   },
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "demo": {
+    "url": "https://demo.2fauth.app",
+    "username": "demo@2fauth.app",
+    "password": "demo"
   },
   "notes": [],
   "repository_status": null,

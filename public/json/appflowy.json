@@ -26,9 +26,11 @@
     "documentation": "https://github.com/AppFlowy-IO/AppFlowy",
     "source_code": "https://github.com/AppFlowy-IO/AppFlowy",
     "logo": "/icons/appflowy.webp",
-    "screenshot": "https://camo.githubusercontent.com/c87b33acd33f682555336a6538b135a0102b63bade97ddd4e8b9daf71d24d81c/68747470733a2f2f617070666c6f77792e636f6d2f5f6e6578742f7374617469632f6d656469612f7461736b732e37393663373533652e706e67",
     "issues": "https://github.com/AppFlowy-IO/AppFlowy/issues",
-    "releases": "https://github.com/AppFlowy-IO/AppFlowy/releases"
+    "releases": "https://github.com/AppFlowy-IO/AppFlowy/releases",
+    "screenshots": [
+      "https://camo.githubusercontent.com/c87b33acd33f682555336a6538b135a0102b63bade97ddd4e8b9daf71d24d81c/68747470733a2f2f617070666c6f77792e636f6d2f5f6e6578742f7374617469632f6d656469612f7461736b732e37393663373533652e706e67"
+    ]
   },
   "features": [
     {
@@ -80,9 +82,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

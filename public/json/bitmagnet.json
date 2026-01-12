@@ -26,9 +26,11 @@
     "documentation": "https://bitmagnet.io",
     "source_code": "https://github.com/bitmagnet-io/bitmagnet",
     "logo": "/icons/bitmagnet.webp",
-    "screenshot": "https://bitmagnet.io/assets/images/webui-1.png",
     "issues": "https://github.com/bitmagnet-io/bitmagnet/issues",
-    "releases": "https://github.com/bitmagnet-io/bitmagnet/releases"
+    "releases": "https://github.com/bitmagnet-io/bitmagnet/releases",
+    "screenshots": [
+      "https://bitmagnet.io/assets/images/webui-1.png"
+    ]
   },
   "features": [
     {
@@ -120,9 +122,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

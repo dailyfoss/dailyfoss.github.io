@@ -26,9 +26,11 @@
     "documentation": "https://github.com/getarcaneapp/arcane",
     "source_code": "https://github.com/getarcaneapp/arcane",
     "logo": "/icons/arcane.webp",
-    "screenshot": "https://raw.githubusercontent.com/getarcaneapp/arcane/main/.github/assets/arcane-dashboard.png",
     "issues": "https://github.com/getarcaneapp/arcane/issues",
-    "releases": "https://github.com/getarcaneapp/arcane/releases"
+    "releases": "https://github.com/getarcaneapp/arcane/releases",
+    "screenshots": [
+      "https://raw.githubusercontent.com/getarcaneapp/arcane/main/.github/assets/arcane-dashboard.png"
+    ]
   },
   "features": [
     {
@@ -84,9 +86,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

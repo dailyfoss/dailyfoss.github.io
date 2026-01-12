@@ -26,9 +26,11 @@
     "documentation": "https://docs.joinbookwyrm.com",
     "source_code": "https://github.com/bookwyrm-social/bookwyrm",
     "logo": "/icons/bookwyrm.webp",
-    "screenshot": "/uploads/bookwyrm-homepage.png",
     "issues": "https://github.com/bookwyrm-social/bookwyrm/issues",
-    "releases": "https://github.com/bookwyrm-social/bookwyrm/releases"
+    "releases": "https://github.com/bookwyrm-social/bookwyrm/releases",
+    "screenshots": [
+      "/uploads/bookwyrm-homepage.png"
+    ]
   },
   "features": [
     {
@@ -117,9 +119,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

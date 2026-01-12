@@ -26,9 +26,11 @@
     "documentation": "https://budgetboard.net",
     "source_code": "https://github.com/teelur/budget-board",
     "logo": "/icons/budget-board.webp",
-    "screenshot": "/uploads/budget-board-dashboard.png",
     "issues": "https://github.com/teelur/budget-board/issues",
-    "releases": "https://github.com/teelur/budget-board/releases"
+    "releases": "https://github.com/teelur/budget-board/releases",
+    "screenshots": [
+      "/uploads/budget-board-dashboard.png"
+    ]
   },
   "features": [
     {
@@ -106,9 +108,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

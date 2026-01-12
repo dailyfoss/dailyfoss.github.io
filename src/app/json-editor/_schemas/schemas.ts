@@ -85,8 +85,9 @@ export const ScriptSchema = z.object({
 
   install_methods: z.array(InstallMethodSchema).min(1, "At least one install method is required"),
 
-  default_credentials: z
+  demo: z
     .object({
+      url: z.string().nullable(),
       username: z.string().nullable(),
       password: z.string().nullable(),
     })

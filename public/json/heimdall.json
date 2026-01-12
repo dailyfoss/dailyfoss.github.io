@@ -26,10 +26,10 @@
     "documentation": "https://github.com/linuxserver/Heimdall",
     "source_code": "https://github.com/linuxserver/Heimdall",
     "logo": "/icons/heimdall.webp",
-    "screenshot": "",
     "issues": "https://github.com/linuxserver/Heimdall/issues",
     "releases": "https://github.com/linuxserver/Heimdall/releases",
-    "logo_light": "/icons/heimdall-light.webp"
+    "logo_light": "/icons/heimdall-light.webp",
+    "screenshots": []
   },
   "features": [
     {
@@ -96,9 +96,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

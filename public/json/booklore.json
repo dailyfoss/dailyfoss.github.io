@@ -26,9 +26,11 @@
     "documentation": "https://booklore.org/docs/getting-started",
     "source_code": "https://github.com/booklore-app/booklore",
     "logo": "/icons/booklore.webp",
-    "screenshot": "https://booklore.org/img/website/web-01.png",
     "issues": "https://github.com/booklore-app/booklore/issues",
-    "releases": "https://github.com/booklore-app/booklore/releases"
+    "releases": "https://github.com/booklore-app/booklore/releases",
+    "screenshots": [
+      "/uploads/booklore-book-browser.png"
+    ]
   },
   "features": [
     {
@@ -109,9 +111,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

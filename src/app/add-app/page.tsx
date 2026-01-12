@@ -159,7 +159,7 @@ export default function AddAppPage() {
         ...(formData.deployment_methods.kubernetes ? { kubernetes: `/manifests/${formData.slug}/k8s-deployment.yaml` } : {}),
         ...(formData.deployment_methods.terraform ? { terraform: `/manifests/${formData.slug}/main.tf` } : {}),
       },
-      default_credentials: { username: null, password: null },
+      demo: { url: null, username: null, password: null },
       notes: [],
       repository_status: null,
       community_integrations: {

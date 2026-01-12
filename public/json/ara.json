@@ -26,9 +26,11 @@
     "documentation": "https://github.com/ansible-community/ara",
     "source_code": "https://github.com/ansible-community/ara",
     "logo": "/icons/ara.webp",
-    "screenshot": "/uploads/ara.png",
     "issues": "https://github.com/ansible-community/ara/issues",
-    "releases": null
+    "releases": null,
+    "screenshots": [
+      "/uploads/ara.png"
+    ]
   },
   "features": [
     {
@@ -84,9 +86,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

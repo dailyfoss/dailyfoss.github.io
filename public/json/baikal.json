@@ -26,9 +26,11 @@
     "documentation": "https://github.com/sabre-io/Baikal",
     "source_code": "https://github.com/sabre-io/Baikal",
     "logo": "/icons/baikal.webp",
-    "screenshot": "/uploads/baikal-web-admin.png",
     "issues": "https://github.com/sabre-io/Baikal/issues",
-    "releases": "https://github.com/sabre-io/Baikal/releases"
+    "releases": "https://github.com/sabre-io/Baikal/releases",
+    "screenshots": [
+      "/uploads/baikal-web-admin.png"
+    ]
   },
   "features": [
     {
@@ -84,9 +86,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

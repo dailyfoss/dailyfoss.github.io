@@ -26,9 +26,11 @@
     "documentation": "https://github.com/blackcandy-org/blackcandy",
     "source_code": "https://github.com/blackcandy-org/blackcandy",
     "logo": "/icons/black-candy.webp",
-    "screenshot": "/uploads/black-candy-demo.png",
     "issues": "https://github.com/blackcandy-org/blackcandy/issues",
-    "releases": "https://github.com/blackcandy-org/blackcandy/releases"
+    "releases": "https://github.com/blackcandy-org/blackcandy/releases",
+    "screenshots": [
+      "/uploads/black-candy-demo.png"
+    ]
   },
   "features": [
     {
@@ -111,9 +113,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

@@ -26,10 +26,13 @@
     "documentation": "https://github.com/marmelab/atomic-crm",
     "source_code": "https://github.com/marmelab/atomic-crm",
     "logo": "/icons/atomic-crm.webp",
-    "screenshot": "/uploads/atomic-crm.png",
     "issues": "https://github.com/marmelab/atomic-crm/issues",
     "releases": null,
-    "logo_light": "/icons/atomic-crm-light.webp"
+    "logo_light": "/icons/atomic-crm-light.webp",
+    "screenshots": [
+      "/uploads/atomic-crm.png",
+      "/uploads/atomic-crm-dashboard.png"
+    ]
   },
   "features": [
     {
@@ -81,9 +84,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

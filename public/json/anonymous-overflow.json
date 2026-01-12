@@ -26,9 +26,11 @@
     "documentation": "https://github.com/httpjamesm/AnonymousOverflow",
     "source_code": "https://github.com/httpjamesm/AnonymousOverflow",
     "logo": "/icons/anonymous-overflow.webp",
-    "screenshot": "/uploads/anonymous-overflow.png",
     "issues": "https://github.com/httpjamesm/AnonymousOverflow/issues",
-    "releases": "https://github.com/httpjamesm/AnonymousOverflow/releases"
+    "releases": "https://github.com/httpjamesm/AnonymousOverflow/releases",
+    "screenshots": [
+      "/uploads/anonymous-overflow.png"
+    ]
   },
   "features": [
     {
@@ -80,9 +82,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

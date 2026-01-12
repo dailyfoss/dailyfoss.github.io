@@ -27,6 +27,7 @@ export type Script = {
     logo: string | null;
     logo_light?: string | null;
     screenshot?: string | null;
+    screenshots?: string[]; // Multiple screenshots for carousel
     issues: string | null;
     releases: string | null;
   };
@@ -77,9 +78,10 @@ export type Script = {
     kubernetes?: string;
     terraform?: string;
   };
-  default_credentials: {
-    username: string | null;
-    password: string | null;
+  demo: {
+    url: null;
+    username: null;
+    password: null;
   };
   notes: Array<{
     text: string;

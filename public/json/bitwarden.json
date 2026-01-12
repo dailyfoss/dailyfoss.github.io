@@ -26,9 +26,11 @@
     "documentation": "https://github.com/bitwarden/server",
     "source_code": "https://github.com/bitwarden/server",
     "logo": "/icons/bitwarden.webp",
-    "screenshot": "/uploads/bitwarden-homepage.png",
     "issues": "https://github.com/bitwarden/server/issues",
-    "releases": "https://github.com/bitwarden/server/releases"
+    "releases": "https://github.com/bitwarden/server/releases",
+    "screenshots": [
+      "/uploads/bitwarden-homepage.png"
+    ]
   },
   "features": [
     {
@@ -98,9 +100,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

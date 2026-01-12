@@ -26,9 +26,11 @@
     "documentation": "https://github.com/Atheos/Atheos",
     "source_code": "https://github.com/Atheos/Atheos",
     "logo": "/icons/atheos.webp",
-    "screenshot": "https://www.atheos.io/assets/images/atheos.jpg",
     "issues": "https://github.com/Atheos/Atheos/issues",
-    "releases": "https://github.com/Atheos/Atheos/releases"
+    "releases": "https://github.com/Atheos/Atheos/releases",
+    "screenshots": [
+      "https://www.atheos.io/assets/images/atheos.jpg"
+    ]
   },
   "features": [
     {
@@ -84,9 +86,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

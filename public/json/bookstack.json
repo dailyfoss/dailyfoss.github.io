@@ -26,9 +26,11 @@
     "documentation": "https://www.bookstackapp.com/docs",
     "source_code": "https://github.com/BookStackApp/BookStack",
     "logo": "/icons/bookstack.webp",
-    "screenshot": "/uploads/bookstack-demo.png",
     "issues": "https://github.com/BookStackApp/BookStack/issues",
-    "releases": "https://github.com/BookStackApp/BookStack/releases"
+    "releases": "https://github.com/BookStackApp/BookStack/releases",
+    "screenshots": [
+      "/uploads/bookstack-demo.png"
+    ]
   },
   "features": [
     {
@@ -120,9 +122,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

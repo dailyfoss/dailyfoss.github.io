@@ -26,9 +26,11 @@
     "documentation": "https://github.com/aureuserp/aureuserp",
     "source_code": "https://github.com/aureuserp/aureuserp",
     "logo": "/icons/aureus.webp",
-    "screenshot": "/uploads/aureus.png",
     "issues": "https://github.com/aureuserp/aureuserp/issues",
-    "releases": "https://github.com/aureuserp/aureuserp/releases"
+    "releases": "https://github.com/aureuserp/aureuserp/releases",
+    "screenshots": [
+      "/uploads/aureus.png"
+    ]
   },
   "features": [
     {
@@ -83,9 +85,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

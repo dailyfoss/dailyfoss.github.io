@@ -21,9 +21,11 @@
     "documentation": "https://gitlab.com/baserow/baserow",
     "source_code": "https://gitlab.com/baserow/baserow",
     "logo": "/icons/baserow.webp",
-    "screenshot": "/uploads/baserow-homepage.png",
     "issues": "https://gitlab.com/baserow/baserow/issues",
-    "releases": "https://gitlab.com/baserow/baserow/releases"
+    "releases": "https://gitlab.com/baserow/baserow/releases",
+    "screenshots": [
+      "/uploads/baserow-homepage.png"
+    ]
   },
   "features": [
     {
@@ -79,9 +81,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

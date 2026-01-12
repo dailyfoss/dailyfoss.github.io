@@ -26,9 +26,12 @@
     "documentation": "https://caddyserver.com/docs",
     "source_code": "https://github.com/caddyserver/caddy",
     "logo": "/icons/caddy.webp",
-    "screenshot": "/uploads/caddy-homepage.png",
     "issues": "https://github.com/caddyserver/caddy/issues",
-    "releases": "https://github.com/caddyserver/caddy/releases"
+    "releases": "https://github.com/caddyserver/caddy/releases",
+    "screenshots": [
+      "/uploads/caddy-homepage.png",
+      "/uploads/caddy-manager-server.png"
+    ]
   },
   "features": [
     {
@@ -98,9 +101,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

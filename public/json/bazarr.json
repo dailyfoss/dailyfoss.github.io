@@ -26,9 +26,12 @@
     "documentation": "https://github.com/morpheus65535/bazarr",
     "source_code": "https://github.com/morpheus65535/bazarr",
     "logo": "/icons/bazarr.webp",
-    "screenshot": "https://raw.githubusercontent.com/morpheus65535/bazarr/refs/heads/master/screenshot/bazarr-screenshot.png",
     "issues": "https://github.com/morpheus65535/bazarr/issues",
-    "releases": "https://github.com/morpheus65535/bazarr/releases"
+    "releases": "https://github.com/morpheus65535/bazarr/releases",
+    "screenshots": [
+      "/uploads/bazarr-demo.png",
+      "/uploads/bazarr-homepage.png"
+    ]
   },
   "features": [
     {
@@ -84,9 +87,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

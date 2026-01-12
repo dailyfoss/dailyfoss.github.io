@@ -25,6 +25,7 @@ import Alerts from "./script-items/alerts";
 import RelatedTools from "./script-items/related-tools";
 import CommunityStatsHeader from "./script-items/community-stats-header";
 import CommunityIntegrations from "./script-items/community-integrations";
+import DemoCard from "./script-items/demo-card";
 import { useFavoriteCount } from "@/components/favorite-button";
 import { CommunityLikes } from "@/components/community-likes";
 

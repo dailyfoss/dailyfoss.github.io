@@ -26,9 +26,11 @@
     "documentation": "https://github.com/caronc/apprise",
     "source_code": "https://github.com/caronc/apprise",
     "logo": "/icons/apprise.webp",
-    "screenshot": "https://raw.githubusercontent.com/caronc/apprise-api/refs/heads/master/Screenshot-2.png",
     "issues": "https://github.com/caronc/apprise/issues",
-    "releases": "https://github.com/caronc/apprise/releases"
+    "releases": "https://github.com/caronc/apprise/releases",
+    "screenshots": [
+      "https://raw.githubusercontent.com/caronc/apprise-api/refs/heads/master/Screenshot-2.png"
+    ]
   },
   "features": [
     {
@@ -80,9 +82,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

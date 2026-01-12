@@ -26,9 +26,11 @@
     "documentation": "https://www.bugsink.com/docs",
     "source_code": "https://github.com/bugsink/bugsink",
     "logo": "/icons/bugsink.webp",
-    "screenshot": "/uploads/bugsink-homepage.png",
     "issues": "https://github.com/bugsink/bugsink/issues",
-    "releases": "https://github.com/bugsink/bugsink/releases"
+    "releases": "https://github.com/bugsink/bugsink/releases",
+    "screenshots": [
+      "/uploads/bugsink-homepage.png"
+    ]
   },
   "features": [
     {
@@ -112,9 +114,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

@@ -26,9 +26,11 @@
     "documentation": "https://github.com/bewcloud/bewcloud",
     "source_code": "https://github.com/bewcloud/bewcloud",
     "logo": "/icons/bewcloud.webp",
-    "screenshot": "https://bewcloud.com/images/app/04%20-%20files.png",
     "issues": "https://github.com/bewcloud/bewcloud/issues",
-    "releases": "https://github.com/bewcloud/bewcloud/releases"
+    "releases": "https://github.com/bewcloud/bewcloud/releases",
+    "screenshots": [
+      "https://bewcloud.com/images/app/04%20-%20files.png"
+    ]
   },
   "features": [
     {
@@ -84,9 +86,9 @@
     "script": true,
     "docker": true,
     "docker_compose": true,
-    "helm": true,
-    "kubernetes": true,
-    "terraform": true
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
   },
   "manifests": {},
   "default_credentials": {

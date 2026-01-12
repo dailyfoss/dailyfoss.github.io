@@ -1,0 +1,44 @@
+services:
+  anycable:
+    image: anycable/anycable-go:latest
+    container_name: anycable
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      # WebSocket server
+      ANYCABLE_HOST: 0.0.0.0
+      ANYCABLE_PORT: 8080
+
+      # gRPC connection to Rails app
+      ANYCABLE_RPC_HOST: app
+      ANYCABLE_RPC_PORT: 50051
+
+      # Redis pub/sub
+      ANYCABLE_REDIS_URL: redis://redis:6379/0
+
+      # Optional logging
+      ANYCABLE_LOG_LEVEL: info
+    depends_on:
+      - redis
+      - app
+
+  app:
+    image: your-rails-app:latest
+    container_name: rails_app
+    restart: unless-stopped
+    environment:
+      ANYCABLE_RPC_SERVER: 0.0.0.0:50051
+      REDIS_URL: redis://redis:6379/0
+    expose:
+      - "50051"
+
+  redis:
+    image: redis:7-alpine
+    container_name: anycable_redis
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+
+volumes:
+  redis_data:
