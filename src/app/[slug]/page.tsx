@@ -75,20 +75,39 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     }
   }
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || ''
-  const ogImageUrl = `${siteUrl}/og/${slug}.jpg`
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dailyfoss.github.io'
+  const ogImageUrl = `${siteUrl}/media/images/og/${slug}.png`
 
   return {
     title: `${script.name} – ${script.tagline}`,
     description: script.description,
     openGraph: {
-      title: `${script.name} – ${script.tagline}`,
-      description: script.description,
-      images: [ogImageUrl],
+      title: script.name,
+      description: script.tagline,
+      url: `${siteUrl}/${slug}`,
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: `${script.name} Preview`,
+        },
+      ],
+      type: 'website',
+      siteName: 'dailyfoss',
+      locale: 'en_US',
     },
     twitter: {
       card: 'summary_large_image',
-      images: [ogImageUrl],
+      title: script.name,
+      description: script.tagline,
+      images: [
+        {
+          url: ogImageUrl,
+          alt: `${script.name} Preview`,
+        },
+      ],
+      creator: '@dailyfoss',
     },
   }
 }
