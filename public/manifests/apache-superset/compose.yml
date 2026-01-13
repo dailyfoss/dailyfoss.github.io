@@ -1,0 +1,77 @@
+# Url: http://localhost:8088
+# Username: admin
+# Password: admin
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: superset
+      POSTGRES_USER: superset
+      POSTGRES_PASSWORD: superset
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U superset"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  superset:
+    image: apache/superset:latest
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "8088:8088"
+    environment:
+      # --- Core ---
+      SUPERSET_ENV: production
+      SUPERSET_SECRET_KEY: "dev-secret-key"
+      PYTHONUNBUFFERED: "1"
+
+      # --- Database ---
+      DATABASE_DIALECT: postgresql
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+      DATABASE_DB: superset
+      DATABASE_USER: superset
+      DATABASE_PASSWORD: superset
+
+      # --- Redis ---
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+
+      # --- Disable extras ---
+      SUPERSET_LOAD_EXAMPLES: "no"
+      ENABLE_PLAYWRIGHT: "false"
+      PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "true"
+
+    command: >
+      sh -c "
+      superset db upgrade &&
+      superset fab create-admin
+        --username admin
+        --firstname Admin
+        --lastname User
+        --email admin@superset.local
+        --password admin || true &&
+      superset init &&
+      superset run -h 0.0.0.0 -p 8088
+      "
+
+volumes:
+  db_data:

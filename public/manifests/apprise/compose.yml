@@ -1,0 +1,11 @@
+services:
+  apprise:
+    image: caronc/apprise:latest
+    container_name: apprise
+    working_dir: /apprise
+    user: "1000:1000"
+    environment:
+      LANG: C.UTF-8
+      PYTHONPATH: /apprise
+      PYTHONDONTWRITEBYTECODE: "1"
+    command: ["bash"]

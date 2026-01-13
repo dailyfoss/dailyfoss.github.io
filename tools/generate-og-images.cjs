@@ -103,9 +103,8 @@ function buildOgParams(app) {
     params.set('License', app.metadata.license);
   }
   
-  if (app.hosting_options?.self_hosted) {
-    params.set('SelfHosted', 'true');
-  }
+  // Explicitly set self-hosted status
+  params.set('SelfHosted', app.hosting_options?.self_hosted === true ? 'true' : 'false');
   
   const platform = app.platform_support || {};
   const desktop = platform.desktop || {};
@@ -120,6 +119,13 @@ function buildOgParams(app) {
   
   if (app.resources?.screenshot) {
     let screenshotUrl = app.resources.screenshot;
+    if (screenshotUrl.startsWith('/uploads/') || screenshotUrl.startsWith('/')) {
+      screenshotUrl = OG_SERVICE_URL + screenshotUrl;
+    }
+    params.set('ScreenshotUrl', screenshotUrl);
+  } else if (app.resources?.screenshots?.length > 0) {
+    // Handle screenshots array - use first screenshot
+    let screenshotUrl = app.resources.screenshots[0];
     if (screenshotUrl.startsWith('/uploads/') || screenshotUrl.startsWith('/')) {
       screenshotUrl = OG_SERVICE_URL + screenshotUrl;
     }

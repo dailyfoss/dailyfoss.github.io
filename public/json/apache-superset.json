@@ -22,8 +22,8 @@
     "github_releases_this_year": 0
   },
   "resources": {
-    "website": "https://superset.apache.org/",
-    "documentation": "https://github.com/apache/superset",
+    "website": "https://superset.apache.org",
+    "documentation": "https://superset.apache.org/docs/6.0.0/intro",
     "source_code": "https://github.com/apache/superset",
     "logo": "/icons/apache-superset.webp",
     "issues": "https://github.com/apache/superset/issues",
@@ -67,7 +67,7 @@
       "android": false,
       "ios": false
     },
-    "web_app": false,
+    "web_app": true,
     "browser_extension": false,
     "cli_only": false
   },
@@ -84,18 +84,22 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
+    "script": false,
+    "docker": false,
     "docker_compose": true,
-    "helm": false,
+    "helm": true,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "manifests": {
+    "docker_compose": "/manifests/apache-superset/compose.yml",
+    "helm": "/manifests/apache-superset/helm.yaml"
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "demo": {
+    "url": null,
+    "username": null,
+    "password": null
+  }
 }

@@ -29,7 +29,7 @@
     "issues": "https://github.com/caronc/apprise/issues",
     "releases": "https://github.com/caronc/apprise/releases",
     "screenshots": [
-      "https://raw.githubusercontent.com/caronc/apprise-api/refs/heads/master/Screenshot-2.png"
+      "/uploads/apprise-demo.png"
     ]
   },
   "features": [
@@ -55,8 +55,8 @@
   "platform_support": {
     "desktop": {
       "linux": true,
-      "windows": false,
-      "macos": false
+      "windows": true,
+      "macos": true
     },
     "mobile": {
       "android": false,
@@ -64,7 +64,7 @@
     },
     "web_app": false,
     "browser_extension": false,
-    "cli_only": false
+    "cli_only": true
   },
   "hosting_options": {
     "self_hosted": false,
@@ -79,18 +79,21 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
+    "script": false,
+    "docker": false,
     "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
-  "default_credentials": {
-    "username": null,
-    "password": null
+  "manifests": {
+    "docker_compose": "/manifests/apprise/compose.yml"
   },
   "notes": [],
-  "repository_status": null
+  "repository_status": null,
+  "demo": {
+    "url": null,
+    "username": null,
+    "password": null
+  }
 }
