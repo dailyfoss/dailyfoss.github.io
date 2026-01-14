@@ -1,0 +1,125 @@
+version: "3.9"
+
+x-logging: &x-logging
+  logging:
+    driver: json-file
+    options:
+      max-size: "10m" # Rotate logs by size
+      max-file: "5"   # Keep last 5 files
+
+services:
+  traefik:
+    image: traefik:2.11
+    container_name: appwrite-traefik
+    <<: *x-logging
+    restart: unless-stopped
+    command:
+      - --log.level=INFO
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - appwrite
+
+  appwrite:
+    image: appwrite/appwrite:latest
+    container_name: appwrite
+    <<: *x-logging
+    restart: unless-stopped
+    depends_on:
+      - mariadb
+      - redis
+    environment:
+      - _APP_ENV=production
+      - _APP_OPENSSL_KEY_V1=${_APP_OPENSSL_KEY_V1}
+      - _APP_DOMAIN=${_APP_DOMAIN}
+      - _APP_CONSOLE_DOMAIN=${_APP_CONSOLE_DOMAIN}
+      - _APP_DB_HOST=mariadb
+      - _APP_DB_PORT=3306
+      - _APP_DB_SCHEMA=${_APP_DB_SCHEMA}
+      - _APP_DB_USER=${_APP_DB_USER}
+      - _APP_DB_PASS=${_APP_DB_PASS}
+      - _APP_REDIS_HOST=redis
+      - _APP_REDIS_PORT=6379
+    volumes:
+      - appwrite-uploads:/storage/uploads
+      - appwrite-cache:/storage/cache
+      - appwrite-functions:/storage/functions
+      - appwrite-sites:/storage/sites
+      - appwrite-builds:/storage/builds
+      - appwrite-certificates:/storage/certificates
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.appwrite.rule=Host(`${_APP_DOMAIN}`)
+      - traefik.http.routers.appwrite.entrypoints=websecure
+      - traefik.http.routers.appwrite.tls=true
+      - traefik.http.services.appwrite.loadbalancer.server.port=80
+    networks:
+      - appwrite
+
+  appwrite-realtime:
+    image: appwrite/appwrite:latest
+    container_name: appwrite-realtime
+    <<: *x-logging
+    restart: unless-stopped
+    entrypoint: realtime
+    depends_on:
+      - appwrite
+    environment:
+      - _APP_ENV=production
+      - _APP_REDIS_HOST=redis
+      - _APP_REDIS_PORT=6379
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.realtime.rule=PathPrefix(`/v1/realtime`)
+      - traefik.http.routers.realtime.entrypoints=websecure
+      - traefik.http.routers.realtime.tls=true
+      - traefik.http.services.realtime.loadbalancer.server.port=80
+    networks:
+      - appwrite
+
+  mariadb:
+    image: mariadb:10.11
+    container_name: appwrite-mariadb
+    <<: *x-logging
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=${_APP_DB_ROOT_PASS}
+      - MYSQL_DATABASE=${_APP_DB_SCHEMA}
+      - MYSQL_USER=${_APP_DB_USER}
+      - MYSQL_PASSWORD=${_APP_DB_PASS}
+    volumes:
+      - appwrite-mariadb:/var/lib/mysql
+    networks:
+      - appwrite
+
+  redis:
+    image: redis:7.2-alpine
+    container_name: appwrite-redis
+    <<: *x-logging
+    restart: unless-stopped
+    command: redis-server --maxmemory 512mb --maxmemory-policy allkeys-lru
+    volumes:
+      - appwrite-redis:/data
+    networks:
+      - appwrite
+
+networks:
+  appwrite:
+    driver: bridge
+
+volumes:
+  appwrite-mariadb:
+  appwrite-redis:
+  appwrite-cache:
+  appwrite-uploads:
+  appwrite-functions:
+  appwrite-sites:
+  appwrite-builds:
+  appwrite-certificates:
