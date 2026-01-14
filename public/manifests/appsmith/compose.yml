@@ -1,0 +1,22 @@
+services:
+  appsmith:
+    image: appsmith/appsmith-ce:release
+    container_name: appsmith
+    restart: unless-stopped
+    ports:
+      - "8080:80" 
+    environment:
+      APPSMITH_ENCRYPTION_PASSWORD: ${APPSMITH_ENCRYPTION_PASSWORD}
+      APPSMITH_ENCRYPTION_SALT: ${APPSMITH_ENCRYPTION_SALT}
+      APPSMITH_SUPERVISOR_LOG_LEVEL: INFO
+    volumes:
+      - appsmith-stacks:/appsmith-stacks
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  appsmith-stacks:
+    driver: local  # Local named volume

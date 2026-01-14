@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://www.appsmith.com",
-    "documentation": "https://github.com/appsmithorg/appsmith",
+    "documentation": "https://docs.appsmith.com",
     "source_code": "https://github.com/appsmithorg/appsmith",
     "logo": "/icons/appsmith.webp",
     "issues": "https://github.com/appsmithorg/appsmith/issues",
@@ -66,7 +66,7 @@
       "android": false,
       "ios": false
     },
-    "web_app": false,
+    "web_app": true,
     "browser_extension": false,
     "cli_only": false
   },
@@ -83,14 +83,17 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
+    "script": false,
+    "docker": false,
     "docker_compose": true,
-    "helm": false,
+    "helm": true,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/appsmith/compose.yml",
+    "helm": "/manifests/appsmith/helm.yaml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

@@ -1,0 +1,4 @@
+helm repo add appsmith-ee https://helm-ee.appsmith.com
+helm repo update
+helm show values appsmith-ee/appsmith  > values.yaml
+helm install appsmith-ee appsmith-ee/appsmith -n appsmith-ee --create-namespace -f values.yaml
