@@ -23,13 +23,13 @@
   },
   "resources": {
     "website": "https://www.atheos.io/",
-    "documentation": "https://github.com/Atheos/Atheos",
+    "documentation": "https://github.com/Atheos/Atheos/blob/main/docs/installation/index.md",
     "source_code": "https://github.com/Atheos/Atheos",
     "logo": "/icons/atheos.webp",
     "issues": "https://github.com/Atheos/Atheos/issues",
     "releases": "https://github.com/Atheos/Atheos/releases",
     "screenshots": [
-      "https://www.atheos.io/assets/images/atheos.jpg"
+      "/uploads/atheos.jpg"
     ]
   },
   "features": [
@@ -66,19 +66,19 @@
       "android": false,
       "ios": false
     },
-    "web_app": false,
+    "web_app": true,
     "browser_extension": false,
     "cli_only": false
   },
   "hosting_options": {
-    "self_hosted": false,
+    "self_hosted": true,
     "managed_cloud": false,
     "saas": false
   },
   "interfaces": {
     "cli": false,
     "gui": false,
-    "web_ui": false,
+    "web_ui": true,
     "api": false,
     "tui": false
   },
@@ -90,7 +90,10 @@
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "script": "/manifests/atheos/script.sh",
+    "docker_compose": "/manifests/atheos/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
