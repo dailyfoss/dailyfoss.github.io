@@ -1,0 +1,52 @@
+# Url: http://localhost:3000
+# Username: admin@example.com
+# Password: password
+
+x-db-env: &db-env
+  POSTGRES_USER: astuto
+  POSTGRES_PASSWORD: strong_postgres_password
+  POSTGRES_DB: astuto_production
+
+services:
+  db:
+    image: postgres:14.5
+    container_name: astuto-db
+    restart: unless-stopped
+    environment:
+      <<: *db-env
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U astuto"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - astuto-net
+
+  web:
+    image: riggraz/astuto:latest
+    container_name: astuto-web
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      <<: *db-env
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+      RAILS_ENV: production
+
+      BASE_URL: https://yourdomain.com
+      SECRET_KEY_BASE: verylongrandomsecretkeyhere
+    ports:
+      - "3000:3000"
+    networks:
+      - astuto-net
+
+volumes:
+  dbdata:
+
+networks:
+  astuto-net:
+    driver: bridge

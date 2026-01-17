@@ -22,14 +22,14 @@
     "github_releases_this_year": 0
   },
   "resources": {
-    "website": "https://getastroluma.com/",
-    "documentation": "https://getastroluma.com/",
+    "website": "https://getastroluma.com",
+    "documentation": "https://getastroluma.com",
     "source_code": "https://github.com/Sanjeet990/Astroluma",
     "logo": "/icons/astroluma.webp",
     "issues": "https://github.com/Sanjeet990/Astroluma/issues",
     "releases": "https://github.com/Sanjeet990/Astroluma/releases",
     "screenshots": [
-      "https://cdn.buymeacoffee.com/uploads/project_updates/2024/12/1acc3cbc309cfaffb92a00dcf2369dac.png"
+      "/uploads/astroluma.png"
     ]
   },
   "features": [
@@ -61,31 +61,33 @@
       "android": false,
       "ios": false
     },
-    "web_app": false,
+    "web_app": true,
     "browser_extension": false,
     "cli_only": false
   },
   "hosting_options": {
-    "self_hosted": false,
+    "self_hosted": true,
     "managed_cloud": false,
     "saas": false
   },
   "interfaces": {
     "cli": false,
     "gui": false,
-    "web_ui": false,
+    "web_ui": true,
     "api": false,
     "tui": false
   },
   "deployment_methods": {
     "script": false,
-    "docker": false,
-    "docker_compose": false,
+    "docker": true,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/astroluma/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

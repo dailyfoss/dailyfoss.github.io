@@ -1,0 +1,13 @@
+services:
+  asciinema:
+    image: ghcr.io/asciinema/asciinema:latest
+    container_name: asciinema
+    stdin_open: true
+    tty: true
+    user: "${UID}:${GID}"
+    environment:
+      ASCIINEMA_CONFIG_HOME: "/run/user/${UID}/.config/asciinema"
+    volumes:
+      - ~/.config/asciinema:/run/user/${UID}/.config/asciinema:rw
+      - ./:/data:rw
+    working_dir: /data

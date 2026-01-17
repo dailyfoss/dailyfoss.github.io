@@ -1,0 +1,28 @@
+services:
+  atheos:
+    image: php:8.2-apache
+    container_name: atheos
+    restart: unless-stopped
+
+    ports:
+      - "8080:80"
+
+    environment:
+      APACHE_DOCUMENT_ROOT: /var/www/html
+
+    volumes:
+      - ./atheos:/var/www/html
+
+    command: >
+      bash -c "
+      apt update &&
+      apt install -y git unzip &&
+      docker-php-ext-install zip &&
+      a2enmod rewrite &&
+      if [ ! -f /var/www/html/config.php ]; then
+        rm -rf /var/www/html/* &&
+        git clone https://github.com/atheos/atheos.git /var/www/html &&
+        touch /var/www/html/config.php
+      fi &&
+      apache2-foreground
+      "
