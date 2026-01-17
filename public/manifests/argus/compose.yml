@@ -1,0 +1,9 @@
+services:
+  argus:
+    image: ghcr.io/release-argus/argus:latest
+    container_name: argus
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/data
+    restart: unless-stopped

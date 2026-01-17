@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://archivebox.io",
-    "documentation": "https://github.com/ArchiveBox/ArchiveBox",
+    "documentation": "https://github.com/ArchiveBox/ArchiveBox/wiki",
     "source_code": "https://github.com/ArchiveBox/ArchiveBox",
     "logo": "/icons/archivebox.webp",
     "issues": "https://github.com/ArchiveBox/ArchiveBox/issues",
@@ -66,31 +66,33 @@
       "android": false,
       "ios": false
     },
-    "web_app": false,
+    "web_app": true,
     "browser_extension": false,
     "cli_only": false
   },
   "hosting_options": {
-    "self_hosted": false,
+    "self_hosted": true,
     "managed_cloud": false,
     "saas": false
   },
   "interfaces": {
     "cli": false,
     "gui": false,
-    "web_ui": false,
+    "web_ui": true,
     "api": false,
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
+    "script": false,
+    "docker": false,
     "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/archivebox/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
