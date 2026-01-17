@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://asciinema.org",
-    "documentation": "https://github.com/asciinema/asciinema",
+    "documentation": "https://docs.asciinema.org/getting-started",
     "source_code": "https://github.com/asciinema/asciinema",
     "logo": "/icons/asciinema.webp",
     "issues": "https://github.com/asciinema/asciinema/issues",
@@ -64,7 +64,7 @@
     },
     "web_app": false,
     "browser_extension": false,
-    "cli_only": false
+    "cli_only": true
   },
   "hosting_options": {
     "self_hosted": false,
@@ -72,21 +72,23 @@
     "saas": false
   },
   "interfaces": {
-    "cli": false,
+    "cli": true,
     "gui": false,
     "web_ui": false,
     "api": false,
-    "tui": false
+    "tui": true
   },
   "deployment_methods": {
     "script": true,
-    "docker": true,
-    "docker_compose": true,
+    "docker": false,
+    "docker_compose": false,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "script": "/manifests/asciinema/script.sh"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

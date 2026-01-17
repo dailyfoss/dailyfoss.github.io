@@ -1,0 +1,15 @@
+services:
+  archivebox:
+    image: archivebox/archivebox:latest
+    container_name: archivebox
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/data
+    environment:
+      - ALLOWED_HOSTS=*
+      - CSRF_TRUSTED_ORIGINS=http://localhost:8000
+      - PUBLIC_INDEX=True
+      - PUBLIC_SNAPSHOTS=True
+      - PUBLIC_ADD_VIEW=False
+    restart: unless-stopped
