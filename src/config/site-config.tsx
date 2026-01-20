@@ -44,9 +44,10 @@ export const navbarLinks = [
 
 export const analytics = {
   plausible: {
-    domain: "dailyfoss.github.io",
+    // Use site URL from env, fallback to production domain
+    domain: process.env.NEXT_PUBLIC_SITE_URL?.replace(/^https?:\/\//, '') || "dailyfoss.github.io",
     apiUrl: process.env.NEXT_PUBLIC_PLAUSIBLE_ANALYTICS_URL,
-    sharedLinkAuth: process.env.NEXT_PUBLIC_PLAUSIBLE_SHARED_LINK_AUTH || "",
+    proxyUrl: process.env.NEXT_PUBLIC_PLAUSIBLE_PROXY_URL,
   },
 };
 

@@ -89,7 +89,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <PlausibleProvider 
-          domain="dailyfoss.github.io" 
+          domain={process.env.NEXT_PUBLIC_SITE_URL?.replace(/^https?:\/\//, '') || "null"}
           customDomain={process.env.NEXT_PUBLIC_PLAUSIBLE_ANALYTICS_URL}
           selfHosted
           trackOutboundLinks

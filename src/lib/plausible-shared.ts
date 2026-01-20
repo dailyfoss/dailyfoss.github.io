@@ -1,8 +1,8 @@
-// Plausible Client-side API (Real-time)
-// Supports both shared link and Cloudflare Worker proxy
+// Plausible Client-side API via Cloudflare Worker Proxy
+// The proxy keeps the API key secure on the server
 
-const PLAUSIBLE_API_URL = `${process.env.NEXT_PUBLIC_PLAUSIBLE_ANALYTICS_URL}/api/v1`;
-const PLAUSIBLE_SITE_ID = "dailyfoss.github.io";
+// Use site URL from env, fallback to production domain
+const PLAUSIBLE_SITE_ID = process.env.NEXT_PUBLIC_SITE_URL?.replace(/^https?:\/\//, '') || "dailyfoss.github.io";
 
 // Get proxy URL at runtime (not module load time) to work with SSR
 function getProxyUrl(): string | null {
@@ -17,69 +17,44 @@ export interface PlausibleSharedPageStats {
 }
 
 /**
- * Fetch top pages using Cloudflare Worker proxy or shared link
- * @param sharedLinkAuth - Shared link auth token (optional if using proxy)
+ * Fetch top pages using Cloudflare Worker proxy
+ * The proxy keeps the API key secure on the server
  * @param period - Time period (day, month)
  * @param limit - Number of results
  */
 export async function getTopPagesShared(
-  sharedLinkAuth: string,
   period: string = "month",
   limit: number = 30,
 ): Promise<PlausibleSharedPageStats[]> {
   try {
-    // Use Cloudflare Worker proxy if configured (most secure)
     const proxyUrl = getProxyUrl();
-    if (proxyUrl) {
-      const url = new URL(proxyUrl);
-      url.searchParams.append("period", period);
-      url.searchParams.append("limit", limit.toString());
-
-      console.log("Fetching from proxy:", url.toString());
-
-      const response = await fetch(url.toString(), {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.error("Failed to fetch from proxy:", response.status, errorText);
-        return [];
-      }
-
-      const data = await response.json();
-      console.log("Proxy response:", data);
-      return data.results || [];
-    }
-
-    // Fallback to shared link
-    if (!sharedLinkAuth) {
-      console.warn("Neither proxy nor shared link auth configured");
+    
+    if (!proxyUrl) {
+      console.error("Plausible proxy URL not configured. Set NEXT_PUBLIC_PLAUSIBLE_PROXY_URL");
       return [];
     }
 
-    const url = new URL(`${PLAUSIBLE_API_URL}/stats/breakdown`);
-    url.searchParams.append("site_id", PLAUSIBLE_SITE_ID);
+    const url = new URL(proxyUrl);
     url.searchParams.append("period", period);
-    url.searchParams.append("property", "event:page");
-    url.searchParams.append("metrics", "visitors");
     url.searchParams.append("limit", limit.toString());
 
+    console.log("Fetching from proxy:", url.toString());
+
     const response = await fetch(url.toString(), {
+      method: 'GET',
       headers: {
-        Authorization: `Bearer ${sharedLinkAuth}`,
+        'Content-Type': 'application/json',
       },
     });
 
     if (!response.ok) {
-      console.error("Failed to fetch from Plausible shared link:", response.statusText);
+      const errorText = await response.text();
+      console.error("Failed to fetch from proxy:", response.status, errorText);
       return [];
     }
 
     const data = await response.json();
+    console.log("Proxy response:", data);
     return data.results || [];
   }
   catch (error) {
@@ -95,16 +70,14 @@ const RESERVED_ROUTES = new Set([
 ]);
 
 /**
- * Get trending scripts using shared link (real-time, client-side)
- * @param sharedLinkAuth - Shared link auth token
+ * Get trending scripts using Cloudflare Worker proxy
  * @param period - Time period
  */
 export async function getTrendingScriptsShared(
-  sharedLinkAuth: string,
   period: string = "month",
 ): Promise<Record<string, number>> {
   try {
-    const topPages = await getTopPagesShared(sharedLinkAuth, period, 60);
+    const topPages = await getTopPagesShared(period, 60);
 
     // Extract view counts for script pages
     // Supports both old format (/scripts/slug) and new format (/slug)
