@@ -280,12 +280,15 @@ async function fetchRepoData(owner, repo) {
 }
 
 /**
- * Find all screenshots for a given slug in uploads directory
- * Returns an array of screenshot filenames, sorted by numeric suffix (0, 1, 2...) then alphabetically
+ * Find all screenshots for a given slug in assets repository
+ * Returns an array of screenshot URLs from GitHub, sorted by numeric suffix (0, 1, 2...) then alphabetically
  */
 async function findScreenshots(slug) {
   try {
-    const files = await fs.readdir(UPLOADS_DIR);
+    // Path to the assets repository screenshots directory
+    const ASSETS_SCREENSHOTS_DIR = '/root/dailyfoss-assets/screenshots';
+    
+    const files = await fs.readdir(ASSETS_SCREENSHOTS_DIR);
     const slugLower = slug.toLowerCase();
     
     // Look for files that start with the slug
@@ -372,7 +375,7 @@ async function updateScreenshotOnly(filePath, slug) {
     
     const screenshots = await findScreenshots(slug);
     if (screenshots.length > 0) {
-      const newScreenshotPaths = screenshots.map(s => `/uploads/${s}`);
+      const newScreenshotPaths = screenshots.map(s => `https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/${s}`);
       
       // Compare arrays to check if changed
       const oldArray = Array.isArray(oldScreenshots) ? oldScreenshots : (oldScreenshots ? [oldScreenshots] : []);
@@ -382,7 +385,7 @@ async function updateScreenshotOnly(filePath, slug) {
         json.resources.screenshots = newScreenshotPaths;
         await fs.writeFile(filePath, JSON.stringify(json, null, 2) + '\n', 'utf-8');
         
-        const oldDisplay = Array.isArray(oldScreenshot) ? oldScreenshot.join(', ') : (oldScreenshot || 'none');
+        const oldDisplay = Array.isArray(oldScreenshots) ? oldScreenshots.join(', ') : (oldScreenshots || 'none');
         const newDisplay = newScreenshotPaths.join(', ');
         console.log(`✓ Updated ${slug}.json: [${oldDisplay}] → [${newDisplay}]`);
         
@@ -471,7 +474,7 @@ async function updateJsonFile(filePath, repoData, repoUrl, slug) {
     if (UPDATE_SCREENSHOTS && !shouldExclude('screenshots')) {
       const screenshots = await findScreenshots(slug);
       if (screenshots.length > 0) {
-        const newScreenshotPaths = screenshots.map(s => `/uploads/${s}`);
+        const newScreenshotPaths = screenshots.map(s => `https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/${s}`);
         const oldArray = Array.isArray(oldScreenshots) ? oldScreenshots : (oldScreenshots ? [oldScreenshots] : []);
         if (JSON.stringify(oldArray) !== JSON.stringify(newScreenshotPaths)) {
           json.resources.screenshots = newScreenshotPaths;

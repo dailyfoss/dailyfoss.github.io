@@ -1,7 +1,7 @@
 // Plausible Client-side API (Real-time)
 // Supports both shared link and Cloudflare Worker proxy
 
-const PLAUSIBLE_API_URL = "https://plausible.mvl.biz.id/api/v1";
+const PLAUSIBLE_API_URL = `${process.env.NEXT_PUBLIC_PLAUSIBLE_ANALYTICS_URL}/api/v1`;
 const PLAUSIBLE_SITE_ID = "dailyfoss.github.io";
 
 // Get proxy URL at runtime (not module load time) to work with SSR
