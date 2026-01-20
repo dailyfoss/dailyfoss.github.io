@@ -28,7 +28,7 @@ jobs:
       - name: Check community integrations
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run check-community-integrations
+        run: npm run check-community-integrations-all
 
       - name: Check for changes
         id: git-check
