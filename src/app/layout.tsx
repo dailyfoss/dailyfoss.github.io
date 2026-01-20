@@ -89,7 +89,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <PlausibleProvider 
-          domain={process.env.NEXT_PUBLIC_SITE_URL?.replace(/^https?:\/\//, '') || "null"}
+          domain={process.env.NEXT_PUBLIC_SITE_URL?.replace(/^https?:\/\//, '') || ""}
           customDomain={process.env.NEXT_PUBLIC_PLAUSIBLE_ANALYTICS_URL}
           selfHosted
           trackOutboundLinks

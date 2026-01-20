@@ -44,8 +44,8 @@ export const navbarLinks = [
 
 export const analytics = {
   plausible: {
-    // Use site URL from env, fallback to production domain
-    domain: process.env.NEXT_PUBLIC_SITE_URL?.replace(/^https?:\/\//, '') || "dailyfoss.github.io",
+    // Domain must be set via NEXT_PUBLIC_SITE_URL environment variable
+    domain: process.env.NEXT_PUBLIC_SITE_URL?.replace(/^https?:\/\//, '') || "",
     apiUrl: process.env.NEXT_PUBLIC_PLAUSIBLE_ANALYTICS_URL,
     proxyUrl: process.env.NEXT_PUBLIC_PLAUSIBLE_PROXY_URL,
   },

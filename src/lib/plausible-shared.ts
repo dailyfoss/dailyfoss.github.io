@@ -1,8 +1,8 @@
 // Plausible Client-side API via Cloudflare Worker Proxy
 // The proxy keeps the API key secure on the server
 
-// Use site URL from env, fallback to production domain
-const PLAUSIBLE_SITE_ID = process.env.NEXT_PUBLIC_SITE_URL?.replace(/^https?:\/\//, '') || "dailyfoss.github.io";
+// Domain must be set via NEXT_PUBLIC_SITE_URL environment variable
+const PLAUSIBLE_SITE_ID = process.env.NEXT_PUBLIC_SITE_URL?.replace(/^https?:\/\//, '') || "";
 
 // Get proxy URL at runtime (not module load time) to work with SSR
 function getProxyUrl(): string | null {
