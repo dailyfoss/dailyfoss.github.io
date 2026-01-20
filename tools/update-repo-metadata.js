@@ -336,6 +336,14 @@ async function findScreenshots(slug) {
       const aNum = getNumericSuffix(a);
       const bNum = getNumericSuffix(b);
       
+      // Check if filename contains "homepage" (case insensitive)
+      const aHasHomepage = a.toLowerCase().includes('homepage');
+      const bHasHomepage = b.toLowerCase().includes('homepage');
+      
+      // Homepage files get highest priority (after exact match)
+      if (aHasHomepage && !bHasHomepage) return -1;
+      if (!aHasHomepage && bHasHomepage) return 1;
+      
       // Both have numeric suffixes (including -1 for exact match)
       if (aNum !== null && bNum !== null) {
         return aNum - bNum;
