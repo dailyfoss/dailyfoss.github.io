@@ -7,7 +7,6 @@ import Link from "next/link";
 import type { Category, Script } from "@/lib/types";
 
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { mostPopularScripts } from "@/config/site-config";
 import { Badge } from "@/components/ui/badge";
 import { JSX } from "react/jsx-runtime";
 
@@ -367,9 +366,7 @@ export function PopularScripts({ items }: { items: Category[] }) {
       .sort((a, b) => {
         const starsA = a.metadata?.github_stars || 0;
         const starsB = b.metadata?.github_stars || 0;
-        const boostA = mostPopularScripts.includes(a.slug) ? 10000 : 0;
-        const boostB = mostPopularScripts.includes(b.slug) ? 10000 : 0;
-        return (starsB + boostB) - (starsA + boostA);
+        return starsB - starsA;
       });
   }, [items]);
 
@@ -428,25 +425,4 @@ export function FeaturedScripts({ items }: { items: Category[] }) {
   );
 }
 
-export function MostViewedScripts({ items }: { items: Category[] }) {
-  const mostViewedScripts = items.reduce((acc: Script[], category) => {
-    const foundScripts = (category.scripts || []).filter(script => mostPopularScripts.includes(script.slug));
-    return acc.concat(foundScripts);
-  }, []);
 
-  if (mostViewedScripts.length === 0) return null;
-
-  return (
-    <div>
-      <div className="flex items-center gap-2 mb-4">
-        <Eye className="h-5 w-5 text-primary" />
-        <h2 className="text-lg font-bold">Most Viewed</h2>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-        {mostViewedScripts.map(script => (
-          <CompactScriptCard key={script.slug} script={script} allCategories={items} />
-        ))}
-      </div>
-    </div>
-  );
-}
