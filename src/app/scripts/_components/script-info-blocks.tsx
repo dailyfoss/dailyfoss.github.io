@@ -246,7 +246,7 @@ export function TrendingScripts({ items }: { items: Category[] }) {
         const proxyUrl = process.env.NEXT_PUBLIC_PLAUSIBLE_PROXY_URL;
         if (!proxyUrl) return;
         const { getTrendingScriptsShared } = await import("@/lib/plausible-shared");
-        const counts = await getTrendingScriptsShared("", "month");
+        const counts = await getTrendingScriptsShared("month");
         setViewCounts(counts);
       } catch (error) {
         console.error("Failed to load trending data:", error);
