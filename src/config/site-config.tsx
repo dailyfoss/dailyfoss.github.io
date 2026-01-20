@@ -42,12 +42,10 @@ export const navbarLinks = [
   mobileHidden?: boolean;
 }[];
 
-export const mostPopularScripts = ["post-pve-install", "docker", "homeassistant"];
-
 export const analytics = {
   plausible: {
     domain: "dailyfoss.github.io",
-    apiUrl: "https://plausible.mvl.biz.id",
+    apiUrl: process.env.NEXT_PUBLIC_PLAUSIBLE_ANALYTICS_URL,
     sharedLinkAuth: process.env.NEXT_PUBLIC_PLAUSIBLE_SHARED_LINK_AUTH || "",
   },
 };
@@ -56,20 +54,3 @@ export const AlertColors = {
   warning: "border-red-500/25 bg-destructive/25",
   info: "border-cyan-500/25 bg-cyan-50 dark:border-cyan-900 dark:bg-cyan-900/25",
 };
-
-export const OperatingSystems: OperatingSystem[] = [
-  {
-    name: "Debian",
-    versions: [
-      { name: "12", slug: "bookworm" },
-      { name: "13", slug: "trixie" },
-    ],
-  },
-  {
-    name: "Ubuntu",
-    versions: [
-      { name: "22.04", slug: "jammy" },
-      { name: "24.04", slug: "noble" },
-    ],
-  },
-];

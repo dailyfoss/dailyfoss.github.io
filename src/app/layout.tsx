@@ -90,7 +90,7 @@ export default function RootLayout({
       <head>
         <PlausibleProvider 
           domain="dailyfoss.github.io" 
-          customDomain="https://plausible.mvl.biz.id"
+          customDomain={process.env.NEXT_PUBLIC_PLAUSIBLE_ANALYTICS_URL}
           selfHosted
           trackOutboundLinks
           manualPageviews
