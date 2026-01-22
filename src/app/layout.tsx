@@ -12,6 +12,7 @@ import { Toaster } from "@/components/ui/sonner";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import { PlausibleTracker } from "@/components/plausible-tracker";
+import { siteConfig } from "@/config/site-config";
 import "@/styles/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -32,9 +33,9 @@ export const metadata: Metadata = {
   ],
   creator: "Daily FOSS",
   publisher: "Daily FOSS",
-  metadataBase: new URL(`https://dailyfoss.github.io/`),
+  metadataBase: new URL(siteConfig.url),
   alternates: {
-    canonical: `https://dailyfoss.github.io/`,
+    canonical: siteConfig.url,
   },
   formatDetection: {
     email: false,
@@ -45,11 +46,11 @@ export const metadata: Metadata = {
     title: "Daily FOSS",
     description:
       "Your curated platform for exploring and deploying free and open source software.",
-    url: `https://dailyfoss.github.io/`,
+    url: siteConfig.url,
     siteName: "Daily FOSS",
     images: [
       {
-        url: `https://dailyfoss.github.io/media/images/og/homepage.svg`,
+        url: `${siteConfig.url}/media/images/og/homepage.svg`,
         width: 1200,
         height: 630,
         alt: "Daily FOSS",
@@ -64,7 +65,7 @@ export const metadata: Metadata = {
     creator: "@dailyfoss",
     description:
       "Your curated platform for exploring and deploying free and open source software.",
-    images: [`https://dailyfoss.github.io/media/images/og/homepage.svg`],
+    images: [`${siteConfig.url}/media/images/og/homepage.svg`],
   },
   manifest: "/manifest.webmanifest",
   appleWebApp: {

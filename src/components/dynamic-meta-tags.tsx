@@ -2,19 +2,17 @@
 
 import { useEffect } from 'react'
 import type { Script } from '@/lib/types'
+import { siteConfig } from '@/config/site-config'
 
 interface DynamicMetaTagsProps {
   script: Script | undefined
 }
 
-const OG_SERVICE_URL = process.env.NEXT_PUBLIC_OG_SERVICE_URL
-
 export function DynamicMetaTags({ script }: DynamicMetaTagsProps) {
   useEffect(() => {
     if (!script) return
 
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL!
-    const appUrl = `${siteUrl}/${script.slug}`
+    const appUrl = `${siteConfig.url}/${script.slug}`
     
     // Use live OG service with all parameters from JSON
     const params = new URLSearchParams({
@@ -23,7 +21,7 @@ export function DynamicMetaTags({ script }: DynamicMetaTagsProps) {
       Theme: 'dark',
       Title: script.name,
       Description: script.tagline,
-      ScreenshotUrl: script.resources?.screenshots?.[0] ? `${siteUrl}${script.resources.screenshots[0]}` : '',
+      ScreenshotUrl: script.resources?.screenshots?.[0] || '',
       License: script.metadata?.license || '',
       SelfHosted: script.hosting_options?.self_hosted ? 'true' : 'false',
       Windows: script.platform_support?.desktop?.windows ? 'true' : 'false',
@@ -33,7 +31,7 @@ export function DynamicMetaTags({ script }: DynamicMetaTagsProps) {
       Android: script.platform_support?.mobile?.android ? 'true' : 'false',
       iOS: script.platform_support?.mobile?.ios ? 'true' : 'false',
     })
-    const ogImageUrl = `${OG_SERVICE_URL}/api/image?${params.toString()}`
+    const ogImageUrl = `${siteConfig.ogServiceUrl}/api/image?${params.toString()}`
 
     // Update document title
     document.title = `${script.name} - Daily FOSS`
