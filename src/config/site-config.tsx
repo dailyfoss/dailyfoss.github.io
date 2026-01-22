@@ -7,6 +7,14 @@ import type { OperatingSystem } from "@/lib/types";
 export const basePath = "";
 export const repoName = "dailyfoss";
 
+// Site URLs - all from environment variables, no hardcoded values
+export const siteConfig = {
+  url: process.env.NEXT_PUBLIC_SITE_URL!,
+  ogServiceUrl: process.env.NEXT_PUBLIC_OG_SERVICE_URL!,
+  backendApi: process.env.NEXT_PUBLIC_BACKEND_API!,
+  sponsoredApi: process.env.NEXT_PUBLIC_SPONSORED_API!,
+};
+
 export const navbarLinks = [
   {
     href: `https://github.com/dailyfoss/${repoName}`,
@@ -14,12 +22,6 @@ export const navbarLinks = [
     icon: <FaGithub className="h-4 w-4" />,
     text: "GitHub",
   },
-  // {
-  //   href: `https://discord.gg/2wvnMDgdnU`,
-  //   event: "Discord",
-  //   icon: <FaDiscord className="h-4 w-4" />,
-  //   text: "Discord",
-  // },
   // {
   //   href: `https://github.com/dailyfoss/${repoName}/blob/main/CHANGELOG.md`,
   //   event: "Changelog",

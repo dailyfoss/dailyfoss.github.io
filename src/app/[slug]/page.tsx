@@ -4,6 +4,7 @@ import fs from 'fs'
 import path from 'path'
 import type { Script } from '@/lib/types'
 import { ScriptPageClient } from './client'
+import { siteConfig } from '@/config/site-config'
 
 // Reserved routes that should not be handled by this dynamic route
 const RESERVED_ROUTES = [
@@ -75,8 +76,24 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     }
   }
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dailyfoss.github.io'
-  const ogImageUrl = `${siteUrl}/media/images/og/${slug}.png`
+  // Build OG image URL with all parameters
+  const ogParams = new URLSearchParams({
+    fileType: 'webp',
+    layoutName: 'template',
+    Theme: 'dark',
+    Title: script.name,
+    Description: script.tagline,
+    ScreenshotUrl: script.resources?.screenshots?.[0] || '',
+    License: script.metadata?.license || '',
+    SelfHosted: script.hosting_options?.self_hosted ? 'true' : 'false',
+    Windows: script.platform_support?.desktop?.windows ? 'true' : 'false',
+    MacOS: script.platform_support?.desktop?.macos ? 'true' : 'false',
+    Linux: script.platform_support?.desktop?.linux ? 'true' : 'false',
+    Web: script.platform_support?.web_app ? 'true' : 'false',
+    Android: script.platform_support?.mobile?.android ? 'true' : 'false',
+    iOS: script.platform_support?.mobile?.ios ? 'true' : 'false',
+  })
+  const ogImageUrl = `${siteConfig.ogServiceUrl}/api/image?${ogParams.toString()}`
 
   return {
     title: `${script.name} – ${script.tagline}`,
@@ -84,7 +101,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: script.name,
       description: script.tagline,
-      url: `${siteUrl}/${slug}`,
+      url: `${siteConfig.url}/${slug}`,
       images: [
         {
           url: ogImageUrl,
