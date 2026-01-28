@@ -1,0 +1,24 @@
+services:
+    server:
+        image: padloc/server
+        environment:
+            PL_DATA_BACKEND: leveldb
+            PL_DATA_LEVELDB_DIR: /data
+            PL_DATA_ATTACHMENTS_BACKEND: fs
+            PL_DATA_ATTACHMENTS_DIR: /attachments
+            PL_SERVER_CLIENT_URL: http://localhost:8080
+            PL_EMAIL_BACKEND: console
+        ports:
+            - 3000:3000
+        volumes:
+            - ./attachments:/attachments
+            - ./data:/data
+        restart: unless-stopped
+    pwa:
+        image: padloc/pwa
+        environment:
+            PL_SERVER_URL: http://localhost:3000
+            PL_PWA_URL: http://localhost:8080
+        ports:
+            - 8080:8080
+        restart: on-failure

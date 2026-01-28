@@ -1,0 +1,7 @@
+services:
+  app:
+    image: bsyed/troddit
+    container_name: troddit
+    ports:
+      - 3000:3000
+    restart: unless-stopped

@@ -1,0 +1,14 @@
+services:
+  web:
+    image: passit/passit:stable
+    command: bin/start.sh
+    ports:
+      - "8000:8080"
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@YOUR_HOST:5432/postgres
+      SECRET_KEY: change_me
+      IS_DEBUG: 'False'
+      EMAIL_URL: consolemail://
+      DEFAULT_FROM_EMAIL: "[email protected]"
+      EMAIL_CONFIRMATION_HOST: "https://passit.some-site.com"
+    restart: unless-stopped

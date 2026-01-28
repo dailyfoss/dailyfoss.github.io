@@ -1,0 +1,9 @@
+services:
+  cloudbeaver-ee:
+    image: dbeaver/cloudbeaver-ee:latest
+    container_name: cloudbeaver-ee
+    ports:
+      - 8080:8978
+    volumes:
+      - /opt/cloudbeaver/workspace
+    restart: unless-stopped

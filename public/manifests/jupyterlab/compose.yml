@@ -1,0 +1,8 @@
+services:
+  r-notebook:
+    image: quay.io/jupyter//minimal-notebook:latest
+    ports:
+      - 10000:8888
+    volumes:
+      - '"${PWD}":/home/jovyan/work'
+    restart: unless-stopped

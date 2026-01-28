@@ -1,0 +1,6 @@
+services:
+  focalboard:
+    image: mattermost/focalboard
+    ports:
+      - 80:8000
+    restart: always

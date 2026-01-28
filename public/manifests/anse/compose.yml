@@ -1,0 +1,7 @@
+services:
+  anse-demo:
+    image: ddiu8081/anse:latest
+    container_name: anse
+    ports:
+      - '3000:3000'
+    restart: always

@@ -1,0 +1,6 @@
+services:
+    eda:
+        image: 'jortilles/eda:latest'
+        ports:
+            - '80:80'
+	    restart: unless-stopped

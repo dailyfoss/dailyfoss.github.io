@@ -1,0 +1,41 @@
+services:
+	webdb:
+		image: webdb/app
+		restart: always
+		volumes:
+			- "$HOME/.webdb:/usr/src/app/static/version"
+		ports:
+			- "127.0.0.1:22071:22071"
+
+	maria:
+		image: mariadb
+		command: mysqld --default-authentication-plugin=mysql_native_password
+		ports:
+			- 3307:3306
+		environment:
+			MARIADB_ROOT_PASSWORD: notSecureChangeMe
+
+	postgre:
+		image: postgres
+		ports:
+			- 5432:5432
+		environment:
+			POSTGRES_USER: root
+			POSTGRES_PASSWORD: notSecureChangeMe
+
+	mongo:
+		image: mongo
+		ports:
+			- 27017:27017
+		environment:
+			MONGO_INITDB_ROOT_USERNAME: root
+			MONGO_INITDB_ROOT_PASSWORD: notSecureChangeMe
+
+	cockroach:
+		image: cockroachdb/cockroach
+		command: start-single-node --insecure
+		ports:
+			- 26257:26257
+		environment:
+			COCKROACH_USER: 'root'
+			COCKROACH_PASSWORD: 'notSecureChangeMe'

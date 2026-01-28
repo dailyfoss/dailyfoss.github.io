@@ -77,7 +77,7 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": false,
+    "script": true,
     "docker": false,
     "docker_compose": true,
     "helm": false,
@@ -85,8 +85,8 @@
     "terraform": false
   },
   "manifests": {
-    "script": "/manifests/adguardhome-sync/script.sh",
-    "docker_compose": "/manifests/adguardhome-sync/compose.yml"
+    "docker_compose": "/manifests/adguardhome-sync/compose.yml",
+    "script": "/manifests/adguardhome-sync/script.sh"
   },
   "notes": [],
   "repository_status": null,

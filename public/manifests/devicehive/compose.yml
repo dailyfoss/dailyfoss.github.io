@@ -1,0 +1,264 @@
+services:
+  zookeeper:
+    image: docker.io/bitnami/zookeeper:3.8
+    ports:
+      - "2181:2181"
+    restart: unless-stopped
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+    profiles:
+      - infra
+      - all
+
+  kafka:
+    image: devicehive/devicehive-kafka:${DH_TAG:-3.5.0}
+    ports:
+      - "9092:9092"
+    links:
+      - "zookeeper"
+    restart: unless-stopped
+    environment:
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CLIENT:PLAINTEXT,EXTERNAL:PLAINTEXT
+      - KAFKA_CFG_LISTENERS=CLIENT://:9092
+      - KAFKA_CFG_ADVERTISED_LISTENERS=CLIENT://kafka:9092
+      - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=CLIENT
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+      - ALLOW_PLAINTEXT_LISTENER=yes
+    healthcheck:
+      test: /bin/nc -z localhost 9092
+      interval: 2s
+      timeout: 2s
+      retries: 15
+    profiles:
+      - infra
+      - all
+
+  postgres:
+    image: postgres:14.4
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DH_POSTGRES_USERNAME:-postgres}
+      POSTGRES_PASSWORD: ${DH_POSTGRES_PASSWORD:-mysecretpassword}
+      POSTGRES_DB: ${DH_POSTGRES_DB:-postgres}
+    volumes:
+      - devicehive-db:/var/lib/postgresql/data
+    profiles:
+      - infra
+      - all
+
+  wsproxy:
+    image: devicehive/devicehive-ws-proxy:${DH_WS_PROXY_TAG:-1.1.0}
+    ports:
+      - "3000:3000"
+    links:
+      - "kafka"
+
+    depends_on:
+      kafka:
+        condition: service_healthy
+
+    restart: unless-stopped
+    environment:
+      FRANZ.KAFKA_HOSTS: ${DH_KAFKA_BOOTSTRAP_SERVERS:-kafka:9092}
+      PROXY.WEB_SOCKET_SERVER_HOST: 'wsproxy'
+      PROXY.ENABLE_PLUGIN_MANAGER: 'false'
+      PROXY.APP_LOG_LEVEL: 'debug'
+    profiles:
+      - infra
+      - all
+
+  wsproxy_external:
+    image: devicehive/devicehive-ws-proxy:${DH_WS_PROXY_TAG:-1.1.0}
+    ports:
+      - "3001:3000"
+    links:
+      - "kafka"
+      - "dh_auth"
+      - "dh_plugin"
+    restart: unless-stopped
+    environment:
+      FRANZ.KAFKA_HOSTS: ${DH_KAFKA_BOOTSTRAP_SERVERS:-kafka:9092}
+      PLUGIN_MANAGER.AUTH_SERVICE_ENDPOINT: http://dh_auth:8090/auth/rest
+      PLUGIN_MANAGER.PLUGIN_MANAGEMENT_SERVICE_ENDPOINT: http://dh_plugin:8110/plugin/rest
+      PROXY.WEB_SOCKET_SERVER_HOST: 'wsproxy_external'
+      PROXY.ENABLE_PLUGIN_MANAGER: 'true'
+    profiles:
+      - dev
+      - all
+
+  dh_plugin:
+    image: devicehive/devicehive-plugin:${DH_TAG:-3.5.0}
+    ports:
+      - "8110:8110"
+    links:
+      - "postgres"
+      - "kafka"
+      - "zookeeper"
+      - "dh_frontend"
+      - "dh_auth"
+      - "wsproxy"
+    restart: unless-stopped
+    environment:
+      DH_ZK_ADDRESS: ${DH_ZK_ADDRESS:-zookeeper}
+      DH_ZK_PORT: ${DH_ZK_PORT:-2181}
+      DH_KAFKA_BOOTSTRAP_SERVERS: ${DH_KAFKA_BOOTSTRAP_SERVERS:-kafka:9092}
+      DH_POSTGRES_ADDRESS: ${DH_POSTGRES_ADDRESS:-postgres}
+      DH_POSTGRES_PORT: ${DH_POSTGRES_PORT:-5432}
+      DH_POSTGRES_USERNAME: ${DH_POSTGRES_USERNAME:-postgres}
+      DH_POSTGRES_PASSWORD: ${DH_POSTGRES_PASSWORD:-mysecretpassword}
+      DH_POSTGRES_DB: ${DH_POSTGRES_DB:-postgres}
+      DH_RPC_CLIENT_RES_CONS_THREADS: ${DH_RPC_CLIENT_RES_CONS_THREADS:-3}
+      DH_LOG_LEVEL: ${DH_LOG_LEVEL:-INFO}
+      ROOT_LOG_LEVEL: ${ROOT_LOG_LEVEL:-WARN}
+      DH_WS_PROXY: wsproxy:3000
+      DH_PROXY_PLUGIN_CONNECT: ${DH_PROXY_PLUGIN_CONNECT:-ws://localhost/plugin/proxy}
+      DH_AUTH_URL: http://dh_auth:8090/auth/rest
+      REDIS_MASTER_HOST: ${REDIS_MASTER_HOST:-redis_master}
+      REDIS_MASTER_PORT: ${REDIS_MASTER_PORT:-6379}
+      JWT_SECRET: ${JWT_SECRET}
+      SPRING_PROFILES_ACTIVE: ${DH_PLUGIN_SPRING_PROFILES_ACTIVE:-ws-kafka-proxy}
+    profiles:
+      - front
+      - all
+
+  dh_frontend:
+    image: devicehive/devicehive-frontend:${DH_TAG:-3.5.0}
+    ports:
+      - "8080:8080"
+    links:
+      - "postgres"
+      - "kafka"
+      - "zookeeper"
+      - "dh_backend"
+      - "dh_auth"
+      - "wsproxy"
+    restart: unless-stopped
+    environment:
+      DH_ZK_ADDRESS: ${DH_ZK_ADDRESS:-zookeeper}
+      DH_ZK_PORT: ${DH_ZK_PORT:-2181}
+      DH_KAFKA_BOOTSTRAP_SERVERS: ${DH_KAFKA_BOOTSTRAP_SERVERS:-kafka:9092}
+      DH_POSTGRES_ADDRESS: ${DH_POSTGRES_ADDRESS:-postgres}
+      DH_POSTGRES_PORT: ${DH_POSTGRES_PORT:-5432}
+      DH_POSTGRES_USERNAME: ${DH_POSTGRES_USERNAME:-postgres}
+      DH_POSTGRES_PASSWORD: ${DH_POSTGRES_PASSWORD:-mysecretpassword}
+      DH_POSTGRES_DB: ${DH_POSTGRES_DB:-postgres}
+      DH_RPC_CLIENT_RES_CONS_THREADS: ${DH_RPC_CLIENT_RES_CONS_THREADS:-3}
+      DH_LOG_LEVEL: ${DH_LOG_LEVEL:-INFO}
+      DH_WS_PROXY: wsproxy:3000
+      ROOT_LOG_LEVEL: ${ROOT_LOG_LEVEL:-WARN}
+      DH_AUTH_URL: ${DH_AUTH_URL:-http://dh_auth:8090/auth/rest}
+      REDIS_MASTER_HOST: ${REDIS_MASTER_HOST:-redis_master}
+      REDIS_MASTER_PORT: ${REDIS_MASTER_PORT:-6379}
+      JWT_SECRET: ${JWT_SECRET}
+      SPRING_PROFILES_ACTIVE: ${DH_FE_SPRING_PROFILES_ACTIVE:-ws-kafka-proxy-frontend}
+    profiles:
+      - front
+      - all
+
+  dh_auth:
+    image: devicehive/devicehive-auth:${DH_TAG:-3.5.0}
+    ports:
+      - "8090:8090"
+    links:
+      - "kafka"
+      - "postgres"
+      - "wsproxy"
+      - "zookeeper"
+      - "dh_backend"
+    restart: unless-stopped
+    environment:
+      DH_ZK_ADDRESS: ${DH_ZK_ADDRESS:-zookeeper}
+      DH_ZK_PORT: ${DH_ZK_PORT:-2181}
+      DH_KAFKA_BOOTSTRAP_SERVERS: ${DH_KAFKA_BOOTSTRAP_SERVERS:-kafka:9092}
+      DH_POSTGRES_ADDRESS: ${DH_POSTGRES_ADDRESS:-postgres}
+      DH_POSTGRES_PORT: ${DH_POSTGRES_PORT:-5432}
+      DH_POSTGRES_USERNAME: ${DH_POSTGRES_USERNAME:-postgres}
+      DH_POSTGRES_PASSWORD: ${DH_POSTGRES_PASSWORD:-mysecretpassword}
+      DH_POSTGRES_DB: ${DH_POSTGRES_DB:-postgres}
+      DH_LOG_LEVEL: ${DH_LOG_LEVEL:-INFO}
+      ROOT_LOG_LEVEL: ${ROOT_LOG_LEVEL:-WARN}
+      REDIS_MASTER_HOST: ${REDIS_MASTER_HOST:-redis_master}
+      REDIS_MASTER_PORT: ${REDIS_MASTER_PORT:-6379}
+      JWT_SECRET: ${JWT_SECRET}
+      DH_WS_PROXY: wsproxy:3000
+      SPRING_PROFILES_ACTIVE: ${DH_AUTH_SPRING_PROFILES_ACTIVE:-ws-kafka-proxy}
+    profiles:
+      - front
+      - all
+
+  redis_master:
+    image: bitnami/redis:7.0
+    ports:
+      - "6379:6379"
+    volumes:
+      - devicehive-redis:/bitnami
+    environment:
+      - REDIS_REPLICATION_MODE=master
+      - ALLOW_EMPTY_PASSWORD=yes
+    profiles:
+      - infra
+      - all
+
+  redis_replica:
+    image: bitnami/redis:7.0
+    ports:
+      - "7001:6379"
+    depends_on:
+      - redis_master
+    environment:
+      - REDIS_REPLICATION_MODE=slave
+      - REDIS_MASTER_HOST=redis_master
+      - REDIS_MASTER_PORT_NUMBER=6379
+      - ALLOW_EMPTY_PASSWORD=yes
+    profiles:
+      - infra
+      - all
+
+  dh_backend:
+    image: devicehive/devicehive-backend:${DH_TAG:-3.5.0}
+    links:
+      - "kafka"
+      - "postgres"
+      - "zookeeper"
+      - "wsproxy"
+      - "redis_master"
+    restart: unless-stopped
+    environment:
+      DH_ZK_ADDRESS: ${DH_ZK_ADDRESS:-zookeeper}
+      DH_ZK_PORT: ${DH_ZK_PORT:-2181}
+      DH_KAFKA_BOOTSTRAP_SERVERS: ${DH_KAFKA_BOOTSTRAP_SERVERS:-kafka:9092}
+      DH_POSTGRES_ADDRESS: ${DH_POSTGRES_ADDRESS:-postgres}
+      DH_POSTGRES_PORT: ${DH_POSTGRES_PORT:-5432}
+      DH_POSTGRES_USERNAME: ${DH_POSTGRES_USERNAME:-postgres}
+      DH_POSTGRES_PASSWORD: ${DH_POSTGRES_PASSWORD:-mysecretpassword}
+      DH_POSTGRES_DB: ${DH_POSTGRES_DB:-postgres}
+      DH_RPC_SERVER_REQ_CONS_THREADS: ${DH_RPC_SERVER_REQ_CONS_THREADS:-3}
+      DH_RPC_SERVER_WORKER_THREADS: ${DH_RPC_SERVER_WORKER_THREADS:-3}
+      DH_LOG_LEVEL: ${DH_LOG_LEVEL:-INFO}
+      DH_WS_PROXY: wsproxy:3000
+      REDIS_MASTER_HOST: ${REDIS_MASTER_HOST:-redis_master}
+      REDIS_MASTER_PORT: ${REDIS_MASTER_PORT:-6379}
+      ROOT_LOG_LEVEL: ${ROOT_LOG_LEVEL:-INFO}
+      SPRING_PROFILES_ACTIVE: ${DH_BE_SPRING_PROFILES_ACTIVE:-ws-kafka-proxy-backend}
+    profiles:
+      - backend
+      - all
+
+  dh_proxy:
+    image: devicehive/devicehive-proxy:${DH_PROXY_TAG:-3.5.0}
+    links:
+      - "dh_auth"
+      - "dh_frontend"
+      - "dh_plugin"
+    ports:
+      - "80:8080"
+    restart: unless-stopped
+    profiles:
+      - dev
+      - all
+
+volumes:
+  devicehive-db:
+  devicehive-redis:

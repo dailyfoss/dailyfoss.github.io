@@ -1,0 +1,31 @@
+services:
+  sveltekasten-web:
+    build:
+      context: .
+      tags:
+        - web:latest
+      target: web
+    restart: unless-stopped
+    networks:
+      - briefkasten
+    ports:
+      - ${PORT:-3000}:${PORT:-3000}
+    env_file: ./apps/web/.env
+  sveltekasten-backend:
+    build:
+      context: .
+      tags:
+        - backend:latest
+      target: backend
+    networks:
+      - briefkasten
+    ports:
+      - ${PORT:-8000}:${PORT:-8000}
+    restart: unless-stopped
+    env_file: apps/backend/.env
+
+volumes:
+  database:
+
+networks:
+  briefkasten:

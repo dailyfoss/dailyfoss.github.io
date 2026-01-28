@@ -1,0 +1,9 @@
+services:
+  ulogger:
+    container_name: ulogger
+    image: bfabiszewski/ulogger
+    environment:
+      - ULOGGER_LANG=pl
+    ports:
+      - 8080:80
+    restart: unless-stopped

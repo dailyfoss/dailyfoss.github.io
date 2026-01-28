@@ -1,0 +1,21 @@
+services:
+  phpbb:
+    container_name: phpbb
+    image: bitnami/phpbb:latest
+    ports:
+      - 8080:8080
+      - 8443:8443
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - PHPBB_DATABASE_USER=bn_phpbb
+      - PHPBB_DATABASE_PASSWORD=bitnami
+      - PHPBB_DATABASE_NAME=bitnami_phpbb
+    networks:
+      - phpbb-network
+    volumes:
+      - ./phpbb_data:/bitnami/phpbb
+    restart: always
+
+networks:
+  phpbb-network:
+    external: true

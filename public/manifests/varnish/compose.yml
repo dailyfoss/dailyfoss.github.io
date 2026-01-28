@@ -1,0 +1,19 @@
+services:
+  nginx:
+    image: wodby/nginx
+    environment:
+      NGINX_BACKEND_HOST: php
+      NGINX_VHOST_PRESET: php
+    depends_on:
+    - php
+
+  php:
+    image: wodby/php
+
+  varnish:
+    image: $IMAGE
+    depends_on:
+    - nginx
+    environment:
+      VARNISH_IMPORT_MODULES: cookie,header,digest
+      VARNISH_BACKEND_HOST: nginx

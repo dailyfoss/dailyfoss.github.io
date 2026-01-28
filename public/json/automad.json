@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://automad.org",
-    "documentation": "https://github.com/marcantondahmen/automad",
+    "documentation": "https://automad.org/getting-started",
     "source_code": "https://github.com/marcantondahmen/automad",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/automad.webp",
     "issues": "https://github.com/marcantondahmen/automad/issues",
@@ -84,14 +84,16 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
+    "script": false,
+    "docker": false,
     "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/automad/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
@@ -102,7 +104,7 @@
     }
   },
   "demo": {
-    "url": null,
+    "url": "https://try.automad.org",
     "username": null,
     "password": null
   }

@@ -1,0 +1,6 @@
+services:
+  sosse:
+    image: biolds/sosse:latest
+    ports:
+      - 8006:80
+    restart: unless-stopped

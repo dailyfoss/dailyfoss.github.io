@@ -1,0 +1,32 @@
+services:
+  seafile:
+    image: gronis/seafile
+    container_name: seafile
+    restart: unless-stopped
+    depends_on:
+      - seafile-db
+    links:
+      - seafile-db
+    volumes:
+      - ./seafile-container-data:/seafile:rw
+    ports:
+      - 8000:8000
+      - 8082:8082
+    environment:
+      - SEAFILE_NAME=Seafile
+      - SEAFILE_ADDRESS=seafile.example.com
+      - [email protected]
+      - SEAFILE_ADMIN_PW=SuperSecretPassword
+      - MYSQL_SERVER=seafile-db
+      - MYSQL_USER=seafile
+      - MYSQL_USER_PASSWORD=SuperSecretDatabasePassword
+      - MYSQL_ROOT_PASSWORD=EvenMoreSuperSecretDatabasePassword
+
+  seafile-db:
+    image: mariadb:latest
+    container_name: seafile-db
+    restart: unless-stopped
+    volumes:
+      - ./seafile-db-data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=EvenMoreSuperSecretDatabasePassword

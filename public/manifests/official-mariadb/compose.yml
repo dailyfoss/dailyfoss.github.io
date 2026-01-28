@@ -1,0 +1,7 @@
+services:
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: example
+    # (this is just an example, not intended to be a production configuration)

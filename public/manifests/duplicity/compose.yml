@@ -1,0 +1,19 @@
+services:
+  duplicacy-web:
+    container_name: duplicacy-web
+    hostname: myhost # pls adjust
+    image: saspus/duplicacy-web:mini
+    environment:
+      - USR_ID=1000 # user account id on the system
+      - GRP_ID=1000 # group id on the system
+      - TZ=Europe/Berlin
+      - DUPLICACY_WEB_VERSION=latest
+    ports:
+      - "3875:3875/tcp"
+    volumes:
+      - ${DOCKER_VOLUME_STORAGE:-/mnt/docker-volumes}/duplicacy-web/config:/config
+      - ${DOCKER_VOLUME_STORAGE:-/mnt/docker-volumes}/duplicacy-web/logs:/logs
+      - ${DOCKER_VOLUME_STORAGE:-/mnt/docker-volumes}/duplicacy-web/cache:/cache
+      - /path/to/my/data/dir1:/data/dir1:ro # 1st path to your data for backup
+      - /path/to/my/data/dir2:/data/dir2:ro # 2nd path to your data for backup
+    restart: unless-stopped

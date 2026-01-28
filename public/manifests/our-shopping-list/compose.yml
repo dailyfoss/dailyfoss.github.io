@@ -1,0 +1,27 @@
+services:
+  app:
+    image: ourshoppinglist/our-shopping-list:latest
+    restart: always
+    ports:
+      - '8080:8080'
+    environment:
+      # Default values below (See README for more)
+      VUE_APP_I18N_LOCALE: en
+      VUE_APP_I18N_FALLBACK_LOCALE: en
+      VUE_APP_I18N_FORCE_LOCALE: 0
+      VUE_APP_SINGLEBOARD_MODE: 0
+    # You may want to use a .env file instead
+    #env_file:
+    #  - .env
+    #volumes:
+    #  - ./robots.txt:/app/robots.txt:ro   # See README
+    depends_on:
+      - mongodb
+
+  mongodb:
+    # *Caution*: Before 2024-06-11 the version used was mongo:4. You *cannot* upgrade directly to mongo:7.
+    # Use the automated script update-mongo7.sh to upgrade your stack to mongo:5, mongo:6 then mongo:7
+    # Refer to README.md for more information
+    image: mongo:7
+    volumes:
+      - ./dbdata:/data/db

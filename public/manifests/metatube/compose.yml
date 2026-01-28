@@ -1,0 +1,14 @@
+services:
+    metatube:
+        container_name: metatube
+        restart: always
+        image: jvt038/metatube:latest
+        ports:
+            - '5000:5000'
+        environment:
+            - PORT=5000
+            - HOST=0.0.0.0
+        volumes:
+            - '/downloads:/downloads:rw'
+            - '/metatube/database:/database:rw'
+            - '/metatube/migrations:/config/migrations:rw'

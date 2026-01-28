@@ -1,0 +1,9 @@
+services:
+    picprose:
+        container_name: picprose
+        image: hausen1012/picprose
+        ports:
+            - '3000:3000'
+        env_file:
+            - .env
+        restart: unless-stopped

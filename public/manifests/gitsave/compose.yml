@@ -1,0 +1,12 @@
+services:
+  gitsave:
+    image: timwitzdam/gitsave:latest
+    container_name: GitSave
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./gitsave:/app/data
+      - ./backups:/app/backups
+    environment:
+      - JWT_SECRET=${JWT_SECRET:?error}

@@ -1,0 +1,49 @@
+services:
+  db:
+    image: docker.io/postgres:15-alpine
+    healthcheck:
+      test: ['CMD', 'pg_isready', '-U', 'postgres']
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    networks:
+      - internal_network
+    restart: always
+    environment:
+      POSTGRES_DB: takahe
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: insecure_password
+    ports:
+      - "5433:5432"
+
+  web:
+    : *takahe-common
+    healthcheck:
+      test: ["CMD", "nc", "-z", "-v", "localhost", "8000"]
+      interval: 20s
+      timeout: 60s
+      start_period: 15s
+    ports:
+      - "8000:8000"
+    depends_on:
+      setup:
+        condition: service_completed_successfully
+
+  stator:
+    : *takahe-common
+    command: ["/takahe/manage.py", "runstator"]
+    depends_on:
+      setup:
+        condition: service_completed_successfully
+
+  setup:
+    : *takahe-common
+    restart: "no"
+    command: >
+      bash -c "/takahe/manage.py migrate && /takahe/manage.py collectstatic --noinput"
+
+networks:
+  internal_network:
+  external_network:
+
+volumes:
+  dbdata:

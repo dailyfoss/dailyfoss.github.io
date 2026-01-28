@@ -1,0 +1,17 @@
+services:
+  goaway:
+    image: pommee/goaway:latest
+    container_name: goaway
+    volumes:
+      - ./goaway_data:/home/appuser
+    environment:
+      - DNS_PORT=${DNS_PORT:-53}
+      - WEBSITE_PORT=${WEBSITE_PORT:-8080}
+    ports:
+      - "${DNS_PORT:-53}:${DNS_PORT:-53}/udp"
+      - "${DNS_PORT:-53}:${DNS_PORT:-53}/tcp"
+      - "${WEBSITE_PORT:-8080}:${WEBSITE_PORT:-8080}/tcp"
+    cap_add:
+      - NET_BIND_SERVICE
+      - NET_RAW
+    restart: unless-stopped

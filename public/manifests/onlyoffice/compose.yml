@@ -1,0 +1,13 @@
+services:
+  documentserver:
+    image: onlyoffice/documentserver
+    ports:
+      - 80:80
+    volumes:
+      - /app/onlyoffice/DocumentServer/logs:/var/log/onlyoffice
+      - /app/onlyoffice/DocumentServer/data:/var/www/onlyoffice/Data
+      - /app/onlyoffice/DocumentServer/lib:/var/lib/onlyoffice
+      - /app/onlyoffice/DocumentServer/rabbitmq:/var/lib/rabbitmq
+      - /app/onlyoffice/DocumentServer/redis:/var/lib/redis
+      - /app/onlyoffice/DocumentServer/db:/var/lib/postgresql
+    restart: unless-stopped

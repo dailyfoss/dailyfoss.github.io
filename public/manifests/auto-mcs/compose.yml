@@ -1,0 +1,26 @@
+services:
+  auto-mcs:
+    container_name: auto-mcs
+    image: macarooniman/auto-mcs:latest
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+
+    environment:
+      # Web/TTY interface port (change if perlu)
+      WEB_PORT: "8080"
+
+      # Ubah kredensial default!
+      WEB_USERNAME: "admin"
+      WEB_PASSWORD: "changeMeStrongPassword"
+
+    ports:
+      - "8080:8080"   # Access web terminal UI
+      - "7001:7001"   # Telepath remote API
+      - "25565:25565" # Default Minecraft server port (expose jika jalankan server)
+
+    volumes:
+      - auto-mcs-data:/root/.auto-mcs
+
+volumes:
+  auto-mcs-data:

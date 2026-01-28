@@ -1,0 +1,28 @@
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/error.log:/etc/nginx/error_log.log
+      - ./nginx/cache/:/etc/nginx/cache
+      - /etc/letsencrypt/:/etc/letsencrypt/
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+
+  pigallery2:
+    image: bpatrik/pigallery2:latest
+    container_name: pigallery2
+    environment:
+      - NODE_ENV=production # set to 'debug' for full debug logging
+      # - NODE_OPTIONS=--enable-source-maps # enable source map support on the backend for development
+    volumes:
+      - "./pigallery2/config:/app/data/config" # CHANGE ME
+      - "./db-data:/app/data/db"
+      - "./pigallery2/images:/app/data/images:ro" # CHANGE ME, ':ro' means read-only
+      - "./pigallery2/tmp:/app/data/tmp" # CHANGE ME
+    expose:
+      - "80"
+    restart: always

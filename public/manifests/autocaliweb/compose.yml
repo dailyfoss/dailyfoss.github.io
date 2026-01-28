@@ -1,0 +1,17 @@
+services:
+  autocaliweb:
+    image: gelbphoenix/autocaliweb:latest
+    container_name: autocaliweb
+    restart: unless-stopped
+    ports:
+      - "8083:8083"
+    environment:
+      - TZ=Etc/UTC # Change to your specific timezone (e.g. Europe/Berlin, America/Denver)
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /path/to/config:/config
+      - /path/to/book/ingest:/acw-book-ingest
+      - /path/to/library:/calibre-library
+    stop_signal: SIGINT
+    stop_grace_period: 15s

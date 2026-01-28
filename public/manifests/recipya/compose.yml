@@ -1,0 +1,11 @@
+services:
+  recipya:
+    image: reaper99/recipya:nightly
+    container_name: recipya
+    ports:
+      - 8085:8078
+    volumes:
+      - ./recipya-data:/root/.config/Recipya
+    environment:
+      - RECIPYA_SERVER_PORT=8078
+    restart: unless-stopped

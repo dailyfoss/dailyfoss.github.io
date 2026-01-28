@@ -1,0 +1,13 @@
+services:
+  ihatemoney:
+    image: ihatemoney/ihatemoney:latest
+    container_name: ihatemoney
+    environment:
+      - PORT=8000
+      - PUID=0
+      - PGID=0
+    volumes:
+      - :/database
+    ports:
+      - 8000:8000
+    restart: unless-stopped

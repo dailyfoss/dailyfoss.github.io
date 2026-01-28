@@ -1,0 +1,175 @@
+services:
+  postgres:
+    image: postgres:15
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: authportaldb
+      POSTGRES_USER: authportal
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set-in-.env}
+      # reuse same flag as app
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      TZ: ${TZ:-UTC}
+    command:
+      - sh
+      - -c
+      - |
+        set -e
+        case "${LOG_LEVEL:-INFO}" in
+          DEBUG|debug)
+            EXTRA="-c log_min_messages=debug1 -c log_connections=on -c log_disconnections=on -c log_destination=stderr"
+            ;;
+          INFO|info)
+            EXTRA="-c log_min_messages=info -c log_destination=stderr"
+            ;;
+          WARN|warn|WARNING|warning)
+            EXTRA="-c log_min_messages=warning -c log_destination=stderr"
+            ;;
+          ERROR|error)
+            EXTRA="-c log_min_messages=error -c log_destination=stderr"
+            ;;
+          *)
+            EXTRA="-c log_min_messages=warning -c log_destination=stderr"
+            ;;
+        esac
+        # IMPORTANT: call the official entrypoint so initdb still runs on first boot
+        exec docker-entrypoint.sh postgres $EXTRA
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [authnet]
+
+  auth-portal:
+    image: modomofn/auth-portal:v2.0.3
+    ports:
+      - "8089:8080"
+    environment:
+      # App
+      APP_BASE_URL: ${APP_BASE_URL:-http://localhost:8089}
+      APP_TIMEZONE: ${APP_TIMEZONE:-UTC}
+      TZ: ${TZ:-UTC}
+      TRUSTED_PROXY_CIDRS: ${TRUSTED_PROXY_CIDRS:-}
+      SESSION_SECRET: ${SESSION_SECRET:?set-in-.env}
+      SESSION_COOKIE_DOMAIN: ${SESSION_COOKIE_DOMAIN:?set-in-.env}
+      DATA_KEY: ${DATA_KEY:?set-in-.env}
+      LOGIN_EXTRA_LINK_URL: ${LOGIN_EXTRA_LINK_URL:-}
+      LOGIN_EXTRA_LINK_TEXT: ${LOGIN_EXTRA_LINK_TEXT:-}
+      UNAUTH_REQUEST_EMAIL: ${UNAUTH_REQUEST_EMAIL:-}
+      UNAUTH_REQUEST_SUBJECT: ${UNAUTH_REQUEST_SUBJECT:-}
+      FORCE_SECURE_COOKIE: ${FORCE_SECURE_COOKIE:-0}
+      FORCE_HSTS: ${FORCE_HSTS:-0}
+      MEDIA_SERVER: ${MEDIA_SERVER:-plex}
+      MFA_ENABLE: ${MFA_ENABLE:-1}
+      MFA_ENFORCE: ${MFA_ENFORCE:-0}
+      MFA_ISSUER: ${MFA_ISSUER:-AuthPortal}
+      OIDC_SIGNING_KEY_PATH: ${OIDC_SIGNING_KEY_PATH:-}
+      OIDC_SIGNING_KEY: ${OIDC_SIGNING_KEY:-}
+      OIDC_ISSUER: ${OIDC_ISSUER:-http://localhost:8089}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+
+      # Admin Config
+      ADMIN_BOOTSTRAP_USERS: ${ADMIN_BOOTSTRAP_USERS:?set-in-.env}
+
+      # DB
+      DATABASE_URL: postgres://authportal:${POSTGRES_PASSWORD:?set-in-.env}@postgres:5432/authportaldb?sslmode=disable
+
+      # Plex
+      PLEX_OWNER_TOKEN: ${PLEX_OWNER_TOKEN:-}
+      PLEX_SERVER_MACHINE_ID: ${PLEX_SERVER_MACHINE_ID:-}
+      PLEX_SERVER_NAME: ${PLEX_SERVER_NAME:-}
+      
+      # Jellyfin
+      JELLYFIN_SERVER_URL: ${JELLYFIN_SERVER_URL:-http://localhost:8096}
+      JELLYFIN_API_KEY: ${JELLYFIN_API_KEY:-}
+      JELLYFIN_APP_NAME: ${JELLYFIN_APP_NAME:-AuthPortal}
+      JELLYFIN_APP_VERSION: ${JELLYFIN_APP_VERSION:-2.0.3}
+
+      # Emby
+      EMBY_SERVER_URL: ${EMBY_SERVER_URL:-http://localhost:8096}
+      EMBY_APP_NAME: ${EMBY_APP_NAME:-AuthPortal}
+      EMBY_APP_VERSION: ${EMBY_APP_VERSION:-2.0.3}
+      EMBY_API_KEY: ${EMBY_API_KEY:-}
+      EMBY_OWNER_USERNAME: ${EMBY_OWNER_USERNAME:-}
+      EMBY_OWNER_ID: ${EMBY_OWNER_ID:-}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- --header='Host: 127.0.0.1' http://127.0.0.1:8080/healthz >/dev/null || exit 1"]
+      interval: 30s
+      timeout: 3s
+      start_period: 20s
+      retries: 3
+    networks: [authnet]
+
+  openldap:
+    image: osixia/openldap:1.5.0
+    profiles: ["ldap"]
+    environment:
+      LDAP_ORGANISATION: AuthPortal
+      LDAP_DOMAIN: authportal.local
+      LDAP_ADMIN_PASSWORD: ${LDAP_ADMIN_PASSWORD:?set-in-.env}
+      TZ: ${TZ:-UTC}
+    # Uncomment if you need external LDAP access from host:
+    # ports:
+    #   - "389:389"
+    #   - "636:636"
+    volumes:
+      - ldap_data:/var/lib/ldap
+      - ldap_config:/etc/ldap/slapd.d
+      # Seed OU/users if desired:
+      # - ./ldap-seed:/container/service/slapd/assets/config/bootstrap/ldif/custom:ro
+    restart: unless-stopped
+    healthcheck:
+      # Use service DNS name inside the network, not localhost
+      test: ["CMD-SHELL", "ldapsearch -x -H ldap://openldap -D 'cn=admin,dc=authportal,dc=local' -w \"$LDAP_ADMIN_PASSWORD\" -b 'dc=authportal,dc=local' -s base dn >/dev/null 2>&1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [authnet]
+
+  ldap-sync:
+    image: modomofn/ldap-sync:latest
+    profiles: ["ldap"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+      openldap:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://authportal:${POSTGRES_PASSWORD:?set-in-.env}@postgres:5432/authportaldb?sslmode=disable
+      LDAP_HOST: ldap://openldap:389
+      LDAP_ADMIN_DN: cn=admin,dc=authportal,dc=local
+      LDAP_ADMIN_PASSWORD: ${LDAP_ADMIN_PASSWORD:?set-in-.env}
+      BASE_DN: ou=users,dc=authportal,dc=local
+      # LDAP_STARTTLS: "true"   # enable if your server supports StartTLS
+      TZ: ${TZ:-UTC}
+    restart: "no"
+    networks: [authnet]
+
+  phpldapadmin:
+    image: osixia/phpldapadmin:0.9.0
+    profiles: ["ldap"]
+    environment:
+      PHPLDAPADMIN_LDAP_HOSTS: openldap
+      PHPLDAPADMIN_HTTPS: "false"
+      TZ: ${TZ:-UTC}
+    ports:
+      - "8087:80"
+    depends_on:
+      openldap:
+        condition: service_healthy
+    restart: unless-stopped
+    networks: [authnet]
+
+volumes:
+  pgdata:
+  ldap_data:
+  ldap_config:
+
+networks:
+  authnet:

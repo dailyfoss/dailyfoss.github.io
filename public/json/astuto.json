@@ -84,15 +84,14 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
+    "script": false,
+    "docker": false,
     "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
   "manifests": {
-    "script": "/manifests/astuto/script.sh",
     "docker_compose": "/manifests/astuto/compose.yml"
   },
   "notes": [],

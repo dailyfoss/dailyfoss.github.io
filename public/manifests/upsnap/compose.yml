@@ -1,0 +1,28 @@
+services:
+  upsnap:
+    container_name: upsnap
+    image: ghcr.io/seriousm4x/upsnap:4 # images are also available on docker hub: seriousm4x/upsnap:4
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/pb_data
+    # # To use a non-root user, create the mountpoint first (mkdir data) so that it has the right permission.
+    # user: 1000:1000
+    # environment:
+    #   - TZ=Europe/Berlin # Set container timezone for cron schedules
+    #   - UPSNAP_INTERVAL=@every 10s # Sets the interval in which the devices are pinged
+    #   - UPSNAP_SCAN_RANGE=192.168.1.0/24 # Scan range is used for device discovery on local network
+    #   - UPSNAP_SCAN_TIMEOUT=500ms # Scan timeout is nmap's --host-timeout value to wait for devices (https://nmap.org/book/man-performance.html)
+    #   - UPSNAP_PING_PRIVILEGED=true # Set to false if you don't have root user permissions
+    #   - UPSNAP_WEBSITE_TITLE=Custom name # Custom website title
+    # # dns is used for name resolution during network scan
+    # dns:
+    #   - 192.18.0.1
+    #   - 192.18.0.2
+    # # you can change the listen ip:port inside the container like this:
+    # entrypoint: /bin/sh -c "./upsnap serve --http 0.0.0.0:5000"
+    # healthcheck:
+    #   test: curl -fs "http://localhost:5000/api/health" || exit 1
+    #   interval: 10s
+    # # or install custom packages for shutdown
+    # entrypoint: /bin/sh -c "apk update && apk add --no-cache  && rm -rf /var/cache/apk/* && ./upsnap serve --http 0.0.0.0:8090"

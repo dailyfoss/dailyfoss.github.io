@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://www.bazarr.media",
-    "documentation": "https://github.com/morpheus65535/bazarr",
+    "documentation": "https://wiki.bazarr.media",
     "source_code": "https://github.com/morpheus65535/bazarr",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/bazarr.webp",
     "issues": "https://github.com/morpheus65535/bazarr/issues",
@@ -59,9 +59,9 @@
   ],
   "platform_support": {
     "desktop": {
-      "linux": false,
-      "windows": false,
-      "macos": false
+      "linux": true,
+      "windows": true,
+      "macos": true
     },
     "mobile": {
       "android": false,
@@ -84,14 +84,16 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
+    "script": false,
+    "docker": false,
     "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/bazarr/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

@@ -1,0 +1,88 @@
+services:
+  app:
+    restart: always
+    image: "solidtime/solidtime:${SOLIDTIME_IMAGE_TAG:-latest}"
+    user: "1000:1000"
+    ports:
+      - '${FORWARD_APP_PORT:-8000}:8000'
+    networks:
+      - internal
+    volumes:
+      - "app-storage:/var/www/html/storage"
+      - "./logs:/var/www/html/storage/logs"
+      - "./app-storage:/var/www/html/storage/app"
+    environment:
+      CONTAINER_MODE: http
+    healthcheck:
+      test: [ "CMD-SHELL", "curl --fail http://localhost:8000/health-check/up || exit 1" ]
+    env_file:
+      - laravel.env
+    depends_on:
+      - database
+  scheduler:
+    restart: always
+    image: "solidtime/solidtime:${SOLIDTIME_IMAGE_TAG:-latest}"
+    user: "1000:1000"
+    networks:
+      - internal
+    volumes:
+      - "app-storage:/var/www/html/storage"
+      - "./logs:/var/www/html/storage/logs"
+      - "./app-storage:/var/www/html/storage/app"
+    environment:
+      CONTAINER_MODE: scheduler
+    healthcheck:
+      test: [ "CMD-SHELL", "supervisorctl status scheduler:scheduler_00" ]
+    env_file:
+      - laravel.env
+    depends_on:
+      - database
+  queue:
+    restart: always
+    image: "solidtime/solidtime:${SOLIDTIME_IMAGE_TAG:-latest}"
+    user: "1000:1000"
+    networks:
+      - internal
+    volumes:
+      - "app-storage:/var/www/html/storage"
+      - "./logs:/var/www/html/storage/logs"
+      - "./app-storage:/var/www/html/storage/app"
+    environment:
+      CONTAINER_MODE: worker
+      WORKER_COMMAND: "php /var/www/html/artisan queue:work"
+    healthcheck:
+      test: [ "CMD-SHELL", "supervisorctl status worker:worker_00" ]
+    env_file:
+      - laravel.env
+    depends_on:
+      - database
+  database:
+    restart: always
+    image: 'postgres:15'
+#    ports:
+#      - '${FORWARD_DB_PORT:-5432}:5432'
+    environment:
+      PGPASSWORD: '${DB_PASSWORD:-secret}'
+      POSTGRES_DB: '${DB_DATABASE}'
+      POSTGRES_USER: '${DB_USERNAME}'
+      POSTGRES_PASSWORD: '${DB_PASSWORD:-secret}'
+    volumes:
+      - 'database-storage:/var/lib/postgresql/data'
+    networks:
+      - internal
+    healthcheck:
+      test:
+        - CMD
+        - pg_isready
+        - '-q'
+        - '-d'
+        - '${DB_DATABASE}'
+        - '-U'
+        - '${DB_USERNAME}'
+      retries: 3
+      timeout: 5s
+networks:
+  internal:
+volumes:
+  database-storage:
+  app-storage:

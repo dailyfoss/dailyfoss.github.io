@@ -1,0 +1,27 @@
+services:
+  timemachine:
+    container_name: timemachine
+    image: mbentley/timemachine:smb
+    network_mode: "host"
+    environment:
+      - TM_USERNAME=timemachine
+      - TM_GROUPNAME=timemachine
+      - PASSWORD=timemachine
+      - TM_UID=1000
+      - TM_GID=1000
+      - SET_PERMISSIONS=false
+      - VOLUME_SIZE_LIMIT=0
+    ports:
+      - "137:137/udp"
+      - "138:138/udp"
+      - "139:139"
+      - "445:445"
+    volumes:
+      - /path/to/your/timemachine/volume:/opt/timemachine
+    tmpfs:
+      - /run/samba
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
+    restart: unless-stopped

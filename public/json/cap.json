@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "http://capjs.js.org/",
-    "documentation": "https://github.com/tiagozip/cap",
+    "documentation": "https://capjs.js.org/guide",
     "source_code": "https://github.com/tiagozip/cap",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/cap.webp",
     "issues": "https://github.com/tiagozip/cap/issues",
@@ -92,14 +92,16 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
+    "script": false,
+    "docker": false,
     "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/cap/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

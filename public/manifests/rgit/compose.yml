@@ -1,0 +1,8 @@
+services:
+  rgit:
+    image: ghcr.io/w4/rgit:main
+    volumes:
+      - /path/to/my-repos:/git
+    ports:
+      - 3333:8000
+    restart: unless-stopped

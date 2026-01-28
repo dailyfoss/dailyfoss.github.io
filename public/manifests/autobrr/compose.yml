@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+  autobrr:
+    image: ghcr.io/autobrr/autobrr:latest
+    container_name: autobrr
+    depends_on:
+      - postgres
+    volumes:
+      - ./config:/config
+    ports:
+      - "7474:7474"
+    environment:
+      AUTOBRR__HOST: 0.0.0.0
+      AUTOBRR__PORT: 7474
+
+      AUTOBRR__DATABASE_TYPE: postgres
+      AUTOBRR__POSTGRES_HOST: postgres
+      AUTOBRR__POSTGRES_PORT: 5432
+      AUTOBRR__POSTGRES_DATABASE: autobrr
+      AUTOBRR__POSTGRES_USER: autobrr
+      AUTOBRR__POSTGRES_PASSWORD: postgres
+
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: autobrr-postgres
+    environment:
+      POSTGRES_USER: autobrr
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: autobrr
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U autobrr -d autobrr"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+volumes:
+  postgres:

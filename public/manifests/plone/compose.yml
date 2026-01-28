@@ -1,0 +1,10 @@
+services:
+  plone-backend:
+    image: plone/plone-backend:6.0
+    container_name: plone6-backend
+    environment:
+      - SITE=Plone
+      - CORS_ALLOW_ORIGIN=*
+    ports:
+      - 8080:8080
+    restart: always

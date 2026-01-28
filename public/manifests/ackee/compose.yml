@@ -1,52 +1,19 @@
 services:
   ackee:
-    image: electerious/ackee:3.5.1
     container_name: ackee
-    restart: unless-stopped
+    image: electerious/ackee
     ports:
       - "3000:3000"
+    environment:
+      - WAIT_HOSTS=mongo:27017
+      - ACKEE_MONGODB=mongodb://mongo:27017/ackee
     env_file:
       - .env
-    environment:
-      ACKEE_MONGODB: mongodb://mongo:27017/ackee
     depends_on:
-      mongo:
-        condition: service_healthy
-    networks:
-      - ackee_net
-    read_only: true
-    security_opt:
-      - no-new-privileges:true
-    tmpfs:
-      - /tmp
-    deploy:
-      resources:
-        limits:
-          cpus: "0.50"
-          memory: 512M
-
+      - mongo
+    restart: always
   mongo:
-    image: mongo:6.0
-    container_name: ackee-mongo
-    restart: unless-stopped
+    container_name: mongo
+    image: mongo
     volumes:
-      - mongo_data:/data/db
-    networks:
-      - ackee_net
-    healthcheck:
-      test: ["CMD", "mongosh", "--eval", "db.runCommand('ping').ok"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-    deploy:
-      resources:
-        limits:
-          cpus: "0.50"
-          memory: 512M
-
-volumes:
-  mongo_data:
-
-networks:
-  ackee_net:
-    driver: bridge
+      - ./data:/data/db

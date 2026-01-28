@@ -1,0 +1,9 @@
+services:
+  bepasty:
+    image: asmaps/bepasty
+    volumes:
+      - ./bepasty:/srv/bepasty
+    ports:
+      - 5000:5000
+    container_name: bepasty
+    restart: always

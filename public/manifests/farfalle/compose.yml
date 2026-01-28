@@ -1,0 +1,107 @@
+services:
+  backend:
+    depends_on:
+      - db
+      - searxng
+    build:
+      context: .
+      dockerfile: ./src/backend/Dockerfile
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - SEARCH_PROVIDER=${SEARCH_PROVIDER:-searxng}
+      - SEARXNG_BASE_URL=${SEARXNG_BASE_URL:-http://searxng:8080}
+
+      - TAVILY_API_KEY=${TAVILY_API_KEY}
+      - SERPER_API_KEY=${SERPER_API_KEY}
+      - BING_API_KEY=${BING_API_KEY}
+
+      - OLLAMA_API_BASE=${OLLAMA_API_BASE:-http://host.docker.internal:11434}
+
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - GROQ_API_KEY=${GROQ_API_KEY}
+
+      - AZURE_DEPLOYMENT_NAME=${AZURE_DEPLOYMENT_NAME}
+      - AZURE_API_KEY=${AZURE_API_KEY}
+      - AZURE_API_BASE=${AZURE_API_BASE}
+      - AZURE_API_VERSION=${AZURE_API_VERSION}
+
+      - OPENAI_MODE=${OPENAI_MODE}
+
+      - CUSTOM_MODEL=${CUSTOM_MODEL}
+
+      - DATABASE_URL=${DATABASE_URL:-postgresql+psycopg2://postgres:password@db:5432/postgres}
+      - DB_ENABLED=${DB_ENABLED:-True}
+
+      - RATE_LIMIT_ENABLED=${RATE_LIMIT_ENABLED:-False}
+      - REDIS_URL=${REDIS_URL}
+
+      - ENABLE_LOCAL_MODELS=${ENABLE_LOCAL_MODELS:-True}
+
+    entrypoint: >
+      /bin/sh -c "
+        cd /workspace/src/backend &&
+        alembic upgrade head &&
+        uvicorn main:app --host 0.0.0.0 --port 8000
+      "
+    develop:
+      watch:
+        - action: sync
+          path: ./src/backend
+          target: /workspace/src/backend
+    networks:
+      - farfalle-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  frontend:
+    depends_on:
+      - backend
+    build:
+      context: .
+      dockerfile: ./src/frontend/Dockerfile
+      args:
+        - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL:-http://localhost:8000}
+        - NEXT_PUBLIC_LOCAL_MODE_ENABLED=${NEXT_PUBLIC_LOCAL_MODE_ENABLED:-true}
+        - NEXT_PUBLIC_PRO_MODE_ENABLED=${NEXT_PUBLIC_PRO_MODE_ENABLED:-true}
+    restart: always
+    ports:
+      - "3000:3000"
+    develop:
+      watch:
+        - action: sync
+          path: ./src/frontend
+          target: /app
+          ignore:
+            - node_modules/
+    networks:
+      - farfalle-network
+
+  searxng:
+    image: docker.io/searxng/searxng:latest
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./searxng:/etc/searxng:rw
+    networks:
+      - farfalle-network
+
+  db:
+    image: postgres:15.2-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-password}
+      - POSTGRES_DB=${POSTGRES_DB:-postgres}
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db_volume:/var/lib/postgresql/data
+    networks:
+      - farfalle-network
+
+networks:
+  farfalle-network:
+    name: farfalle-network

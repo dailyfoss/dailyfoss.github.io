@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://casdoor.org",
-    "documentation": "https://github.com/casdoor/casdoor",
+    "documentation": "https://www.casdoor.org/docs/overview",
     "source_code": "https://github.com/casdoor/casdoor",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/casdoor.webp",
     "issues": "https://github.com/casdoor/casdoor/issues",
@@ -93,18 +93,20 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
+    "script": false,
+    "docker": false,
     "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/casdoor/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://demo.casdoor.com",
     "username": null,
     "password": null
   }

@@ -1,0 +1,53 @@
+services:
+  notifo_mongo:
+    image: mongo:5
+    volumes:
+      - /etc/notifo/mongo/db:/data/db
+    networks:
+      - internal
+    restart: unless-stopped
+
+  notifo_notifo:
+    image: "squidex/notifo:1"
+    environment:
+      - URLS__BASEURL=https://${NOTIFO_DOMAIN}
+      - STORAGE__MONGODB__CONNECTIONSTRING=mongodb://notifo_mongo
+      - IDENTITY__GOOGLECLIENT=${NOTIFO_GOOGLECLIENT}
+      - IDENTITY__GOOGLESECRET=${NOTIFO_GOOGLESECRET}
+      - IDENTITY__GITHUBCLIENT=${NOTIFO_GITHUBCLIENT}
+      - IDENTITY__GITHUBSECRET=${NOTIFO_GITHUBSECRET}
+      - IDENTITY__MICROSOFTCLIENT=${NOTIFO_MICROSOFTCLIENT}
+      - IDENTITY__MICROSOFTSECRET=${NOTIFO_MICROSOFTSECRET}
+      - ASPNETCORE_URLS=http://+:5000
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/healthz"]
+      start_period: 60s
+    depends_on:
+      - notifo_mongo
+    volumes:
+      - /etc/notifo/assets:/app/Assets
+    networks:
+      - internal
+    restart: unless-stopped
+
+  notifo_proxy:
+    image: squidex/caddy-proxy:2.7.6
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - SITE_ADDRESS=${NOTIFO_DOMAIN}
+      - SITE_SERVER="notifo_notifo:5000"
+    # - SITE_SETTINGS="tls internal"
+    volumes:
+      - /etc/notifo/caddy/data:/data
+      - /etc/notifo/caddy/config:/config
+    depends_on:
+      - notifo_notifo
+    networks:
+      - internal
+    restart: unless-stopped
+
+networks:
+  internal:
+    driver: bridge

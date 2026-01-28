@@ -1,0 +1,14 @@
+services:
+  mysql-backup:
+
+    image: dsteinkopf/backup-all-mysql:latest
+    environment:
+      - BACKUP_INTERVAL=20000
+      - BACKUP_FIRSTDELAY=3600
+    links:
+      - mysql
+    restart: always
+    volumes:
+      - /opt/dockervolumes/wordpress/mysql-backup:/var/dbdumps
+      - /etc/localtime:/etc/localtime
+      - /etc/timezone:/etc/timezone

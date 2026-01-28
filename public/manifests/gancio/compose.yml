@@ -1,0 +1,41 @@
+services:
+  db:
+    image: postgres:15
+    container_name: postgres
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - POSTGRES_USER=gancio
+      - POSTGRES_DB=gancio
+      - POSTGRES_PASSWORD=gancio
+      - PGDATA=/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "sh -c 'pg_isready -U gancio -d gancio'"]
+      interval: 2s
+      timeout: 5s
+      retries: 10
+    restart: always
+    ports:
+        - 5432:5432
+  gancio:
+    restart: always
+    image: cisti/gancio
+    container_name: gancio
+    environment:
+      - PATH=$PATH:/home/node/.yarn/bin
+      - GANCIO_DATA=/home/node/data
+      - NODE_ENV=production
+      - GANCIO_DB_DIALECT=postgres
+      - GANCIO_DB_HOST=db
+      - GANCIO_DB_PORT=5432
+      - GANCIO_DB_DATABASE=gancio
+      - GANCIO_DB_USERNAME=gancio
+      - GANCIO_DB_PASSWORD=gancio
+    volumes:
+      - ./data:/home/node/data
+    ports:
+      - "127.0.0.1:13120:13120"
+    depends_on:
+      db:
+        condition: service_healthy

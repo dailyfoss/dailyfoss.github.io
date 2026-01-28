@@ -1,0 +1,8 @@
+services:
+  fava:
+    image: yegle/fava
+    volumes:
+      - $PWD:/bean
+    environment:
+      - BEANCOUNT_FILE=/bean/example.bean
+    restart: unless-stopped

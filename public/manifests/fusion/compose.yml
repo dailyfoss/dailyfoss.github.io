@@ -1,0 +1,10 @@
+services:
+    fusion:
+        image: rook1e404/fusion
+        environment:
+            - PASSWORD=123456
+        volumes:
+            - ./data:/data
+        ports:
+            - '8080:8080'
+        restart: always

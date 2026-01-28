@@ -1,0 +1,26 @@
+services:
+  exbin:
+    restart: always
+    image: m1dnight/exbin:latest
+    volumes:
+      - ./rel/overlays/config.exs:/app/prod/config.exs
+    ports:
+      - 5000:5000
+      - 9999:9999
+    networks:
+      - internal
+    depends_on:
+      - db
+
+  db:
+    restart: always
+    image: postgres
+    volumes:
+      - ./.data/:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=exbin_dev
+      - TZ=Europe/Brussels
+      - PGTZ=Europe/Brussels
+    networks:
+      - internal

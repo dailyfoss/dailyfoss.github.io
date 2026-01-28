@@ -1,0 +1,13 @@
+services:
+    mirotalk:
+        image: mirotalk/p2p:latest
+        container_name: mirotalk
+        hostname: mirotalk
+        volumes:
+            - .env:/src/.env:ro
+            # These volumes are not mandatory, uncomment if you want to use it
+            # - ./app/:/src/app/:ro
+            # - ./public/:/src/public/:ro
+        restart: unless-stopped
+        ports:
+            - '${PORT}:${PORT}'

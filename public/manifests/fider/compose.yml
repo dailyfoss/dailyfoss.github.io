@@ -1,0 +1,45 @@
+services:
+  db:
+    image: postgres:12
+    volumes:
+      - /var/fider/pg_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: fider
+      POSTGRES_PASSWORD: s0m3g00dp4ssw0rd
+    restart: always
+  app:
+    image: getfider/fider:stable
+    ports:
+      - "80:3000"
+    environment:
+      # Public Host Name
+      BASE_URL: http://localhost
+
+      # Connection string to the PostgreSQL database
+      DATABASE_URL: postgres://fider:s0m3g00dp4ssw0rd@db:5432/fider?sslmode=disable
+
+      # Generate a secure secret, for example using https://jwtsecret.com
+      JWT_SECRET: VERY_STRONG_SECRET_SHOULD_BE_USED_HERE
+
+      # From which account e-mails will be sent
+      EMAIL_NOREPLY: [email protected]
+
+      ###
+      # EMAIL
+      # Either EMAIL_MAILGUN_* or EMAIL_SMTP_* or EMAIL_AWSSES_* is required
+      ###
+
+      # EMAIL_MAILGUN_API: key-yourkeygoeshere
+      # EMAIL_MAILGUN_DOMAIN: yourdomain.com
+      # EMAIL_MAILGUN_REGION: US
+
+      # EMAIL_SMTP_HOST: smtp.yourdomain.com
+      # EMAIL_SMTP_PORT: 587
+      # EMAIL_SMTP_USERNAME: [email protected]
+      # EMAIL_SMTP_PASSWORD: s0m3p4ssw0rd
+      # EMAIL_SMTP_ENABLE_STARTTLS: 'true'
+
+      # EMAIL_AWSSES_REGION: us-east-1
+      # EMAIL_AWSSES_ACCESS_KEY_ID: youraccesskeygoeshere
+      # EMAIL_AWSSES_SECRET_ACCESS_KEY: yoursecretkeygoeshere
+      restart: always

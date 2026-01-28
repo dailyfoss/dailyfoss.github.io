@@ -41,6 +41,7 @@ const __dirname = path.dirname(__filename);
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const JSON_DIR = path.join(__dirname, '../public/json');
 const UPLOADS_DIR = path.join(__dirname, '../public/uploads');
+const MANIFESTS_DIR = path.join(__dirname, '../public/manifests');
 const BATCH_SIZE = 10; // Process 10 at a time for better progress visibility
 
 // Parse command line arguments
@@ -48,6 +49,7 @@ let LIMIT = null;
 let SPECIFIC_FILE = null;
 let EXCLUDE_FIELDS = [];
 let UPDATE_SCREENSHOTS = false;
+let UPDATE_MANIFESTS = false;
 let LIST_FILE = null;
 let SPECIFIC_LIST = [];
 
@@ -69,6 +71,8 @@ for (let i = 2; i < process.argv.length; i++) {
     }
   } else if (arg === '--screenshots') {
     UPDATE_SCREENSHOTS = true;
+  } else if (arg === '--manifests') {
+    UPDATE_MANIFESTS = true;
   } else if (!LIMIT && !SPECIFIC_FILE) {
     // First non-flag argument
     const parsedNum = parseInt(arg);
@@ -110,14 +114,17 @@ async function loadListFile() {
   }
 }
 
-// Determine if we're in screenshot-only mode (no GitHub metadata updates)
+// Determine if we're in screenshot-only mode or manifest-only mode (no GitHub metadata updates)
 const SCREENSHOT_ONLY_MODE = UPDATE_SCREENSHOTS && !GITHUB_TOKEN;
+const MANIFEST_ONLY_MODE = UPDATE_MANIFESTS && !GITHUB_TOKEN;
+const NO_GITHUB_MODE = SCREENSHOT_ONLY_MODE || MANIFEST_ONLY_MODE;
 
 // Only require GitHub token if we need to fetch GitHub metadata
-if (!GITHUB_TOKEN && !SCREENSHOT_ONLY_MODE) {
+if (!GITHUB_TOKEN && !NO_GITHUB_MODE) {
   console.error('ERROR: GITHUB_TOKEN environment variable is required for GitHub metadata updates');
   console.error('Usage: GITHUB_TOKEN=xxx node tools/update-repo-metadata.js [options]');
   console.error('Note: For screenshot-only updates, use: node tools/update-repo-metadata.js --screenshots');
+  console.error('Note: For manifest-only updates, use: node tools/update-repo-metadata.js --manifests');
   process.exit(1);
 }
 
@@ -365,6 +372,137 @@ async function findScreenshots(slug) {
 }
 
 /**
+ * Check which manifest files exist for a given app
+ * Returns an object with boolean flags for each deployment method
+ */
+async function checkManifestFiles(appName) {
+  const manifestDir = path.join(MANIFESTS_DIR, appName);
+  
+  const deploymentMethods = {
+    script: false,
+    docker: false,
+    docker_compose: false,
+    helm: false,
+    kubernetes: false,
+    terraform: false
+  };
+  
+  const manifestPaths = {};
+  
+  try {
+    // Check if manifest directory exists
+    await fs.access(manifestDir);
+    
+    // Read all files in the manifest directory
+    const files = await fs.readdir(manifestDir);
+    
+    // Check for each file type
+    for (const file of files) {
+      const fileLower = file.toLowerCase();
+      
+      // Script files
+      if (fileLower === 'script.sh' || fileLower.endsWith('.sh')) {
+        deploymentMethods.script = true;
+        manifestPaths.script = `/manifests/${appName}/${file}`;
+      }
+      
+      // Dockerfile
+      if (fileLower === 'dockerfile') {
+        deploymentMethods.docker = true;
+        manifestPaths.docker = `/manifests/${appName}/${file}`;
+      }
+      
+      // Docker Compose files
+      if (fileLower === 'compose.yml' || fileLower === 'docker-compose.yml' || fileLower === 'compose.yaml' || fileLower === 'docker-compose.yaml') {
+        deploymentMethods.docker_compose = true;
+        manifestPaths.docker_compose = `/manifests/${appName}/${file}`;
+      }
+      
+      // Helm files (look for Chart.yaml or values.yaml)
+      if (fileLower === 'chart.yaml' || fileLower === 'chart.yml' || fileLower === 'values.yaml' || fileLower === 'values.yml') {
+        deploymentMethods.helm = true;
+        if (!manifestPaths.helm) {
+          manifestPaths.helm = `/manifests/${appName}/${file}`;
+        }
+      }
+      
+      // Kubernetes files
+      if (fileLower.includes('kubernetes') || fileLower.includes('k8s') || fileLower.endsWith('-deployment.yaml') || fileLower.endsWith('-deployment.yml')) {
+        deploymentMethods.kubernetes = true;
+        if (!manifestPaths.kubernetes) {
+          manifestPaths.kubernetes = `/manifests/${appName}/${file}`;
+        }
+      }
+      
+      // Terraform files
+      if (fileLower.endsWith('.tf') || fileLower === 'main.tf' || fileLower === 'variables.tf') {
+        deploymentMethods.terraform = true;
+        if (!manifestPaths.terraform) {
+          manifestPaths.terraform = `/manifests/${appName}/${file}`;
+        }
+      }
+    }
+  } catch (error) {
+    // Directory doesn't exist or can't be read - all methods remain false
+  }
+  
+  return { deploymentMethods, manifestPaths };
+}
+
+/**
+ * Update manifests in JSON file based on available manifest files
+ */
+async function updateManifestsInJson(filePath, appName) {
+  try {
+    const content = await fs.readFile(filePath, 'utf-8');
+    const json = JSON.parse(content);
+    
+    // Get manifest file information
+    const { deploymentMethods, manifestPaths } = await checkManifestFiles(appName);
+    
+    // Store old values for comparison
+    const oldDeploymentMethods = JSON.stringify(json.deployment_methods);
+    const oldManifests = JSON.stringify(json.manifests);
+    
+    // Update deployment_methods
+    json.deployment_methods = deploymentMethods;
+    
+    // Update manifests
+    json.manifests = manifestPaths;
+    
+    // Check if anything changed
+    const hasChanged = oldDeploymentMethods !== JSON.stringify(deploymentMethods) || 
+                       oldManifests !== JSON.stringify(manifestPaths);
+    
+    if (hasChanged) {
+      await fs.writeFile(filePath, JSON.stringify(json, null, 2) + '\n', 'utf-8');
+      
+      const methodsEnabled = Object.entries(deploymentMethods)
+        .filter(([_, enabled]) => enabled)
+        .map(([method, _]) => method)
+        .join(', ') || 'none';
+      
+      console.log(`✓ Updated ${appName}.json: deployment_methods=[${methodsEnabled}], manifests=${Object.keys(manifestPaths).length} files`);
+      
+      changeLog.push({
+        repository: json.name,
+        manifestUpdated: true,
+        deploymentMethods: methodsEnabled,
+        manifestCount: Object.keys(manifestPaths).length
+      });
+      
+      return { updated: true, noChange: false };
+    }
+    
+    // No change needed
+    return { updated: false, noChange: true };
+  } catch (error) {
+    console.error(`✗ Failed to update manifests for ${appName}.json:`, error.message);
+    return { updated: false, noChange: false, error: true };
+  }
+}
+
+/**
  * Check if a field should be excluded
  */
 function shouldExclude(field) {
@@ -415,6 +553,13 @@ async function updateScreenshotOnly(filePath, slug) {
     console.error(`✗ Failed to update ${slug}.json:`, error.message);
     return { updated: false, noChange: false, error: true };
   }
+}
+
+/**
+ * Update a single JSON file with manifest only (no GitHub data)
+ */
+async function updateManifestOnly(filePath, slug) {
+  return await updateManifestsInJson(filePath, slug);
 }
 
 /**
@@ -491,6 +636,30 @@ async function updateJsonFile(filePath, repoData, repoUrl, slug) {
       }
     }
 
+    // Update manifests if --manifests flag is set
+    let manifestUpdated = false;
+    let manifestMethods = '';
+    let manifestCount = 0;
+    if (UPDATE_MANIFESTS && !shouldExclude('manifests')) {
+      const { deploymentMethods, manifestPaths } = await checkManifestFiles(slug);
+      
+      const oldDeploymentMethods = JSON.stringify(json.deployment_methods);
+      const oldManifests = JSON.stringify(json.manifests);
+      
+      json.deployment_methods = deploymentMethods;
+      json.manifests = manifestPaths;
+      
+      if (oldDeploymentMethods !== JSON.stringify(deploymentMethods) || 
+          oldManifests !== JSON.stringify(manifestPaths)) {
+        manifestUpdated = true;
+        manifestMethods = Object.entries(deploymentMethods)
+          .filter(([_, enabled]) => enabled)
+          .map(([method, _]) => method)
+          .join(', ') || 'none';
+        manifestCount = Object.keys(manifestPaths).length;
+      }
+    }
+
     await fs.writeFile(filePath, JSON.stringify(json, null, 2) + '\n', 'utf-8');
 
     // Track changes
@@ -504,6 +673,9 @@ async function updateJsonFile(filePath, repoData, repoUrl, slug) {
       versionChanged: oldVersion !== repoData.version,
       licenseChanged: oldLicense !== repoData.license,
       screenshotUpdated: screenshotUpdated,
+      manifestUpdated: manifestUpdated,
+      deploymentMethods: manifestMethods,
+      manifestCount: manifestCount,
       link: repoUrl
     };
 
@@ -521,6 +693,18 @@ async function updateJsonFile(filePath, repoData, repoUrl, slug) {
 async function processBatchScreenshotsOnly(files) {
   const promises = files.map(async ({ filePath, slug }) => {
     const updated = await updateScreenshotOnly(filePath, slug);
+    return { success: updated, file: filePath, skipped: false };
+  });
+
+  return Promise.all(promises);
+}
+
+/**
+ * Process files in parallel batches (manifest-only mode)
+ */
+async function processBatchManifestsOnly(files) {
+  const promises = files.map(async ({ filePath, slug }) => {
+    const updated = await updateManifestOnly(filePath, slug);
     return { success: updated, file: filePath, skipped: false };
   });
 
@@ -632,8 +816,8 @@ function generateSummaryContent(results) {
       output += '|------------|-----------|-----------|------------|-------------|-------------|------|\n';
       
       for (const change of sortedChanges) {
-        const diffStr = change.starDiff > 0 ? `+${change.starDiff}` : change.starDiff.toString();
-        output += `| ${change.repository} | ${change.oldStars} | ${change.newStars} | ${diffStr} | ${change.oldVersion} | ${change.newVersion} | [Link](${change.link}) |\n`;
+        const diffStr = change.starDiff > 0 ? `+${change.starDiff}` : (change.starDiff || 0).toString();
+        output += `| ${change.repository || 'N/A'} | ${change.oldStars || 0} | ${change.newStars || 0} | ${diffStr} | ${change.oldVersion || 'N/A'} | ${change.newVersion || 'N/A'} | [Link](${change.link || '#'}) |\n`;
       }
     }
   }
@@ -718,10 +902,10 @@ function generateSummaryTable(results) {
       const sortedChanges = [...changeLog].sort((a, b) => Math.abs(b.starDiff || 0) - Math.abs(a.starDiff || 0));
 
       for (const change of sortedChanges) {
-        const diffStr = change.starDiff > 0 ? `+${change.starDiff}` : change.starDiff.toString();
+        const diffStr = change.starDiff > 0 ? `+${change.starDiff}` : (change.starDiff || 0).toString();
         
         console.log(
-          `${change.repository.padEnd(25)} | ${change.oldStars.toString().padStart(10)} | ${change.newStars.toString().padStart(10)} | ${diffStr.padStart(10)} | ${change.oldVersion.padEnd(15)} | ${change.newVersion.padEnd(15)}`
+          `${(change.repository || 'N/A').padEnd(25)} | ${(change.oldStars || 0).toString().padStart(10)} | ${(change.newStars || 0).toString().padStart(10)} | ${diffStr.padStart(10)} | ${(change.oldVersion || 'N/A').padEnd(15)} | ${(change.newVersion || 'N/A').padEnd(15)}`
         );
       }
       console.log('-'.repeat(120));
@@ -733,9 +917,9 @@ function generateSummaryTable(results) {
       console.log('|------------|-----------|-----------|------------|-------------|-------------|------|');
       
       for (const change of sortedChanges) {
-        const diffStr = change.starDiff > 0 ? `+${change.starDiff}` : change.starDiff.toString();
+        const diffStr = change.starDiff > 0 ? `+${change.starDiff}` : (change.starDiff || 0).toString();
         console.log(
-          `| ${change.repository} | ${change.oldStars} | ${change.newStars} | ${diffStr} | ${change.oldVersion} | ${change.newVersion} | [Link](${change.link}) |`
+          `| ${change.repository || 'N/A'} | ${change.oldStars || 0} | ${change.newStars || 0} | ${diffStr} | ${change.oldVersion || 'N/A'} | ${change.newVersion || 'N/A'} | [Link](${change.link || '#'}) |`
         );
       }
       
@@ -761,6 +945,10 @@ async function main() {
   
   if (UPDATE_SCREENSHOTS) {
     console.log('Screenshot update mode enabled\n');
+  }
+  
+  if (UPDATE_MANIFESTS) {
+    console.log('Manifest update mode enabled\n');
   }
 
   // If specific file is provided, only process that file
@@ -794,6 +982,27 @@ async function main() {
           }
         } else {
           console.log(`\nNo screenshot changes for ${SPECIFIC_FILE}`);
+        }
+        
+        return;
+      }
+      
+      // Manifest-only mode (no GitHub API needed)
+      if (MANIFEST_ONLY_MODE) {
+        console.log(`Updating manifests for ${slug}...`);
+        const updated = await updateManifestOnly(filePath, slug);
+        
+        if (updated.updated) {
+          console.log(`\n✓ Successfully updated ${SPECIFIC_FILE}`);
+          
+          if (changeLog.length > 0) {
+            const change = changeLog[0];
+            console.log(`\nChanges:`);
+            console.log(`  Deployment Methods: ${change.deploymentMethods}`);
+            console.log(`  Manifest Files: ${change.manifestCount}`);
+          }
+        } else {
+          console.log(`\nNo manifest changes for ${SPECIFIC_FILE}`);
         }
         
         return;
@@ -874,6 +1083,12 @@ async function main() {
           filePath,
           slug
         });
+      } else if (MANIFEST_ONLY_MODE) {
+        // In manifest-only mode, process all files (no GitHub API needed)
+        filesToProcess.push({
+          filePath,
+          slug
+        });
       } else if (json.resources?.source_code && json.resources.source_code.includes('github.com')) {
         // Normal mode: only process files with GitHub URLs
         filesToProcess.push({
@@ -901,7 +1116,8 @@ async function main() {
   const limitedFiles = filesToProcess.slice(0, totalToProcess);
 
   const listInfo = SPECIFIC_LIST.length > 0 ? ` (from list: ${LIST_FILE})` : '';
-  console.log(`Processing ${totalToProcess} ${SCREENSHOT_ONLY_MODE ? 'files for screenshots' : 'repositories'}${LIMIT ? ` (limited to ${LIMIT})` : ''}${listInfo}\n`);
+  const modeInfo = SCREENSHOT_ONLY_MODE ? 'files for screenshots' : (MANIFEST_ONLY_MODE ? 'files for manifests' : 'repositories');
+  console.log(`Processing ${totalToProcess} ${modeInfo}${LIMIT ? ` (limited to ${LIMIT})` : ''}${listInfo}\n`);
 
   // Process in batches
   const results = [];
@@ -910,18 +1126,23 @@ async function main() {
   for (let i = 0; i < limitedFiles.length; i += BATCH_SIZE) {
     const batch = limitedFiles.slice(i, i + BATCH_SIZE);
     
-    // Use screenshot-only batch processing if in that mode
-    const batchResults = SCREENSHOT_ONLY_MODE
-      ? await processBatchScreenshotsOnly(batch)
-      : await processBatch(batch, i, limitedFiles.length);
+    // Use appropriate batch processing based on mode
+    let batchResults;
+    if (SCREENSHOT_ONLY_MODE) {
+      batchResults = await processBatchScreenshotsOnly(batch);
+    } else if (MANIFEST_ONLY_MODE) {
+      batchResults = await processBatchManifestsOnly(batch);
+    } else {
+      batchResults = await processBatch(batch, i, limitedFiles.length);
+    }
     
     results.push(...batchResults);
     
     updatedCount += batchResults.filter(r => r.success).length;
     printProgress(Math.min(i + BATCH_SIZE, limitedFiles.length), limitedFiles.length, updatedCount);
 
-    // Rate limit delay between batches (not needed for screenshot-only mode)
-    if (i + BATCH_SIZE < limitedFiles.length && !SCREENSHOT_ONLY_MODE) {
+    // Rate limit delay between batches (not needed for screenshot-only or manifest-only mode)
+    if (i + BATCH_SIZE < limitedFiles.length && !NO_GITHUB_MODE) {
       await new Promise(resolve => setTimeout(resolve, 1000));
     }
   }

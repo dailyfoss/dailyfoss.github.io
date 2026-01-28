@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "EE License",
     "version": "2.0.12",
     "date_app_added": "2025-11-23",
     "date_last_released": "2026-01-26",
@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://www.bugsink.com/",
-    "documentation": "https://www.bugsink.com/docs",
+    "documentation": "https://www.bugsink.com/docs  ",
     "source_code": "https://github.com/bugsink/bugsink",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/bugsink.webp",
     "issues": "https://github.com/bugsink/bugsink/issues",
@@ -111,14 +111,16 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
+    "script": false,
+    "docker": false,
     "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/bugsink/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

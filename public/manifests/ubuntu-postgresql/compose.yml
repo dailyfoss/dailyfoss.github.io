@@ -1,0 +1,7 @@
+services:
+  db:
+    image: ubuntu/postgres:14-22.04_beta
+    restart: always
+    environment:
+      POSTGRES_ROOT_PASSWORD: example
+    # (this is just an example, not intended to be a production configuration)

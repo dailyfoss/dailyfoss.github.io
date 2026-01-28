@@ -1,0 +1,6 @@
+services:
+  tagspaces:
+    image: tagspaces/tagspaces-lite-web:5.4.4
+    ports:
+      - 5000:80
+    restart: unless-stopped

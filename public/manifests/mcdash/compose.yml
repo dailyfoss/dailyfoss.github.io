@@ -1,0 +1,10 @@
+services:
+  mcdash:
+    image: germannewsmaker/mcdash
+    container_name: MCDash
+    restart: unless-stopped
+    volumes:
+      - ./mcdash:/app/data
+    ports:
+      - 7865:7865
+      - 25565:25565 # Add the necessary port mappings for the minecraft servers

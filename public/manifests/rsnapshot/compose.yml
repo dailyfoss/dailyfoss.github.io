@@ -1,0 +1,13 @@
+services:
+  rsnapshot:
+    image: lscr.io/linuxserver/rsnapshot:latest
+    container_name: rsnapshot
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /path/to/rsnapshot/config:/config
+      - /path/to/snapshots:/.snapshots #optional
+      - /path/to/data:/data #optional
+    restart: unless-stopped

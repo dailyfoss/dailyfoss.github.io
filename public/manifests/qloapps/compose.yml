@@ -1,0 +1,13 @@
+services:
+  qloapps_docker:
+    image: webkul/qloapps_docker:latest
+    container_name: qloappsv160
+    ports:
+      - 80:80
+      - 3306:3306
+      - 2222:22
+    environment:
+      - USER_PASSWORD=qloappsuserpassword
+      - MYSQL_ROOT_PASSWORD=myrootpassword
+      - MYSQL_DATABASE=mydatabase
+    restart: unless-stopped

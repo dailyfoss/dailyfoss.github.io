@@ -1,0 +1,22 @@
+services:
+  healthchecks:
+    image: healthchecks/healthchecks:latest
+    container_name: healthchecks
+    environment:
+      - ALLOWED_HOSTS=localhost
+      - DB=sqlite
+      - DB_NAME=/data/hc.sqlite
+      - DEBUG=False
+      - DEFAULT_FROM_EMAIL=fixme-email-address-here
+      - EMAIL_HOST=fixme-smtp-host-here
+      - EMAIL_HOST_PASSWORD=fixme-smtp-password-here
+      - EMAIL_HOST_USER=fixme-smtp-username-here
+      - EMAIL_PORT=587
+      - EMAIL_USE_TLS=True
+      - SECRET_KEY=---
+      - SITE_ROOT=http://localhost:8000
+    ports:
+      - 8000:8000
+    volumes:
+      - ./healthchecks-data:/data
+    restart: unless-stopped

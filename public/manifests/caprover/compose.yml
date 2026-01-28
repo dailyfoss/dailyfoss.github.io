@@ -1,0 +1,17 @@
+services:
+  caprover:
+    image: caprover/caprover:latest
+    container_name: caprover
+    ports:
+      - "3000:3000"    # CapRover GUI
+      - "80:80"        # HTTP (optional)
+      - "443:443"      # HTTPS (optional)
+    environment:
+      - MAIN_NODE_IP_ADDRESS=0.0.0.0
+      - ADMIN_PASSWORD=captain42
+    volumes:
+      - caprover_data:/captain
+    restart: unless-stopped
+
+volumes:
+  caprover_data:

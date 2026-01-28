@@ -1,0 +1,16 @@
+services:
+  drone:
+    image: drone/drone:2
+    container_name: drone
+    volumes:
+      - /var/lib/drone:/data
+    environment:
+      - DRONE_GITHUB_CLIENT_ID=your-id
+      - DRONE_GITHUB_CLIENT_SECRET=super-duper-secret
+      - DRONE_RPC_SECRET=super-duper-secret
+      - DRONE_SERVER_HOST=drone.company.com
+      - DRONE_SERVER_PROTO=https
+    ports:
+      - 80:80
+      - 443:443
+    restart: always

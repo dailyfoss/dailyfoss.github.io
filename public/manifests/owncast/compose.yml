@@ -1,0 +1,9 @@
+services:
+  owncast:
+    image: owncast/owncast:latest
+    volumes:
+      - "`pwd`/data:/app/data"
+    ports:
+      - 8080:8080
+      - 1935:1935
+    restart: unless-stopped

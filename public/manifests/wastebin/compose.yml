@@ -1,0 +1,9 @@
+services:
+  wastebin:
+    environment:
+      - ./db=/data/state.db
+    ports:
+      - 8088:8088
+    volumes:
+      - ./data:/data
+    image: quxfoo/wastebin:latest

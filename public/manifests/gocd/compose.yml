@@ -1,0 +1,6 @@
+services:
+  gocd-server:
+    image: gocd/gocd-server:v24.3.0
+    ports:
+      - 8153:8153
+    restart: always

@@ -1,0 +1,12 @@
+services:
+  headscale:
+    image: headscale/headscale:0.22.3
+    restart: unless-stopped
+    container_name: headscale
+    ports:
+      - "127.0.0.1:8080:8080"
+      - "127.0.0.1:9090:9090"
+    volumes:
+      # pls change [config_path] to the fullpath of the config folder just created
+      - [config_path]:/etc/headscale
+    command: headscale serve

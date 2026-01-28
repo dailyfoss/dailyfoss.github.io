@@ -1,0 +1,23 @@
+services:
+  mox:
+    # Replace "latest" with the version you want to run, see https://r.xmox.nl/r/mox/.
+    # Include the @sha256:... digest to ensure you get the listed image.
+    image: r.xmox.nl/mox:latest
+    environment:
+      - MOX_DOCKER=yes # Quickstart won't try to write systemd service file.
+    # Mox needs host networking because it needs access to the IPs of the
+    # machine, and the IPs of incoming connections for spam filtering.
+    network_mode: 'host'
+    volumes:
+      - ./config:/mox/config
+      - ./data:/mox/data
+      # web is optional but recommended to bind in, useful for serving static files with
+      # the webserver.
+      - ./web:/mox/web
+    working_dir: /mox
+    restart: on-failure
+    healthcheck:
+      test: netstat -nlt | grep ':25 '
+      interval: 1s
+      timeout: 1s
+      retries: 10

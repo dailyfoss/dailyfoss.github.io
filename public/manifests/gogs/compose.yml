@@ -1,0 +1,10 @@
+services:
+  gogs:
+    image: gogs/gogs
+    container_name: gogs
+    ports:
+      - 10022:22
+      - 10880:3000
+    volumes:
+      - /var/gogs:/data
+    restart: unless-stopped

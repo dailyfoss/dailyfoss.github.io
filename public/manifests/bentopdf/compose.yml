@@ -1,0 +1,19 @@
+services:
+  bentopdf:
+    container_name: bentopdf
+    image: ghcr.io/alam00000/bentopdf-simple:latest
+    restart: unless-stopped
+
+    ports:
+      - "8080:8080"
+
+    environment:
+      # Set to true if your environment does not support IPv6
+      DISABLE_IPV6: "false"
+
+    # Optional resource limits (recommended for PDF tools)
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: "1.0"

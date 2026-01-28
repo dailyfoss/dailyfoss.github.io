@@ -1,0 +1,14 @@
+services:
+  h5ai:
+    image: awesometic/h5ai
+    container_name: h5ai
+    ports:
+      - 80:80
+    volumes:
+      - /shared/dir:/h5ai
+      - /config/dir:/config
+    environment:
+      - PUID=$UID
+      - PGID=$GID
+      - TZ=Asia/Seoul
+    restart: unless-stopped

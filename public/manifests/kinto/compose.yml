@@ -1,0 +1,33 @@
+services:
+  db:
+    image: postgres:14
+    environment:
+      POSTGRES_NAME: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+  cache:
+    image: memcached:1
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: kinto/kinto-server:latest
+    depends_on:
+      db:
+        condition: service_healthy
+      cache:
+        condition: service_started
+    ports:
+    - "8888:8888"
+    environment:
+      KINTO_CACHE_BACKEND: kinto.core.cache.memcached
+      KINTO_CACHE_HOSTS: cache:11211 cache:11212
+      KINTO_STORAGE_BACKEND: kinto.core.storage.postgresql
+      KINTO_STORAGE_URL: postgresql://postgres:postgres@db/postgres
+      KINTO_PERMISSION_BACKEND: kinto.core.permission.postgresql
+      KINTO_PERMISSION_URL: postgresql://postgres:postgres@db/postgres

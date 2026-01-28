@@ -1,0 +1,23 @@
+services:
+  bazarr:
+    container_name: bazarr
+    image: lscr.io/linuxserver/bazarr:latest
+    restart: unless-stopped
+
+    environment:
+      # set these to your user IDs so Bazarr can access host volumes
+      PUID: 1000
+      PGID: 1000
+      # timezone
+      TZ: Etc/UTC
+
+    ports:
+      - "6767:6767"  # Bazarr UI
+
+    volumes:
+      # config & database
+      - ./config:/config
+
+      # optional: point at your media if you want Bazarr to see your files
+      - /path/to/tv:/tv
+      - /path/to/movies:/movies

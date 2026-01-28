@@ -1,0 +1,61 @@
+services:
+  server:
+    image: standardnotes/server
+    env_file: .env
+    container_name: server_self_hosted
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+      - 3125:3104
+    volumes:
+      - ./logs:/var/lib/server/logs
+      - ./uploads:/opt/server/packages/files/dist/uploads
+    networks:
+      - standardnotes_self_hosted
+
+  localstack:
+    image: localstack/localstack:3.0
+    container_name: localstack_self_hosted
+    expose:
+      - 4566
+    restart: unless-stopped
+    environment:
+      - SERVICES=sns,sqs
+      - HOSTNAME_EXTERNAL=localstack
+      - LS_LOG=warn
+    volumes:
+      - ./localstack_bootstrap.sh:/etc/localstack/init/ready.d/localstack_bootstrap.sh
+    networks:
+      - standardnotes_self_hosted
+
+  db:
+    image: mysql:8
+    container_name: db_self_hosted
+    environment:
+      - MYSQL_DATABASE=standard_notes_db
+      - MYSQL_USER=std_notes_user
+      - MYSQL_ROOT_PASSWORD=changeme123
+      - MYSQL_PASSWORD=changeme123
+    expose:
+      - 3306
+    restart: unless-stopped
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+      - ./data/import:/docker-entrypoint-initdb.d
+    networks:
+      - standardnotes_self_hosted
+
+  cache:
+    image: redis:6.0-alpine
+    container_name: cache_self_hosted
+    volumes:
+      - ./data/redis/:/data
+    expose:
+      - 6379
+    restart: unless-stopped
+    networks:
+      - standardnotes_self_hosted
+
+networks:
+  standardnotes_self_hosted:
+    name: standardnotes_self_hosted

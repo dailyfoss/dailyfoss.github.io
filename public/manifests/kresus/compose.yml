@@ -1,0 +1,15 @@
+services:
+  kresus:
+    container_name: kresus
+    image: bnjbvr/kresus
+    ports:
+      - 9876:9876
+    environment:
+      - LOCAL_USER_ID=`id
+    user: "true"
+    volumes:
+      - /opt/kresus/data:/home/user/data
+      - /opt/kresus/woob:/woob
+      - /opt/kresus/config.ini:/opt/config.ini
+      - /etc/localtime:/etc/localtime
+    restart: unless-stopped

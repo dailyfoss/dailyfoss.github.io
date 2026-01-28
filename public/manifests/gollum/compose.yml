@@ -1,0 +1,12 @@
+services:
+  gollum:
+    image: gollumwiki/gollum:master
+    restart: always
+    ports:
+      - "4567:4567/tcp"
+    volumes:
+      - ${PWD}/config.rb:/etc/gollum/config.rb
+      - ${PWD}/gitconfig:/home/www-data/.gitconfig
+      - ${PWD}/wikidata:/wiki
+    command:
+      - "--config=/etc/gollum/config.rb"

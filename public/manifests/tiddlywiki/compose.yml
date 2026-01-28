@@ -1,0 +1,11 @@
+services:
+  tiddlywiki:
+    container_name: tiddlywiki
+    image: jbardi/tiddlywiki5-lazy-images:latest
+    volumes:
+      - ./tiddlywiki:/var/lib/tiddlywiki # i.e. /home/username/tiddlywiki:/var/lib/tiddlywiki
+    ports:
+      - 8280:8080
+    environment:
+      - TZ=America/Denver
+    restart: unless-stopped

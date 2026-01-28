@@ -1,0 +1,37 @@
+services:
+    bracket-frontend:
+        image: ghcr.io/evroon/bracket-frontend
+        container_name: bracket-frontend
+        ports:
+            - "3000:3000"
+        environment:
+            NODE_ENV: "production"
+            NEXT_PUBLIC_API_BASE_URL: "http://your-site.com:8400"
+            NEXT_PUBLIC_HCAPTCHA_SITE_KEY: "10000000-ffff-ffff-ffff-000000000001"
+        restart: unless-stopped
+
+    bracket-backend:
+        image: ghcr.io/evroon/bracket-backend
+        container_name: bracket-backend
+        ports:
+            - "8400:8400"
+        environment:
+            ENVIRONMENT: "PRODUCTION"
+            PG_DSN: "postgresql://bracket_prod:bracket_prod@postgres:5432/bracket_prod"
+            CORS_ORIGINS: https://your-site.com
+            JWT_SECRET: change_me
+        volumes:
+            - ./backend/static:/app/static
+        restart: unless-stopped
+        depends_on:
+          - postgres
+
+    postgres:
+        image: postgres
+        restart: always
+        environment:
+          POSTGRES_DB: bracket_prod
+          POSTGRES_USER: bracket_prod
+          POSTGRES_PASSWORD: bracket_prod
+        volumes:
+          - ./postgres:/var/lib/postgresql/data

@@ -1,0 +1,17 @@
+services:
+  yarnd:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8000:8000/tcp"
+    volumes:
+      - ./data:/src/data
+      - ./internal:/src/internal
+    healthcheck:
+      test: wget -nv -t1 --spider 'http://localhost:8000' || exit 1
+      interval: 10s
+      retries: 5
+      start_period: 10s
+      timeout: 10s
+    restart: always

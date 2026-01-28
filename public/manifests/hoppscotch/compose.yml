@@ -1,0 +1,42 @@
+services:
+    hoppscotch-backend:
+        image: elestio/hoppscotch-backend:latest
+        env_file:
+            - ./.env
+        restart: always
+        environment:
+            - DATABASE_URL=postgresql://postgres:${ADMIN_PASSWORD}@hoppscotch-db:5432/hoppscotch?connect_timeout=300
+            - PORT=8080
+        depends_on:
+            - hoppscotch-db
+        ports:
+            - "172.17.0.1:3170:8080"
+
+    hoppscotch-app:
+        image: elestio/hoppscotch-app:latest
+        env_file:
+            - ./.env
+        depends_on:
+            - hoppscotch-backend
+        ports:
+            - "172.17.0.1:3130:3000"
+
+    hoppscotch-sh-admin:
+        image: elestio/hoppscotch-sh-admin:latest
+        env_file:
+            - ./.env
+        depends_on:
+            - hoppscotch-backend
+        ports:
+            - "172.17.0.1:3100:3100"
+
+    hoppscotch-db:
+        image: elestio/postgres:15
+        ports:
+            - "172.17.0.1:5282:5432"
+        environment:
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: ${ADMIN_PASSWORD}
+        POSTGRES_DB: hoppscotch
+        volumes:
+            - ./pgdata:/var/lib/postgresql/data/

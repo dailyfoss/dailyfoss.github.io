@@ -1,0 +1,45 @@
+version: "3.9"
+
+services:
+  bewcloud:
+    container_name: bewcloud
+    image: ghcr.io/bewcloud/bewcloud:v3.6.0
+    restart: unless-stopped
+
+    ports:
+      - "127.0.0.1:8000:8000"
+
+    environment:
+      POSTGRES_HOST: postgresql
+      POSTGRES_DB: bewcloud
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: fake
+
+    volumes:
+      - ./data-files:/app/data-files
+      - ./bewcloud.config.ts:/app/bewcloud.config.ts
+
+  postgresql:
+    container_name: bewcloud-db
+    image: postgres:16-alpine
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: bewcloud
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: fake
+
+    volumes:
+      - bewcloud-db:/var/lib/postgresql/data
+
+  radicale:
+    container_name: bewcloud-radicale
+    image: tomsquest/docker-radicale:3.6.0.0
+    restart: unless-stopped
+
+    volumes:
+      - ./data-radicale:/data
+      - ./radicale-config:/config:ro
+
+volumes:
+  bewcloud-db:

@@ -1,0 +1,53 @@
+services:
+  meilisearch:
+    image: getmeili/meilisearch:v1.6
+    environment:
+      - MEILI_MASTER_KEY=$MEILI_MASTER_KEY
+      - MEILI_ENV=production
+    restart: unless-stopped
+    volumes:
+      - ./meilisearch_data:/meili_data
+
+  redis:
+    image: redis
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    restart: unless-stopped
+
+  bar-assistant:
+    image: barassistant/server:v3
+    depends_on:
+      - meilisearch
+      - redis
+    environment:
+      - APP_URL=$API_URL
+      - LOG_CHANNEL=stderr
+      - MEILISEARCH_KEY=$MEILI_MASTER_KEY
+      - MEILISEARCH_HOST=http://meilisearch:7700
+      - REDIS_HOST=redis
+      - ALLOW_REGISTRATION=true
+    restart: unless-stopped
+    volumes:
+      - ./bar_data:/var/www/cocktails/storage/bar-assistant
+
+  salt-rim:
+    image: barassistant/salt-rim:v2
+    depends_on:
+      - bar-assistant
+    environment:
+      - API_URL=$API_URL
+      - MEILISEARCH_URL=$MEILISEARCH_URL
+      - DEFAULT_LOCALE=en-US
+    restart: unless-stopped
+
+  webserver:
+    image: nginx:alpine
+    restart: unless-stopped
+    depends_on:
+      - bar-assistant
+      - salt-rim
+      - meilisearch
+    ports:
+      - 3000:3000
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf

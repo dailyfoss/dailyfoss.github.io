@@ -1,0 +1,33 @@
+
+services:
+  babybuddy:
+    image: lscr.io/linuxserver/babybuddy:latest
+    container_name: babybuddy
+    restart: unless-stopped
+
+    ports:
+      - "8000:8000"
+
+    environment:
+      # Set user and group (host filesystem permissions)
+      PUID: 1000
+      PGID: 1000
+      TZ: Etc/UTC
+
+      # Trusted host origins (adjust to your domain)
+      CSRF_TRUSTED_ORIGINS: http://localhost:8000
+
+      # Optional: Use PostgreSQL instead of default SQLite (see below)
+      # DB_ENGINE: django.db.backends.postgresql
+      # DB_HOST: postgres
+      # DB_NAME: babybuddy
+      # DB_USER: babybuddy
+      # DB_PASSWORD: secret
+      # DB_PORT: 5432
+
+      # IMPORTANT: Change this secret in production!
+      SECRET_KEY: "CHANGE_THIS_TO_A_RANDOM_SECRET_KEY"
+
+    volumes:
+      # Persistent config, database and uploads
+      - ./babybuddy_data:/config

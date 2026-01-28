@@ -1,0 +1,33 @@
+services:
+  movim:
+    environment:
+      DAEMON_URL: http://localhost
+      DAEMON_PORT: 8080
+      DAEMON_INTERFACE: 0.0.0.0
+      DB_DRIVER: pgsql
+      DB_HOST: postgresql
+      DB_PORT: 5432
+      DB_DATABASE: movim
+      DB_USERNAME: movim
+      DB_PASSWORD: changeme
+    image: movim/movim:0.21.1
+    volumes:
+    - ${PWD}/movim:/var/www/html:rw
+
+  nginx:
+    image: nginx:mainline-alpine
+    ports:
+    - published: 80
+      target: 80
+    volumes:
+    - ${PWD}/movim:/var/www/html:ro
+    - ${PWD}/nginx:/etc/nginx/conf.d:ro
+
+  postgresql:
+    environment:
+      POSTGRES_DB: movim
+      POSTGRES_PASSWORD: changeme
+      POSTGRES_USER: movim
+    image: postgres:15-alpine
+    volumes:
+    - ${PWD}/postgres/data:/var/lib/postgresql/data:rw

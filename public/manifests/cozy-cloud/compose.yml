@@ -1,0 +1,56 @@
+services:
+  # Database
+  couchdb:
+    image: couchdb:3.3
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./volumes/couchdb/data:/opt/couchdb/data
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "curl",
+          "-f",
+          "${COUCHDB_PROTOCOL}://${COUCHDB_USER}:${COUCHDB_PASSWORD}@${COUCHDB_HOST}:${COUCHDB_PORT}/_up",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+
+  # Cozy Stack
+  stack:
+    image: cozy/cozy-stack
+    pull_policy: always
+    restart: unless-stopped
+    env_file: .env
+    depends_on:
+      - couchdb
+    healthcheck:
+      test: '[ "$(curl -fsSL http://localhost:8080/status | jq -r .status)" = "OK" ]'
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+    volumes:
+      - ./volumes/cozy-stack/data:/var/lib/cozy/data
+      - ./volumes/cozy-stack/config:/etc/cozy/
+      - ./files/cozy.yml:/etc/cozy/cozy.yml
+
+  # Reverse Proxy
+  caddy:
+    image: caddy:2.7
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - stack
+    volumes:
+      - ./volumes/caddy/data:/data
+      - ./volumes/caddy/etc:/etc/caddy
+      - ./files/Caddyfile:/etc/caddy/Caddyfile
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"

@@ -1,0 +1,6 @@
+services:
+  chatchat:
+    image: ghcr.io/okisdev/chatchat:latest
+    ports:
+      - 3000:3000
+    restart: always

@@ -1,0 +1,14 @@
+services:
+  cap:
+    image: tiago2/cap:latest
+    container_name: cap
+    ports:
+      - "3000:3000"
+    environment:
+      ADMIN_KEY: your_secret_password
+    volumes:
+      - cap-data:/usr/src/app/.data
+    restart: unless-stopped
+
+volumes:
+  cap-data:

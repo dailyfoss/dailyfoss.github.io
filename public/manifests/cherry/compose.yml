@@ -1,0 +1,13 @@
+services:
+  cherry:
+    image: haishanh/cherry:latest
+    container_name: cherry
+    volumes:
+      - ./data:/data
+    ports:
+      - "8000:8000"
+    environment:
+      - JWT_SECRET=cherry
+      - ENABLE_PUBLIC_REGISTRATION=1
+      - USE_INSECURE_COOKIE=1
+    restart: always

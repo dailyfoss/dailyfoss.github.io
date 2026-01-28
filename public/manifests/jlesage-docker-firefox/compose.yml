@@ -1,0 +1,8 @@
+services:
+  firefox:
+    image: jlesage/firefox
+    ports:
+      - "5800:5800"
+    volumes:
+      - "./config:/config:rw"
+	restart: "unless-stopped"

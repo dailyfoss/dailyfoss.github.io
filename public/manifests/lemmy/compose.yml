@@ -1,0 +1,12 @@
+services:
+  lemmy-ui:
+    container_name: lemmy-ui
+    image: dockurr/lemmy-ui
+    environment:
+      - LEMMY_UI_HTTPS=true
+      - LEMMY_UI_LEMMY_INTERNAL_HOST=lemmy:8536
+      - LEMMY_UI_LEMMY_EXTERNAL_HOST=domain.tld
+    ports:
+      - 1234:1234
+    stop_grace_period: 1m
+    restart: unless-stopped

@@ -1,0 +1,13 @@
+services:
+  mistserver:
+    image: ddvtech/mistserver
+    volumes:
+      - type: bind
+        source: /PATH/TO/CONFIG.JSON
+        destination: /config.json
+      - type: bind
+        source: /FOLDER/WITH/VIDEOFILES
+        destination: /video
+    shm_size: 4g
+    network_mode: host
+    restart: unless-stopped

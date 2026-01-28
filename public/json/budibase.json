@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "GPL-3",
     "version": "3.26.1",
     "date_app_added": "2025-11-23",
     "date_last_released": "2026-01-28",
@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://budibase.com",
-    "documentation": "https://github.com/Budibase/budibase",
+    "documentation": "https://docs.budibase.com/docs/what-is-budibase",
     "source_code": "https://github.com/Budibase/budibase",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/budibase.webp",
     "issues": "https://github.com/Budibase/budibase/issues",
@@ -118,14 +118,16 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
+    "script": false,
+    "docker": false,
     "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/budibase/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

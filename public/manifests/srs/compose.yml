@@ -1,0 +1,8 @@
+services:
+  srs:
+    image: ossrs/srs:5
+    ports:
+      - 1935:1935
+      - 1985:1985
+      - 8080:8080
+    restart: unless-stopped

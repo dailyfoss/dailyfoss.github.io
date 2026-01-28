@@ -1,0 +1,20 @@
+services:
+  httplaceholder:
+    depends_on:
+      - postgres
+    image: dukeofharen/httplaceholder:latest
+    environment:
+      postgresConnectionString: 'Host=postgres,5432;Username=postgres;Password=postgres;Database=httplaceholder;SearchPath=public'
+      verbose: 'true'
+    ports:
+      - "5000:5000"
+    restart: on-failure
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: httplaceholder
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data

@@ -1,0 +1,23 @@
+services:
+  mybb:
+    image: mybb/mybb:latest
+    volumes:
+    - ${PWD}/mybb:/var/www/html:rw
+
+  nginx:
+    image: nginx:mainline-alpine
+    ports:
+    - published: 8080
+      target: 80
+    volumes:
+    - ${PWD}/nginx:/etc/nginx/conf.d:ro
+    - ${PWD}/mybb:/var/www/html:ro
+
+  postgresql:
+    environment:
+      POSTGRES_DB: mybb
+      POSTGRES_PASSWORD: changeme
+      POSTGRES_USER: mybb
+    image: postgres:14-alpine
+    volumes:
+    - ${PWD}/postgres/data:/var/lib/postgresql/data:rw

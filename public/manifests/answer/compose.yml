@@ -1,0 +1,8 @@
+services:
+  answer:
+    image: apache/answer
+    ports:
+      - '9080:80'
+    restart: on-failure
+    volumes:
+      - ./answer-data:/data

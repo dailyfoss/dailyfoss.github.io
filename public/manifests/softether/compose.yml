@@ -1,0 +1,12 @@
+services:
+    softethervpn:
+        image: siomiz/softethervpn
+        ports:
+            - '5555:5555/tcp'
+            - '1194:1194/udp'
+            - '1701:1701/tcp'
+            - '4500:4500/udp'
+            - '500:500/udp'
+        cap_add:
+            - NET_ADMIN
+        restart: always

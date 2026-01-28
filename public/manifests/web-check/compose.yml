@@ -1,0 +1,7 @@
+services:
+  web-check:
+    container_name: Web-Check
+    image: lissy93/web-check
+    ports:
+      - 3000:3000
+    restart: unless-stopped

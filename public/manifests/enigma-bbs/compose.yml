@@ -1,0 +1,15 @@
+services:
+  enigma-bbs:
+    container_name: ENiGMABBS
+    image: enigmabbs/enigma-bbs:latest
+    ports:
+      - 8888:8888
+    volumes:
+      - $(pwd)/config:/enigma-bbs/config
+      - $(pwd)/db:/enigma-bbs/db
+      - $(pwd)/logs:/enigma-bbs/logs
+      - $(pwd)/filebase:/enigma-bbs/filebase
+      - $(pwd)/art:/enigma-bbs/art
+      - $(pwd)/mods:/enigma-bbs/mods
+      - $(pwd)/mail:/mail
+    restart: unless-stopped

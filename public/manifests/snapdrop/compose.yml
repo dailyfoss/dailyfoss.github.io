@@ -1,0 +1,10 @@
+services:
+  filebrowser:
+    image: filebrowser/filebrowser
+    volumes:
+      - /path/to/root:/srv
+      - /path/filebrowser.db:/database.db
+      - /path/.filebrowser.json:/.filebrowser.json
+    ports:
+      - 8080:80
+    restart: unless-stopped

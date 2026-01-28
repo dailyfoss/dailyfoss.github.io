@@ -1,0 +1,9 @@
+services:
+  adguardian:
+    image: lissy93/adguardian
+    environment:
+      - ADGUARD_IP=192.168.180.1
+      - ADGUARD_PORT=3000
+      - ADGUARD_USERNAME=admin
+      - ADGUARD_PASSWORD=bobs-your-uncle
+    restart: unless-stopped

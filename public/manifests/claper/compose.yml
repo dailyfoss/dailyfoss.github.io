@@ -1,0 +1,51 @@
+services:
+  db:
+    image: postgres:15
+    ports:
+      - 5432:5432
+    volumes:
+      - "claper-db:/var/lib/postgresql/data"
+    healthcheck:
+      test:
+        - CMD
+        - pg_isready
+        - "-q"
+        - "-d"
+        - "claper"
+        - "-U"
+        - "claper"
+      retries: 3
+      timeout: 5s
+    environment:
+      POSTGRES_PASSWORD: claper
+      POSTGRES_USER: claper
+      POSTGRES_DB: claper
+    networks:
+      - claper-net
+  app:
+    image: ghcr.io/claperco/claper:latest # or build: .
+    ports:
+      - 4000:4000
+    volumes:
+      - "claper-uploads:/app/uploads"
+    healthcheck:
+      test: curl --fail http://localhost:4000 || exit 1
+      retries: 3
+      start_period: 20s
+      timeout: 5s
+    env_file: .env
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - claper-net
+
+volumes:
+  claper-db:
+    driver: local
+  claper-uploads:
+    driver: local
+
+networks:
+  claper-net:
+    driver: bridge

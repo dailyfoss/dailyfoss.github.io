@@ -1,0 +1,9 @@
+services:
+  opengist:
+    image: ghcr.io/thomiceli/opengist:1
+    container_name: opengist
+    restart: unless-stopped
+    ports:
+      - "6157:6157"
+    volumes:
+      - "./opengist:/opengist"

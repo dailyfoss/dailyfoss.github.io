@@ -1,0 +1,9 @@
+services:
+  putty:
+    image: jlesage/putty
+    container_name: putty
+    ports:
+      - 5800:5800
+    volumes:
+      - ./config:/config:rw
+    restart: always

@@ -1,0 +1,8 @@
+services:
+  portkey:
+    image: codehat/portkey:latest
+    volumes:
+      - $(PWD)/config.yml:/opt/config.yml
+    ports:
+      - 3000:3000
+    restart: unless-stopped

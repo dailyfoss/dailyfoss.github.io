@@ -1,0 +1,8 @@
+services:
+  openttd:
+    image: bateau/openttd:latest
+    volumes:
+      - /path/to/your/.openttd:/home/openttd/.openttd
+    ports:
+      - 3979:3979/tcp
+      - 3979:3979/udp

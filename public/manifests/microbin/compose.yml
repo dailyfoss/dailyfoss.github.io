@@ -1,0 +1,21 @@
+services:
+  microbin:
+    container_name: microbin
+    image: danielszabo99/microbin:latest
+    security_opt:
+      - no-new-privileges:false
+    healthcheck:
+      test: timeout 10s bash -c ':> /dev/tcp/127.0.0.1/8080' || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 90s
+    volumes:
+      - /data:/app/microbin_data:rw
+    environment:
+      MICROBIN_ADMIN_USERNAME: microbin
+      MICROBIN_ADMIN_PASSWORD: microbin_password
+      MICROBIN_PUBLIC_PATH: http://localhost/
+    ports:
+      - 5980:8080
+    restart: on-failure:5

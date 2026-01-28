@@ -1,0 +1,8 @@
+services:
+  web:
+    image: bleckbeard/hiccup:latest
+    ports:
+      - '8899:80'
+    volumes:
+      - ./public/configs/config.json:/usr/share/nginx/html/configs/config.json
+    restart: unless-stopped

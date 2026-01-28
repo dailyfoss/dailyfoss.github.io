@@ -1,0 +1,8 @@
+services:
+  server:
+    image: joplin/server:latest
+    env_file:
+      - .env
+    ports:
+      - 22300:22300
+    restart: unless-stopped

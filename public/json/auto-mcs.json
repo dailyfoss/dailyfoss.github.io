@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://www.auto-mcs.com",
-    "documentation": "https://github.com/macarooni-man/auto-mcs",
+    "documentation": "https://www.auto-mcs.com/guides",
     "source_code": "https://github.com/macarooni-man/auto-mcs",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/auto-mcs.webp",
     "issues": "https://github.com/macarooni-man/auto-mcs/issues",
@@ -79,14 +79,16 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
+    "script": false,
+    "docker": false,
     "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/auto-mcs/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

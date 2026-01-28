@@ -1,0 +1,34 @@
+services:
+  api:
+    # custom build via
+    #build: packages/api-server
+    image: xemle/home-gallery-api-server
+    environment:
+      # TensorflowJS backends
+      # - cpu: slowest and best support
+      # - wasm: good perfromance for arm64 and amd64 platforms
+      # - node: best performance on amd64 platform
+      #- BACKEND=cpu
+      - BACKEND=wasm
+      #- BACKEND=node
+  gallery:
+    # custom build via
+    #build: .
+    image: xemle/home-gallery
+    environment:
+      - GALLERY_API_SERVER=http://api:3000
+      - GALLERY_API_SERVER_CONCURRENT=1 # for SoC devices like Rasperry Pi. Use 5 otherwise
+      - GALLERY_API_SERVER_TIMEOUT=60 # for SoC devices like Rasperry Pi. Use 30 otherwise
+      #- GALLERY_USE_NATIVE=ffprobe,ffmpeg,vipsthumbnail # On issues with sharp resizer
+      - GALLERY_OPEN_BROWSER=false
+      # Use polling for safety of possible network mounts. Try 0 to use inotify via fs.watch
+      - GALLERY_WATCH_POLL_INTERVAL=300
+    volumes:
+      - ./data:/data
+      # Mount your media directories below /data
+      - ${HOME}/Pictures:/data/Pictures
+    ports:
+      - "3000:3000"
+    user: "${CURRENT_USER}"
+    entrypoint: ['node', '/app/gallery.js']
+    command: ['run', 'server']

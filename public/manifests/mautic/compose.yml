@@ -1,0 +1,8 @@
+services:
+  web:
+    image: shinsenter/mautic:latest
+    volumes:
+      - ./myproject:/var/www/html
+      - ./my_domain.crt:/etc/ssl/site/server.crt
+      - ./my_domain.key:/etc/ssl/site/server.key
+    restart: unless-stopped

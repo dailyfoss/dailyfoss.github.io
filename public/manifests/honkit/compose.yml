@@ -1,0 +1,13 @@
+services:
+  honkit:
+    image: honkit/honkit
+    stdin_open: true
+    tty: true
+    init: true
+    ports:
+      - 4000:4000
+    volumes:
+      - "`pwd`:`pwd`"
+    working_dir: "`pwd`"
+    command: honkit serve
+    restart: unless-stopped

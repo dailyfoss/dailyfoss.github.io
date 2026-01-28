@@ -1,0 +1,10 @@
+services:
+  lobe-chat:
+    container_name: lobe-chat
+    image: lobehub/lobe-chat
+    ports:
+      - 3210:3210
+    environment:
+      - OPENAI_API_KEY=sk-xxxx
+      - ACCESS_CODE=lobe66
+    restart: always

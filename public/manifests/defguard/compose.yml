@@ -1,0 +1,98 @@
+services:
+  db:
+    image: postgres:15-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: defguard
+      POSTGRES_USER: defguard
+      POSTGRES_PASSWORD: ${DEFGUARD_DB_PASSWORD}
+    volumes:
+      - ${VOLUME_DIR:-./.volumes}/db:/var/lib/postgresql/data
+    # ports:
+    #   - "5432:5432"
+
+  # caddy:  # [PROXY]
+  #   image: caddy:2.7-alpine  # [PROXY]
+  #   restart: unless-stopped  # [PROXY]
+  #   volumes:  # [PROXY]
+  #     - ${VOLUME_DIR:-./.volumes}/caddy/data:/data  # [PROXY]
+  #     - ${VOLUME_DIR:-./.volumes}/caddy/config:/config  # [PROXY]
+  #     - ${VOLUME_DIR:-./.volumes}/caddy/Caddyfile:/etc/caddy/Caddyfile  # [PROXY]
+  #   ports:  # [PROXY]
+  #     # http  # [PROXY]
+  #     - "80:80"  # [PROXY]
+  #     # https  # [PROXY]
+  #     - "443:443"  # [PROXY]
+
+  core:
+    image: ghcr.io/defguard/defguard:${CORE_IMAGE_TAG:-latest}
+    restart: unless-stopped
+    environment:
+      DEFGUARD_AUTH_SECRET: ${DEFGUARD_AUTH_SECRET}
+      DEFGUARD_GATEWAY_SECRET: ${DEFGUARD_GATEWAY_SECRET}
+      DEFGUARD_YUBIBRIDGE_SECRET: ${DEFGUARD_YUBIBRIDGE_SECRET}
+      DEFGUARD_SECRET_KEY: ${DEFGUARD_SECRET_KEY}
+      DEFGUARD_DEFAULT_ADMIN_PASSWORD: ${DEFGUARD_DEFAULT_ADMIN_PASSWORD}
+      DEFGUARD_DB_HOST: db
+      DEFGUARD_DB_PORT: 5432
+      DEFGUARD_DB_USER: defguard
+      DEFGUARD_DB_PASSWORD: ${DEFGUARD_DB_PASSWORD}
+      DEFGUARD_DB_NAME: defguard
+      DEFGUARD_URL: ${DEFGUARD_URL}
+      DEFGUARD_LOG_LEVEL: info
+      DEFGUARD_WEBAUTHN_RP_ID: ${DEFGUARD_WEBAUTHN_RP_ID}
+      DEFGUARD_COOKIE_INSECURE: ${DEFGUARD_COOKIE_INSECURE:-false}
+      # DEFGUARD_ENROLLMENT_URL: ${DEFGUARD_ENROLLMENT_URL}  # [ENROLLMENT]
+      # DEFGUARD_PROXY_URL: https://proxy:50052  # [ENROLLMENT]
+      # DEFGUARD_PROXY_GRPC_CA: /ssl/defguard-ca.pem  # [ENROLLMENT]
+      DEFGUARD_GRPC_CERT: /ssl/defguard-grpc.crt
+      DEFGUARD_GRPC_KEY: /ssl/defguard-grpc.key
+      ## RSA setup guide: https://defguard.gitbook.io/defguard/community-features/setting-up-your-instance/docker-compose#openid-rsa-setup
+      DEFGUARD_OPENID_KEY: /keys/rsakey.pem
+      ## LDAP setup guide: https://defguard.gitbook.io/defguard/features/ldap-synchronization-setup
+      # DEFGUARD_LDAP_URL: ldap://localhost:389 # [LDAP]
+      # DEFGUARD_LDAP_BIND_USERNAME: cn=admin,dc=example,dc=org # [LDAP]
+      # DEFGUARD_LDAP_BIND_PASSWORD: password # [LDAP]
+    ports:
+      # web
+      # - "8000:8000"
+      # grpc
+      - "50055:50055"
+    depends_on:
+      - db
+    volumes:
+      # SSL setup guide: https://defguard.gitbook.io/defguard/features/setting-up-your-instance/docker-compose#ssl-setup
+      - ${VOLUME_DIR:-./.volumes}/ssl:/ssl
+      ## RSA setup guide: https://defguard.gitbook.io/defguard/community-features/setting-up-your-instance/docker-compose#openid-rsa-setup
+      - ${VOLUME_DIR:-./.volumes}/core/rsakey.pem:/keys/rsakey.pem
+
+  # proxy:  # [ENROLLMENT]
+  #   image: ghcr.io/defguard/defguard-proxy:${PROXY_IMAGE_TAG:-latest}  # [ENROLLMENT]
+  #   restart: unless-stopped  # [ENROLLMENT]
+  #   environment:  # [ENROLLMENT]
+  #     DEFGUARD_PROXY_GRPC_PORT: 50052  # [ENROLLMENT]
+  #     DEFGUARD_PROXY_GRPC_CERT: /ssl/defguard-proxy-grpc.crt  # [ENROLLMENT]
+  #     DEFGUARD_PROXY_GRPC_KEY: /ssl/defguard-proxy-grpc.key  # [ENROLLMENT]
+  #   volumes:  # [ENROLLMENT]
+  # SSL setup guide: https://defguard.gitbook.io/defguard/features/setting-up-your-instance/docker-compose#ssl-setup
+  #     - ${VOLUME_DIR:-./.volumes}/ssl:/ssl  # [ENROLLMENT]
+  #   ports:
+  #     # web
+  #     - "8080:8080"
+  #   depends_on:  # [ENROLLMENT]
+  #     - core  # [ENROLLMENT]
+
+  # gateway:  # [VPN]
+  #   image: ghcr.io/defguard/gateway:${GATEWAY_IMAGE_TAG:-latest}  # [VPN]
+  #   restart: unless-stopped  # [VPN]
+  #   network_mode: "host"  # [VPN]
+  #   environment:  # [VPN]
+  #     DEFGUARD_GRPC_URL: https://localhost:50055  # [VPN]
+  #     DEFGUARD_GRPC_CA: /ssl/defguard-ca.pem  # [VPN]
+  #     DEFGUARD_STATS_PERIOD: 30  # [VPN]
+  #     DEFGUARD_TOKEN: ${DEFGUARD_TOKEN}  # [VPN]
+  #   volumes:  # [VPN]
+  # SSL setup guide: https://defguard.gitbook.io/defguard/features/setting-up-your-instance/docker-compose#ssl-setup
+  #     - ${VOLUME_DIR:-./.volumes}/ssl:/ssl  # [VPN]
+  #   cap_add:  # [VPN]
+  #     - NET_ADMIN  # [VPN]

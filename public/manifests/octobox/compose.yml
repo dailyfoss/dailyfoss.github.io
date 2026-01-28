@@ -1,0 +1,40 @@
+services:
+  app:
+    image: octoboxio/octobox:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - RAILS_ENV=development
+      - GITHUB_CLIENT_ID=${GITHUB_CLIENT_ID}
+      - GITHUB_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}
+      - OCTOBOX_DATABASE_NAME=postgres
+      - OCTOBOX_DATABASE_USERNAME=postgres
+      - OCTOBOX_DATABASE_PASSWORD=development
+      - OCTOBOX_DATABASE_HOST=database.service.octobox.internal
+      - REDIS_URL=redis://redis.service.octobox.internal
+    networks:
+      - internal
+    depends_on:
+      - database.service.octobox.internal
+      - redis.service.octobox.internal
+
+  database.service.octobox.internal:
+    image: postgres:16-alpine
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    networks:
+      - internal
+    environment:
+      - POSTGRES_PASSWORD=development
+
+  redis.service.octobox.internal:
+    image: redis:7-alpine
+    networks:
+      - internal
+
+volumes:
+  pg_data:
+
+networks:
+  internal:
+    driver: bridge

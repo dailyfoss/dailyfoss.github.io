@@ -1,0 +1,102 @@
+services:
+  nginx:
+    image: nginxproxy/nginx-proxy:1.6.0
+    networks:
+      - flowforge
+    restart: always
+    volumes:
+      - "/var/run/docker.sock:/tmp/docker.sock:ro"
+      - "./nginx/vhost.d:/etc/nginx/vhost.d"
+      - "./nginx/html:/usr/share/nginx/html"
+      - "./nginx/my-proxy.conf:/etc/nginx/conf.d/my_proxy.conf"
+      # - "./certs:/etc/nginx/certs"
+    ports:
+      - "80:80"
+      # - "443:443"
+    # environment:
+      # - "HTTPS_METHOD=redirect"
+  # acme:
+  #   image: nginxproxy/acme-companion:2.4.0
+  #   restart: always
+  #   volumes:
+  #     - "/var/run/docker.sock:/var/run/docker.sock:ro"
+  #     - "./acme:/etc/acme.sh"
+  #   volumes_from:
+  #     - nginx:rw
+  #   environment:
+  #     - "[email protected]"
+  #   depends_on:
+  #     - "nginx"
+  postgres:
+    image: postgres:14
+    networks:
+      - flowforge
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: secret
+      POSTGRES_USER: root
+    volumes:
+      - "./db:/var/lib/postgresql/data"
+      - "./setup-db.sh:/docker-entrypoint-initdb.d/01-setup-db.sh"
+      - "./setup-context-db.sh:/docker-entrypoint-initdb.d/02-setup-context-db.sh"
+  flowforge-broker:
+    image: "iegomez/mosquitto-go-auth"
+    networks:
+      - flowforge
+    restart: always
+    ulimits:
+      nofile: 2048
+    environment:
+      - "VIRTUAL_HOST=mqtt.example.com"
+      - "VIRTUAL_PORT=1884"
+      - "LETSENCRYPT_HOST=mqtt.example.com"
+    volumes:
+      - "./broker/mosquitto.conf:/etc/mosquitto/mosquitto.conf"
+  forge:
+    build:
+      context: "./flowforge-docker"
+    image: "flowfuse/forge-docker"
+    networks:
+      - flowforge
+    restart: always
+    environment:
+      - "VIRTUAL_HOST=forge.example.com"
+      - "LETSENCRYPT_HOST=forge.example.com"
+    volumes:
+      - "/var/run/docker.sock:/tmp/docker.sock"
+      - "./etc/flowforge.yml:/usr/src/forge/etc/flowforge.yml"
+      - "./persistent-storage:/opt/persistent-storage"
+    depends_on:
+      - "postgres"
+      - "nginx"
+      - "flowforge-broker"
+
+  file-server:
+    build:
+      context: "./file-server"
+    image: "flowfuse/file-server"
+    networks:
+      - flowforge
+    restart: always
+    volumes:
+      - "./etc/flowforge-storage.yml:/usr/src/flowforge-file-server/etc/flowforge-storage.yml"
+      - "./fileStorage:/usr/src/flowforge-file-server/var/root"
+    depends_on:
+      - "forge"
+
+  # npm:
+  #   image: "verdaccio/verdaccio:5"
+  #   networks:
+  #     - flowforge
+  #   restart: always
+  #   environment:
+  #     - "VIRTUAL_HOST=npm.example.com"
+  #     - "VIRTUAL_PORT=4873"
+  #   volumes:
+  #     - "./npm/conf:/verdaccio/conf"
+  #     - "./npm/storage:/verdaccio/storage"
+  #   depends_on:
+  #     - nginx
+
+networks:
+  flowforge:

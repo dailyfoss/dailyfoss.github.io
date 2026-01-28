@@ -1,0 +1,25 @@
+services:
+  biblioreads:
+    container_name: biblioreads
+    image: nesaku/biblioreads:latest
+    restart: unless-stopped
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      # The public URL where BiblioReads is served
+      NEXT_PUBLIC_HOST_URL: http://localhost:3000
+
+      # Disable telemetry (recommended for privacy)
+      NEXT_TELEMETRY_DISABLED: "1"
+
+      # Optional: base path (remove or adjust if not needed)
+      # NEXT_PUBLIC_BASE_PATH: /your/basepath
+
+      # Optional: set node environment
+      NODE_ENV: production
+
+    volumes:
+      # Optional: mount local content if you want persistent caching or screenshots
+      # - ./cache:/app/.cache

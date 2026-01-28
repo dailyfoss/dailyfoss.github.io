@@ -1,0 +1,58 @@
+version: "3.9"
+
+services:
+  broadcastchannel:
+    container_name: broadcastchannel
+    image: ghcr.io/miantiao-me/broadcastchannel:main
+    restart: unless-stopped
+
+    ports:
+      - "4321:4321"
+
+    environment:
+      # Required
+      CHANNEL: miantiao_me
+
+      # Locale & Timezone
+      LOCALE: en
+      TIMEZONE: America/New_York
+
+      # Social Media
+      TELEGRAM: miantiao-me
+      TWITTER: miantiao-me
+      GITHUB: miantiao-me
+      MASTODON: mastodon.social/@Mastodon
+      BLUESKY: bsky.app
+      DISCORD: https://DISCORD.com
+      PODCAST: https://PODCAST.com
+
+      # Header / Footer Inject
+      HEADER_INJECT: HEADER_INJECT
+      FOOTER_INJECT: FOOTER_INJECT
+
+      # SEO
+      NO_FOLLOW: "false"
+      NO_INDEX: "false"
+
+      # Display Options
+      HIDE_DESCRIPTION: "false"
+      COMMENTS: "true"
+      REACTIONS: "true"
+      RSS_BEAUTIFY: "true"
+
+      # Tags & Navigation
+      TAGS: tag1,tag2,tag3
+      LINKS: "Title1,URL1;Title2,URL2;Title3,URL3;"
+      NAVS: "Title1,URL1;Title2,URL2;Title3,URL3;"
+
+      # Search
+      GOOGLE_SEARCH_SITE: memo.miantiao.me
+
+      # Sentry (optional)
+      SENTRY_AUTH_TOKEN: SENTRY_AUTH_TOKEN
+      SENTRY_DSN: SENTRY_DSN
+      SENTRY_PROJECT: SENTRY_PROJECT
+
+      # Internal (do not change unless needed)
+      HOST: telegram.dog
+      STATIC_PROXY: ""

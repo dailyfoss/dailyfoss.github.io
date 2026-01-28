@@ -1,0 +1,19 @@
+services:
+  filegator:
+    container_name: filegator
+    image: filegator/filegator
+    restart: always
+    ports:
+      - "8080:8080"
+    volumes:
+      # common mount points are listed here
+      # make sure filegator can read/write to the mounted volume
+
+      # mount local folder as a repository
+      - ./files:/var/www/filegator/repository
+
+      # locally stored users.json file
+      # - ./users.json:/var/www/filegator/private/users.json
+
+      # load your own custom configuration file
+      # - ./configuration.php:/var/www/filegator/configuration.php

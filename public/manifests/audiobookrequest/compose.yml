@@ -1,0 +1,33 @@
+services:
+  web:
+    container_name: audiobookrequest-web
+    image: ghcr.io/markbeep/audiobookrequest:latest
+    volumes:
+      - ./config:/config
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    depends_on:
+      - psql
+
+  gotify:
+    container_name: audiobookrequest-gotify
+    image: gotify/server:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./data/gotify/data:/app/data
+    restart: unless-stopped
+
+  psql:
+    container_name: audiobookrequest-db
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: abr
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: audiobookrequest
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: unless-stopped

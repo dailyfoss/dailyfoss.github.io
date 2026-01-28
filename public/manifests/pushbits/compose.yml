@@ -1,0 +1,16 @@
+services:
+    server:
+        image: ghcr.io/pushbits/server:latest
+        ports:
+            - 8080:8080
+        environment:
+            PUSHBITS_DATABASE_DIALECT: 'sqlite3'
+            PUSHBITS_ADMIN_MATRIXID: '@your/matrix/username:matrix.org' # The Matrix account on which the admin will receive their notifications.
+            PUSHBITS_ADMIN_PASSWORD: 'your/pushbits/password' # The login password of the admin account. Default username is 'admin'.
+            PUSHBITS_MATRIX_USERNAME: 'your/matrix/username' # The Matrix account from which notifications are sent to all users.
+            PUSHBITS_MATRIX_PASSWORD: 'your/matrix/password' # The password of the above account.
+        volumes:
+            - /etc/localtime:/etc/localtime:ro
+            - /etc/timezone:/etc/timezone:ro
+            - ./data:/data
+        restart: unless-stopped

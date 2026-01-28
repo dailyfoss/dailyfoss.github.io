@@ -1,0 +1,8 @@
+services:
+  paisa:
+    image: ananthakumaran/paisa:latest
+    ports:
+      - 7500:7500
+    volumes:
+      - /home/john/Documents/paisa/:/root/Documents/paisa/
+    restart: unless-stopped

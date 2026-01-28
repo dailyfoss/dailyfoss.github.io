@@ -1,0 +1,36 @@
+services:
+  db:
+    image: mysql:5.7
+    restart: unless-stopped
+    environment:
+      # These values are taken from the .env file
+      MYSQL_DATABASE: ${CB_DB_NAME}
+      MYSQL_USER: ${CB_DB_USERNAME}
+      MYSQL_PASSWORD: ${CB_DB_PASSWORD}
+      MYSQL_RANDOM_ROOT_PASSWORD: true
+    volumes:
+      - chartbrew-db:/var/lib/mysql
+
+  redis:
+    image: redis:latest
+    restart: unless-stopped
+    environment:
+      REDIS_PASSWORD: ${CB_REDIS_PASSWORD}
+    ports:
+      - 6379:6379
+
+  chartbrew:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      # Feel free to remap these ports on the left side to your desired ports.
+      # If you do change these ports you also need to update them in the VITE_APP_CLIENT_HOST and VITE_APP_API_HOST variables in your .env file
+      - 4018:4018 # Frontend
+      - 4019:4019 # API
+    depends_on:
+      - db
+      - redis
+    links:
+      - db
+      - redis

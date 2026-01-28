@@ -1,0 +1,7 @@
+services:
+
+  haproxy:
+    image: bitnami/haproxy
+    volumes:
+      - /path/to/haproxy.cfg:/bitnami/haproxy/conf/haproxy.cfg
+    restart: unless-stopped

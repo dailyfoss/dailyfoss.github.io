@@ -1,0 +1,9 @@
+services:
+  atomic-server:
+    image: joepmeneer/atomic-server
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./atomic-storage:/atomic-storage
+    restart: always

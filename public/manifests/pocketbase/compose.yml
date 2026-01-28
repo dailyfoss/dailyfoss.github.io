@@ -1,0 +1,16 @@
+services:
+  pocketbase:
+    image: adrianmusante/pocketbase:latest
+    container_name: pocketbase
+    ports:
+      - 80:8090
+    environment:
+      - USER_DEFINED_KEY=custom_value
+    networks:
+      - pocketbase_network
+    volumes:
+      - /path/to/pocketbase-persistence:/pocketbase
+
+networks:
+  pocketbase_network:
+    external: true

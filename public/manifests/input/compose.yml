@@ -1,0 +1,14 @@
+services:
+    input:
+      image: ghcr.io/deck9/input:main
+      volumes:
+        - input-data:/var/www/html/storage
+      ports:
+        - 8080:8080
+      restart: unless-stopped
+      environment:
+        - APP_URL="https://:8080"
+        - APP_KEY=""
+        - DB_CONNECTION="sqlite"
+        - SESSION_DRIVER="file"
+        - CACHE_DRIVER="file"

@@ -1,0 +1,12 @@
+services:
+  mykeycloak:
+    image: mykeycloak
+    container_name: mykeycloak
+    ports:
+      - 8443:8443
+      - 9000:9000
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=change_me
+    command: start --optimized
+    restart: unless-stopped

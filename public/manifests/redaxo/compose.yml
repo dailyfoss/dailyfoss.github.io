@@ -1,0 +1,62 @@
+services:
+
+  redaxo:
+    build: ./docker/redaxo                  # build folder for redaxo image
+    ports:
+      - 20080:80                            # web server will use port 20080 for http
+      - 20443:443                           # web server will use port 20443 for https
+    volumes:
+      - ./html:/var/www/html:cached         # webroot `/var/www/html` will be synced with your local folder `./html`
+    depends_on:
+      - db
+    environment:
+      REDAXO_SERVER: http://localhost:20080
+      REDAXO_SERVERNAME: REDAXO
+      REDAXO_ERROR_EMAIL: [email protected]
+      REDAXO_LANG: de_de
+      REDAXO_TIMEZONE: Europe/London
+      REDAXO_DB_HOST: db                    # database container name
+      REDAXO_DB_NAME: redaxo
+      REDAXO_DB_LOGIN: redaxo
+      REDAXO_DB_PASSWORD: redaxo
+      REDAXO_DB_CHARSET: utf8mb4
+      REDAXO_ADMIN_USER: admin
+      REDAXO_ADMIN_PASSWORD: admin123
+
+  db:
+    image: mysql:8
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ./db:/var/lib/mysql:cached          # database in `/var/lib/mysql` will be synced with your local folder `./db`
+    environment:
+      MYSQL_DATABASE: redaxo
+      MYSQL_USER: redaxo
+      MYSQL_PASSWORD: redaxo
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 28080:80
+    depends_on:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_USER: redaxo
+      PMA_PASSWORD: redaxo
+      UPLOAD_LIMIT: 256M
+
+  mailpit:
+    image: axllent/mailpit
+    ports:
+      - 1025:1025                           # mailpit will use port 1025 (for smtp)
+      - 28025:8025                          # mailpit will use port 28025 (for its web interface)
+
+  blackfire:
+    image: blackfire/blackfire:2
+    environment:
+      # replace with credentials found on https://blackfire.io/my/settings/credentials
+      BLACKFIRE_CLIENT_ID:
+      BLACKFIRE_CLIENT_TOKEN:
+      BLACKFIRE_SERVER_ID:
+      BLACKFIRE_SERVER_TOKEN:

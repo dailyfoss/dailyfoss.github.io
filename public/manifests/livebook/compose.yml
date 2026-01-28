@@ -1,0 +1,9 @@
+services:
+  livebook:
+    image: ghcr.io/livebook-dev/livebook
+    ports:
+      - 8080:8080
+      - 8081:8081
+    volumes:
+      - $(pwd):/data
+    restart: unless-stopped

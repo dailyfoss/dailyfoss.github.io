@@ -1,0 +1,24 @@
+services:
+  vaultwarden:
+    image: vaultwarden/server
+    container_name: vaultwarden
+    ports:
+      - 8002:80
+    volumes:
+      - ./data:/data/
+    restart: on-failure
+    env_file:
+      - .env
+
+  vaultwarden-backup:
+    image: bruceforce/vaultwarden-backup
+    restart: on-failure
+    init: true
+    depends_on:
+      - vaultwarden
+    volumes:
+      - ./data:/data/
+      # uncomment this if you want your backup to be written to ./backup/ folder"
+      - ./backup:/backup/
+    env_file:
+      - .env

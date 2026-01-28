@@ -1,0 +1,22 @@
+services:
+  baikal:
+    container_name: baikal
+    image: ckulka/baikal:nginx
+    restart: unless-stopped
+
+    ports:
+      - "8080:80"  # Change 8080 to whatever public port you prefer
+
+    volumes:
+      # Baïkal configuration
+      - baikal_config:/var/www/baikal/config
+      # Database & user data (SQLite by default)
+      - baikal_data:/var/www/baikal/Specific
+
+    environment:
+      # Skip chown on startup (optional; set to "true" to disable chown)
+      BAIKAL_SKIP_CHOWN: "false"
+
+volumes:
+  baikal_config:
+  baikal_data:

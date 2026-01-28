@@ -1,0 +1,9 @@
+services:
+  alerthub:
+    image: ghcr.io/ardakilic/alerthub:2
+    container_name: alerthub
+    volumes:
+      - /host/path/config.js:/usr/src/app/etc/config.js
+    ports:
+      - 3444:3444
+    restart: unless-stopped

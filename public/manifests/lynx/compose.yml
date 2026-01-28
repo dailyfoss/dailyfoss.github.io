@@ -1,0 +1,41 @@
+services:
+    db:
+        image: mongo
+        restart: always
+        environment:
+            - MONGO_INITDB_ROOT_USERNAME=
+            - MONGO_INITDB_ROOT_PASSWORD=
+        volumes:
+            - ./db:/data/db
+
+    lynx:
+        image: jackbailey/lynx:1
+        restart: always
+        ports:
+            - 3000:3000
+        depends_on:
+            - db
+        volumes:
+            - ./backups:/app/backups
+        environment:
+            - NODE_ENV=production
+            - DB_USER=
+            - DB_PASSWORD=
+            - JWT_KEY=
+            - URL_LENGTH=8
+            - URL_SET=standard
+            - URL_ONLY_UNIQUE=false
+            - HOME_REDIRECT=/dash/overview
+            - FORCE_FRONTEND_REDIRECT=false
+            - ENABLE_REGISTRATION=false # First registration will always be allowed
+            - DOMAIN=http://example.com
+            - DEMO=false
+            - USE_HTTPS=true
+            - CORS=*
+            - BACKUP=true
+            - BACKUP_SCHEDULE=* * * * * # Use crontab.guru to create
+            - BACKUP_COUNT=5 # A count of 1 will make a backup file called backup.json
+
+            ## DO NOT CHANGE THESE:
+            - DB_HOST=db
+            - DB_PORT=27017

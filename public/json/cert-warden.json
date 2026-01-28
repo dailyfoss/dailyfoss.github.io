@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "Personal",
     "version": null,
     "date_app_added": "2025-11-23",
     "date_last_released": null,
@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://www.certwarden.com/",
-    "documentation": "https://github.com/gregtwallace/certwarden",
+    "documentation": "https://www.certwarden.com/docs/introduction/",
     "source_code": "https://github.com/gregtwallace/certwarden",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/cert-warden.webp",
     "issues": "https://github.com/gregtwallace/certwarden/issues",
@@ -93,14 +93,16 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
+    "script": false,
+    "docker": false,
     "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/cert-warden/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

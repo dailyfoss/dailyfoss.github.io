@@ -1,0 +1,101 @@
+services:
+  proxy:
+    image: envoyproxy/envoy:v1.30-latest
+    container_name: bigcapital-proxy
+    restart: unless-stopped
+    depends_on:
+      - server
+      - webapp
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./docker/envoy/envoy.yaml:/etc/envoy/envoy.yaml
+    networks:
+      - bigcapital
+
+  webapp:
+    image: bigcapitalhq/webapp:latest
+    container_name: bigcapital-webapp
+    restart: unless-stopped
+    networks:
+      - bigcapital
+
+  server:
+    image: bigcapitalhq/server:latest
+    container_name: bigcapital-server
+    restart: unless-stopped
+    expose:
+      - "3000"
+    depends_on:
+      - mysql
+      - redis
+      - gotenberg
+    environment:
+      # Core
+      BASE_URL: https://yourdomain.com
+      JWT_SECRET: change-me
+
+      # Database
+      DB_HOST: mysql
+      DB_USER: bigcapital
+      DB_PASSWORD: strongpassword
+      DB_CHARSET: utf8mb4
+      SYSTEM_DB_NAME: bigcapital
+      TENANT_DB_NAME_PERFIX: tenant_
+
+      # Mail
+      MAIL_HOST: smtp.example.com
+      MAIL_PORT: "587"
+      MAIL_USERNAME: user
+      MAIL_PASSWORD: password
+      MAIL_SECURE: "false"
+      MAIL_FROM_NAME: Bigcapital
+      MAIL_FROM_ADDRESS: no-reply@example.com
+
+      # PDF
+      GOTENBERG_URL: http://gotenberg:9000
+      GOTENBERG_DOCS_URL: http://gotenberg:9000
+
+    networks:
+      - bigcapital
+
+  mysql:
+    image: mariadb:10.11
+    container_name: bigcapital-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: bigcapital
+      MYSQL_USER: bigcapital
+      MYSQL_PASSWORD: strongpassword
+      MYSQL_ROOT_PASSWORD: rootpassword
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - bigcapital
+
+  redis:
+    image: redis:7-alpine
+    container_name: bigcapital-redis
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+    networks:
+      - bigcapital
+
+  gotenberg:
+    image: gotenberg/gotenberg:7
+    container_name: bigcapital-gotenberg
+    restart: unless-stopped
+    expose:
+      - "9000"
+    networks:
+      - bigcapital
+
+volumes:
+  mysql_data:
+  redis_data:
+
+networks:
+  bigcapital:
+    driver: bridge

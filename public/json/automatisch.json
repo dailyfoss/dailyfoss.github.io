@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "AGPL-3.0",
     "version": "v0.15.0",
     "date_app_added": "2025-11-23",
     "date_last_released": "2025-08-08",
@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://automatisch.io",
-    "documentation": "https://github.com/automatisch/automatisch",
+    "documentation": "https://automatisch.io/docs",
     "source_code": "https://github.com/automatisch/automatisch",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/automatisch.webp",
     "issues": "https://github.com/automatisch/automatisch/issues",
@@ -84,14 +84,16 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
+    "script": false,
+    "docker": false,
     "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/automatisch/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

@@ -1,0 +1,31 @@
+services:
+  calorific:
+    image: xdpirate/calorific:latest
+    container_name: calorific_app
+    ports:
+      - "1338:80"
+    environment:
+      # Database configuration
+      - MYSQL_HOST=db
+      - MYSQL_PORT=3306
+      - MYSQL_USER=calorific
+      - MYSQL_PASSWORD=secret
+      - MYSQL_DATABASE=calorific
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  db:
+    image: mysql:8.0
+    container_name: calorific_db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: calorific
+      MYSQL_USER: calorific
+      MYSQL_PASSWORD: secret
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: unless-stopped
+
+volumes:
+  db_data:

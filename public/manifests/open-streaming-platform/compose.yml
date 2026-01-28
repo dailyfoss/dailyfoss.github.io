@@ -1,0 +1,228 @@
+services:
+  osp_ejabberd:
+    build: ./osp-ejabberd
+    # image: deamos/osp-ejabberd
+    restart: unless-stopped
+
+    mem_limit: 256m
+    memswap_limit: 256m
+    mem_reservation: 256m
+
+    ports:
+      - '5280:5280'
+      - '5222:5222'
+    environment:
+      - EJABBERD_XMLRPC_ALLOWIP=0.0.0.0/0
+      - EJABBERD_PASSWORD=changeme
+      - EJABBERD_DOMAIN=osp.example.com
+      - OSP_API_PROTOCOL=http
+      - OSP_API_DOMAIN=osp.example.com
+    #labels:
+    #  - "traefik.enable=true"
+    #  - "traefik.http.routers.ejabberd.entrypoints=websecure"
+    #  - "traefik.http.routers.ejabberd.rule=Host(`ejabberd.example.com`) && PathPrefix(`/http-bind`)"
+    #  - "traefik.http.routers.ejabberd.tls.domains[0].main=ejabberd.example.com"
+    #  - "traefik.http.routers.ejabberd.tls.certresolver=le"
+    #  - "traefik.http.services.ejabberd.loadbalancer.server.port=5280"
+    volumes:
+    - "/srv/docker/osp-app/data/ejabberd/database:/opt/ejabberd/database"
+    networks:
+      - osp
+      - web
+
+  osp_core:
+    build: ./osp-core
+    # image: deamos/osp-core
+    restart: unless-stopped
+
+    mem_limit: 2048m
+    memswap_limit: 2304m
+    mem_reservation: 2048m
+
+    #labels:
+    #  - "traefik.enable=true"
+    #  - "traefik.http.routers.streamingapp.entrypoints=websecure"
+    #  - "traefik.http.routers.streamingapp.rule=Host(`osp.example.com`)"
+    #  - "traefik.http.routers.streamingapp.tls.domains[0].main=osp.example.com"
+    #  - "traefik.http.routers.streamingapp.tls.certresolver=le"
+    #  - "traefik.http.services.streamingapp.loadBalancer.sticky.cookie.name=server_id"
+    #  - "traefik.http.services.streamingapp.loadBalancer.sticky.cookie.httpOnly=true"
+    ports:
+      - '80'
+    environment:
+      - OSP_SERVER_ADDRESS=osp.example.com
+      - OSP_REDIS_HOST=osp_redis
+      - OSP_REDIS_PORT=6379
+      - OSP_REDIS_PASSWORD=
+      - OSP_CORE_DB=mysql+pymysql://osp:REPLACEOSPDBPASSWORD@osp_db/osp
+      - OSP_CORE_SECRETKEY=REPLACEME_osp_flask_secret_REPLACEME
+      - OSP_CORE_PASSWORD_SALT=REPLACEME_osp_flask_salt_REPLACEME
+      - OSP_CORE_ALLOWREGISTRATION=True
+      - OSP_CORE_REQUIREEMAILREGISTRATION=False
+      - OSP_EJABBERD_PASSWORD=changeme
+      - OSP_EJABBERD_RPCHOST=osp_ejabberd
+      - OSP_EJABBERD_BOSHDOMAIN=ejabberd.example.com
+      - [email protected]
+      - OSP_SMTP_SERVERADDRESS=smtp.email.com
+      - OSP_SMTP_SERVERPORT=25
+      - OSP_SMTP_ENCRYPTION=none
+      - OSP_SMTP_USERNAME=
+      - OSP_SMTP_PASSWORD=
+      - OSP_RTMP_SERVER=osp_rtmp
+      # - TZ=ETC/UTC
+    volumes:
+      - "/srv/docker/osp-app/data/www:/var/www"
+      - "/srv/docker/osp-app/data/tmpfs/live:/var/www/live"
+      - "/srv/docker/osp-app/data/tmpfs/live-adapt:/var/www/live-adapt"
+      - "/srv/docker/osp-app/data/tmpfs/stream-thumb:/var/www/stream-thumb"
+    networks:
+      - osp
+      - web
+    depends_on:
+      - osp_db
+      - osp_redis
+      - osp_ejabberd
+    entrypoint: ["/opt/osp/docker-files.d/wait-for-it.sh", "osp_db:3306", "-t", "60", "--", "/opt/osp/docker-files.d/entrypoint.sh"]
+
+  osp_celery:
+    build: ./osp-core
+    # image: deamos/osp-core
+    restart: unless-stopped
+
+    mem_limit: 2048m
+    memswap_limit: 2304m
+    mem_reservation: 2048m
+
+    environment:
+      - OSP_SERVER_ADDRESS=osp.example.com
+      - OSP_REDIS_HOST=osp_redis
+      - OSP_REDIS_PORT=6379
+      - OSP_REDIS_PASSWORD=
+      - OSP_CORE_DB=mysql+pymysql://osp:REPLACEOSPDBPASSWORD@osp_db/osp
+      - OSP_CORE_SECRETKEY=REPLACEME_osp_flask_secret_REPLACEME
+      - OSP_CORE_PASSWORD_SALT=REPLACEME_osp_flask_salt_REPLACEME
+      - OSP_CORE_ALLOWREGISTRATION=True
+      - OSP_CORE_REQUIREEMAILREGISTRATION=False
+      - OSP_EJABBERD_PASSWORD=changeme
+      - OSP_EJABBERD_RPCHOST=osp_ejabberd
+      - OSP_EJABBERD_BOSHDOMAIN=ejabberd.example.com
+      - [email protected]
+      - OSP_SMTP_SERVERADDRESS=smtp.email.com
+      - OSP_SMTP_SERVERPORT=25
+      - OSP_SMTP_ENCRYPTION=none
+      - OSP_SMTP_USERNAME=
+      - OSP_SMTP_PASSWORD=
+      - OSP_CORE_TYPE=celery
+      # - TZ=ETC/UTC
+    volumes:
+      - "/srv/docker/osp-app/data/www:/var/www"
+      - "/srv/docker/osp-app/data/tmpfs/live:/var/www/live"
+      - "/srv/docker/osp-app/data/tmpfs/live-adapt:/var/www/live-adapt"
+      - "/srv/docker/osp-app/data/tmpfs/stream-thumb:/var/www/stream-thumb"
+    networks:
+      - osp
+    depends_on:
+      - osp_db
+      - osp_redis
+      - osp_ejabberd
+      - osp_core
+    entrypoint: ["/opt/osp/docker-files.d/wait-for-it.sh", "osp_db:3306", "-t", "60", "--", "/opt/osp/docker-files.d/entrypoint.sh"]
+
+  osp_celery_beat:
+    build: ./osp-core
+    # image: deamos/osp-core
+    restart: unless-stopped
+
+    mem_limit: 2048m
+    memswap_limit: 2304m
+    mem_reservation: 2048m
+
+    environment:
+      - OSP_SERVER_ADDRESS=osp.example.com
+      - OSP_REDIS_HOST=osp_redis
+      - OSP_REDIS_PORT=6379
+      - OSP_REDIS_PASSWORD=
+      - OSP_CORE_DB=mysql+pymysql://osp:REPLACEOSPDBPASSWORD@osp_db/osp
+      - OSP_CORE_SECRETKEY=REPLACEME_osp_flask_secret_REPLACEME
+      - OSP_CORE_PASSWORD_SALT=REPLACEME_osp_flask_salt_REPLACEME
+      - OSP_CORE_ALLOWREGISTRATION=True
+      - OSP_CORE_REQUIREEMAILREGISTRATION=False
+      - OSP_EJABBERD_PASSWORD=changeme
+      - OSP_EJABBERD_RPCHOST=osp_ejabberd
+      - OSP_EJABBERD_BOSHDOMAIN=ejabberd.example.com
+      - [email protected]
+      - OSP_SMTP_SERVERADDRESS=smtp.email.com
+      - OSP_SMTP_SERVERPORT=25
+      - OSP_SMTP_ENCRYPTION=none
+      - OSP_SMTP_USERNAME=
+      - OSP_SMTP_PASSWORD=
+      - OSP_CORE_TYPE=beat
+      # - TZ=ETC/UTC
+    volumes:
+      - "/srv/docker/osp-app/data/www:/var/www"
+      - "/srv/docker/osp-app/data/tmpfs/live:/var/www/live"
+      - "/srv/docker/osp-app/data/tmpfs/live-adapt:/var/www/live-adapt"
+      - "/srv/docker/osp-app/data/tmpfs/stream-thumb:/var/www/stream-thumb"
+    networks:
+      - osp
+    depends_on:
+      - osp_db
+      - osp_redis
+      - osp_ejabberd
+      - osp_core
+    entrypoint: [ "/opt/osp/docker-files.d/wait-for-it.sh", "osp_db:3306", "-t", "60", "--", "/opt/osp/docker-files.d/entrypoint.sh" ]
+
+  osp_rtmp:
+    build: ./osp-rtmp
+    # image: deamos/osp-rtmp
+    restart: unless-stopped
+    mem_limit: 2048m
+    memswap_limit: 2304m
+    mem_reservation: 2048m
+
+    ports:
+      - '1935:1935'
+    environment:
+      - OSP_API_HOST=http://osp_core
+      - OSP_RTMP_SECRETKEY=changeme
+    volumes:
+      - "/srv/docker/osp-app/data/www:/var/www"
+      - "/srv/docker/osp-app/data/tmpfs/live:/var/www/live"
+      - "/srv/docker/osp-app/data/tmpfs/live-adapt:/var/www/live-adapt"
+      - "/srv/docker/osp-app/data/tmpfs/stream-thumb:/var/www/stream-thumb"
+    networks:
+      - osp
+    depends_on:
+      - osp_core
+
+  osp_db:
+    image: mariadb
+    restart: unless-stopped
+    mem_limit: 256m
+    memswap_limit: 512m
+    mem_reservation: 256m
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+    volumes:
+      - /srv/docker/osp-mariadb:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=REPLACEOSPROOTDBPASSWORD
+      - MYSQL_PASSWORD=REPLACEOSPDBPASSWORD
+      - MYSQL_DATABASE=osp
+      - MYSQL_USER=osp
+    networks:
+      - osp
+    healthcheck:
+      test: "/usr/bin/mysql --user=root --password=$$MYSQL_ROOT_PASSWORD --execute \"SHOW DATABASES;\""
+      interval: 1m
+      timeout: 1s
+      retries: 5
+      start_period: 30s
+
+  osp_redis:
+    image: redis
+    restart: unless-stopped
+    mem_limit: 128m
+    memswap_limit: 256m
+    mem_reservation: 128m
+    networks:
+      - osp

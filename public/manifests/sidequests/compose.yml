@@ -1,0 +1,14 @@
+services:
+  SideQuests:
+    image: need4swede/sidequests:latest
+    container_name: SideQuests
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./instance:/app/instance
+    environment:
+      - PORT=8080
+      - ADMIN_USERNAME=your_admin_username
+      - ADMIN_PASSWORD=your_admin_password
+      - SECRET_KEY=your_secret_key
+    restart: always

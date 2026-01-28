@@ -1,0 +1,21 @@
+services:
+  restserver:
+    image: eikek0/sharry:latest
+    container_name: sharry
+    command: /opt/sharry.conf
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./sharry.conf:/opt/sharry.conf
+    depends_on:
+      - db
+  db:
+    image: postgres:16.3
+    container_name: postgres_db
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=dbuser
+      - POSTGRES_PASSWORD=dbpass
+      - POSTGRES_DB=dbname
+	  restart: unless-stopped

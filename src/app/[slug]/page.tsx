@@ -15,6 +15,7 @@ const RESERVED_ROUTES = [
   'category-view',
   'dashboard',
   'data',
+  'explore',
   'favorites',
   'index',
   'json-editor',

@@ -1,0 +1,8 @@
+
+services:
+  cerbos:
+    container_name: cerbos
+    image: ghcr.io/cerbos/cerbos:0.50.0
+    restart: unless-stopped
+    ports:
+      - "3592:3592"

@@ -1,0 +1,12 @@
+services:
+  ums:
+    image: universalmediaserver/ums
+    container_name: UMS
+    ports:
+      - 1044:1044
+      - 5001:5001
+      - 9001:9001
+    volumes:
+      - /srv/UMS:/root/media
+      - '"$HOME/.config/UMS":/root/.config/UMS'
+    restart: unless-stopped

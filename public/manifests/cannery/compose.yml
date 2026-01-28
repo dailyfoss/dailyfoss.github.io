@@ -1,0 +1,89 @@
+services:
+  cannery:
+    image: shibaobun/cannery
+    container_name: cannery
+    restart: unless_stopped
+    environment:
+      # HOST must be set!
+      # - HOST=your.domain.com
+      - DATABASE_URL=ecto://postgres:postgres@cannery-db/cannery
+      # Use `docker run -it shibaobun/cannery /app/priv/random.sh` to generate a secret key base
+      # - SECRET_KEY_BASE=change-me-this-is-really-important-seriously-change-it
+      # uncomment to enable public sign ups, not recommended
+      # - REGISTRATION=public
+      # SMTP host must be set!
+      # - SMTP_HOST=smtp.mailserver.tld
+      # optional, default is 587
+      # - SMTP_PORT=587
+      # SMTP username/passwords must be set!
+      # - SMTP_USERNAME=username
+      # - SMTP_PASSWORD=password
+      # optional, default is false
+      # - SMTP_SSL=false
+      # optional, default is format below
+      # - EMAIL_FROM=no-reply@cannery.example.tld
+      # optional, default is "Cannery"
+      # - EMAIL_NAME=Cannery
+    expose:
+      - "4000"
+    depends_on:
+      - cannery-db
+
+  cannery-db:
+    image: postgres:17
+    # To upgrade your database from a previous version, replace the existing
+    # image with the following line. Once the container has been booted and your
+    # database updated, you can revert back to the original `postgres:17` image
+    # if you'd like
+    # image: pgautoupgrade/pgautoupgrade:17-alpine
+    container_name: cannery-db
+    environment:
+      - POSTGRES_USER="postgres"
+      - POSTGRES_PASSWORD="postgres"
+      - POSTGRES_DB="cannery"
+    restart: always
+    volumes:
+      - ./cannery/data:/var/lib/postgresql/data
+
+  # Optional, if you don't have a reverse proxy set up already. You can replace
+  # this with any other reverse proxy like nginx, apache or caddy if you would
+  # like something more minimalist.
+
+  # nginx:
+  #   image: jc21/nginx-proxy-manager
+  #   container_name: nginx
+  #   restart: on-failure
+  #   ports:
+  #     - 443:443
+  #     - 80:80
+  #    # Access via http://localhost:81, although once you access this, you can
+  #    # reverse proxy itself to a domain name to control it from anywhere if
+  #    # you'd like, and then you can remove the following line
+  #     - 127.0.0.1:81:81
+  #   # expose:
+  #   #   - 81
+  #   environment:
+  #     # DISABLE_IPV6: 'true'
+  #     DB_MYSQL_HOST: "nginx-db"
+  #     DB_MYSQL_NAME: "nginx"
+  #     DB_MYSQL_PASSWORD: "my-password"
+  #     DB_MYSQL_PORT: 3306
+  #     DB_MYSQL_USER: "nginx"
+  #     PGID: 9000
+  #     PUID: 9000
+  #   volumes:
+  #     - /etc/letsencrypt:/etc/letsencrypt
+  #     - ./nginx/data:/data
+  #     - /tmp:/tmp
+
+  # nginx-db:
+  #   image: 'jc21/mariadb-aria:latest'
+  #   container_name: nginx-db
+  #   restart: on-failure
+  #   environment:
+  #     MYSQL_DATABASE: 'nginx'
+  #     MYSQL_PASSWORD: 'my-password'
+  #     MYSQL_ROOT_PASSWORD: 'my-root-password'
+  #     MYSQL_USER: 'nginx'
+  #   volumes:
+  #     - ./nginx/mysql:/var/lib/mysql

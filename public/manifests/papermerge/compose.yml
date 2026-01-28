@@ -1,0 +1,12 @@
+services:
+  web:
+    : *common
+    ports:
+     - "12000:80"
+    depends_on:
+      - redis
+  worker:
+    : *common
+    command: worker
+  redis:
+    image: redis:6

@@ -1,0 +1,81 @@
+services:
+  clearflask-connect:
+    image: ghcr.io/clearflask/clearflask-connect:latest
+    depends_on:
+      - clearflask-server
+    ports:
+      - 80:9080
+      - 443:9443
+    environment:
+      - NODE_ENV=production
+      - ENV=selfhost
+      - CLEARFLASK_CREATE_CONNECT_CONFIG_IF_MISSING=1
+    volumes:
+      - ./connect:/opt/clearflask/
+  clearflask-server:
+    image: ghcr.io/clearflask/clearflask-server:latest
+    ports:
+      - 8080:8080
+      # JMX
+      - 9950:9950
+      - 9951:9951
+    environment:
+      - CLEARFLASK_ENVIRONMENT=PRODUCTION_SELF_HOST
+      - CLEARFLASK_CREATE_SERVER_CONFIG_IF_MISSING=1
+    volumes:
+      - ./server:/opt/clearflask/
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8080/api/health" ]
+      interval: 5s
+      timeout: 15s
+      retries: 2
+  # MySQL (enabled by default as an alternative to ElasticSearch)
+  mysql-db:
+    image: mysql:5.7@sha256:2c23f254c6b9444ecda9ba36051a9800e8934a2f5828ecc8730531db8142af83
+    platform: linux/amd64
+    command:
+      - 'mysqld'
+      - '--port=3306'
+      - '--sql-mode=IGNORE_SPACE'
+      - '--explicit-defaults-for-timestamp'
+      - '--secure-file-priv=/tmp'
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=clearflask
+  # ElasticSearch (disabled by default)
+  #  elasticsearch:
+  #    profiles:
+  #      - with-deps
+  #    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.0
+  #    expose:
+  #      - 9200
+  #    environment:
+  #      - ES_JAVA_OPTS=-Xms2g -Xmx2g
+  #      - discovery.type=single-node
+  #    mem_limit: 4g
+  #    volumes:
+  #      - ./data/elasticsearch:/usr/share/elasticsearch/data
+  # For DynamoDB, S3 and SES alternative
+  localstack:
+    profiles:
+      - with-deps
+    image: localstack/localstack:0.14.3
+    expose:
+      - 4566
+      - 4571
+    environment:
+      - DEFAULT_REGION=us-east-1
+      - LOCALSTACK_HOSTNAME=localstack
+      - HOSTNAME_EXTERNAL=localstack
+      - SERVICES=dynamodb,ses,s3
+      - LS_LOG=warn
+      - START_WEB=0
+      - USE_SSL=0
+      - FORCE_NONINTERACTIVE=true
+      - DATA_DIR=/tmp/localstack/data
+      - LEGACY_PERSISTENCE=1
+    volumes:
+      - ./data/localstack:/tmp/localstack

@@ -1,0 +1,15 @@
+    # Adapt the next line to use the latest version of zusam
+    # https://hub.docker.com/r/zusam/zusam/tags
+    image: zusam/zusam:0.5.5
+    environment:
+      - DATABASE_NAME=data.db
+      - INIT_GROUP=zusam
+      - INIT_PASSWORD=zusam
+      - INIT_USER=zusam
+      - SUBPATH=
+    restart: always
+    volumes:
+      # "/path/to/your/data/dir" should be replaced
+      - /path/to/your/data/dir:/zusam/data
+    ports:
+      - "80:8080"

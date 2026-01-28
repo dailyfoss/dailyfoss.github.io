@@ -1,0 +1,14 @@
+services:
+  backend:
+    image: athlon1600/notepad:latest
+    environment:
+      NODE_ENV: production
+#    build:
+#      context: "."
+#      target: "runner"
+    volumes:
+      - ./backend/storage:/app/backend/storage
+      - ./backend/public:/app/backend/public
+    ports:
+      - "3000:3000"
+    restart: unless-stopped

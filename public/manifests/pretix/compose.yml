@@ -1,0 +1,14 @@
+services:
+  standalone:
+    image: pretix/standalone:stable
+    container_name: pretix
+    ports:
+      - 127.0.0.1:8345:80
+    volumes:
+      - /var/pretix-data:/data
+      - /etc/pretix:/etc/pretix
+      - /var/run/redis:/var/run/redis
+    sysctls:
+      - net.core.somaxconn=4096
+    command: all
+    restart: unless-stopped
