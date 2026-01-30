@@ -1,0 +1,31 @@
+services:
+  czkawka:
+    image: jlesage/czkawka:latest
+    container_name: czkawka
+    restart: unless-stopped
+
+    # Web UI port (browser access)
+    ports:
+      - "5800:5800"
+
+    # Persistent config and storage mounts
+    volumes:
+      # Stores app config, state, logs
+      - ./config:/config:rw
+
+      # Storage you want to scan
+      # Change /path/to/files to your actual path
+      - /path/to/files:/storage:rw
+
+    environment:
+      # Optional: set your own time zone
+      TZ: Asia/Jakarta
+
+      # Optional: set user IDs to match host permissions
+      # USER_ID: 1000
+      # GROUP_ID: 1000
+
+      # Optional: authentication for Web UI
+      # WEB_AUTHENTICATION: "1"
+      # WEB_AUTHENTICATION_USERNAME: "admin"
+      # WEB_AUTHENTICATION_PASSWORD: "secret123"

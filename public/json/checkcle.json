@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://checkcle.io",
-    "documentation": "https://github.com/operacle/checkcle",
+    "documentation": "https://docs.checkcle.io",
     "source_code": "https://github.com/operacle/checkcle",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/checkcle.webp",
     "issues": "https://github.com/operacle/checkcle/issues",
@@ -77,21 +77,21 @@
     "cli_only": false
   },
   "hosting_options": {
-    "self_hosted": false,
+    "self_hosted": true,
     "managed_cloud": false,
     "saas": false
   },
   "interfaces": {
     "cli": false,
     "gui": false,
-    "web_ui": false,
+    "web_ui": true,
     "api": false,
     "tui": false
   },
   "deployment_methods": {
-    "script": false,
+    "script": true,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
@@ -100,8 +100,8 @@
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
-    "username": null,
-    "password": null
+    "url": "https://demo.checkcle.io",
+    "username": "admin@example.com",
+    "password": "Admin123456"
   }
 }

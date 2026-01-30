@@ -1,0 +1,38 @@
+services:
+  crowdsec:
+    image: crowdsecurity/crowdsec:latest
+    container_name: crowdsec
+    restart: unless-stopped
+
+    # Expose Local API & metrics
+    ports:
+      - "8080:8080"  # Local API (bouncers and cscli)
+      - "6060:6060"  # Prometheus metrics (optional)
+
+    environment:
+      # Collections to install by default (comma-separated)
+      COLLECTIONS: "crowdsecurity/linux"
+
+      # Optional: timezone
+      TZ: Asia/Jakarta
+
+    volumes:
+      # Config and acquired scenarios
+      - crowdsec_config:/etc/crowdsec
+
+      # Data, decisions, cache, etc.
+      - crowdsec_db:/var/lib/crowdsec/data
+
+      # Optional: mount host logs for analysis
+      # Replace /var/log/nginx with whatever you want to protect
+      # - /var/log/nginx:/var/log/nginx:ro
+
+    healthcheck:
+      test: ["CMD", "crowdsec", "cscli", "metrics"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  crowdsec_config:
+  crowdsec_db:

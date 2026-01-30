@@ -1,0 +1,21 @@
+services:
+  comfyui:
+    image: sinfallas/comfyui:latest
+    container_name: comfyui
+    restart: unless-stopped
+    # GPU support (optional):
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
+    ports:
+      - "8188:8188"
+    volumes:
+      - ./comfyui_models:/app/models
+      - ./comfyui_flows:/app/flows
+      - ./comfyui_output:/app/output
+    environment:
+      - CLI_ARGS=--host 0.0.0.0

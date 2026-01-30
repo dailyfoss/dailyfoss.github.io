@@ -1,0 +1,15 @@
+services:
+  checkcle:
+    image: operacle/checkcle:latest
+    container_name: checkcle
+    restart: unless-stopped
+    ports:
+      - "8090:8090" # Map ports for external access, if local only "127.0.0.1:8090:8090"
+    volumes:
+      - /opt/pb_data:/mnt/pb_data  # Mount persistent data
+
+    # Optional: set user limits
+    ulimits:
+      nofile:
+        soft: 4096
+        hard: 8192

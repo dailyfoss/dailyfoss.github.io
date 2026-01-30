@@ -1,0 +1,54 @@
+services:
+  chirpy:
+    image: ghcr.io/chirpy-dev/chirpy:latest
+    container_name: chirpy
+    restart: unless-stopped
+    depends_on:
+      - postgres
+
+    ports:
+      - "8080:8080"
+
+    environment:
+      # Server
+      CHIRPY_ENV: production
+      CHIRPY_HOST: 0.0.0.0
+      CHIRPY_PORT: "8080"
+
+      # App
+      BASE_URL: http://localhost:8080
+      JWT_SECRET: super_secure_jwt_secret_change_me
+
+      # Database
+      DB_DRIVER: postgres
+      DB_HOST: postgres
+      DB_PORT: "5432"
+      DB_NAME: chirpy
+      DB_USER: chirpy
+      DB_PASSWORD: chirpy_password
+
+      # Security
+      ENABLE_SIGNUPS: "true"
+
+    networks:
+      - chirpy
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: chirpy-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: chirpy
+      POSTGRES_USER: chirpy
+      POSTGRES_PASSWORD: chirpy_password
+    volumes:
+      - chirpy_db:/var/lib/postgresql/data
+    networks:
+      - chirpy
+
+networks:
+  chirpy:
+    driver: bridge
+
+volumes:
+  chirpy_db:

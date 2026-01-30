@@ -1,0 +1,22 @@
+services:
+  clamav:
+    image: clamav/clamav:stable
+    container_name: clamav
+    restart: unless-stopped
+
+    # Expose clamd scanning port
+    ports:
+      - "3310:3310"
+
+    # Persist virus database to avoid redownloading
+    volumes:
+      - clamav-db:/var/lib/clamav
+
+    healthcheck:
+      test: ["CMD", "clamdtop"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  clamav-db:

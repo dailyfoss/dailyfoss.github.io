@@ -1,0 +1,24 @@
+services:
+  dashdot:
+    image: mauricenino/dashdot:latest
+    container_name: dashdot
+    restart: unless-stopped
+
+    # Expose the internal UI port
+    ports:
+      - "3001:3001"
+
+    # To allow the dashboard to display host metrics
+    # you need read access to host resources
+    privileged: true
+
+    volumes:
+      # Mandatory: mount the host root so dashdot can read
+      # system info (metrics, disk usage, etc.)
+      - "/:/mnt/host:ro"
+
+    environment:
+      # Optional: enable CPU temperature widget
+      DASHDOT_ENABLE_CPU_TEMPS: "true"
+      # Optional: override OS label (e.g., for Synology)
+      # DASHDOT_OVERRIDE_OS: "Linux"

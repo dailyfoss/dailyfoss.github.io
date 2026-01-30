@@ -1,0 +1,33 @@
+services:
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared
+    restart: unless-stopped
+
+    # Set the tunnel run command with your Cloudflare Tunnel TOKEN
+    command: tunnel --no-autoupdate run --token ${CLOUDFLARE_TUNNEL_TOKEN}
+
+    environment:
+      # Optional metrics (example)
+      # TUNNEL_METRICS: "0.0.0.0:2000"
+      # Optional region restriction
+      # TUNNEL_REGION: "us"
+
+    # If you have a local config & credentials instead of a token:
+    # command: tunnel --config /etc/cloudflared/config.yml run
+    # volumes:
+    #   - ./cloudflared:/etc/cloudflared
+
+    # No published ports are needed unless exposing metrics
+    # ports:
+    #   - "2000:2000"
+
+    # Example label for automatic network routing (e.g., Traefik)
+    # labels:
+    #   - "traefik.enable=true"
+    networks:
+      - cloudflared-net
+
+networks:
+  cloudflared-net:
+    driver: bridge

@@ -1,0 +1,15 @@
+services:
+  couchtube:
+    image: ghcr.io/ozencb/couchtube:latest
+    container_name: couchtube_app
+    ports:
+      - "8363:8363"  
+    environment:
+      - PORT=8363
+      - READONLY_MODE=false
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8363"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

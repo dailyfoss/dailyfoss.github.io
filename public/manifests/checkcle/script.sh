@@ -1,0 +1,1 @@
+curl -fsSL https://checkcle.io/install.sh | bash

@@ -1,0 +1,19 @@
+services:
+  shelfmark:
+    image: ghcr.io/calibrain/shelfmark:latest
+    container_name: shelfmark
+    restart: unless-stopped
+    ports:
+      - "8084:8084"
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: Asia/Jakarta
+    volumes:
+      - ./books:/books
+      - ./config:/config
+      # Required only if using torrent / usenet
+      # Path must match your downloader exactly
+      # - ./downloads:/downloads
+    healthcheck:
+      tes

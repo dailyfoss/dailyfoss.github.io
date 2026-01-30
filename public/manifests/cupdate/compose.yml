@@ -1,0 +1,23 @@
+services:
+  cupdate:
+    image: ghcr.io/alexgustafsson/cupdate:latest
+    container_name: cupdate
+    restart: unless-stopped
+
+    # Expose UI/API
+    ports:
+      - "8080:8080"
+
+    # Provide Docker/Podman socket for scanning local images
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - cupdate_data:/root/.cupdate
+
+    environment:
+      # Any environment variables documented upstream
+      # (none documented as required in repo, zero-config by default) 
+      # Add any needed overrides here
+      TZ: Asia/Jakarta
+
+volumes:
+  cupdate_data:

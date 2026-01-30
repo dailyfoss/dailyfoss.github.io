@@ -1,0 +1,39 @@
+# Email: admin@chronoframe.com
+# Password: CF1234@!
+
+services:
+  chronoframe:
+    image: ghcr.io/hoshinosuzumi/chronoframe:latest
+    container_name: chronoframe
+    restart: unless-stopped
+
+    ports:
+      - "3000:3000"
+
+    volumes:
+      - ./data:/app/data
+
+    environment:
+      # Admin (required once)
+      CFRAME_ADMIN_EMAIL: admin@example.com
+      CFRAME_ADMIN_NAME: Chronoframe
+      CFRAME_ADMIN_PASSWORD: "CF1234@!"
+
+      # Site metadata
+      NUXT_PUBLIC_APP_TITLE: Chronoframe
+      NUXT_PUBLIC_APP_SLOGAN: "Your timeline of memories"
+      NUXT_PUBLIC_APP_AUTHOR: "Chronoframe"
+      NUXT_PUBLIC_APP_AVATAR_URL: ""
+
+      # Map configuration
+      NUXT_PUBLIC_MAP_PROVIDER: maplibre
+      NUXT_PUBLIC_MAP_MAPLIBRE_TOKEN: ""
+      NUXT_PUBLIC_MAPBOX_ACCESS_TOKEN: ""
+      NUXT_MAPBOX_ACCESS_TOKEN: ""
+
+      # Storage
+      NUXT_STORAGE_PROVIDER: local
+      NUXT_PROVIDER_LOCAL_PATH: /app/data/storage
+
+      # Security (REQUIRED) must be 32 characters
+      NUXT_SESSION_PASSWORD: "replace_with_32_char_random_string"

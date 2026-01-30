@@ -1,0 +1,99 @@
+services:
+  client:
+    image: ghcr.io/bluewave-labs/checkmate:frontend-demo
+    container_name: checkmate-client
+    restart: unless-stopped
+    depends_on:
+      server:
+        condition: service_healthy
+    environment:
+      UPTIME_APP_API_BASE_URL: "https://checkmate-demo.bluewavelabs.ca/api/v1"
+      UPTIME_APP_CLIENT_HOST: "https://checkmate-demo.bluewavelabs.ca"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./certbot/www:/var/www/certbot:ro
+      - ./certbot/conf:/etc/nginx/ssl:ro
+    networks:
+      - checkmate
+
+  server:
+    image: ghcr.io/bluewave-labs/checkmate:backend-demo
+    container_name: checkmate-server
+    restart: unless-stopped
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      PORT: 52345
+    ports:
+      # expose only if needed externally
+      - "127.0.0.1:52345:52345"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:52345/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - checkmate
+
+  mongodb:
+    image: ghcr.io/bluewave-labs/checkmate:mongo-demo
+    container_name: checkmate-mongodb
+    restart: unless-stopped
+    command: ["mongod", "--quiet", "--bind_ip_all"]
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: strong_password
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')", "--quiet"]
+      interval: 5s
+      timeout: 10s
+      retries: 30
+    networks:
+      - checkmate
+
+  certbot:
+    image: certbot/certbot:latest
+    container_name: checkmate-certbot
+    restart: unless-stopped
+    volumes:
+      - ./certbot/www:/var/www/certbot
+      - ./certbot/conf:/etc/letsencrypt
+    entrypoint: >
+      /bin/sh -c "
+      trap exit TERM;
+      while :; do
+        certbot renew --webroot -w /var/www/certbot;
+        sleep 12h;
+      done"
+    networks:
+      - checkmate
+
+  capture:
+    image: ghcr.io/bluewave-labs/capture:latest
+    container_name: checkmate-capture
+    restart: unless-stopped
+    ports:
+      - "59232:59232"
+    environment:
+      API_SECRET: my_secret
+      GIN_MODE: release
+    volumes:
+      - /etc/os-release:/etc/os-release:ro
+    networks:
+      - checkmate
+
+networks:
+  checkmate:
+    driver: bridge
+
+volumes:
+  mongo_data:

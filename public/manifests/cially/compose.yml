@@ -1,0 +1,64 @@
+services:
+  cially-bot:
+    image: ghcr.io/cially/bot:2.0.0-beta.6
+    container_name: cially-bot
+    restart: unless-stopped
+    depends_on:
+      - pocketbase
+      - cially-web
+    ports:
+      - "3001:3001"
+    environment:
+      # Bot
+      TOKEN: "DISCORD_BOT_TOKEN"
+      CLIENT_ID: "DISCORD_CLIENT_ID"
+
+      API_PORT: "3001"
+      API_URL: "http://cially-bot:3001"
+
+      DEBUGGING: "FALSE"
+
+      # PocketBase collections
+      GUILD_COLLECTION: guilds
+      MESSAGE_COLLECTION: messages
+      INVITE_COLLECTION: invites
+      MEMBER_LEAVES_COLLECTION: member_leaves
+      MEMBER_JOINS_COLLECTION: member_joins
+    networks:
+      - cially-network
+
+  cially-web:
+    image: ghcr.io/cially/web:2.0.0-beta.6
+    container_name: cially-web
+    restart: unless-stopped
+    depends_on:
+      - pocketbase
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: "3000"
+      POCKETBASE_URL: "http://pocketbase:8090"
+    networks:
+      - cially-network
+
+  pocketbase:
+    image: ghcr.io/cially/pocketbase:2.0.0-beta.6
+    container_name: cially-pocketbase
+    restart: unless-stopped
+    ports:
+      - "8090:8090"
+    volumes:
+      - pocketbase-data:/pb/pb_data
+    environment:
+      POCKETBASE_ADMIN_EMAIL: admin@cially.org
+      POCKETBASE_ADMIN_PASSWORD: "admin123!"
+      POCKETBASE_ENCRYPTION_KEY: "REPLACE_WITH_32_CHAR_HEX"
+    networks:
+      - cially-network
+
+networks:
+  cially-network:
+    driver: bridge
+
+volumes:
+  pocketbase-data:

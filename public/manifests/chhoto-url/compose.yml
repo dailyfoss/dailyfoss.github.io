@@ -1,47 +1,53 @@
 services:
-    chhoto-url:
-        image: sintan1729/chhoto-url:latest
-        restart: unless-stopped
-        container_name: chhoto-url
-        ports:
-            - 4567:4567
-        environment:
-            # Change if you want to mount the database somewhere else.
-            # In this case, you can get rid of the db volume below
-            # and instead do a mount manually by specifying the location.
-            # - db_url=/urls.sqlite
+  chhoto-url:
+    image: sintan1729/chhoto-url:latest
+    container_name: chhoto-url
+    restart: unless-stopped
+    tty: true
 
-            # Change it in case you want to set the website name
-            # displayed in front of the shorturls, defaults to
-            # the hostname you're accessing it from.
-            # - site_url=https://www.example.com
+    ports:
+      - "4567:4567"
 
-            - password=$3CuReP4S$W0rD
+    environment:
+      # Database
+      db_url: /db/urls.sqlite
+      use_wal_mode: "True"
 
-            # Pass the redirect method, if needed. TEMPORARY and PERMANENT
-            # are accepted values, defaults to PERMANENT.
-            # - redirect_method=TEMPORARY
+      # Application
+      port: "4567"
+      site_url: https://short.example.com
 
-            # By default, the auto-generated pairs are adjective-name pairs.
-            # If you want UIDs, please change slug_style to UID.
-            # Supported values for slug_style are Pair and UID.
-            # The length is 8 by default, and a minimum of 4 is allowed.
-            # - slug_style=Pair
-            # - slug_length=8
+      # Security
+      password: TopSecretPass
+      api_key: SuperSecureRandomAPIKey123456
 
-            # In case you want to provide public access to adding links (and not
-            # delete, or listing), change the following option to Enable.
-            # - public_mode=Disable
+      # Redirect behavior
+      redirect_method: PERMANENT
 
-            # By default, the server sends no Cache-Control headers. You can supply a
-            # comma separated list of valid header as per RFC 7234 §5.2 to send those
-            # headers instead.
-            # - cache_control_header=no-cache, private
-        volumes:
-            - ./db:/urls.sqlite
-        networks:
-            - proxy
+      # Slug generation
+      slug_style: Pair
+      slug_length: "8"
+      try_longer_slug: "True"
+      allow_capital_letters: "False"
 
-networks:
-    proxy:
-        external: true
+      # Frontend / access control
+      public_mode: Disable
+      disable_frontend: "False"
+
+      # Cache headers (optional)
+      cache_control_header: "no-cache, private"
+
+    volumes:
+      - chhoto_db:/db
+
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:4567/api/whoami"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  chhoto_db:

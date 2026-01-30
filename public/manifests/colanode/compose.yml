@@ -1,0 +1,104 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg17
+    container_name: colanode-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: colanode_user
+      POSTGRES_PASSWORD: change_me_postgres_password
+      POSTGRES_DB: colanode_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "127.0.0.1:5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U colanode_user"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - colanode
+
+  valkey:
+    image: valkey/valkey:8.1
+    container_name: colanode-valkey
+    restart: unless-stopped
+    command: ["valkey-server", "--requirepass", "change_me_valkey_password"]
+    volumes:
+      - valkey_data:/data
+    ports:
+      - "127.0.0.1:6379:6379"
+    healthcheck:
+      test: ["CMD", "valkey-cli", "-a", "change_me_valkey_password", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - colanode
+
+  minio:
+    profiles: ["s3"]
+    image: minio/minio:RELEASE.2025-04-08T15-41-24Z
+    container_name: colanode-minio
+    restart: unless-stopped
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: change_me_minio_password
+      MINIO_BROWSER: "on"
+      MINIO_ADDRESS: ":9000"
+      MINIO_CONSOLE_ADDRESS: ":9001"
+    command: server /data --address ":9000" --console-address ":9001"
+    volumes:
+      - minio_data:/data
+    ports:
+      - "127.0.0.1:9000:9000"
+      - "127.0.0.1:9001:9001"
+    networks:
+      - colanode
+
+  server:
+    image: ghcr.io/colanode/server:latest
+    container_name: colanode-server
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      valkey:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+
+      POSTGRES_URL: postgres://colanode_user:change_me_postgres_password@postgres:5432/colanode_db
+      REDIS_URL: redis://:change_me_valkey_password@valkey:6379/0
+
+      # Optional override
+      # CONFIG: /config.json
+
+    ports:
+      - "3000:3000"
+    volumes:
+      - server_storage:/var/lib/colanode/storage
+      # - ./config.json:/config.json:ro
+    networks:
+      - colanode
+
+  web:
+    image: ghcr.io/colanode/web:latest
+    container_name: colanode-web
+    restart: unless-stopped
+    ports:
+      - "4000:80"
+    depends_on:
+      - server
+    networks:
+      - colanode
+
+networks:
+  colanode:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  valkey_data:
+  minio_data:
+  server_storage:

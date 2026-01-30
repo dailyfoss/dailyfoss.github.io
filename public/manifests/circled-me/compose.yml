@@ -1,0 +1,60 @@
+services:
+  circled-server:
+    image: gubble/circled-server:latest
+    container_name: circled-server
+    restart: unless-stopped
+
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+    ports:
+      - "8080:8080"
+
+    environment:
+      # Database
+      MYSQL_DSN: "root:strong_mysql_password@tcp(mysql:3306)/circled?charset=utf8mb4&parseTime=True&loc=Local"
+
+      # Server
+      BIND_ADDRESS: "0.0.0.0:8080"
+
+      # Storage
+      DEFAULT_BUCKET_DIR: "/mnt/data1"
+      DEFAULT_ASSET_PATH_PATTERN: "<year>/<month>/<id>"
+
+    volumes:
+      - asset-data:/mnt/data1
+
+    networks:
+      - circled
+
+  mysql:
+    image: mysql:8.0
+    container_name: circled-mysql
+    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password
+
+    environment:
+      MYSQL_DATABASE: circled
+      MYSQL_ROOT_PASSWORD: strong_mysql_password
+      MYSQL_ROOT_HOST: "%"
+
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+    networks:
+      - circled
+
+networks:
+  circled:
+    driver: bridge
+
+volumes:
+  asset-data:
+  mysql-data:

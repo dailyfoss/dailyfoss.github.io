@@ -1,0 +1,8 @@
+services:
+  registry-ui:
+    image: ghcr.io/eznix86/docker-registry-ui:latest
+    ports:
+      - "8011:80"
+    environment:
+      - REGISTRY_URL=http://your-registry.com:5000
+      - REGISTRY_AUTH=base64basicauthhere

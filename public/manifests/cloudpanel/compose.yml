@@ -1,0 +1,58 @@
+services:
+  cloudpanel:
+    image: cdntip/cloudpanel:latest
+    container_name: cloudpanel
+    restart: unless-stopped
+
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8443:8443"
+
+    environment:
+      # Admin user (change these to your own)
+      CP_ADMIN_EMAIL: "admin@example.com"
+      CP_ADMIN_PASSWORD: "SuperSecurePassword"
+
+      # Database settings (CloudPanel uses MariaDB/MySQL internally)
+      CP_DB_HOST: "mariadb"
+      CP_DB_USER: "cpanel"
+      CP_DB_PASSWORD: "StrongDBPass"
+      CP_DB_NAME: "cloudpanel"
+
+    depends_on:
+      mariadb:
+        condition: service_healthy
+
+    networks:
+      - cloudpanel-net
+
+  mariadb:
+    image: mariadb:10.11
+    container_name: cloudpanel-db
+    restart: unless-stopped
+
+    environment:
+      MYSQL_ROOT_PASSWORD: "StrongRootPass"
+      MYSQL_DATABASE: "cloudpanel"
+      MYSQL_USER: "cpanel"
+      MYSQL_PASSWORD: "StrongDBPass"
+
+    volumes:
+      - cloudpanel-db:/var/lib/mysql
+
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+    networks:
+      - cloudpanel-net
+
+networks:
+  cloudpanel-net:
+    driver: bridge
+
+volumes:
+  cloudpanel-db:

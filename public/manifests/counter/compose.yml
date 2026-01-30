@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: counter-redis
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+    command: ["redis-server", "--save", "60", "1"]
+
+  counter:
+    image: ghcr.io/ihucos/counter.dev-selfhost:latest
+    container_name: counter-selfhost
+    depends_on:
+      - redis
+    environment:
+      REDIS_URL: "redis://redis:6379"
+      BIND_ADDRESS: "0.0.0.0:8080"
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    volumes:
+      - counter_data:/data
+
+volumes:
+  redis_data:
+  counter_data:
