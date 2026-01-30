@@ -1,0 +1,11 @@
+services:
+  huntarr:
+    image: huntarr/huntarr:latest
+    container_name: huntarr
+    ports:
+      - "9705:9705"
+    volumes:
+      - /your-path/huntarr:/config
+    environment:
+      - TZ=America/New_York
+    restart: always

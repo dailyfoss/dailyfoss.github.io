@@ -1,0 +1,18 @@
+services:
+  amnezia:
+    image: amnezia/amnezia-server:latest
+    container_name: amnezia
+    privileged: true
+    restart: unless-stopped
+
+    ports:
+      - "51820:51820/udp"   # WireGuard
+      - "1194:1194/udp"     # OpenVPN
+      - "443:443/tcp"       # HTTPS management
+
+    volumes:
+      - ./amnezia-data:/opt/amnezia
+
+    sysctls:
+      - net.ipv4.ip_forward=1
+      - net.ipv6.conf.all.forwarding=1

@@ -28,7 +28,10 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/counter.webp",
     "issues": "https://github.com/ihucos/counter.dev-selfhost/issues",
     "releases": null,
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/counter-analytics.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/counter-login-page.png"
+    ]
   },
   "features": [
     {
@@ -85,9 +88,9 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
     "helm": false,
     "kubernetes": false,
     "terraform": false
@@ -96,7 +99,7 @@
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://counter.dev/dashboard.html?demo=1",
     "username": null,
     "password": null
   }

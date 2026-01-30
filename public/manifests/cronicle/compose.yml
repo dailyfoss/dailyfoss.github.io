@@ -1,0 +1,29 @@
+services:
+  cronicle:
+    image: bluet/cronicle-docker:latest
+    container_name: cronicle
+    restart: unless-stopped
+
+    # Web UI port
+    ports:
+      - "3012:3012"
+
+    # Recommended timezone
+    environment:
+      TZ: Asia/Jakarta
+      # Optional: use full URL for generated links
+      # CRONICLE_base_app_url: "https://cronicle.example.com"
+
+    volumes:
+      # Persistent data, logs, and plugins
+      - ./data/data:/opt/cronicle/data:rw
+      - ./data/logs:/opt/cronicle/logs:rw
+      - ./data/plugins:/opt/cronicle/plugins:rw
+      # Optional additional app integration path
+      - ./data/app:/app:rw
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3012"]
+      interval: 30s
+      timeout: 5s
+      retries: 3

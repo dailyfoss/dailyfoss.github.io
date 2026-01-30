@@ -1,0 +1,27 @@
+services:
+  beaverhabits:
+    container_name: beaverhabits
+    image: daya0576/beaverhabits:latest
+    restart: unless-stopped
+
+    user: "1000:1000"
+
+    ports:
+      - "8080:8080"
+
+    environment:
+      # Storage mode:
+      # USER_DISK  → JSON files
+      # DATABASE   → SQLite (habits.db)
+      HABITS_STORAGE: USER_DISK
+
+      # Skip authentication for trusted email
+      TRUSTED_LOCAL_EMAIL: your@email.com
+
+      # UI preferences
+      INDEX_HABIT_DATE_COLUMNS: 5
+      ENABLE_IOS_STANDALONE: "true"
+
+    volumes:
+      # Persistent user data
+      - ./data:/app/.user

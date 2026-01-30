@@ -1,0 +1,22 @@
+services:
+  loggifly:
+    image: ghcr.io/clemcer/loggifly:latest
+    container_name: loggifly
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      # This is where you would put your config.yaml file (ignore if you are only using environment variables)
+      # - ./loggifly/config:/config
+    environment:
+      # Choose at least one notification service
+      NTFY_URL: "https://ntfy.sh"
+      NTFY_TOPIC: "your_topic"
+      # Token or Username+Password In case you need authentication
+      # NTFY_TOKEN:
+      # NTFY_USERNAME:
+      # NTFY_PASSWORD:
+      APPRISE_URL: "discord://..."      # Apprise-compatible URL
+
+      CONTAINERS: "vaultwarden,audiobookshelf"        # Comma-separated list
+      GLOBAL_KEYWORDS: "error,failed login,password"  # Basic keyword monitoring
+      GLOBAL_KEYWORDS_WITH_ATTACHMENT: "critical"     # Attaches a log file to the notification
+    restart: unless-stopped

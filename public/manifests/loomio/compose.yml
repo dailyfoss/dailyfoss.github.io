@@ -1,0 +1,165 @@
+services:
+  nginx-proxy:
+    image: nginxproxy/nginx-proxy:alpine
+    labels:
+      - "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy=true"
+    networks:
+      - main
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/custom.conf:ro
+      - certs:/etc/nginx/certs
+      - vhost:/etc/nginx/vhost.d
+      - html:/usr/share/nginx/html
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    restart: unless-stopped
+
+  nginx-proxy-acme:
+    image: nginxproxy/acme-companion
+    networks:
+      - main
+    depends_on:
+      - nginx-proxy
+    volumes:
+      - certs:/etc/nginx/certs
+      - vhost:/etc/nginx/vhost.d
+      - html:/usr/share/nginx/html
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - acme:/etc/acme.sh
+    restart: unless-stopped
+
+  app:
+    container_name: loomio-app
+    image: ${LOOMIO_CONTAINER_IMAGE}:${LOOMIO_CONTAINER_TAG}
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD-SHELL', 'curl --fail http://localhost:3000/ || exit 1']
+    expose:
+      - 3000
+    env_file: ./.env
+    environment:
+      - VIRTUAL_HOST=${CANONICAL_HOST}
+      - LETSENCRYPT_HOST=${CANONICAL_HOST}
+    volumes:
+      - ./uploads:/loomio/public/system
+      - ./storage:/loomio/storage
+      - ./files:/loomio/public/files
+      - ./plugins:/loomio/plugins/docker
+      - ./import:/import
+      - ./tmp:/loomio/tmp
+    networks:
+      - main
+    depends_on:
+      - db
+      - redis
+
+  worker:
+    container_name: loomio-worker
+    image: ${LOOMIO_CONTAINER_IMAGE}:${LOOMIO_CONTAINER_TAG}
+    restart: always
+    networks:
+      - main
+    env_file: ./.env
+    environment:
+      - TASK=worker
+    volumes:
+      - ./uploads:/loomio/public/system
+      - ./storage:/loomio/storage
+      - ./files:/loomio/public/files
+      - ./plugins:/loomio/plugins/docker
+      - ./tmp:/loomio/tmp
+
+  db:
+    container_name: loomio-db
+    image: postgres:${POSTGRES_CONTAINER_TAG}
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD', 'pg_isready', '-U', 'postgres']
+    networks:
+      - main
+    env_file: ./.env
+    volumes:
+      - ./pgdata:/pgdata
+      - ./pgdumps:/pgdumps
+    environment:
+     - PGDATA=/pgdata
+
+  redis:
+    container_name: loomio-redis
+    image: redis:5.0
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+    networks:
+      - main
+
+  mailin:
+    container_name: loomio-mailin
+    image: ${MAILIN_CONTAINER_IMAGE}:${MAILIN_CONTAINER_TAG}
+    restart: unless-stopped
+    networks:
+      - main
+    ports:
+      - "25:25"
+    environment:
+      - WEBHOOK_URL=http://app:3000/email_processor/
+
+  channels:
+    container_name: loomio-channels
+    image: loomio/loomio_channel_server
+    restart: unless-stopped
+    networks:
+      - main
+    env_file: ./.env
+    depends_on:
+      - redis
+    environment:
+      - VIRTUAL_HOST=channels.${CANONICAL_HOST}
+      - LETSENCRYPT_HOST=channels.${CANONICAL_HOST}
+
+  hocuspocus:
+    container_name: loomio-hocuspocus
+    image: loomio/loomio_channel_server
+    restart: unless-stopped
+    networks:
+      - main
+    env_file: ./.env
+    environment:
+      - APP_URL=http://app:3000
+      - VIRTUAL_HOST=hocuspocus.${CANONICAL_HOST}
+      - LETSENCRYPT_HOST=hocuspocus.${CANONICAL_HOST}
+    command: npm run hocuspocus
+
+  pgbackups:
+    image: prodrigestivill/postgres-backup-local
+    restart: always
+    user: postgres:postgres
+    networks:
+      - main
+    volumes:
+      - ./pgdumps:/backups
+    links:
+      - db
+    depends_on:
+      - db
+    environment:
+      - POSTGRES_HOST=db
+      - POSTGRES_DB=loomio_production
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_EXTRA_OPTS=-Z6 --schema=public --blobs
+      - SCHEDULE=@daily
+      - BACKUP_KEEP_DAYS=7
+      - BACKUP_KEEP_WEEKS=1
+      - BACKUP_KEEP_MONTHS=1
+      - HEALTHCHECK_PORT=8080
+networks:
+  main:
+
+volumes:
+  certs:
+  vhost:
+  html:
+  acme:

@@ -1,0 +1,25 @@
+services:
+  dumbterm:
+    image: dumbwareio/dumbterm:latest
+    container_name: dumbterm
+    ports:
+      - ${DUMBTERM_PORT:-3000}:3000
+    volumes:
+      - ${DUMBTERM_CONFIG:-./config}:/root/.config
+      - ${DUMBTERM_DATA_DIR:-./data}:/root/data
+    environment:
+      # Container timezone
+      TZ: ${DUMBTERM_TZ:-America/Los_Angeles}
+      # The title shown in the web interface
+      SITE_TITLE: ${DUMBTERM_SITE_TITLE:-DumbTerm}
+      # Recommended PIN protection (leave empty to disable)
+      DUMBTERM_PIN: ${DUMBTERM_PIN:-1234}
+      # The base URL for the application
+      BASE_URL: ${DUMBTERM_BASE_URL:-http://localhost:3000}
+      ENABLE_STARSHIP: ${ENABLE_STARSHIP:-true}
+      LOCKOUT_TIME: ${DUMBTERM_LOCKOUT_TIME:-15} # Minutes
+      # Session duration in hours before requiring re-authentication
+      MAX_SESSION_AGE: ${DUMBTERM_MAX_SESSION_AGE:-24} # Hours
+      # (OPTIONAL) - List of allowed origins for CORS
+      # ALLOWED_ORIGINS: ${DUMBTERM_ALLOWED_ORIGINS:-http://localhost:3000}
+    restart: unless-stopped

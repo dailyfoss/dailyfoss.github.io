@@ -1,0 +1,29 @@
+services:
+  web:
+    image: tuleap/tuleap-community-edition
+    hostname: ${TULEAP_FQDN}
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+      - "22:22"
+    volumes:
+      - ./tuleap-data:/data
+    depends_on:
+      - db
+    environment:
+      - TULEAP_FQDN=${TULEAP_FQDN}
+      - TULEAP_SYS_DBHOST=db
+      - TULEAP_SYS_DBPASSWD=${TULEAP_SYS_DBPASSWD}
+      - SITE_ADMINISTRATOR_PASSWORD=${SITE_ADMINISTRATOR_PASSWORD}
+      - DB_ADMIN_USER=root
+      - DB_ADMIN_PASSWORD=${MYSQL_ROOT_PASSWORD}
+
+  # This is for test purpose only. It's not advised to run a production database as a docker container
+  db:
+    image: mysql:8.0
+    command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_unicode_ci", "--sql-mode=NO_ENGINE_SUBSTITUTION"]
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - ./db-data:/var/lib/mysql

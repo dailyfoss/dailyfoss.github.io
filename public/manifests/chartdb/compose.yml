@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  chartdb:
+    image: ghcr.io/chartdb/chartdb:latest
+    container_name: chartdb
+    environment:
+      # (Optional) OpenAI API key for AI features (export SQL / smart assistant)
+      - VITE_OPENAI_API_KEY=${OPENAI_API_KEY}
+
+      # Disable analytics if you want privacy
+      - DISABLE_ANALYTICS=true
+
+      # (Optional) Backend configuration
+      # If you host behind HTTPS reverse proxy, set this accordingly
+      - BASE_URL=http://localhost
+
+    ports:
+      - "8080:80"
+    volumes:
+      # Optional: persist config or uploads
+      - chartdb_data:/app/storage
+    restart: unless-stopped
+
+  # Optional: Nginx reverse proxy
+  nginx:
+    image: nginx:stable-alpine
+    container_name: chartdb_nginx
+    depends_on:
+      - chartdb
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - certs:/etc/nginx/certs
+    restart: unless-stopped
+
+volumes:
+  chartdb_data:
+  certs:

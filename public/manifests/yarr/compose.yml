@@ -1,0 +1,8 @@
+services:
+  yarr:
+    image: itsnoted/yarr
+    ports:
+      - 7070:7070
+    volumes:
+      - ./data:/data
+    restart: always

@@ -1,0 +1,8 @@
+services:
+  app:
+    image: epoupon/fileshelter
+    volumes:
+      - ./files:/var/fileshelter
+    ports:
+      - 5091:5091
+	restart unless-stopped

@@ -83,7 +83,7 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
+    "script": false,
     "docker": false,
     "docker_compose": true,
     "helm": false,
@@ -91,7 +91,6 @@
     "terraform": false
   },
   "manifests": {
-    "script": "/manifests/appwrite/script.sh",
     "docker_compose": "/manifests/appwrite/compose.yml"
   },
   "notes": [],

@@ -1,0 +1,14 @@
+#version: "3.8"
+services:
+  configarr:
+    image: ghcr.io/raydak-labs/configarr:latest
+    container_name: configarr
+    #user: 1000:1000 # Optional, defaults to root:root
+    restart: unless_stopped
+    environment:
+      - TZ=Etc/UTC
+    volumes:
+      - ./config:/app/config # Contains the config.yml and secrets.yml
+      - ./dockerrepos:/app/repos # Cache repositories
+      - ./custom/cfs:/app/cfs # Optional if custom formats locally provided
+      - ./custom/templates:/app/templates # Optional if custom templates

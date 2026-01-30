@@ -1,0 +1,13 @@
+services:
+  traccar:
+    container_name: traccar
+    image: traccar/traccar:latest
+    hostname: traccar
+    ports:
+      - 80:8082
+      - 5000-5150:5000-5150
+      - 5000-5150:5000-5150/udp
+    volumes:
+      - /opt/traccar/logs:/opt/traccar/logs:rw
+      - /opt/traccar/traccar.xml:/opt/traccar/conf/traccar.xml:ro
+    restart: unless-stopped

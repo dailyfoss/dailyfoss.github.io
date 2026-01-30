@@ -1,0 +1,8 @@
+services:
+  txtdot:
+    image: ghcr.io/txtdot/txtdot:latest
+    ports:
+      - '8080:8080'
+    restart: unless-stopped
+    volumes:
+      - '.env:/app/packages/server/dist/.env'

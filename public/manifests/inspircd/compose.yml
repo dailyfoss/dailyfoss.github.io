@@ -1,0 +1,9 @@
+services:
+  inspircd-docker:
+    container_name: inspircd
+    image: inspircd/inspircd-docker
+    ports:
+      - 6667:6667
+    volumes:
+      - /path/to/your/config:/inspircd/conf/
+    restart: unless-stopped

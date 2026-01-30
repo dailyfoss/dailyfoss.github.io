@@ -1,0 +1,40 @@
+services:
+  bknd:
+    container_name: bknd
+    image: ghcr.io/lassejlv/bknd:latest
+    restart: unless-stopped
+
+    ports:
+      - "1337:1337"
+
+    environment:
+      # Database connection (PostgreSQL)
+      BKND_DB_URL: "postgresql://bknd:secret@postgres:5432/bknd"
+
+      # Optional admin UI / server port (default 1337)
+      BKND_PORT: "1337"
+
+      # Optional additional args e.g. --db-url file:/data/data.db
+      # ARGS: "--db-url postgresql://bknd:secret@postgres:5432/bknd"
+
+    depends_on:
+      - postgres
+
+    volumes:
+      - ./data:/data
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: bknd-postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: bknd
+      POSTGRES_USER: bknd
+      POSTGRES_PASSWORD: secret
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

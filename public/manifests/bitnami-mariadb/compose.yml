@@ -1,0 +1,9 @@
+services:
+  mysql:
+    image: bitnami/mysql:latest
+    environment:
+     MARIADB_ROOT_PASSWORD: example
+    volumes:
+      - /path/to/mariadb-persistence:/bitnami/mariadb/data
+    # (this is just an example, not intended to be a production configuration)
+    restart: always

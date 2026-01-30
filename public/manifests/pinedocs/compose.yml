@@ -1,0 +1,8 @@
+services:
+  web:
+    image: xy2z/pinedocs:1.2.5
+    ports:
+      - 3000:80
+    volumes:
+      - ./data:/data/pinedocs
+    restart: unless-stopped

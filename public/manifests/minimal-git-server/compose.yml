@@ -1,0 +1,11 @@
+services:
+  minimal-git-server:
+    image: ghcr.io/mcarbonne/minimal-git-server:2
+    container_name: minimal-git-server
+    volumes:
+      - .../ssh:/srv/ssh
+      - .../git:/srv/git
+      - .../config.yml:/srv/config.yml:ro
+    ports:
+      - 20222:22
+    restart: unless-stopped

@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://castopod.org",
-    "documentation": "https://github.com/ad-aures/castopod",
+    "documentation": "https://docs.castopod.org/main/en/",
     "source_code": "https://github.com/ad-aures/castopod",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/castopod.webp",
     "issues": "https://github.com/ad-aures/castopod/issues",
     "releases": null,
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/castopod-homepage.png"
+    ]
   },
   "features": [
     {
@@ -94,14 +96,16 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
+    "script": false,
+    "docker": false,
     "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/castopod/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

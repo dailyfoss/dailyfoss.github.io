@@ -1,0 +1,14 @@
+services:
+  homebox:
+    image: ghcr.io/hay-kot/homebox:latest
+#   image: ghcr.io/hay-kot/homebox:latest-rootless
+    container_name: homebox
+    restart: always
+    environment:
+    - HBOX_LOG_LEVEL=info
+    - HBOX_LOG_FORMAT=text
+    - HBOX_WEB_MAX_UPLOAD_SIZE=10
+    volumes:
+      - ./homebox-data:/data/
+    ports:
+      - 3100:7745

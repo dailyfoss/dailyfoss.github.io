@@ -1,0 +1,33 @@
+services:
+  postgres:
+    image: postgres:14-alpine
+    environment:
+      POSTGRES_USER: dnote
+      POSTGRES_PASSWORD: dnote
+      POSTGRES_DB: dnote
+    volumes:
+      - ./dnote_data:/var/lib/postgresql/data
+    restart: always
+
+  dnote:
+    image: dnote/dnote:latest
+    environment:
+      GO_ENV: PRODUCTION
+      DBSkipSSL: "true"
+      DBHost: postgres
+      DBPort: 5432
+      DBName: dnote
+      DBUser: dnote
+      DBPassword: dnote
+      WebURL: localhost:3000
+      OnPremises: "true"
+      SmtpHost:
+      SmtpPort:
+      SmtpUsername:
+      SmtpPassword:
+      DisableRegistration: "false"
+    ports:
+      - 3000:3000
+    depends_on:
+      - postgres
+    restart: always

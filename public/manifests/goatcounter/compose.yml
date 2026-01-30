@@ -1,0 +1,9 @@
+services:
+    goatcounter:
+	    container_name: goatcounter
+        image: baethon/goatcounter
+        environment:
+            - [email protected]
+            - GOATCOUNTER_DOMAIN=stats.domain.com
+			- GOATCOUNTER_PASSWORD=password
+	    restart: unless-stopped

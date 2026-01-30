@@ -23,13 +23,14 @@
   },
   "resources": {
     "website": "https://aureuserp.com",
-    "documentation": "https://github.com/aureuserp/aureuserp",
+    "documentation": "https://devdocs.aureuserp.com",
     "source_code": "https://github.com/aureuserp/aureuserp",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/aureus.webp",
     "issues": "https://github.com/aureuserp/aureuserp/issues",
     "releases": "https://github.com/aureuserp/aureuserp/releases",
     "screenshots": [
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/aureus-homepage.png"
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/aureus-homepage.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/aureus-demo.png"
     ]
   },
   "features": [
@@ -82,18 +83,20 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
+    "script": false,
+    "docker": false,
     "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/aureus/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://demo.aureuserp.com",
     "username": null,
     "password": null
   }

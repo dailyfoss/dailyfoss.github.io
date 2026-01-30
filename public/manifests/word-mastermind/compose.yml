@@ -1,0 +1,6 @@
+services:
+  word-mastermind:
+    image: ghcr.io/clupasq/word-mastermind:latest
+    ports:
+      - 3333:80
+    restart: unless-stopped

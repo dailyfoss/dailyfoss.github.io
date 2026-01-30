@@ -1,0 +1,9 @@
+services:
+  tamari:
+    container_name: tamari
+    image: alexbates/tamari:0.8
+    ports:
+      - 4888:4888
+    volumes:
+      - tamariappdata:/app/appdata
+    restart: always

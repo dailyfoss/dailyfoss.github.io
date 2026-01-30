@@ -1,0 +1,22 @@
+services:
+  bookheaven:
+    image: ghcr.io/bookheaven/bookheaven-server:latest
+    container_name: bookheaven
+    volumes:
+      # point the /app/data path to a persistent location on your host
+      # this is where all your books, covers, fonts, etc will be stored
+      # make sure the user running the container down below has read and write permissions to this folder
+      - ./data:/app/data
+      # optional: if you want to import books by copying them directly into a folder on your host
+      - ./import:/app/import
+    ports:
+      # web ui
+      - 8080:8080
+      # optional: required for auto discovery, changing the default port is not supported for now since it's hardcoded in the client
+      - 27007:27007/udp
+    environment:
+      # optional: required for auto discovery, change to your desired domain or ip:port, including the protocol (http or https)
+      - SERVER_URL=https://bookheaven.yourdomain.tld
+      - TZ=Europe/Madrid
+    user: 1000:1000
+    restart: unless-stopped

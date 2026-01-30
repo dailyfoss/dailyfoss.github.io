@@ -1,0 +1,15 @@
+services:
+  code-server:
+    image: codercom/code-server:latest
+    stdin_open: true
+    tty: true
+    container_name: code-server
+    ports:
+      - 8080:8080
+    volumes:
+      - $HOME/.local:/home/coder/.local
+      - $HOME/.config:/home/coder/.config
+      - $PWD:/home/coder/project
+    user: $(id -u):$(id -g)
+    environment:
+      - DOCKER_USER=$USER

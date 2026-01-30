@@ -1,0 +1,9 @@
+services:
+  dash:
+    image: mauricenino/dashdot:latest
+    restart: unless-stopped
+    privileged: true
+    ports:
+      - '4000:3001'
+    volumes:
+      - /:/mnt/host:ro

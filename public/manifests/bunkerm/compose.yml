@@ -1,0 +1,69 @@
+version: "3.9"
+
+services:
+  mosquitto:
+    container_name: mosquitto-stack
+    image: eclipse-mosquitto:2.0
+    restart: unless-stopped
+
+    ports:
+      - "1900:1900"   # MQTT
+      - "2000:2000"   # Frontend
+      - "3001:3001"   # Auth API
+
+    environment:
+      # MQTT
+      MQTT_BROKER: mosquitto
+      MQTT_PORT: "1900"
+      MQTT_USERNAME: bunker
+      MQTT_PASSWORD: bunker
+
+      # Security
+      JWT_SECRET: change_me_in_production
+      API_KEY: change_me_api_key
+      VITE_API_KEY: change_me_api_key
+
+      FRONTEND_URL: https://localhost:2000
+      ALLOWED_ORIGINS: https://localhost:2000,http://localhost:2000,*
+      ALLOWED_HOSTS: localhost,127.0.0.1,*
+
+      RATE_LIMIT_PER_MINUTE: "100"
+
+      # SSL
+      SSL_CERT_PATH: /app/certs/cert.pem
+      SSL_KEY_PATH: /app/certs/key.pem
+
+      # Logging
+      LOG_LEVEL: INFO
+      API_LOG_FILE: /var/log/api/api_activity.log
+
+      # App
+      AUTH_API_PORT: "3001"
+      DB_PATH: /data
+      MAX_UPLOAD_SIZE: "10485760"
+      DYNSEC_PATH: /var/lib/mosquitto/dynamic-security.json
+
+      VITE_AWS_BRIDGE_API_URL: https://localhost:2000/api/aws-bridge
+
+    volumes:
+      # Mosquitto
+      - ./backend/mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+      - ./backend/etc/mosquitto/conf.d:/mosquitto/config/conf.d:ro
+      - ./backend/etc/mosquitto/certs:/mosquitto/certs:ro
+
+      # Logs
+      - ./backend/logs:/var/log/mosquitto
+      - ./backend/logs/api:/var/log/api
+
+      # App + Auth data
+      - ./backend/app:/app
+      - auth_data:/data
+
+      # Frontend (optional dev mode)
+      - ./frontend:/frontend
+
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fs http://localhost:3001/api/auth/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

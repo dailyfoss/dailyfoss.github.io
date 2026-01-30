@@ -1,0 +1,10 @@
+services:
+  roundup:
+    image: rounduptracker/roundup:latest
+    container_name: roundup_demo
+    ports:
+      - 127.0.0.1:8917:8080
+    volumes:
+      - $PWD:/usr/src/app/tracker
+    command: demo
+    restart: always

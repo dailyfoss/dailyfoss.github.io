@@ -1,0 +1,23 @@
+services:
+  app:
+    # Comment the line below if you don't want to use the `hybrid/latest` image.
+    image: neonmmd/websurfx:latest
+    # Uncomment the line below if you want to use the `no cache` image.
+    # image: neonmmd/websurfx:nocache
+    # Uncomment the line below if you want to use the `memory` image.
+    # image: neonmmd/websurfx:memory
+    # Uncomment the line below if you want to use the `redis` image.
+    # image: neonmmd/websurfx:redis
+    ports:
+      - 8080:8080
+    # Uncomment the following lines if you are using the `hybrid/latest` or `redis` image.
+    # depends_on:
+    #   - redis
+    # links:
+    #   - redis
+    volumes:
+      - ./websurfx/:/etc/xdg/websurfx/
+  # Uncomment the following lines if you are using the `hybrid/latest` or `redis` image.
+  # redis:
+  #   image: redis:latest
+    restart: unless-stopped

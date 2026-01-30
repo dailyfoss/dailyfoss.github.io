@@ -1,0 +1,9 @@
+services:
+  miniserve:
+    image: docker.io/svenstaro/miniserve
+    volumes:
+      - /tmp:/tmp
+    ports:
+      - 8080:8080
+    command: /tmp
+    restart: unless-stopped

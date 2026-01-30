@@ -1,0 +1,49 @@
+services:
+  web:
+    build: { context: "." }
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/var/www
+    depends_on:
+      # mssql: { condition: service_healthy }
+      [ "${COMPOSE_PROFILES-postgres}" ]
+    environment:
+      DATABASE_URL: ${COMPOSE_PROFILES-postgres}://root:Password123!@${COMPOSE_PROFILES:-postgres}/sqlpage${DATABASE_URL_PARAMS:-}
+      RUST_LOG: sqlpage=trace
+  postgres:
+    profiles: ["postgres"]
+    ports: ["5432:5432"]
+    build: { context: "db-test-setup/postgres" }
+    shm_size: 128mb
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_DB: sqlpage
+      POSTGRES_PASSWORD: Password123!
+    healthcheck:
+      test: pg_isready -U root -d sqlpage
+
+  mysql:
+    profiles: ["mysql"]
+    ports: ["3306:3306"]
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: Password123!
+      MYSQL_DATABASE: sqlpage
+  mssql:
+    profiles: ["mssql"]
+    ports: ["1433:1433"]
+    build: { context: "db-test-setup/mssql" }
+    healthcheck:
+      test: /opt/mssql-tools18/bin/sqlcmd -S localhost -U root -P "Password123!" -Q "SELECT 1" -b -o /dev/null -No
+      interval: 10s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
+  mariadb:
+    profiles: ["mariadb"]
+    ports: ["3306:3306"]
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: Password123!
+      MYSQL_DATABASE: sqlpage

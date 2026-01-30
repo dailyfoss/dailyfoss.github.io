@@ -1,0 +1,11 @@
+services:
+    damselfly:
+        container_name: damselfly
+        image: webreaper/damselfly
+        ports:
+            - 6363:6363/tcp
+        volumes:
+            - ./config:/config
+            - .thumbs:/thumbs
+            - ./photo:/pictures
+        restart: unless-stopped

@@ -23,12 +23,16 @@
   },
   "resources": {
     "website": "https://CapRover.com",
-    "documentation": "https://github.com/caprover/caprover",
+    "documentation": "https://caprover.com/docs/get-started.html",
     "source_code": "https://github.com/caprover/caprover",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/caprover.webp",
     "issues": "https://github.com/caprover/caprover/issues",
     "releases": "https://github.com/caprover/caprover/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/caprover-demo.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/caprover-notification-setting.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/caprover-screenshot.png"
+    ]
   },
   "features": [
     {
@@ -94,19 +98,21 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
+    "script": false,
+    "docker": false,
     "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/caprover/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://captain.server.demo.caprover.com/#/login",
     "username": null,
-    "password": null
+    "password": "captain42"
   }
 }

@@ -1,0 +1,7 @@
+services:
+  youtube-dl:
+    image: "nbr23/youtube-dl-server:latest"
+    volumes:
+      - $HOME/youtube-dl:/youtube-dl
+      - ./config.yml:/app_config/config.yml:ro # Overwrite the container's config file with your own configuration
+    restart: always

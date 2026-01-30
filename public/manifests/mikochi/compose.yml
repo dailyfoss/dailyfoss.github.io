@@ -1,0 +1,12 @@
+services:
+  mikochi:
+    image: zer0tonin/mikochi:latest
+    ports:
+      - 8080:8080
+    volumes:
+      - $(PWD)/data:/data
+    environment:
+      - DATA_DIR=/data
+      - USERNAME=zer0tonin
+      - PASSWORD=horsebatterysomething
+    restart: unless-stopped

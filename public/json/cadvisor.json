@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "Apache-2",
     "version": "v0.56.2",
     "date_app_added": "2025-11-23",
     "date_last_released": "2026-01-16",
@@ -88,21 +88,23 @@
     "saas": false
   },
   "interfaces": {
-    "cli": false,
+    "cli": true,
     "gui": false,
     "web_ui": false,
     "api": false,
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
+    "script": false,
+    "docker": false,
     "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/cadvisor/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

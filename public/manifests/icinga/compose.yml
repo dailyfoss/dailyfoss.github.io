@@ -1,0 +1,19 @@
+services:
+  icingadb:
+    image: icinga/icingadb
+    container_name: icingadb
+    networks:
+      - icinga
+    restart: always
+    environment:
+      - ICINGADB_REDIS_HOST=redis-icingadb
+      - ICINGADB_REDIS_PORT=6379
+      - ICINGADB_REDIS_PASSWORD=123456
+      - ICINGADB_DATABASE_HOST=mariadb-icingadb
+      - ICINGADB_DATABASE_PORT=3306
+      - ICINGADB_DATABASE_DATABASE=icingadb
+      - ICINGADB_DATABASE_USER=icingadb
+      - ICINGADB_DATABASE_PASSWORD=123456
+networks:
+  icinga:
+    external: true

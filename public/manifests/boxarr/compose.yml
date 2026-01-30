@@ -1,0 +1,62 @@
+services:
+  boxarr:
+    container_name: boxarr
+    image: iongpt/boxarr:latest
+    restart: unless-stopped
+
+    ports:
+      - "8888:8888"
+
+    volumes:
+      - ./config:/config
+
+---
+# Put inside config folder
+version: 1
+
+# =========================
+# Radarr Configuration
+# =========================
+radarr:
+  url: "http://radarr:7878"
+  api_key: "PUT_YOUR_RADARR_API_KEY_HERE"
+
+  root_folder: "/movies"
+
+  quality_profiles:
+    default: "HD-1080p"
+    upgrade: "Ultra-HD"
+
+# =========================
+# Boxarr Server
+# =========================
+boxarr:
+  host: "0.0.0.0"
+  port: 8888
+
+  scheduler:
+    enabled: true
+    cron: "0 23 * * 2"   # Every Tuesday at 23:00
+
+  features:
+    auto_add: true
+    quality_upgrade: true
+    notifications: false
+
+  ui:
+    theme: "purple"
+
+    cards_per_row:
+      mobile: 1
+      tablet: 3
+      desktop: 4
+      ultra_hd: 5
+
+  data:
+    directory: "/config"
+    history_retention_days: 90
+
+# =========================
+# Logging
+# =========================
+log_level: "INFO"

@@ -1,0 +1,8 @@
+services:
+  config:
+    image: rclone/rclone
+    volumes:
+      - ~/.config/rclone:/config/rclone
+    user: $(id -u):$(id -g)
+    command:
+      - config

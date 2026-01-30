@@ -1,0 +1,65 @@
+services:
+  # Fusio container
+  fusio:
+    image: fusio/fusio
+    restart: always
+    environment:
+      FUSIO_TENANT_ID: ""
+      FUSIO_PROJECT_KEY: "42eec18ffdbffc9fda6110dcc705d6ce"
+      FUSIO_URL: "http://api.fusio.cloud:8080"
+      FUSIO_APPS_URL: "http://api.fusio.cloud:8080/apps"
+      FUSIO_ENV: "prod"
+      FUSIO_DEBUG: "false"
+      FUSIO_CONNECTION: "pdo-mysql://fusio:61ad6c605975@mysql-fusio/fusio"
+      FUSIO_BACKEND_USER: "test"
+      FUSIO_BACKEND_EMAIL: "[email protected]"
+      FUSIO_BACKEND_PW: "test1234"
+      FUSIO_MAILER: "native://default"
+      FUSIO_MESSENGER: "doctrine://default"
+      FUSIO_MAIL_SENDER: "[email protected]"
+      FUSIO_WORKER_JAVA: "worker-java:9090"
+      FUSIO_WORKER_JAVASCRIPT: "worker-javascript:9091"
+      FUSIO_WORKER_PHP: "worker-php:9092"
+      FUSIO_WORKER_PYTHON: "worker-python:9093"
+    links:
+      - mysql-fusio
+      - worker-java
+      - worker-javascript
+      - worker-php
+      - worker-python
+    ports:
+      - "8080:80"
+
+  # Fusio system database
+  mysql-fusio:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "61ad6c605975"
+      MYSQL_USER: "fusio"
+      MYSQL_PASSWORD: "61ad6c605975"
+      MYSQL_DATABASE: "fusio"
+    volumes:
+      - ./db:/var/lib/mysql
+
+  # Worker
+  worker-java:
+    image: fusio/worker-java:2.0
+    restart: always
+    volumes:
+      - ./worker/java:/worker/actions
+  worker-javascript:
+    image: fusio/worker-javascript:2.0
+    restart: always
+    volumes:
+      - ./worker/javascript:/worker/actions
+  worker-php:
+    image: fusio/worker-php:2.1
+    restart: always
+    volumes:
+      - ./worker/php:/var/www/html/worker/actions
+  worker-python:
+    image: fusio/worker-python:2.0
+    restart: always
+    volumes:
+      - ./worker/python:/worker/actions

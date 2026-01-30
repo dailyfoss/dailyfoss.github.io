@@ -1,0 +1,34 @@
+services:
+  ########################################
+  # PostgreSQL
+  ########################################
+  db:
+    image: postgres:14
+    restart: always
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB:-readflow}
+      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-secret}
+    volumes:
+      - ./db-data:/var/lib/postgresql/data
+
+  ########################################
+  # readflow
+  ########################################
+  readflow:
+    #build: .
+    image: "ncarlier/readflow:edge"
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - "${PORT:-8080}:8080"
+    environment:
+      - READFLOW_DATABASE_URI=postgres://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-secret}@db/${POSTGRES_DB:-readflow}?sslmode=disable
+      - READFLOW_AUTHN_METHOD=basic
+      - READFLOW_AUTHN_BASIC_HTPASSWD_FILE=file:///var/local/demo.htpasswd # "demo" as username and password
+    volumes:
+      - ${PWD}/var/demo.htpasswd:/var/local/demo.htpasswd
+
+networks:
+  default:

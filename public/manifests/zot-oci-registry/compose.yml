@@ -1,0 +1,6 @@
+services:
+    project-zot:
+        image: 'ghcr.io/project-zot/zot-linux-amd64:latest'
+        ports:
+            - '5000:5000'
+	    restart: unless-stopped

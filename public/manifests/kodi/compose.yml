@@ -1,0 +1,15 @@
+services:
+  kodi:
+    container_name: kodi-headless
+    image: matthuisman/kodi-headless:Matrix
+    volumes:
+      - :/config/.kodi
+    environment:
+      - PUID=
+      - PGID=
+      - TZ=
+    ports:
+      - 8080:8080
+      - 9090:9090
+      - 9777:9777/udp
+    restart: unless-stopped

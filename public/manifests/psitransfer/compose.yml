@@ -1,0 +1,11 @@
+services:
+    psitransfer:
+        image: psitrax/psitransfer
+        environment:
+            - PSITRANSFER_DEFAULT_RETENTION=3600
+            - PSITRANSFER_PORT=8080
+        ports:
+            - '3000:8080'
+        volumes:
+            - './data:/data'
+	    restart: unless-stopped

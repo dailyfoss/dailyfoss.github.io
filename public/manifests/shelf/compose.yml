@@ -1,0 +1,21 @@
+services:
+  shelf.nu:
+    container_name: shelf
+    image: ghcr.io/shelf-nu/shelf.nu:latest
+    environment:
+      - DATABASE_URL=postgres://{USER}:{PASSWORD}@{HOST}:6543/{DB_NAME}?pgbouncer
+      - DIRECT_URL=postgres://{USER}:{PASSWORD}@{HOST}:5432/{DB_NAME}
+      - SUPABASE_ANON_PUBLIC=ANON_PUBLIC
+      - SUPABASE_SERVICE_ROLE=SERVICE_ROLE
+      - SUPABASE_URL=https://{YOUR_INSTANCE_NAME}.supabase.co
+      - SESSION_SECRET=super-duper-s3cret
+      - SERVER_URL=http://localhost:3000
+      - MAPTILER_TOKEN=maptiler-token
+      - SMTP_HOST=mail.example.com
+      - [email protected]
+      - SMTP_FROM="Carlos from shelf.nu" [email protected]>
+      - SMTP_PWD=super-safe-passw0rd
+      - INVITE_TOKEN_SECRET=another-super-duper-s3cret
+    ports:
+      - 3000:8080
+    restart: unless-stopped

@@ -1,0 +1,18 @@
+services:
+  web-portal:
+    container_name: web-portal
+    image: ghcr.io/enchant97/web-portal:2
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data
+      # Uncomment if you want custom plugins
+      # - ./plugins:/app/plugins
+    ports:
+      # Change only left side
+      - 8000:8000
+    environment:
+      # This config is built into the Docker image
+      # - "DATA_PATH=/app/data"
+      - "DB_URI=sqlite:///app/data/db.sqlite"
+      # This must be secure
+      - "SECRET_KEY=replace_me_123"

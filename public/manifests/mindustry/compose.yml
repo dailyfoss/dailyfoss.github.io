@@ -1,0 +1,9 @@
+services:
+  mindustry-server:
+    container_name: mindustry-server
+    image: oldshensheep/mindustry-server:latest
+    ports:
+      - 6567
+      - 6567/udp
+    volumes:
+      - /path/to/config:/opt/mindustry/config

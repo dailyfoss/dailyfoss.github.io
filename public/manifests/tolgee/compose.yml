@@ -1,0 +1,9 @@
+services:
+  app:
+    image: tolgee/tolgee
+    volumes:
+      - ./data:/data
+    ports:
+      - '25432:25432' # if you would like to access the DB
+      - '8080:8080'
+    restart: unless-stopped

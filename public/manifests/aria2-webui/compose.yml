@@ -1,0 +1,15 @@
+services:
+  aria2:
+    container_name: Aria2
+    image: abcminiuser/docker-aria2-with-webui:latest
+    network_mode: "bridge"
+    ports:
+      - 6800:6800
+      - 6880:80
+    volumes:
+      - /volume1/Download/complete:/data
+      - /volume1/docker/Aria2:/conf
+    environment:
+      - PGID=100
+      - PUID=1001
+    restart: unless-stopped

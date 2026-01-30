@@ -1,0 +1,10 @@
+services:
+  karaoke-eternal:
+    image: radrootllc/karaoke-eternal
+    container_name: karaoke-eternal
+    volumes:
+      - :/config
+      - :/mnt/karaoke
+    ports:
+      - :8080
+    restart: unless-stopped

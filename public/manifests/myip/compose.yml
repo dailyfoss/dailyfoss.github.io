@@ -1,0 +1,7 @@
+services:
+    myip:
+        container_name: myip
+        image: jason5ng32/myip:latest
+        restart: always
+        ports:
+            - "18966:18966"

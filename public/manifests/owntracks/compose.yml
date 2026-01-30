@@ -1,0 +1,9 @@
+services:
+  otrecorder:
+    image: owntracks/recorder
+    ports:
+      - 8083:8083
+    volumes:
+      - ./config:/config
+      - ./store:/store
+    restart: unless-stopped

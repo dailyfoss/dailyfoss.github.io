@@ -1,0 +1,8 @@
+services:
+  nexterm:
+    image: germannewsmaker/nexterm:1.0.2-OPEN-PREVIEW
+    ports:
+      - "6989:6989"
+    volumes:
+      - ./nexterm:/app/data
+    restart: always

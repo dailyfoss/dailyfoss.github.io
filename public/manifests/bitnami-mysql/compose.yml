@@ -1,0 +1,9 @@
+services:
+  mysql:
+    image: bitnami/mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    volumes:
+      - /path/to/mysql-persistence:/bitnami/mysql/data
+    # (this is just an example, not intended to be a production configuration)
+    restart: always

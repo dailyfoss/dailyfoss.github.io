@@ -1,0 +1,12 @@
+services:
+  appflowy_client:
+    image: appflowyio/appflowy_client:main
+    volumes:
+      - $HOME/.Xauthority:/root/.Xauthority:rw
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /dev/dri:/dev/dri
+      - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
+      - appflowy-data:/home/appflowy
+    environment:
+      - DISPLAY=${DISPLAY}
+    restart: always

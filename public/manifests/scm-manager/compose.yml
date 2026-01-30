@@ -1,0 +1,10 @@
+services:
+  scm:
+    image: scmmanager/scm-manager:
+    ports:
+      - "8080:8080"
+      # if the ssh plugin is used
+      - "2222:2222"
+    volumes:
+      - ./scmhome:/var/lib/scm
+    restart: unless-stopped

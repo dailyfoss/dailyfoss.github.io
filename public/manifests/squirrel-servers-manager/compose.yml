@@ -1,0 +1,45 @@
+services:
+  proxy:
+    restart: unless-stopped
+    image: "ghcr.io/squirrelcorporation/squirrelserversmanager-proxy:latest"
+    ports:
+      - "8000:8000"
+    depends_on:
+      - client
+      - mongo
+      - server
+      - redis
+  mongo:
+    container_name: mongo-ssm
+    image: mongo
+    restart: unless-stopped
+    volumes:
+      - ./.data.prod/db:/data/db
+    command: --quiet
+  redis:
+    container_name: cache-ssm
+    image: redis
+    restart: unless-stopped
+    volumes:
+      - ./.data.prod/cache:/data
+    command: --save 60 1
+  server:
+    image: "ghcr.io/squirrelcorporation/squirrelserversmanager-server:latest"
+    restart: unless-stopped
+    external_links:
+      - mongo
+      - redis
+    depends_on:
+      - mongo
+      - redis
+    env_file: .env
+    environment:
+      NODE_ENV: production
+    volumes:
+      - ./.data.prod/playbooks:/playbooks
+      - ./.data.prod/config:/ansible-config
+  client:
+    image: "ghcr.io/squirrelcorporation/squirrelserversmanager-client:latest"
+    restart: unless-stopped
+    depends_on:
+      - server

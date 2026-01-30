@@ -1,0 +1,45 @@
+services:
+  api_keys:
+    image: alpine
+    environment:
+    #add your api-keys here (put them after the "=" sign or use an .env file)
+    #(is normal to se this conteiner as stopped soon after deploy)
+      # Set your YouTube API key
+      - YT_API_KEY=${YT_API_KEY:-}
+      # Set your Twitch secret
+      - TWITCH_SECRET=${TWITCH_SECRET:-}
+      # Set your Twitch client ID
+      - TWITCH_CLIENT_ID=${TWITCH_CLIENT_ID:-}
+
+  vod2pod:
+    extends: api_keys
+    #change "latest" to "X.X.X" to pin a version es: "1.0.4" will force the image to use to version 1.0.4, if you do please watch the repo for updates (tutorial in README.md)
+    #change "latest" to "beta" if you want to test yet unreleased fixes/features (expect bugs and broken builds from time to time)
+    image: madiele/vod2pod-rss:latest
+    # uncomment to build vod2pod from scratch, only do this if your architecture is not supported
+    #build:
+    #  dockerfile: ./Dockerfile
+    #  context: https://github.com/madiele/vod2pod-rss.git
+    depends_on:
+      - redis
+    restart: unless-stopped
+    ports:
+      - "80:8080" #change from 80 to another port if you already use the port 80 on your host
+    environment:
+      - TZ=Europe/London #set if you want the logs to have you timezone
+      - MP3_BITRATE=192 #bitrate in kilobits of the mp3 transcode
+      - TRANSCODE=true #put to false if you only need feed generation
+      - SUBFOLDER=/ #for reverse proxies, ex: "/" -> access the app at mywebsite.com ; "vod2pod" -> access at mywebsite.com/vod2pod
+      - RUST_LOG=INFO #set to DEBUG if you are having problems than open a github issue with the logs, use "sudo docker compose logs" to print them
+      - REDIS_ADDRESS=redis #don't edit this
+      - REDIS_PORT=6379 #don't edit this
+
+  redis:
+    image: "redis:6.2"
+    command: redis-server --save 20 1 --loglevel warning
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli ping | grep PONG"]
+      interval: 10s
+      timeout: 3s
+      retries: 5

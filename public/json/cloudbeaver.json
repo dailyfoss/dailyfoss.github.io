@@ -28,7 +28,12 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/cloudbeaver.webp",
     "issues": "https://github.com/dbeaver/cloudbeaver/issues",
     "releases": null,
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/cloudbeaver-create-connection.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/cloudbeaver-data-transfer-demo.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/cloudbeaver-gis-demo.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/cloudbeaver-sql-editor-demo.png"
+    ]
   },
   "features": [
     {
@@ -90,14 +95,16 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
+    "script": false,
+    "docker": false,
     "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/cloudbeaver/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

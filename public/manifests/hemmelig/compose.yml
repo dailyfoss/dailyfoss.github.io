@@ -1,0 +1,27 @@
+services:
+    hemmelig:
+        image: hemmeligapp/hemmelig:v5.19.17 # https://github.com/HemmeligOrg/Hemmelig.app/tags
+        hostname: hemmelig
+        init: true
+        volumes:
+            - ./data/hemmelig/:/var/tmp/hemmelig/upload/files
+            - ./database/:/home/node/hemmelig/database/
+        environment:
+            - SECRET_LOCAL_HOSTNAME=0.0.0.0 # The local hostname for the fastify instance
+            - SECRET_PORT=3000 # The port number for the fastify instance
+            - SECRET_HOST=!changeme! # Used for i.e. set cors/cookies to your domain name
+            - SECRET_ROOT_USER=groot # User as the root admin user
+            - SECRET_ROOT_PASSWORD=iamroot # The admin user password (change this after signed in)
+            - [email protected] # The email for the admin user
+            - SECRET_FILE_SIZE=4 # Set the total allowed upload file size in mb
+            - SECRET_FORCED_LANGUAGE=en # Set the default language for the application
+            - SECRET_JWT_SECRET=!changeme! # Override this for the secret signin JWT tokens for log in
+            - SECRET_MAX_TEXT_SIZE=256 # The max text size for the secret. Is set in kb. i.e. 256 for 256kb
+        ports:
+            - '3000:3000'
+        restart: always
+        stop_grace_period: 1m
+        healthcheck:
+            test: 'wget -O /dev/null localhost:3000/api/healthz || exit 1'
+            timeout: 5s
+            retries: 3

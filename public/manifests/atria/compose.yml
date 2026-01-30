@@ -1,0 +1,72 @@
+services:
+  backend:
+    container_name: atria-api-prod
+    image: atriagg/atria-backend:prod
+    environment:
+      FLASK_ENV: production
+      FLASK_APP: api.wsgi:app
+
+      SECRET_KEY: dkjfkldjlkjk
+      JWT_SECRET_KEY: another-super-secret-key-change-in-prod
+
+      JWT_ACCESS_TOKEN_EXPIRES: 3600
+      JWT_REFRESH_TOKEN_EXPIRES: 2592000
+
+      SQLALCHEMY_DATABASE_URI: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+
+      SEED_DB: "false"
+
+    expose:
+      - "5000"
+
+    depends_on:
+      db:
+        condition: service_healthy
+
+    restart: unless-stopped
+    networks:
+      - default
+      - shared_portainer_network
+
+  frontend:
+    container_name: atria-client-prod
+    image: atriagg/atria-frontend:prod
+    expose:
+      - "80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - default
+      - shared_portainer_network
+
+  db:
+    container_name: atria-db-prod
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: atria
+      POSTGRES_PASSWORD: strong-db-password
+      POSTGRES_DB: atria_db
+    volumes:
+      - postgres_data_prod:/var/lib/postgresql/data
+    expose:
+      - "5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - default
+      - shared_portainer_network
+
+volumes:
+  postgres_data_prod:
+
+networks:
+  default:
+    driver: bridge
+
+  shared_portainer_network:
+    external: true

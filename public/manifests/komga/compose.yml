@@ -1,0 +1,22 @@
+services:
+  komga:
+    image: gotson/komga
+    container_name: komga
+    volumes:
+      - type: bind
+        source: /path/to/config
+        target: /config
+      - type: bind
+        source: /path/to/data
+        target: /data
+      - type: bind
+        source: /etc/timezone #alternatively you can use a TZ environment variable, like TZ=Europe/London
+        target: /etc/timezone
+        read_only: true
+    ports:
+      - 25600:25600
+    user: "1000:1000"
+    # remove the whole environment section if you don't need it
+    environment:
+      - =
+    restart: unless-stopped

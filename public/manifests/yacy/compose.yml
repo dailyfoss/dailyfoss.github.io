@@ -1,0 +1,14 @@
+services:
+  yacy_search_server:
+    image: yacy/yacy_search_server:latest
+    container_name: yacy_search_server
+    ports:
+      - 8090:8090
+      - 8443:8443
+    volumes:
+      - ./yacy_search_server_data:/opt/yacy_search_server/DATA
+    logging:
+      options:
+        max-size: 200m
+        max-file: 2
+    restart: unless-stopped

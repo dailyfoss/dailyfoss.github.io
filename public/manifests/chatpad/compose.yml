@@ -1,0 +1,9 @@
+services:
+  chatpad:
+    image: ghcr.io/deiucanta/chatpad:latest
+    container_name: chatpad
+    volumes:
+      - "`pwd`/config.json:/usr/share/nginx/html/config.json"
+    ports:
+      - 8080:80
+    restart: unless-stopped

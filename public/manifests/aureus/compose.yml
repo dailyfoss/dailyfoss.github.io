@@ -1,0 +1,35 @@
+# URL: http://localhost/admin
+# Email: admin@example.com
+# Password: admin@123
+
+services:
+  aureuserp:
+    container_name: aureuserp
+    image: webkul/aureuserp:latest
+    ports:
+      - "80:80"
+      - "3306:3306"
+    environment:
+      # Web / Laravel
+      APP_ENV: production
+      APP_DEBUG: "false"
+      APP_KEY: base64:CHANGE_THIS_TO_A_REAL_KEY
+
+      # Database (MySQL inside the same container)
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: aureuserp
+      MYSQL_USER: aureuserp
+      MYSQL_PASSWORD: aureuserp123
+
+      # Optional node / composer environment (if required)
+      COMPOSER_ALLOW_SUPERUSER: "1"
+      NPM_CONFIG_LOGLEVEL: warn
+
+    volumes:
+      - aureuserp_data:/var/www/html
+      - aureuserp_db:/var/lib/mysql
+    restart: unless-stopped
+
+volumes:
+  aureuserp_data:
+  aureuserp_db:

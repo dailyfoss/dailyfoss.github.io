@@ -1,0 +1,36 @@
+services:
+  ydl_api_ng:
+    container_name: ydl_api_ng
+    image: totonyus/ydl_api_ng
+    restart: unless-stopped
+    depends_on:
+      - ydl_api_ng_redis
+    ports:
+      - 5011:80
+    volumes:
+      - ./params:/app/params
+      - ./logs:/app/logs
+      - ./downloads:/app/downloads
+      - ./data:/app/data
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - UID=1000
+      - GID=1000
+      - NB_WORKERS=5
+      - LOG_LEVEL=error
+      # Redis will be disable is this value is not false, remember to also change the setting in params.ini file
+      - DISABLE_REDIS=false
+    networks:
+      - ydl_api_ng
+
+  ydl_api_ng_redis:
+    container_name: ydl_api_ng_redis
+    image: redis
+    restart: unless-stopped
+    networks:
+      - ydl_api_ng
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+
+networks:
+  ydl_api_ng:

@@ -1,0 +1,57 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: calcom-db
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_USER: unicorn_user
+      POSTGRES_PASSWORD: magical_password
+      POSTGRES_DB: calendso
+
+    volumes:
+      - database-data:/var/lib/postgresql/data
+
+
+  redis:
+    image: redis:7-alpine
+    container_name: calcom-redis
+    restart: unless-stopped
+
+    volumes:
+      - redis-data:/data
+
+    ports:
+      - "6379:6379"
+
+
+  calcom:
+    image: calcom.docker.scarf.sh/calcom/cal.com
+    container_name: calcom
+    restart: unless-stopped
+
+    depends_on:
+      - postgres
+      - redis
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      # Core
+      NEXTAUTH_SECRET: change-me
+      CALENDSO_ENCRYPTION_KEY: change-me
+      NODE_ENV: production
+
+      # Database
+      DATABASE_URL: postgresql://unicorn_user:magical_password@postgres:5432/calendso
+
+      # Redis
+      REDIS_URL: redis://redis:6379
+
+      # Public URLs
+      NEXT_PUBLIC_WEBAPP_URL: http://localhost:3000
+      NEXT_PUBLIC_API_V2_URL: http://localhost:3000/api/v2
+
+      # Telemetry
+      CALCOM_TELEMETRY_DISABLED: "true"

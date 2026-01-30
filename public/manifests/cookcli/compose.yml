@@ -1,0 +1,10 @@
+services:
+  cookcli:
+    image: cookcli:latest
+    container_name: cookcli
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./recipes:/recipes:rw
+    environment:
+      TZ: Asia/Jakarta

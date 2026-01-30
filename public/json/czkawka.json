@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "CC-BY-4.0",
     "version": "10.0.0",
     "date_app_added": "2025-11-23",
     "date_last_released": "2025-08-18",
@@ -28,7 +28,10 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/czkawka.webp",
     "issues": "https://github.com/qarmin/czkawka/issues",
     "releases": "https://github.com/qarmin/czkawka/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/czkawka-image-list.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/czkawka-image-preview.png"
+    ]
   },
   "features": [
     {
@@ -89,9 +92,9 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
     "helm": false,
     "kubernetes": false,
     "terraform": false

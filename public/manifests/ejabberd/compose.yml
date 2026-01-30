@@ -1,0 +1,7 @@
+services:
+  ejabberd:
+    container_name: ejabberd
+    image: ghcr.io/processone/ejabberd
+    ports:
+      - 5222:5222
+    restart: unless-stopped

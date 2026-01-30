@@ -1,53 +1,16 @@
 services:
-  adguardhome:
-    image: adguard/adguardhome:v0.107.43
-    container_name: adguardhome
-    restart: unless-stopped
-
-    ports:
-      # DNS
-      - "53:53/tcp"
-      - "53:53/udp"
-
-      # DHCP (optional)
-      - "67:67/udp"
-      # - "68:68/udp"
-
-      # Web UI
-      - "80:80/tcp"
-      - "443:443/tcp"
-      - "443:443/udp"
-
-      # AdGuard API
-      - "3000:3000/tcp"
-
-      # Secure DNS
-      - "853:853/tcp"   # DNS-over-TLS
-      - "853:853/udp"   # DNS-over-DTLS
-      - "784:784/udp"   # DNS-over-QUIC
-      - "8853:8853/udp" # DNS-over-TLS (alt)
-      - "5443:5443/tcp" # DNSCrypt
-      - "5443:5443/udp"
-
-    volumes:
-      - adguard_work:/opt/adguardhome/work
-      - adguard_conf:/opt/adguardhome/conf
-
-    healthcheck:
-      test: ["CMD-SHELL", "wget -qO- http://localhost:3000/control/status || exit 1"]
-      interval: 30s
-      timeout: 5s
-      retries: 3
-
-    security_opt:
-      - no-new-privileges:true
-
-    deploy:
-      resources:
-        limits:
-          cpus: "0.50"
-          memory: 512M
-
-volumes:
-  adguard_work:
-  adguard_conf:
+    adguardhome:
+        container_name: adguard-home
+		image: adguard/adguardhome
+        volumes:
+            - ./work:/opt/adguardhome/work
+            - ./conf:/opt/adguardhome/conf
+        ports:
+            - 53:53
+            - 67:67/udp
+            - 68:68/udp
+            - 3002:3000
+            #- 80:80/tcp
+            #- 443:443/tcp
+            #- 443:443/udp
+        restart: unless-stopped

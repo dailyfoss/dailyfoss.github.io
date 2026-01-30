@@ -1,0 +1,33 @@
+services:
+  tube:
+    image: prologic/tube
+    command: -c /config.json
+    configs:
+      - source: config_json
+        target: /config.json
+    networks:
+      - traefik
+    volumes:
+      - tube:/data
+    deploy:
+      labels:
+        - "traefik.enable=true"
+        - "traefik.port=8000"
+        - "traefik.backend=tube"
+        - "traefik.docker.network=traefik"
+        - "traefik.frontend.rule=Host:tube.mydomain.tld"
+      restart_policy:
+        condition: on-failure
+      replicas: 1
+
+configs:
+  config_json:
+    file: ./config.json
+
+networks:
+  traefik:
+    external: true
+
+volumes:
+  tube:
+    driver: local

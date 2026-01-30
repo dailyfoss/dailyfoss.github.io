@@ -1,0 +1,9 @@
+services:
+  gerbera:
+    image: gerbera/gerbera
+    container_name: gerbera
+    network_mode: host
+    volumes:
+      - ./gerbera-config:/var/run/gerbera
+      - /some/files:/mnt/content:ro
+    restart: unless-stopped

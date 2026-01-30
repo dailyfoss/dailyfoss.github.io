@@ -1,0 +1,9 @@
+services:
+  thunderbird:
+    container_name: thunderbird
+    image: jlesage/thunderbird
+    ports:
+      - 5800:5800
+    volumes:
+      - /docker/appdata/thunderbird:/config:rw
+    restart: always

@@ -1,0 +1,18 @@
+services:
+  cyberchef:
+    image: mpepping/cyberchef:latest
+    container_name: cyberchef
+    restart: unless-stopped
+
+    # Web UI
+    ports:
+      - "8000:8000"
+
+    environment:
+      TZ: Asia/Jakarta
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000"]
+      interval: 30s
+      timeout: 5s
+      retries: 3

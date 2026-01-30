@@ -1,0 +1,57 @@
+version: "3.9"
+
+services:
+  tuwunel:
+    container_name: tuwunel
+    image: jevolk/tuwunel:latest
+    restart: unless-stopped
+
+    volumes:
+      - tuwunel-db:/var/lib/tuwunel
+      # - ./tuwunel.toml:/etc/tuwunel.toml:ro
+
+    networks:
+      - proxy
+
+    environment:
+      # Core server config
+      TUWUNEL_SERVER_NAME: matrix.example.com
+      TUWUNEL_ADDRESS: 0.0.0.0
+      TUWUNEL_PORT: 6167
+      TUWUNEL_DATABASE_PATH: /var/lib/tuwunel
+
+      # Limits & security
+      TUWUNEL_MAX_REQUEST_SIZE: 20000000
+      TUWUNEL_ALLOW_REGISTRATION: "true"
+      TUWUNEL_REGISTRATION_TOKEN: "CHANGE_ME_STRONG_TOKEN"
+
+      # Federation
+      TUWUNEL_ALLOW_FEDERATION: "true"
+      TUWUNEL_TRUSTED_SERVERS: '["matrix.org"]'
+
+      # .well-known delegation
+      TUWUNEL_WELL_KNOWN: |
+        {
+          client=https://matrix.example.com,
+          server=matrix.example.com:443
+        }
+
+    ulimits:
+      nofile:
+        soft: 1048576
+        hard: 1048576
+
+    labels:
+      - "traefik.enable=true"
+
+      # Router
+      - "traefik.http.routers.tuwunel.rule=Host(`matrix.example.com`)"
+      - "traefik.http.routers.tuwunel.entrypoints=websecure"
+      - "traefik.http.routers.tuwunel.tls=true"
+      - "traefik.http.routers.tuwunel.tls.certresolver=letsencrypt"
+
+      # Service
+      - "traefik.http.services.tuwunel.loadbalancer.server.port=6167"
+
+      # Important for Matrix
+      - "traefik.http.middlewares.tuwune

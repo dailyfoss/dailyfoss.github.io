@@ -1,0 +1,53 @@
+services:
+  budgetbee:
+    container_name: budgetbee
+    image: ghcr.io/budgetbee/budgetbee/api:latest
+    restart: unless-stopped
+
+    ports:
+      - "8895:8895"
+
+    environment:
+      # =====================
+      # App
+      # =====================
+      APP_ENV: production
+      APP_DEBUG: "false"
+      HOST: localhost
+      APP_PORT: "8895"
+
+      # =====================
+      # Database
+      # =====================
+      DB_CONNECTION: mysql
+      DB_HOST: db
+      DB_DATABASE: budgetbee
+      DB_USERNAME: user
+      DB_PASSWORD: password
+
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    container_name: budgetbee-db
+    image: mysql:8.0
+    restart: unless-stopped
+
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: budgetbee
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+
+    volumes:
+      - budgetbee_db:/var/lib/mysql
+
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -p$${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  budgetbee_db:

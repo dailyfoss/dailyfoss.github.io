@@ -1,0 +1,41 @@
+services:
+  search01:
+    image: ghcr.io/codelibs/fess-opensearch:2.17.0
+    container_name: search01
+    environment:
+      - node.name=search01
+      - discovery.seed_hosts=search01
+      - cluster.initial_cluster_manager_nodes=search01
+      - cluster.name=fess-search
+      - bootstrap.memory_lock=true
+      - node.roles=cluster_manager,data,ingest,ml
+      - "OPENSEARCH_JAVA_OPTS=-Xms1g -Xmx1g"
+      - "DISABLE_INSTALL_DEMO_CONFIG=true"
+      - "DISABLE_SECURITY_PLUGIN=true"
+      - "FESS_DICTIONARY_PATH=/usr/share/opensearch/config/dictionary"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65535
+        hard: 65535
+    volumes:
+      - search01_data:/usr/share/opensearch/data
+      - search01_dictionary:/usr/share/opensearch/config/dictionary
+    ports:
+      - 9200:9200
+    networks:
+      - search_net
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+    restart: unless-stopped
+
+volumes:
+  search01_data:
+    driver: local
+  search01_dictionary:
+    driver: local

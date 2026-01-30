@@ -1,0 +1,53 @@
+services:
+  chhoto-url:
+    image: sintan1729/chhoto-url:latest
+    container_name: chhoto-url
+    restart: unless-stopped
+    tty: true
+
+    ports:
+      - "4567:4567"
+
+    environment:
+      # Database
+      db_url: /db/urls.sqlite
+      use_wal_mode: "True"
+
+      # Application
+      port: "4567"
+      site_url: https://short.example.com
+
+      # Security
+      password: TopSecretPass
+      api_key: SuperSecureRandomAPIKey123456
+
+      # Redirect behavior
+      redirect_method: PERMANENT
+
+      # Slug generation
+      slug_style: Pair
+      slug_length: "8"
+      try_longer_slug: "True"
+      allow_capital_letters: "False"
+
+      # Frontend / access control
+      public_mode: Disable
+      disable_frontend: "False"
+
+      # Cache headers (optional)
+      cache_control_header: "no-cache, private"
+
+    volumes:
+      - chhoto_db:/db
+
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:4567/api/whoami"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  chhoto_db:

@@ -1,0 +1,13 @@
+services:
+  tasks.md:
+    image: baldissaramatheus/tasks.md
+    container_name: tasks.md
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - ./tasks:/tasks
+      - ./config:/config
+    restart: unless-stopped
+    ports:
+      - 8080:8080

@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": null,
-    "documentation": null,
+    "documentation": "https://authman.simular.co/docs",
     "source_code": "https://github.com/simular/authman-server",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/authman.webp",
     "issues": "https://github.com/simular/authman-server/issues",
@@ -62,13 +62,13 @@
   ],
   "platform_support": {
     "desktop": {
-      "linux": false,
-      "windows": false,
-      "macos": false
+      "linux": true,
+      "windows": true,
+      "macos": true
     },
     "mobile": {
-      "android": false,
-      "ios": false
+      "android": true,
+      "ios": true
     },
     "web_app": false,
     "browser_extension": false,
@@ -81,7 +81,7 @@
   },
   "interfaces": {
     "cli": false,
-    "gui": false,
+    "gui": true,
     "web_ui": false,
     "api": false,
     "tui": false

@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "BSD-3",
     "version": "1.4.3",
     "date_app_added": "2025-11-23",
     "date_last_released": "2025-12-02",
@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://www.borgbackup.org/",
-    "documentation": "https://borgbackup.readthedocs.io/",
+    "documentation": "https://borgbackup.readthedocs.io/en/stable",
     "source_code": "https://github.com/borgbackup/borg",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/borg.webp",
     "issues": "https://github.com/borgbackup/borg/issues",
@@ -110,16 +110,16 @@
     "saas": false
   },
   "interfaces": {
-    "cli": false,
+    "cli": true,
     "gui": false,
     "web_ui": false,
     "api": false,
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
     "helm": false,
     "kubernetes": false,
     "terraform": false
@@ -135,7 +135,7 @@
     }
   },
   "demo": {
-    "url": null,
+    "url": "https://www.borgbackup.org/demo.html",
     "username": null,
     "password": null
   }

@@ -1,0 +1,21 @@
+services:
+  mysql:
+    image: mysql:8.0
+    volumes:
+      - "mysql-data:/var/lib/mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: "my-secret-pw"
+
+  mysqlbackup:
+    image: selim13/automysqlbackup:2.6-9
+    volumes:
+      - "mysql-backups-data:/backup"
+    environment:
+      USERNAME: root
+      PASSWORD: "my-secret-pw"
+      DBHOST: mysql
+      DBEXCLUDE: "performance_schema information_schema"
+      CRON_SCHEDULE: "0 0 * * *"
+      EXTRA_OPTS: "--single-transaction"
+    depends_on:
+      - mysql

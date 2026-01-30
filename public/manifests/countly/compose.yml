@@ -1,0 +1,64 @@
+services:
+  mongodb:
+    image: 'bitnami/mongodb:latest'
+    volumes:
+      - './mongodb_data:/bitnami'
+    networks:
+      countly:
+
+  countly-api:
+    image: 'countly/api:latest'
+    # Countly Enterprise: image: 'gcr.io/countly-01/api:20.11.2'
+    environment:
+      - COUNTLY_PLUGINS=mobile,web,desktop,plugins,density,locale,browser,sources,views,logger,systemlogs,populator,reports,crashes,push,star-rating,slipping-away-users,compare,server-stats,dbviewer,times-of-day,compliance-hub,alerts,onboarding,consolidate,remote-config,hooks,dashboards,sdk,data-manager
+      # Countly Enterprise: - COUNTLY_PLUGINS=mobile,web,desktop,plugins,density,locale,browser,sources,views,license,drill,funnels,retention_segments,flows,cohorts,surveys,remote-config,ab-testing,formulas,activity-map,concurrent_users,revenue,logger,systemlogs,populator,reports,crashes,push,geo,block,restrict,users,star-rating,slipping-away-users,compare,server-stats,assistant,dbviewer,crash_symbolication,crashes-jira,groups,white-labeling,alerts,times-of-day,compliance-hub,onboarding,active_users,performance-monitoring,config-transfer,consolidate,data-manager,hooks,dashboards,sdk
+      - COUNTLY_CONFIG__MONGODB_HOST=mongodb
+      - COUNTLY_CONFIG_API_API_WORKERS=4 # CPU core count
+      - COUNTLY_CONFIG__FILESTORAGE="gridfs"
+      - NODE_OPTIONS="--max-old-space-size=2048"
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 400s
+    networks:
+      countly:
+    depends_on:
+      - mongodb
+
+  countly-frontend:
+    image: 'countly/frontend:latest'
+    # Countly Enterprise: image: 'gcr.io/countly-01/frontend:20.11.2'
+    environment:
+      - COUNTLY_PLUGINS=mobile,web,desktop,plugins,density,locale,browser,sources,views,logger,systemlogs,populator,reports,crashes,push,star-rating,slipping-away-users,compare,server-stats,dbviewer,times-of-day,compliance-hub,alerts,onboarding,consolidate,remote-config,hooks,dashboards,sdk,data-manager
+      # Countly Enterprise: - COUNTLY_PLUGINS=mobile,web,desktop,plugins,density,locale,browser,sources,views,license,drill,funnels,retention_segments,flows,cohorts,surveys,remote-config,ab-testing,formulas,activity-map,concurrent_users,revenue,logger,systemlogs,populator,reports,crashes,push,geo,block,restrict,users,star-rating,slipping-away-users,compare,server-stats,assistant,dbviewer,crash_symbolication,crashes-jira,groups,white-labeling,alerts,times-of-day,compliance-hub,onboarding,active_users,performance-monitoring,config-transfer,consolidate,data-manager,hooks,dashboards,sdk
+      - COUNTLY_CONFIG__MONGODB_HOST=mongodb
+      - NODE_OPTIONS="--max-old-space-size=2048"
+    networks:
+      countly:
+    depends_on:
+      - mongodb
+    deploy:
+      # There is usually no need in multiple frontends, so throttling down resources for it
+      mode: global
+      resources:
+        limits:
+          cpus: '0.5'
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 400s
+
+  nginx:
+    image: 'bitnami/nginx'
+    ports:
+      - '80:8080'
+    volumes:
+      - './bin/docker/nginx.server.conf:/opt/bitnami/nginx/conf/server_blocks/countly.conf:ro'
+    networks:
+      countly:
+    depends_on:
+      - countly-api
+      - countly-frontend

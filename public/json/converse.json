@@ -23,13 +23,17 @@
   },
   "resources": {
     "website": "http://conversejs.org",
-    "documentation": "https://github.com/conversejs/converse.js",
+    "documentation": "https://conversejs.org/docs/html/index.html",
     "source_code": "https://github.com/conversejs/converse.js",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/converse.webp",
     "issues": "https://github.com/conversejs/converse.js/issues",
     "releases": "https://github.com/conversejs/converse.js/releases",
     "logo_light": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/converse-light.webp",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/converse-desktop.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/converse-embeded.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/converse-hero.png"
+    ]
   },
   "features": [
     {
@@ -91,9 +95,9 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
     "helm": false,
     "kubernetes": false,
     "terraform": false
@@ -109,7 +113,7 @@
     }
   },
   "demo": {
-    "url": null,
+    "url": "https://conversejs.org/fullscreen.html",
     "username": null,
     "password": null
   }

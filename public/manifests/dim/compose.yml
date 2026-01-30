@@ -1,0 +1,17 @@
+services:
+  dim:
+    container_name: dim
+    image: ghcr.io/dusk-labs/dim:dev
+    restart: unless-stopped
+    ports:
+      - 8000:8000
+    volumes:
+      - /:/opt/dim/config
+      - /:/media
+      # Add more folders like so:
+      # - /:/media2
+    # Use the below lines to pass your device with hardware acceleration
+    devices:
+      - /:/
+      # VAAPI Device example:
+      # - /dev/dri/renderD128:/dev/dri/renderD128

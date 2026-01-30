@@ -28,7 +28,10 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/cr-nmaster.webp",
     "issues": "https://github.com/fccview/cronmaster/issues",
     "releases": "https://github.com/fccview/cronmaster/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/cr-nmaster-dashboard.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/cr-nmaster-home-dark-mobile.png"
+    ]
   },
   "features": [
     {
@@ -82,9 +85,9 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
     "helm": false,
     "kubernetes": false,
     "terraform": false

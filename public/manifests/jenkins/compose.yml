@@ -1,0 +1,21 @@
+services:
+  docker:
+    image: docker:dind
+    container_name: jenkins-docker
+    privileged: true
+    networks:
+      jenkins:
+        aliases:
+          - docker
+    environment:
+      - DOCKER_TLS_CERTDIR=/certs
+    volumes:
+      - ./jenkins-docker-certs:/certs/client
+      - ./jenkins-data:/var/jenkins_home
+    ports:
+      - 2376:2376
+    command: --storage-driver overlay2
+
+networks:
+  jenkins:
+    external: true

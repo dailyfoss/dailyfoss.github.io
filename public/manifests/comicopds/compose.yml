@@ -1,0 +1,40 @@
+version: "3.9"
+
+services:
+  comicopds:
+    image: ghcr.io/linuxserver/comicopds:latest
+    container_name: comicopds
+    restart: unless-stopped
+
+    ports:
+      - "8080:8080"
+
+    environment:
+      # Library
+      CONTENT_BASE_DIR: /library
+      PAGE_SIZE: "50"
+
+      # Public URL for OPDS clients
+      SERVER_BASE: ${SERVER_BASE:-http://localhost:8080}
+      URL_PREFIX: ${URL_PREFIX:-}
+
+      # Authentication
+      DISABLE_AUTH: ${DISABLE_AUTH:-false}
+      OPDS_BASIC_USER: ${OPDS_USER:-admin}
+      OPDS_BASIC_PASS: ${OPDS_PASS:-change-me}
+
+      # Indexing
+      ENABLE_WATCH: "false"
+      AUTO_INDEX_ON_START: "false"
+
+      # Thumbnails
+      PRECACHE_THUMBS: "true"
+      PRECACHE_ON_START: "false"
+      THUMB_WORKERS: "3"
+
+    volumes:
+      - ./Comics:/library:ro
+      - ./data:/data
+
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8080/health"]

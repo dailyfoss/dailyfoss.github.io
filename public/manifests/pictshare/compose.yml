@@ -1,0 +1,7 @@
+services:
+    hascheksolutions:
+        image: ghcr.io/hascheksolutions/pictshare
+        container_name: pictshare
+        ports:
+            - '8080:80'
+        restart: unless-stopped

@@ -1,0 +1,21 @@
+services:
+  gonic:
+    image: sentriz/gonic:latest
+    environment:
+      - TZ
+      # optionally, see more available env vars in the readme
+    ports:
+      - 4747:80
+    volumes:
+      - ./data:/data # gonic db etc
+      - /path/to/music:/music:ro # your music
+      - /path/to/podcasts:/podcasts # your podcasts
+      - /path/to/playlists:/playlists # your playlists
+      - /path/to/cache:/cache # transcode / covers / etc cache dir
+
+    # set the following two sections if you've enabled jukebox
+    group_add:
+      - audio
+    devices:
+      - /dev/snd:/dev/snd
+    restart: unless-stopped

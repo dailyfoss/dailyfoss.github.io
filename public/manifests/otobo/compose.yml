@@ -1,0 +1,142 @@
+services:
+
+  # the database
+  db:
+    image: ${OTOBO_IMAGE_DB:-mariadb:10.5}
+    user: mysql:mysql
+    cap_drop:
+        - ALL
+    cap_add:
+        - CAP_SYS_CHROOT
+    restart: always
+    logging:
+        driver: "local"
+        options:
+            max-file: "5"
+            max-size: "10m"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+    # Within the container network the MariaDB server listens to its default port 3306.
+    # Per default this port is not exposed to the outside world.
+    # One can use 'docker-compose exec -it db mysql ...' when access to the database is needed.
+    # But for development it can be useful to expose the port 3306. E.g. when a graphical client
+    # like MySQL Workbench or DBeaver is used. Uncomment the following lines for making MariaDB available
+    # on port 3307 on the Docker host. A non-standard port is chosen here, because 3306 is
+    # often already used on the Docker host.
+    # ports:
+    #   - "3307:3306"
+
+    # Set the db root password which has to be entered when running otobo/installer.pl.
+    # The passwort is secret and can be stored in the file .env.
+    # The content of the .env file is something like:
+    # OTOBO_DB_ROOT_PASSWORD=otobo_root
+    environment:
+      MYSQL_ROOT_PASSWORD: ${OTOBO_DB_ROOT_PASSWORD:?err}
+    command: --max-allowed-packet=136314880 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --innodb-log-file-size=268435456 --query-cache-size=${OTOBO_DB_QUERY_CACHE_SIZE:-33554432}
+
+    # "mysqladmin ping" sets the exit code $?. The exit code will be 0 (success) when the server can be reached,
+    # not 0 (failure) otherwise.
+    # The host is given as db, because localhost might not be resolved on some systems.
+    # The credentials are not really needed for pinging, but without them we would get "Access denied" log messages
+    # every time the health check is executed.
+    # Note: alternatively /usr/local/bin/healthcheck.sh could be used.
+    healthcheck:
+      test: mysqladmin -h db --user=root --password='${OTOBO_DB_ROOT_PASSWORD}' ping
+
+  # a container running a webserver
+  web:
+    # The services 'web' and 'daemon' use the same image.
+    image: ${OTOBO_IMAGE_OTOBO:-rotheross/otobo:latest-10_1}
+    cap_drop:
+        - ALL
+    #cap_add:
+    depends_on:
+      - db
+      - elastic
+      - redis
+    restart: always
+    logging:
+        driver: "local"
+        options:
+            max-file: "5"
+            max-size: "10m"
+    # The HTTP port might be specified in a docker-compose extension file, e.g. docker-compose/otobo-override-http.yml.
+    # For HTTPS no HTTP port is exposed.
+    #ports:
+    #    - "80:5000"
+    volumes:
+      - opt_otobo:/opt/otobo
+    command: web
+    healthcheck:
+      test: curl -s -f http://localhost:5000/robots.txt
+
+  # a container running the OTOBO daemon
+  daemon:
+    # The services 'web' and 'daemon' use the same image.
+    image: ${OTOBO_IMAGE_OTOBO:-rotheross/otobo:latest-10_1}
+    cap_drop:
+        - ALL
+    #cap_add:
+    depends_on:
+      - web
+    restart: always
+    logging:
+        driver: "local"
+        options:
+            max-file: "5"
+            max-size: "10m"
+    volumes:
+      - opt_otobo:/opt/otobo
+    command: daemon
+    healthcheck:
+      test: ./bin/otobo.Daemon.pl status | grep 'Daemon running'
+
+  # a container running Elasticsearch
+  elastic:
+    image: ${OTOBO_IMAGE_OTOBO_ELASTICSEARCH:-rotheross/otobo-elasticsearch:latest-10_1}
+    cap_drop:
+        - ALL
+    cap_add:
+        - CAP_SYS_CHROOT
+        - CAP_SETUID
+        - CAP_SETGID
+    restart: always
+    logging:
+        driver: "local"
+        options:
+            max-file: "5"
+            max-size: "10m"
+    environment:
+      discovery.type: single-node
+      ES_JAVA_OPTS: ${OTOBO_ELASTICSEARCH_ES_JAVA_OPTS:?err}
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+    healthcheck:
+      test: curl -s -f http://localhost:9200/_cat/health
+
+  # a container running Redis
+  redis:
+    image: ${OTOBO_IMAGE_REDIS:-redis:6.0-alpine}
+    user: redis:redis
+    cap_drop:
+        - ALL
+    #cap_add:
+    restart: always
+    logging:
+        driver: "local"
+        options:
+            max-file: "5"
+            max-size: "10m"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: redis-cli ping
+
+
+# no volumes need to be exposed across services
+volumes:
+  mariadb_data: {}
+  opt_otobo: {}
+  elasticsearch_data: {}
+  redis_data: {}

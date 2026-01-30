@@ -1,0 +1,11 @@
+services:
+  snips:
+    image: 'ghcr.io/robherley/snips.sh:latest'
+    restart: unless-stopped
+    ports:
+      - '80:8080'
+      - '22:2222'
+    volumes:
+      - ./data:/data
+    env_file:
+      - snips.env

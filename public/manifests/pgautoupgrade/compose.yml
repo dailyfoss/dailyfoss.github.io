@@ -1,0 +1,14 @@
+services:
+  pgautoupgrade:
+    image: pgautoupgrade/pgautoupgrade:latest
+    container_name: pgauto
+    stdin_open: true
+    tty: true
+    volumes:
+      - type: bind
+        source: /path/to/your/database/directory
+        target: /var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=password
+      - PGAUTO_ONESHOT=yes
+    restart: always

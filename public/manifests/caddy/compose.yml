@@ -1,0 +1,9 @@
+services:
+  caddy:
+    image: caddy
+    ports:
+      - 80:80
+    volumes:
+      - $PWD/Caddyfile:/etc/caddy/Caddyfile
+      - ./caddy_data:/data
+    restart: unless-stopped

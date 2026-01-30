@@ -1,0 +1,88 @@
+services:
+  lychee_db:
+    container_name: lychee_db
+    image: mariadb:10
+    environment:
+      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_DATABASE=lychee
+      - MYSQL_USER=lychee
+      - MYSQL_PASSWORD=
+    expose:
+      - 3306
+    volumes:
+      - ./mysql:/var/lib/mysql
+    networks:
+      - lychee
+    restart: unless-stopped
+
+  lychee:
+    image: lycheeorg/lychee
+    container_name: lychee
+    ports:
+      - 90:80
+    volumes:
+      - ./lychee/conf:/conf
+      - ./lychee/uploads:/uploads
+      - ./lychee/sym:/sym
+      - ./lychee/logs:/logs
+    networks:
+      - lychee
+    environment:
+      #- PUID=1000
+      #- PGID=1000
+      # PHP timezone e.g. PHP_TZ=America/New_York
+      - PHP_TZ=UTC
+      - TIMEZONE=UTC
+      #- APP_NAME=Laravel
+      #- APP_ENV=local
+      #- APP_DEBUG=true
+      #- APP_FORCE_HTTPS=false
+      #- APP_URL=http://localhost
+      #- APP_DIR=
+      #- DEBUGBAR_ENABLEd=false
+      #- LEGACY_V4_REDIRECT=false
+      #- DB_OLD_LYCHEE_PREFIX=''
+      - DB_CONNECTION=mysql
+      - DB_HOST=lychee_db
+      - DB_PORT=3306
+      - DB_DATABASE=lychee
+      - DB_USERNAME=lychee
+      - DB_PASSWORD=
+      #- DB_PASSWORD_FILE=
+      #- DB_LOG_SQL=false
+      #- DB_LOG_SQL_EXPLAIN=false
+      #- ENABLE_TOKEN_AUTH=true
+      #- CACHE_DRIVER=file
+      #- SESSION_DRIVER=file
+      #- SESSION_LIFETIME=120
+      #- QUEUE_CONNECTION=sync
+      #- SECURITY_HEADER_HSTS_ENABLE=false
+      #- SECURITY_HEADER_CSP_CONNECT_SRC=
+      #- SECURITY_HEADER_SCRIPT_SRC_ALLOW=
+      #- SESSION_SECURE_COOKIE=false
+      #- MAIL_DRIVER=smtp
+      #- MAIL_HOST=smtp.mailtrap.io
+      #- MAIL_PORT=2525
+      #- MAIL_USERNAME=null
+      #- MAIL_PASSWORD=null
+      #- MAIL_PASSWORD_FILE=
+      #- MAIL_ENCRYPTION=null
+      #- MAIL_FROM_NAME=
+      #- MAIL_FROM_ADDRESS=
+      #- TRUSTED_PROXIES=
+      #- SKIP_PERMISSIONS_CHECKS
+      - STARTUP_DELAY=30
+      #- ADMIN_USER=admin
+      #- ADMIN_PASSWORD=
+      #- ADMIN_PASSWORD_FILE=
+      ### Unused in Lychee
+      #- REDIS_HOST=127.0.0.1
+      #- REDIS_PASSWORD=null
+      #- REDIS_PASSWORD_FILE=
+      #- REDIS_PORT=6379
+    restart: unless-stopped
+    depends_on:
+      - lychee_db
+
+networks:
+  lychee:

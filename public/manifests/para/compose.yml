@@ -1,0 +1,11 @@
+services:
+  para:
+    image: erudikaltd/para:latest_stable
+    ports:
+      - 8080:8080
+    volumes:
+      - $(pwd)/data:/para/data
+      - $(pwd)/application.conf:/para/application.conf
+    environment:
+      - JAVA_OPTS="-Dconfig.file
+    restart: always

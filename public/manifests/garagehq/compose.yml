@@ -1,0 +1,10 @@
+services:
+  garage:
+    image: dxflrs/garage:v1.0.0
+    network_mode: "host"
+
+    volumes:
+      - ./garage.toml:/etc/garage.toml
+      - ./meta:/var/lib/garage/meta
+      - ./data:/var/lib/garage/data
+	restart: unless-stopped

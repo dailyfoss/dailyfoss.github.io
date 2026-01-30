@@ -1,0 +1,30 @@
+services:
+  app:
+    image: chenzhaoyu94/chatgpt-web # always use latest, pull the tag image again to update
+    ports:
+      - 127.0.0.1:3002:3002
+    environment:
+      # choose one
+      OPENAI_API_KEY: sk-xxx
+      # choose one
+      OPENAI_ACCESS_TOKEN: xxx
+      # API interface address, optional, available when OPENAI_API_KEY is set
+      OPENAI_API_BASE_URL: xxx
+      # API model, optional, available when OPENAI_API_KEY is set, https://platform.openai.com/docs/models
+      # gpt-4, gpt-4o, gpt-4o-mini, gpt-4-turbo, gpt-4-turbo-preview, gpt-4-0125-preview, gpt-4-1106-preview, gpt-4-0314, gpt-4-0613, gpt-4-32k, gpt-4-32k-0314, gpt-4-32k-0613, gpt-3.5-turbo-16k, gpt-3.5-turbo-16k-0613, gpt-3.5-turbo, gpt-3.5-turbo-0301, gpt-3.5-turbo-0613, text-davinci-003, text-davinci-002, code-davinci-002
+      OPENAI_API_MODEL: xxx
+      # reverse proxy, optional
+      API_REVERSE_PROXY: xxx
+      # access permission key, optional
+      AUTH_SECRET_KEY: xxx
+      # maximum number of requests per hour, optional, unlimited by default
+      MAX_REQUEST_PER_HOUR: 0
+      # timeout, unit milliseconds, optional
+      TIMEOUT_MS: 60000
+      # Socks proxy, optional, take effect with SOCKS_PROXY_PORT
+      SOCKS_PROXY_HOST: xxx
+      # Socks proxy port, optional, take effect with SOCKS_PROXY_HOST
+      SOCKS_PROXY_PORT: xxx
+      # HTTPS proxy, optional, support http,https,socks5
+      HTTPS_PROXY: http://xxx:7890
+    restart: always

@@ -82,14 +82,16 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
+    "script": false,
+    "docker": false,
     "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/baby-buddy/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
@@ -100,8 +102,8 @@
     }
   },
   "demo": {
-    "url": null,
-    "username": null,
-    "password": null
+    "url": "https://demo.baby-buddy.net/login",
+    "username": "admin",
+    "password": "admin"
   }
 }

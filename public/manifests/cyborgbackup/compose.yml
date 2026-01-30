@@ -1,0 +1,74 @@
+services:
+  postgres:
+    image: postgres:latest
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+  callback_receiver:
+    image: cyborgbackup/cyborgbackup:latest
+    command: "cyborgbackup-manage run_callback_receiver -v 3"
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+      - redis
+  channel_workers:
+    image: cyborgbackup/cyborgbackup:latest
+    command: 'cyborgbackup-manage runworker websocket'
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+      - redis
+  api:
+    image: cyborgbackup/cyborgbackup:latest
+    command: launch_cyborg.sh
+    env_file:
+      - .env
+    environment:
+      - RUN_MIGRATIONS=1
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - redis
+    restart: unless-stopped
+  celery:
+    image: cyborgbackup/cyborgbackup:latest
+    command: celery -A cyborgbackup worker -E -c 1
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+      - redis
+  celery_beat:
+    image: cyborgbackup/cyborgbackup:latest
+    command: celery -A cyborgbackup beat -s /var/run/cyborgbackup/celerybeat-schedule
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+      - redis
+  mongodb:
+    image: mongo:latest
+    volumes:
+      - mongo_data:/data/db
+    ports:
+      - 27017:27017
+  ui:
+    image: cyborgbackup/cyborgbackup-ui:develop
+    depends_on:
+      - api
+    ports:
+      - "8088:80"
+
+volumes:
+  postgres_data:
+  mongo_data:

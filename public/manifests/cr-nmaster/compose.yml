@@ -1,0 +1,21 @@
+services:
+  cronmaster:
+    image: ghcr.io/fccview/cronmaster:latest
+    container_name: cronmaster
+    user: "root"
+    ports:
+      - "40123:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_CLOCK_UPDATE_INTERVAL=30000
+      - AUTH_PASSWORD=very_strong_password
+      - HOST_CRONTAB_USER=root
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./scripts:/app/scripts
+      - ./data:/app/data
+      - ./snippets:/app/snippets
+    pid: "host"
+    privileged: true
+    restart: always
+    init: true

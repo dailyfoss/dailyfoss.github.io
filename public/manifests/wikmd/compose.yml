@@ -1,0 +1,13 @@
+services:
+  wikmd:
+    image: linbreux/wikmd:latest
+    container_name: wikmd
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Paris
+    volumes:
+      - /path/to/wiki:/wiki
+    ports:
+      - 5000:5000
+    restart: unless-stopped

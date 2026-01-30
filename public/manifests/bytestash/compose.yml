@@ -1,0 +1,20 @@
+services:
+  bytestash:
+    container_name: bytestash
+    image: ghcr.io/bytestash/bytestash:latest
+    restart: unless-stopped
+
+    ports:
+      - "5000:5000"
+
+    environment:
+      JWT_SECRET: change-me
+      TOKEN_EXPIRY: 24h
+
+      ALLOW_NEW_ACCOUNTS: "true"
+      ALLOW_PASSWORD_CHANGES: "true"
+
+      DEBUG: "false"
+
+    volumes:
+      - ./data:/data/snippets

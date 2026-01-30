@@ -1,0 +1,98 @@
+services:
+  mysql:
+    container_name: bookhaven-mysql
+    image: mysql:8.0
+    restart: unless-stopped
+
+    environment:
+      MYSQL_ROOT_PASSWORD: secure_mysql_root_password
+      MYSQL_DATABASE: epub_library
+      MYSQL_USER: epub_user
+      MYSQL_PASSWORD: secure_password_here
+
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -p$${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 10s
+      retries: 10
+
+  redis:
+    container_name: bookhaven-redis
+    image: redis:7-alpine
+    restart: unless-stopped
+
+    ports:
+      - "6379:6379"
+
+  bookhaven:
+    container_name: bookhaven
+    image: hrbingr/bookhaven:latest
+    restart: unless-stopped
+
+    ports:
+      - "5000:5000"
+
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_started
+
+    environment:
+      # ========================
+      # Application
+      # ========================
+      BASE_DIRECTORY: /ebooks
+      BASE_URL: http://localhost:5000
+
+      SECRET_KEY: replace_with_32_char_random_hex
+
+      ADMIN_EMAIL: admin@example.com
+      ADMIN_PASS: adminpassword
+      ADMIN_RESET: "false"
+
+      UI_BASE_COLOR: green
+      LOG_LEVEL: INFO
+      APP_PORT: "5000"
+
+      ENABLE_HTTPS: "false"
+      RATE_LIMITER_ENABLED: "true"
+      SCHEDULER_ENABLED: "true"
+      PERIODIC_SCAN_INTERVAL: "10"
+
+      REQUESTS_ENABLED: "true"
+      WRITE_TO_EPUB: "false"
+
+      UPLOADS_ENABLED: "false"
+      UPLOADS_DIRECTORY: /uploads
+
+      COVER_BASE_DIRECTORY: /cover_img
+      COVER_DIRECTORIES_PER_LEVEL: "10"
+      COVER_DIRECTORY_LEVELS: "2"
+
+      # ========================
+      # Database
+      # ========================
+      DB_TYPE: mysql
+      DB_HOST: mysql
+      DB_PORT: "3306"
+      DB_NAME: epub_library
+      DB_USER: epub_user
+      DB_PASSWORD: secure_password_here
+
+      # ========================
+      # Redis
+      # ========================
+      REDIS_HOST: redis
+      REDIS_PORT: "6379"
+
+    volumes:
+      - ./ebooks:/ebooks
+      - ./covers:/cover_img
+      - ./uploads:/uploads
+
+volumes:
+  mysql_data:

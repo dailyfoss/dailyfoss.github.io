@@ -1,0 +1,147 @@
+services:
+  ssh:
+    image: shellhubio/ssh:${SHELLHUB_VERSION}
+    restart: unless-stopped
+    environment:
+      - PRIVATE_KEY=/run/secrets/ssh_private_key
+      - SHELLHUB_ENTERPRISE=${SHELLHUB_ENTERPRISE}
+      - SHELLHUB_CLOUD=${SHELLHUB_CLOUD}
+      - SHELLHUB_LOG_LEVEL=${SHELLHUB_LOG_LEVEL}
+      - SHELLHUB_LOG_FORMAT=${SHELLHUB_LOG_FORMAT}
+      - SHELLHUB_BILLING=${SHELLHUB_BILLING}
+      - ALLOW_PUBLIC_KEY_ACCESS_BELLOW_0_6_0=${SHELLHUB_ALLOW_PUBLIC_KEY_ACCESS_BELLOW_0_6_0}
+      - RECORD_URL=${SHELLHUB_RECORD_URL}
+      - BILLING_URL=${SHELLHUB_BILLING_URL}
+    ports:
+      - "${SHELLHUB_SSH_PORT}:2222"
+    secrets:
+      - ssh_private_key
+    networks:
+      - shellhub
+    healthcheck:
+      test: "curl -f http://ssh:8080/healthcheck || exit 1"
+      interval: 30s
+      start_period: 10s
+    depends_on:
+      - redis
+  api:
+    image: shellhubio/api:${SHELLHUB_VERSION}
+    restart: unless-stopped
+    environment:
+      - SHELLHUB_VERSION=${SHELLHUB_VERSION}
+      - PRIVATE_KEY=/run/secrets/api_private_key
+      - PUBLIC_KEY=/run/secrets/api_public_key
+      - SHELLHUB_ENTERPRISE=${SHELLHUB_ENTERPRISE}
+      - SHELLHUB_BILLING=${SHELLHUB_BILLING}
+      - SHELLHUB_CLOUD=${SHELLHUB_CLOUD}
+      - GEOIP=${SHELLHUB_GEOIP}
+      - MAXMIND_LICENSE=${SHELLHUB_MAXMIND_LICENSE}
+      - RECORD_RETENTION=${SHELLHUB_RECORD_RETENTION}
+      - TELEMETRY=${SHELLHUB_TELEMETRY:-}
+      - TELEMETRY_SCHEDULE=${SHELLHUB_TELEMETRY_SCHEDULE:-}
+      - SESSION_RECORD_CLEANUP_SCHEDULE=${SHELLHUB_SESSION_RECORD_CLEANUP_SCHEDULE}
+      - SHELLHUB_LOG_LEVEL=${SHELLHUB_LOG_LEVEL}
+      - SHELLHUB_LOG_FORMAT=${SHELLHUB_LOG_FORMAT}
+      - SENTRY_DSN=${SHELLHUB_SENTRY_DSN}
+      - SHELLLHUB_ANNOUNCEMENTS=${SHELLLHUB_ANNOUNCEMENTS:-}
+      - SHELLHUB_SSH_PORT=${SHELLHUB_SSH_PORT}
+      - SHELLHUB_DOMAIN=${SHELLHUB_DOMAIN}
+      - ASYNQ_GROUP_MAX_DELAY=${SHELLHUB_ASYNQ_GROUP_MAX_DELAY}
+      - ASYNQ_GROUP_GRACE_PERIOD=${SHELLHUB_ASNYQ_GROUP_GRACE_PERIOD}
+      - ASYNQ_GROUP_MAX_SIZE=${SHELLHUB_ASYNQ_GROUP_MAX_SIZE}
+      - REDIS_CACHE_POOL_SIZE=${SHELLHUB_REDIS_CACHE_POOL_SIZE}
+      - MAXIMUM_ACCOUNT_LOCKOUT=${SHELLHUB_MAXIMUM_ACCOUNT_LOCKOUT}
+    depends_on:
+      - mongo
+      - redis
+    links:
+      - mongo
+      - redis
+    secrets:
+      - api_private_key
+      - api_public_key
+    networks:
+      - shellhub
+    healthcheck:
+      test: "curl -f http://api:8080/api/healthcheck || exit 1"
+      interval: 30s
+      start_period: 10s
+  ui:
+    image: shellhubio/ui:${SHELLHUB_VERSION}
+    restart: unless-stopped
+    environment:
+      - SHELLHUB_STRIPE_PUBLISHABLE_KEY=${STRIPE_PUBLISHABLE_KEY}
+      - SHELLHUB_BILLING=${SHELLHUB_BILLING}
+      - SHELLHUB_ENTERPRISE=${SHELLHUB_ENTERPRISE}
+      - SHELLHUB_CLOUD=${SHELLHUB_CLOUD}
+      - SHELLHUB_ANNOUNCEMENTS=${SHELLHUB_ANNOUNCEMENTS}
+      - SHELLHUB_VERSION=${SHELLHUB_VERSION}
+      - SHELLHUB_SENTRY_DSN=${SHELLHUB_SENTRY_DSN}
+      - SHELLHUB_PAYWALL=${SHELLHUB_PAYWALL}
+      - SHELLHUB_CONNECTOR=${SHELLHUB_CONNECTOR}
+    networks:
+      - shellhub
+    healthcheck:
+      test: "curl -f http://ui:8080/healthcheck || exit 1"
+      interval: 30s
+      start_period: 10s
+  gateway:
+    image: shellhubio/gateway:${SHELLHUB_VERSION}
+    restart: unless-stopped
+    environment:
+      - SHELLHUB_DOMAIN=${SHELLHUB_DOMAIN}
+      - SHELLHUB_PUBLIC_URL_DOMAIN=${SHELLHUB_PUBLIC_URL_DOMAIN}
+      - SHELLHUB_VERSION=${SHELLHUB_VERSION}
+      - SHELLHUB_SSH_PORT=${SHELLHUB_SSH_PORT}
+      - SHELLHUB_PROXY=${SHELLHUB_PROXY}
+      - SHELLHUB_ENTERPRISE=${SHELLHUB_ENTERPRISE}
+      - SHELLHUB_CLOUD=${SHELLHUB_CLOUD}
+      - SHELLHUB_AUTO_SSL=${SHELLHUB_AUTO_SSL}
+    depends_on:
+      - api
+      - ui
+    ports:
+      - ${SHELLHUB_BIND_ADDRESS}:${SHELLHUB_HTTP_PORT}:80
+    networks:
+      - shellhub
+    healthcheck:
+      test: "curl -f -k -L http://gateway/healthcheck || exit 1"
+      interval: 30s
+      start_period: 10s
+  cli:
+    image: shellhubio/cli:${SHELLHUB_VERSION}
+    stop_signal: SIGKILL
+    command: /bin/sleep infinity
+    environment:
+      - SHELLHUB_LOG_LEVEL=${SHELLHUB_LOG_LEVEL}
+      - SHELLHUB_LOG_FORMAT=${SHELLHUB_LOG_FORMAT}
+    networks:
+      - shellhub
+  mongo:
+    image: mongo:4.4.29
+    restart: unless-stopped
+    healthcheck:
+      test: 'test $$(echo "rs.initiate({ _id: ''rs'', members: [ { _id: 0, host: ''mongo:27017'' } ] }).ok || rs.status().ok" | mongo --quiet) -eq 1'
+      interval: 30s
+      start_period: 10s
+    command: ["--replSet", "rs", "--bind_ip_all"]
+    networks:
+      - shellhub
+  redis:
+    image: redis
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "no", "--save", "\"\""]
+    networks:
+      - shellhub
+
+secrets:
+  ssh_private_key:
+    file: ./ssh_private_key
+  api_private_key:
+    file: ./api_private_key
+  api_public_key:
+    file: ./api_public_key
+
+networks:
+  shellhub:
+    name: ${SHELLHUB_NETWORK}

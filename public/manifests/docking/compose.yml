@@ -1,0 +1,16 @@
+services:
+  docking:
+    image: "ghcr.io/shipsaas/docking-dev:latest"
+    volumes:
+      - ./app_storage:/var/www/html/storage/app
+    links:
+      - gotenberg
+    ports:
+      - '8888:80'
+
+  gotenberg:
+    image: gotenberg/gotenberg:7
+    ports:
+      - '9898:3000'
+
+    restart: unless-stopped

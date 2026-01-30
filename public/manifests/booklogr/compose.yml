@@ -1,0 +1,64 @@
+services:
+  booklogr-db:
+    container_name: booklogr-db
+    image: postgres:16-alpine
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: booklogr
+
+    volumes:
+      - booklogr_db:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d booklogr"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  booklogr-api:
+    container_name: booklogr-api
+    image: mozzo/booklogr:v1.6.0
+    restart: unless-stopped
+
+    depends_on:
+      booklogr-db:
+        condition: service_healthy
+
+    environment:
+      DATABASE_URL: postgresql://admin:password@booklogr-db:5432/booklogr
+
+      AUTH_SECRET_KEY: change-this-secret
+      AUTH_ALLOW_REGISTRATION: "true"
+      AUTH_REQUIRE_VERIFICATION: "false"
+
+      GOOGLE_CLIENT_ID: xxx.apps.googleusercontent.com
+      GOOGLE_CLIENT_SECRET: xxx
+
+      EXPORT_FOLDER: export_data
+
+      MAIL_SERVER: smtp.example.com
+      MAIL_USERNAME: username
+      MAIL_PASSWORD: password
+      MAIL_SENDER: noreply@example.com
+
+    ports:
+      - "5000:5000"
+
+  booklogr-web:
+    container_name: booklogr-web
+    image: mozzo/booklogr-web:v1.6.0
+    restart: unless-stopped
+
+    environment:
+      BL_API_ENDPOINT: http://localhost:5000
+      BL_GOOGLE_ID: xxx.apps.googleusercontent.com
+      BL_DEMO_MODE: "false"
+
+    ports:
+      - "5150:80"
+
+volumes:
+  booklogr_db:

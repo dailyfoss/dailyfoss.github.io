@@ -1,0 +1,11 @@
+services:
+  picoshare:
+    image: mtlynch/picoshare
+    environment:
+      - PORT=4001
+      - PS_SHARED_SECRET=dummypass # Change to any password
+    ports:
+      - 4001:4001
+    command: -db /data/store.db
+    volumes:
+      - ./data:/data

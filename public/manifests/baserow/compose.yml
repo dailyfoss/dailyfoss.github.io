@@ -1,0 +1,14 @@
+services:
+  baserow:
+    container_name: baserow
+    image: baserow/baserow:${BASEROW_VERSION:-2.0.6}
+    environment:
+      BASEROW_PUBLIC_URL: 'http://localhost'
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - baserow_data:/baserow/data
+volumes:
+  baserow_data:
+

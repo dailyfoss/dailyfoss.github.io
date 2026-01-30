@@ -1,0 +1,11 @@
+services:
+    gokapi:
+        image: 'f0rc3/gokapi:latest'
+        environment:
+            - TZ=UTC
+        ports:
+            - '53842:53842'
+        volumes:
+            - './gokapi-config:/app/config'
+            - './gokapi-data:/app/data'
+        restart: unless-stopped

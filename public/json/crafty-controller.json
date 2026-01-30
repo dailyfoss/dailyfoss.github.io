@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": null,
+    "license": "GNU-GPL",
     "version": null,
     "date_app_added": "2025-11-23",
     "date_last_released": null,
@@ -18,12 +18,14 @@
   },
   "resources": {
     "website": null,
-    "documentation": null,
+    "documentation": "https://docs.craftycontrol.com",
     "source_code": "https://gitlab.com/crafty-controller/crafty-4",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/crafty-controller.webp",
     "issues": null,
     "releases": null,
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/crafty-controller.png"
+    ]
   },
   "features": [
     {
@@ -87,12 +89,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/crafty-controller/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

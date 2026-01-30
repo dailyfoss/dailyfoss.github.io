@@ -1,0 +1,34 @@
+services:
+  db:
+    : *db-defaults
+    container_name: listmonk_db
+    volumes:
+      - type: volume
+        source: listmonk-data
+        target: /var/lib/postgresql/data
+
+  app:
+    : *app-defaults
+    container_name: listmonk_app
+    hostname: listmonk.example.com # Recommend using FQDN for hostname
+    depends_on:
+      - db
+    volumes:
+      - ./config.toml:/listmonk/config.toml
+
+  demo-db:
+    container_name: listmonk_demo_db
+    : *db-defaults
+
+  demo-app:
+    : *app-defaults
+    container_name: listmonk_demo_app
+    command: [sh, -c, "yes | ./listmonk --install --config config-demo.toml && ./listmonk --config config-demo.toml"]
+    depends_on:
+      - demo-db
+
+networks:
+  listmonk:
+
+volumes:
+  listmonk-data:

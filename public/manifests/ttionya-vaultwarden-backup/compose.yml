@@ -1,0 +1,40 @@
+services:
+
+  vaultwarden:
+    image: vaultwarden/server:latest
+    restart: always
+    # environment:
+    #   SIGNUPS_ALLOWED: 'false'
+    #   ADMIN_TOKEN: 'your authentication token'
+    ports:
+      - '8200:80'
+    volumes:
+      - ./vaultwarden-data:/data/
+
+  backup:
+    image: ttionya/vaultwarden-backup:latest
+    restart: always
+    # environment:
+    #   RCLONE_REMOTE_NAME: 'BitwardenBackup'
+    #   RCLONE_REMOTE_DIR: '/BitwardenBackup/'
+    #   RCLONE_GLOBAL_FLAG: ''
+    #   CRON: '5 * * * *'
+    #   ZIP_ENABLE: 'TRUE'
+    #   ZIP_PASSWORD: 'WHEREISMYPASSWORD?'
+    #   ZIP_TYPE: 'zip'
+    #   BACKUP_FILE_SUFFIX: '%Y%m%d'
+    #   BACKUP_KEEP_DAYS: 0
+    #   PING_URL: ''
+    #   PING_URL_WHEN_START: ''
+    #   PING_URL_WHEN_SUCCESS: ''
+    #   PING_URL_WHEN_FAILURE: ''
+    #   MAIL_SMTP_ENABLE: 'FALSE'
+    #   MAIL_SMTP_VARIABLES: ''
+    #   MAIL_TO: ''
+    #   MAIL_WHEN_SUCCESS: 'TRUE'
+    #   MAIL_WHEN_FAILURE: 'TRUE'
+    #   TIMEZONE: 'UTC'
+    volumes:
+      - ./vaultwarden-data:/bitwarden/data/
+      - ./vaultwarden-rclone-data:/config/
+      - /path/to/env:/.env

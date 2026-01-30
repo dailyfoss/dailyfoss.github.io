@@ -1,0 +1,43 @@
+services:
+  blinko:
+    container_name: blinko
+    image: ghcr.io/blinko-io/blinko:latest
+    restart: unless-stopped
+
+    ports:
+      - "1111:1111"
+
+    environment:
+      NODE_ENV: production
+
+      NEXTAUTH_URL: http://localhost:1111
+      NEXT_PUBLIC_BASE_URL: http://localhost:1111
+      NEXTAUTH_SECRET: change-me-now
+
+      DATABASE_URL: postgresql://postgres:mysecretpassword@postgres:5432/postgres
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  postgres:
+    image: postgres:14-alpine
+    container_name: blinko-postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mysecretpassword
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:

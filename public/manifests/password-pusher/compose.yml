@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: docker.io/postgres:15
+    volumes:
+      - /var/lib/postgresql/data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: passwordpusher_user
+      POSTGRES_PASSWORD: passwordpusher_passwd
+      POSTGRES_DB: passwordpusher_db
+
+  passwordpusher:
+    image: docker.io/pglombardo/pwpush:release
+    environment:
+      DATABASE_URL: 'postgres://passwordpusher_user:passwordpusher_passwd@postgres:5432/passwordpusher_db'
+    ports:
+      - "5100:5100"
+    depends_on:
+      - postgres
+    links:
+     - postgres:postgres

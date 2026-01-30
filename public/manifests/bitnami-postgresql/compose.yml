@@ -1,0 +1,9 @@
+services:
+  postgresql:
+    image: bitnami/postgresql:latest
+    environment:
+      POSTGRES_ROOT_PASSWORD: example
+    volumes:
+      - /path/to/postgres-persistence:/bitnami/postgres/data
+    # (this is just an example, not intended to be a production configuration)
+    restart: always

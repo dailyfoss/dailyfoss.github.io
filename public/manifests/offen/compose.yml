@@ -1,0 +1,26 @@
+services:
+  offen:
+    image: offen/offen:v1.4.2
+    ports:
+      - 80:80
+      - 443:443
+    env_file: ./offen.env
+    environment:
+      OFFEN_DATABASE_DIALECT: postgres
+      OFFEN_DATABASE_CONNECTIONSTRING: postgres://user:password@postgres:5432/offen?sslmode=disable
+      OFFEN_DATABASE_CONNECTIONRETRIES: 10
+    volumes:
+      - ./certs:/var/www/.cache
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:12-alpine
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_DB: offen
+      # check the documentation for POSTGRES_PASSWORD_FILE for
+      # how to avoid putting the password in here
+      POSTGRES_PASSWORD: password
+    volumes:
+      - ./data:/var/lib/postgresql/data

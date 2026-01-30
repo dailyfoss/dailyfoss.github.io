@@ -1,0 +1,13 @@
+services:
+  poste.io:
+    container_name: mailserver
+    image: analogic/poste.io
+    network_mode: host
+    environment:
+      - TZ=Europe/Prague
+    volumes:
+      - /your-data-dir/data:/data
+
+    hostname: mail.example.com
+    tty: true
+    restart: always

@@ -1,0 +1,108 @@
+services:
+  proxy: # The proxy must not be removed. If needed, point your own proxy to this container, rather than removing this
+    container_name: recipesage_proxy
+    image: julianpoy/recipesage-selfhost-proxy:v4.0.0
+    ports:
+    - 7270:80
+    depends_on:
+      - static
+      - api
+      - pushpin
+    restart: unless-stopped
+  static: # Hosts frontend assets
+    container_name: recipesage_static
+    image: julianpoy/recipesage-selfhost:static-v2.15.3
+    restart: unless-stopped
+  api: # Hosts backend API
+    container_name: recipesage_api
+    image: julianpoy/recipesage-selfhost:api-v2.15.3
+    depends_on:
+      - postgres
+      - typesense
+      - pushpin
+      - browserless
+    command: sh -c "npx prisma migrate deploy; npx nx seed prisma; npx ts-node --swc --project packages/backend/tsconfig.json packages/backend/src/bin/www"
+    environment:
+      - STORAGE_TYPE=filesystem
+      - FILESYSTEM_STORAGE_PATH=/rs-media
+      - NODE_ENV=selfhost
+      - VERBOSE=false
+      - VERSION=selfhost
+      - POSTGRES_DB=recipesage_selfhost # If changing this, make sure to update the postgres container and the DATABASE_URL below accordingly
+      - POSTGRES_USER=recipesage_selfhost # If changing this, make sure to update the postgres container and the DATABASE_URL below accordingly
+      - POSTGRES_PASSWORD=recipesage_selfhost # If changing this, make sure to update the postgres container and the DATABASE_URL below accordingly
+      - POSTGRES_PORT=5432 # If changing this, make sure to update the postgres container and the DATABASE_URL below accordingly
+      - POSTGRES_HOST=postgres # If changing this, make sure to update the postgres container and the DATABASE_URL below accordingly
+      - POSTGRES_SSL=false
+      - POSTGRES_LOGGING=false
+      - DATABASE_URL=postgresql://recipesage_selfhost:recipesage_selfhost@postgres:5432/recipesage_selfhost # Format is: postgresql://USERNAME:PASSWORD@HOST:PORT/DBNAME and must match the variables from the postgres container if you decide to change them
+      - GCM_KEYPAIR
+      - SENTRY_DSN
+      - GRIP_URL=http://pushpin:5561/
+      - GRIP_KEY=changeme
+      - SEARCH_PROVIDER=typesense
+      - 'TYPESENSE_NODES=[{"host": "typesense", "port": 8108, "protocol": "http"}]'
+      - TYPESENSE_API_KEY=recipesage_selfhost
+      - STRIPE_SK # Value should not be set.
+      - STRIPE_WEBHOOK_SECRET # Value should not be set
+      - BROWSERLESS_HOST=browserless
+      - BROWSERLESS_PORT=3000
+      - INGREDIENT_INSTRUCTION_CLASSIFIER_URL=http://ingredient-instruction-classifier:3000/
+      - OPENAI_API_KEY # Please follow the instructions in the README if you decide to supply a value here
+    volumes:
+      - apimedia:/rs-media
+    restart: unless-stopped
+  typesense: # Provides the fuzzy search engine
+    container_name: recipesage_typesense
+    image: typesense/typesense:0.24.1
+    volumes:
+      - typesensedata:/data
+    command: "--data-dir /data --api-key=recipesage_selfhost --enable-cors"
+    restart: unless-stopped
+  pushpin: # Provides websocket support
+    container_name: recipesage_pushpin
+    image: julianpoy/pushpin:2023-09-17
+    entrypoint: /bin/sh -c
+    command:
+      [
+        'sed -i "s/sig_key=changeme/sig_key=$$GRIP_KEY/" /etc/pushpin/pushpin.conf && echo "* $${TARGET},over_http" > /etc/pushpin/routes && pushpin --merge-output',
+      ]
+    environment:
+      - GRIP_KEY=changeme
+      - TARGET=api:3000
+    restart: unless-stopped
+  postgres: # Database
+    container_name: recipesage_postgres
+    image: postgres:16
+    environment:
+      - POSTGRES_DB=recipesage_selfhost # If you change this, make sure to change both POSTGRES_DB and DATABASE_URL on the API container
+      - POSTGRES_USER=recipesage_selfhost # If you change this, make sure to change both POSTGRES_USER and DATABASE_URL on the API container
+      - POSTGRES_PASSWORD=recipesage_selfhost # If you change this, make sure to change both POSTGRES_PASSWORD and DATABASE_URL on the API container
+    volumes:
+      - postgresdata:/var/lib/postgresql/data
+    restart: unless-stopped
+  browserless: # A headless browser for scraping websites with the auto import tool
+    container_name: recipesage_browserless
+    image: browserless/chrome:1.61.0-puppeteer-21.4.1
+    environment:
+      - MAX_CONCURRENT_SESSIONS=3
+      - MAX_QUEUE_LENGTH=10
+    restart: unless-stopped
+
+  # Uncomment the lines below to enable the ingredient instruction classifier. It's somewhat resource intensive (and large) and requires AVX instruction support on your CPU, but does improve site compatibility for the automatic import tool.
+
+  # ingredient-instruction-classifier: # An _optional_ server that runs a machine learning model able to classify text for improved automatic import site support. Not required for application to run, and will crash if your CPU does not support AVX instructions
+  #   container_name: recipesage_classifier
+  #   image: julianpoy/ingredient-instruction-classifier:1.4.11
+  #   environment:
+  #     - SENTENCE_EMBEDDING_BATCH_SIZE=200
+  #     - PREDICTION_CONCURRENCY=2
+  #   restart: unless-stopped
+
+volumes:
+  apimedia:
+    driver: local
+  typesensedata:
+    driver: local
+  postgresdata:
+    driver: local

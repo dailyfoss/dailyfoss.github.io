@@ -1,0 +1,6 @@
+services:
+  code:
+    image: collabora/code
+    ports:
+      - 127.0.0.1:9980:9980
+    restart: unless-stopped

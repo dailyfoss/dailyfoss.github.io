@@ -1,0 +1,53 @@
+services:
+  server:
+    : *redash-service
+    command: server
+    ports:
+      - "__PORT__:5000"
+    environment:
+      REDASH_WEB_WORKERS: 4
+  scheduler:
+    : *redash-service
+    command: scheduler
+    depends_on:
+      - server
+  scheduled_worker:
+    : *redash-service
+    command: worker
+    depends_on:
+      - server
+    environment:
+      QUEUES: "scheduled_queries,schemas"
+      WORKERS_COUNT: 1
+  adhoc_worker:
+    : *redash-service
+    command: worker
+    depends_on:
+      - server
+    environment:
+      QUEUES: "queries"
+      WORKERS_COUNT: 2
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+  postgres:
+    image: pgautoupgrade/pgautoupgrade:latest
+    env_file: /opt/redash/env
+    volumes:
+      - /opt/redash/postgres-data:/var/lib/postgresql/data
+    restart: unless-stopped
+  nginx:
+    image: redash/nginx:latest
+    ports:
+      - "80:80"
+    depends_on:
+      - server
+    links:
+      - server:redash
+    restart: always
+  worker:
+    : *redash-service
+    command: worker
+    environment:
+      QUEUES: "periodic,emails,default"
+      WORKERS_COUNT: 1

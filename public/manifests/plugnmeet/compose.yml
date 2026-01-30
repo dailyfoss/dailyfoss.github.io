@@ -1,0 +1,78 @@
+    image: redis:6
+    ports:
+      - "6379:6379/tcp"
+  db:
+    image: mariadb:10.11
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+    volumes:
+      - ./mariadb-data:/var/lib/mysql
+      - ./sql_dump/install.sql:/docker-entrypoint-initdb.d/install.sql
+  nats:
+    image: nats:alpine
+    command:
+      - "-DVV"
+      - "-config"
+      - "/nats-server.conf"
+    ports:
+      - "4222:4222/tcp" # clients
+      - "8222:8222/tcp" # websockets
+    volumes:
+      - ./nats_server.conf:/nats-server.conf
+      - ./etc/tmp/nats-data:/data/jetstream
+  livekit:
+    image: livekit/livekit-server
+    ports:
+      - "7880:7880/tcp"
+      - "7881:7881/tcp"
+      - "7882:7882/udp"
+    volumes:
+      - .:/app
+    command: --config "/app/livekit.yaml" --dev
+    depends_on:
+      - redis
+  livekit-ingress:
+    image: livekit/ingress
+    ports:
+      - "1935:1935/tcp"
+      - "8089:8089/tcp"
+    volumes:
+      - .:/app
+    command: --config "/app/ingress.yaml"
+    depends_on:
+      - redis
+      - livekit
+  etherpad:
+    image: mynaparrot/plugnmeet-etherpad
+    ports:
+      - "9001:9001/tcp"
+    volumes:
+      - ./etc/etherpad/settings.json:/opt/etherpad-lite/settings.json
+      # mount fonts as read only mood
+#      - /usr/share/fonts/:/usr/share/fonts/:ro
+#      - /etc/fonts/:/etc/fonts/:ro
+#      - /usr/share/fontconfig/:/usr/share/fontconfig/:ro
+#      - /var/cache/fontconfig/:/var/cache/fontconfig/:ro
+    depends_on:
+      - redis
+  plugnmeet-api:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8080:8080/tcp"
+    volumes:
+      - .:/app
+      - ../client:/app/client
+      - ../recording_files:/app/recording_files
+      # mount fonts as read only mood
+#      - /usr/share/fonts/:/usr/share/fonts/:ro
+#      - /etc/fonts/:/etc/fonts/:ro
+#      - /usr/share/fontconfig/:/usr/share/fontconfig/:ro
+#      - /var/cache/fontconfig/:/var/cache/fontconfig/:ro
+    depends_on:
+      - nats
+      - redis
+      - db
+      - livekit

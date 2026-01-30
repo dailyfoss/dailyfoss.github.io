@@ -1,0 +1,33 @@
+services:
+  ## Uncomment this if you want to use postgres
+  # db:
+  #   image: postgres
+  #   restart: always
+  #   volumes:
+  #     - db:/var/lib/postgresql/data
+  #   env_file:
+  #     - ../.env
+  web:
+    image: ghcr.io/tobysuch/shifter:0.3.0
+    restart: always
+    volumes:
+      - ./static:/home/app/web/static_root
+      - ./media:/home/app/web/media
+      - ./db:/home/app/web/db # Comment this out if you are using postgres
+    expose:
+      - 8000
+    env_file:
+      - ../.env
+  nginx:
+    image: nginx:1.19.0-alpine
+    volumes:
+      - static:/home/app/web/static
+      - media:/home/app/web/media
+      - ../nginx/nginx.conf:/etc/nginx/templates/default.conf.template
+    ports:
+      - 1337:80
+    depends_on:
+      - web
+    env_file:
+      - ../.env
+	  restart: unless-stopped

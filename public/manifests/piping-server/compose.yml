@@ -1,0 +1,6 @@
+services:
+  piping-server-pkg:
+    image: nwtgck/piping-server
+    ports:
+      - 8080:8080
+	restart: unless-stopped

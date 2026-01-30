@@ -1,0 +1,36 @@
+services:
+  compose-craft:
+    image: composecraft/composecraft:latest
+    container_name: compose-craft
+    restart: unless-stopped
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      SECRET_KEY: ${SECRET_KEY}
+      MONGODB_URI: mongodb://mongo:27017/composecraft
+      URL: ${URL}
+
+      # Optional
+      CORE_ONLY: ${CORE_ONLY:-false}
+      DISABLE_TELEMETRY: ${DISABLE_TELEMETRY:-true}
+      NEXT_PUBLIC_POSTHOG_KEY: ${NEXT_PUBLIC_POSTHOG_KEY:-}
+
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:7
+    container_name: composecraft_mongo
+    restart: unless-stopped
+
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:

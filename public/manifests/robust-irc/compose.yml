@@ -1,0 +1,14 @@
+services:
+  robustirc:
+    image: robustirc/robustirc:latest
+    environment:
+      -tls_cert_path=/media/persistent/ssl/combined.crt
+      -tls_key_path=/media/persistent/ssl/robustirc.net.startssl.key
+      -network_password= -network_name=robustirc.net
+      -peer_addr=dock0.robustirc.net:60667
+    volumes:
+      - /media/persistent:/media/persistent:ro
+      - /media/persistent/robustirc:/var/lib/robustirc
+    ports:
+      - :60667:8443
+    restart: unless-stopped

@@ -1,108 +1,40 @@
-version: "3.9"
-
 services:
   activepieces:
-    image: ghcr.io/activepieces/activepieces:0.75.0
+    image: ghcr.io/activepieces/activepieces:0.33.0
     container_name: activepieces
     restart: unless-stopped
+    ## Enable the following line if you already use AP_EXECUTION_MODE with SANDBOXED or old activepieces, checking the breaking change documentation for more info.
+    ## privileged: true
     ports:
-      - "8080:80"
+      - '8080:80'
     depends_on:
-      postgres:
-        condition: service_healthy
-      redis:
-        condition: service_healthy
-    environment:
-      AP_ENVIRONMENT: prod
-      AP_FRONTEND_URL: http://localhost:8080
-
-      AP_ENGINE_EXECUTABLE_PATH: dist/packages/engine/main.js
-
-      # SECURITY (WAJIB ISI SENDIRI)
-      AP_API_KEY: change-me-long-random
-      AP_ENCRYPTION_KEY: 32hexcharacterslongxxxxxxxxxxxx
-      AP_JWT_SECRET: very-long-jwt-secret
-
-      # DATABASE
-      AP_POSTGRES_DATABASE: activepieces
-      AP_POSTGRES_HOST: postgres
-      AP_POSTGRES_PORT: 5432
-      AP_POSTGRES_USERNAME: postgres
-      AP_POSTGRES_PASSWORD: strongpassword
-
-      # REDIS
-      AP_REDIS_HOST: redis
-      AP_REDIS_PORT: 6379
-
-      # EXECUTION
-      AP_EXECUTION_MODE: UNSANDBOXED
-      AP_FLOW_TIMEOUT_SECONDS: 600
-      AP_WEBHOOK_TIMEOUT_SECONDS: 30
-      AP_TRIGGER_DEFAULT_POLL_INTERVAL: 5
-
-      # MISC
-      AP_TELEMETRY_ENABLED: true
-      AP_TEMPLATES_SOURCE_URL: https://cloud.activepieces.com/api/v1/flow-templates
-    volumes:
-      - activepieces_cache:/usr/src/app/cache
+      - postgres
+      - redis
+    env_file: .env
     networks:
-      - activepieces_net
-    security_opt:
-      - no-new-privileges:true
-    deploy:
-      resources:
-        limits:
-          cpus: "1.0"
-          memory: 1G
-
+      - activepieces
   postgres:
-    image: postgres:14.4
-    container_name: activepieces-postgres
+    image: 'postgres:14.4'
+    container_name: postgres
     restart: unless-stopped
     environment:
-      POSTGRES_DB: activepieces
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: strongpassword
+      - 'POSTGRES_DB=${AP_POSTGRES_DATABASE}'
+      - 'POSTGRES_PASSWORD=${AP_POSTGRES_PASSWORD}'
+      - 'POSTGRES_USER=${AP_POSTGRES_USERNAME}'
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
-      - activepieces_net
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-    deploy:
-      resources:
-        limits:
-          cpus: "0.50"
-          memory: 512M
-
+      - activepieces
   redis:
-    image: redis:7.0.7
-    container_name: activepieces-redis
+    image: 'redis:7.0.7'
+    container_name: redis
     restart: unless-stopped
-    command: ["redis-server", "--save", "60", "1"]
     volumes:
-      - redis_data:/data
+      - 'redis_data:/data'
     networks:
-      - activepieces_net
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-    deploy:
-      resources:
-        limits:
-          cpus: "0.25"
-          memory: 256M
-
+      - activepieces
 volumes:
   postgres_data:
   redis_data:
-  activepieces_cache:
-
 networks:
-  activepieces_net:
-    driver: bridge
+  activepieces:

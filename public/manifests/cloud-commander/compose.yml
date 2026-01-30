@@ -1,0 +1,28 @@
+services:
+  cloudcmd:
+    image: coderaiser/cloudcmd:latest
+    container_name: cloudcmd
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      # Cloud Commander options
+      # Always set a secure password
+      CLOUDCMD_PASSWORD: "ReplaceWithASecurePassword"
+      # Optional: enable or disable console
+      CLOUDCMD_CONSOLE: "true"
+      # Optional: enable or disable edit
+      CLOUDCMD_EDIT: "true"
+      # Optional: enable history
+      CLOUDCMD_HISTORY: "true"
+      # Show hidden files
+      CLOUDCMD_SHOW_HIDDEN: "true"
+    volumes:
+      # Directory to manage
+      - ./data:/root
+    networks:
+      - cloudcmd-net
+
+networks:
+  cloudcmd-net:
+    driver: bridge

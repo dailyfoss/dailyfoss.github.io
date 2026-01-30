@@ -1,0 +1,10 @@
+services:
+  convos:
+    image: ghcr.io/convos-chat/convos:stable
+    stdin_open: true
+    tty: true
+    ports:
+      - 8080:3000
+    volumes:
+      - $HOME/convos/data:/data
+    restart: unless-stopped

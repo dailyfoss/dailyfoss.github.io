@@ -1,0 +1,194 @@
+services:
+  nginx:
+    image: nginx:1.25.2
+    container_name: bookwyrm-nginx
+    restart: unless-stopped
+
+    ports:
+      - "80:80"
+      - "443:443"
+
+    depends_on:
+      web:
+        condition: service_healthy
+
+    environment:
+      DOMAIN: bookwyrm.example.com
+      MAX_UPLOAD_MiB: "100"
+
+    volumes:
+      - ./nginx/https.conf:/etc/nginx/templates/default.conf.template
+      - ./nginx/server_config:/etc/nginx/templates/server_config.template
+      - ./nginx/server_name:/etc/nginx/templates/server_name.template
+      - ./nginx/locations:/etc/nginx/conf.d/locations
+      - ./nginx/99-autoreload.sh:/docker-entrypoint.d/99-autoreload.sh
+      - ./certbot/conf:/etc/nginx/ssl
+      - ./certbot/data:/var/www/certbot
+      - static_volume:/app/static
+      - media_volume:/app/images
+
+    networks:
+      - main
+
+  certbot:
+    image: certbot/certbot:latest
+    container_name: bookwyrm-certbot
+    restart: unless-stopped
+
+    entrypoint: >
+      /bin/sh -c "
+      while true; do
+        certbot renew --webroot --webroot-path=/var/www/certbot;
+        sleep 12h;
+      done"
+
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/logs:/var/log/letsencrypt
+      - ./certbot/data:/var/www/certbot
+
+  db:
+    image: postgres:16-alpine
+    container_name: bookwyrm-db
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: bookwyrm
+      POSTGRES_USER: bookwyrm
+      POSTGRES_PASSWORD: strongpassword
+
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bookwyrm -d bookwyrm"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+    networks:
+      - main
+
+  redis_activity:
+    image: redis:7.2-alpine
+    container_name: bookwyrm-redis-activity
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_activity_data:/data
+    networks:
+      - main
+
+  redis_broker:
+    image: redis:7.2-alpine
+    container_name: bookwyrm-redis-broker
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_broker_data:/data
+    networks:
+      - main
+
+  web:
+    image: ghcr.io/bookwyrm-social/bookwyrm:latest
+    container_name: bookwyrm-web
+    restart: unless-stopped
+
+    command: gunicorn bookwyrm.wsgi:application
+
+    environment:
+      DOMAIN: bookwyrm.example.com
+      DATABASE_URL: postgres://bookwyrm:strongpassword@db:5432/bookwyrm
+      REDIS_ACTIVITY_URL: redis://redis_activity:6379/0
+      REDIS_BROKER_URL: redis://redis_broker:6379/0
+      SECRET_KEY: change-me
+
+    volumes:
+      - static_volume:/app/static
+      - media_volume:/app/images
+      - exports_volume:/app/exports
+
+    depends_on:
+      db:
+        condition: service_healthy
+      redis_activity:
+        condition: service_started
+      redis_broker:
+        condition: service_started
+
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8000"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+
+    networks:
+      - main
+
+  celery_worker:
+    image: ghcr.io/bookwyrm-social/bookwyrm:latest
+    container_name: bookwyrm-worker
+    restart: unless-stopped
+
+    command: celery -A celerywyrm worker -l info
+
+    environment:
+      DOMAIN: bookwyrm.example.com
+      DATABASE_URL: postgres://bookwyrm:strongpassword@db:5432/bookwyrm
+      REDIS_BROKER_URL: redis://redis_broker:6379/0
+
+    volumes:
+      - static_volume:/app/static
+      - media_volume:/app/images
+      - exports_volume:/app/exports
+
+    depends_on:
+      web:
+        condition: service_healthy
+
+    networks:
+      - main
+
+  celery_beat:
+    image: ghcr.io/bookwyrm-social/bookwyrm:latest
+    container_name: bookwyrm-beat
+    restart: unless-stopped
+
+    command: celery -A celerywyrm beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler
+
+    environment:
+      DATABASE_URL: postgres://bookwyrm:strongpassword@db:5432/bookwyrm
+      REDIS_BROKER_URL: redis://redis_broker:6379/0
+
+    depends_on:
+      celery_worker:
+        condition: service_started
+
+    networks:
+      - main
+
+  flower:
+    image: ghcr.io/bookwyrm-social/bookwyrm:latest
+    container_name: bookwyrm-flower
+    restart: unless-stopped
+
+    command: celery -A celerywyrm flower --url_prefix=flower
+
+    environment:
+      REDIS_BROKER_URL: redis://redis_broker:6379/0
+      FLOWER_BASIC_AUTH: admin:password
+
+    networks:
+      - main
+
+volumes:
+  pgdata:
+  static_volume:
+  media_volume:
+  exports_volume:
+  redis_activity_data:
+  redis_broker_data:
+
+networks:
+  main:
+    driver: bridge

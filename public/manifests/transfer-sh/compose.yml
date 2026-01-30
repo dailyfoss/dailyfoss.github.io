@@ -1,0 +1,7 @@
+services:
+    transfer.sh:
+        image: 'dutchcoders/transfer.sh:latest'
+        ports:
+            - '8080:8080'
+        command: '--provider local --basedir /tmp/'
+	      restart: unless-stopped

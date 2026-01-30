@@ -1,0 +1,23 @@
+
+services:
+  automad:
+    container_name: automad
+    image: automad/automad:latest
+    restart: unless-stopped
+
+    ports:
+      - "80:80"   # HTTP
+      - "443:443" # optional HTTPS if added via reverse proxy
+
+    environment:
+      # Optionally set your host UID/GID here so file permissions match your user
+      UID: "1000"
+      GID: "1000"
+
+    volumes:
+      # Your Automad site files and content
+      - ./app:/app
+
+      # Optional if you need persistent cache/upload storage:
+      - ./cache:/app/cache
+      - ./shared:/app/shared

@@ -1,0 +1,8 @@
+services:
+  algernon:
+    image: xyproto/algernon
+    ports:
+      - 4000:4000
+    volumes:
+      - .:/srv/algernon
+    restart: unless-stopped

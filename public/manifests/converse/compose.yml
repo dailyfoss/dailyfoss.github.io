@@ -1,0 +1,10 @@
+services:
+  conversejs:
+    image: masipcat/conversejs:latest
+    container_name: conversejs
+    restart: unless-stopped
+    environment:
+      # WebSocket endpoint of your XMPP server
+      WS_SERVICE_URL: "wss://xmpp.example.com/ws/"
+    ports:
+      - "8000:8000"

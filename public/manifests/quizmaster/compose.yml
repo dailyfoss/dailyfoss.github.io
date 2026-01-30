@@ -1,0 +1,8 @@
+services:
+  app:
+    image: nymanjens/quizmaster:latest
+    ports: ["9000:9000"]
+    volumes:
+      - ./conf/quiz:/app/conf/quiz
+      - ./conf/application.conf:/app/conf/application.conf
+    command: "bin/server"

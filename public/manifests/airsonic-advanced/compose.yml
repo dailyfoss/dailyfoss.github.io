@@ -1,0 +1,17 @@
+services:
+  airsonic-advanced:
+    container_name: airsonic-advanced
+    image: airsonicadvanced/airsonic-advanced:latest
+    restart: unless-stopped
+    ports:
+      - 4040:4040
+      - 4041:4041 #UPnp
+    user: pid:gid #optional - run container as user
+    environment:
+      TZ: America/Los_Angeles #optional - show logs in local timezone
+      JAVA_OPTS: '-Dserver.forward-headers-strategy=native' #optional - if you use a reverse-proxy
+    volumes:
+      - /host/path/to/my/playlists:/var/playlists
+      - /host/path/to/my/podcasts:/var/podcasts
+      - /host/path/to/my/data:/var/airsonic
+      - /host/path/to/my/music:/var/music

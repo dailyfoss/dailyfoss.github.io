@@ -1,0 +1,6 @@
+services:
+  feedpushr:
+    image: ncarlier/feedpushr
+    ports:
+    - 8080:8080
+    restart: always

@@ -1,0 +1,299 @@
+services:
+  gearmand:
+    image: openitcockpit/gearmand:latest
+    ports:
+      - "4730"       # Gearman-Job-Server
+    ulimits:         # See: https://statusengine.org/tutorials/gearman-to-many-files/
+      nofile:
+        soft: 65536
+        hard: 65536
+    networks:
+      - oitc-backend
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379"       # Redis-Server
+    networks:
+      - oitc-backend
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+  mysql:
+    image: mysql:latest
+    env_file:
+     - openitcockpit.env
+    ports:
+      - "3306"       # MySQL Default Ports
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
+    networks:
+      - oitc-backend
+    volumes:
+      - mysql-data:/var/lib/mysql
+    command: mysqld --sql_mode="" --innodb-buffer-pool-size=256M --innodb-flush-log-at-trx-commit=2 --innodb-file-per-table=1 --innodb-flush-method=O_DIRECT --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci --skip-log-bin
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+  victoria-metrics:
+    image: openitcockpit/victoria-metrics:latest
+    env_file:
+     - openitcockpit.env
+    ports:
+      - "8428"       # victoria-metrics
+    networks:
+      - oitc-backend
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+  carbon-c-relay:
+    image: openitcockpit/carbon-c-relay:latest
+    # Please notice: https://github.com/grobian/carbon-c-relay/issues/455
+    env_file:
+     - openitcockpit.env
+    ports:
+      - "2003"       # local graphite plaintext port
+    networks:
+      - oitc-backend
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+  # You can add more carbon-cache instances if needed
+  # Please notice: https://github.com/grobian/carbon-c-relay/issues/455
+  carbon-cache1:
+    image: openitcockpit/carbon-cache:latest
+    env_file:
+     - openitcockpit.env
+    environment:
+      - CC_INSTANCE=1 # Make sure to adjust this
+    hostname: carbon-cache1
+    volumes:
+      - graphite-data:/var/lib/graphite/whisper
+    networks:
+      - oitc-backend
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
+
+  # You can add more carbon-cache instances if needed
+  # Please notice: https://github.com/grobian/carbon-c-relay/issues/455
+  carbon-cache2:
+    image: openitcockpit/carbon-cache:latest
+    env_file:
+     - openitcockpit.env
+    environment:
+      - CC_INSTANCE=2 # Make sure to adjust this
+    hostname: carbon-cache2
+    volumes:
+      - graphite-data:/var/lib/graphite/whisper
+    networks:
+      - oitc-backend
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
+
+  graphite-web:
+    image: openitcockpit/graphite-web:latest
+    ports:
+      - "8080"       # Graphite Web
+    volumes:
+      - graphite-data:/var/lib/graphite/whisper
+    networks:
+      - oitc-backend
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+  grafana:
+    image: openitcockpit/grafana:latest
+    env_file:
+     - openitcockpit.env
+    ports:
+      - "3033"       # Grafana
+    networks:
+      oitc-backend:
+        aliases:
+          - "grafana.docker"
+    volumes:
+      - grafana-data:/var/lib/grafana
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+  naemon:
+    image: openitcockpit/naemon:latest
+    init: true
+    env_file:
+     - openitcockpit.env
+    ports:
+      - "9001"       # Supervisor
+      - "9099"       # Binaryd
+    networks:
+      - oitc-backend
+    depends_on:
+      - gearmand
+    volumes:
+      - naemon-var:/opt/openitc/nagios/var
+      - naemon-var-local:/opt/openitc/nagios/var_local  # Stuff like logfiles etc we do not care about this
+      - naemon-config:/opt/openitc/nagios/etc/config:ro
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+  mod_gearman_worker:
+    image: openitcockpit/mod_gearman_worker:latest
+    init: true
+    env_file:
+     - openitcockpit.env
+    environment:
+      - IS_WORKHORSE_CONTAINER=1                      # Enables the CLI for sending notifications and to be able to execute check plugins like EVC
+    volumes:
+      - naemon-var:/opt/openitc/nagios/var
+      - oitc-agent-cert:/opt/openitc/agent:ro         # TLS certificats of the openITCOCKPIT Monitoring Agent
+      - oitc-agent-etc:/opt/openitc/receiver/etc:ro   # Configfile of the openITCOCKPIT Agent
+      - oitc-frontend-src:/opt/openitc/frontend:ro    # Shared source code of openITCOCKPIT so that this container can execute EVC plugin and default notification scripts
+    networks:
+      - oitc-backend
+    depends_on:
+      - gearmand
+    deploy:
+      replicas: 1   # Increase this number if you need more mod_gearman worker containers
+      restart_policy:
+        condition: on-failure
+
+  statusengine-worker:
+    image: openitcockpit/statusengine-worker:latest
+    init: true
+    env_file:
+     - openitcockpit.env
+    networks:
+      - oitc-backend
+    depends_on:
+      - redis
+      - mysql
+      - gearmand
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+  openitcockpit:
+    image: openitcockpit/openitcockpit-ce:latest                             # Community Edition of openITCOCKPIT
+    init: true
+    env_file:
+     - openitcockpit.env
+    ports:
+      - "80:80"       # HTTP
+      - "443:443"     # HTTPS
+    networks:
+      - oitc-backend
+    volumes:
+      - naemon-config:/opt/openitc/nagios/etc/config                          # Configuration files related to Naemon
+      - naemon-var:/opt/openitc/nagios/var                                    # The status.dat is required for the recurring downtimes cronjob
+      - oitc-frontend-src:/opt/openitc/src_sharing/frontend                   # Frontend of openITCOCKPIT to be shared with mod_gearman container so that the container can execute the EVC plugin
+      - oitc-webroot:/opt/openitc/frontend/webroot                            # Webroot of openITCOCKPIT to keep images and share files with puppeteer
+      - oitc-maps:/opt/openitc/frontend/plugins/MapModule/webroot/img         # Images of the MapModule
+      - oitc-agent-cert:/opt/openitc/agent                                    # TLS certificats of the openITCOCKPIT Monitoring Agent
+      - oitc-agent-etc:/opt/openitc/receiver/etc                              # Configuration for the openITCOCKPIT Monitoring Agent Check Reciver
+      - oitc-var:/opt/openitc/var                                             # A safe harbor to store .lock files
+      - oitc-backups:/opt/openitc/nagios/backup                               # Automaticaly generated MySQL dumps
+      #- oitc-import:/opt/openitc/frontend/plugins/ImportModule/webroot/files  # Uplaoded files of the ImportModule
+      - oitc-styles:/opt/openitc/frontend/plugins/DesignModule/webroot/css    # Custom styles of the DesignModule
+      - checkmk-agents:/opt/openitc/check_mk/agents:ro
+      - checkmk-etc:/opt/openitc/check_mk/etc/check_mk
+      - checkmk-var:/opt/openitc/check_mk/var/check_mk
+    depends_on:
+      - redis
+      - mysql
+      - gearmand
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+  puppeteer:
+    image: openitcockpit/puppeteer:latest
+    init: true
+    env_file:
+     - openitcockpit.env
+    ports:
+      - "8084"      # Puppeteer Web Server
+    networks:
+      - oitc-backend
+    volumes:
+      - oitc-webroot:/opt/openitc/frontend/webroot:ro
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+  checkmk:
+    image: openitcockpit/checkmk:latest
+    init: true
+    env_file:
+     - openitcockpit.env
+    ports:
+      - "1234"      # Checkmk Wrapper HTTP API
+    networks:
+      - oitc-backend
+    volumes:
+      - naemon-var:/opt/openitc/nagios/var                                  # oitc.cmd
+      - checkmk-agents:/opt/omd/sites/nagios/version/share/check_mk/agents
+      - checkmk-etc:/omd/sites/nagios/etc/check_mk
+      - checkmk-var:/omd/sites/nagios/var/check_mk
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+  # Docs about the postfix container ban be found
+  # - https://hub.docker.com/r/boky/postfix
+  # - https://github.com/bokysan/docker-postfix
+  postfix:
+    image: boky/postfix
+    environment:
+      - HOSTNAME=openitcockpit.itsm.love            # Postfix myhostname
+      - RELAYHOST=mailrelay.static.itsm.love        # Host that relays all e-mails
+      #- RELAYHOST_USERNAME=                        # An (optional) username for the relay server
+      #- RELAYHOST_PASSWORD=                        # An (optional) login password for the relay server
+      #- MYNETWORKS=                                # allow domains from per Network ( default 127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16 )
+      #- ALLOWED_SENDER_DOMAINS=                    # domains sender domains
+      - ALLOW_EMPTY_SENDER_DOMAINS=true             # if value is set (i.e: "true"), $ALLOWED_SENDER_DOMAINS can be unset
+      #- MASQUERADED_DOMAINS=                       # domains where you want to masquerade internal hosts
+    ports:
+      - "587"      # SMTPS (postfix)
+    networks:
+      - oitc-backend
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+networks:
+  oitc-backend:
+
+volumes:
+  mysql-data:
+  grafana-data:
+  graphite-data:
+  naemon-var:
+  naemon-var-local:
+  naemon-config:
+  oitc-frontend-src:
+  oitc-webroot:
+  oitc-maps:
+  oitc-agent-cert:
+  oitc-agent-etc:
+  oitc-var:
+  oitc-backups:
+  #oitc-import:
+  oitc-styles:
+  checkmk-etc:
+  checkmk-var:
+  checkmk-agents:

@@ -16,6 +16,7 @@ import { usePlausiblePageview } from "@/hooks/use-plausible-pageview";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 import { LatestScripts, PopularScripts, TrendingScripts } from "./scripts/_components/script-info-blocks";
+import { UnifiedScriptsSection } from "./scripts/_components/unified-scripts-section";
 import { SponsoredSidebar } from "./scripts/_components/sponsored-sidebar";
 import Sidebar from "./scripts/_components/sidebar";
 import { DynamicMetaTags } from "@/components/dynamic-meta-tags";
@@ -624,11 +625,7 @@ function ScriptContent() {
             {selectedScript && item ? (
               <ScriptItem key={item.slug} item={item} setSelectedScript={setSelectedScript} allCategories={links} />
             ) : (
-              <div className="space-y-10">
-                <TrendingScripts items={filteredLinks} />
-                <LatestScripts items={filteredLinks} />
-                <PopularScripts items={filteredLinks} />
-              </div>
+              <UnifiedScriptsSection items={filteredLinks} />
             )}
           </div>
 

@@ -1,0 +1,33 @@
+services:
+
+  frontail:     # place frontail configuration here ...
+  grafana:      # place grafana configuration here ...
+  influxdb:     # place influx configuration here ...
+  zigbee2mqtt:  # place zigbee2mqtt configuration here ..
+  mosquitto:    # place mosquitto configuration here ...
+
+  openhab:
+    depends_on:
+      - frontail
+      - influxdb
+      - grafana
+      - zigbee2mqtt
+    container_name: ${COMPOSE_PROJECT_NAME}-server
+    image: openhab/openhab:4.1.0-debian
+    restart: unless-stopped
+    network_mode: host
+    group_add:
+      - tty
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - /etc/timezone:/etc/timezone
+      - $OPENHAB_CONF/ssh:/openhab/.ssh
+      - $OPENHAB_ADDONS:/openhab/addons
+      - $OPENHAB_CONF:/openhab/conf
+      - $OPENHAB_USERDATA:/openhab/userdata
+    devices:
+      - /dev/serial/by-id/usb-0658_0200-if00:/dev/ttyACM2
+      - /dev/serial/by-id/usb-Prolific_Technology_Inc._USB-Serial_Controller_D-if00-port0:/dev/ttyUSB0
+    environment:
+      - CRYPTO_POLICY=unlimited
+      - EXTRA_JAVA_OPTS=${EXTRA_JAVA_OPTS}

@@ -1,0 +1,11 @@
+services:
+  mdbook:
+    container_name: mdbook
+    image: allfunc/mdbook
+    ports:
+      - 3888:3888
+    environment:
+      - PORT=3888
+    volumes:
+      - ./data:/mdbook/src
+    restart: unless-stopped

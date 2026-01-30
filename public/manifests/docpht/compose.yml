@@ -1,0 +1,14 @@
+services:
+  docpht:
+    container_name: docpht
+    image: docpht/docpht:v1.3.2
+    ports:
+      - 80:80
+      - 443:443
+    tty: true
+    volumes:
+      - /var/www/app/src/config:/var/www/app/src/config
+      - /var/www/app/data:/var/www/app/data
+      - /var/www/app/pages:/var/www/app/pages
+      - /etc/nginx/ssl:/etc/nginx/ssl
+    restart: always

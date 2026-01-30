@@ -1,0 +1,8 @@
+services:
+  huginn:
+    image: huginn/huginn
+    ports:
+      - 3000:3000
+    volumes:
+      - /home/huginn/mysql-data:/var/lib/mysql
+    restart: unless-stopped

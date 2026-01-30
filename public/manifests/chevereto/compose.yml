@@ -1,0 +1,21 @@
+services:
+    chevereto:
+	      container_name: chevereto
+        image: 'ghcr.io/chevereto/chevereto:latest'
+        volumes:
+            - ./images:/var/www/html/images/
+        environment:
+            - CHEVERETO_SERVICING=server
+            - CHEVERETO_MAX_UPLOAD_SIZE=2G
+            - CHEVERETO_MAX_POST_SIZE=2G
+            - CHEVERETO_ASSET_STORAGE_BUCKET=/var/www/html/images/_assets/
+            - CHEVERETO_ASSET_STORAGE_URL=/images/_assets/
+            - CHEVERETO_ASSET_STORAGE_TYPE=local
+            - CHEVERETO_DB_NAME=chevereto
+            - CHEVERETO_DB_PORT=3306
+            - CHEVERETO_DB_PASS=user_database_password
+            - CHEVERETO_DB_USER=chevereto
+            - CHEVERETO_DB_HOST=database
+        ports:
+            - '80:80'
+        restart: unless-stopped

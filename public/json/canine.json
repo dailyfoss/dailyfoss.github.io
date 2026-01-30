@@ -23,12 +23,16 @@
   },
   "resources": {
     "website": "https://canine.sh",
-    "documentation": "https://github.com/CanineHQ/canine",
+    "documentation": "https://docs.canine.sh/",
     "source_code": "https://github.com/CanineHQ/canine",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/canine.webp",
     "issues": "https://github.com/CanineHQ/canine/issues",
     "releases": null,
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/canine-homepage.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/canine-addons.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/canine-hero.webp"
+    ]
   },
   "features": [
     {
@@ -94,14 +98,16 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
+    "script": false,
+    "docker": false,
     "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/canine/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

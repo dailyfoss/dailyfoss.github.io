@@ -1,0 +1,22 @@
+services:
+  application:
+    container_name: accent
+    network_mode: "host"
+    build: .
+    ports:
+      - 4000:4000
+    depends_on:
+      - postgresql
+    environment:
+      - PORT=4000
+      - DATABASE_URL=postgres://postgres@localhost:5432/accent_development
+  postgresql:
+    image: postgres:15.6
+    container_name: accent-postgres
+    environment:
+      - POSTGRES_DB=accent_development
+    ports:
+      - 5432:5432
+    volumes:
+      - ./accent_psql:/var/lib/postgresql/data
+    restart: unless-stopped

@@ -1,0 +1,17 @@
+services:
+  app:
+    container_name: sl-migration
+    image: simplelogin/app:3.4.0
+    volumes:
+      - $(pwd)/sl:/sl
+      - $(pwd)/sl/upload:/code/static/upload
+      - $(pwd)/dkim.key:/dkim.key
+      - $(pwd)/dkim.pub.key:/dkim.pub.key
+      - $(pwd)/simplelogin.env:/code/.env
+    networks:
+      - sl-network
+    command: flask db upgrade
+    restart: always
+networks:
+  sl-network:
+    external: true

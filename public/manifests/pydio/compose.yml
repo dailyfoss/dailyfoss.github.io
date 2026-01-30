@@ -1,0 +1,21 @@
+services:
+
+  cells:
+    image: pydio/cells:latest
+    restart: unless-stopped
+    ports: ["8080:8080"]
+    volumes:
+      - ./cellsdir:/var/cells
+      - ./data:/var/cells/data
+
+  mysql:
+    image: mysql:8
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: P@ssw0rd
+      MYSQL_DATABASE: cells
+      MYSQL_USER: pydio
+      MYSQL_PASSWORD: P@ssw0rd
+    command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci]
+    volumes:
+      - ./mysqldir:/var/lib/mysql

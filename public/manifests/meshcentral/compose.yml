@@ -1,0 +1,20 @@
+services:
+  meshcentral:
+    container_name: meshcentral
+    # use the official meshcentral container
+    image: ghcr.io/ylianst/meshcentral:latest
+    ports:
+      # MeshCentral will moan and try everything not to use port 80, but you can also use it if you so desire, just change the config.json according to your needs
+      - 8086:443
+    env_file:
+      - .env
+    volumes:
+      # config.json and other important files live here. A must for data persistence
+      - ./meshcentral/data:/opt/meshcentral/meshcentral-data
+      # where file uploads for users live
+      - ./meshcentral/user_files:/opt/meshcentral/meshcentral-files
+      # location for the meshcentral-backups - this should be mounted to an external storage
+      - ./meshcentral/backup:/opt/meshcentral/meshcentral-backups
+      # location for site customization files
+      - ./meshcentral/web:/opt/meshcentral/meshcentral-web
+	restart: always

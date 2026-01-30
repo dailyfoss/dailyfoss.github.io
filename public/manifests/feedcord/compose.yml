@@ -1,0 +1,8 @@
+services:
+  myfeedcord:
+    image: qolors/feedcord:latest # for amd64 architecture
+    # image: qolors/feedcord:latest-arm64  # For arm64 architecture (Uncomment this line and comment the above if using arm64)
+    container_name: FeedCord
+    restart: unless-stopped
+    volumes:
+      - ./appsettings.json:/app/config/appsettings.json

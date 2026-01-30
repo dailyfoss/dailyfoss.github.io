@@ -23,12 +23,16 @@
   },
   "resources": {
     "website": "https://crowdsec.net",
-    "documentation": "https://github.com/crowdsecurity/crowdsec",
+    "documentation": "https://crowdsec.net",
     "source_code": "https://github.com/crowdsecurity/crowdsec",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/crowdsec.webp",
     "issues": "https://github.com/crowdsecurity/crowdsec/issues",
     "releases": "https://github.com/crowdsecurity/crowdsec/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/crowdsec-homepage.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/crowdsec-data-insights.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/crowdsec-visualizer.png"
+    ]
   },
   "features": [
     {
@@ -89,9 +93,9 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
     "helm": false,
     "kubernetes": false,
     "terraform": false

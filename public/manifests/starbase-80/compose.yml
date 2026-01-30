@@ -1,0 +1,14 @@
+services:
+    starbase80:
+        image: jordanroher/starbase-80
+        ports:
+            - 80:4173
+        environment:
+            - TITLE=Starbase 80
+            - LOGO=/starbase80.jpg
+        volumes:
+            - ./config.json:/app/src/config/config.json
+            - ./public/favicon.ico:/app/public/favicon.ico
+            - ./public/logo.png:/app/public/logo.png
+            - ./public/icons:/app/public/icons
+        restart: unless-stopped

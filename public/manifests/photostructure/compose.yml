@@ -1,0 +1,38 @@
+services:
+  photostructure:
+    # You can run alpha, beta, or stable builds. See
+    #  for details.
+    image: photostructure/server:alpha
+    container_name: photostructure
+    restart: unless-stopped
+    stop_grace_period: 2m
+    volumes:
+      - type: bind
+        source: /mnt/media/PhotoStructure #
+        target: /ps/library
+
+      # Example additional directories to import into your library:
+      - type: bind
+        source: "/mnt/Photos backup" #
+        target: /photos-backup
+
+    ports:
+      - 1787:1787/tcp
+
+    environment:
+      - "TZ=Etc/GMT" #
+      - "PUID=1000" #
+      - "PGID=1000" #
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+
+  # The rest of this file enables automatic PhotoStructure upgrades, and is optional
+  watchtower:
+    image: containrrr/watchtower
+    restart: always
+    container_name: watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 10800
+    environment:
+      - "WATCHTOWER_LABEL_ENABLE=true"

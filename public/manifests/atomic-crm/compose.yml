@@ -1,0 +1,28 @@
+services:
+  supabase:
+    image: supabase/local
+    container_name: supabase
+    ports:
+      - "54321:54321"   # Postgres (REST API)
+      - "54323:54323"   # Supabase Studio
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - JWT_SECRET=supersecretjwt
+
+    volumes:
+      - ./supabase:/var/lib/postgresql/data
+
+  inbucket:
+    image: inbucket/inbucket:latest
+    container_name: inbucket
+    ports:
+      - "54324:9432"   # Inbucket web UI & SMTP
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@local
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"

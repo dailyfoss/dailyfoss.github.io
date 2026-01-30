@@ -1,0 +1,10 @@
+services:
+  server:
+    image: 1dev/server
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - $(pwd)/onedev:/opt/onedev
+    ports:
+      - 6610:6610
+      - 6611:6611
+    restart: unless-stopped

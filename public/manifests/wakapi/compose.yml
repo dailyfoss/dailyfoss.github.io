@@ -1,0 +1,11 @@
+services:
+  wakapi:
+    image: ghcr.io/muety/wakapi:latest
+    container_name: wakapi
+    ports:
+      - 3000:3000
+    environment:
+      - WAKAPI_PASSWORD_SALT=$SALT
+    volumes:
+      - ./wakapi-data:/data
+    restart: unless-stopped

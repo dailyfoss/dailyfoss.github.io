@@ -23,12 +23,18 @@
   },
   "resources": {
     "website": "https://colanode.com",
-    "documentation": "https://github.com/colanode/colanode",
+    "documentation": "https://colanode.com/docs",
     "source_code": "https://github.com/colanode/colanode",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/colanode.webp",
     "issues": "https://github.com/colanode/colanode/issues",
     "releases": "https://github.com/colanode/colanode/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/colanode-homepage.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/colanode-chat.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/colanode-database.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/colanode-files.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/colanode-rich-text.png"
+    ]
   },
   "features": [
     {
@@ -89,9 +95,9 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
-    "docker_compose": true,
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
     "helm": false,
     "kubernetes": false,
     "terraform": false

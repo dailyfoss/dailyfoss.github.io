@@ -1,0 +1,17 @@
+# Url: http://localhost:8080
+# Username: admin
+# Password: admin123
+
+services:
+  clipcascade:
+    image: sathvikrao/clipcascade:latest
+    ports:
+      - "8080:8080"  # Expose the ClipCascade server on port 8080
+    restart: always  # Automatically restart the container if it stops
+    volumes:
+      - ./cc_users:/database  # Persistent storage for user data
+    environment:
+      - CC_MAX_MESSAGE_SIZE_IN_MiB=1   # Maximum message size in MiB (ignored if P2P mode is enabled)
+      - CC_P2P_ENABLED=false  # Enables or disables peer-to-peer(P2P) mode
+      # - CC_ALLOWED_ORIGINS=https://clipcascade.example.com  # Defines allowed CORS origins for security
+      # - CC_SIGNUP_ENABLED=false  # Enables or disables user self-registration

@@ -1,0 +1,24 @@
+services:
+  hedgedoc:
+    image: lscr.io/linuxserver/hedgedoc:latest
+    container_name: hedgedoc
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - "DB_HOST="
+      - DB_PORT=3306
+      - DB_USER=hedgedoc
+      - "DB_PASS="
+      - DB_NAME=hedgedoc
+      - CMD_DOMAIN=localhost
+      - CMD_URL_ADDPORT=false #optional
+      - CMD_PROTOCOL_USESSL=false #optional
+      - CMD_PORT=3000 #optional
+      - CMD_ALLOW_ORIGIN=['localhost'] #optional
+      - CMD_DB_DIALECT= #optional
+    volumes:
+      - /path/to/hedgedoc/config:/config
+    ports:
+      - 3000:3000
+    restart: unless-stopped

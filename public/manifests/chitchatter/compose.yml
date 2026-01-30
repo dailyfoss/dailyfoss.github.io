@@ -1,0 +1,7 @@
+services:
+  chitchatter:
+    image: ghcr.io/jeremyckahn/chitchatter:latest
+    container_name: chitchatter
+    restart: unless-stopped
+    ports:
+      - "80:80"

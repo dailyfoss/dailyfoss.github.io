@@ -1,0 +1,26 @@
+services:
+  nodebb:
+    user: 0:0
+    image: elestio/nodebb:${SOFTWARE_VERSION_TAG}
+    restart: always
+    environment:
+      URL: "https://${DOMAIN}"
+      DATABASE: "redis"
+      DB_NAME: "0"
+      DB_HOST: "redis"
+      DB_PORT: "8443"
+    volumes:
+      - ./nodebb-files:/usr/src/app/public/uploads
+      # - ./nodebb-config/config.json:/usr/src/app/config.json
+      - ./entrypoint.sh:/usr/src/app/entrypoint.sh
+    ports:
+      - "172.17.0.1:4567:4567"
+
+  redis:
+    image: redis
+    restart: always
+    command: redis-server --appendonly yes --loglevel warning --requirepass ${REDIS_PASSWORD}
+    volumes:
+      - ./nodebb-data:/data
+    ports:
+      - "172.17.0.1:6379:6379"

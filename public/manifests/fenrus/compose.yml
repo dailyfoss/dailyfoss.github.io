@@ -1,0 +1,11 @@
+services:
+  fenrus:
+    image: revenz/fenrus
+    container_name: fenrus
+    environment:
+      - TZ=Pacific/Auckland
+    volumes:
+      - ./data:/app/data
+    ports:
+      - 3000:3000
+    restart: unless-stopped

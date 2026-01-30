@@ -1,0 +1,14 @@
+services:
+  koblas:
+    image: ynuwenhof/koblas:latest
+    container_name: koblas
+    restart: unless-stopped
+    ports:
+      - 1080:1080
+    environment:
+      RUST_LOG: debug
+      KOBLAS_LIMIT: 256
+      KOBLAS_NO_AUTHENTICATION: false
+      KOBLAS_ANONYMIZATION: true
+    volumes:
+      - /path/to/config.toml:/etc/koblas/config.toml

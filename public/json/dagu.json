@@ -23,13 +23,16 @@
   },
   "resources": {
     "website": "https://dagu.cloud",
-    "documentation": "https://github.com/dagu-org/dagu",
+    "documentation": "https://docs.dagu.cloud",
     "source_code": "https://github.com/dagu-org/dagu",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/dagu.webp",
     "issues": "https://github.com/dagu-org/dagu/issues",
     "releases": "https://github.com/dagu-org/dagu/releases",
     "logo_light": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/dagu-light.webp",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/dagu-homepage.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/dagu-dashboard.png"
+    ]
   },
   "features": [
     {
@@ -99,14 +102,16 @@
     "tui": false
   },
   "deployment_methods": {
-    "script": true,
-    "docker": true,
+    "script": false,
+    "docker": false,
     "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/dagu/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
@@ -117,8 +122,8 @@
     }
   },
   "demo": {
-    "url": null,
-    "username": null,
-    "password": null
+    "url": "http://23.251.149.55:8525",
+    "username": "demouser",
+    "password": "demouser"
   }
 }

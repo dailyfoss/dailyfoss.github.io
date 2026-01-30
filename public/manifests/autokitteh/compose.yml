@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  server:
+    container_name: autokitteh-server
+    image: 123456789012.dkr.ecr.ap-southeast-1.amazonaws.com/autokitteh/server:latest
+
+    command: ["up", "--mode=dev"]
+
+    ports:
+      - "9980:9980"
+      - "9982:9982"
+
+    environment:
+      # Temporal
+      AK_TEMPORALCLIENT__HOSTPORT: "temporal:7233"
+      AK_TEMPORALCLIENT__NAMESPACE: "default"
+
+      # Database
+      AK_DB__TYPE: "sqlite"
+      # persistent sqlite
+      AK_DB__DSN: "sqlite:///data/autokitteh.db"
+
+    volumes:
+      - ./data:/data
+
+    restart: unless-stopped

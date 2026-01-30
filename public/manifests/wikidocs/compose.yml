@@ -1,0 +1,11 @@
+services:
+  wikidocs:
+    image: zavy86/wikidocs
+    environment:
+      - PUID=1000
+      - PGID=1000
+    ports:
+      - 80:80
+    volumes:
+      - /path/to/local/wikidocs/datasets/or/volume:/datasets
+    restart: unless-stopped
