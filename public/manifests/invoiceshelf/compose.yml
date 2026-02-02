@@ -1,0 +1,54 @@
+# ===============================
+# Docker Compose (InvoiceShelf)
+# ===============================
+# host: localhost:8090
+# username: (create via web UI)
+# password: (create via web UI)
+
+services:
+  invoiceshelf:
+    image: invoiceshelf/invoiceshelf:latest
+    container_name: invoiceshelf
+    restart: unless-stopped
+
+    # Expose InvoiceShelf Web UI port
+    ports:
+      - "8090:8080"
+
+    environment:
+      # Application settings
+      - APP_NAME=InvoiceShelf
+      - APP_ENV=production
+      - APP_DEBUG=false
+      - APP_URL=http://localhost:8090
+
+      # Timezone
+      - PHP_TZ=UTC
+      - TIMEZONE=UTC
+
+      # Database configuration (choose one)
+      # For SQLite (simplest):
+      - DB_CONNECTION=sqlite
+      - DB_DATABASE=/data/database/database.sqlite
+
+      # For MySQL/PostgreSQL, uncomment and set:
+      # - DB_CONNECTION=mysql
+      # - DB_HOST=db
+      # - DB_PORT=3306
+      # - DB_DATABASE=invoiceshelf
+      # - DB_USERNAME=invoiceshelf
+      # - DB_PASSWORD=somepass
+
+      # Laravel session & cache
+      - CACHE_STORE=file
+      - SESSION_DRIVER=file
+      - SESSION_LIFETIME=120
+      - SESSION_DOMAIN=localhost
+
+    volumes:
+      # Persist InvoiceShelf files & database
+      - invoiceshelf-data:/data
+
+volumes:
+  invoiceshelf-data:
+

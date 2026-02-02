@@ -1,0 +1,138 @@
+# ===============================
+# Docker Compose (SafeLine)
+# ===============================
+# host: localhost:9443
+# username: admin (initial UI login)
+# password: set below in POSTGRES_PASSWORD
+
+services:
+  # PostgreSQL for SafeLine
+  postgres:
+    container_name: safeline-pg
+    image: safeline-postgres:15.2
+    restart: always
+    environment:
+      - POSTGRES_USER=safeline-ce
+      - POSTGRES_PASSWORD=YourSecurePasswordHere
+    volumes:
+      - safeline-postgres-data:/var/lib/postgresql/data
+    networks:
+      safeline-ce:
+        ipv4_address: 172.22.222.2
+
+  # SafeLine Management UI
+  mgt:
+    container_name: safeline-mgt
+    image: safeline-mgt:latest
+    restart: always
+    depends_on:
+      - postgres
+    environment:
+      - MGT_PG=postgres://safeline-ce:YourSecurePasswordHere@safeline-pg/safeline-ce?sslmode=disable
+    ports:
+      - "9443:1443"      # UI port
+    volumes:
+      - safeline-mgt-data:/app/data
+      - safeline-logs-nginx:/app/log/nginx
+      - safeline-sock:/app/sock
+    networks:
+      safeline-ce:
+        ipv4_address: 172.22.222.4
+
+  # Detection Engine
+  detect:
+    container_name: safeline-detector
+    image: safeline-detector:latest
+    restart: always
+    environment:
+      - LOG_DIR=/logs/detector
+    volumes:
+      - safeline-detector-resources:/resources/detector
+      - safeline-logs-detector:/logs/detector
+    networks:
+      safeline-ce:
+        ipv4_address: 172.22.222.5
+
+  # Reverse Proxy / Engine
+  tengine:
+    container_name: safeline-tengine
+    image: safeline-tengine:latest
+    restart: always
+    environment:
+      # Backend service IPs
+      - TCD_MGT_API=https://172.22.222.4:1443/api/open/publish/server
+      - TCD_SNSERVER=172.22.222.5:8000
+      - CHAOS_ADDR=172.22.222.10
+    volumes:
+      - safeline-nginx-resources:/etc/nginx
+      - safeline-cache:/usr/local/nginx/cache
+      - safeline-sock:/app/sock
+      - safeline-logs-nginx:/var/log/nginx
+    network_mode: host  # Uses host networking
+
+  # Luigi Task Scheduler
+  luigi:
+    container_name: safeline-luigi
+    image: safeline-luigi:latest
+    restart: always
+    depends_on:
+      - detect
+      - mgt
+    environment:
+      - MGT_IP=172.22.222.4
+      - LUIGI_PG=postgres://safeline-ce:YourSecurePasswordHere@safeline-pg/safeline-ce?sslmode=disable
+    volumes:
+      - safeline-luigi-data:/app/data
+    networks:
+      safeline-ce:
+        ipv4_address: 172.22.222.7
+
+  # FVM Analytics Service
+  fvm:
+    container_name: safeline-fvm
+    image: safeline-fvm:latest
+    restart: always
+    networks:
+      safeline-ce:
+        ipv4_address: 172.22.222.8
+
+  # Chaos Service
+  chaos:
+    container_name: safeline-chaos
+    image: safeline-chaos:latest
+    restart: always
+    environment:
+      - DB_ADDR=postgres://safeline-ce:YourSecurePasswordHere@safeline-pg/safeline-ce?sslmode=disable
+    volumes:
+      - safeline-chaos-sock:/app/sock
+      - safeline-chaos-data:/app/chaos
+    networks:
+      safeline-ce:
+        ipv4_address: 172.22.222.10
+
+# ===============================
+# Custom Network
+# ===============================
+networks:
+  safeline-ce:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.22.222.0/24
+          gateway: 172.22.222.1
+
+# ===============================
+# Persistent Storage
+# ===============================
+volumes:
+  safeline-postgres-data:
+  safeline-mgt-data:
+  safeline-detector-resources:
+  safeline-logs-detector:
+  safeline-nginx-resources:
+  safeline-cache:
+  safeline-sock:
+  safeline-logs-nginx:
+  safeline-luigi-data:
+  safeline-chaos-sock:
+  safeline-chaos-data:
