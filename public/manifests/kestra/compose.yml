@@ -1,0 +1,90 @@
+# ===============================
+# Docker Compose (Kestra)
+# ===============================
+# host: localhost:8080
+# username: (optional, see basic-auth below)
+# password: (optional, see basic-auth below)
+
+services:
+  postgres:
+    image: postgres:18
+    container_name: kestra-postgres
+
+    volumes:
+      - postgres-data:/var/lib/postgresql
+
+    environment:
+      POSTGRES_DB: kestra
+      POSTGRES_USER: kestra
+      POSTGRES_PASSWORD: k3str4
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+
+  kestra:
+    image: kestra/kestra:latest
+    container_name: kestra
+    pull_policy: always
+
+    # Kestra needs extra time to stop safely when tasks are running
+    stop_grace_period: 6m
+
+    # Required for Docker task runner access (dev setup)
+    user: "root"
+
+    command: server standalone
+
+    volumes:
+      - kestra-data:/app/storage
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /tmp/kestra-wd:/tmp/kestra-wd
+
+    environment:
+      KESTRA_CONFIGURATION: |
+        datasources:
+          postgres:
+            url: jdbc:postgresql://postgres:5432/kestra
+            driverClassName: org.postgresql.Driver
+            username: kestra
+            password: k3str4
+
+        kestra:
+          # Uncomment to enable UI basic authentication
+          # server:
+          #   basic-auth:
+          #     username: admin@kestra.io
+          #     password: Admin1234!
+
+          repository:
+            type: postgres
+
+          storage:
+            type: local
+            local:
+              base-path: "/app/storage"
+
+          queue:
+            type: postgres
+
+          tasks:
+            tmp-dir:
+              path: /tmp/kestra-wd/tmp
+
+          url: http://localhost:8080/
+
+    ports:
+      - "8080:8080" # Web UI
+      - "8081:8081" # API / internal services
+
+    depends_on:
+      postgres:
+        condition: service_started
+
+volumes:
+  postgres-data:
+    driver: local
+  kestra-data:
+    driver: local

@@ -1,0 +1,126 @@
+{
+  "name": "Browserless",
+  "slug": "browserless",
+  "tagline": "Deploy headless browsers in Docker – manage them locally or run on cloud",
+  "description": "Browserless provides infrastructure and APIs to run and scale headless browser sessions using Chromium-based and other browsers, enabling automation, testing, scraping, PDF/screenshot rendering, and more. It comes as an open-source Docker image with optional managed cloud services.",
+  "categories": [
+    16
+  ],
+  "metadata": {
+    "sponsored": false,
+    "license": "SSPL-1.0",
+    "version": null,
+    "date_app_added": "2026-02-02",
+    "date_last_released": null,
+    "date_last_commit": null,
+    "github_stars": 12300,
+    "github_contributors": 78,
+    "github_commits_this_year": 0,
+    "github_issues_open": 43,
+    "github_issues_closed_this_year": null,
+    "github_releases_this_year": null
+  },
+  "resources": {
+    "website": "https://www.browserless.io",
+    "documentation": "https://docs.browserless.io/open-source",
+    "source_code": "https://github.com/browserless/browserless",
+    "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/browserless.webp",
+    "issues": "https://github.com/browserless/browserless/issues",
+    "releases": "https://github.com/browserless/browserless/releases",
+    "screenshot": [],
+    "logo_light": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/browserless-light.webp",
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/browserless-homepage.png"
+    ]
+  },
+  "features": [
+    {
+      "title": "Headless Browser Automation",
+      "description": "Run and control headless browser instances (Chrome/Chromium/WebKit/Firefox) using standard libraries such as Puppeteer and Playwright.",
+      "core_feature": true
+    },
+    {
+      "title": "Parallel & Scalable Sessions",
+      "description": "Supports multiple concurrent browser sessions with queueing and configurable concurrency limits.",
+      "core_feature": true
+    },
+    {
+      "title": "REST APIs for Browser Tasks",
+      "description": "Built-in APIs for common tasks such as generating PDFs, taking screenshots, and retrieving HTML.",
+      "core_feature": true
+    },
+    {
+      "title": "Session Management and Debugging",
+      "description": "Manage browser sessions with health checks, timeouts, reconnects, and visual debug viewers.",
+      "core_feature": true
+    },
+    {
+      "title": "Containerized Deployment",
+      "description": "Runs as a Docker image with all required system fonts and dependencies pre-included.",
+      "core_feature": true
+    },
+    {
+      "title": "Automation Workflows & Integrations",
+      "description": "Integrates with workflows and tools like n8n and script code via WebSockets or REST.",
+      "core_feature": false
+    },
+    {
+      "title": "Screenshot & PDF Generation",
+      "description": "Programmatically capture web page screenshots and generate PDFs.",
+      "core_feature": false
+    },
+    {
+      "title": "Support for Multiple Browsers",
+      "description": "Includes out-of-the-box support for Chromium, WebKit, Firefox, and more via separate images.",
+      "core_feature": false
+    },
+    {
+      "title": "Bot Detection Mitigation",
+      "description": "Optional advanced features to handle bot detection and CAPTCHAs (in premium plans).",
+      "core_feature": false
+    }
+  ],
+  "platform_support": {
+    "desktop": {
+      "linux": true,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": true,
+    "managed_cloud": true,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": true,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": true,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {
+    "docker_compose": "/manifests/browserless/compose.yml"
+  },
+  "default_credentials": {
+    "username": null,
+    "password": null
+  },
+  "repository_status": null,
+  "community_integrations": {}
+}

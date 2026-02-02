@@ -245,8 +245,8 @@ async function main() {
 
             if (data.slug && data.slug.trim() !== '') {
                 const slug = data.slug.trim();
-                const iconUrl = `https://raw.githubusercontent.com/dailyfoss/icons/main/icons/${slug}.webp`;
-                const lightIconUrl = `https://raw.githubusercontent.com/dailyfoss/icons/main/icons/${slug}-light.webp`;
+                const iconUrl = `https://raw.githubusercontent.com/dailyfoss/assets/main/icons/${slug}.webp`;
+                const lightIconUrl = `https://raw.githubusercontent.com/dailyfoss/assets/main/icons/${slug}-light.webp`;
 
                 if (!data.resources) data.resources = {};
                 

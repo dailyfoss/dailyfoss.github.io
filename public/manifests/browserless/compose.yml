@@ -1,0 +1,47 @@
+# ===============================
+# Docker Compose (Browserless)
+# ===============================
+# host: localhost:3000
+# username:
+# password:
+
+services:
+  browserless:
+    # Open-source Browserless Chromium image
+    image: ghcr.io/browserless/chromium:latest
+    container_name: browserless
+    restart: unless-stopped
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      # Security token for accessing Browserless
+      TOKEN=change-this-token
+
+      # Maximum number of concurrent browser sessions
+      CONCURRENT=5
+
+      # Maximum queued requests
+      QUEUED=10
+
+      # Enable debug logs (optional)
+      DEBUG=browserless*
+
+      # Timezone (optional)
+      TZ=UTC
+
+    volumes:
+      - browserless-data:/user_data
+      - browserless-downloads:/downloads
+
+    networks:
+      - browserless-net
+
+volumes:
+  browserless-data:
+  browserless-downloads:
+
+networks:
+  browserless-net:
+    driver: bridge

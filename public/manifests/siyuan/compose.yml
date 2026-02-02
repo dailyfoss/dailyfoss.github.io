@@ -1,0 +1,37 @@
+# ===============================
+# Docker Compose (SiYuan)
+# ===============================
+# host: localhost:6806
+# username:
+# password: (set below via ACCESS_AUTH_CODE)
+
+services:
+  siyuan:
+    # Official SiYuan container
+    image: b3log/siyuan:latest
+    container_name: siyuan
+    restart: unless-stopped
+
+    # Map SiYuan UI port
+    ports:
+      - "6806:6806"
+
+    # Set workspace location and auth code here
+    environment:
+      # Time zone (optional)
+      - TZ=UTC
+
+      # Custom user and group IDs (optional, helps with host volume permissions)
+      - PUID=1000
+      - PGID=1000
+
+      # Access code required on initial web login
+      - ACCESS_AUTH_CODE=your_auth_code_here
+
+    # Workspace volume for notes and attachments
+    volumes:
+      - siyuan-workspace:/siyuan/workspace
+
+# Persistent volume for SiYuan data
+volumes:
+  siyuan-workspace:
