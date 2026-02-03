@@ -18,10 +18,10 @@ const https = require('https');
 const http = require('http');
 
 // Configuration
-const OG_SERVICE_URL = process.env.OG_SERVICE_URL || 'http://192.168.1.102:3003';
+const OG_SERVICE_URL = process.env.OG_SERVICE_URL || 'https://og.dailyfoss.biz.id';
 const SITE_URL = process.env.SITE_URL || 'https://dailyfoss.com';
-const OUTPUT_DIR = path.join(__dirname, '../public/media/images/og');
-const SVG_SOURCE_DIR = path.join(__dirname, '../public/og-images/beta-dark');
+const OUTPUT_DIR = '/root/dailyfoss-assets/og';
+const SVG_SOURCE_DIR = path.join(OUTPUT_DIR, 'svg-temp');
 const JSON_DIR = path.join(__dirname, '../public/json');
 const APPS_LIST_FILE = path.join(__dirname, 'og-apps-list.txt');
 
@@ -62,8 +62,8 @@ if (args.includes('--all')) {
   }
 }
 
-// Only beta-dark template
-const VARIANT = { layout: 'dailyfoss-beta', theme: 'dark' };
+// Only template with dark theme
+const VARIANT = { layout: 'template', theme: 'dark' };
 
 // Ensure output directory exists
 function ensureDirectories() {
@@ -89,12 +89,12 @@ function readAppJson(appName) {
   }
 }
 
-// Build URL params for OG image API (SVG for conversion)
-function buildOgParams(app) {
+// Build URL params for OG image API
+function buildOgParams(app, fileType = 'svg') {
   const params = new URLSearchParams();
   
   params.set('layoutName', VARIANT.layout);
-  params.set('fileType', 'svg');
+  params.set('fileType', fileType);
   params.set('Theme', VARIANT.theme);
   params.set('Title', app.name || app.slug);
   params.set('Description', app.tagline || app.description?.substring(0, 100) || '');
@@ -187,18 +187,18 @@ async function generateOgImage(app, overwrite = true) {
   }
   
   try {
-    // Step 1: Generate SVG from og-railway service
-    const params = buildOgParams(app);
+    // Step 1: Download SVG from og service
+    const params = buildOgParams(app, 'svg');
     const url = `${OG_SERVICE_URL}/api/image?${params}`;
     
-    // Ensure SVG source directory exists
+    // Ensure SVG temp directory exists
     if (!fs.existsSync(SVG_SOURCE_DIR)) {
       fs.mkdirSync(SVG_SOURCE_DIR, { recursive: true });
     }
     
     await downloadFile(url, svgPath);
     
-    // Step 2: Convert SVG to high-quality PNG
+    // Step 2: Convert SVG to PNG
     await convertSvgToPng(svgPath, pngPath);
     
     return { status: 'success', path: pngPath };

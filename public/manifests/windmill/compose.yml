@@ -1,0 +1,160 @@
+# ===============================
+# Docker Compose (Windmill)
+# ===============================
+# host: http://localhost
+# username: admin@windmill.dev (created on first setup)
+# password: (set during onboarding)
+
+x-logging: &default-logging
+  driver: json-file
+  options:
+    max-size: "20m"
+    max-file: "5"
+
+services:
+
+  db:
+    image: postgres:16
+    container_name: windmill-postgres
+    restart: unless-stopped
+    shm_size: 1g
+
+    environment:
+      POSTGRES_DB: windmill
+      POSTGRES_USER: windmill
+      POSTGRES_PASSWORD: replace_with_strong_password
+
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U windmill"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+    logging: *default-logging
+
+
+  windmill_server:
+    image: ghcr.io/windmill-labs/windmill:latest
+    container_name: windmill-server
+    pull_policy: always
+    restart: unless-stopped
+
+    expose:
+      - 8000
+      - 2525
+
+    environment:
+      DATABASE_URL: postgres://windmill:replace_with_strong_password@db:5432/windmill
+      MODE: server
+
+    depends_on:
+      db:
+        condition: service_healthy
+
+    volumes:
+      - worker_logs:/tmp/windmill/logs
+
+    logging: *default-logging
+
+
+  windmill_worker:
+    image: ghcr.io/windmill-labs/windmill:latest
+    container_name: windmill-worker
+    pull_policy: always
+    restart: unless-stopped
+
+    environment:
+      DATABASE_URL: postgres://windmill:replace_with_strong_password@db:5432/windmill
+      MODE: worker
+      WORKER_GROUP: default
+
+    depends_on:
+      db:
+        condition: service_healthy
+
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - worker_dependency_cache:/tmp/windmill/cache
+      - worker_logs:/tmp/windmill/logs
+
+    logging: *default-logging
+
+
+  windmill_worker_native:
+    image: ghcr.io/windmill-labs/windmill:latest
+    container_name: windmill-worker-native
+    pull_policy: always
+    restart: unless-stopped
+
+    environment:
+      DATABASE_URL: postgres://windmill:replace_with_strong_password@db:5432/windmill
+      MODE: worker
+      WORKER_GROUP: native
+      NUM_WORKERS: 8
+      SLEEP_QUEUE: 200
+
+    depends_on:
+      db:
+        condition: service_healthy
+
+    volumes:
+      - worker_logs:/tmp/windmill/logs
+
+    logging: *default-logging
+
+
+  windmill_extra:
+    image: ghcr.io/windmill-labs/windmill-extra:latest
+    container_name: windmill-extra
+    restart: unless-stopped
+
+    expose:
+      - 3001
+      - 3002
+      - 3003
+
+    environment:
+      ENABLE_LSP: "true"
+      ENABLE_MULTIPLAYER: "false"
+      ENABLE_DEBUGGER: "true"
+      DEBUGGER_PORT: 3003
+      ENABLE_NSJAIL: "false"
+      REQUIRE_SIGNED_DEBUG_REQUESTS: "false"
+      WINDMILL_BASE_URL: http://windmill_server:8000
+
+    volumes:
+      - lsp_cache:/pyls/.cache
+
+    logging: *default-logging
+
+
+  caddy:
+    image: ghcr.io/windmill-labs/caddy-l4:latest
+    container_name: windmill-caddy
+    restart: unless-stopped
+
+    ports:
+      - "80:80"
+      - "25:25"
+      # - "443:443"   # enable when using TLS
+
+    environment:
+      BASE_URL: ":80"
+
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+
+    logging: *default-logging
+
+
+volumes:
+  db_data:
+  worker_dependency_cache:
+  worker_logs:
+  windmill_index:
+  lsp_cache:
+  caddy_data:

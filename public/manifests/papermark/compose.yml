@@ -1,0 +1,80 @@
+# ===============================
+# Docker Compose (Papermark)
+# ===============================
+# host: http://localhost:3000
+# username: (create on first signup)
+# password: (create on first signup)
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: papermark-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: papermark
+      POSTGRES_USER: papermark
+      POSTGRES_PASSWORD: replace_with_strong_password
+    volumes:
+      - papermark_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U papermark"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  
+  redis:
+    image: redis:7-alpine
+    container_name: papermark-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    volumes:
+      - papermark_redis:/data
+
+  minio:
+    image: minio/minio:latest
+    container_name: papermark-minio
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: papermark
+      MINIO_ROOT_PASSWORD: replace_with_strong_password
+    volumes:
+      - papermark_storage:/data
+    ports:
+      - "9000:9000" # S3 API
+      - "9001:9001" # MinIO Console
+
+  papermark:
+    image: ghcr.io/mfts/papermark:latest
+    container_name: papermark
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      minio:
+        condition: service_started
+    ports:
+      - "3000:3000"
+    environment:
+      # Core
+      NODE_ENV: production
+      NEXTAUTH_URL: http://localhost:3000
+      NEXTAUTH_SECRET: replace_with_very_long_secret
+      # Database
+      DATABASE_URL: postgresql://papermark:replace_with_strong_password@postgres:5432/papermark
+      # Redis
+      REDIS_URL: redis://redis:6379
+      # Storage (S3)
+      S3_ENDPOINT: http://minio:9000
+      S3_REGION: us-east-1
+      S3_BUCKET_NAME: papermark
+      S3_ACCESS_KEY_ID: papermark
+      S3_SECRET_ACCESS_KEY: replace_with_strong_password
+      S3_FORCE_PATH_STYLE: "true"
+
+volumes:
+  papermark_db:
+  papermark_redis:
+  papermark_storage:
