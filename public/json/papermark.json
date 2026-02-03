@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "GNU-AGPL",
     "version": "v0.22.0",
     "date_app_added": "2025-11-23",
     "date_last_released": "2025-12-06",
@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://papermark.com",
-    "documentation": "https://github.com/mfts/papermark",
+    "documentation": "https://www.papermark.com",
     "source_code": "https://github.com/mfts/papermark",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/papermark.webp",
     "issues": "https://github.com/mfts/papermark/issues",
@@ -86,12 +86,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/papermark/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

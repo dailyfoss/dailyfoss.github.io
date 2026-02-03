@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "MIT",
     "version": "v0.25.3",
     "date_app_added": "2025-11-23",
     "date_last_released": "2026-01-31",
@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://docs.godoxy.dev",
-    "documentation": "https://github.com/yusing/godoxy",
+    "documentation": "https://docs.godoxy.dev",
     "source_code": "https://github.com/yusing/godoxy",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/godoxy.webp",
     "issues": "https://github.com/yusing/godoxy/issues",
@@ -94,16 +94,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/godoxy/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://demo.godoxy.dev",
     "username": null,
     "password": null
   }

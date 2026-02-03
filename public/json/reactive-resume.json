@@ -23,12 +23,15 @@
   },
   "resources": {
     "website": "https://rxresu.me",
-    "documentation": "https://github.com/AmruthPillai/Reactive-Resume",
+    "documentation": "https://docs.rxresu.me/getting-started",
     "source_code": "https://github.com/AmruthPillai/Reactive-Resume",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/reactive-resume.webp",
     "issues": "https://github.com/AmruthPillai/Reactive-Resume/issues",
     "releases": "https://github.com/AmruthPillai/Reactive-Resume/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/reactive-resume-homepage.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/reactive-resume-demo.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +91,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/reactive-resume/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

@@ -1,0 +1,66 @@
+# ===============================
+# Docker Compose (Godoxy)
+# ===============================
+# host: http://localhost
+# username: (set inside config if enabled)
+# password: (set inside config if enabled)
+
+services:
+  socket-proxy:
+    image: ghcr.io/yusing/socket-proxy:latest
+    container_name: godoxy-socket-proxy
+    restart: unless-stopped
+    environment:
+      ALLOW_START: "1"
+      ALLOW_STOP: "1"
+      ALLOW_RESTARTS: "1"
+      CONTAINERS: "1"
+      EVENTS: "1"
+      INFO: "1"
+      PING: "1"
+      POST: "1"
+      VERSION: "1"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    tmpfs:
+      - 
+    ports:
+      - "127.0.0.1:2375:2375"
+
+  app:
+    image: ghcr.io/yusing/godoxy:latest
+    container_name: godoxy
+    restart: unless-stopped
+    # REQUIRED by Godoxy
+    network_mode: host
+    depends_on:
+      socket-proxy:
+        condition: service_started
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_BIND_SERVICE
+    environment:
+      DOCKER_HOST: tcp://127.0.0.1:2375
+    volumes:
+      - ./config:/app/config
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./certs:/app/certs
+      - ./error_pages:/app/error_pages:ro
+
+  frontend:
+    image: ghcr.io/yusing/godoxy-frontend:latest
+    container_name: godoxy-frontend
+    restart: unless-stopped
+    depends_on:
+      - app
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    tmpfs:
+      - /app/.next/cache
