@@ -1,65 +1,114 @@
+# ===============================
+# Docker Compose (Outline Wiki)
+# ===============================
+# host: https://docs.mycompany.com
+# username: created via auth provider (Google, Slack, OIDC, etc.)
+# password: managed by your auth provider
+
 services:
 
   outline:
     image: outlinewiki/outline:latest
-    env_file: ./docker.env
-    ports:
-      - "3000:3000"
-    volumes:
-      - ./storage-data:/var/lib/outline/data
+    container_name: outline
+    restart: unless-stopped
     depends_on:
-      - postgres
-      - redis
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+
+      # --- REQUIRED DATABASE ---
+      DATABASE_URL: postgres://outline:CHANGE_ME_DB_PASSWORD@postgres:5432/outline
+      PGSSLMODE: disable
+
+      # --- REQUIRED REDIS ---
+      REDIS_URL: redis://redis:6379
+
+      # --- REQUIRED APP SECRETS ---
+      SECRET_KEY: CHANGE_ME_LONG_RANDOM_STRING
+      UTILS_SECRET: CHANGE_ME_ANOTHER_LONG_RANDOM_STRING
+
+      # --- URL ---
+      URL: https://docs.mycompany.com
+
+      # --- FILE STORAGE (local) ---
+      FILE_STORAGE: local
+      FILE_STORAGE_LOCAL_ROOT_DIR: /var/lib/outline/data
+
+      # ⚠ You MUST configure at least one auth provider.
+      # Example placeholders below — replace with real values.
+      OIDC_CLIENT_ID: CHANGE_ME
+      OIDC_CLIENT_SECRET: CHANGE_ME
+      OIDC_AUTH_URI: https://provider.example.com/oauth2/auth
+      OIDC_TOKEN_URI: https://provider.example.com/oauth2/token
+      OIDC_USERINFO_URI: https://provider.example.com/userinfo
+      OIDC_USERNAME_CLAIM: preferred_username
+      OIDC_DISPLAY_NAME: SSO
+      OIDC_SCOPES: openid profile email
+
+    volumes:
+      - outline_storage:/var/lib/outline/data
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--spider", "http://localhost:3000/_health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: outline_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: outline
+      POSTGRES_USER: outline
+      POSTGRES_PASSWORD: CHANGE_ME_DB_PASSWORD
+    volumes:
+      - outline_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U outline"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   redis:
-    image: redis
-    env_file: ./docker.env
-    ports:
-      - "6379:6379"
+    image: redis:7-alpine
+    container_name: outline_redis
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
     volumes:
-      - ./redis.conf:/redis.conf
-    command: ["redis-server", "/redis.conf"]
+      - outline_redis_data:/data
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 10s
-      timeout: 30s
-      retries: 3
-
-  postgres:
-    image: postgres
-    env_file: ./docker.env
-    ports:
-      - "5432:5432"
-    volumes:
-      - ./database-data:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD", "pg_isready", "-d", "outline", "-U", "user"]
-      interval: 30s
-      timeout: 20s
-      retries: 3
-    environment:
-      POSTGRES_USER: 'user'
-      POSTGRES_PASSWORD: 'pass'
-      POSTGRES_DB: 'outline'
+      timeout: 5s
+      retries: 5
 
   https-portal:
-    image: steveltn/https-portal
-    env_file: ./docker.env
-    ports:
-      - '80:80'
-      - '443:443'
-    links:
+    image: steveltn/https-portal:1
+    container_name: outline_https_portal
+    restart: unless-stopped
+    depends_on:
       - outline
-    restart: always
-    volumes:
-      - ./https-portal-data:/var/lib/https-portal
-    healthcheck:
-      test: ["CMD", "service", "nginx", "status"]
-      interval: 30s
-      timeout: 20s
-      retries: 3
+    ports:
+      - "80:80"
+      - "443:443"
     environment:
-      DOMAINS: 'docs.mycompany.com -> http://outline:3000'
-      STAGE: 'production'
-      WEBSOCKET: 'true'
-      CLIENT_MAX_BODY_SIZE: '0'
+      DOMAINS: docs.mycompany.com -> http://outline:3000
+      STAGE: production
+      WEBSOCKET: "true"
+      CLIENT_MAX_BODY_SIZE: "0"
+    volumes:
+      - outline_https_data:/var/lib/https-portal
+    healthcheck:
+      test: ["CMD-SHELL", "nginx -t"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  outline_storage:
+  outline_postgres_data:
+  outline_redis_data:
+  outline_https_data:

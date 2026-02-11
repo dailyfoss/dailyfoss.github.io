@@ -1,0 +1,41 @@
+# ===============================
+# Docker Compose (Netdata)
+# ===============================
+# host: http://localhost:19999
+# username: (none by default)
+# password: (none by default; optional Basic Auth via proxy)
+
+services:
+
+  netdata:
+    image: netdata/netdata:latest
+    container_name: netdata
+    restart: unless-stopped
+    ports:
+      - "19999:19999"
+    volumes:
+      # Persistent configuration + plugins cache
+      - netdata_config:/etc/netdata
+      - netdata_lib:/var/lib/netdata
+      # Read system metrics (host statfs, cgroup, etc.)
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /etc/passwd:/host/etc/passwd:ro
+      - /etc/group:/host/etc/group:ro
+    environment:
+      # Bind to 0.0.0.0 to allow external access
+      NETDATA_CLAIM_TOKEN: ""
+      NETDATA_CLAIM_ROOM: ""
+      NETDATA_CLAIM_API_KEY: ""
+      # Optional tuning
+      NETDATA_LISTEN_HOST: "0.0.0.0"
+      NETDATA_PORT: "19999"
+    healthcheck:
+      test: ["CMD-SHELL", "wget --quiet --spider http://localhost:19999/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  netdata_config:
+  netdata_lib:

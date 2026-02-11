@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://www.netdata.cloud",
-    "documentation": "https://github.com/netdata/netdata",
+    "documentation": "https://learn.netdata.cloud",
     "source_code": "https://github.com/netdata/netdata",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/netdata.webp",
     "issues": "https://github.com/netdata/netdata/issues",
@@ -91,12 +91,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/netdata/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
@@ -107,7 +109,7 @@
     }
   },
   "demo": {
-    "url": null,
+    "url": "https://app.netdata.cloud/spaces/netdata-demo",
     "username": null,
     "password": null
   }
