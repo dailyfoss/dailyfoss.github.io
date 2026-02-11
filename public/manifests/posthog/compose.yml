@@ -1,0 +1,64 @@
+# ===============================
+# Docker Compose (PostHog Self-Hosted)
+# ===============================
+# host: http://localhost:8000
+# username: created on first login
+# password: created on first login
+
+services:
+
+  posthog-db:
+    image: postgres:16-alpine
+    container_name: posthog_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: posthog
+      POSTGRES_USER: posthog
+      POSTGRES_PASSWORD: CHANGE_ME_DB_PASSWORD
+    volumes:
+      - posthog_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U posthog"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  posthog-redis:
+    image: redis:7-alpine
+    container_name: posthog_redis
+    restart: unless-stopped
+    command: ["redis-server", "--save", "60", "1"]
+    volumes:
+      - posthog_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  posthog-web:
+    image: posthog/posthog:latest
+    container_name: posthog_web
+    restart: unless-stopped
+    depends_on:
+      posthog-db:
+        condition: service_healthy
+      posthog-redis:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: "postgres://posthog:CHANGE_ME_DB_PASSWORD@posthog-db:5432/posthog"
+      REDIS_URL: "redis://posthog-redis:6379"
+      SECRET_KEY: CHANGE_ME_LONG_RANDOM_STRING
+      # Set your domain for URLs (optional but recommended)
+      SITE_URL: "http://localhost:8000"
+    healthcheck:
+      test: ["CMD-SHELL", "wget --quiet --spider http://localhost:8000/_health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  posthog_db_data:
+  posthog_redis_data:

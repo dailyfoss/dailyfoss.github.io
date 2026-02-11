@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "Enterprise License",
     "version": "posthog-cli-v0.5.28",
     "date_app_added": "2025-11-23",
     "date_last_released": "2026-02-11",
@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://posthog.com",
-    "documentation": "https://github.com/PostHog/posthog",
+    "documentation": "https://posthog.com/docs",
     "source_code": "https://github.com/PostHog/posthog",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/posthog.webp",
     "issues": "https://github.com/PostHog/posthog/issues",
@@ -90,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/posthog/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

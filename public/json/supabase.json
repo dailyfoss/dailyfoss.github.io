@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://supabase.com",
-    "documentation": "https://github.com/supabase/supabase",
+    "documentation": "https://supabase.com/docs",
     "source_code": "https://github.com/supabase/supabase",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/supabase.webp",
     "issues": "https://github.com/supabase/supabase/issues",
@@ -100,12 +100,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/supabase/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
