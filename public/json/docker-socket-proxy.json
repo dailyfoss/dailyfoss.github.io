@@ -1,0 +1,107 @@
+{
+  "name": "docker-socket-proxy",
+  "slug": "docker-socket-proxy",
+  "tagline": "A secure proxy for restricting and controlling access to the Docker socket",
+  "subtitle": "",
+  "description": "Docker Socket Proxy is a secure proxy for the Docker socket, designed to expose only specific actions through HTTP. It helps isolate and restrict container management operations safely using granular authorization.",
+  "categories": [
+    41
+  ],
+  "metadata": {
+    "sponsored": false,
+    "license": "Apache-2.0",
+    "version": "v0.4.2",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-12-16",
+    "date_last_commit": "2025-12-16",
+    "github_stars": 2261,
+    "github_contributors": 24,
+    "github_commits_this_year": 0,
+    "github_issues_open": 0,
+    "github_issues_closed_this_year": 0,
+    "github_releases_this_year": 0
+  },
+  "resources": {
+    "website": "https://github.com/Tecnativa/docker-socket-proxy",
+    "documentation": "https://github.com/Tecnativa/docker-socket-proxy",
+    "source_code": "https://github.com/Tecnativa/docker-socket-proxy",
+    "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/docker-socket-proxy.webp",
+    "issues": "https://github.com/Tecnativa/docker-socket-proxy/issues",
+    "releases": "https://github.com/Tecnativa/docker-socket-proxy/releases",
+    "screenshots": []
+  },
+  "features": [
+    {
+      "title": "Docker Socket Proxy",
+      "description": "Restricts access to Docker socket endpoints",
+      "core_feature": true
+    },
+    {
+      "title": "Permission-Based Filtering",
+      "description": "Allows fine-grained API access control",
+      "core_feature": true
+    },
+    {
+      "title": "Reverse Proxy Architecture",
+      "description": "Proxies Docker API requests"
+    },
+    {
+      "title": "Container Deployment",
+      "description": "Runs as a Docker container"
+    },
+    {
+      "title": "Security Hardening",
+      "description": "Reduces attack surface of Docker socket"
+    },
+    {
+      "title": "Configuration via Environment Variables",
+      "description": "Controls allowed endpoints through env vars"
+    },
+    {
+      "title": "Self-Hosted Security Tool",
+      "description": "Runs on user-managed infrastructure"
+    }
+  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": false,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {},
+  "notes": [],
+  "repository_status": null,
+  "demo": {
+    "url": null,
+    "username": null,
+    "password": null
+  }
+}
