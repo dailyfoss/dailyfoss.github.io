@@ -1,0 +1,21 @@
+# ===============================
+# Docker Compose (Double Take)
+# ===============================
+# host: http://localhost:3000
+# username: (set inside app if enabled)
+# password: (set inside app if enabled)
+
+services:
+  double-take:
+    image: skrashevich/double-take:latest
+    container_name: double-take
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      TZ: UTC
+    volumes:
+      - double_take_data:/.storage
+
+volumes:
+  double_take_data:

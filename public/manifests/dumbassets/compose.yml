@@ -1,0 +1,36 @@
+# ===============================
+# Docker Compose (DumbAssets)
+# ===============================
+# host: http://localhost:3000
+# username: (not required)
+# password / PIN: replace_with_secure_pin
+
+services:
+  dumbassets:
+    image: dumbwareio/dumbassets:latest
+    container_name: dumbassets
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      DEBUG: "false"
+      SITE_TITLE: DumbAssets
+      BASE_URL: http://localhost:3000
+
+      # Security (VERY important — change this)
+      DUMBASSETS_PIN: replace_with_secure_pin
+
+      ALLOWED_ORIGINS: "*"
+
+      # Optional notifications
+      APPRISE_URL: ""
+
+      # Currency settings
+      CURRENCY_CODE: USD
+      CURRENCY_LOCALE: en-US
+    volumes:
+      - dumbassets_data:/app/data
+
+volumes:
+  dumbassets_data:

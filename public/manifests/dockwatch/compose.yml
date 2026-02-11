@@ -1,0 +1,35 @@
+# ===============================
+# Docker Compose (Dockwatch)
+# ===============================
+# host: http://localhost:8086
+# username: (set inside app)
+# password: (generated inside app)
+
+services:
+  dockwatch:
+    image: notifiarr/dockwatch:latest
+    container_name: dockwatch
+    restart: unless-stopped
+    ports:
+      - "8086:8086"
+    environment:
+      # REQUIRED: secret key for signing web tokens
+      SECRET: replace_with_secure_random_string
+
+      # Optional: limit exposed API
+      # API_ALLOW_ORIGIN: "*"
+
+      # Optional Notification Services
+      # See https://docs.notifiarr.com/setup/notifications
+      # NOTIFIARR_API_KEY: your_api_key
+      # PUSHOVER_TOKEN: user_or_app_token
+      # DISCORD_WEBHOOK: https://discordapp.com/api/webhooks/...
+
+      # Docker API source (leave unless proxying)
+      DOCKER_HOST: unix:///var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - dockwatch_config:/config
+
+volumes:
+  dockwatch_config:

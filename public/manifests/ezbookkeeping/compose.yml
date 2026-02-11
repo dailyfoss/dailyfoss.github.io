@@ -1,0 +1,41 @@
+# ===============================
+# Docker Compose (ezBookkeeping)
+# ===============================
+# host: http://localhost:8080
+# username/password: set via UI after first run
+
+services:
+  ezbookkeeping:
+    image: mayswind/ezbookkeeping:latest
+    container_name: ezbookkeeping
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      # Optional server domain (use your own domain if hosting publicly)
+      EBK_SERVER_DOMAIN: http://localhost:8080
+      
+      # Optional gzip compression
+      EBK_SERVER_ENABLE_GZIP: "true"
+      
+      # (Optional) Database config (if using external database)
+      # EBK_DATABASE_TYPE: mysql
+      # EBK_DATABASE_HOST: mysql
+      # EBK_DATABASE_NAME: ezbookkeeping
+      # EBK_DATABASE_USER: ezbookkeeping
+      # EBK_DATABASE_PASSWD: replace_with_db_password
+      
+      # Logging mode
+      EBK_LOG_MODE: file
+      
+      # Secret key (recommended for production)
+      EBK_SECURITY_SECRET_KEY: replace_with_very_long_random_string
+    volumes:
+      - ezbookkeeping_data:/ezbookkeeping/data
+      - ezbookkeeping_storage:/ezbookkeeping/storage
+      - ezbookkeeping_log:/ezbookkeeping/log
+
+volumes:
+  ezbookkeeping_data:
+  ezbookkeeping_storage:
+  ezbookkeeping_log:

@@ -1,0 +1,27 @@
+# ===============================
+# Docker Compose (Feedbase)
+# ===============================
+# host: http://localhost:3000
+# username: (from Supabase auth)
+# password: (from Supabase auth)
+
+services:
+  feedbase:
+    image: chroxify/feedbase:latest
+    container_name: feedbase
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      # REQUIRED: point these to your Supabase instance
+      NEXT_PUBLIC_SUPABASE_URL: ""
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: ""
+      SUPABASE_SERVICE_ROLE_KEY: ""
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--spider", "http://localhost:3000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  feedbase_data:

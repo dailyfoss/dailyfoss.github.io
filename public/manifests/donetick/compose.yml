@@ -1,0 +1,25 @@
+# ===============================
+# Docker Compose (Donetick)
+# ===============================
+# host: http://localhost:2021
+# username: (create during setup)
+# password: (create during setup)
+
+services:
+  donetick:
+    image: donetick/donetick:latest
+    container_name: donetick
+    restart: unless-stopped
+    ports:
+      - "2021:2021"
+    environment:
+      DT_ENV: selfhosted
+      DT_SQLITE_PATH: /donetick-data/donetick.db
+      TZ: UTC
+    volumes:
+      - donetick_data:/donetick-data
+      - donetick_config:/config
+
+volumes:
+  donetick_data:
+  donetick_config:

@@ -1,8 +1,23 @@
+# ===============================
+# Docker Compose (FeedCord)
+# ===============================
+# host: (no web host — service runs as a background bot)
+# username: (none)
+# password: (none)
+
 services:
-  myfeedcord:
-    image: qolors/feedcord:latest # for amd64 architecture
-    # image: qolors/feedcord:latest-arm64  # For arm64 architecture (Uncomment this line and comment the above if using arm64)
-    container_name: FeedCord
+  feedcord:
+    image: qolors/feedcord:latest
+    container_name: feedcord
     restart: unless-stopped
     volumes:
-      - ./appsettings.json:/app/config/appsettings.json
+      # Must mount your JSON config into the container
+      - feedcord_config:/app/config
+    healthcheck:
+      test: ["CMD", "stat", "/app/config/appsettings.json"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  feedcord_config:

@@ -1,0 +1,50 @@
+# ===============================
+# Docker Compose (EteSync Server & Web)
+# ===============================
+# host: http://localhost:3735
+# username/password: create via UI
+# NOTE: this is a basic self-hosted stack for dev/test
+
+services:
+
+  etesync:
+    image: grburst/etesync:alpine
+    container_name: etesync
+    restart: unless-stopped
+    ports:
+      - "3735:3735"
+    environment:
+      # Create initial admin user
+      SUPER_USER: admin
+      SUPER_PASS: replace_with_secure_password
+      SUPER_EMAIL: admin@example.com
+
+      # Server behavior
+      SERVER: http
+      DEBUG: "false"
+
+      # Allowed hosts contains hostnames you expect clients to connect from
+      ALLOWED_HOSTS: localhost,127.0.0.1
+
+      # Timezone
+      TIME_ZONE: UTC
+
+      # Default DB engine is sqlite3 (works well for self-hosted)
+      # If you want PostgreSQL, see note below
+    volumes:
+      - etesync_data:/data
+
+  etesync-web:
+    image: pencilshavings/etesync-web:0.6.1
+    container_name: etesync-web
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      # Point web UI to the EteSync server
+      ETEBASE_URL: http://localhost:3735
+    depends_on:
+      - etesync
+
+volumes:
+  etesync_data:

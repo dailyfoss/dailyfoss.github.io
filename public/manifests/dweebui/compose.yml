@@ -1,0 +1,28 @@
+# ===============================
+# Docker Compose (DweebUI)
+# ===============================
+# host: http://localhost:8000
+# username / password: (managed by app if enabled)
+
+services:
+  dweebui:
+    image: lllllllillllllillll/dweebui:latest
+    container_name: dweebui
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      # App listen settings
+      PORT: "8000"
+      # Secret for internal session signing / optional auth
+      SECRET: replace_with_very_long_random_secret
+
+      # Optional configuration
+      # NODE_ENV: production
+      # PROXY_MANAGER_ENABLED: "true"
+    volumes:
+      - dweebui_config:/app/config
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+volumes:
+  dweebui_config:

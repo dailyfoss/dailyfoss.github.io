@@ -1,0 +1,30 @@
+# ===============================
+# Docker Compose (Databag)
+# ===============================
+# host: http://localhost:7007
+# username: (create in UI or invite link)
+# password: set below as ADMIN
+
+services:
+  databag:
+    image: balzack/databag:latest
+    container_name: databag
+    restart: unless-stopped
+    ports:
+      - "7007:7007"
+    environment:
+      # Admin password (required to generate invites and manage instance)
+      ADMIN: replace_with_strong_password
+
+      # Optional debug/development mode
+      DEV: "0"
+
+      # Optional (if you want HTTPS directly inside container)
+      # TLS_CERT: /app/cert/fullchain.pem
+      # TLS_KEY: /app/cert/privkey.pem
+
+    volumes:
+      - databag_data:/var/lib/databag
+
+volumes:
+  databag_data:

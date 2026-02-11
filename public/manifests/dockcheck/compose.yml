@@ -1,0 +1,29 @@
+# ===============================
+# Docker Compose (Dockcheck Web UI)
+# ===============================
+# host: http://localhost:8081
+# username: (login via UI if supported)
+# password: (login via UI if supported)
+
+services:
+  dockcheck-web:
+    image: palleri/dockcheck-web:latest
+    container_name: dockcheck-web
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    volumes:
+      - dockcheck_web_data:/var/www/html
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      # enable notifications (optional)
+      NOTIFY: "false"
+      # NOTIFY_URLS: "discord://Dockcheck-web@xxxxx/xxxxxx"
+      # NOTIFY_DEBUG: "false"
+      # EXCLUDE: "container1,container2"
+      # HTTP_PROXY: "http://proxy:3128"
+      # HTTPS_PROXY: "http://proxy:3128"
+
+volumes:
+  dockcheck_web_data:

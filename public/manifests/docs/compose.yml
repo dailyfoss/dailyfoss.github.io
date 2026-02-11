@@ -1,0 +1,158 @@
+# ===============================
+# Docker Compose (Impress Stack)
+# ===============================
+# frontend: http://localhost:3000
+# backend: http://localhost:8071
+# keycloak: http://localhost:8080
+# mailcatcher: http://localhost:1081
+# minio console: http://localhost:9001
+
+services:
+  postgresql:
+    image: postgres:16-alpine
+    container_name: impress-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: impress
+      POSTGRES_USER: impress
+      POSTGRES_PASSWORD: replace_with_strong_password
+    ports:
+      - "15432:5432"
+    volumes:
+      - impress_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U impress"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+    container_name: impress-redis
+    restart: unless-stopped
+    volumes:
+      - impress_redis:/data
+
+  mailcatcher:
+    image: sj26/mailcatcher
+    container_name: impress-mailcatcher
+    restart: unless-stopped
+    ports:
+      - "1081:1080"
+
+  minio:
+    image: minio/minio
+    container_name: impress-minio
+    restart: unless-stopped
+    environment:
+      MINIO_ROOT_USER: impress
+      MINIO_ROOT_PASSWORD: replace_with_strong_password
+    command: server --console-address ":9001" /data
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - impress_minio:/data
+    healthcheck:
+      test: ["CMD","curl","-f","http://localhost:9000/minio/health/live"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  createbuckets:
+    image: minio/mc
+    container_name: impress-minio-init
+    depends_on:
+      minio:
+        condition: service_healthy
+    entrypoint: >
+      sh -c "
+      mc alias set impress http://minio:9000 impress replace_with_strong_password &&
+      mc mb impress/impress-media-storage || true &&
+      mc version enable impress/impress-media-storage;
+      exit 0;"
+
+  app:
+    image: your-registry/impress-backend:latest
+    container_name: impress-backend
+    restart: unless-stopped
+    environment:
+      DJANGO_CONFIGURATION: Production
+      DATABASE_URL: postgres://impress:replace_with_strong_password@postgresql:5432/impress
+      REDIS_URL: redis://redis:6379
+    ports:
+      - "8071:8000"
+    volumes:
+      - impress_static:/data/static
+    depends_on:
+      postgresql:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      createbuckets:
+        condition: service_completed_successfully
+
+  celery:
+    image: your-registry/impress-backend:latest
+    container_name: impress-celery
+    restart: unless-stopped
+    command: ["celery","-A","impress.celery_app","worker","-l","INFO"]
+    environment:
+      DATABASE_URL: postgres://impress:replace_with_strong_password@postgresql:5432/impress
+      REDIS_URL: redis://redis:6379
+    depends_on:
+      - app
+
+  nginx:
+    image: nginx:1.25-alpine
+    container_name: impress-nginx
+    restart: unless-stopped
+    ports:
+      - "8083:8083"
+    volumes:
+      - nginx_conf:/etc/nginx/conf.d:ro
+    depends_on:
+      - app
+
+  frontend:
+    image: your-registry/impress-frontend:latest
+    container_name: impress-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+
+  kc_postgresql:
+    image: postgres:14-alpine
+    container_name: keycloak-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: impress
+      POSTGRES_PASSWORD: replace_with_strong_password
+    volumes:
+      - keycloak_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U impress"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.3
+    container_name: keycloak
+    restart: unless-stopped
+    command:
+      - start-dev
+      - --import-realm
+      - --hostname=http://localhost:8083
+      - --hostname-strict=false
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: replace_with_strong_password
+      KC_DB: postgres
+      KC_DB_URL_HOST: kc_postgresql
+      KC_DB_URL_DATABASE: keycloak
+      KC_DB_USERNAME: impress
+      KC_DB_PASSWORD: replace_with_strong_password
+    ports:
+      - "8080:8080"

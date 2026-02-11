@@ -1,0 +1,17 @@
+# ===============================
+# Docker Compose (Docker StaticMaps)
+# ===============================
+# host: http://localhost:3000
+# username: (not required)
+# password: (not required)
+#
+# sample cmd:
+# curl "http://localhost:3000/api/staticmaps?width=1000&height=1000&center=-18.2871,147.6992&zoom=9&basemap=satellite"
+
+services:
+  staticmaps:
+    image: mxdcodes/docker-staticmaps:latest
+    container_name: docker-staticmaps
+    restart: unless-stopped
+    ports:
+      - "3000:3000"

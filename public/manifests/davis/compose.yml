@@ -1,0 +1,53 @@
+# ===============================
+# Docker Compose (Davis)
+# ===============================
+# host: http://localhost:9000
+# username: (set via app)
+# password: (set via app)
+
+services:
+  postgresql:
+    image: postgres:16-alpine
+    container_name: davis-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: davis
+      POSTGRES_USER: davis
+      POSTGRES_PASSWORD: replace_with_strong_password
+    volumes:
+      - database_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U davis"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  davis:
+    image: ghcr.io/tchapi/davis:edge
+    container_name: davis
+    restart: unless-stopped
+    depends_on:
+      postgresql:
+        condition: service_healthy
+    environment:
+      DATABASE_DRIVER: postgresql
+      DATABASE_URL: postgresql://davis:replace_with_strong_password@postgresql:5432/davis?serverVersion=15&charset=UTF-8
+      MAILER_DSN: smtp://username:password@mailhost:587
+    volumes:
+      - davis_www:/var/www/davis
+
+  nginx:
+    image: nginx:1.25-alpine
+    container_name: davis-nginx
+    restart: unless-stopped
+    depends_on:
+      - davis
+    ports:
+      - "9000:80"
+    volumes:
+      - davis_www:/var/www/davis
+      - ./configurations/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+
+volumes:
+  davis_www:
+  database_pg:

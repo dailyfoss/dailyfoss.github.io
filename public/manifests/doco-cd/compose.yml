@@ -1,0 +1,40 @@
+# ===============================
+# Docker Compose (Doco-CD)
+# ===============================
+# host: http://localhost
+# username: (not required)
+# password: (use webhook secret if enabled)
+
+services:
+  doco-cd:
+    image: ghcr.io/kimdre/doco-cd:latest
+    container_name: doco-cd
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "9120:9120"
+    environment:
+      TZ: UTC
+      GIT_ACCESS_TOKEN: replace_with_git_token
+
+      # Enable webhook security (HIGHLY recommended if exposed)
+      # WEBHOOK_SECRET: replace_with_long_random_secret
+
+      # Optional polling instead of webhooks
+      # POLL_CONFIG: |
+      #   - url: https://github.com/your/repo.git
+      #     reference: main
+      #     interval: 180
+      #     target: ""
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - doco_cd_data:/data
+    healthcheck:
+      test: ["CMD","/doco-cd","healthcheck"]
+      start_period: 15s
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  doco_cd_data:

@@ -1,0 +1,28 @@
+# ===============================
+# Docker Compose (Docking Station)
+# ===============================
+# host: http://localhost:3000
+# username: (set inside app if enabled)
+# password: (set inside app if enabled)
+
+services:
+  docking-station:
+    image: loolzzz/docking-station:latest
+    container_name: docking-station
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      TZ: UTC
+    volumes:
+      - docking_station_config:/config
+      - docking_station_data:/data
+      - docking_station_logs:/logs
+      - /mnt/compose-files:/mnt/compose-files
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/localtime:/etc/localtime:ro
+
+volumes:
+  docking_station_config:
+  docking_station_data:
+  docking_station_logs:

@@ -1,0 +1,111 @@
+# ===============================
+# Docker Compose (FFun / Feed Fun)
+# ===============================
+# host: https://localhost
+# username: admin (Keycloak default — CHANGE IMMEDIATELY)
+# password: admin (Keycloak default — CHANGE IMMEDIATELY)
+
+services:
+
+  postgresql:
+    image: postgres:16-alpine
+    container_name: ffun_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ffun
+      POSTGRES_USER: ffun
+      POSTGRES_PASSWORD: CHANGE_ME_STRONG_PASSWORD
+    volumes:
+      - ffun_postgresql_data:/var/lib/postgresql/data
+    networks:
+      - ffun_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ffun"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    image: ffun-backend-dev
+    container_name: ffun_backend
+    restart: unless-stopped
+    depends_on:
+      postgresql:
+        condition: service_healthy
+    command: >
+      bash -c "
+      poetry run ffun migrate &&
+      poetry run uvicorn ffun.application.application:app
+      --host 0.0.0.0 --port 8000 --workers 2
+      "
+    environment:
+      FFUN_ENABLE_API_SPA: "True"
+      FFUN_ENABLE_SENTRY: "False"
+      FFUN_SENTRY__DSN: "not-specified"
+    networks:
+      - ffun_network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--spider", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  frontend:
+    image: ffun-frontend-dev
+    container_name: ffun_frontend
+    restart: unless-stopped
+    command: "npm run preview -- --host 0.0.0.0 --port 8000"
+    networks:
+      - ffun_network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--spider", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:25.0
+    container_name: ffun_keycloak
+    restart: unless-stopped
+    command: start-dev
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: CHANGE_ME_ADMIN_PASSWORD
+      KC_DB: postgres
+      KC_DB_URL_HOST: postgresql
+      KC_DB_URL_DATABASE: ffun
+      KC_DB_USERNAME: ffun
+      KC_DB_PASSWORD: CHANGE_ME_STRONG_PASSWORD
+      KC_HEALTH_ENABLED: "true"
+    depends_on:
+      postgresql:
+        condition: service_healthy
+    networks:
+      - ffun_network
+    healthcheck:
+      test: ["CMD-SHELL", "exec 3<>/dev/tcp/127.0.0.1/9000 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  edge-proxy:
+    image: caddy:2-alpine
+    container_name: ffun_edge_proxy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ffun_caddy_data:/data
+      - ffun_caddy_config:/config
+    networks:
+      - ffun_network
+
+volumes:
+  ffun_postgresql_data:
+  ffun_caddy_data:
+  ffun_caddy_config:
+
+networks:
+  ffun_network:
+    driver: bridge

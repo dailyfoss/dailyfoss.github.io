@@ -1,11 +1,28 @@
+# ===============================
+# Docker Compose (Fenrus)
+# ===============================
+# host: http://localhost:8080
+# username: created via app UI
+# password: created via app UI
+
 services:
   fenrus:
-    image: revenz/fenrus
+    image: revenz/fenrus:latest
     container_name: fenrus
-    environment:
-      - TZ=Pacific/Auckland
-    volumes:
-      - ./data:/app/data
-    ports:
-      - 3000:3000
     restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      # Persistent storage for SQLite DB and uploads
+      - fenrus_data:/app/data
+    environment:
+      # Port and listen address (optional, defaults correct)
+      FENRUS_BIND: "0.0.0.0:8080"
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--spider", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  fenrus_data:

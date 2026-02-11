@@ -1,0 +1,70 @@
+# ===============================
+# Docker Compose (Dittofeed)
+# ===============================
+# host: http://localhost:3000
+# username: (create via UI)
+# password: (create via UI)
+
+services:
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: dittofeed-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: dittofeed
+      POSTGRES_USER: dittofeed
+      POSTGRES_PASSWORD: replace_with_strong_password
+    volumes:
+      - dittofeed_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U dittofeed"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  clickhouse:
+    image: clickhouse/clickhouse-server:latest
+    container_name: dittofeed-clickhouse
+    restart: unless-stopped
+    volumes:
+      - dittofeed_ch:/var/lib/clickhouse
+    healthcheck:
+      test: ["CMD","curl","-f","http://localhost:8123"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: dittofeed-redis
+    restart: unless-stopped
+    volumes:
+      - dittofeed_redis:/data
+
+  dittofeed:
+    image: dittofeed/dittofeed-lite:latest
+    container_name: dittofeed
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      clickhouse:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DATABASE_URL: postgresql://dittofeed:replace_with_strong_password@postgres:5432/dittofeed
+      CLICKHOUSE_URL: http://clickhouse:8123
+      REDIS_URL: redis://redis:6379
+      SECRET_KEY: replace_with_very_long_random_secret
+      # Optional: sendgrid / SES / other providers config
+
+volumes:
+  dittofeed_pg:
+  dittofeed_ch:
+  dittofeed_redis:

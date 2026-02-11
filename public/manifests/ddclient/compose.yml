@@ -1,0 +1,21 @@
+# ===============================
+# Docker Compose (ddclient)
+# ===============================
+# host: (background service, no web UI)
+# username: (your DNS provider username)
+# password: (your DNS provider password / API token)
+
+services:
+  ddclient:
+    image: lscr.io/linuxserver/ddclient:latest
+    container_name: ddclient
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: UTC
+    volumes:
+      - ddclient_config:/config
+
+volumes:
+  ddclient_config:

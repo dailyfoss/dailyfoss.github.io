@@ -1,0 +1,30 @@
+# ===============================
+# Docker Compose (Fail2Ban-Report)
+# ===============================
+# host: http://localhost:8080
+# username: (set via .htpasswd or app config)
+# password: (set via .htpasswd or app config)
+
+services:
+  fail2ban-report:
+    image: ghcr.io/sublexble/fail2ban-report:latest
+    container_name: fail2ban_report
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      # Application data (JSON archive, internal config)
+      - fail2ban_report_data:/opt/Fail2Ban-Report
+      # Fail2Ban logs (MUST be bound to real host logs in production)
+      # Replace with bind mount if running on same host as Fail2Ban:
+      # - /var/log/fail2ban:/var/log/fail2ban:ro
+      - fail2ban_logs:/var/log/fail2ban:ro
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  fail2ban_report_data:
+  fail2ban_logs:

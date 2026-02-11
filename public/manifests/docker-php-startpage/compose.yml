@@ -1,0 +1,28 @@
+# ===============================
+# Docker Compose (docker-php-startpage)
+# ===============================
+# host: http://localhost:8080
+# username: (not required – static start page)
+# password: (not required)
+
+services:
+  startpage:
+    image: loganmarchione/docker-php-startpage:latest
+    container_name: php-startpage
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      # Optional custom settings
+      # Example:
+      # PAGE_TITLE: "My Start Page"
+      # BACKGROUND_IMAGE_URL: "https://example.com/bg.jpg"
+      # CUSTOM_CSS: ""
+      # ENABLE_SEARCH: "true"
+      # SEARCH_ENGINE: "https://www.google.com/search?q="
+      TZ: UTC
+    volumes:
+      - startpage_data:/var/www/html
+
+volumes:
+  startpage_data:

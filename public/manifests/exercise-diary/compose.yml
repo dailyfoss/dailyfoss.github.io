@@ -1,0 +1,24 @@
+# ===============================
+# Docker Compose (ExerciseDiary)
+# ===============================
+# host: http://localhost:8851
+# username/password: (not required)
+
+services:
+  exercisediary:
+    image: aceberg/exercisediary:latest
+    container_name: exercisediary
+    restart: unless-stopped
+    ports:
+      - "8851:8851"
+    environment:
+      TZ: Asia/Novosibirsk   # REQUIRED
+      HOST: "0.0.0.0"        # optional (default: 0.0.0.0)
+      PORT: "8851"           # optional (default: 8851)
+      THEME: grass           # optional: grass, dark, etc.
+      COLOR: light           # optional: light | dark
+    volumes:
+      - exercisediary_data:/data/ExerciseDiary
+
+volumes:
+  exercisediary_data:

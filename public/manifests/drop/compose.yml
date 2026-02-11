@@ -1,0 +1,46 @@
+# ===============================
+# Docker Compose (Drop OSS)
+# ===============================
+# host: http://localhost:3000
+# username: (create inside app)
+# password: (create inside app)
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: drop-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: drop
+      POSTGRES_USER: drop
+      POSTGRES_PASSWORD: replace_with_strong_password
+    volumes:
+      - drop_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U drop -d drop"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
+
+  drop:
+    image: ghcr.io/drop-oss/drop:latest
+    container_name: drop
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgres://drop:replace_with_strong_password@postgres:5432/drop
+      EXTERNAL_URL: http://localhost:3000
+      NODE_ENV: production
+    volumes:
+      - drop_library:/library
+      - drop_data:/data
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  drop_pg:
+  drop_library:
+  drop_data:

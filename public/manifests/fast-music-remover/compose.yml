@@ -1,0 +1,25 @@
+# ===============================
+# Docker Compose (Fast Music Remover)
+# ===============================
+# host: http://localhost:8080
+# username: none
+# password: none
+
+services:
+  fast-music-remover:
+    image: ghcr.io/omeryusufyagci/fast-music-remover:latest
+    container_name: fast_music_remover
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      # Persistent storage for uploads / processing artifacts
+      - fast_music_remover_data:/data
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--spider", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  fast_music_remover_data:

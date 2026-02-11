@@ -1,0 +1,54 @@
+# ===============================
+# Docker Compose (Easy!Appointments)
+# ===============================
+# host: http://localhost:80
+# username: (create in UI)
+# password: (create in UI)
+
+services:
+
+  db:
+    image: mariadb:10.11
+    container_name: easyappointments-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: replace_with_strong_password
+      MYSQL_DATABASE: easyappointments
+      MYSQL_USER: easyappointments
+      MYSQL_PASSWORD: replace_with_strong_password
+    volumes:
+      - easyappt_db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -ueasyappointments -p$${MYSQL_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  easyappointments:
+    image: alextselegidis/easyappointments:latest
+    container_name: easyappointments
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "80:80"
+    environment:
+      BASE_URL: http://localhost
+      DEBUG_MODE: "FALSE"
+      DB_HOST: db
+      DB_NAME: easyappointments
+      DB_USERNAME: easyappointments
+      DB_PASSWORD: replace_with_strong_password
+
+      # Optional SMTP for email reminders:
+      # MAIL_PROTOCOL: smtp
+      # SMTP_HOST: smtp.example.com
+      # SMTP_PORT: "587"
+      # SMTP_USERNAME: user@example.com
+      # SMTP_PASSWORD: smtp_password
+      # SMTP_FROM_ADDRESS: noreply@example.com
+      # SMTP_FROM_NAME: "Easy!Appointments"
+
+volumes:
+  easyappt_db:

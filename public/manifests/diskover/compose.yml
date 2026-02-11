@@ -1,0 +1,63 @@
+# ===============================
+# Docker Compose (Diskover Community)
+# ===============================
+# host: http://localhost:8000
+# username: diskover
+# password: darkdata
+
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.8.0
+    container_name: diskover-elasticsearch
+    restart: unless-stopped
+    environment:
+      discovery.type: single-node
+      bootstrap.memory_lock: "true"
+      "ES_JAVA_OPTS": "-Xms1g -Xmx1g"
+      xpack.security.enabled: "false"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - diskover_es_data:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+
+  redis:
+    image: redis:7-alpine
+    container_name: diskover-redis
+    restart: unless-stopped
+    volumes:
+      - diskover_redis:/data
+
+  diskover:
+    image: lscr.io/linuxserver/diskover:latest
+    container_name: diskover
+    restart: unless-stopped
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: UTC
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      ES_HOST: elasticsearch
+      ES_PORT: 9200
+      # Default credentials (change after first login)
+      DISKOVER_USER: diskover
+      DISKOVER_PASS: darkdata
+    volumes:
+      - diskover_config:/config
+      - /mnt/data:/data   # Change this to the path(s) you want to index
+    ports:
+      - "8000:80"
+
+volumes:
+  diskover_es_data:
+  diskover_redis:
+  diskover_config:

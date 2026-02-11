@@ -1,0 +1,25 @@
+# ===============================
+# Docker Compose (ESPHome)
+# ===============================
+# host: http://localhost:6052
+# username/password: (none built-in — protect with proxy if public)
+
+services:
+  esphome:
+    image: esphome/esphome:latest
+    container_name: esphome
+    restart: unless-stopped
+
+    ports:
+      - "6052:6052"  # web dashboard
+
+    environment:
+      # optional: set custom editor settings
+      TZ: UTC
+
+    volumes:
+      # Persist project config files here
+      - esphome_config:/config
+
+volumes:
+  esphome_config:

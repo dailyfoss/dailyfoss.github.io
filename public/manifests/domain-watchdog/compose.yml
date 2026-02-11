@@ -1,0 +1,31 @@
+# ===============================
+# Docker Compose (Domain Watchdog)
+# ===============================
+# host: http://localhost:8080
+# username: (create via UI once running)
+# password: (create via UI once running)
+
+services:
+  domain-watchdog:
+    image: maelgangloff/domain-watchdog:latest
+    container_name: domain-watchdog
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      TZ: UTC
+      # Optional: Discord/notification hooks
+      # DISCORD_WEBHOOK_URL: "https://discord.com/api/webhooks/..."
+      # SEND_API_NOTIFICATIONS: "true"
+      # SEND_UPDATES_NOTIFICATIONS: "true"
+      # TIME_ZONE: "UTC"
+    volumes:
+      # Optional static content override (if customizing UI)
+      - domainwatchdog_content:/app/public/content
+      # Docker config for registry access (if needed)
+      - ~/.docker/config.json:/root/.docker/config.json:ro
+      # Projects directory (if enabling auto update features)
+      #- /path/to/projects:/projects
+
+volumes:
+  domainwatchdog_content:

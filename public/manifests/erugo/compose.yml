@@ -1,0 +1,13 @@
+# ===============================
+# Docker Compose (Erugo)
+# ===============================
+# host:     http://localhost:9998
+
+services:
+  app:
+    image: wardy784/erugo:latest
+    restart: unless-stopped
+    volumes:
+      - ./erugo-storage:/var/www/html/storage # Use a dedicated folder
+    ports:
+      - "9998:80"

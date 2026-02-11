@@ -1,0 +1,22 @@
+# ===============================
+# Docker Compose (Dockpeek)
+# ===============================
+# host: http://localhost:3420
+# username: admin
+# password: replace_with_strong_password
+
+services:
+  dockpeek:
+    image: dockpeek/dockpeek:latest
+    container_name: dockpeek
+    restart: unless-stopped
+    ports:
+      - "3420:8000"
+    environment:
+      SECRET_KEY: replace_with_very_long_random_secret
+      USERNAME: admin
+      PASSWORD: replace_with_strong_password
+      # DOCKER_HOST_NAME: docker-host
+      TZ: UTC
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro

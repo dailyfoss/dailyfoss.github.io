@@ -1,0 +1,46 @@
+# ===============================
+# Docker Compose (FerriShare)
+# ===============================
+# host: http://localhost:3000
+# username: created during app setup
+# password: created during app setup
+
+services:
+
+  ferrishare:
+    image: ghcr.io/tobiasmarschner/ferrishare:1
+    container_name: ferrishare
+    restart: unless-stopped
+    volumes:
+      # Stores config, database, templates, and uploaded encrypted files
+      - ferrishare_data:/app/data
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.ferrishare.rule=Host(`localhost`)"
+      - "traefik.http.services.ferrishare.loadbalancer.server.port=8080"
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--spider", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  reverse-proxy:
+    image: traefik:v3.1
+    container_name: ferrishare_traefik
+    restart: unless-stopped
+    depends_on:
+      - ferrishare
+    command:
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+    ports:
+      - "3000:80"
+    volumes:
+      # Allows Traefik to dynamically discover containers
+      - ferrishare_traefik_data:/data
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+volumes:
+  ferrishare_data:
+  ferrishare_traefik_data:

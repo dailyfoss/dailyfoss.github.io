@@ -1,0 +1,58 @@
+# ===============================
+# Docker Compose (Dockerizalo)
+# ===============================
+# host: http://localhost:8080
+# username: (create inside app)
+# password: (set via APP_SECRET / DB)
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: dockerizalo-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: dockerizalo
+      POSTGRES_USER: dockerizalo
+      POSTGRES_PASSWORD: replace_with_strong_password
+    volumes:
+      - dockerizalo_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U dockerizalo"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    image: ghcr.io/undernightcore/dockerizalo:latest
+    container_name: dockerizalo-api
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://dockerizalo:replace_with_strong_password@db:5432/dockerizalo?schema=public
+      APP_SECRET: replace_with_very_long_random_secret
+    volumes:
+      - dockerizalo_apps:/data/dockerizalo
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  ui:
+    image: ghcr.io/undernightcore/dockerizalo-ui:latest
+    container_name: dockerizalo-ui
+    restart: unless-stopped
+    depends_on:
+      - api
+
+  proxy:
+    image: ghcr.io/undernightcore/dockerizalo-proxy:latest
+    container_name: dockerizalo-proxy
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    depends_on:
+      - api
+      - ui
+
+volumes:
+  dockerizalo_pg:
+  dockerizalo_apps:

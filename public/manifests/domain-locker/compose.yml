@@ -1,0 +1,50 @@
+# ===============================
+# Docker Compose (Domain Locker)
+# ===============================
+# host: http://localhost:2096
+# username: admin (create in UI)
+# password: (create in UI)
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: domain-locker-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: domainlocker
+      POSTGRES_USER: domainlocker
+      POSTGRES_PASSWORD: replace_with_strong_password
+    volumes:
+      - domainlocker_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U domainlocker"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  domain-locker:
+    image: ghcr.io/lissy93/domain-locker:latest
+    container_name: domain-locker
+    restart: unless-stopped
+    ports:
+      - "2096:2095"
+    environment:
+      DOMAIN_LOCKER_HOST: "0.0.0.0"
+      DOMAIN_LOCKER_PORT: "2095"
+      SECRET_KEY: replace_with_very_long_random_secret
+
+      DB_TYPE: postgres
+      DB_HOST: postgres
+      DB_PORT: "5432"
+      DB_NAME: domainlocker
+      DB_USER: domainlocker
+      DB_PASSWORD: replace_with_strong_password
+    volumes:
+      - domainlocker_data:/app/data
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  domainlocker_pg:
+  domainlocker_data:

@@ -1,0 +1,34 @@
+# ===============================
+# Docker Compose (DumbBudget)
+# ===============================
+# host: http://localhost:3000
+# username: (not required)
+# password / PIN: replace_with_secure_pin
+
+services:
+  dumbbudget:
+    image: dumbwareio/dumbbudget:latest
+    container_name: dumbbudget
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      DUMBBUDGET_PIN: replace_with_secure_pin
+      BASE_URL: http://localhost:3000
+      CURRENCY: USD
+      SITE_TITLE: DumbBudget
+      INSTANCE_NAME: Personal Budget
+
+      # Optional security
+      # ALLOWED_ORIGINS: http://localhost:3000
+    volumes:
+      - dumbbudget_data:/app/data
+    healthcheck:
+      test: ["CMD-SHELL","wget --spider -q http://127.0.0.1:3000 || exit 1"]
+      interval: 20s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+volumes:
+  dumbbudget_data:

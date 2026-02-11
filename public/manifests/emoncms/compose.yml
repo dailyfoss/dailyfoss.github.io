@@ -1,0 +1,43 @@
+# ===============================
+# Docker Compose (Emoncms)
+# ===============================
+# host: http://localhost:8080
+# username/password: create via UI
+
+services:
+  emoncms:
+    image: alexjunk/emoncms:latest
+    container_name: emoncms
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+      - "7883:1883"   # optional MQTT if needed
+    environment:
+      # Web UI
+      BASE_URL: http://localhost:8080
+
+      # Database (bundled inside container, no external DB)
+      MYSQL_HOST: localhost
+      MYSQL_DB: emoncms
+      MYSQL_USER: emoncms
+      MYSQL_PASSWORD: emoncms
+
+      # Redis (enabled by default in this image)
+      REDIS_ENABLED: "true"
+      REDIS_HOST: localhost
+      REDIS_PORT: "6379"
+
+      # Emoncms internal settings
+      PHPFina_DIR: /data/phpfina
+      PHPTIMESERIES_DIR: /data/phptimeseries
+
+      # Optional: MQTT (optional if pushing events)
+      MQTT_ENABLED: "true"
+      MQTT_HOST: localhost
+      MQTT_PORT: "1883"
+
+    volumes:
+      - emoncms_data:/data
+
+volumes:
+  emoncms_data:
