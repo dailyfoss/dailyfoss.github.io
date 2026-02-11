@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://github.com/fastenhealth/fasten-onprem",
-    "documentation": "https://github.com/fastenhealth/fasten-onprem",
+    "documentation": "https://docs.connect.fastenhealth.com/home",
     "source_code": "https://github.com/fastenhealth/fasten-onprem",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/fasten-health.webp",
     "issues": "https://github.com/fastenhealth/fasten-onprem/issues",
     "releases": "https://github.com/fastenhealth/fasten-onprem/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/fasten-health-preview.png"
+    ]
   },
   "features": [
     {
@@ -96,12 +98,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/fasten-health/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

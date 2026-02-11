@@ -28,7 +28,11 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/dockpeek.webp",
     "issues": "https://github.com/dockpeek/dockpeek/issues",
     "releases": "https://github.com/dockpeek/dockpeek/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/dockpeek-dashboard-dark.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/dockpeek-dashboard-light.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/dockpeek-logs.png"
+    ]
   },
   "features": [
     {
@@ -91,12 +95,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/dockpeek/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

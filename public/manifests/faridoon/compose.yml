@@ -1,0 +1,51 @@
+# ===============================
+# Docker Compose (Faridoon)
+# ===============================
+# host: http://localhost:8080
+# username: created via app setup
+# password: created via app setup
+
+services:
+  faridoon:
+    image: ghcr.io/jamesread/faridoon:latest
+    container_name: faridoon
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      DB_HOST: faridoon-mysql
+      DB_NAME: faridoon
+      DB_USER: faridoon
+      DB_PASS: CHANGE_ME_STRONG_PASSWORD
+    volumes:
+      - faridoon-config:/config
+    depends_on:
+      faridoon-mysql:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--spider", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  faridoon-mysql:
+    image: mysql:8.4
+    container_name: faridoon-mysql
+    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: CHANGE_ME_ROOT_PASSWORD
+      MYSQL_DATABASE: faridoon
+      MYSQL_USER: faridoon
+      MYSQL_PASSWORD: CHANGE_ME_STRONG_PASSWORD
+    volumes:
+      - faridoon-mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -p$$MYSQL_ROOT_PASSWORD"]
+      interval: 20s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  faridoon-config:
+  faridoon-mysql:

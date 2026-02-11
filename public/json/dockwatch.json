@@ -23,12 +23,25 @@
   },
   "resources": {
     "website": "https://dockwatch.wiki",
-    "documentation": "https://github.com/Notifiarr/dockwatch",
+    "documentation": "https://dockwatch.wiki",
     "source_code": "https://github.com/Notifiarr/dockwatch",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/dockwatch.webp",
     "issues": "https://github.com/Notifiarr/dockwatch/issues",
     "releases": "https://github.com/Notifiarr/dockwatch/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/dockwatch-commands.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/dockwatch-compose.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/dockwatch-container.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/dockwatch-containers.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/dockwatch-generate-compose.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/dockwatch-logs.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/dockwatch-networks.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/dockwatch-notifications.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/dockwatch-orphans.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/dockwatch-overview.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/dockwatch-settings.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/dockwatch-tasks.png"
+    ]
   },
   "features": [
     {
@@ -95,12 +108,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/dockwatch/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

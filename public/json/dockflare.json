@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "GNU-GPL 3.0",
     "version": "v3.0.5",
     "date_app_added": "2025-11-23",
     "date_last_released": "2025-10-14",
@@ -23,12 +23,15 @@
   },
   "resources": {
     "website": "https://dockflare.app",
-    "documentation": "https://github.com/ChrispyBacon-dev/DockFlare",
+    "documentation": "https://dockflare.app/docs",
     "source_code": "https://github.com/ChrispyBacon-dev/DockFlare",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/dockflare.webp",
     "issues": "https://github.com/ChrispyBacon-dev/DockFlare/issues",
     "releases": "https://github.com/ChrispyBacon-dev/DockFlare/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/dockflare-access-policies.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/dockflare-dashboard.png"
+    ]
   },
   "features": [
     {
@@ -95,17 +98,19 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/dockflare/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
-    "username": null,
-    "password": null
+    "url": "https://webdemo.dockflare.app",
+    "username": "demo",
+    "password": "demo"
   }
 }

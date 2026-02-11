@@ -1,0 +1,31 @@
+# ===============================
+# Docker Compose (Decypharr / Blackhole)
+# ===============================
+# host: http://localhost:8282
+# username: (set inside config.json if enabled)
+# password: (set inside config.json if enabled)
+
+services:
+  decypharr:
+    image: cy01/blackhole:latest
+    container_name: decypharr
+    restart: unless-stopped
+    ports:
+      - "8282:8282"
+    # Required for FUSE mounts
+    devices:
+      - /dev/fuse:/dev/fuse:rwm
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - apparmor:unconfined
+    volumes:
+      # Mount host storage (needed for media workflows)
+      - /mnt:/mnt:rshared
+      # Ensure config.json exists in this directory
+      - decypharr_config:/app
+    environment:
+      TZ: UTC
+
+volumes:
+  decypharr_config:

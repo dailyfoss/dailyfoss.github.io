@@ -1,0 +1,27 @@
+# ===============================
+# Docker Compose (Dashlit)
+# ===============================
+# host: http://localhost:3000
+# username: admin
+# password: replace_with_strong_password
+
+services:
+  dashlit:
+    image: ghcr.io/codewec/dashlit:latest
+    container_name: dashlit
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      ORIGIN: http://localhost:3000
+      NODE_ENV: production
+      HOST_HEADER: HOST
+      ADDRESS_HEADER: X-Real-IP
+      PROTOCOL_HEADER: X-Forwarded-Proto
+      PASSWORD: replace_with_strong_password
+      SECRET_KEY: replace_with_very_long_random_secret
+    volumes:
+      - dashlit_data:/app/data
+
+volumes:
+  dashlit_data:

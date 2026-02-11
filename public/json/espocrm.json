@@ -23,12 +23,15 @@
   },
   "resources": {
     "website": "https://www.espocrm.com",
-    "documentation": "https://github.com/espocrm/espocrm",
+    "documentation": "https://docs.espocrm.com",
     "source_code": "https://github.com/espocrm/espocrm",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/espocrm.webp",
     "issues": "https://github.com/espocrm/espocrm/issues",
     "releases": "https://github.com/espocrm/espocrm/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/espocrm-dashboard.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/espocrm-demo.png"
+    ]
   },
   "features": [
     {
@@ -96,12 +99,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/espocrm/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
@@ -112,7 +117,7 @@
     }
   },
   "demo": {
-    "url": null,
+    "url": "https://www.espocrm.com/demo",
     "username": null,
     "password": null
   }

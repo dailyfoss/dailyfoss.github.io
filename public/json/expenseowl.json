@@ -28,7 +28,10 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/expenseowl.webp",
     "issues": "https://github.com/Tanq16/ExpenseOwl/issues",
     "releases": "https://github.com/Tanq16/ExpenseOwl/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/expenseowl-dark-main.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/expenseowl-light-main.png"
+    ]
   },
   "features": [
     {
@@ -95,12 +98,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/expenseowl/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

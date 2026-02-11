@@ -1,0 +1,43 @@
+# ===============================
+# Docker Compose (Dribdat)
+# ===============================
+# host: http://localhost:5000
+# username: (create inside app)
+# password: (set via app)
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: dribdat-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: dribdat
+      POSTGRES_USER: dribdat_user
+      POSTGRES_PASSWORD: replace_with_strong_password
+    volumes:
+      - dribdat_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U dribdat_user"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  dribdat:
+    image: ghcr.io/dribdat/dribdat:latest
+    container_name: dribdat
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      SERVER_URL: http://localhost:5000
+      DATABASE_URL: postgres://dribdat_user:replace_with_strong_password@db:5432/dribdat
+      DRIBDAT_ENV: prod
+      DRIBDAT_SECRET: replace_with_very_long_random_secret
+      DRIBDAT_APIKEY: replace_with_api_key
+      TIME_ZONE: UTC
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  dribdat_pg:

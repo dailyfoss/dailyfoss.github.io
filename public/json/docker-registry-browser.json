@@ -28,7 +28,11 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/docker-registry-browser.webp",
     "issues": "https://github.com/klausmeyer/docker-registry-browser/issues",
     "releases": "https://github.com/klausmeyer/docker-registry-browser/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/docker-registry-browser-company.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/docker-registry-browser-details.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/docker-registry-browser-screenshot.png"
+    ]
   },
   "features": [
     {
@@ -95,12 +99,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/docker-registry-browser/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

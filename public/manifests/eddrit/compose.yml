@@ -1,0 +1,26 @@
+# ===============================
+# Docker Compose (Eddrit)
+# ===============================
+# host: http://localhost:8080
+# username: (handled inside app if enabled)
+# password: (handled inside app if enabled)
+
+services:
+  eddrit:
+    image: ghcr.io/corenting/eddrit:latest
+    container_name: eddrit
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      # Optional: URL your instance will run on
+      BASE_URL: http://localhost:8080
+
+      # Optional rate limit bypass proxy (if needed)
+      # PROXY: http://your-proxy:port
+
+      # Optional User Agent override
+      # USER_AGENT: "MyEddritInstance/1.0"
+
+      # Optional logging level
+      # LOG_LEVEL: info

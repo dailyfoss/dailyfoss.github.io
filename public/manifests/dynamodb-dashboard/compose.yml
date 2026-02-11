@@ -1,0 +1,20 @@
+# ===============================
+# Docker Compose (DynamoDB Dashboard)
+# ===============================
+# host: http://localhost:8080
+# username: (not required)
+# password: (not required)
+
+services:
+  dynamodb-dashboard:
+    image: kritishdhaubanjar/dynamodb-dashboard:latest
+    container_name: dynamodb-dashboard
+    restart: unless-stopped
+    ports:
+      - "8080:4567"
+    environment:
+      AWS_REGION: us-west-2
+      AWS_ENDPOINT: http://host.docker.internal:8000
+      AWS_ACCESS_KEY_ID: fakeAccessKeyId
+      AWS_SECRET_ACCESS_KEY: fakeSecretAccessKey
+      TZ: UTC

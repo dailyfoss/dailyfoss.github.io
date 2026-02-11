@@ -1,0 +1,32 @@
+# ===============================
+# Docker Compose (Draw.io / diagrams.net)
+# ===============================
+# host: http://localhost:8080
+# username: (optional, UI handles this if needed)
+# password: (optional)
+
+services:
+  drawio:
+    image: jgraph/drawio:latest
+    container_name: drawio
+    restart: unless-stopped
+
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+
+    environment:
+      TZ: UTC
+
+    # Optional data volume if integrating persistent export config
+    volumes:
+      - drawio_user_data:/root/.drawio
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  drawio_user_data:

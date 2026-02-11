@@ -28,7 +28,9 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/dumbassets.webp",
     "issues": "https://github.com/DumbWareio/DumbAssets/issues",
     "releases": "https://github.com/DumbWareio/DumbAssets/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/DumbAssets-demo.png"
+    ]
   },
   "features": [
     {
@@ -94,17 +96,19 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/dumbassets/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://dumbassets.dumbware.io/login",
     "username": null,
-    "password": null
+    "password": "1234"
   }
 }

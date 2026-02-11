@@ -1,0 +1,50 @@
+# ===============================
+# Docker Compose (Dashwise)
+# ===============================
+# host: http://localhost:3016
+# username: default@dashwise.local
+# password: replace_with_strong_password
+
+services:
+  dashwise:
+    image: andreasmolnardev/dashwise:stable
+    container_name: dashwise
+    restart: unless-stopped
+    ports:
+      - "3016:3000"
+    environment:
+      PB_ADMIN_EMAIL: admin@dashwise.local
+      PB_ADMIN_PASSWORD: replace_with_strong_password
+      NEXT_PUBLIC_PB_URL: http://pocketbase:8090
+    depends_on:
+      - pocketbase
+
+  pocketbase:
+    image: andreasmolnardev/dashwise-pb:stable
+    container_name: dashwise-pocketbase
+    restart: unless-stopped
+    ports:
+      - "8092:8090"
+    environment:
+      PB_ADMIN_EMAIL: admin@dashwise.local
+      PB_ADMIN_PASSWORD: replace_with_strong_password
+    volumes:
+      - pocketbase_data:/app/pb_data
+
+  jobs:
+    image: andreasmolnardev/dashwise-jobs:stable
+    container_name: dashwise-jobs
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    environment:
+      PB_URL: http://pocketbase:8090
+      DASHWISE_URL: http://dashwise:3000
+      PB_ADMIN_EMAIL: admin@dashwise.local
+      PB_ADMIN_PASSWORD: replace_with_strong_password
+    depends_on:
+      - pocketbase
+      - dashwise
+
+volumes:
+  pocketbase_data:

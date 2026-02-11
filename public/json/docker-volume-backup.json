@@ -22,13 +22,15 @@
     "github_releases_this_year": 1
   },
   "resources": {
-    "website": "https://offen.github.io/docker-volume-backup/",
-    "documentation": "https://github.com/offen/docker-volume-backup",
+    "website": "https://offen.github.io/docker-volume-backup",
+    "documentation": "https://offen.github.io/docker-volume-backup",
     "source_code": "https://github.com/offen/docker-volume-backup",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/docker-volume-backup.webp",
     "issues": "https://github.com/offen/docker-volume-backup/issues",
     "releases": "https://github.com/offen/docker-volume-backup/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/docker-volume-backup-homepage.png"
+    ]
   },
   "features": [
     {
@@ -95,12 +97,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/docker-volume-backup/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

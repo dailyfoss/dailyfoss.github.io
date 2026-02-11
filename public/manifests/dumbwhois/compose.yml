@@ -1,0 +1,20 @@
+# ===============================
+# Docker Compose (DumbWhois)
+# ===============================
+# host: http://localhost:3000
+# username: (not required)
+# password: (not required)
+
+services:
+  dumbwhois:
+    image: dumbwareio/dumbwhois:latest
+    container_name: dumbwhois
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      SITE_TITLE: DumbWhois
+      NODE_ENV: production
+
+      # Optional security
+      # ALLOWED_ORIGINS: http://localhost:3000

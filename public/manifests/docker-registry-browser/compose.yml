@@ -1,0 +1,16 @@
+# ===============================
+# Docker Compose (Docker Registry Browser)
+# ===============================
+# host: http://localhost:8080
+# username: (set inside app if configured)
+# password: (set inside app if configured)
+
+services:
+  registry-browser:
+    image: klausmeyer/docker-registry-browser:latest
+    container_name: registry-browser
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      SECRET_KEY_BASE: replace_with_very_long_random_secret

@@ -1,0 +1,19 @@
+# ===============================
+# Docker Compose (ExpenseOwl)
+# ===============================
+# Dashboard: http://localhost:5006/
+# Table View: http://localhost:5006/table
+# Settings: http://localhost:5006/settings
+
+services:
+  expenseowl:
+    image: tanq16/expenseowl:main
+    container_name: expenseowl
+    restart: unless-stopped
+    ports:
+      - "5006:8080"
+    volumes:
+      - expenseowl_data:/app/data
+
+volumes:
+  expenseowl_data:

@@ -22,8 +22,8 @@
     "github_releases_this_year": 16
   },
   "resources": {
-    "website": "https://github.com/kimdre/doco-cd",
-    "documentation": "https://github.com/kimdre/doco-cd",
+    "website": "https://github.com/kimdre/doco-cd/wiki",
+    "documentation": "https://github.com/kimdre/doco-cd/wiki",
     "source_code": "https://github.com/kimdre/doco-cd",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/doco-cd.webp",
     "issues": "https://github.com/kimdre/doco-cd/issues",
@@ -96,12 +96,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/doco-cd/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

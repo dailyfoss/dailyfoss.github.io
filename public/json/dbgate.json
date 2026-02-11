@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://www.dbgate.io",
-    "documentation": "https://github.com/dbgate/dbgate",
+    "documentation": "https://docs.dbgate.io",
     "source_code": "https://github.com/dbgate/dbgate",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/dbgate.webp",
     "issues": "https://github.com/dbgate/dbgate/issues",
@@ -101,16 +101,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/dbgate/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://demo.dbgate.org",
     "username": null,
     "password": null
   }

@@ -1,0 +1,47 @@
+# ===============================
+# Docker Compose (DomainMOD)
+# ===============================
+# host: http://localhost:8080
+# username: admin
+# password: admin (change after first login)
+
+services:
+  db:
+    image: mariadb:10.11
+    container_name: domainmod-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: replace_with_strong_password
+      MYSQL_DATABASE: domainmod
+      MYSQL_USER: domainmod
+      MYSQL_PASSWORD: replace_with_strong_password
+    volumes:
+      - domainmod_db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL","mysqladmin ping -h localhost -uroot -p${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    image: domainmod/domainmod:latest
+    container_name: domainmod-app
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      DOMAINMOD_DATABASE_HOST: db
+      DOMAINMOD_DATABASE: domainmod
+      DOMAINMOD_USER: domainmod
+      DOMAINMOD_PASSWORD: replace_with_strong_password
+      TZ: UTC
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      # If you want to persist config & uploaded files (optional)
+      - domainmod_data:/var/www/html
+
+volumes:
+  domainmod_db:
+  domainmod_data:

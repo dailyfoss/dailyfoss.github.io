@@ -23,12 +23,15 @@
   },
   "resources": {
     "website": "https://dashlit.cwec.dev/",
-    "documentation": "https://github.com/codewec/dashlit",
+    "documentation": "https://dashlit.cwec.dev/guide/getting-started.html",
     "source_code": "https://github.com/codewec/dashlit",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/dashlit.webp",
     "issues": "https://github.com/codewec/dashlit/issues",
     "releases": "https://github.com/codewec/dashlit/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/dashlit-homepage.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/dashlit-dashboard.png"
+    ]
   },
   "features": [
     {
@@ -95,16 +98,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/dashlit/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://demo.dashlit.cwec.dev",
     "username": null,
     "password": null
   }

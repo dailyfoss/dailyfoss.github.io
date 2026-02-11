@@ -1,0 +1,65 @@
+# ===============================
+# Docker Compose (Endurain)
+# ===============================
+# host: http://localhost:8080
+# username: admin (default demo)
+# password: admin (default demo)
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: endurain-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: endurain
+      POSTGRES_USER: endurain
+      POSTGRES_PASSWORD: replace_with_strong_password
+    volumes:
+      - endurain_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U endurain"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  endurain:
+    image: ghcr.io/endurain-project/endurain:latest
+    container_name: endurain
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8080:8000"
+    environment:
+      # App basics
+      TZ: UTC
+      ENVIRONMENT: production
+      ENDURAIN_HOST: http://localhost:8080
+      BEHIND_PROXY: "false"
+      LOG_LEVEL: info
+
+      # PostgreSQL
+      DB_HOST: postgres
+      DB_PORT: "5432"
+      DB_USER: endurain
+      DB_PASSWORD: replace_with_strong_password
+      DB_DATABASE: endurain
+
+      # Secrets (must be unique & secure)
+      SECRET_KEY: replace_with_hex_64_secret
+      FERNET_KEY: replace_with_fernet_key
+
+      # Reverse geocoding (optional, adjust if using other provider)
+      REVERSE_GEO_PROVIDER: nominatim
+      PHOTON_API_HOST: photon.komoot.io
+      NOMINATIM_API_HOST: nominatim.openstreetmap.org
+
+    volumes:
+      - endurain_data:/app/backend/data
+      - endurain_logs:/app/backend/logs
+
+volumes:
+  endurain_pg:
+  endurain_data:
+  endurain_logs:

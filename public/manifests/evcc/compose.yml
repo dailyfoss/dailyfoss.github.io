@@ -1,0 +1,31 @@
+# ===============================
+# Docker Compose (EVCC)
+# ===============================
+# host UI: http://localhost:7070
+# access via dashboard + REST API
+
+services:
+  evcc:
+    image: evcc/evcc:latest
+    container_name: evcc
+    restart: unless-stopped
+
+    ports:
+      - "7070:7070"   # dashboard & API
+
+    environment:
+      TZ: UTC
+
+      # Optional: log level (info, debug, warn)
+      LOG_LEVEL: info
+
+      # Optional metrics / telemetry
+      # METRICS_ADDR: ":9090"
+
+    volumes:
+      # Mount your EVCC configuration (config.yaml inside this folder)
+      - ./config:/etc/evcc
+      # Persist data/store
+      - evcc_data:/etc/evcc/data
+
+    command: ["evcc", "serve", "--port", "7070"]

@@ -1,0 +1,32 @@
+# ===============================
+# Docker Compose (DumbDo)
+# ===============================
+# host: http://localhost:3000
+# username: (not required)
+# password / PIN: replace_with_secure_pin
+
+services:
+  dumbdo:
+    image: dumbwareio/dumbdo:latest
+    container_name: dumbdo
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      DUMBDO_PIN: replace_with_secure_pin
+      DUMBDO_SITE_TITLE: DumbDo
+      NODE_ENV: production
+
+      # Optional security
+      # ALLOWED_ORIGINS: http://localhost:3000
+    volumes:
+      - dumbdo_data:/app/data
+    healthcheck:
+      test: ["CMD-SHELL","wget --spider -q http://127.0.0.1:3000 || exit 1"]
+      interval: 20s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+volumes:
+  dumbdo_data:

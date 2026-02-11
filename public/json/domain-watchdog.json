@@ -23,12 +23,16 @@
   },
   "resources": {
     "website": "https://domainwatchdog.eu",
-    "documentation": "https://github.com/maelgangloff/domain-watchdog",
+    "documentation": "https://domainwatchdog.eu/en/features",
     "source_code": "https://github.com/maelgangloff/domain-watchdog",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/domain-watchdog.webp",
     "issues": "https://github.com/maelgangloff/domain-watchdog/issues",
     "releases": "https://github.com/maelgangloff/domain-watchdog/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/domain-watchdog-domain.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/domain-watchdog-statistic.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/domain-watchdog-tld.png"
+    ]
   },
   "features": [
     {
@@ -95,12 +99,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/domain-watchdog/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
@@ -111,7 +117,7 @@
     }
   },
   "demo": {
-    "url": null,
+    "url": "https://demo.domainwatchdog.eu",
     "username": null,
     "password": null
   }

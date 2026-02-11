@@ -1,0 +1,40 @@
+# ===============================
+# Docker Compose (Dub)
+# ===============================
+# host: http://localhost:3000
+# username: (create via UI/admin config)
+# password: (create via UI/admin config)
+
+services:
+  dub:
+    image: ghcr.io/dubinc/dub:latest
+    container_name: dub
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      # App config
+      APP_HOST: "0.0.0.0"
+      APP_PORT: "3000"
+      NODE_ENV: production
+
+      # Storage paths
+      STORAGE_PATH: /data/uploads
+      CONFIG_PATH: /data/config
+
+      # Optional Secrets
+      # If Dub supports JWT or admin auth in future, set keys here:
+      # SECRET_KEY: replace_with_very_long_secret
+
+      # Optional external database (PostgreSQL example):
+      # DB_TYPE: postgres
+      # DB_HOST: postgres
+      # DB_PORT: "5432"
+      # DB_USER: dub
+      # DB_PASSWORD: replace_with_strong_password
+      # DB_NAME: dub
+    volumes:
+      - dub_data:/data
+
+volumes:
+  dub_data:

@@ -1,0 +1,30 @@
+# ===============================
+# Docker Compose (ebook2audiobook)
+# ===============================
+# host: http://localhost:7860
+# username/password: (none — UI is open by default)
+
+services:
+  ebook2audiobook:
+    image: athomasson2/ebook2audiobook:latest
+    container_name: ebook2audiobook
+    restart: unless-stopped
+    ports:
+      - "7860:7860"
+    environment:
+      # Set to "cpu" for CPU only (default), or a specific GPU tag
+      # Supported options depend on image variants:
+      # for example: TORCH_VERSION=cpu, cuda118, cuda121, etc.
+      TORCH_VERSION: cpu
+      TZ: UTC
+    # Uncomment below if you want realtime logs and interactivity:
+    # tty: true
+    # stdin_open: true
+    volumes:
+      # Mount a host folder where you will put ebooks and see generated audio
+      - ebook2audiobook_ebooks:/app/ebooks
+      - ebook2audiobook_output:/app/audiobooks
+
+volumes:
+  ebook2audiobook_ebooks:
+  ebook2audiobook_output:

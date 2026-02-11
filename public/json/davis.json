@@ -28,7 +28,11 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/davis.webp",
     "issues": "https://github.com/tchapi/davis/issues",
     "releases": "https://github.com/tchapi/davis/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/davis-dashboard.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/davis-sharing.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/davis-user.png"
+    ]
   },
   "features": [
     {
@@ -95,12 +99,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/davis/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

@@ -1,0 +1,83 @@
+# ===============================
+# Docker Compose (DockFlare)
+# ===============================
+# host: http://localhost:5000
+# username: (create inside UI)
+# password: (create inside UI)
+
+services:
+  docker-socket-proxy:
+    image: tecnativa/docker-socket-proxy:0.4.1
+    container_name: dockflare-socket-proxy
+    restart: unless-stopped
+    logging:
+      driver: "none"
+    environment:
+      DOCKER_HOST: unix:///var/run/docker.sock
+      CONTAINERS: "1"
+      EVENTS: "1"
+      NETWORKS: "1"
+      IMAGES: "1"
+      POST: "1"
+      PING: "1"
+      INFO: "1"
+      EXEC: "1"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - dockflare-internal
+
+  dockflare-init:
+    image: alpine:3.20
+    container_name: dockflare-init
+    restart: "no"
+    command: ["sh","-c","chown -R 65532:65532 /app/data"]
+    volumes:
+      - dockflare_data:/app/data
+    networks:
+      - dockflare-internal
+
+  redis:
+    image: redis:7-alpine
+    container_name: dockflare-redis
+    restart: unless-stopped
+    command: ["redis-server","--save","","--appendonly","no"]
+    logging:
+      driver: "none"
+    volumes:
+      - dockflare_redis:/data
+    networks:
+      - dockflare-internal
+
+  dockflare:
+    image: alplat/dockflare:stable
+    container_name: dockflare
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      REDIS_URL: redis://redis:6379/0
+      REDIS_DB_INDEX: "0"
+      DOCKER_HOST: tcp://docker-socket-proxy:2375
+      # LOG_LEVEL: DEBUG
+    volumes:
+      - dockflare_data:/app/data
+    depends_on:
+      docker-socket-proxy:
+        condition: service_started
+      dockflare-init:
+        condition: service_completed_successfully
+      redis:
+        condition: service_started
+    networks:
+      - cloudflare-net
+      - dockflare-internal
+
+volumes:
+  dockflare_data:
+  dockflare_redis:
+
+networks:
+  cloudflare-net:
+    external: true
+  dockflare-internal:

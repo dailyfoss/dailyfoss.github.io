@@ -1,0 +1,24 @@
+# ===============================
+# Docker Compose (DbGate)
+# ===============================
+# host: http://localhost:3000
+# username: (set inside DbGate connection)
+# password: (set inside DbGate connection)
+
+services:
+  dbgate:
+    image: dbgate/dbgate:latest
+    container_name: dbgate
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      # Run as web app
+      CONNECTIONS: "[]"
+      LOGINS: "[]"
+      THEME: "dark"
+    volumes:
+      - dbgate_data:/root/.dbgate
+
+volumes:
+  dbgate_data:

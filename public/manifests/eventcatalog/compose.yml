@@ -1,0 +1,31 @@
+# ===============================
+# Docker Compose (EventCatalog)
+# ===============================
+# host: http://localhost:8000
+# username/password: (UI doesn’t require logins by default)
+
+services:
+  eventcatalog:
+    image: ghcr.io/event-catalog/eventcatalog:latest
+    container_name: eventcatalog
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      # Optional: change base path if using reverse proxy
+      BASE_URL: http://localhost:8000
+
+      # Directory inside container with event definitions
+      # (required unless you bake definitions into your image)
+      PATH_TO_DOCS: /app/docs
+
+      # Optional settings
+      LOG_LEVEL: info
+    volumes:
+      # Mount your local event definitions directory
+      - ./docs:/app/docs:ro
+      # Optionally persist app state (caching & UI settings)
+      - eventcatalog_data:/app/.eventcatalog
+
+volumes:
+  eventcatalog_data:

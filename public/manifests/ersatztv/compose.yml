@@ -1,0 +1,32 @@
+# ===============================
+# Docker Compose (Ersatztv)
+# ===============================
+# host:     http://localhost:8409
+
+services:
+  ersatztv:
+    image: ghcr.io/ersatztv/ersatztv
+    container_name: ersatztv
+    environment:
+      - TZ=America/Chicago # Edit for your timezone, list can be found https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+      # UNCOMMENT THESE LINES TO ENABLE NVIDIA GPU PASSTHROUGH
+      #- NVIDIA_VISIBLE_DEVICES:all
+      #- NVIDIA_DRIVER_CAPABILITIES:all
+    #deploy:
+    #    resources:
+    #      reservations:
+    #        devices:
+    #          - driver: nvidia
+    #            count: 1
+    #            capabilities: [gpu]
+    ports: # This maps port from host:container
+      - "8409:8409"
+    volumes:
+     # Required: Configuration data (must be writable)
+      - /path/to/config:/config
+     # Required: media directories - Where your media files are stored. Use :ro at the end of the path to limit container to Read-Only
+      - /path/to/local/media:/path/to/local/media:ro
+     # tmpfs is optional but recommended: Limits writing to SSD/disk by using RAM for transcode files. Comment out to disable
+    tmpfs:
+      - /transcode
+    restart: unless-stopped

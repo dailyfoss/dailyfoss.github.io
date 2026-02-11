@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://easyappointments.org",
-    "documentation": "https://github.com/alextselegidis/easyappointments",
+    "documentation": "https://easyappointments.org/documentation",
     "source_code": "https://github.com/alextselegidis/easyappointments",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/easy-appointments.webp",
     "issues": "https://github.com/alextselegidis/easyappointments/issues",
     "releases": "https://github.com/alextselegidis/easyappointments/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/easy-appointments-homepage.png"
+    ]
   },
   "features": [
     {
@@ -101,12 +103,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/easy-appointments/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
@@ -117,7 +121,7 @@
     }
   },
   "demo": {
-    "url": null,
+    "url": "https://demo.easyappointments.org",
     "username": null,
     "password": null
   }

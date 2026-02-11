@@ -1,0 +1,27 @@
+# ===============================
+# Docker Compose (Fasten OnPrem)
+# ===============================
+# host: http://localhost:8080
+# username: create via app UI
+# password: create via app UI
+
+services:
+  fasten-onprem:
+    image: ghcr.io/fastenhealth/fasten-onprem:main
+    container_name: fasten_onprem
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      # persistent database & cache
+      - fasten_db:/opt/fasten/db
+      - fasten_cache:/opt/fasten/cache
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--spider", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  fasten_db:
+  fasten_cache:

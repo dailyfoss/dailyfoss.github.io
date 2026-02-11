@@ -1,0 +1,31 @@
+# ===============================
+# Docker Compose (Feedlynx)
+# ===============================
+# host: http://localhost:8001
+# username: none
+# password: none
+
+services:
+  feedlynx:
+    image: wezm/feedlynx:latest
+    container_name: feedlynx
+    restart: unless-stopped
+    ports:
+      - "8001:8001"
+    environment:
+      # REQUIRED: strong tokens
+      FEEDLYNX_PRIVATE_TOKEN: ""
+      FEEDLYNX_FEED_TOKEN: ""
+      # optional overrides (defaults are valid)
+      FEEDLYNX_ADDRESS: "0.0.0.0"
+      FEEDLYNX_PORT: "8001"
+    volumes:
+      - feedlynx_data:/data
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--spider", "http://localhost:8001/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  feedlynx_data:

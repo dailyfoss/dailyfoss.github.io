@@ -1,0 +1,31 @@
+# ===============================
+# Docker Compose (Electerm Web)
+# ===============================
+# host: http://localhost:8082
+# username: (set below if auth enabled)
+# password: (set below if auth enabled)
+
+services:
+  electerm-web:
+    image: zxdong262/electerm-web:latest
+    container_name: electerm-web
+    restart: unless-stopped
+    ports:
+      - "8082:5577"
+    environment:
+      # Listen host inside container
+      HOST: 0.0.0.0
+      # Optional authentication (enable and customize)
+      # ENABLE_AUTH: "1"
+      # SERVER_SECRET: replace_with_very_long_random_secret
+      # SERVER_PASS: replace_with_secure_password
+    volumes:
+      - electerm_web_data:/home/electerm/data
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:5577"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  electerm_web_data:

@@ -23,12 +23,19 @@
   },
   "resources": {
     "website": "https://domain-locker.com",
-    "documentation": "https://github.com/Lissy93/domain-locker",
+    "documentation": "https://domain-locker.com/about",
     "source_code": "https://github.com/Lissy93/domain-locker",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/domain-locker.webp",
     "issues": "https://github.com/Lissy93/domain-locker/issues",
     "releases": "https://github.com/Lissy93/domain-locker/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/domain-locker-dashboard.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/domain-locker-ip-address.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/domain-locker-registrar.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/domain-locker-statistics.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/domain-locker-valuation.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/domain-locker-web-monitoring.png"
+    ]
   },
   "features": [
     {
@@ -95,12 +102,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/domain-locker/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
@@ -111,8 +120,8 @@
     }
   },
   "demo": {
-    "url": null,
-    "username": null,
-    "password": null
+    "url": "https://demo.domain-locker.com",
+    "username": "demo@domain-locker.com",
+    "password": "domainlocker"
   }
 }

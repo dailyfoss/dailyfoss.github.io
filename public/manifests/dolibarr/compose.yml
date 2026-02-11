@@ -1,0 +1,46 @@
+# ===============================
+# Docker Compose (Dolibarr)
+# ===============================
+# host: http://localhost:8080
+# username: admin
+# password: (set via web UI)
+
+services:
+  db:
+    image: mariadb:10.11
+    container_name: dolibarr-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: replace_with_strong_password
+      MYSQL_DATABASE: dolibarr
+      MYSQL_USER: dolibarr
+      MYSQL_PASSWORD: replace_with_strong_password
+    volumes:
+      - dolibarr_db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL","mysqladmin ping -h localhost -u root -p$${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    image: dolibarr/dolibarr:latest
+    container_name: dolibarr-app
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      DOLI_DB_HOST: db
+      DOLI_DB_PORT: 3306
+      DOLI_DB_USER: dolibarr
+      DOLI_DB_PASSWORD: replace_with_strong_password
+      DOLI_DB_NAME: dolibarr
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - dolibarr_data:/var/www/html/documents
+
+volumes:
+  dolibarr_db:
+  dolibarr_data:
