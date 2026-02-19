@@ -1,0 +1,44 @@
+# ===============================
+# Docker Compose (FilePizza)
+# ===============================
+# host: http://localhost:8080
+# username: none
+# password: none
+
+services:
+
+  filepizza:
+    image: kern/filepizza:latest
+    container_name: filepizza
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: "8080"
+      # Optional Redis support for channel metadata
+      REDIS_URL: ""
+      # TURN/STUN support (optional)
+      COTURN_ENABLED: "false"
+      TURN_HOST: ""
+      TURN_REALM: "file.pizza"
+      STUN_SERVER: "stun:stun.l.google.com:19302"
+    healthcheck:
+      test: ["CMD-SHELL", "wget --quiet --spider http://localhost:8080/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  redis:
+    image: redis:7-alpine
+    container_name: filepizza_redis
+    restart: unless-stopped
+    volumes:
+      - filepizza_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  filepizza_redis_data:

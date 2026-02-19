@@ -1,0 +1,29 @@
+# ===============================
+# Docker Compose (GiftManager)
+# ===============================
+# host: http://localhost:5000
+# username: create via web UI
+# password: create via web UI
+
+services:
+  giftmanager:
+    image: icbest/giftmanager:latest
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    volumes:
+      - giftmanager-data:/app/data
+    environment:
+      # (Optional) Flask environment mode
+      FLASK_ENV: "production"
+      # (Optional) set to "0.0.0.0:5000" if needed
+      GIFTMANAGER_HOST: "0.0.0.0"
+      GIFTMANAGER_PORT: "5000"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:5000/ >/dev/null 2>&1 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  giftmanager-data:

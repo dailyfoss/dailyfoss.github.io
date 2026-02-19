@@ -1,0 +1,87 @@
+# ===============================
+# Docker Compose (Friendica)
+# ===============================
+# host: http://localhost:8080
+# admin username: created via web UI
+# admin password: created via web UI
+# email: (set in environment to enable outgoing mail)
+
+services:
+  # Database for Friendica
+  db:
+    image: mariadb:10.11
+    container_name: friendica_db
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=YourRootPassHere
+      - MYSQL_DATABASE=friendica
+      - MYSQL_USER=friendica
+      - MYSQL_PASSWORD=YourDBPassHere
+    volumes:
+      - friendica_db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -p$${MYSQL_ROOT_PASSWORD}"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  # Caching layer (optional but recommended)
+  redis:
+    image: redis:7-alpine
+    container_name: friendica_redis
+    restart: unless-stopped
+    command: ["redis-server", "--save", "60", "1", "--loglevel", "warning"]
+    volumes:
+      - friendica_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  # Friendica application server
+  friendica:
+    image: friendica/friendica:latest
+    container_name: friendica
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      # Database config
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_NAME=friendica
+      - DB_USER=friendica
+      - DB_PASS=YourDBPassHere
+
+      # Redis cache
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+
+      # Public URL of your instance
+      - FRIENDICA_BASEURL=http://localhost:8080
+
+      # Email outgoing (optional but recommended)
+      # - SMTP_HOST=smtp.example.com
+      # - SMTP_PORT=587
+      # - SMTP_USER=user@example.com
+      # - SMTP_PASS=EmailPassHere
+      # - SMTP_SECURE=yes
+    volumes:
+      - friendica_data:/var/www/html
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:80 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+volumes:
+  friendica_db_data:
+  friendica_redis_data:
+  friendica_data:

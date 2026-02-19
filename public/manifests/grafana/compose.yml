@@ -1,0 +1,28 @@
+# ===============================
+# Docker Compose (Grafana)
+# ===============================
+# host: http://localhost:3000
+# username: admin
+# password: admin (default, will need to change)
+
+services:
+  grafana:
+    image: grafana/grafana:latest
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      # Default admin password (change in production)
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      # Prevent user signup by default
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana-storage:/var/lib/grafana
+    healthcheck:
+      test: ["CMD-SHELL", "wget --quiet --tries=1 --spider http://localhost:3000/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  grafana-storage:

@@ -1,0 +1,46 @@
+# ===============================
+# Docker Compose (GrowChief)
+# ===============================
+# host: http://localhost:3000
+# username: created via UI/API
+# password: created via UI/API
+
+services:
+  postgres:
+    image: postgres:15
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=growchief
+      - POSTGRES_USER=growchief
+      - POSTGRES_PASSWORD=ChangeThisStrongPassword
+    volumes:
+      - growchief-postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U growchief -d growchief"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  growchief:
+    image: ghcr.io/growchief/growchief:v0.3.0
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgresql://growchief:ChangeThisStrongPassword@postgres:5432/growchief
+      - APP_SECRET=ReplaceWithVeryStrongRandomSecret
+      - NODE_ENV=production
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - growchief-data:/app/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget --quiet --tries=1 --spider http://localhost:3000/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  growchief-postgres:
+  growchief-data:

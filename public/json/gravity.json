@@ -34,7 +34,12 @@
       "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gravity_dns_records.png",
       "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gravity_dns_zones.png",
       "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gravity_grafana.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gravity_overview.png"
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gravity_overview.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gravity-cluster_nodes.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gravity-dhcp_leases.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gravity-dns_records.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gravity-dns_zones.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gravity-overview.png"
     ]
   },
   "features": [
@@ -95,12 +100,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/gravity/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

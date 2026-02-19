@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "Server Side License 1.0",
     "version": null,
     "date_app_added": "2025-11-23",
     "date_last_released": null,
@@ -23,12 +23,16 @@
   },
   "resources": {
     "website": "https://www.graylog.org",
-    "documentation": "https://github.com/Graylog2/graylog2-server",
+    "documentation": "http://docs.graylog.org",
     "source_code": "https://github.com/Graylog2/graylog2-server",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/graylog.webp",
     "issues": "https://github.com/Graylog2/graylog2-server/issues",
     "releases": null,
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/graylog-homepage.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/graylog-dashboard-2.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/graylog-dashboard.png"
+    ]
   },
   "features": [
     {
@@ -95,12 +99,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/graylog/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

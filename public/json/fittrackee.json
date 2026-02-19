@@ -22,13 +22,15 @@
     "github_releases_this_year": 8
   },
   "resources": {
-    "website": "https://docs.fittrackee.org",
-    "documentation": "https://github.com/SamR1/FitTrackee",
+    "website": "https://fittrackee.org",
+    "documentation": "hhttps://docs.fittrackee.org",
     "source_code": "https://github.com/SamR1/FitTrackee",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/fittrackee.webp",
     "issues": "https://github.com/SamR1/FitTrackee/issues",
     "releases": "https://github.com/SamR1/FitTrackee/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/fittrackee-dashboard.png"
+    ]
   },
   "features": [
     {
@@ -92,12 +94,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/fittrackee/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

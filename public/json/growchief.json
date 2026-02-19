@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://growchief.com",
-    "documentation": "https://github.com/growchief/growchief",
+    "documentation": "https://docs.growchief.com/introduction",
     "source_code": "https://github.com/growchief/growchief",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/growchief.webp",
     "issues": "https://github.com/growchief/growchief/issues",
     "releases": "https://github.com/growchief/growchief/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/growchief-homepage.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/growchief/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

@@ -1,0 +1,45 @@
+# ===============================
+# Docker Compose (FileRise)
+# ===============================
+# host: http://localhost:8080
+# username: (create via UI on first setup)
+# password: (create via UI on first setup)
+
+services:
+  filerise:
+    image: error311/filerise-docker:latest
+    container_name: filerise
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      # Timezone for UI and logs
+      TIMEZONE: "UTC"
+
+      # Format for file timestamps
+      DATE_TIME_FORMAT: "Y-m-d H:i:s"
+
+      # Maximum allowed upload size (adjust as needed)
+      TOTAL_UPLOAD_SIZE: "10G"
+
+      # If set true, the container will chown mounted directories on start
+      CHOWN_ON_START: "true"
+
+      # If set true, scan and index files on startup
+      SCAN_ON_START: "true"
+
+      # Security key used for persistent login tokens
+      PERSISTENT_TOKENS_KEY: "replace_with_strong_random_string"
+
+      # Set to "true" if behind HTTPS reverse proxy
+      SECURE: "false"
+
+    volumes:
+      - filerise_uploads:/var/www/uploads
+      - filerise_users:/var/www/users
+      - filerise_metadata:/var/www/metadata
+
+volumes:
+  filerise_uploads:
+  filerise_users:
+  filerise_metadata:

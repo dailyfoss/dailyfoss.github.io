@@ -1,0 +1,78 @@
+# ===============================
+# Docker Compose (Frames)
+# ===============================
+# host: http://localhost:3000
+# username: create via the UI
+# password: create via the UI
+
+services:
+  frames:
+    image: elevenam/frames:latest
+    container_name: frames
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      # REQUIRED: PostgreSQL connection URLs
+      - DATABASE_URL=postgresql://frames:ChangeDBPassword@postgres:5432/frames
+      - DIRECT_DATABASE_URL=postgresql://frames:ChangeDBPassword@postgres:5432/frames
+
+      # REQUIRED: Redis setup
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_TTL=86400
+      - REDIS_DB=0
+
+      # REQUIRED: JWT secret
+      - JWT_SECRET=ChangeThisToAStrongSecret
+
+      # Optional but recommended for media metadata:
+      # - TMDB_API_KEY=your_tmdb_api_key_here
+      # - FAN_ART_API_KEY=your_fanart_api_key_here
+      # - OPEN_AI_API_KEY=your_openai_api_key_here
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      # mount your media files (local storage, etc.)
+      - "/path/to/your/media:/media:ro"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:3000/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+  postgres:
+    image: pgvector/pgvector:pg14
+    container_name: frames_postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=frames
+      - POSTGRES_PASSWORD=ChangeDBPassword
+      - POSTGRES_DB=frames
+    volumes:
+      - frames_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U frames -d frames"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:alpine
+    container_name: frames_redis
+    restart: unless-stopped
+    volumes:
+      - frames_redisdata:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  frames_pgdata:
+  frames_redisdata:

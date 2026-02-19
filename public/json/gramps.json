@@ -23,12 +23,20 @@
   },
   "resources": {
     "website": "https://gramps-project.org/",
-    "documentation": "https://github.com/gramps-project/gramps",
+    "documentation": "https://www.gramps-project.org/wiki/index.php/Gramps_6.0_Wiki_Manual",
     "source_code": "https://github.com/gramps-project/gramps",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/gramps.webp",
     "issues": "https://github.com/gramps-project/gramps/issues",
     "releases": "https://github.com/gramps-project/gramps/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gramps-web-blog.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gramps-web-dna.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gramps-web-fan.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gramps-web-map.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gramps-web-search.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gramps-web-tag.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gramps-web-tasks.png"
+    ]
   },
   "features": [
     {
@@ -94,12 +102,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/gramps/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

@@ -28,7 +28,9 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/ghostfile.webp",
     "issues": "https://github.com/jon6fingrs/ghostfile/issues",
     "releases": "https://github.com/jon6fingrs/ghostfile/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/ghostfile-webui.png"
+    ]
   },
   "features": [
     {
@@ -94,12 +96,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/ghostfile/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

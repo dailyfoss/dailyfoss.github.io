@@ -28,7 +28,14 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/giftmanager.webp",
     "issues": "https://github.com/icbestCA/giftmanager/issues",
     "releases": "https://github.com/icbestCA/giftmanager/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/giftmanager-add-ideas.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/giftmanager-list-ideas.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/giftmanager-manage-groups.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/giftmanager-manage-users.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/giftmanager-setup-oidc.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/giftmanager-users.png"
+    ]
   },
   "features": [
     {
@@ -94,16 +101,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/giftmanager/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://giftmanagerdemo.pages.dev/dashboard.htm",
     "username": null,
     "password": null
   }

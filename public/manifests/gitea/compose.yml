@@ -1,30 +1,54 @@
+# ===============================
+# Docker Compose (Gitea)
+# ===============================
+# host: http://localhost:3000
+# username: (create via UI on first launch)
+# password: (create via UI on first launch)
+
 services:
-  server:
-    image: gitea/gitea:1.22.2-rootless
+  db:
+    image: mariadb:11
+    restart: unless-stopped
     environment:
-+      - GITEA__database__DB_TYPE=postgres
-+      - GITEA__database__HOST=db:5432
-+      - GITEA__database__NAME=gitea
-+      - GITEA__database__USER=gitea
-+      - GITEA__database__PASSWD=gitea
-    restart: always
+      MYSQL_ROOT_PASSWORD: strong_root_password
+      MYSQL_DATABASE: gitea
+      MYSQL_USER: gitea
+      MYSQL_PASSWORD: strong_gitea_password
     volumes:
-      - ./data:/var/lib/gitea
-      - ./config:/etc/gitea
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
+      - gitea-db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -pstrong_gitea_password --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  gitea:
+    image: gitea/gitea:latest
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      USER_UID: "1000"
+      USER_GID: "1000"
+      DB_TYPE: mysql
+      DB_HOST: db:3306
+      DB_NAME: gitea
+      DB_USER: gitea
+      DB_PASSWD: strong_gitea_password
+      APP_NAME: "Gitea"
+      ROOT_URL: "http://localhost:3000"
+    volumes:
+      - gitea-data:/data
     ports:
       - "3000:3000"
-      - "2222:2222"
-+    depends_on:
-+      - db
-+
-+  db:
-+    image: postgres:14
-+    restart: always
-+    environment:
-+      - POSTGRES_USER=gitea
-+      - POSTGRES_PASSWORD=gitea
-+      - POSTGRES_DB=gitea
-+    volumes:
-+      - ./postgres:/var/lib/postgresql/data
+      - "222:22"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000/healthz || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  gitea-db:
+  gitea-data:

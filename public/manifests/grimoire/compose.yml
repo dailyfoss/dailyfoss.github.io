@@ -1,35 +1,31 @@
+# ===============================
+# Docker Compose (Grimoire)
+# ===============================
+# host: http://localhost:5173
+# username: created via UI on first run
+# password: created via UI on first run
+
 services:
-  pocketbase:
-    image: spectado/pocketbase:0.22.10
-    container_name: grimoire-pocketbase
-    restart: unless-stopped
-    ports:
-      - '8090:80'
-    volumes:
-      - ./pb_data:/pb_data
-      - ./pb_migrations:/pb_migrations/
-    healthcheck:
-      test: wget --no-verbose --tries=1 --spider http://localhost:80/api/health || exit 1
-      interval: 5s
-      timeout: 5s
-      retries: 5
-    env_file: .env
-    depends_on:
-      - grimoire
   grimoire:
     image: goniszewski/grimoire:latest
-    container_name: grimoire
     restart: unless-stopped
-    env_file: .env
-    volumes:
-      - ./pb_migrations:/app/pb_migrations/
-    build:
-      context: .
-      dockerfile: Dockerfile
-    healthcheck:
-      test: wget --no-verbose --tries=1 --spider http://localhost:$PORT/api/health || exit 1
-      interval: 5s
-      timeout: 5s
-      retries: 5
     ports:
-      - '$PORT:$PORT'
+      - "5173:5173"
+    environment:
+      # Grimoire listens on this port internally
+      - PORT=5173
+      # Allow plain HTTP (disable HTTPS only if using reverse proxy)
+      - PUBLIC_HTTPS_ONLY=false
+      # Allow user signup via UI (toggle false to disable)
+      - PUBLIC_SIGNUP_DISABLED=false
+    volumes:
+      # Persistent data (bookmarks, users, metadata, etc.)
+      - grimoire-data:/app/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget --quiet --tries=1 --spider http://localhost:5173/api/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  grimoire-data:

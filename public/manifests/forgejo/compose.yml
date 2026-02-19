@@ -1,17 +1,59 @@
+# ===============================
+# Docker Compose (Forgejo)
+# ===============================
+# host: http://localhost:3000
+# username: create via web UI on first run
+# password: create via web UI on first run
+
 services:
-  server:
-    image: codeberg.org/forgejo/forgejo:8
+  forgejo:
+    image: codeberg.org/forgejo/forgejo:latest
     container_name: forgejo
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+      # Optionally expose SSH for Git operations
+      # - "222:22"
     environment:
+      # user/group for container file ownership
       - USER_UID=1000
       - USER_GID=1000
-    restart: always
-    networks:
-      - forgejo
+      # SQLite is the default DB; volumes below persist /data
+      # If you want MySQL/PostgreSQL instead, uncomment & set:
+      # - FORGEJO__database__DB_TYPE=mysql
+      # - FORGEJO__database__HOST=db:3306
+      # - FORGEJO__database__NAME=forgejo
+      # - FORGEJO__database__USER=forgejo
+      # - FORGEJO__database__PASSWD=forgejo_password
     volumes:
-      - ./forgejo:/data
-      - /etc/timezone:/etc/timezone:ro
+      - forgejo_data:/data
       - /etc/localtime:/etc/localtime:ro
-    ports:
-      - '3000:3000'
-      - '222:22'
+      - /etc/timezone:/etc/timezone:ro
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:3000/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+# Optional database service (uncomment to use)
+#  db:
+#    image: mariadb:10.11
+#    container_name: forgejo_db
+#    restart: unless-stopped
+#    environment:
+#      - MYSQL_ROOT_PASSWORD=YourRootDbPassword
+#      - MYSQL_DATABASE=forgejo
+#      - MYSQL_USER=forgejo
+#      - MYSQL_PASSWORD=forgejo_password
+#    volumes:
+#      - forgejo_db_data:/var/lib/mysql
+#    healthcheck:
+#      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+#      interval: 30s
+#      timeout: 5s
+#      retries: 5
+
+volumes:
+  forgejo_data:
+#  forgejo_db_data:

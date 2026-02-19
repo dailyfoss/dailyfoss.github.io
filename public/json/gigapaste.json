@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": null,
+    "license": "GNU-AGPL 3.0",
     "version": null,
     "date_app_added": "2025-11-23",
     "date_last_released": null,
@@ -24,11 +24,16 @@
   "resources": {
     "website": null,
     "documentation": null,
-    "source_code": "https://github.com/NRicode/GigaPaste",
+    "source_code": "https://github.com/Zhoros/SuperBin",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/gigapaste.webp",
-    "issues": "https://github.com/NRicode/GigaPaste/issues",
+    "issues": "https://github.com/Zhoros/SuperBin",
     "releases": null,
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gigapaste-superbin-another-theme.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gigapaste-superbin-qr-code.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gigapaste-superbin-text-box.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gigapaste-superbin-text-sharing.png"
+    ]
   },
   "features": [
     {
@@ -94,12 +99,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/gigapaste/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

@@ -28,7 +28,12 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/gocron.webp",
     "issues": "https://github.com/flohoss/gocron/issues",
     "releases": "https://github.com/flohoss/gocron/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gocron-filter-dark.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gocron-job-dark.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gocron-jobs-dark.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gocron-terminal-dark.png"
+    ]
   },
   "features": [
     {
@@ -95,12 +100,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/gocron/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

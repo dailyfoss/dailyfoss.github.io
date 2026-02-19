@@ -1,0 +1,30 @@
+# ===============================
+# Docker Compose (Grav CMS)
+# ===============================
+# host: http://localhost:8000
+# username: (set via Grav Admin UI)
+# password: (set via Grav Admin UI)
+
+services:
+  grav:
+    image: lscr.io/linuxserver/grav:latest
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    environment:
+      # Optional: set correct user and group ids for filesystem ownership
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+    volumes:
+      - grav-content:/config
+      - grav-data:/var/www/html
+    healthcheck:
+      test: ["CMD-SHELL", "wget --quiet --tries=1 --spider http://localhost:80 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  grav-content:
+  grav-data:

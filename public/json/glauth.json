@@ -22,13 +22,15 @@
     "github_releases_this_year": 0
   },
   "resources": {
-    "website": "https://github.com/glauth/glauth",
-    "documentation": "https://github.com/glauth/glauth",
+    "website": "https://glauth.github.io",
+    "documentation": "https://glauth.github.io/docs",
     "source_code": "https://github.com/glauth/glauth",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/glauth.webp",
     "issues": "https://github.com/glauth/glauth/issues",
     "releases": "https://github.com/glauth/glauth/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/glauth-homepage.png"
+    ]
   },
   "features": [
     {
@@ -94,12 +96,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/glauth/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

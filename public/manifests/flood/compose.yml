@@ -1,0 +1,70 @@
+# ===============================
+# Docker Compose (Flood)
+# ===============================
+# host: http://localhost:3000 (Flood UI)
+# username: admin (default)
+# password: admin (default — change after first login)
+
+services:
+  rtorrent:
+    image: jesec/rtorrent-rutorrent:latest
+    container_name: flood_rtorrent
+    restart: unless-stopped
+    volumes:
+      - rtorrent_data:/data
+      - rtorrent_watch:/watch
+    environment:
+      - TZ=UTC
+    healthcheck:
+      test: ["CMD-SHELL", "pgrep rtorrent || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  flood:
+    image: jesec/flood:latest
+    container_name: flood_ui
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - FLOOD_DB=mysql
+      - MYSQL_HOST=db
+      - MYSQL_USER=flood
+      - MYSQL_PASSWORD=flood_pass
+      - MYSQL_DATABASE=flood
+      - FLOOD_RTORRENT_SOCKET=/tmp/rtorrent.sock
+    depends_on:
+      - rtorrent
+      - db
+    volumes:
+      - flood_data:/config
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:3000/api/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+  db:
+    image: mysql:8.0
+    container_name: flood_db
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=root_password_here
+      - MYSQL_DATABASE=flood
+      - MYSQL_USER=flood
+      - MYSQL_PASSWORD=flood_pass
+    volumes:
+      - flood_db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  rtorrent_data:
+  rtorrent_watch:
+  flood_data:
+  flood_db_data:

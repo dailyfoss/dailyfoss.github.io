@@ -23,12 +23,15 @@
   },
   "resources": {
     "website": "https://getgrav.org",
-    "documentation": "https://github.com/getgrav/grav",
+    "documentation": "https://learn.getgrav.org",
     "source_code": "https://github.com/getgrav/grav",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/grav.webp",
     "issues": "https://github.com/getgrav/grav/issues",
     "releases": "https://github.com/getgrav/grav/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/grav-homepage.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/grav-content-standard.png"
+    ]
   },
   "features": [
     {
@@ -94,12 +97,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/grav/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

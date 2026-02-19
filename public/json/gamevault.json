@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "CC BY-NC-SA 4.0",
     "version": "1.17.5.0",
     "date_app_added": "2025-11-23",
     "date_last_released": "2025-12-13",
@@ -28,7 +28,12 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/gamevault.webp",
     "issues": "https://github.com/Phalcode/gamevault-app/issues",
     "releases": "https://github.com/Phalcode/gamevault-app/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gamevault-homepage.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gamevault-library.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gamevault-rich-metadata.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/gamevault-store.png"
+    ]
   },
   "features": [
     {
@@ -96,17 +101,19 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/gamevault/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
-    "username": null,
-    "password": null
+    "url": "https://demo.gamevau.lt",
+    "username": "demo",
+    "password": "demodemo"
   }
 }

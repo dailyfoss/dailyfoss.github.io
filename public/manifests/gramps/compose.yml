@@ -1,0 +1,33 @@
+# ===============================
+# Docker Compose (Gramps Web)
+# ===============================
+# host: http://localhost:5449
+# username: created via setup wizard
+# password: created via setup wizard
+
+services:
+  gramps-web:
+    image: ghcr.io/gramps-project/grampsweb:latest
+    restart: unless-stopped
+    ports:
+      - "5449:5000"
+    volumes:
+      - grampsweb-media:/app/media
+      - grampsweb-db:/root/.gramps/grampsdb
+      - grampsweb-users:/app/users
+      - grampsweb-index:/app/indexdir
+      - grampsweb-thumb:/app/thumbnail_cache
+      - grampsweb-secret:/app/secret
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:5000/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  grampsweb-media:
+  grampsweb-db:
+  grampsweb-users:
+  grampsweb-index:
+  grampsweb-thumb:
+  grampsweb-secret:

@@ -1,0 +1,35 @@
+# ===============================
+# Docker Compose (FileSync)
+# ===============================
+# host: http://localhost:80
+# secret: (required — generate once before starting)
+# no username/password, no accounts (WebRTC sharing)
+
+services:
+  filesync:
+    image: polius/filesync:latest
+    container_name: filesync
+    restart: unless-stopped
+    environment:
+      # must be the same as PEERJS secret; see setup notes
+      - SECRET_KEY=<YOUR_BASE64_SECRET>
+      # static auth secret for PeerJS (optional but recommended)
+      - STATIC_AUTH_SECRET=<YOUR_BASE64_SECRET>
+    networks:
+      - filesync_net
+
+  peerjs:
+    image: peerjs/peerjs-server:latest
+    container_name: peerjs
+    restart: unless-stopped
+    networks:
+      - filesync_net
+    command: ["--port", "9000", "--key", "filesync", "--path", "/myapp"]
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:9000/healthz || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+networks:
+  filesync_net:

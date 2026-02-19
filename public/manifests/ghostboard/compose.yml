@@ -1,0 +1,31 @@
+# ===============================
+# Docker Compose (Ghostboard)
+# ===============================
+# host: http://localhost:3000
+# username: (none — auth via Ghost API tokens)
+# password: (none — auth via Ghost API tokens)
+
+services:
+  ghostboard:
+    image: ghcr.io/jon6fingrs/ghostboard:latest
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      # Required — Ghost *Content API* key
+      GHOST_CONTENT_API_KEY: your_ghost_content_api_key
+
+      # Optional — if using Admin API for realtime stats
+      # GHOST_ADMIN_API_KEY: your_ghost_admin_api_key
+
+      # Your Ghost blog URL (must be reachable by Ghostboard)
+      GHOST_API_URL: "http://host.docker.internal:2368"
+
+      # Optional settings
+      # GHOSTBOARD_PORT: "3000"
+      # LOG_LEVEL: "info"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3

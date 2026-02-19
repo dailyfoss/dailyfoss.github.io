@@ -1,10 +1,29 @@
+# ===============================
+# Docker Compose (Gotify)
+# ===============================
+# host: http://localhost:8080
+# username: admin (default)
+# password: (set via env below)
+
 services:
   gotify:
-    image: gotify/server
+    image: gotify/server:latest
+    restart: unless-stopped
     ports:
-      - 8080:80
+      - "8080:80"
     environment:
-      - GOTIFY_DEFAULTUSER_PASS=custom
+      # Sets the initial default admin password
+      # Change this to a secure password before production
+      - GOTIFY_DEFAULTUSER_PASS=ReplaceWithSecurePass
+      # Optional: set timezone for correct timestamps
+      - TZ=UTC
     volumes:
-      - "./gotify_data:/app/data"
-    restart: always
+      - gotify-data:/app/data
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "--quiet", "http://localhost:80/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  gotify-data:

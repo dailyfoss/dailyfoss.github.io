@@ -1,0 +1,33 @@
+# ===============================
+# Docker Compose (GoMFT)
+# ===============================
+# host: http://localhost:8080
+# username: (set via first-time setup UI)
+# password: (set via first-time setup UI)
+
+services:
+  gomft:
+    image: starfleetcptn/gomft:latest
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - gomft-data:/app/data
+      - gomft-backups:/app/backups
+    environment:
+      # Application basics (required)
+      - SERVER_ADDRESS=:8080
+      - DATA_DIR=/app/data
+      - BACKUP_DIR=/app/backups
+      - BASE_URL=http://localhost:8080
+      # SECRET: must be changed for production
+      - JWT_SECRET=replace_with_secure_random
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  gomft-data:
+  gomft-backups:

@@ -22,13 +22,15 @@
     "github_releases_this_year": 0
   },
   "resources": {
-    "website": "https://simounet.github.io/flox/",
-    "documentation": "https://simounet.github.io/flox/",
+    "website": "https://simounet.github.io/flox",
+    "documentation": "https://simounet.github.io/flox",
     "source_code": "https://github.com/Simounet/flox",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/flox.webp",
     "issues": "https://github.com/Simounet/flox/issues",
     "releases": "https://github.com/Simounet/flox/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/flox-screenshot.jpg"
+    ]
   },
   "features": [
     {
@@ -88,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/flox/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

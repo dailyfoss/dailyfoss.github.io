@@ -1,18 +1,29 @@
+# ===============================
+# Docker Compose (Flatnotes)
+# ===============================
+# host: http://localhost:3000
+# username: (none)
+# password: (none; optional authentication via reverse proxy or app layer)
+
 services:
   flatnotes:
-    container_name: flatnotes
     image: dullage/flatnotes:latest
-    environment:
-      PUID: 1000
-      PGID: 1000
-      FLATNOTES_AUTH_TYPE: "password"
-      FLATNOTES_USERNAME: "user"
-      FLATNOTES_PASSWORD: "changeMe!"
-      FLATNOTES_SECRET_KEY: "aLongRandomSeriesOfCharacters"
-    volumes:
-      - "./data:/data"
-      # Optional. Allows you to save the search index in a different location:
-      # - "./index:/data/.flatnotes"
-    ports:
-      - "8080:8080"
+    container_name: flatnotes
     restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      # Optional base URL your app will use; adjust if behind proxy
+      - BASE_URL=http://localhost:3000
+    volumes:
+      # persist application data (SQLite DB, uploaded files, etc.)
+      - flatnotes_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:3000/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  flatnotes_data:

@@ -1,0 +1,34 @@
+# ===============================
+# Docker Compose (Gravity)
+# ===============================
+# host: http://<host_ip>:8008
+# username: (printed in logs first start)
+# password: (printed in logs first start)
+
+services:
+  gravity:
+    image: ghcr.io/beryju/gravity:stable
+    restart: unless-stopped
+    # MUST use host network for DNS + DHCP services
+    network_mode: "host"
+    environment:
+      # unique instance name if clustered; adjust for each node
+      - INSTANCE_IDENTIFIER=gravity-node
+      # specify DNS/DHCP/etc roles (default includes DNS & DHCP & API & etcd)
+      - BOOTSTRAP_ROLES=dns;dhcp;api;etcd;monitoring;tsdb;tftp;discovery
+      # advertise API listen address
+      - INSTANCE_LISTEN=0.0.0.0
+      # optional: set admin password (random if unset)
+      # - ADMIN_PASSWORD=ReplaceWithSecurePass
+    volumes:
+      - gravity-data:/data
+      - gravity-logs:/var/log/gravity
+    healthcheck:
+      test: ["CMD-SHELL", "wget --quiet --tries=1 --spider http://localhost:8008/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  gravity-data:
+  gravity-logs:

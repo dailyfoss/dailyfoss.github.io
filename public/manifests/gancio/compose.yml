@@ -1,41 +1,52 @@
+# ===============================
+# Docker Compose (Gancio)
+# ===============================
+# host: http://localhost:13120
+# username: (create via UI)
+# password: (create via UI)
+
 services:
   db:
-    image: postgres:15
-    container_name: postgres
-    volumes:
-      - ./postgres:/var/lib/postgresql/data
-      - /etc/localtime:/etc/localtime:ro
+    image: postgres:16
+    restart: unless-stopped
     environment:
-      - POSTGRES_USER=gancio
-      - POSTGRES_DB=gancio
-      - POSTGRES_PASSWORD=gancio
-      - PGDATA=/var/lib/postgresql/data
+      POSTGRES_USER: gancio
+      POSTGRES_PASSWORD: gancio
+      POSTGRES_DB: gancio
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - gancio-postgres:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "sh -c 'pg_isready -U gancio -d gancio'"]
-      interval: 2s
+      test: ["CMD-SHELL", "pg_isready -U gancio -d gancio"]
+      interval: 10s
       timeout: 5s
-      retries: 10
-    restart: always
-    ports:
-        - 5432:5432
+      retries: 5
+
   gancio:
-    restart: always
-    image: cisti/gancio
-    container_name: gancio
-    environment:
-      - PATH=$PATH:/home/node/.yarn/bin
-      - GANCIO_DATA=/home/node/data
-      - NODE_ENV=production
-      - GANCIO_DB_DIALECT=postgres
-      - GANCIO_DB_HOST=db
-      - GANCIO_DB_PORT=5432
-      - GANCIO_DB_DATABASE=gancio
-      - GANCIO_DB_USERNAME=gancio
-      - GANCIO_DB_PASSWORD=gancio
-    volumes:
-      - ./data:/home/node/data
-    ports:
-      - "127.0.0.1:13120:13120"
+    image: cisti/gancio:latest
+    restart: unless-stopped
     depends_on:
       db:
         condition: service_healthy
+    environment:
+      NODE_ENV: production
+      GANCIO_DB_DIALECT: postgres
+      GANCIO_DB_HOST: db
+      GANCIO_DB_PORT: "5432"
+      GANCIO_DB_DATABASE: gancio
+      GANCIO_DB_USERNAME: gancio
+      GANCIO_DB_PASSWORD: gancio
+      GANCIO_DATA: /data
+    volumes:
+      - gancio-data:/data
+    ports:
+      - "13120:13120"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:13120/ > /dev/null 2>&1 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  gancio-postgres:
+  gancio-data:

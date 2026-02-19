@@ -1,0 +1,27 @@
+# ===============================
+# Docker Compose (Fladder)
+# ===============================
+# host: http://localhost:8080
+# source: https://github.com/DonutWare/Fladder
+# description: A simple Jellyfin web frontend
+
+services:
+  fladder:
+    image: ghcr.io/donutware/fladder:latest
+    container_name: fladder
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      # The Jellyfin server URL Fladder should connect to (example):
+      - JELLYFIN_URL=http://your-jellyfin-server:8096
+      # optional environment for OAuth/CORS hosts or other configs
+      # see project docs for advanced configuration
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:80 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  # no volumes needed for a static frontend unless caching is desired

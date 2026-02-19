@@ -28,7 +28,11 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/glpi.webp",
     "issues": "https://github.com/glpi-project/glpi/issues",
     "releases": "https://github.com/glpi-project/glpi/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/glpi-asset.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/glpi-dashboard.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/glpi-ticket.png"
+    ]
   },
   "features": [
     {
@@ -95,12 +99,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/glpi/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

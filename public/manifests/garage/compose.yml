@@ -1,0 +1,30 @@
+# ===============================
+# Docker Compose (Garage)
+# ===============================
+# host: http://localhost:3900  (S3 API)
+# admin: (see config file & admin token)
+# access_key: (set in config)
+# secret_key: (set in config)
+
+services:
+  garage:
+    image: dxflrs/garage:latest
+    restart: unless-stopped
+    ports:
+      - "3900:3900"   # S3 API
+      - "3901:3901"   # RPC service
+      - "3902:3902"   # S3 Web UI (if enabled)
+      - "3903:3903"   # Admin API
+    volumes:
+      - garage-meta:/var/lib/garage/meta
+      - garage-data:/var/lib/garage/data
+      - ./garage.toml:/etc/garage/garage.toml:ro
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3900/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  garage-meta:
+  garage-data:

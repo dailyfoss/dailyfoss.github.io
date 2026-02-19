@@ -1,0 +1,50 @@
+# ===============================
+# Docker Compose (FluidCalendar)
+# ===============================
+# host: http://localhost:3000
+# admin: create via web UI
+# note: connect calendars (Google/Outlook) via OAuth
+
+services:
+  db:
+    image: postgres:17
+    container_name: fluidcalendar_db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=fluidcalendar
+      - POSTGRES_USER=fluidcalendaruser
+      - POSTGRES_PASSWORD=YourDBPasswordHere
+    volumes:
+      - fluidcalendar_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fluidcalendaruser -d fluidcalendar"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  app:
+    image: eibrahim/fluid-calendar:latest
+    container_name: fluidcalendar_app
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    environment:
+      # these must be set to real values before first run
+      - NEXTAUTH_SECRET=YourStrongSecretHere
+      - DATABASE_URL=postgresql://fluidcalendaruser:YourDBPasswordHere@db:5432/fluidcalendar
+      - NEXTAUTH_URL=http://localhost:3000
+      - NEXT_PUBLIC_APP_URL=http://localhost:3000
+      # optional external API keys
+      # - RESEND_API_KEY=...
+      # - RESEND_FROM_EMAIL=...
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:3000 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  fluidcalendar_db_data:

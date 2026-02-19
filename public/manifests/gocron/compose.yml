@@ -1,0 +1,23 @@
+# ===============================
+# Docker Compose (gocron)
+# ===============================
+# host: http://localhost:8156
+# username:
+# password:
+
+services:
+  gocron:
+    image: ghcr.io/flohoss/gocron:latest
+    restart: unless-stopped
+    ports:
+      - "8156:8156"
+    volumes:
+      - gocron-config:/app/config:rw
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8156/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  gocron-config:

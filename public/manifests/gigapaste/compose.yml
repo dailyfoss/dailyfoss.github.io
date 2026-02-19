@@ -1,0 +1,35 @@
+# ===============================
+# Docker Compose (SuperBin)
+# ===============================
+# host: http://localhost:8080
+# username: (if enabled via config)
+# password: (if enabled via config)
+
+services:
+  superbin:
+    image: ghcr.io/zhoros/superbin:latest
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      # SuperBin config options
+      # Optional: base URL (if behind reverse proxy)
+      # SUPERBIN_BASE_URL: "https://paste.example.com"
+
+      # Optional: enable basic auth
+      # SUPERBIN_AUTH_ENABLED: "true"
+      # SUPERBIN_AUTH_USER: "youruser"
+      # SUPERBIN_AUTH_PASS: "yourpass"
+
+      # Optional: custom listen port
+      # SUPERBIN_PORT: "8080"
+    volumes:
+      - superbin-data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8080/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  superbin-data:

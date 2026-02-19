@@ -1,0 +1,70 @@
+# ===============================
+# Docker Compose (fitbit-grafana)
+# ===============================
+# host: http://localhost:3000 (Grafana UI)
+# username: admin (default Grafana)
+# password: admin (default Grafana)
+
+services:
+  influxdb:
+    image: influxdb:1.8
+    container_name: influxdb
+    restart: unless-stopped
+    ports:
+      - "8086:8086"
+    volumes:
+      - influxdb_data:/var/lib/influxdb
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:8086/ping || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      # Change after first login
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      influxdb:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:3000/api/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+  fitbit-grafana:
+    image: ghcr.io/arpanghosh8453/fitbit-grafana:latest
+    container_name: fitbit-grafana
+    restart: unless-stopped
+    environment:
+      # You MUST supply Fitbit API credentials and refresh token
+      - FITBIT_CLIENT_ID=your_client_id_here
+      - FITBIT_CLIENT_SECRET=your_client_secret_here
+      - FITBIT_REMOTE_REFRESH_TOKEN=your_refresh_token_here
+      - INFLUXDB_VERSION=1
+      - INFLUXDB_HOST=influxdb
+      - INFLUXDB_PORT=8086
+      - INFLUXDB_USERNAME=fitbit
+      - INFLUXDB_PASSWORD=fitbit_password
+      - INFLUXDB_DATABASE=fitbit_db
+    depends_on:
+      influxdb:
+        condition: service_healthy
+    networks:
+      - fitbit-net
+
+volumes:
+  influxdb_data:
+  grafana_data:
+
+networks:
+  fitbit-net:

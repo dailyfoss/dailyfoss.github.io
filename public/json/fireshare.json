@@ -28,7 +28,17 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/fireshare.webp",
     "issues": "https://github.com/ShaneIsrael/fireshare/issues",
     "releases": "https://github.com/ShaneIsrael/fireshare/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/fireshare-card-view.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/fireshare-edit-details.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/fireshare-games.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/fireshare-list-view.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/fireshare-mobile-view.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/fireshare-ogg-data.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/fireshare-preview-modal.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/fireshare-uploading.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/fireshare-watch-page.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +98,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/fireshare/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

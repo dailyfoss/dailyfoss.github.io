@@ -23,12 +23,18 @@
   },
   "resources": {
     "website": "https://filebrowser.org",
-    "documentation": "https://github.com/filebrowser/filebrowser",
+    "documentation": "https://filebrowser.org/installation.html",
     "source_code": "https://github.com/filebrowser/filebrowser",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/file-browser.webp",
     "issues": "https://github.com/filebrowser/filebrowser/issues",
     "releases": "https://github.com/filebrowser/filebrowser/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/file-browser-1.jpg",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/file-browser-2.jpg",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/file-browser-3.jpg",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/file-browser-4.jpg",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/file-browser-5.jpg"
+    ]
   },
   "features": [
     {
@@ -96,12 +102,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/file-browser/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

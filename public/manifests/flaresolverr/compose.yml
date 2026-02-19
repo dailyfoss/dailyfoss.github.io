@@ -1,9 +1,29 @@
+# ===============================
+# Docker Compose (FlareSolverr)
+# ===============================
+# host: http://localhost:8191
+# username: (none)
+# password: (optional via API_KEY)
+
 services:
   flaresolverr:
-    image: flaresolverr/flaresolverr
+    image: flaresolverr/flaresolverr:latest
     container_name: flaresolverr
+    restart: unless-stopped
     ports:
       - "8191:8191"
     environment:
-      - TZ=America/New_York # Set the time zone (optional)
-    restart: unless-stopped
+      # optional: protect the API with a key
+      # - API_KEY=YourStrongApiKeyHere
+      - LOG_LEVEL=info
+    volumes:
+      - flaresolverr_data:/home/node/.flaresolverr
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:8191/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  flaresolverr_data:

@@ -1,10 +1,57 @@
+# ===============================
+# Docker Compose (Gogs)
+# ===============================
+# host: http://localhost:3000
+# username: (create via UI)
+# password: (create via UI)
+
 services:
-  gogs:
-    image: gogs/gogs
-    container_name: gogs
-    ports:
-      - 10022:22
-      - 10880:3000
-    volumes:
-      - /var/gogs:/data
+  db:
+    image: mariadb:11
     restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: strong_root_password
+      MYSQL_DATABASE: gogs
+      MYSQL_USER: gogs
+      MYSQL_PASSWORD: strong_gogs_password
+    volumes:
+      - gogs-db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -pstrong_gogs_password --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  gogs:
+    image: gogs/gogs:latest
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_TYPE: mysql
+      DB_HOST: db:3306
+      DB_NAME: gogs
+      DB_USER: gogs
+      DB_PASSWD: strong_gogs_password
+
+      # Optional: set user/group IDs
+      USER_UID: "1000"
+      USER_GID: "1000"
+
+      # Application URL (adjust if using reverse proxy or custom host)
+      ROOT_URL: "http://localhost:3000"
+    ports:
+      - "3000:3000"
+      - "2222:22"
+    volumes:
+      - gogs-data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  gogs-db:
+  gogs-data:
