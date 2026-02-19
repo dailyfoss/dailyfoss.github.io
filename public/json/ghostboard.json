@@ -28,7 +28,10 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/ghostboard.webp",
     "issues": "https://github.com/jon6fingrs/ghostboard/issues",
     "releases": "https://github.com/jon6fingrs/ghostboard/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/ghostboard-dark-mode.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/ghostboard-project-info.png"
+    ]
   },
   "features": [
     {
@@ -95,12 +98,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/ghostboard/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

@@ -1,8 +1,24 @@
+# ===============================
+# Docker Compose (Gossa)
+# ===============================
+# host: http://localhost:8001
+# username: (configured via reverse proxy/auth; Gossa has no built-in auth)
+# password:
+
 services:
   gossa:
-    image: pldubouilh/gossa
-    volumes:
-      - ~/LocalDirToShare:/shared
-    ports:
-      - 8001:8001
+    image: pldubouilh/gossa:latest
     restart: unless-stopped
+    ports:
+      - "8001:8001"
+    volumes:
+      # Directory that will be served
+      - gossa-data:/shared
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:8001/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  gossa-data:

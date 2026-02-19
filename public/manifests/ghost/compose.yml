@@ -1,28 +1,50 @@
+# ===============================
+# Docker Compose (Ghost)
+# ===============================
+# host: http://localhost:2368
+# username: (create via Ghost admin UI)
+# password: (create via Ghost admin UI)
+
 services:
+  mysql:
+    image: mysql:8
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: changeme
+      MYSQL_DATABASE: ghost
+      MYSQL_USER: ghost
+      MYSQL_PASSWORD: ghost
+    volumes:
+      - ghost-mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -pghost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   ghost:
-    image: ghost:5-alpine
-    restart: always
-    ports:
-      - 8080:2368
+    image: ghost:latest
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
     environment:
-      # see https://ghost.org/docs/config/#configuration-options
+      url: "http://localhost:2368"
       database__client: mysql
-      database__connection__host: db
-      database__connection__user: root
-      database__connection__password: example
+      database__connection__host: mysql
+      database__connection__user: ghost
+      database__connection__password: ghost
       database__connection__database: ghost
-      # this url value is just an example, and is likely wrong for your environment!
-      url: http://localhost:8080
-      # contrary to the default mentioned in the linked documentation, this image defaults to NODE_ENV=production (so development mode needs to be explicitly specified if desired)
-      #NODE_ENV: development
+    ports:
+      - "2368:2368"
     volumes:
-      - ./ghost:/var/lib/ghost/content
+      - ghost-content:/var/lib/ghost/content
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:2368/ >/dev/null 2>&1 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
 
-  db:
-    image: mysql:8.0
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: example
-    volumes:
-      - ./db:/var/lib/mysql
+volumes:
+  ghost-mysql:
+  ghost-content:

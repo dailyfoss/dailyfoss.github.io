@@ -1,8 +1,31 @@
+# ===============================
+# Docker Compose (Grist Core)
+# ===============================
+# host: http://localhost:8484
+# username: created via first run login
+# password: created via first run login
+
 services:
   grist:
-    image: gristlabs/grist
-    ports:
-      - 8484:8484
-    volumes:
-      - $PWD/persist:/persist
+    image: gristlabs/grist:latest
     restart: unless-stopped
+    ports:
+      - "8484:8484"
+    environment:
+      # Secret string for session signing (change to secure random)
+      - GRIST_SESSION_SECRET=ReplaceWithSecureRandom
+      # Default email for the first admin user
+      - GRIST_DEFAULT_EMAIL=admin@example.com
+      # Optional: set home/app external URL if behind proxy
+      - APP_HOME_URL=http://localhost:8484
+    volumes:
+      # Persist user documents, metadata, attachments, etc.
+      - grist-persist:/persist
+    healthcheck:
+      test: ["CMD-SHELL", "wget --quiet --tries=1 --spider http://localhost:8484/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  grist-persist:

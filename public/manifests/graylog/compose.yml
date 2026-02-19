@@ -1,0 +1,68 @@
+# ===============================
+# Docker Compose (Graylog)
+# ===============================
+# host: http://localhost:9000
+# username: admin
+# password: (see setup notes below)
+
+services:
+  mongo:
+    image: mongo:6.0
+    restart: unless-stopped
+    volumes:
+      - mongo-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongo", "--eval", "db.adminCommand('ping')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  opensearch:
+    image: opensearchproject/opensearch:2.11.0
+    restart: unless-stopped
+    environment:
+      - discovery.type=single-node
+      - plugins.security.disabled=true
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - opensearch-data:/usr/share/opensearch/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider --quiet http://localhost:9200/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  graylog:
+    image: graylog/graylog:latest
+    restart: unless-stopped
+    depends_on:
+      mongo:
+        condition: service_healthy
+      opensearch:
+        condition: service_healthy
+    ports:
+      - "9000:9000"
+      - "12201:12201/udp"
+      - "1514:1514/udp"
+    environment:
+      # MUST be unique and secret
+      - GRAYLOG_PASSWORD_SECRET=ReplaceWithStrongRandom
+      # SHA-256 of your admin password
+      - GRAYLOG_ROOT_PASSWORD_SHA2=ReplaceWithSHA256Hash
+      # External URL for UI/API
+      - GRAYLOG_HTTP_EXTERNAL_URI=http://localhost:9000/
+    volumes:
+      - graylog-journal:/usr/share/graylog/data/journal
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider --quiet http://localhost:9000/api/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  mongo-data:
+  opensearch-data:
+  graylog-journal:

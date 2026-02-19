@@ -1,11 +1,25 @@
+# ===============================
+# Docker Compose (Glances)
+# ===============================
+# host: http://localhost:61208
+# username: (configure via CLI args if needed)
+# password: (configure via CLI args if needed)
+
 services:
   glances:
-    image: nicolargo/glances:latest-full
-    environment:
-      - TZ=${TZ}
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      - /run/user/1000/podman/podman.sock:/run/user/1000/podman/podman.sock:ro
-    pid: host
-    network_mode: host
+    image: nicolargo/glances:latest
     restart: unless-stopped
+    network_mode: "host"   # Required to monitor host metrics
+    environment:
+      # Glances Web server port
+      GLANCES_OPT: "-w -p 61208"
+      # (Optional) Disable discovery
+      # GLANCES_DISABLE_DISCOVERY: "true"
+      # (Optional) Set user & password
+      # GLANCES_USER: "admin"
+      # GLANCES_PASS: "strongpassword"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:61208/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3

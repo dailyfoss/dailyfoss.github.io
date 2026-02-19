@@ -1,0 +1,40 @@
+# ===============================
+# Docker Compose (Git-Sync)
+# ===============================
+# host: (no web UI; this service runs in background)
+# username: (configured via repo auth)
+# password: (configured via repo auth)
+
+services:
+  git-sync:
+    image: ghcr.io/akashrajpurohit/git-sync:latest
+    restart: unless-stopped
+    environment:
+      # Required — remote git repository URL
+      GIT_SYNC_REPO: "https://github.com/your/repo.git"
+
+      # Sync branch
+      GIT_SYNC_BRANCH: "main"
+
+      # Remote auth (only set if needed)
+      # GIT_SYNC_USERNAME: "your_username"
+      # GIT_SYNC_PASSWORD: "your_password"
+
+      # Local destination (inside container)
+      GIT_SYNC_DEST: "/sync"
+
+      # Optional: enable periodic syncing (cron expression)
+      # GIT_SYNC_PERIOD: "5m" 
+
+      # Optional: allow insecure TLS for self-signed
+      # GIT_SYNC_INSECURE: "true"
+    volumes:
+      - git-sync-data:/sync
+    healthcheck:
+      test: ["CMD-SHELL", "test -d /sync && exit 0 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  git-sync-data:

@@ -1,0 +1,57 @@
+# ===============================
+# Docker Compose (FTPGrab)
+# ===============================
+# No web UI — runs as a scheduled FTP/SFTP file grabber
+# host: (n/a)
+# username/password: configured via env vars
+
+services:
+  ftpgrab:
+    image: crazymax/ftpgrab:latest
+    container_name: ftpgrab
+    restart: unless-stopped
+    volumes:
+      # Database/BoltDB to track downloaded files
+      - ftpgrab_db:/db
+      # Downloaded files stored here
+      - ftpgrab_download:/download
+      # Optional: mount your YAML config instead of env vars
+      # - ./ftpgrab.yml:/ftpgrab.yml:ro
+    environment:
+      # Timezone (set your region)
+      - TZ=Etc/UTC
+      # Cron schedule (example: every 30 minutes)
+      - SCHEDULE=*/30 * * * *
+      # Logging options
+      - LOG_LEVEL=info
+      - LOG_JSON=false
+
+      # FTP server connection (example values, customize below)
+      - FTPGRAB_SERVER_FTP_HOST=ftp.example.com
+      - FTPGRAB_SERVER_FTP_PORT=21
+      - FTPGRAB_SERVER_FTP_USERNAME=youruser
+      - FTPGRAB_SERVER_FTP_PASSWORD=yourpass
+      - FTPGRAB_SERVER_FTP_SOURCES=/path1,/path2
+
+      # Download filters
+      # - FTPGRAB_DOWNLOAD_INCLUDE=^.*\.txt$
+      # - FTPGRAB_DOWNLOAD_EXCLUDE=\.tmp$
+      # - FTPGRAB_DOWNLOAD_SINCE=2025-01-01T00:00:00Z
+      # - FTPGRAB_DOWNLOAD_RETRY=3
+
+      # Notification examples (optional)
+      # Email
+      # - FTPGRAB_NOTIF_MAIL_HOST=smtp.example.com
+      # - FTPGRAB_NOTIF_MAIL_PORT=587
+      # - FTPGRAB_NOTIF_MAIL_FROM=ftpgrab@example.com
+      # - FTPGRAB_NOTIF_MAIL_TO=alerts@example.com
+
+    healthcheck:
+      test: ["CMD-SHELL", "test -f /db/ftpgrab.db || exit 1"]
+      interval: 1m
+      timeout: 10s
+      retries: 3
+
+volumes:
+  ftpgrab_db:
+  ftpgrab_download:

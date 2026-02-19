@@ -1,35 +1,57 @@
+# ===============================
+# Docker Compose (Gaseous Server)
+# ===============================
+# host: http://localhost:8080
+# username: (create via UI)
+# password: (create via UI)
+
 services:
-  gaseous-server:
-    container_name: gaseous-server
+  db:
+    image: mariadb:11
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password_here
+      MYSQL_DATABASE: gaseous
+      MYSQL_USER: gaseous
+      MYSQL_PASSWORD: gaseous
+    volumes:
+      - gaseous-db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -pgaseous --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  server:
     image: gaseousgames/gaseousserver:latest
     restart: unless-stopped
-    networks:
-      - gaseous
     depends_on:
-      - gsdb
+      db:
+        condition: service_healthy
+    environment:
+      # Database connection
+      DB_HOST: db
+      DB_PORT: "3306"
+      DB_NAME: gaseous
+      DB_USER: gaseous
+      DB_PASS: gaseous
+
+      # Required for metadata scraping (IGDB)
+      IGDB_CLIENT_ID: your_igdb_client_id
+      IGDB_CLIENT_SECRET: your_igdb_client_secret
+
+      # Server settings
+      PORT: "8080"
+    volumes:
+      - gaseous-media:/data
     ports:
-      - 5198:80
-    volumes:
-      - ./gs:/root/.gaseous-server
-    environment:
-      - TZ=Australia/Sydney
-      - dbhost=gsdb
-      - dbuser=root
-      - dbpass=gaseous
-      - igdbclientid=
-      - igdbclientsecret=
-  gsdb:
-    container_name: gsdb
-    image: mariadb
-    restart: unless-stopped
-    networks:
-      - gaseous
-    volumes:
-      - ./gsdb:/var/lib/mysql
-    environment:
-      - MARIADB_ROOT_PASSWORD=gaseous
-      - MARIADB_USER=gaseous
-      - MARIADB_PASSWORD=gaseous
-networks:
-  gaseous:
-    driver: bridge
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8080/ >/dev/null 2>&1 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  gaseous-db:
+  gaseous-media:

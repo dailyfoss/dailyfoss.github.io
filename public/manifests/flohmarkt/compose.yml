@@ -1,0 +1,56 @@
+# ===============================
+# Docker Compose (Flohmarkt)
+# ===============================
+# host: http://localhost:8000
+# username: created via web UI (CouchDB/Flohmarkt)
+# password: created via web UI
+# notes: build from repo and run with CouchDB backend
+
+services:
+  couchdb:
+    image: couchdb:3.2
+    container_name: flohmarkt_couchdb
+    restart: unless-stopped
+    environment:
+      - COUCHDB_USER=admin
+      - COUCHDB_PASSWORD=admin_password_here
+    ports:
+      - "5984:5984"
+    volumes:
+      - flohmarkt_couchdb_data:/opt/couchdb/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:5984/_up && echo ok || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  flohmarkt:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: flohmarkt
+    restart: unless-stopped
+    depends_on:
+      couchdb:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    environment:
+      # Point Flohmarkt at the CouchDB instance
+      - COUCHDB_URL=http://admin:admin_password_here@couchdb:5984
+      # Base URL for your deployment
+      - BASE_URL=http://localhost:8000
+      # Optional app config overrides
+      # - FLASK_ENV=production
+    volumes:
+      # optional local overrides or persistent configs
+      - flohmarkt_source:/app
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:8000/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  flohmarkt_couchdb_data:
+  flohmarkt_source:

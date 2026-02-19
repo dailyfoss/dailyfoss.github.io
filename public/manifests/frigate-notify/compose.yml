@@ -1,0 +1,26 @@
+# ===============================
+# Docker Compose (Frigate-Notify)
+# ===============================
+# host: (no web UI by default)
+# username: (none)
+# password: (none)
+# note: Requires a config.yml mounted to /app/config.yml
+
+services:
+  frigate-notify:
+    image: ghcr.io/0x2142/frigate-notify:latest
+    container_name: frigate_notify
+    restart: unless-stopped
+    environment:
+      - TZ=Etc/UTC
+      # If you place your config in a subfolder, set FN_CONFIGFILE:
+      # - FN_CONFIGFILE=/app/config/config.yml
+    volumes:
+      # Mount your local config directory (containing config.yml)
+      - ./config:/app/config:ro
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:8000 || exit 0"]
+      # Healthcheck will always succeed if no API is enabled
+      interval: 1m
+      timeout: 10s
+      retries: 1

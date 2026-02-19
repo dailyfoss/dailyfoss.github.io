@@ -1,0 +1,55 @@
+# ===============================
+# Docker Compose (GameVault)
+# ===============================
+# host: http://localhost:8080
+# username/password: created via web UI
+# note: Game files and media paths must be provided
+
+services:
+  db:
+    image: postgres:17
+    container_name: gamevault_db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=gamevault
+      - POSTGRES_PASSWORD=ChangeThisDBPass
+      - POSTGRES_DB=gamevault
+    volumes:
+      - gamevault_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U gamevault -d gamevault || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  gamevault-backend:
+    image: phalcode/gamevault-backend:latest
+    container_name: gamevault
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      # PostgreSQL connection
+      - DB_HOST=db
+      - DB_USERNAME=gamevault
+      - DB_PASSWORD=ChangeThisDBPass
+
+      # Optional tweaks — consult docs for full list
+      - SERVER_LOG_LEVEL=info
+    volumes:
+      # Mount where your DRM-free games sit
+      - /path/to/games:/files
+      # Mount where GameVault stores media (cover art, etc.)
+      - /path/to/media:/media
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:8080 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+volumes:
+  gamevault_db_data:

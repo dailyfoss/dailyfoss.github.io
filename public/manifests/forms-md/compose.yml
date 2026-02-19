@@ -1,0 +1,45 @@
+# ===============================
+# Docker Compose (FormsMD)
+# ===============================
+# host: http://localhost:3000
+# username: set via web UI
+# password: set via web UI
+
+services:
+  formsmd:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: formsmd
+    restart: unless-stopped
+    environment:
+      - FORMSMD_PORT=3000
+      - FORMSMD_DB_PATH=/data/formsmd.db
+    volumes:
+      - formsmd_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:3000/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  caddy:
+    image: caddy:latest
+    container_name: formsmd_caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+    depends_on:
+      formsmd:
+        condition: service_healthy
+
+volumes:
+  formsmd_data:
+  caddy_data:
+  caddy_config:

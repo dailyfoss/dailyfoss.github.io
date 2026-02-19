@@ -28,7 +28,10 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/guardian.webp",
     "issues": "https://github.com/HydroshieldMKII/Guardian/issues",
     "releases": "https://github.com/HydroshieldMKII/Guardian/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/guardian-active-streams.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/guardian-devices.png"
+    ]
   },
   "features": [
     {
@@ -94,12 +97,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/guardian/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

@@ -1,32 +1,36 @@
+# ===============================
+# Docker Compose (FlashPaper)
+# ===============================
+# host: http://localhost:8080
+# username: (none)
+# password: (none; basic access controlled via BASE_URL logic or reverse proxy)
+
 services:
   flashpaper:
     image: ghcr.io/andrewpaglusch/flashpaper:v2
     container_name: flashpaper
-    restart: always
-    volumes:
-      - ./data:/var/www/html/data
+    restart: unless-stopped
     ports:
-      - 8080:80
+      - "8080:80"
+    volumes:
+      # persistent SQLite DB and stored secrets
+      - flashpaper_data:/var/www/html/data
     environment:
-      SITE_TITLE: "FlashPaper :: Self-Destructing Message"
-      SITE_LOGO: img/logo.png
-      DISPLAY_LOGO: "false"
-      DISPLAY_TITLE: "true"
-      RETURN_FULL_URL: "true"
-      BASE_URL: locahost # https://mydomain.com/flashpaper
-      MAX_SECRET_LENGTH: "3000"
-      ANNOUNCEMENT: ""
-      MESSAGES_ERROR_SECRET_TOO_LONG: Input length too long
-      MESSAGES_SUBMIT_SECRET_HEADER: Create A Self-Destructing Message
-      MESSAGES_SUBMIT_SECRET_SUBHEADER: ""
-      MESSAGES_SUBMIT_SECRET_BUTTON: Encrypt Message
-      MESSAGES_VIEW_CODE_HEADER: Self-Destructing URL
-      MESSAGES_VIEW_CODE_SUBHEADER: Share this URL via email, chat, or another
-        messaging service. It will self-destruct after being viewed once.
-      MESSAGES_CONFIRM_VIEW_SECRET_HEADER: View this secret?
-      MESSAGES_CONFIRM_VIEW_SECRET_BUTTON: View Secret
-      MESSAGES_VIEW_SECRET_HEADER: Self-Destructing Message
-      MESSAGES_VIEW_SECRET_SUBHEADER: This message has been destroyed
-      PRUNE_ENABLED: "true"
-      PRUNE_MIN_DAYS: 365
-      PRUNE_MAX_DAYS: 730
+      # Customize your instance here:
+      - SITE_TITLE=FlashPaper :: Self-Destructing Message
+      - BASE_URL=http://localhost:8080
+      - RETURN_FULL_URL=true
+      - DISPLAY_LOGO=true
+      - DISPLAY_TITLE=false
+      - PRUNE_ENABLED=true
+      - PRUNE_MIN_DAYS=1
+      - PRUNE_MAX_DAYS=30
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:80 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  flashpaper_data:

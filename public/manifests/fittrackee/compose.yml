@@ -1,0 +1,66 @@
+# ===============================
+# Docker Compose (FitTrackee)
+# ===============================
+# host: http://localhost:5000
+# username: created via UI (register first admin)
+# password: created via UI
+
+services:
+  db:
+    image: postgres:15
+    container_name: fittrackee_db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=fittrackee
+      - POSTGRES_USER=fittrackee
+      - POSTGRES_PASSWORD=fittrackee_password
+    volumes:
+      - fittrackee_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fittrackee"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7
+    container_name: fittrackee_redis
+    restart: unless-stopped
+    volumes:
+      - fittrackee_redisdata:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  fittrackee:
+    image: fittrackee/fittrackee:latest
+    container_name: fittrackee
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      # Postgres connection
+      - DATABASE_URL=postgresql://fittrackee:fittrackee_password@db:5432/fittrackee
+      # Redis (optional for rate limits/tasks)
+      - REDIS_URL=redis://redis:6379/0
+      # host binding for the app
+      - HOST=0.0.0.0
+      # set a secret key for sessions (generate a secure random string)
+      - SECRET_KEY=change_this_to_a_secure_random_value
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:5000/api/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+volumes:
+  fittrackee_pgdata:
+  fittrackee_redisdata:

@@ -1,0 +1,28 @@
+# ===============================
+# Docker Compose (glauth)
+# ===============================
+# host (LDAP):  ldap://localhost:1389
+# host (LDAPS): ldaps://localhost:1636
+# username: defined in config file
+# password: defined in config file
+
+services:
+  glauth:
+    image: glauth/glauth:latest
+    restart: unless-stopped
+    ports:
+      - "1389:1389"   # LDAP
+      - "1636:1636"   # LDAPS
+    volumes:
+      - glauth-config:/config
+    environment:
+      # Path to config.yaml inside container
+      GLAUTH_CFG_PATH: "/config/config.yaml"
+    healthcheck:
+      test: ["CMD-SHELL", "glauth --config /config/config.yaml --check"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  glauth-config:

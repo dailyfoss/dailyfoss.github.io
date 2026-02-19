@@ -1,0 +1,74 @@
+# ===============================
+# Docker Compose (GLPI)
+# ===============================
+# host: http://localhost:8080
+# username: create via GLPI UI
+# password: create via GLPI UI
+
+services:
+  db:
+    image: mariadb:11
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: strong_root_password
+      MYSQL_DATABASE: glpi
+      MYSQL_USER: glpi
+      MYSQL_PASSWORD: strong_glpi_password
+    volumes:
+      - glpi-db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -pstrong_glpi_password --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    volumes:
+      - glpi-redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  glpi:
+    image: glpi/glpi:latest
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      APP_ENV: prod
+      # Database
+      DB_HOST: db
+      DB_PORT: "3306"
+      DB_NAME: glpi
+      DB_USER: glpi
+      DB_PASSWORD: strong_glpi_password
+
+      # Cache / Session (optional)
+      REDIS_HOST: redis
+      REDIS_PORT: "6379"
+      REDIS_PREFIX: glpi_
+
+      # PHP settings (optional)
+      PHP_MAX_EXECUTION_TIME: "60"
+      PHP_MEMORY_LIMIT: "256M"
+    ports:
+      - "8080:80"
+    volumes:
+      - glpi-data:/var/www/html
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8080/front/help.php || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  glpi-db:
+  glpi-redis:
+  glpi-data:

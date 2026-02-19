@@ -1,19 +1,31 @@
+# ===============================
+# Docker Compose (FileGator)
+# ===============================
+# host: http://localhost:8080
+# username: defined in users.json
+# password: defined in users.json
+
 services:
   filegator:
+    image: filegator/filegator:latest
     container_name: filegator
-    image: filegator/filegator
-    restart: always
+    restart: unless-stopped
     ports:
       - "8080:8080"
     volumes:
-      # common mount points are listed here
-      # make sure filegator can read/write to the mounted volume
+      # Repository (files exposed in UI)
+      - filegator_repository:/var/www/filegator/repository
+      # Persistent users database
+      - filegator_users:/var/www/filegator/private
+      # Optional custom configuration
+      - filegator_config:/var/www/filegator/config
+    healthcheck:
+      test: ["CMD-SHELL", "wget --quiet --spider http://localhost:8080/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
 
-      # mount local folder as a repository
-      - ./files:/var/www/filegator/repository
-
-      # locally stored users.json file
-      # - ./users.json:/var/www/filegator/private/users.json
-
-      # load your own custom configuration file
-      # - ./configuration.php:/var/www/filegator/configuration.php
+volumes:
+  filegator_repository:
+  filegator_users:
+  filegator_config:

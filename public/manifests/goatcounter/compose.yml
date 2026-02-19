@@ -1,9 +1,52 @@
+# ===============================
+# Docker Compose (GoatCounter)
+# ===============================
+# host: http://localhost:8080
+# username: (create via UI first visit)
+# password: (create via UI first visit)
+
 services:
-    goatcounter:
-	    container_name: goatcounter
-        image: baethon/goatcounter
-        environment:
-            - [email protected]
-            - GOATCOUNTER_DOMAIN=stats.domain.com
-			- GOATCOUNTER_PASSWORD=password
-	    restart: unless-stopped
+  postgres:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: goat
+      POSTGRES_PASSWORD: strongpassword
+      POSTGRES_DB: goatcounter
+    volumes:
+      - goatcounter-postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U goat -d goatcounter"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  goatcounter:
+    image: goatcounter/goatcounter:latest
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      # Database
+      GC_DB_TYPE: postgres
+      GC_DB_URL: "postgres://goat:strongpassword@postgres:5432/goatcounter?sslmode=disable"
+
+      # Web hosting
+      GC_HOST: "http://localhost:8080"
+
+      # (Optional) Logging
+      GC_LOG_LEVEL: info
+
+      # (Optional) secret key (auto-generated if empty)
+      # GC_SECRET: "replace_with_long_random"
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8080/healthz || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  goatcounter-postgres:

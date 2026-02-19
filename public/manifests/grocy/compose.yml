@@ -1,38 +1,34 @@
+# ===============================
+# Docker Compose (Grocy)
+# ===============================
+# host: http://localhost:9283
+# username: admin
+# password: admin
+
 services:
-
-  frontend:
-    image: "grocy/frontend:v4.2.0"
-    build:
-      args:
-        GROCY_VERSION: v4.2.0
-        PLATFORM: linux/amd64
-      context: .
-      dockerfile: Containerfile-frontend
-    depends_on:
-      - backend
+  grocy:
+    # Use a trusted multi-platform community image
+    image: lscr.io/linuxserver/grocy:latest
+    restart: unless-stopped
     ports:
-      - '8080:8080'
-    read_only: true
-    tmpfs:
-      - /tmp
-    restart: unless-stopped
-
-  backend:
-    image: "grocy/backend:v4.2.0"
-    build:
-      args:
-        GROCY_VERSION: v4.2.0
-        PLATFORM: linux/amd64
-      context: .
-      dockerfile: Containerfile-backend
-    expose:
-      - '9000'
-    read_only: true
-    tmpfs:
-      - /tmp
-      - /var/www/data/viewcache:mode=755,uid=82,gid=82,size=16m
+      - "9283:80"
+    environment:
+      # Optional UID/GID for file ownership (adjust to your host as needed)
+      - PUID=1000
+      - PGID=1000
+      # Optional timezone
+      - TZ=UTC
+      # Default login — override for your deployment
+      - GROCY_ADMIN_USERNAME=admin
+      - GROCY_ADMIN_PASSWORD=admin
     volumes:
-      - ./app-db:/var/www/data
-    env_file:
-      - grocy.env
-    restart: unless-stopped
+      # Persistent config/database/media storage
+      - grocy-data:/config
+    healthcheck:
+      test: ["CMD-SHELL", "wget --quiet --tries=1 --spider http://localhost:80/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  grocy-data:

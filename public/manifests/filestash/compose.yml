@@ -1,22 +1,25 @@
-services:
-  app:
-    container_name: filestash
-    image: machines/filestash
-    restart: always
-    environment:
-    - APPLICATION_URL=
-    - GDRIVE_CLIENT_ID=
-    - GDRIVE_CLIENT_SECRET=
-    - DROPBOX_CLIENT_ID=
-    - ONLYOFFICE_URL=http://onlyoffice
-    ports:
-    - "8334:8334"
-    volumes:
-    - ./filestash:/app/data/state/
+# ===============================
+# Docker Compose (Filestash)
+# ===============================
+# host: http://localhost:8334
+# username: (set on first run via web UI)
+# password: (set on first run via web UI)
 
-  onlyoffice:
-    container_name: filestash_oods
-    image: onlyoffice/documentserver
-    restart: always
-    security_opt:
-      - seccomp:unconfined
+services:
+  filestash:
+    image: machines/filestash:latest
+    container_name: filestash
+    restart: unless-stopped
+    ports:
+      - "8334:8334"
+    volumes:
+      - filestash_data:/app/data/state
+    healthcheck:
+      test: ["CMD-SHELL", "wget --quiet --spider http://localhost:8334/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  filestash_data:

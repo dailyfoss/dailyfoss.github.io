@@ -1,0 +1,47 @@
+# ===============================
+# Docker Compose (Fli.so)
+# ===============================
+# host: http://localhost:5173
+# admin: http://localhost:8090 (PocketBase admin UI)
+# username: (none built-in)
+# password: set via PocketBase admin UI
+
+services:
+  pocketbase:
+    image: pocketbase/pocketbase:latest
+    container_name: fli_pocketbase
+    restart: unless-stopped
+    ports:
+      - "8090:8090"
+    volumes:
+      - fli_pb_data:/pb_data
+    environment:
+      # PocketBase server binds
+      - POCKETBASE_HTTP_ADDR=0.0.0.0:8090
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:8090/api/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  fliapp:
+    image: ghcr.io/thisuxhq/fli.so:latest
+    container_name: fli_app
+    restart: unless-stopped
+    ports:
+      - "5173:5173"
+    environment:
+      # Point app at the PocketBase backend
+      - VITE_PB_BASE_URL=http://pocketbase:8090
+      - VITE_PUBLIC_BASE_URL=http://localhost:5173
+    depends_on:
+      pocketbase:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:5173 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  fli_pb_data:

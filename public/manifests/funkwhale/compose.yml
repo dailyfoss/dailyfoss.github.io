@@ -1,103 +1,75 @@
+# ===============================
+# Docker Compose (Funkwhale)
+# ===============================
+# host: http://localhost:8000
+# username: create via first-run admin setup
+# password: create via first-run admin setup
+
 services:
   postgres:
+    image: postgres:15
+    container_name: funkwhale_db
     restart: unless-stopped
-    env_file: .env
     environment:
-      - "POSTGRES_HOST_AUTH_METHOD=trust"
-    image: postgres:15-alpine
+      - POSTGRES_DB=funkwhale
+      - POSTGRES_USER=funkwhale
+      - POSTGRES_PASSWORD=ChangeThisDBPass
     volumes:
-      - ./data/postgres:/var/lib/postgresql/data
+      - funkwhale_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U funkwhale -d funkwhale || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
 
   redis:
-    restart: unless-stopped
-    env_file: .env
     image: redis:7-alpine
+    container_name: funkwhale_redis
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  web:
+    image: funkwhale/web:latest
+    container_name: funkwhale_web
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    environment:
+      - FUNKWHALE_HOSTNAME=localhost:8000
+      - DJANGO_SECRET_KEY=ChangeThisSecret
+      - DATABASE_URL=postgresql://funkwhale:ChangeThisDBPass@postgres:5432/funkwhale
+      - REDIS_URL=redis://redis:6379/0
     volumes:
-      - ./data/redis:/data
+      - funkwhale_media:/data/media
+      - funkwhale_static:/data/static
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:8000/healthz || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
 
   celeryworker:
+    image: funkwhale/api:latest
+    container_name: funkwhale_celery
     restart: unless-stopped
-    image: funkwhale/api:${FUNKWHALE_VERSION:-latest}
     depends_on:
-      - postgres
-      - redis
-    env_file: .env
-    # Celery workers handle background tasks (such file imports or federation
-    # messaging). The more processes a worker gets, the more tasks
-    # can be processed in parallel. However, more processes also means
-    # a bigger memory footprint.
-    # By default, a worker will span a number of process equal to your number
-    # of CPUs. You can adjust this, by explicitly setting the --concurrency
-    # flag:
-    #   celery -A funkwhale_api.taskapp worker -l INFO --concurrency=4
-    command:
-      - celery
-      - --app=funkwhale_api.taskapp
-      - worker
-      - --loglevel=INFO
-      - --concurrency=${CELERYD_CONCURRENCY-0}
+      - web
     environment:
-      - C_FORCE_ROOT=true
-    volumes:
-      - "${MUSIC_DIRECTORY_SERVE_PATH-/srv/funkwhale/data/music}:${MUSIC_DIRECTORY_PATH-/music}:ro"
-      - "${MEDIA_ROOT}:${MEDIA_ROOT}"
+      - REDIS_URL=redis://redis:6379/0
+      - DATABASE_URL=postgresql://funkwhale:ChangeThisDBPass@postgres:5432/funkwhale
 
-  celerybeat:
-    restart: unless-stopped
-    image: funkwhale/api:${FUNKWHALE_VERSION:-latest}
-    command:
-      - celery
-      - --app=funkwhale_api.taskapp
-      - beat
-      - --loglevel=INFO
-    depends_on:
-      - postgres
-      - redis
-    env_file: .env
-
-  api:
-    restart: unless-stopped
-    image: funkwhale/api:${FUNKWHALE_VERSION:-latest}
-    depends_on:
-      - postgres
-      - redis
-    env_file: .env
-    volumes:
-      - "${MUSIC_DIRECTORY_SERVE_PATH-/srv/funkwhale/data/music}:${MUSIC_DIRECTORY_PATH-/music}:ro"
-      - "${MEDIA_ROOT}:${MEDIA_ROOT}"
-      - "${STATIC_ROOT}:${STATIC_ROOT}"
-
-  front:
-    restart: unless-stopped
-    image: funkwhale/front:${FUNKWHALE_VERSION:-latest}
-    depends_on:
-      - api
-    env_file:
-      - .env
-    environment:
-      # Override those variables in your .env file if needed
-      - "NGINX_MAX_BODY_SIZE=${NGINX_MAX_BODY_SIZE-100M}"
-    volumes:
-      # Uncomment if you want to use your previous nginx config, please let us
-      # know what special configuration you need, so we can support it with out
-      # upstream nginx configuration!
-      #- "./nginx/funkwhale.template:/etc/nginx/templates/default.conf.template:ro"
-      #- "./nginx/funkwhale_proxy.conf:/etc/nginx/funkwhale_proxy.conf:ro"
-
-      - "${MUSIC_DIRECTORY_SERVE_PATH-/srv/funkwhale/data/music}:${MUSIC_DIRECTORY_PATH-/music}:ro"
-      - "${MEDIA_ROOT}:${MEDIA_ROOT}:ro"
-      - "${STATIC_ROOT}:/usr/share/nginx/html/staticfiles:ro"
-    ports:
-      # override those variables in your .env file if needed
-      - "${FUNKWHALE_API_IP}:${FUNKWHALE_API_PORT}:80"
-
-  typesense:
-    restart: unless-stopped
-    env_file:
-      - .env
-    image: typesense/typesense:0.24.0
-    volumes:
-      - ./typesense/data:/data
-    command: --data-dir /data --enable-cors
-    profiles:
-      - typesense
+volumes:
+  funkwhale_pgdata:
+  funkwhale_media:
+  funkwhale_static:
+  

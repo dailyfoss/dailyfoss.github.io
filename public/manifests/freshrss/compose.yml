@@ -1,62 +1,60 @@
-services:
-  freshrss:
-    image: freshrss/freshrss:edge
+# ===============================
+# Docker Compose (FreshRSS)
+# ===============================
+# host: http://localhost:8080
+# username: set via web UI (FreshRSS installer)
+# password: set via web UI
 
+services:
+  db:
+    image: mariadb:10.11
+    container_name: freshrss_db
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=ChangeRootDBPass
+      - MYSQL_DATABASE=freshrss
+      - MYSQL_USER=freshrss
+      - MYSQL_PASSWORD=ChangeFreshrssDBPass
+    volumes:
+      - freshrss_db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -p$${MYSQL_ROOT_PASSWORD}"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  freshrss:
+    image: freshrss/freshrss:latest
     container_name: freshrss
     restart: unless-stopped
-    logging:
-      options:
-        max-size: 10m
-    volumes:
-      # Recommended volume for FreshRSS persistent data such as configuration and SQLite databases
-      - ./data:/var/www/FreshRSS/data
-      # Optional volume for storing third-party extensions
-      - ./extensions:/var/www/FreshRSS/extensions
-      # Optional file providing custom global settings (used before a FreshRSS install)
-      - ./config.custom.php:/var/www/FreshRSS/data/config.custom.php
-      # Optional file providing custom user settings (used before a new user is created)
-      - ./config-user.custom.php:/var/www/FreshRSS/data/config-user.custom.php
+    depends_on:
+      db:
+        condition: service_healthy
     ports:
-      # If you want to open a port 8080 on the local machine:
       - "8080:80"
-	env_file:
-	  - .env
     environment:
-      # A timezone http://php.net/timezones (default is UTC)
-      TZ: Europe/Paris
-      # Cron job to refresh feeds at specified minutes
-      CRON_MIN: '2,32'
-      # 'development' for additional logs; default is 'production'
-      FRESHRSS_ENV: development
-      # Optional advanced parameter controlling the internal Apache listening port
-      LISTEN: 0.0.0.0:80
-      # Optional parameter, remove for automatic settings, set to 0 to disable,
-      # or (if you use a proxy) to a space-separated list of trusted IP ranges
-      # compatible with https://httpd.apache.org/docs/current/mod/mod_remoteip.html#remoteipinternalproxy
-      # This impacts which IP address is logged (X-Forwarded-For or REMOTE_ADDR).
-      # This also impacts external authentication methods;
-      # see https://freshrss.github.io/FreshRSS/en/admins/09_AccessControl.html
-      TRUSTED_PROXY: 172.16.0.1/12 192.168.0.1/16
-      # Optional parameter, set to 1 to enable OpenID Connect (only available in our Debian image)
-      # Requires more environment variables. See https://freshrss.github.io/FreshRSS/en/admins/16_OpenID-Connect.html
-      OIDC_ENABLED: 0
-      # Optional auto-install parameters (the Web interface install is recommended instead):
-      # ⚠️ Parameters below are only used at the very first run (so far).
-      # So if changes are made (or in .env file), first delete the service and volumes.
-      # ℹ️ All the --db-* parameters can be omitted if using built-in SQLite database.
-      FRESHRSS_INSTALL: |-
-        --api-enabled
-        --base-url ${BASE_URL}
-        --db-base ${DB_BASE}
-        --db-host ${DB_HOST}
-        --db-password ${DB_PASSWORD}
-        --db-type pgsql
-        --db-user ${DB_USER}
-        --default_user admin
-        --language en
-      FRESHRSS_USER: |-
-        --api-password ${ADMIN_API_PASSWORD}
-        --email ${ADMIN_EMAIL}
-        --language en
-        --password ${ADMIN_PASSWORD}
-        --user admin
+      # Database connection
+      - FR_RSS_DB_TYPE=mysql
+      - FR_RSS_DB_HOST=db
+      - FR_RSS_DB_NAME=freshrss
+      - FR_RSS_DB_USER=freshrss
+      - FR_RSS_DB_PASS=ChangeFreshrssDBPass
+      - FR_RSS_DB_PORT=3306
+
+      # Optional recommended values
+      #- TZ=UTC
+      #- FR_RSS_PHP_MAX_EXECUTION_TIME=300
+      #- FR_RSS_PHP_MEMORY_LIMIT=512M
+    volumes:
+      # Persist user data and configs
+      - freshrss_data:/var/www/FreshRSS/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:80/p/ping.php || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+volumes:
+  freshrss_db_data:
+  freshrss_data:

@@ -28,7 +28,10 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/fli-so.webp",
     "issues": "https://github.com/thisuxhq/fli.so/issues",
     "releases": null,
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/fli-so-homepage.jpg",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/fli-so-demo.jpg"
+    ]
   },
   "features": [
     {
@@ -88,12 +91,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/fli-so/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

@@ -1,50 +1,63 @@
+# ===============================
+# Docker Compose (Flarum)
+# ===============================
+# host: http://localhost:8080
+# admin_username: set via web installer
+# admin_password: set via web installer
+
 services:
   db:
-    image: mariadb:10
+    image: mariadb:10.11
     container_name: flarum_db
-    command:
-      - "mysqld"
-      - "--character-set-server=utf8mb4"
-      - "--collation-server=utf8mb4_unicode_ci"
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=YourRootDBPasswordHere
+      - MYSQL_DATABASE=flarum
+      - MYSQL_USER=flarum
+      - MYSQL_PASSWORD=YourFlarumDBPasswordHere
     volumes:
-      - "./db:/var/lib/mysql"
-    environment:
-      - "TZ"
-      - "MARIADB_RANDOM_ROOT_PASSWORD=yes"
-      - "MYSQL_DATABASE"
-      - "MYSQL_USER"
-      - "MYSQL_PASSWORD"
-    restart: always
-
-  msmtpd:
-    image: crazymax/msmtpd:latest
-    container_name: flarum_msmtpd
-    env_file:
-      - "./msmtpd.env"
-    environment:
-      - "TZ"
-    restart: always
+      - flarum_db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -p$${MYSQL_ROOT_PASSWORD}"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
 
   flarum:
-    image: crazymax/flarum:latest
-    container_name: flarum
-    ports:
-      - target: 8000
-        published: 8000
-        protocol: tcp
+    image: mondedie/flarum:latest
+    container_name: flarum_app
+    restart: unless-stopped
     depends_on:
-      - db
-      - msmtpd
-    volumes:
-      - "./data:/data"
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:8888"
     environment:
-      - "TZ"
-      - "PUID"
-      - "PGID"
-      - "DB_HOST=db"
-      - "DB_NAME=${MYSQL_DATABASE}"
-      - "DB_USER=${MYSQL_USER}"
-      - "DB_PASSWORD=${MYSQL_PASSWORD}"
-    env_file:
-      - "./flarum.env"
-    restart: always
+      # Flarum DB config
+      - DB_HOST=db
+      - DB_NAME=flarum
+      - DB_USER=flarum
+      - DB_PASS=YourFlarumDBPasswordHere
+      # Optional forum settings
+      - FLARUM_TITLE=MyForum
+      - FLARUM_ADMIN_USER=admin
+      - FLARUM_ADMIN_PASS=YourAdminPasswordHere
+      - FLARUM_ADMIN_MAIL=admin@example.com
+    volumes:
+      - flarum_assets:/flarum/app/public/assets
+      - flarum_extensions:/flarum/app/extensions
+      - flarum_logs:/flarum/app/storage/logs
+      - flarum_nginx:/etc/nginx/flarum
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:8888 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+volumes:
+  flarum_db_data:
+  flarum_assets:
+  flarum_extensions:
+  flarum_logs:
+  flarum_nginx:

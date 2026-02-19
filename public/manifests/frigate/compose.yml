@@ -1,28 +1,42 @@
+# ===============================
+# Docker Compose (Frigate NVR)
+# ===============================
+# host: http://localhost:5000 (UI)
+# username: configured via Frigate UI
+# password: configured via Frigate UI
+
 services:
   frigate:
-    container_name: frigate
-    privileged: true # this may not be necessary for all setups
-    restart: unless-stopped
     image: ghcr.io/blakeblackshear/frigate:stable
-    shm_size: "64mb" # update for your cameras based on calculation above
-    devices:
-      - /dev/bus/usb:/dev/bus/usb # Passes the USB Coral, needs to be modified for other versions
-      - /dev/apex_0:/dev/apex_0 # Passes a PCIe Coral, follow driver instructions here https://coral.ai/docs/m2/get-started/#2a-on-linux
-      - /dev/video11:/dev/video11 # For Raspberry Pi 4B
-      - /dev/dri/renderD128:/dev/dri/renderD128 # For intel hwaccel, needs to be updated for your hardware
+    container_name: frigate
+    restart: unless-stopped
+    privileged: true
+    shm_size: "512mb"
+    ports:
+      - "5000:5000"     # UI (unauthenticated)
+      - "8971:8971"     # Authenticated UI/API
+      - "8554:8554"     # RTSP streams
+      - "8555:8555/tcp" # WebRTC (TCP)
+      - "8555:8555/udp" # WebRTC (UDP)
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - /path/to/your/config:/config
-      - /path/to/your/storage:/media/frigate
-      - type: tmpfs # Optional: 1GB of memory, reduces SSD/SD Card wear
+      - ./config:/config                       # your config.yml
+      - ./storage:/media/frigate               # recordings + clips
+      - type: tmpfs
         target: /tmp/cache
         tmpfs:
           size: 1000000000
-    ports:
-      - "8971:8971"
-      # - "5000:5000" # Internal unauthenticated access. Expose carefully.
-      - "8554:8554" # RTSP feeds
-      - "8555:8555/tcp" # WebRTC over tcp
-      - "8555:8555/udp" # WebRTC over udp
     environment:
-      FRIGATE_RTSP_PASSWORD: "password"
+      # Frigate RTSP camera credentials (if not in config)
+      # - FRIGATE_RTSP_USERNAME=your_username
+      # - FRIGATE_RTSP_PASSWORD=your_password
+      # Optionally enable MQTT (point to your broker)
+      # - FRIGATE_MQTT_HOST=mqtt://mqtt_host
+      # - FRIGATE_MQTT_USERNAME=your_mqtt_user
+      # - FRIGATE_MQTT_PASSWORD=your_mqtt_password
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:5000 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s

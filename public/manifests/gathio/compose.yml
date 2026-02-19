@@ -1,19 +1,52 @@
+# ===============================
+# Docker Compose (Gathio)
+# ===============================
+# host: http://localhost:3000
+# admin via email / magic link
+# no built-in username/password
+
 services:
-    gathio:
-        container_name: gathio-app
-        image: ghcr.io/lowercasename/gathio:latest
-        links:
-            - mongo
-        ports:
-            - 3000:3000
-        volumes:
-            # The path to Gathio's config folder - change to match your system
-            - ./gathio-docker/config:/app/config
-            # The path to Gathio's user-uploaded event images folder - change to match your system
-            - ./gathio-docker/images:/app/public/events
-    mongo:
-        container_name: gathio-db
-        image: mongo:latest
-        volumes:
-            - ./mongodb_data_db:/data/db
-        restart: always
+  mongo:
+    image: mongo:6
+    restart: unless-stopped
+    volumes:
+      - gathio-mongo:/data/db
+    healthcheck:
+      test: ["CMD", "mongo", "--eval", "db.runCommand({ ping: 1 })"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+
+  gathio:
+    image: ghcr.io/lowercasename/gathio:latest
+    restart: unless-stopped
+    depends_on:
+      mongo:
+        condition: service_healthy
+    environment:
+      # Database connection to internal Mongo
+      GATHIO_MONGODB_URL: "mongodb://mongo:27017/gathio"
+      PORT: "3000"
+      # (Optional) SMTP for email links
+      # MAIL_SERVICE: "smtp"
+      # MAIL_HOST: "smtp.example.com"
+      # MAIL_PORT: "587"
+      # MAIL_USER: "username"
+      # MAIL_PASS: "password"
+    volumes:
+      - gathio-config:/app/config
+      - gathio-static:/app/static
+      - gathio-images:/app/public/events
+    ports:
+      - "3000:3000"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000/ >/dev/null 2>&1 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  gathio-mongo:
+  gathio-config:
+  gathio-static:
+  gathio-images:

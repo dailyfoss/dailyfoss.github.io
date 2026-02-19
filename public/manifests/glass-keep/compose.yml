@@ -1,0 +1,23 @@
+# ===============================
+# Docker Compose (React Glass Keep)
+# ===============================
+# host: http://localhost:3000
+# username: (none)
+# password: (none)
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    environment:
+      # (Optional) override base URL
+      REACT_APP_API_BASE_URL: ""
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3

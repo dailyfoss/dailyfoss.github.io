@@ -1,37 +1,91 @@
+# ===============================
+# Docker Compose (GlitchTip)
+# ===============================
+# host: http://localhost:8080
+# username: (create via UI)
+# password: (create via UI)
+
 services:
   postgres:
     image: postgres:16
+    restart: unless-stopped
     environment:
-      POSTGRES_HOST_AUTH_METHOD: "trust"  # Consider removing this and setting a password
-    restart: unless-stopped
+      POSTGRES_USER: glitchtip
+      POSTGRES_PASSWORD: strong_db_password
+      POSTGRES_DB: glitchtip
     volumes:
-      - pg-data:/var/lib/postgresql/data
+      - glitchtip-postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U glitchtip -d glitchtip"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   redis:
-    image: redis
-    restart: unless-stopped
-  web:
-    image: glitchtip/glitchtip
-    depends_on: *default-depends_on
-    ports:
-      - "8000:8000"
-    environment: *default-environment
+    image: redis:7-alpine
     restart: unless-stopped
     volumes:
-      - uploads:/code/uploads
+      - glitchtip-redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    image: glitchtip/backend:latest
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://glitchtip:strong_db_password@postgres:5432/glitchtip
+      REDIS_URL: redis://redis:6379/0
+      SECRET_KEY: replace_with_long_random_secret
+      ALLOWED_HOSTS: "*"
+      GLITCHTIP_DOMAIN: http://localhost:8080
+      EMAIL_URL: consolemail://
+    volumes:
+      - glitchtip-uploads:/code/uploads
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8000/health/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
   worker:
-    image: glitchtip/glitchtip
-    command: ./bin/run-celery-with-beat.sh
-    depends_on: *default-depends_on
-    environment: *default-environment
+    image: glitchtip/backend:latest
     restart: unless-stopped
-    volumes:
-      - uploads:/code/uploads
-  migrate:
-    image: glitchtip/glitchtip
-    depends_on: *default-depends_on
-    command: ./bin/run-migrate.sh
-    environment: *default-environment
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    command: celery -A glitchtip worker -l info
+    environment:
+      DATABASE_URL: postgres://glitchtip:strong_db_password@postgres:5432/glitchtip
+      REDIS_URL: redis://redis:6379/0
+      SECRET_KEY: replace_with_long_random_secret
+      ALLOWED_HOSTS: "*"
+
+  frontend:
+    image: glitchtip/frontend:latest
+    restart: unless-stopped
+    depends_on:
+      - backend
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    ports:
+      - "8080:3000"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
 
 volumes:
-  pg-data:
-  uploads:
+  glitchtip-postgres:
+  glitchtip-redis:
+  glitchtip-uploads:

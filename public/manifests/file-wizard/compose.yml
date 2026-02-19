@@ -1,0 +1,38 @@
+# ===============================
+# Docker Compose (FileWizard)
+# ===============================
+# host: http://localhost:6969
+# username: (disabled when LOCAL_ONLY=True)
+# password: (set only if auth enabled)
+
+services:
+  filewizard:
+    image: loredcast/filewizard:latest
+    container_name: filewizard
+    restart: unless-stopped
+    ports:
+      - "6969:8000"
+    environment:
+      LOCAL_ONLY: "True"                 # Set to "False" to enable auth
+      SECRET_KEY: ""                     # REQUIRED if LOCAL_ONLY=False
+      UPLOADS_DIR: /app/uploads
+      PROCESSED_DIR: /app/processed
+      OMP_NUM_THREADS: "1"
+      DOWNLOAD_KOKORO_ON_STARTUP: "true"
+    volumes:
+      # App configuration (settings.yml stored here)
+      - filewizard_config:/app/config
+      # Uploaded files
+      - filewizard_uploads:/app/uploads
+      # Processed output files
+      - filewizard_processed:/app/processed
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--spider", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  filewizard_config:
+  filewizard_uploads:
+  filewizard_processed:

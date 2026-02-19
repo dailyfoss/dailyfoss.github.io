@@ -1,26 +1,63 @@
+# ===============================
+# Docker Compose (Formbricks)
+# ===============================
+# host: http://localhost:3000
+# username: create via web UI
+# password: create via web UI
+
 services:
   postgres:
-    restart: always
-    image: postgres:15-alpine
-    volumes:
-      - postgres:/var/lib/postgresql/data
+    image: postgres:15
+    container_name: formbricks_postgres
+    restart: unless-stopped
     environment:
-      # Postgres DB Super User Password
-      # Replace the below with your own secure password & Make sure the password matches the password field in DATABASE_URL above
-      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=formbricks
+      - POSTGRES_USER=formbricks
+      - POSTGRES_PASSWORD=ChangeThisDBPassword
+    volumes:
+      - formbricks_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U formbricks -d formbricks || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
 
   formbricks:
-    restart: always
-    image: ghcr.io/formbricks/formbricks:latest
-    depends_on:
-      - postgres
+    image: formbricks/formbricks:latest
+    container_name: formbricks
+    restart: unless-stopped
     ports:
-      - 3000:3000
+      - "3000:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      # REQUIRED 🔐 — set your real public URL here:
+      - WEBAPP_URL=http://localhost:3000
+
+      # REQUIRED 🔐 — generate a strong secret:
+      - NEXTAUTH_SECRET=ChangeThisToAStrongSecret
+
+      # REQUIRED 🔐 — encryption key for sensitive data:
+      - ENCRYPTION_KEY=ChangeThisToAnotherStrongSecret
+
+      # REQUIRED 🔐 — PostgreSQL connection string
+      - DATABASE_URL=postgresql://formbricks:ChangeThisDBPassword@postgres:5432/formbricks
+
+      # Optional mailer settings (uncomment and set if needed)
+      # - SMTP_HOST=smtp.example.com
+      # - SMTP_PORT=587
+      # - SMTP_USER=your@email.com
+      # - SMTP_PASSWORD=ChangeSMTPPassword
     volumes:
-      - uploads:/home/nextjs/apps/web/uploads/
-    : *environment
+      - formbricks_data:/home/nextjs/apps/web/uploads
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://localhost:3000 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
 
 volumes:
-  postgres:
-    driver: local
-  uploads:
+  formbricks_pgdata:
+  formbricks_data:

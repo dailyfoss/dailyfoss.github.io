@@ -1,0 +1,43 @@
+# ===============================
+# Docker Compose (Geoposler)
+# ===============================
+# host: http://localhost:3454
+# username: (create via UI)
+# password: (create via UI)
+
+services:
+  mysql:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: changeme_strong_pass
+      MYSQL_DATABASE: geoposler
+    volumes:
+      - geoposler-mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -p$${MYSQL_ROOT_PASSWORD} >/dev/null 2>&1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  geoposler:
+    image: ghcr.io/garanda21/geoposler:latest
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - "3454:80"
+    environment:
+      DB_HOST: mysql
+      DB_USER: root
+      DB_PASSWORD: changeme_strong_pass
+      DB_NAME: geoposler
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3454/ >/dev/null 2>&1 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  geoposler-mysql:

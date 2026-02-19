@@ -1,0 +1,28 @@
+# ===============================
+# Docker Compose (File Browser)
+# ===============================
+# host: http://localhost:8080
+# username: admin
+# password: admin  (change immediately)
+
+services:
+  filebrowser:
+    image: filebrowser/filebrowser:latest
+    container_name: filebrowser
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - filebrowser_data:/srv
+      - filebrowser_database:/database
+      - filebrowser_config:/config
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  filebrowser_data:
+  filebrowser_database:
+  filebrowser_config:

@@ -1,29 +1,71 @@
+# ===============================
+# Docker Compose (Gladys Assistant)
+# ===============================
+# host: http://localhost:8080
+# username: (create via UI)
+# password: (create via UI)
+
 services:
-  gladys:
-    image: gladysassistant/gladys:v4
-    container_name: gladys
-    restart: always
-    privileged: true
-    network_mode: host
-    cgroup: host
-    logging:
-      driver: "json-file"
-      options:
-        max-size: 10m
+  redis:
+    image: redis:7
+    restart: unless-stopped
+    volumes:
+      - gladys-redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  postgres:
+    image: postgres:15
+    restart: unless-stopped
     environment:
-      NODE_ENV: production
-      SQLITE_FILE_PATH: /var/lib/gladysassistant/gladys-production.db
-      SERVER_PORT: 80
-      TZ: Europe/Paris
+      POSTGRES_USER: gladys
+      POSTGRES_PASSWORD: changeme
+      POSTGRES_DB: gladys
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - /var/lib/gladysassistant:/var/lib/gladysassistant
-      - /dev:/dev
-      - /run/udev:/run/udev:ro
-  watchtower:
-    image: containrrr/watchtower
-    restart: always
-    container_name: watchtower
-    command: --cleanup --include-restarting
+      - gladys-postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U gladys -d gladys"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  gladys:
+    image: ghcr.io/gladysassistant/gladys:latest
+    restart: unless-stopped
+    depends_on:
+      redis:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    environment:
+      # API / UI
+      SERVER_PORT: "8080"
+      # Database
+      DB_CLIENT: postgres
+      DB_HOST: postgres
+      DB_PORT: "5432"
+      DB_NAME: gladys
+      DB_USER: gladys
+      DB_PASSWORD: changeme
+      # Redis
+      REDIS_HOST: redis
+      REDIS_PORT: "6379"
+      # Optional: base URL for external access
+      # GLADYS_BASE_URL: "https://yourdomain.com"
+    ports:
+      - "8080:8080"
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+      - gladys-data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8080/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  gladys-redis:
+  gladys-postgres:
+  gladys-data:
