@@ -1,0 +1,104 @@
+# ===============================
+# Docker Compose (Supabase OSS Stack)
+# ===============================
+# host: http://localhost:54322 (Postgres), http://localhost:8000 (API + Auth + Studio),
+#       http://localhost:54323 (Realtime), http://localhost:5000 (Functions)
+# username: postgres (for database)
+# password: CHANGE_ME_SUPABASE_PASSWORD
+
+services:
+
+  db:
+    image: postgres:16-alpine
+    container_name: supabase_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: CHANGE_ME_SUPABASE_PASSWORD
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+    volumes:
+      - supabase_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    image: supabase/gotrue:v2.5.0
+    container_name: supabase_api
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      GOTRUE_DB_DRIVER: "postgres"
+      GOTRUE_DB_DATABASE_URL: "postgres://postgres:CHANGE_ME_SUPABASE_PASSWORD@db:5432/postgres"
+      GOTRUE_JWT_SECRET: CHANGE_ME_LONG_RANDOM_SECRET
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD-SHELL", "wget --quiet --spider http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  realtime:
+    image: supabase/realtime:v1.24.1
+    container_name: supabase_realtime
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_HOST: db
+      DB_PORT: "5432"
+      DB_NAME: postgres
+      DB_USER: postgres
+      DB_PASSWORD: CHANGE_ME_SUPABASE_PASSWORD
+    ports:
+      - "54323:4000"
+    healthcheck:
+      test: ["CMD-SHELL", "wget --quiet --spider http://localhost:54323/"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  storage:
+    image: supabase/storage-api:v0.28.2
+    container_name: supabase_storage
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      SUPABASE_DB_URL: "postgres://postgres:CHANGE_ME_SUPABASE_PASSWORD@db:5432/postgres"
+      ANON_KEY: CHANGE_ME_SUPABASE_ANON_KEY
+      SERVICE_ROLE_KEY: CHANGE_ME_SUPABASE_SERVICE_ROLE_KEY
+    ports:
+      - "5001:5000"
+    healthcheck:
+      test: ["CMD-SHELL", "wget --quiet --spider http://localhost:5001/"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  functions:
+    image: supabase/functions:v1.27.0
+    container_name: supabase_functions
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      SUPABASE_DB_URL: "postgres://postgres:CHANGE_ME_SUPABASE_PASSWORD@db:5432/postgres"
+    ports:
+      - "5000:5000"
+    healthcheck:
+      test: ["CMD-SHELL", "wget --quiet --spider http://localhost:5000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  supabase_db_data:

@@ -1,9 +1,28 @@
+# ===============================
+# Docker Compose (MeTube)
+# ===============================
+# host: http://localhost:8081
+# username: none
+# password: none
+
 services:
   metube:
-    image: ghcr.io/alexta69/metube
+    image: ghcr.io/alexta69/metube:latest
     container_name: metube
     restart: unless-stopped
     ports:
       - "8081:8081"
     volumes:
-      - ./downloads:/downloads
+      # Downloaded media will be stored here
+      - metube_downloads:/downloads
+    environment:
+      # Optional: limit max concurrent downloads (default is reasonable)
+      DOWNLOAD_DIR: /downloads
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--spider", "http://localhost:8081/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  metube_downloads:
