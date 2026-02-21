@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://github.com/zxh326/kite",
-    "documentation": "https://github.com/zxh326/kite",
+    "documentation": "https://kite.zzde.me/config/",
     "source_code": "https://github.com/zxh326/kite",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/kite.webp",
     "issues": "https://github.com/zxh326/kite/issues",
@@ -75,17 +75,19 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/kite/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
-    "username": null,
-    "password": null
+    "url": "https://kite-demo.zzde.me/login",
+    "username": "admin",
+    "password": "pass"
   }
 }

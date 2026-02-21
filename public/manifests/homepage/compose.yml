@@ -1,13 +1,28 @@
+# ===============================
+# Docker Compose (Homepage)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
 services:
   homepage:
     image: ghcr.io/gethomepage/homepage:latest
     container_name: homepage
-    environment:
-      PUID: 1000 # optional, your user id
-      PGID: 1000 # optional, your group id
-    ports:
-      - 3000:3000
-    volumes:
-      - /path/to/config:/app/config # Make sure your local config directory exists
-      - /var/run/docker.sock:/var/run/docker.sock:ro # optional, for docker integrations
     restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - TZ=UTC
+    volumes:
+      - homepage_config:/app/config
+      - homepage_images:/app/public/images
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  homepage_config:
+  homepage_images:

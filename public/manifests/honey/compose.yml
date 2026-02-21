@@ -1,8 +1,27 @@
+# ===============================
+# Docker Compose (Honey)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
 services:
   honey:
     image: ghcr.io/dani3l0/honey:latest
-    ports:
-      - 4173:4173
-    volumes:
-      - /path/to/config:/app/dist/config:ro
+    container_name: honey
     restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - TZ=UTC
+    volumes:
+      - honey_data:/app/data
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  honey_data:

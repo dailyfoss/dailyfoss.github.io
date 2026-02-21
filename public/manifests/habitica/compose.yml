@@ -1,0 +1,42 @@
+# ===============================
+# Docker Compose (Habitica)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  mongo:
+    image: mongo:7
+    container_name: habitica-mongo
+    restart: unless-stopped
+    volumes:
+      - habitica_mongo_data:/data/db
+    healthcheck:
+      test: ["CMD-SHELL", "mongosh --quiet --eval \"db.adminCommand('ping').ok\" | grep 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  habitica:
+    image: habitica/habitica:latest
+    container_name: habitica-app
+    restart: unless-stopped
+    depends_on:
+      mongo:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      BASE_URL: http://localhost:3000
+      MONGO_URL: mongodb://mongo:27017/habitica
+      NODE_DB_URI: mongodb://mongo:27017/habitica
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3000 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  habitica_mongo_data:

@@ -1,0 +1,33 @@
+# ===============================
+# Docker Compose (InfluxDB)
+# ===============================
+# host: http://localhost:8086
+# username: admin
+# password: change_this_strong_password
+
+services:
+
+  influxdb:
+    image: influxdb:2
+    restart: unless-stopped
+    ports:
+      - "8086:8086"
+    environment:
+      DOCKER_INFLUXDB_INIT_MODE: setup
+      DOCKER_INFLUXDB_INIT_USERNAME: admin
+      DOCKER_INFLUXDB_INIT_PASSWORD: change_this_strong_password
+      DOCKER_INFLUXDB_INIT_ORG: my-org
+      DOCKER_INFLUXDB_INIT_BUCKET: my-bucket
+      DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: change_this_super_secret_token
+    volumes:
+      - influxdb_data:/var/lib/influxdb2
+      - influxdb_config:/etc/influxdb2
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8086/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  influxdb_data:
+  influxdb_config:

@@ -1,18 +1,26 @@
+# ===============================
+# Docker Compose (Komodo)
+# ===============================
+# host: http://localhost:3000
+# username: (set during setup)
+# password: (set during setup)
+
 services:
-  diun:
-    image: crazymax/diun:latest
-    container_name: diun
-    command: serve
-    volumes:
-      - "./data:/data"
-      - "/var/run/docker.sock:/var/run/docker.sock"
+  komodo:
+    image: ghcr.io/moghtech/komodo:latest
+    container_name: komodo
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
     environment:
-      - "TZ=Europe/Paris"
-      - "LOG_LEVEL=info"
-      - "LOG_JSON=false"
-      - "DIUN_WATCH_WORKERS=20"
-      - "DIUN_WATCH_SCHEDULE=0 */6 * * *"
-      - "DIUN_WATCH_JITTER=30s"
-      - "DIUN_PROVIDERS_DOCKER=true"
-      - "DIUN_PROVIDERS_DOCKER_WATCHBYDEFAULT=true"
-    restart: always
+      TZ: Etc/UTC
+    volumes:
+      - komodo_data:/app/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:3000 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  komodo_data:

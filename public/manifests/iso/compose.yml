@@ -1,0 +1,27 @@
+# ===============================
+# Docker Compose (ISO Dashboard)
+# ===============================
+# host: http://localhost:3000
+# username: (SET below)
+# password: (SET below)
+
+services:
+  iso:
+    image: coyann/iso:latest
+    container_name: iso_dashboard
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      AUTH_SECRET: "changeme123"
+      AUTH_PASSWORD: "changeme123"
+    volumes:
+      - iso_config:/config
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:3000 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  iso_config:

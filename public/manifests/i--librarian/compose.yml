@@ -1,0 +1,55 @@
+# ===============================
+# Docker Compose (i-Librarian Free)
+# ===============================
+# host: http://localhost:8080
+# username: admin
+# password: admin
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: ilibrarian_db
+    restart: unless-stopped
+    environment:
+      - MYSQL_DATABASE=ilibrarian
+      - MYSQL_USER=ilibrarian
+      - MYSQL_PASSWORD=ilibrarian_change_me
+      - MYSQL_ROOT_PASSWORD=root_change_me
+    command:
+      - --default-authentication-plugin=mysql_native_password
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - ilibrarian_db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -proot_change_me"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  ilibrarian:
+    image: mkucej/i-librarian-free:latest
+    container_name: ilibrarian
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    environment:
+      - DB_HOST=db
+      - DB_NAME=ilibrarian
+      - DB_USER=ilibrarian
+      - DB_PASS=ilibrarian_change_me
+      - TZ=UTC
+    volumes:
+      - ilibrarian_data:/var/www/html/data
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  ilibrarian_db_data:
+  ilibrarian_data:

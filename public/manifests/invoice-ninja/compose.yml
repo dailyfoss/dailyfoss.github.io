@@ -1,0 +1,65 @@
+# ===============================
+# Docker Compose (Invoice Ninja)
+# ===============================
+# host: http://localhost:8080
+# username: admin@example.com
+# password: (set during setup)
+
+services:
+  app:
+    image: invoiceninja/invoiceninja:latest
+    container_name: invoiceninja_app
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      APP_ENV: production
+      APP_DEBUG: "false"
+      APP_URL: http://localhost:8080
+      APP_KEY: base64:SomeRandomStringChangeThisAfterInstall
+      REQUIRE_HTTPS: "false"
+
+      DB_CONNECTION: pgsql
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_DATABASE: invoiceninja
+      DB_USERNAME: invoiceninja
+      DB_PASSWORD: invoiceninja
+
+      CACHE_DRIVER: file
+      SESSION_DRIVER: file
+      QUEUE_CONNECTION: database
+      MAIL_MAILER: log
+
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - invoiceninja_storage:/var/www/app/storage
+      - invoiceninja_public:/var/www/app/public
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost/health-check || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  db:
+    image: postgres:latest
+    container_name: invoiceninja_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: invoiceninja
+      POSTGRES_USER: invoiceninja
+      POSTGRES_PASSWORD: invoiceninja
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U invoiceninja"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+  invoiceninja_storage:
+  invoiceninja_public:

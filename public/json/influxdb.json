@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://influxdata.com",
-    "documentation": "https://github.com/influxdata/influxdb",
+    "documentation": "https://docs.influxdata.com",
     "source_code": "https://github.com/influxdata/influxdb",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/influxdb.webp",
     "issues": "https://github.com/influxdata/influxdb/issues",
@@ -95,12 +95,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/influxdb/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

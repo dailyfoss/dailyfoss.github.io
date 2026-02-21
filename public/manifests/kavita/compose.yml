@@ -1,15 +1,26 @@
+# ===============================
+# Docker Compose (Kavita)
+# ===============================
+# host: http://localhost:5000
+# username: (set during setup)
+# password: (set during setup)
+
 services:
-    kavita:
-        image: jvmilazz0/kavita:latest    # Using the stable branch from the official dockerhub repo.
-        container_name: kavita
-        volumes:
-            - ./manga:/manga            # Manga is just an example you can have the name you want. See the following
-            - ./comics:/comics          # Use as many as you want
-            - ./books:/books            #
-            - ./data:/kavita/config     # Change './data if you want to have the config files in a different place.
-                                        # /kavita/config must not be changed
-        environment:
-            - TZ=Your/Timezone
-        ports:
-            - "5000:5000" # Change the public port (the first 5000) if you have conflicts with other services
-        restart: unless-stopped
+  kavita:
+    image: kareadita/kavita:latest
+    container_name: kavita
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    volumes:
+      - kavita_config:/kavita/config
+      - kavita_library:/library
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:5000 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  kavita_config:
+  kavita_library:

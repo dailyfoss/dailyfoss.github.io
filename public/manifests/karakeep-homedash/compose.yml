@@ -1,0 +1,24 @@
+# ===============================
+# Docker Compose (Karakeep HomeDash)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  homedash:
+    image: ghcr.io/codejawn/karakeep-homedash:latest
+    container_name: karakeep-homedash
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - homedash_data:/app/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:3000 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  homedash_data:

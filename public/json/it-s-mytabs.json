@@ -94,16 +94,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/it-s-mytabs/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://its-mytabs.kuma.pet/tab/1?audio=youtube-VuKSlOT__9s&track=2",
     "username": null,
     "password": null
   },

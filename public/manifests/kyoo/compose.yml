@@ -1,12 +1,74 @@
+# ===============================
+# Docker Compose (Kyoo)
+# ===============================
+# host: http://localhost:8901
+# username:
+# password:
+
 services:
+  postgres:
+    image: postgres:15
+    container_name: kyoo-postgres
+    environment:
+      POSTGRES_DB: kyoo
+      POSTGRES_USER: kyoo
+      POSTGRES_PASSWORD: change_this_password
+    volumes:
+      - db:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kyoo -d kyoo"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  meilisearch:
+    image: getmeili/meilisearch:v1.4
+    container_name: kyoo-meilisearch
+    environment:
+      MEILI_ENV: production
+      MEILI_MASTER_KEY: change_this_meili_key
+    volumes:
+      - search:/meili_data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:7700/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  rabbitmq:
+    image: rabbitmq:3-alpine
+    container_name: kyoo-rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: kyoo
+      RABBITMQ_DEFAULT_PASS: change_this_rabbit_password
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  migrations:
+    image: ghcr.io/zoriya/kyoo_migrations:4.7
+    container_name: kyoo-migrations
+    environment:
+      DATABASE_URL: postgres://kyoo:change_this_password@postgres:5432/kyoo
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: "no"
+
   back:
     image: ghcr.io/zoriya/kyoo_back:4.7
-    restart: unless-stopped
-    cpus: 1.5
+    container_name: kyoo-back
     environment:
-      - TRANSCODER_URL=${TRANSCODER_URL:-http://transcoder:7666}
-    env_file:
-      - ./.env
+      DATABASE_URL: postgres://kyoo:change_this_password@postgres:5432/kyoo
+      MEILISEARCH_URL: http://meilisearch:7700
+      MEILISEARCH_MASTER_KEY: change_this_meili_key
+      RABBITMQ_URL: amqp://kyoo:change_this_rabbit_password@rabbitmq:5672
+      TRANSCODER_URL: http://transcoder:7666
     depends_on:
       postgres:
         condition: service_healthy
@@ -17,158 +79,60 @@ services:
       migrations:
         condition: service_completed_successfully
     volumes:
-      - kyoo:/metadata
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.api.rule=PathPrefix(`/api/`)"
-      - "traefik.http.routers.api.middlewares=api-sp"
-      - "traefik.http.middlewares.api-sp.stripprefix.prefixes=/api"
-      - "traefik.http.middlewares.api-sp.stripprefix.forceSlash=false"
-
-  migrations:
-    image: ghcr.io/zoriya/kyoo_migrations:4.7
-    restart: "no"
-    depends_on:
-      postgres:
-        condition: service_healthy
-    env_file:
-      - ./.env
+      - metadata:/metadata
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
 
   front:
     image: ghcr.io/zoriya/kyoo_front:4.7
-    restart: unless-stopped
+    container_name: kyoo-front
     environment:
-      - KYOO_URL=${KYOO_URL:-http://back:5000}
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.front.rule=PathPrefix(`/`)"
+      KYOO_URL: http://back:5000
+    depends_on:
+      back:
+        condition: service_healthy
+    restart: unless-stopped
 
   scanner:
     image: ghcr.io/zoriya/kyoo_scanner:4.7
-    restart: unless-stopped
+    container_name: kyoo-scanner
+    environment:
+      KYOO_URL: http://back:5000
     depends_on:
       back:
         condition: service_healthy
-    env_file:
-      - ./.env
-    environment:
-      - KYOO_URL=${KYOO_URL:-http://back:5000}
     volumes:
-      - ${LIBRARY_ROOT}:/video:ro
-
-  matcher:
-    image: ghcr.io/zoriya/kyoo_scanner:4.7
-    command: matcher
+      - library:/video:ro
     restart: unless-stopped
-    depends_on:
-      back:
-        condition: service_healthy
-    env_file:
-      - ./.env
-    environment:
-      - KYOO_URL=${KYOO_URL:-http://back:5000}
-
-  autosync:
-    image: ghcr.io/zoriya/kyoo_autosync:4.7
-    restart: on-failure
-    depends_on:
-      rabbitmq:
-        condition: service_healthy
-    env_file:
-      - ./.env
 
   transcoder:
-    : *transcoder-base
-    profiles: ['', 'cpu']
-
-  transcoder-nvidia:
-    : *transcoder-base
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - capabilities: [gpu]
+    image: ghcr.io/zoriya/kyoo_transcoder:4.7
+    container_name: kyoo-transcoder
     environment:
-      - GOCODER_PREFIX=/video
-      - GOCODER_HWACCEL=nvidia
-    profiles: ['nvidia']
-
-  transcoder-vaapi:
-    : *transcoder-base
-    devices:
-      - /dev/dri:/dev/dri
-    environment:
-      - GOCODER_PREFIX=/video
-      - GOCODER_HWACCEL=vaapi
-      - GOCODER_VAAPI_RENDERER=${GOCODER_VAAPI_RENDERER:-/dev/dri/renderD128}
-    profiles: ['vaapi']
-  # qsv is the same setup as vaapi but with the hwaccel env var different
-  transcoder-qsv:
-    : *transcoder-base
-    devices:
-      - /dev/dri:/dev/dri
-    environment:
-      - GOCODER_PREFIX=/video
-      - GOCODER_HWACCEL=qsv
-      - GOCODER_VAAPI_RENDERER=${GOCODER_VAAPI_RENDERER:-/dev/dri/renderD128}
-    profiles: ['qsv']
+      GOCODER_PREFIX: /video
+    volumes:
+      - library:/video
+    restart: unless-stopped
 
   traefik:
     image: traefik:v3.1
-    restart: unless-stopped
+    container_name: kyoo-traefik
     command:
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
       - "--entryPoints.web.address=:8901"
-      - "--accesslog=true"
     ports:
       - "8901:8901"
     volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock:ro"
-
-  postgres:
-    image: postgres:15
+      - /var/run/docker.sock:/var/run/docker.sock:ro
     restart: unless-stopped
-    env_file:
-      - ./.env
-    volumes:
-      - db:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
-      interval: 5s
-      timeout: 5s
-      retries: 5
-
-  meilisearch:
-    image: getmeili/meilisearch:v1.4
-    restart: unless-stopped
-    volumes:
-      - search:/meili_data
-    environment:
-      - MEILI_ENV=production
-    env_file:
-      - .env
-    healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--spider", "http://meilisearch:7700/health"]
-      interval: 30s
-      timeout: 5s
-      retries: 5
-
-  rabbitmq:
-    image: rabbitmq:3-alpine
-    restart: on-failure
-    environment:
-      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
-      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
-    healthcheck:
-      test: rabbitmq-diagnostics -q ping
-      interval: 30s
-      timeout: 10s
-      retries: 5
-      start_period: 10s
 
 volumes:
-  kyoo:
   db:
   metadata:
   search:
+  library:

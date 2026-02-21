@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://imagor.net",
-    "documentation": "https://github.com/cshum/imagor-studio",
+    "documentation": "https://docs.studio.imagor.net",
     "source_code": "https://github.com/cshum/imagor-studio",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/imagor-studio.webp",
     "issues": "https://github.com/cshum/imagor-studio/issues",
@@ -95,12 +95,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/imagor-studio/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

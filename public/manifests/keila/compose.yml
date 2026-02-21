@@ -1,22 +1,46 @@
+# ===============================
+# Docker Compose (Keila)
+# ===============================
+# host: http://localhost:4000
+# username: (set during setup)
+# password: (set during setup)
+
 services:
   keila:
     image: pentacent/keila:latest
+    container_name: keila
+    restart: unless-stopped
     ports:
       - "4000:4000"
+    environment:
+      DATABASE_URL: postgres://keila:keila@db:5432/keila
+      SECRET_KEY_BASE: change_this_secret_key
+      HOST: 0.0.0.0
+      PORT: 4000
     depends_on:
-      - postgres
-    environment:
-      SECRET_KEY_BASE: "${YOUR_SECRET_KEY}"
-      DB_URL: "postgres://postgres:postgres@postgres/postgres"
-      URL_HOST: "${YOUR_URL_HOST}"
-      MAILER_SMTP_HOST: "${YOUR_MAILER_SMTP_HOST}"
-      MAILER_SMTP_USER: "${YOUR_MAILER_SMTP_USER}"
-      MAILER_SMTP_PASSWORD: "${YOUR_MAILER_SMTP_PASSWORD}"
-     restart: unless-stopped
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:4000 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
-  postgres:
-    image: postgres:alpine
-    ports:
-      - "5432:5432"
+  db:
+    image: postgres:latest
+    container_name: keila_db
+    restart: unless-stopped
     environment:
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: keila
+      POSTGRES_USER: keila
+      POSTGRES_PASSWORD: keila
+    volumes:
+      - keila_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U keila"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  keila_db_data:

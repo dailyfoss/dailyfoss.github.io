@@ -1,0 +1,27 @@
+# ===============================
+# Docker Compose (Kubero - Dev)
+# ===============================
+# host: http://localhost:2000
+# username:
+# password:
+
+services:
+  kubero:
+    image: ghcr.io/kubero-dev/kubero:latest
+    container_name: kubero
+    restart: unless-stopped
+    ports:
+      - "2000:2000"
+    environment:
+      NODE_ENV: production
+      PORT: 2000
+    volumes:
+      - kubero_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:2000 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  kubero_data:

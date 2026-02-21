@@ -1,0 +1,44 @@
+# ===============================
+# Docker Compose (Jellysweep)
+# ===============================
+# host: http://localhost:8081
+# username: (set during setup)
+# password: (set during setup)
+
+services:
+  jellysweep:
+    image: ghcr.io/jon4hz/jellysweep:latest
+    container_name: jellysweep
+    restart: unless-stopped
+    ports:
+      - "8081:8080"
+    environment:
+      DATABASE_URL: postgresql://jellysweep:jellysweep@db:5432/jellysweep
+      NODE_ENV: production
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:8080 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  db:
+    image: postgres:latest
+    container_name: jellysweep_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: jellysweep
+      POSTGRES_USER: jellysweep
+      POSTGRES_PASSWORD: jellysweep
+    volumes:
+      - jellysweep_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U jellysweep"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  jellysweep_db_data:

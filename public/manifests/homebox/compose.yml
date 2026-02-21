@@ -1,14 +1,28 @@
+# ===============================
+# Docker Compose (Homebox)
+# ===============================
+# host: http://localhost:3100
+# username: (created during setup)
+# password: (created during setup)
+
 services:
   homebox:
-    image: ghcr.io/hay-kot/homebox:latest
-#   image: ghcr.io/hay-kot/homebox:latest-rootless
+    image: ghcr.io/sysadminsmedia/homebox:latest
     container_name: homebox
-    restart: always
-    environment:
-    - HBOX_LOG_LEVEL=info
-    - HBOX_LOG_FORMAT=text
-    - HBOX_WEB_MAX_UPLOAD_SIZE=10
-    volumes:
-      - ./homebox-data:/data/
+    restart: unless-stopped
     ports:
-      - 3100:7745
+      - "3100:3100"
+    environment:
+      - TZ=UTC
+      - HBOX_OPTIONS_ALLOW_REGISTRATION=false
+      - HBOX_OPTIONS_ALLOW_ANONYMOUS=false
+    volumes:
+      - homebox_data:/data
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3100"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  homebox_data:

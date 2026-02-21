@@ -1,34 +1,65 @@
+# ===============================
+# Docker Compose (HeyForm)
+# ===============================
+# host: http://localhost:3000
+# username: (created during first signup)
+# password: (created during first signup)
+
 services:
-  heyform:
-    image: heyform/community-edition:latest
-    restart: always
-    volumes:
-      # Persist uploaded images
-      - ./assets:/app/static/upload
-    depends_on:
-      - mongo
-      - keydb
-    ports:
-      - '9513:8000'
+  db:
+    image: postgres:16-alpine
+    container_name: heyform_db
+    restart: unless-stopped
     environment:
-      APP_HOMEPAGE_URL: http://127.0.0.1:9513
-      SESSION_KEY: key1
-      FORM_ENCRYPTION_KEY: key2
-      MONGO_URI: 'mongodb://mongo:27017/heyform'
-      REDIS_HOST: keydb
-      REDIS_PORT: 6379
-
-  mongo:
-    image: percona/percona-server-mongodb:4.4
-    restart: always
+      - POSTGRES_DB=heyform
+      - POSTGRES_USER=heyform
+      - POSTGRES_PASSWORD=heyform_change_me
     volumes:
-      # Persist MongoDB data
-      - ./database:/data/db
+      - heyform_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U heyform"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
-  keydb:
-    image: eqalpha/keydb:latest
-    restart: always
-    command: keydb-server --appendonly yes
+  redis:
+    image: redis:7-alpine
+    container_name: heyform_redis
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
     volumes:
-      # Persist KeyDB data
-      - ./keydb:/data
+      - heyform_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  heyform:
+    image: heyform/heyform:latest
+    container_name: heyform
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DATABASE_URL=postgresql://heyform:heyform_change_me@db:5432/heyform
+      - REDIS_URL=redis://redis:6379
+      - NEXTAUTH_URL=http://localhost:3000
+      - NEXTAUTH_SECRET=change_this_to_a_long_random_string
+      - TZ=UTC
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  heyform_db_data:
+  heyform_redis_data:

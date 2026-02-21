@@ -1,0 +1,51 @@
+# ===============================
+# Docker Compose (HortusFox Web)
+# ===============================
+# host: http://localhost:8080
+# username: (created during setup)
+# password: (created during setup)
+
+services:
+  db:
+    image: mariadb:11
+    container_name: hortusfox_db
+    restart: unless-stopped
+    environment:
+      - MYSQL_DATABASE=hortusfox
+      - MYSQL_USER=hortusfox
+      - MYSQL_PASSWORD=hortusfox_change_me
+      - MYSQL_ROOT_PASSWORD=root_change_me
+    volumes:
+      - hortusfox_db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mariadb-admin ping -h localhost -u root -proot_change_me"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  hortusfox:
+    image: danielbrendel/hortusfox-web:latest
+    container_name: hortusfox
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    environment:
+      - DB_HOST=db
+      - DB_DATABASE=hortusfox
+      - DB_USERNAME=hortusfox
+      - DB_PASSWORD=hortusfox_change_me
+      - TZ=UTC
+    volumes:
+      - hortusfox_storage:/var/www/html/storage
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  hortusfox_db_data:
+  hortusfox_storage:

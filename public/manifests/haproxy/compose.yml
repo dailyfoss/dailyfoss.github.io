@@ -1,7 +1,25 @@
-services:
+# ===============================
+# Docker Compose (HAProxy)
+# ===============================
+# host: http://localhost:80
+# username:
+# password:
 
+services:
   haproxy:
-    image: bitnami/haproxy
-    volumes:
-      - /path/to/haproxy.cfg:/bitnami/haproxy/conf/haproxy.cfg
+    image: haproxy:latest
+    container_name: haproxy
     restart: unless-stopped
+    ports:
+      - "80:80"
+      - "8404:8404" # stats page
+    volumes:
+      - haproxy_config:/usr/local/etc/haproxy
+    healthcheck:
+      test: ["CMD-SHELL", "haproxy -c -f /usr/local/etc/haproxy/haproxy.cfg || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  haproxy_config:

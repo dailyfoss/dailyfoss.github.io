@@ -1,0 +1,44 @@
+# ===============================
+# Docker Compose (Jetlog)
+# ===============================
+# host: http://localhost:3000
+# username: (set during setup)
+# password: (set during setup)
+
+services:
+  jetlog:
+    image: ghcr.io/pbogre/jetlog:latest
+    container_name: jetlog
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgresql://jetlog:jetlog@db:5432/jetlog
+      NODE_ENV: production
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:3000 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  db:
+    image: postgres:latest
+    container_name: jetlog_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: jetlog
+      POSTGRES_USER: jetlog
+      POSTGRES_PASSWORD: jetlog
+    volumes:
+      - jetlog_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U jetlog"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  jetlog_db_data:

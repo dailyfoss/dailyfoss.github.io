@@ -1,0 +1,28 @@
+# ===============================
+# Docker Compose (Ktistec)
+# ===============================
+# host: http://localhost:3000
+# username: (created during setup)
+# password: (created during setup)
+
+services:
+  ktistec:
+    image: toddsundsted/ktistec:latest
+    container_name: ktistec
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      KTS_ENV: production
+      KTS_HOST: localhost
+      KTS_PORT: 3000
+    volumes:
+      - ktistec_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:3000 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  ktistec_data:

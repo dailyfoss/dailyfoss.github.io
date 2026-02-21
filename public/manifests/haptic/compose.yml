@@ -1,6 +1,19 @@
+# ===============================
+# Docker Compose (Haptic)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
 services:
-  haptic-web:
-    image: chroxify/haptic-web:latest
-    ports:
-      - 3000:80
+  haptic:
+    image: ghcr.io/chroxify/haptic:latest
+    container_name: haptic
     restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - haptic_data:/app/data
+
+volumes:
+  haptic_data:

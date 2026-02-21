@@ -1,0 +1,45 @@
+# ===============================
+# Docker Compose (Karrot)
+# ===============================
+# host: http://localhost:8000
+# username: (set during setup)
+# password: (set during setup)
+
+services:
+  karrot:
+    image: ghcr.io/karrot-dev/karrot:latest
+    container_name: karrot
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://karrot:karrot@db:5432/karrot
+      DJANGO_SECRET_KEY: change_this_secret_key
+      ALLOWED_HOSTS: localhost
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:8000 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  db:
+    image: postgres:latest
+    container_name: karrot_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: karrot
+      POSTGRES_USER: karrot
+      POSTGRES_PASSWORD: karrot
+    volumes:
+      - karrot_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U karrot"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  karrot_db_data:

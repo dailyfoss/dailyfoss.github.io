@@ -1,0 +1,53 @@
+# ===============================
+# Docker Compose (HumHub)
+# ===============================
+# host: http://localhost:8080
+# username: (created during setup)
+# password: (created during setup)
+
+services:
+  db:
+    image: mariadb:11
+    container_name: humhub_db
+    restart: unless-stopped
+    environment:
+      - MYSQL_DATABASE=humhub
+      - MYSQL_USER=humhub
+      - MYSQL_PASSWORD=humhub_change_me
+      - MYSQL_ROOT_PASSWORD=root_change_me
+    volumes:
+      - humhub_db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mariadb-admin ping -h localhost -u root -proot_change_me"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  humhub:
+    image: humhub/humhub:latest
+    container_name: humhub
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    environment:
+      - HUMHUB_DB_HOST=db
+      - HUMHUB_DB_NAME=humhub
+      - HUMHUB_DB_USER=humhub
+      - HUMHUB_DB_PASSWORD=humhub_change_me
+      - TZ=UTC
+    volumes:
+      - humhub_uploads:/var/www/localhost/htdocs/uploads
+      - humhub_modules:/var/www/localhost/htdocs/protected/modules
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  humhub_db_data:
+  humhub_uploads:
+  humhub_modules:

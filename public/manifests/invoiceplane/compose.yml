@@ -1,0 +1,62 @@
+# ===============================
+# Docker Compose (InvoicePlane)
+# ===============================
+# host: http://localhost:8080
+# username: (created during install)
+# password: (created during install)
+
+services:
+  app:
+    image: php:8.2-apache
+    container_name: invoiceplane_app
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      MYSQL_HOST: db
+      MYSQL_DATABASE: invoiceplane
+      MYSQL_USER: invoiceplane
+      MYSQL_PASSWORD: invoiceplane
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - invoiceplane_data:/var/www/html
+    command: >
+      bash -c "
+      apt-get update &&
+      apt-get install -y unzip curl libzip-dev &&
+      docker-php-ext-install mysqli pdo pdo_mysql zip &&
+      if [ ! -f /var/www/html/index.php ]; then
+        curl -L https://github.com/InvoicePlane/InvoicePlane/releases/latest/download/InvoicePlane.zip -o /tmp/invoiceplane.zip &&
+        unzip /tmp/invoiceplane.zip -d /var/www/html &&
+        chown -R www-data:www-data /var/www/html;
+      fi &&
+      apache2-foreground
+      "
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  db:
+    image: mysql:latest
+    container_name: invoiceplane_db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: invoiceplane
+      MYSQL_USER: invoiceplane
+      MYSQL_PASSWORD: invoiceplane
+      MYSQL_ROOT_PASSWORD: rootpassword
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -prootpassword || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mysql_data:
+  invoiceplane_data:

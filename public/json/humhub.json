@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "AGPL-3.0",
     "version": "v1.18.0",
     "date_app_added": "2025-11-23",
     "date_last_released": "2026-02-04",
@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://www.humhub.com",
-    "documentation": "https://github.com/humhub/humhub",
+    "documentation": "https://docs.humhub.org",
     "source_code": "https://github.com/humhub/humhub",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/humhub.webp",
     "issues": "https://github.com/humhub/humhub/issues",
@@ -94,12 +94,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/humhub/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
@@ -110,7 +112,7 @@
     }
   },
   "demo": {
-    "url": null,
+    "url": "https://saas.humhub.com/en/demo",
     "username": null,
     "password": null
   }

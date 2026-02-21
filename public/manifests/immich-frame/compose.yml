@@ -1,0 +1,27 @@
+# ===============================
+# Docker Compose (ImmichFrame)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+
+  immichframe:
+    image: ghcr.io/immichframe/immichframe:latest
+    restart: unless-stopped
+    environment:
+      IMMICH_URL: "http://immich-server:2283"
+      IMMICH_API_KEY: "YOUR_IMMICH_API_KEY"
+    ports:
+      - "3000:3000"
+    volumes:
+      - immichframe_data:/app/data
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  immichframe_data:

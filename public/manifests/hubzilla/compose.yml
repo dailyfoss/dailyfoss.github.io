@@ -1,0 +1,51 @@
+# ===============================
+# Docker Compose (Hubzilla)
+# ===============================
+# host: http://localhost:8080
+# username: (created during setup)
+# password: (created during setup)
+
+services:
+  db:
+    image: mariadb:11
+    container_name: hubzilla_db
+    restart: unless-stopped
+    environment:
+      - MYSQL_DATABASE=hubzilla
+      - MYSQL_USER=hubzilla
+      - MYSQL_PASSWORD=hubzilla_change_me
+      - MYSQL_ROOT_PASSWORD=root_change_me
+    volumes:
+      - hubzilla_db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mariadb-admin ping -h localhost -u root -proot_change_me"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  hubzilla:
+    image: hubzilla/hubzilla:latest
+    container_name: hubzilla
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_DATABASE=hubzilla
+      - MYSQL_USER=hubzilla
+      - MYSQL_PASSWORD=hubzilla_change_me
+      - TZ=UTC
+    volumes:
+      - hubzilla_html:/var/www/html
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  hubzilla_db_data:
+  hubzilla_html:

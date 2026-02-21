@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://www.hortusfox.com",
-    "documentation": "https://github.com/danielbrendel/hortusfox-web",
+    "documentation": "https://hortusfox.github.io",
     "source_code": "https://github.com/danielbrendel/hortusfox-web",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/hortusfox.webp",
     "issues": "https://github.com/danielbrendel/hortusfox-web/issues",
@@ -94,12 +94,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/hortusfox/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
@@ -110,8 +112,8 @@
     }
   },
   "demo": {
-    "url": null,
-    "username": null,
-    "password": null
+    "url": "https://demo.hortusfox.com",
+    "username": "test1@gmail.com",
+    "password": "test"
   }
 }

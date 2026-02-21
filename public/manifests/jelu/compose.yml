@@ -1,13 +1,45 @@
+# ===============================
+# Docker Compose (Jelu)
+# ===============================
+# host: http://localhost:11111
+# username: (set during setup)
+# password: (set during setup)
+
 services:
   jelu:
-    image: wabayang/jelu
+    image: bayang/jelu:latest
     container_name: jelu
-    volumes:
-      - ~/jelu/config:/config
-      - ~/jelu/database:/database
-      - ~/jelu/files/images:/files/images
-      - ~/jelu/files/imports:/files/imports
-      - /etc/timezone:/etc/timezone:ro
-    ports:
-      - 11111:11111
     restart: unless-stopped
+    ports:
+      - "11111:11111"
+    environment:
+      DATABASE_URL: postgresql://jelu:jelu@db:5432/jelu
+      JELU_HOST: 0.0.0.0
+      JELU_PORT: 11111
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:11111 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  db:
+    image: postgres:latest
+    container_name: jelu_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: jelu
+      POSTGRES_USER: jelu
+      POSTGRES_PASSWORD: jelu
+    volumes:
+      - jelu_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U jelu"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  jelu_db_data:

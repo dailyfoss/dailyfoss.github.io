@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://kometa.wiki",
-    "documentation": "https://github.com/Kometa-Team/Kometa",
+    "documentation": "https://kometa.wiki/en/latest/",
     "source_code": "https://github.com/Kometa-Team/Kometa",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/kometa.webp",
     "issues": "https://github.com/Kometa-Team/Kometa/issues",
@@ -88,12 +88,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/kometa/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

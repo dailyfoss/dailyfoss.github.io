@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://kanidm.com",
-    "documentation": "https://github.com/kanidm/kanidm",
+    "documentation": "https://kanidm.com/docs",
     "source_code": "https://github.com/kanidm/kanidm",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/kanidm.webp",
     "issues": "https://github.com/kanidm/kanidm/issues",
@@ -85,12 +85,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/kanidm/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

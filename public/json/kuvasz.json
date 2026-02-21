@@ -22,8 +22,8 @@
     "github_releases_this_year": 3
   },
   "resources": {
-    "website": "https://kuvasz-uptime.dev/",
-    "documentation": "https://github.com/kuvasz-uptime/kuvasz",
+    "website": "https://kuvasz-uptime.dev",
+    "documentation": "https://kuvasz-uptime.dev",
     "source_code": "https://github.com/kuvasz-uptime/kuvasz",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/kuvasz.webp",
     "issues": "https://github.com/kuvasz-uptime/kuvasz/issues",
@@ -88,17 +88,19 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/kuvasz/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
-    "username": null,
-    "password": null
+    "url": "https://demo.kuvasz-uptime.dev",
+    "username": "demo",
+    "password": "secureDemoPassword"
   }
 }

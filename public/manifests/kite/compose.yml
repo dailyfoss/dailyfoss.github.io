@@ -1,0 +1,24 @@
+# ===============================
+# Docker Compose (Kite)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  kite:
+    image: zxh326/kite:latest
+    container_name: kite
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - kite_data:/app/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:8080 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  kite_data:

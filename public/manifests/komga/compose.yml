@@ -1,22 +1,28 @@
+# ===============================
+# Docker Compose (Komga)
+# ===============================
+# host: http://localhost:25600
+# username: (created during setup)
+# password: (created during setup)
+
 services:
   komga:
-    image: gotson/komga
+    image: gotson/komga:latest
     container_name: komga
-    volumes:
-      - type: bind
-        source: /path/to/config
-        target: /config
-      - type: bind
-        source: /path/to/data
-        target: /data
-      - type: bind
-        source: /etc/timezone #alternatively you can use a TZ environment variable, like TZ=Europe/London
-        target: /etc/timezone
-        read_only: true
-    ports:
-      - 25600:25600
-    user: "1000:1000"
-    # remove the whole environment section if you don't need it
-    environment:
-      - =
     restart: unless-stopped
+    ports:
+      - "25600:25600"
+    environment:
+      TZ: Etc/UTC
+    volumes:
+      - komga_config:/config
+      - komga_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:25600 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  komga_config:
+  komga_data:
