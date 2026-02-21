@@ -1,0 +1,24 @@
+# ===============================
+# Docker Compose (its-mytabs)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  itsmytabs:
+    image: ghcr.io/louislam/its-mytabs:latest
+    container_name: itsmytabs
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - itsmytabs_data:/app/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:3000 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  itsmytabs_data:

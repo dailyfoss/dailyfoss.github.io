@@ -28,7 +28,9 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/immich-power-tools.webp",
     "issues": "https://github.com/varun-raj/immich-power-tools/issues",
     "releases": "https://github.com/varun-raj/immich-power-tools/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/immich-power-tools-demo.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/immich-power-tools/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

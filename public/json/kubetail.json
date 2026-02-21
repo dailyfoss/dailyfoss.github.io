@@ -23,12 +23,15 @@
   },
   "resources": {
     "website": "https://www.kubetail.com",
-    "documentation": "https://github.com/kubetail-org/kubetail",
+    "documentation": "https://www.kubetail.com/docs",
     "source_code": "https://github.com/kubetail-org/kubetail",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/kubetail.webp",
     "issues": "https://github.com/kubetail-org/kubetail/issues",
     "releases": "https://github.com/kubetail-org/kubetail/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/kubetail-dashboard.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/kubetail-log-viewer-overview.png"
+    ]
   },
   "features": [
     {
@@ -88,16 +91,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/kubetail/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://demo.kubetail.com",
     "username": null,
     "password": null
   }

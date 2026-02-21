@@ -1,0 +1,43 @@
+# ===============================
+# Docker Compose (InvestBrain)
+# ===============================
+# host: http://localhost:3000
+# username: (create on first launch)
+# password: (create on first launch)
+
+services:
+
+  postgres:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: investbrain
+      POSTGRES_USER: investbrain
+      POSTGRES_PASSWORD: change_this_strong_password
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U investbrain -d investbrain"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  investbrain:
+    image: ghcr.io/investbrainapp/investbrain:latest
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgresql://investbrain:change_this_strong_password@postgres:5432/investbrain
+      NEXTAUTH_SECRET: replace_with_long_random_string
+      NEXTAUTH_URL: http://localhost:3000
+    ports:
+      - "3000:3000"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pgdata:

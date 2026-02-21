@@ -1,0 +1,27 @@
+# ===============================
+# Docker Compose (HymnoScribe)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  hymnoscribe:
+    image: ghcr.io/revisor01/hymnoscribe:latest
+    container_name: hymnoscribe
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - TZ=UTC
+    volumes:
+      - hymnoscribe_data:/app/data
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  hymnoscribe_data:

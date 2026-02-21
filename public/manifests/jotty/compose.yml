@@ -1,0 +1,24 @@
+# ===============================
+# Docker Compose (Jotty)
+# ===============================
+# host: http://localhost:5000
+# username:
+# password:
+
+services:
+  jotty:
+    image: fccview/jotty:latest
+    container_name: jotty
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    volumes:
+      - jotty_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:5000 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  jotty_data:

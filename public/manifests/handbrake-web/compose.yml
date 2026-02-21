@@ -1,0 +1,28 @@
+# ===============================
+# Docker Compose (HandBrake Web)
+# ===============================
+# host: http://localhost:5000
+# username:
+# password:
+
+services:
+  handbrake-web:
+    image: ghcr.io/thenickoftime/handbrake-web:latest
+    container_name: handbrake-web
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    volumes:
+      - handbrake_config:/config
+      - handbrake_watch:/watch
+      - handbrake_output:/output
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:5000 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  handbrake_config:
+  handbrake_watch:
+  handbrake_output:

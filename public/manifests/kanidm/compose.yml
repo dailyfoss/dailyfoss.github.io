@@ -1,0 +1,27 @@
+# ===============================
+# Docker Compose (Kanidm)
+# ===============================
+# host: https://localhost:8443
+# username: admin
+# password: (generated on first run)
+
+services:
+  kanidm:
+    image: ghcr.io/kanidm/server:latest
+    container_name: kanidm
+    restart: unless-stopped
+    ports:
+      - "8443:8443"
+    environment:
+      KANIDM_DOMAIN: localhost
+      KANIDM_ORIGIN: https://localhost:8443
+    volumes:
+      - kanidm_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-check-certificate --spider -q https://localhost:8443/status || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  kanidm_data:

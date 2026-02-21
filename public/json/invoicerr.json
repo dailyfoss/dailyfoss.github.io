@@ -29,7 +29,9 @@
     "issues": "https://github.com/Impre-visible/invoicerr/issues",
     "releases": "https://github.com/Impre-visible/invoicerr/releases",
     "logo_light": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/invoicerr-light.webp",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/invoicerr-dashboard.png"
+    ]
   },
   "features": [
     {
@@ -95,12 +97,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/invoicerr/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

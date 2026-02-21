@@ -1,0 +1,24 @@
+# ===============================
+# Docker Compose (Kan)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  kan:
+    image: kanbn/kan:latest
+    container_name: kan
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - kan_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:3000 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  kan_data:

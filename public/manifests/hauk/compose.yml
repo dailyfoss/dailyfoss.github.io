@@ -1,0 +1,40 @@
+# ===============================
+# Docker Compose (Hauk)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: hauk-redis
+    restart: unless-stopped
+    volumes:
+      - hauk_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  hauk:
+    image: ghcr.io/bilde2910/hauk:latest
+    container_name: hauk
+    restart: unless-stopped
+    depends_on:
+      redis:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      NODE_ENV: production
+      REDIS_HOST: redis
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:8080 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  hauk_redis_data:

@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://www.ironcalc.com",
-    "documentation": "https://github.com/ironcalc/IronCalc",
+    "documentation": "https://docs.ironcalc.com",
     "source_code": "https://github.com/ironcalc/IronCalc",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/ironcalc.webp",
     "issues": "https://github.com/ironcalc/IronCalc/issues",
     "releases": "https://github.com/ironcalc/IronCalc/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/ironcalc-homepage.png"
+    ]
   },
   "features": [
     {
@@ -95,16 +97,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/ironcalc/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://app.ironcalc.com",
     "username": null,
     "password": null
   }

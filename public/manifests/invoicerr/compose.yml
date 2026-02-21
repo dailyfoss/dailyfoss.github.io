@@ -1,0 +1,44 @@
+# ===============================
+# Docker Compose (Invoicerr)
+# ===============================
+# host: http://localhost:3000
+# username: (created during setup)
+# password: (created during setup)
+
+services:
+  app:
+    image: ghcr.io/invoicerr-app/invoicerr:latest
+    container_name: invoicerr_app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgresql://invoicerr:invoicerr@db:5432/invoicerr
+      NODE_ENV: production
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:3000 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  db:
+    image: postgres:latest
+    container_name: invoicerr_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: invoicerr
+      POSTGRES_USER: invoicerr
+      POSTGRES_PASSWORD: invoicerr
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U invoicerr"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:

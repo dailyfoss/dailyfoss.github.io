@@ -1,11 +1,25 @@
+# ===============================
+# Docker Compose (Home Assistant)
+# ===============================
+# host: http://localhost:8123
+# username: (created during onboarding)
+# password: (created during onboarding)
+
 services:
   homeassistant:
+    image: ghcr.io/home-assistant/home-assistant:stable
     container_name: homeassistant
-    image: "ghcr.io/home-assistant/home-assistant:stable"
-    volumes:
-      - /PATH_TO_YOUR_CONFIG:/config
-      - /etc/localtime:/etc/localtime:ro
-      - /run/dbus:/run/dbus:ro
     restart: unless-stopped
-    privileged: true
     network_mode: host
+    environment:
+      - TZ=UTC
+    volumes:
+      - homeassistant_config:/config
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8123"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  homeassistant_config:

@@ -28,7 +28,12 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/habittrove.webp",
     "issues": "https://github.com/dohsimpson/HabitTrove/issues",
     "releases": "https://github.com/dohsimpson/HabitTrove/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/habittrove-calendar.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/habittrove-demo-overview.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/habittrove-habits.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/habittrove-wishlist.png"
+    ]
   },
   "features": [
     {
@@ -94,16 +99,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/habittrove/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "demo.habittrove.com",
     "username": null,
     "password": null
   }

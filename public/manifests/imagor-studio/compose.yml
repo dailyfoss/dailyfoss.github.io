@@ -1,0 +1,35 @@
+# ===============================
+# Docker Compose (Imagor Studio)
+# ===============================
+# host: http://localhost:8000
+# username: (set in app UI)
+# password: (set in app UI)
+
+services:
+
+  app:
+    image: shumc/imagor-studio:latest
+    restart: unless-stopped
+    environment:
+      # Application & storage
+      DATABASE_URL: "sqlite:///app/data/imagor-studio.db"
+      FILE_STORAGE_BASE_DIR: /app/gallery
+      FILE_STORAGE_MKDIR_PERMISSIONS: "0755"
+      FILE_STORAGE_WRITE_PERMISSIONS: "0644"
+
+      # Optional strong secret (production)
+      # JWT_SECRET: "your-jwt-secret"
+    volumes:
+      - imagor_data:/app/data
+      - gallery:/app/gallery
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8000/healthz"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  imagor_data:
+  gallery:

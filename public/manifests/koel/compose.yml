@@ -1,37 +1,56 @@
+# ===============================
+# Docker Compose (Koel)
+# ===============================
+# host: http://localhost:8000
+# username: admin@example.com
+# password: admin
+
 services:
   koel:
-    image: phanan/koel
-    depends_on:
-      - database
+    image: phanan/koel:latest
+    container_name: koel
+    restart: unless-stopped
     ports:
-      - 80:80
+      - "8000:80"
     environment:
-      - DB_CONNECTION=pgsql
-      - DB_HOST=database
-      - DB_PORT=5432
-      - DB_USERNAME=koel
-      - DB_PASSWORD=
-      - DB_DATABASE=koel
+      APP_ENV: production
+      APP_DEBUG: "false"
+      APP_KEY: base64:change_this_after_install
+      DB_CONNECTION: pgsql
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_DATABASE: koel
+      DB_USERNAME: koel
+      DB_PASSWORD: koel
     volumes:
-      - music:/music
-      - covers:/var/www/html/public/img/covers
-      - search_index:/var/www/html/storage/search-indexes
+      - koel_music:/music
+      - koel_storage:/var/www/html/storage
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
-  database:
-    image: postgres:13
-    volumes:
-      - db:/var/lib/postgresql/data
+  db:
+    image: postgres:latest
+    container_name: koel_db
+    restart: unless-stopped
     environment:
-      - POSTGRES_DB=koel
-      - POSTGRES_USER=koel
-      - POSTGRES_PASSWORD=
+      POSTGRES_DB: koel
+      POSTGRES_USER: koel
+      POSTGRES_PASSWORD: koel
+    volumes:
+      - koel_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U koel"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 volumes:
-  db:
-    driver: local
-  music:
-    driver: local
-  covers:
-    driver: local
-  search_index:
-    driver: local
+  koel_db_data:
+  koel_music:
+  koel_storage:

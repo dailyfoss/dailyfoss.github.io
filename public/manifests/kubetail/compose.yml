@@ -1,0 +1,25 @@
+# ===============================
+# Docker Compose (Kubetail)
+# ===============================
+# host: http://localhost:7500
+# username:
+# password:
+
+services:
+  kubetail:
+    image: ghcr.io/kubetail-org/kubetail:latest
+    container_name: kubetail
+    command: serve --host 0.0.0.0 --port 7500
+    ports:
+      - "7500:7500"
+    volumes:
+      - kubeconfig:/root/.kube:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:7500/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  kubeconfig:

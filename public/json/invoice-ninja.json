@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "Elastic License",
     "version": "v5.12.64",
     "date_app_added": "2025-11-23",
     "date_last_released": "2026-02-18",
@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://invoiceninja.com",
-    "documentation": "https://github.com/invoiceninja/invoiceninja",
+    "documentation": "https://invoiceninja.github.io/docs/self-host",
     "source_code": "https://github.com/invoiceninja/invoiceninja",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/invoice-ninja.webp",
     "issues": "https://github.com/invoiceninja/invoiceninja/issues",
@@ -96,12 +96,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/invoice-ninja/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

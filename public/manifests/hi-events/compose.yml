@@ -1,0 +1,55 @@
+# ===============================
+# Docker Compose (Hi.Events)
+# ===============================
+# host: http://localhost:8080
+# username: (created during setup)
+# password: (created during setup)
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: hievents_db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=hievents
+      - POSTGRES_USER=hievents
+      - POSTGRES_PASSWORD=hievents_change_me
+    volumes:
+      - hievents_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hievents"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  hievents:
+    image: hievents/hievents:latest
+    container_name: hievents
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    environment:
+      - APP_ENV=production
+      - APP_DEBUG=false
+      - APP_URL=http://localhost:8080
+      - DB_CONNECTION=pgsql
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_DATABASE=hievents
+      - DB_USERNAME=hievents
+      - DB_PASSWORD=hievents_change_me
+      - TZ=UTC
+    volumes:
+      - hievents_storage:/var/www/html/storage
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  hievents_db_data:
+  hievents_storage:

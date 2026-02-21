@@ -1,14 +1,26 @@
+# ===============================
+# Docker Compose (Homer)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
 services:
   homer:
-    image: b4bz/homer
-    #To build from source, comment previous line and uncomment below
-    #build: .
+    image: b4bz/homer:latest
     container_name: homer
-    volumes:
-      - /your/local/assets/:/www/assets
-    ports:
-      - 8080:8080
-    user: 1000:1000 # default
-    environment:
-      - INIT_ASSETS=1 # default
     restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - TZ=UTC
+    volumes:
+      - homer_assets:/www/assets
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8080"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  homer_assets:

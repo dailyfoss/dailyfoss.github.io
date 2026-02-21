@@ -1,0 +1,24 @@
+# ===============================
+# Docker Compose (Kill the Newsletter)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  kill-the-newsletter:
+    image: leafac/kill-the-newsletter:latest
+    container_name: kill-the-newsletter
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ktn_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:3000 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  ktn_data:

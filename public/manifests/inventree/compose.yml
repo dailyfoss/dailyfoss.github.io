@@ -1,95 +1,65 @@
+# ===============================
+# Docker Compose (InvenTree)
+# ===============================
+# host: http://localhost:8000
+# username: admin
+# password: (set during first setup)
+
 services:
-    # Database service
-    # Use PostgreSQL as the database backend
-    inventree-db:
-        image: postgres:13
-        container_name: inventree-db
-        expose:
-            - ${INVENTREE_DB_PORT:-5432}/tcp
-        environment:
-            - PGDATA=/var/lib/postgresql/data/pgdb
-            - POSTGRES_USER=${INVENTREE_DB_USER:?You must provide the 'INVENTREE_DB_USER' variable in the .env file}
-            - POSTGRES_PASSWORD=${INVENTREE_DB_PASSWORD:?You must provide the 'INVENTREE_DB_PASSWORD' variable in the .env file}
-            - POSTGRES_DB=${INVENTREE_DB_NAME:?You must provide the 'INVENTREE_DB_NAME' variable in the .env file}
-        volumes:
-            # Map 'data' volume such that postgres database is stored externally
-            - ${INVENTREE_EXT_VOLUME:?You must specify the 'INVENTREE_EXT_VOLUME' variable in the .env file!}:/var/lib/postgresql/data/:z
-        restart: unless-stopped
 
-    # redis acts as database cache manager
-    inventree-cache:
-        image: redis:7.0
-        container_name: inventree-cache
-        env_file:
-            - .env
-        expose:
-            - ${INVENTREE_CACHE_PORT:-6379}
-        restart: always
+  postgres:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: inventree
+      POSTGRES_USER: inventree
+      POSTGRES_PASSWORD: change_this_strong_password
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U inventree -d inventree"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
 
-    # InvenTree web server service
-    # Uses gunicorn as the web server
-    inventree-server:
-        # If you wish to specify a particular InvenTree version, do so here
-        image: inventree/inventree:${INVENTREE_TAG:-stable}
-        container_name: inventree-server
-        # Only change this port if you understand the stack.
-        expose:
-            - 8000
-        depends_on:
-            - inventree-db
-        env_file:
-            - .env
-        volumes:
-            # Data volume must map to /home/inventree/data
-            - ${INVENTREE_EXT_VOLUME}:/home/inventree/data:z
-        restart: unless-stopped
+  redis:
+    image: redis:7
+    restart: unless-stopped
+    volumes:
+      - redisdata:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
 
-    # Background worker process handles long-running or periodic tasks
-    inventree-worker:
-        # If you wish to specify a particular InvenTree version, do so here
-        image: inventree/inventree:${INVENTREE_TAG:-stable}
-        container_name: inventree-worker
-        command: invoke worker
-        depends_on:
-            - inventree-server
-        env_file:
-            - .env
-        volumes:
-            # Data volume must map to /home/inventree/data
-            - ${INVENTREE_EXT_VOLUME}:/home/inventree/data:z
-        restart: unless-stopped
+  inventree:
+    image: inventree/inventree:latest
+    restart: unless-stopped
+    depends_on:
+      - postgres
+      - redis
+    ports:
+      - "8000:8000"
+    environment:
+      INVENTREE_SECRET_KEY: replace_with_strong_random_string
+      INVENTREE_DB_ENGINE: django.db.backends.postgresql
+      INVENTREE_DB_HOST: postgres
+      INVENTREE_DB_PORT: 5432
+      INVENTREE_DB_NAME: inventree
+      INVENTREE_DB_USER: inventree
+      INVENTREE_DB_PASSWORD: change_this_strong_password
+      INVENTREE_REDIS_HOST: redis
+      INVENTREE_REDIS_PORT: 6379
+    volumes:
+      - inventree_data:/home/inventree/data
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8000/api/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
 
-    # caddy acts as reverse proxy and static file server
-    # https://hub.docker.com/_/caddy
-    inventree-proxy:
-        container_name: inventree-proxy
-        image: caddy:alpine
-        restart: always
-        depends_on:
-            - inventree-server
-        ports:
-            - ${INVENTREE_WEB_PORT:-80}:80
-            - 443:443
-        env_file:
-            - .env
-        volumes:
-            - ./Caddyfile:/etc/caddy/Caddyfile:ro,z
-            - ${INVENTREE_EXT_VOLUME}/static:/var/www/static:z
-            - ${INVENTREE_EXT_VOLUME}/media:/var/www/media:z
-            - ${INVENTREE_EXT_VOLUME}:/var/log:z
-            - ${INVENTREE_EXT_VOLUME}:/data:z
-            - ${INVENTREE_EXT_VOLUME}:/config:z
-
-    # alternative: run nginx as reverse proxy
-    # inventree-proxy:
-    #     container_name: inventree-proxy
-    #     image: nginx:stable
-    #     restart: always
-    #     depends_on:
-    #         - inventree-server
-    #     ports:
-    #         - ${INVENTREE_WEB_PORT:-80}:80
-    #         - 443:443
-    #     volumes:
-    #         - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro,z
-    #         - ${INVENTREE_EXT_VOLUME}:/var/www:z
+volumes:
+  pgdata:
+  redisdata:
+  inventree_data:

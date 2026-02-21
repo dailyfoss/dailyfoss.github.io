@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://kan.bn",
-    "documentation": "https://github.com/kanbn/kan",
+    "documentation": "https://docs.kan.bn/introduction",
     "source_code": "https://github.com/kanbn/kan",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/kan.webp",
     "issues": "https://github.com/kanbn/kan/issues",
     "releases": null,
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/kan-ban-board.png"
+    ]
   },
   "features": [
     {
@@ -79,12 +81,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/kan/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

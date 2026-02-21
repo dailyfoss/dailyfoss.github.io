@@ -1,11 +1,26 @@
+# ===============================
+# Docker Compose (Kapowarr)
+# ===============================
+# host: http://localhost:5656
+# username: (set during setup)
+# password: (set during setup)
+
 services:
   kapowarr:
+    image: ghcr.io/casvt/kapowarr:latest
     container_name: kapowarr
-    image: mrcas/kapowarr:latest
-    volumes:
-      - "./kapowarr-db:/app/db"
-      - "/path/to/download_folder:/app/temp_downloads"
-      - "/path/to/root_folder:/comics-1"
-    ports:
-      - 5656:5656
     restart: unless-stopped
+    ports:
+      - "5656:5656"
+    volumes:
+      - kapowarr_config:/config
+      - kapowarr_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:5656 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  kapowarr_config:
+  kapowarr_data:

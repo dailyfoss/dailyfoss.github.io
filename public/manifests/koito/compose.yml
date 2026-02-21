@@ -1,0 +1,24 @@
+# ===============================
+# Docker Compose (Koito)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  koito:
+    image: ghcr.io/gabehf/koito:latest
+    container_name: koito
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - koito_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:8080 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  koito_data:

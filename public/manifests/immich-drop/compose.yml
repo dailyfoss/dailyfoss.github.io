@@ -1,0 +1,28 @@
+# ===============================
+# Docker Compose (Immich Drop)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+
+  immich-drop:
+    image: ghcr.io/nasogaa/immich-drop:latest
+    restart: unless-stopped
+    environment:
+      IMMICH_URL: "http://immich-server:2283"
+      IMMICH_API_KEY: "YOUR_IMMICH_API_KEY"
+      WATCH_FOLDER: "/watch"
+    volumes:
+      - watch_folder:/watch
+    ports:
+      - "3000:3000"
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  watch_folder:

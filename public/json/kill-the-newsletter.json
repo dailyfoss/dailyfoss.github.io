@@ -28,7 +28,9 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/kill-the-newsletter.webp",
     "issues": "https://github.com/leafac/kill-the-newsletter/issues",
     "releases": "https://github.com/leafac/kill-the-newsletter/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/kill-the-newsletter-homepage.png"
+    ]
   },
   "features": [
     {
@@ -76,12 +78,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/kill-the-newsletter/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

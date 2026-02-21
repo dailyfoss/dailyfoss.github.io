@@ -1,8 +1,50 @@
+# ===============================
+# Docker Compose (Joplin Server)
+# ===============================
+# host: http://localhost:22300
+# username: (created during setup)
+# password: (created during setup)
+
 services:
-  server:
+  joplin:
     image: joplin/server:latest
-    env_file:
-      - .env
-    ports:
-      - 22300:22300
+    container_name: joplin_server
     restart: unless-stopped
+    ports:
+      - "22300:22300"
+    environment:
+      APP_PORT: 22300
+      APP_BASE_URL: http://localhost:22300
+      DB_CLIENT: pg
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+      POSTGRES_DATABASE: joplin
+      POSTGRES_USER: joplin
+      POSTGRES_PASSWORD: joplin
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:22300/api/ping || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  db:
+    image: postgres:latest
+    container_name: joplin_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: joplin
+      POSTGRES_USER: joplin
+      POSTGRES_PASSWORD: joplin
+    volumes:
+      - joplin_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U joplin"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  joplin_db_data:

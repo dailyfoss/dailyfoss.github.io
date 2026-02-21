@@ -1,0 +1,47 @@
+# ===============================
+# Docker Compose (Koillection)
+# ===============================
+# host: http://localhost:8000
+# username: admin
+# password: (set during setup)
+
+services:
+  koillection:
+    image: koillection/koillection:latest
+    container_name: koillection
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    environment:
+      APP_ENV: prod
+      DATABASE_URL: postgresql://koillection:koillection@db:5432/koillection
+    volumes:
+      - koillection_uploads:/uploads
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  db:
+    image: postgres:latest
+    container_name: koillection_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: koillection
+      POSTGRES_USER: koillection
+      POSTGRES_PASSWORD: koillection
+    volumes:
+      - koillection_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U koillection"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  koillection_db_data:
+  koillection_uploads:

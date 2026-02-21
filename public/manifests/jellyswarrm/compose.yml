@@ -1,0 +1,44 @@
+# ===============================
+# Docker Compose (Jellyswarrm)
+# ===============================
+# host: http://localhost:8080
+# username: (set during setup)
+# password: (set during setup)
+
+services:
+  jellyswarrm:
+    image: ghcr.io/llukas22/jellyswarrm:latest
+    container_name: jellyswarrm
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      DATABASE_URL: postgresql://jellyswarrm:jellyswarrm@db:5432/jellyswarrm
+      NODE_ENV: production
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:8080 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  db:
+    image: postgres:latest
+    container_name: jellyswarrm_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: jellyswarrm
+      POSTGRES_USER: jellyswarrm
+      POSTGRES_PASSWORD: jellyswarrm
+    volumes:
+      - jellyswarrm_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U jellyswarrm"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  jellyswarrm_db_data:

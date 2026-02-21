@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://github.com/alangrainger/immich-public-proxy",
-    "documentation": "https://github.com/alangrainger/immich-public-proxy",
+    "documentation": "https://github.com/alangrainger/immich-public-proxy#table-of-contents",
     "source_code": "https://github.com/alangrainger/immich-public-proxy",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/immich-public-proxy.webp",
     "issues": "https://github.com/alangrainger/immich-public-proxy/issues",
     "releases": "https://github.com/alangrainger/immich-public-proxy/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/immich-public-proxy-url.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/immich-public-proxy/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

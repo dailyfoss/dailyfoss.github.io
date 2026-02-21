@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://demo.habitsync.de",
-    "documentation": "https://demo.habitsync.de",
+    "documentation": "https://github.com/jofoerster/habitsync",
     "source_code": "https://github.com/jofoerster/habitsync",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/habitsync.webp",
     "issues": "https://github.com/jofoerster/habitsync/issues",
     "releases": "https://github.com/jofoerster/habitsync/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/habitsync-homepage.png"
+    ]
   },
   "features": [
     {
@@ -95,16 +97,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/habitsync/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://demo.habitsync.de",
     "username": null,
     "password": null
   }

@@ -1,0 +1,24 @@
+# ===============================
+# Docker Compose (Kanba)
+# ===============================
+# host: http://localhost:5173
+# username:
+# password:
+
+services:
+  kanba:
+    image: kanbaco/kanba:latest
+    container_name: kanba
+    restart: unless-stopped
+    ports:
+      - "5173:5173"
+    volumes:
+      - kanba_data:/app/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:5173 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  kanba_data:

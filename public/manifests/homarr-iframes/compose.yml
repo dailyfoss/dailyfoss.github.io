@@ -1,0 +1,23 @@
+# ===============================
+# Docker Compose (Homarr Iframes)
+# ===============================
+# host: http://localhost:8081
+# username:
+# password:
+
+services:
+  homarr-iframes:
+    image: ghcr.io/diogovalentte/homarr-iframes:latest
+    container_name: homarr-iframes
+    restart: unless-stopped
+    ports:
+      - "8081:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - TZ=UTC
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5

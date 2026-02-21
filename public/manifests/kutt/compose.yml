@@ -1,31 +1,63 @@
+# ===============================
+# Docker Compose (Kutt)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
 services:
-  kutt:
-    image: kutt/kutt
-    depends_on:
-      - postgres
-      - redis
-    command: ["./wait-for-it.sh", "postgres:5432", "--", "npm", "start"]
-    ports:
-      - "3000:3000"
-    env_file:
-      - .env
+  postgres:
+    image: postgres:latest
+    container_name: kutt-postgres
     environment:
-      DB_HOST: postgres
-      DB_NAME: kutt
-      DB_USER: user
-      DB_PASSWORD: pass
-      REDIS_HOST: redis
+      POSTGRES_DB: kutt
+      POSTGRES_USER: kutt
+      POSTGRES_PASSWORD: kuttpassword
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kutt"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   redis:
-    image: redis:6.0-alpine
+    image: redis:latest
+    container_name: kutt-redis
     volumes:
-      - ./redis_data:/data
+      - redis_data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
-  postgres:
-    image: postgres:12-alpine
+  kutt:
+    image: ghcr.io/thedevs-network/kutt:latest
+    container_name: kutt
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
     environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: pass
-      POSTGRES_DB: kutt
-    volumes:
-      - ./postgres_data:/var/lib/postgresql/data
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: kutt
+      DB_USER: kutt
+      DB_PASSWORD: kuttpassword
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      JWT_SECRET: change_this_super_secret_value
+      SITE_NAME: Kutt
+      DEFAULT_DOMAIN: localhost:3000
+      APP_URL: http://localhost:3000
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  redis_data:

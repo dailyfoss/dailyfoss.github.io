@@ -1,0 +1,44 @@
+# ===============================
+# Docker Compose (Kuvasz Uptime)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: kuvasz-postgres
+    environment:
+      POSTGRES_DB: kuvasz
+      POSTGRES_USER: kuvasz
+      POSTGRES_PASSWORD: kuvaszpassword
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kuvasz"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  kuvasz:
+    image: ghcr.io/kuvasz-uptime/kuvasz:latest
+    container_name: kuvasz
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      DATABASE_URL: postgres://kuvasz:kuvaszpassword@postgres:5432/kuvasz
+      NODE_ENV: production
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8080"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  postgres_data:

@@ -1,0 +1,37 @@
+# ===============================
+# Docker Compose (Home Assistant Time Machine)
+# ===============================
+# host: http://localhost:54000
+# Home Assistant URL: configure in UI or via env
+# Long-Lived Access Token: configure in UI or via env
+
+services:
+  ha_time_machine:
+    image: ghcr.io/saihgupr/homeassistanttimemachine:latest
+    restart: unless-stopped
+    ports:
+      - "54000:54000"
+    environment:
+      # Provide your Home Assistant instance URL if you want the HA credentials fields pre-filled
+      - HOME_ASSISTANT_URL=http://homeassistant.local:8123
+      # Provide a Home Assistant Long-Lived Access Token for read/write integration
+      - LONG_LIVED_ACCESS_TOKEN=ReplaceWithYourLongLivedToken
+      # Optional timezone
+      - TZ=UTC
+    volumes:
+      # Mount your live Home Assistant config (for manual restores)
+      - ha_tm_config:/config
+      # Mount your Home Assistant backups folder
+      - ha_tm_backups:/media
+      # Internal application state
+      - ha_tm_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget --quiet --tries=1 --spider http://localhost:54000/api/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  ha_tm_config:
+  ha_tm_backups:
+  ha_tm_data:

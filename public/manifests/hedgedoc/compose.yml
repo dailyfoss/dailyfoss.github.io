@@ -1,24 +1,54 @@
+# ===============================
+# Docker Compose (HedgeDoc)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
 services:
-  hedgedoc:
-    image: lscr.io/linuxserver/hedgedoc:latest
-    container_name: hedgedoc
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Etc/UTC
-      - "DB_HOST="
-      - DB_PORT=3306
-      - DB_USER=hedgedoc
-      - "DB_PASS="
-      - DB_NAME=hedgedoc
-      - CMD_DOMAIN=localhost
-      - CMD_URL_ADDPORT=false #optional
-      - CMD_PROTOCOL_USESSL=false #optional
-      - CMD_PORT=3000 #optional
-      - CMD_ALLOW_ORIGIN=['localhost'] #optional
-      - CMD_DB_DIALECT= #optional
-    volumes:
-      - /path/to/hedgedoc/config:/config
-    ports:
-      - 3000:3000
+  db:
+    image: postgres:16-alpine
+    container_name: hedgedoc_db
     restart: unless-stopped
+    environment:
+      - POSTGRES_DB=hedgedoc
+      - POSTGRES_USER=hedgedoc
+      - POSTGRES_PASSWORD=hedgedoc_change_me
+    volumes:
+      - hedgedoc_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hedgedoc"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  hedgedoc:
+    image: hedgedoc/hedgedoc:latest
+    container_name: hedgedoc
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    environment:
+      - CMD_DB_URL=postgres://hedgedoc:hedgedoc_change_me@db:5432/hedgedoc
+      - CMD_DOMAIN=localhost
+      - CMD_URL_ADDPORT=true
+      - CMD_PROTOCOL_USESSL=false
+      - CMD_ALLOW_ANONYMOUS=true
+      - CMD_ALLOW_ANONYMOUS_EDITS=true
+      - CMD_ALLOW_FREEURL=true
+      - CMD_REQUIRE_FREEURL_AUTHENTICATION=false
+      - TZ=UTC
+    volumes:
+      - hedgedoc_uploads:/hedgedoc/public/uploads
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  hedgedoc_db_data:
+  hedgedoc_uploads:

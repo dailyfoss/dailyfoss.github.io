@@ -1,0 +1,25 @@
+# ===============================
+# Docker Compose (KrakenD CE)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  krakend:
+    image: devopsfaith/krakend:latest
+    container_name: krakend
+    restart: unless-stopped
+    command: run -c /etc/krakend/krakend.json
+    ports:
+      - "8080:8080"
+    volumes:
+      - krakend_config:/etc/krakend
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:8080/__health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  krakend_config:

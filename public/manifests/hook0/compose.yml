@@ -1,0 +1,45 @@
+# ===============================
+# Docker Compose (hook0)
+# ===============================
+# host: http://localhost:8080
+# username: (created during setup)
+# password: (created during setup)
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: hook0_db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=hook0
+      - POSTGRES_USER=hook0
+      - POSTGRES_PASSWORD=hook0_change_me
+    volumes:
+      - hook0_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hook0"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  hook0:
+    image: ghcr.io/hook0/hook0:latest
+    container_name: hook0
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      - DATABASE_URL=postgresql://hook0:hook0_change_me@db:5432/hook0
+      - NODE_ENV=production
+      - TZ=UTC
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  hook0_db_data:

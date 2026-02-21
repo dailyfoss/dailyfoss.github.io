@@ -1,8 +1,57 @@
+# ===============================
+# Docker Compose (Huginn)
+# ===============================
+# host: http://localhost:3000
+# username: admin
+# password: (set below in HUGINN_ADMIN_PASSWORD)
+
 services:
-  huginn:
-    image: huginn/huginn
-    ports:
-      - 3000:3000
-    volumes:
-      - /home/huginn/mysql-data:/var/lib/mysql
+  db:
+    image: mysql:8
+    container_name: huginn_db
     restart: unless-stopped
+    environment:
+      - MYSQL_DATABASE=huginn
+      - MYSQL_USER=huginn
+      - MYSQL_PASSWORD=huginn_change_me
+      - MYSQL_ROOT_PASSWORD=root_change_me
+    volumes:
+      - huginn_db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -proot_change_me"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  huginn:
+    image: huginn/huginn:latest
+    container_name: huginn
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_ADAPTER=mysql2
+      - DATABASE_HOST=db
+      - DATABASE_PORT=3306
+      - DATABASE_NAME=huginn
+      - DATABASE_USERNAME=huginn
+      - DATABASE_PASSWORD=huginn_change_me
+      - DATABASE_ENCODING=utf8mb4
+      - HUGINN_SECRET_TOKEN=change_this_to_a_long_random_string
+      - HUGINN_ADMIN_PASSWORD=change_admin_password
+      - INVITATION_CODE=change_invitation_code
+      - TZ=UTC
+    volumes:
+      - huginn_files:/var/lib/mysql-files
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  huginn_db_data:
+  huginn_files:
