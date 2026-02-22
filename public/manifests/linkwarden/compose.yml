@@ -1,20 +1,57 @@
+# ===============================
+# Docker Compose (Linkwarden)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
 services:
-  postgres:
-    image: postgres:16-alpine
-    env_file: .env
-    restart: always
-    volumes:
-      - ./pgdata:/var/lib/postgresql/data
-  linkwarden:
-    env_file: .env
+  db:
+    image: postgres:16
+    container_name: linkwarden_db
+    restart: unless-stopped
+
     environment:
-      - DATABASE_URL=postgresql://postgres:${POSTGRES_PASSWORD}@postgres:5432/postgres
-    restart: always
-    # build: . # uncomment this line to build from source
-    image: ghcr.io/linkwarden/linkwarden:latest # comment this line to build from source
-    ports:
-      - 3000:3000
+      - POSTGRES_DB=linkwarden
+      - POSTGRES_USER=linkwarden
+      - POSTGRES_PASSWORD=strongpassword
+
     volumes:
-      - ./data:/data/data
+      - linkwarden_db_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U linkwarden"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  linkwarden:
+    image: ghcr.io/linkwarden/linkwarden:latest
+    container_name: linkwarden
+    restart: unless-stopped
+
     depends_on:
-      - postgres
+      db:
+        condition: service_healthy
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      - DATABASE_URL=postgresql://linkwarden:strongpassword@db:5432/linkwarden
+      - NEXTAUTH_SECRET=changeme_super_secret_key
+      - NEXTAUTH_URL=http://localhost:3000
+
+    volumes:
+      - linkwarden_data:/data
+
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+volumes:
+  linkwarden_db_data:
+  linkwarden_data:

@@ -22,13 +22,26 @@
     "github_releases_this_year": 0
   },
   "resources": {
-    "website": "https://simjanos-dev.github.io/LinguaCafeHome/",
-    "documentation": "https://github.com/simjanos-dev/LinguaCafe",
+    "website": "https://simjanos-dev.github.io/LinguaCafeHome",
+    "documentation": "https://github.com/simjanos-dev/LinguaCafe/wiki/2.-Setup#installation",
     "source_code": "https://github.com/simjanos-dev/LinguaCafe",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/linguacafe.webp",
     "issues": "https://github.com/simjanos-dev/LinguaCafe/issues",
     "releases": "https://github.com/simjanos-dev/LinguaCafe/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/linguacafe-AnkiReview.jpg",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/linguacafe-DictionaryList.jpg",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/linguacafe-GoalTracking.jpg",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/linguacafe-KanjiDetails.jpg",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/linguacafe-Languages.jpg",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/linguacafe-LibraryChapters.jpg",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/linguacafe-LibraryCover.jpg",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/linguacafe-LibraryDetailed.jpg",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/linguacafe-ReviewBackCard.jpg",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/linguacafe-TextReader.jpg",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/linguacafe-ThemeDark.jpg",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/linguacafe-VocabularySearch.jpg"
+    ]
   },
   "features": [
     {
@@ -88,12 +101,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/linguacafe/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

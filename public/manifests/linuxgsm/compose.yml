@@ -1,13 +1,33 @@
+# ===============================
+# Docker Compose (LinuxGSM - CS2)
+# ===============================
+# host: udp://localhost:27015
+# username:
+# password:
+
 services:
-  linuxgsm-csgo:
-    image: gameservermanagers/gameserver:csgo
-    # image: ghcr.io/gameservermanagers/gameserver:csgo
-    container_name: csgoserver
-    volumes:
-      - /path/to/csgoserver:/data
-    ports:
-      - "27015:27015/tcp"
-      - "27015:27015/udp"
-      - "27020:27020/udp"
-      - "27005:27005/udp"
+  linuxgsm:
+    image: gameservermanagers/linuxgsm:latest
+    container_name: linuxgsm
     restart: unless-stopped
+
+    ports:
+      - "27015:27015/udp"
+      - "27015:27015/tcp"
+
+    environment:
+      - GAMESERVER=cs2server
+      - LGSM_GAMESERVERNAME=cs2server
+
+    volumes:
+      - linuxgsm_data:/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pgrep -f cs2server || exit 1"]
+      interval: 60s
+      timeout: 10s
+      retries: 5
+      start_period: 120s
+
+volumes:
+  linuxgsm_data:

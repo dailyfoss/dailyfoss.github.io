@@ -23,12 +23,17 @@
   },
   "resources": {
     "website": "https://libredesk.io",
-    "documentation": "https://github.com/abhinavxd/libredesk",
+    "documentation": "https://docs.libredesk.io/introduction",
     "source_code": "https://github.com/abhinavxd/libredesk",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/libredesk.webp",
     "issues": "https://github.com/abhinavxd/libredesk/issues",
     "releases": "https://github.com/abhinavxd/libredesk/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/libredesk-homepage.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/libredesk-demo.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/libredesk-inbox-demo.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/libredesk-inbox-team.png"
+    ]
   },
   "features": [
     {
@@ -92,16 +97,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/libredesk/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://demo.libredesk.io",
     "username": null,
     "password": null
   }

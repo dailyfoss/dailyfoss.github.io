@@ -1,12 +1,77 @@
+# ===============================
+# Docker Compose (Lemmy)
+# ===============================
+# host: http://localhost:8536
+# username: (created on first admin setup)
+# password:
+
 services:
-  lemmy-ui:
-    container_name: lemmy-ui
-    image: dockurr/lemmy-ui
-    environment:
-      - LEMMY_UI_HTTPS=true
-      - LEMMY_UI_LEMMY_INTERNAL_HOST=lemmy:8536
-      - LEMMY_UI_LEMMY_EXTERNAL_HOST=domain.tld
-    ports:
-      - 1234:1234
-    stop_grace_period: 1m
+  postgres:
+    image: postgres:latest
+    container_name: lemmy-postgres
     restart: unless-stopped
+    environment:
+      POSTGRES_DB: lemmy
+      POSTGRES_USER: lemmy
+      POSTGRES_PASSWORD: lemmy
+    volumes:
+      - lemmy_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lemmy"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:latest
+    container_name: lemmy-redis
+    restart: unless-stopped
+    volumes:
+      - lemmy_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  pictrs:
+    image: asonix/pictrs:latest
+    container_name: lemmy-pictrs
+    restart: unless-stopped
+    volumes:
+      - lemmy_pictrs_data:/mnt
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8080/healthz || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  lemmy:
+    image: dessalines/lemmy:latest
+    container_name: lemmy
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      pictrs:
+        condition: service_started
+    environment:
+      LEMMY_DATABASE_URL: postgres://lemmy:lemmy@postgres:5432/lemmy
+      LEMMY_REDIS_URL: redis://redis:6379
+      LEMMY_HOSTNAME: localhost
+      LEMMY_PORT: 8536
+      LEMMY_PICTRS_URL: http://pictrs:8080
+    ports:
+      - "8536:8536"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8536/api/v3/site || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  lemmy_postgres_data:
+  lemmy_redis_data:
+  lemmy_pictrs_data:

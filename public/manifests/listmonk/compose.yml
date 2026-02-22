@@ -1,34 +1,62 @@
+# ===============================
+# Docker Compose (listmonk)
+# ===============================
+# host: http://localhost:9000
+# username: admin
+# password: admin
+
 services:
   db:
-    : *db-defaults
+    image: postgres:16
     container_name: listmonk_db
+    restart: unless-stopped
+
+    environment:
+      - POSTGRES_DB=listmonk
+      - POSTGRES_USER=listmonk
+      - POSTGRES_PASSWORD=strongpassword
+
     volumes:
-      - type: volume
-        source: listmonk-data
-        target: /var/lib/postgresql/data
+      - listmonk_db_data:/var/lib/postgresql/data
 
-  app:
-    : *app-defaults
-    container_name: listmonk_app
-    hostname: listmonk.example.com # Recommend using FQDN for hostname
-    depends_on:
-      - db
-    volumes:
-      - ./config.toml:/listmonk/config.toml
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U listmonk"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
-  demo-db:
-    container_name: listmonk_demo_db
-    : *db-defaults
-
-  demo-app:
-    : *app-defaults
-    container_name: listmonk_demo_app
-    command: [sh, -c, "yes | ./listmonk --install --config config-demo.toml && ./listmonk --config config-demo.toml"]
-    depends_on:
-      - demo-db
-
-networks:
   listmonk:
+    image: knadh/listmonk:latest
+    container_name: listmonk
+    restart: unless-stopped
+
+    depends_on:
+      db:
+        condition: service_healthy
+
+    ports:
+      - "9000:9000"
+
+    command: >
+      ./listmonk --install --yes
+      --db-host=db
+      --db-port=5432
+      --db-user=listmonk
+      --db-password=strongpassword
+      --db-name=listmonk
+      --admin-username=admin
+      --admin-password=admin
+
+    volumes:
+      - listmonk_data:/listmonk
+
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:9000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
 
 volumes:
-  listmonk-data:
+  listmonk_db_data:
+  listmonk_data:

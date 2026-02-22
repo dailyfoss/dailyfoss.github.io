@@ -1,0 +1,56 @@
+# ===============================
+# Docker Compose (LogForge)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  db:
+    image: postgres:16
+    container_name: logforge_db
+    restart: unless-stopped
+
+    environment:
+      - POSTGRES_DB=logforge
+      - POSTGRES_USER=logforge
+      - POSTGRES_PASSWORD=strongpassword
+
+    volumes:
+      - logforge_db_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U logforge"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  logforge:
+    image: ghcr.io/log-forge/logforge:latest
+    container_name: logforge
+    restart: unless-stopped
+
+    depends_on:
+      db:
+        condition: service_healthy
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      - DATABASE_URL=postgresql://logforge:strongpassword@db:5432/logforge
+      - NODE_ENV=production
+
+    volumes:
+      - logforge_data:/app/data
+
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+volumes:
+  logforge_db_data:
+  logforge_data:

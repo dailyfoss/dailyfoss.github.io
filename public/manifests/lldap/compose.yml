@@ -1,0 +1,36 @@
+# ===============================
+# Docker Compose (LLDAP)
+# ===============================
+# host: 
+#   LDAP: ldap://localhost:3890
+#   Web UI: http://localhost:17170
+# username: admin
+# password: admin
+
+services:
+  lldap:
+    image: lldap/lldap:latest
+    container_name: lldap
+    restart: unless-stopped
+
+    ports:
+      - "3890:3890"
+      - "17170:17170"
+
+    environment:
+      - LLDAP_JWT_SECRET=change_this_super_secret_key
+      - LLDAP_LDAP_USER_PASS=admin
+      - LLDAP_LDAP_BASE_DN=dc=example,dc=com
+
+    volumes:
+      - lldap_data:/data
+
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:17170"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  lldap_data:

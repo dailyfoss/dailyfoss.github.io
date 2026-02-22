@@ -23,12 +23,15 @@
   },
   "resources": {
     "website": "https://lunarphp.com",
-    "documentation": "https://github.com/lunarphp/lunar",
+    "documentation": "https://docs.lunarphp.com/1.x/getting-started/overview/introduction",
     "source_code": "https://github.com/lunarphp/lunar",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/lunar.webp",
     "issues": "https://github.com/lunarphp/lunar/issues",
     "releases": "https://github.com/lunarphp/lunar/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/lunar-homepage.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/lunar-store-demo.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +91,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/lunar/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

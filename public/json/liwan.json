@@ -23,13 +23,15 @@
   },
   "resources": {
     "website": "https://liwan.dev",
-    "documentation": "https://github.com/explodingcamera/liwan",
+    "documentation": "https://liwan.dev/getting-started",
     "source_code": "https://github.com/explodingcamera/liwan",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/liwan.webp",
     "issues": "https://github.com/explodingcamera/liwan/issues",
     "releases": "https://github.com/explodingcamera/liwan/releases",
     "logo_light": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/liwan-light.webp",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/liwan-dashboard.png"
+    ]
   },
   "features": [
     {
@@ -89,16 +91,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/liwan/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://demo.liwan.dev/p/liwan.dev",
     "username": null,
     "password": null
   }

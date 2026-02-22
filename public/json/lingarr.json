@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "GNU GPL-3.0",
     "version": "1.0.7",
     "date_app_added": "2025-11-23",
     "date_last_released": "2026-02-16",
@@ -23,12 +23,15 @@
   },
   "resources": {
     "website": "https://github.com/lingarr-translate/lingarr",
-    "documentation": "https://github.com/lingarr-translate/lingarr",
+    "documentation": "https://lingarr.com/docs/api",
     "source_code": "https://github.com/lingarr-translate/lingarr",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/lingarr.webp",
     "issues": "https://github.com/lingarr-translate/lingarr/issues",
     "releases": "https://github.com/lingarr-translate/lingarr/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/lingarr-automated-subtitle-translation.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/lingarr-subtitle.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +91,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/lingarr/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

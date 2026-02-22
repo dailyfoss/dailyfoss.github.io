@@ -1,9 +1,58 @@
+# ===============================
+# Docker Compose (Lodestone)
+# ===============================
+# host: http://localhost:16662
+# username:
+# password:
+
 services:
-  lodestone_core:
-    image: ghcr.io/lodestone-team/lodestone_core
+  db:
+    image: postgres:16
+    container_name: lodestone_db
+    restart: unless-stopped
+
+    environment:
+      - POSTGRES_DB=lodestone
+      - POSTGRES_USER=lodestone
+      - POSTGRES_PASSWORD=strongpassword
+
+    volumes:
+      - lodestone_db_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lodestone"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  lodestone:
+    image: ghcr.io/lodestone-team/lodestone:latest
     container_name: lodestone
     restart: unless-stopped
+
+    depends_on:
+      db:
+        condition: service_healthy
+
     ports:
-      - 16662:16662
+      - "16662:16662"
+
+    environment:
+      - DATABASE_URL=postgresql://lodestone:strongpassword@db:5432/lodestone
+      - NODE_ENV=production
+
     volumes:
-      - ./lodestone:/home/user/.lodestone
+      - lodestone_data:/app/data
+      - lodestone_servers:/app/servers
+
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:16662"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+
+volumes:
+  lodestone_db_data:
+  lodestone_data:
+  lodestone_servers:

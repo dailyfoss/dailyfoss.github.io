@@ -23,15 +23,18 @@
   },
   "resources": {
     "website": "https://logto.io",
-    "documentation": "https://github.com/logto-io/logto",
+    "documentation": "https://docs.logto.io/introduction",
     "source_code": "https://github.com/logto-io/logto",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/logto.webp",
     "issues": "https://github.com/logto-io/logto/issues",
     "releases": "https://github.com/logto-io/logto/releases",
     "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/logto-homepage.png",
       "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/logto_assign-m2m-roles-modal.png",
       "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/logto_assign-m2m-roles-page.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/logto_outline-home.png"
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/logto_outline-home.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/logto-assign-m2m-roles-page.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/logto-user-management.webp"
     ]
   },
   "features": [
@@ -92,12 +95,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/logto/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

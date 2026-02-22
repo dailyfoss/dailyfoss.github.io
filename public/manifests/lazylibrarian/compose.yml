@@ -1,0 +1,32 @@
+# ===============================
+# Docker Compose (LazyLibrarian)
+# ===============================
+# host: http://localhost:5299
+# username:
+# password:
+
+services:
+  lazylibrarian:
+    image: linuxserver/lazylibrarian:latest
+    container_name: lazylibrarian
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: Etc/UTC
+    volumes:
+      - lazylibrarian_config:/config
+      - lazylibrarian_downloads:/downloads
+      - lazylibrarian_books:/books
+    ports:
+      - "5299:5299"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:5299/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  lazylibrarian_config:
+  lazylibrarian_downloads:
+  lazylibrarian_books:

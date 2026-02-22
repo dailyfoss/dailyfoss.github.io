@@ -1,0 +1,39 @@
+# ===============================
+# Docker Compose (Lyrion Music Server)
+# ===============================
+# host: http://localhost:9000
+# username:
+# password:
+
+services:
+  lyrion:
+    image: ghcr.io/lms-community/lyrionmusicserver:9.2.0-dev
+    container_name: lyrion
+    restart: unless-stopped
+
+    ports:
+      - "9000:9000"       # Web UI
+      - "3483:3483"       # TCP
+      - "3483:3483/udp"   # UDP discovery
+
+    environment:
+      TZ: UTC
+
+    volumes:
+      - lyrion_config:/config
+      - lyrion_cache:/cache
+      - lyrion_music:/music
+      - lyrion_playlist:/playlist
+
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:9000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+volumes:
+  lyrion_config:
+  lyrion_cache:
+  lyrion_music:
+  lyrion_playlist:

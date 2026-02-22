@@ -1,0 +1,61 @@
+# ===============================
+# Docker Compose (Libredesk)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: libredesk-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: libredesk
+      POSTGRES_USER: libredesk
+      POSTGRES_PASSWORD: libredesk
+    volumes:
+      - libredesk_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U libredesk"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:latest
+    container_name: libredesk-redis
+    restart: unless-stopped
+    volumes:
+      - libredesk_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  libredesk:
+    image: ghcr.io/abhinavxd/libredesk:latest
+    container_name: libredesk
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://libredesk:libredesk@postgres:5432/libredesk
+      REDIS_URL: redis://redis:6379
+      PORT: 3000
+      HOST: 0.0.0.0
+    ports:
+      - "3000:3000"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  libredesk_postgres_data:
+  libredesk_redis_data:

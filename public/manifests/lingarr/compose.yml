@@ -1,0 +1,30 @@
+# ===============================
+# Docker Compose (Lingarr)
+# ===============================
+# host: http://localhost:7575
+# username:
+# password:
+
+services:
+  lingarr:
+    image: ghcr.io/lingarr-translate/lingarr:latest
+    container_name: lingarr
+    restart: unless-stopped
+
+    ports:
+      - "7575:7575"
+
+    volumes:
+      - lingarr_config:/app/config
+      - lingarr_data:/app/data
+
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:7575"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  lingarr_config:
+  lingarr_data:

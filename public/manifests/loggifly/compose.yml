@@ -1,22 +1,50 @@
+# ===============================
+# Docker Compose (LoggiFly)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
 services:
   loggifly:
     image: ghcr.io/clemcer/loggifly:latest
     container_name: loggifly
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      # This is where you would put your config.yaml file (ignore if you are only using environment variables)
-      # - ./loggifly/config:/config
+    restart: unless-stopped
+    read_only: true
+
+    ports:
+      - "8080:8080"
+
     environment:
-      # Choose at least one notification service
-      NTFY_URL: "https://ntfy.sh"
-      NTFY_TOPIC: "your_topic"
-      # Token or Username+Password In case you need authentication
+      TZ: Europe/Berlin
+
+      # --- Notification (choose at least one) ---
+      NTFY_URL: https://ntfy.sh
+      NTFY_TOPIC: your_topic
       # NTFY_TOKEN:
       # NTFY_USERNAME:
       # NTFY_PASSWORD:
-      APPRISE_URL: "discord://..."      # Apprise-compatible URL
 
-      CONTAINERS: "vaultwarden,audiobookshelf"        # Comma-separated list
-      GLOBAL_KEYWORDS: "error,failed login,password"  # Basic keyword monitoring
-      GLOBAL_KEYWORDS_WITH_ATTACHMENT: "critical"     # Attaches a log file to the notification
-    restart: unless-stopped
+      APPRISE_URL: discord://...
+
+      # --- Monitoring ---
+      CONTAINERS: vaultwarden,audiobookshelf
+      GLOBAL_KEYWORDS: error,failed login,password
+      GLOBAL_KEYWORDS_WITH_ATTACHMENT: critical
+
+    volumes:
+      - loggifly_config:/config
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+    tmpfs:
+      - /tmp
+
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8080"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  loggifly_config:

@@ -23,12 +23,17 @@
   },
   "resources": {
     "website": "http://lms-demo.poupon.dev",
-    "documentation": "https://github.com/epoupon/lms",
+    "documentation": "https://github.com/epoupon/lms/blob/master/INSTALL.md",
     "source_code": "https://github.com/epoupon/lms",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/lightweight-music-server.webp",
     "issues": "https://github.com/epoupon/lms/issues",
     "releases": "https://github.com/epoupon/lms/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/lightweight-music-server-albums.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/lightweight-music-server-playlists.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/lightweight-music-server-playlst.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/lightweight-music-server-track.png"
+    ]
   },
   "features": [
     {
@@ -88,17 +93,19 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/lightweight-music-server/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
-    "username": null,
-    "password": null
+    "url": "https://lms-demo.poupon.dev",
+    "username": "demo",
+    "password": "demo"
   }
 }

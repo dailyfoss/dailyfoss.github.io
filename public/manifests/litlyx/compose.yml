@@ -1,0 +1,56 @@
+# ===============================
+# Docker Compose (Litlyx)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  db:
+    image: postgres:16
+    container_name: litlyx_db
+    restart: unless-stopped
+
+    environment:
+      - POSTGRES_DB=litlyx
+      - POSTGRES_USER=litlyx
+      - POSTGRES_PASSWORD=strongpassword
+
+    volumes:
+      - litlyx_db_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U litlyx"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  litlyx:
+    image: ghcr.io/litlyx/litlyx:latest
+    container_name: litlyx
+    restart: unless-stopped
+
+    depends_on:
+      db:
+        condition: service_healthy
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      - DATABASE_URL=postgresql://litlyx:strongpassword@db:5432/litlyx
+      - NODE_ENV=production
+
+    volumes:
+      - litlyx_data:/app/data
+
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+volumes:
+  litlyx_db_data:
+  litlyx_data:
