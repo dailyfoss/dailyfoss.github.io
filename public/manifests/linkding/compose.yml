@@ -1,11 +1,33 @@
+# ===============================
+# Docker Compose (linkding)
+# ===============================
+# host: http://localhost:9090
+# username:
+# password:
+
 services:
   linkding:
-    container_name: "${LD_CONTAINER_NAME:-linkding}"
     image: sissbruecker/linkding:latest
-    ports:
-      - "${LD_HOST_PORT:-9090}:9090"
-    volumes:
-      - "${LD_HOST_DATA_DIR:-./data}:/etc/linkding/data"
-    env_file:
-      - .env
+    container_name: linkding
     restart: unless-stopped
+
+    ports:
+      - "9090:9090"
+
+    environment:
+      - LD_SUPERUSER_NAME=admin
+      - LD_SUPERUSER_PASSWORD=admin
+      - LD_SUPERUSER_EMAIL=admin@example.com
+
+    volumes:
+      - linkding_data:/etc/linkding/data
+
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:9090/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  linkding_data:

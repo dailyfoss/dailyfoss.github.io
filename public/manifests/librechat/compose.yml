@@ -1,87 +1,84 @@
-services:
-  api:
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile.multi
-    #   target: api-build
-    image: ghcr.io/danny-avila/librechat-dev-api:latest
-    container_name: LibreChat-API
-    ports:
-      - 3080:3080
-    depends_on:
-      - mongodb
-      - rag_api
-    restart: always
-    extra_hosts:
-    - "host.docker.internal:host-gateway"
-    env_file:
-      - .env
-    environment:
-      - HOST=0.0.0.0
-      - NODE_ENV=production
-      - MONGO_URI=mongodb://mongodb:27017/LibreChat
-      - MEILI_HOST=http://meilisearch:7700
-      - RAG_PORT=${RAG_PORT:-8000}
-      - RAG_API_URL=http://rag_api:${RAG_PORT:-8000}
-    volumes:
-      - type: bind
-        source: ./librechat.yaml
-        target: /app/librechat.yaml
-      - ./images:/app/client/public/images
-      - ./logs:/app/api/logs
+# ===============================
+# Docker Compose (LibreChat)
+# ===============================
+# host: http://localhost:3080
+# username:
+# password:
 
-  client:
-    image: nginx:1.27.0-alpine
-    container_name: LibreChat-NGINX
-    ports:
-      - 80:80
-      - 443:443
-    depends_on:
-      - api
-    restart: always
+services:
+  postgres:
+    image: postgres:latest
+    container_name: librechat-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: librechat
+      POSTGRES_USER: librechat
+      POSTGRES_PASSWORD: librechat
     volumes:
-      - ./client/nginx.conf:/etc/nginx/conf.d/default.conf
+      - librechat_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U librechat"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   mongodb:
-    container_name: chat-mongodb
-    # ports:  # Uncomment this to access mongodb from outside docker, not safe in deployment
-    #   - 27018:27017
-    image: mongo
-    restart: always
+    image: mongo:latest
+    container_name: librechat-mongo
+    restart: unless-stopped
     volumes:
-      - ./data-node:/data/db
-    command: mongod --noauth
+      - librechat_mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   meilisearch:
-    container_name: chat-meilisearch
-    image: getmeili/meilisearch:v1.7.3
-    restart: always
-    # ports: # Uncomment this to access meilisearch from outside docker
-    #   - 7700:7700 # if exposing these ports, make sure your master key is not the default value
-    env_file:
-      - .env
+    image: getmeili/meilisearch:latest
+    container_name: librechat-meilisearch
+    restart: unless-stopped
     environment:
-      - MEILI_HOST=http://meilisearch:7700
-      - MEILI_NO_ANALYTICS=true
+      MEILI_NO_ANALYTICS: "true"
     volumes:
-      - ./meili_data_v1.7:/meili_data
-  vectordb:
-    image: ankane/pgvector:latest
-    environment:
-      POSTGRES_DB: mydatabase
-      POSTGRES_USER: myuser
-      POSTGRES_PASSWORD: mypassword
-    restart: always
-    volumes:
-      - pgdata2:/var/lib/postgresql/data
-  rag_api:
-    image: ghcr.io/danny-avila/librechat-rag-api-dev-lite:latest
-    environment:
-      - DB_HOST=vectordb
-      - RAG_PORT=${RAG_PORT:-8000}
-    restart: always
+      - librechat_meili_data:/meili_data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:7700/health || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+
+  librechat:
+    image: ghcr.io/danny-avila/librechat:latest
+    container_name: librechat
+    restart: unless-stopped
     depends_on:
-      - vectordb
-    env_file:
-      - .env
+      postgres:
+        condition: service_healthy
+      mongodb:
+        condition: service_healthy
+      meilisearch:
+        condition: service_healthy
+    environment:
+      HOST: 0.0.0.0
+      PORT: 3080
+      POSTGRES_URI: postgres://librechat:librechat@postgres:5432/librechat
+      MONGO_URI: mongodb://mongodb:27017/librechat
+      MEILI_HOST: http://meilisearch:7700
+      OPENAI_API_KEY: sk-xxxxxxxxxxxxxxxx
+      ANTHROPIC_API_KEY: sk-ant-xxxxxxxxxxxx
+      GOOGLE_API_KEY: your-google-key
+      JWT_SECRET: replace_with_long_random_string
+      SESSION_SECRET: replace_with_long_random_string
+    ports:
+      - "3080:3080"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3080/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
 
 volumes:
-  pgdata2:
+  librechat_postgres_data:
+  librechat_mongo_data:
+  librechat_meili_data:

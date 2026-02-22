@@ -1,0 +1,29 @@
+# ===============================
+# Docker Compose (Librum)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  librum:
+    image: ghcr.io/librum-reader/librum:latest
+    container_name: librum
+    restart: unless-stopped
+    environment:
+      PORT: 3000
+      HOST: 0.0.0.0
+    volumes:
+      - librum_data:/app/data
+      - librum_books:/books
+    ports:
+      - "3000:3000"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  librum_data:
+  librum_books:

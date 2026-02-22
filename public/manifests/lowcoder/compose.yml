@@ -1,0 +1,56 @@
+# ===============================
+# Docker Compose (Lowcoder)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  db:
+    image: postgres:16
+    container_name: lowcoder_db
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: lowcoder
+      POSTGRES_USER: lowcoder
+      POSTGRES_PASSWORD: strongpassword
+
+    volumes:
+      - lowcoder_db_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lowcoder"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  lowcoder:
+    image: ghcr.io/lowcoder-org/lowcoder:latest
+    container_name: lowcoder
+    restart: unless-stopped
+
+    depends_on:
+      db:
+        condition: service_healthy
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      DATABASE_URL: postgres://lowcoder:strongpassword@db:5432/lowcoder
+      NODE_ENV: production
+
+    volumes:
+      - lowcoder_data:/app/data
+
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+
+volumes:
+  lowcoder_db_data:
+  lowcoder_data:

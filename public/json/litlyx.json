@@ -23,14 +23,16 @@
   },
   "resources": {
     "website": "https://litlyx.com",
-    "documentation": "https://github.com/Litlyx/litlyx",
+    "documentation": "https://docs.litlyx.com",
     "source_code": "https://github.com/Litlyx/litlyx",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/litlyx.webp",
     "issues": "https://github.com/Litlyx/litlyx/issues",
     "releases": "https://github.com/Litlyx/litlyx/releases",
     "logo_light": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/litlyx-light.webp",
     "screenshots": [
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/litlyx_d.png"
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/litlyx_d.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/litlyx-analytics.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/litlyx-dashboard.png"
     ]
   },
   "features": [
@@ -91,16 +93,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/litlyx/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://dashboard.litlyx.com/shared/75bee531ba6c2b6b086f8c8c01ba8135",
     "username": null,
     "password": null
   }

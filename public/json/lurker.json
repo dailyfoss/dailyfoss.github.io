@@ -31,7 +31,15 @@
     "screenshots": [
       "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/lurker_home.png",
       "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/lurker_search.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/lurker_subreddit.png"
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/lurker_subreddit.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/lurker-collapse.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/lurker-comments.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/lurker-gallery.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/lurker-invite.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/lurker-light.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/lurker-search.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/lurker-subreddit.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/lurker-subs.png"
     ]
   },
   "features": [
@@ -92,12 +100,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/lurker/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

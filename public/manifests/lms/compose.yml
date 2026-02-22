@@ -1,10 +1,76 @@
+# ===============================
+# Docker Compose (Frappe LMS)
+# ===============================
+# host: http://localhost:8000
+# username:
+# password:
+
 services:
-  lms:
-    image: epoupon/lms
+  mariadb:
+    image: mariadb:11
+    container_name: frappe_lms_db
     restart: unless-stopped
-    user:
-    ports:
-      - :5082
+
+    environment:
+      - MARIADB_ROOT_PASSWORD=strongrootpassword
+      - MARIADB_DATABASE=frappe
+      - MARIADB_USER=frappe
+      - MARIADB_PASSWORD=strongpassword
+
     volumes:
-      - :/music:ro
-      - :/var/lms:rw
+      - frappe_lms_db_data:/var/lib/mysql
+
+    healthcheck:
+      test: ["CMD", "mariadb-admin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis-cache:
+    image: redis:7
+    container_name: frappe_lms_redis_cache
+    restart: unless-stopped
+    volumes:
+      - frappe_lms_redis_cache:/data
+
+  redis-queue:
+    image: redis:7
+    container_name: frappe_lms_redis_queue
+    restart: unless-stopped
+    volumes:
+      - frappe_lms_redis_queue:/data
+
+  frappe:
+    image: frappe/lms:latest
+    container_name: frappe_lms
+    restart: unless-stopped
+
+    depends_on:
+      mariadb:
+        condition: service_healthy
+
+    ports:
+      - "8000:8000"
+
+    environment:
+      - DB_HOST=mariadb
+      - DB_PORT=3306
+      - MYSQL_ROOT_PASSWORD=strongrootpassword
+      - REDIS_CACHE=redis://redis-cache:6379
+      - REDIS_QUEUE=redis://redis-queue:6379
+
+    volumes:
+      - frappe_lms_sites:/home/frappe/frappe-bench/sites
+
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+volumes:
+  frappe_lms_db_data:
+  frappe_lms_sites:
+  frappe_lms_redis_cache:
+  frappe_lms_redis_queue:

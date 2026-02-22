@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "GNU GPL 2.0",
     "version": null,
     "date_app_added": "2025-11-23",
     "date_last_released": null,
@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://lyrion.org",
-    "documentation": "https://github.com/LMS-Community/slimserver",
+    "documentation": "https://lyrion.org/getting-started",
     "source_code": "https://github.com/LMS-Community/slimserver",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/lyrion-music-server.webp",
     "issues": "https://github.com/LMS-Community/slimserver/issues",
     "releases": null,
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/lyrion-music-server-demo.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/lyrion-music-server/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

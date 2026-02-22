@@ -1,0 +1,30 @@
+# ===============================
+# Docker Compose (LMS)
+# ===============================
+# host: http://localhost:5082
+# username:
+# password:
+
+services:
+  lms:
+    image: epoupon/lms:latest
+    container_name: lms
+    restart: unless-stopped
+
+    ports:
+      - "5082:5082"
+
+    volumes:
+      - lms_config:/config
+      - lms_music:/music
+
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:5082"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  lms_config:
+  lms_music:

@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://github.com/LuteOrg/lute-v3",
-    "documentation": "https://github.com/LuteOrg/lute-v3",
+    "documentation": "https://luteorg.github.io/lute-manual",
     "source_code": "https://github.com/LuteOrg/lute-v3",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/lute.webp",
     "issues": "https://github.com/LuteOrg/lute-v3/issues",
     "releases": "https://github.com/LuteOrg/lute-v3/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/lute-homepage.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/lute/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

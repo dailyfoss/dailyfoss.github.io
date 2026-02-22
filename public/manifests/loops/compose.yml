@@ -1,0 +1,74 @@
+# ===============================
+# Docker Compose (Loops Server)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  db:
+    image: postgres:16
+    container_name: loops_db
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: loops
+      POSTGRES_USER: loops
+      POSTGRES_PASSWORD: strongpassword
+
+    volumes:
+      - loops_db_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U loops"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7
+    container_name: loops_redis
+    restart: unless-stopped
+
+    volumes:
+      - loops_redis_data:/data
+
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  loops:
+    image: ghcr.io/joinloops/loops-server:latest
+    container_name: loops
+    restart: unless-stopped
+
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      DATABASE_URL: postgres://loops:strongpassword@db:5432/loops
+      REDIS_URL: redis://redis:6379
+      NODE_ENV: production
+
+    volumes:
+      - loops_data:/app/data
+
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+
+volumes:
+  loops_db_data:
+  loops_redis_data:
+  loops_data:

@@ -1,15 +1,37 @@
+# ===============================
+# Docker Compose (Lidarr)
+# ===============================
+# host: http://localhost:8686
+# username:
+# password:
+
 services:
   lidarr:
     image: lscr.io/linuxserver/lidarr:latest
     container_name: lidarr
+    restart: unless-stopped
+
+    ports:
+      - "8686:8686"
+
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Etc/UTC
+      - TZ=UTC
+
     volumes:
-      - /path/to/lidarr/config:/config
-      - /path/to/music:/music #optional
-      - /path/to/downloads:/downloads #optional
-    ports:
-      - 8686:8686
-    restart: unless-stopped
+      - lidarr_config:/config
+      - lidarr_music:/music
+      - lidarr_downloads:/downloads
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8686"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+
+volumes:
+  lidarr_config:
+  lidarr_music:
+  lidarr_downloads:

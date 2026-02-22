@@ -1,0 +1,27 @@
+# ===============================
+# Docker Compose (LibreTranslate)
+# ===============================
+# host: http://localhost:5000
+# username:
+# password:
+
+services:
+  libretranslate:
+    image: libretranslate/libretranslate:latest
+    container_name: libretranslate
+    restart: unless-stopped
+    environment:
+      LT_LOAD_ONLY: en,es,fr,de
+      LT_UPDATE_MODELS: "true"
+    volumes:
+      - libretranslate_data:/home/libretranslate/.local
+    ports:
+      - "5000:5000"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:5000/languages || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  libretranslate_data:

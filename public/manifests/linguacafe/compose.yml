@@ -1,0 +1,59 @@
+# ===============================
+# Docker Compose (LinguaCafe)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  db:
+    image: postgres:16
+    container_name: linguacafe_db
+    restart: unless-stopped
+
+    environment:
+      - POSTGRES_DB=linguacafe
+      - POSTGRES_USER=linguacafe
+      - POSTGRES_PASSWORD=strongpassword
+
+    volumes:
+      - linguacafe_db_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U linguacafe"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  linguacafe:
+    image: ghcr.io/simjanos-dev/linguacafe:latest
+    container_name: linguacafe
+    restart: unless-stopped
+
+    depends_on:
+      db:
+        condition: service_healthy
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=linguacafe
+      - DB_USER=linguacafe
+      - DB_PASSWORD=strongpassword
+
+    volumes:
+      - linguacafe_uploads:/app/uploads
+
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+volumes:
+  linguacafe_db_data:
+  linguacafe_uploads:

@@ -1,0 +1,61 @@
+# ===============================
+# Docker Compose (Laudspeaker)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: laudspeaker-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: laudspeaker
+      POSTGRES_USER: laudspeaker
+      POSTGRES_PASSWORD: laudspeaker
+    volumes:
+      - laudspeaker_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U laudspeaker"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:latest
+    container_name: laudspeaker-redis
+    restart: unless-stopped
+    volumes:
+      - laudspeaker_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  laudspeaker:
+    image: laudspeaker/laudspeaker:latest
+    container_name: laudspeaker
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://laudspeaker:laudspeaker@postgres:5432/laudspeaker
+      REDIS_URL: redis://redis:6379
+      NEXTAUTH_URL: http://localhost:3000
+      NEXTAUTH_SECRET: supersecretkey
+    ports:
+      - "3000:3000"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  laudspeaker_postgres_data:
+  laudspeaker_redis_data:

@@ -1,0 +1,45 @@
+# ===============================
+# Docker Compose (Leed)
+# ===============================
+# host: http://localhost:8080
+# username: (created during install)
+# password: (created during install)
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: leed-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: leed
+      MYSQL_USER: leed
+      MYSQL_PASSWORD: leed
+      MYSQL_ROOT_PASSWORD: rootpassword
+    volumes:
+      - leed_mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -prootpassword || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  leed:
+    image: php:apache
+    container_name: leed
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    volumes:
+      - leed_html:/var/www/html
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  leed_mysql_data:
+  leed_html:

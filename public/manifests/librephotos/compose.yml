@@ -1,67 +1,68 @@
-services:
-  proxy:
-    image: reallibrephotos/librephotos-proxy:${tag}
-    container_name: proxy
-    restart: unless-stopped
-    volumes:
-      - ${scanDirectory}:/data
-      - ${data}/protected_media:/protected_media
-    ports:
-      - ${httpPort}:80
-    depends_on:
-      - backend
-      - frontend
+# ===============================
+# Docker Compose (LibrePhotos)
+# ===============================
+# host: http://localhost:3000
+# username: (created on first login)
+# password:
 
-  db:
-    image: postgres:13
-    container_name: db
+services:
+  postgres:
+    image: postgres:latest
+    container_name: librephotos-postgres
     restart: unless-stopped
     environment:
-      - POSTGRES_USER=${dbUser}
-      - POSTGRES_PASSWORD=${dbPass}
-      - POSTGRES_DB=${dbName}
+      POSTGRES_DB: librephotos
+      POSTGRES_USER: librephotos
+      POSTGRES_PASSWORD: librephotos
     volumes:
-      - ${data}/db:/var/lib/postgresql/data
-    command: postgres -c fsync=off -c synchronous_commit=off -c full_page_writes=off -c random_page_cost=1.0
+      - librephotos_postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: psql -U ${dbUser} -d ${dbName} -c "SELECT 1;"
-      interval: 5s
+      test: ["CMD-SHELL", "pg_isready -U librephotos"]
+      interval: 10s
       timeout: 5s
       retries: 5
 
-  frontend:
-    image: reallibrephotos/librephotos-frontend:${tag}
-    container_name: frontend
-    restart: unless-stopped
-
-  backend:
-    image: reallibrephotos/librephotos:${tag}
-    container_name: backend
+  redis:
+    image: redis:latest
+    container_name: librephotos-redis
     restart: unless-stopped
     volumes:
-      - ${scanDirectory}:/data
-      - ${data}/protected_media:/protected_media
-      - ${data}/logs:/logs
-      - ${data}/cache:/root/.cache
-    environment:
-      - SECRET_KEY=${shhhhKey:-}
-      - BACKEND_HOST=backend
-      - ADMIN_EMAIL=${adminEmail:-}
-      - ADMIN_USERNAME=${userName:-}
-      - ADMIN_PASSWORD=${userPass:-}
-      - DB_BACKEND=postgresql
-      - DB_NAME=${dbName}
-      - DB_USER=${dbUser}
-      - DB_PASS=${dbPass}
-      - DB_HOST=${dbHost}
-      - DB_PORT=5432
-      - MAPBOX_API_KEY=${mapApiKey:-}
-      - WEB_CONCURRENCY=${gunniWorkers:-1}
-      - SKIP_PATTERNS=${skipPatterns:-}
-      - ALLOW_UPLOAD=${allowUpload:-false}
-      - CSRF_TRUSTED_ORIGINS=${csrfTrustedOrigins:-}
-      - DEBUG=0
-      - HEAVYWEIGHT_PROCESS=${HEAVYWEIGHT_PROCESS:-}
+      - librephotos_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  librephotos:
+    image: librephotos/librephotos:latest
+    container_name: librephotos
+    restart: unless-stopped
     depends_on:
-      db:
+      postgres:
         condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      SECRET_KEY: replace_with_random_string
+      DB_HOST: postgres
+      DB_NAME: librephotos
+      DB_USER: librephotos
+      DB_PASS: librephotos
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      ALLOWED_HOSTS: localhost
+    volumes:
+      - librephotos_media:/data
+    ports:
+      - "3000:80"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  librephotos_postgres_data:
+  librephotos_redis_data:
+  librephotos_media:

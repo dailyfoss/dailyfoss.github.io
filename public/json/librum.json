@@ -28,7 +28,12 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/librum.webp",
     "issues": "https://github.com/Librum-Reader/Librum/issues",
     "releases": "https://github.com/Librum-Reader/Librum/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/librum-create-folder.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/librum-dashboard-page.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/librum-setting-appearance.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/librum-simple-ui.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +93,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/librum/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

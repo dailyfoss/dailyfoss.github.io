@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://logdy.dev",
-    "documentation": "https://github.com/logdyhq/logdy-core",
+    "documentation": "https://logdy.dev/docs/quick-start",
     "source_code": "https://github.com/logdyhq/logdy-core",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/logdy.webp",
     "issues": "https://github.com/logdyhq/logdy-core/issues",
     "releases": "https://github.com/logdyhq/logdy-core/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/logdy-demo.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/logdy/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
@@ -104,7 +108,7 @@
     }
   },
   "demo": {
-    "url": null,
+    "url": "https://demo.logdy.dev",
     "username": null,
     "password": null
   }

@@ -1,31 +1,62 @@
+# ===============================
+# Docker Compose (LinkAce)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
 services:
-
-  # --- MariaDB
   db:
-    image: docker.io/library/mariadb:11.2
+    image: postgres:16
+    container_name: linkace_db
     restart: unless-stopped
-    command: mariadbd --character-set-server=utf8mb4 --collation-server=utf8mb4_bin
-    environment:
-      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
-      - MYSQL_USER=${DB_USERNAME}
-      - MYSQL_PASSWORD=${DB_PASSWORD}
-      - MYSQL_DATABASE=${DB_DATABASE}
-    volumes:
-      - ./db:/var/lib/mysql
 
-  # --- LinkAce Image with PHP and nginx
-  app:
-    image: docker.io/linkace/linkace:simple
-    restart: unless-stopped
-    depends_on:
-      - db
-    ports:
-      - "0.0.0.0:80:80"
-      #- "0.0.0.0:443:443"
+    environment:
+      - POSTGRES_DB=linkace
+      - POSTGRES_USER=linkace
+      - POSTGRES_PASSWORD=strongpassword
+
     volumes:
-      - ./.env:/app/.env
-      - ./backups:/app/storage/app/backups
-      - ./linkace_logs:/app/storage/logs
-      # Remove the hash of the following line if you want to use HTTPS for this container
-      #- ./nginx-ssl.conf:/etc/nginx/conf.d/default.conf:ro
-      #- /path/to/your/ssl/certificates:/certs:ro
+      - linkace_db_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U linkace"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  linkace:
+    image: ghcr.io/kovah/linkace:latest
+    container_name: linkace
+    restart: unless-stopped
+
+    depends_on:
+      db:
+        condition: service_healthy
+
+    ports:
+      - "8080:80"
+
+    environment:
+      - APP_ENV=production
+      - APP_URL=http://localhost:8080
+      - DB_CONNECTION=pgsql
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_DATABASE=linkace
+      - DB_USERNAME=linkace
+      - DB_PASSWORD=strongpassword
+
+    volumes:
+      - linkace_storage:/app/storage
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+
+volumes:
+  linkace_db_data:
+  linkace_storage:

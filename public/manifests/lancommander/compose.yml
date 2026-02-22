@@ -1,0 +1,34 @@
+# ===============================
+# Docker Compose (LANCommander)
+# ===============================
+# host: http://localhost:1337
+# username: (configured via web UI)
+# password:
+
+services:
+  lancommander:
+    image: lancommander/lancommander:latest
+    container_name: lancommander
+    restart: unless-stopped
+    environment:
+      # user/group to run container as; can match your host user
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      # enable optional features:
+      # - STEAMCMD=1     # install SteamCMD support
+      # - WINE=1         # install Wine support
+    volumes:
+      - lancommander_data:/app/Data
+    ports:
+      - "1337:1337/tcp"   # web UI/API
+      - "35891:35891/udp" # LAN beacon
+      - "213:213/udp"     # optional IPX relay
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:1337/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  lancommander_data:

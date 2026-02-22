@@ -1,0 +1,74 @@
+# ===============================
+# Docker Compose (LiveBlog)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  db:
+    image: postgres:16
+    container_name: liveblog_db
+    restart: unless-stopped
+
+    environment:
+      - POSTGRES_DB=liveblog
+      - POSTGRES_USER=liveblog
+      - POSTGRES_PASSWORD=strongpassword
+
+    volumes:
+      - liveblog_db_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U liveblog"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7
+    container_name: liveblog_redis
+    restart: unless-stopped
+
+    volumes:
+      - liveblog_redis_data:/data
+
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  liveblog:
+    image: ghcr.io/liveblog/liveblog:latest
+    container_name: liveblog
+    restart: unless-stopped
+
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      - DATABASE_URL=postgresql://liveblog:strongpassword@db:5432/liveblog
+      - REDIS_URL=redis://redis:6379
+      - NODE_ENV=production
+
+    volumes:
+      - liveblog_uploads:/app/uploads
+
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+
+volumes:
+  liveblog_db_data:
+  liveblog_redis_data:
+  liveblog_uploads:

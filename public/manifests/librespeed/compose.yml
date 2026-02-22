@@ -1,19 +1,29 @@
+# ===============================
+# Docker Compose (LibreSpeed)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
 services:
-  speedtest:
-    container_name: speedtest
-    image: ghcr.io/librespeed/speedtest:latest
-    restart: always
+  librespeed:
+    image: linuxserver/librespeed:latest
+    container_name: librespeed
+    restart: unless-stopped
     environment:
-      MODE: standalone
-      #TITLE: "LibreSpeed"
-      #TELEMETRY: "false"
-      #ENABLE_ID_OBFUSCATION: "false"
-      #REDACT_IP_ADDRESSES: "false"
-      #PASSWORD:
-      #EMAIL:
-      #DISABLE_IPINFO: "false"
-      #IPINFO_APIKEY: "your api key"
-      #DISTANCE: "km"
-      #WEBPORT: 80
+      PUID: 1000
+      PGID: 1000
+      TZ: Etc/UTC
+      PASSWORD: ""   # optional UI password (leave empty to disable)
+    volumes:
+      - librespeed_config:/config
     ports:
-      - "80:80" # webport mapping (host:container)
+      - "8080:80"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  librespeed_config:

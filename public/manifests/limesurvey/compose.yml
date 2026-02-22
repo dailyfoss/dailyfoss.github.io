@@ -1,25 +1,62 @@
+# ===============================
+# Docker Compose (LimeSurvey)
+# ===============================
+# host: http://localhost:8080
+# username: admin
+# password: admin
+
 services:
+  db:
+    image: postgres:16
+    container_name: limesurvey_db
+    restart: unless-stopped
+
+    environment:
+      - POSTGRES_DB=limesurvey
+      - POSTGRES_USER=limesurvey
+      - POSTGRES_PASSWORD=strongpassword
+
+    volumes:
+      - limesurvey_db_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U limesurvey"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   limesurvey:
-    image: adamzammit/limesurvey:6.6.3
-    ports:
-      - 127.0.0.1:8082:80
-    environment:
-      LIMESURVEY_DB_PASSWORD: e/xa|m|ple
-      LIMESURVEY_ADMIN_USER: admin
-      LIMESURVEY_ADMIN_PASSWORD: password
-      LIMESURVEY_ADMIN_NAME: Lime Administrator
-      LIMESURVEY_ADMIN_EMAIL: [email protected]
-      TZ: Europe/London
-    volumes:
-      - ./plugins:/var/www/html/plugins
-      - ./upload:/var/www/html/upload
-      - ./config:/var/www/html/application/config
-      - ./sessions:/var/lime/sessions
+    image: limesurvey/limesurvey:latest
+    container_name: limesurvey
+    restart: unless-stopped
 
-  mysql:
-    image: mariadb:10.5
+    depends_on:
+      db:
+        condition: service_healthy
+
+    ports:
+      - "8080:80"
+
     environment:
-      MYSQL_ROOT_PASSWORD: e/xa|m|ple
+      - DB_TYPE=pgsql
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=limesurvey
+      - DB_USERNAME=limesurvey
+      - DB_PASSWORD=strongpassword
+
     volumes:
-       - ./mysql:/var/lib/mysql
+      - limesurvey_uploads:/var/www/html/upload
+      - limesurvey_plugins:/var/www/html/plugins
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+
+volumes:
+  limesurvey_db_data:
+  limesurvey_uploads:
+  limesurvey_plugins:

@@ -1,31 +1,34 @@
+# ===============================
+# Docker Compose (LocalAI)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
 services:
-  api:
-    image: localai/localai:latest-aio-cpu
-    # For a specific version:
-    # image: localai/localai:v2.19.4-aio-cpu
-    # For Nvidia GPUs decomment one of the following (cuda11 or cuda12):
-    # image: localai/localai:v2.19.4-aio-gpu-nvidia-cuda-11
-    # image: localai/localai:v2.19.4-aio-gpu-nvidia-cuda-12
-    # image: localai/localai:latest-aio-gpu-nvidia-cuda-11
-    # image: localai/localai:latest-aio-gpu-nvidia-cuda-12
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/readyz"]
-      interval: 1m
-      timeout: 20m
-      retries: 5
-    ports:
-      - 8080:8080
-    environment:
-      - DEBUG=true
-      # ...
-    volumes:
-      - ./models:/build/models:cached
-    # decomment the following piece if running with Nvidia GPUs
-    # deploy:
-    #   resources:
-    #     reservations:
-    #       devices:
-    #         - driver: nvidia
-    #           count: 1
-    #           capabilities: [gpu]
+  localai:
+    image: quay.io/go-skynet/local-ai:latest
+    container_name: localai
     restart: unless-stopped
+
+    ports:
+      - "8080:8080"
+
+    environment:
+      - DEBUG=false
+
+    volumes:
+      - localai_models:/models
+
+    command: >
+      --models-path /models
+
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8080/v1/models"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+volumes:
+  localai_models:

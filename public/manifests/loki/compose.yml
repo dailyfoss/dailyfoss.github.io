@@ -1,0 +1,30 @@
+# ===============================
+# Docker Compose (Grafana Loki)
+# ===============================
+# host: http://localhost:3100
+# username:
+# password:
+
+services:
+  loki:
+    image: grafana/loki:latest
+    container_name: loki
+    restart: unless-stopped
+
+    ports:
+      - "3100:3100"
+
+    command: -config.file=/etc/loki/local-config.yaml
+
+    volumes:
+      - loki_data:/loki
+
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3100/ready"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  loki_data:
