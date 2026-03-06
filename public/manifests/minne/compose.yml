@@ -1,0 +1,63 @@
+# ===============================
+# Docker Compose (Minne)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  minne:
+    image: ghcr.io/perstarkse/minne:v1.0.2
+    container_name: minne
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - SURREALDB_ADDRESS=ws://surrealdb:8000
+      - SURREALDB_USERNAME=root_user
+      - SURREALDB_PASSWORD=root_password
+      - SURREALDB_DATABASE=test
+      - SURREALDB_NAMESPACE=test
+      - OPENAI_API_KEY=sk-add-your-key
+      - DATA_DIR=/data
+      - HTTP_PORT=3000
+      - RUST_LOG=info
+      - RERANKING_ENABLED=false
+    volumes:
+      - minne_data:/data
+    depends_on:
+      surrealdb:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:3000/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  surrealdb:
+    image: surrealdb/surrealdb:latest
+    container_name: surrealdb
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    command:
+      - start
+      - --log
+      - info
+      - --user
+      - root_user
+      - --pass
+      - root_password
+      - rocksdb:/database/database.db
+    volumes:
+      - surrealdb_data:/database
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:8000/health"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  minne_data:
+  surrealdb_data:

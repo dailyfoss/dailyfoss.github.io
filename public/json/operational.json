@@ -23,12 +23,17 @@
   },
   "resources": {
     "website": "https://operational.co",
-    "documentation": "https://operational.co",
+    "documentation": "https://operational.co/docs/start-here",
     "source_code": "https://github.com/operational-co/operational.co",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/operational.webp",
     "issues": "https://github.com/operational-co/operational.co/issues",
     "releases": "https://github.com/operational-co/operational.co/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/operational-dashboard.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/operational-events.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/operational-playground.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/operational-screenshot.png"
+    ]
   },
   "features": [
     {
@@ -86,16 +91,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/operational/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://app.operational.co",
     "username": null,
     "password": null
   }

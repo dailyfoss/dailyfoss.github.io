@@ -23,12 +23,16 @@
   },
   "resources": {
     "website": "https://postgresus.com",
-    "documentation": "https://github.com/RostislavDugin/postgresus",
+    "documentation": "https://databasus.com/installation",
     "source_code": "https://github.com/RostislavDugin/postgresus",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/postgresus.webp",
     "issues": "https://github.com/RostislavDugin/postgresus/issues",
     "releases": "https://github.com/RostislavDugin/postgresus/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/postgresus-homepage.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/postgresus-dashboard-dark.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/postgresus-dashboard-light.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +92,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/postgresus/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

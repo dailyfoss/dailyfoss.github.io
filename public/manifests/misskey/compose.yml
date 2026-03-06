@@ -1,10 +1,15 @@
-    build: .
-    restart: always
-    links:
-      - db
-      - redis
-#     - mcaptcha
-#     - meilisearch
+# ===============================
+# Docker Compose (Misskey)
+# ===============================
+# host: http://localhost:3000
+# username: (created on first run)
+# password:
+
+services:
+  misskey:
+    image: misskey/misskey:latest
+    container_name: misskey
+    restart: unless-stopped
     depends_on:
       db:
         condition: service_healthy
@@ -13,84 +18,68 @@
     ports:
       - "3000:3000"
     networks:
-      - internal_network
-      - external_network
-    # env_file:
-    #   - .config/docker.env
+      - internal
+      - external
+    environment:
+      - NODE_ENV=production
+      - MISSKEY_URL=http://localhost:3000
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=misskey
+      - DB_PASS=misskey_password
+      - DB_DB=misskey
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
     volumes:
-      - ./files:/misskey/files
-      - ./.config:/misskey/.config:ro
-
-  redis:
-    restart: always
-    image: redis:7-alpine
-    networks:
-      - internal_network
-    volumes:
-      - ./redis:/data
+      - misskey_files:/misskey/files
+      - misskey_config:/misskey/.config
     healthcheck:
-      test: "redis-cli ping"
-      interval: 5s
-      retries: 20
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:3000/api/meta"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
 
   db:
-    restart: always
-    image: postgres:15-alpine
+    image: postgres:17-alpine
+    container_name: misskey-db
+    restart: unless-stopped
     networks:
-      - internal_network
-    env_file:
-      - .config/docker.env
+      - internal
+    environment:
+      - POSTGRES_USER=misskey
+      - POSTGRES_PASSWORD=misskey_password
+      - POSTGRES_DB=misskey
     volumes:
-      - ./db:/var/lib/postgresql/data
+      - misskey_db:/var/lib/postgresql/data
     healthcheck:
-      test: "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"
-      interval: 5s
-      retries: 20
+      test: ["CMD-SHELL", "pg_isready -U misskey -d misskey"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
 
-#  mcaptcha:
-#    restart: always
-#    image: mcaptcha/mcaptcha:latest
-#    networks:
-#      internal_network:
-#      external_network:
-#        aliases:
-#          - localhost
-#    ports:
-#      - 7493:7493
-#    env_file:
-#      - .config/docker.env
-#    environment:
-#      PORT: 7493
-#      MCAPTCHA_redis_URL: "redis://mcaptcha_redis/"
-#    depends_on:
-#      db:
-#        condition: service_healthy
-#      mcaptcha_redis:
-#        condition: service_healthy
-#
-#  mcaptcha_redis:
-#    image: mcaptcha/cache:latest
-#    networks:
-#      - internal_network
-#    healthcheck:
-#      test: "redis-cli ping"
-#      interval: 5s
-#      retries: 20
-
-#  meilisearch:
-#    restart: always
-#    image: getmeili/meilisearch:v1.3.4
-#    environment:
-#      - MEILI_NO_ANALYTICS=true
-#      - MEILI_ENV=production
-#    env_file:
-#      - .config/meilisearch.env
-#    networks:
-#      - internal_network
-#    volumes:
-#      - ./meili_data:/meili_data
+  redis:
+    image: redis:7-alpine
+    container_name: misskey-redis
+    restart: unless-stopped
+    networks:
+      - internal
+    volumes:
+      - misskey_redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
 
 networks:
-  internal_network:
+  internal:
     internal: true
-  external_network:
+  external:
+
+volumes:
+  misskey_files:
+  misskey_config:
+  misskey_db:
+  misskey_redis:

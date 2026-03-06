@@ -29,7 +29,10 @@
     "issues": "https://github.com/OpenCut-app/OpenCut/issues",
     "releases": "https://github.com/OpenCut-app/OpenCut/releases",
     "logo_light": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/opencut-light.webp",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/opencut-homepage.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/opencut-demo.png"
+    ]
   },
   "features": [
     {
@@ -87,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/opencut/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
@@ -103,7 +108,7 @@
     }
   },
   "demo": {
-    "url": null,
+    "url": "https://opencut.app/projects",
     "username": null,
     "password": null
   }

@@ -1,11 +1,29 @@
+# ===============================
+# Docker Compose (Polaris)
+# ===============================
+# host: http://localhost:5050
+# username:
+# password:
+# ===============================
+
 services:
   polaris:
-    container_name: polaris
-    image: registry.gitlab.com/connectical/container/polaris
-    ports:
-      - 5050:5050
-    volumes:
-      - /my/music/directory:/music
-      - /my/polaris/cache:/var/cache/polaris
-      - /my/polaris/data:/var/lib/polaris
+    image: oguzbilgic/polaris:0.16.0
     restart: unless-stopped
+    ports:
+      - "5050:5050"
+    volumes:
+      - polaris_music:/music
+      - polaris_cache:/var/cache/polaris
+      - polaris_data:/var/lib/polaris
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:5050 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  polaris_music:
+  polaris_cache:
+  polaris_data:

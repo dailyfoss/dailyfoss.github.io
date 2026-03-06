@@ -1,0 +1,97 @@
+# ===============================
+# Docker Compose (NortixMail)
+# ===============================
+# host: http://localhost:8080
+# username: created during first setup
+# password: created during first setup
+
+services:
+  postgres:
+    image: postgres:16
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: nortixmail
+      POSTGRES_USER: nortixmail
+      POSTGRES_PASSWORD: nortixmail
+
+    volumes:
+      - nortixmail_db:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nortixmail -d nortixmail"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+
+    command: ["redis-server", "--appendonly", "yes"]
+
+    volumes:
+      - nortixmail_redis:/data
+
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  app:
+    image: zhoros/nortixmail:latest
+    restart: unless-stopped
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+    ports:
+      - "8080:8080"
+      - "25:25"
+      - "587:587"
+      - "993:993"
+
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: nortixmail
+      DB_USER: nortixmail
+      DB_PASSWORD: nortixmail
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+
+    volumes:
+      - nortixmail_data:/var/lib/nortixmail
+
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8080 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  nortixmail_db:
+  nortixmail_redis:
+  nortixmail_data:

@@ -1,0 +1,32 @@
+# ===============================
+# Docker Compose (Pi-hole)
+# ===============================
+# host: http://localhost/admin
+# username:
+# password: correct horse battery staple
+# ===============================
+
+services:
+  pihole:
+    image: pihole/pihole:latest
+    restart: unless-stopped
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "80:80/tcp"
+      - "443:443/tcp"
+    environment:
+      TZ: Europe/London
+      FTLCONF_webserver_api_password: correct horse battery staple
+      FTLCONF_dns_listeningMode: ALL
+    volumes:
+      - pihole_data:/etc/pihole
+      - pihole_dnsmasq:/etc/dnsmasq.d
+    cap_add:
+      - NET_ADMIN
+      - SYS_TIME
+      - SYS_NICE
+
+volumes:
+  pihole_data:
+  pihole_dnsmasq:

@@ -1,0 +1,71 @@
+# ===============================
+# Docker Compose (Pterodactyl Panel)
+# ===============================
+# host: http://localhost
+# username: admin
+# password: created during setup
+
+services:
+
+  database:
+    image: mariadb:11
+    container_name: pterodactyl-db
+    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_ROOT_PASSWORD=change_root_password
+      - MYSQL_DATABASE=panel
+      - MYSQL_USER=pterodactyl
+      - MYSQL_PASSWORD=change_db_password
+    volumes:
+      - pterodactyl_db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -upterodactyl -pchange_db_password"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  cache:
+    image: redis:7-alpine
+    container_name: pterodactyl-redis
+    restart: unless-stopped
+    volumes:
+      - pterodactyl_redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  panel:
+    image: ghcr.io/pterodactyl/panel:latest
+    container_name: pterodactyl-panel
+    restart: unless-stopped
+    depends_on:
+      database:
+        condition: service_healthy
+      cache:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    environment:
+      - APP_ENV=production
+      - APP_URL=http://localhost:8080
+      - APP_TIMEZONE=UTC
+      - APP_SERVICE_AUTHOR=noreply@example.com
+      - CACHE_DRIVER=redis
+      - SESSION_DRIVER=redis
+      - QUEUE_DRIVER=redis
+      - REDIS_HOST=cache
+      - DB_HOST=database
+      - DB_PORT=3306
+      - DB_PASSWORD=change_db_password
+    volumes:
+      - pterodactyl_var:/app/var
+      - pterodactyl_logs:/app/storage/logs
+
+volumes:
+  pterodactyl_db:
+  pterodactyl_redis:
+  pterodactyl_var:
+  pterodactyl_logs:

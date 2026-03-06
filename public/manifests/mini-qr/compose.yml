@@ -1,0 +1,29 @@
+# ===============================
+# Docker Compose (mini-qr)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  mini-qr:
+    image: ghcr.io/lyqht/mini-qr:latest
+    container_name: mini-qr
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    environment:
+      - BASE_PATH=/mini-qr/
+      - VITE_HIDE_CREDITS=false
+      - VITE_DEFAULT_PRESET=
+      - VITE_DEFAULT_DATA_TO_ENCODE=
+      - VITE_QR_CODE_PRESETS=[]
+      - VITE_FRAME_PRESET=
+      - VITE_FRAME_PRESETS=[]
+      - VITE_DISABLE_LOCAL_STORAGE=false
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 15s

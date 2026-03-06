@@ -1,88 +1,128 @@
+# ===============================
+# Docker Compose (Postiz)
+# ===============================
+# host: http://localhost:4007
+# username: created on first login
+# password: created on first login
+# ===============================
+
 services:
+
+  postgres:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postiz
+      POSTGRES_PASSWORD: change-postgres-password
+      POSTGRES_DB: postiz
+    volumes:
+      - postiz_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U postiz -d postiz"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    volumes:
+      - postiz_redis:/data
+    healthcheck:
+      test: ["CMD","redis-cli","ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   postiz:
     image: ghcr.io/gitroomhq/postiz-app:latest
-    container_name: postiz
-    restart: always
-    environment:
-      # You must change these. Replace `postiz.your-server.com` with your DNS name - what your web browser sees.
-      MAIN_URL: "https://postiz.your-server.com"
-      FRONTEND_URL: "https://postiz.your-server.com"
-      NEXT_PUBLIC_BACKEND_URL: "https://postiz.your-server.com/api"
-      JWT_SECRET: "random string that is unique to every install - just type random characters here!"
-
-      # These are totally fake values, you must change them with your own Cloudflare R2 settings.
-      # Docs: https://docs.postiz.com/configuration/r2
-      CLOUDFLARE_ACCOUNT_ID: "QhcMSXQyPuMCRpSQcSYdEuTYgHeCXHbu"
-      CLOUDFLARE_ACCESS_KEY: "dcfCMSuFEeCNfvByUureMZEfxWJmDqZe"
-      CLOUDFLARE_SECRET_ACCESS_KEY: "zTTMXBmtyLPwHEdpACGHgDgzRTNpTJewiNriLnUS"
-      CLOUDFLARE_BUCKETNAME: "postiz"
-      CLOUDFLARE_BUCKET_URL: "https://QhcMSXQyPuMCRpSQcSYdEuTYgHeCXHbu.r2.cloudflarestorage.com/"
-      CLOUDFLARE_REGION: "auto"
-
-      # These defaults are probably fine, but if you change your user/password, update it in the
-      # postiz-postgres or postiz-redis services below.
-      DATABASE_URL: "postgresql://postiz-user:postiz-password@postiz-postgres:5432/postiz-db-local"
-      REDIS_URL: "redis://postiz-redis:6379"
-      BACKEND_INTERNAL_URL: "http://localhost:3000/"
-      IS_GENERAL: "true" # Required for self-hosting.
-    volumes:
-      - postiz-config:/config/
-    ports:
-      - 5000:5000
-    networks:
-      - postiz-network
+    restart: unless-stopped
     depends_on:
-      postiz-postgres:
+      postgres:
         condition: service_healthy
-      postiz-redis:
+      redis:
         condition: service_healthy
-
-  postiz-postgres:
-    image: postgres:14.5
-    container_name: postiz-postgres
-    restart: always
+      temporal:
+        condition: service_started
+    ports:
+      - "4007:5000"
     environment:
-      POSTGRES_PASSWORD: postiz-password
-      POSTGRES_USER: postiz-user
-      POSTGRES_DB: postiz-db-local
-    volumes:
-      - postgres-volume:/var/lib/postgresql/data
-    ports:
-      - 5432:5432
-    networks:
-      - postiz-network
-    healthcheck:
-      test: pg_isready -U postiz-user -d postiz-db-local
-      interval: 10s
-      timeout: 3s
-      retries: 3
-  postiz-redis:
-    image: redis:7.2
-    container_name: postiz-redis
-    restart: always
-    ports:
-      - 6379:6379
-    healthcheck:
-      test: redis-cli ping
-      interval: 10s
-      timeout: 3s
-      retries: 3
-    volumes:
-      - postiz-redis-data:/data
-    networks:
-      - postiz-network
+      MAIN_URL: http://localhost:4007
+      FRONTEND_URL: http://localhost:4007
+      NEXT_PUBLIC_BACKEND_URL: http://localhost:4007/api
+      BACKEND_INTERNAL_URL: http://localhost:3000
 
+      DATABASE_URL: postgresql://postiz:change-postgres-password@postgres:5432/postiz
+      REDIS_URL: redis://redis:6379
+
+      TEMPORAL_ADDRESS: temporal:7233
+
+      JWT_SECRET: change-this-secret
+
+      STORAGE_PROVIDER: local
+      UPLOAD_DIRECTORY: /uploads
+      NEXT_PUBLIC_UPLOAD_DIRECTORY: /uploads
+
+      IS_GENERAL: "true"
+      DISABLE_REGISTRATION: "false"
+
+    volumes:
+      - postiz_uploads:/uploads
+
+  # -----------------------
+  # Temporal Stack
+  # -----------------------
+
+  temporal-postgres:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: temporal
+      POSTGRES_PASSWORD: temporal
+    volumes:
+      - temporal_postgres:/var/lib/postgresql/data
+
+  temporal-elasticsearch:
+    image: elasticsearch:7.17.27
+    restart: unless-stopped
+    environment:
+      discovery.type: single-node
+      ES_JAVA_OPTS: -Xms256m -Xmx256m
+      xpack.security.enabled: "false"
+    volumes:
+      - temporal_es:/usr/share/elasticsearch/data
+
+  temporal:
+    image: temporalio/auto-setup:1.28.1
+    restart: unless-stopped
+    depends_on:
+      - temporal-postgres
+      - temporal-elasticsearch
+    environment:
+      DB: postgres12
+      DB_PORT: 5432
+      POSTGRES_USER: temporal
+      POSTGRES_PWD: temporal
+      POSTGRES_SEEDS: temporal-postgres
+      ENABLE_ES: "true"
+      ES_SEEDS: temporal-elasticsearch
+      ES_VERSION: v7
+    ports:
+      - "7233:7233"
+
+  temporal-ui:
+    image: temporalio/ui:2.34.0
+    restart: unless-stopped
+    depends_on:
+      - temporal
+    environment:
+      TEMPORAL_ADDRESS: temporal:7233
+    ports:
+      - "8080:8080"
 
 volumes:
-  postgres-volume:
-    external: false
-
-  postiz-redis-data:
-    external: false
-
-  postiz-config:
-    external: false
-
-networks:
-  postiz-network:
-    external: false
+  postiz_postgres:
+  postiz_redis:
+  postiz_uploads:
+  temporal_postgres:
+  temporal_es:

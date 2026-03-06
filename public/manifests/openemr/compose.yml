@@ -1,0 +1,54 @@
+# ===============================
+# Docker Compose (OpenEMR)
+# ===============================
+# host: https://localhost
+# username: admin
+# password: pass
+# ===============================
+
+services:
+  mysql:
+    image: mariadb:11.8
+    restart: unless-stopped
+    command: ["mariadbd", "--character-set-server=utf8mb4"]
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - database_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "/usr/local/bin/healthcheck.sh", "--su-mysql", "--connect", "--innodb_initialized"]
+      start_period: 60s
+      interval: 60s
+      timeout: 5s
+      retries: 3
+
+  openemr:
+    image: openemr/openemr:7.0.4
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_ROOT_PASS: root
+      MYSQL_USER: openemr
+      MYSQL_PASS: openemr
+      OE_USER: admin
+      OE_PASS: pass
+    volumes:
+      - openemr_logs:/var/log
+      - openemr_sites:/var/www/localhost/htdocs/openemr/sites
+    depends_on:
+      mysql:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "--insecure", "--silent", "https://localhost/meta/health/readyz"]
+      start_period: 180s
+      interval: 60s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  database_data:
+  openemr_logs:
+  openemr_sites:

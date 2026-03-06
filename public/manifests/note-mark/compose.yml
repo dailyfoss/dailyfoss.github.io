@@ -1,12 +1,44 @@
+# ===============================
+# Docker Compose (Note Mark AIO)
+# ===============================
+# host: http://localhost
+# username: created during first setup
+# password: created during first setup
+
 services:
   note-mark:
-    image: ghcr.io/enchant97/note-mark-aio:0.13.1
+    image: ghcr.io/enchant97/note-mark-aio:0.19.0
     restart: unless-stopped
-    volumes:
-      - ./data:/data
-    environment:
-      # !!! REPLACE These !!!
-      JWT_SECRET: "bXktc2VjcmV0"
-      CORS_ORIGINS: "http://example.com:8000"
+
     ports:
-      - 8000:8000
+      - "80:8080"
+
+    environment:
+      JWT_SECRET: replace_with_a_long_random_secret
+      PUBLIC_URL: http://notemark.example.com
+
+    volumes:
+      - note_mark_data:/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8080 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 512M
+        reservations:
+          memory: 128M
+
+volumes:
+  note_mark_data:

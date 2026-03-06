@@ -1,29 +1,71 @@
-services:
-  postal:
-    image: ${POSTAL_IMAGE}
-    depends_on:
-      - mariadb
-    entrypoint: ["/docker-entrypoint.sh"]
-    volumes:
-      - "./docker/ci-config:/config"
-    environment:
-      POSTAL_SIGNING_KEY_PATH: /config/signing.key
-      MAIN_DB_HOST: mariadb
-      MAIN_DB_USERNAME: root
-      MESSAGE_DB_HOST: mariadb
-      MESSAGE_DB_USERNAME: root
-      LOGGING_ENABLED: "false"
-      RAILS_ENVIRONMENT: test
-      RAILS_LOG_ENABLED: "false"
-      WAIT_FOR_TIMEOUT: 90
-      WAIT_FOR_TARGETS: |-
-        mariadb:3306
-    restart: always
+# ===============================
+# Docker Compose (Postal Mail Server)
+# ===============================
+# host: http://localhost
+# username: admin (created during setup)
+# password: set during installation
+# ===============================
 
-  mariadb:
-    image: mariadb
-    restart: always
+services:
+
+  db:
+    image: mariadb:11
+    restart: unless-stopped
     environment:
-      MARIADB_DATABASE: postal
-      MARIADB_ALLOW_EMPTY_PASSWORD: 'yes'
-      MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: 'yes'
+      MYSQL_ROOT_PASSWORD: change-root-password
+      MYSQL_DATABASE: postal
+      MYSQL_USER: postal
+      MYSQL_PASSWORD: change-postal-db-password
+    volumes:
+      - postal_db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL","mysqladmin ping -h localhost -u root -pchange-root-password"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    restart: unless-stopped
+    environment:
+      RABBITMQ_DEFAULT_USER: postal
+      RABBITMQ_DEFAULT_PASS: change-rabbitmq-password
+      RABBITMQ_DEFAULT_VHOST: postal
+    volumes:
+      - postal_rabbitmq:/var/lib/rabbitmq
+    healthcheck:
+      test: ["CMD-SHELL","rabbitmq-diagnostics -q ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  postal:
+    image: ghcr.io/postalserver/postal:latest
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    environment:
+      POSTAL_DB_HOST: db
+      POSTAL_DB_USER: postal
+      POSTAL_DB_PASSWORD: change-postal-db-password
+      POSTAL_DB_NAME: postal
+      POSTAL_RABBITMQ_HOST: rabbitmq
+      POSTAL_RABBITMQ_USER: postal
+      POSTAL_RABBITMQ_PASSWORD: change-rabbitmq-password
+      POSTAL_RABBITMQ_VHOST: postal
+    volumes:
+      - postal_data:/opt/postal/data
+      - postal_config:/opt/postal/config
+    ports:
+      - "5000:5000"
+      - "25:25"
+      - "587:587"
+
+volumes:
+  postal_db:
+  postal_rabbitmq:
+  postal_data:
+  postal_config:

@@ -22,13 +22,15 @@
     "github_releases_this_year": 1
   },
   "resources": {
-    "website": "https://openbao.org/",
-    "documentation": "https://github.com/openbao/openbao",
+    "website": "https://openbao.org",
+    "documentation": "https://openbao.org/docs",
     "source_code": "https://github.com/openbao/openbao",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/openbao.webp",
     "issues": "https://github.com/openbao/openbao/issues",
     "releases": "https://github.com/openbao/openbao/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/openbao-homepage.png"
+    ]
   },
   "features": [
     {
@@ -87,12 +89,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/openbao/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

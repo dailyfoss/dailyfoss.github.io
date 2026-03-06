@@ -22,8 +22,8 @@
     "github_releases_this_year": 0
   },
   "resources": {
-    "website": "https://www.phpmyadmin.net/",
-    "documentation": "https://github.com/phpmyadmin/phpmyadmin",
+    "website": "https://www.phpmyadmin.net",
+    "documentation": "https://docs.phpmyadmin.net/en/latest",
     "source_code": "https://github.com/phpmyadmin/phpmyadmin",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/phpmyadmin.webp",
     "issues": "https://github.com/phpmyadmin/phpmyadmin/issues",
@@ -89,12 +89,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/phpmyadmin/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
@@ -105,7 +107,7 @@
     }
   },
   "demo": {
-    "url": null,
+    "url": "https://demo.phpmyadmin.net/master-config",
     "username": null,
     "password": null
   }

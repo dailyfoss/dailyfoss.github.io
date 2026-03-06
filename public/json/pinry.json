@@ -22,13 +22,18 @@
     "github_releases_this_year": 0
   },
   "resources": {
-    "website": "https://pinry.github.io/pinry/",
-    "documentation": "https://github.com/pinry/pinry",
+    "website": "https://pinry.github.io/pinry",
+    "documentation": "https://pinry.github.io/pinry/install-with-docker",
     "source_code": "https://github.com/pinry/pinry",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/pinry.webp",
     "issues": "https://github.com/pinry/pinry/issues",
     "releases": "https://github.com/pinry/pinry/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/pinry-home.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/pinry-my-boards.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/pinry-my-pin.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/pinry-product-demo.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +93,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/pinry/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

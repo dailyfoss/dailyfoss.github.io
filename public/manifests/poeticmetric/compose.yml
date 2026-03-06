@@ -1,0 +1,188 @@
+# ===============================
+# Docker Compose (PoeticMetric)
+# ===============================
+# host: http://localhost:8000
+# username: created during signup
+# password: created during signup
+# ===============================
+
+services:
+
+  clickhouse:
+    image: clickhouse/clickhouse-server:25.2
+    restart: unless-stopped
+    environment:
+      CLICKHOUSE_DB: poeticmetric
+      CLICKHOUSE_USER: poeticmetric
+      CLICKHOUSE_PASSWORD: change-clickhouse-password
+    volumes:
+      - poeticmetric_clickhouse:/var/lib/clickhouse
+    healthcheck:
+      test: ["CMD-SHELL", "clickhouse-client --user poeticmetric --password change-clickhouse-password --query 'SELECT 1'"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  postgres:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: poeticmetric
+      POSTGRES_USER: poeticmetric
+      POSTGRES_PASSWORD: change-postgres-password
+    volumes:
+      - poeticmetric_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U poeticmetric -d poeticmetric"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  rabbitmq:
+    image: rabbitmq:4.2-management-alpine
+    restart: unless-stopped
+    environment:
+      RABBITMQ_DEFAULT_USER: poeticmetric
+      RABBITMQ_DEFAULT_PASS: change-rabbitmq-password
+      RABBITMQ_DEFAULT_VHOST: /
+    volumes:
+      - poeticmetric_rabbitmq:/var/lib/rabbitmq
+    healthcheck:
+      test: ["CMD-SHELL", "rabbitmq-diagnostics -q ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  valkey:
+    image: valkey/valkey:7-alpine
+    restart: unless-stopped
+    command: valkey-server --requirepass change-valkey-password
+    volumes:
+      - poeticmetric_valkey:/data
+    healthcheck:
+      test: ["CMD-SHELL", "valkey-cli -a change-valkey-password ping | grep PONG"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  rest-api:
+    image: code.unius.sh/poeticmetric/backend:2.0.0
+    restart: unless-stopped
+    depends_on:
+      clickhouse:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      valkey:
+        condition: service_healthy
+    environment:
+      INSTANCE: rest-api
+      CLICKHOUSE_HOST: clickhouse
+      CLICKHOUSE_PORT: 9000
+      CLICKHOUSE_DATABASE: poeticmetric
+      CLICKHOUSE_USER: poeticmetric
+      CLICKHOUSE_PASSWORD: change-clickhouse-password
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DATABASE: poeticmetric
+      POSTGRES_USER: poeticmetric
+      POSTGRES_PASSWORD: change-postgres-password
+      RABBITMQ_HOST: rabbitmq
+      RABBITMQ_PORT: 5672
+      RABBITMQ_USER: poeticmetric
+      RABBITMQ_PASSWORD: change-rabbitmq-password
+      RABBITMQ_VHOST: /
+      VALKEY_HOST: valkey
+      VALKEY_PORT: 6379
+      VALKEY_PASSWORD: change-valkey-password
+      FRONTEND_BASE_URL: http://localhost:8000
+      REST_API_BASE_URL: http://localhost:8001
+    ports:
+      - "8001:80"
+
+  worker:
+    image: code.unius.sh/poeticmetric/backend:2.0.0
+    restart: unless-stopped
+    depends_on:
+      clickhouse:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      valkey:
+        condition: service_healthy
+    environment:
+      INSTANCE: worker
+      CLICKHOUSE_HOST: clickhouse
+      CLICKHOUSE_PORT: 9000
+      CLICKHOUSE_DATABASE: poeticmetric
+      CLICKHOUSE_USER: poeticmetric
+      CLICKHOUSE_PASSWORD: change-clickhouse-password
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DATABASE: poeticmetric
+      POSTGRES_USER: poeticmetric
+      POSTGRES_PASSWORD: change-postgres-password
+      RABBITMQ_HOST: rabbitmq
+      RABBITMQ_PORT: 5672
+      RABBITMQ_USER: poeticmetric
+      RABBITMQ_PASSWORD: change-rabbitmq-password
+      RABBITMQ_VHOST: /
+      VALKEY_HOST: valkey
+      VALKEY_PORT: 6379
+      VALKEY_PASSWORD: change-valkey-password
+      FRONTEND_BASE_URL: http://localhost:8000
+      REST_API_BASE_URL: http://localhost:8001
+
+  scheduler:
+    image: code.unius.sh/poeticmetric/backend:2.0.0
+    restart: unless-stopped
+    depends_on:
+      clickhouse:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      valkey:
+        condition: service_healthy
+    environment:
+      INSTANCE: scheduler
+      CLICKHOUSE_HOST: clickhouse
+      CLICKHOUSE_PORT: 9000
+      CLICKHOUSE_DATABASE: poeticmetric
+      CLICKHOUSE_USER: poeticmetric
+      CLICKHOUSE_PASSWORD: change-clickhouse-password
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DATABASE: poeticmetric
+      POSTGRES_USER: poeticmetric
+      POSTGRES_PASSWORD: change-postgres-password
+      RABBITMQ_HOST: rabbitmq
+      RABBITMQ_PORT: 5672
+      RABBITMQ_USER: poeticmetric
+      RABBITMQ_PASSWORD: change-rabbitmq-password
+      RABBITMQ_VHOST: /
+      VALKEY_HOST: valkey
+      VALKEY_PORT: 6379
+      VALKEY_PASSWORD: change-valkey-password
+      FRONTEND_BASE_URL: http://localhost:8000
+      REST_API_BASE_URL: http://localhost:8001
+
+  frontend:
+    image: code.unius.sh/poeticmetric/frontend:2.0.0
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    environment:
+      VITE_BASE_URL: http://localhost:8000
+      VITE_REST_API_BASE_URL: http://localhost:8001
+
+volumes:
+  poeticmetric_clickhouse:
+  poeticmetric_postgres:
+  poeticmetric_rabbitmq:
+  poeticmetric_valkey:

@@ -1,0 +1,110 @@
+# ===============================
+# Docker Compose (Omnipoly AI Stack)
+# ===============================
+# Omnipoly: http://localhost
+# LibreTranslate: http://localhost:5000
+# LanguageTool: http://localhost:8081
+
+services:
+  omnipoly:
+    image: kweg/omnipoly:latest
+    restart: unless-stopped
+    depends_on:
+      - libretranslate
+      - languagetool
+
+    ports:
+      - "80:80"
+
+    environment:
+      LANGUAGE_TOOL: http://languagetool:8081
+      LANGUAGE_TOOL_PICKY: "true"
+      LIBRETRANSLATE: http://libretranslate:5000
+      OLLAMA: http://ollama:11434
+      OLLAMA_MODEL: llama3
+      THEME: dark
+      LIBRETRANSLATE_LANGUAGES: pl,en
+      LANGUAGE_TOOL_LANGUAGES: pl-PL,en-GB
+      DISABLE_DICTIONARY: "true"
+      DEBUG: "false"
+
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  libretranslate:
+    image: libretranslate/libretranslate:latest
+    restart: unless-stopped
+
+    ports:
+      - "5000:5000"
+
+    environment:
+      LT_LOAD_ONLY: en,pl
+
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:5000/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+    volumes:
+      - libretranslate_data:/app/db
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  languagetool:
+    image: meyay/languagetool:latest
+    restart: unless-stopped
+
+    read_only: true
+    tmpfs:
+      - /tmp:exec
+
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - DAC_OVERRIDE
+      - SETUID
+      - SETGID
+
+    ports:
+      - "8081:8081"
+
+    environment:
+      MAP_UID: 783
+      MAP_GID: 783
+
+    volumes:
+      - languagetool_ngrams:/ngrams
+      - languagetool_fasttext:/fasttext
+
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8081/v2/check || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  libretranslate_data:
+  languagetool_ngrams:
+  languagetool_fasttext:

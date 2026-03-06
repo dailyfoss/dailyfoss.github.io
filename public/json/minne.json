@@ -28,7 +28,11 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/minne.webp",
     "issues": "https://github.com/perstarkse/minne/issues",
     "releases": "https://github.com/perstarkse/minne/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/minne-content.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/minne-dashboard.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/minne-knowledge.png"
+    ]
   },
   "features": [
     {
@@ -87,17 +91,19 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/minne/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
-    "username": null,
-    "password": null
+    "url": "https://minne.stark.pub/signin",
+    "username": "demo@domain.com",
+    "password": "Demodemo1"
   }
 }

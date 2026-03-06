@@ -1,0 +1,50 @@
+# ===============================
+# Docker Compose (PWGen)
+# ===============================
+# host: http://localhost:5069
+# username:
+# password:
+
+services:
+  pwgen:
+    image: jocxfin/pwgen:latest
+    container_name: pwgen
+    restart: unless-stopped
+    ports:
+      - "5069:5069"
+    environment:
+      - NO_API_CHECK=false
+      - PW_LENGTH=12
+      - PW_INCLUDE_UPPERCASE=false
+      - PW_INCLUDE_DIGITS=false
+      - PW_INCLUDE_SPECIAL=false
+      - PW_EXCLUDE_HOMOGLYPHS=true
+      - PP_WORD_COUNT=4
+      - PP_CAPITALIZE=false
+      - PP_SEPARATOR_TYPE=dash
+      - PP_USER_DEFINED_SEPARATOR=
+      - PP_MAX_WORD_LENGTH=12
+      - PP_INCLUDE_NUMBERS=false
+      - PP_INCLUDE_SPECIAL_CHARS=false
+      - PP_LANGUAGE=en
+      - PP_HIDE_LANG=false
+      - PP_LANGUAGE_CUSTOM=
+      - MULTI_GEN=true
+      - GENERATE_PP=true
+      - SHOW_SAVE_SETTINGS=true
+      - ROBOTS_ALLOW=false
+      - GOOGLE_SITE_VERIFICATION=
+      - DISABLE_URL_CHECK=false
+      - BASE_PATH=
+      - PP_LOCAL_WORDLIST=/app/custom_wordlist.txt
+    volumes:
+      - pwgen_data:/app
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:5069/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  pwgen_data:

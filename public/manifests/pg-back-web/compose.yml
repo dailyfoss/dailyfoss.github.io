@@ -1,30 +1,46 @@
+# ===============================
+# Docker Compose (PgBackWeb)
+# ===============================
+# host: http://localhost:8085
+# username:
+# password:
+
 services:
+
+  postgres:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: pgbackweb
+      POSTGRES_PASSWORD: change_this_password
+      POSTGRES_DB: pgbackweb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pgbackweb -d pgbackweb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   pgbackweb:
     image: eduardolat/pgbackweb:latest
+    restart: unless-stopped
     ports:
-      - "8085:8085" # Access the web interface at http://localhost:8085
-    volumes:
-      - ./backups:/backups # If you only use S3 destinations, you don't need this volume
-    environment:
-      PBW_ENCRYPTION_KEY: "my_secret_key"
-      PBW_POSTGRES_CONN_STRING: "postgresql://postgres:password@postgres:5432/pgbackweb?sslmode=disable"
+      - "8085:8085"
     depends_on:
       postgres:
         condition: service_healthy
-
-  postgres:
-    image: postgres:16
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_DB: pgbackweb
-      POSTGRES_PASSWORD: password
-    ports:
-      - "5432:5432"
+      PBW_ENCRYPTION_KEY: change_this_secret_key
+      PBW_POSTGRES_CONN_STRING: postgresql://pgbackweb:change_this_password@postgres:5432/pgbackweb?sslmode=disable
     volumes:
-      - ./data:/var/lib/postgresql/data
+      - pgbackweb_backups:/backups
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
-      interval: 5s
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8085"]
+      interval: 30s
       timeout: 5s
       retries: 5
-	restart: unless-stopped
+
+volumes:
+  postgres_data:
+  pgbackweb_backups:

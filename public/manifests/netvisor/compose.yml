@@ -1,0 +1,74 @@
+# ===============================
+# Docker Compose (Scanopy)
+# ===============================
+# host: http://localhost:60072
+# username:
+# password:
+
+services:
+  daemon:
+    image: ghcr.io/scanopy/scanopy/daemon:latest
+    container_name: scanopy-daemon
+    restart: unless-stopped
+    network_mode: host
+    privileged: true
+    environment:
+      - SCANOPY_LOG_LEVEL=info
+      - SCANOPY_SERVER_PORT=60072
+      - SCANOPY_DAEMON_PORT=60073
+      - SCANOPY_SERVER_URL=http://127.0.0.1:60072
+      - SCANOPY_BIND_ADDRESS=0.0.0.0
+      - SCANOPY_NAME=scanopy-daemon
+      - SCANOPY_HEARTBEAT_INTERVAL=30
+      - SCANOPY_MODE=daemon_poll
+    volumes:
+      - daemon_config:/root/.config/daemon
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:60073/api/health || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 15
+
+  postgres:
+    image: postgres:17-alpine
+    container_name: scanopy-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=scanopy
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=change_postgres_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d scanopy"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  server:
+    image: ghcr.io/scanopy/scanopy/server:latest
+    container_name: scanopy-server
+    restart: unless-stopped
+    ports:
+      - "60072:60072"
+    environment:
+      - SCANOPY_LOG_LEVEL=info
+      - SCANOPY_SERVER_PORT=60072
+      - SCANOPY_DAEMON_PORT=60073
+      - SCANOPY_DATABASE_URL=postgresql://postgres:change_postgres_password@postgres:5432/scanopy
+      - SCANOPY_WEB_EXTERNAL_PATH=/app/static
+      - SCANOPY_PUBLIC_URL=http://localhost:60072
+      - SCANOPY_INTEGRATED_DAEMON_URL=http://127.0.0.1:60073
+    volumes:
+      - scanopy_data:/data
+    depends_on:
+      postgres:
+        condition: service_healthy
+      daemon:
+        condition: service_started
+
+volumes:
+  postgres_data:
+  daemon_config:
+  scanopy_data:

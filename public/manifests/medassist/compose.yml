@@ -1,0 +1,58 @@
+# ===============================
+# Docker Compose (MedAssist)
+# ===============================
+# host: http://localhost:3000
+# username: (created during first setup)
+# password: (created during first setup)
+# database user: medassist
+# database password: change_this_password
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: medassist-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: medassist
+      POSTGRES_USER: medassist
+      POSTGRES_PASSWORD: change_this_password
+    volumes:
+      - medassist_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U medassist"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - internal
+
+  medassist:
+    image: ghcr.io/njic/medassist:latest
+    container_name: medassist
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://medassist:change_this_password@postgres:5432/medassist
+      NODE_ENV: production
+      PORT: 3000
+      HOST: 0.0.0.0
+    ports:
+      - "3000:3000"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    networks:
+      - internal
+      - external
+
+volumes:
+  medassist_postgres_data:
+
+networks:
+  internal:
+    internal: true
+  external:

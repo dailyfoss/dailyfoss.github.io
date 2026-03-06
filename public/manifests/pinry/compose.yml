@@ -1,0 +1,12 @@
+services:
+  pinry:
+    image: getpinry/pinry
+    container_name: pinry
+    ports:
+      - "80:80"
+    volumes:
+      - pinry:/data
+    restart: unless-stopped
+
+volumes:
+  pinry:

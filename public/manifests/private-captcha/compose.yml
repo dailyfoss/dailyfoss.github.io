@@ -1,0 +1,66 @@
+# ===============================
+# Docker Compose (PrivateCaptcha)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+
+  privatecaptcha:
+    image: ghcr.io/privatecaptcha/privatecaptcha:latest
+    container_name: privatecaptcha
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      - DATABASE_URL=postgres://privatecaptcha:privatecaptcha_password@postgres:5432/privatecaptcha
+      - REDIS_URL=redis://redis:6379
+      - SERVER_HOST=0.0.0.0
+      - SERVER_PORT=8080
+    volumes:
+      - privatecaptcha_data:/app/data
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  postgres:
+    image: postgres:17-alpine
+    container_name: privatecaptcha-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=privatecaptcha
+      - POSTGRES_USER=privatecaptcha
+      - POSTGRES_PASSWORD=privatecaptcha_password
+    volumes:
+      - privatecaptcha_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U privatecaptcha -d privatecaptcha"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: privatecaptcha-redis
+    restart: unless-stopped
+    volumes:
+      - privatecaptcha_redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  privatecaptcha_data:
+  privatecaptcha_db:
+  privatecaptcha_redis:

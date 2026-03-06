@@ -1,0 +1,25 @@
+# ===============================
+# Docker Compose (Postgresus/Databasus)
+# ===============================
+# host: http://localhost:4005
+# username:
+# password:
+# ===============================
+
+services:
+  databasus:
+    image: databasus/databasus:latest
+    restart: unless-stopped
+    ports:
+      - "4005:4005"
+    volumes:
+      - databasus_data:/databasus-data
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:4005 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+volumes:
+  databasus_data:

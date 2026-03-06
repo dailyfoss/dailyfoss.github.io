@@ -1,0 +1,43 @@
+# ===============================
+# Docker Compose (OTS - One-Time Secret)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+# ===============================
+
+services:
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+
+  app:
+    image: luzifer/ots:v1.21.2
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      redis:
+        condition: service_healthy
+    environment:
+      REDIS_URL: redis://redis:6379/0
+      SECRET_EXPIRY: "604800"
+      STORAGE_TYPE: redis
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://127.0.0.1:3000/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+volumes:
+  redis_data:

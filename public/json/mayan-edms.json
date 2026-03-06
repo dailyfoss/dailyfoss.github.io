@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": null,
+    "license": "GNU GPL 2.0",
     "version": null,
     "date_app_added": "2025-11-23",
     "date_last_released": null,
@@ -17,14 +17,16 @@
     "github_stars": null
   },
   "resources": {
-    "website": null,
-    "documentation": null,
+    "website": "https://www.mayan-edms.com",
+    "documentation": "https://docs.mayan-edms.com/chapters/installation.html",
     "source_code": "https://gitlab.com/mayan-edms/mayan-edms",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/mayan-edms.webp",
     "issues": null,
     "releases": null,
     "logo_light": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/mayan-edms-light.webp",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/mayan-edms-dashboard.png"
+    ]
   },
   "features": [
     {
@@ -84,12 +86,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/mayan-edms/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

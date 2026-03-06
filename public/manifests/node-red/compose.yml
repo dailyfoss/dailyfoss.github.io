@@ -1,15 +1,43 @@
+# ===============================
+# Docker Compose (Node-RED)
+# ===============================
+# host: http://localhost:1880
+# username: none (enable auth in settings.js if needed)
+# password: none (enable auth in settings.js if needed)
+
 services:
   node-red:
     image: nodered/node-red:latest
+    restart: unless-stopped
+
     environment:
-      - TZ=Europe/Amsterdam
+      TZ: Europe/Amsterdam
+
     ports:
       - "1880:1880"
-    networks:
-      - node-red-net
-    volumes:
-      - ./node-red-data:/data
-    restart: always
 
-networks:
-  node-red-net:
+    volumes:
+      - node_red_data:/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:1880 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 512M
+        reservations:
+          memory: 128M
+
+volumes:
+  node_red_data:

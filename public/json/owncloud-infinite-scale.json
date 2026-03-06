@@ -22,8 +22,8 @@
     "github_releases_this_year": 3
   },
   "resources": {
-    "website": "https://doc.owncloud.com/ocis/next/",
-    "documentation": "https://github.com/owncloud/ocis",
+    "website": "https://owncloud.com",
+    "documentation": "https://doc.owncloud.com/ocis/next",
     "source_code": "https://github.com/owncloud/ocis",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/owncloud-infinite-scale.webp",
     "issues": "https://github.com/owncloud/ocis/issues",
@@ -86,12 +86,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/owncloud-infinite-scale/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

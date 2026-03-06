@@ -1,0 +1,19 @@
+# ===============================
+# Docker Compose (Oxker)
+# ===============================
+# Access: terminal UI (interactive)
+# ===============================
+
+services:
+  oxker:
+    image: ghcr.io/mrjackwills/oxker:latest
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    volumes:
+      - docker_socket:/var/run/docker.sock:ro
+
+volumes:
+  docker_socket:
+    external: true
+    name: docker_socket

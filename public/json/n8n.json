@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "Sustainable Use License",
     "version": "n8n@2.8.4",
     "date_app_added": "2025-11-23",
     "date_last_released": "2026-02-23",
@@ -23,12 +23,15 @@
   },
   "resources": {
     "website": "https://n8n.io",
-    "documentation": "https://github.com/n8n-io/n8n",
+    "documentation": "https://docs.n8n.io",
     "source_code": "https://github.com/n8n-io/n8n",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/n8n.webp",
     "issues": "https://github.com/n8n-io/n8n/issues",
     "releases": "https://github.com/n8n-io/n8n/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/n8n-homepage.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/n8n-screenshot-readme.png"
+    ]
   },
   "features": [
     {
@@ -92,12 +95,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/n8n/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

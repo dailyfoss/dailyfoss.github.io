@@ -1,0 +1,48 @@
+# ===============================
+# Docker Compose (OwnTracks Recorder)
+# ===============================
+# Recorder UI: http://localhost:8083
+# ===============================
+
+services:
+
+  postgres:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: owntracks
+      POSTGRES_USER: owntracks
+      POSTGRES_PASSWORD: change-this-password
+    volumes:
+      - owntracks_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U owntracks -d owntracks"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  recorder:
+    image: owntracks/recorder:latest
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8083:8083"
+    environment:
+      OTR_HOST: "0.0.0.0"
+      OTR_PORT: "8083"
+      OTR_DB_DRIVER: "postgres"
+      OTR_DB_DSN: "host=postgres user=owntracks password=change-this-password dbname=owntracks sslmode=disable"
+    volumes:
+      - owntracks_data:/store
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:8083/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+volumes:
+  owntracks_pgdata:
+  owntracks_data:

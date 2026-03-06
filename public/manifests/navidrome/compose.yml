@@ -1,16 +1,32 @@
+# ===============================
+# Docker Compose (Navidrome)
+# ===============================
+# host: http://localhost:4533
+# username: admin
+# password: (set on first login)
+
 services:
   navidrome:
     image: deluan/navidrome:latest
-    user: 1000:1000 # should be owner of volumes
+    container_name: navidrome
+    restart: unless-stopped
     ports:
       - "4533:4533"
-    restart: unless-stopped
     environment:
-      # Optional: put your config options customization here. Examples:
-      ND_SCANSCHEDULE: 1h
-      ND_LOGLEVEL: info
-      ND_SESSIONTIMEOUT: 24h
-      ND_BASEURL: ""
+      - ND_SCANSCHEDULE=1h
+      - ND_LOGLEVEL=info
+      - ND_SESSIONTIMEOUT=24h
+      - ND_BASEURL=
     volumes:
-      - "/path/to/data:/data"
-      - "/path/to/your/music/folder:/music:ro"
+      - navidrome_data:/data
+      - navidrome_music:/music:ro
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:4533/ping"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  navidrome_data:
+  navidrome_music:

@@ -1,0 +1,48 @@
+# ===============================
+# Docker Compose (Mantrae)
+# ===============================
+# host: http://localhost:3000
+# username: (created during first setup)
+# password: (created during first setup)
+# database user: mantrae
+# database password: mantrae
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: mantrae-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: mantrae
+      POSTGRES_USER: mantrae
+      POSTGRES_PASSWORD: mantrae
+    volumes:
+      - mantrae_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mantrae"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  mantrae:
+    image: ghcr.io/mizuchilabs/mantrae:latest
+    container_name: mantrae
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://mantrae:mantrae@postgres:5432/mantrae
+      NODE_ENV: production
+      PORT: 3000
+      HOST: 0.0.0.0
+    ports:
+      - "3000:3000"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mantrae_postgres_data:

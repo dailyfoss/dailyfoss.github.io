@@ -1,0 +1,47 @@
+# ===============================
+# Docker Compose (NetAlertX)
+# ===============================
+# host: http://localhost:20211
+# username:
+# password:
+
+services:
+  netalertx:
+    image: ghcr.io/netalertx/netalertx:latest
+    container_name: netalertx
+    restart: unless-stopped
+    network_mode: host
+
+    read_only: true
+
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+      - NET_BIND_SERVICE
+      - CHOWN
+      - SETUID
+      - SETGID
+
+    environment:
+      - LISTEN_ADDR=0.0.0.0
+      - PORT=20211
+      - GRAPHQL_PORT=20212
+
+    volumes:
+      - netalertx_data:/data
+      - /etc/localtime:/etc/localtime:ro
+
+    tmpfs:
+      - /tmp:uid=20211,gid=20211,mode=1700
+
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:20211/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+volumes:
+  netalertx_data:

@@ -1,0 +1,26 @@
+# ===============================
+# Docker Compose (Maintainerr)
+# ===============================
+# host: http://localhost:6246
+# username:
+# password:
+
+services:
+  maintainerr:
+    image: ghcr.io/maintainerr/maintainerr:latest
+    container_name: maintainerr
+    restart: unless-stopped
+    environment:
+      TZ: Etc/UTC
+    volumes:
+      - maintainerr_config:/config
+    ports:
+      - "6246:6246"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:6246/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  maintainerr_config:

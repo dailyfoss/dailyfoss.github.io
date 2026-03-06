@@ -1,0 +1,26 @@
+# ===============================
+# Docker Compose (Portracker)
+# ===============================
+# host: http://localhost:4999
+# username:
+# password:
+# ===============================
+
+services:
+  portracker:
+    image: mostafawahied/portracker:latest
+    restart: unless-stopped
+    pid: host
+    ports:
+      - "4999:4999"
+    cap_add:
+      - SYS_PTRACE
+      - SYS_ADMIN
+    security_opt:
+      - apparmor:unconfined
+    volumes:
+      - portracker_data:/data
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+volumes:
+  portracker_data:

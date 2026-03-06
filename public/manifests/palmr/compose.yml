@@ -1,107 +1,106 @@
+# ===============================
+# Docker Compose (Palmr Stack)
+# ===============================
+# host: http://localhost:5487
+# username:
+# password:
+
 services:
-  palmr-api:
-    image: kyantech/palmr-api:latest # Make sure to use the correct version (latest) of the image
-    container_name: palmr-api
-    depends_on:
-      postgres:
-        condition: "service_healthy"
-      minio:
-        condition: "service_healthy"
-    environment:
-      - PORT=${API_INTERNAL_PORT:-3333} # Port for the backend service
-      - DATABASE_URL=postgresql://postgres:${POSTGRESQL_PASSWORD:-postgresRootPassword}@postgres:5432/palmr_db?schema=public # Database URL with configurable password through POSTGRESQL_PASSWORD env var
-      - MINIO_ENDPOINT=${MINIO_ENDPOINT:-minio} # This can change if your MinIO is at a different address
-      - MINIO_PORT=${MINIO_INTERNAL_API_PORT:-6421} # Default MinIO port (Change if yours is not the default)
-      - MINIO_USE_SSL=false # MinIO uses SSL by default, but you can change it to true if needed
-      - MINIO_ROOT_USER=${MINIO_ROOT_USER:-minio_root_user} # MinIO credentials can be configured through MINIO_ROOT_USER env vars
-      - MINIO_ROOT_PASSWORD=${MINIO_ROOT_PASSWORD:-minioRootPassword} # MinIO credentials can be configured through MINIO_ROOT_PASSWORD env vars
-      - MINIO_REGION=sa-east-1 # MinIO region - This is needed for MinIO to work properly
-      - MINIO_BUCKET_NAME=files # MinIO bucket name - This is needed for MinIO to work properly, dont change it if you don't know what you are doing
-      - FRONTEND_URL=${APP_URL:-http://${SERVER_IP:-localhost}:${APP_EXTERNAL_PORT:-5487}} # Frontend URL - Make sure to use the correct frontend URL, depends on where the frontend is running, its prepared for localhost, but you can change it to your frontend URL if needed
-      - SERVER_IP=${SERVER_IP:-localhost} # Server IP - Make sure to use the correct server IP if you running on a cloud provider or a virtual machine. This prepared for localhost, but you can change it to your server IP if needed
-      - MAX_FILESIZE=${MAX_FILESIZE:-1073741824} # Max Filesize for upload - Declared in Bytes. Default is 1GiB
-    ports:
-      - "${API_EXTERNAL_PORT:-3333}:${API_INTERNAL_PORT:-3333}" # Backend port mapping
+
+  postgres:
+    image: postgres:17
     restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgresRootPassword
+      POSTGRES_DB: palmr_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "http://palmr-api:${API_INTERNAL_PORT:-3333}/health"]
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 10s
       timeout: 5s
       retries: 5
-      start_period: 30s
+
+  minio:
+    image: minio/minio:RELEASE.2025-03-12T18-04-18Z
+    restart: unless-stopped
+    command: server /data --address ":6421" --console-address ":6422"
+    environment:
+      MINIO_ROOT_USER: minio_root_user
+      MINIO_ROOT_PASSWORD: minioRootPassword
+      MINIO_SITE_REGION: sa-east-1
+    ports:
+      - "6421:6421"
+      - "6422:6422"
+    volumes:
+      - minio_data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6421/minio/health/ready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  minio-init:
+    image: minio/mc:RELEASE.2025-03-12T17-29-24Z
+    restart: "no"
+    depends_on:
+      minio:
+        condition: service_healthy
+    entrypoint: >
+      sh -c "
+      mc alias set local http://minio:6421 minio_root_user minioRootPassword &&
+      mc mb local/files --ignore-existing &&
+      mc anonymous set download local/files
+      "
+
+  palmr-api:
+    image: kyantech/palmr-api:latest
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+    ports:
+      - "3333:3333"
+    environment:
+      PORT: 3333
+      DATABASE_URL: postgresql://postgres:postgresRootPassword@postgres:5432/palmr_db?schema=public
+      MINIO_ENDPOINT: minio
+      MINIO_PORT: 6421
+      MINIO_USE_SSL: "false"
+      MINIO_ROOT_USER: minio_root_user
+      MINIO_ROOT_PASSWORD: minioRootPassword
+      MINIO_REGION: sa-east-1
+      MINIO_BUCKET_NAME: files
+      FRONTEND_URL: http://localhost:5487
+      SERVER_IP: localhost
+      MAX_FILESIZE: 1073741824
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3333/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   palmr-app:
-    image: kyantech/palmr-app:latest # Make sure to use the correct version (latest) of the image
-    container_name: palmr-web
+    image: kyantech/palmr-app:latest
+    restart: unless-stopped
     depends_on:
       palmr-api:
-        condition: "service_healthy"
+        condition: service_healthy
     ports:
-      - "${APP_EXTERNAL_PORT:-5487}:5487" # Frontend port mapping
+      - "5487:5487"
     environment:
-      - NODE_ENV=production
-      - NEXT_TELEMETRY_DISABLED=1
-      - API_BASE_URL=http://palmr-api:${API_INTERNAL_PORT:-3333} # Here we use docker's internal network to reference the backend service (can be changed if needed)
-    restart: unless-stopped
+      NODE_ENV: production
+      NEXT_TELEMETRY_DISABLED: "1"
+      API_BASE_URL: http://palmr-api:3333
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:5487"]
       interval: 30s
       timeout: 10s
       retries: 3
 
-  minio:
-    image: minio/minio:RELEASE.2025-03-12T18-04-18Z # Use only version RELEASE.2025-03-12T18-04-18Z to avoid compatibility issues with the backend
-    container_name: minio
-    environment:
-      # MinIO credentials - same as above, configurable through environment variables
-      - MINIO_ROOT_USER=${MINIO_ROOT_USER:-minio_root_user}
-      - MINIO_ROOT_PASSWORD=${MINIO_ROOT_PASSWORD:-minioRootPassword}
-      - MINIO_SITE_REGION=sa-east-1
-    command: server /data --address ":${MINIO_INTERNAL_API_PORT:-6421}" --console-address ":${MINIO_INTERNAL_CONSOLE_PORT:-6422}"
-    volumes:
-      - ./minio_data:/data
-    ports:
-      - "${MINIO_EXTERNAL_API_PORT:-6421}:${MINIO_INTERNAL_API_PORT:-6421}"
-      - "${MINIO_EXTERNAL_CONSOLE_PORT:-6422}:${MINIO_INTERNAL_CONSOLE_PORT:-6422}"
-    restart: unless-stopped
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:${MINIO_INTERNAL_API_PORT:-6421}/minio/health/ready"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
-  minio-init:
-    image: minio/mc:RELEASE.2025-03-12T17-29-24Z # Use only version RELEASE.2025-03-12T17-29-24Z to avoid compatibility issues with the backend and MinIO
-    container_name: minio-init
-    depends_on:
-      minio:
-        condition: "service_healthy"
-    restart: "no"
-    # The entrypoint script will create a bucket called "files" and set it to be publicly readable using the MinIO client (mc).
-    entrypoint: >
-      sh -c "
-        sleep 5 &&
-        mc alias set myminio http://minio:${MINIO_INTERNAL_API_PORT:-6421} ${MINIO_ROOT_USER:-minio_root_user} ${MINIO_ROOT_PASSWORD:-minioRootPassword} &&
-        mc mb myminio/files --ignore-existing &&
-        mc anonymous set download myminio/files
-      "
-
-  postgres:
-    image: bitnami/postgresql:17.2.0 # You can use any postgres version you prefer, but remember that some versions might not be compatible
-    container_name: palmr-postgres
-    environment:
-      # PostgreSQL credentials configurable through environment variables
-      # POSTGRESQL_USERNAME, POSTGRESQL_PASSWORD, and POSTGRES_DB can be set to override defaults
-      - POSTGRESQL_USERNAME=${POSTGRESQL_USERNAME:-postgres}
-      - POSTGRESQL_PASSWORD=${POSTGRESQL_PASSWORD:-postgresRootPassword}
-      - POSTGRESQL_DATABASE=${POSTGRES_DATABASE:-palmr_db}
-    volumes:
-      - ./postgres_data:/bitnami/postgresql
-    ports:
-      - "5432:5432"
-    restart: unless-stopped
-    healthcheck:
-      test: ["CMD", "pg_isready", "-U", "palmr"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+volumes:
+  postgres_data:
+  minio_data:

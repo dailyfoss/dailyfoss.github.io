@@ -1,0 +1,64 @@
+# ===============================
+# Docker Compose (Mantium)
+# ===============================
+# host: http://localhost:3000
+# username: (created during first setup)
+# password: (created during first setup)
+# database user: mantium
+# database password: mantium
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: mantium-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: mantium
+      POSTGRES_USER: mantium
+      POSTGRES_PASSWORD: mantium
+    volumes:
+      - mantium_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mantium"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:latest
+    container_name: mantium-redis
+    restart: unless-stopped
+    volumes:
+      - mantium_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  mantium:
+    image: ghcr.io/diogovalentte/mantium:latest
+    container_name: mantium
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://mantium:mantium@postgres:5432/mantium
+      REDIS_URL: redis://redis:6379
+      NODE_ENV: production
+      PORT: 3000
+      HOST: 0.0.0.0
+    ports:
+      - "3000:3000"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mantium_postgres_data:
+  mantium_redis_data:

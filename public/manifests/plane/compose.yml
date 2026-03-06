@@ -1,172 +1,115 @@
+# ===============================
+# Docker Compose (Plane CE)
+# ===============================
+# host: http://localhost
+# username: create on first setup
+# password: create on first setup
+# ===============================
+
 services:
+
+  plane-db:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: plane
+      POSTGRES_PASSWORD: change-db-password
+      POSTGRES_DB: plane
+    volumes:
+      - plane_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U plane -d plane"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  plane-redis:
+    image: valkey/valkey:7-alpine
+    restart: unless-stopped
+    volumes:
+      - plane_redisdata:/data
+    command: ["valkey-server", "--appendonly", "yes"]
+
+  plane-mq:
+    image: rabbitmq:3-management-alpine
+    restart: unless-stopped
+    environment:
+      RABBITMQ_DEFAULT_USER: plane
+      RABBITMQ_DEFAULT_PASS: change-rabbit-password
+      RABBITMQ_DEFAULT_VHOST: plane
+    volumes:
+      - plane_rabbitmq:/var/lib/rabbitmq
+
+  plane-minio:
+    image: minio/minio:latest
+    restart: unless-stopped
+    command: server /export --console-address ":9090"
+    environment:
+      MINIO_ROOT_USER: plane
+      MINIO_ROOT_PASSWORD: change-minio-password
+    volumes:
+      - plane_uploads:/export
+    ports:
+      - "9090:9090"
+
+  api:
+    image: ghcr.io/makeplane/plane-backend:latest
+    restart: unless-stopped
+    depends_on:
+      plane-db:
+        condition: service_healthy
+      plane-redis:
+        condition: service_started
+    environment:
+      DATABASE_URL: postgres://plane:change-db-password@plane-db:5432/plane
+      REDIS_URL: redis://plane-redis:6379
+      AMQP_URL: amqp://plane:change-rabbit-password@plane-mq:5672/plane
+
+  worker:
+    image: ghcr.io/makeplane/plane-backend:latest
+    restart: unless-stopped
+    command: worker
+    depends_on:
+      - api
+
+  beat-worker:
+    image: ghcr.io/makeplane/plane-backend:latest
+    restart: unless-stopped
+    command: beat
+    depends_on:
+      - api
+
+  live:
+    image: ghcr.io/makeplane/plane-live:latest
+    restart: unless-stopped
+
   web:
-    container_name: web
-    build:
-      context: .
-      dockerfile: ./web/Dockerfile.web
-      args:
-        DOCKER_BUILDKIT: 1
-    restart: always
-    command: node web/server.js web
+    image: ghcr.io/makeplane/plane-web:latest
+    restart: unless-stopped
     depends_on:
       - api
 
   admin:
-    container_name: admin
-    build:
-      context: .
-      dockerfile: ./admin/Dockerfile.admin
-      args:
-        DOCKER_BUILDKIT: 1
-    restart: always
-    command: node admin/server.js admin
+    image: ghcr.io/makeplane/plane-admin:latest
+    restart: unless-stopped
     depends_on:
       - api
-      - web
 
   space:
-    container_name: space
-    build:
-      context: .
-      dockerfile: ./space/Dockerfile.space
-      args:
-        DOCKER_BUILDKIT: 1
-    restart: always
-    command: node space/server.js space
+    image: ghcr.io/makeplane/plane-space:latest
+    restart: unless-stopped
     depends_on:
       - api
-      - web
 
-  api:
-    container_name: api
-    build:
-      context: ./apiserver
-      dockerfile: Dockerfile.api
-      args:
-        DOCKER_BUILDKIT: 1
-    restart: always
-    command: ./bin/docker-entrypoint-api.sh
-    env_file:
-      - ./apiserver/.env
-    depends_on:
-      - plane-db
-      - plane-redis
-
-  worker:
-    container_name: bgworker
-    build:
-      context: ./apiserver
-      dockerfile: Dockerfile.api
-      args:
-        DOCKER_BUILDKIT: 1
-    restart: always
-    command: ./bin/docker-entrypoint-worker.sh
-    env_file:
-      - ./apiserver/.env
-    depends_on:
-      - api
-      - plane-db
-      - plane-redis
-
-  beat-worker:
-    container_name: beatworker
-    build:
-      context: ./apiserver
-      dockerfile: Dockerfile.api
-      args:
-        DOCKER_BUILDKIT: 1
-    restart: always
-    command: ./bin/docker-entrypoint-beat.sh
-    env_file:
-      - ./apiserver/.env
-    depends_on:
-      - api
-      - plane-db
-      - plane-redis
-
-  migrator:
-    container_name: plane-migrator
-    build:
-      context: ./apiserver
-      dockerfile: Dockerfile.api
-      args:
-        DOCKER_BUILDKIT: 1
-    restart: no
-    command: ./bin/docker-entrypoint-migrator.sh
-    env_file:
-      - ./apiserver/.env
-    depends_on:
-      - plane-db
-      - plane-redis
-
-  live:
-    container_name: plane-live
-    build:
-      context: .
-      dockerfile: ./live/Dockerfile.live
-      args:
-        DOCKER_BUILDKIT: 1
-    restart: always
-    command: node live/dist/server.js
-
-  plane-db:
-    container_name: plane-db
-    image: postgres:15.7-alpine
-    restart: always
-    command: postgres -c 'max_connections=1000'
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    env_file:
-      - .env
-    environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_DB: ${POSTGRES_DB}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      PGDATA: /var/lib/postgresql/data
-
-  plane-redis:
-    container_name: plane-redis
-    image: valkey/valkey:7.2.5-alpine
-    restart: always
-    volumes:
-      - redisdata:/data
-
-  plane-mq:
-    container_name: plane-mq
-    image: rabbitmq:3.13.6-management-alpine
-    restart: always
-    env_file:
-      - .env
-    environment:
-      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
-      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
-      RABBITMQ_DEFAULT_VHOST: ${RABBITMQ_VHOST}
-    volumes:
-      - rabbitmq_data:/var/lib/rabbitmq
-
-  plane-minio:
-    container_name: plane-minio
-    image: minio/minio
-    restart: always
-    command: server /export --console-address ":9090"
-    volumes:
-      - uploads:/export
-    environment:
-      MINIO_ROOT_USER: ${AWS_ACCESS_KEY_ID}
-      MINIO_ROOT_PASSWORD: ${AWS_SECRET_ACCESS_KEY}
-
-  # Comment this if you already have a reverse proxy running
   proxy:
-    container_name: proxy
-    build:
-      context: ./nginx
-      dockerfile: Dockerfile
-    restart: always
+    image: ghcr.io/makeplane/plane-proxy:latest
+    restart: unless-stopped
     ports:
-      - ${NGINX_PORT}:80
+      - "80:80"
+      - "443:443"
     environment:
-      FILE_SIZE_LIMIT: ${FILE_SIZE_LIMIT:-5242880}
-      BUCKET_NAME: ${AWS_S3_BUCKET_NAME:-uploads}
+      FILE_SIZE_LIMIT: "5242880"
+      BUCKET_NAME: uploads
     depends_on:
       - web
       - api
@@ -174,7 +117,7 @@ services:
       - admin
 
 volumes:
-  pgdata:
-  redisdata:
-  uploads:
-  rabbitmq_data:
+  plane_pgdata:
+  plane_redisdata:
+  plane_uploads:
+  plane_rabbitmq:

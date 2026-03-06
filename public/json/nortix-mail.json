@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "PolyForm Noncommercial License 1.0",
     "version": null,
     "date_app_added": "2025-11-23",
     "date_last_released": null,
@@ -28,7 +28,9 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/nortix-mail.webp",
     "issues": "https://github.com/Zhoros/NortixMail/issues",
     "releases": null,
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nortix-mail-demo.png"
+    ]
   },
   "features": [
     {
@@ -82,12 +84,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/nortix-mail/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

@@ -1,0 +1,66 @@
+# ===============================
+# Docker Compose (Manyfold)
+# ===============================
+# host: http://localhost:3214
+# username: (created during first setup)
+# password: (created during first setup)
+# database user: manyfold
+# database password: manyfold
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: manyfold-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: manyfold
+      POSTGRES_USER: manyfold
+      POSTGRES_PASSWORD: manyfold
+    volumes:
+      - manyfold_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U manyfold"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:latest
+    container_name: manyfold-redis
+    restart: unless-stopped
+    volumes:
+      - manyfold_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  manyfold:
+    image: ghcr.io/manyfold3d/manyfold:latest
+    container_name: manyfold
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://manyfold:manyfold@postgres:5432/manyfold
+      REDIS_URL: redis://redis:6379
+      RAILS_ENV: production
+      PORT: 3214
+    ports:
+      - "3214:3214"
+    volumes:
+      - manyfold_storage:/app/storage
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3214/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  manyfold_postgres_data:
+  manyfold_redis_data:
+  manyfold_storage:

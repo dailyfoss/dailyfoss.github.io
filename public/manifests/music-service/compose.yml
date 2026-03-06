@@ -1,0 +1,75 @@
+# ===============================
+# Docker Compose (MusicService)
+# ===============================
+# host: http://localhost:5678
+# username:
+# password:
+
+services:
+  musicservice:
+    image: thijstakken/musicservice:latest
+    container_name: musicservice
+    restart: unless-stopped
+    ports:
+      - "5678:5678"
+    volumes:
+      - music:/music
+    depends_on:
+      database:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - DATABASE_URL=mysql+pymysql://musicservice:musicservice@database:3306/musicservice
+
+  taskworker:
+    image: thijstakken/musicservice:latest
+    container_name: taskworker
+    restart: unless-stopped
+    entrypoint: rq
+    command: worker -u redis://redis:6379/0 music-tasks
+    volumes:
+      - music:/music
+    depends_on:
+      database:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      - DATABASE_URL=mysql+pymysql://musicservice:musicservice@database:3306/musicservice
+
+  database:
+    image: mysql:8.4
+    container_name: musicservice-db
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=change_root_password
+      - MYSQL_DATABASE=musicservice
+      - MYSQL_USER=musicservice
+      - MYSQL_PASSWORD=musicservice_password
+    volumes:
+      - db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u musicservice -pmusicservice_password"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  redis:
+    image: redis:7-alpine
+    container_name: musicservice-redis
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  music:
+  db:
+  redis_data:

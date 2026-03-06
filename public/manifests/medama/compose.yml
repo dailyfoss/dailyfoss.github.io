@@ -1,10 +1,76 @@
+# ===============================
+# Docker Compose (Medama)
+# ===============================
+# host: http://localhost:3000
+# username: (created during first setup)
+# password: (created during first setup)
+# database user: medama
+# database password: change_this_password
+
 services:
-  medama:
-    image: ghcr.io/medama-io/medama:latest
+  postgres:
+    image: postgres:16-alpine
+    container_name: medama-postgres
     restart: unless-stopped
     environment:
-      - LOGGER=pretty
-    ports:
-      - "8080:8080"
+      POSTGRES_DB: medama
+      POSTGRES_USER: medama
+      POSTGRES_PASSWORD: change_this_password
     volumes:
-      - ./data:/app/data
+      - medama_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U medama"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - internal
+
+  redis:
+    image: redis:7-alpine
+    container_name: medama-redis
+    restart: unless-stopped
+    volumes:
+      - medama_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - internal
+
+  medama:
+    image: ghcr.io/medama-io/medama:latest
+    container_name: medama
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://medama:change_this_password@postgres:5432/medama
+      REDIS_URL: redis://redis:6379
+      NODE_ENV: production
+      PORT: 3000
+      HOST: 0.0.0.0
+    ports:
+      - "3000:3000"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    networks:
+      - internal
+      - external
+
+volumes:
+  medama_postgres_data:
+  medama_redis_data:
+
+networks:
+  internal:
+    internal: true
+  external:

@@ -1,0 +1,33 @@
+# ===============================
+# Docker Compose (Omni-Tools)
+# ===============================
+# Web: http://localhost:8080
+# No authentication by default
+
+services:
+  omni-tools:
+    image: iib0011/omni-tools:latest
+    restart: unless-stopped
+
+    ports:
+      - "8080:80"
+
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 256M
+        reservations:
+          memory: 64M

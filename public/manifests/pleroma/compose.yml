@@ -1,42 +1,57 @@
+# ===============================
+# Docker Compose (Pleroma)
+# ===============================
+# host: http://localhost:4000
+# username: created during setup
+# password: created during setup
+# ===============================
+
 services:
+
   db:
-    image: postgres:12.1-alpine
-    container_name: pleroma_db
-    restart: always
+    image: postgres:17
+    restart: unless-stopped
     environment:
       POSTGRES_USER: pleroma
-      POSTGRES_PASSWORD: ChangeMe!
+      POSTGRES_PASSWORD: change-db-password
       POSTGRES_DB: pleroma
     volumes:
-      - ./postgres:/var/lib/postgresql/data
+      - pleroma_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "pleroma"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   web:
-    image: pleroma
-    container_name: pleroma_web
-    restart: always
+    image: pleroma/pleroma:latest
+    restart: unless-stopped
     ports:
       - "4000:4000"
-    build:
-      context: .
-      # Feel free to remove or override this section
-      # See 'Build-time variables' in README.md
-      args:
-        - "UID=911"
-        - "GID=911"
-        - "PLEROMA_VER=develop"
-    volumes:
-      - ./uploads:/var/lib/pleroma/uploads
-      - ./static:/var/lib/pleroma/static
-      - ./config.exs:/etc/pleroma/config.exs:ro
-      # optional, see 'Config Override' section in README.md
-      # - ./config-override.exs:/var/lib/pleroma/config.exs:ro
+    depends_on:
+      db:
+        condition: service_healthy
     environment:
       DOMAIN: example.com
       INSTANCE_NAME: Pleroma
-      ADMIN_EMAIL: [email protected]
-      NOTIFY_EMAIL: [email protected]
+      ADMIN_EMAIL: admin@example.com
+      NOTIFY_EMAIL: notify@example.com
       DB_USER: pleroma
-      DB_PASS: ChangeMe!
+      DB_PASS: change-db-password
       DB_NAME: pleroma
-    depends_on:
-      - db
+    volumes:
+      - pleroma_uploads:/var/lib/pleroma/uploads
+      - pleroma_static:/var/lib/pleroma/static
+      - pleroma_config:/etc/pleroma
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:4000 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  pleroma_db:
+  pleroma_uploads:
+  pleroma_static:
+  pleroma_config:

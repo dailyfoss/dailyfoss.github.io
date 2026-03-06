@@ -1,11 +1,27 @@
+# ===============================
+# Docker Compose (PicoShare)
+# ===============================
+# host: http://localhost:4001
+# username:
+# password: change_this_password
+
 services:
   picoshare:
-    image: mtlynch/picoshare
-    environment:
-      - PORT=4001
-      - PS_SHARED_SECRET=dummypass # Change to any password
+    image: mtlynch/picoshare:latest
+    restart: unless-stopped
     ports:
-      - 4001:4001
+      - "4001:4001"
     command: -db /data/store.db
+    environment:
+      PORT: 4001
+      PS_SHARED_SECRET: change_this_password
     volumes:
-      - ./data:/data
+      - picoshare_data:/data
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:4001"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  picoshare_data:

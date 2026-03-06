@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "CC BY-NC-SA 4.0",
     "version": "0.8.39",
     "date_app_added": "2025-11-23",
     "date_last_released": "2026-02-16",
@@ -23,12 +23,20 @@
   },
   "resources": {
     "website": "https://github.com/sparkison/m3u-editor",
-    "documentation": "https://github.com/sparkison/m3u-editor",
+    "documentation": "https://m3ue.sparkison.dev/docs/intro",
     "source_code": "https://github.com/sparkison/m3u-editor",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/m3u-editor.webp",
     "issues": "https://github.com/sparkison/m3u-editor/issues",
     "releases": "https://github.com/sparkison/m3u-editor/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/m3u-editor-api.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/m3u-editor-channel-editing.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/m3u-editor-in-app-playlist-epg-playback.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/m3u-editor-in-app-playlist-epg-preview.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/m3u-editor-proxy-monitor.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/m3u-editor-series-mgmt.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/m3u-editor-series-view.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +96,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/m3u-editor/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

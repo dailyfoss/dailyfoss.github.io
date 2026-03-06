@@ -1,23 +1,31 @@
+# ===============================
+# Docker Compose (Mox)
+# ===============================
+# host: https://mail.example.com
+# username: (created during quickstart)
+# password:
+
 services:
   mox:
-    # Replace "latest" with the version you want to run, see https://r.xmox.nl/r/mox/.
-    # Include the @sha256:... digest to ensure you get the listed image.
     image: r.xmox.nl/mox:latest
-    environment:
-      - MOX_DOCKER=yes # Quickstart won't try to write systemd service file.
-    # Mox needs host networking because it needs access to the IPs of the
-    # machine, and the IPs of incoming connections for spam filtering.
-    network_mode: 'host'
-    volumes:
-      - ./config:/mox/config
-      - ./data:/mox/data
-      # web is optional but recommended to bind in, useful for serving static files with
-      # the webserver.
-      - ./web:/mox/web
+    container_name: mox
+    restart: unless-stopped
+    network_mode: host
     working_dir: /mox
-    restart: on-failure
+    environment:
+      - MOX_DOCKER=yes
+    volumes:
+      - mox_config:/mox/config
+      - mox_data:/mox/data
+      - mox_web:/mox/web
     healthcheck:
-      test: netstat -nlt | grep ':25 '
-      interval: 1s
-      timeout: 1s
-      retries: 10
+      test: ["CMD", "mox", "version"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+
+volumes:
+  mox_config:
+  mox_data:
+  mox_web:

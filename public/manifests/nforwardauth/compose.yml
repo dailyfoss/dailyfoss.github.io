@@ -1,0 +1,80 @@
+# ===============================
+# Docker Compose (Traefik + nforwardauth)
+# ===============================
+# host: https://whoami.yourdomain.com
+# username: defined in /passwd file
+# password: defined in /passwd file
+
+services:
+  traefik:
+    image: traefik:v2.9
+    restart: unless-stopped
+
+    command:
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
+      - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+      - "--certificatesresolvers.le.acme.email=admin@yourdomain.com"
+      - "--certificatesresolvers.le.acme.storage=/letsencrypt/acme.json"
+      - "--certificatesresolvers.le.acme.httpchallenge.entrypoint=web"
+
+    ports:
+      - "80:80"
+      - "443:443"
+
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - traefik_letsencrypt:/letsencrypt
+
+    healthcheck:
+      test: ["CMD", "traefik", "healthcheck"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  nforwardauth:
+    image: nosduco/nforwardauth:v1
+    restart: unless-stopped
+
+    environment:
+      TOKEN_SECRET: change_this_to_a_long_random_secret
+      AUTH_HOST: nforwardauth.yourdomain.com
+
+    labels:
+      - "traefik.enable=true"
+
+      - "traefik.http.routers.nforwardauth.rule=Host(`nforwardauth.yourdomain.com`)"
+      - "traefik.http.routers.nforwardauth.entrypoints=websecure"
+      - "traefik.http.routers.nforwardauth.tls.certresolver=le"
+
+      - "traefik.http.middlewares.nforwardauth.forwardauth.address=http://nforwardauth:3000"
+      - "traefik.http.middlewares.nforwardauth.forwardauth.authResponseHeaders=X-Forwarded-User"
+
+      - "traefik.http.services.nforwardauth.loadbalancer.server.port=3000"
+
+    volumes:
+      - passwd_file:/passwd:ro
+
+  whoami:
+    image: traefik/whoami
+    restart: unless-stopped
+
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.whoami.rule=Host(`whoami.yourdomain.com`)"
+      - "traefik.http.routers.whoami.entrypoints=websecure"
+      - "traefik.http.routers.whoami.tls.certresolver=le"
+      - "traefik.http.routers.whoami.middlewares=nforwardauth@docker"
+
+volumes:
+  traefik_letsencrypt:
+  passwd_file:

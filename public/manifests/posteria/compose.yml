@@ -1,0 +1,50 @@
+# ===============================
+# Docker Compose (Posteria)
+# ===============================
+# host: http://localhost:1818
+# username: admin
+# password: change-this-password
+# ===============================
+
+services:
+  posteria:
+    image: bozodev/posteria:latest
+    restart: unless-stopped
+    ports:
+      - "1818:80"
+    environment:
+      SITE_TITLE: Posteria
+      AUTH_USERNAME: admin
+      AUTH_PASSWORD: change-this-password
+      SESSION_DURATION: "3600"
+      AUTH_BYPASS: "false"
+      PUID: "1000"
+      PGID: "1000"
+      TZ: Etc/UTC
+      IMAGES_PER_PAGE: "24"
+      MAX_FILE_SIZE: "5242880"
+      PLEX_SERVER_URL: ""
+      PLEX_TOKEN: ""
+      PLEX_REMOVE_OVERLAY_LABEL: "false"
+      IGNORE_ARTICLES_IN_SORT: "true"
+      SORT_BY_DATE_ADDED: "false"
+      AUTO_IMPORT_ENABLED: "false"
+      AUTO_IMPORT_SCHEDULE: "1h"
+      AUTO_IMPORT_MOVIES: "false"
+      AUTO_IMPORT_SHOWS: "false"
+      AUTO_IMPORT_SEASONS: "false"
+      AUTO_IMPORT_COLLECTIONS: "false"
+      EXCLUDED_LIBRARIES: ""
+    volumes:
+      - posteria_posters:/config/posters
+      - posteria_data:/config/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+volumes:
+  posteria_posters:
+  posteria_data:

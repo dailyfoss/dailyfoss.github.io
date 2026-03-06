@@ -1,132 +1,133 @@
-    shm_size: 256mb
-    networks:
-      - internal_network
-    healthcheck:
-      test: ['CMD', 'pg_isready', '-U', 'postgres']
-    volumes:
-      - ./postgres14:/var/lib/postgresql/data
+# ===============================
+# Docker Compose (Mastodon)
+# ===============================
+# host: https://yourdomain.com
+# username: (created during mastodon:setup)
+# password: (created during mastodon:setup)
+# database user: mastodon
+# database password: change_this_password
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: mastodon-db
+    restart: unless-stopped
+    shm_size: 512mb
     environment:
-      - 'POSTGRES_HOST_AUTH_METHOD=trust'
+      POSTGRES_DB: mastodon_production
+      POSTGRES_USER: mastodon
+      POSTGRES_PASSWORD: change_this_password
+    volumes:
+      - mastodon_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mastodon"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - internal
 
   redis:
-    restart: always
     image: redis:7-alpine
-    networks:
-      - internal_network
-    healthcheck:
-      test: ['CMD', 'redis-cli', 'ping']
+    container_name: mastodon-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes
     volumes:
-      - ./redis:/data
-
-  # es:
-  #   restart: always
-  #   image: docker.elastic.co/elasticsearch/elasticsearch:7.17.4
-  #   environment:
-  #     - "ES_JAVA_OPTS=-Xms512m -Xmx512m -Des.enforce.bootstrap.checks=true"
-  #     - "xpack.license.self_generated.type=basic"
-  #     - "xpack.security.enabled=false"
-  #     - "xpack.watcher.enabled=false"
-  #     - "xpack.graph.enabled=false"
-  #     - "xpack.ml.enabled=false"
-  #     - "bootstrap.memory_lock=true"
-  #     - "cluster.name=es-mastodon"
-  #     - "discovery.type=single-node"
-  #     - "thread_pool.write.queue_size=1000"
-  #   networks:
-  #      - external_network
-  #      - internal_network
-  #   healthcheck:
-  #      test: ["CMD-SHELL", "curl --silent --fail localhost:9200/_cluster/health || exit 1"]
-  #   volumes:
-  #      - ./elasticsearch:/usr/share/elasticsearch/data
-  #   ulimits:
-  #     memlock:
-  #       soft: -1
-  #       hard: -1
-  #     nofile:
-  #       soft: 65536
-  #       hard: 65536
-  #   ports:
-  #     - '127.0.0.1:9200:9200'
+      - mastodon_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - internal
 
   web:
-    # You can uncomment the following line if you want to not use the prebuilt image, for example if you have local code changes
-    # build: .
-    image: ghcr.io/mastodon/mastodon:v4.3.0-beta.2
-    restart: always
-    env_file: .env.production
+    image: ghcr.io/mastodon/mastodon:v4.5.6
+    container_name: mastodon-web
+    restart: unless-stopped
     command: bundle exec puma -C config/puma.rb
-    networks:
-      - external_network
-      - internal_network
-    healthcheck:
-      # prettier-ignore
-      test: ['CMD-SHELL',"curl -s --noproxy localhost localhost:3000/health | grep -q 'OK' || exit 1"]
-    ports:
-      - '127.0.0.1:3000:3000'
+    environment:
+      RAILS_ENV: production
+      DB_HOST: db
+      DB_USER: mastodon
+      DB_NAME: mastodon_production
+      DB_PASS: change_this_password
+      REDIS_HOST: redis
     depends_on:
-      - db
-      - redis
-      # - es
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
     volumes:
-      - ./public/system:/mastodon/public/system
+      - mastodon_public_system:/mastodon/public/system
+    ports:
+      - "127.0.0.1:3000:3000"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:3000/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    networks:
+      - internal
+      - external
 
   streaming:
-    # You can uncomment the following lines if you want to not use the prebuilt image, for example if you have local code changes
-    # build:
-    #   dockerfile: ./streaming/Dockerfile
-    #   context: .
-    image: ghcr.io/mastodon/mastodon-streaming:v4.3.0-beta.2
-    restart: always
-    env_file: .env.production
+    image: ghcr.io/mastodon/mastodon-streaming:v4.5.6
+    container_name: mastodon-streaming
+    restart: unless-stopped
     command: node ./streaming/index.js
-    networks:
-      - external_network
-      - internal_network
-    healthcheck:
-      # prettier-ignore
-      test: ['CMD-SHELL', "curl -s --noproxy localhost localhost:4000/api/v1/streaming/health | grep -q 'OK' || exit 1"]
-    ports:
-      - '127.0.0.1:4000:4000'
+    environment:
+      NODE_ENV: production
+      DB_HOST: db
+      DB_USER: mastodon
+      DB_NAME: mastodon_production
+      DB_PASS: change_this_password
+      REDIS_HOST: redis
     depends_on:
-      - db
-      - redis
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:4000:4000"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:4000/api/v1/streaming/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    networks:
+      - internal
+      - external
 
   sidekiq:
-    build: .
-    image: ghcr.io/mastodon/mastodon:v4.3.0-beta.2
-    restart: always
-    env_file: .env.production
+    image: ghcr.io/mastodon/mastodon:v4.5.6
+    container_name: mastodon-sidekiq
+    restart: unless-stopped
     command: bundle exec sidekiq
+    environment:
+      RAILS_ENV: production
+      DB_HOST: db
+      DB_USER: mastodon
+      DB_NAME: mastodon_production
+      DB_PASS: change_this_password
+      REDIS_HOST: redis
     depends_on:
-      - db
-      - redis
-    networks:
-      - external_network
-      - internal_network
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
     volumes:
-      - ./public/system:/mastodon/public/system
-    healthcheck:
-      test: ['CMD-SHELL', "ps aux | grep '[s]idekiq\ 6' || false"]
+      - mastodon_public_system:/mastodon/public/system
+    networks:
+      - internal
 
-  ## Uncomment to enable federation with tor instances along with adding the following ENV variables
-  ## http_hidden_proxy=http://privoxy:8118
-  ## ALLOW_ACCESS_TO_HIDDEN_SERVICE=true
-  # tor:
-  #   image: sirboops/tor
-  #   networks:
-  #      - external_network
-  #      - internal_network
-  #
-  # privoxy:
-  #   image: sirboops/privoxy
-  #   volumes:
-  #     - ./priv-config:/opt/config
-  #   networks:
-  #     - external_network
-  #     - internal_network
+volumes:
+  mastodon_postgres_data:
+  mastodon_redis_data:
+  mastodon_public_system:
 
 networks:
-  external_network:
-  internal_network:
+  external:
+  internal:
     internal: true

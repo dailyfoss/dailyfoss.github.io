@@ -1,0 +1,63 @@
+# ===============================
+# Docker Compose (Odoo)
+# ===============================
+# Web: http://localhost:8069
+# Database: internal only
+# Master password: change_this_master_password
+
+services:
+  postgres:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: change_this_db_password
+    volumes:
+      - odoo_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U odoo -d postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  odoo:
+    image: odoo:17
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8069:8069"
+    environment:
+      HOST: postgres
+      USER: odoo
+      PASSWORD: change_this_db_password
+    volumes:
+      - odoo_data:/var/lib/odoo
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8069/web/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+          memory: 2G
+        reservations:
+          memory: 512M
+
+volumes:
+  odoo_postgres:
+  odoo_data:

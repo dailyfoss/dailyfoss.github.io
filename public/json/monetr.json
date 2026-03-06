@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "FSL 1.1",
     "version": "v1.9.2",
     "date_app_added": "2025-11-23",
     "date_last_released": "2026-02-09",
@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://monetr.app",
-    "documentation": "https://github.com/monetr/monetr",
+    "documentation": "https://monetr.app/documentation",
     "source_code": "https://github.com/monetr/monetr",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/monetr.webp",
     "issues": "https://github.com/monetr/monetr/issues",
@@ -96,12 +96,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/monetr/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

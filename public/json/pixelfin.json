@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": null,
+    "license": "MIT",
     "version": null,
     "date_app_added": "2025-11-23",
     "date_last_released": null,
@@ -23,12 +23,17 @@
   },
   "resources": {
     "website": null,
-    "documentation": null,
+    "documentation": "https://github.com/nothing2obvi/pixelfin#-running-with-docker",
     "source_code": "https://github.com/nothing2obvi/pixelfin",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/pixelfin.webp",
     "issues": "https://github.com/nothing2obvi/pixelfin/issues",
     "releases": null,
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/pixelfin-images-entry.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/pixelfin-screenshot-dark.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/pixelfin-table-image-2.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/pixelfin-table-image.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +93,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/pixelfin/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

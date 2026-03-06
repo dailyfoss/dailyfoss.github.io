@@ -1,8 +1,40 @@
+# ===============================
+# Docker Compose (Nexterm)
+# ===============================
+# host: http://localhost:6989
+# username: created during first setup
+# password: created during first setup
+
 services:
   nexterm:
     image: germannewsmaker/nexterm:1.0.2-OPEN-PREVIEW
+    restart: unless-stopped
+
     ports:
       - "6989:6989"
+
     volumes:
-      - ./nexterm:/app/data
-    restart: always
+      - nexterm_data:/app/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:6989 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 512M
+        reservations:
+          memory: 128M
+
+volumes:
+  nexterm_data:

@@ -1,11 +1,28 @@
+# ===============================
+# Docker Compose (PsiTransfer)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
 services:
-    psitransfer:
-        image: psitrax/psitransfer
-        environment:
-            - PSITRANSFER_DEFAULT_RETENTION=3600
-            - PSITRANSFER_PORT=8080
-        ports:
-            - '3000:8080'
-        volumes:
-            - './data:/data'
-	    restart: unless-stopped
+  psitransfer:
+    image: psitrax/psitransfer:latest
+    container_name: psitransfer
+    restart: unless-stopped
+    ports:
+      - "3000:8080"
+    environment:
+      - PSITRANSFER_DEFAULT_RETENTION=3600
+      - PSITRANSFER_PORT=8080
+    volumes:
+      - psitransfer_data:/data
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  psitransfer_data:

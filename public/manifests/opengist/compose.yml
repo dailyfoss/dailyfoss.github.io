@@ -1,9 +1,26 @@
+# ===============================
+# Docker Compose (OpenGist)
+# ===============================
+# host: http://localhost:6157
+# username:
+# password:
+# ===============================
+
 services:
   opengist:
-    image: ghcr.io/thomiceli/opengist:1
-    container_name: opengist
+    image: ghcr.io/thomiceli/opengist:1.12
     restart: unless-stopped
     ports:
-      - "6157:6157"
+      - "6157:6157"   # Web UI
+      - "2222:2222"   # SSH (optional, remove if unused)
     volumes:
-      - "./opengist:/opengist"
+      - opengist_data:/opengist
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://127.0.0.1:6157/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  opengist_data:

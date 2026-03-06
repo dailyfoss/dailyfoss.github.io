@@ -1,0 +1,142 @@
+# ===============================
+# Docker Compose (Peekaping)
+# ===============================
+# host: http://localhost:8383
+# username:
+# password:
+
+services:
+
+  postgres:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: peekaping
+      POSTGRES_PASSWORD: change_this_password
+      POSTGRES_DB: peekaping
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U peekaping -d peekaping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  migrate:
+    image: 0xfurai/peekaping-migrate:latest
+    restart: "no"
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: peekaping
+      DB_PASSWORD: change_this_password
+      DB_NAME: peekaping
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  api:
+    image: 0xfurai/peekaping-api:latest
+    restart: unless-stopped
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: peekaping
+      DB_PASSWORD: change_this_password
+      DB_NAME: peekaping
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO - http://localhost:8034/api/v1/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  producer:
+    image: 0xfurai/peekaping-producer:latest
+    restart: unless-stopped
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: peekaping
+      DB_PASSWORD: change_this_password
+      DB_NAME: peekaping
+    depends_on:
+      redis:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+
+  worker:
+    image: 0xfurai/peekaping-worker:latest
+    restart: unless-stopped
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+    depends_on:
+      redis:
+        condition: service_healthy
+
+  ingester:
+    image: 0xfurai/peekaping-ingester:latest
+    restart: unless-stopped
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: peekaping
+      DB_PASSWORD: change_this_password
+      DB_NAME: peekaping
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  web:
+    image: 0xfurai/peekaping-web:latest
+    restart: unless-stopped
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  gateway:
+    image: nginx:latest
+    restart: unless-stopped
+    ports:
+      - "8383:80"
+    depends_on:
+      api:
+        condition: service_healthy
+      web:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:

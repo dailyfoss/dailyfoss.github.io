@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://nzbget.com",
-    "documentation": "https://github.com/nzbgetcom/nzbget",
+    "documentation": "https://nzbget.com/documentation",
     "source_code": "https://github.com/nzbgetcom/nzbget",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/nzbget.webp",
     "issues": "https://github.com/nzbgetcom/nzbget/issues",
     "releases": "https://github.com/nzbgetcom/nzbget/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nzbget-homepage.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/nzbget/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

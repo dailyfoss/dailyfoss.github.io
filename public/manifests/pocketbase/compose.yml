@@ -1,16 +1,27 @@
+# ===============================
+# Docker Compose (PocketBase)
+# ===============================
+# host: http://localhost
+# admin: created during setup
+# password: created during setup
+# ===============================
+
 services:
   pocketbase:
-    image: adrianmusante/pocketbase:latest
-    container_name: pocketbase
+    image: ghcr.io/muchobien/pocketbase:latest
+    restart: unless-stopped
     ports:
-      - 80:8090
+      - "80:8090"
     environment:
-      - USER_DEFINED_KEY=custom_value
-    networks:
-      - pocketbase_network
+      USER_DEFINED_KEY: custom_value
     volumes:
-      - /path/to/pocketbase-persistence:/pocketbase
+      - pocketbase_data:/pb_data
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:8090/_/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
 
-networks:
-  pocketbase_network:
-    external: true
+volumes:
+  pocketbase_data:

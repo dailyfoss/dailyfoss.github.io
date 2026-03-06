@@ -1,0 +1,57 @@
+# ===============================
+# Docker Compose (Nextexplorer)
+# ===============================
+# host: http://localhost:3000
+# username: created in application
+# password: created in application
+
+services:
+  nextexplorer:
+    image: nxzai/explorer:latest
+    restart: unless-stopped
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      NODE_ENV: production
+      PUBLIC_URL: https://files.example.com
+      SESSION_SECRET: change_this_to_a_strong_random_value
+      PUID: 1000
+      PGID: 1000
+      USER_DIR_ENABLED: "true"
+      USER_ROOT: /srv/nextexplorer/users
+
+    volumes:
+      - nextexplorer_config:/config
+      - nextexplorer_cache:/cache
+      - nextexplorer_users:/srv/nextexplorer/users
+      - projects_data:/mnt/Projects
+      - media_data:/mnt/Media
+
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+          memory: 1G
+        reservations:
+          memory: 256M
+
+volumes:
+  nextexplorer_config:
+  nextexplorer_cache:
+  nextexplorer_users:
+  projects_data:
+  media_data:

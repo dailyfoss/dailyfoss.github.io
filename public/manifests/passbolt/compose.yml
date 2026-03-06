@@ -1,31 +1,43 @@
+# ===============================
+# Docker Compose (Passbolt CE)
+# ===============================
+# host: https://localhost
+# username:
+# password:
+
 services:
+
   db:
     image: mariadb:10.11
     restart: unless-stopped
     environment:
+      MYSQL_DATABASE: passbolt
+      MYSQL_USER: passbolt
+      MYSQL_PASSWORD: change_this_password
       MYSQL_RANDOM_ROOT_PASSWORD: "true"
-      MYSQL_DATABASE: "passbolt"
-      MYSQL_USER: "passbolt"
-      MYSQL_PASSWORD: "P4ssb0lt"
     volumes:
-      - ./database_volume:/var/lib/mysql
+      - mariadb_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "passbolt", "-pchange_this_password"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   passbolt:
     image: passbolt/passbolt:latest-ce
-    #Alternatively you can use rootless:
-    #image: passbolt/passbolt:latest-ce-non-root
     restart: unless-stopped
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     environment:
-      APP_FULL_BASE_URL: https://passbolt.local
-      DATASOURCES_DEFAULT_HOST: "db"
-      DATASOURCES_DEFAULT_USERNAME: "passbolt"
-      DATASOURCES_DEFAULT_PASSWORD: "P4ssb0lt"
-      DATASOURCES_DEFAULT_DATABASE: "passbolt"
+      APP_FULL_BASE_URL: https://localhost
+      DATASOURCES_DEFAULT_HOST: db
+      DATASOURCES_DEFAULT_USERNAME: passbolt
+      DATASOURCES_DEFAULT_PASSWORD: change_this_password
+      DATASOURCES_DEFAULT_DATABASE: passbolt
     volumes:
-      - ./gpg_volume:/etc/passbolt/gpg
-      - ./jwt_volume:/etc/passbolt/jwt
+      - passbolt_gpg:/etc/passbolt/gpg
+      - passbolt_jwt:/etc/passbolt/jwt
     command:
       [
         "/usr/bin/wait-for.sh",
@@ -33,11 +45,18 @@ services:
         "0",
         "db:3306",
         "--",
-        "/docker-entrypoint.sh",
+        "/docker-entrypoint.sh"
       ]
     ports:
-      - 80:80
-      - 443:443
-    #Alternatively for non-root images:
-    # - 80:8080
-    # - 443:4433
+      - "80:80"
+      - "443:443"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mariadb_data:
+  passbolt_gpg:
+  passbolt_jwt:

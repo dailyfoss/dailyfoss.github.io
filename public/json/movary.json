@@ -23,13 +23,15 @@
   },
   "resources": {
     "website": "https://github.com/leepeuker/movary",
-    "documentation": "https://github.com/leepeuker/movary",
+    "documentation": "https://docs.movary.org",
     "source_code": "https://github.com/leepeuker/movary",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/movary.webp",
     "issues": "https://github.com/leepeuker/movary/issues",
     "releases": "https://github.com/leepeuker/movary/releases",
     "screenshots": [
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/movary_dashboard-screenshot.png"
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/movary_dashboard-screenshot.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/movary-dashboard-screenshot.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/movary-demo-screenshot.png"
     ]
   },
   "features": [
@@ -89,17 +91,19 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/movary/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
-    "username": null,
-    "password": null
+    "url": "https://demo.movary.org",
+    "username": "testUser@movary.org",
+    "password": "testUser"
   }
 }

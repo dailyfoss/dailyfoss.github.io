@@ -1,0 +1,29 @@
+# ===============================
+# Docker Compose (OpenBao)
+# ===============================
+# host: http://localhost:8200
+# username:
+# password:
+
+services:
+  openbao:
+    image: openbao/openbao:latest
+    container_name: openbao
+    restart: unless-stopped
+    ports:
+      - "8200:8200"
+    cap_add:
+      - IPC_LOCK
+    environment:
+      - BAO_LOCAL_CONFIG={"storage":{"file":{"path":"/openbao/data"}},"listener":{"tcp":{"address":"0.0.0.0:8200","tls_disable":1}},"ui":true}
+    volumes:
+      - openbao_data:/openbao/data
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:8200/v1/sys/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  openbao_data:

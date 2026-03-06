@@ -1,19 +1,66 @@
+# ===============================
+# Docker Compose (Obsidian LiveSync - CouchDB)
+# ===============================
+# host: https://obsidian-livesync.example.org
+# username: username
+# password: password
+
 services:
   couchdb:
-    image: couchdb:latest
-    container_name: obsidian-livesync
-    user: 0:0
+    image: couchdb:3
+    restart: unless-stopped
+
     environment:
-      - COUCHDB_USER=user
-      - COUCHDB_PASSWORD=testitest
+      COUCHDB_USER: username
+      COUCHDB_PASSWORD: password
+
     volumes:
-      - ./data:/opt/couchdb/data
-      - ./config/local.ini:/opt/couchdb/etc/local.ini
-    # Ports not needed when already passed to Traefik
-    ports:
-      - 5984:5984
+      - couchdb_data:/opt/couchdb/data
+
     networks:
       - proxy
+
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:5984/_up || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.obsidian-livesync.rule=Host(`obsidian-livesync.example.org`)"
+      - "traefik.http.routers.obsidian-livesync.entrypoints=websecure"
+      - "traefik.http.routers.obsidian-livesync.service=obsidian-livesync"
+      - "traefik.http.services.obsidian-livesync.loadbalancer.server.port=5984"
+      - "traefik.http.routers.obsidian-livesync.tls=true"
+      - "traefik.http.routers.obsidian-livesync.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.obsidian-livesync.middlewares=obsidiancors"
+
+      # CORS configuration for Obsidian
+      - "traefik.http.middlewares.obsidiancors.headers.accesscontrolallowmethods=GET,PUT,POST,HEAD,DELETE"
+      - "traefik.http.middlewares.obsidiancors.headers.accesscontrolallowheaders=accept,authorization,content-type,origin,referer"
+      - "traefik.http.middlewares.obsidiancors.headers.accesscontrolalloworiginlist=app://obsidian.md,capacitor://localhost,http://localhost"
+      - "traefik.http.middlewares.obsidiancors.headers.accesscontrolmaxage=3600"
+      - "traefik.http.middlewares.obsidiancors.headers.addvaryheader=true"
+      - "traefik.http.middlewares.obsidiancors.headers.accesscontrolallowcredentials=true"
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 512M
+        reservations:
+          memory: 128M
+
+volumes:
+  couchdb_data:
 
 networks:
   proxy:

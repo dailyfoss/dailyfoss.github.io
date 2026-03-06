@@ -1,0 +1,20 @@
+# ===============================
+# Docker Compose (Moocup)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  moocup:
+    image: ghcr.io/jellydeck/moocup:latest
+    container_name: moocup
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:3000/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 15s

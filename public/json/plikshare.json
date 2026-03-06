@@ -23,12 +23,19 @@
   },
   "resources": {
     "website": "https://plikshare.com",
-    "documentation": "https://plikshare.com",
+    "documentation": "https://plikshare.com/docs/get-started",
     "source_code": "https://github.com/damian-krychowski/plikshare",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/plikshare.webp",
     "issues": "https://github.com/damian-krychowski/plikshare/issues",
     "releases": "https://github.com/damian-krychowski/plikshare/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/plikshare-entry-page-box-links.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/plikshare-entry-page-complete-control-over-data.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/plikshare-entry-page-storages.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/plikshare-entry-page-streamlined-collaboration-config.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/plikshare-entry-page-users.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/plikshare-product-screenshot.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +95,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/plikshare/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

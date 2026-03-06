@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://www.usemergeable.dev",
-    "documentation": "https://github.com/pvcnt/mergeable",
+    "documentation": "https://www.usemergeable.dev/self-host",
     "source_code": "https://github.com/pvcnt/mergeable",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/mergeable.webp",
     "issues": "https://github.com/pvcnt/mergeable/issues",
     "releases": "https://github.com/pvcnt/mergeable/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/mergeable-screenshot.png"
+    ]
   },
   "features": [
     {
@@ -83,16 +85,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/mergeable/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://app.usemergeable.dev",
     "username": null,
     "password": null
   }

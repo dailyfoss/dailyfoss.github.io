@@ -28,7 +28,9 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/mini-qr.webp",
     "issues": "https://github.com/lyqht/mini-qr/issues",
     "releases": "https://github.com/lyqht/mini-qr/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/mini-qr-demo.png"
+    ]
   },
   "features": [
     {
@@ -79,16 +81,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/mini-qr/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://mini-qr-code-generator.vercel.app",
     "username": null,
     "password": null
   }

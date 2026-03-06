@@ -1,0 +1,26 @@
+# ===============================
+# Docker Compose (OwnTracks Frontend)
+# ===============================
+# host: http://localhost
+# ===============================
+
+services:
+  owntracks-frontend:
+    image: owntracks/frontend:latest
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    environment:
+      SERVER_HOST: otrecorder
+      SERVER_PORT: "8083"
+    volumes:
+      - owntracks_config:/usr/share/nginx/html/config
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+volumes:
+  owntracks_config:

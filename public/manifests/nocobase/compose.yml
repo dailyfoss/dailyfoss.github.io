@@ -1,0 +1,81 @@
+# ===============================
+# Docker Compose (NocoBase)
+# ===============================
+# host: http://localhost:13000
+# username: admin (created during first setup)
+# password: created during first setup
+
+services:
+  postgres:
+    image: postgres:16
+    restart: unless-stopped
+
+    command: postgres -c wal_level=logical
+
+    environment:
+      POSTGRES_USER: nocobase
+      POSTGRES_PASSWORD: nocobase
+      POSTGRES_DB: nocobase
+
+    volumes:
+      - nocobase_db_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nocobase -d nocobase"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  app:
+    image: nocobase/nocobase:latest-full
+    restart: unless-stopped
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+    ports:
+      - "13000:80"
+
+    environment:
+      APP_KEY: change_this_to_a_long_random_secret
+      DB_DIALECT: postgres
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_DATABASE: nocobase
+      DB_USER: nocobase
+      DB_PASSWORD: nocobase
+      TZ: UTC
+
+    volumes:
+      - nocobase_storage:/app/nocobase/storage
+
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+          memory: 1G
+        reservations:
+          memory: 256M
+
+volumes:
+  nocobase_db_data:
+  nocobase_storage:

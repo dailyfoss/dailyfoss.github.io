@@ -1,0 +1,148 @@
+# ===============================
+# Docker Compose (OpenTalk Core)
+# ===============================
+# host: http://localhost:8080
+# username: admin
+# password: change-me
+# ===============================
+
+services:
+
+  postgres:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: opentalk
+      POSTGRES_USER: ot
+      POSTGRES_PASSWORD: change-me
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ot -d opentalk"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  postgres_kc:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: kc
+      POSTGRES_PASSWORD: change-me
+    volumes:
+      - kc_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kc -d keycloak"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  rabbit:
+    image: rabbitmq:4.1-management
+    restart: unless-stopped
+    ports:
+      - "15672:15672"
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "check_running"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  redis:
+    image: redis:8-alpine
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+    command: ["redis-server", "--appendonly", "yes"]
+
+  minio:
+    image: minio/minio:latest
+    restart: unless-stopped
+    command: server /data
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: change-me
+    volumes:
+      - minio_data:/data
+    ports:
+      - "9000:9000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:9000/minio/health/live"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.3.2
+    restart: unless-stopped
+    command:
+      - start
+      - --health-enabled=true
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: change-me
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://postgres_kc:5432/keycloak
+      KC_DB_USERNAME: kc
+      KC_DB_PASSWORD: change-me
+      KC_HTTP_ENABLED: true
+    ports:
+      - "8087:8080"
+    depends_on:
+      postgres_kc:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:8080/health/ready"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  controller:
+    image: registry.opencode.de/opentalk/controller:v0.31.0-3
+    restart: unless-stopped
+    ports:
+      - "8090:11311"
+    environment:
+      OPENTALK_CTRL_DATABASE__URL: postgres://ot:change-me@postgres:5432/opentalk
+      OPENTALK_CTRL_RABBIT_MQ__URL: amqp://guest:guest@rabbit/%2F
+      OPENTALK_CTRL_MINIO__URI: http://minio:9000
+      OPENTALK_CTRL_MINIO__BUCKET: opentalk
+      OPENTALK_CTRL_MINIO__ACCESS_KEY: minioadmin
+      OPENTALK_CTRL_MINIO__SECRET_KEY: change-me
+    depends_on:
+      postgres:
+        condition: service_healthy
+      rabbit:
+        condition: service_healthy
+
+  livekit:
+    image: livekit/livekit-server:v1.9.0
+    restart: unless-stopped
+    command: --dev
+    ports:
+      - "7880:7880"
+      - "7881:7881"
+    environment:
+      LIVEKIT_KEYS_API_KEY: controller
+      LIVEKIT_KEYS_API_SECRET: change-me
+
+  web-frontend:
+    image: registry.opencode.de/opentalk/web-frontend:v2.6.2-1
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      CONTROLLER_HOST: controller
+      BASE_URL: http://localhost:8080
+      OIDC_ISSUER: http://localhost:8087/realms/opentalk
+      OIDC_CLIENT_ID: OtFrontend
+      LIVEKIT_SERVER_URL: http://localhost:7880
+    depends_on:
+      - controller
+
+volumes:
+  pg_data:
+  kc_pg_data:
+  redis_data:
+  minio_data:

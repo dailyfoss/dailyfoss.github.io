@@ -1,0 +1,26 @@
+# ===============================
+# Docker Compose (Monitarr)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  monitarr:
+    image: ghcr.io/nickshanks347/monitarr:latest
+    container_name: monitarr
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - SONARR_URL=http://sonarr:8989
+      - SONARR_API_KEY=YOUR_SONARR_API_KEY
+      - RADARR_URL=http://radarr:7878
+      - RADARR_API_KEY=YOUR_RADARR_API_KEY
+      - BASE_PATH=/monitarr
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:3000/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 15s

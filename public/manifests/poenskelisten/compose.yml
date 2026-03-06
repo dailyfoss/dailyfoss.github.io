@@ -1,0 +1,58 @@
+# ===============================
+# Docker Compose (Poenskelisten)
+# ===============================
+# host: http://localhost:8080
+# username: created on first setup
+# password: created on first setup
+# ===============================
+
+services:
+
+  db:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: poenskelisten
+      POSTGRES_USER: poenskelisten
+      POSTGRES_PASSWORD: change-db-password
+    volumes:
+      - poenskelisten_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U poenskelisten -d poenskelisten"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  poenskelisten-app:
+    image: ghcr.io/aunefyren/poenskelisten:latest
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+      dbtype: postgres
+      dbip: db
+      dbport: "5432"
+      dbname: poenskelisten
+      dbusername: poenskelisten
+      dbpassword: change-db-password
+      timezone: Europe/Oslo
+      generateinvite: "true"
+    volumes:
+      - poenskelisten_files:/app/files
+      - poenskelisten_images:/app/images
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:8080 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  poenskelisten_db:
+  poenskelisten_files:
+  poenskelisten_images:

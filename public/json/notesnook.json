@@ -22,13 +22,15 @@
     "github_releases_this_year": 0
   },
   "resources": {
-    "website": "https://notesnook.com/",
-    "documentation": "https://github.com/streetwriters/notesnook-sync-server",
-    "source_code": "https://github.com/streetwriters/notesnook-sync-server",
+    "website": "https://notesnook.com",
+    "documentation": "https://github.com/streetwriters/notesnook",
+    "source_code": "https://github.com/streetwriters/notesnook",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/notesnook.webp",
-    "issues": "https://github.com/streetwriters/notesnook-sync-server/issues",
+    "issues": "https://github.com/streetwriters/notesnook/issues",
     "releases": null,
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/notesnook-homepage.png"
+    ]
   },
   "features": [
     {
@@ -83,12 +85,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/notesnook/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

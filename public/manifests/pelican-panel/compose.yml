@@ -1,0 +1,84 @@
+# ===============================
+# Docker Compose (Pelican Panel)
+# ===============================
+# host: https://localhost
+# username:
+# password:
+
+services:
+
+  mariadb:
+    image: mariadb:10.11
+    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: change_root_password
+      MYSQL_DATABASE: panel
+      MYSQL_USER: pelican
+      MYSQL_PASSWORD: change_db_password
+    volumes:
+      - pelican_db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  panel:
+    image: ghcr.io/pelican-dev/panel:latest
+    restart: unless-stopped
+    depends_on:
+      mariadb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      APP_URL: https://localhost
+      APP_ENV: production
+      APP_DEBUG: "false"
+
+      LE_EMAIL: admin@example.com
+
+      CACHE_STORE: redis
+      SESSION_DRIVER: redis
+      QUEUE_CONNECTION: redis
+      REDIS_HOST: redis
+
+      DB_CONNECTION: mariadb
+      DB_HOST: mariadb
+      DB_PORT: 3306
+      DB_DATABASE: panel
+      DB_USERNAME: pelican
+      DB_PASSWORD: change_db_password
+
+      MAIL_DRIVER: log
+
+      XDG_DATA_HOME: /pelican-data
+    volumes:
+      - pelican_data:/pelican-data
+      - pelican_logs:/var/www/html/storage/logs
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pelican_db:
+  pelican_data:
+  pelican_logs:
+  redis_data:

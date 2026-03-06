@@ -1,0 +1,49 @@
+# ===============================
+# Docker Compose (Movary)
+# ===============================
+# host: http://localhost:8080
+# username: (created during setup)
+# password:
+
+services:
+  movary:
+    image: leepeuker/movary:latest
+    container_name: movary
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      - APP_ENV=production
+      - DATABASE_URL=postgres://movary:movary_password@db:5432/movary
+    volumes:
+      - movary_data:/var/www/html/storage
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  db:
+    image: postgres:17-alpine
+    container_name: movary-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=movary
+      - POSTGRES_PASSWORD=movary_password
+      - POSTGRES_DB=movary
+    volumes:
+      - movary_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U movary -d movary"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  movary_data:
+  movary_db:

@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "Apache-2.0",
     "version": "v2.0.2",
     "date_app_added": "2025-11-23",
     "date_last_released": "2026-02-22",
@@ -23,13 +23,21 @@
   },
   "resources": {
     "website": "https://www.nocobase.com",
-    "documentation": "https://github.com/nocobase/nocobase",
+    "documentation": "https://v2.docs.nocobase.com",
     "source_code": "https://github.com/nocobase/nocobase",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/nocobase.webp",
     "issues": "https://github.com/nocobase/nocobase/issues",
     "releases": "https://github.com/nocobase/nocobase/releases",
     "logo_light": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/nocobase-light.webp",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nocobase-calendar.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nocobase-customers.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nocobase-dashboard.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nocobase-lead.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nocobase-orders.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nocobase-pipeline.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nocobase-products.png"
+    ]
   },
   "features": [
     {
@@ -87,16 +95,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/nocobase/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://demo.nocobase.com",
     "username": null,
     "password": null
   }

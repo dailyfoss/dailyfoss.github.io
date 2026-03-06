@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "BSD 3-Clause",
     "version": "2.0.3",
     "date_app_added": "2025-11-23",
     "date_last_released": "2025-11-12",
@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://privatebin.info/",
-    "documentation": "https://github.com/PrivateBin/PrivateBin",
+    "documentation": "https://github.com/PrivateBin/PrivateBin/blob/master/doc/Installation.md",
     "source_code": "https://github.com/PrivateBin/PrivateBin",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/privatebin.webp",
     "issues": "https://github.com/PrivateBin/PrivateBin/issues",
     "releases": "https://github.com/PrivateBin/PrivateBin/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/privatebin-sample-demo.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/privatebin/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

@@ -1,22 +1,45 @@
-services:
-  postgres:
-    image: docker.io/postgres:15
-    volumes:
-      - /var/lib/postgresql/data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
-    environment:
-      POSTGRES_USER: passwordpusher_user
-      POSTGRES_PASSWORD: passwordpusher_passwd
-      POSTGRES_DB: passwordpusher_db
+# ===============================
+# Docker Compose (Password Pusher + PostgreSQL)
+# ===============================
+# host: http://localhost:5100
+# username:
+# password:
 
-  passwordpusher:
-    image: docker.io/pglombardo/pwpush:release
+services:
+
+  postgres:
+    image: postgres:15
+    restart: unless-stopped
     environment:
-      DATABASE_URL: 'postgres://passwordpusher_user:passwordpusher_passwd@postgres:5432/passwordpusher_db'
+      POSTGRES_USER: passwordpusher
+      POSTGRES_PASSWORD: change_this_password
+      POSTGRES_DB: passwordpusher
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U passwordpusher"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  pwpush:
+    image: docker.io/pglombardo/pwpush:stable
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
     ports:
       - "5100:5100"
-    depends_on:
-      - postgres
-    links:
-     - postgres:postgres
+    environment:
+      DATABASE_URL: postgres://passwordpusher:change_this_password@postgres:5432/passwordpusher
+      PWPUSH_MASTER_KEY: change_this_master_key
+      PWP__ENABLE_LOGINS: "true"
+      PWP__FILES__STORAGE: local
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5100/up"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  postgres_data:

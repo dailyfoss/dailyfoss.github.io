@@ -1,0 +1,57 @@
+# ===============================
+# Docker Compose (Mobilizon)
+# ===============================
+# host: http://localhost:4000
+# username: (created during setup)
+# password:
+
+services:
+  mobilizon:
+    image: framasoft/mobilizon:latest
+    container_name: mobilizon
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "4000:4000"
+    environment:
+      - MIX_ENV=prod
+      - MOBILIZON_INSTANCE_NAME=My Mobilizon
+      - MOBILIZON_INSTANCE_HOST=localhost
+      - MOBILIZON_INSTANCE_PORT=4000
+      - MOBILIZON_DATABASE_HOST=db
+      - MOBILIZON_DATABASE_PORT=5432
+      - MOBILIZON_DATABASE_USERNAME=mobilizon
+      - MOBILIZON_DATABASE_PASSWORD=mobilizon_password
+      - MOBILIZON_DATABASE_DBNAME=mobilizon
+      - MOBILIZON_SECRET_KEY_BASE=change_this_secret_key
+    volumes:
+      - mobilizon_uploads:/var/lib/mobilizon/uploads
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:4000/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+
+  db:
+    image: postgres:17-alpine
+    container_name: mobilizon-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=mobilizon
+      - POSTGRES_PASSWORD=mobilizon_password
+      - POSTGRES_DB=mobilizon
+    volumes:
+      - mobilizon_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mobilizon -d mobilizon"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  mobilizon_uploads:
+  mobilizon_db:

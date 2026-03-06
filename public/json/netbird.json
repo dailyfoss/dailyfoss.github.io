@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "AGPL-3.0",
     "version": "v0.65.3",
     "date_app_added": "2025-11-23",
     "date_last_released": "2026-02-19",
@@ -23,12 +23,19 @@
   },
   "resources": {
     "website": "https://netbird.io",
-    "documentation": "https://github.com/netbirdio/netbird",
+    "documentation": "https://docs.netbird.io",
     "source_code": "https://github.com/netbirdio/netbird",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/netbird.webp",
     "issues": "https://github.com/netbirdio/netbird/issues",
     "releases": "https://github.com/netbirdio/netbird/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/netbird-homepage.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/netbird-activity-events.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/netbird-approve-peer.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/netbird-idp.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/netbird-peer-approval-and-periodic-auth.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/netbird-policy-list.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +95,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/netbird/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

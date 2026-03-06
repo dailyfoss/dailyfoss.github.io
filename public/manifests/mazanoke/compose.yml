@@ -1,0 +1,100 @@
+# ===============================
+# Docker Compose (Mbin)
+# ===============================
+# host: http://localhost:8080
+# username: (created during setup)
+# password: (created during setup)
+# database user: mbin
+# database password: change_this_password
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: mbin-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: mbin
+      POSTGRES_USER: mbin
+      POSTGRES_PASSWORD: change_this_password
+    volumes:
+      - mbin_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mbin"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - internal
+
+  redis:
+    image: redis:7-alpine
+    container_name: mbin-redis
+    restart: unless-stopped
+    volumes:
+      - mbin_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - internal
+
+  mbin:
+    image: ghcr.io/mbinorg/mbin:latest
+    container_name: mbin
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      APP_ENV: prod
+      DATABASE_URL: postgresql://mbin:change_this_password@postgres:5432/mbin
+      REDIS_URL: redis://redis:6379
+      APP_SECRET: change_this_secret
+      APP_DOMAIN: example.com
+    volumes:
+      - mbin_media:/var/www/mbin/public/media
+    ports:
+      - "8080:80"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    networks:
+      - internal
+      - external
+
+  worker:
+    image: ghcr.io/mbinorg/mbin:latest
+    container_name: mbin-worker
+    restart: unless-stopped
+    command: php bin/console messenger:consume async
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      APP_ENV: prod
+      DATABASE_URL: postgresql://mbin:change_this_password@postgres:5432/mbin
+      REDIS_URL: redis://redis:6379
+      APP_SECRET: change_this_secret
+      APP_DOMAIN: example.com
+    volumes:
+      - mbin_media:/var/www/mbin/public/media
+    networks:
+      - internal
+
+volumes:
+  mbin_postgres_data:
+  mbin_redis_data:
+  mbin_media:
+
+networks:
+  internal:
+    internal: true
+  external:

@@ -1,0 +1,30 @@
+# ===============================
+# Docker Compose (NanoNote)
+# ===============================
+# host: http://localhost:3030
+# username:
+# password:
+
+services:
+  nanote:
+    image: omarmir/nanote:latest
+    container_name: nanote
+    restart: unless-stopped
+    ports:
+      - "3030:3000"
+    environment:
+      - NOTES_PATH=/nanote/notes
+      - UPLOAD_PATH=/nanote/uploads
+      - CONFIG_PATH=/nanote/config
+      - SECRET_KEY=change_this_secret_key
+    volumes:
+      - nanote_data:/nanote
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+volumes:
+  nanote_data:

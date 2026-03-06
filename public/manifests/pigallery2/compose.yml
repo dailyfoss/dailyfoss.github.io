@@ -1,0 +1,32 @@
+# ===============================
+# Docker Compose (PiGallery2)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+
+  pigallery2:
+    image: bpatrik/pigallery2:latest
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      NODE_ENV: production
+    volumes:
+      - pigallery2_config:/app/data/config
+      - pigallery2_db:/app/data/db
+      - pigallery2_images:/app/data/images:ro
+      - pigallery2_tmp:/app/data/tmp
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pigallery2_config:
+  pigallery2_db:
+  pigallery2_images:
+  pigallery2_tmp:

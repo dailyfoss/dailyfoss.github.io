@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "MIT",
     "version": "v5.0.0",
     "date_app_added": "2025-11-23",
     "date_last_released": "2025-10-11",
@@ -28,7 +28,11 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/mantium.webp",
     "issues": "https://github.com/diogovalentte/mantium/issues",
     "releases": "https://github.com/diogovalentte/mantium/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/mantium-list.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/mantium-screenshot.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/mantium-search-by-name.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +92,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/mantium/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

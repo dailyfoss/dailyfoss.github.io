@@ -1,15 +1,31 @@
+# ===============================
+# Docker Compose (ProjectSend)
+# ===============================
+# host: http://localhost:8080
+# username: admin
+# password: (set during setup)
+
 services:
   projectsend:
     image: lscr.io/linuxserver/projectsend:latest
     container_name: projectsend
+    restart: unless-stopped
+    ports:
+      - "8080:80"
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Etc/UTC
-      - MAX_UPLOAD=5000
     volumes:
-      - /path/to/projectsend/config:/config
-      - /path/to/data:/data
-    ports:
-      - 80:80
-    restart: unless-stopped
+      - projectsend_config:/config
+      - projectsend_data:/data
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+volumes:
+  projectsend_config:
+  projectsend_data:

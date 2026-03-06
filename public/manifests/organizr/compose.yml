@@ -1,13 +1,25 @@
+# ===============================
+# Docker Compose (Organizr)
+# ===============================
+# host: http://localhost:8080
+# username: set during first setup
+# password: set during first setup
+# ===============================
+
 services:
   organizr:
-    image: linuxserver/organizr
-    container_name: organizr
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=
-    volumes:
-      - :/config
-    ports:
-      - 9983:80
+    image: organizr/organizr:latest
     restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - organizr_data:/config
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+volumes:
+  organizr_data:

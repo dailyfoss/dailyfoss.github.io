@@ -1,0 +1,44 @@
+# ===============================
+# Docker Compose (nzbdav)
+# ===============================
+# host: http://localhost:3000
+# username: configured inside app
+# password: configured inside app
+
+services:
+  nzbdav:
+    image: nzbdav/nzbdav:alpha
+    restart: unless-stopped
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      PUID: 1000
+      PGID: 1000
+
+    volumes:
+      - nzbdav_config:/config
+
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 256M
+        reservations:
+          memory: 64M
+
+volumes:
+  nzbdav_config:

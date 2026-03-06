@@ -23,12 +23,15 @@
   },
   "resources": {
     "website": "https://github.com/0xfurai/peekaping",
-    "documentation": "https://github.com/0xfurai/peekaping",
+    "documentation": "https://docs.peekaping.com",
     "source_code": "https://github.com/0xfurai/peekaping",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/peekaping.webp",
     "issues": "https://github.com/0xfurai/peekaping/issues",
     "releases": "https://github.com/0xfurai/peekaping/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/peekaping-homepage.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/peekaping-monitor.png"
+    ]
   },
   "features": [
     {
@@ -88,16 +91,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/peekaping/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://demo.peekaping.com/register",
     "username": null,
     "password": null
   }

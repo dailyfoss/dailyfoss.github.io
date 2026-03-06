@@ -1,0 +1,27 @@
+# ===============================
+# Docker Compose (pgAdmin 4)
+# ===============================
+# host: http://localhost:8081
+# username: admin@example.com
+# password: change_this_password
+
+services:
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: change_this_password
+      PGADMIN_CONFIG_SERVER_MODE: "True"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost/misc/ping"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pgadmin_data:

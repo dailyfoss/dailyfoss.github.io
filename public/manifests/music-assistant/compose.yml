@@ -1,0 +1,31 @@
+# ===============================
+# Docker Compose (Music Assistant)
+# ===============================
+# host: http://localhost:8095
+# username:
+# password:
+
+services:
+  music-assistant-server:
+    image: ghcr.io/music-assistant/server:latest
+    container_name: music-assistant-server
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      - LOG_LEVEL=info
+    volumes:
+      - music_assistant_data:/data
+    cap_add:
+      - SYS_ADMIN
+      - DAC_READ_SEARCH
+    security_opt:
+      - apparmor:unconfined
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:8095/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+volumes:
+  music_assistant_data:

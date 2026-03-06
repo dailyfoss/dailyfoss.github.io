@@ -23,12 +23,18 @@
   },
   "resources": {
     "website": "https://github.com/nzbdav-dev/nzbdav",
-    "documentation": "https://github.com/nzbdav-dev/nzbdav",
+    "documentation": "https://github.com/nzbdav-dev/nzbdav/blob/main/docs/setup-guide.md",
     "source_code": "https://github.com/nzbdav-dev/nzbdav",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/nzb-dav.webp",
     "issues": "https://github.com/nzbdav-dev/nzbdav/issues",
     "releases": "https://github.com/nzbdav-dev/nzbdav/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nzb-dav-dav-explore.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nzb-dav-queue-history.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nzb-dav-settings-usenet.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nzb-dav-settings-webdav.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nzb-dav-setup.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +94,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/nzb-dav/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

@@ -1,0 +1,36 @@
+# ===============================
+# Docker Compose (MyBibliotheca)
+# ===============================
+# host: http://localhost:5054
+# username:
+# password:
+
+services:
+  bibliotheca:
+    image: pickles4evaaaa/mybibliotheca:latest
+    container_name: bibliotheca
+    restart: unless-stopped
+    ports:
+      - "5054:5054"
+    volumes:
+      - bibliotheca_data:/app/data
+    environment:
+      - SECRET_KEY=change_this_secret_key
+      - SECURITY_PASSWORD_SALT=change_this_password_salt
+      - KUZU_DB_PATH=/app/data/kuzu
+      - GRAPH_DATABASE_ENABLED=true
+      - SITE_NAME=MyBibliotheca
+      - TIMEZONE=UTC
+      - WORKERS=1
+      - LOG_LEVEL=info
+      - MYBIBLIOTHECA_VERBOSE_INIT=false
+      - AUTO_MIGRATE=false
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:5054/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  bibliotheca_data:

@@ -1,27 +1,51 @@
+# ===============================
+# Docker Compose (Pastefy)
+# ===============================
+# host: http://localhost:9999
+# username:
+# password:
+
 services:
-  db:
+
+  mariadb:
     image: mariadb:10.11
-    volumes:
-      - ./db:/var/lib/mysql
+    restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: tyooe
+      MYSQL_ROOT_PASSWORD: change_root_password
       MYSQL_DATABASE: pastefy
       MYSQL_USER: pastefy
-      MYSQL_PASSWORD: tyooe
+      MYSQL_PASSWORD: change_db_password
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   pastefy:
-    depends_on:
-      - db
     image: interaapps/pastefy:latest
+    restart: unless-stopped
+    depends_on:
+      mariadb:
+        condition: service_healthy
     ports:
-      - 9999:80
+      - "9999:80"
     environment:
       HTTP_SERVER_PORT: 80
       HTTP_SERVER_CORS: "*"
       DATABASE_DRIVER: mysql
       DATABASE_NAME: pastefy
       DATABASE_USER: pastefy
-      DATABASE_PASSWORD: tyooe
-      DATABASE_HOST: db
+      DATABASE_PASSWORD: change_db_password
+      DATABASE_HOST: mariadb
       DATABASE_PORT: 3306
       SERVER_NAME: http://localhost:9999
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mariadb_data:

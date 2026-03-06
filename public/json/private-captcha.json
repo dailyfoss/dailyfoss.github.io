@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "PolyForm Noncommercial License 1.0.0",
     "version": "v1.29.0",
     "date_app_added": "2025-11-23",
     "date_last_released": "2026-02-09",
@@ -23,13 +23,15 @@
   },
   "resources": {
     "website": "https://privatecaptcha.com",
-    "documentation": "https://github.com/PrivateCaptcha/PrivateCaptcha",
+    "documentation": "https://docs.privatecaptcha.com/docs/getting-started",
     "source_code": "https://github.com/PrivateCaptcha/PrivateCaptcha",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/private-captcha.webp",
     "issues": "https://github.com/PrivateCaptcha/PrivateCaptcha/issues",
     "releases": "https://github.com/PrivateCaptcha/PrivateCaptcha/releases",
     "logo_light": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/private-captcha-light.webp",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/private-captcha-homepage.png"
+    ]
   },
   "features": [
     {
@@ -89,12 +91,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/private-captcha/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

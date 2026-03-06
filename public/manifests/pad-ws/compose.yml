@@ -1,0 +1,126 @@
+# ===============================
+# Docker Compose (Pad Workspace Stack)
+# ===============================
+# host: http://localhost:7080
+# username: admin
+# password: admin
+
+services:
+
+  postgres:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: coder
+      POSTGRES_PASSWORD: coderpassword
+      POSTGRES_DB: coder
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U coder"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7
+    restart: unless-stopped
+    command: >
+      redis-server
+      --requirepass redispassword
+      --save 60 1
+      --loglevel warning
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "redispassword", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:25
+    restart: unless-stopped
+    command: start
+    ports:
+      - "8080:8080"
+    environment:
+      KC_HTTP_ENABLED: "true"
+      KC_PROXY: edge
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://postgres:5432/coder
+      KC_DB_USERNAME: coder
+      KC_DB_PASSWORD: coderpassword
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  coder:
+    image: ghcr.io/coder/coder:latest
+    restart: unless-stopped
+    ports:
+      - "7080:7080"
+    environment:
+      CODER_ACCESS_URL: http://localhost:7080
+      CODER_ADDRESS: 0.0.0.0:7080
+      CODER_PG_CONNECTION_URL: postgresql://coder:coderpassword@postgres:5432/coder?sslmode=disable
+      CODER_OIDC_ISSUER_URL: http://keycloak:8080/realms/pad
+      CODER_OIDC_CLIENT_ID: coder
+      CODER_OIDC_CLIENT_SECRET: codersecret
+      CODER_OIDC_IGNORE_EMAIL_VERIFIED: "true"
+      CODER_OAUTH2_GITHUB_DEFAULT_PROVIDER_ENABLED: "false"
+      CODER_OIDC_SIGN_IN_TEXT: Sign in for pad
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      postgres:
+        condition: service_healthy
+      keycloak:
+        condition: service_started
+
+  pad:
+    image: ghcr.io/pad-ws/pad.ws:main
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      STATIC_DIR: /app/frontend/dist
+      ASSETS_DIR: /app/frontend/dist/assets
+
+      OIDC_CLIENT_ID: coder
+      OIDC_CLIENT_SECRET: codersecret
+      OIDC_SERVER_URL: http://keycloak:8080
+      OIDC_REALM: pad
+      REDIRECT_URI: http://localhost:3000/auth/callback
+
+      POSTGRES_USER: coder
+      POSTGRES_PASSWORD: coderpassword
+      POSTGRES_DB: coder
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_PASSWORD: redispassword
+
+      CODER_URL: http://coder:7080
+      CODER_API_KEY: change_me
+      CODER_TEMPLATE_ID: default
+      CODER_DEFAULT_ORGANIZATION: default
+
+      API_WORKERS: 2
+      FRONTEND_URL: http://localhost:3000
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      coder:
+        condition: service_started
+
+volumes:
+  postgres_data:
+  redis_data:

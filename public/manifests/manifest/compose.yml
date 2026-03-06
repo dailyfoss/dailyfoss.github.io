@@ -1,0 +1,47 @@
+# ===============================
+# Docker Compose (Manifest)
+# ===============================
+# host: http://localhost:1111
+# username: (create during first setup)
+# password: (create during first setup)
+# database user: manifest
+# database password: manifest
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: manifest-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: manifest
+      POSTGRES_USER: manifest
+      POSTGRES_PASSWORD: manifest
+    volumes:
+      - manifest_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U manifest"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  manifest:
+    image: mnfst/manifest:latest
+    container_name: manifest
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://manifest:manifest@postgres:5432/manifest
+      NODE_ENV: production
+      PORT: 1111
+    ports:
+      - "1111:1111"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:1111/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  manifest_postgres_data:

@@ -1,0 +1,26 @@
+# ===============================
+# Docker Compose (MkDocs)
+# ===============================
+# host: http://localhost:8000
+# username:
+# password:
+
+services:
+  mkdocs:
+    image: squidfunk/mkdocs-material:latest
+    container_name: mkdocs
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - mkdocs_project:/docs
+    command: serve -a 0.0.0.0:8000
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+volumes:
+  mkdocs_project:
