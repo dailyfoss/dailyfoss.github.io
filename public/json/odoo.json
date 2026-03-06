@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "GNU GPL-3.0",
     "version": null,
     "date_app_added": "2025-11-23",
     "date_last_released": null,
@@ -23,12 +23,15 @@
   },
   "resources": {
     "website": "https://www.odoo.com",
-    "documentation": "https://github.com/odoo/odoo",
+    "documentation": "https://www.odoo.com/page/docs",
     "source_code": "https://github.com/odoo/odoo",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/odoo.webp",
     "issues": "https://github.com/odoo/odoo/issues",
     "releases": null,
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/odoo-hero-page.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/odoo-preview.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +91,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/odoo/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

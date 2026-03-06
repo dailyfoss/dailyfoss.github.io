@@ -28,7 +28,9 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/nextcloud-notes.webp",
     "issues": "https://github.com/nextcloud/notes/issues",
     "releases": "https://github.com/nextcloud/notes/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nextcloud-notes.png"
+    ]
   },
   "features": [
     {
@@ -87,12 +89,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/nextcloud-notes/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

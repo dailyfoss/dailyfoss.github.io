@@ -17,13 +17,15 @@
     "github_stars": null
   },
   "resources": {
-    "website": null,
-    "documentation": null,
+    "website": "https://pods-blitz.org",
+    "documentation": "https://docs.pods-blitz.org",
     "source_code": "https://codeberg.org/pods-blitz/pods-blitz",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/pods-blitz.webp",
     "issues": null,
     "releases": null,
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/pods-blitz-homepage.png"
+    ]
   },
   "features": [
     {
@@ -83,12 +85,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/pods-blitz/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

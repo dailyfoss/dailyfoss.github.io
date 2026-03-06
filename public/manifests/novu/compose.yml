@@ -1,0 +1,96 @@
+# ===============================
+# Docker Compose (Novu)
+# ===============================
+# Web UI: http://localhost:4200
+# API: http://localhost:3000
+# No default login (first user created on signup)
+
+services:
+  mongodb:
+    image: mongo:7
+    restart: unless-stopped
+    volumes:
+      - novu_mongodb:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.runCommand({ ping: 1 })"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - novu_redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  api:
+    image: ghcr.io/novuhq/novu/api:latest
+    restart: unless-stopped
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      MONGO_URL: mongodb://mongodb:27017/novu
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      JWT_SECRET: replace_with_strong_secret
+      STORE_ENCRYPTION_KEY: replace_with_strong_32_char_key
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000/v1/health-check || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  worker:
+    image: ghcr.io/novuhq/novu/worker:latest
+    restart: unless-stopped
+    depends_on:
+      - api
+    environment:
+      NODE_ENV: production
+      MONGO_URL: mongodb://mongodb:27017/novu
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      JWT_SECRET: replace_with_strong_secret
+      STORE_ENCRYPTION_KEY: replace_with_strong_32_char_key
+
+  ws:
+    image: ghcr.io/novuhq/novu/ws:latest
+    restart: unless-stopped
+    depends_on:
+      - api
+    ports:
+      - "3002:3002"
+    environment:
+      NODE_ENV: production
+      MONGO_URL: mongodb://mongodb:27017/novu
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      JWT_SECRET: replace_with_strong_secret
+
+  web:
+    image: ghcr.io/novuhq/novu/web:latest
+    restart: unless-stopped
+    depends_on:
+      - api
+    ports:
+      - "4200:4200"
+    environment:
+      NODE_ENV: production
+      REACT_APP_API_URL: http://localhost:3000
+      REACT_APP_WS_URL: ws://localhost:3002
+
+volumes:
+  novu_mongodb:
+  novu_redis:

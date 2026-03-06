@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://theaxelander.github.io",
-    "documentation": "https://github.com/TheAxelander/OpenBudgeteer",
+    "documentation": "https://axelander.dev/latest/install",
     "source_code": "https://github.com/TheAxelander/OpenBudgeteer",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/openbudgeteer.webp",
     "issues": "https://github.com/TheAxelander/OpenBudgeteer/issues",
@@ -97,12 +97,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/openbudgeteer/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

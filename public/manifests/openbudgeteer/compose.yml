@@ -1,0 +1,62 @@
+# ===============================
+# Docker Compose (OpenBudgeteer)
+# ===============================
+# host: http://localhost:8081
+# username:
+# password:
+
+services:
+  openbudgeteer:
+    image: axelander/openbudgeteer:latest
+    container_name: openbudgeteer
+    restart: unless-stopped
+    ports:
+      - "8081:8080"
+    environment:
+      - CONNECTION_PROVIDER=mariadb
+      - CONNECTION_SERVER=mariadb
+      - CONNECTION_PORT=3306
+      - CONNECTION_DATABASE=openbudgeteer
+      - CONNECTION_USER=openbudgeteer
+      - CONNECTION_PASSWORD=change_db_password
+      - CONNECTION_REDIS_SERVER=redis
+      - APPSETTINGS_CULTURE=en-US
+    depends_on:
+      mariadb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  mariadb:
+    image: mariadb:11
+    container_name: openbudgeteer-mariadb
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=change_root_password
+      - MYSQL_DATABASE=openbudgeteer
+      - MYSQL_USER=openbudgeteer
+      - MYSQL_PASSWORD=change_db_password
+    volumes:
+      - openbudgeteer_db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u openbudgeteer -pchange_db_password"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  redis:
+    image: redis:7-alpine
+    container_name: openbudgeteer-redis
+    restart: unless-stopped
+    volumes:
+      - openbudgeteer_redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  openbudgeteer_db:
+  openbudgeteer_redis:

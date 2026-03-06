@@ -1,0 +1,102 @@
+# ===============================
+# Docker Compose (PieFed)
+# ===============================
+# host: http://localhost:8030
+# username:
+# password:
+
+services:
+
+  postgres:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: piefed
+      POSTGRES_USER: piefed
+      POSTGRES_PASSWORD: change_this_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U piefed -d piefed"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  web:
+    image: ghcr.io/piefed/piefed-web:latest
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "8030:5000"
+    environment:
+      DATABASE_URL: postgresql://piefed:change_this_password@postgres:5432/piefed
+      REDIS_URL: redis://redis:6379/0
+    volumes:
+      - piefed_media:/app/media
+      - piefed_logs:/app/logs
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:5000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  celery:
+    image: ghcr.io/piefed/piefed-celery:latest
+    restart: unless-stopped
+    depends_on:
+      redis:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://piefed:change_this_password@postgres:5432/piefed
+      REDIS_URL: redis://redis:6379/0
+    volumes:
+      - piefed_media:/app/media
+      - piefed_logs:/app/logs
+
+  notifications:
+    image: ghcr.io/piefed/piefed-notifications:latest
+    restart: unless-stopped
+    depends_on:
+      redis:
+        condition: service_healthy
+    ports:
+      - "8040:8000"
+    environment:
+      REDIS_URL: redis://redis:6379/0
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  adminer:
+    image: adminer:latest
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8888:8080"
+
+volumes:
+  postgres_data:
+  redis_data:
+  piefed_media:
+  piefed_logs:

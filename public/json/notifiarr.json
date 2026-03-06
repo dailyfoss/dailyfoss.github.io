@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://notifiarr.wiki",
-    "documentation": "https://github.com/Notifiarr/notifiarr",
+    "documentation": "https://notifiarr.wiki",
     "source_code": "https://github.com/Notifiarr/notifiarr",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/notifiarr.webp",
     "issues": "https://github.com/Notifiarr/notifiarr/issues",
     "releases": "https://github.com/Notifiarr/notifiarr/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/notifiarr-homepage.png"
+    ]
   },
   "features": [
     {
@@ -87,12 +89,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/notifiarr/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

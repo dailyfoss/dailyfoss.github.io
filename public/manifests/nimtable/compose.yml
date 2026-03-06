@@ -1,0 +1,54 @@
+# ===============================
+# Docker Compose (Nimtable)
+# ===============================
+# host: http://localhost:3000
+# username: admin
+# password: admin
+
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: nimtable
+      POSTGRES_USER: nimtable
+      POSTGRES_PASSWORD: nimtable
+
+    volumes:
+      - nimtable_db_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nimtable -d nimtable"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    image: nimtable/nimtable:latest
+    restart: unless-stopped
+
+    depends_on:
+      db:
+        condition: service_healthy
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      DATABASE_URL: postgres://nimtable:nimtable@db:5432/nimtable
+
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  nimtable_db_data:

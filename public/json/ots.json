@@ -29,7 +29,9 @@
     "issues": "https://github.com/Luzifer/ots/issues",
     "releases": "https://github.com/Luzifer/ots/releases",
     "logo_light": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/ots-light.webp",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/ots-demo-screenshot.png"
+    ]
   },
   "features": [
     {
@@ -84,12 +86,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/ots/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
@@ -100,7 +104,7 @@
     }
   },
   "demo": {
-    "url": null,
+    "url": "https://ots.fyi",
     "username": null,
     "password": null
   }

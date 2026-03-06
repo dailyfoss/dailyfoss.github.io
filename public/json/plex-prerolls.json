@@ -28,7 +28,9 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/plex-prerolls.webp",
     "issues": "https://github.com/nwithan8/plex-prerolls/issues",
     "releases": "https://github.com/nwithan8/plex-prerolls/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/plex-prerolls-recently-added-example.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/plex-prerolls/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

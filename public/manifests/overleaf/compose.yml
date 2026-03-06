@@ -1,2 +1,62 @@
+# ===============================
+# Docker Compose (Overleaf CE)
+# ===============================
+# host: http://localhost
+# username: register on first run
+# password: register on first run
+# ===============================
+
 services:
-  actual_server:
+
+  mongo:
+    image: mongo:6.0
+    restart: unless-stopped
+    command: ["--replSet", "overleaf"]
+    environment:
+      MONGO_INITDB_DATABASE: sharelatex
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD-SHELL", "echo 'db.stats().ok' | mongosh localhost:27017/test --quiet"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+
+  sharelatex:
+    image: sharelatex/sharelatex:latest
+    restart: unless-stopped
+    depends_on:
+      mongo:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "80:80"
+    stop_grace_period: 60s
+    environment:
+      OVERLEAF_APP_NAME: Overleaf Community Edition
+      OVERLEAF_MONGO_URL: mongodb://mongo/sharelatex
+      OVERLEAF_REDIS_HOST: redis
+      REDIS_HOST: redis
+      ENABLED_LINKED_FILE_TYPES: "project_file,project_output_file"
+      ENABLE_CONVERSIONS: "true"
+      EMAIL_CONFIRMATION_DISABLED: "true"
+    volumes:
+      - overleaf_data:/var/lib/overleaf
+
+volumes:
+  mongo_data:
+  redis_data:
+  overleaf_data:

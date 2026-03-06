@@ -1,103 +1,82 @@
+# ===============================
+# Docker Compose (PeerTube)
+# ===============================
+# host: http://localhost
+# username:
+# password:
+
 services:
 
-  # You can comment this webserver section if you want to use another webserver/proxy or test PeerTube in local
-  webserver:
-    image: chocobozzz/peertube-webserver:latest
-    # If you don't want to use the official image and build one from sources:
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile.nginx
-    env_file:
-      - .env
-    ports:
-     - "80:80"
-     - "443:443"
-    volumes:
-      - type: bind
-        # Switch sources if you downloaded the whole repository
-        #source: ../../nginx/peertube
-        source: ./docker-volume/nginx/peertube
-        target: /etc/nginx/conf.d/peertube.template
-      - assets:/var/www/peertube/peertube-latest/client/dist:ro
-      - ./docker-volume/data:/var/www/peertube/storage
-      - certbot-www:/var/www/certbot
-      - ./docker-volume/certbot/conf:/etc/letsencrypt
-    depends_on:
-      - peertube
-    restart: "always"
-
-  # You can comment this certbot section if you want to use another webserver/proxy or test PeerTube in local
-  certbot:
-    container_name: certbot
-    image: certbot/certbot
-    volumes:
-      - ./docker-volume/certbot/conf:/etc/letsencrypt
-      - certbot-www:/var/www/certbot
-    restart: unless-stopped
-    entrypoint: /bin/sh -c "trap exit TERM; while :; do certbot renew --webroot -w /var/www/certbot; sleep 12h & wait $${!}; done;"
-    depends_on:
-      - webserver
-
-  peertube:
-    # If you don't want to use the official image and build one from sources:
-    # build:
-    #   context: .
-    #   dockerfile: ./support/docker/production/Dockerfile.bookworm
-    image: chocobozzz/peertube:production-bookworm
-    # Use a static IP for this container because nginx does not handle proxy host change without reload
-    # This container could be restarted on crash or until the postgresql database is ready for connection
-    networks:
-      default:
-        ipv4_address: 172.18.0.42
-        ipv6_address: 2001:db8:2::42
-    env_file:
-      - .env
-
-    ports:
-     - "1935:1935" # Comment if you don't want to use the live feature
-    #  - "9000:9000" # Uncomment if you use another webserver/proxy or test PeerTube in local, otherwise not suitable for production
-    volumes:
-      # Remove the following line if you want to use another webserver/proxy or test PeerTube in local
-      - assets:/app/client/dist
-      - ./docker-volume/data:/data
-      - ./docker-volume/config:/config
-    depends_on:
-      - postgres
-      - redis
-      - postfix
-    restart: "always"
-
   postgres:
-    image: postgres:13-alpine
-    env_file:
-      - .env
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: peertube
+      POSTGRES_USER: peertube
+      POSTGRES_PASSWORD: change_this_password
     volumes:
-      - ./docker-volume/db:/var/lib/postgresql/data
-    restart: "always"
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U peertube -d peertube"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   redis:
-    image: redis:6-alpine
+    image: redis:7
+    restart: unless-stopped
     volumes:
-      - ./docker-volume/redis:/data
-    restart: "always"
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   postfix:
-    image: mwader/postfix-relay
-    env_file:
-      - .env
-    volumes:
-      - ./docker-volume/opendkim/keys:/etc/opendkim/keys
-    restart: "always"
+    image: mwader/postfix-relay:latest
+    restart: unless-stopped
 
-networks:
-  default:
-    enable_ipv6: true
-    ipam:
-      driver: default
-      config:
-      - subnet: 172.18.0.0/16
-      - subnet: 2001:db8:2::/64
+  peertube:
+    image: chocobozzz/peertube:production-bookworm
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "1935:1935"
+      - "9000:9000"
+    environment:
+      PEERTUBE_DB_HOSTNAME: postgres
+      PEERTUBE_DB_USERNAME: peertube
+      PEERTUBE_DB_PASSWORD: change_this_password
+      PEERTUBE_DB_DATABASE: peertube
+      PEERTUBE_REDIS_HOSTNAME: redis
+      PEERTUBE_SMTP_HOSTNAME: postfix
+      PEERTUBE_WEBSERVER_HOSTNAME: localhost
+    volumes:
+      - peertube_data:/data
+      - peertube_config:/config
+      - peertube_assets:/app/client/dist
+
+  webserver:
+    image: chocobozzz/peertube-webserver:latest
+    restart: unless-stopped
+    depends_on:
+      peertube:
+        condition: service_started
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - peertube_assets:/var/www/peertube/peertube-latest/client/dist:ro
+      - peertube_data:/var/www/peertube/storage
 
 volumes:
-  assets:
-  certbot-www:
+  postgres_data:
+  redis_data:
+  peertube_data:
+  peertube_config:
+  peertube_assets:

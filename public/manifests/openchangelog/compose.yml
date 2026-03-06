@@ -1,0 +1,27 @@
+# ===============================
+# Docker Compose (OpenChangelog)
+# ===============================
+# host: http://localhost:6001
+# username:
+# password:
+
+services:
+  openchangelog:
+    image: ghcr.io/jonashiltl/openchangelog:0.7.1
+    container_name: openchangelog
+    restart: unless-stopped
+    ports:
+      - "6001:6001"
+    volumes:
+      - openchangelog_release_notes:/release-notes
+      - openchangelog_config:/etc
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:6001/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+volumes:
+  openchangelog_release_notes:
+  openchangelog_config:

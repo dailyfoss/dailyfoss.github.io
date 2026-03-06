@@ -1,0 +1,57 @@
+# ===============================
+# Docker Compose (Piglet)
+# ===============================
+# host: http://localhost
+# username: admin@$DOMAIN
+# password: admin
+
+services:
+
+  mariadb:
+    image: mariadb:11
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: change_root_password
+      MARIADB_DATABASE: piglet
+      MARIADB_USER: piglet
+      MARIADB_PASSWORD: change_db_password
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  piglet:
+    image: k3nd0x/piglet:latest
+    restart: unless-stopped
+    depends_on:
+      mariadb:
+        condition: service_healthy
+    ports:
+      - "80:80"
+      - "8080:8080"
+    environment:
+      DB_ROOT_PASSWORD: change_root_password
+      MYSQL_DATABASE: piglet
+      MYSQL_USER: piglet
+      MYSQL_PASSWORD: change_db_password
+      MYSQL_HOST: mariadb
+
+      MAIL_SERVER: smtp.example.com
+      MAIL_USER: user@example.com
+      MAIL_PASSWORD: change_mail_password
+      MAIL_PORT: 587
+      MAIL_ENCRYPTIONPROTOCOL: tls
+
+      DOMAIN: localhost
+      SECURE_COOKIE: "false"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mariadb_data:

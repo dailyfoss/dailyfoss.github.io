@@ -1,20 +1,60 @@
+# ===============================
+# Docker Compose (MeshCentral)
+# ===============================
+# host: https://localhost
+# username: (first account created)
+# password:
+
 services:
   meshcentral:
-    container_name: meshcentral
-    # use the official meshcentral container
     image: ghcr.io/ylianst/meshcentral:latest
+    container_name: meshcentral
+    restart: unless-stopped
+    depends_on:
+      mongodb:
+        condition: service_healthy
     ports:
-      # MeshCentral will moan and try everything not to use port 80, but you can also use it if you so desire, just change the config.json according to your needs
-      - 8086:443
-    env_file:
-      - .env
+      - "443:443"
+      - "80:80"
+    environment:
+      - DYNAMIC_CONFIG=false
+      - HOSTNAME=localhost
+      - PORT=443
+      - REDIR_PORT=80
+      - ALLOW_NEW_ACCOUNTS=false
+      - USE_MONGODB=true
+      - MONGO_URL=mongodb://meshcentral:meshcentral_password@mongodb:27017/meshcentral
     volumes:
-      # config.json and other important files live here. A must for data persistence
-      - ./meshcentral/data:/opt/meshcentral/meshcentral-data
-      # where file uploads for users live
-      - ./meshcentral/user_files:/opt/meshcentral/meshcentral-files
-      # location for the meshcentral-backups - this should be mounted to an external storage
-      - ./meshcentral/backup:/opt/meshcentral/meshcentral-backups
-      # location for site customization files
-      - ./meshcentral/web:/opt/meshcentral/meshcentral-web
-	restart: always
+      - meshcentral_data:/opt/meshcentral/meshcentral-data
+      - meshcentral_files:/opt/meshcentral/meshcentral-files
+      - meshcentral_web:/opt/meshcentral/meshcentral-web
+      - meshcentral_backups:/opt/meshcentral/meshcentral-backups
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "https://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+
+  mongodb:
+    image: mongo:7
+    container_name: meshcentral-mongodb
+    restart: unless-stopped
+    environment:
+      - MONGO_INITDB_DATABASE=meshcentral
+      - MONGO_INITDB_ROOT_USERNAME=meshcentral
+      - MONGO_INITDB_ROOT_PASSWORD=meshcentral_password
+    volumes:
+      - meshcentral_mongodb:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 20s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  meshcentral_data:
+  meshcentral_files:
+  meshcentral_web:
+  meshcentral_backups:
+  meshcentral_mongodb:

@@ -1,0 +1,28 @@
+# ===============================
+# Docker Compose (metadata-remote)
+# ===============================
+# host: http://localhost:8338
+# username:
+# password:
+
+services:
+  metadata-remote:
+    image: ghcr.io/wow-signal-dev/metadata-remote:latest
+    container_name: metadata-remote
+    restart: unless-stopped
+    ports:
+      - "8338:8338"
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - metadata_music:/music
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:8338/"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  metadata_music:

@@ -23,16 +23,21 @@
   },
   "resources": {
     "website": "https://maintainerr.info",
-    "documentation": "https://github.com/Maintainerr/Maintainerr",
+    "documentation": "https://docs.maintainerr.info",
     "source_code": "https://github.com/Maintainerr/Maintainerr",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/maintainerr.webp",
     "issues": "https://github.com/Maintainerr/Maintainerr/issues",
     "releases": "https://github.com/Maintainerr/Maintainerr/releases",
     "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/maintainerr-homepage.png",
       "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/Maintainerr_collections_screenshot.png",
       "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/Maintainerr_overview_screenshot.png",
       "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/Maintainerr_rule_example_screenshot.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/Maintainerr_rules_screenshot.png"
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/Maintainerr_rules_screenshot.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/maintainerr-collections_screenshot.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/maintainerr-overview_screenshot.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/maintainerr-rule_example_screenshot.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/maintainerr-rules_screenshot.png"
     ]
   },
   "features": [
@@ -93,12 +98,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/maintainerr/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

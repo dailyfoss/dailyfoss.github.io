@@ -135,7 +135,11 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/manifest.webp",
     "issues": "https://github.com/mnfst/manifest/issues",
     "releases": "https://github.com/mnfst/manifest/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/manifest-homepage.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/manifest-graph.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/manifest-screenshot.png"
+    ]
   },
   "platform_support": {
     "desktop": {
@@ -166,12 +170,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/manifest/compose.yml"
+  },
   "demo": {
     "url": null,
     "username": null,

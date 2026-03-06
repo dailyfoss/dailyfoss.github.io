@@ -1,26 +1,107 @@
+# ===============================
+# Docker Compose (NodeBB)
+# ===============================
+# host: http://localhost:4567
+# username: created during first setup
+# password: created during first setup
+
 services:
-  nodebb:
-    user: 0:0
-    image: elestio/nodebb:${SOFTWARE_VERSION_TAG}
-    restart: always
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+
     environment:
-      URL: "https://${DOMAIN}"
-      DATABASE: "redis"
-      DB_NAME: "0"
-      DB_HOST: "redis"
-      DB_PORT: "8443"
+      POSTGRES_USER: nodebb
+      POSTGRES_PASSWORD: nodebb
+      POSTGRES_DB: nodebb
+
     volumes:
-      - ./nodebb-files:/usr/src/app/public/uploads
-      # - ./nodebb-config/config.json:/usr/src/app/config.json
-      - ./entrypoint.sh:/usr/src/app/entrypoint.sh
-    ports:
-      - "172.17.0.1:4567:4567"
+      - postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nodebb -d nodebb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
 
   redis:
-    image: redis
-    restart: always
-    command: redis-server --appendonly yes --loglevel warning --requirepass ${REDIS_PASSWORD}
+    image: redis:7-alpine
+    restart: unless-stopped
+
+    command: ["redis-server", "--appendonly", "yes", "--loglevel", "warning"]
+
     volumes:
-      - ./nodebb-data:/data
+      - redis_data:/data
+
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  nodebb:
+    image: ghcr.io/nodebb/nodebb:latest
+    restart: unless-stopped
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
     ports:
-      - "172.17.0.1:6379:6379"
+      - "4567:4567"
+
+    environment:
+      DATABASE: postgres
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: nodebb
+      DB_PASSWORD: nodebb
+      DB_NAME: nodebb
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+
+    volumes:
+      - nodebb_build:/usr/src/app/build
+      - nodebb_uploads:/usr/src/app/public/uploads
+      - nodebb_config:/opt/config
+
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:4567 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+          memory: 1G
+        reservations:
+          memory: 256M
+
+volumes:
+  postgres_data:
+  redis_data:
+  nodebb_build:
+  nodebb_uploads:
+  nodebb_config:

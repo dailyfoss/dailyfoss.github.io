@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": null,
+    "license": "EULA & CC-BY-NC",
     "version": null,
     "date_app_added": "2025-11-23",
     "date_last_released": null,
@@ -23,12 +23,16 @@
   },
   "resources": {
     "website": "https://openpanel.com",
-    "documentation": "https://github.com/stefanpejcic/OpenPanel",
+    "documentation": "https://openpanel.com/docs/admin/intro",
     "source_code": "https://github.com/stefanpejcic/OpenPanel",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/openpanel.webp",
     "issues": "https://github.com/stefanpejcic/OpenPanel/issues",
     "releases": null,
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/openpanel-homepage.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/openpanel-dashboard.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/openpanel-openadmin-dashboard.png"
+    ]
   },
   "features": [
     {
@@ -82,16 +86,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/openpanel/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://openpanel.com/demo/",
     "username": null,
     "password": null
   }

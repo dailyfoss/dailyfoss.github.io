@@ -1,21 +1,30 @@
+# ===============================
+# Docker Compose (MicroBin)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
 services:
   microbin:
+    image: ghcr.io/szabodanika/microbin:latest
     container_name: microbin
-    image: danielszabo99/microbin:latest
-    security_opt:
-      - no-new-privileges:false
-    healthcheck:
-      test: timeout 10s bash -c ':> /dev/tcp/127.0.0.1/8080' || exit 1
-      interval: 10s
-      timeout: 5s
-      retries: 3
-      start_period: 90s
-    volumes:
-      - /data:/app/microbin_data:rw
-    environment:
-      MICROBIN_ADMIN_USERNAME: microbin
-      MICROBIN_ADMIN_PASSWORD: microbin_password
-      MICROBIN_PUBLIC_PATH: http://localhost/
+    restart: unless-stopped
     ports:
-      - 5980:8080
-    restart: on-failure:5
+      - "8080:8080"
+    environment:
+      - MICROBIN_PORT=8080
+      - MICROBIN_PUBLIC_PATH=
+      - MICROBIN_QR=true
+      - MICROBIN_PRIVATE=true
+    volumes:
+      - microbin_data:/app/pasta_data
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+volumes:
+  microbin_data:

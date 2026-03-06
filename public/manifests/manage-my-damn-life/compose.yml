@@ -1,0 +1,47 @@
+# ===============================
+# Docker Compose (Manage My Damn Life)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: mmdl-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: mmdl
+      POSTGRES_USER: mmdl
+      POSTGRES_PASSWORD: mmdl
+    volumes:
+      - mmdl_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mmdl"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    image: ghcr.io/intri-in/manage-my-damn-life-nextjs:latest
+    container_name: mmdl
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://mmdl:mmdl@postgres:5432/mmdl
+      NEXTAUTH_URL: http://localhost:3000
+      NEXTAUTH_SECRET: replace_with_random_string
+      NODE_ENV: production
+      PORT: 3000
+    ports:
+      - "3000:3000"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mmdl_postgres_data:

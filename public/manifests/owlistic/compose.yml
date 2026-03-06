@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  nats:
+    image: nats
+    command:
+      - --http_port
+      - "8222"
+      - -js
+      - -sd
+      - /var/lib/nats/data
+    ports:
+     - "4222:4222"
+     - "8222:8222"
+    volumes:
+      - nats_data:/var/lib/nats/data
+
+volumes:
+  postgres_data:
+  nats_data:
+

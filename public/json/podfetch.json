@@ -22,7 +22,7 @@
     "github_releases_this_year": 2
   },
   "resources": {
-    "website": "https://samtv12345.github.io/PodFetch",
+    "website": "https://podfetch-docs.samtv.fyi",
     "documentation": "https://github.com/SamTV12345/PodFetch",
     "source_code": "https://github.com/SamTV12345/PodFetch",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/podfetch.webp",
@@ -88,12 +88,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/podfetch/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

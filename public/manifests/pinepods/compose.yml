@@ -1,46 +1,77 @@
+# ===============================
+# Docker Compose (PinePods)
+# ===============================
+# host: http://localhost:8040
+# username:
+# password:
+
 services:
-  db:
-    image: mariadb:latest
-    command: --wait_timeout=1800
+
+  postgres:
+    image: postgres:17
+    restart: unless-stopped
     environment:
-      MYSQL_TCP_PORT: 3306
-      MYSQL_ROOT_PASSWORD: myS3curepass
-      MYSQL_DATABASE: pypods_database
-      MYSQL_COLLATION_SERVER: utf8mb4_unicode_ci
-      MYSQL_CHARACTER_SET_SERVER: utf8mb4
-      MYSQL_INIT_CONNECT: 'SET @@GLOBAL.max_allowed_packet=64*1024*1024;'
+      POSTGRES_DB: pinepods_database
+      POSTGRES_USER: pinepods
+      POSTGRES_PASSWORD: change_this_password
+      PGDATA: /var/lib/postgresql/data/pgdata
     volumes:
-      - /home/user/pinepods/sql:/var/lib/mysql
-    ports:
-      - "3306:3306"
-    restart: always
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pinepods -d pinepods_database"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  valkey:
+    image: valkey/valkey:8-alpine
+    restart: unless-stopped
+    volumes:
+      - valkey_data:/data
+    healthcheck:
+      test: ["CMD", "valkey-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   pinepods:
     image: madeofpendletonwool/pinepods:latest
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      valkey:
+        condition: service_healthy
     ports:
-    # Pinepods Main Port
       - "8040:8040"
     environment:
-      # Basic Server Info
-      SEARCH_API_URL: 'https://search.pinepods.online/api/search'
-      # Default Admin User Information
-      USERNAME: myadminuser01
-      PASSWORD: myS3curepass
-      FULLNAME: Pinepods Admin
-      EMAIL: [email protected]
-      # Database Vars
-      DB_TYPE: mariadb
-      DB_HOST: db
-      DB_PORT: 3306
-      DB_USER: root
-      DB_PASSWORD: myS3curepass
-      DB_NAME: pypods_database
-      # Enable or Disable Debug Mode for additional Printing
-      DEBUG_MODE: False
-    volumes:
-    # Mount the download and the backup location on the server if you want to. You could mount a nas to the downloads folder or something like that.
-    # The backups directory is used if backups are made on the web version on pinepods. When taking backups on the client version it downloads them locally.
+      SEARCH_API_URL: https://search.pinepods.online/api/search
+      PEOPLE_API_URL: https://people.pinepods.online
+      HOSTNAME: http://localhost:8040
 
-      - /home/user/pinepods/downloads:/opt/pinepods/downloads
-      - /home/user/pinepods/backups:/opt/pinepods/backups
-    depends_on:
-      - db
+      DB_TYPE: postgresql
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: pinepods
+      DB_PASSWORD: change_this_password
+      DB_NAME: pinepods_database
+
+      VALKEY_HOST: valkey
+      VALKEY_PORT: 6379
+
+      DEBUG_MODE: "false"
+      TZ: UTC
+    volumes:
+      - pinepods_downloads:/opt/pinepods/downloads
+      - pinepods_backups:/opt/pinepods/backups
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8040"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+  valkey_data:
+  pinepods_downloads:
+  pinepods_backups:

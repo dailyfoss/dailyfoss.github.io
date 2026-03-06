@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://peppermint.sh",
-    "documentation": "https://github.com/Peppermint-Lab/peppermint",
+    "documentation": "https://docs.peppermint.sh",
     "source_code": "https://github.com/Peppermint-Lab/peppermint",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/peppermint.webp",
     "issues": "https://github.com/Peppermint-Lab/peppermint/issues",
@@ -83,12 +83,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/peppermint/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

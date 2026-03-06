@@ -1,0 +1,98 @@
+# ===============================
+# Docker Compose (Pixelfed)
+# ===============================
+# host: http://localhost:8080
+# username: created during setup
+# password: created during setup
+# ===============================
+
+services:
+
+  db:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: pixelfed
+      MYSQL_USER: pixelfed
+      MYSQL_PASSWORD: change-db-password
+      MYSQL_ROOT_PASSWORD: change-root-password
+    volumes:
+      - pixelfed_mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -pchange-root-password"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - pixelfed_redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  pixelfed:
+    image: ghcr.io/pixelfed/pixelfed:latest
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      DB_CONNECTION: mysql
+      DB_HOST: db
+      DB_PORT: "3306"
+      DB_DATABASE: pixelfed
+      DB_USERNAME: pixelfed
+      DB_PASSWORD: change-db-password
+      REDIS_HOST: redis
+      REDIS_PORT: "6379"
+      APP_ENV: production
+      APP_DEBUG: "false"
+      APP_URL: http://localhost:8080
+      PHP_POST_MAX_SIZE: "500M"
+      PHP_UPLOAD_MAX_FILE_SIZE: "500M"
+    volumes:
+      - pixelfed_storage:/var/www/storage
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:8080/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+  horizon:
+    image: ghcr.io/pixelfed/pixelfed:latest
+    restart: unless-stopped
+    command: ["php", "artisan", "horizon"]
+    depends_on:
+      - pixelfed
+    volumes:
+      - pixelfed_storage:/var/www/storage
+    healthcheck:
+      test: ["CMD", "php", "artisan", "horizon:status"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  scheduler:
+    image: ghcr.io/pixelfed/pixelfed:latest
+    restart: unless-stopped
+    command: ["php", "artisan", "schedule:work"]
+    depends_on:
+      - pixelfed
+    volumes:
+      - pixelfed_storage:/var/www/storage
+
+volumes:
+  pixelfed_mysql:
+  pixelfed_redis:
+  pixelfed_storage:

@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "PolyForm Noncommercial License 1.0.0",
     "version": "v0.5.1",
     "date_app_added": "2025-11-23",
     "date_last_released": "2026-02-23",
@@ -28,7 +28,19 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/omoide.webp",
     "issues": "https://github.com/EinAeffchen/Omoide/issues",
     "releases": "https://github.com/EinAeffchen/Omoide/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/omoide-coappearance-graph.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/omoide-duplicates.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/omoide-library-grid.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/omoide-map.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/omoide-media-detail.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/omoide-orphan-faces.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/omoide-people-list.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/omoide-person-detail.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/omoide-search-scene.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/omoide-search-text.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/omoide-settings-profiles.png"
+    ]
   },
   "features": [
     {
@@ -84,12 +96,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/omoide/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

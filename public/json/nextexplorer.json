@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://deepwiki.com/vikramsoni2/nextExplorer",
-    "documentation": "https://github.com/vikramsoni2/nextExplorer",
+    "documentation": "https://explorer.nxz.ai/installation/deployment.html",
     "source_code": "https://github.com/vikramsoni2/nextExplorer",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/nextexplorer.webp",
     "issues": "https://github.com/vikramsoni2/nextExplorer/issues",
@@ -33,7 +33,13 @@
       "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nextExplorer_6.png",
       "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nextExplorer_favorites-added.png",
       "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nextExplorer_home-screen.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nextExplorer_login-screen.png"
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nextExplorer_login-screen.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nextexplorer-directory-light.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nextexplorer-directory-list.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nextexplorer-directory.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nextexplorer-first-setup.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nextexplorer-sign-in.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nextexplorer-upload.png"
     ]
   },
   "features": [
@@ -89,12 +95,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/nextexplorer/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
@@ -105,8 +113,8 @@
     }
   },
   "demo": {
-    "url": null,
-    "username": null,
-    "password": null
+    "url": "https://explorer-latest.onrender.com",
+    "username": "demo@example.com",
+    "password": "password"
   }
 }

@@ -1,8 +1,21 @@
+# ===============================
+# Docker Compose (OpenSpeedTest)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+# ===============================
+
 services:
-    speedtest:
-        restart: unless-stopped
-        container_name: openspeedtest
-        ports:
-            - '3000:3000'
-            - '3001:3001'
-        image: openspeedtest/latest
+  speedtest:
+    image: openspeedtest/latest
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://127.0.0.1:3000/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 10s

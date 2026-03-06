@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://piped.video",
-    "documentation": "https://github.com/TeamPiped/Piped",
+    "documentation": "https://docs.piped.video/docs",
     "source_code": "https://github.com/TeamPiped/Piped",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/piped.webp",
     "issues": "https://github.com/TeamPiped/Piped/issues",
     "releases": null,
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/piped-trending-video.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/piped/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
@@ -109,7 +113,7 @@
     }
   },
   "demo": {
-    "url": null,
+    "url": "https://piped.video",
     "username": null,
     "password": null
   }

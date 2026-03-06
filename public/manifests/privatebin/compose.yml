@@ -1,0 +1,25 @@
+# ===============================
+# Docker Compose (PrivateBin)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  privatebin:
+    image: privatebin/nginx-fpm-alpine:latest
+    container_name: privatebin
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - privatebin_data:/srv/data
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:8080/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  privatebin_data:

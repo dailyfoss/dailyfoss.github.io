@@ -1,0 +1,60 @@
+# ===============================
+# Docker Compose (Open Web Analytics)
+# ===============================
+# Web: http://localhost:8080
+# Installer: http://localhost:8080/install.php
+# MySQL user: owa
+# MySQL password: change_this_password
+
+services:
+
+  mysql:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: owa
+      MYSQL_USER: owa
+      MYSQL_PASSWORD: change_this_password
+      MYSQL_ROOT_PASSWORD: change_this_root_password
+    volumes:
+      - owa_mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  owa:
+    image: openwebanalytics/owa:latest
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    environment:
+      OWA_DB_HOST: mysql
+      OWA_DB_NAME: owa
+      OWA_DB_USER: owa
+      OWA_DB_PASSWORD: change_this_password
+    volumes:
+      - owa_data:/var/www/html
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  owa_mysql:
+  owa_data:

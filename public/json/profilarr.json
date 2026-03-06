@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://dictionarry.dev",
-    "documentation": "https://github.com/Dictionarry-Hub/profilarr",
+    "documentation": "https://dictionarry.dev/profilarr-setup/installation",
     "source_code": "https://github.com/Dictionarry-Hub/profilarr",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/profilarr.webp",
     "issues": "https://github.com/Dictionarry-Hub/profilarr/issues",
@@ -88,12 +88,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/profilarr/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

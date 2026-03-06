@@ -23,12 +23,22 @@
   },
   "resources": {
     "website": "https://netalertx.com",
-    "documentation": "https://github.com/jokob-sk/NetAlertX",
+    "documentation": "https://docs.netalertx.com",
     "source_code": "https://github.com/jokob-sk/NetAlertX",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/netalertx.webp",
     "issues": "https://github.com/jokob-sk/NetAlertX/issues",
     "releases": "https://github.com/jokob-sk/NetAlertX/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/netalertx-device_details.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/netalertx-device_tools.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/netalertx-devices_split.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/netalertx-maintenance.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/netalertx-network.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/netalertx-presence.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/netalertx-report_sample.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/netalertx-settings.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/netalertx-sync_hub.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +98,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/netalertx/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

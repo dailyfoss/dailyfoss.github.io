@@ -1,0 +1,55 @@
+# ===============================
+# Docker Compose (Monica)
+# ===============================
+# host: http://localhost:8080
+# username: (created during setup)
+# password:
+
+services:
+  monica:
+    image: monica:latest
+    container_name: monica
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    environment:
+      - APP_ENV=production
+      - APP_KEY=change_this_app_key
+      - DB_CONNECTION=pgsql
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_DATABASE=monica
+      - DB_USERNAME=monica
+      - DB_PASSWORD=monica_password
+    volumes:
+      - monica_storage:/var/www/html/storage
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+
+  db:
+    image: postgres:17-alpine
+    container_name: monica-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=monica
+      - POSTGRES_PASSWORD=monica_password
+      - POSTGRES_DB=monica
+    volumes:
+      - monica_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U monica -d monica"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  monica_storage:
+  monica_db:

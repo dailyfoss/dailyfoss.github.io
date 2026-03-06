@@ -1,0 +1,37 @@
+# ===============================
+# Docker Compose (OpenCloud Minimal)
+# ===============================
+# host: http://localhost:9200
+# username: admin
+# password: (set during init)
+
+services:
+  opencloud:
+    image: opencloudeu/opencloud-rolling:latest
+    container_name: opencloud
+    restart: unless-stopped
+    ports:
+      - "9200:9200"
+    environment:
+      # Enable insecure mode only for initial startup 
+      # (set to false & use HTTPS in production)
+      - OC_INSECURE=true
+      - OC_URL=http://localhost:9200
+    command: >
+      /bin/sh -c "
+        opencloud init --insecure true || true &&
+        opencloud server
+      "
+    volumes:
+      - opencloud_data:/var/lib/opencloud
+      - opencloud_config:/etc/opencloud
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:9200/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+volumes:
+  opencloud_data:
+  opencloud_config:

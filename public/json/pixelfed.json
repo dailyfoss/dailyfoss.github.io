@@ -23,12 +23,15 @@
   },
   "resources": {
     "website": "https://pixelfed.org",
-    "documentation": "https://github.com/pixelfed/pixelfed",
+    "documentation": "https://docs.pixelfed.org",
     "source_code": "https://github.com/pixelfed/pixelfed",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/pixelfed.webp",
     "issues": "https://github.com/pixelfed/pixelfed/issues",
     "releases": "https://github.com/pixelfed/pixelfed/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/pixelfed-homepage.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/pixelfed-product-screenshot.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +91,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/pixelfed/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

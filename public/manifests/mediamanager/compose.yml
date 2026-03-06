@@ -1,0 +1,30 @@
+# ===============================
+# Docker Compose (MediaManager)
+# ===============================
+# host: http://localhost:8080
+# username: (created during first setup)
+# password:
+
+services:
+  mediamanager:
+    image: ghcr.io/maxdorninger/mediamanager:latest
+    container_name: mediamanager
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: 8080
+      HOST: 0.0.0.0
+    volumes:
+      - mediamanager_data:/app/data
+      - mediamanager_media:/app/media
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8080/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mediamanager_data:
+  mediamanager_media:

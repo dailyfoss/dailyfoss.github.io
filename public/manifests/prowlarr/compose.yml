@@ -1,13 +1,29 @@
+# ===============================
+# Docker Compose (Prowlarr)
+# ===============================
+# host: http://localhost:9696
+# username:
+# password:
+
 services:
   prowlarr:
     image: lscr.io/linuxserver/prowlarr:latest
     container_name: prowlarr
+    restart: unless-stopped
+    ports:
+      - "9696:9696"
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Etc/UTC
     volumes:
-      - /path/to/prowlarr/data:/config
-    ports:
-      - 9696:9696
-    restart: unless-stopped
+      - prowlarr_config:/config
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:9696/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  prowlarr_config:

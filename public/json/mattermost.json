@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "GNU GPL-3.0",
     "version": "v11.4.2",
     "date_app_added": "2025-11-23",
     "date_last_released": "2026-02-26",
@@ -23,13 +23,15 @@
   },
   "resources": {
     "website": "https://mattermost.com",
-    "documentation": "https://github.com/mattermost/mattermost",
+    "documentation": "https://docs.mattermost.com",
     "source_code": "https://github.com/mattermost/mattermost",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/mattermost.webp",
     "issues": "https://github.com/mattermost/mattermost/issues",
     "releases": "https://github.com/mattermost/mattermost/releases",
     "logo_light": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/mattermost-light.webp",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/mattermost-dashboard.png"
+    ]
   },
   "features": [
     {
@@ -89,12 +91,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/mattermost/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

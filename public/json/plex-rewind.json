@@ -28,7 +28,11 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/plex-rewind.webp",
     "issues": "https://github.com/RaunoT/plex-rewind/issues",
     "releases": "https://github.com/RaunoT/plex-rewind/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/plex-rewind-activity.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/plex-rewind-dashboard.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/plex-rewind-movies.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +92,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/plex-rewind/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

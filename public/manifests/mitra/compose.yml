@@ -1,0 +1,86 @@
+# ===============================
+# Docker Compose (Mitra - Dev)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  database:
+    image: pgautoupgrade/pgautoupgrade:15-bookworm
+    container_name: mitra-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=mitra
+      - POSTGRES_PASSWORD=mitra
+      - POSTGRES_DB=mitra
+    volumes:
+      - postgres_database:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mitra -d mitra"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  monerod:
+    image: ghcr.io/sethforprivacy/simple-monerod:v0.18.4.4
+    container_name: monerod
+    restart: unless-stopped
+    profiles:
+      - monero
+    command:
+      - --regtest
+      - --offline
+      - --no-igd
+      - --fixed-difficulty=1
+      - --rpc-bind-ip=0.0.0.0
+      - --confirm-external-bind
+      - --zmq-rpc-bind-ip=0.0.0.0
+      - --zmq-rpc-bind-port=18082
+    volumes:
+      - monero_blockchain:/home/monero/.bitmonero
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:18081"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+
+  monero-wallet-rpc:
+    image: ghcr.io/sethforprivacy/simple-monero-wallet-rpc:v0.18.4.4
+    container_name: monero-wallet-rpc
+    restart: unless-stopped
+    profiles:
+      - monero
+    depends_on:
+      monerod:
+        condition: service_started
+    command:
+      - --daemon-address=monerod:18081
+      - --trusted-daemon
+      - --allow-mismatched-daemon-version
+      - --rpc-bind-port=18083
+      - --disable-rpc-login
+      - --wallet-dir=/home/monero/wallet
+    volumes:
+      - monero_wallets:/home/monero/wallet
+
+  monero-lws:
+    image: ghcr.io/farcaster-project/containers/monero-lws:monerod-0.18.0.0
+    container_name: monero-lws
+    restart: unless-stopped
+    profiles:
+      - monero
+    depends_on:
+      monerod:
+        condition: service_started
+    environment:
+      - NETWORK=main
+      - MONERO_DAEMON_ADDRESS=monerod:18082
+    ports:
+      - "58443:38884"
+
+volumes:
+  postgres_database:
+  monero_blockchain:
+  monero_wallets:

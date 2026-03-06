@@ -1,0 +1,26 @@
+# ===============================
+# Docker Compose (Managarr)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  managarr:
+    image: ghcr.io/dark-alex-17/managarr:latest
+    container_name: managarr
+    restart: unless-stopped
+    environment:
+      TZ: Etc/UTC
+    volumes:
+      - managarr_config:/app/config
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8080/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  managarr_config:

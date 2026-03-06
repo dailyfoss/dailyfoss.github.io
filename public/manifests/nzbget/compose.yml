@@ -1,0 +1,48 @@
+# ===============================
+# Docker Compose (NZBGet)
+# ===============================
+# host: http://localhost:6789
+# Default login:
+#   Username: nzbget
+#   Password: tegbzn6789
+
+services:
+  nzbget:
+    image: nzbgetcom/nzbget:latest
+    restart: unless-stopped
+
+    ports:
+      - "6789:6789"
+
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: Europe/London
+
+    volumes:
+      - nzbget_config:/config
+      - nzbget_downloads:/downloads
+
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:6789 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+          memory: 512M
+        reservations:
+          memory: 128M
+
+volumes:
+  nzbget_config:
+  nzbget_downloads:

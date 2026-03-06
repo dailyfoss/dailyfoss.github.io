@@ -1,0 +1,28 @@
+# ===============================
+# Docker Compose (Many Notes)
+# ===============================
+# host: http://localhost:3000
+# username: (created during first setup)
+# password:
+
+services:
+  many-notes:
+    image: ghcr.io/brufdev/many-notes:latest
+    container_name: many-notes
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      HOST: 0.0.0.0
+    volumes:
+      - many_notes_data:/app/data
+    ports:
+      - "3000:3000"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  many_notes_data:

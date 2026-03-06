@@ -1,32 +1,57 @@
-services:
-  web:
-    image: haedlessdev/portnote:latest
-    ports:
-      - "3000:3000"
-    environment:
-      JWT_SECRET: RANDOM_SECRET # Replace with a secure random string
-      USER_SECRET: RANDOM_SECRET # Replace with a secure random string
-      LOGIN_USERNAME: username # Replace with a username
-      LOGIN_PASSWORD: mypassword # Replace with a custom password
-      DATABASE_URL: "postgresql://postgres:postgres@db:5432/postgres"
-    depends_on:
-      db:
-        condition: service_started
+# ===============================
+# Docker Compose (Portnote)
+# ===============================
+# host: http://localhost:3000
+# username: admin
+# password: change-this-password
+# ===============================
 
-  agent:
-    image: haedlessdev/portnote-agent:latest
-    environment:
-      DATABASE_URL: "postgresql://postgres:postgres@db:5432/postgres"
-    depends_on:
-      db:
-        condition: service_started
+services:
 
   db:
     image: postgres:17
-    restart: always
+    restart: unless-stopped
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: postgres
+      POSTGRES_USER: portnote
+      POSTGRES_PASSWORD: change-db-password
+      POSTGRES_DB: portnote
     volumes:
-      - ./postgres_data:/var/lib/postgresql/data
+      - portnote_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U portnote -d portnote"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  web:
+    image: haedlessdev/portnote:latest
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      JWT_SECRET: change-jwt-secret
+      USER_SECRET: change-user-secret
+      LOGIN_USERNAME: admin
+      LOGIN_PASSWORD: change-this-password
+      DATABASE_URL: postgresql://portnote:change-db-password@db:5432/portnote
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:3000 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  agent:
+    image: haedlessdev/portnote-agent:latest
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://portnote:change-db-password@db:5432/portnote
+
+volumes:
+  portnote_db:

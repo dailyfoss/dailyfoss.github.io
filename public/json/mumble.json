@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "BSD 3-Clause",
     "version": "v1.5.857",
     "date_app_added": "2025-11-23",
     "date_last_released": "2025-10-21",
@@ -23,13 +23,15 @@
   },
   "resources": {
     "website": "https://www.mumble.info",
-    "documentation": "https://github.com/mumble-voip/mumble",
+    "documentation": "https://www.mumble.info/documentation",
     "source_code": "https://github.com/mumble-voip/mumble",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/mumble.webp",
     "issues": "https://github.com/mumble-voip/mumble/issues",
     "releases": "https://github.com/mumble-voip/mumble/releases",
     "logo_light": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/mumble-light.webp",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/mumble-screenshot-preview.png"
+    ]
   },
   "features": [
     {
@@ -85,12 +87,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/mumble/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

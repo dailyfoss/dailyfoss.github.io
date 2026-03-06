@@ -18,7 +18,7 @@
   },
   "resources": {
     "website": null,
-    "documentation": null,
+    "documentation": "https://codeberg.org/rimu/pyfedi/src/branch/main/INSTALL-docker.md",
     "source_code": "https://codeberg.org/rimu/pyfedi",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/piefed.webp",
     "issues": null,
@@ -83,12 +83,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/piefed/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

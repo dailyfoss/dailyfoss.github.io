@@ -1,0 +1,139 @@
+# ===============================
+# Docker Compose (OpnForm)
+# ===============================
+# host: http://localhost
+# username: create on first setup
+# password: create on first setup
+# ===============================
+
+services:
+
+  db:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: opnform
+      POSTGRES_USER: opnform
+      POSTGRES_PASSWORD: change-db-password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U opnform -d opnform"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+
+  api:
+    image: jhumanj/opnform-api:latest
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      APP_ENV: production
+      DB_HOST: db
+      DB_CONNECTION: pgsql
+      DB_DATABASE: opnform
+      DB_USERNAME: opnform
+      DB_PASSWORD: change-db-password
+      REDIS_HOST: redis
+      PHP_MEMORY_LIMIT: "1G"
+      PHP_MAX_EXECUTION_TIME: "600"
+      PHP_UPLOAD_MAX_FILESIZE: "64M"
+      PHP_POST_MAX_SIZE: "64M"
+    volumes:
+      - opnform_storage:/usr/share/nginx/html/storage
+    healthcheck:
+      test: ["CMD-SHELL", "php /usr/share/nginx/html/artisan about || exit 1"]
+      interval: 30s
+      timeout: 15s
+      retries: 3
+      start_period: 60s
+
+  api-worker:
+    image: jhumanj/opnform-api:latest
+    restart: unless-stopped
+    command: ["php", "artisan", "queue:work"]
+    depends_on:
+      api:
+        condition: service_started
+    environment:
+      APP_ENV: production
+      DB_HOST: db
+      DB_CONNECTION: pgsql
+      DB_DATABASE: opnform
+      DB_USERNAME: opnform
+      DB_PASSWORD: change-db-password
+      REDIS_HOST: redis
+    volumes:
+      - opnform_storage:/usr/share/nginx/html/storage
+    healthcheck:
+      test: ["CMD-SHELL", "pgrep -f 'php artisan queue:work' > /dev/null || exit 1"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  api-scheduler:
+    image: jhumanj/opnform-api:latest
+    restart: unless-stopped
+    command: ["php", "artisan", "schedule:work"]
+    depends_on:
+      api:
+        condition: service_started
+    environment:
+      APP_ENV: production
+      DB_HOST: db
+      DB_CONNECTION: pgsql
+      DB_DATABASE: opnform
+      DB_USERNAME: opnform
+      DB_PASSWORD: change-db-password
+      REDIS_HOST: redis
+    volumes:
+      - opnform_storage:/usr/share/nginx/html/storage
+
+  ui:
+    image: jhumanj/opnform-client:latest
+    restart: unless-stopped
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:3000/login || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 45s
+
+  ingress:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+      - ui
+    healthcheck:
+      test: ["CMD-SHELL", "nginx -t && wget -qO- http://127.0.0.1/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  postgres_data:
+  redis_data:
+  opnform_storage:

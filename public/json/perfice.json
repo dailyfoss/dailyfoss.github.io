@@ -23,19 +23,23 @@
   },
   "resources": {
     "website": "https://perfice.adoe.dev",
-    "documentation": "https://github.com/p0lloc/perfice",
+    "documentation": "https://perfice.adoe.dev/docs",
     "source_code": "https://github.com/p0lloc/perfice",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/perfice.webp",
     "issues": "https://github.com/p0lloc/perfice/issues",
     "releases": null,
     "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/perfice-homepage.png",
       "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/perfice_analytics-onboarding-mobile.png",
       "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/perfice_analytics-onboarding.png",
       "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/perfice_dashboard-onboarding-mobile-(copy-1).png",
       "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/perfice_dashboard-onboarding.png",
       "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/perfice_goals-onboarding-mobile.png",
       "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/perfice_goals-onboarding.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/perfice_trackables-onboarding.png"
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/perfice_trackables-onboarding.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/perfice-analytics-onboarding.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/perfice-goals-onboarding.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/perfice-trackables-onboarding.png"
     ]
   },
   "features": [
@@ -96,16 +100,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/perfice/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://perfice.adoe.dev/new",
     "username": null,
     "password": null
   }

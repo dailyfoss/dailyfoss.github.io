@@ -28,7 +28,13 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/middleware-manager.webp",
     "issues": "https://github.com/hhftechnology/middleware-manager/issues",
     "releases": "https://github.com/hhftechnology/middleware-manager/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/middleware-manager-dashboard.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/middleware-manager-plugin-catalogue.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/middleware-manager-plugin-hub.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/middleware-manager-resources.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/middleware-manager-security-overview.png"
+    ]
   },
   "features": [
     {
@@ -83,12 +89,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/middleware-manager/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

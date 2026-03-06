@@ -1,0 +1,25 @@
+# ===============================
+# Docker Compose (mail-archiver)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  mail-archiver:
+    image: ghcr.io/s1t5/mail-archiver:latest
+    container_name: mail-archiver
+    ports:
+      - "8080:8080"
+    volumes:
+      - mail_archiver_data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://127.0.0.1:8080"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  mail_archiver_data:

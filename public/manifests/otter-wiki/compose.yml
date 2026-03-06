@@ -1,8 +1,32 @@
+# ===============================
+# Docker Compose (OtterWiki)
+# ===============================
+# host: http://localhost:8080
+# username: set on first run
+# password: set on first run
+# ===============================
+
 services:
   otterwiki:
     image: redimp/otterwiki:2
     restart: unless-stopped
     ports:
-      - 8080:80
+      - "8080:80"
     volumes:
-      - ./app-data:/app-data
+      - otterwiki_data:/app-data
+    # environment:
+    #   MAIL_DEFAULT_SENDER: no-reply@example.com
+    #   MAIL_SERVER: smtp.example.com
+    #   MAIL_PORT: "465"
+    #   MAIL_USERNAME: otterwiki@example.com
+    #   MAIL_PASSWORD: change-this-password
+    #   MAIL_USE_SSL: "True"
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+volumes:
+  otterwiki_data:

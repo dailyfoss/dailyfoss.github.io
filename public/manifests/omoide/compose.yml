@@ -1,0 +1,44 @@
+# ===============================
+# Docker Compose (Omoide)
+# ===============================
+# Web: http://localhost:8123
+# No default credentials (configure inside app)
+
+services:
+  omoide:
+    image: einaeffchen/omoide:latest
+    restart: unless-stopped
+
+    ports:
+      - "8123:8123"
+
+    environment:
+      TZ: UTC
+
+    volumes:
+      - omoide_media:/app/media
+      - omoide_data:/app/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8123 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 1G
+        reservations:
+          memory: 256M
+
+volumes:
+  omoide_media:
+  omoide_data:

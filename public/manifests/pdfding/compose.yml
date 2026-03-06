@@ -1,0 +1,53 @@
+# ===============================
+# Docker Compose (PdfDing)
+# ===============================
+# host: http://localhost:8000
+# username:
+# password:
+
+services:
+
+  postgres:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: pdfding
+      POSTGRES_USER: pdfding
+      POSTGRES_PASSWORD: change_this_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pdfding -d pdfding"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  pdfding:
+    image: mrmn/pdfding:latest
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    environment:
+      DEFAULT_THEME: dark
+      DEFAULT_THEME_COLOR: green
+      SECRET_KEY: change_this_secret_key
+      HOST_NAME: localhost
+      DATABASE_TYPE: POSTGRES
+      POSTGRES_HOST: postgres
+      POSTGRES_PASSWORD: change_this_password
+      CSRF_COOKIE_SECURE: "FALSE"
+      SESSION_COOKIE_SECURE: "FALSE"
+    volumes:
+      - pdfding_media:/home/nonroot/pdfding/media
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+  pdfding_media:

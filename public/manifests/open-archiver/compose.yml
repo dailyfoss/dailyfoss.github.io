@@ -1,0 +1,95 @@
+# ===============================
+# Docker Compose (Open-Archiver)
+# ===============================
+# Web: http://localhost:3000
+# No default credentials
+
+services:
+
+  postgres:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: open_archive
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: change_this_password
+    volumes:
+      - openarchiver_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d open_archive"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  valkey:
+    image: valkey/valkey:8-alpine
+    restart: unless-stopped
+    command: ["valkey-server", "--requirepass", "change_this_redis_password"]
+    volumes:
+      - openarchiver_valkey:/data
+    healthcheck:
+      test: ["CMD", "valkey-cli", "-a", "change_this_redis_password", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  meilisearch:
+    image: getmeili/meilisearch:v1.15
+    restart: unless-stopped
+    environment:
+      MEILI_MASTER_KEY: change_this_meili_key
+      MEILI_SCHEDULE_SNAPSHOT: "86400"
+    volumes:
+      - openarchiver_meili:/meili_data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:7700/health || exit 1"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+
+  tika:
+    image: apache/tika:3.2.2.0-full
+    restart: unless-stopped
+
+  open-archiver:
+    image: logiclabshq/open-archiver:latest
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      valkey:
+        condition: service_healthy
+      meilisearch:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_NAME: open_archive
+      DATABASE_USER: admin
+      DATABASE_PASSWORD: change_this_password
+      REDIS_HOST: valkey
+      REDIS_PASSWORD: change_this_redis_password
+      MEILI_HOST: http://meilisearch:7700
+      MEILI_MASTER_KEY: change_this_meili_key
+      TIKA_HOST: http://tika:9998
+      STORAGE_LOCAL_ROOT_PATH: /data
+    volumes:
+      - openarchiver_storage:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  openarchiver_postgres:
+  openarchiver_valkey:
+  openarchiver_meili:
+  openarchiver_storage:

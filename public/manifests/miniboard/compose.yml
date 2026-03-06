@@ -1,8 +1,32 @@
+# ===============================
+# Docker Compose (Miniboard)
+# ===============================
+# host: http://localhost:8849
+# username:
+# password:
+
 services:
-    vigil:
-        image: 'valeriansaliou/vigil:v1.26.3'
-        volumes:
-            - './config.cfg:/etc/vigil.cfg'
-        ports:
-            - '8080:8080'
-        restart: always
+  miniboard:
+    image: aceberg/miniboard:latest
+    container_name: miniboard
+    restart: unless-stopped
+    ports:
+      - "8849:8849"
+    environment:
+      - TZ=Asia/Novosibirsk
+      - HOST=0.0.0.0
+      - PORT=8849
+      - THEME=flatly
+      - COLOR=dark
+    volumes:
+      - miniboard_data:/data/miniboard
+      - /var/run/docker.sock:/var/run/docker.sock
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:8849/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
+volumes:
+  miniboard_data:

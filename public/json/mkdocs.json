@@ -23,12 +23,16 @@
   },
   "resources": {
     "website": "https://www.mkdocs.org",
-    "documentation": "https://github.com/mkdocs/mkdocs",
+    "documentation": "https://www.mkdocs.org/getting-started",
     "source_code": "https://github.com/mkdocs/mkdocs",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/mkdocs.webp",
     "issues": "https://github.com/mkdocs/mkdocs/issues",
     "releases": "https://github.com/mkdocs/mkdocs/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/mkdocs-dashboard-demo.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/mkdocs-readthedocs.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/mkdocs-search.png"
+    ]
   },
   "features": [
     {
@@ -84,12 +88,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/mkdocs/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

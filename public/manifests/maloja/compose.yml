@@ -1,21 +1,27 @@
+# ===============================
+# Docker Compose (Maloja)
+# ===============================
+# host: http://localhost:42010
+# username:
+# password:
+
 services:
   maloja:
-    # from dockerhub
-    image: "krateng/maloja:latest"
-    # or built locally
-    #build:
-    #  context: .
-    #  dockerfile: ./Containerfile
-    ports:
-    - "42010:42010"
-    # different directories for configuration, state and logs
-    volumes:
-    - "$PWD/config:/etc/maloja"
-    - "$PWD/data:/var/lib/maloja"
-    - "$PWD/logs:/var/log/maloja"
-    #you can also have everything together instead:
-    #volumes:
-    #- "$PWD/data:/data"
-    #environment:
-    #- "MALOJA_DATA_DIRECTORY=/data"
+    image: krateng/maloja:latest
+    container_name: maloja
     restart: unless-stopped
+    environment:
+      MALOJA_HOST: 0.0.0.0
+      MALOJA_PORT: 42010
+    volumes:
+      - maloja_data:/mljdata
+    ports:
+      - "42010:42010"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:42010/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  maloja_data:

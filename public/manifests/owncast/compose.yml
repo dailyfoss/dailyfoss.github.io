@@ -1,9 +1,25 @@
+# ===============================
+# Docker Compose (Owncast)
+# ===============================
+# Web UI: http://localhost:8080
+# RTMP:    rtmp://localhost/live
+# ===============================
+
 services:
   owncast:
     image: owncast/owncast:latest
-    volumes:
-      - "`pwd`/data:/app/data"
-    ports:
-      - 8080:8080
-      - 1935:1935
     restart: unless-stopped
+    ports:
+      - "8080:8080"   # Web interface
+      - "1935:1935"   # RTMP ingest
+    volumes:
+      - owncast_data:/app/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:8080/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  owncast_data:

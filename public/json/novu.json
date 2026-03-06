@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "MIT",
     "version": "@novu/react-native@v3.14.1",
     "date_app_added": "2025-11-23",
     "date_last_released": "2026-02-27",
@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://novu.co",
-    "documentation": "https://github.com/novuhq/novu",
+    "documentation": "https://docs.novu.co",
     "source_code": "https://github.com/novuhq/novu",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/novu.webp",
     "issues": "https://github.com/novuhq/novu/issues",
@@ -87,12 +87,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/novu/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

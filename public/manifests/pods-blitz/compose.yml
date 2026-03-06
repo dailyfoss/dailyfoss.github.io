@@ -1,0 +1,54 @@
+# ===============================
+# Docker Compose (Pods-Blitz)
+# ===============================
+# host: http://localhost:3002
+# username:
+# password:
+# ===============================
+
+services:
+
+  db:
+    image: mariadb:11.4
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: change-root-password
+      MYSQL_DATABASE: podsblitz
+      MYSQL_USER: podsblitz
+      MYSQL_PASSWORD: change-db-password
+    volumes:
+      - podsblitz_db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    image: ghcr.io/pods-blitz/pods-blitz:latest
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "3002:3002"
+    environment:
+      DATABASE_URL: mysql://podsblitz:change-db-password@db/podsblitz
+      BASE_URL: http://localhost:3002/
+      LISTEN_PORT: "3002"
+    volumes:
+      - podsblitz_assets:/app/assets
+      - podsblitz_rss:/app/rss
+      - podsblitz_config:/app/config
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:3002 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  podsblitz_db:
+  podsblitz_assets:
+  podsblitz_rss:
+  podsblitz_config:

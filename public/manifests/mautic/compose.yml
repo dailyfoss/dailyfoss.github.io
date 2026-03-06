@@ -1,8 +1,62 @@
+# ===============================
+# Docker Compose (Mautic)
+# ===============================
+# host: http://localhost:8080
+# username: (created during web setup)
+# password: (created during web setup)
+# database user: mautic
+# database password: change_this_password
+
 services:
-  web:
-    image: shinsenter/mautic:latest
-    volumes:
-      - ./myproject:/var/www/html
-      - ./my_domain.crt:/etc/ssl/site/server.crt
-      - ./my_domain.key:/etc/ssl/site/server.key
+  db:
+    image: mysql:8
+    container_name: mautic-mysql
     restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: mautic
+      MYSQL_USER: mautic
+      MYSQL_PASSWORD: change_this_password
+      MYSQL_ROOT_PASSWORD: change_root_password
+    volumes:
+      - mautic_mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -pchange_root_password || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - internal
+
+  mautic:
+    image: mautic/mautic:latest
+    container_name: mautic
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      MAUTIC_DB_HOST: db
+      MAUTIC_DB_USER: mautic
+      MAUTIC_DB_PASSWORD: change_this_password
+      MAUTIC_DB_NAME: mautic
+    volumes:
+      - mautic_data:/var/www/html
+    ports:
+      - "8080:80"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    networks:
+      - internal
+      - external
+
+volumes:
+  mautic_mysql_data:
+  mautic_data:
+
+networks:
+  internal:
+    internal: true
+  external:

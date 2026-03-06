@@ -1,0 +1,31 @@
+# ===============================
+# Docker Compose (Parseable)
+# ===============================
+# host: http://localhost:8000
+# username:
+# password:
+
+services:
+  parseable:
+    image: parseable/parseable:latest
+    restart: unless-stopped
+    command: parseable s3-store
+    ports:
+      - "8000:8000"
+    environment:
+      P_STORAGE_ENDPOINT: http://minio:9000
+      P_STORAGE_ACCESS_KEY: parseable
+      P_STORAGE_SECRET_KEY: parseable_secret
+      P_STORAGE_BUCKET: parseable
+      P_STORAGE_REGION: us-east-1
+      P_STORAGE_PROVIDER: s3
+    volumes:
+      - parseable_staging:/staging
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  parseable_staging:

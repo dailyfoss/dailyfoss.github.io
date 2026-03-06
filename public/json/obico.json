@@ -23,12 +23,15 @@
   },
   "resources": {
     "website": "https://obico.io",
-    "documentation": "https://github.com/TheSpaghettiDetective/obico-server",
+    "documentation": "https://www.obico.io/docs/server-guides",
     "source_code": "https://github.com/TheSpaghettiDetective/obico-server",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/obico.webp",
     "issues": "https://github.com/TheSpaghettiDetective/obico-server/issues",
     "releases": null,
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/obico-homepage.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/obico-login-page.png"
+    ]
   },
   "features": [
     {
@@ -87,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/obico/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

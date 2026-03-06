@@ -1,0 +1,59 @@
+# ===============================
+# Docker Compose (Piped)
+# ===============================
+# Frontend: http://localhost:8080
+# Backend:  internal
+# ===============================
+
+services:
+
+  postgres:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: piped
+      POSTGRES_PASSWORD: change-db-password
+      POSTGRES_DB: piped
+    volumes:
+      - piped_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U piped -d piped"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  piped-backend:
+    image: ghcr.io/team-piped/piped:latest
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      PIPED_DB_HOST: postgres
+      PIPED_DB_PORT: "5432"
+      PIPED_DB_USER: piped
+      PIPED_DB_PASSWORD: change-db-password
+      PIPED_DB_NAME: piped
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:8080/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  piped-frontend:
+    image: ghcr.io/team-piped/piped-frontend:latest
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    depends_on:
+      - piped-backend
+    environment:
+      BACKEND_URL: http://piped-backend:8080
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  piped_db:

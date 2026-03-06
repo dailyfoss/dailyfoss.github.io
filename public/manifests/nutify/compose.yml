@@ -1,0 +1,62 @@
+# ===============================
+# Docker Compose (Nutify - NUT)
+# ===============================
+# NUT: port 3493
+# Web UI: https://localhost:5050
+# HTTPS: https://localhost
+# Default credentials: configured inside container
+
+services:
+  nut:
+    image: dartsteven/nutify:arm64-latest
+    restart: unless-stopped
+    user: root
+
+    privileged: true
+    cap_add:
+      - SYS_ADMIN
+      - SYS_RAWIO
+      - MKNOD
+
+    devices:
+      - /dev/bus/usb:/dev/bus/usb:rwm
+
+    device_cgroup_rules:
+      - "c 189:* rwm"
+
+    volumes:
+      - nut_logs:/app/nutify/logs
+      - nut_instance:/app/nutify/instance
+      - nut_ssl:/app/ssl
+      - nut_config:/etc/nut
+      - /dev:/dev:rw
+      - /run/udev:/run/udev:ro
+
+    environment:
+      SECRET_KEY: replace_with_long_random_secret
+      UDEV: "1"
+
+    ports:
+      - "3493:3493"
+      - "5050:5050"
+      - "443:443"
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 512M
+        reservations:
+          memory: 128M
+
+volumes:
+  nut_logs:
+  nut_instance:
+  nut_ssl:
+  nut_config:

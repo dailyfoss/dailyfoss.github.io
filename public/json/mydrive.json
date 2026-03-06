@@ -28,7 +28,18 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/mydrive.webp",
     "issues": "https://github.com/subnub/myDrive/issues",
     "releases": "https://github.com/subnub/myDrive/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/mydrive-homepage.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/mydrive-download.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/mydrive-image-viewer.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/mydrive-media-viewer.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/mydrive-move.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/mydrive-multiselect.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/mydrive-search.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/mydrive-share.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/mydrive-trash.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/mydrive-upload.png"
+    ]
   },
   "features": [
     {
@@ -84,12 +95,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/mydrive/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

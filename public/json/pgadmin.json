@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "Postgres License",
     "version": null,
     "date_app_added": "2025-11-23",
     "date_last_released": null,
@@ -23,12 +23,13 @@
   },
   "resources": {
     "website": "https://www.pgadmin.org",
-    "documentation": "https://github.com/pgadmin-org/pgadmin4",
+    "documentation": "https://www.pgadmin.org/docs/pgadmin4/latest/index.html",
     "source_code": "https://github.com/pgadmin-org/pgadmin4",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/pgadmin.webp",
     "issues": "https://github.com/pgadmin-org/pgadmin4/issues",
     "releases": null,
     "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/pgadmin-screenshot.png",
       "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/pgadmin4_backup_table.png",
       "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/pgadmin4_json_editor_modes.png",
       "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/pgadmin4_main_dashboard_general.png",
@@ -93,12 +94,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/pgadmin/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

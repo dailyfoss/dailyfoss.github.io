@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "EUPL",
     "version": "v6.4",
     "date_app_added": "2025-11-23",
     "date_last_released": "2026-02-17",
@@ -23,12 +23,17 @@
   },
   "resources": {
     "website": "https://pi-hole.net",
-    "documentation": "https://github.com/pi-hole/pi-hole",
+    "documentation": "https://docs.pi-hole.net",
     "source_code": "https://github.com/pi-hole/pi-hole",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/pi-hole.webp",
     "issues": "https://github.com/pi-hole/pi-hole/issues",
     "releases": "https://github.com/pi-hole/pi-hole/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/pi-hole-audit-log.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/pi-hole-dashboard.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/pi-hole-dhcp.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/pi-hole-query-log.png"
+    ]
   },
   "features": [
     {
@@ -84,12 +89,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/pi-hole/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

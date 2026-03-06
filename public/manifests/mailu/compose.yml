@@ -1,2 +1,116 @@
+# ===============================
+# Docker Compose (Mailu)
+# ===============================
+# host: https://mail.example.com
+# username: admin
+# password: (set in compose below)
+
 services:
-  mailu:
+  redis:
+    image: redis:latest
+    container_name: mailu-redis
+    restart: unless-stopped
+    volumes:
+      - mailu_redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  database:
+    image: postgres:latest
+    container_name: mailu-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: mailu
+      POSTGRES_USER: mailu
+      POSTGRES_PASSWORD: mailupassword
+    volumes:
+      - mailu_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mailu"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  front:
+    image: mailu/nginx:latest
+    container_name: mailu-front
+    restart: unless-stopped
+    depends_on:
+      - smtp
+      - imap
+    environment:
+      HOSTNAMES: mail.example.com
+      TLS_FLAVOR: letsencrypt
+    ports:
+      - "80:80"
+      - "443:443"
+      - "25:25"
+      - "465:465"
+      - "587:587"
+      - "993:993"
+    volumes:
+      - mailu_certs:/certs
+      - mailu_front:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  smtp:
+    image: mailu/postfix:latest
+    container_name: mailu-smtp
+    restart: unless-stopped
+    environment:
+      DB_FLAVOR: postgres
+      DB_HOST: database
+      DB_USER: mailu
+      DB_PASSWORD: mailupassword
+      DB_NAME: mailu
+    depends_on:
+      database:
+        condition: service_healthy
+    volumes:
+      - mailu_mail:/mail
+
+  imap:
+    image: mailu/dovecot:latest
+    container_name: mailu-imap
+    restart: unless-stopped
+    environment:
+      DB_FLAVOR: postgres
+      DB_HOST: database
+      DB_USER: mailu
+      DB_PASSWORD: mailupassword
+      DB_NAME: mailu
+    depends_on:
+      database:
+        condition: service_healthy
+    volumes:
+      - mailu_mail:/mail
+
+  admin:
+    image: mailu/admin:latest
+    container_name: mailu-admin
+    restart: unless-stopped
+    environment:
+      SECRET_KEY: replace_with_random_string
+      DB_FLAVOR: postgres
+      DB_HOST: database
+      DB_USER: mailu
+      DB_PASSWORD: mailupassword
+      DB_NAME: mailu
+      DOMAIN: example.com
+    depends_on:
+      database:
+        condition: service_healthy
+
+volumes:
+  mailu_db:
+  mailu_redis:
+  mailu_mail:
+  mailu_certs:
+  mailu_front:

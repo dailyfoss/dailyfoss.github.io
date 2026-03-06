@@ -1,0 +1,49 @@
+# ===============================
+# Docker Compose (PodFetch)
+# ===============================
+# host: http://localhost
+# username: created on first login
+# password: created on first login
+# ===============================
+
+services:
+
+  postgres:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: podfetch
+      POSTGRES_PASSWORD: change-db-password
+      POSTGRES_DB: podfetch
+    volumes:
+      - podfetch_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U podfetch -d podfetch"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  podfetch:
+    image: samuel19982/podfetch:latest
+    restart: unless-stopped
+    ports:
+      - "80:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      POLLING_INTERVAL: "300"
+      SERVER_URL: http://localhost
+      DATABASE_URL: postgresql://podfetch:change-db-password@postgres:5432/podfetch
+    volumes:
+      - podfetch_podcasts:/app/podcasts
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:8000 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  podfetch_db:
+  podfetch_podcasts:

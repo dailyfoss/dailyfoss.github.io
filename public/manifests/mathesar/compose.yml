@@ -1,67 +1,59 @@
-version: "3.9"
+# ===============================
+# Docker Compose (Mathesar)
+# ===============================
+# host: http://localhost:8000
+# username: (created during first setup)
+# password: (created during first setup)
+# database user: mathesar
+# database password: change_this_password
 
-service:
-    container_name: mathesar_service
-    image: mathesar/mathesar-prod:latest
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: mathesar-postgres
+    restart: unless-stopped
     environment:
-      # First we load the variables configured above.
-      : *config
-
-      DJANGO_SETTINGS_MODULE: config.settings.production
-
-      # We set ALLOWED_HOSTS to * (allow all hosts) by default here since we are
-      # relying on caddy to manage which domains could access the mathesar web
-      # service.  If you do not want to use caddy add the domain(s) that you
-      # want to ALLOWED_HOSTS. Doing so will restrict traffic from all other
-      # domains.
-      ALLOWED_HOSTS: ${ALLOWED_HOSTS:-*}
-
-      # WARNING: MATHESAR_DATABASES is deprecated, and will be removed in a future release.
-      MATHESAR_DATABASES: ${MATHESAR_DATABASES:-}
+      POSTGRES_DB: mathesar
+      POSTGRES_USER: mathesar
+      POSTGRES_PASSWORD: change_this_password
     volumes:
-      - ./msar/static:/code/static
-      - ./msar/media:/code/media
-    depends_on:
-      db:
-        condition: service_healthy
+      - mathesar_postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: curl -f http://localhost:8000
+      test: ["CMD-SHELL", "pg_isready -U mathesar"]
       interval: 10s
       timeout: 5s
-      retries: 30
-      start_period: 5s
-    # If using caddy, expose the internal port 8000 only to other containers and
-    # not the docker host.
-    expose:
-      - "8000"
-    # Uncomment the following if not using caddy
-    ports:
-      - ${HOST_PORT:-8000}:8000
+      retries: 5
+    networks:
+      - internal
 
-  #-----------------------------------------------------------------------------
-  # PostgreSQL Database
-  #
-  # This service provides a Postgres database instance for holding both internal
-  # Mathesar data, as well as user data if desired, using the official
-  # PostgreSQL image hosted on Docker Hub
-  #
-  # As configured, this service exposes Postgres' default port (5432) to other
-  # services, allowing the Mathesar web sevice to connect to it.
-  #
-  db:
-    image: postgres:13
-    container_name: mathesar_db
-    # This service needs the config variables defined above.
-    environment: *config
-    # Expose the internal port 5432 only to other containers and not
-    # the underlying host.
-    expose:
-      - "5432"
+  mathesar:
+    image: ghcr.io/mathesar-foundation/mathesar:latest
+    container_name: mathesar
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://mathesar:change_this_password@postgres:5432/mathesar
+      DJANGO_SETTINGS_MODULE: config.settings.production
+    ports:
+      - "8000:8000"
     volumes:
-      - ./msar/pgdata:/var/lib/postgresql/data
+      - mathesar_media:/app/media
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
-      interval: 5s
-      timeout: 1s
-      retries: 30
-      start_period: 5s
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8000/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    networks:
+      - internal
+      - external
+
+volumes:
+  mathesar_postgres_data:
+  mathesar_media:
+
+networks:
+  internal:
+    internal: true
+  external:

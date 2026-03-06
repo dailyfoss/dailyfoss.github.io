@@ -1,37 +1,55 @@
+# ===============================
+# Docker Compose (Mixpost)
+# ===============================
+# host: http://localhost:8000
+# username: (set during installation)
+# password:
+
 services:
-    mixpost:
-        image: inovector/mixpost:latest
-        env_file:
-            - .env
-        ports:
-            - 9000:80
-        volumes:
-            - ./storage:/var/www/html/storage/app
-            - ./logs:/var/www/html/storage/logs
-        depends_on:
-            - mysql
-            - redis
-        restart: unless-stopped
-    mysql:
-        image: 'mysql/mysql-server:8.0'
-        environment:
-            MYSQL_DATABASE: ${DB_DATABASE}
-            MYSQL_USER: ${DB_USERNAME}
-            MYSQL_PASSWORD: ${DB_PASSWORD}
-        volumes:
-            - './mysql:/var/lib/mysql'
-        healthcheck:
-            test: ["CMD", "mysqladmin", "ping", "-p ${DB_PASSWORD}"]
-            retries: 3
-            timeout: 5s
-        restart: unless-stopped
-    redis:
-        image: 'redis:latest'
-        command: redis-server --appendonly yes --replica-read-only no
-        volumes:
-            - './redis:/data'
-        healthcheck:
-            test: ["CMD", "redis-cli", "ping"]
-            retries: 3
-            timeout: 5s
-        restart: unless-stopped
+  mixpost:
+    image: inovector/mixpost:latest
+    container_name: mixpost
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_ENV=production
+      - APP_URL=http://localhost:8000
+      - DB_CONNECTION=pgsql
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_DATABASE=mixpost
+      - DB_USERNAME=mixpost
+      - DB_PASSWORD=mixpost_password
+    volumes:
+      - mixpost_storage:/var/www/html/storage
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:8000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+
+  db:
+    image: postgres:17-alpine
+    container_name: mixpost-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=mixpost
+      - POSTGRES_USER=mixpost
+      - POSTGRES_PASSWORD=mixpost_password
+    volumes:
+      - mixpost_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mixpost -d mixpost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  mixpost_storage:
+  mixpost_db:

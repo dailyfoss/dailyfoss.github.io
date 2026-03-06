@@ -1,10 +1,38 @@
+# ===============================
+# Docker Compose (Portall)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+# ===============================
+
 services:
+
+  socket-proxy:
+    image: tecnativa/docker-socket-proxy:latest
+    restart: unless-stopped
+    environment:
+      CONTAINERS: 1
+      SERVICES: 1
+      TASKS: 1
+      POST: 0
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
   portall:
-    image: need4swede/portall:latest
-    container_name: portall
+    image: ghcr.io/portall/portall:latest
+    restart: unless-stopped
+    depends_on:
+      - socket-proxy
     ports:
       - "8080:8080"
     environment:
-      - SECRET_KEY=your_secret_key
+      SECRET_KEY: change-this-secret
+      DOCKER_HOST: tcp://socket-proxy:2375
+      DOCKER_ENABLED: "true"
+      HOST_IP: 127.0.0.1
     volumes:
-      - ./instance:/app/instance
+      - portall_data:/app/instance
+
+volumes:
+  portall_data:

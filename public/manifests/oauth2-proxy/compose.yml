@@ -1,0 +1,43 @@
+# ===============================
+# Docker Compose (OAuth2 Proxy)
+# ===============================
+# host: http://localhost:4180
+# No default credentials (OAuth provider handles login)
+
+services:
+  oauth2-proxy:
+    image: quay.io/oauth2-proxy/oauth2-proxy:latest
+    restart: unless-stopped
+
+    ports:
+      - "4180:4180"
+
+    environment:
+      OAUTH2_PROXY_PROVIDER: oidc
+      OAUTH2_PROXY_OIDC_ISSUER_URL: https://accounts.google.com
+      OAUTH2_PROXY_CLIENT_ID: replace_with_client_id
+      OAUTH2_PROXY_CLIENT_SECRET: replace_with_client_secret
+      OAUTH2_PROXY_COOKIE_SECRET: replace_with_32_byte_base64_secret
+      OAUTH2_PROXY_EMAIL_DOMAINS: "*"
+      OAUTH2_PROXY_HTTP_ADDRESS: 0.0.0.0:4180
+      OAUTH2_PROXY_UPSTREAMS: http://your-app:8080
+
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:4180/ping || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 256M
+        reservations:
+          memory: 64M

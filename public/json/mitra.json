@@ -23,7 +23,11 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/mitra.webp",
     "issues": null,
     "releases": null,
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/mitra-dashboard.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/mitra-federated.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/mitra-profile-directory.png"
+    ]
   },
   "features": [
     {
@@ -84,12 +88,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/mitra/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

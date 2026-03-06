@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "GPL 3.0",
     "version": "v4.5.0",
     "date_app_added": "2025-11-23",
     "date_last_released": "2026-03-03",
@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://www.getontime.no",
-    "documentation": "https://github.com/cpvalente/ontime",
+    "documentation": "https://docs.getontime.no/ontime",
     "source_code": "https://github.com/cpvalente/ontime",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/ontime.webp",
     "issues": "https://github.com/cpvalente/ontime/issues",
     "releases": "https://github.com/cpvalente/ontime/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/ontime-editor.png"
+    ]
   },
   "features": [
     {
@@ -87,12 +89,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/ontime/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

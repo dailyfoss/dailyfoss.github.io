@@ -23,12 +23,15 @@
   },
   "resources": {
     "website": "https://oauth2-proxy.github.io/oauth2-proxy",
-    "documentation": "https://github.com/oauth2-proxy/oauth2-proxy",
+    "documentation": "https://oauth2-proxy.github.io/oauth2-proxy",
     "source_code": "https://github.com/oauth2-proxy/oauth2-proxy",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/oauth2-proxy.webp",
     "issues": "https://github.com/oauth2-proxy/oauth2-proxy/issues",
     "releases": "https://github.com/oauth2-proxy/oauth2-proxy/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/oauth2-proxy-homepage.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/oauth2-proxy-overview.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +91,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/oauth2-proxy/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

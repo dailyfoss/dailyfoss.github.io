@@ -1,0 +1,29 @@
+# ===============================
+# Docker Compose (Podsync)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+# ===============================
+
+services:
+  podsync:
+    image: ghcr.io/mxpv/podsync:latest
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - podsync_data:/app/data
+      - podsync_db:/app/db
+      - podsync_config:/app/config
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:8080 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  podsync_data:
+  podsync_db:
+  podsync_config:

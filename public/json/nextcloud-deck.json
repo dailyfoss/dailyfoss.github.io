@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://apps.nextcloud.com/apps/deck",
-    "documentation": "https://github.com/nextcloud/deck",
+    "documentation": "https://deck.readthedocs.io/en/latest/API",
     "source_code": "https://github.com/nextcloud/deck",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/nextcloud-deck.webp",
     "issues": "https://github.com/nextcloud/deck/issues",
     "releases": "https://github.com/nextcloud/deck/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nextcloud-deck-demo.png"
+    ]
   },
   "features": [
     {
@@ -83,12 +85,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/nextcloud-deck/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

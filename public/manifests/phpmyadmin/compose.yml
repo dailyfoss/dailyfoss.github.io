@@ -1,0 +1,29 @@
+# ===============================
+# Docker Compose (phpMyAdmin)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  phpmyadmin:
+    image: phpmyadmin:latest
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      PMA_ARBITRARY: "1"
+    volumes:
+      - phpmyadmin_sessions:/sessions
+      - phpmyadmin_config:/etc/phpmyadmin
+      - phpmyadmin_themes:/www/themes
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  phpmyadmin_sessions:
+  phpmyadmin_config:
+  phpmyadmin_themes:

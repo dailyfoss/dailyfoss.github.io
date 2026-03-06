@@ -1,0 +1,44 @@
+# ===============================
+# Docker Compose (Operational.co)
+# ===============================
+# host: http://localhost:3000
+# username: admin@email.com
+# password: set via SECRET
+# ===============================
+
+services:
+
+  mysql:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: change-root-password
+      MYSQL_DATABASE: operational
+      MYSQL_USER: operational_user
+      MYSQL_PASSWORD: change-db-password
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -pchange-root-password"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  operational:
+    image: ghcr.io/operational-co/operational.co:0.1.7
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+      - "4337:4337"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: mysql://operational_user:change-db-password@mysql:3306/operational
+      APP_URL: http://localhost:3000
+      SECRET: change-this-to-a-long-random-string
+      CORS: "*"
+      ADMIN_EMAIL: admin@example.com
+
+volumes:
+  mysql_data:

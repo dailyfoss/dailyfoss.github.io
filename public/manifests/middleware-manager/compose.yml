@@ -1,0 +1,32 @@
+# ===============================
+# Docker Compose (Middleware Manager)
+# ===============================
+# host: http://localhost:3456
+# username:
+# password:
+
+services:
+  middleware-manager:
+    image: hhftechnology/middleware-manager:v4.3.0
+    container_name: middleware-manager
+    restart: unless-stopped
+    ports:
+      - "3456:3456"
+    environment:
+      - PANGOLIN_API_URL=http://pangolin:3001/api/v1
+      - TRAEFIK_CONF_DIR=/conf
+      - DB_PATH=/data/middleware.db
+      - PORT=3456
+    volumes:
+      - middleware_data:/data
+      - middleware_conf:/conf
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:3456/"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  middleware_data:
+  middleware_conf:

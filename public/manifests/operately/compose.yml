@@ -1,0 +1,53 @@
+# ===============================
+# Docker Compose (Operately)
+# ===============================
+# host: http://localhost:4000
+# username: create on first run
+# password: create on first run
+# ===============================
+
+services:
+
+  db:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: change-this-password
+      POSTGRES_DB: operately
+    volumes:
+      - operately_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d operately"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    image: operately/operately:latest
+    restart: unless-stopped
+    ports:
+      - "4000:4000"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_HOST: db
+      DB_USERNAME: postgres
+      DB_PASSWORD: change-this-password
+      DB_NAME: operately
+      OPERATELY_JS_SENTRY_ENABLED: "false"
+      OPERATELY_DEMO_BUILDER_ALLOWED: "false"
+      NOTIFICATION_EMAIL: notifications@example.com
+    volumes:
+      - operately_media:/media
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://127.0.0.1:4000/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  operately_pgdata:
+  operately_media:

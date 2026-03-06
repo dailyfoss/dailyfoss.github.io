@@ -1,0 +1,41 @@
+# ===============================
+# Docker Compose (PortCheckerio)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+# ===============================
+
+services:
+
+  api:
+    image: ghcr.io/dsgnr/portcheckerio-api:latest
+    restart: unless-stopped
+    environment:
+      ALLOW_PRIVATE: "false"
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://127.0.0.1:8000/healthz"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+
+  web:
+    image: ghcr.io/dsgnr/portcheckerio-web:latest
+    restart: unless-stopped
+    depends_on:
+      api:
+        condition: service_healthy
+    environment:
+      DEFAULT_PORT: "443"
+      API_URL: http://api:8000
+    ports:
+      - "8080:80"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://127.0.0.1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s

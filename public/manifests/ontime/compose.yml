@@ -1,0 +1,45 @@
+# ===============================
+# Docker Compose (OnTime)
+# ===============================
+# Web: http://localhost:4001
+# OSC (UDP): 8888, 9999
+# No default credentials
+
+services:
+  ontime:
+    image: getontime/ontime:latest
+    restart: unless-stopped
+
+    ports:
+      - "4001:4001/tcp"
+      - "8888:8888/udp"
+      - "9999:9999/udp"
+
+    environment:
+      TZ: Asia/Singapore
+
+    volumes:
+      - ontime_data:/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:4001 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 512M
+        reservations:
+          memory: 128M
+
+volumes:
+  ontime_data:

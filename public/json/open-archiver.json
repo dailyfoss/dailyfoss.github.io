@@ -23,12 +23,16 @@
   },
   "resources": {
     "website": "https://openarchiver.com",
-    "documentation": "https://github.com/LogicLabs-OU/OpenArchiver",
+    "documentation": "https://docs.openarchiver.com",
     "source_code": "https://github.com/LogicLabs-OU/OpenArchiver",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/open-archiver.webp",
     "issues": "https://github.com/LogicLabs-OU/OpenArchiver/issues",
     "releases": "https://github.com/LogicLabs-OU/OpenArchiver/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/open-archiver-archived-emails.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/open-archiver-dashboard.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/open-archiver-search.png"
+    ]
   },
   "features": [
     {
@@ -86,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/open-archiver/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
@@ -107,8 +113,8 @@
     }
   },
   "demo": {
-    "url": null,
-    "username": null,
-    "password": null
+    "url": "https://demo.openarchiver.com/signin",
+    "username": "demo@openarchiver.com",
+    "password": "openarchiver_demo"
   }
 }

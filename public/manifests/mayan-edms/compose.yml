@@ -1,0 +1,81 @@
+# ===============================
+# Docker Compose (Mayan EDMS)
+# ===============================
+# host: http://localhost:8000
+# username: admin
+# password: (shown in container logs on first start)
+# database user: mayan
+# database password: change_this_password
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: mayan-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: mayan
+      POSTGRES_USER: mayan
+      POSTGRES_PASSWORD: change_this_password
+    volumes:
+      - mayan_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mayan"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - internal
+
+  redis:
+    image: redis:7-alpine
+    container_name: mayan-redis
+    restart: unless-stopped
+    volumes:
+      - mayan_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - internal
+
+  mayan:
+    image: mayanedms/mayanedms:latest
+    container_name: mayan
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      MAYAN_DATABASE_ENGINE: django.db.backends.postgresql
+      MAYAN_DATABASE_NAME: mayan
+      MAYAN_DATABASE_USER: mayan
+      MAYAN_DATABASE_PASSWORD: change_this_password
+      MAYAN_DATABASE_HOST: postgres
+      MAYAN_REDIS_HOST: redis
+      MAYAN_REDIS_PORT: 6379
+    volumes:
+      - mayan_media:/var/lib/mayan
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8000/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    networks:
+      - internal
+      - external
+
+volumes:
+  mayan_postgres_data:
+  mayan_redis_data:
+  mayan_media:
+
+networks:
+  internal:
+    internal: true
+  external:

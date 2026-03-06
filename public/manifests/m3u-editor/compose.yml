@@ -1,0 +1,99 @@
+# ===============================
+# Docker Compose (m3u-editor)
+# ===============================
+# host: http://localhost:36400
+# username: admin
+# password: admin
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: m3ue-postgres
+    environment:
+      POSTGRES_DB: m3ue
+      POSTGRES_USER: m3ue
+      POSTGRES_PASSWORD: strongpassword
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U m3ue"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: m3ue-redis
+    command: ["redis-server", "--requirepass", "strongredispassword"]
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "strongredispassword", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  m3u-proxy:
+    image: sparkison/m3u-proxy:latest
+    container_name: m3ue-proxy
+    environment:
+      M3U_PROXY_PORT: 38085
+      M3U_PROXY_TOKEN: strongproxytoken
+    ports:
+      - "38085:38085"
+    restart: unless-stopped
+    depends_on:
+      - redis
+
+  m3u-editor:
+    image: sparkison/m3u-editor:latest
+    container_name: m3ue-app
+    ports:
+      - "36400:36400"
+    environment:
+      TZ: Etc/UTC
+
+      APP_URL: http://localhost
+      APP_PORT: 36400
+
+      DB_CONNECTION: pgsql
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_DATABASE: m3ue
+      DB_USERNAME: m3ue
+      DB_PASSWORD: strongpassword
+
+      REDIS_ENABLED: "true"
+      REDIS_HOST: redis
+      REDIS_SERVER_PORT: 6379
+      REDIS_PASSWORD: strongredispassword
+
+      M3U_PROXY_ENABLED: "true"
+      M3U_PROXY_HOST: m3u-proxy
+      M3U_PROXY_PORT: 38085
+      M3U_PROXY_TOKEN: strongproxytoken
+
+    volumes:
+      - m3ue_config:/var/www/config
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+    restart: unless-stopped
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:36400/up"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+volumes:
+  postgres_data:
+  redis_data:
+  m3ue_config:

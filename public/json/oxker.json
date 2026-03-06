@@ -28,7 +28,9 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/oxker.webp",
     "issues": "https://github.com/mrjackwills/oxker/issues",
     "releases": "https://github.com/mrjackwills/oxker/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/oxker-demo.png"
+    ]
   },
   "features": [
     {
@@ -78,12 +80,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/oxker/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

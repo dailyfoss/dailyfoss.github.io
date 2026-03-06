@@ -1,0 +1,50 @@
+# ===============================
+# Docker Compose (monetr)
+# ===============================
+# host: http://localhost:8080
+# username: (created on first run)
+# password:
+
+services:
+  monetr:
+    image: ghcr.io/monetr/monetr:latest
+    container_name: monetr
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      - MONETR_LISTEN_ADDRESS=0.0.0.0:8080
+      - MONETR_DATABASE_URL=postgres://monetr:monetr_password@db:5432/monetr?sslmode=disable
+      - MONETR_SECRET_KEY=change_this_secret_key
+    volumes:
+      - monetr_data:/data
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  db:
+    image: postgres:17-alpine
+    container_name: monetr-db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=monetr
+      - POSTGRES_PASSWORD=monetr_password
+      - POSTGRES_DB=monetr
+    volumes:
+      - monetr_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U monetr -d monetr"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  monetr_data:
+  monetr_db:

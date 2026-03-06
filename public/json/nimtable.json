@@ -28,7 +28,9 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/nimtable.webp",
     "issues": "https://github.com/nimtable/nimtable/issues",
     "releases": "https://github.com/nimtable/nimtable/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/nimtable-screenshot.png"
+    ]
   },
   "features": [
     {
@@ -86,12 +88,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/nimtable/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

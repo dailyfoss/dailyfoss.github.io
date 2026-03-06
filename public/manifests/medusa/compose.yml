@@ -1,0 +1,27 @@
+# ===============================
+# Docker Compose (Medusa)
+# ===============================
+# host: http://localhost:8081
+# username:
+# password:
+
+services:
+  medusa:
+    image: lscr.io/linuxserver/medusa:latest
+    container_name: medusa
+    restart: unless-stopped
+    ports:
+      - "8081:8081"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+    volumes:
+      - medusa_config:/config
+      - medusa_tv:/tv
+      - medusa_downloads:/downloads
+
+volumes:
+  medusa_config:
+  medusa_tv:
+  medusa_downloads:

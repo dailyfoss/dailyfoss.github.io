@@ -1,0 +1,33 @@
+# ===============================
+# Docker Compose (Overr-Syncerr)
+# ===============================
+# host: http://localhost:8089
+# username:
+# password:
+# ===============================
+
+services:
+  overr-syncerr:
+    image: gsariev/overr-syncerr:latest
+    restart: unless-stopped
+    ports:
+      - "8089:8089"
+    volumes:
+      - overr_syncerr_config:/config
+      - docker_socket:/var/run/docker.sock
+      - movies_data:/mnt/movies
+      - tv_data:/mnt/tv
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:8089/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+volumes:
+  overr_syncerr_config:
+  movies_data:
+  tv_data:
+  docker_socket:
+    external: true
+    name: docker_socket

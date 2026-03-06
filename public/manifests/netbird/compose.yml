@@ -1,0 +1,32 @@
+# ===============================
+# Docker Compose (NetBird Client)
+# ===============================
+# host: n/a (VPN client)
+# username:
+# password:
+
+services:
+  netbird-client:
+    image: netbirdio/netbird:latest
+    container_name: netbird-client
+    hostname: netbird-client
+    restart: unless-stopped
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+      - SYS_RESOURCE
+    devices:
+      - /dev/net/tun
+    environment:
+      - NB_SETUP_KEY=replace_with_real_setup_key
+    volumes:
+      - netbird_client_data:/var/lib/netbird
+    healthcheck:
+      test: ["CMD", "netbird", "status"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+
+volumes:
+  netbird_client_data:

@@ -1,0 +1,53 @@
+# ===============================
+# Docker Compose (OpenPanel Analytics)
+# ===============================
+# host: http://localhost:8000
+# admin credentials: created on first launch
+# ===============================
+
+services:
+  openpanel:
+    image: openpanel/openpanel:latest
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://openpanel:openpanel@db:5432/openpanel
+      REDIS_URL: redis://redis:6379
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://127.0.0.1:8000/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  db:
+    image: postgres:15
+    restart: unless-stopped
+    volumes:
+      - openpanel_db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: openpanel
+      POSTGRES_USER: openpanel
+      POSTGRES_PASSWORD: openpanel
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "openpanel"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  openpanel_db:

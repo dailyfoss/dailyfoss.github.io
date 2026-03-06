@@ -1,10 +1,29 @@
+# ===============================
+# Docker Compose (Meilisearch)
+# ===============================
+# host: http://localhost:7700
+# username:
+# password: (set via MEILI_MASTER_KEY)
+
 services:
   meilisearch:
-    image: getmeili/meilisearch:v1.10
-    ports:
-      - 7700:7700
-    environment:
-      - MEILI_MASTER_KEY='MASTER_KEY'\
-    volumes:
-      - $(pwd)/meili_data:/meili_data
+    image: getmeili/meilisearch:v1.7
+    container_name: meilisearch
     restart: unless-stopped
+    ports:
+      - "7700:7700"
+    environment:
+      - MEILI_ENV=production
+      - MEILI_MASTER_KEY=change_this_master_key
+      - MEILI_LOG_LEVEL=WARN
+    volumes:
+      - meilisearch_data:/meili_data
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:7700/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  meilisearch_data:

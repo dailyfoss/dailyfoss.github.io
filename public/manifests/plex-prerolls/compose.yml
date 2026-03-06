@@ -1,0 +1,36 @@
+# ===============================
+# Docker Compose (Plex PreRolls)
+# ===============================
+# host: http://localhost:8283
+# ===============================
+
+services:
+
+  plex-prerolls:
+    image: nwithan8/plex_prerolls:latest
+    restart: unless-stopped
+    ports:
+      - "8283:8283"
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: "Etc/UTC"
+    volumes:
+      - plex_prerolls_config:/
+      - plex_prerolls_logs:/logs
+      - plex_prerolls_files:/files
+      - plex_prerolls_renders:/renders
+      - plex_prerolls_auto:/auto_rolls
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:8283 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  plex_prerolls_config:
+  plex_prerolls_logs:
+  plex_prerolls_files:
+  plex_prerolls_renders:
+  plex_prerolls_auto:

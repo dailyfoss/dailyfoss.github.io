@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://jamcalli.github.io/Pulsarr/",
-    "documentation": "https://github.com/jamcalli/Pulsarr",
+    "documentation": "https://jamcalli.github.io/Pulsarr/docs/intro",
     "source_code": "https://github.com/jamcalli/Pulsarr",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/pulsarr.webp",
     "issues": "https://github.com/jamcalli/Pulsarr/issues",
     "releases": "https://github.com/jamcalli/Pulsarr/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/pulsarr-dashboard.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/pulsarr/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

@@ -1,0 +1,44 @@
+# ===============================
+# Docker Compose (Plik)
+# ===============================
+# host: http://localhost:8080
+# username: admin
+# password: generated on setup
+# ===============================
+
+services:
+
+  mongodb:
+    image: mongo:7
+    restart: unless-stopped
+    volumes:
+      - plik_mongo:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  plik:
+    image: rootgg/plik:latest
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    command:
+      - "--mongo"
+      - "mongodb://mongodb:27017/plik"
+    volumes:
+      - plik_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:8080 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  plik_mongo:
+  plik_data:

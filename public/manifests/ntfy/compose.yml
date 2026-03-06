@@ -1,21 +1,47 @@
+# ===============================
+# Docker Compose (ntfy)
+# ===============================
+# host: http://localhost
+# No default credentials (public by default unless configured)
+
 services:
   ntfy:
-    image: binwiederhier/ntfy
-    container_name: ntfy
-    command:
-      - serve
-    environment:
-      - TZ=UTC    # optional: set desired timezone
-    user: UID:GID # optional: replace with your own user/group or uid/gid
-    volumes:
-      - /var/cache/ntfy:/var/cache/ntfy
-      - /etc/ntfy:/etc/ntfy
-    ports:
-      - 80:80
-    healthcheck: # optional: remember to adapt the host:port to your environment
-        test: ["CMD-SHELL", "wget -q --tries=1 http://localhost:80/v1/health -O - | grep -Eo '\"healthy\"\\s*:\\s*true' || exit 1"]
-        interval: 60s
-        timeout: 10s
-        retries: 3
-        start_period: 40s
+    image: binwiederhier/ntfy:latest
     restart: unless-stopped
+
+    command: serve
+
+    environment:
+      TZ: UTC
+
+    ports:
+      - "80:80"
+
+    volumes:
+      - ntfy_cache:/var/cache/ntfy
+      - ntfy_config:/etc/ntfy
+
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost/v1/health | grep -q '\"healthy\":true' || exit 1"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 256M
+        reservations:
+          memory: 64M
+
+volumes:
+  ntfy_cache:
+  ntfy_config:

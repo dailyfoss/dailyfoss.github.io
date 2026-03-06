@@ -23,12 +23,15 @@
   },
   "resources": {
     "website": "https://pymedusa.com",
-    "documentation": "https://github.com/pymedusa/Medusa",
+    "documentation": "https://github.com/pymedusa/Medusa/wiki/Installation-&-Configuration-Guides",
     "source_code": "https://github.com/pymedusa/Medusa",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/medusa.webp",
     "issues": "https://github.com/pymedusa/Medusa/issues",
     "releases": "https://github.com/pymedusa/Medusa/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/medusa-details-overview.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/medusa-media-overview.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +91,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/medusa/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

@@ -1,87 +1,59 @@
+# ===============================
+# Docker Compose (OpenProject)
+# ===============================
+# host: http://localhost:8080
+# username: admin
+# password: admin (change on first login)
+# ===============================
+
 services:
   db:
-    image: postgres:13
-    : *restart_policy
-    stop_grace_period: "3s"
-    volumes:
-      - "${PGDATA:-pgdata}:/var/lib/postgresql/data"
+    image: postgres:17
+    restart: unless-stopped
     environment:
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-p4ssw0rd}
       POSTGRES_DB: openproject
-    networks:
-      - backend
+      POSTGRES_USER: openproject
+      POSTGRES_PASSWORD: openproject
+    volumes:
+      - openproject_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U openproject -d openproject"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   cache:
-    image: memcached
-    : *restart_policy
-    networks:
-      - backend
-
-  proxy:
-    build:
-      context: ./proxy
-      args:
-        APP_HOST: web
-    image: openproject/proxy
-    : *restart_policy
-    ports:
-      - "${PORT:-8080}:80"
-    depends_on:
-      - web
-    networks:
-      - frontend
-
-  web:
-    : *app
-    command: "./docker/prod/web"
-    networks:
-      - frontend
-      - backend
-    depends_on:
-      - db
-      - cache
-      - seeder
-    labels:
-      - autoheal=true
+    image: memcached:1.6-alpine
+    restart: unless-stopped
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080${OPENPROJECT_RAILS__RELATIVE__URL__ROOT:-}/health_checks/default"]
-      interval: 10s
-      timeout: 3s
-      retries: 3
-      start_period: 30s
+      test: ["CMD", "sh", "-c", "echo stats | nc 127.0.0.1 11211"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
 
-  autoheal:
-    image: willfarrell/autoheal:1.2.0
-    volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
+  openproject:
+    image: openproject/community:latest
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+      cache:
+        condition: service_healthy
     environment:
-      AUTOHEAL_CONTAINER_LABEL: autoheal
-      AUTOHEAL_START_PERIOD: 600
-      AUTOHEAL_INTERVAL: 30
+      DATABASE_URL: postgresql://openproject:openproject@db:5432/openproject
+      OPENPROJECT_CACHE__MEMCACHE__SERVER: cache:11211
+      OPENPROJECT_SECRET_KEY_BASE: change-this-to-a-long-random-string
+    volumes:
+      - openproject_assets:/var/openproject/assets
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:8080/health_checks/default"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
 
-  worker:
-    : *app
-    command: "./docker/prod/worker"
-    networks:
-      - backend
-    depends_on:
-      - db
-      - cache
-      - seeder
-
-  cron:
-    : *app
-    command: "./docker/prod/cron"
-    networks:
-      - backend
-    depends_on:
-      - db
-      - cache
-      - seeder
-
-  seeder:
-    : *app
-    command: "./docker/prod/seeder"
-    restart: on-failure
-    networks:
-      - backend
+volumes:
+  openproject_pgdata:
+  openproject_assets:

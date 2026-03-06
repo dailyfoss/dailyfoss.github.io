@@ -1,10 +1,43 @@
+# ===============================
+# Docker Compose (OneDev)
+# ===============================
+# Web: http://localhost:6610
+# SSH: ssh://localhost:6611
+# Default admin password: printed in logs on first start
+
 services:
-  server:
-    image: 1dev/server
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - $(pwd)/onedev:/opt/onedev
-    ports:
-      - 6610:6610
-      - 6611:6611
+  onedev:
+    image: 1dev/server:latest
     restart: unless-stopped
+
+    ports:
+      - "6610:6610"
+      - "6611:6611"
+
+    volumes:
+      - onedev_data:/opt/onedev
+      - /var/run/docker.sock:/var/run/docker.sock
+
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:6610 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 60s
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+          memory: 2G
+        reservations:
+          memory: 512M
+
+volumes:
+  onedev_data:

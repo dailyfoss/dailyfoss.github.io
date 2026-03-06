@@ -1,0 +1,25 @@
+# ===============================
+# Docker Compose (Pigeon Pod)
+# ===============================
+# host: http://localhost:8834
+# username:
+# password:
+
+services:
+  pigeon-pod:
+    image: ghcr.io/aizhimou/pigeon-pod:latest
+    restart: unless-stopped
+    ports:
+      - "8834:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:sqlite:/data/pigeon-pod.db
+    volumes:
+      - pigeonpod_data:/data
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8080"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pigeonpod_data:

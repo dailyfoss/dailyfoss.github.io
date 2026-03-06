@@ -1,9 +1,25 @@
+# ===============================
+# Docker Compose (Memos)
+# ===============================
+# host: http://localhost:5230
+# username:
+# password:
+
 services:
   memos:
     image: neosmemo/memos:latest
     container_name: memos
-    volumes:
-      - ./data:/var/opt/memos
-    ports:
-      - 5230:5230
     restart: unless-stopped
+    ports:
+      - "5230:5230"
+    volumes:
+      - memos_data:/var/opt/memos
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:5230/healthz"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  memos_data:

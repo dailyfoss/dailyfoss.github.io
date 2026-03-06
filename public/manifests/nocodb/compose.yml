@@ -1,27 +1,107 @@
+# ===============================
+# Docker Compose (NocoDB + NPM)
+# ===============================
+# host: http://localhost:8181 (NPM UI)
+# host: http://localhost (via proxy)
+# NPM default login:
+#   Email: admin@example.com
+#   Password: changeme
+
 services:
+  root_db:
+    image: mysql:8
+    restart: unless-stopped
+
+    environment:
+      MYSQL_DATABASE: root_db
+      MYSQL_USER: noco
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: strong_root_password
+
+    volumes:
+      - db_data:/var/lib/mysql
+
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-pnoco"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
   nocodb:
+    image: nocodb/nocodb:latest
+    restart: unless-stopped
+
     depends_on:
       root_db:
         condition: service_healthy
+
     environment:
-      NC_DB: "pg://root_db:5432?u=postgres&p=password&d=root_db"
-    image: "nocodb/nocodb:latest"
+      NC_DB: mysql2://noco:password@root_db:3306/root_db
+
+    volumes:
+      - nc_data:/usr/app/data
+
+    networks:
+      - internal
+      - proxy
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+          memory: 1G
+        reservations:
+          memory: 256M
+
+  nginx-proxy-manager:
+    image: jlesage/nginx-proxy-manager:latest
+    restart: unless-stopped
+
+    environment:
+      TZ: Europe/Amsterdam
+      PUID: 1000
+      PGID: 1000
+
     ports:
-      - "8080:8080"
-    restart: always
+      - "8181:8181"
+      - "80:8080"
+      - "443:4443"
+
     volumes:
-      - "./nc_data:/usr/app/data"
-  root_db:
-    environment:
-      POSTGRES_DB: root_db
-      POSTGRES_PASSWORD: password
-      POSTGRES_USER: postgres
+      - nginx_proxy_manager:/config
+
+    networks:
+      - proxy
+
     healthcheck:
-      interval: 10s
-      retries: 10
-      test: "pg_isready -U \"$$POSTGRES_USER\" -d \"$$POSTGRES_DB\""
-      timeout: 2s
-    image: postgres
-    restart: always
-    volumes:
-      - "./db_data:/var/lib/postgresql/data"
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8181 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  internal:
+  proxy:
+
+volumes:
+  db_data:
+  nc_data:
+  nginx_proxy_manager:

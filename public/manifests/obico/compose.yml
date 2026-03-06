@@ -1,0 +1,121 @@
+# ===============================
+# Docker Compose (Obico Server)
+# ===============================
+# Web UI: http://localhost:3334
+# ML API: http://localhost:3333
+# No default credentials (create admin on first run)
+
+services:
+  postgres:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: obico
+      POSTGRES_USER: obico
+      POSTGRES_PASSWORD: change_this_password
+    volumes:
+      - obico_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U obico -d obico"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - obico_redis:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  ml_api:
+    image: ghcr.io/thespaghettidetective/ml-api:latest
+    restart: unless-stopped
+    ports:
+      - "3333:3333"
+    environment:
+      DEBUG: "False"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3333/hc/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  web:
+    image: ghcr.io/thespaghettidetective/obico-server:latest
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      ml_api:
+        condition: service_healthy
+    ports:
+      - "3334:3334"
+    environment:
+      DEBUG: "False"
+      DATABASE_URL: postgres://obico:change_this_password@postgres:5432/obico
+      REDIS_URL: redis://redis:6379
+      DJANGO_SECRET_KEY: replace_with_strong_random_key
+      INTERNAL_MEDIA_HOST: http://web:3334
+      ML_API_HOST: http://ml_api:3333
+      ACCOUNT_ALLOW_SIGN_UP: "False"
+      SITE_IS_PUBLIC: "False"
+      SITE_USES_HTTPS: "False"
+    command: >
+      sh -c "
+      python manage.py migrate &&
+      python manage.py collectstatic --noinput &&
+      daphne -b 0.0.0.0 -p 3334 config.routing:application
+      "
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3334/hc/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+          memory: 1G
+        reservations:
+          memory: 256M
+
+  tasks:
+    image: ghcr.io/thespaghettidetective/obico-server:latest
+    restart: unless-stopped
+    command: celery -A config worker --beat -l info -c 2 -Q realtime,celery
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://obico:change_this_password@postgres:5432/obico
+      REDIS_URL: redis://redis:6379
+      DJANGO_SECRET_KEY: replace_with_strong_random_key
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  obico_postgres:
+  obico_redis:

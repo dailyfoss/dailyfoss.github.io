@@ -1,13 +1,29 @@
+# ===============================
+# Docker Compose (Overseerr)
+# ===============================
+# host: http://localhost:5055
+# username: set on first run
+# password: set on first run
+# ===============================
+
 services:
   overseerr:
     image: lscr.io/linuxserver/overseerr:latest
-    container_name: overseerr
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Etc/UTC
-    volumes:
-      - /path/to/overseerr/config:/config
-    ports:
-      - 5055:5055
     restart: unless-stopped
+    ports:
+      - "5055:5055"
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: "Etc/UTC"
+    volumes:
+      - overseerr_config:/config
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:5055/api/v1/status || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  overseerr_config:

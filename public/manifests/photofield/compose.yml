@@ -1,0 +1,25 @@
+# ===============================
+# Docker Compose (Photofield)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  photofield:
+    image: ghcr.io/smilyorg/photofield:latest
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - photofield_data:/app/data
+      - photofield_photos:/app/photos:ro
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8080"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  photofield_data:
+  photofield_photos:

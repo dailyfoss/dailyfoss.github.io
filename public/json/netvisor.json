@@ -23,12 +23,22 @@
   },
   "resources": {
     "website": "https://netvisor.io/",
-    "documentation": "https://github.com/mayanayza/netvisor",
+    "documentation": "https://scanopy.net/docs/",
     "source_code": "https://github.com/mayanayza/netvisor",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/netvisor.webp",
     "issues": "https://github.com/mayanayza/netvisor/issues",
     "releases": "https://github.com/mayanayza/netvisor/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/netvisor-scanopy-DATACENTER.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/netvisor-scanopy-groups.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/netvisor-scanopy-home.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/netvisor-scanopy-hosts.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/netvisor-scanopy-maya.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/netvisor-scanopy-services.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/netvisor-scanopy-subnets.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/netvisor-scanopy-tay.png",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/netvisor-scanopy-topology.png"
+    ]
   },
   "features": [
     {
@@ -88,12 +98,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/netvisor/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
@@ -104,8 +116,8 @@
     }
   },
   "demo": {
-    "url": null,
-    "username": null,
-    "password": null
+    "url": "https://demo.scanopy.net/login",
+    "username": "demo@scanopy.net",
+    "password": "password123"
   }
 }
