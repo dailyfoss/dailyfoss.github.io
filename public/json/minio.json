@@ -1,0 +1,119 @@
+{
+  "name": "minio",
+  "slug": "minio",
+  "tagline": "A high-performance object storage server compatible with the S3 API",
+  "subtitle": "",
+  "description": "MinIO is a high-performance, self-hosted object storage solution compatible with the S3 API. It's ideal for cloud-native apps, providing scalable, distributed storage with client libraries and a web UI.",
+  "categories": [
+    25
+  ],
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "RELEASE.2025-10-15T17-29-55Z",
+    "date_app_added": "2025-11-23",
+    "date_last_released": "2025-10-16",
+    "date_last_commit": "2026-02-12",
+    "github_stars": 60437,
+    "github_contributors": 412,
+    "github_commits_this_year": 2,
+    "github_issues_open": 0,
+    "github_issues_closed_this_year": 0,
+    "github_releases_this_year": 0
+  },
+  "resources": {
+    "website": "https://min.io/download?license=agpl&platform=linux",
+    "documentation": "https://github.com/minio/minio",
+    "source_code": "https://github.com/minio/minio",
+    "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/minio.webp",
+    "issues": "https://github.com/minio/minio/issues",
+    "releases": "https://github.com/minio/minio/releases",
+    "logo_light": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/minio-light.webp",
+    "screenshots": []
+  },
+  "features": [
+    {
+      "title": "Object Storage Server",
+      "description": "Store and retrieve objects using an S3-compatible API",
+      "core_feature": true
+    },
+    {
+      "title": "S3 Compatibility",
+      "description": "Use standard S3 clients and tools",
+      "core_feature": true
+    },
+    {
+      "title": "Bucket Management",
+      "description": "Create and manage storage buckets"
+    },
+    {
+      "title": "Access Policies",
+      "description": "Control access using policies",
+      "core_feature": true
+    },
+    {
+      "title": "Web Console",
+      "description": "Manage storage through a browser"
+    },
+    {
+      "title": "Self-Hosted Deployment",
+      "description": "Run the storage service on your own infrastructure"
+    }
+  ],
+  "platform_support": {
+    "desktop": {
+      "linux": false,
+      "windows": false,
+      "macos": false
+    },
+    "mobile": {
+      "android": false,
+      "ios": false
+    },
+    "web_app": false,
+    "browser_extension": false,
+    "cli_only": false
+  },
+  "hosting_options": {
+    "self_hosted": false,
+    "managed_cloud": false,
+    "saas": false
+  },
+  "interfaces": {
+    "cli": false,
+    "gui": false,
+    "web_ui": false,
+    "api": false,
+    "tui": false
+  },
+  "deployment_methods": {
+    "script": false,
+    "docker": false,
+    "docker_compose": true,
+    "helm": false,
+    "kubernetes": false,
+    "terraform": false
+  },
+  "manifests": {
+    "docker_compose": "/manifests/minio/compose.yml"
+  },
+  "notes": [],
+  "repository_status": null,
+  "community_integrations": {
+    "proxmox_ve": {
+      "supported": true,
+      "script_id": "minio",
+      "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=minio"
+    },
+    "yunohost": {
+      "supported": true,
+      "repo_name": "minio_ynh",
+      "url": "https://github.com/YunoHost-Apps/minio_ynh"
+    }
+  },
+  "demo": {
+    "url": null,
+    "username": null,
+    "password": null
+  }
+}
