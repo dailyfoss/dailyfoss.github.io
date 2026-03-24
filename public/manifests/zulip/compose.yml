@@ -1,0 +1,57 @@
+# ===============================
+# Docker Compose (Zulip)
+# ===============================
+# host: http://localhost:8080
+# username: (created during setup)
+# password:
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: zulip
+      POSTGRES_PASSWORD: zulippassword
+      POSTGRES_DB: zulip
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U zulip -d zulip"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+
+  zulip:
+    image: zulip/docker-zulip:latest
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    ports:
+      - "8080:80"
+    environment:
+      SETTING_EXTERNAL_HOST: "localhost"
+      SETTING_ZULIP_ADMINISTRATOR: "admin@example.com"
+      DB_HOST: postgres
+      DB_USER: zulip
+      DB_PASS: zulippassword
+      DB_NAME: zulip
+      REDIS_HOST: redis
+      MEMCACHED_HOST: "127.0.0.1"
+      SETTING_SECRET_KEY: "replace_with_long_random_string"
+    volumes:
+      - zulip_data:/data
+
+volumes:
+  postgres_data:
+  redis_data:
+  zulip_data:

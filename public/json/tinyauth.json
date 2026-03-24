@@ -28,7 +28,9 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/tinyauth.webp",
     "issues": "https://github.com/steveiliop56/tinyauth/issues",
     "releases": "https://github.com/steveiliop56/tinyauth/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tinyauth-screenshot.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/tinyauth/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
@@ -109,8 +113,8 @@
     }
   },
   "demo": {
-    "url": null,
-    "username": null,
-    "password": null
+    "url": "https://demo.tinyauth.app/login",
+    "username": "user",
+    "password": "password"
   }
 }

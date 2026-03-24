@@ -1,0 +1,24 @@
+# ===============================
+# Docker Compose (StencilBox)
+# ===============================
+# host: http://localhost:4337
+# username:
+# password:
+
+services:
+  stencilbox:
+    image: ghcr.io/jamesread/stencilbox:latest
+    container_name: stencilbox
+    restart: unless-stopped
+    ports:
+      - "4337:8080"
+    volumes:
+      - stencilbox_config:/config
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:8080"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  stencilbox_config:

@@ -1,8 +1,29 @@
+# ===============================
+# Docker Compose (TriliumNext)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
 services:
   trilium:
-    image: zadam/trilium:[VERSION]
-    ports:
-      - 8080:8080
-    volumes:
-      - ./trilium-data:/home/node/trilium-data
+    image: triliumnext/trilium:latest
     restart: unless-stopped
+
+    ports:
+      - "8080:8080"
+
+    environment:
+      TRILIUM_DATA_DIR: /home/node/trilium-data
+
+    volumes:
+      - trilium_data:/home/node/trilium-data
+
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8080"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  trilium_data:

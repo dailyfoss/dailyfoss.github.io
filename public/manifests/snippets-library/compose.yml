@@ -1,0 +1,72 @@
+# ===============================
+# Docker Compose (Snippets Library)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: snippets-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: snippets_library
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - snippets_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U postgres -d snippets_library"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  migration:
+    image: ghcr.io/example/snippets-library:latest
+    container_name: snippets-migration
+    restart: "no"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/snippets_library
+    command:
+      - sh
+      - -c
+      - |
+        echo "Running database migrations..." &&
+        npm run migrate &&
+        echo "Migration finished"
+
+  app:
+    image: ghcr.io/example/snippets-library:latest
+    container_name: snippets-app
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      migration:
+        condition: service_completed_successfully
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      NEXT_TELEMETRY_DISABLED: "1"
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/snippets_library
+      AUTH_URL: http://localhost:3000
+      AUTH_SECRET: change_this_secret
+      GITHUB_CLIENT_ID: your_client_id
+      GITHUB_CLIENT_SECRET: your_client_secret
+      NEXT_PUBLIC_APP_URL: http://localhost:3000
+      NEXT_PUBLIC_BASE_URL: http://localhost:3000
+      NEXT_PUBLIC_IS_PUBLIC_INSTANCE: "false"
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  snippets_db:

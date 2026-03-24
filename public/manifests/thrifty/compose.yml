@@ -1,0 +1,64 @@
+# ===============================
+# Docker Compose (Thrifty)
+# ===============================
+# host: http://localhost:9090
+# username:
+# password:
+
+services:
+  traefik:
+    image: traefik:3.6
+    restart: unless-stopped
+
+    ports:
+      - "9090:80"
+
+    environment:
+      TRAEFIK_GLOBAL_SENDANONYMOUSUSAGE: "false"
+      TRAEFIK_PROVIDERS_DOCKER: "true"
+      TRAEFIK_PROVIDERS_DOCKER_EXPOSEDBYDEFAULT: "true"
+      TRAEFIK_ENTRYPOINTS_main: "true"
+      TRAEFIK_ENTRYPOINTS_main_ADDRESS: ":80"
+      TRAEFIK_ENTRYPOINTS_main_HTTP_MIDDLEWARES: "gzip@docker"
+
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+    labels:
+      - traefik.enable=true
+      - traefik.http.middlewares.gzip.compress=true
+
+  ui:
+    image: tiehfood/thrifty-ui:latest
+    restart: unless-stopped
+
+    environment:
+      CURRENCY_ISO: EUR
+
+    labels:
+      - traefik.http.routers.ui.entrypoints=main
+      - traefik.http.routers.ui.rule=PathPrefix(`/`)
+      - traefik.http.routers.ui.service=ui
+      - traefik.http.services.ui.loadbalancer.server.port=8080
+
+    depends_on:
+      - api
+
+  api:
+    image: tiehfood/thrifty-api:latest
+    restart: unless-stopped
+
+    environment:
+      SQLITE_DB_PATH: /data/thrifty.sqlite
+
+    volumes:
+      - thrifty_db:/data
+
+    labels:
+      - traefik.http.routers.api.entrypoints=main
+      - traefik.http.routers.api.rule=PathRegexp(`^/(api|swagger)/`)
+      - traefik.http.routers.api.service=api
+      - traefik.http.services.api.loadbalancer.server.port=8080
+
+volumes:
+  thrifty_db:

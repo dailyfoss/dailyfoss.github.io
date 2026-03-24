@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "AGPL",
     "version": "v1.10.0",
     "date_app_added": "2025-11-23",
     "date_last_released": "2025-09-15",
@@ -23,20 +23,23 @@
   },
   "resources": {
     "website": "https://teable.ai",
-    "documentation": "https://github.com/teableio/teable",
+    "documentation": "https://help.teable.ai/en/deploy/docker",
     "source_code": "https://github.com/teableio/teable",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/teable.webp",
     "issues": "https://github.com/teableio/teable/issues",
     "releases": "https://github.com/teableio/teable/releases",
     "screenshots": [
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/teable-dashboard.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/teable-search.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/teable-ui.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/teable-view-calendar.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/teable-view-form.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/teable-view-gallery.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/teable-view-grid.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/teable-view-kanban.png"
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/teable-comments.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/teable-dashboard.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/teable-interface-light.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/teable-record-history.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/teable-search.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/teable-ui.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/teable-view-calendar.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/teable-view-form.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/teable-view-gallery.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/teable-view-grid.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/teable-view-kanban.webp"
     ]
   },
   "features": [
@@ -92,12 +95,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/teable/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

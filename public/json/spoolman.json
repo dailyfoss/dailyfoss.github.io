@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://github.com/Donkie/Spoolman",
-    "documentation": "https://github.com/Donkie/Spoolman",
+    "documentation": "https://github.com/Donkie/Spoolman/wiki/Installation",
     "source_code": "https://github.com/Donkie/Spoolman",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/spoolman.webp",
     "issues": "https://github.com/Donkie/Spoolman/issues",
     "releases": "https://github.com/Donkie/Spoolman/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/spoolman-ui.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/spoolman/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

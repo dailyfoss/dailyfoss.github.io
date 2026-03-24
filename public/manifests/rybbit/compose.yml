@@ -1,86 +1,82 @@
+# ===============================
+# Docker Compose (Rybbit)
+# ===============================
+# host: https://localhost
+# username:
+# password:
+
 services:
+
   caddy:
     image: caddy:2.10.0
     container_name: caddy
-    restart: unless-stopped
     ports:
       - "80:80"
       - "443:443"
-      - "443:443/udp" # Needed for HTTP/3
+      - "443:443/udp"
     volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile # Mount Caddy config file
-      - caddy_data:/data # Mount persistent data volume for certs etc.
-      - caddy_config:/config # Mount persistent config volume
-    environment:
-      # Pass domain name for use in Caddyfile
-      # Email is configured via Caddyfile global options
-      - DOMAIN_NAME=${DOMAIN_NAME}
+      - caddy_data:/data
+      - caddy_config:/config
+      - rybbit_caddyfile:/etc/caddy
     depends_on:
       - backend
       - client
+    restart: unless-stopped
+
 
   clickhouse:
+    image: clickhouse/clickhouse-server:25.4
     container_name: clickhouse
-    image: clickhouse/clickhouse-server:25.4.2
-    ports:
-      - "8123:8123"
-      - "9000:9000"
-    volumes:
-      - clickhouse-data:/var/lib/clickhouse
-      - ./clickhouse_config:/etc/clickhouse-server/config.d
     environment:
-      - CLICKHOUSE_DB=${CLICKHOUSE_DB:-analytics}
-      - CLICKHOUSE_USER=${CLICKHOUSE_USER:-default}
-      - CLICKHOUSE_PASSWORD=${CLICKHOUSE_PASSWORD:-frog}
+      CLICKHOUSE_DB: "analytics"
+      CLICKHOUSE_USER: "default"
+      CLICKHOUSE_PASSWORD: "frog"
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse
+      - clickhouse_config:/etc/clickhouse-server/config.d
     healthcheck:
-      test:
-        [
-          "CMD",
-          "wget",
-          "--no-verbose",
-          "--tries=1",
-          "--spider",
-          "http://localhost:8123/ping",
-        ]
-      interval: 3s
+      test: ["CMD","wget","--spider","--tries=1","http://localhost:8123/ping"]
+      interval: 5s
       timeout: 5s
-      retries: 5
+      retries: 10
       start_period: 10s
     restart: unless-stopped
 
+
   postgres:
-    image: postgres:17.4
+    image: postgres:17-alpine
     container_name: postgres
     environment:
-      - POSTGRES_USER=${POSTGRES_USER:-frog}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-frog}
-      - POSTGRES_DB=${POSTGRES_DB:-analytics}
+      POSTGRES_USER: "frog"
+      POSTGRES_PASSWORD: "frog"
+      POSTGRES_DB: "analytics"
     volumes:
-      - postgres-data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD","pg_isready","-U","frog"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     restart: unless-stopped
 
+
   backend:
-    image: ghcr.io/rybbit-io/rybbit-backend:${IMAGE_TAG:-latest}
+    image: ghcr.io/rybbit-io/rybbit-backend:latest
     container_name: backend
-    build:
-      context: ./server
-      dockerfile: Dockerfile
-    ports:
-      - "${HOST_BACKEND_PORT}"
     environment:
-      - NODE_ENV=production
-      - CLICKHOUSE_HOST=http://clickhouse:8123
-      - CLICKHOUSE_DB=${CLICKHOUSE_DB:-analytics}
-      - CLICKHOUSE_PASSWORD=${CLICKHOUSE_PASSWORD:-frog}
-      - POSTGRES_HOST=postgres
-      - POSTGRES_PORT=5432
-      - POSTGRES_DB=${POSTGRES_DB:-analytics}
-      - POSTGRES_USER=${POSTGRES_USER:-frog}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-frog}
-      - BETTER_AUTH_SECRET=${BETTER_AUTH_SECRET}
-      - BASE_URL=${BASE_URL}
-      - DISABLE_SIGNUP=${DISABLE_SIGNUP}
-      - RESEND_API_KEY=${RESEND_API_KEY}
+      NODE_ENV: "production"
+      CLICKHOUSE_HOST: "http://clickhouse:8123"
+      CLICKHOUSE_DB: "analytics"
+      CLICKHOUSE_PASSWORD: "frog"
+      POSTGRES_HOST: "postgres"
+      POSTGRES_PORT: "5432"
+      POSTGRES_DB: "analytics"
+      POSTGRES_USER: "frog"
+      POSTGRES_PASSWORD: "frog"
+      BETTER_AUTH_SECRET: "replace_with_secure_secret"
+      BASE_URL: "https://localhost"
+      DISABLE_SIGNUP: "false"
+      RESEND_API_KEY: ""
     depends_on:
       clickhouse:
         condition: service_healthy
@@ -88,27 +84,23 @@ services:
         condition: service_started
     restart: unless-stopped
 
+
   client:
-    image: ghcr.io/rybbit-io/rybbit-client:${IMAGE_TAG:-latest}
+    image: ghcr.io/rybbit-io/rybbit-client:latest
     container_name: client
-    build:
-      context: ./client
-      dockerfile: Dockerfile
-      args:
-        NEXT_PUBLIC_BACKEND_URL: ${BASE_URL}
-        NEXT_PUBLIC_DISABLE_SIGNUP: ${DISABLE_SIGNUP}
-    ports:
-      - "${HOST_CLIENT_PORT}"
     environment:
-      - NODE_ENV=production
-      - NEXT_PUBLIC_BACKEND_URL=${BASE_URL}
-      - NEXT_PUBLIC_DISABLE_SIGNUP=${DISABLE_SIGNUP}
+      NODE_ENV: "production"
+      NEXT_PUBLIC_BACKEND_URL: "https://localhost"
+      NEXT_PUBLIC_DISABLE_SIGNUP: "false"
     depends_on:
       - backend
     restart: unless-stopped
 
+
 volumes:
-  clickhouse-data:
-  postgres-data:
-  caddy_data: # Persistent volume for Caddy's certificates and state
-  caddy_config: # Persistent volume for Caddy's configuration cache (optional but good practice)
+  clickhouse_data:
+  clickhouse_config:
+  postgres_data:
+  caddy_data:
+  caddy_config:
+  rybbit_caddyfile:

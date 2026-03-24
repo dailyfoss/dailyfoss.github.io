@@ -1,0 +1,24 @@
+# ===============================
+# Docker Compose (Speaches)
+# ===============================
+# host: http://localhost:8000
+# username:
+# password:
+
+services:
+  speaches:
+    image: ghcr.io/speaches-ai/speaches:latest-cpu
+    container_name: speaches
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - hf_hub_cache:/home/ubuntu/.cache/huggingface/hub
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:8000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  hf_hub_cache:

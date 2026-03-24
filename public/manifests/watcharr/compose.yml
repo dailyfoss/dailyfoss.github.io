@@ -1,0 +1,19 @@
+# ===============================
+# Docker Compose (Watcharr)
+# ===============================
+# host: http://localhost:3080
+# username:
+# password:
+
+services:
+  watcharr:
+    image: ghcr.io/sbondco/watcharr:latest
+    container_name: watcharr
+    ports:
+      - "3080:3080"
+    restart: unless-stopped
+    volumes:
+      - watcharr-data:/data
+
+volumes:
+  watcharr-data:

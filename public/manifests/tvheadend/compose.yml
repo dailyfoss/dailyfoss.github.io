@@ -1,0 +1,32 @@
+# ===============================
+# Docker Compose (TVHeadend)
+# ===============================
+# host: http://localhost:9981
+# username:
+# password:
+
+services:
+  tvheadend:
+    image: ghcr.io/tvheadend/tvheadend:issue-123
+    container_name: tvheadend
+    restart: unless-stopped
+
+    user: "1000:1000"
+
+    volumes:
+      - tvheadend_config:/var/lib/tvheadend
+      - tvheadend_recordings:/var/lib/tvheadend/recordings
+
+    ports:
+      - "9981:9981"
+      - "9982:9982"
+
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:9981"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  tvheadend_config:
+  tvheadend_recordings:

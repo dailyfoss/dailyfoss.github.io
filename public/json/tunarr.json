@@ -22,13 +22,17 @@
     "github_releases_this_year": 38
   },
   "resources": {
-    "website": "https://tunarr.com/",
-    "documentation": "https://github.com/chrisbenincasa/tunarr",
+    "website": "https://tunarr.com",
+    "documentation": "https://tunarr.com/getting-started/installation",
     "source_code": "https://github.com/chrisbenincasa/tunarr",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/tunarr.webp",
     "issues": "https://github.com/chrisbenincasa/tunarr/issues",
     "releases": "https://github.com/chrisbenincasa/tunarr/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tunarr-channel-properties.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tunarr-channels.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tunarr-guide.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +92,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/tunarr/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

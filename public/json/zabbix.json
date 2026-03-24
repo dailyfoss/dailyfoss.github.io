@@ -28,7 +28,12 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/zabbix.webp",
     "issues": "https://github.com/zabbix/zabbix/issues",
     "releases": null,
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/zabbix-dashboard.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/zabbix-generic-dashboard-geomap-2.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/zabbix-generic-dashboard-geomap-3.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/zabbix-kubernetes-dashboard.webp"
+    ]
   },
   "features": [
     {
@@ -83,12 +88,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/zabbix/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

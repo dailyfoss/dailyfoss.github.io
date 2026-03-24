@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://typemill.net",
-    "documentation": "https://github.com/typemill/typemill",
+    "documentation": "https://typemill.net/starter-guide/installation",
     "source_code": "https://github.com/typemill/typemill",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/typemill.webp",
     "issues": "https://github.com/typemill/typemill/issues",
     "releases": "https://github.com/typemill/typemill/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/typemill-content.webp"
+    ]
   },
   "features": [
     {
@@ -83,17 +85,19 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/typemill/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
-    "username": null,
-    "password": null
+    "url": "https://try.typemill.net/tm/login",
+    "username": "demouser",
+    "password": "demopass"
   }
 }

@@ -29,13 +29,21 @@
     "issues": "https://github.com/tobychui/zoraxy/issues",
     "releases": "https://github.com/tobychui/zoraxy/releases",
     "screenshots": [
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/zoraxy_2.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/zoraxy_5.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/zoraxy_7.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/zoraxy_8.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/zoraxy_9.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/zoraxy_10.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/zoraxy_preview-mobile.png"
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/zoraxy-2.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/zoraxy-5.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/zoraxy-7.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/zoraxy-8.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/zoraxy-9.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/zoraxy-10.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/zoraxy-default-site.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/zoraxy-http-proxy.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/zoraxy-network-tools.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/zoraxy-preview-mobile.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/zoraxy-statistic-analysis.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/zoraxy-status.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/zoraxy-tls-ssl-certificate.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/zoraxy-uptime-monitor.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/zoraxy-virtual-directory.webp"
     ]
   },
   "features": [
@@ -96,12 +104,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/zoraxy/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

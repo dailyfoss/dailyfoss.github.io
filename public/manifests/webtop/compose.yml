@@ -1,0 +1,27 @@
+# ===============================
+# Docker Compose (Webtop)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  webtop:
+    image: lscr.io/linuxserver/webtop:latest
+    container_name: webtop
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - PIXELFLUX_WAYLAND=true
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=all
+    runtime: nvidia
+    devices:
+      - /dev/dri:/dev/dri
+    shm_size: "1gb"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

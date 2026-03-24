@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "MIT",
     "version": "v1.6.0",
     "date_app_added": "2025-11-23",
     "date_last_released": "2025-12-23",
@@ -28,7 +28,10 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/unraid-guardian.webp",
     "issues": "https://github.com/stephondoestech/unraid-config-guardian/issues",
     "releases": "https://github.com/stephondoestech/unraid-config-guardian/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/unraid-guardian-demo-containers.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/unraid-guardian-demo-home.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +91,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/unraid-guardian/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

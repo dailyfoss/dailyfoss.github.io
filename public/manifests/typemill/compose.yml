@@ -1,0 +1,38 @@
+# ===============================
+# Docker Compose (Typemill)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  typemill:
+    image: ghcr.io/typemill/typemill:latest
+    restart: unless-stopped
+
+    ports:
+      - "8080:80"
+
+    volumes:
+      - typemill_settings:/var/www/html/settings
+      - typemill_media:/var/www/html/media
+      - typemill_data:/var/www/html/data
+      - typemill_cache:/var/www/html/cache
+      - typemill_plugins:/var/www/html/plugins
+      - typemill_content:/var/www/html/content
+      - typemill_themes:/var/www/html/themes
+
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  typemill_settings:
+  typemill_media:
+  typemill_data:
+  typemill_cache:
+  typemill_plugins:
+  typemill_content:
+  typemill_themes:

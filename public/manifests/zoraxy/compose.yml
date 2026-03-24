@@ -1,0 +1,33 @@
+# ===============================
+# Docker Compose (Zoraxy)
+# ===============================
+# host: http://localhost:8000
+# username: admin
+# password: (set on first run)
+
+services:
+  zoraxy:
+    image: zoraxydocker/zoraxy:latest
+    container_name: zoraxy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8000:8000"
+    environment:
+      FASTGEOIP: "true"
+    volumes:
+      - zoraxy_config:/opt/zoraxy/config
+      - zoraxy_plugin:/opt/zoraxy/plugin
+      - /var/run/docker.sock:/var/run/docker.sock
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  zoraxy_config:
+  zoraxy_plugin:

@@ -23,12 +23,16 @@
   },
   "resources": {
     "website": "https://www.runtipi.io/",
-    "documentation": "https://github.com/runtipi/runtipi",
+    "documentation": "https://runtipi.io/docs/introduction",
     "source_code": "https://github.com/runtipi/runtipi",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/runtipi.webp",
     "issues": "https://github.com/runtipi/runtipi/issues",
     "releases": "https://github.com/runtipi/runtipi/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/runtipi-appstore.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/runtipi-dashboard.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/runtipi-my-apps.webp"
+    ]
   },
   "features": [
     {
@@ -79,12 +83,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/runtipi/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
@@ -95,8 +101,8 @@
     }
   },
   "demo": {
-    "url": null,
-    "username": null,
-    "password": null
+    "url": "https://demo.runtipi.io",
+    "username": "user@runtipi.io",
+    "password": "password"
   }
 }

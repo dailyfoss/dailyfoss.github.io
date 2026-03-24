@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://github.com/StuffAnThings/qbit_manage",
-    "documentation": "https://github.com/StuffAnThings/qbit_manage",
+    "documentation": "https://github.com/StuffAnThings/qbit_manage/wiki",
     "source_code": "https://github.com/StuffAnThings/qbit_manage",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/qbit-manage.webp",
     "issues": "https://github.com/StuffAnThings/qbit_manage/issues",
@@ -87,12 +87,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/qbit-manage/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

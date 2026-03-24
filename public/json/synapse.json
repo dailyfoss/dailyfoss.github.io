@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://element-hq.github.io/synapse",
-    "documentation": "https://github.com/element-hq/synapse",
+    "documentation": "https://github.com/element-hq/synapse/tree/develop/docker",
     "source_code": "https://github.com/element-hq/synapse",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/synapse.webp",
     "issues": "https://github.com/element-hq/synapse/issues",
@@ -89,12 +89,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/synapse/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

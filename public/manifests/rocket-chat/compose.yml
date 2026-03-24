@@ -1,0 +1,150 @@
+# ===============================
+# Docker Compose (Rocket.Chat Microservices)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+
+  rocketchat:
+    image: ghcr.io/rocketchat/rocket.chat:latest
+    container_name: rocketchat
+    environment:
+      MONGO_URL: "mongodb://mongo:27017/rocketchat?replicaSet=rs0"
+      MONGO_OPLOG_URL: "mongodb://mongo:27017/local?replicaSet=rs0"
+      TRANSPORTER: "nats://nats:4222"
+      MOLECULER_LOG_LEVEL: "info"
+      OVERWRITE_SETTING_Log_Level: "2"
+    depends_on:
+      mongo:
+        condition: service_healthy
+      nats:
+        condition: service_started
+      traefik:
+        condition: service_started
+    labels:
+      traefik.enable: "true"
+      traefik.http.services.rocketchat.loadbalancer.server.port: "3000"
+      traefik.http.routers.rocketchat.rule: "PathPrefix(`/`)"
+    restart: unless-stopped
+
+
+  authorization-service:
+    image: ghcr.io/rocketchat/authorization-service:latest
+    container_name: rocketchat-auth
+    environment:
+      MONGO_URL: "mongodb://mongo:27017/rocketchat?replicaSet=rs0"
+      TRANSPORTER: "nats://nats:4222"
+      MOLECULER_LOG_LEVEL: "info"
+    depends_on:
+      nats:
+        condition: service_started
+    restart: unless-stopped
+
+
+  account-service:
+    image: ghcr.io/rocketchat/account-service:latest
+    container_name: rocketchat-account
+    environment:
+      MONGO_URL: "mongodb://mongo:27017/rocketchat?replicaSet=rs0"
+      TRANSPORTER: "nats://nats:4222"
+      MOLECULER_LOG_LEVEL: "info"
+    depends_on:
+      nats:
+        condition: service_started
+    restart: unless-stopped
+
+
+  presence-service:
+    image: ghcr.io/rocketchat/presence-service:latest
+    container_name: rocketchat-presence
+    environment:
+      MONGO_URL: "mongodb://mongo:27017/rocketchat?replicaSet=rs0"
+      TRANSPORTER: "nats://nats:4222"
+      MOLECULER_LOG_LEVEL: "info"
+    depends_on:
+      nats:
+        condition: service_started
+    restart: unless-stopped
+
+
+  ddp-streamer-service:
+    image: ghcr.io/rocketchat/ddp-streamer-service:latest
+    container_name: rocketchat-ddp
+    environment:
+      MONGO_URL: "mongodb://mongo:27017/rocketchat?replicaSet=rs0"
+      TRANSPORTER: "nats://nats:4222"
+      MOLECULER_LOG_LEVEL: "info"
+    depends_on:
+      nats:
+        condition: service_started
+    labels:
+      traefik.enable: "true"
+      traefik.http.services.ddp-streamer-service.loadbalancer.server.port: "3000"
+      traefik.http.routers.ddp-streamer-service.rule: "PathPrefix(`/websocket`) || PathPrefix(`/sockjs`)"
+    restart: unless-stopped
+
+
+  queue-worker-service:
+    image: ghcr.io/rocketchat/queue-worker-service:latest
+    container_name: rocketchat-worker
+    environment:
+      MONGO_URL: "mongodb://mongo:27017/rocketchat?replicaSet=rs0"
+      TRANSPORTER: "nats://nats:4222"
+      MOLECULER_LOG_LEVEL: "info"
+    depends_on:
+      nats:
+        condition: service_started
+    restart: unless-stopped
+
+
+  omnichannel-transcript-service:
+    image: ghcr.io/rocketchat/omnichannel-transcript-service:latest
+    container_name: rocketchat-transcript
+    environment:
+      MONGO_URL: "mongodb://mongo:27017/rocketchat?replicaSet=rs0"
+      TRANSPORTER: "nats://nats:4222"
+      MOLECULER_LOG_LEVEL: "info"
+    depends_on:
+      nats:
+        condition: service_started
+    restart: unless-stopped
+
+
+  mongo:
+    image: mongodb/mongodb-community-server:8.0
+    container_name: rocketchat-mongo
+    command: ["mongod","--replSet","rs0","--bind_ip_all"]
+    volumes:
+      - rocketchat_mongo_data:/data/db
+    healthcheck:
+      test: ["CMD","mongosh","--eval","db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+
+  nats:
+    image: nats:2.11-alpine
+    container_name: rocketchat-nats
+    restart: unless-stopped
+
+
+  traefik:
+    image: traefik:v3.0
+    container_name: rocketchat-traefik
+    command:
+      - --providers.docker=true
+      - --serverstransport.maxidleconnsperhost=-1
+    ports:
+      - "3000:80"
+    volumes:
+      - traefik_docker_sock:/var/run/docker.sock:ro
+    restart: unless-stopped
+
+
+volumes:
+  rocketchat_mongo_data:
+  traefik_docker_sock:

@@ -1,0 +1,31 @@
+# ===============================
+# Docker Compose (danb/rss)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  rss:
+    image: codeberg.org/danb/rss:latest
+    container_name: rss
+    ports:
+      - "8080:80"
+    environment:
+      APP_NAME: "RSS"
+      APP_CONFIG_FILE: "/app/storage/feeds.txt"
+      APP_LOAD_POST_THUMBNAILS: "true"
+      APP_FEED_UPDATE_FREQUENCY: "60"
+      APP_PRUNE_POSTS_AFTER_DAYS: "30"
+    volumes:
+      - rss_storage:/app/storage
+    healthcheck:
+      test: ["CMD","wget","-qO-","http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+volumes:
+  rss_storage:

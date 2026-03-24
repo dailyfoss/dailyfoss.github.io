@@ -1,0 +1,29 @@
+# ===============================
+# Docker Compose (Redirecterr)
+# ===============================
+# host: http://localhost:8481
+# username:
+# password:
+
+services:
+  redirecterr:
+    image: varthe/redirecterr:latest
+    container_name: redirecterr
+    ports:
+      - "8481:8481"
+    environment:
+      LOG_LEVEL: "info"
+    volumes:
+      - redirecterr_config:/config
+      - redirecterr_logs:/logs
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8481"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+volumes:
+  redirecterr_config:
+  redirecterr_logs:

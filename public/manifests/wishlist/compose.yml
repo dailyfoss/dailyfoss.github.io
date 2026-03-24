@@ -1,0 +1,29 @@
+# ===============================
+# Docker Compose (Wishlist)
+# ===============================
+# host: http://localhost:3280
+# username:
+# password:
+
+services:
+  wishlist:
+    image: ghcr.io/cmintey/wishlist:latest
+    container_name: wishlist
+    restart: unless-stopped
+    ports:
+      - "3280:3280"
+    environment:
+      ORIGIN: "http://localhost:3280"
+      TOKEN_TIME: "72"
+    volumes:
+      - wishlist_uploads:/usr/src/app/uploads
+      - wishlist_data:/usr/src/app/data
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3280"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  wishlist_uploads:
+  wishlist_data:

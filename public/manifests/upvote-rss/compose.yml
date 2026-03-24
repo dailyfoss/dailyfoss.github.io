@@ -1,0 +1,23 @@
+# ===============================
+# Docker Compose (Upvote RSS)
+# ===============================
+# host: http://localhost:8675
+# username:
+# password:
+
+services:
+  upvote-rss:
+    image: ghcr.io/johnwarne/upvote-rss:latest
+    container_name: upvote-rss
+    ports:
+      - "8675:80"
+    restart: unless-stopped
+    environment:
+      REDDIT_USER: your_reddit_username
+      REDDIT_CLIENT_ID: your_reddit_client_id
+      REDDIT_CLIENT_SECRET: your_reddit_client_secret
+    volumes:
+      - upvote-rss-cache:/app/cache
+
+volumes:
+  upvote-rss-cache:

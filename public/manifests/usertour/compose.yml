@@ -1,0 +1,107 @@
+# ===============================
+# Docker Compose (UserTour)
+# ===============================
+# host: http://localhost:8011
+# username:
+# password:
+
+services:
+  app:
+    image: ghcr.io/usertour/usertour:latest
+    container_name: usertour
+    ports:
+      - "8011:80"
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/usertour?schema=usertour&sslmode=prefer
+      DATABASE_DIRECT_URL: postgresql://postgres:postgres@postgres:5432/usertour?schema=usertour&sslmode=prefer
+
+      EMAIL_HOST: ""
+      EMAIL_PORT: ""
+      EMAIL_USER: ""
+      EMAIL_PASS: ""
+
+      Redis_HOST: redis
+      Redis_PORT: 6379
+      Redis_PASS: ""
+      Redis_USER: ""
+
+      APP_HOMEPAGE_URL: ""
+
+      AWS_S3_REGION: ""
+      AWS_S3_ENDPOINT: ""
+      AWS_S3_ACCESS_KEY_ID: ""
+      AWS_S3_SECRET_ACCESS_KEY: ""
+      AWS_S3_BUCKET: ""
+      AWS_S3_DOMAIN: ""
+
+      JWT_SECRET: test
+      JWT_EXPIRATION_TIME: 1h
+      JWT_REFRESH_EXPIRATION_TIME: 7d
+
+      EMAIL_AUTH_ENABLED: "true"
+      EMAIL_SENDER: "YourApp <your-email@example.com>"
+
+      GITHUB_AUTH_ENABLED: "false"
+      GITHUB_CLIENT_ID: ""
+      GITHUB_CLIENT_SECRET: ""
+      GITHUB_CALLBACK_URL: http://localhost:8011/api/auth/github/callback
+
+      GOOGLE_AUTH_ENABLED: "false"
+      GOOGLE_CLIENT_ID: ""
+      GOOGLE_CLIENT_SECRET: ""
+      GOOGLE_CALLBACK_URL: http://localhost:8011/api/auth/google/callback
+
+      LOGIN_REDIRECT_URL: /env/1/flows
+
+      USERTOUR_COOKIE_DOMAIN: ""
+      USERTOUR_COOKIE_SECURE: ""
+
+      STRIPE_API_KEY: ""
+      STRIPE_ACCOUNT_WEBHOOK_SECRET: ""
+      STRIPE_ACCOUNT_TEST_WEBHOOK_SECRET: ""
+      STRIPE_SESSION_SUCCESS_URL: ""
+      STRIPE_SESSION_CANCEL_URL: ""
+      STRIPE_PORTAL_RETURN_URL: ""
+
+      NODE_ENV: production
+      API_URL: ""
+
+  postgres:
+    image: postgres:16
+    container_name: usertour-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: usertour
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  redis:
+    image: redis:7
+    container_name: usertour-redis
+    restart: unless-stopped
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD","redis-cli","ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+volumes:
+  postgres-data:
+  redis-data:

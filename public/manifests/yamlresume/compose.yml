@@ -1,0 +1,19 @@
+# ===============================
+# Docker Compose (YAML Resume)
+# ===============================
+# host: n/a (CLI tool)
+# username:
+# password:
+
+services:
+  yamlresume:
+    image: yamlresume/yamlresume:latest
+    container_name: yamlresume
+    restart: "no"
+    volumes:
+      - resume_data:/home/yamlresume
+    working_dir: /home/yamlresume
+    command: ["new", "my-resume.yml"]
+
+volumes:
+  resume_data:

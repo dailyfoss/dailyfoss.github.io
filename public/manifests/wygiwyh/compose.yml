@@ -1,0 +1,66 @@
+# ===============================
+# Docker Compose (Wygiwyh)
+# ===============================
+# host: http://localhost:9005
+# username: (optional via env)
+# password: (optional via env)
+
+services:
+  db:
+    image: postgres:16
+    container_name: wygiwyh_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: "wygiwyh"
+      POSTGRES_USER: "wygiwyh"
+      POSTGRES_PASSWORD: "changeme"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U wygiwyh -d wygiwyh"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  web:
+    image: eitchtee/wygiwyh:latest
+    container_name: wygiwyh_server
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "9005:8000"
+    environment:
+      TZ: "UTC"
+
+      DEBUG: "false"
+      URL: "http://localhost:9005"
+      HTTPS_ENABLED: "false"
+      SECRET_KEY: "change-this-secret-key"
+      DJANGO_ALLOWED_HOSTS: "localhost 127.0.0.1 [::1]"
+
+      SQL_DATABASE: "wygiwyh"
+      SQL_USER: "wygiwyh"
+      SQL_PASSWORD: "changeme"
+      SQL_HOST: "db"
+      SQL_PORT: "5432"
+
+      WEB_CONCURRENCY: "4"
+
+      ENABLE_SOFT_DELETE: "false"
+      KEEP_DELETED_TRANSACTIONS_FOR: "365"
+      TASK_WORKERS: "1"
+
+      # Optional admin bootstrap
+      # ADMIN_EMAIL: "admin@example.com"
+      # ADMIN_PASSWORD: "changeme"
+
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  postgres_data:

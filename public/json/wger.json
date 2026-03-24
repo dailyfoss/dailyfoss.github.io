@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://wger.de",
-    "documentation": "https://github.com/wger-project/wger",
+    "documentation": "https://wger.readthedocs.io/en/latest",
     "source_code": "https://github.com/wger-project/wger",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/wger.webp",
     "issues": "https://github.com/wger-project/wger/issues",
@@ -88,12 +88,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/wger/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

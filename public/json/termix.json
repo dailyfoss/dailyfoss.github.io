@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "Apache-2.0",
     "version": "release-1.11.1-tag",
     "date_app_added": "2025-11-23",
     "date_last_released": "2026-02-13",
@@ -22,23 +22,23 @@
     "github_releases_this_year": 3
   },
   "resources": {
-    "website": "https://docs.termix.site/",
-    "documentation": "https://github.com/Termix-SSH/Termix",
+    "website": "https://termix.site",
+    "documentation": "https://docs.termix.site",
     "source_code": "https://github.com/Termix-SSH/Termix",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/termix.webp",
     "issues": "https://github.com/Termix-SSH/Termix/issues",
     "releases": "https://github.com/Termix-SSH/Termix/releases",
     "screenshots": [
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/Termix_Image-1.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/Termix_Image-10.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/Termix_Image-2.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/Termix_Image-3.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/Termix_Image-4.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/Termix_Image-5.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/Termix_Image-6.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/Termix_Image-7.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/Termix_Image-8.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/Termix_Image-9.png"
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/termix-image-1.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/termix-image-10.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/termix-image-2.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/termix-image-3.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/termix-image-4.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/termix-image-5.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/termix-image-6.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/termix-image-7.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/termix-image-8.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/termix-image-9.webp"
     ]
   },
   "features": [
@@ -99,12 +99,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/termix/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

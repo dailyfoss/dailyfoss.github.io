@@ -1,37 +1,46 @@
+# ===============================
+# Docker Compose (Shiori)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
 services:
   shiori:
-    build:
-      context: .
-      dockerfile: Dockerfile.compose
+    image: ghcr.io/go-shiori/shiori:latest
     container_name: shiori
+    restart: unless-stopped
     ports:
       - "8080:8080"
-    volumes:
-      - "./dev-data:/srv/shiori"
-      - ".:/src/shiori"
-    restart: unless-stopped
-    links:
-      - "postgres"
-      - "mariadb"
+    depends_on:
+      - postgres
     environment:
       SHIORI_DIR: /srv/shiori
-      #SHIORI_DATABASE_URL: mysql://shiori:shiori@(mariadb)/shiori?charset=utf8mb4
-      SHIORI_DATABASE_URL: postgres://shiori:shiori@postgres/shiori?sslmode=disable
+      SHIORI_DATABASE_URL: postgres://shiori:shiori@postgres:5432/shiori?sslmode=disable
+    volumes:
+      - shiori_data:/srv/shiori
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8080"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
 
   postgres:
-    image: postgres:15
+    image: postgres:16
+    container_name: shiori-postgres
+    restart: unless-stopped
     environment:
-      POSTGRES_PASSWORD: shiori
+      POSTGRES_DB: shiori
       POSTGRES_USER: shiori
-    ports:
-      - "5432:5432"
+      POSTGRES_PASSWORD: shiori
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U shiori"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
 
-  mariadb:
-    image: mariadb:11
-    environment:
-      MYSQL_ROOT_PASSWORD: toor
-      MYSQL_DATABASE: shiori
-      MYSQL_USER: shiori
-      MYSQL_PASSWORD: shiori
-    ports:
-      - "3306:3306"
+volumes:
+  shiori_data:
+  postgres_data:

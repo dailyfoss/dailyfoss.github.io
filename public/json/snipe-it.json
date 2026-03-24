@@ -23,13 +23,18 @@
   },
   "resources": {
     "website": "https://snipeitapp.com",
-    "documentation": "https://github.com/grokability/snipe-it",
+    "documentation": "https://snipe-it.readme.io/docs/introduction",
     "source_code": "https://github.com/grokability/snipe-it",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/snipe-it.webp",
     "issues": "https://github.com/grokability/snipe-it/issues",
     "releases": "https://github.com/grokability/snipe-it/releases",
     "screenshots": [
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/snipe-it-homepage.png"
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/snipe-it-homepage.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/snipe-it-components.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/snipe-it-consumables.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/snipe-it-dashboard-2.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/snipe-it-dashboard.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/snipe-it-licenses.webp"
     ]
   },
   "features": [
@@ -90,12 +95,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/snipe-it/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
@@ -111,8 +118,8 @@
     }
   },
   "demo": {
-    "url": null,
-    "username": null,
-    "password": null
+    "url": "https://demo.snipeitapp.com/login",
+    "username": "admin",
+    "password": "password"
   }
 }

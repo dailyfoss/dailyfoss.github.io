@@ -1,0 +1,28 @@
+# ===============================
+# Docker Compose (Roundup Demo)
+# ===============================
+# host: http://127.0.0.1:9090
+# username: admin
+# password: admin
+
+services:
+  roundup:
+    image: rounduptracker/roundup:latest
+    container_name: roundup-demo
+    command: ["demo"]
+    ports:
+      - "127.0.0.1:9090:8080"
+    environment:
+      PORT_8080: "9090"
+    volumes:
+      - roundup_tracker_data:/usr/src/app/tracker
+    healthcheck:
+      test: ["CMD","wget","-qO-","http://localhost:8080"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+volumes:
+  roundup_tracker_data:

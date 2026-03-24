@@ -1,0 +1,53 @@
+# ===============================
+# Docker Compose (Traefik + TinyAuth)
+# ===============================
+# host: http://localhost
+# username: user
+# password: password
+
+services:
+  traefik:
+    image: traefik:v3.6
+    restart: unless-stopped
+
+    command:
+      - --api.insecure=true
+      - --providers.docker=true
+      - --entrypoints.web.address=:80
+
+    ports:
+      - "80:80"
+
+    volumes:
+      - docker_socket:/var/run/docker.sock:ro
+
+  whoami:
+    image: traefik/whoami:latest
+    restart: unless-stopped
+
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.whoami.rule=Host(`whoami.example.com`)
+      - traefik.http.routers.whoami.entrypoints=web
+      - traefik.http.routers.whoami.middlewares=tinyauth
+
+  tinyauth:
+    image: ghcr.io/steveiliop56/tinyauth:v5
+    restart: unless-stopped
+
+    environment:
+      TINYAUTH_APPURL: https://tinyauth.example.com
+      TINYAUTH_AUTH_USERS: user:$$2a$$10$$UdLYoJ5lgPsC0RKqYH/jMua7zIn0g9kPqWmhYayJYLaZQ/FTmH2/u
+
+    volumes:
+      - tinyauth_data:/data
+
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.tinyauth.rule=Host(`tinyauth.example.com`)
+      - traefik.http.routers.tinyauth.entrypoints=web
+      - traefik.http.middlewares.tinyauth.forwardauth.address=http://tinyauth:3000/api/auth/traefik
+
+volumes:
+  docker_socket:
+  tinyauth_data:

@@ -1,0 +1,54 @@
+# ===============================
+# Docker Compose (Rundeck)
+# ===============================
+# host: http://localhost:4440
+# username: admin
+# password: admin
+
+services:
+
+  rundeck:
+    image: rundeckpro/enterprise:5.19.0
+    container_name: rundeck
+    ports:
+      - "4440:4440"
+    environment:
+      RUNDECK_DATABASE_DRIVER: "org.mariadb.jdbc.Driver"
+      RUNDECK_DATABASE_USERNAME: "rundeck"
+      RUNDECK_DATABASE_PASSWORD: "rundeck"
+      RUNDECK_DATABASE_URL: "jdbc:mysql://rundeck-db:3306/rundeck"
+    volumes:
+      - rundeck_data:/home/rundeck/server/data
+    depends_on:
+      rundeck-db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD","curl","-f","http://localhost:4440"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+
+
+  rundeck-db:
+    image: mariadb:11
+    container_name: rundeck-db
+    environment:
+      MYSQL_DATABASE: "rundeck"
+      MYSQL_USER: "rundeck"
+      MYSQL_PASSWORD: "rundeck"
+      MYSQL_ROOT_PASSWORD: "replace-root-password"
+    volumes:
+      - rundeck_db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD","mysqladmin","ping","-h","localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+
+volumes:
+  rundeck_data:
+  rundeck_db_data:

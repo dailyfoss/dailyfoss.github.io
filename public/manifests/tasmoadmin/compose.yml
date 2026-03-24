@@ -1,0 +1,29 @@
+# ===============================
+# Docker Compose (TasmoAdmin)
+# ===============================
+# host: http://localhost:8000
+# username:
+# password:
+
+services:
+  tasmoadmin:
+    image: ghcr.io/reloxx13/tasmoadmin:latest
+    container_name: tasmoadmin
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    environment:
+      TASMO_DATADIR: /data/tasmoadmin
+      TASMO_DEBUG: "1"
+    volumes:
+      - tasmoadmin_data:/data/tasmoadmin
+      - tasmoadmin_tmp:/var/www/tasmoadmin/tmp
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  tasmoadmin_data:
+  tasmoadmin_tmp:

@@ -1,26 +1,63 @@
+# ===============================
+# Docker Compose (Rallly)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
 services:
-  rallly_db:
-    image: postgres:14.2
-    restart: always
-    volumes:
-      - ./db-data:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=db
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
-      interval: 5s
-      timeout: 5s
-      retries: 5
 
   rallly:
-    image: lukevella/rallly:latest
-    restart: always
-    depends_on:
-      - rallly_db
+    image: ghcr.io/lukevella/rallly:latest
+    container_name: rallly
     ports:
-      - 3000:3000
+      - "3000:3000"
     environment:
-      - DATABASE_URL=postgres://postgres:postgres@rallly_db/db
-    env_file:
-      - config.env
+      SECRET_PASSWORD: "abcdef1234567890abcdef1234567890"
+      NEXT_PUBLIC_BASE_URL: "http://localhost:3000"
+
+      DATABASE_URL: "postgres://postgres:postgres@postgres:5432/rallly"
+      DIRECT_DATABASE_URL: "postgres://postgres:postgres@postgres:5432/rallly"
+
+      SUPPORT_EMAIL: "support@rallly.co"
+
+      NEXT_PUBLIC_SELF_HOSTED: "false"
+      SENTRY_IGNORE_API_RESOLUTION_ERROR: "1"
+
+      SMTP_HOST: "0.0.0.0"
+      SMTP_PORT: "1025"
+      SMTP_SECURE: "false"
+      SMTP_USER: ""
+      SMTP_PWD: ""
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: rallly-postgres
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_DB: "rallly"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - rallly_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD","pg_isready","-U","postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+
+volumes:
+  rallly_db:

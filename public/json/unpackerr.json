@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://unpackerr.zip",
-    "documentation": "https://github.com/Unpackerr/unpackerr",
+    "documentation": "https://unpackerr.zip/docs/introduction",
     "source_code": "https://github.com/Unpackerr/unpackerr",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/unpackerr.webp",
     "issues": "https://github.com/Unpackerr/unpackerr/issues",
     "releases": "https://github.com/Unpackerr/unpackerr/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/unpackerr-homepage.webp"
+    ]
   },
   "features": [
     {
@@ -83,12 +85,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/unpackerr/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

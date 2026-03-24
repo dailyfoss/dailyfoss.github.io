@@ -1,0 +1,28 @@
+# ===============================
+# Docker Compose (Unpackerr)
+# ===============================
+# host:
+# username:
+# password:
+
+services:
+  unpackerr:
+    image: golift/unpackerr:latest
+    container_name: unpackerr
+    restart: unless-stopped
+
+    user: "1001:100"
+
+    environment:
+      TZ: America/New_York
+      UN_LOG_FILE: /downloads/unpackerr.log
+      UN_SONARR_0_URL: http://sonarr:8989
+      UN_SONARR_0_API_KEY: replace_with_sonarr_api_key
+      UN_RADARR_0_URL: http://radarr:7878
+      UN_RADARR_0_API_KEY: replace_with_radarr_api_key
+
+    volumes:
+      - unpackerr_downloads:/downloads
+
+volumes:
+  unpackerr_downloads:

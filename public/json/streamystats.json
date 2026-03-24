@@ -28,7 +28,15 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/streamystats.webp",
     "issues": "https://github.com/fredrikburmester/streamystats/issues",
     "releases": "https://github.com/fredrikburmester/streamystats/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/streamystats-ai-assistant.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/streamystats-client-statistics.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/streamystats-dashboard.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/streamystats-history.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/streamystats-recommendation.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/streamystats-security-dashboard.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/streamystats-user-location.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +96,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/streamystats/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

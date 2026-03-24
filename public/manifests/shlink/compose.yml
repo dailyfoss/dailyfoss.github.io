@@ -1,11 +1,49 @@
+# ===============================
+# Docker Compose (Shlink)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
 services:
   shlink:
     image: shlinkio/shlink:stable
-    container_name: my_shlink
+    container_name: shlink
+    restart: unless-stopped
     ports:
-      - 8080:8080
+      - "8080:8080"
+    depends_on:
+      - postgres
     environment:
-      - DEFAULT_DOMAIN=s.test
-      - IS_HTTPS_ENABLED=true
-      - GEOLITE_LICENSE_KEY=kjh23ljkbndskj345
-    restart: always
+      DEFAULT_DOMAIN: s.test
+      IS_HTTPS_ENABLED: "true"
+      GEOLITE_LICENSE_KEY: your_geolite_license_key
+      DB_DRIVER: postgres
+      DB_NAME: shlink
+      DB_USER: shlink
+      DB_PASSWORD: shlink
+      DB_HOST: postgres
+    healthcheck:
+      test: ["CMD", "php", "/etc/shlink/bin/cli", "short-url:list"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  postgres:
+    image: postgres:16
+    container_name: shlink-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: shlink
+      POSTGRES_USER: shlink
+      POSTGRES_PASSWORD: shlink
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U shlink"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:

@@ -28,7 +28,14 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/sonobarr.webp",
     "issues": "https://github.com/Dodelidoo-Labs/sonobarr/issues",
     "releases": "https://github.com/Dodelidoo-Labs/sonobarr/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/sonobarr-configuration-album.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/sonobarr-dashboard.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/sonobarr-profile.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/sonobarr-server-configuration.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/sonobarr-trailer-movies.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/sonobarr-user-management.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +95,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/sonobarr/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

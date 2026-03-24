@@ -23,12 +23,15 @@
   },
   "resources": {
     "website": "http://rundeck.org",
-    "documentation": "https://github.com/rundeck/rundeck",
+    "documentation": "https://docs.rundeck.com/docs/administration/install",
     "source_code": "https://github.com/rundeck/rundeck",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/rundeck.webp",
     "issues": "https://github.com/rundeck/rundeck/issues",
     "releases": "https://github.com/rundeck/rundeck/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/rundeck-homepage.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/rundeck-screenshot.webp"
+    ]
   },
   "features": [
     {
@@ -79,12 +82,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/rundeck/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

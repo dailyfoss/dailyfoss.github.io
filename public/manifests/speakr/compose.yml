@@ -1,0 +1,28 @@
+# ===============================
+# Docker Compose (Speakr)
+# ===============================
+# host: http://localhost:8899
+# username:
+# password:
+
+services:
+  speakr:
+    image: learnedmachine/speakr:latest
+    container_name: speakr
+    restart: unless-stopped
+    ports:
+      - "8899:8899"
+    environment:
+      TZ: UTC
+    volumes:
+      - speakr_uploads:/data/uploads
+      - speakr_instance:/data/instance
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:8899"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  speakr_uploads:
+  speakr_instance:

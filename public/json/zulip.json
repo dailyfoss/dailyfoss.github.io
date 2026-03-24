@@ -29,10 +29,11 @@
     "issues": "https://github.com/zulip/zulip/issues",
     "releases": "https://github.com/zulip/zulip/releases",
     "screenshots": [
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/zulip_codeanywhere-workspace.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/zulip_screen-1-dark.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/zulip_screen-1-mobile-dark.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/zulip_zulip-topic.png"
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/zulip-homepage.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/zulip-codeanywhere-workspace.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/zulip-screen-1-dark.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/zulip-screen-1-mobile-dark.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/zulip-zulip-topic.webp"
     ]
   },
   "features": [
@@ -101,12 +102,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/zulip/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

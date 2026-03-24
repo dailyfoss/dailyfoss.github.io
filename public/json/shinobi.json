@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": null,
+    "license": "Source Available License",
     "version": null,
     "date_app_added": "2025-11-23",
     "date_last_released": null,
@@ -18,12 +18,14 @@
   },
   "resources": {
     "website": null,
-    "documentation": null,
+    "documentation": "https://docs.shinobi.video/installation",
     "source_code": "https://gitlab.com/Shinobi-Systems/Shinobi",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/shinobi.webp",
     "issues": null,
     "releases": null,
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/shinobi-maxresdefault.webp"
+    ]
   },
   "features": [
     {
@@ -83,12 +85,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/shinobi/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

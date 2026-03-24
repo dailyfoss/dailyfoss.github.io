@@ -293,7 +293,7 @@ async function fetchRepoData(owner, repo) {
 async function findScreenshots(slug) {
   try {
     // Path to the assets repository screenshots directory
-    const ASSETS_SCREENSHOTS_DIR = '/root/dailyfoss-assets/screenshots';
+    const ASSETS_SCREENSHOTS_DIR = '/root/dailyfoss-assets/screenshots/webp';
     
     const files = await fs.readdir(ASSETS_SCREENSHOTS_DIR);
     const slugLower = slug.toLowerCase();
@@ -521,13 +521,17 @@ async function updateScreenshotOnly(filePath, slug) {
     
     const screenshots = await findScreenshots(slug);
     if (screenshots.length > 0) {
-      const newScreenshotPaths = screenshots.map(s => `https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/${s}`);
+      const newScreenshotPaths = screenshots.map(s => `https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/${s}`);
       
       // Compare arrays to check if changed
       const oldArray = Array.isArray(oldScreenshots) ? oldScreenshots : (oldScreenshots ? [oldScreenshots] : []);
       const hasChanged = JSON.stringify(oldArray) !== JSON.stringify(newScreenshotPaths);
       
       if (hasChanged) {
+        // Ensure resources object exists before setting screenshots
+        if (!json.resources) {
+          json.resources = {};
+        }
         json.resources.screenshots = newScreenshotPaths;
         await fs.writeFile(filePath, JSON.stringify(json, null, 2) + '\n', 'utf-8');
         
@@ -627,9 +631,13 @@ async function updateJsonFile(filePath, repoData, repoUrl, slug) {
     if (UPDATE_SCREENSHOTS && !shouldExclude('screenshots')) {
       const screenshots = await findScreenshots(slug);
       if (screenshots.length > 0) {
-        const newScreenshotPaths = screenshots.map(s => `https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/${s}`);
+        const newScreenshotPaths = screenshots.map(s => `https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/${s}`);
         const oldArray = Array.isArray(oldScreenshots) ? oldScreenshots : (oldScreenshots ? [oldScreenshots] : []);
         if (JSON.stringify(oldArray) !== JSON.stringify(newScreenshotPaths)) {
+          // Ensure resources object exists before setting screenshots
+          if (!json.resources) {
+            json.resources = {};
+          }
           json.resources.screenshots = newScreenshotPaths;
           screenshotUpdated = true;
         }
@@ -866,7 +874,7 @@ function generateSummaryTable(results) {
 
       for (const change of changeLog) {
         console.log(
-          `${change.repository.padEnd(30)} | ${(change.oldScreenshot || 'N/A').padEnd(40)} | ${(change.newScreenshot || 'N/A').padEnd(40)}`
+          `${(change.repository || 'N/A').padEnd(30)} | ${(change.oldScreenshot || 'N/A').padEnd(40)} | ${(change.newScreenshot || 'N/A').padEnd(40)}`
         );
       }
       console.log('-'.repeat(120));

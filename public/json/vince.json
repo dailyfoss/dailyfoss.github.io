@@ -22,14 +22,14 @@
     "github_releases_this_year": 0
   },
   "resources": {
-    "website": "https://www.vinceanalytics.com/",
-    "documentation": "https://github.com/vinceanalytics/vince",
+    "website": "https://www.vinceanalytics.com",
+    "documentation": "https://www.vinceanalytics.com/tags/deployment",
     "source_code": "https://github.com/vinceanalytics/vince",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/vince.webp",
     "issues": "https://github.com/vinceanalytics/vince/issues",
     "releases": "https://github.com/vinceanalytics/vince/releases",
     "screenshots": [
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/vince-homepage.png"
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/vince-homepage.webp"
     ]
   },
   "features": [
@@ -90,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/vince/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

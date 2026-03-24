@@ -1,0 +1,24 @@
+# ===============================
+# Docker Compose (SilverBullet)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  silverbullet:
+    image: silverbulletmd/silverbullet:latest
+    container_name: silverbullet
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - silverbullet_space:/space
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  silverbullet_space:

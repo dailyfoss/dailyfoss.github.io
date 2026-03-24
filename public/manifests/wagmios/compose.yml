@@ -1,0 +1,80 @@
+# ===============================
+# Docker Compose (Wagmios)
+# ===============================
+# host: http://localhost:5174
+# username:
+# password:
+
+services:
+  frontend:
+    image: itzmizzle/wagmi:frontend-latest
+    container_name: wagmios-frontend
+    ports:
+      - "5174:5174"
+    restart: unless-stopped
+    depends_on:
+      - backend
+    environment:
+      VITE_API_URL: http://localhost:5179
+    volumes:
+      - wagmios-frontend-data:/app/data
+
+  backend:
+    image: itzmizzle/wagmi:backend-latest
+    container_name: wagmios-backend
+    ports:
+      - "5179:5179"
+    restart: unless-stopped
+    environment:
+      PORT: 5179
+      WILLOW_URL: http://willow:5678
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - wagmios-backend-data:/app/data
+    depends_on:
+      - willow
+
+  willow:
+    image: n8nio/n8n:latest
+    container_name: willow
+    ports:
+      - "5678:5678"
+    restart: unless-stopped
+    environment:
+      N8N_SECURE_COOKIE: "false"
+      N8N_DEFAULT_WORKFLOW_STATE: active
+      N8N_LOG_LEVEL: info
+      DB_TYPE: postgresdb
+      DB_POSTGRESDB_HOST: postgres
+      DB_POSTGRESDB_DATABASE: willow_memories
+      DB_POSTGRESDB_USER: willow
+      DB_POSTGRESDB_PASSWORD: wagmios
+    volumes:
+      - willow-data:/home/node/.n8n
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:16
+    container_name: wagmios-postgres
+    restart: unless-stopped
+    ports:
+      - "5443:5432"
+    environment:
+      POSTGRES_USER: willow
+      POSTGRES_PASSWORD: wagmios
+      POSTGRES_DB: willow_memories
+    volumes:
+      - wagmios-postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U willow"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+volumes:
+  willow-data:
+  wagmios-postgres-data:
+  wagmios-frontend-data:
+  wagmios-backend-data:

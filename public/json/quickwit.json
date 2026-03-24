@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://quickwit.io",
-    "documentation": "https://github.com/quickwit-oss/quickwit",
+    "documentation": "https://quickwit.io/docs/get-started/installation",
     "source_code": "https://github.com/quickwit-oss/quickwit",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/quickwit.webp",
     "issues": "https://github.com/quickwit-oss/quickwit/issues",
     "releases": "https://github.com/quickwit-oss/quickwit/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/quickwit-homepage.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/quickwit/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

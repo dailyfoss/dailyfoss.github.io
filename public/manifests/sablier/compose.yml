@@ -1,0 +1,23 @@
+# ===============================
+# Docker Compose (Sablier)
+# ===============================
+# host: internal service
+# username:
+# password:
+
+services:
+  sablier:
+    image: sablierapp/sablier:1.11.1
+    container_name: sablier
+    command:
+      - start
+      - --provider.name=docker
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    healthcheck:
+      test: ["CMD","wget","-qO-","http://localhost:10000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped

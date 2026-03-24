@@ -1,0 +1,25 @@
+# ===============================
+# Docker Compose (Scraparr)
+# ===============================
+# host: http://localhost:7100
+# username:
+# password:
+
+services:
+  scraparr:
+    image: ghcr.io/thecfu/scraparr:latest
+    container_name: scraparr
+    ports:
+      - "7100:7100"
+    volumes:
+      - scraparr_config:/scraparr/config
+    healthcheck:
+      test: ["CMD","wget","-qO-","http://localhost:7100"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+
+volumes:
+  scraparr_config:

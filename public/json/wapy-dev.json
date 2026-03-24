@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "Common Clause 1.0",
     "version": "v2.1.3",
     "date_app_added": "2025-11-23",
     "date_last_released": "2025-12-12",
@@ -23,12 +23,19 @@
   },
   "resources": {
     "website": "https://www.wapy.dev",
-    "documentation": "https://github.com/meceware/wapy.dev",
+    "documentation": "https://github.com/meceware/wapy.dev/wiki/Getting-Started",
     "source_code": "https://github.com/meceware/wapy.dev",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/wapy-dev.webp",
     "issues": "https://github.com/meceware/wapy.dev/issues",
     "releases": "https://github.com/meceware/wapy.dev/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/wapy-dev-account-page.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/wapy-dev-edit-page.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/wapy-dev-home-page-filter.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/wapy-dev-home-page.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/wapy-dev-reports-page.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/wapy-dev-view-page.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +95,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/wapy-dev/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

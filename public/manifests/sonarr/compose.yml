@@ -1,15 +1,32 @@
+# ===============================
+# Docker Compose (Sonarr)
+# ===============================
+# host: http://localhost:8989
+# username:
+# password:
+
 services:
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
     container_name: sonarr
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Etc/UTC
-    volumes:
-      - /path/to/sonarr/data:/config
-      - /path/to/tvseries:/tv #optional
-      - /path/to/downloadclient-downloads:/downloads #optional
-    ports:
-      - 8989:8989
     restart: unless-stopped
+    ports:
+      - "8989:8989"
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: Etc/UTC
+    volumes:
+      - sonarr_config:/config
+      - sonarr_tv:/tv
+      - sonarr_downloads:/downloads
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:8989"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  sonarr_config:
+  sonarr_tv:
+  sonarr_downloads:

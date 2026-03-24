@@ -1,0 +1,54 @@
+# ===============================
+# Docker Compose (Tandoor Recipes)
+# ===============================
+# host: http://localhost
+# username:
+# password:
+
+services:
+  recipes:
+    image: vabene1111/recipes:latest
+    container_name: recipes
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "80:80"
+    environment:
+      SECRET_KEY: change_this_secret_key
+      DB_ENGINE: django.db.backends.postgresql
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: "5432"
+      POSTGRES_USER: djangodb
+      POSTGRES_PASSWORD: change_this_db_password
+      POSTGRES_DB: djangodb
+    volumes:
+      - recipes_static:/opt/recipes/staticfiles
+      - recipes_media:/opt/recipes/mediafiles
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  postgres:
+    image: postgres:16
+    container_name: recipes-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: djangodb
+      POSTGRES_PASSWORD: change_this_db_password
+      POSTGRES_DB: djangodb
+    volumes:
+      - recipes_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U djangodb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  recipes_static:
+  recipes_media:
+  recipes_postgres_data:

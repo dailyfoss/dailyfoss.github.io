@@ -22,13 +22,16 @@
     "github_releases_this_year": 3
   },
   "resources": {
-    "website": "https://docs.seerr.dev",
-    "documentation": "https://github.com/seerr-team/seerr",
+    "website": "https://seerr.dev",
+    "documentation": "https://docs.seerr.dev",
     "source_code": "https://github.com/seerr-team/seerr",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/seerr.webp",
     "issues": "https://github.com/seerr-team/seerr/issues",
     "releases": "https://github.com/seerr-team/seerr/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/seerr-screen-movie-details.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/seerr-screen-season-requests.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +91,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/seerr/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

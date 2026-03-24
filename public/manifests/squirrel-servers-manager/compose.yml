@@ -1,45 +1,78 @@
+# ===============================
+# Docker Compose (SSM Stack)
+# ===============================
+# host: http://localhost:8000
+# username:
+# password:
+
 services:
   proxy:
+    image: ghcr.io/ssm/proxy:latest
+    container_name: ssm-proxy
     restart: unless-stopped
-    image: "ghcr.io/squirrelcorporation/squirrelserversmanager-proxy:latest"
     ports:
       - "8000:8000"
     depends_on:
       - client
-      - mongo
       - server
+      - mongo
       - redis
-  mongo:
-    container_name: mongo-ssm
-    image: mongo
-    restart: unless-stopped
-    volumes:
-      - ./.data.prod/db:/data/db
-    command: --quiet
-  redis:
-    container_name: cache-ssm
-    image: redis
-    restart: unless-stopped
-    volumes:
-      - ./.data.prod/cache:/data
-    command: --save 60 1
+      - prometheus
+
   server:
-    image: "ghcr.io/squirrelcorporation/squirrelserversmanager-server:latest"
+    image: ghcr.io/ssm/server:latest
+    container_name: ssm-server
     restart: unless-stopped
-    external_links:
-      - mongo
-      - redis
     depends_on:
-      - mongo
-      - redis
-    env_file: .env
+      mongo:
+        condition: service_started
+      redis:
+        condition: service_started
+      prometheus:
+        condition: service_started
     environment:
       NODE_ENV: production
+      MONGO_URL: mongodb://mongo:27017/ssm
+      REDIS_URL: redis://redis:6379
     volumes:
-      - ./.data.prod/playbooks:/playbooks
-      - ./.data.prod/config:/ansible-config
+      - ssm_data:/data
+    healthcheck:
+      test: ["CMD","curl","--fail","http://localhost:3000/ping"]
+      interval: 40s
+      timeout: 30s
+      retries: 3
+      start_period: 60s
+
   client:
-    image: "ghcr.io/squirrelcorporation/squirrelserversmanager-client:latest"
+    image: ghcr.io/ssm/client:latest
+    container_name: ssm-client
     restart: unless-stopped
     depends_on:
       - server
+
+  mongo:
+    image: mongo:7
+    container_name: ssm-mongo
+    restart: unless-stopped
+    volumes:
+      - ssm_mongo:/data/db
+
+  redis:
+    image: redis:7
+    container_name: ssm-redis
+    restart: unless-stopped
+    volumes:
+      - ssm_redis:/data
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: ssm-prometheus
+    restart: unless-stopped
+    volumes:
+      - ssm_prometheus:/prometheus
+
+volumes:
+  ssm_data:
+  ssm_mongo:
+  ssm_redis:
+  ssm_prometheus:

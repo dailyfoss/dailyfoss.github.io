@@ -29,7 +29,9 @@
     "issues": "https://github.com/javedh-dev/tracktor/issues",
     "releases": "https://github.com/javedh-dev/tracktor/releases",
     "logo_light": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/tracktor-light.webp",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tracktor-dashboard-light.webp"
+    ]
   },
   "features": [
     {
@@ -89,12 +91,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/tracktor/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
@@ -105,8 +109,8 @@
     }
   },
   "demo": {
-    "url": null,
-    "username": null,
-    "password": null
+    "url": "https://tracktor.bytedge.in",
+    "username": "demo",
+    "password": "demo"
   }
 }

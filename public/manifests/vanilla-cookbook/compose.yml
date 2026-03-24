@@ -1,0 +1,72 @@
+# ===============================
+# Docker Compose (Vanilla Cookbook)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  vanilla-cookbook:
+    image: jt196/vanilla-cookbook:latest
+    container_name: vanilla-cookbook
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    environment:
+      # Required
+      ORIGIN: http://localhost:3000
+
+      # General
+      VITE_SITE_NAME: "Vanilla Cookbook"
+      BODY_SIZE_LIMIT: 5242880
+      RECIPE_IMAGE_MAX_DIMENSION: 1024
+      RECIPE_IMAGE_GENERATION_SIZE: 1024x1024
+
+      # OAuth (disabled by default)
+      GITHUB_CLIENT_ID: ""
+      GITHUB_CLIENT_SECRET: ""
+      GOOGLE_CLIENT_ID: ""
+      GOOGLE_CLIENT_SECRET: ""
+
+      # Generic OIDC
+      OIDC_ISSUER_URL: ""
+      OIDC_CLIENT_ID: ""
+      OIDC_CLIENT_SECRET: ""
+      OIDC_NAME: "OIDC"
+      OIDC_EMAIL_CLAIM: email
+      OIDC_NAME_CLAIM: preferred_username
+      OIDC_SCOPES: "openid email profile"
+
+      # AI Providers
+      OPENAI_API_KEY: ""
+      ANTHROPIC_API_KEY: ""
+      GOOGLE_API_KEY: ""
+      OLLAMA_BASE_URL: http://localhost:11434
+      SEMANTIC_WARMUP_ON_BOOT: "false"
+
+      # Security
+      RATE_LIMIT_WINDOW_MS: 60000
+      RATE_LIMIT_LOGIN_PER_IP: 10
+      RATE_LIMIT_LOGIN_PER_ID: 5
+
+      PASSWORD_MIN_LENGTH: 8
+      PASSWORD_REQUIRE_UPPERCASE: "true"
+      PASSWORD_REQUIRE_LOWERCASE: "true"
+      PASSWORD_REQUIRE_DIGIT: "true"
+      PASSWORD_REQUIRE_SPECIAL: "true"
+
+      # Backup settings
+      BACKUP_CRON_SCHEDULE: "0 3 * * 0"
+      BACKUP_RETENTION_COUNT: 6
+
+      # Container permissions
+      PUID: 1000
+      PGID: 1000
+
+    volumes:
+      - cookbook-db:/app/prisma/db
+      - cookbook-uploads:/app/uploads
+
+volumes:
+  cookbook-db:
+  cookbook-uploads:

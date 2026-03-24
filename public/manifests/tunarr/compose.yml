@@ -1,0 +1,30 @@
+# ===============================
+# Docker Compose (Tunarr)
+# ===============================
+# host: http://localhost:8000
+# username:
+# password:
+
+services:
+  tunarr:
+    image: chrisbenincasa/tunarr:latest
+    container_name: tunarr
+    restart: unless-stopped
+
+    ports:
+      - "8000:8000"
+
+    environment:
+      TZ: America/New_York
+
+    volumes:
+      - tunarr_data:/config/tunarr
+
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  tunarr_data:

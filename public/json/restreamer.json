@@ -22,13 +22,17 @@
     "github_releases_this_year": 0
   },
   "resources": {
-    "website": "https://docs.datarhei.com/restreamer/",
-    "documentation": "https://github.com/datarhei/restreamer",
+    "website": "https://datarhei.com",
+    "documentation": "https://docs.datarhei.com/restreamer",
     "source_code": "https://github.com/datarhei/restreamer",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/restreamer.webp",
     "issues": "https://github.com/datarhei/restreamer/issues",
     "releases": "https://github.com/datarhei/restreamer/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/restreamer-clean-interface.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/restreamer-demo.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/restreamer-multiple-sources.webp"
+    ]
   },
   "features": [
     {
@@ -83,17 +87,19 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/restreamer/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
-    "username": null,
-    "password": null
+    "url": "https://demo.datarhei.com/ui",
+    "username": "admin",
+    "password": "demo"
   }
 }

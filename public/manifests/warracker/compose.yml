@@ -1,0 +1,45 @@
+# ===============================
+# Docker Compose (Warracker)
+# ===============================
+# host: http://localhost:8005
+# username:
+# password:
+
+services:
+  warracker:
+    image: ghcr.io/sassanix/warracker/main:latest
+    container_name: warracker
+    ports:
+      - "8005:80"
+    restart: unless-stopped
+    depends_on:
+      warrackerdb:
+        condition: service_healthy
+    environment:
+      POSTGRES_USER: warracker
+      POSTGRES_PASSWORD: change_me
+      POSTGRES_DB: warracker
+      POSTGRES_HOST: warrackerdb
+      POSTGRES_PORT: 5432
+    volumes:
+      - warracker-uploads:/data/uploads
+
+  warrackerdb:
+    image: postgres:15-alpine
+    container_name: warracker-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: warracker
+      POSTGRES_PASSWORD: change_me
+      POSTGRES_DB: warracker
+    volumes:
+      - warracker-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U warracker -d warracker"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  warracker-db-data:
+  warracker-uploads:

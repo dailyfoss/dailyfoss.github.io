@@ -1,0 +1,43 @@
+# ===============================
+# Docker Compose (Wiredoor)
+# ===============================
+# host: http://localhost
+# username: admin@example.com
+# password: ChangeMe1st!
+
+services:
+  wiredoor:
+    image: ghcr.io/wiredoor/wiredoor:latest
+    container_name: wiredoor
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "80:80"
+      - "443:443"
+      - "51820:51820/udp"
+    environment:
+      ADMIN_EMAIL: "admin@example.com"
+      ADMIN_PASSWORD: "ChangeMe1st!"
+      VPN_HOST: "your-public-ip-or-domain"
+      VPN_PORT: "51820"
+      VPN_SUBNET: "10.0.0.0/24"
+      TCP_SERVICES_PORT_RANGE: "32760-32767"
+      TZ: "UTC"
+      OAUTH2_PROXY_PROVIDER: "google"
+      OAUTH2_PROXY_CLIENT_ID: ""
+      OAUTH2_PROXY_CLIENT_SECRET: ""
+    volumes:
+      - wiredoor_data:/data
+      - wiredoor_certbot:/etc/letsencrypt
+    sysctls:
+      net.ipv4.ip_forward: "1"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  wiredoor_data:
+  wiredoor_certbot:

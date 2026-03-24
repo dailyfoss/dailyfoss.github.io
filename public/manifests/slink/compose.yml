@@ -1,0 +1,36 @@
+# ===============================
+# Docker Compose (Slink)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  slink:
+    image: anirdev/slink:latest
+    container_name: slink
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      TZ: UTC
+      ORIGIN: https://your-domain.com
+      USER_APPROVAL_REQUIRED: "true"
+      USER_PASSWORD_MIN_LENGTH: "8"
+      USER_PASSWORD_REQUIREMENTS: "15"
+      IMAGE_MAX_SIZE: 15M
+      IMAGE_STRIP_EXIF_METADATA: "true"
+      IMAGE_COMPRESSION_QUALITY: "80"
+      STORAGE_PROVIDER: local
+    volumes:
+      - slink_data:/app/var/data
+      - slink_images:/app/slink/images
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  slink_data:
+  slink_images:

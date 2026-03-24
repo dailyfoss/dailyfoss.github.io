@@ -23,12 +23,19 @@
   },
   "resources": {
     "website": "https://www.reaparr.rocks",
-    "documentation": "https://github.com/Reaparr/Reaparr",
+    "documentation": "https://www.reaparr.rocks/docs/getting-started",
     "source_code": "https://github.com/Reaparr/Reaparr",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/reaparr.webp",
     "issues": "https://github.com/Reaparr/Reaparr/issues",
     "releases": "https://github.com/Reaparr/Reaparr/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/reaparr-demo-3-movies-library-1-poster-table.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/reaparr-demo-3-movies-library-2-table-view.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/reaparr-demo-4-tv-show-library-1-detail-view.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/reaparr-demo-4-tv-show-library-1-download-confirmation.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/reaparr-demo-5-settings-ui-language-select.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/reaparr-demo-7-download-screen.webp"
+    ]
   },
   "features": [
     {
@@ -83,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/reaparr/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

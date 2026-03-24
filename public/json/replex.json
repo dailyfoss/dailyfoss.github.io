@@ -28,7 +28,9 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/replex.webp",
     "issues": "https://github.com/lostb1t/replex/issues",
     "releases": "https://github.com/lostb1t/replex/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/replex-examplewithhero.webp"
+    ]
   },
   "features": [
     {
@@ -79,12 +81,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/replex/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

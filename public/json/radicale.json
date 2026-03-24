@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://radicale.org",
-    "documentation": "https://github.com/Kozea/Radicale",
+    "documentation": "https://radicale.org/v3.html",
     "source_code": "https://github.com/Kozea/Radicale",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/radicale.webp",
     "issues": "https://github.com/Kozea/Radicale/issues",
@@ -84,12 +84,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/radicale/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

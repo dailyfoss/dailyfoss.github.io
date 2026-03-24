@@ -1,0 +1,93 @@
+# ===============================
+# Docker Compose (Riven Full Stack)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+
+  riven-frontend:
+    image: spoked/riven-frontend:latest
+    container_name: riven-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      TZ: "UTC"
+      DATABASE_URL: "/riven/data/riven.db"
+      BACKEND_URL: "http://riven:8080"
+      BACKEND_API_KEY: "replace-with-api-key"
+      AUTH_SECRET: "replace-with-random-secret"
+      ORIGIN: "http://localhost:3000"
+    volumes:
+      - riven_frontend_data:/riven/data
+    depends_on:
+      riven:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD","wget","-qO-","http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+
+  riven:
+    image: spoked/riven:latest
+    container_name: riven
+    ports:
+      - "8080:8080"
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: "UTC"
+      RIVEN_FORCE_ENV: "true"
+      RIVEN_DATABASE_HOST: "postgresql+psycopg2://postgres:postgres@riven-db:5432/riven"
+      RIVEN_FILESYSTEM_MOUNT_PATH: "/mount"
+      RIVEN_UPDATERS_LIBRARY_PATH: "/mount"
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - apparmor:unconfined
+    devices:
+      - /dev/fuse
+    shm_size: 1024m
+    volumes:
+      - riven_backend_data:/riven/data
+      - riven_library:/mount
+    depends_on:
+      riven-db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD","curl","-fsS","http://localhost:8080"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 20s
+    restart: unless-stopped
+
+
+  riven-db:
+    image: postgres:17-alpine
+    container_name: riven-db
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_DB: "riven"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - riven_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD","pg_isready","-U","postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+
+volumes:
+  riven_frontend_data:
+  riven_backend_data:
+  riven_library:
+  riven_pg_data:

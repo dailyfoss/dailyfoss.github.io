@@ -1,0 +1,81 @@
+# ===============================
+# Docker Compose (Xibo CMS)
+# ===============================
+# host: http://localhost:8080
+# username: admin (set on first run)
+# password: (set on first run)
+
+services:
+  cms-db:
+    image: mysql:8.4
+    container_name: xibo_db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: "cms"
+      MYSQL_USER: "cms"
+      MYSQL_PASSWORD: "changeme"
+      MYSQL_ROOT_PASSWORD: "changeme_root"
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  cms-xmr:
+    image: ghcr.io/xibosignage/xibo-xmr:1.0
+    container_name: xibo_xmr
+    restart: unless-stopped
+    ports:
+      - "9505:9505"
+
+  cms-memcached:
+    image: memcached:alpine
+    container_name: xibo_memcached
+    restart: unless-stopped
+    command: memcached -m 64
+
+  cms-quickchart:
+    image: ianw/quickchart:latest
+    container_name: xibo_quickchart
+    restart: unless-stopped
+
+  cms-web:
+    image: ghcr.io/xibosignage/xibo-cms:release-4.4.0
+    container_name: xibo_web
+    restart: unless-stopped
+    depends_on:
+      cms-db:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    environment:
+      MYSQL_HOST: "cms-db"
+      MYSQL_DATABASE: "cms"
+      MYSQL_USER: "cms"
+      MYSQL_PASSWORD: "changeme"
+      XMR_HOST: "cms-xmr"
+      CMS_USE_MEMCACHED: "true"
+      MEMCACHED_HOST: "cms-memcached"
+    volumes:
+      - cms_custom:/var/www/cms/custom
+      - cms_backup:/var/www/backup
+      - cms_theme:/var/www/cms/web/theme/custom
+      - cms_library:/var/www/cms/library
+      - cms_userscripts:/var/www/cms/web/userscripts
+      - cms_certs:/var/www/cms/ca-certs
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  db_data:
+  cms_custom:
+  cms_backup:
+  cms_theme:
+  cms_library:
+  cms_userscripts:
+  cms_certs:

@@ -1,0 +1,60 @@
+# ===============================
+# Docker Compose (Scraperr)
+# ===============================
+# host: http://localhost
+# username:
+# password:
+
+services:
+
+  scraperr:
+    image: jpyles0524/scraperr:latest
+    container_name: scraperr
+    command: ["npm", "run", "start"]
+    ports:
+      - "80:3000"
+    environment:
+      NEXT_PUBLIC_API_URL: "http://scraperr_api:8000"
+      SERVER_URL: "http://scraperr_api:8000"
+    depends_on:
+      scraperr_api:
+        condition: service_started
+    healthcheck:
+      test: ["CMD","wget","-qO-","http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+    networks:
+      - scraperr_network
+
+
+  scraperr_api:
+    image: jpyles0524/scraperr_api:latest
+    container_name: scraperr_api
+    init: true
+    environment:
+      LOG_LEVEL: "INFO"
+      OPENAI_KEY: "replace_with_openai_api_key"
+    volumes:
+      - scraperr_data:/project/app/data
+      - scraperr_media:/project/app/media
+    healthcheck:
+      test: ["CMD","wget","-qO-","http://localhost:8000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+    networks:
+      - scraperr_network
+
+
+networks:
+  scraperr_network:
+
+
+volumes:
+  scraperr_data:
+  scraperr_media:

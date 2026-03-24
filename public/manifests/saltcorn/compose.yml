@@ -1,0 +1,29 @@
+# ===============================
+# Docker Compose (Saltcorn)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  saltcorn:
+    image: saltcorn/saltcorn:latest
+    container_name: saltcorn
+    command: ["serve"]
+    ports:
+      - "3000:3000"
+    environment:
+      SQLITE_FILEPATH: "/db/db.sqlite"
+      SALTCORN_SESSION_SECRET: "replace_with_secure_secret"
+    volumes:
+      - saltcorn_db:/db
+    healthcheck:
+      test: ["CMD","wget","-qO-","http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+
+volumes:
+  saltcorn_db:

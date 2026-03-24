@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://vector.dev",
-    "documentation": "https://github.com/vectordotdev/vector",
+    "documentation": "https://vector.dev/docs",
     "source_code": "https://github.com/vectordotdev/vector",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/vector.webp",
     "issues": "https://github.com/vectordotdev/vector/issues",
     "releases": "https://github.com/vectordotdev/vector/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/vector-dashboard.webp"
+    ]
   },
   "features": [
     {
@@ -83,12 +85,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/vector/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

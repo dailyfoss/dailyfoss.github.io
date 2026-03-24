@@ -1,9 +1,24 @@
+# ===============================
+# Docker Compose (Tamari)
+# ===============================
+# host: http://localhost:4888
+# username:
+# password:
+
 services:
   tamari:
+    image: alexbates/tamari:1.4
     container_name: tamari
-    image: alexbates/tamari:0.8
+    restart: unless-stopped
     ports:
-      - 4888:4888
+      - "4888:4888"
     volumes:
-      - tamariappdata:/app/appdata
-    restart: always
+      - tamari_appdata:/app/appdata
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:4888"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  tamari_appdata:

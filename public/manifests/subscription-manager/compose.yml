@@ -1,0 +1,24 @@
+# ===============================
+# Docker Compose (Subscription Manager)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  subscription-manager:
+    image: dh1011/subscription-manager:stable
+    container_name: subscription-manager
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - subscription_manager_data:/app/data
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:3000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  subscription_manager_data:

@@ -1,0 +1,51 @@
+# ===============================
+# Docker Compose (Ziit)
+# ===============================
+# host: http://localhost:3000
+# username: admin (set via admin key)
+# password: (NUXT_ADMIN_KEY)
+
+services:
+  postgres:
+    image: timescale/timescaledb-ha:pg17
+    container_name: ziit_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "changeme"
+      POSTGRES_DB: "ziit"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d ziit"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    image: ghcr.io/0pandadev/ziit:v1.1.1
+    container_name: ziit_app
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    environment:
+      NUXT_DATABASE_URL: "postgresql://postgres:changeme@postgres:5432/ziit"
+
+      # REQUIRED → generate before running
+      NUXT_PASETO_KEY: "REPLACE_ME"
+      NUXT_ADMIN_KEY: "REPLACE_ME"
+
+      NUXT_HOST: "http://localhost:3000"
+      NUXT_DISABLE_REGISTRATION: "false"
+
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  db_data:

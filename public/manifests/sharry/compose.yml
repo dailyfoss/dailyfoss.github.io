@@ -1,21 +1,55 @@
+# ===============================
+# Docker Compose (Sharry)
+# ===============================
+# host: http://localhost:9090
+# username:
+# password:
+
 services:
-  restserver:
+  postgres:
+    image: postgres:16
+    container_name: sharry_postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_USER: dbuser
+      POSTGRES_PASSWORD: dbpass
+      POSTGRES_DB: dbname
+
+    volumes:
+      - sharry_postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dbuser -d dbname"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+
+  sharry:
     image: eikek0/sharry:latest
     container_name: sharry
+    restart: unless-stopped
+
     command: /opt/sharry.conf
+
     ports:
       - "9090:9090"
+
     volumes:
-      - ./sharry.conf:/opt/sharry.conf
+      - sharry_config:/opt
+
     depends_on:
-      - db
-  db:
-    image: postgres:16.3
-    container_name: postgres_db
-    volumes:
-      - ./postgres_data:/var/lib/postgresql/data/
-    environment:
-      - POSTGRES_USER=dbuser
-      - POSTGRES_PASSWORD=dbpass
-      - POSTGRES_DB=dbname
-	  restart: unless-stopped
+      postgres:
+        condition: service_healthy
+
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://localhost:9090/api/v2/open/info/version || exit 1"]
+      interval: 1m
+      timeout: 10s
+      retries: 2
+      start_period: 30s
+
+volumes:
+  sharry_postgres_data:
+  sharry_config:

@@ -1,0 +1,46 @@
+# ===============================
+# Docker Compose (Workout Tracker)
+# ===============================
+# host: http://localhost:8080
+# username: (register in app)
+# password: (register in app)
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: wt_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: "wt"
+      POSTGRES_USER: "wt"
+      POSTGRES_PASSWORD: "changeme"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U wt -d wt"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  workout-tracker:
+    image: ghcr.io/jovandeginste/workout-tracker:latest
+    container_name: wt_app
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      TZ: "UTC"
+      WT_DATABASE_DRIVER: "postgres"
+      WT_DSN: "host=db user=wt password=changeme dbname=wt port=5432 sslmode=disable TimeZone=UTC"
+      WT_JWT_ENCRYPTION_KEY: "change-this-secret"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  db_data:

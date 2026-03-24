@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "MIT",
     "version": "1.41.1",
     "date_app_added": "2025-11-23",
     "date_last_released": "2026-03-04",
@@ -22,29 +22,30 @@
     "github_releases_this_year": 11
   },
   "resources": {
-    "website": "https://itskovacs-trip.netlify.app/",
-    "documentation": "https://github.com/itskovacs/trip",
+    "website": "https://itskovacs-trip.netlify.app",
+    "documentation": "https://itskovacs.github.io/trip/docs/intro",
     "source_code": "https://github.com/itskovacs/trip",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/trip.webp",
     "issues": "https://github.com/itskovacs/trip/issues",
     "releases": "https://github.com/itskovacs/trip/releases",
     "screenshots": [
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/trip_map_filtering.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/trip_map_places_panel.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/trip_place_creation_modal.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/trip_place_gmaps_api.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/trip_place_gmaps_parse.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/trip_places_place_details.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/trip_places_places.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/trip_plan_details.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/trip_sc_map_filters_list.jpg",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/trip_sc_map.jpg",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/trip_sc_trip.jpg",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/trip_sc_trips.jpg",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/trip_screenshot.jpg",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/trip_trip_packinglist.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/trip_trip_place_highlight.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/trip_trips.png"
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/trip-map-filtering.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/trip-map-places-panel.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/trip-place-creation-modal.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/trip-place-gmaps-api.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/trip-place-gmaps-parse.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/trip-places-place-details.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/trip-places-places.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/trip-plan-details.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/trip-sc-map-filters-list.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/trip-sc-map.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/trip-sc-photos.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/trip-sc-trip.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/trip-sc-trips.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/trip-screenshot.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/trip-trip-packinglist.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/trip-trip-place-highlight.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/trip-trips.webp"
     ]
   },
   "features": [
@@ -105,16 +106,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/trip/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://itskovacs-trip.netlify.app/home",
     "username": null,
     "password": null
   },

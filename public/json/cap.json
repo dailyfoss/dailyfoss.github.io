@@ -1,6 +1,6 @@
 {
   "name": "cap-captcha",
-  "slug": "cap",
+  "slug": "cap-captcha",
   "tagline": "A web-based tool for creating and validating Common Alerting Protocol files",
   "subtitle": "",
   "description": "Cap is a web tool that generates, edits, and validates CAP (Common Alerting Protocol) files. It is useful in emergency systems and alert servers, with a simple visual editor and XML export.",
@@ -29,40 +29,46 @@
     "issues": "https://github.com/tiagozip/cap/issues",
     "releases": "https://github.com/tiagozip/cap/releases",
     "screenshots": [
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/cap-homepage.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/cap-demo.png"
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/cap-captcha-homepage.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/cap-homepage.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/cap-demo.webp"
     ]
   },
   "features": [
     {
-      "title": "Screen Recording",
-      "description": "Records screen activity to video files",
+      "title": "Ultra Lightweight",
+      "description": "About 250x smaller than hCaptcha (~20kb) with zero dependencies",
       "core_feature": true
     },
     {
-      "title": "Audio Capture",
-      "description": "Records system and microphone audio",
+      "title": "Privacy-First",
+      "description": "No telemetry sent to external servers",
       "core_feature": true
     },
     {
-      "title": "Region Selection",
-      "description": "Records full screen or selected areas"
+      "title": "Fully Customizable",
+      "description": "Customize colors, size, position, and icons with CSS variables"
     },
     {
-      "title": "Export Formats",
-      "description": "Saves recordings in common video formats"
+      "title": "Proof-of-Work",
+      "description": "Verifies users without visual puzzles"
     },
     {
-      "title": "Desktop Application",
-      "description": "Runs as a local desktop app"
+      "title": "Standalone Mode",
+      "description": "Run anywhere using Docker"
     },
     {
-      "title": "Simple Controls",
-      "description": "Focuses on straightforward recording workflows"
+      "title": "Programmatic",
+      "description": "Solve challenges in the background"
     },
     {
-      "title": "Local Storage",
-      "description": "Stores recordings on the local machine"
+      "title": "M2M Support",
+      "description": "Protect APIs while allowing trusted bots"
+    },
+    {
+      "title": "Open Source",
+      "description": "Free and open-source under Apache 2.0",
+      "core_feature": true
     }
   ],
   "platform_support": {
@@ -105,7 +111,7 @@
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://capjs.js.org/guide/demo.html",
     "username": null,
     "password": null
   }

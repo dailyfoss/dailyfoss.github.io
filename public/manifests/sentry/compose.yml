@@ -1,0 +1,70 @@
+# ===============================
+# Docker Compose (Sentry)
+# ===============================
+# host: http://localhost:9004
+# username:
+# password:
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: sentry_postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: sentry
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+    volumes:
+      - sentry_postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d sentry"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7
+    container_name: sentry_redis
+    restart: unless-stopped
+
+    volumes:
+      - sentry_redis_data:/data
+
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  sentry:
+    image: getsentry/sentry:latest
+    container_name: sentry
+    restart: unless-stopped
+
+    ports:
+      - "9004:9000"
+
+    environment:
+      SENTRY_SECRET_KEY: change-this-secret-key
+      SENTRY_POSTGRES_HOST: postgres
+      SENTRY_DB_USER: postgres
+      SENTRY_DB_PASSWORD: postgres
+      SENTRY_REDIS_HOST: redis
+      SENTRY_TSDB: sentry.tsdb.redis.RedisTSDB
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+    volumes:
+      - sentry_data:/var/lib/sentry/files
+
+volumes:
+  sentry_postgres_data:
+  sentry_redis_data:
+  sentry_data:

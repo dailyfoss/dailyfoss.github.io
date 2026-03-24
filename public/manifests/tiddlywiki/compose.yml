@@ -1,11 +1,24 @@
+# ===============================
+# Docker Compose (TiddlyWiki)
+# ===============================
+# host: http://localhost:8280
+# username:
+# password:
+
 services:
   tiddlywiki:
-    container_name: tiddlywiki
     image: jbardi/tiddlywiki5-lazy-images:latest
-    volumes:
-      - ./tiddlywiki:/var/lib/tiddlywiki # i.e. /home/username/tiddlywiki:/var/lib/tiddlywiki
-    ports:
-      - 8280:8080
-    environment:
-      - TZ=America/Denver
+    container_name: tiddlywiki
     restart: unless-stopped
+
+    ports:
+      - "8280:8080"
+
+    environment:
+      TZ: America/Denver
+
+    volumes:
+      - tiddlywiki_data:/var/lib/tiddlywiki
+
+volumes:
+  tiddlywiki_data:

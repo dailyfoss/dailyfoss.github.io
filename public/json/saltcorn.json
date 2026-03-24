@@ -22,13 +22,19 @@
     "github_releases_this_year": 0
   },
   "resources": {
-    "website": "https://saltcorn.com/",
-    "documentation": "https://github.com/saltcorn/saltcorn",
+    "website": "https://saltcorn.com",
+    "documentation": "https://wiki.saltcorn.com",
     "source_code": "https://github.com/saltcorn/saltcorn",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/saltcorn.webp",
     "issues": "https://github.com/saltcorn/saltcorn/issues",
     "releases": null,
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/saltcorn-homepage.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/saltcorn-builder-smaller.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/saltcorn-plugin-store-smaller.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/saltcorn-tables-smaller.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/saltcorn-themes-composit.webp"
+    ]
   },
   "features": [
     {
@@ -83,12 +89,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/saltcorn/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
@@ -99,7 +107,7 @@
     }
   },
   "demo": {
-    "url": null,
+    "url": "https://createapplication.saltcorn.com/tenant/create",
     "username": null,
     "password": null
   }

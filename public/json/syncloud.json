@@ -23,12 +23,16 @@
   },
   "resources": {
     "website": "https://syncloud.org",
-    "documentation": "https://syncloud.org",
+    "documentation": "https://github.com/syncloud/platform/wiki",
     "source_code": "https://github.com/syncloud/platform",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/syncloud.webp",
     "issues": "https://github.com/syncloud/platform/issues",
     "releases": null,
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/syncloud-activate.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/syncloud-app-store.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/syncloud-settings.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +92,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/syncloud/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

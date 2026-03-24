@@ -1,0 +1,87 @@
+# ===============================
+# Docker Compose (Wanderer)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  search:
+    image: getmeili/meilisearch:v1.11.3
+    container_name: wanderer-search
+    ports:
+      - "7700:7700"
+    restart: unless-stopped
+    environment:
+      MEILI_URL: http://search:7700
+      MEILI_MASTER_KEY: change_this_master_key
+      MEILI_NO_ANALYTICS: "true"
+    volumes:
+      - wanderer-meili-data:/meili_data
+    healthcheck:
+      test: ["CMD-SHELL","curl --fail http://localhost:7700/health || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 20s
+
+  db:
+    image: flomp/wanderer-db:latest
+    container_name: wanderer-db
+    restart: unless-stopped
+    depends_on:
+      search:
+        condition: service_healthy
+    ports:
+      - "8090:8090"
+    environment:
+      MEILI_URL: http://search:7700
+      MEILI_MASTER_KEY: change_this_master_key
+      POCKETBASE_ENCRYPTION_KEY: change_this_encryption_key
+      ORIGIN: http://localhost:3000
+    volumes:
+      - wanderer-db-data:/pb_data
+    healthcheck:
+      test: ["CMD-SHELL","curl --fail http://localhost:8090/health || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 20s
+
+  web:
+    image: flomp/wanderer-web:latest
+    container_name: wanderer-web
+    restart: unless-stopped
+    depends_on:
+      search:
+        condition: service_healthy
+      db:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    environment:
+      MEILI_URL: http://search:7700
+      MEILI_MASTER_KEY: change_this_master_key
+      ORIGIN: http://localhost:3000
+      BODY_SIZE_LIMIT: Infinity
+      PUBLIC_POCKETBASE_URL: http://db:8090
+      PUBLIC_DISABLE_SIGNUP: "false"
+      UPLOAD_FOLDER: /app/uploads
+      UPLOAD_USER: ""
+      UPLOAD_PASSWORD: ""
+      PUBLIC_OVERPASS_API_URL: https://overpass-api.de
+      PUBLIC_VALHALLA_URL: https://valhalla1.openstreetmap.de
+      PUBLIC_NOMINATIM_URL: https://nominatim.openstreetmap.org
+    volumes:
+      - wanderer-uploads:/app/uploads
+    healthcheck:
+      test: ["CMD-SHELL","curl --fail http://localhost:3000/ || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 20s
+
+volumes:
+  wanderer-meili-data:
+  wanderer-db-data:
+  wanderer-uploads:

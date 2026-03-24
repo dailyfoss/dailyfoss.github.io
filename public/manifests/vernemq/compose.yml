@@ -1,0 +1,30 @@
+# ===============================
+# Docker Compose (VerneMQ)
+# ===============================
+# host: mqtt://localhost:1883
+# username:
+# password:
+
+services:
+  vernemq:
+    image: vernemq/vernemq:latest
+    container_name: vernemq
+    ports:
+      - "1883:1883"
+      - "8888:8888"
+    restart: unless-stopped
+    environment:
+      DOCKER_VERNEMQ_ALLOW_ANONYMOUS: "on"
+    volumes:
+      - vernemq-data:/vernemq/data
+      - vernemq-etc:/vernemq/etc
+    healthcheck:
+      test: ["CMD", "vmq-admin", "status"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+volumes:
+  vernemq-data:
+  vernemq-etc:

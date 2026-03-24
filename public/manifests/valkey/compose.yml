@@ -1,0 +1,30 @@
+# ===============================
+# Docker Compose (Valkey)
+# ===============================
+# host: redis://localhost:6379
+# username:
+# password:
+
+services:
+  valkey:
+    image: valkey/valkey:latest
+    container_name: valkey
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+    volumes:
+      - valkey-data:/data
+    command: >
+      valkey-server
+      --save 60 1000
+      --appendonly yes
+      --dir /data
+    healthcheck:
+      test: ["CMD", "valkey-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+volumes:
+  valkey-data:

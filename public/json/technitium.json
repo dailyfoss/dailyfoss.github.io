@@ -22,13 +22,15 @@
     "github_releases_this_year": 0
   },
   "resources": {
-    "website": "https://technitium.com/dns/",
+    "website": "https://technitium.com/dns",
     "documentation": "https://github.com/TechnitiumSoftware/DnsServer",
     "source_code": "https://github.com/TechnitiumSoftware/DnsServer",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/technitium.webp",
     "issues": "https://github.com/TechnitiumSoftware/DnsServer/issues",
     "releases": null,
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/technitium-analytics.webp"
+    ]
   },
   "features": [
     {
@@ -82,12 +84,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/technitium/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

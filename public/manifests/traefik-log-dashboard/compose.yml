@@ -1,0 +1,61 @@
+# ===============================
+# Docker Compose (Traefik Log Dashboard)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  traefik-agent:
+    image: hhftechnology/traefik-log-dashboard-agent:latest
+    restart: unless-stopped
+
+    ports:
+      - "5000:5000"
+
+    environment:
+      TRAEFIK_LOG_DASHBOARD_ACCESS_PATH: /logs/access.log
+      TRAEFIK_LOG_DASHBOARD_ERROR_PATH: /logs/traefik.log
+      TRAEFIK_LOG_DASHBOARD_AUTH_TOKEN: change_this_secure_token
+      TRAEFIK_LOG_DASHBOARD_SYSTEM_MONITORING: "true"
+      TRAEFIK_LOG_DASHBOARD_LOG_FORMAT: json
+
+    volumes:
+      - traefik_logs:/logs:ro
+      - traefik_positions:/data
+
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:5000/api/logs/status"]
+      interval: 2m
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  traefik-dashboard:
+    image: hhftechnology/traefik-log-dashboard:latest
+    restart: unless-stopped
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      AGENT_API_URL: http://traefik-agent:5000
+      AGENT_API_TOKEN: change_this_secure_token
+      AGENT_NAME: Default Agent
+      NODE_ENV: production
+      PORT: "3000"
+      NEXT_PUBLIC_SHOW_DEMO_PAGE: "true"
+      NEXT_PUBLIC_MAX_LOGS_DISPLAY: "500"
+
+    volumes:
+      - traefik_dashboard:/app/data
+      - traefik_positions:/data
+
+    depends_on:
+      traefik-agent:
+        condition: service_healthy
+
+volumes:
+  traefik_logs:
+  traefik_positions:
+  traefik_dashboard:

@@ -1,18 +1,36 @@
+# ===============================
+# Docker Compose (qBittorrent-nox)
+# ===============================
+# host: http://localhost:8080
+# username: admin
+# password: (shown in container logs on first start)
+
 services:
   qbittorrent:
-    image: lscr.io/linuxserver/qbittorrent:latest
+    image: qbittorrentofficial/qbittorrent-nox:latest
     container_name: qbittorrent
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Etc/UTC
-      - WEBUI_PORT=8080
-      - TORRENTING_PORT=6881
-    volumes:
-      - /path/to/qbittorrent/appdata:/config
-      - /path/to/downloads:/downloads #optional
+      QBT_LEGAL_NOTICE: "confirm"
+      QBT_TORRENTING_PORT: "6881"
+      QBT_WEBUI_PORT: "8080"
     ports:
-      - 8080:8080
-      - 6881:6881
-      - 6881:6881/udp
+      - "6881:6881/tcp"
+      - "6881:6881/udp"
+      - "8080:8080"
+    volumes:
+      - qbittorrent_config:/config
+      - qbittorrent_downloads:/downloads
+    tmpfs:
+      - /tmp
+    stop_grace_period: 30m
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8080"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
     restart: unless-stopped
+
+volumes:
+  qbittorrent_config:
+  qbittorrent_downloads:

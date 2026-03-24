@@ -1,0 +1,73 @@
+# ===============================
+# Docker Compose (Youtarr)
+# ===============================
+# host: http://localhost:3087
+# username: (optional preset)
+# password: (optional preset)
+
+services:
+  db:
+    image: mariadb:10.11
+    container_name: youtarr_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: "changeme"
+      MYSQL_DATABASE: "youtarr"
+    command:
+      - "--character-set-server=utf8mb4"
+      - "--collation-server=utf8mb4_unicode_ci"
+      - "--innodb-file-per-table=1"
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-pchangeme"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  youtarr:
+    image: dialmaster/youtarr:latest
+    container_name: youtarr
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "3087:3011"
+    environment:
+      TZ: "UTC"
+
+      DB_HOST: "db"
+      DB_PORT: "3306"
+      DB_USER: "root"
+      DB_PASSWORD: "changeme"
+      DB_NAME: "youtarr"
+
+      LOG_LEVEL: "info"
+
+      # Optional auth (recommended to set)
+      AUTH_ENABLED: "true"
+      AUTH_PRESET_USERNAME: "admin"
+      AUTH_PRESET_PASSWORD: "changeme"
+
+      # Internal path only (required by app logic)
+      YOUTUBE_OUTPUT_DIR: "/data"
+
+    volumes:
+      - youtarr_data:/usr/src/app/data
+      - youtarr_config:/app/config
+      - youtarr_jobs:/app/jobs
+      - youtarr_images:/app/server/images
+
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:3011/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  db_data:
+  youtarr_data:
+  youtarr_config:
+  youtarr_jobs:
+  youtarr_images:

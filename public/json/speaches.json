@@ -22,13 +22,15 @@
     "github_releases_this_year": 0
   },
   "resources": {
-    "website": "https://speaches.ai/",
-    "documentation": "https://github.com/speaches-ai/speaches",
+    "website": "https://speaches.ai",
+    "documentation": "https://speaches.ai/installation",
     "source_code": "https://github.com/speaches-ai/speaches",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/speaches.webp",
     "issues": "https://github.com/speaches-ai/speaches/issues",
     "releases": "https://github.com/speaches-ai/speaches/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/speaches-homepage.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/speaches/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

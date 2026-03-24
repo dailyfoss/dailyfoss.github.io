@@ -1,0 +1,57 @@
+# ===============================
+# Docker Compose (RSSBox)
+# ===============================
+# host: http://localhost:8000
+# username: admin
+# password: rssbox
+
+services:
+
+  rssbox:
+    image: versun/rssbox:latest
+    container_name: rssbox
+    ports:
+      - "8000:8000"
+    environment:
+      SITE_URL: "http://127.0.0.1:8000"
+      REDIS_URL: "redis://rssbox_redis:6379/0"
+      CSRF_TRUSTED_ORIGINS: "http://127.0.0.1:8000"
+      DEFAULT_TARGET_LANGUAGE: "Chinese Simplified"
+      PORT: "8000"
+      DEBUG: "0"
+      DEMO: "0"
+      USER_MANAGEMENT: "0"
+      LOG_LEVEL: "ERROR"
+      default_max_posts: "20"
+    volumes:
+      - rssbox_data:/app/data
+    depends_on:
+      rssbox_redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD","python","-c","import redis,os; r=redis.Redis.from_url(os.getenv('REDIS_URL')); r.ping()"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    restart: unless-stopped
+
+
+  rssbox_redis:
+    image: redis:7-alpine
+    container_name: rssbox-redis
+    command: ["redis-server","--appendonly","yes"]
+    volumes:
+      - rssbox_redis_data:/data
+    healthcheck:
+      test: ["CMD","redis-cli","ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 5s
+    restart: unless-stopped
+
+
+volumes:
+  rssbox_data:
+  rssbox_redis_data:

@@ -22,13 +22,18 @@
     "github_releases_this_year": 10
   },
   "resources": {
-    "website": "https://docs.slinkapp.io",
-    "documentation": "https://github.com/andrii-kryvoviaz/slink",
+    "website": "https://slinkapp.io",
+    "documentation": "https://docs.slinkapp.io",
     "source_code": "https://github.com/andrii-kryvoviaz/slink",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/slink.webp",
     "issues": "https://github.com/andrii-kryvoviaz/slink/issues",
     "releases": "https://github.com/andrii-kryvoviaz/slink/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/slink-dashboard.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/slink-explore.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/slink-history.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/slink-tags.webp"
+    ]
   },
   "features": [
     {
@@ -88,16 +93,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/slink/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://demo.slinkapp.io/explore",
     "username": null,
     "password": null
   }

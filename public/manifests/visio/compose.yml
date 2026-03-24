@@ -1,0 +1,89 @@
+# ===============================
+# Docker Compose (LaSuite Meet)
+# ===============================
+# host: http://localhost:8083
+# username:
+# password:
+
+services:
+  postgresql:
+    image: postgres:16
+    container_name: meet-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: meet
+      POSTGRES_USER: meet
+      POSTGRES_PASSWORD: change_me
+    volumes:
+      - meet-postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -d meet -U meet"]
+      interval: 2s
+      timeout: 2s
+      retries: 30
+      start_period: 10s
+
+  redis:
+    image: redis:7
+    container_name: meet-redis
+    restart: unless-stopped
+    volumes:
+      - meet-redis-data:/data
+
+  livekit:
+    image: livekit/livekit-server:latest
+    container_name: meet-livekit
+    restart: unless-stopped
+    ports:
+      - "7881:7881/tcp"
+      - "7882:7882/udp"
+    command:
+      - "--dev"
+    depends_on:
+      - redis
+
+  backend:
+    image: lasuite/meet-backend:latest
+    container_name: meet-backend
+    restart: unless-stopped
+    user: "1000"
+    depends_on:
+      postgresql:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      livekit:
+        condition: service_started
+    environment:
+      DATABASE_URL: postgres://meet:change_me@postgresql:5432/meet
+      REDIS_URL: redis://redis:6379/0
+      LIVEKIT_URL: ws://livekit:7880
+    healthcheck:
+      test: ["CMD","python","manage.py","check"]
+      interval: 15s
+      timeout: 30s
+      retries: 10
+      start_period: 10s
+
+  frontend:
+    image: lasuite/meet-frontend:latest
+    container_name: meet-frontend
+    restart: unless-stopped
+    user: "1000"
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "8083:8083"
+    entrypoint:
+      - /docker-entrypoint.sh
+    command:
+      - nginx
+      - -g
+      - "daemon off;"
+    environment:
+      API_URL: http://backend:8000
+
+volumes:
+  meet-postgres-data:
+  meet-redis-data:

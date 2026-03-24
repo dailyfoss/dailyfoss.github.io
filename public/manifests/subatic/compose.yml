@@ -1,0 +1,95 @@
+# ===============================
+# Docker Compose (Subatic)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: subatic-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: subatic
+    volumes:
+      - subatic_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  minio:
+    image: quay.io/minio/minio:latest
+    container_name: subatic-minio
+    restart: unless-stopped
+    command: server --console-address ":9001" /data
+    environment:
+      MINIO_ROOT_USER: user
+      MINIO_ROOT_PASSWORD: password
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - subatic_minio:/data
+
+  subatic:
+    image: ghcr.io/orthdron/subatic:latest-amd64
+    container_name: subatic
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+      minio:
+        condition: service_started
+    ports:
+      - "3000:3000"
+      - "4000:4000"
+    environment:
+      DATABASE_URL: postgresql://postgres:password@postgres:5432/subatic
+      RAWFILES_S3_ACCESS_KEY_ID: randomApiKeyUser
+      RAWFILES_S3_SECRET_ACCESS_KEY: randomApiKeyPassword
+      RAWFILES_S3_REGION: us-east-1
+      RAWFILES_S3_BUCKET: subatic
+      RAWFILES_S3_ENDPOINT: http://minio:9000
+      MAX_FILE_SIZE: "50000"
+      PROCESSED_VIDEO_URL: http://localhost:9000/subatic
+      WEBHOOK_TOKEN: someRandomString
+      MARK_FAILED_AFTER: "600"
+      APP_HOSTNAME: http://localhost:3000
+      ENABLE_TUNNEL: "true"
+      TUNNEL_HOSTNAME: http://localhost
+      TUNNEL_PORT: "4000"
+    healthcheck:
+      test: ["CMD","curl","-f","http://localhost:3000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  subatic-transcoding:
+    image: ghcr.io/orthdron/subatic-transcoding:latest-amd64
+    container_name: subatic-transcoding
+    restart: unless-stopped
+    depends_on:
+      - subatic
+    environment:
+      SQS_ENABLED: "false"
+      RAWFILES_S3_ENDPOINT: http://minio:9000
+      RAWFILES_S3_ACCESS_KEY_ID: randomApiKeyUser
+      RAWFILES_S3_SECRET_ACCESS_KEY: randomApiKeyPassword
+      RAWFILES_S3_REGION: us-east-1
+      RAWFILES_S3_BUCKET: subatic
+      PROCESSED_S3_ACCESS_KEY_ID: randomApiKeyUser
+      PROCESSED_S3_SECRET_ACCESS_KEY: randomApiKeyPassword
+      PROCESSED_S3_REGION: us-east-1
+      PROCESSED_S3_BUCKET: subatic
+      PROCESSED_S3_ENDPOINT: http://minio:9000
+      WEBHOOK_URL: http://subatic:3000/
+      WEBHOOK_TOKEN: someRandomString
+
+volumes:
+  subatic_postgres:
+  subatic_minio:

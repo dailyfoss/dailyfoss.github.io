@@ -23,12 +23,15 @@
   },
   "resources": {
     "website": "https://yunohost.org",
-    "documentation": "https://github.com/YunoHost/yunohost",
+    "documentation": "https://doc.yunohost.org/admin/get_started/install_on",
     "source_code": "https://github.com/YunoHost/yunohost",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/yunohost.webp",
     "issues": "https://github.com/YunoHost/yunohost/issues",
     "releases": "https://github.com/YunoHost/yunohost/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/yunohost-user-panel.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/yunohost-webadmin.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +91,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/yunohost/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
@@ -104,7 +109,7 @@
     }
   },
   "demo": {
-    "url": null,
+    "url": "https://doc.yunohost.org/try",
     "username": null,
     "password": null
   }

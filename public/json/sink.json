@@ -23,12 +23,16 @@
   },
   "resources": {
     "website": "https://Sink.Cool",
-    "documentation": "https://github.com/ccbikai/Sink",
+    "documentation": "https://github.com/miantiao-me/Sink/blob/master/docs/configuration.md",
     "source_code": "https://github.com/ccbikai/Sink",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/sink.webp",
     "issues": "https://github.com/ccbikai/Sink/issues",
     "releases": "https://github.com/ccbikai/Sink/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/sink-analytics.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/sink-link.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/sink-realtime.webp"
+    ]
   },
   "features": [
     {
@@ -88,17 +92,19 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/sink/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://sink.cool/dashboard/login",
     "username": null,
-    "password": null
+    "password": "SinkCool"
   }
 }

@@ -1,0 +1,40 @@
+# ===============================
+# Docker Compose (Velld)
+# ===============================
+# host: http://localhost:3000
+# username: your-super-username-admin
+# password: your-super-password-admin
+
+services:
+  api:
+    image: ghcr.io/velld/api:latest
+    container_name: velld-api
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    environment:
+      JWT_SECRET: your-super-secret-jwt-key-here-use-openssl-rand-hex-32
+      ENCRYPTION_KEY: your-64-char-hex-key-here-use-openssl-rand-hex-32
+      DB_PATH: /app/data/velld.db
+      ADMIN_USERNAME_CREDENTIAL: your-super-username-admin
+      ADMIN_PASSWORD_CREDENTIAL: your-super-password-admin
+      ALLOW_REGISTER: "true"
+    volumes:
+      - velld-api-data:/app/data
+      - velld-backups:/app/backups
+
+  web:
+    image: ghcr.io/velld/web:latest
+    container_name: velld-web
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    depends_on:
+      - api
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8080
+      ALLOW_REGISTER: "true"
+
+volumes:
+  velld-api-data:
+  velld-backups:

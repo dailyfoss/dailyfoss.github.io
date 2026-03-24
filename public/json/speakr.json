@@ -22,13 +22,33 @@
     "github_releases_this_year": 19
   },
   "resources": {
-    "website": "https://github.com/murtaza-nasir/speakr",
-    "documentation": "https://github.com/murtaza-nasir/speakr",
+    "website": "https://murtaza-nasir.github.io/speakr",
+    "documentation": "https://murtaza-nasir.github.io/speakr/getting-started/installation",
     "source_code": "https://github.com/murtaza-nasir/speakr",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/speakr.webp",
     "issues": "https://github.com/murtaza-nasir/speakr/issues",
     "releases": "https://github.com/murtaza-nasir/speakr/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/speakr-admin-dashboard.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/speakr-admin-vector-store.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/speakr-audio-sync-simple-view.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/speakr-edit-tags.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/speakr-filters-sidebar-expanded.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/speakr-highlighted-transcript-following-simple-light.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/speakr-main-view-recipe-example.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/speakr-main-view-token-usage.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/speakr-main-view.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/speakr-recording-dual-source.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/speakr-recording-interface.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/speakr-recording-upload-modal.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/speakr-settings-account-info.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/speakr-share-modal.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/speakr-share-summary-view.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/speakr-speaker-identification-voice-profiles.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/speakr-speakers-management-voice-profiles.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/speakr-ui-chinese.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/speakr-video-playback.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +108,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/speakr/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

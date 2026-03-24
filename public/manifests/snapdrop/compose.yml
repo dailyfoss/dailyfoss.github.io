@@ -1,10 +1,15 @@
+version: '3'
 services:
-  filebrowser:
-    image: filebrowser/filebrowser
-    volumes:
-      - /path/to/root:/srv
-      - /path/filebrowser.db:/database.db
-      - /path/.filebrowser.json:/.filebrowser.json
+  snapdrop:
+    image: lscr.io/linuxserver/snapdrop:latest
+    container_name: snapdrop
+    environment:
+      - PUID=1000
+      - PGID=100
+      - TZ=Etc/UTC
     ports:
-      - 8080:80
+      - 80:80
+      - 443:443
+    volumes:
+      - ./config:/config
     restart: unless-stopped

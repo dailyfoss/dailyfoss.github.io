@@ -23,13 +23,14 @@
   },
   "resources": {
     "website": "https://vert.sh",
-    "documentation": "https://github.com/VERT-sh/VERT",
+    "documentation": "https://github.com/VERT-sh/VERT/tree/main/docs",
     "source_code": "https://github.com/VERT-sh/VERT",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/vert.webp",
     "issues": "https://github.com/VERT-sh/VERT/issues",
     "releases": null,
     "screenshots": [
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/VERT_screenshot-convert.png"
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/vert-screenshot-convert.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/vert-screenshot-home.webp"
     ]
   },
   "features": [
@@ -90,12 +91,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/vert/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

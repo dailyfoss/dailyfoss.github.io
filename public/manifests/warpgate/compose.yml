@@ -1,10 +1,23 @@
+# ===============================
+# Docker Compose (Warpgate)
+# ===============================
+# host: http://localhost:8888
+# username:
+# password:
+
 services:
   warpgate:
-    image: ghcr.io/warp-tech/warpgate
+    image: ghcr.io/warp-tech/warpgate:latest
+    container_name: warpgate
     ports:
-      - 2222:2222
-      - 8888:8888
-      - 33306:33306
+      - "2222:2222"
+      - "8888:8888"
+      - "33306:33306"
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
     volumes:
-      - ./data:/data
-    restart: always
+      - warpgate-data:/data
+
+volumes:
+  warpgate-data:

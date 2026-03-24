@@ -1,0 +1,71 @@
+# ===============================
+# Docker Compose (Rachoon)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+
+  rachoon:
+    image: ghcr.io/ad-on-is/rachoon:latest
+    container_name: rachoon
+    environment:
+      APP_KEY: "replace-with-minimum-32-character-secret-key"
+      DB_CONNECTION: "pg"
+      GOTENBERG_URL: "http://gotenberg:3000"
+      PG_HOST: "postgres"
+      PG_PORT: "5432"
+      PG_USER: "rachoon"
+      PG_PASSWORD: "rachoon_password"
+      PG_DB_NAME: "rachoon"
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      gotenberg:
+        condition: service_started
+    healthcheck:
+      test: ["CMD","wget","-qO-","http://localhost:8080"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: rachoon-postgres
+    environment:
+      POSTGRES_USER: "rachoon"
+      POSTGRES_PASSWORD: "rachoon_password"
+      POSTGRES_DB: "rachoon"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD","pg_isready","-U","rachoon"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+
+  gotenberg:
+    image: gotenberg/gotenberg:8
+    container_name: rachoon-gotenberg
+    command:
+      - gotenberg
+      - --api-port=3000
+    healthcheck:
+      test: ["CMD","wget","-qO-","http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+
+
+volumes:
+  postgres_data:

@@ -22,13 +22,15 @@
     "github_releases_this_year": 2
   },
   "resources": {
-    "website": "http://app.lizardbyte.dev/Sunshine/",
-    "documentation": "https://github.com/LizardByte/Sunshine",
+    "website": "http://app.lizardbyte.dev/Sunshine",
+    "documentation": "https://docs.lizardbyte.dev/projects/sunshine/latest",
     "source_code": "https://github.com/LizardByte/Sunshine",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/sunshine.webp",
     "issues": "https://github.com/LizardByte/Sunshine/issues",
     "releases": "https://github.com/LizardByte/Sunshine/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/sunshine-homepage.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/sunshine/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

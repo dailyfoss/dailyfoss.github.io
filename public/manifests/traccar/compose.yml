@@ -1,13 +1,65 @@
+# ===============================
+# Docker Compose (Traccar)
+# ===============================
+# host: http://localhost:8082
+# username:
+# password:
+
 services:
-  traccar:
-    container_name: traccar
-    image: traccar/traccar:latest
-    hostname: traccar
-    ports:
-      - 80:8082
-      - 5000-5150:5000-5150
-      - 5000-5150:5000-5150/udp
-    volumes:
-      - /opt/traccar/logs:/opt/traccar/logs:rw
-      - /opt/traccar/traccar.xml:/opt/traccar/conf/traccar.xml:ro
+  database:
+    image: timescale/timescaledb:latest-pg16
     restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: traccar
+      POSTGRES_USER: traccar
+      POSTGRES_PASSWORD: change_this_password
+      TIMESCALEDB_TELEMETRY: "off"
+
+    volumes:
+      - traccar_db:/var/lib/postgresql/data
+
+  traccar:
+    image: traccar/traccar:latest
+    restart: unless-stopped
+
+    ports:
+      - "8082:8082"
+      - "5000-5500:5000-5500"
+
+    environment:
+      CONFIG_USE_ENVIRONMENT_VARIABLES: "true"
+      DATABASE_DRIVER: org.postgresql.Driver
+      DATABASE_URL: jdbc:postgresql://database:5432/traccar
+      DATABASE_USER: traccar
+      DATABASE_PASSWORD: change_this_password
+
+    volumes:
+      - traccar_logs:/opt/traccar/logs
+
+    depends_on:
+      - database
+
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8082/api/health"]
+      interval: 2m
+      timeout: 5s
+      start_period: 1h
+      retries: 3
+
+  autoheal:
+    image: willfarrell/autoheal:latest
+    restart: unless-stopped
+
+    environment:
+      AUTOHEAL_CONTAINER_LABEL: all
+      AUTOHEAL_INTERVAL: "60"
+      AUTOHEAL_START_PERIOD: "3600"
+
+    volumes:
+      - docker_socket:/var/run/docker.sock:ro
+
+volumes:
+  traccar_db:
+  traccar_logs:
+  docker_socket:

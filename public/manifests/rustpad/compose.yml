@@ -1,7 +1,20 @@
+# ===============================
+# Docker Compose (Rustpad)
+# ===============================
+# host: http://localhost:3030
+# username:
+# password:
+
 services:
   rustpad:
+    image: ekzhang/rustpad:latest
     container_name: rustpad
-    image: ekzhang/rustpad
     ports:
-      - 3030:3030
+      - "3030:3030"
+    healthcheck:
+      test: ["CMD","wget","-qO-","http://localhost:3030"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 10s
     restart: unless-stopped

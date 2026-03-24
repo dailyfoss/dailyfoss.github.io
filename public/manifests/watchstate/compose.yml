@@ -1,0 +1,20 @@
+# ===============================
+# Docker Compose (WatchState)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  watchstate:
+    image: ghcr.io/arabcoders/watchstate:latest
+    container_name: watchstate
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    user: "1000:1000"
+    volumes:
+      - watchstate-config:/config
+
+volumes:
+  watchstate-config:

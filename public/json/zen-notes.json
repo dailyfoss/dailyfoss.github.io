@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://www.sheshbabu.com/zen/",
-    "documentation": "https://github.com/sheshbabu/zen",
+    "documentation": "https://www.sheshbabu.com/zen/documentation",
     "source_code": "https://github.com/sheshbabu/zen",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/zen-notes.webp",
     "issues": "https://github.com/sheshbabu/zen/issues",
     "releases": null,
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/zen-notes-preview.webp"
+    ]
   },
   "features": [
     {
@@ -88,16 +90,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/zen-notes/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://zendemo.fly.dev",
     "username": null,
     "password": null
   }

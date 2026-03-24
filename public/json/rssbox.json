@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://rssbox.app",
-    "documentation": "https://github.com/versun/RSSBox",
+    "documentation": "https://rssbox.app/install/docker/",
     "source_code": "https://github.com/versun/RSSBox",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/rssbox.webp",
     "issues": "https://github.com/versun/RSSBox/issues",
     "releases": "https://github.com/versun/RSSBox/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/rssbox-dashboard.webp"
+    ]
   },
   "features": [
     {
@@ -88,16 +90,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/rssbox/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://demo.rssbox.app",
     "username": null,
     "password": null
   }

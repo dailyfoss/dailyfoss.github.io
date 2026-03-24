@@ -1,0 +1,22 @@
+# ===============================
+# Docker Compose (Vert)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  vert:
+    image: ghcr.io/vert-sh/vert:latest
+    container_name: vert
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+    environment:
+      PUB_HOSTNAME: localhost:3000
+      PUB_PLAUSIBLE_URL: ""
+      PUB_ENV: production
+      PUB_DISABLE_ALL_EXTERNAL_REQUESTS: "false"
+      PUB_VERTD_URL: ""
+      PUB_DONATION_URL: https://donations.vert.sh
+      PUB_STRIPE_KEY: pk_live_51RDVmAGSxPVad6bQwzVNnbc28nlmzA30krLWk1fefCMpUPiSRPkavMMbGqa8A3lUaOCMlsUEVy2CWDYg0ip3aPpL00ZJlsMkf2

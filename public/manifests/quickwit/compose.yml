@@ -1,0 +1,103 @@
+# ===============================
+# Docker Compose (Quickwit)
+# ===============================
+# host: http://localhost:7280
+# username: minioadmin
+# password: minioadmin
+
+services:
+
+  quickwit:
+    image: quickwit/quickwit:latest
+    container_name: quickwit
+    command:
+      - run
+    ports:
+      - "7280:7280"
+    environment:
+      QW_CONFIG: /quickwit/config/quickwit.yaml
+    volumes:
+      - quickwit_data:/quickwit/qwdata
+    depends_on:
+      postgres:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD","wget","-qO-","http://localhost:7280/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: quickwit-postgres
+    environment:
+      POSTGRES_USER: quickwit
+      POSTGRES_PASSWORD: quickwit
+      POSTGRES_DB: quickwit
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD","pg_isready","-U","quickwit"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+
+  kafka:
+    image: confluentinc/confluent-local:7.6.1
+    container_name: quickwit-kafka
+    environment:
+      KAFKA_NODE_ID: "1"
+      KAFKA_PROCESS_ROLES: "broker,controller"
+      KAFKA_CONTROLLER_QUORUM_VOTERS: "1@localhost:9093"
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: "CONTROLLER:PLAINTEXT,EXTERNAL:PLAINTEXT"
+      KAFKA_LISTENERS: "EXTERNAL://0.0.0.0:9092,CONTROLLER://0.0.0.0:9093"
+      KAFKA_ADVERTISED_LISTENERS: "EXTERNAL://localhost:9092"
+      KAFKA_CONTROLLER_LISTENER_NAMES: "CONTROLLER"
+      KAFKA_INTER_BROKER_LISTENER_NAME: "EXTERNAL"
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: "1"
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: "0"
+      CLUSTER_ID: "MkU3OEVBNTcwNTJENDM2Qk"
+    ports:
+      - "9092:9092"
+    healthcheck:
+      test: ["CMD","bash","-c","nc -z localhost 9092"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+
+  minio:
+    image: minio/minio:latest
+    container_name: quickwit-minio
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio_data:/data
+    healthcheck:
+      test: ["CMD","curl","-f","http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+
+
+volumes:
+  quickwit_data:
+  postgres_data:
+  minio_data:

@@ -1,0 +1,22 @@
+# ===============================
+# Docker Compose (Touitomamout)
+# ===============================
+# host:
+# username:
+# password:
+
+services:
+  touitomamout:
+    image: louisgrasset/touitomamout:latest
+    container_name: touitomamout
+    restart: unless-stopped
+
+    environment:
+      ENV_FILE: /data/.env
+      STORAGE_DIR: /data
+
+    volumes:
+      - touitomamout_data:/data
+
+volumes:
+  touitomamout_data:

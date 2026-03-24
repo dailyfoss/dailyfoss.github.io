@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://www.teemii.io",
-    "documentation": "https://github.com/dokkaner/teemii",
+    "documentation": "https://docs.teemii.io/Quick-Start",
     "source_code": "https://github.com/dokkaner/teemii",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/teemii.webp",
     "issues": "https://github.com/dokkaner/teemii/issues",
     "releases": "https://github.com/dokkaner/teemii/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/teemii-manga-detail.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/teemii/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

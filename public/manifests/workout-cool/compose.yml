@@ -1,0 +1,90 @@
+# ===============================
+# Docker Compose (Workout Cool)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: workoutcool_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: "workout-cool"
+      POSTGRES_USER: "username"
+      POSTGRES_PASSWORD: "password"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U username -d workout-cool"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  workout_cool:
+    image: yourname/workout-cool:latest
+    container_name: workoutcool_app
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    environment:
+      # Database
+      POSTGRES_USER: "username"
+      POSTGRES_PASSWORD: "password"
+      POSTGRES_DB: "workout-cool"
+      DB_HOST: "postgres"
+      DB_PORT: "5432"
+      DATABASE_URL: "postgresql://username:password@postgres:5432/workout-cool"
+
+      # Auth
+      BETTER_AUTH_URL: "http://localhost:3000"
+      BETTER_AUTH_SECRET: "change-this-secret"
+
+      # Google OAuth
+      GOOGLE_CLIENT_ID: ""
+      GOOGLE_CLIENT_SECRET: ""
+
+      # OpenPanel
+      OPENPANEL_SECRET_KEY: ""
+      NEXT_PUBLIC_OPENPANEL_CLIENT_ID: ""
+
+      # App
+      NODE_ENV: "production"
+      NEXT_PUBLIC_APP_URL: "http://localhost:3000"
+
+      # SMTP
+      SMTP_HOST: "mailhog"
+      SMTP_PORT: "1025"
+      SMTP_USER: ""
+      SMTP_PASS: ""
+      SMTP_FROM: "Workout Cool <noreply@workout.cool>"
+      SMTP_SECURE: "false"
+
+      # Seed
+      SEED_SAMPLE_DATA: "true"
+
+      # Billing
+      DEFAULT_BILLING_MODE: "DISABLED"
+
+      # Stripe (optional)
+      STRIPE_SECRET_KEY: ""
+      STRIPE_WEBHOOK_SECRET: ""
+      NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: ""
+
+      # RevenueCat (optional)
+      REVENUECAT_API_KEY: ""
+      REVENUECAT_WEBHOOK_SECRET: ""
+      REVENUECAT_SECRET_KEY: "test_secret_key"
+
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  pgdata:

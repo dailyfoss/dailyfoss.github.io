@@ -1,0 +1,22 @@
+# ===============================
+# Docker Compose (VaultLS)
+# ===============================
+# host: http://localhost:5173
+# username:
+# password:
+
+services:
+  vaultls:
+    image: ghcr.io/7ritn/vaultls:latest
+    container_name: vaultls
+    ports:
+      - "5173:80"
+    restart: unless-stopped
+    environment:
+      VAULTLS_API_SECRET: "CHANGE_ME_SECRET"
+      VAULTLS_URL: "http://localhost:5173/"
+    volumes:
+      - vaultls-data:/app/data
+
+volumes:
+  vaultls-data:

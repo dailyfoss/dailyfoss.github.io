@@ -1,0 +1,34 @@
+# ===============================
+# Docker Compose (Trailarr)
+# ===============================
+# host: http://localhost:7889
+# username:
+# password:
+
+services:
+  trailarr:
+    image: nandyalu/trailarr:latest
+    container_name: trailarr
+    restart: unless-stopped
+
+    ports:
+      - "7889:7889"
+
+    environment:
+      TZ: America/New_York
+
+    volumes:
+      - trailarr_config:/config
+      - trailarr_movies:/media/movies
+      - trailarr_tv:/media/tv
+
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:7889"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  trailarr_config:
+  trailarr_movies:
+  trailarr_tv:

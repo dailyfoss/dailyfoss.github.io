@@ -1,0 +1,26 @@
+# ===============================
+# Docker Compose (Spoolman)
+# ===============================
+# host: http://localhost:7912
+# username:
+# password:
+
+services:
+  spoolman:
+    image: ghcr.io/donkie/spoolman:latest
+    container_name: spoolman
+    restart: unless-stopped
+    ports:
+      - "7912:8000"
+    environment:
+      TZ: Europe/Stockholm
+    volumes:
+      - spoolman_data:/home/app/.local/share/spoolman
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:8000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  spoolman_data:

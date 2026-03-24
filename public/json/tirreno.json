@@ -29,7 +29,20 @@
     "issues": "https://github.com/tirrenotechnologies/tirreno/issues",
     "releases": "https://github.com/tirrenotechnologies/tirreno/releases",
     "logo_light": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/tirreno-light.webp",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tirreno-activity.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tirreno-api.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tirreno-countries.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tirreno-dashboard.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tirreno-field-history.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tirreno-ip-address.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tirreno-logbook.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tirreno-networks.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tirreno-resources.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tirreno-rules.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tirreno-settings.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tirreno-users.webp"
+    ]
   },
   "features": [
     {
@@ -89,17 +102,19 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/tirreno/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
-    "username": null,
-    "password": null
+    "url": "https://play.tirreno.com/login",
+    "username": "admin",
+    "password": "tirreno"
   }
 }

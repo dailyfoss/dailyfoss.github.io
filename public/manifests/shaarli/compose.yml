@@ -1,41 +1,50 @@
-services:
-  shaarli:
-    image: ghcr.io/shaarli/shaarli:${SHAARLI_DOCKER_TAG}
-    build: ./
-    networks:
-      - http-proxy
-    volumes:
-      - ./shaarli-cache:/var/www/shaarli/cache
-      - ./shaarli-data:/var/www/shaarli/data
-    labels:
-      traefik.domain: "${SHAARLI_VIRTUAL_HOST}"
-      traefik.backend: shaarli
-      traefik.frontend.rule: "Host:${SHAARLI_VIRTUAL_HOST}"
+# ===============================
+# Docker Compose (Shaarli + Traefik)
+# ===============================
+# host: https://shaarli.localhost
+# username:
+# password:
 
+services:
   traefik:
-    image: traefik:1.7-alpine
+    image: traefik:latest
+    container_name: traefik
+    restart: unless-stopped
+
     command:
-      - "--defaultentrypoints=http,https"
-      - "--entrypoints=Name:http Address::80 Redirect.EntryPoint:https"
-      - "--entrypoints=Name:https Address::443 TLS"
-      - "--retry"
-      - "--docker"
-      - "--docker.domain=${SHAARLI_VIRTUAL_HOST}"
-      - "--docker.exposedbydefault=true"
-      - "--docker.watch=true"
-      - "--acme"
-      - "--acme.domains=${SHAARLI_VIRTUAL_HOST}"
-      - "--acme.email=${SHAARLI_LETSENCRYPT_EMAIL}"
-      - "--acme.entrypoint=https"
-      - "--acme.onhostrule=true"
-      - "--acme.storage=/acme/acme.json"
-      - "--acme.httpchallenge"
-      - "--acme.httpchallenge.entrypoint=http"
-    networks:
-      - http-proxy
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+      - --certificatesresolvers.le.acme.tlschallenge=true
+      - --certificatesresolvers.le.acme.email=admin@example.com
+      - --certificatesresolvers.le.acme.storage=/letsencrypt/acme.json
+
     ports:
-      - 80:80
-      - 443:443
+      - "80:80"
+      - "443:443"
+
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ./traefik-acme:/acme
+      - traefik_letsencrypt:/letsencrypt
+
+  shaarli:
+    image: ghcr.io/shaarli/shaarli:latest
+    container_name: shaarli
+    restart: unless-stopped
+
+    volumes:
+      - shaarli_data:/var/www/shaarli/data
+      - shaarli_cache:/var/www/shaarli/cache
+
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.shaarli.rule=Host(`shaarli.localhost`)
+      - traefik.http.routers.shaarli.entrypoints=websecure
+      - traefik.http.routers.shaarli.tls.certresolver=le
+      - traefik.http.services.shaarli.loadbalancer.server.port=80
+
+volumes:
+  shaarli_data:
+  shaarli_cache:
+  traefik_letsencrypt:

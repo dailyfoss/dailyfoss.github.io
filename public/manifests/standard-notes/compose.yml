@@ -1,61 +1,73 @@
+# ===============================
+# Docker Compose (Standard Notes)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
 services:
   server:
-    image: standardnotes/server
-    env_file: .env
-    container_name: server_self_hosted
+    image: standardnotes/server:latest
+    container_name: standardnotes-server
     restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_started
     ports:
-      - 3000:3000
-      - 3125:3104
-    volumes:
-      - ./logs:/var/lib/server/logs
-      - ./uploads:/opt/server/packages/files/dist/uploads
-    networks:
-      - standardnotes_self_hosted
+      - "3000:3000"
+      - "3125:3104"
+    environment:
+      DB_HOST: mysql
+      DB_PORT: "3306"
+      DB_USERNAME: std_notes_user
+      DB_PASSWORD: changeme123
+      DB_DATABASE: standard_notes_db
+      DB_TYPE: mysql
 
-  localstack:
-    image: localstack/localstack:3.0
-    container_name: localstack_self_hosted
-    expose:
-      - 4566
+      REDIS_HOST: redis
+      REDIS_PORT: "6379"
+      CACHE_TYPE: redis
+
+      AUTH_JWT_SECRET: replace_with_jwt_secret
+      AUTH_SERVER_ENCRYPTION_SERVER_KEY: replace_with_encryption_key
+      VALET_TOKEN_SECRET: replace_with_valet_secret
+    volumes:
+      - standardnotes_logs:/var/lib/server/logs
+      - standardnotes_uploads:/opt/server/packages/files/dist/uploads
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:3000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  mysql:
+    image: mysql:8.4
+    container_name: standardnotes-mysql
     restart: unless-stopped
     environment:
-      - SERVICES=sns,sqs
-      - HOSTNAME_EXTERNAL=localstack
-      - LS_LOG=warn
+      MYSQL_DATABASE: standard_notes_db
+      MYSQL_USER: std_notes_user
+      MYSQL_PASSWORD: changeme123
+      MYSQL_ROOT_PASSWORD: changeme123
     volumes:
-      - ./localstack_bootstrap.sh:/etc/localstack/init/ready.d/localstack_bootstrap.sh
-    networks:
-      - standardnotes_self_hosted
+      - standardnotes_mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD","mysqladmin","ping","-h","localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
-  db:
-    image: mysql:8
-    container_name: db_self_hosted
-    environment:
-      - MYSQL_DATABASE=standard_notes_db
-      - MYSQL_USER=std_notes_user
-      - MYSQL_ROOT_PASSWORD=changeme123
-      - MYSQL_PASSWORD=changeme123
-    expose:
-      - 3306
+  redis:
+    image: redis:7
+    container_name: standardnotes-redis
     restart: unless-stopped
     volumes:
-      - ./data/mysql:/var/lib/mysql
-      - ./data/import:/docker-entrypoint-initdb.d
-    networks:
-      - standardnotes_self_hosted
+      - standardnotes_redis:/data
 
-  cache:
-    image: redis:6.0-alpine
-    container_name: cache_self_hosted
-    volumes:
-      - ./data/redis/:/data
-    expose:
-      - 6379
-    restart: unless-stopped
-    networks:
-      - standardnotes_self_hosted
-
-networks:
-  standardnotes_self_hosted:
-    name: standardnotes_self_hosted
+volumes:
+  standardnotes_logs:
+  standardnotes_uploads:
+  standardnotes_mysql:
+  standardnotes_redis:

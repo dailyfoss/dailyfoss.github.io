@@ -1,0 +1,29 @@
+# ===============================
+# Docker Compose (WUD)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  wud:
+    image: getwud/wud:latest
+    container_name: wud
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      WUD_WATCHER_LOCAL_CRON: "0 */6 * * *"
+      WUD_AUTH_BASIC_USERNAME: "admin"
+      WUD_AUTH_BASIC_PASSWORD: "changeme"
+    volumes:
+      - wud_store:/store
+      - /var/run/docker.sock:/var/run/docker.sock
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  wud_store:

@@ -1,0 +1,50 @@
+# ===============================
+# Docker Compose (TaxHacker)
+# ===============================
+# host: http://localhost:7331
+# username:
+# password:
+
+services:
+  taxhacker:
+    image: ghcr.io/vas3k/taxhacker:latest
+    container_name: taxhacker
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "7331:7331"
+    environment:
+      NODE_ENV: production
+      BASE_URL: http://localhost:7331
+      SELF_HOSTED_MODE: "true"
+      UPLOAD_PATH: /app/data/uploads
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/taxhacker
+    volumes:
+      - taxhacker_data:/app/data
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:7331"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  postgres:
+    image: postgres:16
+    container_name: taxhacker-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: taxhacker
+    volumes:
+      - taxhacker_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  taxhacker_data:
+  taxhacker_postgres_data:

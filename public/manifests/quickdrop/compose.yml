@@ -1,0 +1,29 @@
+# ===============================
+# Docker Compose (QuickDrop)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  quickdrop:
+    image: roastslav/quickdrop:latest
+    container_name: quickdrop
+    ports:
+      - "8080:8080"
+    volumes:
+      - quickdrop_db:/app/db
+      - quickdrop_logs:/app/log
+      - quickdrop_files:/app/files
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8080"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+volumes:
+  quickdrop_db:
+  quickdrop_logs:
+  quickdrop_files:

@@ -1,0 +1,36 @@
+# ===============================
+# Docker Compose (ytdl-sub)
+# ===============================
+# host: https://localhost:8443
+# username: (set in app)
+# password: (set in app)
+
+services:
+  ytdl-sub:
+    image: ghcr.io/jmbannon/ytdl-sub-gui:latest
+    container_name: ytdl_sub
+    restart: unless-stopped
+    ports:
+      - "8443:8443"
+    environment:
+      TZ: "UTC"
+      PUID: "1000"
+      PGID: "1000"
+    volumes:
+      - config_data:/config
+      - tv_data:/tv_shows
+      - movies_data:/movies
+      - music_videos_data:/music_videos
+      - music_data:/music
+    healthcheck:
+      test: ["CMD", "wget", "--no-check-certificate", "--spider", "-q", "https://localhost:8443"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  config_data:
+  tv_data:
+  movies_data:
+  music_videos_data:
+  music_data:

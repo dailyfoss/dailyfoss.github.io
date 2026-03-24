@@ -1,0 +1,63 @@
+# ===============================
+# Docker Compose (Traefik + Trala)
+# ===============================
+# host: https://trala.your-domain.com // gttp://127.0.0.1:8080
+# username:
+# password:
+
+services:
+  traefik:
+    image: traefik:v3.0
+    restart: unless-stopped
+
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+
+    networks:
+      - traefik_net
+
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+    command:
+      - --api.insecure=true
+      - --api.dashboard=true
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+
+  trala:
+    image: ghcr.io/dannybouwers/trala:latest
+    restart: unless-stopped
+
+    networks:
+      - traefik_net
+
+    environment:
+      TRAEFIK_API_HOST: http://traefik:8080
+      REFRESH_INTERVAL_SECONDS: "30"
+      SEARCH_ENGINE_URL: https://duckduckgo.com/?q=
+      LOG_LEVEL: info
+      LANGUAGE: en
+
+    volumes:
+      - trala_config:/config
+      - trala_icons:/icons
+
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.trala.rule=Host(`trala.your-domain.com`)
+      - traefik.http.routers.trala.entrypoints=websecure
+      - traefik.http.routers.trala.tls=true
+      - traefik.http.services.trala.loadbalancer.server.port=8080
+      - traefik.http.services.trala.loadbalancer.server.scheme=http
+
+volumes:
+  trala_config:
+  trala_icons:
+
+networks:
+  traefik_net:

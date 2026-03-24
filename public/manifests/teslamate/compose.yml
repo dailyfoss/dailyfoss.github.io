@@ -1,0 +1,95 @@
+# ===============================
+# Docker Compose (TeslaMate)
+# ===============================
+# host: http://localhost:4000
+# username:
+# password:
+
+services:
+  teslamate:
+    image: teslamate/teslamate:latest
+    restart: unless-stopped
+
+    ports:
+      - "4000:4000"
+
+    environment:
+      ENCRYPTION_KEY: change_this_to_a_long_secure_key
+      DATABASE_USER: teslamate
+      DATABASE_PASS: strongpassword
+      DATABASE_NAME: teslamate
+      DATABASE_HOST: database
+      MQTT_HOST: mosquitto
+
+    volumes:
+      - teslamate_import:/opt/app/import
+
+    cap_drop:
+      - all
+
+    depends_on:
+      database:
+        condition: service_healthy
+      mosquitto:
+        condition: service_started
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  database:
+    image: postgres:16
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_USER: teslamate
+      POSTGRES_PASSWORD: strongpassword
+      POSTGRES_DB: teslamate
+
+    volumes:
+      - teslamate_db:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U teslamate -d teslamate"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  grafana:
+    image: teslamate/grafana:latest
+    restart: unless-stopped
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      DATABASE_USER: teslamate
+      DATABASE_PASS: strongpassword
+      DATABASE_NAME: teslamate
+      DATABASE_HOST: database
+
+    volumes:
+      - teslamate_grafana:/var/lib/grafana
+
+    depends_on:
+      database:
+        condition: service_healthy
+
+  mosquitto:
+    image: eclipse-mosquitto:2
+    restart: unless-stopped
+
+    command: mosquitto -c /mosquitto-no-auth.conf
+
+    volumes:
+      - mosquitto_config:/mosquitto/config
+      - mosquitto_data:/mosquitto/data
+
+volumes:
+  teslamate_db:
+  teslamate_grafana:
+  mosquitto_config:
+  mosquitto_data:
+  teslamate_import:

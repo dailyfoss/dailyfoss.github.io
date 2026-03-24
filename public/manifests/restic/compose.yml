@@ -1,0 +1,23 @@
+# ===============================
+# Docker Compose (Restic Backup)
+# ===============================
+# host:
+# username:
+# password:
+
+services:
+  restic:
+    image: restic/restic:latest
+    container_name: restic-backup
+    hostname: my-host
+    environment:
+      RESTIC_REPOSITORY: "rest:https://user:pass@hostname/"
+    command: ["-p","/pass/passfile","backup","/data"]
+    volumes:
+      - restic_pass:/pass:ro
+      - restic_data:/data:ro
+    restart: unless-stopped
+
+volumes:
+  restic_pass:
+  restic_data:

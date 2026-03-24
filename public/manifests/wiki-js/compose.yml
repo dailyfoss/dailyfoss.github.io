@@ -1,0 +1,48 @@
+# ===============================
+# Docker Compose (Wiki.js)
+# ===============================
+# host: http://localhost:8080
+# username: (set on first run)
+# password: (set on first run)
+
+services:
+  db:
+    image: postgres:16
+    container_name: wikijs_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: "wiki"
+      POSTGRES_USER: "wikijs"
+      POSTGRES_PASSWORD: "changeme"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "wikijs"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  wiki:
+    image: ghcr.io/requarks/wiki:2
+    container_name: wikijs
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:3000"
+    environment:
+      DB_TYPE: "postgres"
+      DB_HOST: "db"
+      DB_PORT: "5432"
+      DB_USER: "wikijs"
+      DB_PASS: "changeme"
+      DB_NAME: "wiki"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  db_data:

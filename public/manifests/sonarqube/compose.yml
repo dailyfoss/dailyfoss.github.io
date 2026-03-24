@@ -1,0 +1,54 @@
+# ===============================
+# Docker Compose (SonarQube)
+# ===============================
+# host: http://localhost:9000
+# username: admin
+# password: admin
+
+services:
+  sonarqube:
+    image: sonarqube:community
+    container_name: sonarqube
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "9000:9000"
+    environment:
+      SONAR_JDBC_URL: jdbc:postgresql://postgres:5432/sonar
+      SONAR_JDBC_USERNAME: sonar
+      SONAR_JDBC_PASSWORD: sonar
+      JAVA_TOOL_OPTIONS: "-Djava.net.preferIPv6Addresses=true"
+      SONAR_WEB_JAVAADDITIONALOPTS: "-Djava.net.preferIPv6Addresses=true"
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_extensions:/opt/sonarqube/extensions
+      - sonarqube_logs:/opt/sonarqube/logs
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:9000/api/system/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+
+  postgres:
+    image: postgres:16
+    container_name: sonarqube-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: sonar
+      POSTGRES_USER: sonar
+      POSTGRES_PASSWORD: sonar
+    volumes:
+      - sonarqube_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U sonar"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  sonarqube_data:
+  sonarqube_extensions:
+  sonarqube_logs:
+  sonarqube_db:

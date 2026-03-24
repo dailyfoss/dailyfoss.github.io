@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": null,
+    "license": "MIT",
     "version": null,
     "date_app_added": "2025-11-23",
     "date_last_released": null,
@@ -24,8 +24,8 @@
     "issues": null,
     "releases": null,
     "screenshots": [
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/rss-bridge_screenshot-4.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/rss-bridge_screenshot-5.png"
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/rss-bridge-screenshot-4.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/rss-bridge-screenshot-5.webp"
     ]
   },
   "features": [
@@ -86,12 +86,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/rss/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

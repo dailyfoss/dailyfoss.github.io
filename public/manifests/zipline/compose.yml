@@ -1,33 +1,50 @@
+# ===============================
+# Docker Compose (Zipline)
+# ===============================
+# host: http://localhost:3000
+# username: (create in app)
+# password: (create in app)
+
 services:
-  postgres:
-    image: postgres:15
+  postgresql:
+    image: postgres:16
+    container_name: zipline_db
     restart: unless-stopped
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DATABASE=postgres
+      POSTGRES_USER: "zipline"
+      POSTGRES_PASSWORD: "changeme"
+      POSTGRES_DB: "zipline"
     volumes:
-      - ./pg_data:/var/lib/postgresql/data
+      - db_data:/var/lib/postgresql/data
     healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U postgres']
+      test: ["CMD", "pg_isready", "-U", "zipline"]
       interval: 10s
       timeout: 5s
       retries: 5
 
   zipline:
-    image: ghcr.io/diced/zipline
-    ports:
-      - '3000:3000'
+    image: ghcr.io/diced/zipline:latest
+    container_name: zipline_app
     restart: unless-stopped
-    environment:
-      - CORE_RETURN_HTTPS=false
-      - CORE_SECRET=changethis
-      - CORE_HOST=0.0.0.0
-      - CORE_PORT=3000
-      - CORE_DATABASE_URL=postgres://postgres:postgres@postgres/postgres
-      - CORE_LOGGER=true
-    volumes:
-      - './uploads:/zipline/uploads'
-      - './public:/zipline/public'
     depends_on:
-      - 'postgres'
+      postgresql:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: "postgres://zipline:changeme@postgresql:5432/zipline"
+    volumes:
+      - uploads_data:/zipline/uploads
+      - public_data:/zipline/public
+      - themes_data:/zipline/themes
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000/api/healthcheck"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  db_data:
+  uploads_data:
+  public_data:
+  themes_data:

@@ -1,0 +1,125 @@
+# ===============================
+# Docker Compose (Runtipi)
+# ===============================
+# host: http://localhost
+# username:
+# password:
+
+services:
+
+  runtipi-reverse-proxy:
+    image: traefik:v3.5
+    container_name: runtipi-reverse-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    command:
+      - --providers.docker=true
+    volumes:
+      - runtipi_traefik_config:/etc/traefik
+      - runtipi_traefik_shared:/shared
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    depends_on:
+      runtipi:
+        condition: service_healthy
+    networks:
+      - runtipi_network
+    restart: unless-stopped
+
+
+  runtipi-db:
+    image: postgres:16-alpine
+    container_name: runtipi-db
+    environment:
+      POSTGRES_USER: "tipi"
+      POSTGRES_PASSWORD: "tipi"
+      POSTGRES_DB: "tipi"
+    volumes:
+      - runtipi_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD","pg_isready","-U","tipi"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - runtipi_network
+    restart: unless-stopped
+
+
+  runtipi-queue:
+    image: rabbitmq:4-alpine
+    container_name: runtipi-queue
+    environment:
+      RABBITMQ_DEFAULT_USER: "tipi"
+      RABBITMQ_DEFAULT_PASS: "tipi"
+    networks:
+      - runtipi_network
+    restart: unless-stopped
+
+
+  runtipi:
+    image: ghcr.io/runtipi/runtipi:4.5.0
+    container_name: runtipi
+    depends_on:
+      runtipi-db:
+        condition: service_healthy
+      runtipi-queue:
+        condition: service_started
+    environment:
+      NODE_ENV: "production"
+      LOCAL: "true"
+      POSTGRES_PASSWORD: "tipi"
+      RABBITMQ_USERNAME: "tipi"
+      RABBITMQ_PASSWORD: "tipi"
+      RABBITMQ_HOST: "runtipi-queue"
+      INTERNAL_IP: "127.0.0.1"
+      TIPI_VERSION: "4.5.0"
+      LOG_LEVEL: "info"
+    volumes:
+      - runtipi_media:/data/media
+      - runtipi_state:/data/state
+      - runtipi_repos:/data/repos
+      - runtipi_apps:/data/apps
+      - runtipi_logs:/data/logs
+      - runtipi_traefik:/data/traefik
+      - runtipi_user_config:/data/user-config
+      - runtipi_app_data:/app-data
+      - runtipi_backups:/data/backups
+      - runtipi_cache:/cache
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /proc/meminfo:/host/proc/meminfo:ro
+    healthcheck:
+      test: ["CMD","curl","-f","http://localhost:3000/api/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks:
+      - runtipi_network
+    labels:
+      traefik.enable: "true"
+      traefik.http.services.dashboard.loadbalancer.server.port: "3000"
+      traefik.http.routers.dashboard.rule: "PathPrefix(`/`)"
+      traefik.http.routers.dashboard.entrypoints: "web"
+    restart: unless-stopped
+
+
+networks:
+  runtipi_network:
+    driver: bridge
+
+
+volumes:
+  runtipi_pgdata:
+  runtipi_media:
+  runtipi_state:
+  runtipi_repos:
+  runtipi_apps:
+  runtipi_logs:
+  runtipi_traefik:
+  runtipi_user_config:
+  runtipi_app_data:
+  runtipi_backups:
+  runtipi_cache:
+  runtipi_traefik_config:
+  runtipi_traefik_shared:

@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "Apache-2.0",
     "version": "26.2.1",
     "date_app_added": "2025-11-23",
     "date_last_released": "2026-02-21",
@@ -23,21 +23,21 @@
   },
   "resources": {
     "website": "https://sentry.io",
-    "documentation": "https://github.com/getsentry/sentry",
+    "documentation": "https://docs.sentry.io",
     "source_code": "https://github.com/getsentry/sentry",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/sentry.webp",
     "issues": "https://github.com/getsentry/sentry/issues",
     "releases": "https://github.com/getsentry/sentry/releases",
     "screenshots": [
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/sentry_insights.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/sentry_issue-details-page-example.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/sentry_issue-details.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/sentry_logs.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/sentry_monitor-config-page-example.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/sentry_replays.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/sentry_seer.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/sentry_trace-explorer.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/sentry_traces.png"
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/sentry-insights.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/sentry-issue-details-page-example.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/sentry-issue-details.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/sentry-logs.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/sentry-monitor-config-page-example.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/sentry-replays.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/sentry-seer.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/sentry-trace-explorer.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/sentry-traces.webp"
     ]
   },
   "features": [
@@ -93,12 +93,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/sentry/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

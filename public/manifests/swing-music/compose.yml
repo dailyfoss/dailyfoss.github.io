@@ -1,0 +1,26 @@
+# ===============================
+# Docker Compose (Swing Music)
+# ===============================
+# host: http://localhost:1971
+# username:
+# password:
+
+services:
+  swingmusic:
+    image: ghcr.io/swingmx/swingmusic:latest
+    container_name: swingmusic
+    restart: unless-stopped
+    ports:
+      - "1971:1970"
+    volumes:
+      - swingmusic_music:/music
+      - swingmusic_config:/config
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:1970"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  swingmusic_music:
+  swingmusic_config:

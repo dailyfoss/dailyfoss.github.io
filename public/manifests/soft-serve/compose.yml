@@ -1,0 +1,29 @@
+# ===============================
+# Docker Compose (Soft Serve)
+# ===============================
+# host: ssh://localhost:23231
+# username:
+# password:
+
+services:
+  soft-serve:
+    image: charmcli/soft-serve:latest
+    container_name: soft-serve
+    restart: unless-stopped
+    ports:
+      - "23231:23231"
+      - "23232:23232"
+      - "23233:23233"
+      - "9418:9418"
+    environment:
+      SOFT_SERVE_INITIAL_ADMIN_KEYS: "YOUR_PUBLIC_SSH_KEY"
+    volumes:
+      - softserve_data:/soft-serve
+    healthcheck:
+      test: ["CMD","soft","serve","--help"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  softserve_data:

@@ -1,0 +1,27 @@
+# ===============================
+# Docker Compose (SuggestArr)
+# ===============================
+# host: http://localhost:5000
+# username:
+# password:
+
+services:
+  suggestarr:
+    image: ciuse99/suggestarr:latest
+    container_name: suggestarr
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      LOG_LEVEL: info
+      SUGGESTARR_PORT: "5000"
+    volumes:
+      - suggestarr_config:/app/config/config_files
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:5000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  suggestarr_config:

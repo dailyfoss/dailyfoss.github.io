@@ -1,60 +1,78 @@
+# ===============================
+# Docker Compose (Tiny Tiny RSS)
+# ===============================
+# host: http://localhost:8280
+# username: admin
+# password: password
+
 services:
   db:
-    image: postgres:15-alpine
+    image: postgres:17-alpine
     restart: unless-stopped
-    env_file:
-      - .env
+
     environment:
-      - POSTGRES_USER=${TTRSS_DB_USER}
-      - POSTGRES_PASSWORD=${TTRSS_DB_PASS}
-      - POSTGRES_DB=${TTRSS_DB_NAME}
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgres
+
     volumes:
-      - ./db:/var/lib/postgresql/data
+      - ttrss_db:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   app:
-    image: cthulhoo/ttrss-fpm-pgsql-static:latest
+    image: ghcr.io/tt-rss/tt-rss:latest
     restart: unless-stopped
-    env_file:
-      - .env
-    volumes:
-      - ./app:/var/www/html
-      - ./config.d:/opt/tt-rss/config.d:ro
-    depends_on:
-      - db
 
-#  optional, makes weekly backups of your install
-#  backups:
-#    image: cthulhoo/ttrss-fpm-pgsql-static:latest
-#    restart: unless-stopped
-#    env_file:
-#      - .env
-#    volumes:
-#      - ./backups:/backups
-#      - ./app:/var/www/html
-#    depends_on:
-#      - db
-#    command: /opt/tt-rss/dcron.sh -f
+    environment:
+      TTRSS_DB_HOST: db
+      TTRSS_DB_USER: postgres
+      TTRSS_DB_PASS: password
+      TTRSS_DB_NAME: postgres
+      TTRSS_SELF_URL_PATH: http://localhost:8280
+
+    volumes:
+      - ttrss_app:/var/www/html
+
+    depends_on:
+      db:
+        condition: service_healthy
 
   updater:
-    image: cthulhoo/ttrss-fpm-pgsql-static:latest
+    image: ghcr.io/tt-rss/tt-rss:latest
     restart: unless-stopped
-    env_file:
-      - .env
-    volumes:
-      - ./app:/var/www/html
-      - ./config.d:/opt/tt-rss/config.d:ro
-    depends_on:
-      - app
+
     command: /opt/tt-rss/updater.sh
 
-  web-nginx:
-    image: cthulhoo/ttrss-web-nginx:latest
-    restart: unless-stopped
-    env_file:
-      - .env
-    ports:
-      - ${HTTP_PORT}:80
+    environment:
+      TTRSS_DB_HOST: db
+      TTRSS_DB_USER: postgres
+      TTRSS_DB_PASS: password
+      TTRSS_DB_NAME: postgres
+
     volumes:
-      - ./app:/var/www/html:ro
+      - ttrss_app:/var/www/html
+
     depends_on:
       - app
+
+  web-nginx:
+    image: ghcr.io/tt-rss/tt-rss-web-nginx:latest
+    restart: unless-stopped
+
+    ports:
+      - "127.0.0.1:8280:80"
+
+    volumes:
+      - ttrss_app:/var/www/html:ro
+
+    depends_on:
+      - app
+
+volumes:
+  ttrss_db:
+  ttrss_app:

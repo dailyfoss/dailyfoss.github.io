@@ -28,7 +28,16 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/traefik-log-dashboard.webp",
     "issues": "https://github.com/hhftechnology/traefik-log-dashboard/issues",
     "releases": "https://github.com/hhftechnology/traefik-log-dashboard/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/traefik-log-dashboard-homepage.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/traefik-log-dashboard-client.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/traefik-log-dashboard-geography.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/traefik-log-dashboard-logs-filter.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/traefik-log-dashboard-logs.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/traefik-log-dashboard-overview.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/traefik-log-dashboard-system.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/traefik-log-dashboard-traffic.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +97,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/traefik-log-dashboard/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

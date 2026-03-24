@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://github.com/HaveAGitGat/Tdarr",
-    "documentation": "https://github.com/HaveAGitGat/Tdarr",
+    "documentation": "https://docs.tdarr.io/docs/welcome/what",
     "source_code": "https://github.com/HaveAGitGat/Tdarr",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/tdarr.webp",
     "issues": "https://github.com/HaveAGitGat/Tdarr/issues",
     "releases": null,
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tdarr-screenshot.webp"
+    ]
   },
   "features": [
     {
@@ -83,12 +85,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/tdarr/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

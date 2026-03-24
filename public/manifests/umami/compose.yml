@@ -1,32 +1,50 @@
+# ===============================
+# Docker Compose (Umami)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
 services:
   umami:
     image: ghcr.io/umami-software/umami:postgresql-latest
+    restart: unless-stopped
+
     ports:
       - "3000:3000"
+
     environment:
-      DATABASE_URL: postgresql://umami:umami@db:5432/umami
+      DATABASE_URL: postgresql://umami:umami@umami-db:5432/umami
       DATABASE_TYPE: postgresql
-      APP_SECRET: replace-me-with-a-random-string
+      APP_SECRET: change_this_random_secret
+
     depends_on:
-      db:
+      umami-db:
         condition: service_healthy
-    restart: always
+
     healthcheck:
-      test: ["CMD-SHELL", "curl http://localhost:3000/api/heartbeat"]
-      interval: 5s
+      test: ["CMD-SHELL", "curl -f http://localhost:3000/api/heartbeat"]
+      interval: 10s
       timeout: 5s
       retries: 5
-  db:
-    image: postgres:15-alpine
+
+  umami-db:
+    image: postgres:16
+    restart: unless-stopped
+
     environment:
       POSTGRES_DB: umami
       POSTGRES_USER: umami
       POSTGRES_PASSWORD: umami
+
     volumes:
-      - ./umami-db-data:/var/lib/postgresql/data
-    restart: always
+      - umami_db:/var/lib/postgresql/data
+
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
-      interval: 5s
+      test: ["CMD-SHELL", "pg_isready -U umami -d umami"]
+      interval: 10s
       timeout: 5s
       retries: 5
+
+volumes:
+  umami_db:

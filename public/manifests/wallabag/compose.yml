@@ -1,44 +1,71 @@
+# ===============================
+# Docker Compose (Wallabag + MariaDB + Redis)
+# ===============================
+# host: http://localhost:8080
+# username: wallabag
+# password: wallabag
+
 services:
   wallabag:
-    image: wallabag/wallabag
-    environment:
-      - MYSQL_ROOT_PASSWORD=wallaroot
-      - SYMFONY__ENV__DATABASE_DRIVER=pdo_mysql
-      - SYMFONY__ENV__DATABASE_HOST=db
-      - SYMFONY__ENV__DATABASE_PORT=3306
-      - SYMFONY__ENV__DATABASE_NAME=wallabag
-      - SYMFONY__ENV__DATABASE_USER=wallabag
-      - SYMFONY__ENV__DATABASE_PASSWORD=wallapass
-      - SYMFONY__ENV__DATABASE_CHARSET=utf8mb4
-      - SYMFONY__ENV__DATABASE_TABLE_PREFIX="wallabag_"
-      - SYMFONY__ENV__MAILER_DSN=smtp://127.0.0.1
-      - [email protected]
-      - SYMFONY__ENV__DOMAIN_NAME=https://your-wallabag-instance.wallabag.org
-      - SYMFONY__ENV__SERVER_NAME="Your wallabag instance"
+    image: wallabag/wallabag:latest
+    container_name: wallabag
     ports:
-      - "80"
-    volumes:
-      - /opt/wallabag/images:/var/www/wallabag/web/assets/images
-    healthcheck:
-      test: ["CMD", "wget" ,"--no-verbose", "--tries=1", "--spider", "http://localhost"]
-      interval: 1m
-      timeout: 3s
+      - "8080:80"
+    restart: unless-stopped
     depends_on:
       - db
       - redis
-  db:
-    image: mariadb
     environment:
-      - MYSQL_ROOT_PASSWORD=wallaroot
+      MYSQL_ROOT_PASSWORD: wallaroot
+      SYMFONY__ENV__DATABASE_DRIVER: pdo_mysql
+      SYMFONY__ENV__DATABASE_HOST: db
+      SYMFONY__ENV__DATABASE_PORT: 3306
+      SYMFONY__ENV__DATABASE_NAME: wallabag
+      SYMFONY__ENV__DATABASE_USER: wallabag
+      SYMFONY__ENV__DATABASE_PASSWORD: wallapass
+      SYMFONY__ENV__DATABASE_CHARSET: utf8mb4
+      SYMFONY__ENV__DATABASE_TABLE_PREFIX: wallabag_
+      SYMFONY__ENV__MAILER_DSN: smtp://127.0.0.1
+      SYMFONY__ENV__DOMAIN_NAME: http://localhost:8080
+      SYMFONY__ENV__SERVER_NAME: "Your Wallabag Instance"
     volumes:
-      - /opt/wallabag/data:/var/lib/mysql
+      - wallabag-images:/var/www/wallabag/web/assets/images
     healthcheck:
-      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      test: ["CMD","wget","--no-verbose","--tries=1","--spider","http://localhost"]
+      interval: 60s
+      timeout: 5s
+      retries: 3
+
+  db:
+    image: mariadb:11
+    container_name: wallabag-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: wallaroot
+      MYSQL_DATABASE: wallabag
+      MYSQL_USER: wallabag
+      MYSQL_PASSWORD: wallapass
+    volumes:
+      - wallabag-db-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD","mysqladmin","ping","-h","localhost"]
       interval: 20s
-      timeout: 3s
+      timeout: 5s
+      retries: 5
+
   redis:
-    image: redis:alpine
+    image: redis:7-alpine
+    container_name: wallabag-redis
+    restart: unless-stopped
+    volumes:
+      - wallabag-redis-data:/data
     healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
+      test: ["CMD","redis-cli","ping"]
       interval: 20s
-      timeout: 3s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  wallabag-images:
+  wallabag-db-data:
+  wallabag-redis-data:

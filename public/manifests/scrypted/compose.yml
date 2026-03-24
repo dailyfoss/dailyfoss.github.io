@@ -1,0 +1,47 @@
+# ===============================
+# Docker Compose (Scrypted)
+# ===============================
+# host: http://localhost:10443
+# username:
+# password:
+
+services:
+
+  scrypted:
+    image: ghcr.io/koush/scrypted:latest
+    container_name: scrypted
+    network_mode: host
+    environment:
+      SCRYPTED_WEBHOOK_UPDATE_AUTHORIZATION: "Bearer change_this_token"
+      SCRYPTED_WEBHOOK_UPDATE: "http://localhost:10444/v1/update"
+    volumes:
+      - scrypted_data:/server/volume
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD","wget","-qO-","http://localhost:10443"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    logging:
+      driver: "none"
+
+
+  watchtower:
+    image: nickfedor/watchtower:latest
+    container_name: scrypted-watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      WATCHTOWER_HTTP_API_TOKEN: "change_this_token"
+      WATCHTOWER_HTTP_API_UPDATE: "true"
+      WATCHTOWER_SCOPE: "scrypted"
+      WATCHTOWER_HTTP_API_PERIODIC_POLLS: "true"
+    command: --interval 3600 --cleanup --scope scrypted
+    ports:
+      - "10444:8080"
+    restart: unless-stopped
+
+
+volumes:
+  scrypted_data:

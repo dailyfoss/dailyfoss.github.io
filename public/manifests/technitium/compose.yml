@@ -1,0 +1,37 @@
+# ===============================
+# Docker Compose (Technitium DNS Server)
+# ===============================
+# host: http://localhost:5380
+# username: admin
+# password: set via DNS_SERVER_ADMIN_PASSWORD
+
+services:
+  dns-server:
+    image: technitium/dns-server:latest
+    container_name: dns-server
+    hostname: dns-server
+    restart: unless-stopped
+
+    ports:
+      - "5380:5380/tcp"
+      - "53:53/udp"
+      - "53:53/tcp"
+
+    environment:
+      DNS_SERVER_DOMAIN: dns-server
+      DNS_SERVER_ADMIN_PASSWORD: change_this_password
+
+    volumes:
+      - dns_config:/etc/dns
+
+    sysctls:
+      net.ipv4.ip_local_port_range: "1024 65535"
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5380"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  dns_config:

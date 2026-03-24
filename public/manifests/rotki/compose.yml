@@ -1,0 +1,27 @@
+# ===============================
+# Docker Compose (Rotki)
+# ===============================
+# host: http://localhost:8084
+# username:
+# password:
+
+services:
+  rotki:
+    image: rotki/rotki:latest
+    container_name: rotki
+    ports:
+      - "8084:80"
+    volumes:
+      - rotki_data:/data
+      - rotki_logs:/logs
+    healthcheck:
+      test: ["CMD","wget","-qO-","http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+volumes:
+  rotki_data:
+  rotki_logs:

@@ -1,0 +1,82 @@
+# ===============================
+# Docker Compose (Yamtrack)
+# ===============================
+# host: http://localhost:8000
+# username: (create in app)
+# password: (create in app)
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: yamtrack_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: "yamtrack"
+      POSTGRES_USER: "yamtrack"
+      POSTGRES_PASSWORD: "changeme"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U yamtrack -d yamtrack"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: yamtrack_redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  yamtrack:
+    image: ghcr.io/fuzzygrim/yamtrack:latest
+    container_name: yamtrack
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    environment:
+      TZ: "UTC"
+
+      # Core
+      SECRET: "change-this-secret"
+      DEBUG: "false"
+
+      # Database
+      DB_HOST: "db"
+      DB_PORT: "5432"
+      DB_NAME: "yamtrack"
+      DB_USER: "yamtrack"
+      DB_PASSWORD: "changeme"
+
+      # Redis
+      REDIS_URL: "redis://redis:6379"
+
+      # APIs (optional but recommended)
+      TMDB_API: ""
+      MAL_API: ""
+      IGDB_ID: ""
+      IGDB_SECRET: ""
+      STEAM_API_KEY: ""
+      BGG_API_TOKEN: ""
+
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  db_data:
+  redis_data:

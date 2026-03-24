@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "Sustainable Use License",
     "version": "v0.12.4",
     "date_app_added": "2025-11-23",
     "date_last_released": "2026-01-09",
@@ -28,7 +28,16 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/tasktrove.webp",
     "issues": "https://github.com/dohsimpson/TaskTrove/issues",
     "releases": "https://github.com/dohsimpson/TaskTrove/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tasktrove-all-task.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tasktrove-calendar.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tasktrove-completed.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tasktrove-habbits.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tasktrove-inbox.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tasktrove-recent.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tasktrove-today.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tasktrove-upcoming.webp"
+    ]
   },
   "features": [
     {
@@ -83,16 +92,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/tasktrove/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://demo.tasktrove.io",
     "username": null,
     "password": null
   }

@@ -1,14 +1,29 @@
+# ===============================
+# Docker Compose (XBackBone)
+# ===============================
+# host: http://localhost
+# username: (set in app)
+# password: (set in app)
+
 services:
   xbackbone:
     image: lscr.io/linuxserver/xbackbone:latest
     container_name: xbackbone
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Etc/UTC
-    volumes:
-      - ./config:/config
-    ports:
-      - 80:80
-      - 443:443
     restart: unless-stopped
+    ports:
+      - "8080:80"
+      - "8443:443"
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: "UTC"
+    volumes:
+      - xbackbone_config:/config
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  xbackbone_config:

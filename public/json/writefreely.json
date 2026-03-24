@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://writefreely.org",
-    "documentation": "https://github.com/writefreely/writefreely",
+    "documentation": "https://writefreely.org/start",
     "source_code": "https://github.com/writefreely/writefreely",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/writefreely.webp",
     "issues": "https://github.com/writefreely/writefreely/issues",
     "releases": "https://github.com/writefreely/writefreely/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/writefreely-apps-demo.webp"
+    ]
   },
   "features": [
     {
@@ -83,12 +85,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/writefreely/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
@@ -104,7 +108,7 @@
     }
   },
   "demo": {
-    "url": null,
+    "url": "https://write.as/new",
     "username": null,
     "password": null
   }

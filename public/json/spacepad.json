@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "Sustainable Use License",
     "version": "v1.7.1",
     "date_app_added": "2025-11-23",
     "date_last_released": "2026-03-02",
@@ -29,7 +29,7 @@
     "issues": "https://github.com/magweter/spacepad/issues",
     "releases": "https://github.com/magweter/spacepad/releases",
     "screenshots": [
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/spacepad_screenshot.png"
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/spacepad-screenshot.webp"
     ]
   },
   "features": [
@@ -90,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/spacepad/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

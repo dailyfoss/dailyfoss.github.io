@@ -22,13 +22,16 @@
     "github_releases_this_year": 1
   },
   "resources": {
-    "website": "https://vuetorrent.github.io/demo",
-    "documentation": "https://github.com/VueTorrent/VueTorrent",
+    "website": "https://github.com/VueTorrent/VueTorrent",
+    "documentation": "https://github.com/VueTorrent/VueTorrent/wiki/Installation",
     "source_code": "https://github.com/VueTorrent/VueTorrent",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/vuetorrent.webp",
     "issues": "https://github.com/VueTorrent/VueTorrent/issues",
     "releases": "https://github.com/VueTorrent/VueTorrent/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/vuetorrent-screenshot-desktop-dark-mode.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/vuetorrent-screenshot-desktop-light.webp"
+    ]
   },
   "features": [
     {
@@ -88,16 +91,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/vuetorrent/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://vuetorrent.github.io/demo",
     "username": null,
     "password": null
   }

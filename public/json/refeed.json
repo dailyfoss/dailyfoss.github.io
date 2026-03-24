@@ -29,9 +29,10 @@
     "issues": "https://github.com/michaelkremenetsky/Refeed/issues",
     "releases": null,
     "screenshots": [
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/Refeed_Hero.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/Refeed_NewImageTry.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/Refeed_Pasted-image-20240229001555.png"
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/refeed-hero.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/refeed-newimagetry.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/refeed-pasted-image-20240229001555.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/refeed-screenshot.webp"
     ]
   },
   "features": [
@@ -83,12 +84,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/refeed/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
