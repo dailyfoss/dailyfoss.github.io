@@ -23,12 +23,16 @@
   },
   "resources": {
     "website": "https://wagmilabs.fun",
-    "documentation": "https://wagmilabs.fun",
+    "documentation": "https://github.com/mentholmike/wagmios#-installation",
     "source_code": "https://github.com/mentholmike/wagmios",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/wagmios.webp",
     "issues": "https://github.com/mentholmike/wagmios/issues",
     "releases": "https://github.com/mentholmike/wagmios/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/wagmios-dashboard-dark.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/wagmios-dashboard-light.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/wagmios-marketplace.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +92,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/wagmios/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

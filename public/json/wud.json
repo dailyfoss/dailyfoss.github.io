@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://getwud.github.io/wud/",
-    "documentation": "https://github.com/getwud/wud",
+    "documentation": "https://getwud.github.io/wud/#/?id=introduction",
     "source_code": "https://github.com/getwud/wud",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/wud.webp",
     "issues": "https://github.com/getwud/wud/issues",
     "releases": "https://github.com/getwud/wud/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/wud-ui.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/wud/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

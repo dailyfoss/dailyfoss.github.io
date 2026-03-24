@@ -1,0 +1,29 @@
+# ===============================
+# Docker Compose (XPipe)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  xpipe:
+    image: ghcr.io/xpipe-io/xpipe:latest
+    container_name: xpipe
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      XPipe_ENABLE_SERVER: "true"
+      XPipe_SERVER_PORT: "8080"
+      XPipe_HOME: "/data"
+    volumes:
+      - xpipe_data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8080"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  xpipe_data:

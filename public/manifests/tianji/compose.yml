@@ -1,27 +1,51 @@
+# ===============================
+# Docker Compose (Tianji)
+# ===============================
+# host: http://localhost:12345
+# username:
+# password:
+
 services:
   tianji:
-    image: moonrailgun/tianji
+    image: moonrailgun/tianji:latest
+    restart: unless-stopped
+
     ports:
       - "12345:12345"
+
     environment:
-      DATABASE_URL: postgresql://tianji:tianji@postgres:5432/tianji
-      JWT_SECRET: replace-me-with-a-random-string
+      DATABASE_URL: postgresql://tianji:tianjipassword@postgres:5432/tianji
+      JWT_SECRET: change_this_to_a_long_random_string
       ALLOW_REGISTER: "false"
       ALLOW_OPENAPI: "true"
+
     depends_on:
-      - postgres
-    restart: always
+      postgres:
+        condition: service_healthy
+
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:12345"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
   postgres:
-    image: postgres:15.4-alpine
+    image: postgres:16
+    restart: unless-stopped
+
     environment:
       POSTGRES_DB: tianji
       POSTGRES_USER: tianji
-      POSTGRES_PASSWORD: tianji
+      POSTGRES_PASSWORD: tianjipassword
+
     volumes:
-      - ./tianji-db-data:/var/lib/postgresql/data
-    restart: always
+      - tianji_db:/var/lib/postgresql/data
+
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
-      interval: 5s
+      test: ["CMD-SHELL", "pg_isready -U tianji -d tianji"]
+      interval: 10s
       timeout: 5s
       retries: 5
+
+volumes:
+  tianji_db:

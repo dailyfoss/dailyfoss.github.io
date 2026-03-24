@@ -1,0 +1,32 @@
+# ===============================
+# Docker Compose (Stormkit)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  hosting:
+    image: ghcr.io/stormkit-io/hosting:latest
+    container_name: stormkit-hosting
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - stormkit_hosting:/home/stormkit
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:8080"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  workerserver:
+    image: ghcr.io/stormkit-io/workerserver:latest
+    container_name: stormkit-workerserver
+    restart: unless-stopped
+    volumes:
+      - stormkit_workerserver:/home/stormkit
+
+volumes:
+  stormkit_hosting:
+  stormkit_workerserver:

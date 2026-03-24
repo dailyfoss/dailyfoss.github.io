@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "Server Side Public License 1.0",
     "version": null,
     "date_app_added": "2025-11-23",
     "date_last_released": null,
@@ -28,7 +28,10 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/workout-challenge.webp",
     "issues": "https://github.com/vanalmsick/workout_challenge/issues",
     "releases": null,
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/workout-challenge-competition-both.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/workout-challenge-myspace-light.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +91,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/workout-challenge/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

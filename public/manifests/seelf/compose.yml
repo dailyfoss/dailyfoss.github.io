@@ -1,0 +1,28 @@
+# ===============================
+# Docker Compose (Seelf)
+# ===============================
+# host: http://localhost:8080
+# username: admin@example.com
+# password: admin
+
+services:
+  seelf:
+    image: yuukanoo/seelf:latest
+    container_name: seelf
+    restart: unless-stopped
+
+    ports:
+      - "8080:8080"
+
+    environment:
+      ADMIN_EMAIL: admin@example.com
+      ADMIN_PASSWORD: admin
+
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - seelf_ssh:/root/.ssh
+      - seelf_data:/seelf/data
+
+volumes:
+  seelf_ssh:
+  seelf_data:

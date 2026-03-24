@@ -1,0 +1,26 @@
+# ===============================
+# Docker Compose (Storyteller)
+# ===============================
+# host: http://localhost:8001
+# username:
+# password:
+
+services:
+  storyteller:
+    image: registry.gitlab.com/storyteller-platform/storyteller:latest
+    container_name: storyteller
+    restart: unless-stopped
+    ports:
+      - "8001:8001"
+    environment:
+      STORYTELLER_SECRET_KEY: replace_with_secure_secret
+    volumes:
+      - storyteller_data:/data
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:8001"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  storyteller_data:

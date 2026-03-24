@@ -1,0 +1,24 @@
+# ===============================
+# Docker Compose (Silicon)
+# ===============================
+# host: http://localhost:5000
+# username:
+# password:
+
+services:
+  silicon:
+    image: docker.io/bityard/silicon:latest
+    container_name: silicon
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:5000:5000"
+    volumes:
+      - silicon_instance:/home/silicon/instance
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:5000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  silicon_instance:

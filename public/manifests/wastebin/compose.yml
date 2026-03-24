@@ -1,9 +1,21 @@
+# ===============================
+# Docker Compose (Wastebin)
+# ===============================
+# host: http://localhost:8088
+# username:
+# password:
+
 services:
   wastebin:
-    environment:
-      - ./db=/data/state.db
-    ports:
-      - 8088:8088
-    volumes:
-      - ./data:/data
     image: quxfoo/wastebin:latest
+    container_name: wastebin
+    ports:
+      - "8088:8088"
+    restart: unless-stopped
+    environment:
+      WASTEBIN_DATABASE_PATH: /data/state.db
+    volumes:
+      - wastebin-data:/data
+
+volumes:
+  wastebin-data:

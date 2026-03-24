@@ -22,13 +22,15 @@
     "github_releases_this_year": 1
   },
   "resources": {
-    "website": "https://sablierapp.dev/",
-    "documentation": "https://github.com/sablierapp/sablier",
+    "website": "https://sablierapp.dev",
+    "documentation": "https://sablierapp.dev/#",
     "source_code": "https://github.com/sablierapp/sablier",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/sablier.webp",
     "issues": "https://github.com/sablierapp/sablier/issues",
     "releases": "https://github.com/sablierapp/sablier/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/sablier-homepage.webp"
+    ]
   },
   "features": [
     {
@@ -84,12 +86,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/sablier/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

@@ -1,0 +1,75 @@
+# ===============================
+# Docker Compose (Spacepad)
+# ===============================
+# host: https://spacepad.local
+# username:
+# password:
+
+services:
+  traefik:
+    image: traefik:latest
+    container_name: spacepad-traefik
+    restart: unless-stopped
+    command:
+      - --api.insecure=false
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+      - --certificatesresolvers.mytlsresolver.acme.tlschallenge=true
+      - --certificatesresolvers.mytlsresolver.acme.email=admin@example.com
+      - --certificatesresolvers.mytlsresolver.acme.storage=/letsencrypt/acme.json
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - traefik_certs:/letsencrypt
+      - traefik_socket:/var/run/docker.sock
+    healthcheck:
+      test: ["CMD","traefik","healthcheck"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  spacepad:
+    image: ghcr.io/magweter/spacepad:latest
+    container_name: spacepad
+    restart: unless-stopped
+    depends_on:
+      traefik:
+        condition: service_started
+    environment:
+      PHP_OPCACHE_ENABLE: "1"
+      AUTORUN_ENABLED: "true"
+      AUTORUN_LARAVEL_MIGRATION: "true"
+      APP_ENV: production
+      APP_URL: https://spacepad.local
+    volumes:
+      - spacepad_storage:/var/www/html/storage
+    labels:
+      traefik.enable: "true"
+      traefik.http.routers.spacepad.rule: Host(`spacepad.local`)
+      traefik.http.routers.spacepad.entrypoints: websecure
+      traefik.http.routers.spacepad.tls.certresolver: mytlsresolver
+      traefik.http.services.spacepad.loadbalancer.server.port: "8080"
+
+  scheduler:
+    image: ghcr.io/magweter/spacepad:latest
+    container_name: spacepad-scheduler
+    restart: unless-stopped
+    command:
+      - php
+      - /var/www/html/artisan
+      - schedule:work
+    environment:
+      PHP_OPCACHE_ENABLE: "1"
+    volumes:
+      - spacepad_storage:/var/www/html/storage
+    healthcheck:
+      test: ["CMD","healthcheck-schedule"]
+      start_period: 10s
+
+volumes:
+  spacepad_storage:
+  traefik_certs:
+  traefik_socket:

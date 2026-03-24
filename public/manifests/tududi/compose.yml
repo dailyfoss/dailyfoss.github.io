@@ -1,0 +1,33 @@
+# ===============================
+# Docker Compose (Tududi)
+# ===============================
+# host: http://localhost:3002
+# username: admin@example.com
+# password: your-secure-password
+
+services:
+  tududi:
+    image: chrisvel/tududi:latest
+    restart: unless-stopped
+
+    ports:
+      - "3002:3002"
+
+    environment:
+      TUDUDI_USER_EMAIL: admin@example.com
+      TUDUDI_USER_PASSWORD: your-secure-password
+      TUDUDI_SESSION_SECRET: replace_with_random_hex_secret
+
+    volumes:
+      - tududi_db:/app/backend/db
+      - tududi_uploads:/app/backend/uploads
+
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3002"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  tududi_db:
+  tududi_uploads:

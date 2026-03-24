@@ -1,31 +1,81 @@
+# ===============================
+# Docker Compose (RSSHub)
+# ===============================
+# host: http://localhost:1200
+# username:
+# password:
+
 services:
-    rsshub:
-        # two ways to enable puppeteer:
-        # * comment out marked lines, then use this image instead: diygod/rsshub:chromium-bundled
-        # * (consumes more disk space and memory) leave everything unchanged
-        image: diygod/rsshub
-        restart: always
-        ports:
-            - '1200:1200'
-        environment:
-            NODE_ENV: production
-            CACHE_TYPE: redis
-            REDIS_URL: 'redis://redis:6379/'
-            PUPPETEER_WS_ENDPOINT: 'ws://browserless:3000'  # marked
-        depends_on:
-            - redis
-            - browserless  # marked
 
-    browserless:  # marked
-        image: browserless/chrome  # marked
-        restart: always  # marked
-        ulimits:  # marked
-          core:  # marked
-            hard: 0  # marked
-            soft: 0  # marked
+  rsshub:
+    image: ghcr.io/diygod/rsshub:latest
+    container_name: rsshub
+    ports:
+      - "1200:1200"
+    environment:
+      NODE_ENV: "production"
+      CACHE_TYPE: "redis"
+      REDIS_URL: "redis://redis:6379/"
+      PUPPETEER_WS_ENDPOINT: "ws://browserless:3000"
+      PUPPETEER_REAL_BROWSER_SERVICE: "http://real-browser:3000"
+    depends_on:
+      redis:
+        condition: service_healthy
+      browserless:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD","curl","-f","http://localhost:1200/healthz"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
 
-    redis:
-        image: redis:alpine
-        restart: always
-        volumes:
-            - ./redis-data:/data
+
+  redis:
+    image: redis:7-alpine
+    container_name: rsshub-redis
+    command: ["redis-server","--appendonly","yes"]
+    volumes:
+      - rsshub_redis_data:/data
+    healthcheck:
+      test: ["CMD","redis-cli","ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 5s
+    restart: unless-stopped
+
+
+  browserless:
+    image: browserless/chrome:latest
+    container_name: rsshub-browserless
+    ulimits:
+      core:
+        hard: 0
+        soft: 0
+    healthcheck:
+      test: ["CMD","curl","-f","http://localhost:3000/pressure"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+
+
+  real-browser:
+    image: ghcr.io/hyoban/puppeteer-real-browser-hono:latest
+    container_name: rsshub-real-browser
+    ports:
+      - "3001:3000"
+    healthcheck:
+      test: ["CMD","curl","-f","http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+
+
+volumes:
+  rsshub_redis_data:

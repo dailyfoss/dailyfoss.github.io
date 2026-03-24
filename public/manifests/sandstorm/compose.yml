@@ -1,0 +1,31 @@
+# ===============================
+# Docker Compose (Sandstorm)
+# ===============================
+# host: http://localhost:6080
+# username:
+# password:
+
+services:
+
+  sandstorm:
+    image: buildpack-deps:latest
+    container_name: sandstorm
+    privileged: true
+    ports:
+      - "6080:6080"
+    command: >
+      bash -c "
+      useradd --system --user-group sandstorm &&
+      if [ ! -f /opt/sandstorm/sandstorm ]; then
+        curl https://install.sandstorm.io/ > install.sh &&
+        REPORT=no bash install.sh -d -e;
+      fi &&
+      /opt/sandstorm/sandstorm start &&
+      tail -f /opt/sandstorm/var/log/sandstorm.log
+      "
+    volumes:
+      - sandstorm_data:/opt/sandstorm
+    restart: unless-stopped
+
+volumes:
+  sandstorm_data:

@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://js.wiki",
-    "documentation": "https://github.com/requarks/wiki",
+    "documentation": "https://docs.requarks.io/install",
     "source_code": "https://github.com/requarks/wiki",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/wiki-js.webp",
     "issues": "https://github.com/requarks/wiki/issues",
     "releases": "https://github.com/requarks/wiki/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/wiki-js-screenshot.webp"
+    ]
   },
   "features": [
     {
@@ -83,12 +85,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/wiki-js/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

@@ -1,0 +1,58 @@
+# ===============================
+# Docker Compose (ZoneMinder)
+# ===============================
+# host: http://localhost
+# username: (set in UI)
+# password: (set in UI)
+
+services:
+  db:
+    image: mariadb:10.11
+    container_name: zoneminder_db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: "zm"
+      MYSQL_USER: "zm"
+      MYSQL_PASSWORD: "changeme"
+      MYSQL_ROOT_PASSWORD: "changeme"
+    command:
+      - "--skip-log-bin"
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-pchangeme"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  zoneminder:
+    image: ghcr.io/zoneminder-containers/zoneminder-base:latest
+    container_name: zoneminder
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "80:80"
+    environment:
+      ZM_DB_HOST: "db"
+      ZM_DB_NAME: "zm"
+      ZM_DB_USER: "zm"
+      ZM_DB_PASS: "changeme"
+    volumes:
+      - zm_data:/data
+      - zm_config:/config
+      - zm_logs:/log
+    tmpfs:
+      - /dev/shm:size=1g
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  db_data:
+  zm_data:
+  zm_config:
+  zm_logs:

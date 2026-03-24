@@ -1,0 +1,24 @@
+# ===============================
+# Docker Compose (TaskTrove)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  tasktrove:
+    image: ghcr.io/dohsimpson/tasktrove:latest
+    container_name: tasktrove
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - tasktrove_data:/app/data
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:3000"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  tasktrove_data:

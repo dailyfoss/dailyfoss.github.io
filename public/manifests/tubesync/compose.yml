@@ -1,14 +1,35 @@
+# ===============================
+# Docker Compose (TubeSync)
+# ===============================
+# host: http://localhost:4848
+# username:
+# password:
+
 services:
   tubesync:
     image: ghcr.io/meeb/tubesync:latest
     container_name: tubesync
     restart: unless-stopped
+    stop_grace_period: 30m
+
     ports:
-      - 4848:4848
-    volumes:
-      - /some/directory/tubesync-config:/config
-      - /some/directory/tubesync-downloads:/downloads
+      - "4848:4848"
+
     environment:
-      - TZ=Europe/London
-      - PUID=1000
-      - PGID=1000
+      TZ: Europe/London
+      PUID: "1000"
+      PGID: "1000"
+
+    volumes:
+      - tubesync_config:/config
+      - tubesync_downloads:/downloads
+
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:4848"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  tubesync_config:
+  tubesync_downloads:

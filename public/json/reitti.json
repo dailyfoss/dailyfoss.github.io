@@ -22,13 +22,18 @@
     "github_releases_this_year": 6
   },
   "resources": {
-    "website": "https://www.dedicatedcode.com/projects/reitti/",
-    "documentation": "https://github.com/dedicatedcode/reitti",
+    "website": "https://www.dedicatedcode.com/projects/reitti",
+    "documentation": "https://www.dedicatedcode.com/projects/reitti",
     "source_code": "https://github.com/dedicatedcode/reitti",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/reitti.webp",
     "issues": "https://github.com/dedicatedcode/reitti/issues",
     "releases": "https://github.com/dedicatedcode/reitti/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/reitti-livemode.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/reitti-main.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/reitti-multiple-users.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/reitti-statistics.webp"
+    ]
   },
   "features": [
     {
@@ -82,12 +87,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/reitti/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

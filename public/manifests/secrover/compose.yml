@@ -1,0 +1,49 @@
+# ===============================
+# Docker Compose (Secrover)
+# ===============================
+# host: http://localhost
+# username:
+# password:
+
+services:
+  secrover:
+    image: secrover/secrover:latest
+    container_name: secrover
+    restart: unless-stopped
+
+    environment:
+      CONFIG_FILE: /config.yaml
+      OUTPUT_DIR: /output/
+      REPOS_DIR: repos/
+      GITHUB_TOKEN: yourgeneratedtokenhere
+      CRON_SCHEDULE: "0 0 * * *"
+      EXPORT_ENABLED: "true"
+      RCLONE_REMOTES: prod-remote,nextcloud
+      RCLONE_PATH: /secrover-reports/
+
+    volumes:
+      - secrover_output:/output
+      - ./config.yaml:/config.yaml:ro
+
+    stdin_open: true
+    tty: true
+
+volumes:
+  secrover_output:
+
+
+## config.yaml
+# project:
+#   name: My project
+
+# domains:
+#   - my-domain.com
+#   - subdomain.my-domain.com
+
+# repos:
+#   - url: https://github.com/your-org/your-repo
+#     description: "Short description of the project"
+#     branch: "main"
+
+#   - url: https://github.com/your-org/another-repo
+#     description: "Another awesome project"

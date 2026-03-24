@@ -1,0 +1,32 @@
+# ===============================
+# Docker Compose (WOL)
+# ===============================
+# host: http://localhost:7777
+# username:
+# password:
+
+services:
+  wol:
+    image: ghcr.io/trugamr/wol:latest
+    container_name: wol
+    restart: unless-stopped
+    network_mode: host
+    command: serve
+    environment:
+      WOL_CONFIG: |
+        machines:
+          - name: desktop
+            mac: "00:11:22:33:44:55"
+            ip: "192.168.1.100"
+          - name: server
+            mac: "AA:BB:CC:DD:EE:FF"
+            ip: "server.local"
+        server:
+          listen: ":7777"
+        ping:
+          privileged: false
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:7777"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

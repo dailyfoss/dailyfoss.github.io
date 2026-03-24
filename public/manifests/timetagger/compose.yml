@@ -1,13 +1,27 @@
+# ===============================
+# Docker Compose (TimeTagger)
+# ===============================
+# host: http://localhost:8080
+# username: test
+# password: test
+
 services:
   timetagger:
-    image: ghcr.io/almarklein/timetagger
-    ports:
-      - "80:80"
-    volumes:
-      - ./_timetagger:/root/_timetagger
-    environment:
-      - TIMETAGGER_BIND=0.0.0.0:80
-      - TIMETAGGER_DATADIR=/root/_timetagger
-      - TIMETAGGER_LOG_LEVEL=info
-      - TIMETAGGER_CREDENTIALS=test:$$2a$$08$$0CD1NFiIbancwWsu3se1v.RNR/b7YeZd71yg3cZ/3whGlyU6Iny5i  # test:test
+    image: ghcr.io/almarklein/timetagger:latest
+    container_name: timetagger
     restart: unless-stopped
+
+    ports:
+      - "8080:80"
+
+    environment:
+      TIMETAGGER_BIND: 0.0.0.0:80
+      TIMETAGGER_DATADIR: /root/_timetagger
+      TIMETAGGER_LOG_LEVEL: info
+      TIMETAGGER_CREDENTIALS: test:$$2a$$08$$0CD1NFiIbancwWsu3se1v.RNR/b7YeZd71yg3cZ/3whGlyU6Iny5i
+
+    volumes:
+      - timetagger_data:/root/_timetagger
+
+volumes:
+  timetagger_data:

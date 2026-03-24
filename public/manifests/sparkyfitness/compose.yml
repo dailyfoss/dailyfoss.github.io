@@ -1,0 +1,67 @@
+# ===============================
+# Docker Compose (SparkyFitness)
+# ===============================
+# host: http://localhost:3004
+# username:
+# password:
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: sparkyfitness-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: sparkyfitness_db
+      POSTGRES_USER: sparky
+      POSTGRES_PASSWORD: changeme_db_password
+    volumes:
+      - sparkyfitness_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U sparky"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  server:
+    image: codewithcj/sparkyfitness_server:latest
+    container_name: sparkyfitness-server
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      SPARKY_FITNESS_LOG_LEVEL: ERROR
+      SPARKY_FITNESS_DB_USER: sparky
+      SPARKY_FITNESS_DB_HOST: postgres
+      SPARKY_FITNESS_DB_NAME: sparkyfitness_db
+      SPARKY_FITNESS_DB_PASSWORD: changeme_db_password
+      SPARKY_FITNESS_APP_DB_USER: sparky_app
+      SPARKY_FITNESS_APP_DB_PASSWORD: password
+      SPARKY_FITNESS_DB_PORT: "5432"
+      SPARKY_FITNESS_API_ENCRYPTION_KEY: replace_with_64_hex_key
+      BETTER_AUTH_SECRET: replace_with_secure_secret
+      SPARKY_FITNESS_FRONTEND_URL: http://localhost:3004
+      SPARKY_FITNESS_DISABLE_SIGNUP: "false"
+      TZ: Etc/UTC
+      GARMIN_MICROSERVICE_URL: http://sparkyfitness-garmin:8000
+    volumes:
+      - sparkyfitness_uploads:/app/SparkyFitnessServer/uploads
+      - sparkyfitness_backup:/app/SparkyFitnessServer/backup
+
+  frontend:
+    image: codewithcj/sparkyfitness:latest
+    container_name: sparkyfitness-frontend
+    restart: unless-stopped
+    depends_on:
+      - server
+    ports:
+      - "3004:80"
+    environment:
+      SPARKY_FITNESS_FRONTEND_URL: http://localhost:3004
+      SPARKY_FITNESS_SERVER_HOST: server
+      SPARKY_FITNESS_SERVER_PORT: "3010"
+
+volumes:
+  sparkyfitness_db:
+  sparkyfitness_uploads:
+  sparkyfitness_backup:

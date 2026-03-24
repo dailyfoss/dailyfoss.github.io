@@ -1,0 +1,56 @@
+# ===============================
+# Docker Compose (Wapy.dev)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  db:
+    image: postgres:17
+    container_name: wapydev-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: wapydev
+      POSTGRES_PASSWORD: change_me
+      POSTGRES_DB: wapydev
+    ports:
+      - "5432:5432"
+    volumes:
+      - wapydev-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U wapydev"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  app:
+    image: ghcr.io/meceware/wapy.dev:latest
+    container_name: wapydev-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgres://wapydev:change_me@db:5432/wapydev
+
+  cron:
+    image: alpine:3.22
+    container_name: wapydev-cron
+    restart: unless-stopped
+    depends_on:
+      - app
+    command:
+      - sh
+      - -c
+      - |
+        while true; do
+          /usr/bin/flock -n /tmp/wapy.lockfile wget -qO- app:3000/api/cron/;
+          sleep 60;
+        done
+
+volumes:
+  wapydev-db-data:

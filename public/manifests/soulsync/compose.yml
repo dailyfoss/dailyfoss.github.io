@@ -1,0 +1,45 @@
+# ===============================
+# Docker Compose (SoulSync)
+# ===============================
+# host: http://localhost:8008
+# username:
+# password:
+
+services:
+  soulsync:
+    image: boulderbadgedad/soulsync:latest
+    container_name: soulsync
+    restart: unless-stopped
+    ports:
+      - "8008:8008"
+      - "8888:8888"
+      - "8889:8889"
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+      UMASK: "022"
+      FLASK_ENV: production
+      PYTHONPATH: /app
+      SOULSYNC_CONFIG_PATH: /app/config/config.json
+      TZ: America/New_York
+    volumes:
+      - soulsync_config:/app/config
+      - soulsync_logs:/app/logs
+      - soulsync_downloads:/app/downloads
+      - soulsync_staging:/app/Staging
+      - soulsync_database:/app/data
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    healthcheck:
+      test: ["CMD","curl","-f","http://localhost:8008/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+volumes:
+  soulsync_config:
+  soulsync_logs:
+  soulsync_downloads:
+  soulsync_staging:
+  soulsync_database:

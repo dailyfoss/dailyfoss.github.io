@@ -1,0 +1,27 @@
+# ===============================
+# Docker Compose (Subtrackr)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  subtrackr:
+    image: ghcr.io/bscott/subtrackr:latest
+    container_name: subtrackr
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      GIN_MODE: release
+      DATABASE_PATH: /app/data/subtrackr.db
+    volumes:
+      - subtrackr_data:/app/data
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:8080"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  subtrackr_data:

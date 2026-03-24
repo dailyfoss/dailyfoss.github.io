@@ -1,14 +1,29 @@
+# ===============================
+# Docker Compose (Starbase 80)
+# ===============================
+# host: http://localhost
+# username:
+# password:
+
 services:
-    starbase80:
-        image: jordanroher/starbase-80
-        ports:
-            - 80:4173
-        environment:
-            - TITLE=Starbase 80
-            - LOGO=/starbase80.jpg
-        volumes:
-            - ./config.json:/app/src/config/config.json
-            - ./public/favicon.ico:/app/public/favicon.ico
-            - ./public/logo.png:/app/public/logo.png
-            - ./public/icons:/app/public/icons
-        restart: unless-stopped
+  starbase80:
+    image: jordanroher/starbase-80:latest
+    container_name: starbase80
+    restart: unless-stopped
+    ports:
+      - "80:4173"
+    environment:
+      TITLE: Starbase 80
+      LOGO: /starbase80.jpg
+    volumes:
+      - starbase80_config:/app/src/config
+      - starbase80_public:/app/public
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:4173"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  starbase80_config:
+  starbase80_public:

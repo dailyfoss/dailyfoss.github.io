@@ -1,9 +1,27 @@
+# ===============================
+# Docker Compose (The Lounge)
+# ===============================
+# host: http://localhost:9000
+# username:
+# password:
+
 services:
   thelounge:
     image: ghcr.io/thelounge/thelounge:latest
     container_name: thelounge
+    restart: unless-stopped
+
     ports:
       - "9000:9000"
-    restart: always
+
     volumes:
-      - ~/.thelounge:/var/opt/thelounge
+      - thelounge_data:/var/opt/thelounge
+
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:9000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  thelounge_data:

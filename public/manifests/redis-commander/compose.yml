@@ -1,0 +1,45 @@
+# ===============================
+# Docker Compose (Redis + Redis Commander)
+# ===============================
+# host: http://localhost:8081
+# username:
+# password:
+
+services:
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD","redis-cli","ping"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+
+
+  redis-commander:
+    image: ghcr.io/joeferner/redis-commander:latest
+    container_name: redis-commander
+    ports:
+      - "8081:8081"
+    environment:
+      REDIS_HOSTS: "local:redis:6379"
+    depends_on:
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD","wget","-qO-","http://localhost:8081"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+
+volumes:
+  redis_data:

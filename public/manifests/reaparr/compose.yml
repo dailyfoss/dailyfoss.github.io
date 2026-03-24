@@ -1,0 +1,36 @@
+# ===============================
+# Docker Compose (Reaparr)
+# ===============================
+# host: http://localhost:7000
+# username:
+# password:
+
+services:
+  reaparr:
+    image: reaparr/reaparr:latest
+    container_name: reaparr
+    ports:
+      - "7000:7000"
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: "UTC"
+      UNMASKED: "false"
+    volumes:
+      - reaparr_config:/Config
+      - reaparr_downloads:/Downloads
+      - reaparr_movies:/Movies
+      - reaparr_tvshows:/TvShows
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:7000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+volumes:
+  reaparr_config:
+  reaparr_downloads:
+  reaparr_movies:
+  reaparr_tvshows:

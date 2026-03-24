@@ -1,0 +1,41 @@
+# ===============================
+# Docker Compose (Wetty)
+# ===============================
+# host: http://localhost:3000
+# username: (system user)
+# password: (system user password)
+
+services:
+  wetty:
+    image: wettyoss/wetty:latest
+    container_name: wetty
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      SSHHOST: "wetty-ssh"
+      SSHPORT: "22"
+    depends_on:
+      - wetty-ssh
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  wetty-ssh:
+    image: linuxserver/openssh-server:latest
+    container_name: wetty-ssh
+    restart: unless-stopped
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: "UTC"
+      PASSWORD_ACCESS: "true"
+      USER_NAME: "user"
+      USER_PASSWORD: "password"
+    volumes:
+      - ssh_config:/config
+
+volumes:
+  ssh_config:

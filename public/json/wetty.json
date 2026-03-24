@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://butlerx.github.io/wetty",
-    "documentation": "https://github.com/butlerx/wetty",
+    "documentation": "https://butlerx.github.io/wetty",
     "source_code": "https://github.com/butlerx/wetty",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/wetty.webp",
     "issues": "https://github.com/butlerx/wetty/issues",
     "releases": "https://github.com/butlerx/wetty/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/wetty-terminal.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/wetty/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

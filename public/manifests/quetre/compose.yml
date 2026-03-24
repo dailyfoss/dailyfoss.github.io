@@ -1,0 +1,46 @@
+# ===============================
+# Docker Compose (Quetre)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  quetre:
+    image: ghcr.io/zyachel/quetre:latest
+    container_name: quetre
+    environment:
+      NODE_ENV: "production"
+      PORT: "3000"
+      CACHE_PERIOD: "1h"
+      REDIS_URL: "redis:6379"
+      REDIS_TTL: "3600"
+      NO_UPGRADE: ""
+    ports:
+      - "3000:3000"
+    depends_on:
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+volumes:
+  redis_data:

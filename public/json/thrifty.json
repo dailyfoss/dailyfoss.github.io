@@ -28,7 +28,12 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/thrifty.webp",
     "issues": "https://github.com/tiehfood/thrifty/issues",
     "releases": "https://github.com/tiehfood/thrifty/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/thrifty-add-new-entry.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/thrifty-add-new-user.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/thrifty-dashboard.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/thrifty-set-new-icon.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +93,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/thrifty/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

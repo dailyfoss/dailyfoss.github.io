@@ -1,0 +1,25 @@
+# ===============================
+# Docker Compose (RetroAssembly)
+# ===============================
+# host: http://localhost:8000
+# username:
+# password:
+
+services:
+  retroassembly:
+    image: arianrhodsandlot/retroassembly:latest
+    container_name: retroassembly
+    ports:
+      - "8000:8000"
+    volumes:
+      - retroassembly_data:/app/data
+    healthcheck:
+      test: ["CMD","wget","-qO-","http://localhost:8000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+volumes:
+  retroassembly_data:

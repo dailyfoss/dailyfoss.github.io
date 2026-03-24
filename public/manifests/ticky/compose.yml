@@ -1,0 +1,67 @@
+# ===============================
+# Docker Compose (Ticky)
+# ===============================
+# host: http://localhost:4088
+# username:
+# password:
+
+services:
+  ticky:
+    image: ghcr.io/dkorecko/ticky:latest
+    container_name: ticky
+    restart: unless-stopped
+
+    ports:
+      - "4088:8080"
+
+    environment:
+      DB_HOST: ticky-db
+      DB_NAME: ticky
+      DB_USERNAME: ticky
+      DB_PASSWORD: change_this_password
+      BASE_URL: http://localhost:4088
+      SMTP_ENABLED: "false"
+      SMTP_HOST: smtp.example.com
+      SMTP_PORT: "587"
+      SMTP_DISPLAY_NAME: Ticky
+      SMTP_EMAIL: your-email@example.com
+      SMTP_USERNAME: smtp-user
+      SMTP_PASSWORD: smtp-password
+      SMTP_SECURITY: "true"
+
+    volumes:
+      - ticky_uploads:/app/wwwroot/uploaded
+
+    depends_on:
+      ticky-db:
+        condition: service_healthy
+
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8080"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  ticky-db:
+    image: mysql:8
+    container_name: ticky-db
+    restart: unless-stopped
+
+    environment:
+      MYSQL_DATABASE: ticky
+      MYSQL_USER: ticky
+      MYSQL_PASSWORD: change_this_password
+      MYSQL_ROOT_PASSWORD: change_this_root_password
+
+    volumes:
+      - ticky_db:/var/lib/mysql
+
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  ticky_db:
+  ticky_uploads:

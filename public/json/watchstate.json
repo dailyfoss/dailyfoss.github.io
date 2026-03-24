@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://github.com/arabcoders/watchstate",
-    "documentation": "https://github.com/arabcoders/watchstate",
+    "documentation": "https://watcharr.app/docs/introduction",
     "source_code": "https://github.com/arabcoders/watchstate",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/watchstate.webp",
     "issues": "https://github.com/arabcoders/watchstate/issues",
     "releases": "https://github.com/arabcoders/watchstate/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/watchstate-index.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/watchstate/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

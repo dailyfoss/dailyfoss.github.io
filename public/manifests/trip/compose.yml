@@ -1,0 +1,28 @@
+# ===============================
+# Docker Compose (Trip)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  trip:
+    image: ghcr.io/itskovacs/trip:1
+    restart: unless-stopped
+
+    ports:
+      - "127.0.0.1:8080:8000"
+
+    command: ["fastapi", "run", "/app/trip/main.py", "--host", "0.0.0.0"]
+
+    volumes:
+      - trip_storage:/app/storage
+
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  trip_storage:

@@ -1,0 +1,43 @@
+# ===============================
+# Docker Compose (VoidAuth)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  voidauth:
+    image: voidauth/voidauth:latest
+    container_name: voidauth
+    restart: unless-stopped
+    depends_on:
+      voidauth-db:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      APP_URL: http://localhost:8080
+      STORAGE_KEY: change_this_to_a_random_secret
+      DB_HOST: voidauth-db
+      DB_PASSWORD: change_me
+    volumes:
+      - voidauth-config:/app/config
+
+  voidauth-db:
+    image: postgres:16
+    container_name: voidauth-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: change_me
+    volumes:
+      - voidauth-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U postgres -h localhost"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+volumes:
+  voidauth-config:
+  voidauth-db-data:

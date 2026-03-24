@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://www.wiredoor.net",
-    "documentation": "https://github.com/wiredoor/wiredoor",
+    "documentation": "https://www.wiredoor.net/documentation",
     "source_code": "https://github.com/wiredoor/wiredoor",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/wiredoor.webp",
     "issues": "https://github.com/wiredoor/wiredoor/issues",
     "releases": "https://github.com/wiredoor/wiredoor/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/wiredoor-homepage.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/wiredoor/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

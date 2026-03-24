@@ -1,0 +1,60 @@
+# ===============================
+# Docker Compose (Transfer.zip Web)
+# ===============================
+# host: http://localhost:9001
+# username:
+# password:
+
+services:
+  mongo:
+    image: mongo:8
+    restart: unless-stopped
+
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: changeme
+
+    ports:
+      - "127.0.0.1:27017:27017"
+
+    volumes:
+      - transferzip_db:/data/db
+
+  next:
+    image: ghcr.io/robinkarlberg/transfer.zip-web-next:latest
+    restart: unless-stopped
+
+    environment:
+      MONGODB_HOST_PORT: "27017"
+      MONGODB_FORWARD_PORT: "27017"
+      MONGODB_DB_NAME: transfer-zip
+      WEB_SERVER_FORWARD_PORT: "9001"
+      CADDY_DOMAIN: your-domain.tld
+      CADDY_ACME_EMAIL: you@example.tld
+
+    ports:
+      - "127.0.0.1:9001:9001"
+
+  signaling-server:
+    image: ghcr.io/robinkarlberg/transfer.zip-web-signaling-server:latest
+    restart: unless-stopped
+
+    environment:
+      SIGNALING_SERVER_FORWARD_PORT: "9002"
+
+    ports:
+      - "127.0.0.1:9002:9002"
+
+  worker:
+    image: ghcr.io/robinkarlberg/transfer.zip-web-worker:latest
+    restart: unless-stopped
+
+    environment:
+      MONGODB_DB_NAME: transfer-zip
+
+    volumes:
+      - transferzip_worker:/worker_data
+
+volumes:
+  transferzip_db:
+  transferzip_worker:

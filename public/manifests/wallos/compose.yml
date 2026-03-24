@@ -1,13 +1,23 @@
+# ===============================
+# Docker Compose (Wallos)
+# ===============================
+# host: http://localhost:8282
+# username:
+# password:
+
 services:
   wallos:
-    container_name: wallos
     image: bellamy/wallos:latest
+    container_name: wallos
     ports:
-      - "8282:80/tcp"
-    environment:
-      TZ: 'America/Toronto'
-    # Volumes store your data between container upgrades
-    volumes:
-      - './db:/var/www/html/db'
-      - './logos:/var/www/html/images/uploads/logos'
+      - "8282:80"
     restart: unless-stopped
+    environment:
+      TZ: America/Toronto
+    volumes:
+      - wallos-db:/var/www/html/db
+      - wallos-logos:/var/www/html/images/uploads/logos
+
+volumes:
+  wallos-db:
+  wallos-logos:

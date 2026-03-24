@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://yamlresume.dev",
-    "documentation": "https://github.com/yamlresume/yamlresume",
+    "documentation": "https://yamlresume.dev/docs",
     "source_code": "https://github.com/yamlresume/yamlresume",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/yamlresume.webp",
     "issues": "https://github.com/yamlresume/yamlresume/issues",
     "releases": "https://github.com/yamlresume/yamlresume/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/yamlresume-playground.webp"
+    ]
   },
   "features": [
     {
@@ -88,16 +90,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/yamlresume/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://yamlresume.dev/playground",
     "username": null,
     "password": null
   }

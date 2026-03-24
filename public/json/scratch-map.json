@@ -23,13 +23,19 @@
   },
   "resources": {
     "website": null,
-    "documentation": null,
+    "documentation": "https://github.com/ad3m3r5/scratch-map/blob/main/docs/INSTALL.md",
     "source_code": "https://github.com/ad3m3r5/scratch-map",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/scratch-map.webp",
     "issues": "https://github.com/ad3m3r5/scratch-map/issues",
     "releases": "https://github.com/ad3m3r5/scratch-map/releases",
     "logo_light": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/scratch-map-light.webp",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/scratch-map-canada.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/scratch-map-home.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/scratch-map-location-modal.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/scratch-map-us.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/scratch-map-world-map.webp"
+    ]
   },
   "features": [
     {
@@ -89,12 +95,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/scratch-map/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

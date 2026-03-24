@@ -1,0 +1,35 @@
+# ===============================
+# Docker Compose (Trackly)
+# ===============================
+# host: http://localhost:11888
+# username:
+# password:
+
+services:
+  trackly:
+    image: ghcr.io/long/trackly:latest
+    restart: unless-stopped
+
+    ports:
+      - "11888:11888"
+
+    environment:
+      UPDATE_INTERVAL: "0 0 * * *"
+      DISCORD_WEBHOOK: https://discord.com/api/webhooks/dummy
+      NOTIFY_ON_SCAN: "false"
+      DISCORD_NOTIFY: "false"
+
+    volumes:
+      - trackly_music:/music:ro
+      - trackly_data:/data
+
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:11888"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  trackly_music:
+  trackly_data:

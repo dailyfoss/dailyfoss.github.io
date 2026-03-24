@@ -1,0 +1,94 @@
+# ===============================
+# Docker Compose (VictoriaMetrics Stack)
+# ===============================
+# host: http://localhost:3000
+# username: admin
+# password: admin
+
+services:
+  victoriametrics:
+    image: victoriametrics/victoria-metrics:v1.138.0
+    container_name: victoriametrics
+    ports:
+      - "8428:8428"
+      - "2003:2003"
+      - "2003:2003/udp"
+      - "4242:4242"
+      - "8089:8089"
+      - "8089:8089/udp"
+    restart: unless-stopped
+    command:
+      - "--storageDataPath=/storage"
+      - "--httpListenAddr=:8428"
+      - "--graphiteListenAddr=:2003"
+      - "--opentsdbListenAddr=:4242"
+      - "--influxListenAddr=:8089"
+    volumes:
+      - vmdata:/storage
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8428/health"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  vmagent:
+    image: victoriametrics/vmagent:v1.138.0
+    container_name: vmagent
+    depends_on:
+      - victoriametrics
+    ports:
+      - "8429:8429"
+    restart: unless-stopped
+    command:
+      - "--remoteWrite.url=http://victoriametrics:8428/api/v1/write"
+    volumes:
+      - vmagentdata:/vmagentdata
+
+  grafana:
+    image: grafana/grafana:12.2.0
+    container_name: grafana
+    depends_on:
+      - victoriametrics
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    environment:
+      GF_PLUGINS_PREINSTALL: yesoreyeram-infinity-datasource
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+    volumes:
+      - grafanadata:/var/lib/grafana
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/api/health"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  alertmanager:
+    image: prom/alertmanager:v0.28.1
+    container_name: alertmanager
+    ports:
+      - "9093:9093"
+    restart: unless-stopped
+
+  vmalert:
+    image: victoriametrics/vmalert:v1.138.0
+    container_name: vmalert
+    depends_on:
+      - victoriametrics
+      - alertmanager
+    ports:
+      - "8880:8880"
+    restart: unless-stopped
+    command:
+      - "--datasource.url=http://victoriametrics:8428"
+      - "--remoteRead.url=http://victoriametrics:8428"
+      - "--remoteWrite.url=http://vmagent:8429"
+      - "--notifier.url=http://alertmanager:9093"
+
+volumes:
+  vmdata:
+  vmagentdata:
+  grafanadata:

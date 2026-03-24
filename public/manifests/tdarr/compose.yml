@@ -1,0 +1,62 @@
+# ===============================
+# Docker Compose (Tdarr)
+# ===============================
+# host: http://localhost:8265
+# username:
+# password:
+
+services:
+  tdarr:
+    image: ghcr.io/haveagitgat/tdarr:latest
+    container_name: tdarr
+    restart: unless-stopped
+
+    ports:
+      - "8265:8265"
+      - "8266:8266"
+
+    environment:
+      serverIP: 0.0.0.0
+      serverPort: 8266
+      webUIPort: 8265
+      internalNode: "true"
+      inContainer: "true"
+      ffmpegVersion: "7"
+      nodeName: MyInternalNode
+      auth: "false"
+      openBrowser: "true"
+      maxLogSizeMB: "10"
+      cronPluginUpdate: ""
+      TZ: Europe/London
+      PUID: "1000"
+      PGID: "1000"
+      NVIDIA_DRIVER_CAPABILITIES: all
+      NVIDIA_VISIBLE_DEVICES: all
+
+    volumes:
+      - tdarr_server:/app/server
+      - tdarr_configs:/app/configs
+      - tdarr_logs:/app/logs
+      - media:/media
+      - transcode_cache:/temp
+
+    devices:
+      - /dev/dri:/dev/dri
+
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+volumes:
+  tdarr_server:
+  tdarr_configs:
+  tdarr_logs:
+  media:
+  transcode_cache:

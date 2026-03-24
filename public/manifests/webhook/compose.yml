@@ -1,0 +1,23 @@
+# ===============================
+# Docker Compose (Webhook)
+# ===============================
+# host: http://localhost:9000
+# username:
+# password:
+
+services:
+  webhook:
+    image: adnanh/webhook:latest
+    container_name: webhook
+    ports:
+      - "9000:9000"
+    restart: unless-stopped
+    command:
+      - -verbose
+      - -hooks=/etc/webhook/hooks.json
+      - -hotreload
+    volumes:
+      - webhook-config:/etc/webhook
+
+volumes:
+  webhook-config:

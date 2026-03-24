@@ -23,16 +23,16 @@
   },
   "resources": {
     "website": "https://xpipe.io",
-    "documentation": "https://github.com/xpipe-io/xpipe",
+    "documentation": "https://docs.xpipe.io",
     "source_code": "https://github.com/xpipe-io/xpipe",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/xpipe.webp",
     "issues": "https://github.com/xpipe-io/xpipe/issues",
     "releases": "https://github.com/xpipe-io/xpipe/releases",
     "screenshots": [
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/xpipe-banner.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/xpipe-browser-shadow.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/xpipe-hub-shadow.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/xpipe-terminal-shadow.png"
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/xpipe-banner.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/xpipe-browser-shadow.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/xpipe-hub-shadow.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/xpipe-terminal-shadow.webp"
     ]
   },
   "features": [
@@ -93,12 +93,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/xpipe/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

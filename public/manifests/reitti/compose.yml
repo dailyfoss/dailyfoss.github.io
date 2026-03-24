@@ -1,0 +1,100 @@
+# ===============================
+# Docker Compose (Reitti)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+
+  reitti:
+    image: dedicatedcode/reitti:latest
+    container_name: reitti
+    ports:
+      - "8080:8080"
+    environment:
+      POSTGIS_HOST: "postgres"
+      POSTGIS_PORT: "5432"
+      POSTGIS_DB: "reittidb"
+      POSTGIS_USER: "reitti"
+      POSTGIS_PASSWORD: "reitti"
+
+      RABBITMQ_HOST: "rabbitmq"
+      RABBITMQ_PORT: "5672"
+      RABBITMQ_USER: "reitti"
+      RABBITMQ_PASSWORD: "reitti"
+
+      REDIS_HOST: "redis"
+      REDIS_PORT: "6379"
+      REDIS_USERNAME: ""
+      REDIS_PASSWORD: ""
+    depends_on:
+      postgres:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD","wget","-qO-","http://localhost:8080"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+
+  postgres:
+    image: postgis/postgis:16-3.4
+    container_name: reitti-postgres
+    environment:
+      POSTGRES_DB: "reittidb"
+      POSTGRES_USER: "reitti"
+      POSTGRES_PASSWORD: "reitti"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - reitti_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD","pg_isready","-U","reitti"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: reitti-rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: "reitti"
+      RABBITMQ_DEFAULT_PASS: "reitti"
+    ports:
+      - "15672:15672"
+    volumes:
+      - reitti_rabbitmq_data:/var/lib/rabbitmq
+    healthcheck:
+      test: ["CMD","rabbitmq-diagnostics","ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+
+
+  redis:
+    image: redis:7-alpine
+    container_name: reitti-redis
+    command: ["redis-server","--appendonly","yes"]
+    volumes:
+      - reitti_redis_data:/data
+    healthcheck:
+      test: ["CMD","redis-cli","ping"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+
+volumes:
+  reitti_postgres_data:
+  reitti_rabbitmq_data:
+  reitti_redis_data:

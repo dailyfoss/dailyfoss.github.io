@@ -1,0 +1,22 @@
+# ===============================
+# Docker Compose (TinyFeed)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  tinyfeed:
+    image: thebigroomxxl/tinyfeed:latest
+    restart: unless-stopped
+
+    command: ["--daemon", "-i", "feeds.txt", "-o", "index.html"]
+
+    ports:
+      - "8080:8080"
+
+    volumes:
+      - tinyfeed_data:/app
+
+volumes:
+  tinyfeed_data:

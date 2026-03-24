@@ -1,0 +1,25 @@
+# ===============================
+# Docker Compose (Wingfit FastAPI)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  app:
+    image: yourname/wingfit:latest
+    container_name: wingfit
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8080:8000"
+    volumes:
+      - wingfit_storage:/app/storage
+    command: ["fastapi", "run", "/app/wingfit/main.py", "--host", "0.0.0.0"]
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  wingfit_storage:

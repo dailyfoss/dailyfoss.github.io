@@ -1,0 +1,34 @@
+# ===============================
+# Docker Compose (Seerr)
+# ===============================
+# host: http://localhost:5055
+# username:
+# password:
+
+services:
+  seerr:
+    image: ghcr.io/seerr-team/seerr:latest
+    container_name: seerr
+    restart: unless-stopped
+    init: true
+
+    ports:
+      - "5055:5055"
+
+    environment:
+      LOG_LEVEL: debug
+      TZ: Asia/Tashkent
+      PORT: "5055"
+
+    volumes:
+      - seerr_config:/app/config
+
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:5055/api/v1/status || exit 1"]
+      interval: 15s
+      timeout: 3s
+      retries: 3
+      start_period: 20s
+
+volumes:
+  seerr_config:

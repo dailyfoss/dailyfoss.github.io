@@ -1,10 +1,21 @@
+# ===============================
+# Docker Compose (Vaultwarden)
+# ===============================
+# host: http://localhost:8000
+# username:
+# password:
+
 services:
-  server:
+  vaultwarden:
+    image: vaultwarden/server:latest
     container_name: vaultwarden
-	image: vaultwarden/server:latest
-    volumes:
-      - ./vw-data/:/data/
-    restart: unless-stopped
     ports:
-      - 80:80
+      - "127.0.0.1:8000:80"
     restart: unless-stopped
+    environment:
+      DOMAIN: "http://localhost:8000"
+    volumes:
+      - vaultwarden-data:/data
+
+volumes:
+  vaultwarden-data:

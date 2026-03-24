@@ -1,0 +1,29 @@
+# ===============================
+# Docker Compose (WhoDB)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  whodb:
+    image: clidey/whodb:latest
+    container_name: whodb
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      WHODB_OLLAMA_HOST: "host.docker.internal"
+      WHODB_OLLAMA_PORT: "11434"
+      WHODB_ANTHROPIC_API_KEY: "your_key_here"
+      WHODB_OPENAI_API_KEY: "your_key_here"
+    volumes:
+      - whodb_data:/data
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8080"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  whodb_data:

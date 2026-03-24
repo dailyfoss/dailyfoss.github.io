@@ -23,12 +23,22 @@
   },
   "resources": {
     "website": "https://tautulli.com",
-    "documentation": "https://github.com/Tautulli/Tautulli",
+    "documentation": "https://github.com/Tautulli/Tautulli/wiki/Installation",
     "source_code": "https://github.com/Tautulli/Tautulli",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/tautulli.webp",
     "issues": "https://github.com/Tautulli/Tautulli/issues",
     "releases": "https://github.com/Tautulli/Tautulli/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tautulli-activity.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tautulli-graphs.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tautulli-history.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tautulli-libraries.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tautulli-library.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tautulli-media-item.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tautulli-notifications.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tautulli-user-info.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tautulli-users.webp"
+    ]
   },
   "features": [
     {
@@ -83,12 +93,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/tautulli/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "GP",
     "version": "v0.143.0",
     "date_app_added": "2025-11-23",
     "date_last_released": "2025-10-28",
@@ -23,12 +23,15 @@
   },
   "resources": {
     "website": "https://scrypted.app",
-    "documentation": "https://github.com/koush/scrypted",
+    "documentation": "https://docs.scrypted.app",
     "source_code": "https://github.com/koush/scrypted",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/scrypted.webp",
     "issues": "https://github.com/koush/scrypted/issues",
     "releases": "https://github.com/koush/scrypted/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/scrypted-homepage.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/scrypted-camera-ui.webp"
+    ]
   },
   "features": [
     {
@@ -83,12 +86,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/scrypted/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
@@ -99,7 +104,7 @@
     }
   },
   "demo": {
-    "url": null,
+    "url": "https://demo.scrypted.app/#/demo",
     "username": null,
     "password": null
   }

@@ -1,0 +1,50 @@
+# ===============================
+# Docker Compose (Tirreno)
+# ===============================
+# host: http://localhost:8585
+# username:
+# password:
+
+services:
+  tirreno:
+    image: tirreno/tirreno:latest
+    restart: unless-stopped
+
+    ports:
+      - "8585:80"
+
+    environment:
+      DATABASE_URL: postgres://tirreno:secret@tirreno-db:5432/tirreno
+      SITE: localhost:8585
+      FORCE_HTTPS: "false"
+
+    volumes:
+      - tirreno_config:/var/www/html/config/local
+      - tirreno_logs:/var/www/html/assets/logs
+
+    depends_on:
+      tirreno-db:
+        condition: service_healthy
+
+  tirreno-db:
+    image: postgres:16
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: tirreno
+      POSTGRES_USER: tirreno
+      POSTGRES_PASSWORD: secret
+
+    volumes:
+      - tirreno_db:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tirreno -d tirreno"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  tirreno_config:
+  tirreno_logs:
+  tirreno_db:

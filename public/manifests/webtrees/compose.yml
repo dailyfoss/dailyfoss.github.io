@@ -1,0 +1,58 @@
+# ===============================
+# Docker Compose (Webtrees)
+# ===============================
+# host: http://localhost:8080
+# username: username
+# password: badwtpassword
+
+services:
+  app:
+    image: ghcr.io/nathanvaughn/webtrees:latest
+    container_name: webtrees_app
+    restart: unless-stopped
+    depends_on:
+      - db
+    ports:
+      - "8080:80"
+    environment:
+      PRETTY_URLS: "1"
+      HTTPS: "0"
+      HTTPS_REDIRECT: "0"
+      LANG: "en-US"
+      BASE_URL: "http://localhost:8080"
+      DB_TYPE: "mysql"
+      DB_HOST: "db"
+      DB_PORT: "3306"
+      DB_USER: "webtrees"
+      DB_PASS: "baddbpassword"
+      DB_NAME: "webtrees"
+      DB_PREFIX: "wt_"
+      WT_USER: "username"
+      WT_NAME: "Full Name"
+      WT_PASS: "badwtpassword"
+      WT_EMAIL: "me@example.com"
+      PUID: "1000"
+      PGID: "1000"
+    volumes:
+      - app_data:/var/www/webtrees/data
+
+  db:
+    image: mariadb:11
+    container_name: webtrees_db
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: "webtrees"
+      MARIADB_USER: "webtrees"
+      MARIADB_PASSWORD: "baddbpassword"
+      MARIADB_ROOT_PASSWORD: "badrootpassword"
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  db_data:
+  app_data:

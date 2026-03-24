@@ -28,7 +28,18 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/worklenz.webp",
     "issues": "https://github.com/Worklenz/worklenz/issues",
     "releases": "https://github.com/Worklenz/worklenz/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/worklenz-client-portal.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/worklenz-finance.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/worklenz-insight.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/worklenz-kanban-board-2.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/worklenz-kanban-board.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/worklenz-schedule.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/worklenz-team-utilization.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/worklenz-template.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/worklenz-time-log.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/worklenz-time-sheet.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +99,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/worklenz/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

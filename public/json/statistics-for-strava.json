@@ -22,8 +22,8 @@
     "github_releases_this_year": 18
   },
   "resources": {
-    "website": "https://statistics-for-strava.robiningelbrecht.be/",
-    "documentation": "https://github.com/robiningelbrecht/statistics-for-strava",
+    "website": "https://statistics-for-strava.robiningelbrecht.be",
+    "documentation": "https://statistics-for-strava-docs.robiningelbrecht.be",
     "source_code": "https://github.com/robiningelbrecht/statistics-for-strava",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/statistics-for-strava.webp",
     "issues": "https://github.com/robiningelbrecht/statistics-for-strava/issues",
@@ -88,16 +88,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/statistics-for-strava/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://statistics-for-strava.robiningelbrecht.be/dashboard",
     "username": null,
     "password": null
   }

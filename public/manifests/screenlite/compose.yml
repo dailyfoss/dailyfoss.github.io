@@ -1,0 +1,130 @@
+# ===============================
+# Docker Compose (Screenlite)
+# ===============================
+# host: http://localhost:3001
+# username:
+# password:
+
+services:
+
+  server:
+    image: ghcr.io/screenlite/server:latest
+    container_name: screenlite-server
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: "production"
+      ENCRYPTION_SECRET: "replace_with_secure_secret"
+      DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/screenlite"
+      REDIS_HOST: "redis"
+      REDIS_PORT: "6379"
+      STORAGE_TYPE: "s3"
+      S3_ENDPOINT: "http://minio:9000"
+      S3_ACCESS_KEY: "screenlite"
+      S3_SECRET_KEY: "screenlite"
+      S3_REGION: "us-east-1"
+      BACKEND_URL: "http://server:3000"
+      FRONTEND_URL: "http://client:3001"
+      FFMPEG_SERVICE_API_URL: "http://ffmpeg-service:3002"
+    volumes:
+      - screenlite_storage:/app/storage
+      - screenlite_server_logs:/app/logs
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+      ffmpeg-service:
+        condition: service_started
+    restart: unless-stopped
+
+
+  client:
+    image: ghcr.io/screenlite/client:latest
+    container_name: screenlite-client
+    ports:
+      - "3001:3001"
+    environment:
+      NODE_ENV: "production"
+      VITE_API_URL: "http://localhost:3000/"
+    depends_on:
+      server:
+        condition: service_started
+    restart: unless-stopped
+
+
+  ffmpeg-service:
+    image: ghcr.io/screenlite/ffmpeg-service:latest
+    container_name: screenlite-ffmpeg
+    environment:
+      PORT: "3002"
+      ALLOWED_ORIGINS: "http://server:3000"
+    volumes:
+      - ffmpeg_logs:/var/log/ffmpeg
+    networks:
+      - default
+      - ffmpeg-network
+    restart: unless-stopped
+
+
+  postgres:
+    image: postgres:17-alpine
+    container_name: screenlite-postgres
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_DB: "screenlite"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD","pg_isready","-U","postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+
+  redis:
+    image: redis:7-alpine
+    container_name: screenlite-redis
+    command: ["redis-server","--appendonly","yes"]
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD","redis-cli","ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+
+  minio:
+    image: minio/minio:latest
+    container_name: screenlite-minio
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: "screenlite"
+      MINIO_ROOT_PASSWORD: "screenlite"
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio_data:/data
+    restart: unless-stopped
+
+
+volumes:
+  screenlite_storage:
+  postgres_data:
+  redis_data:
+  minio_data:
+  ffmpeg_logs:
+  screenlite_server_logs:
+
+
+networks:
+  ffmpeg-network:
+    driver: bridge
+    internal: true

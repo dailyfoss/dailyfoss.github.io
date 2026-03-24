@@ -1,37 +1,69 @@
+# ===============================
+# Docker Compose (RomM)
+# ===============================
+# host: http://localhost
+# username:
+# password:
+
 services:
+
   romm:
     image: rommapp/romm:latest
     container_name: romm
-    restart: unless-stopped
-    environment:
-      - DB_HOST=romm-db
-      - DB_NAME=romm # Should match MYSQL_DATABASE in mariadb
-      - DB_USER=romm-user # Should match MYSQL_USER in mariadb
-      - DB_PASSWD= # Should match MYSQL_PASSWORD in mariadb
-      - ROMM_AUTH_SECRET_KEY= # Generate a key with `openssl rand -hex 32`
-      - IGDB_CLIENT_ID= # Generate an ID and SECRET in IGDB
-      - IGDB_CLIENT_SECRET= # https://api-docs.igdb.com/#account-creation
-      - MOBYGAMES_API_KEY= # https://www.mobygames.com/info/api/
-      - STEAMGRIDDB_API_KEY # https://github.com/rommapp/romm/wiki/Generate-API-Keys#steamgriddb
-    volumes:
-      - ./romm_resources:/romm/resources # Resources fetched from IGDB (covers, screenshots, etc.)
-      - ./romm_redis_data:/redis-data # Cached data for background tasks
-      - /path/to/library:/romm/library # Your game library
-      - /path/to/assets:/romm/assets # Uploaded saves, states, etc.
-      - /path/to/config:/romm/config # Path where config.yml is stored
     ports:
-      - 80:8080
+      - "80:8080"
+    environment:
+      DB_HOST: "romm-db"
+      DB_NAME: "romm"
+      DB_USER: "romm-user"
+      DB_PASSWD: "replace-with-db-password"
+
+      ROMM_AUTH_SECRET_KEY: "replace-with-random-secret"
+
+      IGDB_CLIENT_ID: ""
+      IGDB_CLIENT_SECRET: ""
+      MOBYGAMES_API_KEY: ""
+      STEAMGRIDDB_API_KEY: ""
+    volumes:
+      - romm_resources:/romm/resources
+      - romm_redis_data:/redis-data
+      - romm_library:/romm/library
+      - romm_assets:/romm/assets
+      - romm_config:/romm/config
     depends_on:
-      - romm-db
+      romm-db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD","wget","-qO-","http://localhost:8080"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
 
   romm-db:
-    image: mariadb:latest # if you experience issues, try: linuxserver/mariadb:latest
+    image: mariadb:11
     container_name: romm-db
-    restart: unless-stopped
     environment:
-      - MYSQL_ROOT_PASSWORD= # Use a unique, secure password
-      - MYSQL_DATABASE=romm
-      - MYSQL_USER=romm-user
-      - MYSQL_PASSWORD=
+      MYSQL_ROOT_PASSWORD: "replace-root-password"
+      MYSQL_DATABASE: "romm"
+      MYSQL_USER: "romm-user"
+      MYSQL_PASSWORD: "replace-with-db-password"
     volumes:
-      - ./mysql_data:/var/lib/mysql
+      - romm_mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD","mysqladmin","ping","-h","localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+
+volumes:
+  romm_resources:
+  romm_redis_data:
+  romm_library:
+  romm_assets:
+  romm_config:
+  romm_mysql_data:

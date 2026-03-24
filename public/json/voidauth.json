@@ -23,18 +23,18 @@
   },
   "resources": {
     "website": "http://voidauth.app",
-    "documentation": "https://github.com/voidauth/voidauth",
+    "documentation": "http://voidauth.app/#/Getting-Started",
     "source_code": "https://github.com/voidauth/voidauth",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/voidauth.webp",
     "issues": "https://github.com/voidauth/voidauth/issues",
     "releases": "https://github.com/voidauth/voidauth/releases",
     "screenshots": [
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/voidauth_3f0b0afc-5bcf-436c-8def-f45e68adb019.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/voidauth_4122f143-e016-4dde-a6d2-4dbb5e3c9ef4.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/voidauth_admin_panel.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/voidauth_admin-password-resets.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/voidauth_f7cf9712-4259-43ce-bde1-fbe22a447763.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/voidauth_sign_up.png"
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/voidauth-3f0b0afc-5bcf-436c-8def-f45e68adb019.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/voidauth-4122f143-e016-4dde-a6d2-4dbb5e3c9ef4.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/voidauth-admin-panel.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/voidauth-admin-password-resets.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/voidauth-f7cf9712-4259-43ce-bde1-fbe22a447763.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/voidauth-sign-up.webp"
     ]
   },
   "features": [
@@ -95,12 +95,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/voidauth/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

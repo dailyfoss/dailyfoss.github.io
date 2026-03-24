@@ -1,0 +1,27 @@
+# ===============================
+# Docker Compose (Unraid Config Guardian)
+# ===============================
+# host: http://localhost:7842
+# username:
+# password:
+
+services:
+  unraid-config-guardian:
+    image: stephondoestech/unraid-config-guardian:latest
+    container_name: unraid-config-guardian
+    ports:
+      - "7842:7842"
+    restart: unless-stopped
+    environment:
+      PUID: 99
+      PGID: 100
+      SCHEDULE: "0 2 * * 0"
+    volumes:
+      - config:/config
+      - backups:/output
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /boot:/boot:ro
+
+volumes:
+  config:
+  backups:

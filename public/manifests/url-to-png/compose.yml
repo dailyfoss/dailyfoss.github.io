@@ -1,0 +1,60 @@
+# ===============================
+# Docker Compose (URL to PNG)
+# ===============================
+# host: http://localhost:3089
+# username:
+# password:
+
+services:
+  urltopng:
+    image: jasonraimondi/url-to-png:latest
+    container_name: urltopng
+    ports:
+      - "3089:3089"
+    restart: unless-stopped
+    environment:
+      METRICS: "true"
+      LOG_LEVEL: debug
+      NODE_ENV: debug
+      BROWSER_WAIT_UNTIL: networkidle
+      STORAGE_PROVIDER: couchdb
+      COUCH_DB_PROTOCOL: http
+      COUCH_DB_HOST: couchdb
+      COUCH_DB_PORT: 5984
+      COUCH_DB_USER: admin
+      COUCH_DB_PASS: password
+    depends_on:
+      - couchdb
+
+  couchdb:
+    image: couchdb:latest
+    container_name: urltopng-couchdb
+    ports:
+      - "5984:5984"
+    restart: unless-stopped
+    environment:
+      COUCHDB_USER: admin
+      COUCHDB_PASSWORD: password
+    volumes:
+      - couchdb-data:/opt/couchdb/data
+
+  couchdb-init:
+    image: curlimages/curl:latest
+    container_name: couchdb-init
+    restart: "no"
+    depends_on:
+      - couchdb
+    command: >
+      sh -c "
+      until curl -f http://admin:password@couchdb:5984/_up; do
+        echo 'Waiting for CouchDB...';
+        sleep 2;
+      done;
+      curl -X PUT http://admin:password@couchdb:5984/_users;
+      curl -X PUT http://admin:password@couchdb:5984/_replicator;
+      curl -X PUT http://admin:password@couchdb:5984/_global_changes;
+      curl -X PUT http://admin:password@couchdb:5984/images;
+      "
+
+volumes:
+  couchdb-data:

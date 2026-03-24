@@ -1,0 +1,60 @@
+# ===============================
+# Docker Compose (Semaphore-UI)
+# ===============================
+# host: http://localhost:3000
+# username: admin
+# password: changeme
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: semaphore_postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: semaphore
+      POSTGRES_USER: semaphore
+      POSTGRES_PASSWORD: semaphores3cr3t
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U semaphore -d semaphore"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  semaphore:
+    image: public.ecr.aws/semaphore/server:v2.17.12
+    container_name: semaphore
+    restart: unless-stopped
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      SEMAPHORE_DB_DIALECT: postgres
+      SEMAPHORE_DB_HOST: postgres
+      SEMAPHORE_DB_NAME: semaphore
+      SEMAPHORE_DB_USER: semaphore
+      SEMAPHORE_DB_PASS: semaphores3cr3t
+      SEMAPHORE_DB_OPTIONS: "{\"sslmode\":\"disable\"}"
+
+      SEMAPHORE_ADMIN: admin
+      SEMAPHORE_ADMIN_PASSWORD: changeme
+      SEMAPHORE_ADMIN_NAME: Admin
+      SEMAPHORE_ADMIN_EMAIL: admin@localhost
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+    volumes:
+      - semaphore_data:/var/lib/semaphore
+      - semaphore_config:/etc/semaphore
+
+volumes:
+  postgres_data:
+  semaphore_data:
+  semaphore_config:

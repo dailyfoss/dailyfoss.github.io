@@ -1,0 +1,31 @@
+# ===============================
+# Docker Compose (Sunshine)
+# ===============================
+# host: http://localhost:47990
+# username:
+# password:
+
+services:
+  sunshine:
+    image: lscr.io/linuxserver/sunshine:latest
+    container_name: sunshine
+    restart: unless-stopped
+    ipc: host
+    ports:
+      - "47984-47990:47984-47990/tcp"
+      - "48010:48010"
+      - "47998-48000:47998-48000/udp"
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: UTC
+    volumes:
+      - sunshine_config:/config
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:47990"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  sunshine_config:

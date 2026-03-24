@@ -1,0 +1,33 @@
+# ===============================
+# Docker Compose (WGDashboard)
+# ===============================
+# host: http://localhost:10086
+# username: (set on first run)
+# password: (set on first run)
+
+services:
+  wgdashboard:
+    image: ghcr.io/wgdashboard/wgdashboard:latest
+    container_name: wgdashboard
+    restart: unless-stopped
+    ports:
+      - "10086:10086"
+      - "51820:51820/udp"
+    environment:
+      tz: "UTC"
+    volumes:
+      - wg_conf:/etc/wireguard
+      - wg_data:/data
+      - wg_amnezia:/etc/amnezia/amneziawg
+    cap_add:
+      - NET_ADMIN
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:10086"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  wg_conf:
+  wg_data:
+  wg_amnezia:

@@ -1,11 +1,31 @@
+# ===============================
+# Docker Compose (Viseron)
+# ===============================
+# host: http://localhost:8888
+# username:
+# password:
+
 services:
   viseron:
     image: roflcoopter/viseron:latest
     container_name: viseron
-    volumes:
-      - {recordings path}:/recordings
-      - {config path}:/config
-      - /etc/localtime:/etc/localtime:ro
+    shm_size: "1024mb"
     ports:
-      - 8888:8888
-    restart: always
+      - "8888:8888"
+    restart: unless-stopped
+    volumes:
+      - viseron-segments:/segments
+      - viseron-snapshots:/snapshots
+      - viseron-thumbnails:/thumbnails
+      - viseron-event-clips:/event_clips
+      - viseron-timelapse:/timelapse
+      - viseron-config:/config
+      - /etc/localtime:/etc/localtime:ro
+
+volumes:
+  viseron-segments:
+  viseron-snapshots:
+  viseron-thumbnails:
+  viseron-event-clips:
+  viseron-timelapse:
+  viseron-config:

@@ -1,0 +1,40 @@
+# ===============================
+# Docker Compose (Storyden)
+# ===============================
+# host: https://localhost
+# username:
+# password:
+
+services:
+  storyden:
+    image: ghcr.io/southclaws/storyden:latest
+    container_name: storyden
+    restart: unless-stopped
+    environment:
+      PUBLIC_WEB_ADDRESS: https://example.com
+      PUBLIC_API_ADDRESS: https://example.com
+    volumes:
+      - storyden_data:/storyden/data
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:8000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  caddy:
+    image: caddy:alpine
+    container_name: storyden-caddy
+    restart: unless-stopped
+    depends_on:
+      - storyden
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  storyden_data:
+  caddy_data:
+  caddy_config:

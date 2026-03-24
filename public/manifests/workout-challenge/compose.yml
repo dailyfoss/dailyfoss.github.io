@@ -1,0 +1,72 @@
+# ===============================
+# Docker Compose (Workout Challenge)
+# ===============================
+# host: http://localhost
+# username: (set in app)
+# password: (set in app)
+
+services:
+  database:
+    image: postgres:16
+    container_name: workoutchallenge_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: "workoutchallenge"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "changeme"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  workoutchallenge:
+    image: vanalmsick/workout_challenge:latest
+    container_name: workoutchallenge
+    restart: unless-stopped
+    depends_on:
+      database:
+        condition: service_healthy
+    ports:
+      - "80:80"
+      - "127.0.0.1:5555:5555"   # Flower (local only)
+      - "127.0.0.1:9001:9001"   # Supervisor (local only)
+      - "127.0.0.1:8000:8000"   # Django admin (local only)
+    environment:
+      POSTGRES_HOST: "database"
+      POSTGRES_DB: "workoutchallenge"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "changeme"
+
+      MAIN_HOST: "http://localhost"
+      HOSTS: "http://localhost,http://127.0.0.1"
+
+      SECRET_KEY: "change-this-secret-key"
+      TIME_ZONE: "UTC"
+
+      STRAVA_CLIENT_ID: "000000"
+      STRAVA_CLIENT_SECRET: "change-this"
+
+      EMAIL_HOST: "smtp.gmail.com"
+      EMAIL_PORT: "465"
+      EMAIL_HOST_USER: "competition@example.com"
+      EMAIL_HOST_PASSWORD: "changeme"
+      EMAIL_USE_SSL: "true"
+      EMAIL_USE_TLS: "false"
+      EMAIL_FROM: "competition@example.com"
+      EMAIL_REPLY_TO: "support@example.com"
+
+      OPENAI_API_KEY: ""
+    volumes:
+      - app_data:/workout_challenge/src-backend/data
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  db_data:
+  app_data:

@@ -28,7 +28,20 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/yamtrack.webp",
     "issues": "https://github.com/FuzzyGrim/Yamtrack/issues",
     "releases": "https://github.com/FuzzyGrim/Yamtrack/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/yamtrack-homepage.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/yamtrack-calendar.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/yamtrack-import-data.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/yamtrack-list-grid.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/yamtrack-lists.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/yamtrack-manual-entries.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/yamtrack-media-detail.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/yamtrack-media-list-table.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/yamtrack-season-detail.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/yamtrack-statistics.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/yamtrack-tracking-eps.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/yamtrack-tracking.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +101,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/yamtrack/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

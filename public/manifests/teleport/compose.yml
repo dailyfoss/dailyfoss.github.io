@@ -1,0 +1,25 @@
+# ===============================
+# Docker Compose (Teleport)
+# ===============================
+# host: http://localhost:3080
+# username:
+# password:
+
+services:
+  teleport:
+    image: public.ecr.aws/gravitational/teleport-distroless:18.7.2
+    container_name: teleport
+    hostname: localhost
+    restart: unless-stopped
+
+    ports:
+      - "3025:3025"
+      - "3080:3080"
+
+    volumes:
+      - teleport_config:/etc/teleport
+      - teleport_data:/var/lib/teleport
+
+volumes:
+  teleport_config:
+  teleport_data:

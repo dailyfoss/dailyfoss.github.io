@@ -1,0 +1,31 @@
+# ===============================
+# Docker Compose (Reiverr)
+# ===============================
+# host: http://localhost:9494
+# username: admin
+# password: change-me
+
+services:
+  reiverr:
+    image: ghcr.io/aleksilassila/reiverr:latest
+    container_name: reiverr
+    ports:
+      - "9494:9494"
+    environment:
+      SECRET: "replace-with-long-random-secret"
+      ADMIN_USERNAME: "admin"
+      ADMIN_PASSWORD: "change-me"
+    volumes:
+      - reiverr_config:/config
+      - reiverr_plugins:/plugins
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:9494"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+volumes:
+  reiverr_config:
+  reiverr_plugins:

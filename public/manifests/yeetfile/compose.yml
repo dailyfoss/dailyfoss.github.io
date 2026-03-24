@@ -1,0 +1,57 @@
+# ===============================
+# Docker Compose (YeetFile)
+# ===============================
+# host: http://localhost:8090
+# username: (create in app)
+# password: (create in app)
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: yeetfile_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: "yeetfile"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "changeme"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d yeetfile"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  api:
+    image: ghcr.io/benbusby/yeetfile:latest
+    container_name: yeetfile
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8090:8090"
+    environment:
+      YEETFILE_DEBUG: "0"
+      YEETFILE_STORAGE: "local"
+      YEETFILE_DEFAULT_USER_STORAGE: "-1"
+      YEETFILE_DEFAULT_USER_SEND: "-1"
+      YEETFILE_HOST: "0.0.0.0"
+      YEETFILE_PORT: "8090"
+
+      YEETFILE_DB_USER: "postgres"
+      YEETFILE_DB_PASS: "changeme"
+      YEETFILE_DB_NAME: "yeetfile"
+      YEETFILE_DB_HOST: "db"
+
+    volumes:
+      - uploads_data:/app/uploads
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8090"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  db_data:
+  uploads_data:

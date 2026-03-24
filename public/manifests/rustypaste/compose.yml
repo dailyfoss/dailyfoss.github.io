@@ -1,0 +1,30 @@
+# ===============================
+# Docker Compose (Rustypaste)
+# ===============================
+# host: http://localhost:8000
+# username:
+# password:
+
+services:
+  rustypaste:
+    image: orhunp/rustypaste:latest
+    container_name: rustypaste
+    ports:
+      - "8000:8000"
+    environment:
+      RUST_LOG: "debug"
+      AUTH_TOKEN: "replace_with_secure_token"
+    volumes:
+      - rustypaste_upload:/app/upload
+      - rustypaste_config:/app/config
+    healthcheck:
+      test: ["CMD","wget","-qO-","http://localhost:8000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+
+volumes:
+  rustypaste_upload:
+  rustypaste_config:

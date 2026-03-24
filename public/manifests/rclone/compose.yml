@@ -1,8 +1,20 @@
+# ===============================
+# Docker Compose (rclone-config)
+# ===============================
+# host:
+# username:
+# password:
+
 services:
-  config:
-    image: rclone/rclone
+  rclone:
+    image: rclone/rclone:latest
+    container_name: rclone-config
+    command: ["config"]
     volumes:
-      - ~/.config/rclone:/config/rclone
-    user: $(id -u):$(id -g)
-    command:
-      - config
+      - rclone_config:/config/rclone
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+
+volumes:
+  rclone_config:

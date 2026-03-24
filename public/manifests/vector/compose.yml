@@ -1,0 +1,25 @@
+# ===============================
+# Docker Compose (Vector)
+# ===============================
+# host: http://localhost:8686
+# username:
+# password:
+
+services:
+  vector:
+    image: timberio/vector:0.54.0-debian
+    container_name: vector
+    ports:
+      - "8686:8686"
+    restart: unless-stopped
+    volumes:
+      - vector-config:/etc/vector
+    healthcheck:
+      test: ["CMD", "vector", "--version"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  vector-config:

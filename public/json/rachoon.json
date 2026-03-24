@@ -29,14 +29,14 @@
     "issues": "https://github.com/ad-on-is/rachoon/issues",
     "releases": null,
     "screenshots": [
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/rachoon_clients.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/rachoon_create-invoice.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/rachoon_dashboard.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/rachoon_invoices.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/rachoon_options.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/rachoon_settings.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/rachoon_settings2.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/rachoon_template.png"
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/rachoon-clients.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/rachoon-create-invoice.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/rachoon-dashboard.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/rachoon-invoices.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/rachoon-options.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/rachoon-settings.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/rachoon-settings2.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/rachoon-template.webp"
     ]
   },
   "features": [
@@ -92,12 +92,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/rachoon/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

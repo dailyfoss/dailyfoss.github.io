@@ -1,0 +1,24 @@
+# ===============================
+# Docker Compose (SonaShow)
+# ===============================
+# host: http://localhost:5000
+# username:
+# password:
+
+services:
+  sonashow:
+    image: thewicklowwolf/sonashow:latest
+    container_name: sonashow
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    volumes:
+      - sonashow_config:/sonashow/config
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:5000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  sonashow_config:

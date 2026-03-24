@@ -1,0 +1,53 @@
+# ===============================
+# Docker Compose (Doorbell)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  doorbell-backend:
+    image: yourname/doorbell-backend:latest
+    container_name: doorbell-backend
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    environment:
+      PORT: "3001"
+      NODE_ENV: "production"
+      DATABASE_PATH: "/app/data/doorbell.db"
+      CORS_ORIGIN: "http://localhost:8080"
+      CORS_MODE: "permissive"
+      WEBHOOK_TOKEN: "change-this-token"
+      WEBHOOK_PATH: "/api/webhook/doorbell"
+      PUBLIC_URL: "http://localhost:3001"
+      DOCKER_ENV: "true"
+    volumes:
+      - doorbell_data:/app/data
+      - doorbell_uploads:/app/uploads
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  doorbell-frontend:
+    image: yourname/doorbell-frontend:latest
+    container_name: doorbell-frontend
+    restart: unless-stopped
+    depends_on:
+      - doorbell-backend
+    ports:
+      - "8080:80"
+    environment:
+      VITE_API_URL: "http://localhost:3001/api"
+      VITE_WS_URL: "ws://localhost:3001"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  doorbell_data:
+  doorbell_uploads:

@@ -1,67 +1,80 @@
+# ===============================
+# Docker Compose (Swetrix Analytics)
+# ===============================
+# host: http://localhost
+# username: admin@localhost
+# password: change_this_password
+
 services:
-  # This is the frontend, you can remove it if you want
   swetrix:
     image: swetrix/swetrix-fe:v3.2.0
-    restart: always
+    container_name: swetrix-frontend
+    restart: unless-stopped
     depends_on:
       - swetrix-api
     ports:
-      - '80:3000'
+      - "80:3000"
     environment:
-      - API_URL=http://localhost:8080/
-      - SELFHOSTED=true
+      API_URL: http://localhost:8080/
+      SELFHOSTED: "true"
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:3000"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
 
-  # This is the analytics API
   swetrix-api:
     image: swetrix/swetrix-api:v3.2.3
-    restart: always
     container_name: swetrix-api
-    ports:
-      - '8080:5005'
-    environment:
-      - JWT_ACCESS_TOKEN_SECRET=jwt-access-token-secret
-      - JWT_REFRESH_TOKEN_SECRET=jwt-refresh-token-secret
-      - REDIS_HOST=redis
-      - CLICKHOUSE_HOST=http://clickhouse
-      - API_ORIGINS=
-      - [email protected]
-      - PASSWORD=12345678
-      - API_KEY=
-      - DEBUG_MODE=false
-      - CLOUDFLARE_PROXY_ENABLED=false
-    links:
-      - 'redis'
-      - 'clickhouse'
+    restart: unless-stopped
     depends_on:
-      - 'redis'
-      - 'clickhouse'
-  redis:
-    image: redis:7.2-alpine
-    restart: always
+      - redis
+      - clickhouse
+    ports:
+      - "8080:5005"
     environment:
-      - REDIS_PORT=6379
-      - REDIS_USER=default
-      - REDIS_PASSWORD=
-    # ports:
-    #   - 6379:6379
-  #   volumes:
-  #     - '/opt/redis-volume:/data'
+      JWT_ACCESS_TOKEN_SECRET: change_access_secret
+      JWT_REFRESH_TOKEN_SECRET: change_refresh_secret
+      REDIS_HOST: redis
+      CLICKHOUSE_HOST: http://clickhouse
+      API_ORIGINS: http://localhost
+      EMAIL: admin@localhost
+      PASSWORD: change_this_password
+      API_KEY: change_api_key
+      DEBUG_MODE: "false"
+      CLOUDFLARE_PROXY_ENABLED: "false"
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:5005"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  redis:
+    image: redis:7-alpine
+    container_name: swetrix-redis
+    restart: unless-stopped
+    environment:
+      REDIS_PORT: "6379"
+      REDIS_USER: default
+      REDIS_PASSWORD: redispassword
+
   clickhouse:
     image: clickhouse/clickhouse-server:24.8-alpine
-    container_name: clickhouse
+    container_name: swetrix-clickhouse
+    restart: unless-stopped
     cap_add:
       - SYS_NICE
     environment:
-      - CLICKHOUSE_DATABASE=analytics
-      - CLICKHOUSE_USER=default
-      - CLICKHOUSE_PORT=8123
-      - CLICKHOUSE_PASSWORD=
-    # ports:
-    #   - 8123:8123
-    restart: always
+      CLICKHOUSE_DATABASE: analytics
+      CLICKHOUSE_USER: default
+      CLICKHOUSE_PORT: "8123"
+      CLICKHOUSE_PASSWORD: clickhousepassword
     volumes:
-      - ./swetrix-events-data:/var/lib/clickhouse
+      - swetrix_clickhouse_data:/var/lib/clickhouse
     ulimits:
       nofile:
         soft: 262144
         hard: 262144
+
+volumes:
+  swetrix_clickhouse_data:

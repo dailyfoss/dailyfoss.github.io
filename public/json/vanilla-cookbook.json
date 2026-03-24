@@ -23,21 +23,21 @@
   },
   "resources": {
     "website": null,
-    "documentation": null,
+    "documentation": "https://vanilla-cookbook.readthedocs.io/en/latest",
     "source_code": "https://github.com/jt196/vanilla-cookbook",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/vanilla-cookbook.webp",
     "issues": "https://github.com/jt196/vanilla-cookbook/issues",
     "releases": "https://github.com/jt196/vanilla-cookbook/releases",
     "screenshots": [
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/vanilla-cookbook_screen-desktop-admin-site-dark.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/vanilla-cookbook_screen-desktop-admin-site-dracula.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/vanilla-cookbook_screen-desktop-admin-users-dracula.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/vanilla-cookbook_screen-desktop-calendar-dracula.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/vanilla-cookbook_screen-desktop-first-recipe-dark.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/vanilla-cookbook_screen-desktop-first-recipe-dracula.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/vanilla-cookbook_screen-mobile-admin-site-dracula.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/vanilla-cookbook_screen-mobile-bookmark-dark.png",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/vanilla-cookbook_screen-mobile-list-dracula.png"
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/vanilla-cookbook-screen-desktop-admin-site-dark.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/vanilla-cookbook-screen-desktop-admin-site-dracula.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/vanilla-cookbook-screen-desktop-admin-users-dracula.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/vanilla-cookbook-screen-desktop-calendar-dracula.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/vanilla-cookbook-screen-desktop-first-recipe-dark.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/vanilla-cookbook-screen-desktop-first-recipe-dracula.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/vanilla-cookbook-screen-mobile-admin-site-dracula.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/vanilla-cookbook-screen-mobile-bookmark-dark.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/vanilla-cookbook-screen-mobile-list-dracula.webp"
     ]
   },
   "features": [
@@ -98,12 +98,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/vanilla-cookbook/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

@@ -1,0 +1,54 @@
+# ===============================
+# Docker Compose (VoucherVault)
+# ===============================
+# host: http://localhost:8000
+# username:
+# password:
+
+services:
+  app:
+    image: l4rm4nd/vouchervault:1.26.x
+    container_name: vouchervault
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    environment:
+      DOMAIN: localhost
+      SECURE_COOKIES: "False"
+      EXPIRY_THRESHOLD_DAYS: 90
+      TZ: Europe/Berlin
+
+      DB_ENGINE: postgres
+      POSTGRES_USER: vouchervault
+      POSTGRES_PASSWORD: vouchervault
+      POSTGRES_DB: vouchervault
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+    volumes:
+      - vouchervault-data:/opt/app/database
+    depends_on:
+      - db
+      - redis
+
+  redis:
+    image: redis:7-alpine
+    container_name: vouchervault-redis
+    restart: unless-stopped
+    volumes:
+      - vouchervault-redis-data:/data
+
+  db:
+    image: postgres:16-alpine
+    container_name: vouchervault-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: vouchervault
+      POSTGRES_PASSWORD: vouchervault
+      POSTGRES_DB: vouchervault
+    volumes:
+      - vouchervault-db-data:/var/lib/postgresql/data
+
+volumes:
+  vouchervault-data:
+  vouchervault-db-data:
+  vouchervault-redis-data:

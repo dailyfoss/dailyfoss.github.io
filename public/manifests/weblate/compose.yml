@@ -1,35 +1,93 @@
+# ===============================
+# Docker Compose (Weblate - Clean)
+# ===============================
+# host: http://localhost:8080
+# username: weblate@example.com
+# password: admin
+
 services:
-  weblate:
-    image: weblate/weblate
-    tmpfs:
-    - /run
-    - /tmp
-    volumes:
-    - weblate-data:/app/data
-    - weblate-cache:/app/cache
-    env_file:
-    - ./environment
-    restart: always
-    read_only: true
-    depends_on:
-    - database
-    - cache
-  database:
-    image: postgres:16-alpine
-    env_file:
-    - ./environment
-    volumes:
-    - postgres-data:/var/lib/postgresql/data
-    restart: always
   cache:
     image: redis:7-alpine
-    restart: always
-    read_only: true
-    command: [redis-server, --save, '60', '1']
+    container_name: weblate-redis
+    restart: unless-stopped
+    command:
+      - redis-server
+      - --save
+      - "60"
+      - "1"
     volumes:
-    - redis-data:/data
+      - redis-data:/data
+
+  database:
+    image: postgres:16
+    container_name: weblate-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: weblate
+      POSTGRES_PASSWORD: weblate
+      POSTGRES_DB: weblate
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  maildev:
+    image: maildev/maildev:latest
+    container_name: weblate-mail
+    ports:
+      - "1080:1080"
+
+  weblate:
+    image: weblate/weblate:latest
+    container_name: weblate
+    restart: unless-stopped
+    depends_on:
+      - cache
+      - database
+      - maildev
+    ports:
+      - "8080:8080"
+    environment:
+      # Core
+      WEBLATE_DEBUG: "1"
+      WEBLATE_LOGLEVEL: DEBUG
+      WEBLATE_SITE_TITLE: "Devel Weblate"
+      WEBLATE_SITE_DOMAIN: localhost
+      WEBLATE_ALLOWED_HOSTS: "*"
+      WEBLATE_REGISTRATION_OPEN: "1"
+
+      # Admin
+      WEBLATE_ADMIN_NAME: "Weblate Admin"
+      WEBLATE_ADMIN_EMAIL: weblate@example.com
+      WEBLATE_ADMIN_PASSWORD: admin
+
+      # Email
+      WEBLATE_SERVER_EMAIL: weblate@example.com
+      WEBLATE_DEFAULT_FROM_EMAIL: weblate@example.com
+      WEBLATE_EMAIL_HOST: maildev
+      WEBLATE_EMAIL_PORT: 1025
+      WEBLATE_EMAIL_USE_TLS: "0"
+      WEBLATE_EMAIL_USE_SSL: "0"
+      WEBLATE_EMAIL_HOST_USER: ""
+      WEBLATE_EMAIL_HOST_PASSWORD: ""
+
+      # Database
+      POSTGRES_HOST: database
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: weblate
+      POSTGRES_PASSWORD: weblate
+      POSTGRES_DB: weblate
+
+      # Redis
+      REDIS_HOST: cache
+      REDIS_PORT: 6379
+
+    volumes:
+      - weblate-data:/app/data
+      - weblate-cache:/app/cache
+
 volumes:
-  weblate-cache: {}
-  weblate-data: {}
-  postgres-data: {}
-  redis-data: {}
+  weblate-data:
+  weblate-cache:
+  postgres-data:
+  redis-data:

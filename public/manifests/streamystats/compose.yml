@@ -1,0 +1,47 @@
+# ===============================
+# Docker Compose (StreamyStats)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  streamystats:
+    image: docker.io/fredrikburmester/streamystats-v2-aio:latest
+    container_name: streamystats
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: streamystats
+      POSTGRES_HOST_AUTH_METHOD: scram-sha-256
+      POSTGRES_INITDB_ARGS: --auth-host=scram-sha-256
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/streamystats
+      SESSION_SECRET: replace_with_secure_secret
+      NEXT_SERVER_ACTIONS_ENCRYPTION_KEY: replace_with_encryption_key
+      NODE_ENV: production
+      SESSION_POLL_INTERVAL_MS: "5000"
+      CRON_ACTIVITY_SYNC: "*/1 * * * *"
+      CRON_RECENT_ITEMS_SYNC: "*/1 * * * *"
+      CRON_USER_SYNC: "*/1 * * * *"
+      CRON_PEOPLE_SYNC: "*/15 * * * *"
+      CRON_EMBEDDINGS_SYNC: "*/15 * * * *"
+      CRON_GEOLOCATION_SYNC: "*/5 * * * *"
+      CRON_FINGERPRINT_SYNC: "0 4 * * *"
+      CRON_JOB_CLEANUP: "*/1 * * * *"
+      CRON_OLD_JOB_CLEANUP: "0 3 * * *"
+      CRON_FULL_SYNC: "0 2 * * *"
+      CRON_DELETED_ITEMS_CLEANUP: "0 * * * *"
+      SKIP_STARTUP_FULL_SYNC: "false"
+    volumes:
+      - streamystats_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:3000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  streamystats_data:

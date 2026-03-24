@@ -1,22 +1,35 @@
+# ===============================
+# Docker Compose (wg-easy)
+# ===============================
+# host: http://localhost:51821
+# username: (set via PASSWORD)
+# password: (set below)
+
 services:
   wg-easy:
-    image: ghcr.io/wg-easy/wg-easy  # The Docker image to use.
-    container_name: wg-easy         # Name of the container.
-    environment:                    # Environment variables to configure the instance.
-      - LANG=en                     # Language settings.
-      - WG_HOST=    # Public IP or domain name where WG-Easy is accessible.
-      - PASSWORD=    # Password for accessing the WG-Easy web interface.
-      - PORT=51821                  # Port for the web interface.
-      - WG_PORT=51820               # WireGuard port for VPN traffic.
-    volumes:
-      - ./wg-easy/:/etc/wireguard   # Volume mapping for WireGuard configuration files.
+    image: ghcr.io/wg-easy/wg-easy:15
+    container_name: wg-easy
+    restart: unless-stopped
     ports:
-      - "51820:51820/udp"           # UDP port used by WireGuard.
-      - "51821:51821/tcp"           # TCP port for accessing the web interface.
-    cap_add:                        # Capabilities required for managing networking features.
+      - "51820:51820/udp"
+      - "51821:51821"
+    environment:
+      WG_HOST: "your-server-ip-or-domain"
+      PASSWORD: "changeme"
+    volumes:
+      - wireguard_data:/etc/wireguard
+      - /lib/modules:/lib/modules:ro
+    cap_add:
       - NET_ADMIN
       - SYS_MODULE
-    sysctls:                        # Kernel parameters that need to be set for WireGuard.
-      - net.ipv4.conf.all.src_valid_mark=1
-      - net.ipv4.ip_forward=1
-    restart: unless-stopped         # Ensures the container restarts automatically unless manually stopped.
+    sysctls:
+      net.ipv4.ip_forward: "1"
+      net.ipv4.conf.all.src_valid_mark: "1"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:51821"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  wireguard_data:

@@ -1,9 +1,19 @@
+# ===============================
+# Docker Compose (Uptime Kuma)
+# ===============================
+# host: http://localhost:3001
+# username:
+# password:
+
 services:
-    uptime-kuma:
-        image: 'louislam/uptime-kuma:1'
-        container_name: uptime-kuma
-        volumes:
-            - './data:/app/data'
-        ports:
-            - '3001:3001'
-        restart: always
+  uptime-kuma:
+    image: louislam/uptime-kuma:2
+    container_name: uptime-kuma
+    ports:
+      - "3001:3001"
+    restart: unless-stopped
+    volumes:
+      - uptime-kuma-data:/app/data
+
+volumes:
+  uptime-kuma-data:

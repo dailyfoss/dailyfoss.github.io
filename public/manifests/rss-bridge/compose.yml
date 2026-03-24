@@ -1,8 +1,25 @@
+# ===============================
+# Docker Compose (RSS-Bridge)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
 services:
   rss-bridge:
     image: rssbridge/rss-bridge:latest
-    volumes:
-      - ./config:/config
+    container_name: rss-bridge
     ports:
-      - 3000:80
+      - "3000:80"
+    volumes:
+      - rss_bridge_config:/config
+    healthcheck:
+      test: ["CMD","wget","-qO-","http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
     restart: unless-stopped
+
+volumes:
+  rss_bridge_config:

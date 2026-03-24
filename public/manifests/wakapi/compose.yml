@@ -1,11 +1,22 @@
+# ===============================
+# Docker Compose (Wakapi)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
 services:
   wakapi:
     image: ghcr.io/muety/wakapi:latest
     container_name: wakapi
+    init: true
     ports:
-      - 3000:3000
-    environment:
-      - WAKAPI_PASSWORD_SALT=$SALT
-    volumes:
-      - ./wakapi-data:/data
+      - "3000:3000"
     restart: unless-stopped
+    environment:
+      WAKAPI_PASSWORD_SALT: change_this_random_string
+    volumes:
+      - wakapi-data:/data
+
+volumes:
+  wakapi-data:

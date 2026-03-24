@@ -1,0 +1,82 @@
+# ===============================
+# Docker Compose (SigNoz)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  zookeeper:
+    image: signoz/zookeeper:3.7.1
+    container_name: signoz-zookeeper
+    restart: unless-stopped
+    environment:
+      ZOO_SERVER_ID: 1
+      ALLOW_ANONYMOUS_LOGIN: "yes"
+      ZOO_AUTOPURGE_INTERVAL: 1
+    volumes:
+      - signoz_zookeeper:/bitnami/zookeeper
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s -m 2 http://localhost:8080/commands/ruok | grep imok || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  clickhouse:
+    image: clickhouse/clickhouse-server:25.5
+    container_name: signoz-clickhouse
+    restart: unless-stopped
+    depends_on:
+      zookeeper:
+        condition: service_healthy
+    environment:
+      CLICKHOUSE_SKIP_USER_SETUP: "1"
+    volumes:
+      - signoz_clickhouse:/var/lib/clickhouse
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8123/ping"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  signoz:
+    image: signoz/signoz:v0.115.0
+    container_name: signoz
+    restart: unless-stopped
+    depends_on:
+      clickhouse:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      SIGNOZ_ALERTMANAGER_PROVIDER: signoz
+      SIGNOZ_TELEMETRYSTORE_CLICKHOUSE_DSN: tcp://clickhouse:9000
+      SIGNOZ_SQLSTORE_SQLITE_PATH: /var/lib/signoz/signoz.db
+      SIGNOZ_TOKENIZER_JWT_SECRET: change_this_secret
+    volumes:
+      - signoz_sqlite:/var/lib/signoz
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8080/api/v1/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  otel-collector:
+    image: signoz/signoz-otel-collector:v0.144.2
+    container_name: signoz-otel-collector
+    restart: unless-stopped
+    depends_on:
+      clickhouse:
+        condition: service_healthy
+    ports:
+      - "4317:4317"
+      - "4318:4318"
+    environment:
+      OTEL_RESOURCE_ATTRIBUTES: host.name=signoz-host,os.type=linux
+      SIGNOZ_OTEL_COLLECTOR_CLICKHOUSE_DSN: tcp://clickhouse:9000
+      SIGNOZ_OTEL_COLLECTOR_TIMEOUT: 10m
+
+volumes:
+  signoz_clickhouse:
+  signoz_sqlite:
+  signoz_zookeeper:

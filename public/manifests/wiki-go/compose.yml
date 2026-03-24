@@ -1,0 +1,24 @@
+# ===============================
+# Docker Compose (Wiki-Go)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  wiki-go:
+    image: leomoonstudios/wiki-go:latest
+    container_name: wiki-go
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - wiki_data:/wiki/data
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8080"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  wiki_data:

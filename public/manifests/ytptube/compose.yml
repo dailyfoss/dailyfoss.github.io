@@ -1,0 +1,30 @@
+# ===============================
+# Docker Compose (YTPTube)
+# ===============================
+# host: http://localhost:8081
+# username:
+# password:
+
+services:
+  ytptube:
+    image: ghcr.io/arabcoders/ytptube:latest
+    container_name: ytptube
+    restart: unless-stopped
+    user: "1000:1000"
+    ports:
+      - "8081:8081"
+    environment:
+      YTP_TEMP_PATH: "/downloads/tmp"
+      YTP_DOWNLOAD_PATH: "/downloads/files"
+    volumes:
+      - config_data:/config
+      - downloads_data:/downloads
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8081"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  config_data:
+  downloads_data:

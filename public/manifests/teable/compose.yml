@@ -1,0 +1,72 @@
+# ===============================
+# Docker Compose (Teable)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  teable:
+    image: ghcr.io/teableio/teable:latest
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+
+    environment:
+      NEXT_ENV_IMAGES_ALL_REMOTE: "true"
+      DATABASE_URL: postgresql://teable:teablepassword@teable-db:5432/teable
+      REDIS_URL: redis://:redispassword@teable-cache:6379
+
+    volumes:
+      - teable_data:/app/.assets
+
+    depends_on:
+      teable-db:
+        condition: service_healthy
+      teable-cache:
+        condition: service_healthy
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 10s
+
+  teable-db:
+    image: postgres:16
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: teable
+      POSTGRES_USER: teable
+      POSTGRES_PASSWORD: teablepassword
+
+    volumes:
+      - teable_db:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U teable -d teable"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  teable-cache:
+    image: redis:7
+    restart: unless-stopped
+
+    command: redis-server --appendonly yes --requirepass redispassword
+
+    volumes:
+      - teable_cache:/data
+
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "redispassword", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  teable_db:
+  teable_data:
+  teable_cache:

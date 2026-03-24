@@ -23,12 +23,15 @@
   },
   "resources": {
     "website": "https://yeetfile.com",
-    "documentation": "https://github.com/benbusby/yeetfile",
+    "documentation": "https://docs.yeetfile.com",
     "source_code": "https://github.com/benbusby/yeetfile",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/yeetfile.webp",
     "issues": "https://github.com/benbusby/yeetfile/issues",
     "releases": "https://github.com/benbusby/yeetfile/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/yeetfile-send.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/yeetfile-vault.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +91,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/yeetfile/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

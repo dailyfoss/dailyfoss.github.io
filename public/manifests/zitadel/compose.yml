@@ -1,0 +1,56 @@
+# ===============================
+# Docker Compose (ZITADEL)
+# ===============================
+# host: http://localhost:8080
+# username: zitadel admin (created on first run)
+# password: (set during setup)
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: zitadel_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: "zitadel"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "changeme"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d zitadel"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  zitadel:
+    image: ghcr.io/zitadel/zitadel:v4.11.0
+    container_name: zitadel
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: start-from-init --masterkey "MasterkeyNeedsToHave32Characters"
+    environment:
+      ZITADEL_PORT: "8080"
+      ZITADEL_EXTERNALDOMAIN: "localhost"
+      ZITADEL_EXTERNALPORT: "8080"
+      ZITADEL_EXTERNALSECURE: "false"
+      ZITADEL_TLS_ENABLED: "false"
+
+      ZITADEL_DATABASE_POSTGRES_DSN: "postgresql://postgres:changeme@postgres:5432/zitadel?sslmode=disable"
+
+      ZITADEL_FIRSTINSTANCE_ORG_HUMAN_PASSWORDCHANGEREQUIRED: "false"
+
+    ports:
+      - "8080:8080"
+    volumes:
+      - zitadel_data:/zitadel
+    healthcheck:
+      test: ["CMD", "/app/zitadel", "ready"]
+      interval: 10s
+      timeout: 30s
+      retries: 10
+
+volumes:
+  db_data:
+  zitadel_data:

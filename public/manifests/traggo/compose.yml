@@ -1,10 +1,33 @@
+# ===============================
+# Docker Compose (Traggo)
+# ===============================
+# host: http://localhost:3030
+# username: admin
+# password: admin
+
 services:
   traggo:
     image: traggo/server:latest
+    restart: unless-stopped
+
     ports:
-      - 3030:3030
+      - "3030:3030"
+
     environment:
-      TRAGGO_DEFAULT_USER_NAME: "admin"
-      TRAGGO_DEFAULT_USER_PASS: "mynewpassword"
+      TRAGGO_DEFAULT_USER_NAME: admin
+      TRAGGO_DEFAULT_USER_PASS: admin
+      TRAGGO_LOG_LEVEL: info
+      TRAGGO_DATABASE_DIALECT: sqlite3
+      TRAGGO_DATABASE_CONNECTION: /opt/traggo/data/traggo.db
+
     volumes:
-      - ./traggodata:/opt/traggo/data
+      - traggo_data:/opt/traggo/data
+
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3030"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  traggo_data:

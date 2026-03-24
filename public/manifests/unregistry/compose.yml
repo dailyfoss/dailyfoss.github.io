@@ -1,0 +1,19 @@
+# ===============================
+# Docker Compose (Unregistry)
+# ===============================
+# host: http://localhost:5000
+# username:
+# password:
+
+services:
+  unregistry:
+    image: ghcr.io/psviderski/unregistry:latest
+    container_name: unregistry
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+    volumes:
+      - containerd-sock:/run/containerd
+
+volumes:
+  containerd-sock:

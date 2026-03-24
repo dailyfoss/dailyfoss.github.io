@@ -1,0 +1,27 @@
+# ===============================
+# Docker Compose (Sonobarr)
+# ===============================
+# host: http://localhost:5000
+# username:
+# password:
+
+services:
+  sonobarr:
+    image: ghcr.io/dodelidoo-labs/sonobarr:latest
+    container_name: sonobarr
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      SONARR_URL: http://sonarr:8989
+      SONARR_API_KEY: your_api_key
+    volumes:
+      - sonobarr_config:/sonobarr/config
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:5000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  sonobarr_config:

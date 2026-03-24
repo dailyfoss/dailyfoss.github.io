@@ -1,3 +1,7 @@
+version: '2'
+networks:
+  bridge:
+    driver: bridge
 services:
   web:
     image: "xwiki:stable-mysql-tomcat"
@@ -11,14 +15,14 @@ services:
       - DB_PASSWORD=xwiki
       - DB_HOST=xwiki-mysql-db
     volumes:
-      - ./xwiki-data:/usr/local/xwiki
+      - xwiki-data:/usr/local/xwiki
     networks:
       - bridge
   db:
-    image: "mysql:9.0"
+    image: "mysql:9.1"
     container_name: xwiki-mysql-db
     volumes:
-      - ./mysql-data:/var/lib/mysql
+      - mysql-data:/var/lib/mysql
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
       - MYSQL_ROOT_PASSWORD=xwiki
@@ -31,3 +35,6 @@ services:
       - "--explicit-defaults-for-timestamp=1"
     networks:
       - bridge
+volumes:
+  mysql-data: {}
+  xwiki-data: {}

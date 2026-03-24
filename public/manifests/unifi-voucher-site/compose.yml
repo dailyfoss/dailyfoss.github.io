@@ -1,0 +1,83 @@
+# ===============================
+# Docker Compose (UniFi Voucher Site)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password: 0000
+
+services:
+  unifi-voucher-site:
+    image: glenndehaan/unifi-voucher-site:latest
+    restart: unless-stopped
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      UNIFI_IP: 192.168.1.1
+      UNIFI_PORT: "443"
+      UNIFI_TOKEN: ""
+      UNIFI_SITE_ID: default
+      UNIFI_SSID: ""
+      UNIFI_SSID_PASSWORD: ""
+
+      AUTH_INTERNAL_ENABLED: "true"
+      AUTH_INTERNAL_PASSWORD: "0000"
+      AUTH_INTERNAL_BEARER_TOKEN: "00000000-0000-0000-0000-000000000000"
+
+      AUTH_OIDC_ENABLED: "false"
+      AUTH_OIDC_ISSUER_BASE_URL: ""
+      AUTH_OIDC_APP_BASE_URL: ""
+      AUTH_OIDC_CLIENT_ID: ""
+      AUTH_OIDC_CLIENT_SECRET: ""
+      AUTH_OIDC_REDIRECT_LOGIN: "false"
+      AUTH_OIDC_RESTRICT_VISIBILITY: "false"
+
+      AUTH_DISABLE: "false"
+
+      VOUCHER_TYPES: "480,1,,,;"
+      VOUCHER_CUSTOM: "true"
+      VOUCHER_NOTE_REQUIRED: "false"
+
+      SERVICE_WEB: "true"
+      SERVICE_API: "false"
+
+      PRINTERS: ""
+
+      SMTP_FROM: ""
+      SMTP_HOST: ""
+      SMTP_PORT: ""
+      SMTP_SECURE: "false"
+      SMTP_USERNAME: ""
+      SMTP_PASSWORD: ""
+
+      KIOSK_ENABLED: "false"
+      KIOSK_VOUCHER_TYPES: "480,1,,,;"
+      KIOSK_NAME_REQUIRED: "false"
+      KIOSK_TIMEOUT: "60"
+      KIOSK_HOMEPAGE: "false"
+      KIOSK_EMAIL: "false"
+      KIOSK_PRINTER: ""
+
+      BIND_ADDRESS: "0.0.0.0"
+      LOG_LEVEL: "info"
+
+      TRANSLATION_DEFAULT: "en"
+      TRANSLATION_HIDDEN_LANGUAGES: ""
+      TRANSLATION_DEBUG: "false"
+
+      TASK_CLEANUP_EXPIRED: "false"
+      TASK_CLEANUP_UNUSED: "false"
+      TASK_CLEANUP_UNUSED_DAYS: "1"
+
+    volumes:
+      - unifi_voucher_branding:/kiosk
+
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  unifi_voucher_branding:

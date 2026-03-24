@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "Functional Source Licenses",
     "version": "v3.15.2",
     "date_app_added": "2025-11-23",
     "date_last_released": "2026-01-11",
@@ -23,13 +23,15 @@
   },
   "resources": {
     "website": "https://typebot.io",
-    "documentation": "https://github.com/baptisteArno/typebot.io",
+    "documentation": "https://docs.typebot.io/self-hosting/get-started",
     "source_code": "https://github.com/baptisteArno/typebot.io",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/typebot.webp",
     "issues": "https://github.com/baptisteArno/typebot.io/issues",
     "releases": "https://github.com/baptisteArno/typebot.io/releases",
     "logo_light": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/typebot-light.webp",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/typebot-marketing-builder.webp"
+    ]
   },
   "features": [
     {
@@ -84,12 +86,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/typebot/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

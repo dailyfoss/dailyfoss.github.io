@@ -1,0 +1,56 @@
+# ===============================
+# Docker Compose (Plex + Replex)
+# ===============================
+# host: http://localhost:3001
+# username:
+# password:
+
+services:
+
+  plex:
+    image: lscr.io/linuxserver/plex:latest
+    container_name: plex
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: "UTC"
+      PLEX_CLAIM: ""
+    ports:
+      - "32400:32400"
+    volumes:
+      - plex_config:/config
+      - plex_tv:/tv
+      - plex_movies:/movies
+    healthcheck:
+      test: ["CMD","wget","-qO-","http://localhost:32400/identity"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+
+
+  replex:
+    image: ghcr.io/lostb1t/replex:latest
+    container_name: replex
+    ports:
+      - "3001:80"
+    environment:
+      REPLEX_HOST: "http://plex:32400"
+      REPLEX_TOKEN: "replace-with-plex-token"
+    depends_on:
+      plex:
+        condition: service_started
+    healthcheck:
+      test: ["CMD","wget","-qO-","http://localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+
+volumes:
+  plex_config:
+  plex_tv:
+  plex_movies:

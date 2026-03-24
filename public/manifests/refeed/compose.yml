@@ -1,0 +1,89 @@
+# ===============================
+# Docker Compose (Refeed)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+
+  refeed-web:
+    image: ghcr.io/refeed/refeed-web:latest
+    container_name: refeed-web
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: "postgres://postgres:postgres@postgres:5432/refeed"
+      NEXT_PUBLIC_SUPABASE_URL: "https://example.supabase.co"
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: "replace-with-supabase-anon-key"
+      STRIPE_SECRET_KEY: "replace-with-stripe-secret"
+      STRIPE_WEBHOOK_SECRET: "replace-with-stripe-webhook-secret"
+      NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: "replace-with-stripe-publishable-key"
+      ICON_BUCKET_URL: "https://bucket.example.com"
+      NEXT_PUBLIC_POSTHOG_KEY: "replace-with-posthog-key"
+      NEXT_PUBLIC_POSTHOG_HOST: "https://app.posthog.com"
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 20000
+        hard: 40000
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD","wget","-qO-","http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+
+  refeed-backend:
+    image: ghcr.io/refeed/refeed-backend:latest
+    container_name: refeed-backend
+    ports:
+      - "4050:4050"
+    environment:
+      DATABASE_URL: "postgres://postgres:postgres@postgres:5432/refeed"
+      IMAGE_ACCOUNT_ID: "replace-account-id"
+      IMAGE_ACCESS_KEY_ID: "replace-access-key"
+      IMAGE_ACCESS_KEY_SECRET: "replace-secret"
+      IMAGE_BUCKET_URL: "https://bucket.example.com"
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 100000
+        hard: 150000
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD","wget","-qO-","http://localhost:4050"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: refeed-postgres
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_DB: "refeed"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - refeed_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD","pg_isready","-U","postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+
+volumes:
+  refeed_postgres_data:

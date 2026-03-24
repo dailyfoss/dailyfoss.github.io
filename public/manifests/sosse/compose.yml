@@ -1,6 +1,49 @@
+# ===============================
+# Docker Compose (Sosse)
+# ===============================
+# host: http://localhost:8000
+# username:
+# password:
+
 services:
   sosse:
-    image: biolds/sosse:latest
-    ports:
-      - 8006:80
+    image: biolds/sosse:pip-compose
+    container_name: sosse
     restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8000:80"
+    environment:
+      SOSSE_DB_NAME: sosse_db
+      SOSSE_DB_USER: sosse_user
+      SOSSE_DB_PASS: sosse_password
+      SOSSE_DB_HOST: postgres
+    volumes:
+      - sosse_data:/var/lib/sosse
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  postgres:
+    image: postgres:17
+    container_name: sosse-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: sosse_db
+      POSTGRES_USER: sosse_user
+      POSTGRES_PASSWORD: sosse_password
+    volumes:
+      - sosse_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U sosse_user"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  sosse_data:
+  sosse_db:

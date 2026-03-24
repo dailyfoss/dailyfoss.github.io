@@ -1,8 +1,25 @@
+# ===============================
+# Docker Compose (Readeck)
+# ===============================
+# host: http://localhost:8000
+# username:
+# password:
+
 services:
   readeck:
     image: codeberg.org/readeck/readeck:latest
+    container_name: readeck
     ports:
-      - 8000:8000
+      - "8000:8000"
     volumes:
-      - ./readeck-data:/readeck
+      - readeck_data:/readeck
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
     restart: unless-stopped
+
+volumes:
+  readeck_data:

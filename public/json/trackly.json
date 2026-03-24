@@ -28,7 +28,12 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/trackly.webp",
     "issues": "https://github.com/7eventy7/trackly/issues",
     "releases": "https://github.com/7eventy7/trackly/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/trackly-dark-artists.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/trackly-dark-releases.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/trackly-dark-settings.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/trackly-dark-specific.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +93,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/trackly/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

@@ -1,0 +1,54 @@
+# ===============================
+# Docker Compose (Steam Headless)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  steam-headless:
+    image: josh5/steam-headless:latest
+    container_name: steam-headless
+    restart: unless-stopped
+    network_mode: host
+    ipc: host
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
+      - SYS_NICE
+    security_opt:
+      - seccomp:unconfined
+      - apparmor:unconfined
+    environment:
+      TZ: UTC
+      USER_LOCALES: en_US.UTF-8
+      DISPLAY: ":0"
+      PUID: "1000"
+      PGID: "1000"
+      UMASK: "022"
+      USER_PASSWORD: changeme
+      MODE: primary
+      WEB_UI_MODE: novnc
+      ENABLE_STEAM: "true"
+      ENABLE_SUNSHINE: "false"
+      NVIDIA_VISIBLE_DEVICES: all
+      NVIDIA_DRIVER_CAPABILITIES: all
+    devices:
+      - /dev/fuse
+      - /dev/uinput
+    device_cgroup_rules:
+      - "c 13:* rmw"
+    volumes:
+      - steam_home:/home/default
+      - steam_games:/mnt/games
+      - steam_sockets:/tmp
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:8080"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  steam_home:
+  steam_games:
+  steam_sockets:

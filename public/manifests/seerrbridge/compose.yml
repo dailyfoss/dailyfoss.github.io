@@ -1,0 +1,28 @@
+# ===============================
+# Docker Compose (SeerrBridge)
+# ===============================
+# host: http://localhost:3777
+# username:
+# password:
+
+services:
+  seerrbridge:
+    image: ghcr.io/woahai321/seerrbridge:latest
+    container_name: seerrbridge
+    restart: unless-stopped
+
+    ports:
+      - "3777:3777"
+      - "8777:8777"
+      - "8778:8778"
+      - "3307:3306"
+
+    volumes:
+      - seerrbridge_mysql_data:/var/lib/mysql
+      - seerrbridge_logs:/app/logs
+      - seerrbridge_data:/app/data
+
+volumes:
+  seerrbridge_mysql_data:
+  seerrbridge_logs:
+  seerrbridge_data:

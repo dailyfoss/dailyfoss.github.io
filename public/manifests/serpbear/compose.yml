@@ -1,0 +1,38 @@
+# ===============================
+# Docker Compose (SerpBear)
+# ===============================
+# host: http://localhost:3000
+# username: admin
+# password: changeme
+
+services:
+  serpbear:
+    image: towfiqi/serpbear:latest
+    container_name: serpbear
+    restart: unless-stopped
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      USER_NAME: admin
+      PASSWORD: changeme
+      SECRET: change-this-secret
+      APIKEY: change-this-apikey
+      SESSION_DURATION: "24"
+      NEXT_PUBLIC_APP_URL: http://localhost:3000
+      SEARCH_CONSOLE_CLIENT_EMAIL: ""
+      SEARCH_CONSOLE_PRIVATE_KEY: ""
+
+    volumes:
+      - serpbear_data:/app/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+volumes:
+  serpbear_data:

@@ -1,0 +1,28 @@
+# ===============================
+# Docker Compose (Smallstep Step-CA)
+# ===============================
+# host: https://localhost:9000
+# username:
+# password:
+
+services:
+  step-ca:
+    image: smallstep/step-ca:latest
+    container_name: step-ca
+    restart: unless-stopped
+    ports:
+      - "9000:9000"
+    environment:
+      DOCKER_STEPCA_INIT_NAME: Smallstep
+      DOCKER_STEPCA_INIT_DNS_NAMES: localhost
+      DOCKER_STEPCA_INIT_REMOTE_MANAGEMENT: "true"
+    volumes:
+      - step_ca_data:/home/step
+    healthcheck:
+      test: ["CMD","wget","--no-check-certificate","--spider","-q","https://localhost:9000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  step_ca_data:

@@ -28,7 +28,10 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/ytptube.webp",
     "issues": "https://github.com/arabcoders/ytptube/issues",
     "releases": "https://github.com/arabcoders/ytptube/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/ytptube-short.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/ytptube-simple.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +91,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/ytptube/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

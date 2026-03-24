@@ -1,0 +1,46 @@
+# ===============================
+# Docker Compose (Spliit)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  spliit:
+    image: ghcr.io/spliit-app/spliit:latest
+    container_name: spliit
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/spliit
+      NODE_ENV: production
+      NEXTAUTH_URL: http://localhost:3000
+      NEXTAUTH_SECRET: replace_with_secure_secret
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:3000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  postgres:
+    image: postgres:16
+    container_name: spliit-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: spliit
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - spliit_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  spliit_db:

@@ -1,22 +1,58 @@
+# ===============================
+# Docker Compose (Speedtest Tracker)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
 services:
-    speedtest-tracker:
-        container_name: speedtest-tracker
-        ports:
-            - 8080:80
-            - 8443:443
-        environment:
-            - PUID=1000
-            - PGID=1000
-            - APP_KEY=
-            - DB_CONNECTION=sqlite
-            - SPEEDTEST_SCHEDULE=
-            - SPEEDTEST_SERVERS=
-            - PRUNE_RESULTS_OLDER_THAN=
-            - CHART_DATETIME_FORMAT=
-            - DATETIME_FORMAT=
-            - APP_TIMEZONE=
-        volumes:
-            - /path/to/data:/config
-            - /path/to-custom-ssl-keys:/config/keys
-        image: lscr.io/linuxserver/speedtest-tracker:0.20.6
-        restart: unless-stopped
+  speedtest-tracker:
+    image: lscr.io/linuxserver/speedtest-tracker:latest
+    container_name: speedtest-tracker
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+      - "8443:443"
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+      APP_KEY: replace_with_generated_key
+      APP_URL: http://localhost:8080
+      DB_CONNECTION: pgsql
+      DB_HOST: postgres
+      DB_PORT: "5432"
+      DB_DATABASE: speedtest_tracker
+      DB_USERNAME: speedtest_tracker
+      DB_PASSWORD: password
+    volumes:
+      - speedtest_config:/config
+      - speedtest_ssl:/config/keys
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  postgres:
+    image: postgres:17
+    container_name: speedtest-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: speedtest_tracker
+      POSTGRES_USER: speedtest_tracker
+      POSTGRES_PASSWORD: password
+    volumes:
+      - speedtest_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U speedtest_tracker"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  speedtest_config:
+  speedtest_ssl:
+  speedtest_db:

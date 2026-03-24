@@ -23,12 +23,14 @@
   },
   "resources": {
     "website": "https://vernemq.com",
-    "documentation": "https://github.com/vernemq/vernemq",
+    "documentation": "https://docs.vernemq.com",
     "source_code": "https://github.com/vernemq/vernemq",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/vernemq.webp",
     "issues": "https://github.com/vernemq/vernemq/issues",
     "releases": "https://github.com/vernemq/vernemq/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/vernemq-dashboard.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +90,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/vernemq/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

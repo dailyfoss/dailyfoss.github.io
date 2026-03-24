@@ -1,0 +1,46 @@
+# ===============================
+# Docker Compose (Woodpecker CI)
+# ===============================
+# host: http://localhost:8000
+# username: (via GitHub OAuth)
+# password: (via GitHub OAuth)
+
+services:
+  woodpecker-server:
+    image: woodpeckerci/woodpecker-server:v3
+    container_name: woodpecker-server
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      WOODPECKER_OPEN: "true"
+      WOODPECKER_HOST: "http://localhost:8000"
+      WOODPECKER_GITHUB: "true"
+      WOODPECKER_GITHUB_CLIENT: "your_github_client_id"
+      WOODPECKER_GITHUB_SECRET: "your_github_client_secret"
+      WOODPECKER_AGENT_SECRET: "change-this-secret"
+    volumes:
+      - woodpecker_server_data:/var/lib/woodpecker
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  woodpecker-agent:
+    image: woodpeckerci/woodpecker-agent:v3
+    container_name: woodpecker-agent
+    restart: unless-stopped
+    depends_on:
+      - woodpecker-server
+    command: agent
+    environment:
+      WOODPECKER_SERVER: "woodpecker-server:9000"
+      WOODPECKER_AGENT_SECRET: "change-this-secret"
+    volumes:
+      - woodpecker_agent_config:/etc/woodpecker
+      - /var/run/docker.sock:/var/run/docker.sock
+
+volumes:
+  woodpecker_server_data:
+  woodpecker_agent_config:

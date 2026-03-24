@@ -28,7 +28,13 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/wygiwyh.webp",
     "issues": "https://github.com/eitchtee/WYGIWYH/issues",
     "releases": "https://github.com/eitchtee/WYGIWYH/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/wygiwyh-all-transactions.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/wygiwyh-calendar.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/wygiwyh-monthly-view.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/wygiwyh-networth.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/wygiwyh-yearly.webp"
+    ]
   },
   "features": [
     {
@@ -88,17 +94,19 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/wygiwyh/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
-    "username": null,
-    "password": null
+    "url": "https://wygiwyh-demo.herculino.com",
+    "username": "demo@demo.com",
+    "password": "wygiwyhdemo"
   }
 }

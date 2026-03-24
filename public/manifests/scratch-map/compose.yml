@@ -1,0 +1,30 @@
+# ===============================
+# Docker Compose (Scratch Map)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  scratch-map:
+    image: ad3m3r5/scratch-map:latest
+    container_name: scratch-map
+    ports:
+      - "8080:8080"
+    environment:
+      ADDRESS: "0.0.0.0"
+      PORT: "8080"
+      DATA_DIR: "/my-data-dir"
+      LOG_LEVEL: "INFO"
+    volumes:
+      - scratch_map_data:/my-data-dir
+    healthcheck:
+      test: ["CMD","wget","-qO-","http://localhost:8080"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+
+volumes:
+  scratch_map_data:

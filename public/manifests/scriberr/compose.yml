@@ -1,0 +1,31 @@
+# ===============================
+# Docker Compose (Scriberr)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  scriberr:
+    image: ghcr.io/rishikanthc/scriberr:v1.2.0
+    container_name: scriberr
+    ports:
+      - "8080:8080"
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+      APP_ENV: "production"
+    volumes:
+      - scriberr_data:/app/data
+      - scriberr_models:/app/whisperx-env
+    healthcheck:
+      test: ["CMD","wget","-qO-","http://localhost:8080"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+
+volumes:
+  scriberr_data:
+  scriberr_models:

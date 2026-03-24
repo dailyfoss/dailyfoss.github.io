@@ -1,0 +1,82 @@
+# ===============================
+# Docker Compose (VoCard)
+# ===============================
+# host: http://localhost:49152
+# username:
+# password:
+
+services:
+  lavalink:
+    image: ghcr.io/lavalink-devs/lavalink:latest
+    container_name: lavalink
+    restart: unless-stopped
+    environment:
+      _JAVA_OPTIONS: -Xmx1G
+      SERVER_PORT: 2333
+      LAVALINK_SERVER_PASSWORD: youshallnotpass
+    expose:
+      - "2333"
+    volumes:
+      - lavalink-data:/opt/Lavalink
+    healthcheck:
+      test: ["CMD-SHELL","nc -z localhost 2333"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  spotify-tokener:
+    image: ghcr.io/topi314/spotify-tokener:master
+    container_name: spotify-tokener
+    restart: unless-stopped
+    ports:
+      - "49152:49152"
+    environment:
+      SPOTIFY_TOKENER_ADDR: 0.0.0.0:49152
+    healthcheck:
+      test: ["CMD-SHELL","nc -z localhost 49152"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  vocard-db:
+    image: mongo:8
+    container_name: vocard-db
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    command:
+      - mongod
+      - --oplogSize=1024
+      - --wiredTigerCacheSizeGB=1
+      - --auth
+      - --noscripting
+    expose:
+      - "27017"
+    volumes:
+      - vocard-mongo-db:/data/db
+      - vocard-mongo-config:/data/configdb
+    healthcheck:
+      test: ["CMD-SHELL","mongosh localhost:27017/test --eval 'db.runCommand({ping:1})' --quiet"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  vocard:
+    image: ghcr.io/chocomeow/vocard:latest
+    container_name: vocard
+    restart: unless-stopped
+    depends_on:
+      lavalink:
+        condition: service_healthy
+      vocard-db:
+        condition: service_healthy
+    volumes:
+      - vocard-config:/app
+
+volumes:
+  lavalink-data:
+  vocard-mongo-db:
+  vocard-mongo-config:
+  vocard-config:

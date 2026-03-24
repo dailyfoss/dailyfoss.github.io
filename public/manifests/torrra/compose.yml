@@ -1,0 +1,21 @@
+# ===============================
+# Docker Compose (Torrra)
+# ===============================
+# host:
+# username:
+# password:
+
+services:
+  torrra:
+    image: stabldev/torrra:latest
+    restart: unless-stopped
+
+    command: ["jackett", "--url", "<url>", "--api-key", "<api_key>"]
+
+    volumes:
+      - torrra_config:/root/.config/torrra
+      - torrra_downloads:/root/Downloads
+
+volumes:
+  torrra_config:
+  torrra_downloads:

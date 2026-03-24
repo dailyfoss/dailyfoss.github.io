@@ -28,7 +28,13 @@
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/usertour.webp",
     "issues": "https://github.com/usertour/usertour/issues",
     "releases": "https://github.com/usertour/usertour/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/usertour-analytics.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/usertour-builder.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/usertour-rules.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/usertour-sample.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/usertour-theme.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +94,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/usertour/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

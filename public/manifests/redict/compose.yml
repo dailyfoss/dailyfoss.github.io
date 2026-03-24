@@ -1,0 +1,26 @@
+# ===============================
+# Docker Compose (Redict)
+# ===============================
+# host: redis://localhost:6379
+# username:
+# password:
+
+services:
+  redict:
+    image: registry.redict.io/redict:latest
+    container_name: redict
+    ports:
+      - "6379:6379"
+    volumes:
+      - redict_data:/data
+    command: ["redict-server", "--save", "60", "1", "--loglevel", "warning"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+
+volumes:
+  redict_data:

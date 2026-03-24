@@ -1,17 +1,40 @@
+# ===============================
+# Docker Compose (SimpleLogin Migration)
+# ===============================
+# host:
+# username:
+# password:
+
 services:
-  app:
-    container_name: sl-migration
+  sl-migration:
     image: simplelogin/app:3.4.0
+    container_name: sl-migration
+    command: flask db upgrade
+    restart: "no"
+    environment:
+      URL: http://app.mydomain.com
+      EMAIL_DOMAIN: mydomain.com
+      SUPPORT_EMAIL: support@mydomain.com
+      EMAIL_SERVERS_WITH_PRIORITY: "[(10, \"app.mydomain.com.\")]"
+      DISABLE_ALIAS_SUFFIX: "1"
+      DKIM_PRIVATE_KEY_PATH: /dkim.key
+      DB_URI: postgresql://myuser:mypassword@postgres:5432/simplelogin
+      FLASK_SECRET: put_something_secret_here
+      GNUPGHOME: /sl/pgp
+      LOCAL_FILE_UPLOAD: "1"
+      POSTFIX_SERVER: 10.0.0.1
     volumes:
-      - $(pwd)/sl:/sl
-      - $(pwd)/sl/upload:/code/static/upload
-      - $(pwd)/dkim.key:/dkim.key
-      - $(pwd)/dkim.pub.key:/dkim.pub.key
-      - $(pwd)/simplelogin.env:/code/.env
+      - simplelogin_data:/sl
+      - simplelogin_upload:/code/static/upload
+      - simplelogin_dkim:/dkim
     networks:
       - sl-network
-    command: flask db upgrade
-    restart: always
+
+volumes:
+  simplelogin_data:
+  simplelogin_upload:
+  simplelogin_dkim:
+
 networks:
   sl-network:
     external: true

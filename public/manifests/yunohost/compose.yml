@@ -1,0 +1,32 @@
+# ===============================
+# Docker Compose (Z-Wave JS UI)
+# ===============================
+# host: http://localhost:8091
+# username: (set in UI)
+# password: (set in UI)
+
+services:
+  zwave-js-ui:
+    image: zwavejs/zwave-js-ui:latest
+    container_name: zwave_js_ui
+    restart: unless-stopped
+    tty: true
+    stop_signal: SIGINT
+    ports:
+      - "8091:8091"
+      - "3000:3000"
+    environment:
+      SESSION_SECRET: "change-this-secret"
+      TZ: "UTC"
+    devices:
+      - "/dev/serial/by-id/insert_stick_reference_here:/dev/zwave"
+    volumes:
+      - zwave_data:/usr/src/app/store
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8091"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  zwave_data:s

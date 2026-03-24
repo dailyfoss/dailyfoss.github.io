@@ -23,7 +23,7 @@
   },
   "resources": {
     "website": "https://rotki.com",
-    "documentation": "https://github.com/rotki/rotki",
+    "documentation": "https://docs.rotki.com/requirement-and-installation",
     "source_code": "https://github.com/rotki/rotki",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/rotki.webp",
     "issues": "https://github.com/rotki/rotki/issues",
@@ -79,12 +79,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/rotki/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

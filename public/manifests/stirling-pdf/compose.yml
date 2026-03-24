@@ -1,14 +1,24 @@
+# ===============================
+# Docker Compose (Stirling PDF)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
 services:
   stirling-pdf:
-    image: frooodle/s-pdf:latest
+    image: stirlingtools/stirling-pdf:latest
+    container_name: stirling-pdf
+    restart: unless-stopped
     ports:
-      - '8080:8080'
+      - "8080:8080"
     volumes:
-      - ./trainingData:/usr/share/tessdata #Required for extra OCR languages
-      - ./extraConfigs:/configs
-#      - ./customFiles:/customFiles/
-#      - ./logs:/logs/
-    environment:
-      - DOCKER_ENABLE_SECURITY=false
-      - INSTALL_BOOK_AND_ADVANCED_HTML_OPS=false
-      - LANGS=en_GB
+      - stirling_pdf_data:/configs
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:8080"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  stirling_pdf_data:

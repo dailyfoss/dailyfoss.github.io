@@ -23,12 +23,15 @@
   },
   "resources": {
     "website": "https://github.com/slskd/slskd",
-    "documentation": "https://github.com/slskd/slskd",
+    "documentation": "https://github.com/slskd/slskd/blob/master/docs/docker.md",
     "source_code": "https://github.com/slskd/slskd",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/slskd.webp",
     "issues": "https://github.com/slskd/slskd/issues",
     "releases": "https://github.com/slskd/slskd/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/slskd-download-page.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/slskd-result-page.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +91,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/slskd/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

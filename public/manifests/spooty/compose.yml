@@ -1,0 +1,27 @@
+# ===============================
+# Docker Compose (Spooty)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  spooty:
+    image: raiper34/spooty:latest
+    container_name: spooty
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      SPOTIFY_CLIENT_ID: your_client_id
+      SPOTIFY_CLIENT_SECRET: your_client_secret
+    volumes:
+      - spooty_downloads:/spooty/backend/downloads
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:3000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  spooty_downloads:

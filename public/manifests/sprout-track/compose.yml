@@ -1,0 +1,39 @@
+# ===============================
+# Docker Compose (Sprout Track)
+# ===============================
+# host: http://localhost:3000
+# username:
+# password:
+
+services:
+  sprout-track:
+    image: ghcr.io/sprout-track/sprout-track:latest
+    container_name: sprout-track
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      ENABLE_NOTIFICATIONS: "true"
+      NOTIFICATION_CRON_SECRET: replace_with_secret
+      NOTIFICATION_LOG_RETENTION_DAYS: "30"
+      APP_URL: http://localhost:3000
+      ROOT_DOMAIN: localhost
+      VAPID_PUBLIC_KEY: replace_with_public_key
+      VAPID_PRIVATE_KEY: replace_with_private_key
+      VAPID_SUBJECT: mailto:notifications@example.com
+    volumes:
+      - sprouttrack_db:/db
+      - sprouttrack_env:/app/env
+      - sprouttrack_logs:/app/logs
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  sprouttrack_db:
+  sprouttrack_env:
+  sprouttrack_logs:

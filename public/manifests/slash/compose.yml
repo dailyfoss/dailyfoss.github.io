@@ -1,9 +1,49 @@
+# ===============================
+# Docker Compose (Slash)
+# ===============================
+# host: http://localhost:5231
+# username:
+# password:
+
 services:
   slash:
     image: yourselfhosted/slash:latest
     container_name: slash
-    ports:
-      - 5231:5231
-    volumes:
-      - ./slash:/var/opt/slash
     restart: unless-stopped
+    ports:
+      - "5231:5231"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command:
+      - "--driver"
+      - "postgres"
+      - "--dsn"
+      - "postgresql://postgres:PASSWORD@postgres:5432/slash"
+    volumes:
+      - slash_data:/var/opt/slash
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:5231"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  postgres:
+    image: postgres:16
+    container_name: slash-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: slash
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: PASSWORD
+    volumes:
+      - slash_postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  slash_data:
+  slash_postgres:

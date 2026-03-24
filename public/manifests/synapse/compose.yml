@@ -1,0 +1,21 @@
+# ===============================
+# Docker Compose (Matrix Synapse Config Generator)
+# ===============================
+# host: http://localhost:8008
+# username:
+# password:
+
+services:
+  synapse-generate:
+    image: matrixdotorg/synapse:latest
+    container_name: synapse-generate
+    restart: "no"
+    command: generate
+    environment:
+      SYNAPSE_SERVER_NAME: matrix.example.com
+      SYNAPSE_REPORT_STATS: "yes"
+    volumes:
+      - synapse_data:/data
+
+volumes:
+  synapse_data:

@@ -1,28 +1,59 @@
+# ===============================
+# Docker Compose (Your Spotify)
+# ===============================
+# host: http://localhost:3000
+# username: Spotify login
+# password: Spotify login
+
 services:
+  mongo:
+    image: mongo:7
+    container_name: yourspotify_db
+    restart: unless-stopped
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
   server:
-    image: yooooomi/your_spotify_server
-    restart: always
+    image: yooooomi/your_spotify_server:latest
+    container_name: yourspotify_server
+    restart: unless-stopped
+    depends_on:
+      mongo:
+        condition: service_healthy
     ports:
       - "8080:8080"
-    links:
-      - mongo
-    depends_on:
-      - mongo
     environment:
-      API_ENDPOINT: http://localhost:8080 # This MUST be included as a valid URL in the spotify dashboard (see below)
-      CLIENT_ENDPOINT: http://localhost:3000
-      SPOTIFY_PUBLIC: __your_spotify_client_id__
-      SPOTIFY_SECRET: __your_spotify_secret__
-  mongo:
-    container_name: mongo
-    image: mongo:6
-    volumes:
-      - ./your_spotify_db:/data/db
+      API_ENDPOINT: "http://localhost:8080"
+      CLIENT_ENDPOINT: "http://localhost:3000"
+      SPOTIFY_PUBLIC: "your_spotify_client_id"
+      SPOTIFY_SECRET: "your_spotify_secret"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8080"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
   web:
-    image: yooooomi/your_spotify_client
-    restart: always
+    image: yooooomi/your_spotify_client:latest
+    container_name: yourspotify_web
+    restart: unless-stopped
+    depends_on:
+      server:
+        condition: service_healthy
     ports:
       - "3000:3000"
     environment:
-      API_ENDPOINT: http://localhost:8080
+      API_ENDPOINT: "http://localhost:8080"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  mongo_data:

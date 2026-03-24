@@ -1,0 +1,158 @@
+# ===============================
+# Docker Compose (Richy)
+# ===============================
+# host: https://localhost
+# username:
+# password:
+
+services:
+
+  richy:
+    image: n1cz/richy:latest
+    container_name: richy
+    environment:
+      DB_PASSWORD: "replace-with-strong-password"
+      SENTRY_URL: ""
+      SENTRY_ENABLE: "false"
+      TZ: "UTC"
+      BASE_URL: "http://localhost"
+      DOMAIN: "localhost"
+    volumes:
+      - richy_media:/var/www/app/richy/media
+      - richy_logs:/var/www/app/logs
+      - richy_static:/var/www/app/richy/static
+    depends_on:
+      redis:
+        condition: service_healthy
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+
+  beat:
+    image: n1cz/richy:latest
+    container_name: richy-beat
+    command: /var/www/app/wait_for_it.sh -t 120 -s richy:8000 -- celery -A richy beat -l error -S django
+    environment:
+      DB_PASSWORD: "replace-with-strong-password"
+      TZ: "UTC"
+      BASE_URL: "http://localhost"
+      DOMAIN: "localhost"
+    volumes:
+      - richy_logs:/var/www/app/logs
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+
+  worker:
+    image: n1cz/richy:latest
+    container_name: richy-worker
+    command: celery -A richy worker -c 2 -Q celery -O fair -l error --max-tasks-per-child=3
+    environment:
+      DB_PASSWORD: "replace-with-strong-password"
+      TZ: "UTC"
+      BASE_URL: "http://localhost"
+      DOMAIN: "localhost"
+    volumes:
+      - richy_logs:/var/www/app/logs
+      - richy_media:/var/www/app/richy/media
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+
+  worker_slow:
+    image: n1cz/richy:latest
+    container_name: richy-worker-slow
+    command: celery -A richy worker -c 1 -Q slow -O fair -l error --max-tasks-per-child=3
+    environment:
+      DB_PASSWORD: "replace-with-strong-password"
+      TZ: "UTC"
+      BASE_URL: "http://localhost"
+      DOMAIN: "localhost"
+    volumes:
+      - richy_logs:/var/www/app/logs
+      - richy_media:/var/www/app/richy/media
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+
+  worker_fast:
+    image: n1cz/richy:latest
+    container_name: richy-worker-fast
+    command: celery -A richy worker -c 2 -Q fast -O fair -l error --max-tasks-per-child=3
+    environment:
+      DB_PASSWORD: "replace-with-strong-password"
+      TZ: "UTC"
+      BASE_URL: "http://localhost"
+      DOMAIN: "localhost"
+    volumes:
+      - richy_logs:/var/www/app/logs
+      - richy_media:/var/www/app/richy/media
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+
+  redis:
+    image: redis:7-alpine
+    container_name: richy-redis
+    command: ["redis-server","--appendonly","yes"]
+    volumes:
+      - richy_redis_data:/data
+    healthcheck:
+      test: ["CMD","redis-cli","ping"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+
+  db:
+    image: postgres:16-alpine
+    container_name: richy-db
+    environment:
+      POSTGRES_DB: "richy"
+      POSTGRES_PASSWORD: "replace-with-strong-password"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - richy_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD","pg_isready","-U","postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+
+  nginx:
+    image: nginx:1.27-alpine
+    container_name: richy-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - richy_static:/static
+      - richy_media:/media
+      - richy_tls:/etc/letsencrypt
+      - richy_nginx_conf:/etc/nginx/conf.d
+    depends_on:
+      richy:
+        condition: service_started
+    restart: unless-stopped
+
+
+volumes:
+  richy_media:
+  richy_logs:
+  richy_static:
+  richy_postgres_data:
+  richy_redis_data:
+  richy_tls:
+  richy_nginx_conf:

@@ -1,0 +1,45 @@
+# ===============================
+# Docker Compose (Send)
+# ===============================
+# host: http://localhost:1443
+# username:
+# password:
+
+services:
+  redis:
+    image: redis:7
+    container_name: send_redis
+    restart: unless-stopped
+
+    volumes:
+      - redis_data:/data
+
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  send:
+    image: registry.gitlab.com/timvisee/send:latest
+    container_name: send
+    restart: unless-stopped
+
+    ports:
+      - "1443:1443"
+
+    environment:
+      DETECT_BASE_URL: "true"
+      REDIS_HOST: redis
+      FILE_DIR: /uploads
+
+    volumes:
+      - send_uploads:/uploads
+
+    depends_on:
+      redis:
+        condition: service_healthy
+
+volumes:
+  redis_data:
+  send_uploads:

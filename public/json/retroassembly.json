@@ -29,10 +29,16 @@
     "issues": "https://github.com/arianrhodsandlot/retroassembly/issues",
     "releases": "https://github.com/arianrhodsandlot/retroassembly/releases",
     "screenshots": [
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/retroassembly_library.jpeg",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/retroassembly_menu.jpeg",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/retroassembly_platform.jpeg",
-      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/retroassembly_rom.jpeg"
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/retroassembly-gameboy-advance.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/retroassembly-gameboy-color.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/retroassembly-games.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/retroassembly-genesis.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/retroassembly-library.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/retroassembly-menu.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/retroassembly-nes.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/retroassembly-platform.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/retroassembly-rom.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/retroassembly-super-nes.webp"
     ]
   },
   "features": [
@@ -83,16 +89,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/retroassembly/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://retroassembly.com/demo",
     "username": null,
     "password": null
   }

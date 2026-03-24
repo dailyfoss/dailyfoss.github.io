@@ -9,7 +9,7 @@
   ],
   "metadata": {
     "sponsored": false,
-    "license": "NOASSERTION",
+    "license": "AGPL-3.0",
     "version": "2.5.3",
     "date_app_added": "2025-11-23",
     "date_last_released": "2026-02-14",
@@ -22,13 +22,21 @@
     "github_releases_this_year": 7
   },
   "resources": {
-    "website": "https://docs.tandoor.dev",
-    "documentation": "https://github.com/TandoorRecipes/recipes",
+    "website": "https://tandoor.dev",
+    "documentation": "https://docs.tandoor.dev",
     "source_code": "https://github.com/TandoorRecipes/recipes",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/tandoor-recipes.webp",
     "issues": "https://github.com/TandoorRecipes/recipes/issues",
     "releases": "https://github.com/TandoorRecipes/recipes/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tandoor-recipes-homepage.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tandoor-recipes-book.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tandoor-recipes-demo.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tandoor-recipes-home.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tandoor-recipes-import.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tandoor-recipes-meal-plan.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/tandoor-recipes-shopping.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +96,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/tandoor-recipes/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {
@@ -104,7 +114,7 @@
     }
   },
   "demo": {
-    "url": null,
+    "url": "https://app.tandoor.dev",
     "username": null,
     "password": null
   }

@@ -22,13 +22,16 @@
     "github_releases_this_year": 5
   },
   "resources": {
-    "website": "https://www.storyden.org/",
-    "documentation": "https://github.com/Southclaws/storyden",
+    "website": "https://www.storyden.org",
+    "documentation": "https://www.storyden.org/docs",
     "source_code": "https://github.com/Southclaws/storyden",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/storyden.webp",
     "issues": "https://github.com/Southclaws/storyden/issues",
     "releases": "https://github.com/Southclaws/storyden/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/storyden-demo-ui.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/storyden-demo.webp"
+    ]
   },
   "features": [
     {
@@ -88,16 +91,18 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/storyden/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {
-    "url": null,
+    "url": "https://makeroom.club",
     "username": null,
     "password": null
   }

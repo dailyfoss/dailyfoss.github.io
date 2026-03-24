@@ -1,0 +1,58 @@
+services:
+  spacebar-gateway:
+    image: ghcr.io/spacebarchat/server-gateway:latest
+    env_file: .env
+    networks:
+      - spacebar-network
+    volumes:
+      - ./data:/data
+    ports:
+      - "3001:3001"
+    restart:  unless-stopped
+
+  spacebar-api:
+    image: ghcr.io/spacebarchat/server-api:latest
+    env_file: .env
+    networks:
+      - spacebar-network
+    volumes:
+      - ./data:/data
+    ports:
+      - "3002:3001"
+    restart:  unless-stopped
+
+  spacebar-cdn:
+    image: ghcr.io/spacebarchat/server-cdn:latest
+    env_file: .env
+    networks:
+      - spacebar-network
+    volumes:
+      - ./data:/data
+    ports:
+      - "3003:3001"
+    restart:  unless-stopped
+
+  spacebar-db:
+    image: postgres:18-alpine
+    networks:
+      - spacebar-network
+    volumes:
+      - spacebar-db:/var/lib/postgresql
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    restart: unless-stopped
+
+  rabbitmq:
+    image: rabbitmq:4-management-alpine
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    restart: unless-stopped
+    networks:
+      - spacebar-network
+
+networks:
+  spacebar-network:
+
+volumes:
+  spacebar-db:
+  rabbitmq_data:

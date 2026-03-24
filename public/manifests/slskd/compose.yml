@@ -1,0 +1,33 @@
+# ===============================
+# Docker Compose (slskd)
+# ===============================
+# host: http://localhost:5030
+# username:
+# password:
+
+services:
+  slskd:
+    image: slskd/slskd:latest
+    container_name: slskd
+    restart: unless-stopped
+    user: "1000:1000"
+    ports:
+      - "5030:5030"
+      - "5031:5031"
+      - "50300:50300"
+    environment:
+      SLSKD_REMOTE_CONFIGURATION: "true"
+    volumes:
+      - slskd_config:/app
+      - slskd_music:/music
+      - slskd_ebooks:/ebooks
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:5030"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  slskd_config:
+  slskd_music:
+  slskd_ebooks:

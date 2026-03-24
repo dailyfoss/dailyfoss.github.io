@@ -22,13 +22,16 @@
     "github_releases_this_year": 0
   },
   "resources": {
-    "website": "https://yuukanoo.github.io/seelf/",
-    "documentation": "https://yuukanoo.github.io/seelf/",
+    "website": "https://yuukanoo.github.io/seelf",
+    "documentation": "https://yuukanoo.github.io/seelf/guide/quickstart.html",
     "source_code": "https://github.com/YuukanOO/seelf",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/seelf.webp",
     "issues": "https://github.com/YuukanOO/seelf/issues",
     "releases": "https://github.com/YuukanOO/seelf/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/seelf-homepage.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/seelf-home.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +91,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/seelf/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "community_integrations": {

@@ -1,26 +1,35 @@
+# ===============================
+# Docker Compose (SWAG - Nginx + Let's Encrypt)
+# ===============================
+# host: https://localhost
+# username:
+# password:
+
 services:
   swag:
-    image: lscr.io/linuxserver/swag
+    image: lscr.io/linuxserver/swag:latest
     container_name: swag
+    restart: unless-stopped
     cap_add:
       - NET_ADMIN
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/London
-      - URL=yourdomain.url
-      - SUBDOMAINS=www,
-      - VALIDATION=http
-      - CERTPROVIDER= #optional
-      - DNSPLUGIN=cloudflare #optional
-      - DUCKDNSTOKEN= #optional
-      - EMAIL= #optional
-      - ONLY_SUBDOMAINS=false #optional
-      - EXTRA_DOMAINS= #optional
-      - STAGING=false #optional
-    volumes:
-      - :/config
     ports:
-      - 443:443
-      - 80:80 #optional
-    restart: unless-stopped
+      - "80:80"
+      - "443:443"
+    environment:
+      PUID: "1000"
+      PGID: "1000"
+      TZ: UTC
+      URL: example.com
+      SUBDOMAINS: www
+      VALIDATION: http
+      STAGING: "false"
+    volumes:
+      - swag_config:/config
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  swag_config:

@@ -22,13 +22,16 @@
     "github_releases_this_year": 0
   },
   "resources": {
-    "website": "https://jasonraimondi.github.io/url-to-png/",
+    "website": "https://jasonraimondi.github.io/url-to-png",
     "documentation": "https://github.com/jasonraimondi/url-to-png",
     "source_code": "https://github.com/jasonraimondi/url-to-png",
     "logo": "https://raw.githubusercontent.com/dailyfoss/assets/main/icons/url-to-png.webp",
     "issues": "https://github.com/jasonraimondi/url-to-png/issues",
     "releases": "https://github.com/jasonraimondi/url-to-png/releases",
-    "screenshots": []
+    "screenshots": [
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/url-to-png-dark.webp",
+      "https://raw.githubusercontent.com/dailyfoss/assets/main/screenshots/webp/url-to-png-light.webp"
+    ]
   },
   "features": [
     {
@@ -88,12 +91,14 @@
   "deployment_methods": {
     "script": false,
     "docker": false,
-    "docker_compose": false,
+    "docker_compose": true,
     "helm": false,
     "kubernetes": false,
     "terraform": false
   },
-  "manifests": {},
+  "manifests": {
+    "docker_compose": "/manifests/url-to-png/compose.yml"
+  },
   "notes": [],
   "repository_status": null,
   "demo": {

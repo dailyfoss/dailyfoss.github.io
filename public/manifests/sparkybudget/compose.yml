@@ -1,0 +1,33 @@
+# ===============================
+# Docker Compose (SparkyBudget)
+# ===============================
+# host: http://localhost:5050
+# username: Sparky
+# password: Sparky
+
+services:
+  sparkybudget:
+    image: codewithcj/sparkybudget:latest
+    container_name: sparkybudget
+    restart: unless-stopped
+    ports:
+      - "5050:5000"
+    environment:
+      USE_INTERNAL_HTTPS: "0"
+      USE_SECURE_SESSION_COOKIE: "0"
+      SPARKY_USER: Sparky
+      SPARKY_PASS: Sparky
+      SIMPLEFIN_TOKEN: Your_SimpleFin_Token
+      LOG_LEVEL: INFO
+      TZ: America/New_York
+      FLASK_SECRET_KEY: Your_Secret_Key_preferably_long_and_random
+    volumes:
+      - sparkybudget_data:/private
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost:5000"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  sparkybudget_data:

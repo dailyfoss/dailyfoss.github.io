@@ -1,0 +1,27 @@
+# ===============================
+# Docker Compose (Vito Deploy)
+# ===============================
+# host: http://localhost:8000
+# username: vito@example.com
+# password: password
+
+services:
+  vito:
+    image: vitodeploy/vito:latest
+    container_name: vito
+    ports:
+      - "8000:80"
+    restart: unless-stopped
+    environment:
+      APP_KEY: your-32-character-app-key
+      NAME: vito
+      EMAIL: vito@example.com
+      PASSWORD: password
+      APP_URL: http://localhost:8000
+    volumes:
+      - vito-storage:/var/www/html/storage
+      - vito-plugins:/var/www/html/app/Vito/Plugins
+
+volumes:
+  vito-storage:
+  vito-plugins:

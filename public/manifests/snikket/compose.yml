@@ -1,38 +1,60 @@
+# ===============================
+# Docker Compose (Snikket)
+# ===============================
+# host: https://localhost
+# username:
+# password:
+
 services:
   snikket_proxy:
-    container_name: snikket-proxy
     image: snikket/snikket-web-proxy:stable
-    env_file: snikket.conf
+    container_name: snikket-proxy
+    restart: unless-stopped
     network_mode: host
+    environment:
+      SNIKKET_DOMAIN: example.com
+      SNIKKET_ADMIN_EMAIL: admin@example.com
     volumes:
       - snikket_data:/snikket
       - acme_challenges:/var/www/html/.well-known/acme-challenge
-    restart: "unless-stopped"
+    healthcheck:
+      test: ["CMD","wget","--spider","-q","http://localhost"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
   snikket_certs:
-    container_name: snikket-certs
     image: snikket/snikket-cert-manager:stable
+    container_name: snikket-certs
+    restart: unless-stopped
     network_mode: host
-    env_file: snikket.conf
+    environment:
+      SNIKKET_DOMAIN: example.com
+      SNIKKET_ADMIN_EMAIL: admin@example.com
     volumes:
       - snikket_data:/snikket
       - acme_challenges:/var/www/.well-known/acme-challenge
-    restart: "unless-stopped"
+
   snikket_portal:
-    container_name: snikket-portal
     image: snikket/snikket-web-portal:stable
+    container_name: snikket-portal
+    restart: unless-stopped
     network_mode: host
-    env_file: snikket.conf
-    restart: "unless-stopped"
+    environment:
+      SNIKKET_DOMAIN: example.com
+      SNIKKET_ADMIN_EMAIL: admin@example.com
 
   snikket_server:
-    container_name: snikket
     image: snikket/snikket-server:stable
+    container_name: snikket
+    restart: unless-stopped
     network_mode: host
+    environment:
+      SNIKKET_DOMAIN: example.com
+      SNIKKET_ADMIN_EMAIL: admin@example.com
     volumes:
       - snikket_data:/snikket
-    env_file: snikket.conf
-    restart: "unless-stopped"
 
 volumes:
-  acme_challenges:
   snikket_data:
+  acme_challenges:

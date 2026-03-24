@@ -1,0 +1,27 @@
+# ===============================
+# Docker Compose (Radicale)
+# ===============================
+# host: http://localhost:5232
+# username:
+# password:
+
+services:
+  radicale:
+    image: ghcr.io/kozea/radicale:stable
+    container_name: radicale
+    ports:
+      - "5232:5232"
+    volumes:
+      - radicale_config:/etc/radicale
+      - radicale_data:/var/lib/radicale
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:5232"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+volumes:
+  radicale_config:
+  radicale_data:

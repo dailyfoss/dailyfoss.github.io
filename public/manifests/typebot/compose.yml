@@ -1,0 +1,88 @@
+# ===============================
+# Docker Compose (Typebot)
+# ===============================
+# host: http://localhost:8080
+# username:
+# password:
+
+services:
+  typebot-db:
+    image: postgres:16
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: typebot
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: typebot
+
+    volumes:
+      - typebot_db:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  typebot-redis:
+    image: redis:7
+    restart: unless-stopped
+
+    command: redis-server --save 60 1 --loglevel warning
+
+    volumes:
+      - typebot_redis:/data
+
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 3s
+      retries: 5
+      start_period: 20s
+
+  typebot-builder:
+    image: baptistearno/typebot-builder:latest
+    restart: unless-stopped
+
+    ports:
+      - "8080:3000"
+
+    environment:
+      REDIS_URL: redis://typebot-redis:6379
+      DATABASE_URL: postgresql://postgres:typebot@typebot-db:5432/typebot
+      ENCRYPTION_SECRET: change_this_32_character_secret
+      NODE_OPTIONS: --no-node-snapshot
+      NEXTAUTH_URL: http://localhost:8080
+      NEXT_PUBLIC_VIEWER_URL: http://localhost:8081
+      ADMIN_EMAIL: admin@example.com
+
+    depends_on:
+      typebot-db:
+        condition: service_healthy
+      typebot-redis:
+        condition: service_healthy
+
+  typebot-viewer:
+    image: baptistearno/typebot-viewer:latest
+    restart: unless-stopped
+
+    ports:
+      - "8081:3000"
+
+    environment:
+      REDIS_URL: redis://typebot-redis:6379
+      DATABASE_URL: postgresql://postgres:typebot@typebot-db:5432/typebot
+      ENCRYPTION_SECRET: change_this_32_character_secret
+      NODE_OPTIONS: --no-node-snapshot
+      NEXTAUTH_URL: http://localhost:8080
+      NEXT_PUBLIC_VIEWER_URL: http://localhost:8081
+
+    depends_on:
+      typebot-db:
+        condition: service_healthy
+      typebot-redis:
+        condition: service_healthy
+
+volumes:
+  typebot_db:
+  typebot_redis:
