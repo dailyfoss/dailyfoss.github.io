@@ -58,7 +58,7 @@ export function UnifiedScriptsSection({ items }: { items: Category[] }) {
 
   const sortedScripts = useMemo(() => {
     if (!items) return [];
-    const scripts = items.flatMap((category) => category.scripts || []);
+    const scripts = items.flatMap((category) => category.apps || []);
     const uniqueScriptsMap = new Map<string, Script>();
     scripts.forEach((script) => {
       if (!uniqueScriptsMap.has(script.slug)) {

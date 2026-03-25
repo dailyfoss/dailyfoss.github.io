@@ -61,55 +61,35 @@
       "description": "Run the mail server on your own infrastructure"
     }
   ],
-  "platform_support": {
-    "desktop": {
-      "linux": true,
-      "windows": true,
-      "macos": true
-    },
-    "mobile": {
-      "android": false,
-      "ios": false
-    },
-    "web_app": false,
-    "browser_extension": false,
-    "cli_only": false
-  },
-  "hosting_options": {
-    "self_hosted": false,
-    "managed_cloud": false,
-    "saas": false
-  },
-  "interfaces": {
-    "cli": false,
-    "gui": false,
-    "web_ui": false,
-    "api": false,
-    "tui": false
-  },
-  "deployment_methods": {
-    "script": false,
-    "docker": false,
-    "docker_compose": true,
-    "helm": false,
-    "kubernetes": false,
-    "terraform": false
-  },
+  "hosting": [],
+  "platforms": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "interface": [],
+  "install": [
+    "docker_compose"
+  ],
   "manifests": {
-    "docker_compose": "/manifests/stalwart/compose.yml"
+    "docker_compose": {
+      "files": {
+        "compose.yml": "/manifests/stalwart/compose.yml"
+      }
+    }
   },
   "notes": [],
   "repository_status": null,
-  "demo": {
-    "url": null,
-    "username": null,
-    "password": null
-  },
   "community_integrations": {
     "truenas": {
       "supported": true,
       "app_name": "stalwart",
       "url": "https://apps.truenas.com/catalog/stalwart"
     }
+  },
+  "demo": {
+    "url": null,
+    "username": null,
+    "password": null
   }
 }

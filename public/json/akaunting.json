@@ -59,43 +59,34 @@
       "description": "Controls access through role-based permissions"
     }
   ],
-  "platform_support": {
-    "desktop": {
-      "linux": false,
-      "windows": false,
-      "macos": false
-    },
-    "mobile": {
-      "android": false,
-      "ios": false
-    },
-    "web_app": true,
-    "browser_extension": false,
-    "cli_only": false
-  },
-  "hosting_options": {
-    "self_hosted": true,
-    "managed_cloud": true,
-    "saas": true
-  },
-  "interfaces": {
-    "cli": true,
-    "gui": false,
-    "web_ui": true,
-    "api": true,
-    "tui": false
-  },
-  "deployment_methods": {
-    "script": true,
-    "docker": false,
-    "docker_compose": true,
-    "helm": false,
-    "kubernetes": false,
-    "terraform": false
-  },
+  "hosting": [
+    "self_hosted",
+    "managed_cloud",
+    "saas"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "interface": [
+    "web_ui",
+    "cli",
+    "api"
+  ],
+  "install": [
+    "docker_compose",
+    "script"
+  ],
   "manifests": {
-    "docker_compose": "/manifests/akaunting/compose.yml",
-    "script": "/manifests/akaunting/script.sh"
+    "docker_compose": {
+      "files": {
+        "compose.yml": "/manifests/akaunting/compose.yml"
+      }
+    },
+    "script": {
+      "files": {
+        "script.sh": "/manifests/akaunting/script.sh"
+      }
+    }
   },
   "notes": [],
   "repository_status": null,

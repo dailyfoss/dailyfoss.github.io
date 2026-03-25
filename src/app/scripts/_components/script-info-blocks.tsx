@@ -96,7 +96,7 @@ export function TrendingScripts({ items }: { items: Category[] }) {
 
   const trendingScripts = useMemo(() => {
     if (!items) return [];
-    const scripts = items.flatMap(category => category.scripts || []);
+    const scripts = items.flatMap(category => category.apps || []);
     const uniqueScriptsMap = new Map<string, Script>();
     scripts.forEach((script) => {
       if (!uniqueScriptsMap.has(script.slug)) {
@@ -151,7 +151,7 @@ export function LatestScripts({ items }: { items: Category[] }) {
 
   const latestScripts = useMemo(() => {
     if (!items) return [];
-    const scripts = items.flatMap(category => category.scripts || []);
+    const scripts = items.flatMap(category => category.apps || []);
     const uniqueScriptsMap = new Map<string, Script>();
     scripts.forEach((script) => {
       if (!uniqueScriptsMap.has(script.slug)) {
@@ -195,7 +195,7 @@ export function PopularScripts({ items }: { items: Category[] }) {
 
   const popularScripts = useMemo(() => {
     if (!items) return [];
-    const scripts = items.flatMap(category => category.scripts || []);
+    const scripts = items.flatMap(category => category.apps || []);
     const uniqueScriptsMap = new Map<string, Script>();
     scripts.forEach((script) => {
       if (!uniqueScriptsMap.has(script.slug)) {
@@ -240,7 +240,7 @@ export function PopularScripts({ items }: { items: Category[] }) {
 export function FeaturedScripts({ items }: { items: Category[] }) {
   const featuredScripts = useMemo(() => {
     if (!items) return [];
-    const scripts = items.flatMap(category => category.scripts || []);
+    const scripts = items.flatMap(category => category.apps || []);
     const uniqueScriptsMap = new Map<string, Script>();
     scripts.forEach((script) => {
       if (!uniqueScriptsMap.has(script.slug) && script.sponsored) {

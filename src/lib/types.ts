@@ -1,6 +1,6 @@
 import type { AlertColors } from "@/config/site-config";
 
-export type Script = {
+export type App = {
   name: string;
   slug: string;
   tagline: string;
@@ -37,46 +37,35 @@ export type Script = {
     description: string;
     core_feature?: boolean; // True for core features, false/undefined for additional
   }>;
-  platform_support: {
-    desktop: {
-      linux: boolean;
-      windows: boolean;
-      macos: boolean;
-    };
-    mobile: {
-      android: boolean;
-      ios: boolean;
-    };
-    web_app: boolean;
-    browser_extension: boolean;
-    cli_only: boolean;
-  };
-  hosting_options: {
-    self_hosted: boolean;
-    managed_cloud: boolean;
-    saas: boolean;
-  };
-  interfaces: {
-    cli: boolean;
-    gui: boolean;
-    web_ui: boolean;
-    api: boolean;
-    tui: boolean;
-  };
-  deployment_methods: {
-    script: boolean;
-    docker: boolean;
-    docker_compose: boolean;
-    helm: boolean;
-    kubernetes: boolean;
-    terraform: boolean;
-  };
-  manifests: {
-    script?: string;
-    docker_compose?: string;
-    helm?: string;
-    kubernetes?: string;
-    terraform?: string;
+  hosting: Array<"self_hosted" | "standalone" | "saas" | "managed_cloud">;
+  platforms: Array<"linux" | "macos" | "windows" | "android" | "ios" | "web" | "browser_extension" | "raspberry_pi">;
+  interface: Array<"web_ui" | "gui" | "cli" | "api" | "tui">;
+  install: Array<"docker" | "docker_compose" | "kubernetes" | "helm" | "binary" | "package_manager" | "script">;
+  manifests?: {
+    script?: {
+      files: Record<string, string>;
+    } | string;
+    docker?: {
+      files: Record<string, string>;
+    } | string;
+    docker_compose?: {
+      files: Record<string, string>;
+    } | string;
+    helm?: {
+      files: Record<string, string>;
+    } | string;
+    kubernetes?: {
+      files: Record<string, string>;
+    } | string;
+    terraform?: {
+      files: Record<string, string>;
+    } | string;
+    package_manager?: {
+      files: Record<string, string>;
+    } | string;
+    binary?: {
+      files: Record<string, string>;
+    } | string;
   };
   default_credentials?: {
     username: string | null;
@@ -111,7 +100,6 @@ export type Script = {
   
   // Legacy fields for backward compatibility (optional)
   install_methods?: any[];
-  manifest_path?: any;
   config_path?: string;
   website?: string;
   documentation?: string;
@@ -133,8 +121,11 @@ export type Category = {
   description: string;
   icon: string;
   group?: string;
-  scripts: Script[];
+  apps: App[];
 };
+
+// Backward compatibility alias
+export type Script = App;
 
 export type Metadata = {
   categories: Category[];

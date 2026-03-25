@@ -21,7 +21,7 @@ import { DialogTitle } from "./ui/dialog";
 import { Button } from "./ui/button";
 
 function getRandomScript(categories: Category[], previouslySelected: Set<string> = new Set()): Script | null {
-  const allScripts = categories.flatMap(cat => cat.scripts || []);
+  const allScripts = categories.flatMap(cat => cat.apps || []);
   if (allScripts.length === 0)
     return null;
 
@@ -93,7 +93,7 @@ function CommandMenu() {
   const getUniqueScriptsMap = React.useCallback(() => {
     const scriptMap = new Map<string, { script: Script; categoryName: string }>();
     for (const category of links) {
-      for (const script of category.scripts) {
+      for (const script of category.apps) {
         if (!scriptMap.has(script.slug)) {
           scriptMap.set(script.slug, { script, categoryName: category.name });
         }

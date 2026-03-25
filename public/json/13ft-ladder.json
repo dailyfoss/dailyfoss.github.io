@@ -62,43 +62,30 @@
       "description": "Can be run on a user-controlled server without reliance on third-party services"
     }
   ],
-  "platform_support": {
-    "desktop": {
-      "linux": false,
-      "windows": false,
-      "macos": false
-    },
-    "mobile": {
-      "android": false,
-      "ios": false
-    },
-    "web_app": true,
-    "browser_extension": false,
-    "cli_only": false
-  },
-  "hosting_options": {
-    "self_hosted": true,
-    "managed_cloud": false,
-    "saas": false
-  },
-  "interfaces": {
-    "cli": false,
-    "gui": false,
-    "web_ui": true,
-    "api": false,
-    "tui": false
-  },
-  "deployment_methods": {
-    "script": true,
-    "docker": false,
-    "docker_compose": true,
-    "helm": false,
-    "kubernetes": false,
-    "terraform": false
-  },
+  "hosting": [
+    "self_hosted"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "interface": [
+    "web_ui"
+  ],
+  "install": [
+    "docker_compose",
+    "script"
+  ],
   "manifests": {
-    "docker_compose": "/manifests/13ft-ladder/compose.yml",
-    "script": "/manifests/13ft-ladder/script.sh"
+    "docker_compose": {
+      "files": {
+        "compose.yml": "/manifests/13ft-ladder/compose.yml"
+      }
+    },
+    "script": {
+      "files": {
+        "script.sh": "/manifests/13ft-ladder/script.sh"
+      }
+    }
   },
   "notes": [],
   "repository_status": null,

@@ -3,6 +3,7 @@
 import { useEffect } from 'react'
 import type { Script } from '@/lib/types'
 import { siteConfig } from '@/config/site-config'
+import { isSelfHosted, getPlatforms } from '@/lib/platform-utils'
 
 interface DynamicMetaTagsProps {
   script: Script | undefined
@@ -14,6 +15,9 @@ export function DynamicMetaTags({ script }: DynamicMetaTagsProps) {
 
     const appUrl = `${siteConfig.url}/${script.slug}`
     
+    // Get platform info using utility functions (supports both new and legacy structure)
+    const platforms = getPlatforms(script);
+    
     // Use live OG service with all parameters from JSON
     const params = new URLSearchParams({
       fileType: 'webp',
@@ -23,13 +27,13 @@ export function DynamicMetaTags({ script }: DynamicMetaTagsProps) {
       Description: script.tagline,
       ScreenshotUrl: script.resources?.screenshots?.[0] || '',
       License: script.metadata?.license || '',
-      SelfHosted: script.hosting_options?.self_hosted ? 'true' : 'false',
-      Windows: script.platform_support?.desktop?.windows ? 'true' : 'false',
-      MacOS: script.platform_support?.desktop?.macos ? 'true' : 'false',
-      Linux: script.platform_support?.desktop?.linux ? 'true' : 'false',
-      Web: script.platform_support?.web_app ? 'true' : 'false',
-      Android: script.platform_support?.mobile?.android ? 'true' : 'false',
-      iOS: script.platform_support?.mobile?.ios ? 'true' : 'false',
+      SelfHosted: isSelfHosted(script) ? 'true' : 'false',
+      Windows: platforms.includes('windows') ? 'true' : 'false',
+      MacOS: platforms.includes('macos') ? 'true' : 'false',
+      Linux: platforms.includes('linux') ? 'true' : 'false',
+      Web: platforms.includes('web') ? 'true' : 'false',
+      Android: platforms.includes('android') ? 'true' : 'false',
+      iOS: platforms.includes('ios') ? 'true' : 'false',
     })
     const ogImageUrl = `${siteConfig.ogServiceUrl}/api/image?${params.toString()}`
 

@@ -81,42 +81,26 @@
       "core_feature": false
     }
   ],
-  "platform_support": {
-    "desktop": {
-      "linux": true,
-      "windows": true,
-      "macos": true
-    },
-    "mobile": {
-      "android": true,
-      "ios": true
-    },
-    "web_app": false,
-    "browser_extension": false,
-    "cli_only": false
-  },
-  "hosting_options": {
-    "self_hosted": false,
-    "managed_cloud": false,
-    "saas": false
-  },
-  "interfaces": {
-    "cli": false,
-    "gui": true,
-    "web_ui": false,
-    "api": false,
-    "tui": false
-  },
-  "deployment_methods": {
-    "script": true,
-    "docker": false,
-    "docker_compose": false,
-    "helm": false,
-    "kubernetes": false,
-    "terraform": false
-  },
+  "hosting": [],
+  "platforms": [
+    "linux",
+    "macos",
+    "windows",
+    "android",
+    "ios"
+  ],
+  "interface": [
+    "gui"
+  ],
+  "install": [
+    "script"
+  ],
   "manifests": {
-    "script": "/manifests/proxypin/script.sh"
+    "script": {
+      "files": {
+        "script.sh": "/manifests/proxypin/script.sh"
+      }
+    }
   },
   "repository_status": null,
   "demo": {

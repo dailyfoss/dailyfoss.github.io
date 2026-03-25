@@ -48,7 +48,7 @@ function CategoryView() {
 
   const handleCategoryClick = (index: number) => {
     setSelectedCategoryIndex(index);
-    setCurrentScripts(categories[index]?.scripts || []); // Update scripts for the selected category
+    setCurrentScripts(categories[index]?.apps || []); // Update scripts for the selected category
   };
 
   const handleBackClick = () => {
@@ -67,7 +67,7 @@ function CategoryView() {
           ? (selectedCategoryIndex - 1 + categories.length) % categories.length
           : (selectedCategoryIndex + 1) % categories.length;
       setSelectedCategoryIndex(newIndex);
-      setCurrentScripts(categories[newIndex]?.scripts || []); // Update scripts for the new category
+      setCurrentScripts(categories[newIndex]?.apps || []); // Update scripts for the new category
     }
   };
 
@@ -75,10 +75,10 @@ function CategoryView() {
     setLogoIndices((prev) => {
       const currentIndex = prev[categoryName] || 0;
       const category = categories.find(cat => cat.name === categoryName);
-      if (!category || !category.scripts)
+      if (!category || !category.apps)
         return prev;
 
-      const totalLogos = category.scripts.length;
+      const totalLogos = category.apps.length;
       const newIndex
         = direction === "prev"
           ? (currentIndex - MAX_LOGOS + totalLogos) % totalLogos
@@ -227,7 +227,7 @@ function CategoryView() {
             <div className="flex justify-between items-center mb-8">
               <h1 className="text-3xl font-semibold mb-4">Categories</h1>
               <p className="text-sm text-gray-500">
-                {categories.reduce((total, category) => total + (category.scripts?.length || 0), 0)}
+                {categories.reduce((total, category) => total + (category.apps?.length || 0), 0)}
                 {" "}
                 Total scripts
               </p>
@@ -254,8 +254,8 @@ function CategoryView() {
                       >
                         <ChevronLeft className="h-4 w-4" />
                       </Button>
-                      {category.scripts
-                        && category.scripts
+                      {category.apps
+                        && category.apps
                           .slice(logoIndices[category.name] || 0, (logoIndices[category.name] || 0) + MAX_LOGOS)
                           .map((script, i) => (
                             <div key={i} className="flex flex-col items-center">

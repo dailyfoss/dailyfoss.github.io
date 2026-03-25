@@ -173,7 +173,7 @@ export function SponsoredSidebar({ items, className }: SponsoredSidebarProps) {
       
       if (data.success && data.slugs && Array.isArray(data.slugs)) {
         // Convert slugs to full script objects by looking them up in categories
-        const allScripts = items.flatMap((category: Category) => category.scripts || []);
+        const allScripts = items.flatMap((category: Category) => category.apps || []);
         const resolvedScripts = data.slugs
           .map((slug: string) => allScripts.find((script: Script) => script.slug === slug))
           .filter((script): script is Script => script !== undefined);

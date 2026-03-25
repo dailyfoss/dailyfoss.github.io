@@ -45,7 +45,7 @@ export async function GET() {
 
     const categories = metadata.categories
       .map((category) => {
-        category.scripts = scripts.filter(script =>
+        category.apps = scripts.filter(script =>
           script.categories?.includes(category.id),
         );
         return category;

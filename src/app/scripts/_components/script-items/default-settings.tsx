@@ -1,6 +1,7 @@
 import { Boxes, Cloud, Monitor, MousePointerClick, Smartphone, Terminal } from "lucide-react";
 
 import type { Script } from "@/lib/types";
+import { getHosting, getPlatforms, getInterface, getInstall } from "@/lib/platform-utils";
 
 type PlatformRowProps = {
   label: string;
@@ -33,47 +34,63 @@ function PlatformRow({ label, items, icon }: PlatformRowProps) {
 }
 
 export default function DefaultSettings({ item }: { item: Script }) {
-  const platform = item.platform_support;
-  const hosting = item.hosting_options;
-  const deployment = item.deployment_methods;
-  const ui = item.interfaces;
+  // Use utility functions to support both new and legacy structure
+  const hosting = getHosting(item);
+  const platforms = getPlatforms(item);
+  const interfaces = getInterface(item);
+  const install = getInstall(item);
 
-  if (!platform && !hosting && !deployment && !ui)
+  if (!hosting.length && !platforms.length && !interfaces.length && !install.length)
     return null;
 
-  const desktop = [
-    platform?.desktop?.macos && "macOS",
-    platform?.desktop?.linux && "Linux",
-    platform?.desktop?.windows && "Windows",
-  ].filter(Boolean) as string[];
+  // Extract desktop platforms
+  const desktop = platforms.filter(p => ['linux', 'macos', 'windows'].includes(p));
+  const desktopLabels: Record<string, string> = {
+    linux: 'Linux',
+    macos: 'macOS',
+    windows: 'Windows'
+  };
+  const desktopItems = desktop.map(d => desktopLabels[d] || d);
 
-  const mobile = [
-    platform?.mobile?.android && "Android",
-    platform?.mobile?.ios && "iOS",
-  ].filter(Boolean) as string[];
+  // Extract mobile platforms
+  const mobile = platforms.filter(p => ['android', 'ios'].includes(p));
+  const mobileLabels: Record<string, string> = {
+    android: 'Android',
+    ios: 'iOS'
+  };
+  const mobileItems = mobile.map(m => mobileLabels[m] || m);
 
-  const hostingItems = [
-    hosting?.self_hosted && "Self-hosted",
-    hosting?.saas && "SaaS",
-    hosting?.managed_cloud && "Managed cloud",
-  ].filter(Boolean) as string[];
+  // Map hosting to labels
+  const hostingLabels: Record<string, string> = {
+    self_hosted: "Self-hosted",
+    saas: "SaaS",
+    managed_cloud: "Managed cloud",
+    standalone: "Standalone",
+  };
+  const hostingItems = hosting.map(h => hostingLabels[h] || h);
 
-  const deploymentItems = [
-    deployment?.script && "Script",
-    deployment?.docker && "Docker",
-    deployment?.docker_compose && "Docker Compose",
-    deployment?.helm && "Helm",
-    deployment?.kubernetes && "Kubernetes",
-    deployment?.terraform && "Terraform",
-  ].filter(Boolean) as string[];
+  // Map install to labels
+  const installLabels: Record<string, string> = {
+    script: "Script",
+    docker: "Docker",
+    docker_compose: "Docker Compose",
+    helm: "Helm",
+    kubernetes: "Kubernetes",
+    terraform: "Terraform",
+    binary: "Binary",
+    package_manager: "Package Manager",
+  };
+  const deploymentItems = install.map(i => installLabels[i] || i);
 
-  const uiItems = [
-    ui?.cli && "CLI",
-    ui?.tui && "TUI",
-    ui?.gui && "GUI",
-    ui?.web_ui && "Web UI",
-    ui?.api && "API",
-  ].filter(Boolean) as string[];
+  // Map interface to labels
+  const interfaceLabels: Record<string, string> = {
+    cli: "CLI",
+    tui: "TUI",
+    gui: "GUI",
+    web_ui: "Web UI",
+    api: "API"
+  };
+  const uiItems = interfaces.map(i => interfaceLabels[i] || i);
 
   const interfaceIcon = <MousePointerClick className="h-3 w-3 shrink-0" />;
 
@@ -85,13 +102,13 @@ export default function DefaultSettings({ item }: { item: Script }) {
 
       <PlatformRow
         label="Desktop"
-        items={desktop}
+        items={desktopItems}
         icon={<Monitor className="h-3 w-3 shrink-0" />}
       />
 
       <PlatformRow
         label="Mobile"
-        items={mobile}
+        items={mobileItems}
         icon={<Smartphone className="h-3 w-3 shrink-0" />}
       />
 

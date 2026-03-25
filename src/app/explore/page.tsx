@@ -59,7 +59,7 @@ function ExplorePageContent() {
   useEffect(() => {
     fetchCategories()
       .then((cats) => {
-        const filtered = cats.filter((category) => category.scripts?.length > 0);
+        const filtered = cats.filter((category) => category.apps?.length > 0);
         setCategories(filtered);
       })
       .catch((error) => console.error(error));
@@ -91,7 +91,7 @@ function ExplorePageContent() {
 
   const sortedScripts = useMemo(() => {
     if (!categories.length) return [];
-    const scripts = categories.flatMap((category) => category.scripts || []);
+    const scripts = categories.flatMap((category) => category.apps || []);
     const uniqueScriptsMap = new Map<string, Script>();
     scripts.forEach((script) => {
       if (!uniqueScriptsMap.has(script.slug)) {

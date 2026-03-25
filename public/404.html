@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+  <script>
+    // GitHub Pages 404 redirect handler for /go/{social}/{slug} URLs
+    const socialMediaMap = {
+      "facebook": ["f", "fb"],
+      "instagram": ["i", "ig"],
+      "x": ["x", "tw", "twitter"],
+      "threads": ["t", "th"],
+      "linkedin": ["l", "li"],
+      "youtube": ["y", "yt"],
+      "tiktok": ["tt", "tk"],
+      "reddit": ["r", "rd"],
+      "pinterest": ["p", "pin"],
+      "snapchat": ["s", "sc"]
+    };
+
+    const path = window.location.pathname;
+    
+    // Check if it's a /go/{social}/{slug} URL
+    const goMatch = path.match(/^\/go\/([^\/]+)\/([^\/]+)\/?$/);
+    
+    if (goMatch) {
+      const socialShort = goMatch[1];
+      const slug = goMatch[2];
+      
+      // Find the full social media name
+      let socialName = null;
+      for (const [platform, aliases] of Object.entries(socialMediaMap)) {
+        if (aliases.includes(socialShort.toLowerCase())) {
+          socialName = platform;
+          break;
+        }
+      }
+      
+      if (socialName && slug) {
+        // Redirect to homepage with tracking
+        const baseUrl = window.location.origin;
+        window.location.replace(`${baseUrl}/?id=${slug}&utm_source=${socialName}`);
+      } else {
+        // Invalid social code, redirect to homepage
+        window.location.replace(window.location.origin);
+      }
+    } else {
+      // Not a /go/ URL, redirect to homepage
+      window.location.replace(window.location.origin);
+    }
+  </script>
+</head>
+<body>
+  <div style="
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #f9fafb, #ffffff);
+  ">
+    <div style="text-align: center;">
+      <div style="
+        border: 3px solid #f3f4f6;
+        border-top: 3px solid #3b82f6;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 16px;
+      "></div>
+      <p style="color: #6b7280; font-size: 14px;">Redirecting...</p>
+    </div>
+  </div>
+  <style>
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</body>
+</html>

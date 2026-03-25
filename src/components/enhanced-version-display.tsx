@@ -17,6 +17,7 @@ import type { Script } from "@/lib/types";
 import { useRepositoryStatus } from "@/hooks/use-repository-status";
 import { formatVersion, formatRelativeTime, formatDate } from "@/lib/repository-status";
 import { extractDate } from "@/lib/time";
+import { getInstallMethodLabels } from "@/lib/platform-utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -43,20 +44,9 @@ function formatStarCount(stars?: string | number): string | null {
   return num.toString();
 }
 
-// Get deployment method badges
+// Get deployment method badges (supports both new and legacy structure)
 function getDeploymentMethods(script: Script): string[] {
-  const methods: string[] = [];
-  
-  if (script.deployment_methods) {
-    if (script.deployment_methods.docker) methods.push("Docker");
-    if (script.deployment_methods.docker_compose) methods.push("Docker Compose");
-    if (script.deployment_methods.kubernetes) methods.push("Kubernetes");
-    if (script.deployment_methods.helm) methods.push("Helm");
-    if (script.deployment_methods.script) methods.push("Script");
-    if (script.deployment_methods.terraform) methods.push("Terraform");
-  }
-  
-  return methods;
+  return getInstallMethodLabels(script);
 }
 
 // Get compact status message for badge
