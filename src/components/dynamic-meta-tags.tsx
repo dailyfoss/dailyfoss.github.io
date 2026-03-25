@@ -18,6 +18,10 @@ export function DynamicMetaTags({ script }: DynamicMetaTagsProps) {
     // Get platform info using utility functions (supports both new and legacy structure)
     const platforms = getPlatforms(script);
     
+    // Convert screenshot URL from webp to png format for OG image
+    const screenshotUrl = script.resources?.screenshots?.[0] || '';
+    const pngScreenshotUrl = screenshotUrl.replace('/screenshots/webp/', '/screenshots/png/').replace('.webp', '.png');
+    
     // Use live OG service with all parameters from JSON
     const params = new URLSearchParams({
       fileType: 'webp',
@@ -25,7 +29,7 @@ export function DynamicMetaTags({ script }: DynamicMetaTagsProps) {
       Theme: 'dark',
       Title: script.name,
       Description: script.tagline,
-      ScreenshotUrl: script.resources?.screenshots?.[0] || '',
+      ScreenshotUrl: pngScreenshotUrl,
       License: script.metadata?.license || '',
       SelfHosted: isSelfHosted(script) ? 'true' : 'false',
       Windows: platforms.includes('windows') ? 'true' : 'false',
