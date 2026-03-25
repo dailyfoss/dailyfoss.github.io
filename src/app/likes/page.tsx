@@ -58,7 +58,7 @@ export default function LikesPage() {
       
       // Load all categories to get script details
       const categories = await fetchCategories()
-      const allScripts = categories.flatMap((cat: Category) => cat.scripts || [])
+      const allScripts = categories.flatMap((cat: Category) => cat.apps || [])
       const scriptsMap: Record<string, Script> = {}
       allScripts.forEach((script: Script) => {
         scriptsMap[script.slug] = script

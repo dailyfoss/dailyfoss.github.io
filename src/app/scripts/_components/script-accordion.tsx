@@ -81,14 +81,14 @@ export default function ScriptAccordion({
       // If we have a selected category, try to find the script in that specific category
       if (selectedCategory) {
         category = items.find(
-          cat => cat.name === selectedCategory && cat.scripts.some(script => script.slug === selectedScript),
+          cat => cat.name === selectedCategory && cat.apps.some(script => script.slug === selectedScript),
         );
       }
 
       // Fallback: if no category is selected or script not found in selected category,
       // use the first category containing the script (backward compatibility)
       if (!category) {
-        category = items.find(category => category.scripts.some(script => script.slug === selectedScript));
+        category = items.find(category => category.apps.some(script => script.slug === selectedScript));
       }
 
       // Update to the category containing the selected script
@@ -153,13 +153,13 @@ export default function ScriptAccordion({
                     </span>
                   </div>
                   <span className="rounded-full bg-gradient-to-r from-blue-500/30 to-blue-600/40 px-2.5 py-1 text-sm font-bold text-blue-800 hover:no-underline dark:from-blue-400/30 dark:to-blue-500/40 dark:text-blue-200 border border-blue-400/40 dark:border-blue-400/50">
-                    {category.scripts.length}
+                    {category.apps.length}
                   </span>
                 </div>
                 {" "}
               </AccordionTrigger>
               <AccordionContent data-state={expandedItem === category.name ? "open" : "closed"} className="pt-0">
-                {category.scripts
+                {category.apps
                   .slice()
                   .sort((a, b) => a.name.localeCompare(b.name))
                   .map((script, index) => (

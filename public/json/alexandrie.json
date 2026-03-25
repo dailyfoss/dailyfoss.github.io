@@ -55,42 +55,23 @@
       "description": "Provides browser-based access to the library"
     }
   ],
-  "platform_support": {
-    "desktop": {
-      "linux": false,
-      "windows": false,
-      "macos": false
-    },
-    "mobile": {
-      "android": false,
-      "ios": false
-    },
-    "web_app": false,
-    "browser_extension": false,
-    "cli_only": false
-  },
-  "hosting_options": {
-    "self_hosted": true,
-    "managed_cloud": false,
-    "saas": false
-  },
-  "interfaces": {
-    "cli": false,
-    "gui": false,
-    "web_ui": true,
-    "api": true,
-    "tui": false
-  },
-  "deployment_methods": {
-    "script": false,
-    "docker": false,
-    "docker_compose": true,
-    "helm": false,
-    "kubernetes": false,
-    "terraform": false
-  },
+  "hosting": [
+    "self_hosted"
+  ],
+  "platforms": [],
+  "interface": [
+    "web_ui",
+    "api"
+  ],
+  "install": [
+    "docker_compose"
+  ],
   "manifests": {
-    "docker_compose": "/manifests/alexandrie/compose.yml"
+    "docker_compose": {
+      "files": {
+        "compose.yml": "/manifests/alexandrie/compose.yml"
+      }
+    }
   },
   "notes": [],
   "repository_status": null,

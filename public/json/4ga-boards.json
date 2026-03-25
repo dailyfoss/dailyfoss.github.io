@@ -65,43 +65,33 @@
       "description": "Designed to run with minimal dependencies and simple server-side setup"
     }
   ],
-  "platform_support": {
-    "desktop": {
-      "linux": false,
-      "windows": false,
-      "macos": false
-    },
-    "mobile": {
-      "android": false,
-      "ios": false
-    },
-    "web_app": true,
-    "browser_extension": false,
-    "cli_only": false
-  },
-  "hosting_options": {
-    "self_hosted": true,
-    "managed_cloud": false,
-    "saas": true
-  },
-  "interfaces": {
-    "cli": false,
-    "gui": true,
-    "web_ui": true,
-    "api": true,
-    "tui": false
-  },
-  "deployment_methods": {
-    "script": true,
-    "docker": false,
-    "docker_compose": true,
-    "helm": false,
-    "kubernetes": false,
-    "terraform": false
-  },
+  "hosting": [
+    "self_hosted",
+    "saas"
+  ],
+  "platforms": [
+    "web"
+  ],
+  "interface": [
+    "web_ui",
+    "gui",
+    "api"
+  ],
+  "install": [
+    "docker_compose",
+    "script"
+  ],
   "manifests": {
-    "docker_compose": "/manifests/4ga-boards/compose.yml",
-    "script": "/manifests/4ga-boards/script.sh"
+    "docker_compose": {
+      "files": {
+        "compose.yml": "/manifests/4ga-boards/compose.yml"
+      }
+    },
+    "script": {
+      "files": {
+        "script.sh": "/manifests/4ga-boards/script.sh"
+      }
+    }
   },
   "notes": [],
   "repository_status": null,

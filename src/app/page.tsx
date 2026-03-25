@@ -156,26 +156,29 @@ function ScriptContent() {
   useEffect(() => {
     if (selectedScript && links.length > 0) {
       const script = links
-        .flatMap(category => category.scripts)
+        .flatMap(category => category.apps)
         .find(script => script.slug === selectedScript);
       if (script) {
         setItem(script);
       }
 
       if (script && typeof window !== "undefined" && (window as any).plausible) {
-        const customUrl = `${window.location.origin}/${selectedScript}`;
+        const utmSource = searchParams.get("utm_source");
+        const customUrl = utmSource 
+          ? `${window.location.origin}/${selectedScript}?utm_source=${utmSource}`
+          : `${window.location.origin}/${selectedScript}`;
         (window as any).plausible("pageview", {
           u: customUrl,
           props: { script_name: script.name, script_slug: selectedScript },
         });
       }
     }
-  }, [selectedScript, links]);
+  }, [selectedScript, links, searchParams]);
 
   useEffect(() => {
     fetchCategories()
       .then((categories) => {
-        const filtered = categories.filter(category => category.scripts?.length > 0);
+        const filtered = categories.filter(category => category.apps?.length > 0);
         setLinks(filtered);
       })
       .catch(error => console.error(error));
@@ -184,7 +187,7 @@ function ScriptContent() {
   // Get all unique scripts
   const allScripts = useMemo(() => {
     const scriptsMap = new Map<string, Script>();
-    links.forEach(cat => cat.scripts.forEach(s => scriptsMap.set(s.slug, s)));
+    links.forEach(cat => cat.apps.forEach(s => scriptsMap.set(s.slug, s)));
     return Array.from(scriptsMap.values());
   }, [links]);
 
@@ -210,35 +213,37 @@ function ScriptContent() {
     const activity: Map<string, number> = new Map();
 
     allScripts.forEach(script => {
-      // Platforms
-      const platform = script.platform_support;
-      if (platform?.desktop?.linux) platforms.set("Linux", (platforms.get("Linux") || 0) + 1);
-      if (platform?.desktop?.windows) platforms.set("Windows", (platforms.get("Windows") || 0) + 1);
-      if (platform?.desktop?.macos) platforms.set("macOS", (platforms.get("macOS") || 0) + 1);
-      if (platform?.mobile?.android) platforms.set("Android", (platforms.get("Android") || 0) + 1);
-      if (platform?.mobile?.ios) platforms.set("iOS", (platforms.get("iOS") || 0) + 1);
-      if (platform?.web_app) platforms.set("Web App", (platforms.get("Web App") || 0) + 1);
-      if (platform?.browser_extension) platforms.set("Browser Extension", (platforms.get("Browser Extension") || 0) + 1);
+      // Platforms - use new simplified structure
+      const platformsList = script.platforms || [];
+      if (platformsList.includes('linux')) platforms.set("Linux", (platforms.get("Linux") || 0) + 1);
+      if (platformsList.includes('windows')) platforms.set("Windows", (platforms.get("Windows") || 0) + 1);
+      if (platformsList.includes('macos')) platforms.set("macOS", (platforms.get("macOS") || 0) + 1);
+      if (platformsList.includes('android')) platforms.set("Android", (platforms.get("Android") || 0) + 1);
+      if (platformsList.includes('ios')) platforms.set("iOS", (platforms.get("iOS") || 0) + 1);
+      if (platformsList.includes('web')) platforms.set("Web App", (platforms.get("Web App") || 0) + 1);
+      if (platformsList.includes('browser_extension')) platforms.set("Browser Extension", (platforms.get("Browser Extension") || 0) + 1);
       
-      // Deployments
-      if (script.deployment_methods?.docker) deployments.set("Docker", (deployments.get("Docker") || 0) + 1);
-      if (script.deployment_methods?.docker_compose) deployments.set("Docker Compose", (deployments.get("Docker Compose") || 0) + 1);
-      if (script.deployment_methods?.kubernetes) deployments.set("Kubernetes", (deployments.get("Kubernetes") || 0) + 1);
-      if (script.deployment_methods?.helm) deployments.set("Helm", (deployments.get("Helm") || 0) + 1);
-      if (script.deployment_methods?.terraform) deployments.set("Terraform", (deployments.get("Terraform") || 0) + 1);
-      if (script.deployment_methods?.script) deployments.set("Script", (deployments.get("Script") || 0) + 1);
+      // Deployments - use new install array
+      const installList = script.install || [];
+      if (installList.includes('docker')) deployments.set("Docker", (deployments.get("Docker") || 0) + 1);
+      if (installList.includes('docker_compose')) deployments.set("Docker Compose", (deployments.get("Docker Compose") || 0) + 1);
+      if (installList.includes('kubernetes')) deployments.set("Kubernetes", (deployments.get("Kubernetes") || 0) + 1);
+      if (installList.includes('helm')) deployments.set("Helm", (deployments.get("Helm") || 0) + 1);
+      if (installList.includes('script')) deployments.set("Script", (deployments.get("Script") || 0) + 1);
       
-      // Hosting
-      if (script.hosting_options?.self_hosted) hosting.set("Self-hosted", (hosting.get("Self-hosted") || 0) + 1);
-      if (script.hosting_options?.managed_cloud) hosting.set("Managed Cloud", (hosting.get("Managed Cloud") || 0) + 1);
-      if (script.hosting_options?.saas) hosting.set("SaaS", (hosting.get("SaaS") || 0) + 1);
+      // Hosting - use new hosting array
+      const hostingList = script.hosting || [];
+      if (hostingList.includes('self_hosted')) hosting.set("Self-hosted", (hosting.get("Self-hosted") || 0) + 1);
+      if (hostingList.includes('managed_cloud')) hosting.set("Managed Cloud", (hosting.get("Managed Cloud") || 0) + 1);
+      if (hostingList.includes('saas')) hosting.set("SaaS", (hosting.get("SaaS") || 0) + 1);
       
-      // UI/Interface
-      if (script.interfaces?.cli) ui.set("CLI", (ui.get("CLI") || 0) + 1);
-      if (script.interfaces?.gui) ui.set("GUI", (ui.get("GUI") || 0) + 1);
-      if (script.interfaces?.web_ui) ui.set("Web UI", (ui.get("Web UI") || 0) + 1);
-      if (script.interfaces?.api) ui.set("API", (ui.get("API") || 0) + 1);
-      if (script.interfaces?.tui) ui.set("TUI", (ui.get("TUI") || 0) + 1);
+      // UI/Interface - use new interface array
+      const interfaceList = script.interface || [];
+      if (interfaceList.includes('cli')) ui.set("CLI", (ui.get("CLI") || 0) + 1);
+      if (interfaceList.includes('gui')) ui.set("GUI", (ui.get("GUI") || 0) + 1);
+      if (interfaceList.includes('web_ui')) ui.set("Web UI", (ui.get("Web UI") || 0) + 1);
+      if (interfaceList.includes('api')) ui.set("API", (ui.get("API") || 0) + 1);
+      if (interfaceList.includes('tui')) ui.set("TUI", (ui.get("TUI") || 0) + 1);
       
       // Community
       if (script.community_integrations?.proxmox_ve?.supported) community.set("Proxmox VE", (community.get("Proxmox VE") || 0) + 1);
@@ -293,47 +298,49 @@ function ScriptContent() {
 
       // Platform filter
       if (selectedPlatforms.size > 0) {
-        const platform = script.platform_support;
+        const platformsList = script.platforms || [];
         const hasPlatform = 
-          (selectedPlatforms.has("Linux") && platform?.desktop?.linux) ||
-          (selectedPlatforms.has("Windows") && platform?.desktop?.windows) ||
-          (selectedPlatforms.has("macOS") && platform?.desktop?.macos) ||
-          (selectedPlatforms.has("Android") && platform?.mobile?.android) ||
-          (selectedPlatforms.has("iOS") && platform?.mobile?.ios) ||
-          (selectedPlatforms.has("Web App") && platform?.web_app) ||
-          (selectedPlatforms.has("Browser Extension") && platform?.browser_extension);
+          (selectedPlatforms.has("Linux") && platformsList.includes('linux')) ||
+          (selectedPlatforms.has("Windows") && platformsList.includes('windows')) ||
+          (selectedPlatforms.has("macOS") && platformsList.includes('macos')) ||
+          (selectedPlatforms.has("Android") && platformsList.includes('android')) ||
+          (selectedPlatforms.has("iOS") && platformsList.includes('ios')) ||
+          (selectedPlatforms.has("Web App") && platformsList.includes('web')) ||
+          (selectedPlatforms.has("Browser Extension") && platformsList.includes('browser_extension'));
         if (!hasPlatform) return false;
       }
 
       // Deployment filter
       if (selectedDeployments.size > 0) {
+        const installList = script.install || [];
         const hasDeployment = 
-          (selectedDeployments.has("Docker") && script.deployment_methods?.docker) ||
-          (selectedDeployments.has("Docker Compose") && script.deployment_methods?.docker_compose) ||
-          (selectedDeployments.has("Kubernetes") && script.deployment_methods?.kubernetes) ||
-          (selectedDeployments.has("Helm") && script.deployment_methods?.helm) ||
-          (selectedDeployments.has("Terraform") && script.deployment_methods?.terraform) ||
-          (selectedDeployments.has("Script") && script.deployment_methods?.script);
+          (selectedDeployments.has("Docker") && installList.includes('docker')) ||
+          (selectedDeployments.has("Docker Compose") && installList.includes('docker_compose')) ||
+          (selectedDeployments.has("Kubernetes") && installList.includes('kubernetes')) ||
+          (selectedDeployments.has("Helm") && installList.includes('helm')) ||
+          (selectedDeployments.has("Script") && installList.includes('script'));
         if (!hasDeployment) return false;
       }
 
       // Hosting filter
       if (selectedHosting.size > 0) {
+        const hostingList = script.hosting || [];
         const hasHosting = 
-          (selectedHosting.has("Self-hosted") && script.hosting_options?.self_hosted) ||
-          (selectedHosting.has("Managed Cloud") && script.hosting_options?.managed_cloud) ||
-          (selectedHosting.has("SaaS") && script.hosting_options?.saas);
+          (selectedHosting.has("Self-hosted") && hostingList.includes('self_hosted')) ||
+          (selectedHosting.has("Managed Cloud") && hostingList.includes('managed_cloud')) ||
+          (selectedHosting.has("SaaS") && hostingList.includes('saas'));
         if (!hasHosting) return false;
       }
 
       // UI filter
       if (selectedUI.size > 0) {
+        const interfaceList = script.interface || [];
         const hasUI = 
-          (selectedUI.has("CLI") && script.interfaces?.cli) ||
-          (selectedUI.has("GUI") && script.interfaces?.gui) ||
-          (selectedUI.has("Web UI") && script.interfaces?.web_ui) ||
-          (selectedUI.has("API") && script.interfaces?.api) ||
-          (selectedUI.has("TUI") && script.interfaces?.tui);
+          (selectedUI.has("CLI") && interfaceList.includes('cli')) ||
+          (selectedUI.has("GUI") && interfaceList.includes('gui')) ||
+          (selectedUI.has("Web UI") && interfaceList.includes('web_ui')) ||
+          (selectedUI.has("API") && interfaceList.includes('api')) ||
+          (selectedUI.has("TUI") && interfaceList.includes('tui'));
         if (!hasUI) return false;
       }
 
@@ -391,8 +398,8 @@ function ScriptContent() {
     const filteredScriptSlugs = new Set(filteredAndSortedScripts.map(s => s.slug));
     return links.map(category => ({
       ...category,
-      scripts: category.scripts.filter(script => filteredScriptSlugs.has(script.slug)),
-    })).filter(category => category.scripts.length > 0);
+      scripts: category.apps.filter(script => filteredScriptSlugs.has(script.slug)),
+    })).filter(category => category.apps.length > 0);
   }, [links, filteredAndSortedScripts]);
 
   const uniqueScripts = allScripts.length;

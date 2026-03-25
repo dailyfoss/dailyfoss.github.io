@@ -1,4 +1,4 @@
-import { Info, Terminal } from "lucide-react";
+import { Info, Terminal, FileText, Package, Download } from "lucide-react";
 import { SiDocker, SiHelm, SiKubernetes, SiTerraform } from "react-icons/si";
 import { useEffect, useState } from "react";
 
@@ -12,6 +12,10 @@ const TAB_CONFIG = {
   script: {
     label: "Script",
     description: "Quick installation script for automated setup",
+  },
+  docker: {
+    label: "Docker",
+    description: "Run using Docker container",
   },
   docker_compose: {
     label: "Docker Compose",
@@ -29,6 +33,14 @@ const TAB_CONFIG = {
     label: "Terraform",
     description: "Infrastructure as code with Terraform",
   },
+  package_manager: {
+    label: "Package Manager",
+    description: "Install using system package managers (apt, yum, brew, etc.)",
+  },
+  binary: {
+    label: "Binary",
+    description: "Download and install pre-compiled binaries",
+  },
 } as const;
 
 function buildStaticUrl(path: string) {
@@ -43,61 +55,33 @@ function buildStaticUrl(path: string) {
   return `/${path}`;
 }
 
-export default function InstallCommand({ item }: { item: Script }) {
-  const manifest = item.manifests ?? {};
+// Helper to get all files from manifest object
+function getManifestFiles(manifestObj: any): Record<string, string> {
+  if (!manifestObj) return {};
+  if (typeof manifestObj === 'string') {
+    // Legacy: single file path as string
+    return { 'manifest': manifestObj };
+  }
+  if (manifestObj.files && typeof manifestObj.files === 'object') {
+    return manifestObj.files;
+  }
+  return {};
+}
 
-  const [scriptContent, setScriptContent] = useState<string | null>(null);
-  const [scriptLoading, setScriptLoading] = useState(false);
-  const [scriptError, setScriptError] = useState<string | null>(null);
+// Component to display a single file
+function FileDisplay({ 
+  filename, 
+  filepath 
+}: { 
+  filename: string; 
+  filepath: string;
+}) {
+  const [content, setContent] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const [dockerComposeContent, setDockerComposeContent] = useState<
-    string | null
-  >(null);
-  const [dockerComposeLoading, setDockerComposeLoading] = useState(false);
-  const [dockerComposeError, setDockerComposeError] = useState<string | null>(
-    null,
-  );
-
-  const [k8sContent, setK8sContent] = useState<string | null>(null);
-  const [k8sLoading, setK8sLoading] = useState(false);
-  const [k8sError, setK8sError] = useState<string | null>(null);
-
-  const [helmContent, setHelmContent] = useState<string | null>(null);
-  const [helmLoading, setHelmLoading] = useState(false);
-  const [helmError, setHelmError] = useState<string | null>(null);
-
-  const [tfContent, setTfContent] = useState<string | null>(null);
-  const [tfLoading, setTfLoading] = useState(false);
-  const [tfError, setTfError] = useState<string | null>(null);
-
-  const hasScript = !!manifest.script;
-  const hasDockerCompose = !!manifest.docker_compose;
-  const hasKubernetes = !!manifest.kubernetes;
-  const hasHelm = !!manifest.helm;
-  const hasTerraform = !!manifest.terraform;
-
-  const defaultTab
-    = (hasScript && "script")
-      || (hasDockerCompose && "docker_compose")
-      || (hasHelm && "helm")
-      || (hasKubernetes && "kubernetes")
-      || (hasTerraform && "terraform")
-      || "script";
-
-  function loadTextFile(
-    path: string | null | undefined,
-    setContent: (v: string | null) => void,
-    setLoading: (v: boolean) => void,
-    setError: (v: string | null) => void,
-  ) {
-    if (!path) {
-      setContent(null);
-      setError(null);
-      setLoading(false);
-      return;
-    }
-
-    const url = buildStaticUrl(path);
+  useEffect(() => {
+    const url = buildStaticUrl(filepath);
     console.log("[Manifest] fetching:", url);
 
     setLoading(true);
@@ -113,55 +97,62 @@ export default function InstallCommand({ item }: { item: Script }) {
       .then(text => setContent(text))
       .catch((err) => {
         console.error("Failed to load manifest from", url, err);
-        setError("Failed to load manifest.");
+        setError("Failed to load file.");
       })
       .finally(() => setLoading(false));
-  }
+  }, [filepath]);
 
-  useEffect(() => {
-    loadTextFile(
-      manifest.script,
-      setScriptContent,
-      setScriptLoading,
-      setScriptError,
-    );
-  }, [manifest.script]);
+  return (
+    <div className="space-y-3">
+      <div className="flex items-center gap-2 text-sm font-medium text-foreground">
+        <FileText className="h-4 w-4 text-primary" />
+        <span>{filename}</span>
+      </div>
+      
+      <div className="rounded-md bg-muted/30 px-3 py-2 text-xs text-muted-foreground border border-border/40">
+        <Info className="h-3 w-3 inline mr-1.5" />
+        Path: <code className="text-[11px] bg-muted px-1.5 py-0.5 rounded">{filepath}</code>
+      </div>
 
-  useEffect(() => {
-    loadTextFile(
-      manifest.docker_compose,
-      setDockerComposeContent,
-      setDockerComposeLoading,
-      setDockerComposeError,
-    );
-  }, [manifest.docker_compose]);
+      {loading && <p className="text-sm text-muted-foreground">Loading {filename}...</p>}
+      {error && <p className="text-sm text-red-500">{error}</p>}
+      {content && <CodeCopyButton>{content}</CodeCopyButton>}
+    </div>
+  );
+}
 
-  useEffect(() => {
-    loadTextFile(
-      manifest.kubernetes,
-      setK8sContent,
-      setK8sLoading,
-      setK8sError,
-    );
-  }, [manifest.kubernetes]);
+export default function InstallCommand({ item }: { item: Script }) {
+  const manifest = item.manifests ?? {};
 
-  useEffect(() => {
-    loadTextFile(
-      manifest.helm,
-      setHelmContent,
-      setHelmLoading,
-      setHelmError,
-    );
-  }, [manifest.helm]);
+  // Get all files for each manifest type
+  const scriptFiles = getManifestFiles(manifest.script);
+  const dockerFiles = getManifestFiles(manifest.docker);
+  const dockerComposeFiles = getManifestFiles(manifest.docker_compose);
+  const k8sFiles = getManifestFiles(manifest.kubernetes);
+  const helmFiles = getManifestFiles(manifest.helm);
+  const tfFiles = getManifestFiles(manifest.terraform);
+  const packageManagerFiles = getManifestFiles(manifest.package_manager);
+  const binaryFiles = getManifestFiles(manifest.binary);
 
-  useEffect(() => {
-    loadTextFile(
-      manifest.terraform,
-      setTfContent,
-      setTfLoading,
-      setTfError,
-    );
-  }, [manifest.terraform]);
+  const hasScript = Object.keys(scriptFiles).length > 0;
+  const hasDocker = Object.keys(dockerFiles).length > 0;
+  const hasDockerCompose = Object.keys(dockerComposeFiles).length > 0;
+  const hasKubernetes = Object.keys(k8sFiles).length > 0;
+  const hasHelm = Object.keys(helmFiles).length > 0;
+  const hasTerraform = Object.keys(tfFiles).length > 0;
+  const hasPackageManager = Object.keys(packageManagerFiles).length > 0;
+  const hasBinary = Object.keys(binaryFiles).length > 0;
+
+  const defaultTab
+    = (hasScript && "script")
+      || (hasDocker && "docker")
+      || (hasDockerCompose && "docker_compose")
+      || (hasPackageManager && "package_manager")
+      || (hasBinary && "binary")
+      || (hasHelm && "helm")
+      || (hasKubernetes && "kubernetes")
+      || (hasTerraform && "terraform")
+      || "script";
 
   return (
     <div className="px-4 py-3">
@@ -173,10 +164,28 @@ export default function InstallCommand({ item }: { item: Script }) {
               <span>{TAB_CONFIG.script.label}</span>
             </TabsTrigger>
           )}
+          {hasDocker && (
+            <TabsTrigger value="docker" className="gap-1.5">
+              <SiDocker className="h-3.5 w-3.5" />
+              <span>{TAB_CONFIG.docker.label}</span>
+            </TabsTrigger>
+          )}
           {hasDockerCompose && (
             <TabsTrigger value="docker_compose" className="gap-1.5">
               <SiDocker className="h-3.5 w-3.5" />
               <span>{TAB_CONFIG.docker_compose.label}</span>
+            </TabsTrigger>
+          )}
+          {hasPackageManager && (
+            <TabsTrigger value="package_manager" className="gap-1.5">
+              <Package className="h-3.5 w-3.5" />
+              <span>{TAB_CONFIG.package_manager.label}</span>
+            </TabsTrigger>
+          )}
+          {hasBinary && (
+            <TabsTrigger value="binary" className="gap-1.5">
+              <Download className="h-3.5 w-3.5" />
+              <span>{TAB_CONFIG.binary.label}</span>
             </TabsTrigger>
           )}
           {hasHelm && (
@@ -200,101 +209,90 @@ export default function InstallCommand({ item }: { item: Script }) {
         </TabsList>
 
         {hasScript && (
-          <TabsContent value="script" className="mt-0 space-y-3 min-h-[400px]">
+          <TabsContent value="script" className="mt-0 space-y-6 min-h-[400px]">
             <p className="text-xs text-muted-foreground italic">
               {TAB_CONFIG.script.description}
             </p>
-            {manifest.script && (
-              <div className="rounded-md bg-muted/30 px-3 py-2 text-xs text-muted-foreground border border-border/40">
-                <Info className="h-3 w-3 inline mr-1.5" />
-                Loaded from
-                {" "}
-                <code className="text-[11px] bg-muted px-1.5 py-0.5 rounded">{manifest.script}</code>
-              </div>
-            )}
-            {scriptLoading && (
-              <p className="text-sm">Loading script manifest...</p>
-            )}
-            {scriptError && (
-              <p className="text-sm text-red-500">{scriptError}</p>
-            )}
-            {scriptContent && <CodeCopyButton>{scriptContent}</CodeCopyButton>}
+            {Object.entries(scriptFiles).map(([filename, filepath]) => (
+              <FileDisplay key={filename} filename={filename} filepath={filepath} />
+            ))}
+          </TabsContent>
+        )}
+
+        {hasDocker && (
+          <TabsContent value="docker" className="mt-0 space-y-6 min-h-[400px]">
+            <p className="text-xs text-muted-foreground italic">
+              {TAB_CONFIG.docker.description}
+            </p>
+            {Object.entries(dockerFiles).map(([filename, filepath]) => (
+              <FileDisplay key={filename} filename={filename} filepath={filepath} />
+            ))}
           </TabsContent>
         )}
 
         {hasDockerCompose && (
-          <TabsContent value="docker_compose" className="mt-0 space-y-3 min-h-[400px]">
+          <TabsContent value="docker_compose" className="mt-0 space-y-6 min-h-[400px]">
             <p className="text-xs text-muted-foreground italic">
               {TAB_CONFIG.docker_compose.description}
             </p>
-            {manifest.docker_compose && (
-              <div className="rounded-md bg-muted/30 px-3 py-2 text-xs text-muted-foreground border border-border/40">
-                <Info className="h-3 w-3 inline mr-1.5" />
-                Loaded from
-                {" "}
-                <code className="text-[11px] bg-muted px-1.5 py-0.5 rounded">{manifest.docker_compose}</code>
-              </div>
-            )}
-            {dockerComposeLoading && <p className="text-sm">Loading Docker Compose manifest...</p>}
-            {dockerComposeError && <p className="text-sm text-red-500">{dockerComposeError}</p>}
-            {dockerComposeContent && <CodeCopyButton>{dockerComposeContent}</CodeCopyButton>}
+            {Object.entries(dockerComposeFiles).map(([filename, filepath]) => (
+              <FileDisplay key={filename} filename={filename} filepath={filepath} />
+            ))}
+          </TabsContent>
+        )}
+
+        {hasPackageManager && (
+          <TabsContent value="package_manager" className="mt-0 space-y-6 min-h-[400px]">
+            <p className="text-xs text-muted-foreground italic">
+              {TAB_CONFIG.package_manager.description}
+            </p>
+            {Object.entries(packageManagerFiles).map(([filename, filepath]) => (
+              <FileDisplay key={filename} filename={filename} filepath={filepath} />
+            ))}
+          </TabsContent>
+        )}
+
+        {hasBinary && (
+          <TabsContent value="binary" className="mt-0 space-y-6 min-h-[400px]">
+            <p className="text-xs text-muted-foreground italic">
+              {TAB_CONFIG.binary.description}
+            </p>
+            {Object.entries(binaryFiles).map(([filename, filepath]) => (
+              <FileDisplay key={filename} filename={filename} filepath={filepath} />
+            ))}
           </TabsContent>
         )}
 
         {hasHelm && (
-          <TabsContent value="helm" className="mt-0 space-y-3 min-h-[400px]">
+          <TabsContent value="helm" className="mt-0 space-y-6 min-h-[400px]">
             <p className="text-xs text-muted-foreground italic">
               {TAB_CONFIG.helm.description}
             </p>
-            {manifest.helm && (
-              <div className="rounded-md bg-muted/30 px-3 py-2 text-xs text-muted-foreground border border-border/40">
-                <Info className="h-3 w-3 inline mr-1.5" />
-                Loaded from
-                {" "}
-                <code className="text-[11px] bg-muted px-1.5 py-0.5 rounded">{manifest.helm}</code>
-              </div>
-            )}
-            {helmLoading && <p className="text-sm">Loading Helm manifest...</p>}
-            {helmError && <p className="text-sm text-red-500">{helmError}</p>}
-            {helmContent && <CodeCopyButton>{helmContent}</CodeCopyButton>}
+            {Object.entries(helmFiles).map(([filename, filepath]) => (
+              <FileDisplay key={filename} filename={filename} filepath={filepath} />
+            ))}
           </TabsContent>
         )}
 
         {hasKubernetes && (
-          <TabsContent value="kubernetes" className="mt-0 space-y-3 min-h-[400px]">
+          <TabsContent value="kubernetes" className="mt-0 space-y-6 min-h-[400px]">
             <p className="text-xs text-muted-foreground italic">
               {TAB_CONFIG.kubernetes.description}
             </p>
-            {manifest.kubernetes && (
-              <div className="rounded-md bg-muted/30 px-3 py-2 text-xs text-muted-foreground border border-border/40">
-                <Info className="h-3 w-3 inline mr-1.5" />
-                Loaded from
-                {" "}
-                <code className="text-[11px] bg-muted px-1.5 py-0.5 rounded">{manifest.kubernetes}</code>
-              </div>
-            )}
-            {k8sLoading && <p className="text-sm">Loading Kubernetes manifest...</p>}
-            {k8sError && <p className="text-sm text-red-500">{k8sError}</p>}
-            {k8sContent && <CodeCopyButton>{k8sContent}</CodeCopyButton>}
+            {Object.entries(k8sFiles).map(([filename, filepath]) => (
+              <FileDisplay key={filename} filename={filename} filepath={filepath} />
+            ))}
           </TabsContent>
         )}
 
         {hasTerraform && (
-          <TabsContent value="terraform" className="mt-0 space-y-3 min-h-[400px]">
+          <TabsContent value="terraform" className="mt-0 space-y-6 min-h-[400px]">
             <p className="text-xs text-muted-foreground italic">
               {TAB_CONFIG.terraform.description}
             </p>
-            {manifest.terraform && (
-              <div className="rounded-md bg-muted/30 px-3 py-2 text-xs text-muted-foreground border border-border/40">
-                <Info className="h-3 w-3 inline mr-1.5" />
-                Loaded from
-                {" "}
-                <code className="text-[11px] bg-muted px-1.5 py-0.5 rounded">{manifest.terraform}</code>
-              </div>
-            )}
-            {tfLoading && <p className="text-sm">Loading Terraform manifest...</p>}
-            {tfError && <p className="text-sm text-red-500">{tfError}</p>}
-            {tfContent && <CodeCopyButton>{tfContent}</CodeCopyButton>}
+            {Object.entries(tfFiles).map(([filename, filepath]) => (
+              <FileDisplay key={filename} filename={filename} filepath={filepath} />
+            ))}
           </TabsContent>
         )}
       </Tabs>

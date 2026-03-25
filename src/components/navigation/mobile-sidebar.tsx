@@ -57,7 +57,7 @@ function MobileSidebar() {
     }
 
     const scriptMatch = categories
-      .flatMap(category => category.scripts)
+      .flatMap(category => category.apps)
       .find(script => script.slug === currentSelectedScript);
 
     setLastViewedScript(scriptMatch);

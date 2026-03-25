@@ -62,47 +62,30 @@
       "description": "Run the application on your own servers"
     }
   ],
-  "platform_support": {
-    "desktop": {
-      "linux": true,
-      "windows": true,
-      "macos": true
-    },
-    "mobile": {
-      "android": true,
-      "ios": true
-    },
-    "web_app": true,
-    "browser_extension": false,
-    "cli_only": false
-  },
-  "hosting_options": {
-    "self_hosted": true,
-    "managed_cloud": false,
-    "saas": false
-  },
-  "interfaces": {
-    "cli": false,
-    "gui": true,
-    "web_ui": true,
-    "api": false,
-    "tui": false
-  },
-  "deployment_methods": {
-    "script": false,
-    "docker": false,
-    "docker_compose": true,
-    "helm": false,
-    "kubernetes": false,
-    "terraform": false
-  },
+  "hosting": [
+    "self_hosted"
+  ],
+  "platforms": [
+    "linux",
+    "macos",
+    "windows",
+    "android",
+    "ios",
+    "web"
+  ],
+  "interface": [
+    "web_ui",
+    "gui"
+  ],
+  "install": [
+    "docker_compose"
+  ],
   "manifests": {
-    "docker_compose": "/manifests/2fauth/compose.yml"
-  },
-  "demo": {
-    "url": "https://demo.2fauth.app",
-    "username": "demo@2fauth.app",
-    "password": "demo"
+    "docker_compose": {
+      "files": {
+        "compose.yml": "/manifests/2fauth/compose.yml"
+      }
+    }
   },
   "notes": [],
   "repository_status": null,
@@ -117,5 +100,10 @@
       "repo_name": "2FAuth_ynh",
       "url": "https://github.com/YunoHost-Apps/2FAuth_ynh"
     }
+  },
+  "demo": {
+    "url": "https://demo.2fauth.app",
+    "username": "demo@2fauth.app",
+    "password": "demo"
   }
 }

@@ -86,13 +86,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     Description: script.tagline,
     ScreenshotUrl: script.resources?.screenshots?.[0] || '',
     License: script.metadata?.license || '',
-    SelfHosted: script.hosting_options?.self_hosted ? 'true' : 'false',
-    Windows: script.platform_support?.desktop?.windows ? 'true' : 'false',
-    MacOS: script.platform_support?.desktop?.macos ? 'true' : 'false',
-    Linux: script.platform_support?.desktop?.linux ? 'true' : 'false',
-    Web: script.platform_support?.web_app ? 'true' : 'false',
-    Android: script.platform_support?.mobile?.android ? 'true' : 'false',
-    iOS: script.platform_support?.mobile?.ios ? 'true' : 'false',
+    SelfHosted: script.hosting?.includes('self_hosted') ? 'true' : 'false',
+    Windows: script.platforms?.includes('windows') ? 'true' : 'false',
+    MacOS: script.platforms?.includes('macos') ? 'true' : 'false',
+    Linux: script.platforms?.includes('linux') ? 'true' : 'false',
+    Web: script.platforms?.includes('web') ? 'true' : 'false',
+    Android: script.platforms?.includes('android') ? 'true' : 'false',
+    iOS: script.platforms?.includes('ios') ? 'true' : 'false',
   })
   const ogImageUrl = `${siteConfig.ogServiceUrl}/api/image?${ogParams.toString()}`
 

@@ -64,42 +64,28 @@
       "core_feature": true
     }
   ],
-  "platform_support": {
-    "desktop": {
-      "linux": false,
-      "windows": false,
-      "macos": false
-    },
-    "mobile": {
-      "android": true,
-      "ios": true
-    },
-    "web_app": true,
-    "browser_extension": true,
-    "cli_only": false
-  },
-  "hosting_options": {
-    "self_hosted": true,
-    "managed_cloud": false,
-    "saas": false
-  },
-  "interfaces": {
-    "cli": false,
-    "gui": false,
-    "web_ui": true,
-    "api": true,
-    "tui": false
-  },
-  "deployment_methods": {
-    "script": false,
-    "docker": false,
-    "docker_compose": true,
-    "helm": false,
-    "kubernetes": false,
-    "terraform": false
-  },
+  "hosting": [
+    "self_hosted"
+  ],
+  "platforms": [
+    "android",
+    "ios",
+    "web",
+    "browser_extension"
+  ],
+  "interface": [
+    "web_ui",
+    "api"
+  ],
+  "install": [
+    "docker_compose"
+  ],
   "manifests": {
-    "docker_compose": "/manifests/anonaddy/compose.yml"
+    "docker_compose": {
+      "files": {
+        "compose.yml": "/manifests/anonaddy/compose.yml"
+      }
+    }
   },
   "notes": [
     "Requires a properly configured mail server for self-hosting",

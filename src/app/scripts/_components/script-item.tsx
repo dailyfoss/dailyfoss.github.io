@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { createPortal } from "react-dom";
 
 import type { Script } from "@/lib/types";
+import { getHosting, getPlatforms, getInterface, getInstall, getPlatformLabels } from "@/lib/platform-utils";
 
 import { Separator } from "@/components/ui/separator";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
@@ -323,47 +324,54 @@ function CommunityLikesSection({ slug, appName, appDescription }: { slug: string
 }
 
 function PlatformSummary({ item }: { item: Script }) {
-  const platform = item.platform_support;
-  const hosting = item.hosting_options;
-  const deployment = item.deployment_methods;
-  const ui = item.interfaces;
+  // Use utility functions to support both new and legacy structure
+  const hosting = getHosting(item);
+  const platforms = getPlatforms(item);
+  const interfaces = getInterface(item);
+  const install = getInstall(item);
 
-  if (!platform && !hosting && !deployment && !ui)
+  if (!hosting.length && !platforms.length && !interfaces.length && !install.length)
     return null;
 
-  // Combine Desktop + Mobile into "Platforms"
-  const platforms = [
-    platform?.desktop?.macos && "macOS",
-    platform?.desktop?.linux && "Linux",
-    platform?.desktop?.windows && "Windows",
-    platform?.mobile?.android && "Android",
-    platform?.mobile?.ios && "iOS",
-    platform?.web_app && "Web App",
-    platform?.browser_extension && "Browser Extension",
-  ].filter(Boolean) as string[];
+  // Get platform labels
+  const platformItems = getPlatformLabels(item);
 
-  // Combine Hosting + Deploy into "Deployment"
+  // Map hosting and install to deployment labels
+  const hostingLabels: Record<string, string> = {
+    self_hosted: "Self-hosted",
+    saas: "SaaS",
+    managed_cloud: "Managed Cloud",
+    standalone: "Standalone",
+  };
+  
+  const installLabels: Record<string, string> = {
+    docker: "Docker",
+    docker_compose: "Docker Compose",
+    kubernetes: "Kubernetes",
+    helm: "Helm",
+    script: "Script",
+    terraform: "Terraform",
+    binary: "Binary",
+    package_manager: "Package Manager",
+  };
+  
   const deploymentItems = [
-    hosting?.self_hosted && "Self-hosted",
-    hosting?.saas && "SaaS",
-    hosting?.managed_cloud && "Managed Cloud",
-    deployment?.docker && "Docker",
-    deployment?.docker_compose && "Docker Compose",
-    deployment?.kubernetes && "Kubernetes",
-    deployment?.helm && "Helm",
-    deployment?.script && "Script",
-    deployment?.terraform && "Terraform",
-  ].filter(Boolean) as string[];
+    ...hosting.map(h => hostingLabels[h] || h),
+    ...install.map(i => installLabels[i] || i)
+  ];
 
-  const uiItems = [
-    ui?.cli && "CLI",
-    ui?.tui && "TUI",
-    ui?.gui && "GUI",
-    ui?.web_ui && "Web UI",
-    ui?.api && "API",
-  ].filter(Boolean) as string[];
+  // Map interface to UI labels
+  const interfaceLabels: Record<string, string> = {
+    cli: "CLI",
+    tui: "TUI",
+    gui: "GUI",
+    web_ui: "Web UI",
+    api: "API"
+  };
+  
+  const uiItems = interfaces.map(i => interfaceLabels[i] || i);
 
-  if (!platforms.length && !deploymentItems.length && !uiItems.length) {
+  if (!platformItems.length && !deploymentItems.length && !uiItems.length) {
     return null;
   }
 
@@ -373,10 +381,10 @@ function PlatformSummary({ item }: { item: Script }) {
         Platform & Deployment
       </div>
 
-      {platforms.length > 0 && (
+      {platformItems.length > 0 && (
         <PlatformRow
           label="Platforms"
-          items={platforms}
+          items={platformItems}
           icon={<Monitor className="h-4 w-4" />}
           variant="filled"
         />
@@ -691,10 +699,13 @@ export function ScriptItem({ item, setSelectedScript, allCategories = [] }: Scri
               const manifest = item.manifests ?? {};
               const hasAnyManifest = !!(
                 manifest.script ||
+                manifest.docker ||
                 manifest.docker_compose ||
                 manifest.helm ||
                 manifest.kubernetes ||
-                manifest.terraform
+                manifest.terraform ||
+                manifest.package_manager ||
+                manifest.binary
               );
               
               if (!hasAnyManifest) return null;

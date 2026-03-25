@@ -67,55 +67,31 @@
       "description": "Runs without external monitoring providers"
     }
   ],
-  "platform_support": {
-    "desktop": {
-      "linux": false,
-      "windows": false,
-      "macos": false
-    },
-    "mobile": {
-      "android": false,
-      "ios": false
-    },
-    "web_app": false,
-    "browser_extension": false,
-    "cli_only": false
-  },
-  "hosting_options": {
-    "self_hosted": false,
-    "managed_cloud": false,
-    "saas": false
-  },
-  "interfaces": {
-    "cli": false,
-    "gui": false,
-    "web_ui": false,
-    "api": false,
-    "tui": false
-  },
-  "deployment_methods": {
-    "script": false,
-    "docker": false,
-    "docker_compose": true,
-    "helm": false,
-    "kubernetes": false,
-    "terraform": false
-  },
+  "hosting": [],
+  "platforms": [],
+  "interface": [],
+  "install": [
+    "docker_compose"
+  ],
   "manifests": {
-    "docker_compose": "/manifests/checkmate/compose.yml"
+    "docker_compose": {
+      "files": {
+        "compose.yml": "/manifests/checkmate/compose.yml"
+      }
+    }
   },
   "notes": [],
   "repository_status": null,
-  "demo": {
-    "url": "https://checkmate-demo.bluewavelabs.ca",
-    "username": "uptimedemo@demo.com",
-    "password": "Demouser1!"
-  },
   "community_integrations": {
     "proxmox_ve": {
       "supported": true,
       "script_id": "checkmate",
       "url": "https://community-scripts.github.io/ProxmoxVE/scripts?id=checkmate"
     }
+  },
+  "demo": {
+    "url": "https://checkmate-demo.bluewavelabs.ca",
+    "username": "uptimedemo@demo.com",
+    "password": "Demouser1!"
   }
 }

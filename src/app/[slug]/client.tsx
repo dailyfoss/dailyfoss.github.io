@@ -22,12 +22,12 @@ export function ScriptPageClient({ script, slug }: ScriptPageClientProps) {
   useEffect(() => {
     fetchCategories()
       .then((cats) => {
-        const filtered = cats.filter(category => category.scripts?.length > 0)
+        const filtered = cats.filter(category => category.apps?.length > 0)
         setCategories(filtered)
         
         // Find the category containing this script and set it as selected
         const category = filtered.find(cat => 
-          cat.scripts.some(s => s.slug === slug)
+          cat.apps.some(s => s.slug === slug)
         )
         if (category) {
           setSelectedCategory(category.name)

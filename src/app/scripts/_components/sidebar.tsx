@@ -26,7 +26,7 @@ function Sidebar({
   className,
 }: SidebarProps) {
   const uniqueScripts = items.reduce((acc, category) => {
-    for (const script of category.scripts) {
+    for (const script of category.apps) {
       if (!acc.some(s => s.name === script.name)) {
         acc.push(script);
       }

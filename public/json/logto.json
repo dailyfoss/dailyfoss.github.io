@@ -65,42 +65,20 @@
       "description": "Run the authentication platform on your own infrastructure"
     }
   ],
-  "platform_support": {
-    "desktop": {
-      "linux": true,
-      "windows": false,
-      "macos": false
-    },
-    "mobile": {
-      "android": false,
-      "ios": false
-    },
-    "web_app": false,
-    "browser_extension": false,
-    "cli_only": false
-  },
-  "hosting_options": {
-    "self_hosted": false,
-    "managed_cloud": false,
-    "saas": false
-  },
-  "interfaces": {
-    "cli": false,
-    "gui": false,
-    "web_ui": false,
-    "api": false,
-    "tui": false
-  },
-  "deployment_methods": {
-    "script": false,
-    "docker": false,
-    "docker_compose": true,
-    "helm": false,
-    "kubernetes": false,
-    "terraform": false
-  },
+  "hosting": [],
+  "platforms": [
+    "linux"
+  ],
+  "interface": [],
+  "install": [
+    "docker_compose"
+  ],
   "manifests": {
-    "docker_compose": "/manifests/logto/compose.yml"
+    "docker_compose": {
+      "files": {
+        "compose.yml": "/manifests/logto/compose.yml"
+      }
+    }
   },
   "notes": [],
   "repository_status": null,

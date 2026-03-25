@@ -74,43 +74,30 @@
       "core_feature": false
     }
   ],
-  "platform_support": {
-    "desktop": {
-      "linux": true,
-      "windows": true,
-      "macos": true
-    },
-    "mobile": {
-      "android": false,
-      "ios": false
-    },
-    "web_app": false,
-    "browser_extension": false,
-    "cli_only": false
-  },
-  "hosting_options": {
-    "self_hosted": false,
-    "managed_cloud": false,
-    "saas": false
-  },
-  "interfaces": {
-    "cli": false,
-    "gui": true,
-    "web_ui": false,
-    "api": false,
-    "tui": false
-  },
-  "deployment_methods": {
-    "script": true,
-    "docker": false,
-    "docker_compose": true,
-    "helm": false,
-    "kubernetes": false,
-    "terraform": false
-  },
+  "hosting": [],
+  "platforms": [
+    "linux",
+    "macos",
+    "windows"
+  ],
+  "interface": [
+    "gui"
+  ],
+  "install": [
+    "docker_compose",
+    "script"
+  ],
   "manifests": {
-    "docker_compose": "/manifests/electerm/compose.yml",
-    "script": "/manifests/electerm/script.sh"
+    "docker_compose": {
+      "files": {
+        "compose.yml": "/manifests/electerm/compose.yml"
+      }
+    },
+    "script": {
+      "files": {
+        "script.sh": "/manifests/electerm/script.sh"
+      }
+    }
   },
   "repository_status": null,
   "demo": {

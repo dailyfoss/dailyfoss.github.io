@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 
 import type { Category, Script } from "@/lib/types";
+import { getInstall } from "@/lib/platform-utils";
 
 import { Badge } from "@/components/ui/badge";
 
@@ -172,7 +173,7 @@ export default function RelatedTools({ currentScript, allCategories }: RelatedTo
     if (!allCategories || !currentScript) return [];
 
     // Get all scripts from categories
-    const allScripts = allCategories.flatMap(category => category.scripts || []);
+    const allScripts = allCategories.flatMap(category => category.apps || []);
     
     // Filter out current script and duplicates
     const uniqueScriptsMap = new Map<string, Script>();
@@ -202,9 +203,12 @@ export default function RelatedTools({ currentScript, allCategories }: RelatedTo
       score += sharedCategories * 5;
 
       // +2 points for same deployment methods
-      if (script.deployment_methods?.docker === currentScript.deployment_methods?.docker && script.deployment_methods?.docker) score += 2;
-      if (script.deployment_methods?.docker_compose === currentScript.deployment_methods?.docker_compose && script.deployment_methods?.docker_compose) score += 2;
-      if (script.deployment_methods?.kubernetes === currentScript.deployment_methods?.kubernetes && script.deployment_methods?.kubernetes) score += 2;
+      const currentInstall = getInstall(currentScript);
+      const scriptInstall = getInstall(script);
+      
+      if (currentInstall.includes('docker') && scriptInstall.includes('docker')) score += 2;
+      if (currentInstall.includes('docker_compose') && scriptInstall.includes('docker_compose')) score += 2;
+      if (currentInstall.includes('kubernetes') && scriptInstall.includes('kubernetes')) score += 2;
 
       // +3 bonus points if actively maintained (last updated < 30 days)
       if (script.metadata?.date_last_commit) {

@@ -62,53 +62,28 @@
       "description": "Deploy your own relay service if needed"
     }
   ],
-  "platform_support": {
-    "desktop": {
-      "linux": true,
-      "windows": true,
-      "macos": true
-    },
-    "mobile": {
-      "android": true,
-      "ios": false
-    },
-    "web_app": false,
-    "browser_extension": false,
-    "cli_only": false
-  },
-  "hosting_options": {
-    "self_hosted": false,
-    "managed_cloud": false,
-    "saas": false
-  },
-  "interfaces": {
-    "cli": false,
-    "gui": false,
-    "web_ui": false,
-    "api": false,
-    "tui": false
-  },
-  "deployment_methods": {
-    "script": false,
-    "docker": false,
-    "docker_compose": false,
-    "helm": false,
-    "kubernetes": false,
-    "terraform": false
-  },
+  "hosting": [],
+  "platforms": [
+    "linux",
+    "macos",
+    "windows",
+    "android"
+  ],
+  "interface": [],
+  "install": [],
   "manifests": {},
   "notes": [],
   "repository_status": null,
-  "demo": {
-    "url": null,
-    "username": null,
-    "password": null
-  },
   "community_integrations": {
     "yunohost": {
       "supported": true,
       "repo_name": "localsend_ynh",
       "url": "https://github.com/YunoHost-Apps/localsend_ynh"
     }
+  },
+  "demo": {
+    "url": null,
+    "username": null,
+    "password": null
   }
 }
