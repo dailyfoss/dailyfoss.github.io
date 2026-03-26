@@ -77,6 +77,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     }
   }
 
+  // Convert screenshot URL from webp to png format for OG image
+  const screenshotUrl = script.resources?.screenshots?.[0] || '';
+  const pngScreenshotUrl = screenshotUrl.replace('/screenshots/webp/', '/screenshots/png/').replace('.webp', '.png');
+
   // Build OG image URL with all parameters
   const ogParams = new URLSearchParams({
     fileType: 'webp',
@@ -84,7 +88,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     Theme: 'dark',
     Title: script.name,
     Description: script.tagline,
-    ScreenshotUrl: script.resources?.screenshots?.[0] || '',
+    ScreenshotUrl: pngScreenshotUrl,
     License: script.metadata?.license || '',
     SelfHosted: script.hosting?.includes('self_hosted') ? 'true' : 'false',
     Windows: script.platforms?.includes('windows') ? 'true' : 'false',
