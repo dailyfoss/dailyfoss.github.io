@@ -530,6 +530,7 @@ function ScriptHeader({ item }: { item: Script }) {
               </div>
             ) : (
               <img
+                key={`${item.slug}-${theme}`}
                 src={currentLogo}
                 width={112}
                 height={112}
