@@ -26,6 +26,14 @@ export function ScreenshotCarousel({ screenshots, appName }: ScreenshotCarouselP
     setImageLoaded(false);
   }, [currentIndex]);
 
+  // Keep image loaded state when closing lightbox
+  useEffect(() => {
+    if (!isLightboxOpen) {
+      // When closing lightbox, ensure the main carousel image is marked as loaded
+      setImageLoaded(true);
+    }
+  }, [isLightboxOpen]);
+
   // Filter out failed images
   const validScreenshots = screenshots.filter((_, index) => !failedImages.has(index));
 
