@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { getScreenshotUrls } from "@/lib/asset-utils";
 
 interface ScreenshotCarouselProps {
   screenshots: string[];
@@ -11,6 +12,9 @@ interface ScreenshotCarouselProps {
 }
 
 export function ScreenshotCarousel({ screenshots, appName }: ScreenshotCarouselProps) {
+  // Convert screenshots to CDN URLs
+  const cdnScreenshots = getScreenshotUrls(screenshots);
+  
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -35,7 +39,7 @@ export function ScreenshotCarousel({ screenshots, appName }: ScreenshotCarouselP
   }, [isLightboxOpen]);
 
   // Filter out failed images
-  const validScreenshots = screenshots.filter((_, index) => !failedImages.has(index));
+  const validScreenshots = cdnScreenshots.filter((_, index) => !failedImages.has(index));
 
   // Add keyboard event listener for carousel navigation (when not in lightbox)
   useEffect(() => {
@@ -84,13 +88,13 @@ export function ScreenshotCarousel({ screenshots, appName }: ScreenshotCarouselP
 
   const goToPrevious = (e?: React.MouseEvent) => {
     e?.stopPropagation();
-    const validLength = screenshots.filter((_, index) => !failedImages.has(index)).length;
+    const validLength = cdnScreenshots.filter((_, index) => !failedImages.has(index)).length;
     setCurrentIndex((prev) => (prev === 0 ? validLength - 1 : prev - 1));
   };
 
   const goToNext = (e?: React.MouseEvent) => {
     e?.stopPropagation();
-    const validLength = screenshots.filter((_, index) => !failedImages.has(index)).length;
+    const validLength = cdnScreenshots.filter((_, index) => !failedImages.has(index)).length;
     setCurrentIndex((prev) => (prev === validLength - 1 ? 0 : prev + 1));
   };
 

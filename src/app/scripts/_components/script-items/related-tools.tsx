@@ -43,6 +43,8 @@ function getStatusIcon(daysSinceLastCommit: number): React.ReactNode {
   return <Moon className="h-3 w-3 text-red-500" />;
 }
 
+import { getLogoUrl } from "@/lib/asset-utils";
+
 // Compact App Icon
 function AppIcon({ src, src_light, name }: { src?: string | null; src_light?: string | null; name: string }) {
   const [showFallback, setShowFallback] = useState(!src || src.trim() === "");
@@ -56,7 +58,8 @@ function AppIcon({ src, src_light, name }: { src?: string | null; src_light?: st
     return () => observer.disconnect();
   }, []);
 
-  const currentSrc = (theme === 'dark' && src_light) ? src_light : src;
+  const logoUrl = (theme === 'dark' && src_light) ? src_light : src;
+  const currentSrc = getLogoUrl(logoUrl || '');
 
   useEffect(() => {
     setShowFallback(!currentSrc || currentSrc.trim() === "");

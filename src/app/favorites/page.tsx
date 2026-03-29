@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button"
 import { fetchCategories } from "@/lib/data"
 import { getSession, getFavorites } from "@/lib/auth-client"
 import { BrowserMockup } from "@/components/browser-mockup"
+import { getLogoUrl } from "@/lib/asset-utils"
 
 interface Activity {
   slug: string
@@ -204,7 +205,7 @@ export default function FavoritesPage() {
                 <div className="flex h-12 w-12 min-w-12 items-center justify-center rounded-lg bg-gradient-to-br from-accent/40 to-accent/60 p-2 shadow-sm">
                   {script.resources?.logo ? (
                     <img
-                      src={script.resources.logo}
+                      src={getLogoUrl(script.resources.logo)}
                       alt={script.name}
                       className="h-full w-full object-contain"
                     />

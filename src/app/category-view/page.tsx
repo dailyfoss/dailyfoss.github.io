@@ -9,6 +9,7 @@ import type { Category } from "@/lib/types";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { getLogoUrl } from "@/lib/asset-utils";
 
 const defaultLogo = "/default-logo_dark.png"; // Fallback logo path
 const MAX_DESCRIPTION_LENGTH = 100; // Set max length for description
@@ -187,7 +188,7 @@ function CategoryView() {
                         {script.name}
                       </h3>
                       <img
-                        src={script.resources?.logo || defaultLogo}
+                        src={getLogoUrl(script.resources?.logo || defaultLogo)}
                         alt={script.name || "Script logo"}
                         loading="lazy"
                         className="h-12 w-12 object-contain mx-auto"
@@ -260,7 +261,7 @@ function CategoryView() {
                           .map((script, i) => (
                             <div key={i} className="flex flex-col items-center">
                               <img
-                                src={script.resources?.logo || defaultLogo}
+                                src={getLogoUrl(script.resources?.logo || defaultLogo)}
                                 alt={script.name || "Script logo"}
                                 title={script.name}
                                 loading="lazy"

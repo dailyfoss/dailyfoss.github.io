@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import type { Script } from '@/lib/types'
 import { siteConfig } from '@/config/site-config'
 import { isSelfHosted, getPlatforms } from '@/lib/platform-utils'
+import { getAssetUrl } from '@/lib/asset-utils'
 
 interface DynamicMetaTagsProps {
   script: Script | undefined
@@ -18,9 +19,10 @@ export function DynamicMetaTags({ script }: DynamicMetaTagsProps) {
     // Get platform info using utility functions (supports both new and legacy structure)
     const platforms = getPlatforms(script);
     
-    // Convert screenshot URL from webp to png format for OG image
+    // Convert screenshot URL from webp to png format for OG image, with CDN support
     const screenshotUrl = script.resources?.screenshots?.[0] || '';
-    const pngScreenshotUrl = screenshotUrl.replace('/screenshots/webp/', '/screenshots/png/').replace('.webp', '.png');
+    const cdnScreenshotUrl = getAssetUrl(screenshotUrl);
+    const pngScreenshotUrl = cdnScreenshotUrl.replace('/screenshots/webp/', '/screenshots/png/').replace('.webp', '.png');
     
     // Use live OG service with all parameters from JSON
     const params = new URLSearchParams({

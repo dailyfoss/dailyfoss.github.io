@@ -1,0 +1,82 @@
+{
+  "name": "NOMAD",
+  "slug": "nomad-travel",
+  "tagline": "Self-hosted travel planning and itinerary management app",
+  "description": "NOMAD is a self-hosted travel planning application designed to help users organize, manage, and document their trips in a simple and structured way. Built with a focus on privacy and flexibility, NOMAD allows travelers to create detailed itineraries, manage destinations, and keep track of travel-related information without relying on third-party services.\n\nThe application provides an intuitive web interface where users can plan trips by adding destinations, activities, notes, and schedules. It is particularly useful for frequent travelers, digital nomads, or anyone who wants a centralized place to manage travel plans. By being self-hosted, NOMAD ensures full control over personal travel data, making it an appealing choice for privacy-conscious users.\n\nNOMAD supports multi-trip management, allowing users to organize multiple journeys simultaneously. It also includes features for documenting travel experiences, making it suitable not only for planning but also for journaling past trips. With Docker support, deployment is straightforward, enabling users to quickly set up their own instance.\n\nOverall, NOMAD is a lightweight yet powerful solution for travel planning that combines organization, privacy, and ease of use, making it a great alternative to proprietary travel planning tools.",
+  "categories": [7],
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0",
+    "version": "v1.0.0",
+    "date_app_added": "2026-03-27",
+    "date_last_released": "2024-01-01",
+    "date_last_commit": "2025-01-01",
+    "github_stars": 0,
+    "github_contributors": 0,
+    "github_commits_this_year": 0,
+    "github_issues_open": 0,
+    "github_issues_closed_this_year": 0,
+    "github_releases_this_year": 0
+  },
+  "resources": {
+    "website": "https://github.com/mauriceboe/NOMAD",
+    "documentation": "https://github.com/mauriceboe/NOMAD",
+    "source_code": "https://github.com/mauriceboe/NOMAD",
+    "logo": "",
+    "issues": "https://github.com/mauriceboe/NOMAD/issues",
+    "releases": "https://github.com/mauriceboe/NOMAD/releases",
+    "logo_light": "",
+    "screenshots": []
+  },
+  "features": [
+    {
+      "title": "Trip Management",
+      "description": "Create and manage multiple trips with structured itineraries and destinations",
+      "core_feature": true
+    },
+    {
+      "title": "Itinerary Planning",
+      "description": "Organize daily activities, schedules, and travel details in one place",
+      "core_feature": true
+    },
+    {
+      "title": "Self-Hosted Privacy",
+      "description": "Maintain full control over your travel data by hosting the app yourself",
+      "core_feature": true
+    },
+    {
+      "title": "Travel Notes",
+      "description": "Document experiences, notes, and memories for each trip",
+      "core_feature": true
+    },
+    {
+      "title": "Docker Deployment",
+      "description": "Easily deploy and run the application using Docker containers",
+      "core_feature": false
+    },
+    {
+      "title": "Multi-Trip Organization",
+      "description": "Handle multiple travel plans simultaneously with clear separation",
+      "core_feature": false
+    }
+  ],
+  "hosting": ["self_hosted"],
+  "platforms": ["web", "docker"],
+  "interface": ["web_ui"],
+  "install": ["docker_compose"],
+  "manifests": {
+    "docker_compose": {
+      "files": {
+        "compose.yml": "/manifests/nomad-travel/compose.yml"
+      }
+    }
+  },
+  "notes": [],
+  "repository_status": null,
+  "community_integrations": {},
+  "demo": {
+    "url": "https://demo-nomad.pakulat.org/login",
+    "username": null,
+    "password": null
+  }
+}

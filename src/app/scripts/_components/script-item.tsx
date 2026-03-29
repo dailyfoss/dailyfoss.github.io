@@ -32,7 +32,8 @@ import { CommunityLikes } from "@/components/community-likes";
 
 import type { Category } from "@/lib/types";
 
-// Screenshot Preview with Lightbox
+import { getLogoUrl } from "@/lib/asset-utils";
+
 function ScreenshotPreview({ src, alt }: { src: string; alt: string }) {
   const [isOpen, setIsOpen] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -508,11 +509,13 @@ function ScriptHeader({ item }: { item: Script }) {
     return () => observer.disconnect();
   }, []);
 
-  // Get the appropriate logo based on theme
+  // Get the appropriate logo based on theme with CDN support
   // In dark mode, use light variant if available (for visibility)
-  const currentLogo = (theme === 'dark' && item.resources?.logo_light) 
+  const logoUrl = (theme === 'dark' && item.resources?.logo_light) 
     ? item.resources.logo_light 
     : item.resources?.logo || '';
+  
+  const currentLogo = getLogoUrl(logoUrl);
 
   // Reset fallback state when item or logo changes
   useEffect(() => {

@@ -18,6 +18,7 @@ import { useRepositoryStatus } from "@/hooks/use-repository-status";
 import { formatVersion, formatRelativeTime, formatDate } from "@/lib/repository-status";
 import { extractDate } from "@/lib/time";
 import { getInstallMethodLabels } from "@/lib/platform-utils";
+import { getLogoUrl } from "@/lib/asset-utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -117,7 +118,7 @@ export function EnhancedVersionDisplay({ script, showDeploymentMethods = true }:
       <div className="flex items-center gap-3">
         {(script.resources?.logo) ? (
           <img
-            src={script.resources?.logo}
+            src={getLogoUrl(script.resources.logo)}
             alt={`${script.name} icon`}
             className="h-12 w-12 object-contain"
             onError={(e) => {

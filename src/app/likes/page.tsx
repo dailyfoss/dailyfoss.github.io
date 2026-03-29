@@ -8,6 +8,7 @@ import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { fetchCategories } from "@/lib/data"
 import type { Script, Category } from "@/lib/types"
+import { getLogoUrl } from "@/lib/asset-utils"
 
 interface Activity {
   id: string
@@ -162,7 +163,7 @@ export default function LikesPage() {
               <div className="flex h-12 w-12 min-w-12 items-center justify-center rounded-lg bg-gradient-to-br from-accent/40 to-accent/60 p-2 shadow-sm">
                 {script?.resources?.logo ? (
                   <img
-                    src={script.resources.logo}
+                    src={getLogoUrl(script.resources.logo)}
                     alt={activity.targetName}
                     className="h-full w-full object-contain"
                   />
