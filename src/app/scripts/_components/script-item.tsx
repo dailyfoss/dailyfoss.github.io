@@ -32,8 +32,6 @@ import { CommunityLikes } from "@/components/community-likes";
 
 import type { Category } from "@/lib/types";
 
-import { getLogoUrl } from "@/lib/asset-utils";
-
 function ScreenshotPreview({ src, alt }: { src: string; alt: string }) {
   const [isOpen, setIsOpen] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -515,7 +513,7 @@ function ScriptHeader({ item }: { item: Script }) {
     ? item.resources.logo_light 
     : item.resources?.logo || '';
   
-  const currentLogo = getLogoUrl(logoUrl);
+  const currentLogo = logoUrl;
 
   // Reset fallback state when item or logo changes
   useEffect(() => {

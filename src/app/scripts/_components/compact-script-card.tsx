@@ -3,7 +3,6 @@
 import { CircleCheck, RefreshCcw, Clock3, Moon, LayoutGrid, Star, Eye } from "lucide-react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { getLogoUrl } from "@/lib/asset-utils";
 
 import type { Category, Script } from "@/lib/types";
 
@@ -49,7 +48,7 @@ function AppIcon({ src, src_light, name }: { src?: string | null; src_light?: st
   }, []);
 
   const logoUrl = (theme === 'dark' && src_light) ? src_light : src;
-  const currentSrc = getLogoUrl(logoUrl || '');
+  const currentSrc = logoUrl || '';
 
   useEffect(() => {
     setShowFallback(!currentSrc || currentSrc.trim() === "");

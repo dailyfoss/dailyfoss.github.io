@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import * as Icons from "lucide-react";
-import { getLogoUrl } from "@/lib/asset-utils";
 
 type ScriptLogoProps = {
     logo: string | null | undefined;
@@ -34,10 +33,10 @@ export function ScriptLogo({ logo, logo_light, name, className = "mr-1 w-4 h-4" 
         return () => observer.disconnect();
     }, []);
 
-    // Get the appropriate logo based on theme with CDN support
+    // Get the appropriate logo based on theme
     // In dark mode, use light variant if available (for visibility)
     const logoUrl = (theme === 'dark' && logo_light) ? logo_light : logo;
-    const currentLogo = getLogoUrl(logoUrl || '');
+    const currentLogo = logoUrl || '';
 
     // Reset fallback state when logo changes
     useEffect(() => {

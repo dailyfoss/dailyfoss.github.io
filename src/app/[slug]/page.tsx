@@ -5,7 +5,6 @@ import path from 'path'
 import type { Script } from '@/lib/types'
 import { ScriptPageClient } from './client'
 import { siteConfig } from '@/config/site-config'
-import { getAssetUrl } from '@/lib/asset-utils'
 
 // Reserved routes that should not be handled by this dynamic route
 const RESERVED_ROUTES = [
@@ -78,10 +77,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     }
   }
 
-  // Convert screenshot URL from webp to png format for OG image, with CDN support
+  // Convert screenshot URL from webp to png format for OG image
   const screenshotUrl = script.resources?.screenshots?.[0] || '';
-  const cdnScreenshotUrl = getAssetUrl(screenshotUrl);
-  const pngScreenshotUrl = cdnScreenshotUrl.replace('/screenshots/webp/', '/screenshots/png/').replace('.webp', '.png');
+  const pngScreenshotUrl = screenshotUrl.replace('/screenshots/webp/', '/screenshots/png/').replace('.webp', '.png');
 
   // Build OG image URL with all parameters
   const ogParams = new URLSearchParams({
