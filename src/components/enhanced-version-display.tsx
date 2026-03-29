@@ -117,7 +117,7 @@ export function EnhancedVersionDisplay({ script, showDeploymentMethods = true }:
       <div className="flex items-center gap-3">
         {(script.resources?.logo) ? (
           <img
-            src={script.resources?.logo}
+            src={script.resources.logo}
             alt={`${script.name} icon`}
             className="h-12 w-12 object-contain"
             onError={(e) => {

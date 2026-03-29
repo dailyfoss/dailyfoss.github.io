@@ -56,7 +56,8 @@ function AppIcon({ src, src_light, name }: { src?: string | null; src_light?: st
     return () => observer.disconnect();
   }, []);
 
-  const currentSrc = (theme === 'dark' && src_light) ? src_light : src;
+  const logoUrl = (theme === 'dark' && src_light) ? src_light : src;
+  const currentSrc = logoUrl || '';
 
   useEffect(() => {
     setShowFallback(!currentSrc || currentSrc.trim() === "");

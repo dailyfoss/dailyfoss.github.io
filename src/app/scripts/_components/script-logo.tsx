@@ -35,7 +35,8 @@ export function ScriptLogo({ logo, logo_light, name, className = "mr-1 w-4 h-4" 
 
     // Get the appropriate logo based on theme
     // In dark mode, use light variant if available (for visibility)
-    const currentLogo = (theme === 'dark' && logo_light) ? logo_light : logo;
+    const logoUrl = (theme === 'dark' && logo_light) ? logo_light : logo;
+    const currentLogo = logoUrl || '';
 
     // Reset fallback state when logo changes
     useEffect(() => {
