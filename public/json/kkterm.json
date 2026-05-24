@@ -1,0 +1,85 @@
+{
+  "name": "KKTerm",
+  "slug": "kkterm",
+  "tagline": "Windows-first terminal workspace for SSH, SFTP, RDP/VNC, and dashboard widgets",
+  "subtitle": "",
+  "description": "KKTerm is a Windows-first, local-first Tauri desktop app for terminals, SSH, SFTP, RDP/VNC, dashboards, and approval-gated AI tools. It keeps durable data in SQLite, secrets in the OS keychain, and is designed for sysadmins and developers who want one workspace for multiple connection types.",
+  "categories": [
+    26,
+    36,
+    42
+  ],
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "v0.1.35",
+    "date_app_added": "2026-05-24",
+    "date_last_released": "2026-05-24",
+    "date_last_commit": "2026-05-24",
+    "github_stars": 7,
+    "github_contributors": 5,
+    "github_commits_this_year": 964,
+    "github_issues_open": 4,
+    "github_issues_closed_this_year": 0,
+    "github_releases_this_year": 7
+  },
+  "resources": {
+    "website": "https://ryantsai.github.io/KKTerm/",
+    "documentation": "https://github.com/ryantsai/KKTerm#readme",
+    "source_code": "https://github.com/ryantsai/KKTerm",
+    "logo": "https://raw.githubusercontent.com/ryantsai/KKTerm/main/src-tauri/icons/32x32.png",
+    "issues": "https://github.com/ryantsai/KKTerm/issues",
+    "releases": "https://github.com/ryantsai/KKTerm/releases",
+    "screenshot": "https://ryantsai.github.io/KKTerm/assets/demo.gif"
+  },
+  "features": [
+    {
+      "title": "Windows-first desktop app",
+      "description": "Built with Tauri, Rust, React, and TypeScript for native Windows admin workflows.",
+      "core_feature": true
+    },
+    {
+      "title": "Terminal and SSH workspace",
+      "description": "Open local shells and SSH sessions in a single tabbed workspace.",
+      "core_feature": true
+    },
+    {
+      "title": "SFTP and file browsing",
+      "description": "Browse and transfer files directly from the connected server.",
+      "core_feature": true
+    },
+    {
+      "title": "RDP and VNC access",
+      "description": "Manage remote desktop connections alongside terminal sessions.",
+      "core_feature": true
+    },
+    {
+      "title": "Local-first storage",
+      "description": "Keep durable data in SQLite and secrets in the OS keychain.",
+      "core_feature": false
+    },
+    {
+      "title": "Approval-gated AI tools",
+      "description": "Use AI-assisted workflows without giving up local control of the app.",
+      "core_feature": false
+    }
+  ],
+  "hosting": [],
+  "platforms": [
+    "windows"
+  ],
+  "interface": [
+    "gui"
+  ],
+  "install": [
+    "binary"
+  ],
+  "manifests": {},
+  "notes": [],
+  "repository_status": null,
+  "demo": {
+    "url": null,
+    "username": null,
+    "password": null
+  }
+}
