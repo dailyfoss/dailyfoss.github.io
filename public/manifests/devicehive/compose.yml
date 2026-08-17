@@ -189,7 +189,7 @@ services:
       - all
 
   redis_master:
-    image: bitnami/redis:7.0
+    image: soldevelo/redis:7.0
     ports:
       - "6379:6379"
     volumes:
@@ -202,7 +202,7 @@ services:
       - all
 
   redis_replica:
-    image: bitnami/redis:7.0
+    image: soldevelo/redis:7.0
     ports:
       - "7001:6379"
     depends_on:
