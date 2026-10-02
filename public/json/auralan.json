@@ -1,0 +1,86 @@
+{
+  "name": "AuraLAN",
+  "slug": "auralan",
+  "tagline": "A local-first LAN inventory and network monitoring console",
+  "subtitle": "",
+  "description": "AuraLAN is a self-hosted, local-first network console for Linux and Raspberry Pi. It combines local network evidence into a human-readable device inventory with Activity Center history, Network Baseline, Identity Intelligence, Service Exposure snapshots, reachability checks and Home Assistant integration. AuraLAN requires no cloud account and includes no telemetry or cloud fingerprinting.",
+  "categories": [
+    35
+  ],
+  "metadata": {
+    "sponsored": false,
+    "license": "MIT",
+    "version": "1.0.0",
+    "date_app_added": "2026-10-02",
+    "date_last_released": "2026-10-02",
+    "date_last_commit": null,
+    "github_stars": null,
+    "github_contributors": null,
+    "github_commits_this_year": null,
+    "github_issues_open": null,
+    "github_issues_closed_this_year": null,
+    "github_releases_this_year": null
+  },
+  "resources": {
+    "website": "https://yellownest.github.io/AuraLAN/",
+    "documentation": "https://github.com/YellowNest/AuraLAN/blob/main/docs/INSTALLATION.md",
+    "source_code": "https://github.com/YellowNest/AuraLAN",
+    "logo": "https://yellownest.github.io/AuraLAN/logo-mark.svg",
+    "issues": "https://github.com/YellowNest/AuraLAN/issues",
+    "releases": "https://github.com/YellowNest/AuraLAN/releases",
+    "screenshots": []
+  },
+  "features": [
+    {
+      "title": "Network Device Inventory",
+      "description": "Build a human-readable inventory from local LAN evidence",
+      "core_feature": true
+    },
+    {
+      "title": "Activity Center",
+      "description": "Track meaningful network changes in a local timeline",
+      "core_feature": true
+    },
+    {
+      "title": "Network Baseline",
+      "description": "Compare the current network with an operator-defined reference point",
+      "core_feature": true
+    },
+    {
+      "title": "Identity Intelligence",
+      "description": "Explain which local evidence supports device identities"
+    },
+    {
+      "title": "Service Exposure",
+      "description": "Inspect a bounded set of common TCP ports and retain change history"
+    },
+    {
+      "title": "Home Assistant Integration",
+      "description": "Expose aggregate REST data and optional reliable webhooks"
+    },
+    {
+      "title": "Local-first Operation",
+      "description": "Run without accounts, telemetry, cloud lookups or remote runtime assets"
+    }
+  ],
+  "hosting": [
+    "self_hosted"
+  ],
+  "platforms": [
+    "linux",
+    "raspberry_pi"
+  ],
+  "interface": [
+    "web_ui",
+    "api"
+  ],
+  "install": [
+    "script"
+  ],
+  "notes": [],
+  "demo": {
+    "url": null,
+    "username": null,
+    "password": null
+  }
+}
