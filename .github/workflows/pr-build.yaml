@@ -20,6 +20,11 @@ jobs:
         with:
           bun-version: latest
 
+      - name: Install canvas build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential pkg-config libpixman-1-dev libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
+
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
