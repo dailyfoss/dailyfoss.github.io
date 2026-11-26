@@ -1,0 +1,77 @@
+{
+  "name": "Posnic",
+  "slug": "posnic",
+  "tagline": "Offline-first open source POS and billing software",
+  "subtitle": "",
+  "description": "Posnic is offline-first open source POS and billing software for retail shops and restaurants. It supports local checkout, inventory, receipts, reporting, and role-based workflows through desktop and self-hosted server editions, with optional online access.",
+  "categories": [0],
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0-only",
+    "version": "v1.6.1",
+    "date_app_added": "2026-09-11",
+    "date_last_released": "2026-08-28",
+    "date_last_commit": "2026-09-11",
+    "github_stars": 3,
+    "github_contributors": 11,
+    "github_commits_this_year": null,
+    "github_issues_open": 405,
+    "github_issues_closed_this_year": null,
+    "github_releases_this_year": null
+  },
+  "resources": {
+    "website": "https://www.posnic.com/",
+    "documentation": "https://www.posnic.com/features",
+    "source_code": "https://github.com/Posnic/POS",
+    "logo": "https://raw.githubusercontent.com/Posnic/POS/develop/builds/icon-256.png",
+    "issues": "https://github.com/Posnic/POS/issues",
+    "releases": "https://github.com/Posnic/POS/releases"
+  },
+  "features": [
+    {
+      "title": "Point-of-sale checkout",
+      "description": "Records sales and produces receipts at the checkout counter",
+      "core_feature": true
+    },
+    {
+      "title": "Offline-first operation",
+      "description": "Runs the local POS without requiring a Posnic account or continuous internet access",
+      "core_feature": true
+    },
+    {
+      "title": "Inventory management",
+      "description": "Tracks products, stock levels, purchases, and stock movements",
+      "core_feature": true
+    },
+    {
+      "title": "Billing and reporting",
+      "description": "Supports billing records and operational sales reports",
+      "core_feature": true
+    },
+    {
+      "title": "Role-based workflows",
+      "description": "Provides separate administrator, manager, and cashier access"
+    },
+    {
+      "title": "Desktop and server editions",
+      "description": "Offers desktop packages plus a self-hosted server installation path"
+    }
+  ],
+  "hosting": ["self_hosted", "standalone"],
+  "platforms": ["linux", "macos", "windows", "web"],
+  "interface": ["web_ui", "gui", "api"],
+  "install": ["binary", "script"],
+  "manifests": {},
+  "notes": [
+    {
+      "text": "The Community Edition runs locally; online and managed-cloud options are separate deployment choices.",
+      "type": "info"
+    }
+  ],
+  "repository_status": null,
+  "demo": {
+    "url": null,
+    "username": null,
+    "password": null
+  }
+}
