@@ -1,0 +1,94 @@
+{
+  "name": "Authier",
+  "slug": "authier",
+  "tagline": "Open-source password and TOTP vault for browsers and the web",
+  "subtitle": "",
+  "description": "Authier is a freemium, early-stage open-source password manager and TOTP vault for browsers and the web. It encrypts vault data on the client before synchronization, supports configurable trusted-device approval and browser autofill, and has not been independently audited. Use an established independently audited password manager for high-value secrets.",
+  "categories": [
+    38
+  ],
+  "metadata": {
+    "sponsored": false,
+    "license": "AGPL-3.0-or-later",
+    "version": "1.2.9",
+    "date_app_added": "2026-09-01",
+    "date_last_released": "2026-08-14",
+    "date_last_commit": "2026-09-01",
+    "github_stars": 14,
+    "github_contributors": 3,
+    "github_commits_this_year": 114,
+    "github_issues_open": 46,
+    "github_issues_closed_this_year": 2,
+    "github_releases_this_year": 11
+  },
+  "resources": {
+    "website": "https://www.authier.pm/",
+    "documentation": "https://www.authier.pm/guides/",
+    "source_code": "https://github.com/authier-pm/authier",
+    "logo": "https://www.authier.pm/brand/icon-512.png",
+    "issues": "https://github.com/authier-pm/authier/issues",
+    "releases": "https://github.com/authier-pm/authier/releases",
+    "screenshots": [
+      "https://www.authier.pm/blog/authier-web-vault-ui.webp"
+    ]
+  },
+  "features": [
+    {
+      "title": "Client-side encrypted sync",
+      "description": "Encrypts vault data in the client before sending it to the synchronization service",
+      "core_feature": true
+    },
+    {
+      "title": "Passwords and TOTP in one vault",
+      "description": "Stores login credentials and time-based one-time password seeds in the same vault",
+      "core_feature": true
+    },
+    {
+      "title": "Browser autofill",
+      "description": "Offers credential and TOTP autofill through the supported browser extensions",
+      "core_feature": true
+    },
+    {
+      "title": "Configurable trusted-device approval",
+      "description": "Can require an already trusted device to approve a newly enrolled device",
+      "core_feature": true
+    },
+    {
+      "title": "Web vault and browser extensions",
+      "description": "Provides a browser-based vault plus extensions for Chrome, Firefox, and Microsoft Edge",
+      "core_feature": true
+    },
+    {
+      "title": "AGPL source",
+      "description": "Publishes the application source under the AGPL-3.0-or-later license"
+    }
+  ],
+  "hosting": [
+    "saas"
+  ],
+  "platforms": [
+    "web",
+    "browser_extension"
+  ],
+  "interface": [
+    "web_ui"
+  ],
+  "install": [],
+  "manifests": {},
+  "notes": [
+    {
+      "text": "Authier is early-stage and has not published an independent security audit. Use an established independently audited password manager for high-value secrets.",
+      "type": "warning"
+    },
+    {
+      "text": "Current supported downloads are listed at https://www.authier.pm/download.",
+      "type": "info"
+    }
+  ],
+  "repository_status": null,
+  "demo": {
+    "url": "https://vault.authier.pm/",
+    "username": null,
+    "password": null
+  }
+}
